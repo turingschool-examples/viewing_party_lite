@@ -105,7 +105,7 @@ GEM
     minitest (5.14.4)
     msgpack (1.4.2)
     nio4r (2.5.8)
-    nokogiri (1.12.5-arm64-darwin)
+    nokogiri (1.12.5-x86_64-darwin)
       racc (~> 1.4)
     orderly (0.1.1)
       capybara (>= 1.1)
@@ -243,6 +243,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-20
+  x86_64-darwin-20
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
