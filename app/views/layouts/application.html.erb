@@ -10,12 +10,22 @@
   </head>
 
   <body>
+
+    <% if flash.any? %>
+      <% flash.each do |type, msg| %>
+        <div>
+          <%= msg %>
+        </div>
+      <% end %>
+    <% end %>
+
     <section>
       <p>
       <%= link_to "Home", "/" %>
       </p>
       <h1 align="center">Viewing Party Light</h1>
     </section>
+
     <%= yield %>
   </body>
 </html>
