@@ -13,7 +13,6 @@ RSpec.describe 'user register (new) page' do
 
     expect(current_path).to eq("/users/#{User.all.last.id}")
     expect(page).to have_content('Steve')
-    expect(page).to have_content('steve@steve.com')
   end
 
   it 'shows an error flash message when nothing is entered' do
