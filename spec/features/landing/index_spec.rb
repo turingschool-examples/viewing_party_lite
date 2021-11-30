@@ -19,7 +19,7 @@ RSpec.describe "landing page", type: :feature do
 
     xit "I can see a button to create a new user" do
       click_on "Create a New User"
-      expect(current_path).to eq("/legister")
+      expect(current_path).to eq("/register")
     end
 
     it "I can see a list of existing users with links" do
@@ -28,7 +28,7 @@ RSpec.describe "landing page", type: :feature do
       expect(page).to have_content("seanmorris@gmail.com's Dashboard")
 
       click_on "haewon201@gmail.com's Dashboard"
-      expect(current_path).to eq("/users/#{@user1.id}/dashboard")
+      expect(current_path).to eq("/users/#{@user1.id}")
     end
 
   end
