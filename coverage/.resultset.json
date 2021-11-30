@@ -12,6 +12,8 @@
           1,
           1,
           1,
+          1,
+          1,
           null
         ]
       },
@@ -28,6 +30,49 @@
           1,
           1,
           1,
+          null
+        ]
+      },
+      "/Users/PM/turing/3module/viewing_party_lite/app/controllers/landing_controller.rb": {
+        "lines": [
+          1,
+          1,
+          5,
+          null,
+          null
+        ]
+      },
+      "/Users/PM/turing/3module/viewing_party_lite/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/PM/turing/3module/viewing_party_lite/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          2,
+          null,
           null
         ]
       },
@@ -57,14 +102,6 @@
         "branches": {
         }
       },
-      "/Users/PM/turing/3module/viewing_party_lite/app/controllers/application_controller.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/Users/PM/turing/3module/viewing_party_lite/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
@@ -86,6 +123,6 @@
         }
       }
     },
-    "timestamp": 1638228927
+    "timestamp": 1638302921
   }
 }
