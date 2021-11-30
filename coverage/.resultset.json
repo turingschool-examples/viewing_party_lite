@@ -7,12 +7,13 @@
           null
         ]
       },
-      "/Users/dididodson/turing/mod3/viewing_party_lite/app/models/user.rb": {
+      "/Users/dididodson/turing/mod3/viewing_party_lite/app/models/party_invitee.rb": {
         "lines": [
           1,
           1,
           1,
           null,
+          1,
           1,
           1,
           null
@@ -25,38 +26,33 @@
           null
         ]
       },
-      "/Users/dididodson/turing/mod3/viewing_party_lite/app/mailers/application_mailer.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/Users/dididodson/turing/mod3/viewing_party_lite/app/models/party.rb": {
         "lines": [
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
           null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
+          1,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
       },
-      "/Users/dididodson/turing/mod3/viewing_party_lite/app/models/party_invitee.rb": {
+      "/Users/dididodson/turing/mod3/viewing_party_lite/app/models/user.rb": {
         "lines": [
-          0,
-          0,
-          0,
+          1,
+          1,
+          1,
           null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/dididodson/turing/mod3/viewing_party_lite/app/mailers/application_mailer.rb": {
+        "lines": [
           0,
           0,
           0,
@@ -147,6 +143,6 @@
         }
       }
     },
-    "timestamp": 1638296065
+    "timestamp": 1638297120
   }
 }

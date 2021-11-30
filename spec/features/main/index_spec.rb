@@ -7,6 +7,6 @@ RSpec.describe 'Main page' do
     expect(page).to have_content('Viewing Party Lite')
     expect(page).to have_link('Home')
     expect(page).to have_content('Existing Users:')
-    expect(page).to have_content("Create New User")
+    expect(page).to have_button("Create New User")
   end
 end
