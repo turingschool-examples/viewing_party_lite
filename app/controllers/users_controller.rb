@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       redirect_to registration_path
     end
   end
-
+  
   def show
     @user = User.find(params[:user_id])
   end
@@ -24,4 +24,5 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email)
   end
+
 end
