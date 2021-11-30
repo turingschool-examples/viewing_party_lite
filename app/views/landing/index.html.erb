@@ -1,0 +1,10 @@
+<%= button_to "Create a New User", "/legister", method: :get %>
+
+<section>
+  <h2>Existing Users:</h2>
+  <% @users.each do |user| %>
+    <p>
+    <%= link_to "#{user.email}'s Dashboard", "/users/#{user.id}/dashboard" %>
+    </p>
+  <% end %>
+</section>

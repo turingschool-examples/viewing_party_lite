@@ -7,10 +7,15 @@
           null
         ]
       },
-      "/Users/haewonjeon/right_now_Turing/viewing_party_lite/app/models/movie.rb": {
+      "/Users/haewonjeon/right_now_Turing/viewing_party_lite/app/models/user.rb": {
         "lines": [
           1,
           1,
+          1,
+          1,
+          null,
+          1,
+          null,
           null
         ]
       },
@@ -21,31 +26,25 @@
           null
         ]
       },
-      "/Users/haewonjeon/right_now_Turing/viewing_party_lite/app/models/party.rb": {
+      "/Users/haewonjeon/right_now_Turing/viewing_party_lite/app/controllers/landing_controller.rb": {
         "lines": [
           1,
           1,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/haewonjeon/right_now_Turing/viewing_party_lite/app/models/user_party.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/haewonjeon/right_now_Turing/viewing_party_lite/app/models/user.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
+          4,
           null,
+          null
+        ]
+      },
+      "/Users/haewonjeon/right_now_Turing/viewing_party_lite/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/haewonjeon/right_now_Turing/viewing_party_lite/app/controllers/user_dashboards_controller.rb": {
+        "lines": [
+          1,
+          1,
           1,
           null,
           null
@@ -61,15 +60,38 @@
         "branches": {
         }
       },
-      "/Users/haewonjeon/right_now_Turing/viewing_party_lite/app/jobs/application_job.rb": {
+      "/Users/haewonjeon/right_now_Turing/viewing_party_lite/app/models/party.rb": {
         "lines": [
+          0,
+          0,
+          0,
+          0,
           0,
           0
         ],
         "branches": {
         }
       },
-      "/Users/haewonjeon/right_now_Turing/viewing_party_lite/app/controllers/application_controller.rb": {
+      "/Users/haewonjeon/right_now_Turing/viewing_party_lite/app/models/movie.rb": {
+        "lines": [
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/haewonjeon/right_now_Turing/viewing_party_lite/app/models/user_party.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/haewonjeon/right_now_Turing/viewing_party_lite/app/jobs/application_job.rb": {
         "lines": [
           0,
           0
@@ -98,6 +120,6 @@
         }
       }
     },
-    "timestamp": 1638252349
+    "timestamp": 1638305779
   }
 }
