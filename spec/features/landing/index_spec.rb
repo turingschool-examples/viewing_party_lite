@@ -28,7 +28,6 @@ RSpec.describe "landing page", type: :feature do
       expect(page).to have_content("seanmorris@gmail.com's Dashboard")
 
       click_on "haewon201@gmail.com's Dashboard"
-      save_and_open_page
       expect(current_path).to eq("/users/#{@user1.id}/dashboard")
     end
 
