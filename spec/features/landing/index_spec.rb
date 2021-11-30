@@ -2,6 +2,10 @@ require 'rails_helper'
 # FactoryBot.find_definitions
 
 RSpec.describe 'Landing Page' do
+  it 'has the title of the application' do
+    visit "/"
+    expect(page).to have_content("Viewing Party Lite")
+  end
 
   it 'has a button to create a new user' do
     visit "/"

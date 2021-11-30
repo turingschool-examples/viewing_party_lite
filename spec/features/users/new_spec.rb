@@ -10,7 +10,7 @@ RSpec.describe 'user register (new) page' do
 
     click_button
 
-    # expect(current_path).to eq("/users/#{user.id}")
+    expect(current_path).to eq("/users/#{User.all.last.id}")
     expect(page).to have_content("Steve")
     expect(page).to have_content("steve@steve.com")
   end
