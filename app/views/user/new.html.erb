@@ -1,0 +1,7 @@
+<%= form_with url: '/register', local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name, required: true %><br>
+  <%= form.label :email %>
+  <%= form.text_field :email, required: true %><br>
+  <%= form.submit %>
+<% end %>
