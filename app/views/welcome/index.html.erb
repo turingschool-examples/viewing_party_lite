@@ -1,0 +1,13 @@
+<div style="text-align:center;">
+  <h1>Welcome to Viewing Party!</h1>
+  <br>
+  <br>
+  <br>
+  <%= button_to 'Register', register_path, method: :get %>
+  <br>
+  <br>
+  <h3>Existing Users:</h3>
+  <% @users.each do |user| %>
+    <%= link_to "#{user.email}'s Dashboard", user_path(user.id) %>
+  <% end %>
+</div>
