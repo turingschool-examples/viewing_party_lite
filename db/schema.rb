@@ -10,13 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 0) do
-
+ActiveRecord::Schema.define(version: 2021_11_30_054704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
 
   create_table "movies", force: :cascade do |t|
     t.string "title"
@@ -57,5 +54,4 @@ ActiveRecord::Schema.define(version: 0) do
   add_foreign_key "parties", "users"
   add_foreign_key "user_parties", "parties"
   add_foreign_key "user_parties", "users"
-
 end
