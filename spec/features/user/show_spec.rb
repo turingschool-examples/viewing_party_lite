@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe "user show" do
   it 'shows user details' do
-    visit user_path
+    user = User.new(name: 'Tammy Tanaka', email: 'tammy@fake_email.com')
 
-    expect(page).to have_button('Create New User')
-    click_button "Create New User"
-    expect(current_path).to eq(register_path)
+    visit "/user/#{user.id}"
+
+    expect(page).to have_content("Tammy Tanaka's Dashboard")
   end
 end
