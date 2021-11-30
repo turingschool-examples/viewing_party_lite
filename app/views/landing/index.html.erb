@@ -1,0 +1,10 @@
+<%= button_to "Create a New User", "/register", method: :get %>
+
+<section>
+  <h2>Existing Users:</h2>
+  <% @users.each do |user| %>
+    <p>
+    <%= link_to "#{user.email}'s Dashboard", "/users/#{user.id}" %>
+    </p>
+  <% end %>
+</section>
