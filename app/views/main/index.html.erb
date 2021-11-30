@@ -1,1 +1,6 @@
 <h1>Viewing Party Lite</h1>
+
+<h3>Existing Users:</h3>
+<% @users.each do |user| %>
+  <%= user.email %>'s Dashboard
+<% end %>  
