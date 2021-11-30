@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ViewingParty < ApplicationRecord
   belongs_to :user
   has_many :user_parties

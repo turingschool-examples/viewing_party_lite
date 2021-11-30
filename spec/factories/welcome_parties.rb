@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :welcome_party do
     movie_name { Faker::Ancient.hero }

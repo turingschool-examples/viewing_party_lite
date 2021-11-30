@@ -1,31 +1,19 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/PM/turing/3module/viewing_party_lite/app/helpers/application_helper.rb": {
+      "/Users/amm/turing/mod_3_work/viewing_party_lite/app/helpers/application_helper.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
-      "/Users/PM/turing/3module/viewing_party_lite/app/models/user.rb": {
+      "/Users/amm/turing/mod_3_work/viewing_party_lite/app/models/user.rb": {
         "lines": [
+          null,
+          null,
           1,
-          1,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/PM/turing/3module/viewing_party_lite/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/PM/turing/3module/viewing_party_lite/app/models/viewing_party.rb": {
-        "lines": [
           1,
           1,
           1,
@@ -33,32 +21,56 @@
           null
         ]
       },
-      "/Users/PM/turing/3module/viewing_party_lite/app/controllers/landing_controller.rb": {
+      "/Users/amm/turing/mod_3_work/viewing_party_lite/app/models/application_record.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
-          5,
+          null
+        ]
+      },
+      "/Users/amm/turing/mod_3_work/viewing_party_lite/app/models/viewing_party.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/amm/turing/mod_3_work/viewing_party_lite/app/controllers/landing_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          6,
           null,
           null
         ]
       },
-      "/Users/PM/turing/3module/viewing_party_lite/app/controllers/application_controller.rb": {
+      "/Users/amm/turing/mod_3_work/viewing_party_lite/app/controllers/application_controller.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
-      "/Users/PM/turing/3module/viewing_party_lite/app/controllers/users_controller.rb": {
+      "/Users/amm/turing/mod_3_work/viewing_party_lite/app/controllers/users_controller.rb": {
         "lines": [
-          1,
-          1,
           null,
+          null,
+          1,
+          1,
           null,
           1,
           2,
           null,
           null,
-          null,
           1,
           2,
           2,
@@ -70,22 +82,27 @@
           null,
           null,
           1,
+          null,
           1,
           2,
           null,
           null
         ]
       },
-      "/Users/PM/turing/3module/viewing_party_lite/app/models/user_party.rb": {
+      "/Users/amm/turing/mod_3_work/viewing_party_lite/app/models/user_party.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           1,
           null
         ]
       },
-      "/Users/PM/turing/3module/viewing_party_lite/app/mailers/application_mailer.rb": {
+      "/Users/amm/turing/mod_3_work/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
+          null,
+          null,
           0,
           0,
           0,
@@ -94,16 +111,20 @@
         "branches": {
         }
       },
-      "/Users/PM/turing/3module/viewing_party_lite/app/jobs/application_job.rb": {
+      "/Users/amm/turing/mod_3_work/viewing_party_lite/app/jobs/application_job.rb": {
         "lines": [
+          null,
+          null,
           0,
           0
         ],
         "branches": {
         }
       },
-      "/Users/PM/turing/3module/viewing_party_lite/app/channels/application_cable/connection.rb": {
+      "/Users/amm/turing/mod_3_work/viewing_party_lite/app/channels/application_cable/connection.rb": {
         "lines": [
+          null,
+          null,
           0,
           0,
           0,
@@ -112,8 +133,10 @@
         "branches": {
         }
       },
-      "/Users/PM/turing/3module/viewing_party_lite/app/channels/application_cable/channel.rb": {
+      "/Users/amm/turing/mod_3_work/viewing_party_lite/app/channels/application_cable/channel.rb": {
         "lines": [
+          null,
+          null,
           0,
           0,
           0,
@@ -123,6 +146,6 @@
         }
       }
     },
-    "timestamp": 1638302921
+    "timestamp": 1638304621
   }
 }
