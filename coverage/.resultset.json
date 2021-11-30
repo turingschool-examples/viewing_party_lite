@@ -7,46 +7,16 @@
           null
         ]
       },
-      "/Users/dididodson/turing/mod3/viewing_party_lite/app/models/party_invitee.rb": {
+      "/Users/dididodson/turing/mod3/viewing_party_lite/app/controllers/main_controller.rb": {
         "lines": [
-          1,
           1,
           1,
           null,
-          1,
-          1,
-          1,
           null
         ]
       },
-      "/Users/dididodson/turing/mod3/viewing_party_lite/app/models/application_record.rb": {
+      "/Users/dididodson/turing/mod3/viewing_party_lite/app/controllers/application_controller.rb": {
         "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/dididodson/turing/mod3/viewing_party_lite/app/models/party.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/dididodson/turing/mod3/viewing_party_lite/app/models/user.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
           1,
           null
         ]
@@ -61,15 +31,59 @@
         "branches": {
         }
       },
-      "/Users/dididodson/turing/mod3/viewing_party_lite/app/jobs/application_job.rb": {
+      "/Users/dididodson/turing/mod3/viewing_party_lite/app/models/party.rb": {
         "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
           0,
           0
         ],
         "branches": {
         }
       },
-      "/Users/dididodson/turing/mod3/viewing_party_lite/app/controllers/application_controller.rb": {
+      "/Users/dididodson/turing/mod3/viewing_party_lite/app/models/party_invitee.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/dididodson/turing/mod3/viewing_party_lite/app/models/application_record.rb": {
+        "lines": [
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/dididodson/turing/mod3/viewing_party_lite/app/models/user.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/dididodson/turing/mod3/viewing_party_lite/app/jobs/application_job.rb": {
         "lines": [
           0,
           0
@@ -98,6 +112,6 @@
         }
       }
     },
-    "timestamp": 1638245300
+    "timestamp": 1638246039
   }
 }
