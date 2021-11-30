@@ -14,4 +14,10 @@ RSpec.describe 'user dashboard page' do
    expect(page).to have_content("#{@user.name}'s Dashboard")
    expect(page).to have_button("Discover Movies")
  end
+
+ it 'has a section for viewing parties' do
+   within('#viewing-parties') do
+     expect(page).to have_content('Viewing Parties')
+   end
+ end
 end
