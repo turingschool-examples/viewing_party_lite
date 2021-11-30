@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get '/register', to: 'users#new'
   resources :users, only: [:show, :create] do
-    resources :movies, only: [:discover, :movies]
+    get '/discover', to: 'movies#index'
+    get '/movies', to: 'movies#search'
     resources :movies, only: [:show] do
       resources :party, only: [:new, :create]
     end
