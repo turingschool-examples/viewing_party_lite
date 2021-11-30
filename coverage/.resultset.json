@@ -12,6 +12,8 @@
           1,
           1,
           1,
+          1,
+          1,
           null
         ]
       },
@@ -35,6 +37,7 @@
         "lines": [
           1,
           1,
+          5,
           null,
           null
         ]
@@ -42,6 +45,34 @@
       "/Users/PM/turing/3module/viewing_party_lite/app/controllers/application_controller.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/Users/PM/turing/3module/viewing_party_lite/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          2,
+          null,
           null
         ]
       },
@@ -92,6 +123,6 @@
         }
       }
     },
-    "timestamp": 1638230942
+    "timestamp": 1638298756
   }
 }

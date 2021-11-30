@@ -1,5 +1,10 @@
-<h1>Viewing Party Lite</h1>
+<h1>Viewing Party Light</h1>
 
 <%= button_to "Create a New User", "/register", method: :get %>
 
-list of existing users (links to dashboards)
+<p>Existing Users:</p>
+
+<% @users.each do |user|%>
+  <%= link_to "#{user.email}'s Dashboard", "/users/#{user.id}"%>
+  <br>
+<% end %>
