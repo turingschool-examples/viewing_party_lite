@@ -1,0 +1,13 @@
+<h2>Discover Movies</h2>
+
+<%= form_with url: "/users/#{@user.id}/movies", local: true, method: :get do |form| %>
+  <%= form.hidden_field :q, value: "top_40_movies" %>
+  <%= form.submit "Find Top Rated Movies" %>
+<% end %>
+
+<p>OR</p>
+
+<%= form_with url: "/users/#{@user.id}/movies", local: true, method: :get do |form| %>
+  <%= form.text_field :find_movie, placeholder: "Search by Movie Title:" %>
+  <%= form.submit "Find Movies" %>
+<% end %>
