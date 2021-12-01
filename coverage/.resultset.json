@@ -68,8 +68,43 @@
         "branches": {
         }
       },
+      "/Users/theodorestaros/turing/mod3/projects/viewing_party_lite/app/models/party.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/theodorestaros/turing/mod3/projects/viewing_party_lite/app/models/user_party.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/theodorestaros/turing/mod3/projects/viewing_party_lite/app/jobs/application_job.rb": {
         "lines": [
+          null,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/theodorestaros/turing/mod3/projects/viewing_party_lite/app/controllers/movies_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
           null,
           null,
           0,
@@ -103,6 +138,6 @@
         }
       }
     },
-    "timestamp": 1638317952
+    "timestamp": 1638319627
   }
 }
