@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'user dashboard page' do
   before do
-    visit registration_path
+    visit register_path
     fill_in 'Name', with: 'User 1'
     fill_in 'Email', with: 'user@email.com'
     click_button 'Create User'
@@ -12,7 +12,8 @@ RSpec.describe 'user dashboard page' do
 
  it 'displays dashboard sections' do
    expect(page).to have_content("#{@user.name}'s Dashboard")
-   expect(page).to have_button("Discover Movies")
+   click_button "Discover Movies"
+   expect(current_path).to eq(user_discover_index_path(@user))
  end
 
  it 'has a section for viewing parties' do

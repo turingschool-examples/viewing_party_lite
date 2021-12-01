@@ -7,7 +7,7 @@ resources :users, only: :create do
 end
 
 get '/users/:user_id', to: 'users#show', as: 'dashboard'
-get '/registration', to: 'users#new', as: 'registration'
+get '/register', to: 'users#new', as: 'register'
 
 
 root to: "landing#index"
