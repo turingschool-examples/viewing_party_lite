@@ -98,8 +98,51 @@
           null
         ]
       },
+      "/Users/haewonjeon/right_now_Turing/viewing_party_lite/app/controllers/discover_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/haewonjeon/right_now_Turing/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/haewonjeon/right_now_Turing/viewing_party_lite/app/facades/pop_movie_facade.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/haewonjeon/right_now_Turing/viewing_party_lite/app/poros/pop_movie.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
           0,
           0,
           0,
@@ -116,13 +159,24 @@
         "branches": {
         }
       },
-      "/Users/haewonjeon/right_now_Turing/viewing_party_lite/app/controllers/discover_controller.rb": {
+      "/Users/haewonjeon/right_now_Turing/viewing_party_lite/app/services/movie_service.rb": {
         "lines": [
           0,
+          0,
+          0,
+          0,
+          0,
+          0,
           null,
           0,
           0,
+          0,
+          0,
           null,
+          0,
+          0,
+          0,
+          0,
           0
         ],
         "branches": {
@@ -149,6 +203,6 @@
         }
       }
     },
-    "timestamp": 1638314369
+    "timestamp": 1638374673
   }
 }

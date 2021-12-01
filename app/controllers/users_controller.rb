@@ -11,10 +11,10 @@ class UsersController < ApplicationController
       redirect_to dashboard_path(user)
     else
       flash[:alert] = "Could not create user. Please try again."
-      redirect_to registration_path
+      redirect_to register_path
     end
   end
-  
+
   def show
     @user = User.find(params[:user_id])
   end
