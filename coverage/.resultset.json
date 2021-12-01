@@ -19,31 +19,49 @@
           null
         ]
       },
+      "/Users/theodorestaros/turing/mod3/projects/viewing_party_lite/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/theodorestaros/turing/mod3/projects/viewing_party_lite/app/models/user.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/theodorestaros/turing/mod3/projects/viewing_party_lite/app/models/application_record.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/theodorestaros/turing/mod3/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
           null,
           null,
           0,
           0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/theodorestaros/turing/mod3/projects/viewing_party_lite/app/models/application_record.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/theodorestaros/turing/mod3/projects/viewing_party_lite/app/models/user.rb": {
-        "lines": [
           0,
           0
         ],
@@ -85,6 +103,6 @@
         }
       }
     },
-    "timestamp": 1638306677
+    "timestamp": 1638317952
   }
 }

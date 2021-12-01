@@ -7,4 +7,11 @@ RSpec.describe 'welcome page' do
     expect(page).to have_link('Home')
     expect(page).to have_content('Viewing Party')
   end
+
+  it "can create a user" do
+    visit '/'
+
+    click_on('Create a New User')
+    expect(current_path).to eq('/register')
+  end
 end
