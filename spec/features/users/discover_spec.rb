@@ -19,7 +19,10 @@ RSpec.describe 'user discover page' do
     expect(page).to have_content("Forrest Gump")
   end
 
-  xit 'can search for specific movies' do
-
+  it 'can search for specific movies' do
+    fill_in 'find_movie', with: "Into the Spiderverse"
+    click_button("Find Movies")
+    expect(current_path).to eq("/users/#{@user.id}/movies")
+    expect(page).to have_content("Spider-Man")
   end
 end

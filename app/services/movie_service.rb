@@ -12,6 +12,19 @@ class MovieService
     end
   end
 
+  def self.find(movie)
+    content = conn.get("/3/search/movie?query=#{movie}&api_key=#{ENV['movie_api_key']}")
+    content2 = conn.get("/3/search/movie?query=#{movie}&page=2&api_key=#{ENV['movie_api_key']}")
+    results = (parse_response(content))[:results]
+    results2 = (parse_response(content2))[:results]
+
+    (results << results2).flatten!
+
+    results.map do |movie|
+      Movie.new(movie)
+    end
+  end
+
   def self.parse_response(response)
     JSON.parse(response.body, symbolize_names: true)
   end
