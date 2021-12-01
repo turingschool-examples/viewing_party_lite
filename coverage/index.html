@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-12-01T09:45:42-07:00">2021-12-01T09:45:42-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-12-01T11:39:20-07:00">2021-12-01T11:39:20-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -227,7 +227,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#13cf189bc9f4922cf75d365aa127b3343077c352" class="src_link" title="app/services/movie_service.rb">app/services/movie_service.rb</a></td>
             <td class="red strong cell--number t-file__coverage">71.43 %</td>
-            <td class="cell--number">33</td>
+            <td class="cell--number">32</td>
             <td class="cell--number">7</td>
             <td class="cell--number">5</td>
             <td class="cell--number">2</td>
@@ -857,7 +857,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#13cf189bc9f4922cf75d365aa127b3343077c352" class="src_link" title="app/services/movie_service.rb">app/services/movie_service.rb</a></td>
             <td class="red strong cell--number t-file__coverage">71.43 %</td>
-            <td class="cell--number">33</td>
+            <td class="cell--number">32</td>
             <td class="cell--number">7</td>
             <td class="cell--number">5</td>
             <td class="cell--number">2</td>
@@ -2250,24 +2250,24 @@
 
             
 
-            <code class="ruby">    response = conn.get(&quot;/movie/popular?api_key=#{ENV[&#39;movie_api_key&#39;]}&amp;language=en-US&amp;page=1&quot;)</code>
+            <code class="ruby">    response = conn.get(&quot;/movie/popular?api_key=d36e20441bd82022b81b976673b2a800&amp;language=en-US&amp;page=1&quot;)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="6">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="7">
+          <li class="covered" data-hits="1" data-linenumber="6">
             <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      require &quot;pry&quot;; binding.pry</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="missed" data-hits="0" data-linenumber="7">
+            
             
 
             
@@ -2299,13 +2299,13 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="10">
+          <li class="never" data-hits="" data-linenumber="10">
             
             
 
             
 
-            <code class="ruby">    require &quot;pry&quot;; binding.pry</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -2338,7 +2338,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -2349,7 +2349,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -2360,7 +2360,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">end</code>
           </li>
         </div>
       
@@ -2371,7 +2371,7 @@
 
             
 
-            <code class="ruby">end</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -2393,7 +2393,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">#   def search</code>
           </li>
         </div>
       
@@ -2404,7 +2404,7 @@
 
             
 
-            <code class="ruby">#   def search</code>
+            <code class="ruby">#     conn = Faraday.new(url: &quot;https://api.propublica.org&quot;) do |faraday|</code>
           </li>
         </div>
       
@@ -2415,7 +2415,7 @@
 
             
 
-            <code class="ruby">#     conn = Faraday.new(url: &quot;https://api.propublica.org&quot;) do |faraday|</code>
+            <code class="ruby">#       faraday.headers[&quot;X-API-KEY&quot;] = ENV[&#39;govt_api_key&#39;]</code>
           </li>
         </div>
       
@@ -2426,7 +2426,7 @@
 
             
 
-            <code class="ruby">#       faraday.headers[&quot;X-API-KEY&quot;] = ENV[&#39;govt_api_key&#39;]</code>
+            <code class="ruby">#     end</code>
           </li>
         </div>
       
@@ -2437,7 +2437,7 @@
 
             
 
-            <code class="ruby">#     end</code>
+            <code class="ruby">#     response = conn.get(&quot;/congress/v1/116/senate/members.json&quot;)</code>
           </li>
         </div>
       
@@ -2448,7 +2448,7 @@
 
             
 
-            <code class="ruby">#     response = conn.get(&quot;/congress/v1/116/senate/members.json&quot;)</code>
+            <code class="ruby">#</code>
           </li>
         </div>
       
@@ -2459,7 +2459,7 @@
 
             
 
-            <code class="ruby">#</code>
+            <code class="ruby">#     data = JSON.parse(response.body, symbolize_names: true)</code>
           </li>
         </div>
       
@@ -2470,7 +2470,7 @@
 
             
 
-            <code class="ruby">#     data = JSON.parse(response.body, symbolize_names: true)</code>
+            <code class="ruby">#</code>
           </li>
         </div>
       
@@ -2481,7 +2481,7 @@
 
             
 
-            <code class="ruby">#</code>
+            <code class="ruby">#     members = data[:results][0][:members]</code>
           </li>
         </div>
       
@@ -2492,7 +2492,7 @@
 
             
 
-            <code class="ruby">#     members = data[:results][0][:members]</code>
+            <code class="ruby">#</code>
           </li>
         </div>
       
@@ -2503,7 +2503,7 @@
 
             
 
-            <code class="ruby">#</code>
+            <code class="ruby">#     found_members = members.find_all {|m| m[:last_name] == params[:search]}</code>
           </li>
         </div>
       
@@ -2514,7 +2514,7 @@
 
             
 
-            <code class="ruby">#     found_members = members.find_all {|m| m[:last_name] == params[:search]}</code>
+            <code class="ruby">#     @member = found_members.first</code>
           </li>
         </div>
       
@@ -2525,7 +2525,7 @@
 
             
 
-            <code class="ruby">#     @member = found_members.first</code>
+            <code class="ruby">#     render &quot;welcome/index&quot;</code>
           </li>
         </div>
       
@@ -2536,23 +2536,12 @@
 
             
 
-            <code class="ruby">#     render &quot;welcome/index&quot;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="32">
-            
-            
-
-            
-
             <code class="ruby">#   end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="33">
+          <li class="never" data-hits="" data-linenumber="32">
             
             
 
