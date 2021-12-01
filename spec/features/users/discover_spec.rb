@@ -1,0 +1,25 @@
+# frozen_string_literal: true
+
+require 'rails_helper'
+
+RSpec.describe 'user discover page' do
+  before(:each) do
+    @user = create(:user)
+
+    visit "/users/#{@user.id}/discover"
+  end
+
+  it 'has a heading of discover movies' do
+    expect(page).to have_content("Discover Movies")
+  end
+
+  it 'has a link to show top 40 movies' do
+    click_button("Find Top Rated Movies")
+    expect(current_path).to eq("/users/#{@user.id}/movies")
+    expect(page).to have_content("Forrest Gump")
+  end
+
+  xit 'can search for specific movies' do
+
+  end
+end
