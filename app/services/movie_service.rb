@@ -7,6 +7,6 @@ class MovieService
     json = JSON.parse(response.body, symbolize_names: true)
 
     @movies = json[:results]
-
+    require "pry"; binding.pry
   end
 end
