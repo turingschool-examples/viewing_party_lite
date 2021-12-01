@@ -1,17 +1,13 @@
-class MoviesController < ApplicationController
-  def search
-    conn = Faraday.new(url: "https://www.themoviedb.org/movie") do |faraday|
-      faraday.headers["X-API-KEY"] = ENV['movie_api_key']
-    end
-    response = conn.get("")
+class MovieService
+  def self.conn
+    response = Faraday.get('')
+    parsed = JSON.parse(response.body, symbolize_names: true)
 
-    data = JSON.parse(response.body, symbolize_names: true)
-
-    
   end
+
 end
 
-# class CongressController < ApplicationController
+
 #   def search
 #     conn = Faraday.new(url: "https://api.propublica.org") do |faraday|
 #       faraday.headers["X-API-KEY"] = ENV['govt_api_key']
