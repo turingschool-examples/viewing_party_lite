@@ -12,6 +12,22 @@ class MovieService
     end
   end
 
+  def self.movie_details(movie_id)
+    content = conn.get("/3/movie/#{movie_id}?api_key=#{ENV['movie_api_key']}")
+    results = parse_response(content)
+    Movie.new(results)
+  end
+
+  def self.get_reviews
+    content = conn.get("/3/movie/#{movie_id}/reviews?api_key=#{ENV['movie_api_key']}")
+    results = parse_response(content)
+    Movie.new(results)
+  end
+
+  def self.get_cast
+
+  end
+
   def self.find(movie)
     content = conn.get("/3/search/movie?query=#{movie}&api_key=#{ENV['movie_api_key']}")
     content2 = conn.get("/3/search/movie?query=#{movie}&page=2&api_key=#{ENV['movie_api_key']}")
