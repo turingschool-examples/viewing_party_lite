@@ -1,0 +1,9 @@
+<h1>Discover Movies</h1>
+<%= button_to "Find Top Rated Movies", user_movies_path(q: 'top%20rated'), method: :get  %>
+
+<p>OR</p>
+
+<%= form_with url:user_movies_path, method: :get, local: :true do |f|  %>
+  <%= f.text_field :keyword, value: "Search by movie title" %>
+  <%= f.submit "Find Movies" %>
+<% end %>

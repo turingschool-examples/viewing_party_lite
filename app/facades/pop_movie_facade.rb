@@ -1,13 +1,25 @@
 class PopMovieFacade
   def self.movies
-    pop_movies = MovieService.call_api("/discover/movie?api_key=05946dc2dc50df636962153f45926dbe&sort_by=vote_average.desc")
+    pop_movies1 = MovieService.call_api("/movie/top_rated?api_key=05946dc2dc50df636962153f45926dbe&page=1")
+    pop_movies2 = MovieService.call_api("/movie/top_rated?api_key=05946dc2dc50df636962153f45926dbe&page=2")
 
-    40.times do
-      pop_movies.map do |pop_movie|
-        PopMovie.new(pop_movie)
-      end
-    end
+    # 40.times do
+    #   pop_movies.map do |pop_movie|
+    #     PopMovie.new(pop_movie)
+    #   end
+    # end
 #make sure we get what we think we are getting and mind the pages
+
+    movies1 = pop_movies1.map do |pop_movie|
+      PopMovie.new(pop_movie)
+    end
+
+    movies2 = pop_movies2.map do |pop_movie|
+      PopMovie.new(pop_movie)
+    end
+
+    movies1 + movies2
+
   end
 end
 # hide the key
