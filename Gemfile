@@ -43,6 +43,7 @@ group :development, :test do
   gem 'pry'
   gem 'shoulda-matchers'
   gem 'orderly'
+  gem 'figaro'
 end
 
 group :development do
@@ -57,6 +58,8 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'simplecov'
+  gem 'webmock'
+  gem 'vcr'
 end
 
 
