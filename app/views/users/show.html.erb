@@ -1,2 +1,4 @@
+<h1><%= "#{@user.name}" %>'s Dashboard </h1>
 <%= @user.email %>
-<%= @user.name %>
+
+<%= button_to 'Discover Movies', "/users/#{@user.id}/discover", method: :get %>
