@@ -8,5 +8,8 @@ Rails.application.routes.draw do
   get '/register', to: 'users#new'
 
   get '/users/:id', to: 'users#show'
+  get '/users/:id/discover', to: 'users#discover'
+  get '/users/:id/movies', to: 'users#movies'
+
   post '/users', to: 'users#create'
 end
