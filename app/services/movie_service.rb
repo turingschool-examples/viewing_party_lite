@@ -2,11 +2,11 @@ class MovieService
   def self.popular_movies
     conn = Faraday.new(url: "https://api.themoviedb.org/3")
 
-    response = conn.get("/movie/popular?api_key=#{ENV['movie_api_key']}&language=en-US&page=1")
-
+    response = conn.get("/movie/popular?api_key=d36e20441bd82022b81b976673b2a800&language=en-US&page=1")
+      require "pry"; binding.pry
     json = JSON.parse(response.body, symbolize_names: true)
     #require "pry"; binding.pry
-    @movies = json[]
+    @movies = json[:results]
 
 
 
