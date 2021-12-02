@@ -18,14 +18,20 @@ class MovieService
     Movie.new(results)
   end
 
-  def self.get_reviews
-    content = conn.get("/3/movie/#{movie_id}/reviews?api_key=#{ENV['movie_api_key']}")
-    results = parse_response(content)
-    Movie.new(results)
+  def self.get_reviews(movie_id)
+    review_content = conn.get("/3/movie/#{movie_id}/reviews?api_key=#{ENV['movie_api_key']}")
+    review_results = parse_response(review_content)[:results].flatten
+    review_results.map do |result|
+      Review.new(result)
+    end
   end
 
-  def self.get_cast
-
+  def self.get_cast(movie_id)
+    cast_content = conn.get("/3/movie/#{movie_id}/credits?api_key=#{ENV['movie_api_key']}")
+    cast_results = parse_response(cast_content)[:cast].flatten.shift(10)
+    cast_results.map do |result|
+      Cast.new(result)
+    end
   end
 
   def self.find(movie)

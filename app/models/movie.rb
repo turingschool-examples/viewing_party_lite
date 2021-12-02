@@ -7,6 +7,7 @@ class Movie
               :runtime,
               :overview
 
+
   def initialize(movie)
     @title = movie[:title]
     @id = movie[:id]
@@ -23,9 +24,6 @@ class Movie
     @overview = if movie[:overview].present?
                 movie[:overview]
               end
-    # @reviews = if movie[:overview].present?
-    #             movie[:overview]
-    #           end
   end
 
   def runtime_in_minutes
