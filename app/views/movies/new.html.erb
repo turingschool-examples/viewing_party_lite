@@ -1,0 +1,7 @@
+<%= button_to 'Find Top Rated Movies', "/users/#{@user.id}/movies?q=top%20rated", method: :get %>
+
+<%= form_with url: "/users/#{@user.id}/movies?q=keyword", method: :get do |form| %>
+  <%= form.label :search, "Search for:" %>
+  <%= form.text_field :search %>
+  <%= form.submit "Find Movies" %>
+<% end %>
