@@ -9,9 +9,14 @@ Rails.application.routes.draw do
 
   get '/users/:id', to: 'users#show'
   get '/users/:id/discover', to: 'users#discover'
-  get '/users/:id/movies', to: 'users#movies'
-
-  get '/users/:id/movies/:movie_id', to: 'user_movies#show'  
 
   post '/users', to: 'users#create'
+
+  get '/users/:id/movies/:movie_id', to: 'user_movies#show'
+  get '/users/:id/movies/:movie_id', to: 'user_movies#show'
+  get '/users/:id/movies', to: 'user_movies#index'
+
+  get '/users/:user_id/movies/:movie_id/viewing-party/new', to: 'viewing_parties#new'
+  post '/users/:user_id/movies/:movie_id/viewing-party', to: 'viewing_parties#create'
+
 end

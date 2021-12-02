@@ -126,3 +126,18 @@ def review_data
   :updated_at=>"2021-06-23T15:58:23.763Z",
   :url=>"https://www.themoviedb.org/review/5d17c91385702e001eb921db"}
 end
+
+def cast_data
+  {:adult=>false,
+  :gender=>1,
+  :id=>19587,
+  :known_for_department=>"Acting",
+  :name=>"Rumi Hiiragi",
+  :original_name=>"Rumi Hiiragi",
+  :popularity=>2.799,
+  :profile_path=>"/zITaVtFyc4xSM3mxSoPRWHbqgJI.jpg",
+  :cast_id=>3,
+  :character=>"Chihiro Ogino / Sen (voice)",
+  :credit_id=>"52fe421bc3a36847f8004a97",
+  :order=>0}
+end
