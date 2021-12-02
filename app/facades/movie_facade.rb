@@ -54,9 +54,18 @@ class MovieFacade
     results = Faraday.get("https://api.themoviedb.org/3/search/movie?api_key=05946dc2dc50df636962153f45926dbe&query=" + str_with_sign + "&page=1")
     movies = JSON.parse(results.body, symbolize_names: true)
     # https://api.themoviedb.org/3/search/movie?api_key=05946dc2dc50df636962153f45926dbe&query=birthday+gift
-    movie_objects = movies[:results].map do |movie|
+    movies1 = movies[:results].map do |movie|
       PopMovie.new(movie)
     end
+
+    results = Faraday.get("https://api.themoviedb.org/3/search/movie?api_key=05946dc2dc50df636962153f45926dbe&query=" + str_with_sign + "&page=2")
+    movies = JSON.parse(results.body, symbolize_names: true)
+    # https://api.themoviedb.org/3/search/movie?api_key=05946dc2dc50df636962153f45926dbe&query=birthday+gift
+    movies2 = movies[:results].map do |movie|
+      PopMovie.new(movie)
+    end
+
+    movies1 + movies2
   end
 
 
