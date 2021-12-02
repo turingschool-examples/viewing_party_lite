@@ -12,8 +12,10 @@ RSpec.describe 'movies index page' do
       click_button "Find Top Rated Movies"
       within('#movie-0') do
         click_link
-        expect(current_path).to eq(user_movie_path)
       end
+    end
+    VCR.use_cassette('find_movie') do
+      expect(current_path).to eq(user_movie_path(@user))
     end
   end
 end
