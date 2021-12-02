@@ -30,6 +30,12 @@ class MovieFacade
   def self.movie_search(keyword)
 
   end
+
+  def self.movie_details(id)
+    response = Faraday.get("https://api.themoviedb.org/3/movie/#{id}?language=en-US")
+    parsed = JSON.parse(response.body, symbolize_names: true)
+    PopMovie.new(parsed[:results])
+  end
 end
 # hide the key
 #https://developers.themoviedb.org/3/movies/get-top-rated-movies

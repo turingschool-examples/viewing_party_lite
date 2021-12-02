@@ -2,7 +2,7 @@
 
 <% @movies.each_with_index do |movie, index| %>
   <div id="movie-<%= index %>">
-    Title: <%= link_to "#{movie.title}", user_movie_path(@user, movie) %>
+    Title: <%= link_to movie.title, user_movie_path(@user, movie.movie_id) %>
     Vote Average: <%= movie.vote_average %>
   </div>
 <% end %>
