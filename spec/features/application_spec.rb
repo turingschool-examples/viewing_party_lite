@@ -14,4 +14,18 @@ RSpec.describe 'welcome page' do
     click_on('Create a New User')
     expect(current_path).to eq('/register')
   end
+
+  it "lists existing users email addresses and links to their dashboard" do
+    user = User.create!(name: "Stephanie", email: "steph123@hotmail.com")
+    user2 = User.create!(name: "Ted", email: "tstaros23@hotmail.com")
+
+    visit '/'
+
+    expect(page).to have_link("tstaros23@hotmail.com")
+    expect(page).to have_link("steph123@hotmail.com")
+
+    click_on("tstaros23@hotmail.com")
+
+    expect(current_path).to eq("/users/#{user2.id}")
+  end
 end
