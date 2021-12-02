@@ -9,4 +9,9 @@ class MoviesController < ApplicationController
         @title = "Movie Results For: #{params[:q]}"
     end
   end
+
+  def show
+    @movie = MovieFacade.movie_details(params[:movie_id])
+    require "pry"; binding.pry
+  end
 end
