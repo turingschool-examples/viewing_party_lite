@@ -1,2 +1,7 @@
 <h1>Viewing Party Light</h1>
 <%= button_to 'Create a New User', '/register', method: :get %>
+
+<p>Existing Users:</p>
+<% @users.each do |user| %>
+  <%= link_to "#{user.email}", "/users/#{user.id}" %>
+<% end %>
