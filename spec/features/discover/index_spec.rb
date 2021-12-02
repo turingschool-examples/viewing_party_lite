@@ -19,3 +19,4 @@ RSpec.describe "User's Discover Page", type: :feature do
     end
   end
 end
+#ask about this to Matt

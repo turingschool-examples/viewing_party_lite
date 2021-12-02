@@ -25,13 +25,41 @@ class MovieFacade
 
   end
 
+  # def add_plus_sign(string)
+  #   split_str = str.split(" ")
+  #   str_with_sign = split_str[0]
+  #   count = 1
+  #
+  #   while count < split_str.length
+  #     str_with_sign = str_with_sign + "+" + split_str[count]
+  #     count += 1
+  #   end
+  #
+  #   str_with_sign
+  # end
+
   def self.movie_search(keyword)
-    results = MovieService.call_api("/search/movie?api_key=05946dc2dc50df636962153f45926dbe&query=" + keyword)
+
+    split_str = keyword.split(" ")
+    str_with_sign = split_str[0]
+    count = 1
+
+    while count < split_str.length
+      str_with_sign = str_with_sign + "+" + split_str[count]
+      count += 1
+    end
+
+    str_with_sign
+
+    results = Faraday.get("https://api.themoviedb.org/3/search/movie?api_key=05946dc2dc50df636962153f45926dbe&query=" + str_with_sign + "&page=1")
+    movies = JSON.parse(results.body, symbolize_names: true)
     # https://api.themoviedb.org/3/search/movie?api_key=05946dc2dc50df636962153f45926dbe&query=birthday+gift
-    movies = results.map do |movie|
+    movie_objects = movies[:results].map do |movie|
       PopMovie.new(movie)
     end
   end
+
+
 end
 # hide the key
 #https://developers.themoviedb.org/3/movies/get-top-rated-movies
