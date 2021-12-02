@@ -1,6 +1,6 @@
 <h2><%= @movie.title %></h2>
 <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %><br>
-<%= button_to "Create Viewing Party for #{@movie.title}" %><br>
+<%= button_to "Create Viewing Party for #{@movie.title}", "/users/#{@user.id}/movies/#{@movie.id}/viewing-party/new", method: :get %><br>
 <img src=<%= @movie.poster %> alt="Poster for this movie" width="200" >
 <h3>Vote Average: <%= @movie.vote_average %></h3>
 <h3>Runtime: <%= @movie.runtime_in_minutes %> </h3>

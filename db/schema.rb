@@ -28,9 +28,12 @@ ActiveRecord::Schema.define(version: 2021_11_29_232548) do
   end
 
   create_table "viewing_parties", force: :cascade do |t|
-    t.string "movie_name"
-    t.integer "duration"
+    t.integer "movie_id"
+    t.integer "duration_of_party"
     t.time "start_time"
+    t.date "day"
+    t.string "title"
+    t.string "poster"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_viewing_parties_on_user_id"
   end
