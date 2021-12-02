@@ -71,3 +71,58 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
+# VCR.configure do |config|
+#   config. cassette_library_dir = "spec/fixtures/vcr_cassettes"
+#   config.hook_into :webmock
+#   config.filter sensitive data('HIDE MY KEY') { ENV ['movies_api_kev'] }
+#   config.configure_rspec _metadata!
+# end
+
+def movie_data
+  {:adult=>false,
+ :backdrop_path=>"/mSDsSDwaP3E7dEfUPWy4J0djt4O.jpg",
+ :belongs_to_collection=>nil,
+ :budget=>19000000,
+ :genres=>[{:id=>16, :name=>"Animation"}, {:id=>10751, :name=>"Family"}, {:id=>14, :name=>"Fantasy"}],
+ :homepage=>"http://movies.disney.com/spirited-away",
+ :id=>129,
+ :imdb_id=>"tt0245429",
+ :original_language=>"ja",
+ :original_title=>"千と千尋の神隠し",
+ :overview=>
+  "A young girl, Chihiro, becomes trapped in a strange new world of spirits. When her parents undergo a mysterious transformation, she must call upon the courage she never knew she had to free her family.",
+ :popularity=>60.365,
+ :poster_path=>"/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg",
+ :production_companies=>
+  [{:id=>10342,
+    :logo_path=>"/eS79pslnoKbWg7t3PMA9ayl0bGs.png",
+    :name=>"Studio Ghibli",
+    :origin_country=>"JP"}],
+ :production_countries=>[{:iso_3166_1=>"JP", :name=>"Japan"}],
+ :release_date=>"2001-07-20",
+ :revenue=>274925095,
+ :runtime=>125,
+ :spoken_languages=>[{:english_name=>"Japanese", :iso_639_1=>"ja", :name=>"日本語"}],
+ :status=>"Released",
+ :tagline=>"",
+ :title=>"Spirited Away",
+ :video=>false,
+ :vote_average=>8.5,
+ :vote_count=>12107}
+end
+
+def review_data
+  {:author=>"ZeBlah",
+  :author_details=>
+   {:name=>"ZeBlah",
+    :username=>"TheBlah",
+    :avatar_path=>"/d7rZv7xFhXHy0OLbVc2byJiZwEU.jpg",
+    :rating=>10.0},
+  :content=>
+   "One of the great \"masters\" of the anime art. Somehow, if I would personally associate \"Akira\" to \"self-destruction\", then this anime would be the opposite :)",
+  :created_at=>"2019-06-29T20:24:51.877Z",
+  :id=>"5d17c91385702e001eb921db",
+  :updated_at=>"2021-06-23T15:58:23.763Z",
+  :url=>"https://www.themoviedb.org/review/5d17c91385702e001eb921db"}
+end
