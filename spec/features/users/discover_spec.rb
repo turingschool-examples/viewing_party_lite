@@ -2,25 +2,31 @@ require 'rails_helper'
 
  RSpec.describe 'discover page' do
    it "has a button for top rated movies" do
-     user = User.create!(name: "Stephanie", email: "steph123@hotmail.com")
+     VCR.use_cassette('popular_movies', re_record_interval: 30.days) do
 
-     visit "/users/#{user.id}/discover"
+       user = User.create!(name: "Stephanie", email: "steph123@hotmail.com")
 
-     click_on('Top Rated Movies')
+       visit "/users/#{user.id}/discover"
 
-     expect(current_path).to eq("/users/#{user.id}/movies")
+       click_on('Top Rated Movies')
+
+       expect(current_path).to eq("/users/#{user.id}/movies")
+    end
    end
+
    it "has a button for finding movies" do
-     user = User.create!(name: "Stephanie", email: "steph123@hotmail.com")
+     VCR.use_cassette('popular_movies', re_record_interval: 30.days) do
 
-     visit "/users/#{user.id}/discover"
+       user = User.create!(name: "Stephanie", email: "steph123@hotmail.com")
 
-     fill_in :search, with: "Red Notice"
+       visit "/users/#{user.id}/discover"
 
-     click_on('Find Movies')
+       fill_in :search, with: "Red Notice"
 
-     expect(page).to have_content("Red Notice")
-     expect(current_path).to eq("/users/#{user.id}/movies")
+       click_on('Find Movies')
 
+       expect(page).to have_content("Red Notice")
+       expect(current_path).to eq("/users/#{user.id}/movies")
+    end
    end
  end
