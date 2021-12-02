@@ -31,12 +31,10 @@
           1,
           1,
           null,
-          1,
-          1,
+          0,
+          0,
           null,
-          1,
-          null,
-          1,
+          0,
           null,
           null
         ]
@@ -83,11 +81,26 @@
           null,
           null,
           1,
-          2,
-          2,
-          2,
+          null,
+          null,
+          null,
+          null,
           null,
           2,
+          null,
+          null
+        ]
+      },
+      "/Users/stephaniemhelm/projects/viewing_party_lite/app/facades/movie_facade.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          null,
           null,
           null
         ]
@@ -117,15 +130,6 @@
           0,
           0,
           0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/stephaniemhelm/projects/viewing_party_lite/app/facades/movie_facade.rb": {
-        "lines": [
-          0,
-          null,
           0
         ],
         "branches": {
@@ -175,6 +179,6 @@
         }
       }
     },
-    "timestamp": 1638416656
+    "timestamp": 1638478053
   }
 }
