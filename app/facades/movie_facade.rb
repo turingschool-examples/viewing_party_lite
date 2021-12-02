@@ -18,7 +18,7 @@ class MovieFacade
     #   end
     # end
 #make sure we get what we think we are getting and mind the pages
-    #
+
     movies1 = pop_movies1[:results].map do |pop_movie|
       PopMovie.new(pop_movie)
     end
