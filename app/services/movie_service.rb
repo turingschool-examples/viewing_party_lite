@@ -5,5 +5,6 @@ class MovieService
     response = conn.get("3/movie/popular?api_key=#{ENV['movie_api_key']}&language=en-US&page=1")
 
     JSON.parse(response.body, symbolize_names: true)
+    #require "pry"; binding.pry
   end
 end
