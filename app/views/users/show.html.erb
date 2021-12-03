@@ -12,8 +12,11 @@
   <li><%= party.title %></li>
   <li><%= party.day %></li>
   <li><%= party.start_time %></li>
-  <li>Hosting Status</li>
-  <hr>
+  <% if party.user_id == @user.id %>
+  <li>Hosting</li>
+  <% else %>
+  <li>Invited</li>
+  <% end %>
 <% end %>
 </ul>
 </div>
