@@ -2,3 +2,12 @@
 <%= @user.email %>
 
 <%= button_to 'Discover Movies', "/users/#{@user.id}/discover", method: :get %>
+
+<section>
+  <h1>Viewing Parties</h1>
+  <% @user.parties.each do |party| %>
+    <%= party.duration %>
+    <%= party.day %>
+    <%= party.start_time %>
+  <% end %>
+</section>

@@ -18,4 +18,26 @@ RSpec.describe 'user show page' do
     expect(current_path).to eq("/users/#{user.id}/discover")
   end
 
+  it "has a section that lists viewing parties" do
+    party = Party.create!(host_id: 1, movie_id: 3, duration: 24, day: 'Saturday', start_time: "06:10" )
+    party2 = Party.create!(host_id: nil, movie_id: 5, duration: 26, day: 'Sunday', start_time: "06:20" )
+
+
+    user = User.create!(name: "Stephanie", email: "steph123@hotmail.com")
+
+    UserParty.create!(user_id: user.id, party_id: party.id)
+    UserParty.create!(user_id: user.id, party_id: party2.id)
+
+    visit "/users/#{user.id}"
+
+
+    expect(page).to have_content('Viewing Parties')
+    expect(page).to have_content(party.duration)
+    expect(page).to have_content(party.day)
+    expect(page).to have_content(party.start_time)
+
+    expect(page).to have_content(party2.duration)
+    expect(page).to have_content(party2.day)
+    expect(page).to have_content(party2.start_time)
+  end
 end
