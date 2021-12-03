@@ -17,4 +17,12 @@ class MovieService
 
     json = JSON.parse(response.body, symbolize_names: true)
   end
+
+  def self.get_cast_members(movie_id)
+    conn = Faraday.new("https://api.themoviedb.org")
+    response = conn.get("3/movie/#{movie_id}/credits?api_key=#{ENV['movie_api_key']}")
+
+    json = JSON.parse(response.body, symbolize_names: true)
+    json[:cast][0..9]
+  end
 end

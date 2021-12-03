@@ -11,8 +11,10 @@ class MovieFacade
 
   def self.get_movie_details(movie_id)
     movie_data = MovieService.get_movie_details_db(movie_id)
-
-    Movie.new(movie_data)
+    movie_cast = MovieService.get_cast_members(movie_id)
+    Movie.new(movie_data, movie_cast)
   end
+
+
 
 end

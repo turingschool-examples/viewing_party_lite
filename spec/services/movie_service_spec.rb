@@ -24,4 +24,12 @@ RSpec.describe 'Moive API Service' do
       expect(response[:original_title]).to be_a String
       expect(response[:overview]).to be_a String
     end
+
+    it 'can get a movie cast' do
+      VCR.use_cassette('movie_cast', re_record_interval: 30.days) do
+        response = MovieService.get_cast_members(512195)
+
+        expect(response[0][:name]).to be_a String
+      end
+    end
 end

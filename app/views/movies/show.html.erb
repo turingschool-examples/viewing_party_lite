@@ -1,10 +1,13 @@
-
 <h1><%= @movie.original_title%></h1>
 
 <p>Vote Average: <%= @movie.vote_average%></p><br>
 <p>Run Time: <%= @movie.runtime%> minutes</p><br>
 <p>Summary: <%= @movie.overview%></p><br>
 <p>Release Date: <%= @movie.release_date%></p><br>
+<p>Genres: <% @movie.genre.each do |name|%>
+    <%= name %>
+    <%end %>
 
- <li class="Discover Page">Discover Page: <%= button_to 'Discover Page', "/users/#{@user.id}/movies", method: :get %></li>
-
+<p>Cast: <% @movie.cast.each do |member|%>
+  <%= member[:name] %>
+  <%end %>

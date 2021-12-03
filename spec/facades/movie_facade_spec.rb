@@ -11,8 +11,11 @@ describe 'MovieFacade' do
     end
   end
 
-  it 'can get movie details', :vcr do
-    movie_result = MovieFacade.get_movie_details(512195)
-    expect(movie_result).to be_a Movie
+  it 'can get movie details' do
+    VCR.use_cassette('get_movie_details', re_record_interval: 30.days) do
+
+      movie_result = MovieFacade.get_movie_details(512195)
+      expect(movie_result).to be_a Movie
+    end 
   end
 end
