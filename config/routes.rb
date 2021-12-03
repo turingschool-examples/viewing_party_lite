@@ -4,10 +4,10 @@ Rails.application.routes.draw do
 
 resources :users, only: :create do
   resources :discover, only: :index
-  resources :movies, only: [:index, :show]
+  resources :movies, only: [:index, :show] do
+    resources :parties, only: [:create, :new]
+  end
 end
-
-resources :parties, only: [:create, :new]
 
 get '/users/:user_id', to: 'users#show', as: 'dashboard'
 get '/register', to: 'users#new', as: 'register'
