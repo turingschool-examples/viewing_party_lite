@@ -4,7 +4,7 @@ class PopMovie
               :movie_id
 
   def initialize(data)
-
+# require "pry"; binding.pry
     @title = data[:title]
     @vote_average = data[:vote_average]
     @movie_id = data[:id]
