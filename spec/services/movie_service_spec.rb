@@ -17,4 +17,11 @@ RSpec.describe 'Moive API Service' do
         expect(first_movie_data[:vote_average]).to be_a Float
     end
   end
+
+    it 'can get movie details', :vcr do
+      response = MovieService.get_movie_details_db(512195)
+
+      expect(response[:original_title]).to be_a String
+      expect(response[:overview]).to be_a String
+    end
 end

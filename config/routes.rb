@@ -8,5 +8,10 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
   get '/users/:id/discover', to: 'movies#new'
   get '/users/:id/movies', to: 'movies#index'
+
+  
+
+
   get '/users/:user_id/movies/:id', to: 'movies#show'
+
 end
