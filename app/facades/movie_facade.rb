@@ -9,4 +9,10 @@ class MovieFacade
     end
   end
 
+  def self.get_movie_details(movie_id)
+    movie_data = MovieService.get_movie_details_db(movie_id)
+
+    Movie.new(movie_data)
+  end
+
 end

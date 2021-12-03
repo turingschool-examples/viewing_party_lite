@@ -10,4 +10,9 @@ describe 'MovieFacade' do
         expect(movies.count).to eq(20)
     end
   end
+
+  it 'can get movie details', :vcr do
+    movie_result = MovieFacade.get_movie_details(512195)
+    expect(movie_result).to be_a Movie
+  end
 end
