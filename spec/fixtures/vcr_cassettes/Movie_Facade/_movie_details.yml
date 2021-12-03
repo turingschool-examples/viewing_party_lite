@@ -52,13 +52,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 ee9de9e6182ae0c8e8f119177e905245.cloudfront.net (CloudFront)
+      - 1.1 1e5c934b70471a41d2b61ae8c4abeb79.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - F1C-6cUnmItXIts62_2LZRLlfhr3dP39ANd6qnvumf9X8AlTz7WxEA==
+      - 4zPbPSrBxiCsTKZe3StOkXz3brfgmZN4aiFV3yfEmip5cZ2xXWorRw==
       Age:
-      - '7109'
+      - '12191'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg","belongs_to_collection":{"id":230,"name":"The
@@ -67,9 +67,9 @@ http_interactions:
         fictional Italian-American Corleone crime family. When organized crime family
         patriarch, Vito Corleone barely survives an attempt on his life, his youngest
         son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":57.352,"poster_path":"/eEslKSwcqmiNS6va24Pbxf2UKmJ.jpg","production_companies":[{"id":4,"logo_path":"/fycMZt242LVjagMByZOLUGbCvv3.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":nil,"name":"Alfran
+        of bloody revenge.","popularity":57.352,"poster_path":"/eEslKSwcqmiNS6va24Pbxf2UKmJ.jpg","production_companies":[{"id":4,"logo_path":"/fycMZt242LVjagMByZOLUGbCvv3.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
         Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
         offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.7,"vote_count":15130}'
-  recorded_at: Fri, 03 Dec 2021 00:51:03 GMT
+  recorded_at: Fri, 03 Dec 2021 02:15:45 GMT
 recorded_with: VCR 6.0.0
