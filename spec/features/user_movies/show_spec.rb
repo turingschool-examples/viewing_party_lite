@@ -15,6 +15,7 @@ RSpec.describe 'users movie show page' do
     expect(page).to have_content("1 Reviews")
     expect(page).to have_content("Author: ZeBlah")
     expect(page).to have_content("One of the great")
+    expect(page).to have_content("Runtime: 2 hrs 5 min")
   end
 
   it 'has a button to create a Viewing Party' do

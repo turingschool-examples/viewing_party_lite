@@ -25,4 +25,10 @@ RSpec.describe 'user discover page' do
     expect(current_path).to eq("/users/#{@user.id}/movies")
     expect(page).to have_content("Spider-Man")
   end
+
+  it 'redirects if no valid argument given in searches' do
+    visit "/users/#{@user.id}/movies"
+    expect(current_path).to eq("/users/#{@user.id}/discover")
+    expect(page).to have_content("Please search for movies or browse the top 40 movies")
+  end
 end

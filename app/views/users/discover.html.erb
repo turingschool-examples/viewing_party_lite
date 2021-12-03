@@ -8,6 +8,6 @@
 <p>OR</p>
 
 <%= form_with url: "/users/#{@user.id}/movies", local: true, method: :get do |form| %>
-  <%= form.text_field :find_movie, placeholder: "Search by Movie Title:" %>
+  <%= form.text_field :find_movie, placeholder: "Search by Movie Title:", required: true %>
   <%= form.submit "Find Movies" %>
 <% end %>

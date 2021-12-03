@@ -13,7 +13,7 @@ class ViewingPartiesController < ApplicationController
     if (viewing_party_params)[:duration_of_party].to_i < movie.runtime
       flash[:alert] = 'Viewing Party duration must be equal to or exceed movie runtime!'
       redirect_to "/users/#{user.id}/movies/#{movie.id}/viewing_parties/new"
-    elsif viewing_party.save!
+    elsif viewing_party.save
       UserParty.create!(user_id: user.id, viewing_party_id: viewing_party.id)
       redirect_to "/users/#{user.id}"
     else

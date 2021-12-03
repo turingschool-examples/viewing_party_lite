@@ -33,4 +33,10 @@ RSpec.describe 'viewing party new page' do
     expect(current_path).to eq("/users/#{@user1.id}")
     expect(UserParty.all).to include(UserParty.find_by(user_id: @user2.id))
   end
+
+  it 'flashes an alert if invalid arguments are given' do
+    click_button('Save')
+    expect(current_path).to eq("/users/#{@user1.id}/movies/566525/viewing_parties/new")
+    expect(page).to have_content('Please make sure all fields are filled in.')
+  end
 end
