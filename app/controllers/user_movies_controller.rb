@@ -1,6 +1,5 @@
 class UserMoviesController < ApplicationController
 
-
   def show
     @user = User.find(params[:id])
     @movie = MovieService.movie_details(params[:movie_id])
@@ -16,8 +15,7 @@ class UserMoviesController < ApplicationController
       @movies = MovieService.find(params[:find_movie].downcase)
     else
       redirect_to "/users/#{params[:id]}/discover"
-      binding.pry
-      # flash "please select a valid input"
+      flash[:alert] = 'Please search for movies or browse the top 40 movies.'
     end
   end
 end
