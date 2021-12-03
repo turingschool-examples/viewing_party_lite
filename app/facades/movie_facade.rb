@@ -1,34 +1,15 @@
 class MovieFacade
   def self.popular_movies
-
-    response1 = Faraday.get("https://api.themoviedb.org/3/movie/top_rated?api_key=05946dc2dc50df636962153f45926dbe&page=1")
-    pop_movies1 = JSON.parse(response1.body, symbolize_names: true)
-    response2 = Faraday.get("https://api.themoviedb.org/3/movie/top_rated?api_key=05946dc2dc50df636962153f45926dbe&page=2")
-    pop_movies2 = JSON.parse(response2.body, symbolize_names: true)
-    movies1 = pop_movies1[:results].map do |pop_movie|
+    movies1 = MovieService.popular_movies_call_page_1[:results].map do |pop_movie|
       PopMovie.new(pop_movie)
     end
-    movies2 = pop_movies2[:results].map do |pop_movie|
+    movies2 = MovieService.popular_movies_call_page_2[:results].map do |pop_movie|
       PopMovie.new(pop_movie)
     end
     movies1 + movies2
   end
 
-  # def add_plus_sign(string)
-  #   split_str = str.split(" ")
-  #   str_with_sign = split_str[0]
-  #   count = 1
-  #
-  #   while count < split_str.length
-  #     str_with_sign = str_with_sign + "+" + split_str[count]
-  #     count += 1
-  #   end
-  #
-  #   str_with_sign
-  # end
-
   def self.movie_search(keyword)
-
     split_str = keyword.split(" ")
     str_with_sign = split_str[0]
     count = 1
