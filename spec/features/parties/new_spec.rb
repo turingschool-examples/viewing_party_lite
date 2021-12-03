@@ -23,7 +23,7 @@ RSpec.describe "party new page", type: :feature do
       expect(page).to have_content("Create a Movie Party for #{@movie.title}")
       expect(page).to have_button("Discover Page")
       expect(page).to have_content("Viewing Party Details")
-      save_and_open_page
+
     end
   end
       # <%= collection_check_boxes(:party_invitees, @users, method: :post, default: :false) %>
@@ -34,7 +34,10 @@ RSpec.describe "party new page", type: :feature do
   #   end
   # end
   xit "can create a new party" do
-
+    fill_in "Day", with: "12/05/2021"
+    # page.find(:day).set(12-05-2021)
+    # select "12/05/2021", from: :day
+    # select "12:13 PM", from: :start_time
   end
 
 end
