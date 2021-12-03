@@ -7,9 +7,10 @@ resources :users, only: :create do
   resources :movies, only: [:index, :show]
 end
 
+resources :parties, only: [:create, :new]
+
 get '/users/:user_id', to: 'users#show', as: 'dashboard'
 get '/register', to: 'users#new', as: 'register'
-
 
 root to: "landing#index"
 

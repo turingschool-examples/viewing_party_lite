@@ -75,11 +75,26 @@ class MovieFacade
   end
 
   def self.movie_details(id)
-    response = Faraday.get("https://api.themoviedb.org/3/movie/#{id}?language=en-US")
-    parsed = JSON.parse(response.body, symbolize_names: true)
-    PopMovie.new(parsed[:results])
+    response = Faraday.get("https://api.themoviedb.org/3/movie/#{id}?language=en-US&api_key=05946dc2dc50df636962153f45926dbe")
+    data = JSON.parse(response.body, symbolize_names: true)
+    DetailedMovie.new(data)
   end
 
+  def self.cast(id)
+    response = Faraday.get("https://api.themoviedb.org/3/movie/#{id}/credits?&language=en-US&api_key=05946dc2dc50df636962153f45926dbe")
+    data = JSON.parse(response.body, symbolize_names: true)
+    data[:cast].map do |cast_data|
+      Cast.new(cast_data)
+    end
+  end
+
+  def self.reviews(id)
+    response = Faraday.get("https://api.themoviedb.org/3/movie/#{id}/reviews?&language=en-US&api_key=05946dc2dc50df636962153f45926dbe")
+    data = JSON.parse(response.body, symbolize_names: true)
+    data[:results].map do |review_data|
+      Review.new(review_data)
+    end
+  end
 end
 # hide the key
 #https://developers.themoviedb.org/3/movies/get-top-rated-movies
