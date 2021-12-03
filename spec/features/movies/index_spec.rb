@@ -21,4 +21,14 @@ RSpec.describe 'movies index page' do
       end
     end
   end
+
+  it 'displays search result by keyword' do
+    VCR.use_cassette('search_results') do
+      fill_in "Search by movie title", with: "Pulp"
+      click_button "Find Movies"
+
+      expect(page).to have_content("Pulp Fiction")
+      # expect(page).to have_content("Vote Average: 8.5")
+    end
+  end
 end
