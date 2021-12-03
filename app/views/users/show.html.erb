@@ -8,12 +8,17 @@
 <h2>Viewing Parties</h2>
 <ul>
 <% @user.viewing_parties.each do |party| %>
-  <img src=<%= party.poster %> alt="Poster for this movie" width="200" >
-  <li><%= party.title %></li>
-  <li><%= party.day %></li>
-  <li><%= party.start_time %></li>
-  <li>Hosting Status</li>
-  <hr>
+  <div id="<%= "viewing_party_#{party.id}" %>">
+    <img src=<%= party.poster %> alt="Poster for this movie" width="200" >
+    <li><%= party.title %></li>
+    <li><%= party.day %></li>
+    <li><%= party.start_time %></li>
+    <% if party.user_id == @user.id %>
+    <li>Hosting</li>
+    <% else %>
+    <li>Invited</li>
+    <% end %>
+  </div>
 <% end %>
 </ul>
 </div>
