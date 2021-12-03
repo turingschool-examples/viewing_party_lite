@@ -5,6 +5,7 @@
   <h2>Viewing Party Details</h2><br><br><br>
   <h3>Movie Title: <%= @movie.title %></h3>
   <%= form_with url:new_party_path(@user, @movie.id), method: :post, local: true do |form| %>
+    <% form.hidden_field :movie_id, value: @movie.id %>
     <%= form.label :party_duration, 'Duration of Party:' %><br>
     <%= form.number_field :party_duration, min: @movie.runtime, value: @movie.runtime %><br>
 
