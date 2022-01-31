@@ -7,6 +7,10 @@
 # Ignore bundler config.
 /.bundle
 
+
+#ignore simplecov reports
+coverage/*
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
