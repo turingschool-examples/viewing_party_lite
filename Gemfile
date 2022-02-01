@@ -40,6 +40,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'faraday'
   gem 'net-http'
+  gem 'email_validator'
 end
 
 group :development do
