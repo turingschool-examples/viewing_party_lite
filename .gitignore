@@ -30,3 +30,6 @@ echo coverage >> .gitignore
 coverage/.resultset.json
 coverage/index.html
 /coverage
+
+# Ignore application configuration
+/config/application.yml
