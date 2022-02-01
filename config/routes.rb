@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
   resources :parties
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  root 'landing#index'
+
+  resources :users, only: [:new]
 end
