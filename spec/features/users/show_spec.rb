@@ -11,14 +11,14 @@ describe 'User Show Page' do
         visit user_path(@eldridge)
 
         expect(page).to have_content("#{@eldridge.name}'s Dashboard")
-        expect(page).to_not have_content("#{kevin.name}'s Dashboard")
+        expect(page).to_not have_content("#{@kevin.name}'s Dashboard")
     end
 
     it "has a button to discover movies" do
         visit user_path(@eldridge)
 
-        click_button 'Discover Movies'
+        click_link 'Discover Movies'
 
-        expect(current_path).to eq(user_discover_index(@eldridge))
+        expect(current_path).to eq(user_discover_index_path(@eldridge))
     end
 end
