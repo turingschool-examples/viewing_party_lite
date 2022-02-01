@@ -7,7 +7,7 @@
           null
         ]
       },
-      "/Users/russellrockwood/Turing/3module/viewing_party_lite/app/models/movie_cast.rb": {
+      "/Users/russellrockwood/Turing/3module/viewing_party_lite/app/models/cast_member.rb": {
         "lines": [
           1,
           1,
@@ -17,6 +17,22 @@
       },
       "/Users/russellrockwood/Turing/3module/viewing_party_lite/app/models/application_record.rb": {
         "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/russellrockwood/Turing/3module/viewing_party_lite/app/models/invite.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/russellrockwood/Turing/3module/viewing_party_lite/app/models/movie_cast.rb": {
+        "lines": [
+          1,
           1,
           1,
           null
@@ -50,24 +66,9 @@
           null
         ]
       },
-      "/Users/russellrockwood/Turing/3module/viewing_party_lite/app/models/cast_member.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
       "/Users/russellrockwood/Turing/3module/viewing_party_lite/app/models/view_party.rb": {
         "lines": [
           1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/russellrockwood/Turing/3module/viewing_party_lite/app/models/invite.rb": {
-        "lines": [
           1,
           1,
           1,
@@ -121,6 +122,6 @@
         }
       }
     },
-    "timestamp": 1643675264
+    "timestamp": 1643676512
   }
 }
