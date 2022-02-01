@@ -22,7 +22,7 @@ RSpec.describe 'Landing index page' do
     expect(current_path).to eq("/users/#{user_1.id}")
   end
 
-  it "has link to return to landing page" do
+  xit "has link to return to landing page" do
     visit '/'
     click_link 'Home'
     expect(current_path).to eq('/')
