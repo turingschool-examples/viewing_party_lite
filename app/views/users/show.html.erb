@@ -1,2 +1,14 @@
 <h1> <%= @user.name %>'s Dashboard </h1>
 <p> <%= button_to "Discover Movies", user_discover_index_path(@user), method: :get %></p>
+
+<h2>Viewing parties:</h2>
+<p><% @user.user_parties.each do |up| %> </p>
+  <%= up.user_party_movie.title %>
+  <%= up.party.date %>
+  <%= up.party.start_time %>
+  <% if up.host == true %>
+    <p>Hosting</p>
+  <% else %>
+    <p>Invited</p>
+  <% end %>
+<% end %>
