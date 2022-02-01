@@ -41,6 +41,7 @@ group :development, :test do
   gem 'pry'
   gem 'shoulda-matchers'
   gem 'factory_bot_rails'
+  gem 'figaro'
 end
 
 group :development do
