@@ -1,1 +1,9 @@
+<section id="header">
+  <h1 algin="center"><%= @user.name %>'s Dashboard</h1>
+</section>
+
+<p> <%= button_to "Discover Movies", user_discover_index_path(@user.id) %> </p>
+<div id="viewing-parties">
+  <h3>Viewing Parties</h3>
+</div>
 
