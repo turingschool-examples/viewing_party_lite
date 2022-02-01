@@ -18,13 +18,15 @@ RSpec.describe 'User Dashboard', type: :feature do
     it 'has a button to Discover Movies' do
       visit user_path(user_1.id)
       expect(page).to have_button("Discover Movies")
+
+      click_button "Discover Movies"
+      expect(current_path).to eq(user_discover_index_path(user_1.id))
     end
 
     it 'displays a section that lists viewing parties' do
       #More on this as we encounter later user stories
       visit user_path(user_1.id)
       expect(page).to have_content("Viewing Parties")
-      require "pry"; binding.pry
     end
   end
 end
