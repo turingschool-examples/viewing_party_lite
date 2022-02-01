@@ -1,0 +1,7 @@
+<%= form_with url: "/user", method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :email %>
+  <%= form.text_field :email %>
+  <%= form.submit "Create New User" %>
+<% end %>
