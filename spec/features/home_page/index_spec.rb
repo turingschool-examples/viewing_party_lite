@@ -33,7 +33,7 @@ RSpec.describe 'viewing party homepage' do
     visit "/"
 
     click_link "Home" 
-    save_and_open_page
+    
     expect(current_path).to eq("/")
   end
 end
