@@ -6,4 +6,5 @@ Rails.application.routes.draw do
 
   get '/register', to: 'welcome#register'
   post '/register', to: 'welcome#create'
+  get '/users/:id/discover', to: 'users#discover'
 end
