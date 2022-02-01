@@ -38,7 +38,7 @@ describe 'New User' do
         user = User.find_by(name: 'John')
         
         expect(current_path).to eq(new_user_path)
-        expect(page).to have_content(user.name)
+        expect(page).to have_content(["Email is invalid"])
     end
 
     it "has a link to the landing page" do
