@@ -29,6 +29,7 @@
 echo coverage >> .gitignore
 coverage/.resultset.json
 coverage/index.html
+coverage/.last_run.json
 /coverage
 
 # Ignore application configuration
