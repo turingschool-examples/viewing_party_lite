@@ -1,0 +1,8 @@
+<section id="header"><h1>Viewing Party Lite</h1></section>
+<%= button_to "Create New User", new_user_path %>
+<h3>All Users:</h3>
+<% @users.each do |user| %>
+  <p><%= link_to user.name, user_path(user.id) %>'s Dashboard</p>
+<% end %>
+
+<%= link_to "Landing Page", root_path %>
