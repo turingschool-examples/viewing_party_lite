@@ -8,7 +8,6 @@ class UsersController < ApplicationController
 
   def create
     user = User.create(user_params)
-
     if user.save(user_params)
       redirect_to user_path(user.id)
       flash[:alert] = "Welcome to your Viewing Party!"
