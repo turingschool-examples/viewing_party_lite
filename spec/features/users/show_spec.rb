@@ -21,4 +21,13 @@ describe 'User Show Page' do
 
         expect(current_path).to eq(user_discover_index_path(@eldridge))
     end
+
+    it "links to show page from landing page" do
+        visit root_path 
+
+        click_link "#{@eldridge.name} | #{@eldridge.email}"
+
+        expect(current_path).to eq(user_path(@eldridge))
+    end
+    
 end
