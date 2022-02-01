@@ -19,7 +19,7 @@ RSpec.describe 'Welcome Index Page' do
       visit root_path
 
       click_link('Create a New User')
-      expect(current_path).to eq("/users/new")
+      expect(current_path).to eq("/register")
     end
 
     it 'lists the existing users which link to their dashboard' do
