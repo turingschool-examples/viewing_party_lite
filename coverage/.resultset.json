@@ -28,7 +28,7 @@
           null,
           null,
           1,
-          1,
+          2,
           null,
           null,
           1,
@@ -52,6 +52,15 @@
       "/Users/ericchon/turing/3mod/projects/viewing_party_lite/app/controllers/application_controller.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/Users/ericchon/turing/3mod/projects/viewing_party_lite/app/controllers/discover_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
           null
         ]
       },
@@ -163,6 +172,6 @@
         }
       }
     },
-    "timestamp": 1643747543
+    "timestamp": 1643748483
   }
 }
