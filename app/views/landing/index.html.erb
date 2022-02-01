@@ -1,8 +1,0 @@
-<h1>Viewing Party Lite</h1>
-
-<%= button_to 'Create New User', new_user_path %>
-
-<h3>Existing Users</h3>
-<% @users.each do |user| %>
-    <p><%= "#{user.name} | #{user.email}" %></p>
-<% end %>
