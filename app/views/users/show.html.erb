@@ -1,0 +1,12 @@
+<h1>Viewing Party Lite</h1>
+<h2><%= @user.name %>'s Dashboard</h2>
+
+<p><%= link_to "Discover Movies", "/users/#{@user.id}/discover" %></p>
+<hr>
+<p>Viewing Parties</p>
+<% @parties.each do |party| %>
+  <p>
+    <%= party.day %>
+    <%= party.start_time %>
+  </p>
+<% end %>
