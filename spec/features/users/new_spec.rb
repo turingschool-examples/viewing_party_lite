@@ -21,12 +21,24 @@ describe 'New User' do
         fill_in(:user_name, with: 'John')
         fill_in(:user_email, with: 'john@gmail.com')
         click_button 'Create User'
+
+        user = User.find_by(name: 'John')
         
-        expect(current_path).to eq(user_path()) 
+        expect(current_path).to eq(user_path(user))
+        expect(page).to have_content(user.name)
     end
 
     it "has a sad path for invalid data" do
+        visit new_user_path 
+
+        fill_in(:user_name, with: 'John')
+        fill_in(:user_email, with: 'johnnyboy')
+        click_button 'Create User'
+
+        user = User.find_by(name: 'John')
         
+        expect(current_path).to eq(new_user_path)
+        expect(page).to have_content(user.name)
     end
 
     it "has a link to the landing page" do
