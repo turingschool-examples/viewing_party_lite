@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :users
+
+  get '/register', to: 'welcome#register'
+  post '/register', to: 'welcome#create'
 end
