@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root 'users#index'
 
   resources :users do
-
+    resources :discover, only: [:index]
   end
 end
