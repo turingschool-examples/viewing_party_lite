@@ -10,7 +10,7 @@ RSpec.describe 'Landing index page' do
   it 'has button to create new user' do
     visit '/'
     click_button 'Create new user'
-    expect(current_path).to eq('/users/new')
+    expect(current_path).to eq(register_path)
   end
 
   it "has list of existing users" do
@@ -18,7 +18,6 @@ RSpec.describe 'Landing index page' do
     user_2 = User.create!(name: 'User 2', email: 'email2@gmail.com')
     user_3 = User.create!(name: 'User 3', email: 'email3@gmail.com')
     visit root_path
-    save_and_open_page
     expect(page).to have_content("#{user_1.email}'s Dashboard")
     expect(page).to have_content("#{user_2.email}'s Dashboard")
     expect(page).to have_content("#{user_3.email}'s Dashboard")
