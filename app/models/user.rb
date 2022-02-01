@@ -3,6 +3,8 @@ class User < ApplicationRecord
   :email,
   :status
   
+  validates :email, uniqueness: true
+
   has_many :user_parties
   has_many :parties, through: :user_parties 
   
