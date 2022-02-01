@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'User Show Page' do
-    before :each do 
+    before :each do
         @eldridge = User.create!(name: 'Eldridge', email: 'eldridge@gmail.com')
         @kevin = User.create!(name: 'Kevin', email: 'kevin@gmail.com')
         @suzie = User.create!(name: 'Suzie', email: 'suzieq@gmail.com')
@@ -17,17 +17,17 @@ describe 'User Show Page' do
     it "has a button to discover movies" do
         visit user_path(@eldridge)
 
-        click_link 'Discover Movies'
+        click_on 'Discover Movies'
 
         expect(current_path).to eq(user_discover_index_path(@eldridge))
     end
 
     it "links to show page from landing page" do
-        visit root_path 
+        visit root_path
 
         click_link "#{@eldridge.name} | #{@eldridge.email}"
 
         expect(current_path).to eq(user_path(@eldridge))
     end
-    
+
 end
