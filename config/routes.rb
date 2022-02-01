@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   root 'landing#index'
   get '/register', to: 'users#new'
   # get '/users', to: 'users#show'
-  resources :users, only: [:show, :create]
+  resources :users, only: [:show, :create] do
+    resources :discover, only: [:index]
+  end 
 end
