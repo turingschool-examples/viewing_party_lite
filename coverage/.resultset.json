@@ -45,7 +45,8 @@
           1,
           null,
           1,
-          2,
+          1,
+          0,
           null,
           null
         ]
@@ -53,17 +54,6 @@
       "/Users/croixkimmel/turing/3mod/projects/viewing_party_lite/app/controllers/application_controller.rb": {
         "lines": [
           1,
-          null
-        ]
-      },
-      "/Users/croixkimmel/turing/3mod/projects/viewing_party_lite/app/controllers/users_controller.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
           null
         ]
       },
@@ -88,6 +78,19 @@
       "/Users/croixkimmel/turing/3mod/projects/viewing_party_lite/app/jobs/application_job.rb": {
         "lines": [
           0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/croixkimmel/turing/3mod/projects/viewing_party_lite/app/controllers/users_controller.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
           0
         ],
         "branches": {
@@ -142,6 +145,6 @@
         }
       }
     },
-    "timestamp": 1643690080
+    "timestamp": 1643691687
   }
 }
