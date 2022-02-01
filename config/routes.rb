@@ -5,9 +5,8 @@ Rails.application.routes.draw do
 
   root to: "homepage#index"
 
-  post '/register', to: 'user#create' 
+  get '/register', to: 'user#new' 
 
   resources :user, only: [:show] do
   end
-  # get '/user/:id', to: 'user#show' 
 end
