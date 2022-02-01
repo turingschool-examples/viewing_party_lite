@@ -2,7 +2,7 @@ class UsersController < ApplicationController
     def index
         @users = User.all
     end
-    
+
     def new
         @user = User.new
     end
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
         user = User.new(user_params)
 
         if user.save 
-            redirect_to model: user 
+            redirect_to user_path(user)
         else
             flash[:error] = user.errors.full_messages
             redirect_to new_user_path
