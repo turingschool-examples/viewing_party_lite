@@ -24,7 +24,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'faraday'
 gem 'json'
 
 # Use ActiveStorage variant
@@ -35,12 +34,12 @@ gem 'json'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'faraday'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
   gem 'shoulda-matchers'
-  gem 'webmock'
   gem 'factory_bot_rails'
 end
 
@@ -55,6 +54,8 @@ group :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'
+  gem 'webmock'
+  gem 'vcr'
   gem 'simplecov'
 end
 
