@@ -40,7 +40,6 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'faraday'
   gem 'net-http'
-  gem 'webmock'
 end
 
 group :development do
@@ -55,6 +54,7 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'simplecov'
+  gem 'webmock'
 end 
 
 
