@@ -1,0 +1,11 @@
+<h1>Viewing Party Lite: Create a New User</h1>
+
+<%= form_with url: "/users/new", method: :post, local:true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :email %>
+  <%= form.text_field :email %>
+
+  <%= form.submit "Submit" %>
+<% end %>
