@@ -40,7 +40,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'faraday'
   gem 'net-http'
-  gem 'webmock'
+  gem 'email_validator'
 end
 
 group :development do
@@ -48,6 +48,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rubocop-rails'
+  gem 'figaro'
 end
 
 group :test do 
@@ -55,6 +56,8 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'simplecov'
+  gem 'webmock'
+  gem 'vcr'
 end 
 
 
