@@ -33,7 +33,6 @@ RSpec.describe 'viewing party homepage' do
     visit "/"
 
     click_link "Home" 
-    
     expect(current_path).to eq("/")
   end
 end
