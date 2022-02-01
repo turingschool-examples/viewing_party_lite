@@ -8,9 +8,17 @@ RSpec.describe 'viewing party homepage' do
   it 'should display all user emails' do 
     visit "/"
 
-    expect(page).to have_content(user_1.email)
-    expect(page).to have_content(user_2.email)
-    expect(page).to have_content(user_3.email)
+    expect(page).to have_link("#{user_1.email}'s Dashboard")
+    expect(page).to have_link("#{user_2.email}'s Dashboard")
+    expect(page).to have_link("#{user_3.email}'s Dashboard")
+  end
+
+  it 'can click the user email link and be taken to the users dashboard page' do
+    visit "/"
+
+    click_link "#{user_1.email}'s Dashboard"
+
+    expect(current_path).to eq(user_path(user_1))
   end
 
   it 'can click a button to create a new user' do 
@@ -19,5 +27,13 @@ RSpec.describe 'viewing party homepage' do
     click_button "Create a New User" 
 
     expect(current_path).to eq("/register")
+  end
+
+  it 'can click the home link to be taken back to the home page' do 
+    visit "/"
+
+    click_link "Home" 
+    save_and_open_page
+    expect(current_path).to eq("/")
   end
 end

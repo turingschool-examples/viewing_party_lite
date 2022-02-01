@@ -12,19 +12,15 @@
       "/Users/johnnapier/Turing/mod3/projects/viewing_party_lite/app/models/user.rb": {
         "lines": [
           1,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
           1,
           null,
           null,
           null,
           1,
           1,
+          null,
+          1,
+          null,
           null,
           null,
           null
@@ -43,7 +39,7 @@
         "lines": [
           1,
           1,
-          2,
+          5,
           null,
           null
         ]
@@ -59,6 +55,10 @@
       "/Users/johnnapier/Turing/mod3/projects/viewing_party_lite/app/controllers/user_controller.rb": {
         "lines": [
           1,
+          1,
+          null,
+          null,
+          null,
           1,
           null,
           null,
@@ -177,6 +177,6 @@
         }
       }
     },
-    "timestamp": 1643749742
+    "timestamp": 1643752266
   }
 }

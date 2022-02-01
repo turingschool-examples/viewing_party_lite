@@ -7,4 +7,7 @@ Rails.application.routes.draw do
 
   post '/register', to: 'user#create' 
 
+  resources :user, only: [:show] do
+  end
+  # get '/user/:id', to: 'user#show' 
 end
