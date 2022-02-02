@@ -8,6 +8,7 @@ class MovieService
 
     def self.movie_search(keyword)
       response = get_data("/3/search/movie?query=#{keyword}")
+      search = response[:results]
     end
 
     private

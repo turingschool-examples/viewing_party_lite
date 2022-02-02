@@ -45,6 +45,31 @@
           null
         ]
       },
+      "/Users/malloryvining/turing/mod_3/projects/viewing_party_lite/app/poros/movie.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          62,
+          62,
+          62,
+          62,
+          62,
+          62,
+          62,
+          62,
+          null,
+          null
+        ]
+      },
       "/Users/malloryvining/turing/mod_3/projects/viewing_party_lite/app/controllers/discover_controller.rb": {
         "lines": [
           1,
@@ -82,39 +107,17 @@
           1,
           1,
           1,
-          null,
-          null,
+          1,
+          40,
           null,
           null,
           null,
           1,
           1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/malloryvining/turing/mod_3/projects/viewing_party_lite/app/poros/movie.rb": {
-        "lines": [
           1,
-          1,
+          20,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
           null,
           null
         ]
@@ -129,6 +132,7 @@
           1,
           null,
           null,
+          1,
           1,
           1,
           null,
@@ -223,6 +227,6 @@
         }
       }
     },
-    "timestamp": 1643777990
+    "timestamp": 1643823211
   }
 }

@@ -7,8 +7,8 @@ class Movie
               :vote_average,
               :genres,
               :poster_path
-              
-  def initalize(data)
+
+  def initialize(data)
     @id = data[:id]
     @title = data[:title]
     @summary = data[:overview]

@@ -1,4 +1,4 @@
 <h3>Movie Title- Rating</h3>
 <% @movies.each do |movie| %>
-<p><%= movie[:title] %>- <%= movie[:vote_average] %></p>
+  <p><%= movie.title %>- <%= movie.vote_average %></p>
 <% end %>

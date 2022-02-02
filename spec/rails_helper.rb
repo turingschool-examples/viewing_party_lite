@@ -1,11 +1,13 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
-require 'database_cleaner'
 require 'spec_helper'
+require 'database_cleaner'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
+require 'webmock/rspec'
+
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -91,4 +93,26 @@ VCR.configure do |config|
   config.filter_sensitive_data('fake_api_key') { ENV['movie_api_key'] }
   config.default_cassette_options = { re_record_interval: 30.days }
   config.configure_rspec_metadata!
+  config.allow_http_connections_when_no_cassette = true
+end
+
+def data
+  {
+              "adult": false,
+              "backdrop_path": "/xRyINp9KfMLVjRiO5nCsoRDdvvF.jpg",
+              "genre_ids": [
+                  18
+              ],
+              "id": 550,
+              "original_language": "en",
+              "original_title": "Fight Club",
+              "overview": "A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.",
+              "popularity": 60.783,
+              "poster_path": "/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg",
+              "release_date": "1999-10-15",
+              "title": "Fight Club",
+              "video": false,
+              "vote_average": 8.4,
+              "vote_count": 23389
+          }
 end
