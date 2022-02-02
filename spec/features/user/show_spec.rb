@@ -23,6 +23,5 @@ RSpec.describe 'viewing party homepage' do
     visit user_path(user_1)
 
     expect(page).to have_content("Viewing Parties")
-    save_and_open_page
   end
 end 
