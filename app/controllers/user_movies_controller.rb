@@ -7,10 +7,16 @@ class UserMoviesController < ApplicationController
   end
 
   def search
-      @user = User.find(params[:id])
-      @movies = MovieService.search_for_movie(params[:search])
-      @search = params[:search]
-      
-      render :index
-    end
+    @user = User.find(params[:id])
+    @movies = MovieService.search_for_movie(params[:search])
+    @search = params[:search]
+
+    render :index
   end
+
+  def show
+    @user = User.find(params[:user_id])
+    @movie = MovieService.movie_info(params[:id])
+    # @reviews = MovieService.reviews(params[:id])
+  end
+end
