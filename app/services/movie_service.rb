@@ -6,7 +6,8 @@ class MovieService
       first_call[:results] + second_call[:results]
     end
 
-    def movie_search(search)
+    def self.movie_search(keyword)
+      response = get_data("/3/search/movie?query=#{keyword}")
     end
 
     private

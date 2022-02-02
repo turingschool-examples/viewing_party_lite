@@ -8,7 +8,8 @@ class MoviesFacade
       # end
     end
 
-    def get_search(search)
+    def get_search(keyword)
+      @movies = MovieService.movie_search(keyword)
     end
   end
 end
