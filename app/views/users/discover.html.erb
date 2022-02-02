@@ -1,27 +1,29 @@
 <h1>Viewing Party Lite</h1>
-<h2>Top Rated Movies</h2>
+<h2>Discover Movies</h2>
 
-<%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get, params: {:search => nil} %>
-<% @movies.each do |movie| %>
-  <p><%= link_to "#{movie[:title]}", "/users/#{@user.id}/movies/#{movie[:id]}" %> Vote Average: <%= movie[:vote_average] %></p>
+<%= form_with url: "/users/#{@user.id}/movies", local: true, method: :get do |form| %>
+<%= form.hidden_field :query, value: "top_rated_movies" %>
+<%= form.hidden_field :id, value: params["id"] %>
+<%= form.submit 'Find Top Rated Movies' %>
 <% end %>
+
+<h3>OR</h3>
 
 <% if @movies == nil %>
-<%= form_with url: search_path, local: true do |form| %>
-  <%= form.label :search, 'Search for Movie by title:' %>
-  <%= form.text_field :search %>
-  <%= form.hidden_field :id, value: params[:id] %>
-  <%= form.submit 'Search' %>
-<% end %>
+  <%= form_with url: "/users/#{@user.id}/movies", local: true do |form| %>
+    <%= form.label :search, 'Search for Movie by title:' %>
+    <%= form.text_field :search %>
+    <%= form.hidden_field :id, value: params[:id] %>
+    <%= form.submit 'Search' %>
+  <% end %>
 <% end %>
 
 <% if @movies %>
-<h1> Viewing Party Light </h1>
-<h2> Movie results for: <%= @search %> </h2>
-<%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get, params: {:search => nil} %>
+  <h2> Movie results for: <%= @search %> </h2>
+  <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get, params: {:search => nil} %>
 <p> </p>
 <p> </p>
-<% @movies.each do |movie| %>
-<p><%= movie[:title] %> Vote Average: <%= movie[:vote_average]%> </p>
-<% end %>
+  <% @movies.each do |movie| %>
+    <p><%= movie[:title] %> Vote Average: <%= movie[:vote_average]%> </p>
+  <% end %>
 <% end %>

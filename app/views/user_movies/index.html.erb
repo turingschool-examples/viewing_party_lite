@@ -1,0 +1,16 @@
+<h1>Viewing Party Lite</h1>
+
+
+<%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get, params: {:search => nil} %>
+  <% if @top_movies %>
+  <h2>Top Rated Movies</h2>
+    <% @top_movies.each do |movie| %>
+      <p><%= link_to "#{movie[:title]}", "/users/#{@user.id}/movies/#{movie[:id]}" %> Vote Average: <%= movie[:vote_average] %></p>
+    <% end %>
+
+    <% else %>
+      <h2> Movie results for: <%= @search %> </h2>
+      <% @movies.each do |movie| %>
+        <p><%= link_to "#{movie[:title]}", "/users/#{@user.id}/movies/#{movie[:id]}" %> Vote Average: <%= movie[:vote_average]%> </p>
+      <% end %>
+  <% end %>

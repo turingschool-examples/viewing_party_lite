@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   post '/register', to: 'welcome#create'
   get '/users/:id/discover', to: 'users#discover'
 
-  post '/search', to: 'movies#search'
-  get '/users/:id/movies', to: 'movies#index'
+  post '/users/:id/movies', to: 'user_movies#search'
+  get '/users/:id/movies', to: 'user_movies#index'
 end

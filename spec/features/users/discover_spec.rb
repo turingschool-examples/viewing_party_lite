@@ -19,7 +19,7 @@ RSpec.describe 'Movie Discover Page' do
       fill_in :search, with: 'Aliens'
       click_button 'Search'
       expect(page.status_code).to eq 200
-      expect(page).to have_content("Cowboys & Aliens")
+      expect(page).to have_link("Cowboys & Aliens")
 
       expect(page).to have_content("Vote Average: 5.5")
     end
@@ -32,12 +32,6 @@ RSpec.describe 'Movie Discover Page' do
       expect(page.status_code).to eq 200
       click_button 'Discover Page'
       expect(current_path).to eq("/users/#{@user_1.id}/discover")
-    end
-    it 'shows movie details' do
-      visit "/users/#{@user_1.id}/movies?query=top%40rated"
-
-      expect(page).to have_link("The Shawshank Redemption")
-      expect(page).to have_content("Vote Average: 8.7")
     end
   end
 end
