@@ -15,6 +15,7 @@
 require 'simplecov'
 SimpleCov.start 'rails'
 SimpleCov.add_filter ['spec', 'config']
+require 'webmock/rspec'
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
@@ -24,7 +25,7 @@ RSpec.configure do |config|
     allow_any_instance_of(ValidEmail2::Address).to receive(:valid_mx?).and_return(true)
     allow_any_instance_of(ValidEmail2::Address).to receive(:valid_strict_mx?).and_return(true)
   end
-  
+
   config.expect_with :rspec do |expectations|
     # This option will default to `true` in RSpec 4. It makes the `description`
     # and `failure_message` of custom matchers include text for helper methods
