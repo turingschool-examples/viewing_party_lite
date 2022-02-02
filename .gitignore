@@ -33,3 +33,6 @@ coverage/.last_run.json
 coverage/.resultset.json
 coverage/index.html
 a6d7ff48bc5a27ad931597cee0e6986a33a90b80
+
+#Ignore application configuration 
+/config/application.yml
