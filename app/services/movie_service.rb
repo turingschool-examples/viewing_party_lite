@@ -12,8 +12,8 @@ class MovieService
   end
 
   def self.top_movies
-    response_page_one = conn.get("/3/movie/top_rated?api_key=6bb70d8448dabf0d4dbdfa9e215e1826")
-    response_page_two = conn.get("/3/movie/top_rated?page=2&api_key=6bb70d8448dabf0d4dbdfa9e215e1826")
+    response_page_one = conn.get("/3/movie/top_rated?api_key=#{ENV['movie_api_key']}")
+    response_page_two = conn.get("/3/movie/top_rated?page=2&api_key=#{ENV['movie_api_key']}")
     data_page_one = JSON.parse(response_page_one.body, symbolize_names: true)
     data_page_two = JSON.parse(response_page_two.body, symbolize_names: true)
     a = data_page_one[:results]
@@ -29,5 +29,22 @@ class MovieService
     results = data[:results]
 
     format_return(results)
+  end
+
+  def self.movie_info(movie_id)
+    response = conn.get("/3/movie/#{movie_id}?api_key=#{ENV['movie_api_key']}&language=en-US")
+    data = JSON.parse(response.body, symbolize_names: true)
+
+    Movie.new(data)
+  end
+
+  def self.reviews(movie_id)
+    response = conn.get("/3/movie/#{movie_id}/reviews?api_key=#{ENV['movie_api_key']}&language=en-US")
+    data = JSON.parse(response.body, symbolize_names: true)
+    results = data[:results]
+
+    results.map do |data|
+      Review.new(data)
+    end
   end
 end
