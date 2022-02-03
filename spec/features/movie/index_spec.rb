@@ -7,12 +7,14 @@ RSpec.describe 'Movie index page' do
 
       visit "/users/#{user_1.id}/discover"
 
-      fill_in(:keyword, with: "Fight Club")
+      fill_in(:keyword, with: "Fight")
       click_button "Find Movies"
 
       expect(current_path).to eq("/users/#{user_1.id}/movies")
-      
       expect(page).to have_content("Fight Club")
+      expect(page).to have_content("Rating: 8.4")
     end
   end
+
+
 end
