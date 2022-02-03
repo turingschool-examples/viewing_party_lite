@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Viewing Party New Page' do
+RSpec.describe 'Party New Page' do
   describe 'view' do
     before(:each) do
       @user_1 = User.create!(name: "David", email: "david@email.com")
@@ -12,7 +12,6 @@ RSpec.describe 'Viewing Party New Page' do
 
       visit "/users/#{@user_1.id}/movies/#{top_movie.id}/viewing-party/new"
 
-      # fill_in :title, with: 'Aliens'
       fill_in :duration, with: '180'
       fill_in :day, with: 'February 5th'
       fill_in :start_time, with: '120'
