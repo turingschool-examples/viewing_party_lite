@@ -36,10 +36,18 @@ RSpec.describe 'Movie show page' do
       expect(page).to have_content("5 Reviews")
       expect(page).to have_content("Goddard")
       expect(page).to have_content("Pretty awesome movie. It shows what one crazy person can convince other crazy people to do. Everyone needs something to believe in. I recommend Jesus Christ, but they want Tyler Durden.")
-
     end
+  end
 
+  it "has a return to discover index page button" do
+    VCR.use_cassette('movie_data_from_api') do
+      user_1 = User.create!(name: 'User 1', email: 'email1@gmail.com')
+      visit "/users/#{user_1.id}/movies/550"
+      expect(page).to have_button("Discover Page")
 
+      click_button "Discover Page"
+      expect(current_path).to eq("/users/#{user_1.id}/discover")
+    end
   end
 
 
