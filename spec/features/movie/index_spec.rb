@@ -11,8 +11,8 @@ RSpec.describe 'Movie index page' do
       click_button "Find Movies"
 
       expect(current_path).to eq("/users/#{user_1.id}/movies")
-      save_and_open_page
       expect(page).to have_content("Fight Club")
+      expect(page).to have_content("Rating: 8.4")
     end
   end
 
