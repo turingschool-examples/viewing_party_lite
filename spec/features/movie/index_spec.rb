@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Movie index page' do
   it "checks that the API is returning a search result" do
-    VCR.use_cassette('movies_data_from_api') do
+    VCR.use_cassette('search_data_from_api') do
       user_1 = User.create!(name: 'User 1', email: 'email1@gmail.com')
 
       visit "/users/#{user_1.id}/discover"

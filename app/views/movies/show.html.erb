@@ -1,0 +1,16 @@
+<h2><%= @movie[:title] %></h2>
+<p>Vote Average: <%= @movie[:vote_average]%>    Runtime: <%= @movie[:runtime]%>      Genre(s): <%= @movie[:genres].first[:name] %></p>
+<h4>Summary: </h4>
+<p><%= @movie[:overview] %></p>
+  <br>
+<h4>Cast: </h4>
+<% @top_10_cast.each do |person| %>
+  <p><%= person[0]%> as <%= person[1]%></p>
+<% end %>
+  <br>
+<h4><%= @review_count%> Reviews</h4>
+<% @reviewers.each do |review| %>
+  <p>Author: <%= review[0] %></p>
+  <p><%= review[1] %></p>
+  <br>
+<% end %>
