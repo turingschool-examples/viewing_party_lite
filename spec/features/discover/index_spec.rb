@@ -17,5 +17,6 @@ RSpec.describe 'viewing party homepage' do
 
     click_button "Find Top Rated Movies"
     expect(current_path).to eq(user_movie_index_path(user_1))
+    save_and_open_page
   end 
 end 
