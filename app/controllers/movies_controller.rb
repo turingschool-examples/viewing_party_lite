@@ -28,5 +28,12 @@ class MoviesController < ApplicationController
       [person[:name], person[:character]]
     end
     @top_10_cast = cast_names[0..10]
+
+    reviews_response = conn.get("/3/movie/#{@movie_id}/reviews")
+    @reviews = JSON.parse(reviews_response.body, symbolize_names: true)
+    @review_count = @reviews.count
+    @reviewers = @reviews[:results].map do |review|
+      [review[:author], review[:content]]
+    end
   end
 end

@@ -33,8 +33,9 @@ RSpec.describe 'Movie show page' do
       expect(page).to have_content("Drama")
       expect(page).to have_content("A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.")
       expect(page).to have_content("Cast:\nEdward Norton as The Narrator\nBrad Pitt as Tyler Durden\nHelena Bonham Carter as Marla Singer\nMeat Loaf as Robert \"Bob\" Paulson\nJared Leto as Angel Face\nZach Grenier as Richard Chesler\nHolt McCallany as The Mechanic\nEion Bailey as Ricky\nRichmond Arquette as Intern\nDavid Andrews as Thomas\nChristina Cabot as Group Leader")
-      expect(page).to have_content("COUNT, TOTAL REVIEWS")
-      expect(page).to have_content("REVIEW AUTHOR, INFORMATION")
+      expect(page).to have_content("5 Reviews")
+      expect(page).to have_content("Goddard")
+      expect(page).to have_content("Pretty awesome movie. It shows what one crazy person can convince other crazy people to do. Everyone needs something to believe in. I recommend Jesus Christ, but they want Tyler Durden.")
 
     end
 
