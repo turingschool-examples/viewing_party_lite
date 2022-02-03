@@ -17,7 +17,7 @@ class UserMoviesController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @movie = MovieService.movie_info(params[:id])
-    # @reviews = MovieService.reviews(params[:id])
-
+    @reviews = MovieService.reviews(params[:id])
+    @cast = MovieService.cast(params[:id])
   end
 end

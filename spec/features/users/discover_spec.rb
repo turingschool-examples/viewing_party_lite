@@ -16,12 +16,14 @@ RSpec.describe 'Movie Search' do
     it 'allows user to search for movie' do
       visit "/users/#{@user_1.id}/discover"
 
+      movie = MovieService.search_for_movie('Aliens').first
+
       fill_in :search, with: 'Aliens'
       click_button 'Search'
       expect(page.status_code).to eq 200
-      expect(page).to have_content("Cowboys & Aliens")
+      expect(page).to have_content(movie.title)
 
-      expect(page).to have_content("Vote Average: 5.5")
+      expect(page).to have_content("Vote Average: #{movie.vote_average}")
     end
 
     it 'goes back to discover page after filling in form when clicking button' do
