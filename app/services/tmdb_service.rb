@@ -1,5 +1,5 @@
 require 'faraday' 
-
+require 'pry'
 class TmdbService
   def self.get_url(url)
     Faraday.new(url)
@@ -13,3 +13,4 @@ class TmdbService
     json[:results]
   end
 end
+# TmdbService.top_rated_movies

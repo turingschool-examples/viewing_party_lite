@@ -1,7 +1,9 @@
+require 'pry'
+
 class Movie 
   attr_reader :id, 
               :title, 
-              :overview, 
+              :summary, 
               :vote_average,
               :vote_count,
               :poster_path

@@ -9,5 +9,6 @@ Rails.application.routes.draw do
 
   resources :user, only: [:show, :create] do
     resources :discover, only: [:index]
+    resources :movie, only: [:index]
   end
 end
