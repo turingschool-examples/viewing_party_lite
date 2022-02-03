@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   post '/users/:id/movies', to: 'user_movies#search'
   get '/users/:id/movies', to: 'user_movies#index'
   get '/users/:user_id/movies/:id', to: 'user_movies#show'
+  get '/users/:user_id/movies/:id/viewing-party/new', to: 'viewing_party#new'
 end

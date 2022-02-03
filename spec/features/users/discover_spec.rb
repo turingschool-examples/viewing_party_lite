@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Movie Search' do
+RSpec.describe 'User Discover Page' do
   describe 'view' do
     before(:each) do
       @user_1 = User.create!(name: "David", email: "david@email.com")
