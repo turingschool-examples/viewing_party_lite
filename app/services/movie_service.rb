@@ -47,4 +47,14 @@ class MovieService
       Review.new(data)
     end
   end
+
+  def self.cast(movie_id)
+    response = conn.get("/3/movie/#{movie_id}/credits?api_key=#{ENV['movie_api_key']}&language=en-US")
+    data = JSON.parse(response.body, symbolize_names: true)
+    results = data[:cast]
+
+    results.map do |data|
+      Cast.new(data)
+    end
+  end
 end
