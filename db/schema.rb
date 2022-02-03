@@ -10,19 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_01_004204) do
+ActiveRecord::Schema.define(version: 2022_02_01_003439) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "parties", force: :cascade do |t|
+    t.integer "host_id"
     t.integer "duration"
     t.date "day"
     t.time "start_time"
     t.integer "movie_id"
+    t.string "title"
+    t.string "poster_path"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
     t.index ["user_id"], name: "index_parties_on_user_id"
   end
 

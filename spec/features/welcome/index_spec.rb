@@ -20,6 +20,12 @@ RSpec.describe 'Welcome Index Page' do
 
       click_link('Create a New User')
       expect(current_path).to eq("/register")
+
+      fill_in :name, with: 'Wade'
+      fill_in :email, with: 'Wade@email.com'
+      click_button 'Submit'
+
+      expect(page).to have_content("Wade")
     end
 
     it 'lists the existing users which link to their dashboard' do
