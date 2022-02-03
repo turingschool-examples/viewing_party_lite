@@ -9,4 +9,11 @@ class TMDBFacade
       Movie.new(data)
     end 
   end
+
+  def self.keyword(search_term)
+    json = TmdbService.keyword(search_term)
+    json.map do |data|
+      Movie.new(data)
+    end     
+  end
 end 
