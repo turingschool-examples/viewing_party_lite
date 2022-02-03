@@ -1,7 +1,6 @@
-<%#  if @movie %>
-<%# binding.pry %>
-  <%# @movie.each { |movie| movie[:title] } %>
-<%#  end %>
-
-<h4> Movies with "<%= @keyword %>"</h4>
-  <p><%= @movie[:title] %></p>
+<h3> Movies with the keyword "<%= @keyword %>""</h3>
+<%  if @movie %>
+  <% @movie[:results].each do |movie| %>
+    <p><%= link_to movie[:title], "/users/#{@user}/movies/#{movie[:id]}" %>  Rating: <%= movie[:vote_average] %></p>
+  <% end %>
+<%  end %>
