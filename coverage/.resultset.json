@@ -48,6 +48,7 @@
         "lines": [
           1,
           1,
+          4,
           null,
           null,
           null
@@ -56,6 +57,40 @@
       "/Users/ericchon/turing/3mod/projects/viewing_party_lite/app/controllers/application_controller.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/Users/ericchon/turing/3mod/projects/viewing_party_lite/app/controllers/movies_controller.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          2,
+          2,
+          null,
+          2,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -168,6 +203,6 @@
         }
       }
     },
-    "timestamp": 1643823412
+    "timestamp": 1643859866
   }
 }
