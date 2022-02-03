@@ -42,7 +42,7 @@ class MovieService
     response = conn.get("/3/movie/#{movie_id}/reviews?api_key=#{ENV['movie_api_key']}&language=en-US")
     data = JSON.parse(response.body, symbolize_names: true)
     results = data[:results]
-
+    # require "pry"; binding.pry
     results.map do |data|
       Review.new(data)
     end
