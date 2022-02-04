@@ -16,8 +16,5 @@ class Movie
     @vote_average = data[:vote_average]
     @vote_count   = data[:vote_count]
     @poster_path  = data[:poster_path]
-    # @length     =
-    # @cast         = []
-    # @genre      =
   end
 end
