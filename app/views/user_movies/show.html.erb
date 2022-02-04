@@ -5,7 +5,7 @@
 <%= button_to "Create Viewing Party for #{@movie.title}", "/users/#{@user.id}/movies/#{@movie.id}/viewing-party/new", method: :get %>
 
 <p>Vote Average: <%= @movie.vote_average %> |
-   Runtime: <%= @movie.runtime %> minutes |
+  Runtime: <%= @movie.runtime %> minutes |
   Genre(s): <%= @movie.genres.map{|genre| genre[:name]}.join(", ") %>
 </p>
 
@@ -13,6 +13,6 @@
 <p>Cast: <%= @cast.map{|cast| cast.name}.join(", ") %> </p>
 <p> <%= @reviews.count %> Reviews</p>
 <p>Review: <% @reviews.each do |review| %></p>
-            <p>Author: <%= review.author %></p>
-            <p><%= review.content %></p>
-          <% end %>
+  <p>Author: <%= review.author %></p>
+  <p><%= review.content %></p>
+<% end %>

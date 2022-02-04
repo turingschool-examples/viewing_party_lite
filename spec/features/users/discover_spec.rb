@@ -16,7 +16,7 @@ RSpec.describe 'User Discover Page' do
     it 'allows user to search for movie' do
       visit "/users/#{@user_1.id}/discover"
 
-      movie = MovieService.search_for_movie('Aliens').first
+      movie = MovieFacade.search_for_movie('Aliens').first
 
       fill_in :search, with: 'Aliens'
       click_button 'Search'
@@ -38,7 +38,7 @@ RSpec.describe 'User Discover Page' do
     it 'shows movie details' do
       visit "/users/#{@user_1.id}/movies?query=top%40rated"
 
-      top_movie = MovieService.top_movies.first
+      top_movie = MovieFacade.top_movies.first
 
       expect(page).to have_link(top_movie.title)
       expect(page).to have_content(top_movie.vote_average)

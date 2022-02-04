@@ -8,15 +8,14 @@
 
   <p>
     <img src="https://image.tmdb.org/t/p/w154<%= party.poster_path %>" alt="movie_image" >
-
-    <%= party.title %>
-    <%= party.day %>
-    Start Time: <%= party.start_time %>
+      <%= party.title %>
+      <%= party.day %>
+      Start Time: <%= party.start_time %>
 
     <% if party[:host] == @user.id %>
-    <%= p "host" %>
+      <%= "host" %>
     <% else %>
-    <%= p "Invitee" %>
+      <%= "Invitee" %>
     <% end %>
 
   </p>

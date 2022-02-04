@@ -15,7 +15,7 @@ RSpec.describe 'User Movie Show Page' do
 
     it 'goes back to discover page after filling in form when clicking button' do
       visit "/users/#{@user_1.id}/movies?query=top%40rated"
-      top_movie = MovieService.top_movies.first
+      top_movie = MovieFacade.top_movies.first
 
       expect(page).to have_link(top_movie.title)
 
@@ -28,7 +28,7 @@ RSpec.describe 'User Movie Show Page' do
     end
 
     it 'has a Button to create a viewing party' do
-      top_movie = MovieService.top_movies.first
+      top_movie = MovieFacade.top_movies.first
       visit "/users/#{@user_1.id}/movies/#{top_movie.id}"
 
       click_button "Create Viewing Party for #{top_movie.title}"
@@ -36,7 +36,7 @@ RSpec.describe 'User Movie Show Page' do
       expect(current_path).to eq("/users/#{@user_1.id}/movies/#{top_movie.id}/viewing-party/new")
     end
     it "shows review author" do
-      review = MovieService.reviews(100)
+      review = MovieFacade.reviews(100)
       visit "/users/#{@user_1.id}/movies/100"
 
       expect(page).to have_content("Author: Andres Gomez")
