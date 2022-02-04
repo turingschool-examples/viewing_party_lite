@@ -16,5 +16,18 @@ RSpec.describe 'Movie index page' do
     end
   end
 
+  xit "checks that Find Top Rated Movies button returns a list of top movies" do
+    VCR.use_cassette('search_data_from_api') do
+      user_1 = User.create!(name: 'User 1', email: 'email1@gmail.com')
+
+      visit "/users/#{user_1.id}/discover"
+
+      expect(page).to have_button("Find Top Rated Movies")
+
+      click_button "Find Top Rated Movies"
+
+      expect(current_path).to eq("/users/#{user_1.id}/movies?q=top%40rated")
+    end
+  end
 
 end
