@@ -31,4 +31,14 @@ class TmdbFacade
       Review.new(data)
     end
   end
+
+  def self.details(movie_id)
+    json = TmdbService.details(movie_id)
+    cast = TmdbService.credits(movie_id)[:cast][0..9]
+    movie = Movie.new(json)
+    movie.add_generes(json)
+    movie.add_length(json)
+    movie.add_cast(cast) 
+    movie 
+  end
 end 
