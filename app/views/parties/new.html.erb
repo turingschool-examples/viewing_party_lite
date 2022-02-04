@@ -10,13 +10,13 @@
   <%= form.text_field :title, value: "#{@movie.title}" %>
 
   <%= form.label :duration %>
-  <%= form.text_field :duration %>
+  <%= form.text_field :duration, value: "#{@movie.runtime}" %>
 
   <%= form.label :day %>
   <%= form.text_field :day %>
 
   <%= form.hidden_field :movie_id, value: @movie.id %>
-  <%= form.hidden_field :host, value: "host" %>
+  <%= form.hidden_field :host, value: @user.id %>
 
   <%= form.label :start_time %>
   <%= form.text_field :start_time %>

@@ -8,13 +8,16 @@
 
   <p>
     <img src="<%= party.poster_path %>" alt="movie_image" >
-    <%= require "pry"; binding.pry %>
+
     <%= party.title %>
     <%= party.day %>
     Start Time: <%= party.start_time %>
 
-    <%= party[:host] %>
-    <%= party.host %>
+    <% if party[:host] == @user.id %>
+    <%= p "host" %>
+    <% else %>
+    <%= p "Invitee" %>
+    <% end %>
 
   </p>
 <% end %>

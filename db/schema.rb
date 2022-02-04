@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2022_02_01_003439) do
   enable_extension "plpgsql"
 
   create_table "parties", force: :cascade do |t|
-    t.string "host"
+    t.integer "host"
     t.integer "duration"
     t.date "day"
     t.time "start_time"
