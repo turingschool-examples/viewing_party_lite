@@ -40,6 +40,5 @@ class TmdbFacade
     movie.add_runtime(json)
     movie.add_cast(cast) 
     movie 
-    # require 'pry'; binding.pry
   end
 end 
