@@ -22,5 +22,17 @@ RSpec.describe 'Party New Page' do
       expect(page).to have_content(top_movie.title)
       expect(page).to have_content("Start Time: 2000-01-01 07:00:00")
     end
+    it 'sad path: all fields blank' do
+      top_movie = MovieFacade.top_movies.first
+
+      visit "/users/#{@user_1.id}/movies/#{top_movie.id}/viewing-party/new"
+
+      click_button 'Submit'
+      expect(current_path).to eq("/users/#{@user_1.id}/movies/#{top_movie.id}/viewing-parties")
+
+      expect(page).to have_content("2 errors prohibited this post from being saved")
+      expect(page).to have_content("Day can't be blank")
+      expect(page).to have_content("Start time can't be blank")
+    end
   end
 end
