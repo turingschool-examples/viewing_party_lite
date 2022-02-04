@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @parties = @user.parties
-    # @movie = MovieService.search_for_movie(params[:movie])
   end
 
   def new
