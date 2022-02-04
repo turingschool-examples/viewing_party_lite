@@ -10,7 +10,7 @@ Viewing Part Lite is an application in which users can explore movie options and
 ## Schema
 ![Screen Shot 2022-02-03 at 3 54 19 PM](https://user-images.githubusercontent.com/89048720/152448822-361a29dc-2459-44de-a3fb-e38003247311.png)
 
-## Local Setup for any other use
+## Local Setup
 
 1. Fork and Clone the repo `git clone git@github.com:Dittrir/viewing_party_lite.git`
 2. Navigate to directory `cd viewing_party_lite`
