@@ -7,4 +7,9 @@ class User < ApplicationRecord
             :uniqueness => true
   validates :name,
             :presence => {message: "can't be blank"}
+
+
+  def self.except_self(user)
+    where.not(id: user.id)
+  end
 end
