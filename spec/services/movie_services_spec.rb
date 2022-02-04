@@ -73,5 +73,37 @@ RSpec.describe MovieService do
         expect(info[:overview]).to be_a String
       end
     end
+
+    context '.reviews' do
+      it "returns reviews" do
+        info = MovieService.reviews(100)
+        expect(info).to be_a Hash
+        expect(info[:results]).to be_a Array
+
+        info_results = info[:results][0]
+
+        expect(info_results).to have_key :author
+        expect(info_results[:author]).to be_a String
+
+        expect(info_results).to have_key :content
+        expect(info_results[:content]).to be_a String
+      end
+    end
+
+    context '.cast' do
+      it "returns movie cast" do
+        cast = MovieService.cast(100)
+        expect(cast).to be_a Hash
+        expect(cast[:cast]).to be_a Array
+
+        cast_info = cast[:cast].first
+
+        expect(cast_info).to have_key :name
+        expect(cast_info[:name]).to be_a String
+
+        expect(cast_info).to have_key :character
+        expect(cast_info[:character]).to be_a String
+      end
+    end
   end
 end
