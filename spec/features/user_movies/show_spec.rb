@@ -7,13 +7,13 @@ RSpec.describe 'User Movie Show Page' do
       @party_1 = @user_1.parties.create!(duration: 180, day: "December 12, 2021", start_time: "7:00 pm", movie_id: 100, user_id: @user_1.id)
     end
 
-    it 'has a home link which takes the user back to the home page' do
+    it 'has a home link which takes the user back to the home page', :vcr do
       visit "/users/#{@user_1.id}/movies"
       click_link('Home')
       expect(current_path).to eq(root_path)
     end
 
-    it 'goes back to discover page after filling in form when clicking button' do
+    it 'goes back to discover page after filling in form when clicking button', :vcr do
       visit "/users/#{@user_1.id}/movies?query=top%40rated"
       top_movie = MovieFacade.top_movies.first
 
@@ -27,7 +27,7 @@ RSpec.describe 'User Movie Show Page' do
       expect(current_path).to eq("/users/#{@user_1.id}/discover")
     end
 
-    it 'has a Button to create a viewing party' do
+    it 'has a Button to create a viewing party', :vcr do
       top_movie = MovieFacade.top_movies.first
       visit "/users/#{@user_1.id}/movies/#{top_movie.id}"
 
@@ -35,7 +35,7 @@ RSpec.describe 'User Movie Show Page' do
 
       expect(current_path).to eq("/users/#{@user_1.id}/movies/#{top_movie.id}/viewing-party/new")
     end
-    it "shows review author" do
+    it "shows review author", :vcr do
       review = MovieFacade.reviews(100)
       visit "/users/#{@user_1.id}/movies/100"
 

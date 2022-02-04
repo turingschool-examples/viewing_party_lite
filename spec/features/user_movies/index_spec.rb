@@ -13,7 +13,7 @@ RSpec.describe 'Movie Discover Page' do
       expect(current_path).to eq(root_path)
     end
 
-    it 'shows movie details' do
+    it 'shows movie details', :vcr do
       visit "/users/#{@user_1.id}/movies?query=top%40rated"
 
       expect(page).to have_link("The Shawshank Redemption")

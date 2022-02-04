@@ -13,7 +13,7 @@ RSpec.describe 'User Discover Page' do
       expect(current_path).to eq(root_path)
     end
 
-    it 'allows user to search for movie' do
+    it 'allows user to search for movie', :vcr do
       visit "/users/#{@user_1.id}/discover"
 
       movie = MovieFacade.search_for_movie('Aliens').first
@@ -26,7 +26,7 @@ RSpec.describe 'User Discover Page' do
       expect(page).to have_content("Vote Average: #{movie.vote_average}")
     end
 
-    it 'goes back to discover page after filling in form when clicking button' do
+    it 'goes back to discover page after filling in form when clicking button', :vcr do
       visit "/users/#{@user_1.id}/discover"
 
       fill_in :search, with: 'Aliens'
@@ -35,7 +35,7 @@ RSpec.describe 'User Discover Page' do
       click_button 'Discover Page'
       expect(current_path).to eq("/users/#{@user_1.id}/discover")
     end
-    it 'shows movie details' do
+    it 'shows movie details', :vcr do
       visit "/users/#{@user_1.id}/movies?query=top%40rated"
 
       top_movie = MovieFacade.top_movies.first

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe MovieService do
   context 'class methods' do
     context '.top_movies' do
-      it "returns top movie data" do
+      it "returns top movie data", :vcr do
         top_movies = MovieService.top_movies
         expect(top_movies).to be_a Array
         expect(top_movies).to be_a Array
@@ -28,7 +28,7 @@ RSpec.describe MovieService do
     end
 
     context '.search_for_movie' do
-      it "returns movie search" do
+      it "returns movie search", :vcr do
         search = MovieService.search_for_movie('Dune')
         expect(search).to be_a Hash
         expect(search[:results]).to be_a Array
@@ -53,7 +53,7 @@ RSpec.describe MovieService do
     end
 
     context '.movie_info' do
-      it "returns movie_info" do
+      it "returns movie_info", :vcr do
         info = MovieService.movie_info(100)
         expect(info).to be_a Hash
 
@@ -75,7 +75,7 @@ RSpec.describe MovieService do
     end
 
     context '.reviews' do
-      it "returns reviews" do
+      it "returns reviews", :vcr do
         info = MovieService.reviews(100)
         expect(info).to be_a Hash
         expect(info[:results]).to be_a Array
@@ -91,7 +91,7 @@ RSpec.describe MovieService do
     end
 
     context '.cast' do
-      it "returns movie cast" do
+      it "returns movie cast", :vcr do
         cast = MovieService.cast(100)
         expect(cast).to be_a Hash
         expect(cast[:cast]).to be_a Array
