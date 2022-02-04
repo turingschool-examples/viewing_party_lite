@@ -6,9 +6,9 @@ RSpec.describe 'Party New Page' do
       @user_1 = User.create!(name: "David", email: "david@email.com")
     end
 
-    it 'includes all information about the viewing party' do
+    it 'includes all information about the viewing party', :vcr do
       top_movie = MovieFacade.top_movies.first
-      
+
       visit "/users/#{@user_1.id}/movies/#{top_movie.id}/viewing-party/new"
 
       fill_in :duration, with: '180'

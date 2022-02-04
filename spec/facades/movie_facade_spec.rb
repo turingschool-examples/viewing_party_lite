@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe MovieFacade do
-  it '.top_movies' do
+  it '.top_movies', :vcr do
     top_movies = MovieFacade.top_movies
 
     expect(top_movies).to be_a Array
@@ -10,7 +10,7 @@ RSpec.describe MovieFacade do
     end
   end
 
-  it '.search_for_movie' do
+  it '.search_for_movie', :vcr do
     searched_movies = MovieFacade.search_for_movie(100)
 
     expect(searched_movies).to be_a Array
@@ -19,13 +19,13 @@ RSpec.describe MovieFacade do
     end
   end
 
-  it '.movie_info' do
+  it '.movie_info', :vcr do
     movie_info = MovieFacade.movie_info(100)
 
     expect(movie_info).to be_a Movie
   end
 
-  it '.reviews' do
+  it '.reviews', :vcr do
     reviews = MovieFacade.reviews(100)
 
     expect(reviews).to be_a Array
@@ -34,7 +34,7 @@ RSpec.describe MovieFacade do
     end
   end
 
-  it '.cast' do
+  it '.cast', :vcr do
     casts = MovieFacade.cast(100)
 
     expect(casts).to be_a Array

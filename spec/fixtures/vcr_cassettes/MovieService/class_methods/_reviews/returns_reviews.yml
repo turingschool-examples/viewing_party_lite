@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/100/reviews?api_key=<fake_api_key>&language=en-US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.1.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 04 Feb 2022 16:01:55 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Key:
+      - b8ceef4dd81d362973c4004beb6d29a7067370a0
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '16206'
+      Last-Modified:
+      - '2022-01-28 17:45:45 +0000'
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 6c02603f677dd5669f8ab3b41062340e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - EUFzdTNG2YPTI-dHgdRItpkAIb7R-VmTfHL2vZ0EKbsup4QKEaiFUA==
+      Age:
+      - '3630'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":100,"page":1,"results":[{"author":"BradFlix","author_details":{"name":"","username":"BradFlix","avatar_path":null,"rating":null},"content":"I
+        just plain love this movie!","created_at":"2013-12-01T23:11:51.416Z","id":"529bc23719c2957215011e7b","updated_at":"2021-06-23T15:57:23.111Z","url":"https://www.themoviedb.org/review/529bc23719c2957215011e7b"},{"author":"Andres
+        Gomez","author_details":{"name":"Andres Gomez","username":"tanty","avatar_path":"/https://secure.gravatar.com/avatar/03a53cd53b8254fe582d4fe1acc26c4e.jpg","rating":3.0},"content":"Far
+        from being a good movie, with tons of flaws but already pointing to the pattern
+        of the whole Ritchie''s filmography.","created_at":"2014-04-24T00:11:47.766Z","id":"535856c30e0a26069400064c","updated_at":"2021-06-23T15:57:26.186Z","url":"https://www.themoviedb.org/review/535856c30e0a26069400064c"},{"author":"David
+        Perkins","author_details":{"name":"David Perkins","username":"Prkns","avatar_path":null,"rating":9.0},"content":"Genuinely
+        one of my favorite movies of all time. Watched again recently and realised
+        how well written, brilliantly shot, beautifully cast and cleverly produced
+        this movie actually is!","created_at":"2017-01-09T12:24:47.234Z","id":"5873810f9251410e71009a68","updated_at":"2021-06-23T15:57:52.869Z","url":"https://www.themoviedb.org/review/5873810f9251410e71009a68"}],"total_pages":1,"total_results":3}'
+  recorded_at: Fri, 04 Feb 2022 17:02:25 GMT
+recorded_with: VCR 6.0.0
