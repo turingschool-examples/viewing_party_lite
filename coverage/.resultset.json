@@ -149,12 +149,6 @@
           null
         ]
       },
-      "/Users/croixkimmel/turing/3mod/projects/viewing_party_lite/app/models/movie.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
       "/Users/croixkimmel/turing/3mod/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
           0,
@@ -222,6 +216,6 @@
         }
       }
     },
-    "timestamp": 1643943622
+    "timestamp": 1643943951
   }
 }
