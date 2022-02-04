@@ -2,6 +2,8 @@
 
 <%  if @movie_results %>
   <h3> Movies with the keyword "<%= @keyword %>""</h3>
+  <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %>
+
   <% @movie_results[:results].each do |movie| %>
     <p><%= link_to movie[:title], "/users/#{@user.id}/movies/#{movie[:id]}" %>  Rating: <%= movie[:vote_average] %></p>
   <% end %>
