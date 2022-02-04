@@ -1,27 +1,27 @@
-# require 'rails_helper'
-#
-# RSpec.describe MoviesService do
-#   context 'class methods' do
-#     context '' do
-#       it "returns member data" do
-#         search = CongressService.members_of_house('CO')
-#         expect(search).to be_a Hash
-#         expect(search[:results]).to be_a Array
-#
-#         member_data = search[:results].first
-#
-#         expect(member_data).to have_key :name
-#         expect(member_data[:name]).to be_a String
-#
-#         expect(member_data).to have_key :role
-#         expect(member_data[:role]).to be_a String
-#
-#         expect(member_data).to have_key :district
-#         expect(member_data[:district]).to be_a String
-#
-#         expect(member_data).to have_key :party
-#         expect(member_data[:party]).to be_a String
-#       end
-#     end
-#   end
-# end
+require 'rails_helper'
+
+RSpec.describe MovieService do
+  context 'class methods' do
+    it "returns member data" do
+      VCR.use_cassette('search_data_from_api') do
+        search = MovieService.searched_movies('Fight')
+        expect(search).to be_a Hash
+        expect(search[:results]).to be_a Array
+
+        movie_data = search[:results].first
+
+        expect(movie_data).to have_key :title
+        expect(movie_data[:title]).to be_a String
+
+        expect(movie_data).to have_key :vote_average
+        expect(movie_data[:vote_average]).to be_a Float
+
+        expect(movie_data).to have_key :overview
+        expect(movie_data[:overview]).to be_a String
+
+        expect(movie_data).to have_key :id
+        expect(movie_data[:id]).to be_a Integer
+      end
+    end
+  end
+end
