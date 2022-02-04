@@ -21,7 +21,7 @@ RSpec.describe 'viewing party homepage' do
 
   it 'has a viewing parties section' do 
     visit user_path(user_1)
-
+    
     expect(page).to have_content("Viewing Parties")
   end
 end 

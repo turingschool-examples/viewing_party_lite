@@ -10,56 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_01_231050) do
+ActiveRecord::Schema.define(version: 2022_02_04_092057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "cast_members", force: :cascade do |t|
-    t.string "name"
-    t.string "stage_name"
-    t.bigint "movie_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["movie_id"], name: "index_cast_members_on_movie_id"
-  end
-
-  create_table "movies", force: :cascade do |t|
-    t.string "title"
-    t.integer "vote_average"
-    t.integer "run_time"
-    t.string "genre"
-    t.string "summary"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "parties", force: :cascade do |t|
-    t.date "day"
-    t.time "start_time"
-    t.integer "duration"
-    t.bigint "movie_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["movie_id"], name: "index_parties_on_movie_id"
-  end
-
-  create_table "reviews", force: :cascade do |t|
-    t.string "author"
-    t.string "critique"
-    t.bigint "movie_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["movie_id"], name: "index_reviews_on_movie_id"
-  end
-
   create_table "user_parties", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "party_id"
+    t.bigint "viewing_parties_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["party_id"], name: "index_user_parties_on_party_id"
     t.index ["user_id"], name: "index_user_parties_on_user_id"
+    t.index ["viewing_parties_id"], name: "index_user_parties_on_viewing_parties_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -70,9 +32,16 @@ ActiveRecord::Schema.define(version: 2022_02_01_231050) do
     t.integer "status", default: 0
   end
 
-  add_foreign_key "cast_members", "movies"
-  add_foreign_key "parties", "movies"
-  add_foreign_key "reviews", "movies"
-  add_foreign_key "user_parties", "parties"
+  create_table "viewing_parties", force: :cascade do |t|
+    t.date "date"
+    t.string "start_time"
+    t.integer "length"
+    t.integer "movie_id"
+    t.integer "host_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "user_parties", "users"
+  add_foreign_key "user_parties", "viewing_parties", column: "viewing_parties_id"
 end

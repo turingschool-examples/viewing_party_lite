@@ -3,3 +3,11 @@
 <%= button_to  "Discover Movies", user_discover_index_path(@user), method: :get %>
 
 <h3>Viewing Parties</h3>
+
+<% @parties.each do |party| %>
+<li><%= TmdbFacade.details(party.movie_id).title %></li>
+<%= image_tag TmdbFacade.details(party.movie_id).poster_path %>
+<li><%= party.date %></li>
+<li><%= party.start_time %></li>
+<% end  %>
+<h4><ul><%= @user.status %></ul></h4>
