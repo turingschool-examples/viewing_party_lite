@@ -15,28 +15,13 @@ ActiveRecord::Schema.define(version: 2022_02_02_172331) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "movies", force: :cascade do |t|
-    t.string "title"
-    t.float "vote_average"
-    t.integer "runtime"
-    t.string "genre"
-    t.string "summary"
-    t.string "cast_members"
-    t.integer "total_review_count"
-    t.string "review_information"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "parties", force: :cascade do |t|
     t.integer "duration"
     t.date "date"
     t.time "start_time"
-    t.bigint "movie_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "party_movie_id"
-    t.index ["movie_id"], name: "index_parties_on_movie_id"
   end
 
   create_table "user_parties", force: :cascade do |t|
@@ -56,7 +41,6 @@ ActiveRecord::Schema.define(version: 2022_02_02_172331) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "parties", "movies"
   add_foreign_key "user_parties", "parties"
   add_foreign_key "user_parties", "users"
 end
