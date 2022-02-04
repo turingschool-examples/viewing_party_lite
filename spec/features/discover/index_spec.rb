@@ -16,6 +16,7 @@ RSpec.describe 'viewing party homepage' do
     expect(page).to have_button("Find Top Rated Movies")
 
     click_button "Find Top Rated Movies"
+    
     expect(current_path).to eq(user_movie_index_path(user_1))
   end 
 
@@ -25,6 +26,7 @@ RSpec.describe 'viewing party homepage' do
 
       fill_in :keyword, with: "Godfather"
       click_button "Find Movies"
+      
       expect(current_path).to eq(user_movie_index_path(user_1))
     end 
   end 
