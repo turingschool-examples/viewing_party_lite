@@ -21,7 +21,7 @@ class MoviesController < ApplicationController
 
       @top_40_movies = @top_rated_movies_page_1[:results].push(@top_rated_movies_page_2[:results]).flatten
       @top_movie_details = @top_40_movies.map do |movie_details|
-        [movie_details[:title], movie_details[:vote_average]]
+        [movie_details[:title], movie_details[:vote_average], movie_details[:id]]
       end
     end
   end

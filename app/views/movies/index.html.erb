@@ -7,6 +7,7 @@
   <% end %>
 <% elsif @top_40_movies %>
   <% @top_40_movies.each do |top_movie| %>
-    <p><%= top_movie[:title] %> Rating: <%= top_movie[:vote_average] %></p>
+    <p><%= link_to top_movie[:title], "/users/#{@user.id}/movies/#{top_movie[:id]}"  %> Rating: <%= top_movie[:vote_average] %></p>
   <% end %>
+<p> </p>
 <%  end %>

@@ -28,6 +28,11 @@ RSpec.describe 'Movie index page' do
 
       expect(current_path).to eq("/users/#{user_1.id}/movies")
       expect(page).to have_content("Your Eyes Tell Rating: 8.8")
+      expect(page).to have_link("Your Eyes Tell")
+
+      click_link "Your Eyes Tell"
+
+      expect(current_path).to eq("/users/#{user_1.id}/movies/730154")
     end
   end
 
