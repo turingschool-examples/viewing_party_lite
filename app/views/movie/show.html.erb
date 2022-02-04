@@ -4,7 +4,7 @@
 <%= button_to  "Create Viewing Party for #{@movie.title}", new_user_movie_viewing_party_path(@user, @movie.id), method: :get %>
 
 <h4>Vote Average: <%= @movie.vote_average %></h4>
-<h4>Runtime: <%= @movie.length %></h4>
+<h4>Runtime: <%= @movie.runtime %></h4>
 <h4>Genre(s):</h4>
   <% @movie.genres.each do |genre| %>
   <li><%= genre %></li>

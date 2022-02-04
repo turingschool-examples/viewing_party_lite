@@ -39,7 +39,7 @@ RSpec.describe 'movie show page' do
     
     expect(page).to have_content(movie.title)
     expect(page).to have_content(movie.vote_average)
-    expect(page).to have_content(movie.length)
+    expect(page).to have_content(movie.runtime)
     expect(page).to have_content(movie.genres.first)
     expect(page).to have_content(movie.cast.first.first)
     expect(page).to have_content(movie.cast.first.last)

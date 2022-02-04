@@ -37,7 +37,9 @@ class TmdbFacade
     movie = Movie.new(json)
     movie.add_generes(json)
     movie.add_length(json)
+    movie.add_runtime(json)
     movie.add_cast(cast) 
     movie 
+    # require 'pry'; binding.pry
   end
 end 
