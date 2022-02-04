@@ -16,9 +16,15 @@
   <%= form.text_field :day %>
 
   <%= form.hidden_field :movie_id, value: @movie.id %>
+  <%= form.hidden_field :host, value: "host" %>
 
   <%= form.label :start_time %>
   <%= form.text_field :start_time %>
 
-  <%= form.submit 'Submit' %>
-<% end %>
+  <p>Invite Other Users</p>
+  <% User.except_self(@user).each do |user| %>
+      <%= form.label "#{user.name} (#{user.email})" %>
+      <%= form.check_box user.email, value: user.id  %>
+    <% end %>
+    <%= form.submit 'Submit' %>
+  <% end %>

@@ -5,9 +5,16 @@
 <hr>
 <p>Viewing Parties</p>
 <% @parties.each do |party| %>
+
   <p>
+    <img src="<%= party.poster_path %>" alt="movie_image" >
+    <%= require "pry"; binding.pry %>
     <%= party.title %>
     <%= party.day %>
     Start Time: <%= party.start_time %>
+
+    <%= party[:host] %>
+    <%= party.host %>
+
   </p>
 <% end %>
