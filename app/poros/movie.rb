@@ -7,10 +7,11 @@ class Movie
               :vote_average,
               :vote_count,
               :poster_path, 
-              :length, 
+              :total_min, 
               :cast, 
               :genres, 
-              :reviews
+              :reviews, 
+              :runtime
 
   def initialize(data)
     @id           = data[:id]
@@ -19,7 +20,8 @@ class Movie
     @vote_average = data[:vote_average]
     @vote_count   = data[:vote_count]
     @poster_path  = data[:poster_path]
-    @length       = nil
+    @total_min    = nil
+    @runtime      = nil
     @cast         = nil
     @genres       = nil
   end
@@ -29,7 +31,11 @@ class Movie
   end
 
   def add_length(data)
-    @length = data[:runtime]
+    @total_min = data[:runtime]
+  end
+
+  def add_runtime(data)
+    @runtime = "#{data[:runtime] / 60}hr #{data[:runtime] % 60} min"
   end
 
   def add_cast(data)
