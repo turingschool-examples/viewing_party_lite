@@ -12,6 +12,11 @@ class MoviesController < ApplicationController
 
       search_response = conn.get("/3/search/movie?&query=#{@query}")
       @movie_results = JSON.parse(search_response.body, symbolize_names: true)
+
+      @movie_info = @movie_results[:results].map do |info|
+        [info[:title], info[:id], info[:vote_average]]
+      end
+      
     else
       top_rated_response_page_1 = conn.get("/3/movie/top_rated")
       @top_rated_movies_page_1 = JSON.parse(top_rated_response_page_1.body, symbolize_names: true)
