@@ -7,11 +7,13 @@
           null
         ]
       },
-      "/Users/ericchon/turing/3mod/projects/viewing_party_lite/app/models/user.rb": {
+      "/Users/ericchon/turing/3mod/projects/viewing_party_lite/app/models/party.rb": {
         "lines": [
           1,
           1,
           1,
+          1,
+          null,
           null
         ]
       },
@@ -22,11 +24,31 @@
           null
         ]
       },
-      "/Users/ericchon/turing/3mod/projects/viewing_party_lite/app/controllers/discover_controller.rb": {
+      "/Users/ericchon/turing/3mod/projects/viewing_party_lite/app/models/user_party.rb": {
         "lines": [
           1,
           1,
           1,
+          null,
+          1,
+          5,
+          null,
+          null
+        ]
+      },
+      "/Users/ericchon/turing/3mod/projects/viewing_party_lite/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/ericchon/turing/3mod/projects/viewing_party_lite/app/controllers/discover_controller.rb": {
+        "lines": [
+          1,
+          1,
+          8,
           null,
           null,
           null
@@ -38,60 +60,102 @@
           null
         ]
       },
+      "/Users/ericchon/turing/3mod/projects/viewing_party_lite/app/controllers/landing_controller.rb": {
+        "lines": [
+          1,
+          1,
+          6,
+          null,
+          null
+        ]
+      },
+      "/Users/ericchon/turing/3mod/projects/viewing_party_lite/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          1,
+          7,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/ericchon/turing/3mod/projects/viewing_party_lite/app/controllers/movies_controller.rb": {
         "lines": [
           1,
           1,
-          1,
-          1,
-          1,
+          4,
+          4,
+          4,
+          null,
+          4,
+          4,
+          null,
+          null,
+          4,
+          null,
+          3,
+          3,
           null,
           1,
           1,
           null,
+          1,
+          1,
           null,
           1,
           1,
-          1,
-          null,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
+          40,
           null,
           null,
           null,
           null,
           1,
-          0,
-          0,
-          0,
-          0,
+          3,
+          3,
+          3,
+          3,
           null,
           null,
-          0,
-          0,
+          3,
+          3,
           null,
-          0,
-          0,
-          0,
-          0,
+          3,
+          3,
+          3,
+          237,
           null,
-          0,
+          3,
           null,
-          0,
-          0,
-          0,
-          0,
-          0,
+          3,
+          3,
+          3,
+          3,
+          21,
           null,
           null,
+          null
+        ]
+      },
+      "/Users/ericchon/turing/3mod/projects/viewing_party_lite/app/models/movie.rb": {
+        "lines": [
+          1,
           null
         ]
       },
@@ -105,82 +169,8 @@
         "branches": {
         }
       },
-      "/Users/ericchon/turing/3mod/projects/viewing_party_lite/app/models/party.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0,
-          null,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/ericchon/turing/3mod/projects/viewing_party_lite/app/models/movie.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/ericchon/turing/3mod/projects/viewing_party_lite/app/models/user_party.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/Users/ericchon/turing/3mod/projects/viewing_party_lite/app/jobs/application_job.rb": {
         "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/ericchon/turing/3mod/projects/viewing_party_lite/app/controllers/landing_controller.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/ericchon/turing/3mod/projects/viewing_party_lite/app/controllers/users_controller.rb": {
-        "lines": [
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
           0,
           0
         ],
@@ -236,6 +226,6 @@
         }
       }
     },
-    "timestamp": 1643935613
+    "timestamp": 1643941266
   }
 }
