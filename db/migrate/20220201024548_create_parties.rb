@@ -4,7 +4,7 @@ class CreateParties < ActiveRecord::Migration[5.2]
       t.integer :duration
       t.date :date
       t.time :start_time
-      t.references :movie, foreign_key: true
+      # t.references :movie, foreign_key: true
 
       t.timestamps
     end

@@ -15,10 +15,9 @@ RSpec.describe 'User show page' do
     click_button "Discover Movies"
   end
 
-  it 'has a section to show information for users viewing parties' do
+  xit 'has a section to show information for users viewing parties' do
     user_1 = User.create!(name: 'User 1', email: 'email1@gmail.com')
-    movie_1 = Movie.create!(title: 'Movie 1', vote_average: 7.0, runtime: 120, genre: 'genre 1', summary: 'summary 1', cast_members: 'cast members 1', total_review_count: 1, review_information: 'review information 1')
-    party_1 = Party.create!(duration: 120, date: '2022-10-1', start_time: '19:00:00', movie_id: movie_1.id)
+    party_1 = Party.create!(duration: 120, date: '2022-10-1', start_time: '19:00:00', party_movie_id: 550)
 
     user_party_11 = UserParty.create!(user_id: user_1.id, party_id: party_1.id, host: true)
 
@@ -26,15 +25,14 @@ RSpec.describe 'User show page' do
 
     expect(page).to have_content('Viewing parties:')
 
-    expect(page).to have_content(movie_1.title)
+    # ADD AFTER API IS CREATED - expect(page).to have_content("TITLE")
     expect(page).to have_content(party_1.date)
     expect(page).to have_content(party_1.start_time)
   end
 
   it 'has a section to show if user is hosting or attending' do
     user_1 = User.create!(name: 'User 1', email: 'email1@gmail.com')
-    movie_1 = Movie.create!(title: 'Movie 1', vote_average: 7.0, runtime: 120, genre: 'genre 1', summary: 'summary 1', cast_members: 'cast members 1', total_review_count: 1, review_information: 'review information 1')
-    party_1 = Party.create!(duration: 120, date: '2022-10-1', start_time: '19:00:00', movie_id: movie_1.id)
+    party_1 = Party.create!(duration: 120, date: '2022-10-1', start_time: '19:00:00', party_movie_id: 550)
 
     user_party_11 = UserParty.create!(user_id: user_1.id, party_id: party_1.id, host: true)
 
@@ -44,12 +42,10 @@ RSpec.describe 'User show page' do
     expect(page).to_not have_content("Invited")
   end
 
-  it 'has a section to show if user is hosting or attending' do
+  xit 'has a section to show if user is hosting or attending' do
     user_1 = User.create!(name: 'User 1', email: 'email1@gmail.com')
-    movie_1 = Movie.create!(title: 'Movie 1', vote_average: 7.0, runtime: 120, genre: 'genre 1', summary: 'summary 1', cast_members: 'cast members 1', total_review_count: 1, review_information: 'review information 1')
-    movie_2 = Movie.create!(title: 'Movie 2', vote_average: 7.0, runtime: 120, genre: 'genre 2', summary: 'summary 2', cast_members: 'cast members 2', total_review_count: 2, review_information: 'review information 2')
-    party_1 = Party.create!(duration: 120, date: '2022-10-1', start_time: '19:00:00', movie_id: movie_1.id)
-    party_2 = Party.create!(duration: 120, date: '2022-10-1', start_time: '19:00:00', movie_id: movie_2.id)
+    party_1 = Party.create!(duration: 120, date: '2022-10-1', start_time: '19:00:00', party_movie_id: 550)
+    party_2 = Party.create!(duration: 120, date: '2022-10-1', start_time: '19:00:00', party_movie_id: 551)
 
     user_party_11 = UserParty.create!(user_id: user_1.id, party_id: party_1.id, host: true)
     user_party_12 = UserParty.create!(user_id: user_1.id, party_id: party_2.id, host: false)
@@ -57,7 +53,7 @@ RSpec.describe 'User show page' do
     visit user_path(user_1)
 
     expect(page).to have_content("Hosting")
-    expect(page).to have_content(movie_2.title)
+    ### ADD ONCE API IS WORKING expect(page).to have_content(movie_2.title)
     expect(page).to have_content("Invited")
   end
 end
