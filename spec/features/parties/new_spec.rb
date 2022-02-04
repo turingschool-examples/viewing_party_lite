@@ -7,8 +7,8 @@ RSpec.describe 'Party New Page' do
     end
 
     it 'includes all information about the viewing party' do
-      top_movie = MovieService.top_movies.first
-
+      top_movie = MovieFacade.top_movies.first
+      
       visit "/users/#{@user_1.id}/movies/#{top_movie.id}/viewing-party/new"
 
       fill_in :duration, with: '180'
@@ -21,14 +21,6 @@ RSpec.describe 'Party New Page' do
 
       expect(page).to have_content(top_movie.title)
       expect(page).to have_content("Start Time: 2000-01-01 07:00:00")
-      # Movie Title
-      # Vote Average of the movie
-      # Runtime in hours & minutes
-      # Genre(s) associated to movie
-      # Summary description
-      # List the first 10 cast members (characters&actress/actors)
-      # Count of total reviews
-      # Each review's author and information
     end
   end
 end
