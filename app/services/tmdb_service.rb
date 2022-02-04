@@ -24,4 +24,16 @@ class TmdbService
     
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  def self.details(movie_id)
+    response = conn.get("https://api.themoviedb.org/3/movie/#{movie_id}")
+
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.credits(movie_id)
+    response = conn.get("https://api.themoviedb.org/3/movie/#{movie_id}/credits")
+
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end
