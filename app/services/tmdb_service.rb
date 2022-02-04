@@ -1,5 +1,3 @@
-require 'pry'
-
 class TmdbService
   def self.conn
     Faraday.new(url: 'https://api.themoviedb.org') do |f| 

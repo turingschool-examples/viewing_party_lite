@@ -1,6 +1,3 @@
-require './app/poros/movie'
-require './app/services/tmdb_service'
-
 class TmdbFacade
   def self.top_rated_movies
     page_1 = TmdbService.top_rated_movies(1)[:results]
