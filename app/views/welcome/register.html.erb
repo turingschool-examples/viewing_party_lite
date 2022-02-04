@@ -1,11 +1,16 @@
-<h1>Viewing Party Lite: Create a New User</h1>
+<h1>Viewing Party Lite</h1>
+<h2>Create a New User</h2>
 
 <%= form_with url: "/register", method: :post, local:true do |form| %>
+<% if flash[:alert] %>
+  <div class="alert"><%= flash[:alert] %></div>
+<% end %>
+  <br>
   <%= form.label :name %>
-  <%= form.text_field :name %>
+  <p><%= form.text_field :name %></p>
 
   <%= form.label :email %>
-  <%= form.text_field :email %>
+  <p><%= form.text_field :email %></p>
 
   <%= form.submit "Submit" %>
 <% end %>

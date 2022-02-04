@@ -18,7 +18,7 @@ RSpec.describe 'Welcome Index Page' do
     it 'includes a button to create a new user' do
       visit root_path
 
-      click_link('Create a New User')
+      click_button('Create a New User')
       expect(current_path).to eq("/register")
 
       fill_in :name, with: 'Wade'
@@ -36,8 +36,8 @@ RSpec.describe 'Welcome Index Page' do
       visit root_path
 
       within "#user-#{user_1.id}" do
-        expect(page).to have_link("#{user_1.name}")
-        click_link("#{user_1.name}")
+        expect(page).to have_link("#{user_1.email}")
+        click_link("#{user_1.email}")
       end
 
       expect(current_path).to eq("/users/#{user_1.id}")
