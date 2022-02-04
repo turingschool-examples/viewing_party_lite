@@ -9,6 +9,8 @@ class MovieController < ApplicationController
   end
 
   def show 
-    
+    @user = User.find(params[:user_id])
+    @movie = TmdbFacade.details(params[:id])
+    @reviews = TmdbFacade.reviews(params[:id])
   end
 end
