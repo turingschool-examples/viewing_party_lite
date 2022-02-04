@@ -40,5 +40,5 @@ Viewing Part Lite is an application in which users can explore movie options and
 - Webmock
 - VCR
 
-Contributors
+## Contributors
 Robin Dittrich, David Kassin, Wade Naughton
