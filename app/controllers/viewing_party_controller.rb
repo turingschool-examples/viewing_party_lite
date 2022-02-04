@@ -6,6 +6,13 @@ class ViewingPartyController < ApplicationController
   end
 
   def create 
+    viewing_party = ViewingParty.new(party_params)
+    
     redirect_to user_path(params[:user_id])
   end
+
+  private 
+    def party_params 
+      params.permit(:date, :start_time, :length, :movie_id, :host_id)
+    end
 end

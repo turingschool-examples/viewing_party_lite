@@ -31,8 +31,8 @@ RSpec.describe 'viewing party new form' do
     expect(page).to have_content(user_4.name)
     expect(page).to have_content(user_4.email)
 
-    expect(page).to have_field(:duration_of_party, with: movie.total_min)
-    expect(page).to have_field(:day, with: Date.today)
+    expect(page).to have_field(:length, with: movie.total_min)
+    expect(page).to have_field(:date, with: Date.today)
     expect(page).to have_field(:start_time, with: "7:00")
 
     fill_in :start_time, with: "8:00"

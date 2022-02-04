@@ -192,6 +192,13 @@
           1,
           1,
           null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -209,6 +216,12 @@
           1,
           1,
           null,
+          null
+        ]
+      },
+      "/Users/johnnapier/Turing/mod3/projects/viewing_party_lite/app/models/viewing_party.rb": {
+        "lines": [
+          1,
           null
         ]
       },
@@ -238,21 +251,6 @@
       "/Users/johnnapier/Turing/mod3/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
           null,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/johnnapier/Turing/mod3/projects/viewing_party_lite/app/models/party.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0,
           null,
           0,
           0,
@@ -355,6 +353,6 @@
         }
       }
     },
-    "timestamp": 1643963352
+    "timestamp": 1643967800
   }
 }

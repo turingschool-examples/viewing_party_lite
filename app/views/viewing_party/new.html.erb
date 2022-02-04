@@ -5,15 +5,16 @@
 <h3>Viewing Party Details</h3>
 <h4>Movie Title <%= @movie.title %></h4>
 <%= form_with url: user_movie_viewing_party_index_path(@user.id, @movie.id), method: :post, local: true do |f| %>
-<%= f.label :duration_of_party %>
-<%= f.text_field :duration_of_party, value: @movie.total_min %>
-<%= f.label :day %>
-<%= f.text_field :day, value: Date.today %>
+<%= f.label :length %>
+<%= f.text_field :length, value: @movie.total_min %>
+<%= f.label :date %>
+<%= f.text_field :date, value: Date.today %>
 <%= f.label :start_time %>
 <%= f.text_field :start_time, value: "7:00" %>
   <% @uninvited.each do |user| %>
     <%= f.label "#{user.name} (#{user.email})" %>
     <%= f.check_box "#{user.name} (#{user.email})" %>
   <% end  %>
+  <%= f.hidden_field :host_id, value: params[:user_id] %>
 <%= f.submit "Create Party" %>
 <% end %>
