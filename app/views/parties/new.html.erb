@@ -5,6 +5,17 @@
 
 <h3>Viewing Party Details</h3>
 
+<% if @party.errors.any? %>
+  <div id="error_explanation">
+    <p><%= pluralize(@party.errors.count, "error") %> prohibited this post from being saved: </p>
+      <ul>
+        <% @party.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
 <%= form_with url: "/users/#{@user.id}/movies/#{@movie.id}/viewing-parties", local: true, method: :post do |form| %>
   <%= form.label :title %>
   <%= form.text_field :title, value: "#{@movie.title}" %>
