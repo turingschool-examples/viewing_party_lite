@@ -14,9 +14,9 @@
     Start Time: <%= party.start_time %>
 
     <% if party[:host] == @user.id %>
-    <%= p "host" %>
+      <%= "host" %>
     <% else %>
-    <%= p "Invitee" %>
+      <%= "Invitee" %>
     <% end %>
 
   </p>
