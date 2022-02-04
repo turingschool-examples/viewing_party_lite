@@ -7,7 +7,7 @@
 <% @parties.each do |party| %>
 
   <p>
-    <img src="<%= party.poster_path %>" alt="movie_image" >
+    <img src="https://image.tmdb.org/t/p/w154<%= party.poster_path %>" alt="movie_image" >
 
     <%= party.title %>
     <%= party.day %>
