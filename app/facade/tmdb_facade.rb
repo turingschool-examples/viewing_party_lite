@@ -1,4 +1,3 @@
-require 'pry'
 require './app/poros/movie'
 require './app/services/tmdb_service'
 
