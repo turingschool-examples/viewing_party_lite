@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe 'viewing party new form' do
-  let!(:user_1) { User.create!(name: 'Alfred', email: 'alfred@butler.net', status: 0) }
-  let!(:user_2) { User.create!(name: 'Bruce', email: 'bruced@boss.net', status: 0) }
-  let!(:user_3) { User.create!(name: 'Oswald', email: 'oswald@cobblepot.gotham', status: 0) }
-  let!(:user_4) { User.create!(name: 'Joker', email: 'badman@takeover.edu', status: 0) }
+  let!(:user_1) { User.create!(name: 'Alfred', email: 'alfred@butler.net', status: 0, password: 'mastermind123', password_confirmation: 'mastermind123') }
+  let!(:user_2) { User.create!(name: 'Bruce', email: 'bruced@boss.net', status: 0, password: 'batcave123', password_confirmation: 'batcave123') }
+  let!(:user_3) { User.create!(name: 'Oswald', email: 'oswald@cobblepot.gotham', status: 0, password: 'penguin123', password_confirmation: 'penguin123') }
+  let!(:user_4) { User.create!(name: 'Joker', email: 'badman@takeover.edu', status: 0, password: 'gotham123', password_confirmation: 'gotham123') }
 
-  xit 'has a button that takes the user back to the discover page' do
+  it 'has a button that takes the user back to the discover page', :vcr do
     movie = TmdbFacade.details(278)
 
     visit new_user_movie_viewing_party_path(user_1, movie.id)
@@ -16,7 +16,7 @@ RSpec.describe 'viewing party new form' do
     expect(current_path).to eq(user_discover_index_path(user_1))
   end
 
-  xit 'has a prepopulated form that can be edited to create a new viewing party' do
+  it 'has a prepopulated form that can be edited to create a new viewing party', :vcr do
     movie = TmdbFacade.details(278)
 
     visit new_user_movie_viewing_party_path(user_1, movie.id)

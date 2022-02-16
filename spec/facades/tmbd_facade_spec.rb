@@ -6,19 +6,19 @@ RSpec.describe TmdbFacade do
   let(:reviews) { TmdbFacade.reviews(100) }
   let(:details) { TmdbFacade.details(278) }
 
-  xit 'creates top rated movies poros' do
+  it 'creates top rated movies poros', :vcr do
     expect(top_rated.first).to be_a(Movie)
   end
 
-  xit 'creates keyword movies poros' do
+  it 'creates keyword movies poros', :vcr do
     expect(keyword.first).to be_a(Movie)
   end
 
-  xit 'creates review poros' do
+  it 'creates review poros', :vcr do
     expect(reviews.first).to be_a(Review)
   end
 
-  xit 'add details to an existing movie poro' do
+  it 'add details to an existing movie poro', :vcr do
     expect(details).to be_a(Movie)
   end
 end

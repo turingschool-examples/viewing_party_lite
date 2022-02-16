@@ -14,4 +14,22 @@
     <%= link_to "Home", "/", method: :get %>
     <%= yield %>
   </body>
+
+  <% if flash[:alert] %>
+      <div id="alert">
+         <h3><%= flash[:alert] %> </h3>
+      </div>
+  <% end %>
+
+  <% if flash[:success] %>
+      <div id="success">
+         <h3><%= flash[:success] %> </h3>
+      </div>
+  <% end %>
+
+  <% if flash[:error] %>
+      <div id="error">
+         <h3><%= flash[:error] %> </h3>
+      </div>
+  <% end %>
 </html>

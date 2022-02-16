@@ -7,9 +7,34 @@ class UserController < ApplicationController
   def new; end
 
   def create
-    require 'pry'; binding.pry
-    user = User.create!(user_params)
-    redirect_to user_path(user.id)
+    user = User.new(user_params)
+    
+    if user.save 
+      redirect_to user_path(user.id)
+    else 
+      redirect_to register_path 
+      flash[:alert] = user.errors.full_messages.join(" , ")
+    end
+  end
+
+  def login_form; end
+
+  def login 
+    user = User.find_by(email: params[:email])
+    
+    if user == nil 
+      flash[:error] = "Sorry your email does not belong to an existing user."
+      return redirect_to '/login'
+    end
+
+    if user.authenticate(params[:password])
+      session[:user_id] = user.id
+      flash[:success] = "Welcome, #{user.name}"
+      redirect_to user_path(user)
+    else 
+      flash[:error] = "Sorry your email and/or password is incorrect."
+      redirect_to '/login'
+    end 
   end
 
   private
