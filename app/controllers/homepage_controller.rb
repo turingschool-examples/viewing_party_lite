@@ -1,5 +1,5 @@
-class HomepageController < ApplicationController 
-  def index 
-    @users = User.all 
+class HomepageController < ApplicationController
+  def index
+    @users = User.all
   end
 end

@@ -1,14 +1,14 @@
-class Movie 
-  attr_reader :id, 
-              :title, 
-              :summary, 
+class Movie
+  attr_reader :id,
+              :title,
+              :summary,
               :vote_average,
               :vote_count,
-              :poster_path, 
-              :total_min, 
-              :cast, 
-              :genres, 
-              :reviews, 
+              :poster_path,
+              :total_min,
+              :cast,
+              :genres,
+              :reviews,
               :runtime
 
   def initialize(data)
@@ -25,7 +25,7 @@ class Movie
   end
 
   def add_generes(data)
-    @genres = data[:genres].map {|genre| genre[:name]}
+    @genres = data[:genres].map { |genre| genre[:name] }
   end
 
   def add_length(data)
@@ -37,7 +37,7 @@ class Movie
   end
 
   def add_cast(data)
-    cast_characters = Hash.new 
+    cast_characters = {}
     data.each do |cast_member|
       cast_characters[cast_member[:name]] = cast_member[:character]
     end

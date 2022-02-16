@@ -3,14 +3,14 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root to: "homepage#index"
+  root to: 'homepage#index'
 
-  get '/register', to: 'user#new' 
+  get '/register', to: 'user#new'
 
-  resources :user, only: [:show, :create] do
+  resources :user, only: %i[show create] do
     resources :discover, only: [:index]
-    resources :movie, only: [:index, :show] do 
-      resources :viewing_party, only: [:new, :create]
+    resources :movie, only: %i[index show] do
+      resources :viewing_party, only: %i[new create]
     end
   end
 end
