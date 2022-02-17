@@ -22,6 +22,7 @@ class UserController < ApplicationController
   def login 
     user = User.find_by(email: params[:email])
     
+    
     if user == nil 
       flash[:error] = "Sorry your email does not belong to an existing user."
       return redirect_to '/login'
