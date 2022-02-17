@@ -14,7 +14,7 @@ RSpec.describe "Welcome Page" do
 
   it 'the create user button to the correct path' do
     click_on "Create User"
-    # binding.pry
+
     expect(current_path).to eq("/register")
   end
 
@@ -36,5 +36,33 @@ RSpec.describe "Welcome Page" do
 
     click_on "Home"
     expect(current_path).to eq("/")
+  end
+
+  it 'displays a link for current users to login' do
+    user = User.create(username: "jeffy", email: "jeffy@123.com", password: "rocks", password_confirmation: "rocks")
+
+    click_on "Login"
+    expect(current_path).to eq("/login")
+
+    fill_in 'username', with: user.username
+    fill_in 'password', with: user.password
+    click_on 'Log In'
+
+    expect(current_path).to eq("/users/#{user.id}")
+
+  end
+  describe 'Sad Paths' do
+    it 'displays a link for current users to login' do
+      user = User.create(username: "jeffy", email: "jeffy@123.com", password: "rocks", password_confirmation: "rocks")
+
+      click_on "Login"
+      expect(current_path).to eq("/login")
+
+      fill_in 'username', with: user.username
+      fill_in 'password', with: "marbles"
+      click_on 'Log In'
+      expect(page).to have_content("Password is not correct")
+      expect(current_path).to eq("/login")
+    end
   end
 end
