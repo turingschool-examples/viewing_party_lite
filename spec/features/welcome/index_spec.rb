@@ -37,4 +37,19 @@ RSpec.describe "Welcome Page" do
     click_on "Home"
     expect(current_path).to eq("/")
   end
+
+  it 'displays a link for current users to login' do
+    user = User.create(username: "jeffy", email: "jeffy@123.com", password: "rocks", password_confirmation: "rocks")
+
+    visit "/"
+    click_on "Login"
+    expect(current_path).to eq("/login")
+
+    fill_in 'user_username', with: user.username
+    fill_in 'user_password', with: user.password
+    click_on 'Log In'
+
+    expect(current_path).to eq("/users/#{user.id}")
+
+  end 
 end
