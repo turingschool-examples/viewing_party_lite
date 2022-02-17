@@ -13,9 +13,9 @@ RSpec.describe Party, type: :model do
 
    describe 'instance methods' do
      it 'should return users that are in a hash key' do
-      user_1 = User.create!(name: "Jim", email: "Jim@email.com")
-      user_2 = User.create!(name: "Jeff", email: "Jeff@email.com")
-      user_3 = User.create!(name: "Jill", email: "Jill@email.com")
+      user_1 = User.create!(name: "Jim", email: "Jim@email.com", password: 'test', password_confirmation: 'test')
+      user_2 = User.create!(name: "Jeff", email: "Jeff@email.com", password: 'test', password_confirmation: 'test')
+      user_3 = User.create!(name: "Jill", email: "Jill@email.com", password: 'test', password_confirmation: 'test')
       party_1 = user_1.parties.create!(duration: 180, day: "December 12, 2021", start_time: "7:00 pm", movie_id: 1)
       params_hash = {
         "Jeff@email.com" => 1,

@@ -8,6 +8,10 @@ class User < ApplicationRecord
   validates :name,
             :presence => {message: "can't be blank"}
 
+  validates_presence_of :password_digest
+
+  has_secure_password
+
 
   def self.except_self(user)
     where.not(id: user.id)

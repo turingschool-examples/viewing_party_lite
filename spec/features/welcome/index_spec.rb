@@ -23,15 +23,17 @@ RSpec.describe 'Welcome Index Page' do
 
       fill_in :name, with: 'Wade'
       fill_in :email, with: 'Wade@email.com'
+      fill_in :password, with: 'test'
+      fill_in :password_confirmation, with: 'test'
       click_button 'Submit'
 
       expect(page).to have_content("Wade")
     end
 
     it 'lists the existing users which link to their dashboard' do
-      user_1 = User.create!(name: "David", email: "david@email.com")
-      user_2 = User.create!(name: "Wade", email: "wade@email.com")
-      user_3 = User.create!(name: "Robin", email: "robin@email.com")
+      user_1 = User.create!(name: "David", email: "david@email.com", password: 'test', password_confirmation: 'test')
+      user_2 = User.create!(name: "Wade", email: "wade@email.com", password: 'test', password_confirmation: 'test')
+      user_3 = User.create!(name: "Robin", email: "robin@email.com", password: 'test', password_confirmation: 'test')
 
       visit root_path
 

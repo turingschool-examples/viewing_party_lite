@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 04 Feb 2022 16:01:55 GMT
+      - Wed, 16 Feb 2022 18:18:33 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -38,27 +38,25 @@ http_interactions:
       Cache-Control:
       - public, max-age=28800
       X-Memc:
-      - MISS, STORE
+      - HIT
       X-Memc-Key:
       - b8ceef4dd81d362973c4004beb6d29a7067370a0
       X-Memc-Age:
-      - '0'
+      - '11637'
       X-Memc-Expires:
-      - '16206'
-      Last-Modified:
-      - '2022-01-28 17:45:45 +0000'
+      - '4680'
+      Etag:
+      - W/"1884fef74845c985b616516b18f50b9b"
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Hit from cloudfront
+      - Miss from cloudfront
       Via:
-      - 1.1 824a5d9ed02451bcb68b15ae5991dce0.cloudfront.net (CloudFront)
+      - 1.1 60a33b3ee10b817d4c26e943f253cb0c.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN50-C2
+      - ORD53-C2
       X-Amz-Cf-Id:
-      - zY5_OA1QrkXgEHTD1anhgzszaWqCn6F0sfdqjnsSuKgr4rNyoeXjag==
-      Age:
-      - '3376'
+      - qHW0P3fWaY4MfZw17uIotBl3RC8yf1aj4vhAsOH-zmPZ7U5UAisMTQ==
     body:
       encoding: ASCII-8BIT
       string: '{"id":100,"page":1,"results":[{"author":"BradFlix","author_details":{"name":"","username":"BradFlix","avatar_path":null,"rating":null},"content":"I
@@ -70,5 +68,5 @@ http_interactions:
         one of my favorite movies of all time. Watched again recently and realised
         how well written, brilliantly shot, beautifully cast and cleverly produced
         this movie actually is!","created_at":"2017-01-09T12:24:47.234Z","id":"5873810f9251410e71009a68","updated_at":"2021-06-23T15:57:52.869Z","url":"https://www.themoviedb.org/review/5873810f9251410e71009a68"}],"total_pages":1,"total_results":3}'
-  recorded_at: Fri, 04 Feb 2022 16:58:11 GMT
+  recorded_at: Wed, 16 Feb 2022 18:18:33 GMT
 recorded_with: VCR 6.0.0

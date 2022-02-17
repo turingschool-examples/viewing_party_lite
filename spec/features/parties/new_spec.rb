@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Party New Page' do
   describe 'view' do
     before(:each) do
-      @user_1 = User.create!(name: "David", email: "david@email.com")
+      @user_1 = User.create!(name: "David", email: "david@email.com", password: 'test', password_confirmation: 'test')
     end
 
     it 'includes all information about the viewing party', :vcr do
