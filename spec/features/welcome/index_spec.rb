@@ -83,6 +83,13 @@ RSpec.describe "Welcome Page" do
     expect(page).to have_button("Create User")
     expect(page).to_not have_content("Log Out")
   end
+
+  it "does not allow a visitor to see a list of current users on the site" do
+    user = User.create(username: "jeffy", email: "jeffy@123.com", password: "rocks", password_confirmation: "rocks")
+
+    expect(page).to_not have_content("jeffy@123.com")
+
+  end
   describe 'Sad Paths' do
     it 'displays a link for current users to login' do
       user = User.create(username: "jeffy", email: "jeffy@123.com", password: "rocks", password_confirmation: "rocks")
