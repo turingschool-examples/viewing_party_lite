@@ -1,5 +1,8 @@
 class ViewingPartiesController < ApplicationController
   def new
+    if !current_user
+      redirect_to "/movies/#{params[:movie_id]}", notice: 'You must be logged in to do this'
+    end
     @facade = MovieFacade.new
     @users = User.where.not(id: params[:user_id])
     @movie = @facade.get_movie_by_id(params[:movie_id])

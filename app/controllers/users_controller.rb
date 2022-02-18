@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :require_user, :except => :new
   def new
   end
 

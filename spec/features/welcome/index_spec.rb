@@ -83,6 +83,34 @@ RSpec.describe "Welcome Page" do
     expect(page).to have_button("Create User")
     expect(page).to_not have_content("Log Out")
   end
+
+  it "does not allow a visitor to see a list of current users on the site" do
+    User.create(username: "jeffy", email: "jeffy@123.com", password: "rocks", password_confirmation: "rocks")
+
+    expect(page).to_not have_content("jeffy@123.com")
+
+  end
+
+  it "doesnt have links to each users dashboard after the user has logged in" do
+    User.create(username: "jeffy", email: "jeffy@123.com", password: "rocks", password_confirmation: "rocks")
+    User.create!(username: 'john', email: 'john@gmail.com', password: 'supersecret')
+    User.create!(username: 'sarah', email: 'sarah@gmail.com', password: 'supersecret123')
+    click_on "Login"
+    fill_in 'username', with: 'sarah'
+    fill_in 'password', with: 'supersecret123'
+    click_on 'Log In'
+
+    visit "/"
+    expect(page).to have_content("jeffy@123.com")
+    expect(page).to_not have_link("jeffy@123.com")
+
+  end
+
+  it "doesnt allow a visitor to access the dashboard" do
+    visit "/dashboard"
+
+    expect(page).to have_content("You must be logged in")
+  end
   describe 'Sad Paths' do
     it 'displays a link for current users to login' do
       user = User.create(username: "jeffy", email: "jeffy@123.com", password: "rocks", password_confirmation: "rocks")
