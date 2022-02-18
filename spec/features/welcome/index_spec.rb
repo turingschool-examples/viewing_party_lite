@@ -105,6 +105,12 @@ RSpec.describe "Welcome Page" do
     expect(page).to_not have_link("jeffy@123.com")
 
   end
+
+  it "doesnt allow a visitor to access the dashboard" do
+    visit "/dashboard"
+
+    expect(page).to have_content("You must be logged in")
+  end
   describe 'Sad Paths' do
     it 'displays a link for current users to login' do
       user = User.create(username: "jeffy", email: "jeffy@123.com", password: "rocks", password_confirmation: "rocks")
