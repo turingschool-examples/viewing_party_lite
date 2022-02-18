@@ -3,13 +3,19 @@ require 'rails_helper'
 RSpec.describe "Viewing Party new page" do
   before(:each) do
     @user = User.create!(username: 'john', email: 'john@gmail.com', password: 'supersecret')
+    visit '/login'
+    fill_in :username, with: 'john'
+    fill_in :password, with: 'supersecret'
+    click_on  'Log In'
+
     @user_2 = User.create!(username: 'jeff', email: 'jeff@gmail.com', password: 'supersecret')
     @user_3 = User.create!(username: 'ken', email: 'ken@gmail.com', password: 'supersecret')
+
     json_movie_11 = File.read('./spec/fixtures/movie_11.json')
     stub_request(:get, "https://api.themoviedb.org/3/movie/11?api_key=#{ENV['movie_api_key']}&language=en-US").
          to_return(status: 200, body: json_movie_11, headers: {})
 
-   visit "/users/#{@user.id}/movies/11/viewing_parties/new"
+   visit "/movies/11/viewing_parties/new"
   end
 
   it 'displays the movie title' do
@@ -38,9 +44,9 @@ RSpec.describe "Viewing Party new page" do
     fill_in :start_date, with:'2023/01/01'
     fill_in :start_time, with:'22:00:00'
     check "usernames[#{@user_2.id}]"
-    click_on "Create Party"
 
-    expect(current_path).to eq("/users/#{@user.id}")
+    click_on "Create Party"
+    expect(current_path).to eq("/dashboard")
     expect(page).to have_content("Hosted By: john")
     expect(page).to have_link("Star Wars")
     expect(page).to have_content("1 January 2023,10:00 pm")
@@ -50,17 +56,22 @@ RSpec.describe "Viewing Party new page" do
   end
 
   it 'displays the party on another users dashboard' do
+
     fill_in(:duration, with: 200)
     fill_in :start_date, with:'2023/01/01'
     fill_in :start_time, with:'22:00:00'
     check "usernames[#{@user_2.id}]"
     click_on "Create Party"
 
-    visit "/users/#{@user_2.id}"
+    visit "/dashboard"
+    visit '/login'
+    fill_in :username, with: 'jeff'
+    fill_in :password, with: 'supersecret'
+    click_on  'Log In'
     expect(page).to have_content("Hosted By: john")
     expect(page).to have_link("Star Wars")
     expect(page).to have_content("1 January 2023,10:00 pm")
     expect(page).to have_content("Invited")
     expect(page).to have_content('Guest: jeff')
-  end 
+  end
 end

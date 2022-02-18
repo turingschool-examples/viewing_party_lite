@@ -4,6 +4,10 @@ RSpec.describe "User Show/Dashboard Page" do
 
   before(:each) do
     @user_1 = User.create!(username: 'john', email: 'john@gmail.com', password: 'supersecret')
+    visit '/login'
+    fill_in :username, with: 'john'
+    fill_in :password, with: 'supersecret'
+    click_on  'Log In'
     @user_2 = User.create!(username: 'sarah', email: 'sarah@gmail.com', password: 'supersecret123')
 
     @party_1 = ViewingParty.create!(movie_id: 2, duration: 130, start_date: '2022-02-01 21:26:47', user_id: @user_1.id)
@@ -32,8 +36,7 @@ RSpec.describe "User Show/Dashboard Page" do
          to_return(status: 200, body: json_reviews_movie_2, headers: {})
     stub_request(:get, "https://api.themoviedb.org/3/movie/11/reviews?api_key=#{ENV['movie_api_key']}&language=en-US&page=1").
          to_return(status: 200, body: json_reviews_movie_11, headers: {})
-
-    visit "/users/#{@user_1.id}"
+    visit "/dashboard"
   end
 
   it 'displays username of user' do
@@ -47,7 +50,7 @@ RSpec.describe "User Show/Dashboard Page" do
   it 'the discover movies button takes you to correct path' do
     click_on "Discover Movies"
 
-    expect(current_path).to eq("/users/#{@user_1.id}/discover")
+    expect(current_path).to eq("/discover")
   end
 
   it 'lists viewing parties' do
@@ -75,14 +78,14 @@ RSpec.describe "User Show/Dashboard Page" do
   it 'viewing party links take you to correct path - #1' do
     within "#party-#{@party_1.id}" do
       click_on("Ariel")
-      expect(current_path).to eq("/users/#{@user_1.id}/movies/#{@party_1.movie_id}")
+      expect(current_path).to eq("/movies/#{@party_1.movie_id}")
     end
   end
 
   it 'viewing party links take you to correct path - #2' do
     within "#party-#{@party_2.id}" do
       click_on("Star Wars")
-      expect(current_path).to eq("/users/#{@user_1.id}/movies/#{@party_2.movie_id}")
+      expect(current_path).to eq("/movies/#{@party_2.movie_id}")
     end
   end
 

@@ -3,6 +3,11 @@ require 'rails_helper'
 RSpec.describe "Discover movies index page" do
   before :each do
     @user = User.create(username: "Phil", email: "phil@yahoo.com", password: "5678")
+    visit '/login'
+    fill_in :username, with: 'Phil'
+    fill_in :password, with: '5678'
+    click_on  'Log In'
+
 
     json_top_rated_page_1 = File.read('./spec/fixtures/top_rated_page_1.json')
     json_top_rated_page_2 = File.read('./spec/fixtures/top_rated_page_2.json')
@@ -17,7 +22,7 @@ RSpec.describe "Discover movies index page" do
          to_return(status: 200, body: json_movie_search_john_wick, headers: {})
 
 
-    visit "/users/#{@user.id}/discover"
+    visit "/discover"
   end
 
   it "displays a button to obtain the top rated movies" do
@@ -28,7 +33,7 @@ RSpec.describe "Discover movies index page" do
     # save_and_open_page
     click_on "Top Rated Movies"
 
-    expect(current_path).to eq("/users/#{@user.id}/movies")
+    expect(current_path).to eq("/movies")
   end
 
   it "displays a text field and button to search for movies" do
@@ -41,6 +46,6 @@ RSpec.describe "Discover movies index page" do
     fill_in :q, with: "John Wick"
     click_on "Find Movies"
 
-    expect(current_path).to eq("/users/#{@user.id}/movies")
+    expect(current_path).to eq("/movies")
   end
 end

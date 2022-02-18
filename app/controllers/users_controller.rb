@@ -3,9 +3,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user
     @facade = MovieFacade.new
-
     @invited_parties = @user.viewing_parties
     @hosted_parties = ViewingParty.where(user_id: @user.id)
   end
@@ -14,7 +13,8 @@ class UsersController < ApplicationController
     if params[:user][:password] == params[:user][:password_confirmation]
       user = User.new(user_params)
       if user.save
-        redirect_to "/users/#{user.id}"
+        session[:user_id] = user.id
+        redirect_to "/dashboard"
       else
         user.errors.messages.each do |field, error|
           flash[field] = "#{field} #{error.first}"
@@ -25,15 +25,6 @@ class UsersController < ApplicationController
       redirect_to "/register", notice: "Passwords do not match"
     end
   end
-  #   if user.save
-  #     redirect_to "/users/#{user.id}"
-  #   else
-  #     user.errors.messages.each do |field, error|
-  #       flash[field] = "#{field} #{error.first}"
-  #     end
-  #     redirect_to "/register"
-  #   end
-  # end
 
   private
 

@@ -16,12 +16,17 @@ RSpec.describe "Movie Show/Details Page" do
 
 
     @user = User.create!(username: 'sara', email: 'sara@gmail.com', password: 'helloworld123!!')
+    visit '/login'
+    fill_in :username, with: 'sara'
+    fill_in :password, with: 'helloworld123!!'
+    click_on  'Log In'
+
     @facade = MovieFacade.new
     @movie = @facade.get_movie_by_id(11)
     @reviews = @facade.reviews(11)
     @cast_members = @facade.movie_cast_members(11)
 
-    visit ("/users/#{@user.id}/movies/#{@movie.movie_id}")
+    visit ("/movies/#{@movie.movie_id}")
   end
 
   it 'displays a button to create a viewing party' do
@@ -31,7 +36,7 @@ RSpec.describe "Movie Show/Details Page" do
   it 'the button to create a viewing party takes you to correct path' do
     click_on("Create Viewing Party For #{@movie.title}")
 
-    expect(current_path).to eq("/users/#{@user.id}/movies/#{@movie.movie_id}/viewing_parties/new")
+    expect(current_path).to eq("/movies/#{@movie.movie_id}/viewing_parties/new")
   end
 
   it 'displays a button to go to the discover page' do
@@ -41,7 +46,7 @@ RSpec.describe "Movie Show/Details Page" do
   it 'the button to go to discover page takes you to correct path' do
     click_on("Discover Page")
 
-    expect(current_path).to eq("/users/#{@user.id}/discover")
+    expect(current_path).to eq("/discover")
   end
 
 
