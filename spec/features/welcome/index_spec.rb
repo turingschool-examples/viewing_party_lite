@@ -18,7 +18,7 @@ RSpec.describe "Welcome Page" do
     expect(current_path).to eq("/register")
   end
 
-  #removed this test as we are incorporating logins 
+  #removed this test as we are incorporating logins
 
   # it 'lists existing users with a link for their dashboard' do
   #   carol = User.create!(username: "Carol", email: "carol@gmail.com", password: "1234")
@@ -52,6 +52,31 @@ RSpec.describe "Welcome Page" do
 
     expect(current_path).to eq("/dashboard")
 
+  end
+
+  it 'no longer displays a login/register button after logging in' do
+    user = User.create(username: "jeffy", email: "jeffy@123.com", password: "rocks", password_confirmation: "rocks")
+    click_on "Login"
+    fill_in 'username', with: user.username
+    fill_in 'password', with: user.password
+    click_on 'Log In'
+
+    expect(page).to have_link("Log Out")
+    expect(page).to_not have_content("Login")
+    expect(page).to_not have_content("Create User")
+  end
+
+  it "removes the log out link after clicking and login/register reappears" do
+    user = User.create(username: "jeffy", email: "jeffy@123.com", password: "rocks", password_confirmation: "rocks")
+    click_on "Login"
+    fill_in 'username', with: user.username
+    fill_in 'password', with: user.password
+    click_on 'Log In'
+    click_on 'Log Out'
+
+    expect(page).to have_content("Login")
+    expect(page).to have_content("Create User")
+    expect(page).to_not have_content("Log Out")
   end
   describe 'Sad Paths' do
     it 'displays a link for current users to login' do
