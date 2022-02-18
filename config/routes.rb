@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get "/", to: 'welcome#index'
   get '/login', to: 'welcome#login_form'
   post '/login', to: 'welcome#login'
+  delete '/logout', to: 'welcome#session_delete'
 
   get '/register', to: 'users#new'
   get '/dashboard', to: 'users#show'

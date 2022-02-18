@@ -175,20 +175,25 @@
         "lines": [
           1,
           1,
-          7,
+          12,
           null,
           null,
           1,
           null,
           null,
           1,
-          31,
-          31,
-          30,
-          30,
+          33,
+          33,
+          32,
+          32,
           null,
           1,
           null,
+          null,
+          null,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -196,6 +201,12 @@
       "/Users/thefluffypanda/turing/3mod/1project/viewing_party_lite/app/controllers/application_controller.rb": {
         "lines": [
           1,
+          null,
+          1,
+          null,
+          1,
+          70,
+          null,
           null
         ]
       },
@@ -206,12 +217,10 @@
           null,
           null,
           1,
-          40,
-          40,
-          null,
-          40,
-          40,
-          null,
+          42,
+          42,
+          42,
+          42,
           null,
           null,
           1,
@@ -228,6 +237,7 @@
           null,
           null,
           1,
+          null,
           null,
           null,
           1,
@@ -285,7 +295,6 @@
           null,
           null,
           1,
-          null,
           2,
           2,
           2,
@@ -309,6 +318,6 @@
         ]
       }
     },
-    "timestamp": 1645154062
+    "timestamp": 1645159741
   }
 }

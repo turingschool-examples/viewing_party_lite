@@ -61,6 +61,8 @@ RSpec.describe "Welcome Page" do
     fill_in 'password', with: user.password
     click_on 'Log In'
 
+    visit "/"
+
     expect(page).to have_link("Log Out")
     expect(page).to_not have_content("Login")
     expect(page).to_not have_content("Create User")
@@ -72,10 +74,13 @@ RSpec.describe "Welcome Page" do
     fill_in 'username', with: user.username
     fill_in 'password', with: user.password
     click_on 'Log In'
+
+    visit "/"
+
     click_on 'Log Out'
 
     expect(page).to have_content("Login")
-    expect(page).to have_content("Create User")
+    expect(page).to have_button("Create User")
     expect(page).to_not have_content("Log Out")
   end
   describe 'Sad Paths' do

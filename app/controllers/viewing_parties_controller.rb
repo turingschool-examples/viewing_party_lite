@@ -6,7 +6,7 @@ class ViewingPartiesController < ApplicationController
   end
 
   def create
-    user = User.find(session[:user_id])
+    user = current_user
     datetime = "#{params[:start_date]} #{params[:start_time]}:00"
     viewing_party = ViewingParty.create(
       user_id: user.id,

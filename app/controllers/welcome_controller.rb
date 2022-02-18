@@ -15,4 +15,9 @@ class WelcomeController < ApplicationController
       redirect_to "/login", notice: "Password is not correct"
     end
   end
+
+  def session_delete
+    session.destroy
+    redirect_to "/"
+  end
 end

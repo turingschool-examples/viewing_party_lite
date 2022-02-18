@@ -3,12 +3,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(session[:user_id])
+    @user = current_user
     @facade = MovieFacade.new
-
     @invited_parties = @user.viewing_parties
     @hosted_parties = ViewingParty.where(user_id: @user.id)
-    # binding.pry
   end
 
   def create
@@ -27,6 +25,7 @@ class UsersController < ApplicationController
       redirect_to "/register", notice: "Passwords do not match"
     end
   end
+
   private
 
   def user_params
