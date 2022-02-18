@@ -10,6 +10,6 @@
   <p>You must be logged in to the information below</p>
 <% else %>
   <% @users.each do |user| %>
-    <h3><%= link_to "#{user.email}'s Dashboard", "/dashboard" %></h3>
+    <h3><%= user.email %></h3>
   <% end %>
 <% end %>
