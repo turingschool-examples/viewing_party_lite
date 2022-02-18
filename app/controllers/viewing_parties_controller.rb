@@ -6,9 +6,10 @@ class ViewingPartiesController < ApplicationController
   end
 
   def create
+    user = User.find(session[:user_id])
     datetime = "#{params[:start_date]} #{params[:start_time]}:00"
     viewing_party = ViewingParty.create(
-      user_id: params[:user_id],
+      user_id: user.id,
       movie_id: params[:movie_id],
       duration: params[:duration],
       start_date: datetime,
@@ -16,12 +17,12 @@ class ViewingPartiesController < ApplicationController
 
     party_goers = params[:usernames]
     party_goers ||= []
-    
+
     party_goers.each do |user_id, selected|
       if selected == "1"
         PartyUser.create(viewing_party_id: viewing_party.id, user_id: user_id )
       end
     end
-    redirect_to "/users/#{params[:user_id]}"
+    redirect_to "/dashboard"
   end
 end

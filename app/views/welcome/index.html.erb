@@ -3,5 +3,5 @@
 <%= link_to "Login", "/login"%>
 
 <% @users.each do |user| %>
-  <h3><%= link_to "#{user.email}'s Dashboard", "/users/#{user.id}" %></h3>
+  <h3><%= link_to "#{user.email}'s Dashboard", "/dashboard" %></h3>
 <% end %>

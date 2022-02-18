@@ -18,17 +18,19 @@ RSpec.describe "Welcome Page" do
     expect(current_path).to eq("/register")
   end
 
-  it 'lists existing users with a link for their dashboard' do
-    carol = User.create!(username: "Carol", email: "carol@gmail.com", password: "1234")
-    timmy = User.create!(username: "Timmy", email: "timmy@gmail.com", password: "5678")
-    visit "/"
-    expect(page).to have_link("carol@gmail.com's Dashboard")
-    expect(page).to have_link("timmy@gmail.com's Dashboard")
+  #removed this test as we are incorporating logins 
 
-    click_on "carol@gmail.com's Dashboard"
-
-    expect(current_path).to eq("/users/#{carol.id}")
-  end
+  # it 'lists existing users with a link for their dashboard' do
+  #   carol = User.create!(username: "Carol", email: "carol@gmail.com", password: "1234")
+  #   timmy = User.create!(username: "Timmy", email: "timmy@gmail.com", password: "5678")
+  #   visit "/"
+  #   expect(page).to have_link("carol@gmail.com's Dashboard")
+  #   expect(page).to have_link("timmy@gmail.com's Dashboard")
+  #
+  #   click_on "carol@gmail.com's Dashboard"
+  #
+  #   expect(current_path).to eq("/dashboard")
+  # end
 
   it 'displays a link at the top to return users back to the landing page' do
     expect(page).to have_link("Home")
@@ -48,7 +50,7 @@ RSpec.describe "Welcome Page" do
     fill_in 'password', with: user.password
     click_on 'Log In'
 
-    expect(current_path).to eq("/users/#{user.id}")
+    expect(current_path).to eq("/dashboard")
 
   end
   describe 'Sad Paths' do
