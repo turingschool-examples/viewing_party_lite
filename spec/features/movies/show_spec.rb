@@ -63,4 +63,13 @@ RSpec.describe "Movie Show/Details Page" do
     expect(page).to have_content(@reviews.first.content[0..20])
   end
 
+  it "upon clicking create a viewing party, a visitor gets denied and is kept on the show page" do
+    visit "/"
+    click_on "Log Out"
+
+    visit "/movies/#{@movie.movie_id}"
+    click_on("Create Viewing Party For #{@movie.title}")
+    expect(page).to have_content("You must be logged in to do this")
+    expect(current_path).to eq("/movies/#{@movie.movie_id}")
+  end
 end
