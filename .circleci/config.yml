@@ -26,7 +26,7 @@ jobs:
   test:  # our next job, called "test"
     # we run "parallel job containers" to enable speeding up our tests;
     # this splits our tests across multiple containers.
-    parallelism: 1
+    parallelism: 3
     # here we set TWO docker images.
     docker:
       - image: cimg/ruby:2.7.2-node # this is our primary docker image, where step commands run.
