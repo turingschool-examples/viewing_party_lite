@@ -21,5 +21,14 @@ ActiveRecord::Schema.define(version: 2022_03_21_224211) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+  
+  create_table "viewing_parties", force: :cascade do |t|
+    t.integer "movie_id"
+    t.integer "duration"
+    t.date "date"
+    t.time "start_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
