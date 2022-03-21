@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2022_03_21_222033) do
     t.date "date"
     t.time "start"
     t.integer "movie_id"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
