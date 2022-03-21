@@ -80,6 +80,10 @@ GEM
       paint (>= 0.9, < 3.0)
     diff-lcs (1.5.0)
     docile (1.4.0)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.10.0)
     every_day_irb (2.1.1)
       cd (~> 1.0)
@@ -292,6 +296,7 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   capybara
   coffee-rails (~> 4.2)
+  dotenv-rails
   irbtools
   jbuilder (~> 2.5)
   launchy
