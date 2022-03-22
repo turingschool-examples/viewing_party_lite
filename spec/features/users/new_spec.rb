@@ -6,8 +6,8 @@ RSpec.describe 'The new user view/form' do
  
     fill_in 'Name', with: 'Plain Name'
     fill_in 'Email', with: 'User@gmail.com'
-    fill_in 'Password', with: '1234'
-    fill_in 'Password confirmation', with: '1234'
+    # fill_in 'Password', with: '1234'
+    # fill_in 'Password confirmation', with: '1234'
 
     click_button('Register')
 
