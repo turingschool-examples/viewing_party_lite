@@ -1,0 +1,10 @@
+<h1>Viewing Party</h1>
+
+<%= button_to "Create a New User", '/register' %>
+
+<div class="existing_users">
+  <p>Existing Users:</p>
+  <% @users.each do |user| %>
+  <%= link_to "#{user.email}'s Dashboard", "/users/#{user.id}" %>
+  <% end %>
+</div>
