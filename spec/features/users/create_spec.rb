@@ -4,7 +4,7 @@ RSpec.describe 'create a new user', type: :feature do
   it 'has a registration page' do
     visit "/register"
     expect(current_path).to eq("/register")
-    expect(page).to have_content("New User Registration")
+    expect(page).to have_content("Sign Up for your FREE Viewing Party PRO Account TODAY!")
   end
 
   describe 'happy path:' do
@@ -15,7 +15,7 @@ RSpec.describe 'create a new user', type: :feature do
       click_button("Register")
       user = User.last
       expect(current_path).to eq("/users/#{user.id}")
-      expect(user.name).to eq("Bliff Bliffert")
+      expect(user.name).to eq("Biff Bliffert")
       expect(user.email).to eq("biff@bliffertsolutions.biz")
     end
   end
@@ -28,7 +28,7 @@ RSpec.describe 'create a new user', type: :feature do
       fill_in("Email", with: "jill@gmail.com")
       click_button("Register")
       expect(current_path).to eq("/register")
-      expect(page).to have_content("Error: ")
+      expect(page).to have_content("ERROR: Email has already been taken")
     end
   end
 end
