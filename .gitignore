@@ -29,3 +29,5 @@
 /config/master.key
 
 echo coverage >> .gitignore
+# Ignore application configuration
+/config/application.yml

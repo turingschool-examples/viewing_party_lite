@@ -3,7 +3,7 @@
 <%= button_to "Create a New User", "/register", method: :get%>
 
 <h2>Exisiting Users:</h2>
-<% @users.each do |user| %> 
-    <%= link_to "#{user.email}'s Dashboard", to: "/users/#{user.id}", method: :get %>
+<% @users.each do |user| %>
+    <%= link_to "#{user.email}'s Dashboard", "/users/#{user.id}" %>
     <br>
 <% end %>
