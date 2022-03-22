@@ -28,3 +28,4 @@
 
 # Ignore SimpleCov
 /coverage
+echo coverage >> .gitignore
