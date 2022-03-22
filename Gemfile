@@ -15,7 +15,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
-
+gem 'shoulda-matchers'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -49,13 +49,13 @@ group :development do
   gem 'rubocop-rails'
 end
 
-group :test do 
+group :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'
   gem 'simplecov'
   gem 'orderly'
-end 
+end
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
