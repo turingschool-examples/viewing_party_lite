@@ -39,6 +39,7 @@ group :development, :test do
   gem 'pry'
   gem 'irbtools'
   gem 'figaro'
+  gem 'shoulda-matchers'
 end
 
 group :development do
