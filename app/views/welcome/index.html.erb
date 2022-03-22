@@ -1,1 +1,9 @@
 <h1>Viewing Party Lite</h1>
+
+
+<button>New User</button>
+
+<h2>Existing Users:</h2>
+<% @users.each do |user| %>
+   <p><%= user.email %></p>
+<% end %>
