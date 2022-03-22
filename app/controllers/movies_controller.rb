@@ -8,6 +8,5 @@ class MoviesController < ApplicationController
     @top_rated = json[:results].map do |movie_data|
       Movie.new(movie_data)
     end
-    
   end
 end
