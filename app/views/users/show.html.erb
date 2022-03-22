@@ -1,0 +1,12 @@
+<section id="title">
+  <h1> <%= @user.name %>'s Dashboard </h1>
+</section>
+
+<section id="discover">
+  <p><%= button_to 'Discover Movies', "/users/#{@user.id}/discover", method: :get %><p>
+</section>
+
+<section id="parties">
+  <h3> My Viewing Parties </h3>
+
+</section>

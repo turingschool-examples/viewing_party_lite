@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: 'welcome#index'
 
   resources :users, only: [:show, :new]
+  get '/users/:id/discover', to: 'users#discover'
 end
