@@ -11,11 +11,12 @@ RSpec.describe 'Creating a new user:', type: :feature do
 
   it 'happy path' do
     visit '/register'
-    fill_in("Name", with: "Bliffert's Blankship")
+    fill_in("Name", with: "Bliffert Blankship")
     fill_in("Email", with: "Bliff@aol.com")
     click_button("Save")
 
     expect(current_path).to eq("/users/#{User.last.id}")
+    expect("#{User.last.name}").to eq("Bliffert Blankship")
   end
 
   it ' sad- does not create user if Name empty' do
@@ -27,7 +28,7 @@ RSpec.describe 'Creating a new user:', type: :feature do
     expect(page).to have_content("Error: Name can't be blank")
   end
 
-  it ' sad- does not create user if Name empty' do
+  it ' sad- does not create user if email empty' do
     visit '/register'
 
     fill_in("Name", with: "Bliffert's Blankship")
