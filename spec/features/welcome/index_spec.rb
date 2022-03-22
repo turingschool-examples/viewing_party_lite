@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'the landing page' do
   it 'shows the applications name' do
     visit '/'
-    expect(page).to have_content("Viewing Party Lite")
+    expect(page).to have_content('Viewing Party Lite')
   end
 
   it 'has a button to create a new user' do
@@ -14,10 +16,10 @@ RSpec.describe 'the landing page' do
   end
 
   it 'displays all current registered users' do
-    u1 = User.create!(name: "Mr 1", email: "Test1@test.com")
-    u2 = User.create!(name: "Mrs 2", email: "Test2@test.com")
-    u3 = User.create!(name: "Mrs 3", email: "Test3@test.com")
-    u4 = User.create!(name: "Mr 4", email: "Test4@test.com")
+    u1 = User.create!(name: 'Mr 1', email: 'Test1@test.com')
+    u2 = User.create!(name: 'Mrs 2', email: 'Test2@test.com')
+    u3 = User.create!(name: 'Mrs 3', email: 'Test3@test.com')
+    u4 = User.create!(name: 'Mr 4', email: 'Test4@test.com')
     visit '/'
     save_and_open_page
     within '.registered' do
@@ -30,8 +32,8 @@ RSpec.describe 'the landing page' do
 
   it 'has a link back to the landing page (itself)' do
     visit '/'
-    expect(page).to have_button("HOME")
-    click_button "HOME"
-    expect(current_path).to eq("/")
+    expect(page).to have_button('HOME')
+    click_button 'HOME'
+    expect(current_path).to eq('/')
   end
 end

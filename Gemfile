@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -19,10 +21,10 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
+gem 'bootstrap', '~>4.0.0'
 gem 'faraday'
 gem 'figaro'
-gem 'bootstrap', '~>4.0.0'
+gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -44,21 +46,20 @@ end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rubocop-rails'
+  gem 'web-console', '>= 3.3.0'
 end
 
-group :test do 
-  gem 'rspec-rails'
+group :test do
   gem 'capybara'
   gem 'launchy'
-  gem 'simplecov'
+  gem 'rspec-rails'
   gem 'shoulda-matchers'
-  gem 'webmock'
+  gem 'simplecov'
   gem 'vcr'
-end 
-
+  gem 'webmock'
+end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
