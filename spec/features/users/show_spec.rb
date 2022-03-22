@@ -8,4 +8,12 @@ RSpec.describe 'User Show Page' do
 
     expect(page).to have_content("#{user1.name}'s Dashboard")
   end
+
+  it "has a button of discovery" do
+    user1 = User.create(name: "Asil Rolyat", email: "asil.rolyat@yourmom.com")
+
+    visit "/users/#{user1.id}"
+
+    expect(page).to have_button "Discover Movies"
+  end
 end
