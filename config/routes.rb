@@ -4,6 +4,13 @@ Rails.application.routes.draw do
   get '/', to: "welcome#index"
   get '/register', to: 'users#new'
   post '/register', to: 'users#create'
+
+
+  resources :users, only: [:show, :create] do
+    resources :discover, only: [:index]
+  end
+
   get '/users/:id', to: 'users#show'
+
 
 end
