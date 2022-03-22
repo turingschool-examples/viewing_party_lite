@@ -7,17 +7,18 @@ RSpec.describe 'The landing page' do
     user_3 = User.create!(name: 'user_3', email: 'email3@gmail.com')
     visit root_path
 
-    within '.title' do 
+    within '#title' do 
       expect(page).to have_content('Welcome to Viewing Party')
     end 
 
-    within '.new-user' do 
+    within '#new-user' do 
       expect(page).to have_button 'Register' 
       click_button 'Register'
       expect(current_path).to eq(new_user_path)
     end 
 
-    within '.existing-users' do 
+    visit root_path
+    within '#users' do 
       expect(page).to have_link(user_1.name)
       click_link(user_1.name)
       expect(current_path).to eq(user_path(user_1.id))
