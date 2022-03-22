@@ -8,8 +8,7 @@ class UsersController < ApplicationController
     if user.save
       redirect_to "/users/#{user.id}"
     else
-      redirect_to '/register', notice: "Please kindly fill in all fields"
-      
+      redirect_to '/register', notice: "Please kindly fill in all fields with valid email"
     end
   end
 
