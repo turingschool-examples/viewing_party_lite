@@ -1,0 +1,11 @@
+<h1>Title: <%= @movie.title %> </h1>
+<h3> Genres: <%= @movie.genres.join(', ') %> </h3>
+<h3>Runtime: <%= @movie.duration%> </h3>
+<h3>Vote Average: <%= @movie.vote_average %></h3>
+<h3>Summary: <%= @movie.summary %></h3>
+
+<h3>Review Count: <%= @reviews.count %></h3>
+<h3>Reviews: <% @reviews.each do |review| %></h3>
+   <h4> Author: <%= review.author %> </h4>
+    <h4> Review: <%= review.content %></h4>
+    <% end %> 

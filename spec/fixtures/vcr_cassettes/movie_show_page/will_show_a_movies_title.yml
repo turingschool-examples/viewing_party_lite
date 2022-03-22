@@ -1,0 +1,143 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/235?api_key=movie_api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 22 Mar 2022 16:25:58 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - bd47d7090422719b97b5a9d44adfcc048b231b07
+      X-Memc-Age:
+      - '5349'
+      X-Memc-Expires:
+      - '10137'
+      Etag:
+      - W/"cc0ccc7be810b5a8db75c4f81f5c77a7"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 28d79637e27f11e3ab19a9515e273a5a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - BvnHIRr_zG7Fl-QNb90ZSXbJ_OVfXS01CO7sFDi7J9TevrrgJSTjXg==
+      Age:
+      - '2310'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/7sFjHJSPMjWS7OdeceTzz2ojKB7.jpg","belongs_to_collection":null,"budget":8000000,"genres":[{"id":80,"name":"Crime"},{"id":18,"name":"Drama"}],"homepage":"","id":235,"imdb_id":"tt0092005","original_language":"en","original_title":"Stand
+        by Me","overview":"Gordie, Chris, Teddy and Vern are four friends who decide
+        to hike to find the corpse of Ray Brower, a local teenager, who was hit by
+        a train while plucking blueberries in the wild.","popularity":22.439,"poster_path":"/vz0w9BSehcqjDcJOjRaCk7fgJe7.jpg","production_companies":[{"id":5,"logo_path":"/71BqEFAF4V3qjjMPCpLuyJFB9A.png","name":"Columbia
+        Pictures","origin_country":"US"},{"id":56485,"logo_path":"/t0M92JDUfcICcOB46NHxEOhK1FS.png","name":"Act
+        III Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1986-08-08","revenue":52287414,"runtime":89,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"For
+        some, it''s the last real taste of innocence, and the first real taste of
+        life.","title":"Stand by Me","video":false,"vote_average":7.9,"vote_count":4490}'
+  recorded_at: Tue, 22 Mar 2022 17:04:28 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/235/reviews?api_key=movie_api_key&language=en-US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 22 Mar 2022 16:25:50 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9e7902378af1c4f7f3b10bda98d4514c1fa90c90
+      X-Memc-Age:
+      - '4594'
+      X-Memc-Expires:
+      - '10008'
+      Etag:
+      - W/"ee526c9957181240c97ad3d7a5d4e095"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 e7ff4a714a3b1f464db9c76ee954a564.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - XJfaBmfbmkOvX_PbWeb2_JyhhsCmqnfxuzFxMtZObc8LmK-H5yuAsA==
+      Age:
+      - '2318'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":235,"page":1,"results":[{"author":"Joe","author_details":{"name":"Joe","username":"Joeisacoolguy","avatar_path":null,"rating":10.0},"content":"My
+        all-time favourite movie! Like Gordie, I was a shy, sensitive boy, who was
+        (and am) a writer, and I''ve been told by so many people I have a talent for
+        it. Also, I''ve had many friends like Chris, being tough on the outside, while
+        sweet on the inside, and I''ve known people like Vern, Teddy and Denny too
+        :) Beautiful music, acting and truth about growing up, as relevant today as
+        it was in the 80s/50s :) <3","created_at":"2017-07-27T10:17:01.599Z","id":"5979bd9d92514107d10118ed","updated_at":"2021-06-23T15:57:59.512Z","url":"https://www.themoviedb.org/review/5979bd9d92514107d10118ed"}],"total_pages":1,"total_results":1}'
+  recorded_at: Tue, 22 Mar 2022 17:04:28 GMT
+recorded_with: VCR 6.1.0
