@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root to:'welcome#index'
-  get '/register', to:'users#new'
+  post '/register', to:'users#new'
 
   resources :users, except: [:new] do
     resources :discover, only: [:index]
@@ -8,6 +8,4 @@ Rails.application.routes.draw do
       get '/viewing-party/new', to:'party#new'
     end
   end
-
-
 end
