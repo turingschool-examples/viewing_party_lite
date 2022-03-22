@@ -1,6 +1,10 @@
 
 <h1 align="center"> <%= @user.name %>'s Dashboard </h1>
 
-<div align="center" id="button">
+<div class="row" align="center" id="button">
       <%= button_to("Discover Movies", user_movies_path(@user), method: :get)%>      
+</div>
+
+<div class="row" align="center" id="viewing_parties">
+  <h2>Viewing Parties</h3>
 </div>
