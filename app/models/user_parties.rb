@@ -1,2 +1,0 @@
-class UserParties < ApplicationRecord
-end

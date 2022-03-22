@@ -1,6 +1,6 @@
-class CreateUserParties < ActiveRecord::Migration[5.2]
+class CreateUserParty < ActiveRecord::Migration[5.2]
   def change
-    create_table :user_parties do |t|
+    create_table :user_party do |t|
       t.references :user, foreign_key: true
       t.references :party, foreign_key: true
 
