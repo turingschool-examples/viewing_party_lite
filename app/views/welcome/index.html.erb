@@ -1,0 +1,31 @@
+<style>
+  .title {
+    text-align: center;
+  }
+  .new_user {
+    text-align: center;
+  }
+  .all_users {
+    text-align: center;
+  }
+  .existing_users {
+    font-weight: bold;
+  }
+</style>
+
+<div class="title">
+  <h1>Viewing Party Light</h1>
+</div>
+
+<div class="new_user">
+  <%= button_to 'Create a New User', register_path %>
+</div>
+
+<div class="all_users">
+  <div class="existing_users">
+    <p>Existing Users:</p>
+  </div>
+  <% @users.each do |user| %>
+    <%=link_to "#{user.email}'s Dashboard", user_path(user) %><br>
+  <% end %>
+</div>
