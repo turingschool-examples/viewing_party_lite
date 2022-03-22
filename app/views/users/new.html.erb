@@ -1,6 +1,6 @@
 <h1>Sign Up</h1>
 
-<%= form_with url: user_path, method: :post, local: true do |form| %>
+<%= form_with url: users_path, method: :post, local: true do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name, size: "30x10" %><br>
   <%= form.label :email %>
