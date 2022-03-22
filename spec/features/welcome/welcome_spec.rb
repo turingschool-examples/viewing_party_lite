@@ -22,4 +22,8 @@ RSpec.describe "Welcome Page" do
     expect(page).to have_link(@user2.email)    
     expect(page).to have_link(@user3.email)    
   end 
+
+  it "should have link to home page" do 
+    expect(page).to have_link("Home Page")    
+  end 
 end 
