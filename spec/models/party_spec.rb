@@ -14,6 +14,5 @@ RSpec.describe Party, type: :model do
   end
 
   describe 'methods below here' do
-
   end
 end
