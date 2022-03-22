@@ -100,6 +100,8 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.12.5-arm64-darwin)
       racc (~> 1.4)
+    nokogiri (1.12.5-x86_64-darwin)
+      racc (~> 1.4)
     parallel (1.21.0)
     parser (3.0.2.0)
       ast (~> 2.4.1)
@@ -223,6 +225,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-20
+  x86_64-darwin-20
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
@@ -244,7 +247,7 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 RUBY VERSION
-   ruby 2.7.2p137
+   ruby 2.7.4p191
 
 BUNDLED WITH
-   2.2.11
+   2.3.6
