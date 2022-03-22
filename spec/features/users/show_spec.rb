@@ -21,10 +21,10 @@ RSpec.describe 'User Dashboard Page' do
       expect(page).to have_content("#{@user1.name}'s Dashboard")
       expect(page).to_not have_content("#{@user2.name}'s Dashboard")
     end
-    xit 'has a button to Discover Movies' do 
+    it 'has a button to Discover Movies' do 
       expect(page).to have_button("Discover Movies")
       click_button("Discover Movies")
-      expect(current_path).to eq()
+      expect(current_path).to eq(user_movies_path(@user1))
     end
     xit 'has a section that lists viewing parties' do 
       expect(page).to have_content
