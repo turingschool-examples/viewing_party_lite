@@ -44,14 +44,16 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rubocop-rails'
+  gem 'launchy'
+  gem 'shoulda-matchers', '~> 3.1'
 end
 
-group :test do 
+group :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'
   gem 'simplecov'
-end 
+end
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
