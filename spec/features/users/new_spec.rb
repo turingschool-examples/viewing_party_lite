@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe 'The new user view/form' do 
   it 'has a form a user can fill out to register' do
     visit register_path
-
-    fill_in 'user_email', with: 'User@gmail.com'
-    fill_in 'user_name', with: 'Plain Name'
-    fill_in 'password', with: '1234'
-    fill_in 'password', with: '1234'
+ 
+    fill_in 'Name', with: 'Plain Name'
+    fill_in 'Email', with: 'User@gmail.com'
+    fill_in 'Password', with: '1234'
+    fill_in 'Password confirmation', with: '1234'
 
     click_button('Register')
 
