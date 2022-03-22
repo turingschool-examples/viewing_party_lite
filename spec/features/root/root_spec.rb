@@ -18,7 +18,7 @@ RSpec.describe 'The landing page' do
 
     visit root_path
     within '#users' do
-      expect(page).to have_link(user_1.name)
+      expect(page).to have_link(user.name)
       click_link(user.name)
       expect(current_path).to eq(user_path(user.id))
     end
