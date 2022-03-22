@@ -3,3 +3,9 @@
 <h3><%= @user.name %>'s Dashboard</h3>
 
 <button>Discover Movies</button>
+
+<h3>Viewing Parties</h3>
+<% @user.parties.each do |party|  %>
+  <%= party.date %><br>
+  <%= party.start_time %>
+<% end %>
