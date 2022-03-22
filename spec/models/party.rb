@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Party do
+RSpec.describe Party , type: :model do
   describe 'relationships' do
     it { should have_many(:user_parties)}
     it { should have_many(:users).through(:user_parties)}
@@ -11,3 +11,4 @@ describe Party do
     it { should validate_presence_of(:time)}
     it { should validate_presence_of(:length)}
   end
+end
