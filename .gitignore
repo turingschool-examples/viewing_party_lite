@@ -13,10 +13,12 @@
 !/log/.keep
 !/tmp/.keep
 
+# Ignore SimpleCov
+/coverage
 # Ignore uploaded files in development
 /storage/*
-!/storage/.keep
 
+!/storage/.keep
 /node_modules
 /yarn-error.log
 
