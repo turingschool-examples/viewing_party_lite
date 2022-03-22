@@ -2,7 +2,7 @@
 
 <h3><%= @user.name %>'s Dashboard</h3>
 
-<button>Discover Movies</button>
+<%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %>
 
 <h3>Viewing Parties</h3>
 <% @user.parties.each do |party|  %>

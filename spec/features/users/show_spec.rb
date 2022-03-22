@@ -27,4 +27,13 @@ RSpec.describe 'User Show Page' do
     expect(page).to have_content("Viewing Parties")
     expect(page).to have_content("#{party1.date}")
   end
+
+  it "has a button of discovery" do
+    user1 = User.create(name: "Asil Rolyat", email: "asil.rolyat@yourmom.com")
+
+    visit "/users/#{user1.id}"
+
+    click_button "Discover Movies"
+    expect(current_path).to eq("/users/#{user1.id}/discover")
+  end
 end
