@@ -2,11 +2,10 @@
 
 <%= button_to "Create New User", '/users/new', method: :get %>
 
-<% if @users %>
+
   <div class="registered">
     <% @users.each do |user| %>
       <p><%= user.name %></p>
       <p><%= user.email %></p>
     <% end %>
   </div>
-<% end %>
