@@ -50,7 +50,6 @@ RSpec.describe 'Landing Page' do
 
       within 'div.all_users' do
         expect(page).to have_content('Existing Users:')
-        save_and_open_page
         expect(page).to have_link("first_email@gmail.com's Dashboard")
         expect(page).to have_link("second_email@yahoo.com's Dashboard")
       end
