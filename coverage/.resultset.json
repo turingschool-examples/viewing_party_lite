@@ -42,6 +42,20 @@
           null
         ]
       },
+      "/Users/lisataylor/turing/3module/projects/viewing_party_lite/app/controllers/welcome_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/lisataylor/turing/3module/projects/viewing_party_lite/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/Users/lisataylor/turing/3module/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
           0,
@@ -53,14 +67,6 @@
         }
       },
       "/Users/lisataylor/turing/3module/projects/viewing_party_lite/app/jobs/application_job.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/lisataylor/turing/3module/projects/viewing_party_lite/app/controllers/application_controller.rb": {
         "lines": [
           0,
           0
@@ -89,6 +95,6 @@
         }
       }
     },
-    "timestamp": 1647908866
+    "timestamp": 1647909703
   }
 }
