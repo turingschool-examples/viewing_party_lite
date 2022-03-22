@@ -12,11 +12,13 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+/coverage/*
+/coverage/index.html
 
 # Ignore uploaded files in development
 /storage/*
-!/storage/.keep
 
+!/storage/.keep
 /node_modules
 /yarn-error.log
 
@@ -26,6 +28,4 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-# Ignore SimpleCov
-/coverage
 echo coverage >> .gitignore
