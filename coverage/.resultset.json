@@ -1,13 +1,64 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/helpers/application_helper.rb": {
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/controllers/users_controller.rb": {
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/models/party.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/models/party_user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/controllers/welcome_controller.rb": {
+        "lines": [
+          1,
+          1,
+          5,
+          null,
+          null
+        ]
+      },
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
@@ -24,7 +75,7 @@
           null,
           null,
           1,
-          null,
+          2,
           null,
           null,
           1,
@@ -35,31 +86,7 @@
           null
         ]
       },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/models/user.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
           0,
           0,
@@ -69,19 +96,15 @@
         "branches": {
         }
       },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/models/party.rb": {
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/jobs/application_job.rb": {
         "lines": [
-          0,
-          0,
-          null,
-          0,
           0,
           0
         ],
         "branches": {
         }
       },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/models/party_user.rb": {
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
           0,
@@ -91,36 +114,7 @@
         "branches": {
         }
       },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/jobs/application_job.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/controllers/welcome_controller.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/channels/application_cable/connection.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/channels/application_cable/channel.rb": {
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/channels/application_cable/channel.rb": {
         "lines": [
           0,
           0,
@@ -131,6 +125,6 @@
         }
       }
     },
-    "timestamp": 1647981396
+    "timestamp": 1647982892
   }
 }
