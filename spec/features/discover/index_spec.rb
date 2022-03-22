@@ -17,4 +17,9 @@ RSpec.describe 'Discover things:', type: :feature do
     expect(current_path).to eq("/users/#{@user1.id}/movies")
   end 
 
+  it "has a text field and button to search for movies" do 
+    expect(page).to have_button("Find Movies")
+    fill_in("movie", with: "Aliens")
+    click_on("Find Movies")
+  end 
 end
