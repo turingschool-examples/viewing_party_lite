@@ -12,9 +12,9 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+/coverage/*
+/coverage/index.html
 
-# Ignore SimpleCov
-/coverage
 # Ignore uploaded files in development
 /storage/*
 
@@ -27,4 +27,5 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-coverage
+
+echo coverage >> .gitignore
