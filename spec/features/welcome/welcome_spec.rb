@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Welcome Page' do
+RSpec.describe 'Welcome Page', type: :feature do
   it 'exists' do
     visit "/"
     expect(current_path).to eq("/")
