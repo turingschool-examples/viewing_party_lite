@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Parties model migration
 class CreateParties < ActiveRecord::Migration[5.2]
   def change
     create_table :parties do |t|
