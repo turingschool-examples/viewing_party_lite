@@ -1,5 +1,5 @@
 class Movie
-    attr_reader :title, :genres, :summary, :vote_average, :duration
+    attr_reader :title, :genres, :summary, :vote_average, :duration, :minutes
     def initialize(data)
         @title = data[:title]
         @genres = data[:genres].map do |array|
@@ -8,6 +8,7 @@ class Movie
         @summary = data[:overview]
         @vote_average = data[:vote_average]
         @duration = time_format(data[:runtime])
+        @minutes = data[:runtime]
     end
 
     def time_format(minutes)
