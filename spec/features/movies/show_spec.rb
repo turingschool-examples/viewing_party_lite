@@ -28,4 +28,10 @@ RSpec.describe 'movie show page' do
         visit(user_movie_path(@user, 235))
         expect(page).to have_content("My all-time favourite movie! Like Gordie, I was a shy, sensitive boy, who was (and am) a writer, and I've been told by so many people I have a talent for it. Also, I've had many friends like Chris, being tough on the outside, while sweet on the inside, and I've known people like Vern, Teddy and Denny too :) Beautiful music, acting and truth about growing up, as relevant today as it was in the 80s/50s :) <3")
     end
+    it 'will show cast members', :vcr do 
+        visit(user_movie_path(@user, 235))
+        expect(page).to have_content('Wil Wheaton as Gordie Lachance')
+        expect(page).to have_content('River Phoenix as Chris Chambers')
+        expect(page).to have_content('Corey Feldman as Teddy Duchamp')
+    end
 end

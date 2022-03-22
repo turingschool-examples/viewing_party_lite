@@ -9,5 +9,6 @@ RSpec.describe 'creating a new user' do
     click_on "Save"
     user = User.last
     expect(current_path).to eq("/users/#{user.id}")
+
   end
 end

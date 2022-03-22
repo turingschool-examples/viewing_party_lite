@@ -1,11 +1,50 @@
-<h1>Title: <%= @movie.title %> </h1>
-<h3> Genres: <%= @movie.genres.join(', ') %> </h3>
-<h3>Runtime: <%= @movie.duration%> </h3>
-<h3>Vote Average: <%= @movie.vote_average %></h3>
-<h3>Summary: <%= @movie.summary %></h3>
+<h1 class="text-center" sample center heading>Title: <%= @movie.title %> </h1>
+<div class="container my-3 bg-light">
+   <div class="col-md-12 text-center">
+<button type="button" class="btn btn-link"><%= button_to("Discover Page", '#', method: :get )%></button>
+<button type="button"class="btn btn-link"><%= button_to("Create Viewing Party for #{@movie.title}", "#", method: :get)%></button>
+        </div>
+    </div>
+   <div class="row">
+      <div class="col-sm d-flex justify-content-center">
+         <h3>Vote Average: <%= @movie.vote_average %></h3>
+      </div>
+      <div class="col-sm d-flex justify-content-center">
+         <h3>Runtime: <%= @movie.duration %></h3>
+      </div>
+      <div class="col-sm d-flex justify-content-center">
+         <h3> Genres: <%= @movie.genres.join(', ') %> </h3>
+      </div>
+   </div>
+</div>
+<div class="divider py-1 bg-dark"></div>
+<h3>Summary </h3>
+<p><%= @movie.summary %></p>
+<h3>Cast </h3>
+<div class = "row">
+   <div class = "col-md">
+      <% @cast.first(5).each do |cast| %>
+         <ul class="list-group list-group-flush">
+            <li class="list-group-item d-flex justify-content-between align-items-center"> <%= cast.name%> as <%= cast.character %></li>
+         </ul>
+      <% end %>
+   </div>
+   <div class = "col-md">
+      <% @cast.last(5).each do |cast| %>
+         <ul class="list-group list-group-flush">
+            <li class="list-group-item d-flex justify-content-between align-items-center text-center"> <%= cast.name%> as <%= cast.character %></li>
+         </ul>
+      <% end %>
+   </div>
+</div>
 
 <h3>Review Count: <%= @reviews.count %></h3>
-<h3>Reviews: <% @reviews.each do |review| %></h3>
-   <h4> Author: <%= review.author %> </h4>
-    <h4> Review: <%= review.content %></h4>
-    <% end %> 
+<h3>Reviews <% @reviews.each do |review| %></h3>
+<div class="card">
+   <div class="card-header">
+      <h5> Author: <%= review.author %> </h5>
+   </div>
+   <p> Review: <%= review.content %></p>
+</div>
+<% end %>
+</div>
