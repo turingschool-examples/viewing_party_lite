@@ -26,8 +26,10 @@ RSpec.describe 'User Dashboard Page' do
       click_button("Discover Movies")
       expect(current_path).to eq(user_movies_path(@user1))
     end
-    xit 'has a section that lists viewing parties' do 
-      expect(page).to have_content
+    it 'has a section that lists viewing parties' do 
+      within '#viewing_parties' do 
+        expect(page).to have_content("Viewing Parties")
+      end
     end
   end
 
