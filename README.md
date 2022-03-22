@@ -1,5 +1,5 @@
 ## Database Design
-[https://app.dbdesigner.net/designer/schema/509743]
+https://app.dbdesigner.net/designer/schema/509743
 
 
 # Viewing Party
