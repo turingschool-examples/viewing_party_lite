@@ -14,7 +14,7 @@ RSpec.describe 'The landing page' do
     within '#new-user' do 
       expect(page).to have_button 'Register' 
       click_button 'Register'
-      expect(current_path).to eq(new_user_path)
+      expect(current_path).to eq('/register')
     end 
 
     visit root_path
