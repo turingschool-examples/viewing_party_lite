@@ -1,9 +1,16 @@
 <%= form_with model: @user, local: true do |f| %>
-  <section class="form">
-    <%= f.label :name%>
-    <%= f.text_field :name%>
-    <%= f.label :email%>
-    <%= f.text_field :email%>
-    <%= f.submit 'Register' %>
+  <section id="form">
+    <section id="error_messages">
+      <% if @user.errors.any? %>
+        <% @user.errors.full_messages.each do |message|%>
+          <p><li><%= message %></p>
+        <% end %>
+      <% end %>
+      <%= f.label :name%>
+      <%= f.text_field :name%>
+      <%= f.label :email%>
+      <%= f.text_field :email%>
+      <%= f.submit 'Register' %>
+    </section>
   </section>
 <% end %>
