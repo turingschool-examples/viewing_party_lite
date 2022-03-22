@@ -4,7 +4,7 @@ class ReviewService
     end
 
     def self.reviews(movie_id)
-        response = conn.get("movie/#{movie_id}/reviews?language=en-US")
+        response = conn.get("movie/#{movie_id}/reviews")
         json = JSON.parse(response.body, symbolize_names: true)
     end
 end
