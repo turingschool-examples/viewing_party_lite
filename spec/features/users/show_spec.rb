@@ -23,5 +23,16 @@ describe 'User dashboard page' do
         expect(page).to have_content('Viewing Parties:')
       end
     end
+    describe 'discover' do
+      it 'redirects me a discover page' do
+        user = User.create(name: 'Sam', email: 'sam@supercool.edu')
+        visit("/users/#{user.id}")
+        within '.discover' do
+          expect(page).to have_button('Discover Movies')
+          click_button 'Discover Movies'
+        end
+        expect(current_path).to eq("/users/#{user.id}/discover")
+      end
+    end
   end
 end
