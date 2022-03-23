@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'user create page' do
   before(:each) do
-    visit "/users/new"
+    visit "/register"
   end
   describe "when a user visits the user create page" do
     scenario "they see a form to create a new user, when filled out it redirects to landing page with user listed" do
