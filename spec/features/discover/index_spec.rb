@@ -18,14 +18,27 @@ RSpec.describe 'Discover Index Page' do
     expect(page).to have_field('Keywords')
   end
 
-  it 'allows user to search for govt members' do
+  it 'allows user to use Top Rated Button' do
+    user1 = User.create(name: "Asil Rolyat", email: "asil.rolyat@yourmom.com")
+
     visit user_discover_index_path(user1)
 
-    fill_in :search, with: 'Apples'
+    click_button 'Top Rated Movies'
+    expect(current_path).to eq(user_movies_path(user1))
+
+    expect(page.status_code).to eq 200
+    expect(page).to have_content("Shawshank Redemption")
+  end
+
+  it 'allows user to search for govt members' do
+    user1 = User.create(name: "Asil Rolyat", email: "asil.rolyat@yourmom.com")
+
+    visit user_discover_index_path(user1)
+
+    fill_in :search, with: 'Shawshank'
     click_button 'Search'
 
     expect(page.status_code).to eq 200
-    expect(page).to have_content("Senator Bernard Sanders was found!")
-    expect(page).to have_content("SenSanders")
+    expect(page).to have_content("Shawshank Redemption")
   end
 end
