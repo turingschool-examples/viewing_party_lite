@@ -22,15 +22,16 @@ RSpec.describe 'Discover Index Page' do
     user1 = User.create(name: "Asil Rolyat", email: "asil.rolyat@yourmom.com")
 
     visit user_discover_index_path(user1)
-
+  
     click_button 'Top Rated Movies'
+  
     expect(current_path).to eq(user_movies_path(user1))
 
     expect(page.status_code).to eq 200
     expect(page).to have_content("Shawshank Redemption")
   end
 
-  it 'allows user to search for govt members' do
+  it 'allows user to search for keywords' do
     user1 = User.create(name: "Asil Rolyat", email: "asil.rolyat@yourmom.com")
 
     visit user_discover_index_path(user1)

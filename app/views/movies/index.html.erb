@@ -1,5 +1,9 @@
 <h1>Top Rated Movies</h1>
 
-<% @movies.each do |movie| %>
-<p><%= movie %></p>
+<% @movie_titles.each do |title| %>
+<p><%= title %></p>
+<% end %>
+
+<% @movie_vote_average.each do |vote_avg| %>
+<p><%= vote_avg %></p>
 <% end %>
