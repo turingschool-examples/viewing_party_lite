@@ -5,7 +5,6 @@
 <div align="center" id="existing_users">
   <h3>Existing Users:</h2>
   <% @users.each do |user| %>
-    <%= user.email %> <br>
+    <%= link_to user.email, user_path(user.id) %> <br>
   <% end %>
-
 </div>
