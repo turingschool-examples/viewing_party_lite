@@ -1,5 +1,15 @@
+
+<center>
+  <h1><%= @user.name%>'s Dashboard</h1>
+  <div class="discover">
+    <p> <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %></p>
+    <h2>Viewing Parties:</h2>
+  </div>
+</center>
+
 <% flash.each do |type, msg| %>
   <div>
     <%= msg %>
   </div>
 <% end %>
+

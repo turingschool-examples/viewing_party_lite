@@ -7,7 +7,7 @@ describe 'landing page' do
       expect(page).to have_content('Viewing Party')
     end
 
-    it 'has a button to create a new user' do
+    xit 'has a button to create a new user' do
       visit root_path
       within '.new_user' do
         expect(page).to have_button('Create a New User')

@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   root 'landing_page#index'
 
-  get '/users/:id', to: 'users#show'
   get '/register', to: 'users#new'
 
-  resources :users, only: [:create]
+  resources :users, only: [:show, :create] do
+    resources :discover, only: [:index]
+    resources :movies, only: [:index]
+  end
+
 end
