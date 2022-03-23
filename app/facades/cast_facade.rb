@@ -7,7 +7,7 @@ class CastFacade
 
   def initialize(movie_id)
     complete_cast = []
-    CastService.information(movie_id).each do |cast|
+    MovieService.credits(movie_id).each do |cast|
       complete_cast << CastMember.new(cast)
     end
     @top_cast = complete_cast.first(10)
