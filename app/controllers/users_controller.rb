@@ -1,18 +1,20 @@
 class UsersController < ApplicationController
 
   def show
-
   end
 
   def new
-
   end
 
   def create
-    user = User.create!(user_params)
-    redirect_to '/'
+    @user = User.new(user_params)
+    if @user.save
+      redirect_to "/"
+    else
+      redirect_to "/register"
+      flash[:alert] = "Error: Email already registered"
+    end
   end
-
 
   private
     def user_params
