@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Discover Movie Page' do
+RSpec.describe 'Discover Index Page' do
   before(:each) do 
     @vp1 = ViewingParty.create!(movie_id: 111, duration: 151, date: Time.new(2022, 04, 12, 21, 00), start_time: Time.new(2022, 04, 12, 21, 00))
     @vp2 = ViewingParty.create!(movie_id: 112, duration: 152, date: Time.new(2022, 04, 11, 20, 30), start_time: Time.new(2022, 04, 11, 20, 30))
