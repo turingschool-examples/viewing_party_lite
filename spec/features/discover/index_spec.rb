@@ -7,6 +7,6 @@ RSpec.describe 'Discover Index Page' do
 
     visit user_discover_index_path(eldridge)
 
-    expect(page).to have_content('Test')
+    expect(page).to have_content('Discover Movies')
   end
 end
