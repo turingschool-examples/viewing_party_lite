@@ -16,7 +16,7 @@ class ViewingParty < ApplicationRecord
   end
 
   def add_host_to_user_viewing_parties
-    binding.pry
+     
     UserViewingParty.create!(viewing_party: self, user: user)
   end
 end
