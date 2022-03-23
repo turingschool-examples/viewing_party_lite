@@ -10,9 +10,9 @@ RSpec.describe 'Welcome Page', type: :feature do
   it 'has a button to create a new user' do
     visit "/"
 
-    expect(page).to have_link("Create new user")
+    expect(page).to have_button("Create new user")
 
-    click_link "Create new user"
+    click_on "Create new user"
 
     expect(current_path).to eq("/register")
   end
@@ -24,12 +24,12 @@ RSpec.describe 'Welcome Page', type: :feature do
 
     visit "/"
 
-    expect(page).to have_content("Existing Users:")
+    expect(page).to have_content("Existing users:")
     expect(page).to have_link("katy.perry@turing.io Dashboard")
     expect(page).to have_link("mark.twain@turing.io Dashboard")
     expect(page).to have_link("joe.jonas@turing.io Dashboard")
 
-    click_link("james.grant@turing.io Dashboard")
+    click_on("joe.jonas@turing.io Dashboard")
 
     expect(current_path).to eq("/users/#{user3.id}")
   end
@@ -39,10 +39,11 @@ RSpec.describe 'Welcome Page', type: :feature do
 
     visit "/users/#{user1.id}"
 
+    expect(current_path).to eq("/users/#{user1.id}")
 
-    click_link("jesse.owens@turing.io Dashboard")
+    click_on("Home")
 
-    expect(current_path).to eq("/users/#{user3.id}")
+    expect(current_path).to eq("/")
     # add more pages here for this test when more are built pls -Katy
   end
 end
