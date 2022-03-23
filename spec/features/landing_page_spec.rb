@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'landing page' do
   before(:each) do
-    visit '/'
     @user1 = User.create!(name: "Paul", email: "paul@fake.com")
+    visit "/"
   end
   describe 'when user visits landing page' do
     scenario 'visitor sees title of application' do

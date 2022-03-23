@@ -4,5 +4,5 @@
 <h3>Users:</h3>
 <hr>
 <p><% @users.each do |user| %></p>
-  <p><%= user.name %></p>
+  <p><%= link_to "#{user.name}", "/users/#{user.id}" %></p>
 <% end %>
