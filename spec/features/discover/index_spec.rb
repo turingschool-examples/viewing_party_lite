@@ -30,4 +30,10 @@ RSpec.describe 'Discover Index Page' do
       end
     end
   end
+  context 'top rated movies button' do 
+    it 'routes to movies index' do 
+      click_button("Find Top Rated Movies")
+      expect(current_path).to eq(user_movies_path(@user1))
+    end
+  end
 end 
