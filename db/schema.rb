@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,29 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_220_322_223_813) do
+ActiveRecord::Schema.define(version: 2022_03_22_223813) do
+
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'parties', force: :cascade do |t|
-    t.string 'day'
-    t.time 'start_time'
-    t.integer 'duration'
+  create_table "parties", force: :cascade do |t|
+    t.string "day"
+    t.time "start_time"
+    t.integer "duration"
   end
 
-  create_table 'user_parties', force: :cascade do |t|
-    t.integer 'host'
-    t.bigint 'user_id'
-    t.bigint 'party_id'
-    t.index ['party_id'], name: 'index_user_parties_on_party_id'
-    t.index ['user_id'], name: 'index_user_parties_on_user_id'
+  create_table "user_parties", force: :cascade do |t|
+    t.integer "host"
+    t.bigint "user_id"
+    t.bigint "party_id"
+    t.index ["party_id"], name: "index_user_parties_on_party_id"
+    t.index ["user_id"], name: "index_user_parties_on_user_id"
   end
 
-  create_table 'users', force: :cascade do |t|
-    t.string 'name'
-    t.string 'email'
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
   end
 
-  add_foreign_key 'user_parties', 'parties'
-  add_foreign_key 'user_parties', 'users'
+  add_foreign_key "user_parties", "parties"
+  add_foreign_key "user_parties", "users"
 end
