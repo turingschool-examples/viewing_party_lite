@@ -34,5 +34,13 @@ RSpec.describe 'Movie Index Page' do
       expect(page).to have_content("Gabriel's Inferno - (Vote Average: 8.6)")
       expect(page).to have_content("Evangelion: 3.0+1.0 Thrice Upon a Time - (Vote Average: 8.5)")
     end
+    
+    it 'each movie title is a link to that movies show page', :vcr do 
+      visit user_discover_index_path(@user1)
+      click_button 'Find Top Rated Movies'
+      expect(page).to have_link("The Shawshank Redemption")
+      expect(page).to have_link("Spirited Away")
+      expect(page).to have_link("Evangelion: 3.0+1.0 Thrice Upon a Time")
+    end
   end
 end 
