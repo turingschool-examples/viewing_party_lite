@@ -7,7 +7,7 @@
   <% if @data != nil %>
     <% @data.each do |movie| %>
       <li>
-       <b> <%= movie.title %> </b>
+       <%= link_to movie.title, user_movie_path(@user, movie) %>
         - (Vote Average: <%= movie.vote_average %>)
       </li>
     <% end  %>
