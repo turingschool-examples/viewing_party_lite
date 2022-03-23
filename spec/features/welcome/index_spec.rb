@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'the landing page' do
+RSpec.describe 'the welcome page' do
 
   it 'can create a new user' do
     user = User.create!(name: 'Obama', email: 'obamacare@gmail.com')
