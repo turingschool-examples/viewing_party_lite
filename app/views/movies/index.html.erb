@@ -1,0 +1,9 @@
+  <ol>
+<% if @data != nil %>
+  <% @data.each do |movie| %>
+    <li>
+      <%= movie.title %>
+    </li>
+  <% end  %>
+<% end  %>
+  </ol>

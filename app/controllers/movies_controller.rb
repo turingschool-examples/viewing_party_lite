@@ -3,6 +3,7 @@ class MoviesController < ApplicationController
   before_action :find_user, only: [:index]
 
   def index
+    @data = MovieFacade.top_rated if params[:query] == "top_rated"
   end
 
   def show
