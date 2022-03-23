@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Movie Service' do
   describe 'class methods' do
 
-    it 'can establish connection to MovieDB API and return top rated movies' do
+    it 'can establish connection to MovieDB API and return top rated movies', :vcr do
       movies = MovieService.top_rated_movies
 
       expect(movies).to be_a(Hash)
