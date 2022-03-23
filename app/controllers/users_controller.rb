@@ -9,21 +9,17 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = user_params
-    user[:email] = user[:email].downcase
-    new_user = User.new(user)
-    if new_user.save
-      flash[:success] = 'Account Successfully Created!'
-      session[:user_id] = new_user.id
-      redirect_to user_path(new_user.id)
+    user = User.new(name: params[:name], email: params[:email])
+
+    if user.save
+      redirect_to user_path(user.id)
     else
-      flash[:error] = 'Email address is blank/already in use.'
-      redirect_to new_user_path
+      redirect_to "/register"
     end
   end
 
   private
    def user_params
-     params.permit(:email, :name)
+     params.require(:email, :name)
    end
 end
