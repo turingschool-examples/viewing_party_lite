@@ -19,7 +19,15 @@ RSpec.describe 'Discover Movie Page' do
     it 'has button to top rated movies' do 
       expect(page).to have_button("Find Top Rated Movies")
     end
-    
+    it 'has field to input keywords to search movie titles' do
+      within '#movie_search' do 
+        expect(page).to have_field("Search", with: "Search by movie title")
+      end
+    end
+    it 'has a button to submit form' do 
+      within '#movie_search' do 
+        expect(page).to have_button("Find Movies")
+      end
+    end
   end
-  
 end 
