@@ -10,38 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_17_055654) do
+ActiveRecord::Schema.define(version: 2022_03_22_203900) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "parties", force: :cascade do |t|
-    t.integer "duration"
-    t.date "date"
-    t.time "start_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "movie_id"
-  end
-
-  create_table "party_users", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "party_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "status", default: 0
-    t.index ["party_id"], name: "index_party_users_on_party_id"
-    t.index ["user_id"], name: "index_party_users_on_user_id"
-  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "password_digest"
   end
-
-  add_foreign_key "party_users", "parties"
-  add_foreign_key "party_users", "users"
 end
