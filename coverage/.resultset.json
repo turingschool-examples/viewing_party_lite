@@ -7,9 +7,29 @@
           null
         ]
       },
-      "/Users/conorbarthel/turing/3_module/viewing_party_lite/app/models/party.rb": {
+      "/Users/conorbarthel/turing/3_module/viewing_party_lite/app/controllers/welcome_controller.rb": {
         "lines": [
           1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/conorbarthel/turing/3_module/viewing_party_lite/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/conorbarthel/turing/3_module/viewing_party_lite/app/models/user.rb": {
+        "lines": [
           1,
           1,
           1,
@@ -23,17 +43,8 @@
           null
         ]
       },
-      "/Users/conorbarthel/turing/3_module/viewing_party_lite/app/models/party_user.rb": {
+      "/Users/conorbarthel/turing/3_module/viewing_party_lite/app/controllers/users_controller.rb": {
         "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/conorbarthel/turing/3_module/viewing_party_lite/app/models/user.rb": {
-        "lines": [
-          1,
           1,
           1,
           null
@@ -51,6 +62,17 @@
       },
       "/Users/conorbarthel/turing/3_module/viewing_party_lite/app/models/genre.rb": {
         "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/conorbarthel/turing/3_module/viewing_party_lite/app/models/party.rb": {
+        "lines": [
+          0,
+          0,
+          0,
           0,
           0
         ],
@@ -75,6 +97,16 @@
         "branches": {
         }
       },
+      "/Users/conorbarthel/turing/3_module/viewing_party_lite/app/models/party_user.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/conorbarthel/turing/3_module/viewing_party_lite/app/models/cast.rb": {
         "lines": [
           0,
@@ -85,14 +117,6 @@
         }
       },
       "/Users/conorbarthel/turing/3_module/viewing_party_lite/app/jobs/application_job.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/conorbarthel/turing/3_module/viewing_party_lite/app/controllers/application_controller.rb": {
         "lines": [
           0,
           0
@@ -121,6 +145,6 @@
         }
       }
     },
-    "timestamp": 1647956939
+    "timestamp": 1648044847
   }
 }
