@@ -14,7 +14,7 @@
          <h3>Runtime: <%= @movie.duration %></h3>
       </div>
       <div class="col-sm d-flex justify-content-center">
-         <h3> Genres: <%= @movie.genres.join(', ') %> </h3>
+         <h3> Genres: <%= @movie.genres.map{|genre| genre[:name]}.join(', ') %> </h3>
       </div>
    </div>
 </div>
