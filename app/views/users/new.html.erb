@@ -5,9 +5,9 @@
         <h3>Sign Up</h3>
         <%= form_with url: users_path, method: :post, local: true do |form| %>
         <%= form.label :name %>
-        <%= form.text_field :name,class: "form_control", required: true %><br>
+        <%= form.text_field :name,class: "form_control" %><br>
         <%= form.label :email %>
-        <%= form.email_field :email,class: "form_control", required: true  %><br>
+        <%= form.email_field :email,class: "form_control"  %><br>
         <%= form.submit %>
         <% end %>
       </div>
