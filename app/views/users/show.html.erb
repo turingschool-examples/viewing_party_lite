@@ -3,7 +3,13 @@
     <div class="col-12 pt-4 pb-3">
       <div class="text-center">
       <h2><%=@user.name%>'s Dashboard</h2>
+
+      <%= button_to 'Discover Movies', user_discover_index_path(@user), method: :get %>
       </div>
     </div>
   </div>
+</div>
+
+<div class=".viewing_parties">
+  <h2>Here are your upcoming Viewing Parties:</h2>
 </div>
