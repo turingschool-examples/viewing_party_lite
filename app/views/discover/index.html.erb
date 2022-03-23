@@ -1,8 +1,9 @@
-<section></section>
+<br>
 <div align="center" id="top_rated_movies">
-      <%= button_to("Find Top Rated Movies", user_movies_path(@user), sort: {q: "top_rated"}, method: :get) %>      
+      <%= button_to("Find Top Rated Movies", user_movies_path(@user), params: {query: "top_rated"}, method: :get) %>      
 </div>
-
+<br>
+<br>
 <div align="center" id="movie_search">
   <%= form_with url: user_movies_path(@user), method: :get, local: true do |f| %>
   <%= f.hidden_field :query, value: "movie_search" %>  
