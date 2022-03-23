@@ -34,8 +34,12 @@ RSpec.describe 'Landing Page' do
     expect(current_path).to eq("/")
   end
 
-  xit 'has a list of existing users' do 
-
+  it 'has a list of existing users' do 
+    expect(page).to have_content(@user1.email)
+    expect(page).to have_content(@user2.email)
+    expect(page).to have_content(@user5.email)
+    expect(page).to have_content(@user6.email)
+    expect(page).to_not have_content(@vp1.movie_id)
   end
 
   xit 'existing users link to user dashboard' do 
