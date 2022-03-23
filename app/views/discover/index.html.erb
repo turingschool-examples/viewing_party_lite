@@ -1,9 +1,7 @@
-<button>Top Rated Movies</button>
+<%= button_to "Top Rated Movies", user_movies_path(@user), params: {search: "top_rated"}, method: :get %>
 
 <%# <button>Search Movie Title</button> %>
-
-
-<%= form_with url: search_path, local: true do |form| %>
+<%= form_with url: user_movies_path(@user), method: :get, local: true do |form| %>
   <%= form.label :search, 'Search For Keywords:' %>
   <%= form.text_field :search %>
   <%= form.submit 'Search' %>

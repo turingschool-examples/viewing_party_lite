@@ -1,16 +1,36 @@
 class MoviesController < ApplicationController
-  def search
-    conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
-      faraday.headers["X-API-KEY"] = ENV['api_key']
+  def index 
+    if params[:search] == "top_rated"
+      conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
+        faraday.params["api_key"] = ENV['movie_api_key']
+      end
+      response = conn.get("/3/movie/top_rated")
+    
+      data = JSON.parse(response.body, symbolize_names: true)
+
+      @movie_titles = data[:results].map do |result|
+        result[:title]
+      end
+
+      @movie_vote_average = data[:results].map do |result|
+        result[:vote_average]
+      end
+    elsif params[:search] != nil
+      conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
+        faraday.params["api_key"] = ENV['movie_api_key']
+      end
+
+      response = conn.get("/3/search/movie?query=#{params[:search]}")
+      
+      data = JSON.parse(response.body, symbolize_names: true)
+   
+      @movie_titles = data[:results].map do |result|
+        result[:title]
+      end
+
+      @movie_vote_average = data[:results].map do |result|
+        result[:vote_average]
+      end
     end
-    response = conn.get("/congress/v1/116/senate/members.json")
-
-    data = JSON.parse(response.body, symbolize_names: true)
-
-    members = data[:results][0][:members]
-
-    found_members = members.find_all {|m| m[:last_name] == params[:search]}
-    @member = found_members.first
-    render "welcome/index"
-  end
+  end 
 end
