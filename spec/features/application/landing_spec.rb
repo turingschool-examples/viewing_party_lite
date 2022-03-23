@@ -33,16 +33,33 @@ RSpec.describe 'Landing Page' do
     click_link("Home")
     expect(current_path).to eq("/")
   end
-
+  
   it 'has a list of existing users' do 
-    expect(page).to have_content(@user1.email)
-    expect(page).to have_content(@user2.email)
-    expect(page).to have_content(@user5.email)
-    expect(page).to have_content(@user6.email)
-    expect(page).to_not have_content(@vp1.movie_id)
+    within "#existing_users" do 
+      expect(page).to have_content(@user1.email)
+      expect(page).to have_content(@user2.email)
+      expect(page).to have_content(@user5.email)
+      expect(page).to have_content(@user6.email)
+      expect(page).to_not have_content(@vp1.movie_id)
+    end
   end
+  
+  it 'existing users link to user dashboard' do
+    within "#existing_users" do 
+      expect(page).to have_link("#{@user1.email}")
+      expect(page).to have_link("#{@user2.email}")
+      expect(page).to have_link("#{@user5.email}")
+      expect(page).to have_link("#{@user6.email}")
+      
+      click_link "#{@user1.email}"
+      expect(current_path).to eq(user_path(@user1))
+    end
 
-  xit 'existing users link to user dashboard' do 
+    click_link("Home")
 
+    within "#existing_users" do 
+      click_link "#{@user2.email}"
+      expect(current_path).to eq(user_path(@user2))
+    end      
   end
 end 
