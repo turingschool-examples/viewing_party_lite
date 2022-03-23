@@ -1,0 +1,23 @@
+<h1 class="text-center" sample center heading> <%= @user.name %>'s Dashboard </h1>
+<div class="container my-3 bg-light">
+    <div class="col-md-12 text-center">
+        <button type="button" class="btn btn-link"><%= button_to("Discover Movies", '#', method: :get )%></button>
+    </div>
+</div>
+<div class="divider py-1 bg-dark"></div>
+<div class="container my-3 bg-light">
+    <div class="col-md-12 text-center">
+        <h3>Viewing Parties</h3>
+        <% @user.user_viewing_parties.each do |party| %>
+        <% movie = MovieFacade.new(party.viewing_party.movie_id).movie %>
+            <div class="card bg-light mb-3" style="max-width: 20rem;">
+                <div class="card-header"><%=movie.title%></div>
+                    <div class="card-body">
+                        <img class="card-img-top" src=<%= "https://image.tmdb.org/t/p/original/#{movie.poster_path}"%> >
+                        <p class="card-text"> Date: <%= party.viewing_party.date_time.strftime("%m/%d/%Y at %I:%M%p")%></p>
+                        <p> <%= party.viewing_party.user == @user ?  "Hosting" :  "Invited"%> </p>
+                    </div>
+                </div>
+                    <% end %>
+            </div>
+</div>

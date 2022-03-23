@@ -21,7 +21,6 @@ RSpec.describe 'the landing page' do
     u3 = User.create!(name: 'Mrs 3', email: 'Test3@test.com')
     u4 = User.create!(name: 'Mr 4', email: 'Test4@test.com')
     visit '/'
-    save_and_open_page
     within '.registered' do
       expect(page).to have_content(u1.name)
       expect(page).to have_content(u2.name)
