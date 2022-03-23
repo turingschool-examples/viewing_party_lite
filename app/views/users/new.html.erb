@@ -1,0 +1,7 @@
+<%= form_with url: "/users", method: :post, local: true do |form| %>
+  <%= form.label :name, "Name:" %>
+  <%= form.text_field :name %>
+  <%= form.label :email, "Email:" %>
+  <%= form.text_field :email %>
+  <%= form.submit 'Submit' %>
+<% end %>
