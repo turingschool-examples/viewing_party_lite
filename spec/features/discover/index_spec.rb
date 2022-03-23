@@ -31,13 +31,13 @@ RSpec.describe 'Discover Index Page' do
     end
   end
   context 'top rated movies button' do 
-    xit 'routes to movies index' do 
+    it 'routes to movies index', :vcr do 
       click_button 'Find Top Rated Movies'
       expect(current_path).to eq(user_movies_path(@user1))
     end
   end
   context 'find movies form' do 
-    xit 'routes to movies index' do 
+    it 'routes to movies index', :vcr do 
       fill_in 'search', with: 'Marvel'
       click_button 'Find Movies'
       expect(current_path).to eq(user_movies_path(@user1))

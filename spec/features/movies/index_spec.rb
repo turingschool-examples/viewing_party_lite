@@ -15,14 +15,13 @@ RSpec.describe 'Movie Index Page' do
 
     visit user_movies_path(@user1) 
   end
-
-  context 'top rated movies' do
-    xit 'displays the 20 highest rated movies' do 
-      visit user_discover_index_path(@user1)
-      click_button 'Find Top Rated Movies'
-      expect(current_path).to eq(user_movies_path(@user1))
-      expect(page).to have_content("The Shawshank Redemption")
-    end 
-  end
   
+  context 'top rated movies' do
+    it 'displays the 20 highest rated movies', :vcr do 
+        visit user_discover_index_path(@user1)
+        click_button 'Find Top Rated Movies'
+        expect(current_path).to eq(user_movies_path(@user1))
+        expect(page).to have_content("The Shawshank Redemption")
+    end
+  end
 end 
