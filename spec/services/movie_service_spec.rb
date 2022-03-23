@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe MovieService do 
   context 'class methods' do 
     context '#top_rated' do 
-      it 'returns top rated movies' do 
+      xit 'returns top rated movies' do 
         search = MovieService.top_rated
         expect(search).to be_a Hash 
         expect(search[:results]).to be_an Array

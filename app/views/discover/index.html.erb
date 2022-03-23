@@ -1,0 +1,13 @@
+<section></section>
+<div align="center" id="top_rated_movies">
+      <%= button_to("Find Top Rated Movies", user_movies_path(@user), sort: {q: "top_rated"}, method: :get) %>      
+</div>
+
+<div align="center" id="movie_search">
+  <%= form_with url: user_movies_path(@user), method: :get, local: true do |f| %>
+  <%= f.hidden_field :query, value: "movie_search" %>  
+  <%= f.text_field :search, placeholder: "Search by movie title" %>
+  <%= f.submit "Find Movies" %>
+  <% end %>
+</div>
+
