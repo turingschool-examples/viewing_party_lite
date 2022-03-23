@@ -58,6 +58,7 @@ group :test do
   gem 'simplecov'
   gem 'orderly'
   gem 'webmock', '~> 3.14'
+  gem 'vcr', '~> 6.1.0'
 end
 
 
