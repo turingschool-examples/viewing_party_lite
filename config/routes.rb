@@ -6,5 +6,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:create, :show]
 
+  get '/users/:id/discover', to: 'user_movies#discover'
+
   get '/register', to: 'users#new'
 end
