@@ -42,7 +42,6 @@ group :development, :test do
   gem 'pry'
   gem 'shoulda-matchers' # requires config
   gem 'figaro'
-  
 end
 
 group :development do
