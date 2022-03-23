@@ -15,7 +15,7 @@ RSpec.describe 'the user dashboard' do
     end
   end
 
-  it "has a discover movies button which links to the discover page" do
+  xit "has a discover movies button which links to the discover page" do
     user_1 = User.create!(name: 'user_1', email: 'email@gmail.com')
 
     visit user_path(user_1.id)
