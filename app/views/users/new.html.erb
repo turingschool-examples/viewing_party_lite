@@ -1,3 +1,10 @@
+<style>
+.new_user{
+  text-align: center;
+}
+</style>
+
+<div class="new_user">
 <%= form_with model: @user, local: true do |f| %>
   <p><%= f.label :name %></p>
   <p><%= f.text_field :name %></p> <br>
@@ -6,3 +13,4 @@
 
   <%= f.submit 'Register' %>
 <%end%>
+</div>
