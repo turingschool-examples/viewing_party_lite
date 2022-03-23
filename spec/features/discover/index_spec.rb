@@ -20,17 +20,20 @@ RSpec.describe 'Discover Index Page' do
   it 'allows user to use Top Rated Button' do
     results = File.read('spec/fixtures/top_rated_movies.json')
     # results = File.read('spec/fixtures/vcr_cassettes/Discover_Index_Page/allows_user_to_use_Top_Rated_Button.json')
-    stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['movie_api_key']}").to_return(status: 200, body: results)
+    stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['movie_api_key']}").
+      to_return(status: 200, body: results)
     click_button 'Top Rated Movies'
 
     expect(current_path).to eq(user_movies_path(@user1))
     expect(page.status_code).to eq 200
     expect(page).to have_content("Shawshank Redemption")
+    expect(page).to have_content(8.7)
   end
 
   it 'allows user to search by keyword' do
     results = File.read('spec/fixtures/search_bat_movies.json')
-    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['movie_api_key']}&query=bat").to_return(status: 200, body: results)
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['movie_api_key']}&query=bat").
+      to_return(status: 200, body: results)
     fill_in :search, with: 'bat'
     click_button 'Find Movies'
 
@@ -41,7 +44,8 @@ RSpec.describe 'Discover Index Page' do
 
   it 'allows user to search by multiple keywords' do
     results = File.read('spec/fixtures/multi_word_search_bat.json')
-    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['movie_api_key']}&query=Batman Beg").to_return(status: 200, body: results)
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['movie_api_key']}&query=Batman Beg").
+      to_return(status: 200, body: results)
     fill_in :search, with: 'Batman Beg'
     click_button 'Find Movies'
 
@@ -51,6 +55,11 @@ RSpec.describe 'Discover Index Page' do
   end
 
   it 'returns nothing if no keywords match search' do
+    # popping a false positive !!!
+    # results = File.read('spec/fixtures/multi_word_search_bat.json')
+    results = File.read('spec/fixtures/search_bat_movies.json')
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['movie_api_key']}&query=Batman Begggg").
+      to_return(status: 200, body: results)
     fill_in :search, with: 'Batman Begggg'
     click_button 'Find Movies'
 
