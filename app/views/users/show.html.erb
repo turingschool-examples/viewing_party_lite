@@ -9,10 +9,10 @@
     <div class="row">
         <div class="col-md-12 text-center">
             <h3>Viewing Parties</h3>
-            <% @user.user_viewing_parties.each_with_index do |party, index| %>
+            <div class="card-deck">
+                <% @user.user_viewing_parties.each_with_index do |party, index| %>
                 <% movie = MovieFacade.new(party.viewing_party.movie_id).movie %>
-            <div id=<%=index%>>
-                <div class="card-deck">
+                <div id=<%=index%>>
                     <div class="card bg-light mb-3" style="max-width: 20rem;">
                         <div class="card-header"><%=movie.title%></div>
                         <div class="card-body">
@@ -24,9 +24,9 @@
                             <p> <%= party.viewing_party.user == @user ?  "Hosting" :  "Invited"%> </p>
                         </div>
                     </div>
-            </div>
-                    <% end %>
                 </div>
+                <% end %>
+            </div>
         </div>
     </div>
 </div>
