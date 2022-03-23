@@ -14,5 +14,10 @@ RSpec.describe 'user dashboard page' do
       expect(page).to have_button "Discover Movies"
       expect(page).to have_content "Viewing Parties:"
     end
+
+    scenario 'when user clicks on discover movies button, they are taken to the discover page' do
+      click_button "Discover Movies"
+      expect(current_path).to eq("/users/#{@user1.id}/discover")
+    end
   end
 end
