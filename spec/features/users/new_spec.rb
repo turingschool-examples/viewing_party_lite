@@ -19,7 +19,8 @@ RSpec.describe 'Registration form page' do
       fill_in :email, with: 'BobBarker@ThePriceIsWrong.net'
 
       click_on("Save")
-      expect(current_path).to eq(user_path(:id))
+      user = User.last
+      expect(current_path).to eq(user_path(user.id))
     end
   end
 
@@ -28,9 +29,15 @@ RSpec.describe 'Registration form page' do
       fill_in :email, with: 'BobBarker@ThePriceIsWrong.net'
 
       click_on("Save")
-      save_and_open_page
       expect(current_path).to eq(new_user_path)
-      expect(page).to have_content("Please fill out this field.")
+      expect(page).to have_content('Fields cannot be blank')
+    end
+    it 'returns an error if email is not filled out' do
+      fill_in :name, with: 'Bob Barker'
+
+      click_on("Save")
+      expect(current_path).to eq(new_user_path)
+      expect(page).to have_content('Fields cannot be blank')
     end
   end
 end
