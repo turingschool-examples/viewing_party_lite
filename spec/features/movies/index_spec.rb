@@ -15,6 +15,14 @@ RSpec.describe 'Movie Index Page' do
 
     visit user_movies_path(@user1) 
   end
+
+  context 'discover movies button' do 
+    it 'has a button back to discover movies page', :vcr do 
+      expect(page).to have_button("Discover Movies")
+      click_button "Discover Movies"
+      expect(current_path).to eq(user_discover_index_path(@user1))
+    end
+  end
   
   context 'top rated movies' do
     it 'displays the 20 highest rated movies', :vcr do 
