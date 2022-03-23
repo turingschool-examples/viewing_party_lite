@@ -16,6 +16,6 @@ RSpec.describe 'Register Page' do
     end
   end
 
-
+  
 
 end
