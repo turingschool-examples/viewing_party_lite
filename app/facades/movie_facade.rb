@@ -7,5 +7,27 @@ class MovieFacade
         Movie.new(data)
       end
     end
+
+    def cast_members(movie_id)
+      response = MovieService.cast_members(movie_id)
+
+      response[:cast].map do |data|
+        CastMember.new(data)
+      end
+    end
+
+    def movie_details(movie_id)
+      data = MovieService.movie_details(movie_id)
+
+      MovieDetails.new(data)
+    end
+
+    def reviews(movie_id)
+      data = MovieService.reviews(movie_id)
+      
+      data[:results].map do |result|
+        Reviews.new(result)
+      end
+    end
   end
 end
