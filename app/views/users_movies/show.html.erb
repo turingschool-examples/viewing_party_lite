@@ -1,0 +1,10 @@
+<section id="info">
+  <p>Title: <%= @movie.title %></p>
+  <p>Vote Average: <%= @movie.vote_average %></p>
+  <p>Runtime: <%= "#{@movie.runtime/60} hour(s) " "#{@movie.runtime%60} minutes" %></p>
+  <p>Genre(s): <% @movie.genre.each do |genre| %>
+                  <%= genre[:name] %>
+              <% end %>
+  </p>
+  <p>Summary: <%= @movie.summary %></p>
+</section>
