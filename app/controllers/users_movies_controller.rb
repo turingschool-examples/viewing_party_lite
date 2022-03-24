@@ -9,6 +9,6 @@ class UsersMoviesController < ApplicationController
     end 
   end
 
-  def show 
-  end 
-end 
+  def show
+  end
+end

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.themoviedb.org/3/search/movie?api_key=movie_api_key&query=Shawshank
+    uri: https://api.themoviedb.org/3/search/movie?api_key=movie_api_key&query=Jack%20Reacher
     body:
       encoding: US-ASCII
       string: ''
@@ -42,10 +42,15 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
+<<<<<<< HEAD
       - 1.1 28d79637e27f11e3ab19a9515e273a5a.cloudfront.net (CloudFront)
+=======
+      - 1.1 2f66aa06710fece8ed203ab0ea81eb56.cloudfront.net (CloudFront)
+>>>>>>> fe78f12e95b6d8e6a3bcf93392cef5a42524cce1
       X-Amz-Cf-Pop:
-      - DEN50-C2
+      - IAD89-C3
       X-Amz-Cf-Id:
+<<<<<<< HEAD
       - FFLSX-iCs-kDooqEXujod5e30TQzyIW3W8mzFiSaKa-vHsEmCFaf0Q==
     body:
       encoding: ASCII-8BIT
@@ -68,4 +73,21 @@ http_interactions:
         about the movie.","popularity":1.255,"poster_path":"/vdVab7yNvgYEMd8shCfy2D6nTMu.jpg","release_date":"2004-06-25","title":"Hope
         Springs Eternal: A Look Back at The Shawshank Redemption","video":false,"vote_average":7,"vote_count":1}],"total_pages":1,"total_results":3}'
   recorded_at: Thu, 24 Mar 2022 01:44:39 GMT
+=======
+      - HYlGJwmn2_0ub0jKZ-4zcyrMBuOcGOXegjC-A1cp6k9F2XaZM4NPkw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/k7h4RNAarfOrF2r2YMN0P2FQSr4.jpg","genre_ids":[80,18,53,28],"id":75780,"original_language":"en","original_title":"Jack
+        Reacher","overview":"When a gunman takes five lives with six shots, all evidence
+        points to the suspect in custody. On interrogation, the suspect offers up
+        a single note: \"Get Jack Reacher!\" So begins an extraordinary chase for
+        the truth, pitting Jack Reacher against an unexpected enemy, with a skill
+        for violence and a secret to keep.","popularity":151.079,"poster_path":"/zlyhKMi2aLk25nOHnNm43MpZMtQ.jpg","release_date":"2012-12-20","title":"Jack
+        Reacher","video":false,"vote_average":6.6,"vote_count":5705},{"adult":false,"backdrop_path":"/ww1eIoywghjoMzRLRIcbJLuKnJH.jpg","genre_ids":[28,53],"id":343611,"original_language":"en","original_title":"Jack
+        Reacher: Never Go Back","overview":"When Major Susan Turner is arrested for
+        treason, ex-investigator Jack Reacher undertakes the challenging task to prove
+        her innocence and ends up exposing a shocking conspiracy.","popularity":127.344,"poster_path":"/wxLUQ1pIms3HAlVGYvEG9zg2kDs.jpg","release_date":"2016-10-19","title":"Jack
+        Reacher: Never Go Back","video":false,"vote_average":5.9,"vote_count":3937}],"total_pages":1,"total_results":2}'
+  recorded_at: Thu, 24 Mar 2022 01:24:37 GMT
+>>>>>>> fe78f12e95b6d8e6a3bcf93392cef5a42524cce1
 recorded_with: VCR 6.1.0
