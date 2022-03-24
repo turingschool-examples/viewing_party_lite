@@ -11,7 +11,7 @@ class MovieService
     json = JSON.parse(response.body, symbolize_names: true)
   end
 
-  def self.movie_search(query)
+  def self.movie_title_search(query)
     response = conn.get("search/movie?query=#{query}")
     json = JSON.parse(response.body, symbolize_names: true)
   end
