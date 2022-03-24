@@ -1,11 +1,7 @@
-class TopRated 
-  def service 
-    MovieService.new
-  end
-
+class TopRated
   def movies
-    service.top_rated.map do |data|
-      Movies.new(data)
+    MovieService.top_rated.map do |data|
+      Movie.new(data)
     end.take(20)
   end
-end 
+end
