@@ -4,7 +4,7 @@
 
 <div class="button">
   <%= button_to 'Find Top Rated Movies',
-  user_movies_path(@user)%>
+  user_movies_path(@user), params:{q:'top%20rated'}, method: :get%>
   <p>OR</p>
   <%= button_to 'Find Movies', user_movies_path(@user) %>
 </div>

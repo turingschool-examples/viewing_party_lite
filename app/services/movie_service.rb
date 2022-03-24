@@ -10,4 +10,12 @@ class MovieService
     attrs = JSON.parse(response.body, symbolize_names: true)
     MovieCall.new(attrs)
   end
+
+  def self.top_rated
+    response = MovieService.connect.get("/3/movie/top_rated")
+    attrs = JSON.parse(response.body, symbolize_names: true)
+    @movies = attrs[:results].each do |params|
+      MovieCall.new(params)
+    end
+  end
 end
