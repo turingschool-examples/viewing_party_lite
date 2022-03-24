@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 24 Mar 2022 18:57:17 GMT
+      - Thu, 24 Mar 2022 19:59:23 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,11 +42,11 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 600860a2fda807ac628822c14b5de860.cloudfront.net (CloudFront)
+      - 1.1 a075746ea1824aa1c02a5e26a9e968e4.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - IAD89-C3
       X-Amz-Cf-Id:
-      - Cus_mwden9AYdgI0JNaNIVkLIxC_4yGSSHM5GNhHaQM3pIU5y0eQeQ==
+      - EIzjkCpeYB_X_0RU61ClaxJWXYdSycZs4oXBxbTeDoPQS3G9ylY1cw==
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/k7h4RNAarfOrF2r2YMN0P2FQSr4.jpg","genre_ids":[80,18,53,28],"id":75780,"original_language":"en","original_title":"Jack
@@ -60,5 +60,5 @@ http_interactions:
         treason, ex-investigator Jack Reacher undertakes the challenging task to prove
         her innocence and ends up exposing a shocking conspiracy.","popularity":127.344,"poster_path":"/wxLUQ1pIms3HAlVGYvEG9zg2kDs.jpg","release_date":"2016-10-19","title":"Jack
         Reacher: Never Go Back","video":false,"vote_average":5.9,"vote_count":3937}],"total_pages":1,"total_results":2}'
-  recorded_at: Thu, 24 Mar 2022 18:57:17 GMT
+  recorded_at: Thu, 24 Mar 2022 19:59:23 GMT
 recorded_with: VCR 6.1.0
