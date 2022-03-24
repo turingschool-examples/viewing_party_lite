@@ -8,3 +8,11 @@
   </p>
   <p>Summary: <%= @movie.summary %></p>
 </section>
+
+<section id="cast">
+  <p>Cast</p>
+  <% @cast.each do |person|%>
+    <p>Name: <%= person.name %></p>
+    <p>Character: <%= person.character %></p>
+  <% end %>
+</section>

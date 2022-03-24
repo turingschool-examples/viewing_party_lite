@@ -13,7 +13,23 @@ require 'rails_helper'
           expect(page).to have_content('Horror')
           expect(page).to have_content('Science Fiction')
           expect(page).to have_content('Every six hundred years, a great evil has the opportunity to escape and unleash Armageddon. A group of five stones has the power to either free the evil, or banish it for another six hundred years. An order of Druids battles with a Warlock determined to unleash his father upon the world.')
+      end
+    end
+  end 
+
+  it 'displays the first 10 cast members name/character' do 
+    user = User.create!(name: 'user', email: 'email')
+
+    VCR.use_cassette('cast') do 
+      visit "/users/#{user.id}/movies/24126/"
+      within '#cast' do
+        expect(page).to have_content('Cast')
+        expect(page).to have_content('Julian Sands')
+        expect(page).to have_content('Warlock')
+        expect(page).to have_content('Name: Paula Marshall')
+        expect(page).to have_content('Character: Samantha Ellison')
       end 
     end 
   end 
 end
+

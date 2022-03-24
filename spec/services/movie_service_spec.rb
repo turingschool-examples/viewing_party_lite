@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'The Movie Service' do
   context 'Class Methods' do
-    xit ".top_rated" do
+    it ".top_rated" do
       VCR.use_cassette('top_rated') do
         all_top_movies = MovieService.top_rated
         expect(all_top_movies).to be_instance_of(Array)
@@ -13,7 +13,7 @@ RSpec.describe 'The Movie Service' do
       end
     end
 
-    xit ".search_for_movie" do
+    it ".search_for_movie" do
       VCR.use_cassette('search_for_movie') do
         all_top_movies = MovieService.search_for_movie('Jack Reacher')
         expect(all_top_movies).to be_instance_of(Array)
@@ -24,7 +24,7 @@ RSpec.describe 'The Movie Service' do
       end
     end
 
-    xit ".movie_details" do
+    it ".movie_details" do
       VCR.use_cassette('movie_details') do
         movie_details = MovieService.movie_details(24126)
         expect(movie_details).to be_instance_of(Hash)
