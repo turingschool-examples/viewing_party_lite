@@ -2,7 +2,76 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.themoviedb.org/3/movie/5244/credits?api_key=<api_key>&language=en-US&x-api-key=<api_key>
+    uri: https://api.themoviedb.org/3/movie/5244?api_key=5c7904a395727b286460a52f6b9f743b&language=en-US&x-api-key=5c7904a395727b286460a52f6b9f743b
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 24 Mar 2022 20:23:38 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 8033e21c8d7bc3c58320ec4d0a4eb0ee25a10e53
+      X-Memc-Age:
+      - '12265'
+      X-Memc-Expires:
+      - '4644'
+      Etag:
+      - W/"a11819d94ef689420547b2ee487cb6b9"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 3c7ef4fe3f4a27b69b8df486fc6210e4.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD50-C2
+      X-Amz-Cf-Id:
+      - sdYg2MNXUqF6LPeyqllNaqjqrmMdNekJc1tGsrcXL41nDnmg1pLGTg==
+      Age:
+      - '366'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":null,"belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"},{"id":878,"name":"Science
+        Fiction"},{"id":10749,"name":"Romance"}],"homepage":"","id":5244,"imdb_id":"tt0197770","original_language":"en","original_title":"Pleasurecraft","overview":"A
+        crew of astronauts are tasked with delivering three beautiful women to their
+        superiors. Provided that they don''t get seduced by them before reaching their
+        destination.","popularity":2.08,"poster_path":"/A9wVs8unGUBwQgXcsJuL0w0dkcK.jpg","production_companies":[{"id":1889,"logo_path":null,"name":"Surrender
+        Cinema","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1999-01-01","revenue":0,"runtime":82,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"","title":"Pleasurecraft","video":false,"vote_average":1.0,"vote_count":2}'
+  recorded_at: Thu, 24 Mar 2022 20:29:44 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/5244/credits?api_key=5c7904a395727b286460a52f6b9f743b&language=en-US&x-api-key=5c7904a395727b286460a52f6b9f743b
     body:
       encoding: US-ASCII
       string: ''
@@ -52,13 +121,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 a7a1b4c19abc42d237405ce4c4069f10.cloudfront.net (CloudFront)
+      - 1.1 a2da30f5dacfbd28d77cf4c9702318f8.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - IAD89-P1
+      - IAD50-C2
       X-Amz-Cf-Id:
-      - 5kmsseIH_V0e-jyDzEF4kpn4mxGpmGS7Baub5yAactawNmc-m1aKRA==
+      - xBeJEPRvxnO7PqG_zKrwmOUpaYOhLuNNdxF1hJ-A4mmjFddT5hrjMw==
       Age:
-      - '2465'
+      - '366'
     body:
       encoding: ASCII-8BIT
       string: '{"id":5244,"cast":[{"adult":false,"gender":0,"id":42232,"known_for_department":"Acting","name":"Juan
@@ -85,5 +154,68 @@ http_interactions:
         of Photography"},{"adult":false,"gender":0,"id":3143696,"known_for_department":"Costume
         \u0026 Make-Up","name":"Lysa Rose","original_name":"Lysa Rose","popularity":0.6,"profile_path":null,"credit_id":"60df27450f3655002f6c45bc","department":"Costume
         \u0026 Make-Up","job":"Costume Design"}]}'
-  recorded_at: Thu, 24 Mar 2022 21:04:43 GMT
+  recorded_at: Thu, 24 Mar 2022 20:29:44 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/5244/reviews?api_key=5c7904a395727b286460a52f6b9f743b&language=en-US&x-api-key=5c7904a395727b286460a52f6b9f743b
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 24 Mar 2022 20:23:38 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - c856fcbf07872c5fc6bbcf4989d376f966abf707
+      X-Memc-Age:
+      - '117'
+      X-Memc-Expires:
+      - '14633'
+      Etag:
+      - W/"ac6bb16dc9cc3fa60f1582c90da3dac1"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 ec809871438c11b540493503de981368.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD50-C2
+      X-Amz-Cf-Id:
+      - H66brFoSTMzK__d5jo7HYyEKsiDBy4O9HleECyTIpaw236JRSL1Yew==
+      Age:
+      - '366'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":5244,"page":1,"results":[],"total_pages":0,"total_results":0}'
+  recorded_at: Thu, 24 Mar 2022 20:29:44 GMT
 recorded_with: VCR 6.1.0

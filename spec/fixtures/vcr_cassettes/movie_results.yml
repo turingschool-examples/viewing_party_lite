@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.themoviedb.org/3/movie/5244?api_key=tmdb_key&language=en-US&x-api-key
+    uri: https://api.themoviedb.org/3/movie/5244?api_key=<api_key>&language=en-US&x-api-key=<api_key>
     body:
       encoding: US-ASCII
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Wed, 23 Mar 2022 15:12:38 GMT
+      - Thu, 24 Mar 2022 20:23:38 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,31 +42,31 @@ http_interactions:
       X-Memc-Key:
       - 8033e21c8d7bc3c58320ec4d0a4eb0ee25a10e53
       X-Memc-Age:
-      - '4121'
+      - '12265'
       X-Memc-Expires:
-      - '11886'
+      - '4644'
       Etag:
-      - W/"37ac91b3bb04a9e98767d557464d68dd"
+      - W/"a11819d94ef689420547b2ee487cb6b9"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 4d0ecb5905192435c3fd204705c9fc24.cloudfront.net (CloudFront)
+      - 1.1 a12c29ca3e64ac2015cf4f6c9099b8ce.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN50-C2
+      - IAD89-P1
       X-Amz-Cf-Id:
-      - H3Z6mdX_Fm6_2I97UnNVDVPsOAT01DKhapcOK1DcuulwV5XcJU-vjg==
+      - 7XdG6rkbhwGZnOw9zGXfynoABVAJm7dHuEOgwXa7nBWb1eNkzVZVEQ==
       Age:
-      - '27224'
+      - '2451'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":null,"belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"},{"id":878,"name":"Science
         Fiction"},{"id":10749,"name":"Romance"}],"homepage":"","id":5244,"imdb_id":"tt0197770","original_language":"en","original_title":"Pleasurecraft","overview":"A
         crew of astronauts are tasked with delivering three beautiful women to their
         superiors. Provided that they don''t get seduced by them before reaching their
-        destination.","popularity":1.795,"poster_path":"/A9wVs8unGUBwQgXcsJuL0w0dkcK.jpg","production_companies":[{"id":1889,"logo_path":null,"name":"Surrender
+        destination.","popularity":2.08,"poster_path":"/A9wVs8unGUBwQgXcsJuL0w0dkcK.jpg","production_companies":[{"id":1889,"logo_path":null,"name":"Surrender
         Cinema","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-01-01","revenue":0,"runtime":82,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"","title":"Pleasurecraft","video":false,"vote_average":1.0,"vote_count":2}'
-  recorded_at: Wed, 23 Mar 2022 22:46:22 GMT
+  recorded_at: Thu, 24 Mar 2022 21:04:29 GMT
 recorded_with: VCR 6.1.0
