@@ -1,6 +1,6 @@
 <div class='form-group'>
 <div class = "container">
-<%movie = MovieFacade.new(params[:movie_id]).movie%>
+<%movie = MovieFacade.movie(params[:movie_id])%>
 <h1>Create a Movie Party for <%= movie.title%></h1>
     <%= form_with model: @viewing_parties, local: true do |form| %>
     <p><%= form.label :duration %></p>
