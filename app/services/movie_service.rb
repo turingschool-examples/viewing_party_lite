@@ -14,4 +14,9 @@ class MovieService
       faraday.params["api_key"] = ENV['movie_api_key']
     end
   end
+
+  def self.find_movie(id)
+    response = conn.get("/3/movie/#{id}")
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end
