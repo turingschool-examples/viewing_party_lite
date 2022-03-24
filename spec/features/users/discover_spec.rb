@@ -8,6 +8,7 @@ RSpec.describe 'Discover Page' do
 
     it 'should have a button to discover top 20 rated movies' do
       visit user_discover_index_path(@user)
+      save_and_open_page
       click_on 'Find Top Rated Movies'
       expect(current_path).to eq(user_movies_path(@user))
     end
@@ -18,3 +19,4 @@ RSpec.describe 'Discover Page' do
       expect(current_path).to eq(user_movies_path(@user))
     end
   end
+end

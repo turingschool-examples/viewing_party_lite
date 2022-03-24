@@ -1,10 +1,27 @@
 <!DOCTYPE html>
 <html>
+<style>
+  .title {
+    text-align: center;
+  }
+  .button {
+    text-align: center;
+  }
+  .all_users {
+    text-align: center;
+  }
+  .existing_users {
+    font-weight: bold;
+  }
+</style>
+
   <head>
     <div class="home">
       <%= link_to 'Home', root_path %>
     </div>
-
+    <div class="title">
+      <h1>Viewing Party Light</h1>
+    </div>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 

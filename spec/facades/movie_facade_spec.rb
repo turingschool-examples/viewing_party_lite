@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe MovieFacade do
   describe "#methods" do
-
     describe '#get_movie' do
       it 'gets movie when passed api_id' do
         VCR.use_cassette('fight_club_api') do

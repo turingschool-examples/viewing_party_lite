@@ -1,0 +1,10 @@
+<div class="title">
+  <h3>Discover Movies</h3>
+</div>
+
+<div class="button">
+  <%= button_to 'Find Top Rated Movies',
+  user_movies_path(@user)%>
+  <p>OR</p>
+  <%= button_to 'Find Movies', user_movies_path(@user) %>
+</div>
