@@ -14,7 +14,6 @@ RSpec.describe 'New party page' do
     user_1 = User.create!(name: "Becky", email: "becky@example.com")
     user_2 = User.create!(name: "Steven", email: "steven@example.com")
     movie_id = 22
-    @movie = Movie.new(id: 22, title: "Pirates of the Caribbean: The Curse of the Black Pearl", runtime: 102, vote_average: 10)
     
     visit new_user_movie_viewing_party_path(user_1, movie_id)
     fill_in :duration, with: '102'

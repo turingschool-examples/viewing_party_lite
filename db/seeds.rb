@@ -10,9 +10,7 @@
 UserParty.destroy_all
 User.destroy_all
 ViewingParty.destroy_all
-Movie.destroy_all
 
-@movie = Movie.new(id: 22, title: "Pirates of the Caribbean: The Curse of the Black Pearl", runtime: 102, vote_average: 10)
 @vp1 = ViewingParty.create!(movie_id: 111, duration: 151, date: Time.new(2022, 04, 12, 21, 00), start_time: Time.new(2022, 04, 12, 21, 00))
 @vp2 = ViewingParty.create!(movie_id: 112, duration: 152, date: Time.new(2022, 04, 11, 20, 30), start_time: Time.new(2022, 04, 11, 20, 30))
 @vp3 = ViewingParty.create!(movie_id: 113, duration: 153, date: Time.new(2022, 04, 14, 20, 00), start_time: Time.new(2022, 04, 14, 20, 00))
