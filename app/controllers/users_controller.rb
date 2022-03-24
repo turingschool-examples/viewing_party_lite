@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def create
     user = User.create!(user_params)
-    redirect_to "/users/#{user.id}"
+    redirect_to user_path(user.id)
     flash[:alert] = "Your account was created"
   end
 

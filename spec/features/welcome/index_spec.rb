@@ -11,7 +11,8 @@ RSpec.describe 'the welcome page' do
 
     click_button('Create a New User')
 
-    expect(current_path).to eq("/register")
+
+    expect(current_path).to eq('/register')
 
     click_link('Home')
 
