@@ -8,12 +8,11 @@ class MovieService
     end
 
     response = conn.get(url)
-
     data = JSON.parse(response.body, symbolize_names: true)
   end
 
   def self.top_rated
-    self.get_url('movie/top_rated')[:results]
+    get_url('movie/top_rated')[:results]
   end
 
   def self.search_for_movie(movie)
@@ -22,5 +21,9 @@ class MovieService
 
   def self.movie_details(movie_id)
     get_url("movie/#{movie_id}")
+  end 
+
+  def self.get_cast(movie_id)
+    get_url("movie/#{movie_id}/credits")[:cast]
   end 
 end
