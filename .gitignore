@@ -14,7 +14,7 @@
 !/tmp/.keep
 /coverage/*
 /coverage/index.html
-
+/spec/fixtures
 # Ignore uploaded files in development
 /storage/*
 
