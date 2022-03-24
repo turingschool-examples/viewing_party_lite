@@ -4,7 +4,7 @@ class UsersMoviesController < ApplicationController
     @user = User.find(params[:user_id])
     if params[:top_rated] == "top_rated"
       # @top_rated = TopRated.new.movies
-      @top_rated = MovieFacade.new.movies
+      @top_rated = MovieFacade.new.best_movies
       render 'index'
     elsif params[:search]
       # @found_movies = MovieSearch.new.search(params[:search])

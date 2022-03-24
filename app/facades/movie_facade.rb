@@ -1,5 +1,5 @@
 class MovieFacade
-    def movies
+    def best_movies
       MovieService.top_rated.map do |data|
         Movie.new(data)
       end.take(20)
