@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
-
   def landing
-    @users = User.all 
+    @users = User.all
   end
 end

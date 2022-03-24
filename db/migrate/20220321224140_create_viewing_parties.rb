@@ -6,7 +6,7 @@ class CreateViewingParties < ActiveRecord::Migration[5.2]
       t.date :date
       t.time :start_time
 
-      t.timestamps 
+      t.timestamps
     end
   end
 end
