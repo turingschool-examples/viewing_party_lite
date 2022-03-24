@@ -1,0 +1,27 @@
+<center><h2>Create A Movie Party</h2></center>
+
+<center><h3>Viewing Party Details</h3></center>
+
+<%= form_with url: new_user_movie_viewing_party_path(@user, @movie), method: :post, local: true do |form| %>
+
+<center><%= form.label :title %>
+<%= form.text_field :title, placeholder: "#{@movie.title}"%></center>
+<br>
+<center><%= form.label :duration %>
+<%= form.number_field :duration, value: "#{@movie.runtime}"%></center>
+<br>
+<center><%= form.label :date%>
+<%= form.date_field :date%></center>
+<br>
+<center><%= form.label :start_time%>
+<%= form.time_field :start_time%></center>
+<br>
+
+<center><h4>Invite other users</h4></center>
+<center><% User.all.each do |user| %>
+<%= form.check_box :user %>
+<%= form.label :user, "#{user.name} (#{user.email})" %>
+<% end %>
+<br><br><br>
+<%= form.submit "Create Party" %></center>
+<% end %>
