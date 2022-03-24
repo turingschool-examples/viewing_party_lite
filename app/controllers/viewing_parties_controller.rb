@@ -3,10 +3,6 @@ class ViewingPartiesController < ApplicationController
     @viewing_party = ViewingParty.new
   end
 
-  def show 
-    @viewing_party = ViewingParty.find(params[:id])
-  end
-
   def create
     vp = ViewingParty.new(viewing_party_params)
     if vp.save
