@@ -1,4 +1,4 @@
-class Movie
+class MovieCall
   attr_reader :api_id,
              :title,
              :summary,
@@ -20,4 +20,4 @@ class Movie
    @genres = data[:genres]
    @poster = data[:poster_path]
  end
-end 
+end
