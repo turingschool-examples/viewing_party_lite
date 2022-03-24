@@ -1,17 +1,50 @@
-<div class="card-deck">
-                <% object.each do |party, index| %>
-                <% party.try(:viewing_party).nil? ? movie = MovieFacade.new(party.movie_id).movie : movie = MovieFacade.new(party.viewing_party.movie_id).movie %>
-                <div id=<%=index%>>
-                    <div class="card bg-light mb-3" style="max-width: 20rem;">
-                        <div class="card-header"><%=movie.title%></div>
-                        <div class="card-body">
-                            <img class="card-img-top"
-                                src=<%= "https://image.tmdb.org/t/p/original/#{movie.poster_path}"%>>
-                            <p class="card-text"> Date:
-                                <%= party.try(:viewing_party).nil? ? party.date_time.strftime("%m/%d/%Y at %I:%M%p") :party.viewing_party.date_time.strftime("%m/%d/%Y at %I:%M%p") %>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <% end %>
+<div class="card-deck ">
+    <% object.each_with_index do |party, index| %>
+    <% party.try(:viewing_party).nil? ? movie = MovieFacade.new(party.movie_id).movie : movie = MovieFacade.new(party.viewing_party.movie_id).movie %>
+    <div id=<%=index%>>
+        <div class="card bg-light mb-3 col-lg-4 d-flex align-items-stretch" style="max-width: 20rem;">
+            <div class="card-title">
+                <h4><%=movie.title%></h4>
             </div>
+            <div class="card-body">
+                <img class="card-img-top" src=<%= "https://image.tmdb.org/t/p/original/#{movie.poster_path}"%>>
+                <p class="card-text"> Date:
+                    <%= party.try(:viewing_party).nil? ? party.date_time.strftime("%m/%d/%Y at %I:%M%p") :party.viewing_party.date_time.strftime("%m/%d/%Y at %I:%M%p") %>
+                    <% party.try(:user_viewing_parties).nil? ? 'something else' : guests = party.user_viewing_parties %>
+                    <ul class="host list-group">
+                        <div class=" d-flex justify-content-center">
+                            <h5>Host</h5>
+                        </div>
+                        <%  party.try(:viewing_party).nil? ? host = party.user : host = party.viewing_party.user%> 
+                            <% if host.id!= params[:id].to_i %>
+                                <%=link_to(user_path(host)) do %>
+                                <li class="list-group-item"><%= host.name%></li>
+                                <%end%>
+                            <%else %>
+                                <li class="list-group-item"><%="#{host.name} (self)"%></li>
+                            <% end %>
+                    </ul>
+
+
+                    </ul>
+                    <% if guests.nil? == false && guests.length >0%>
+                    <br>
+                    <ul class="list-group">
+                        <div class="d-flex justify-content-center">
+                            <h5>Invited Guests</h5>
+                        </div>
+                        <div class="invited">
+                            <%guests.map { |vp| User.find(vp.user_id)}.each do |user|%>
+                                <%= link_to(user_path(user)) do %>
+                                <li class="list-group-item"><%=user.name%></li>
+                                <% end %>
+                            <% end %>
+                        </div>
+                    </ul>
+                    <% end %>
+                </p>
+            </div>
+        </div>
+    </div>
+    <% end %>
+</div>
