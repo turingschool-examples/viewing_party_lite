@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Wed, 23 Mar 2022 21:38:51 GMT
+      - Thu, 24 Mar 2022 00:26:25 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -40,15 +40,13 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Hit from cloudfront
+      - Miss from cloudfront
       Via:
-      - 1.1 8bd27032f0d38908fbe32b696e45c288.cloudfront.net (CloudFront)
+      - 1.1 12f59ea0cc8b3c4c54373b702216110a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN50-C2
+      - IAD66-C1
       X-Amz-Cf-Id:
-      - l3ZTVoUeSQvtSXEHCp7DJTRdLiLo2K3USmXYP2szDq7EC3ZZGvkV6A==
-      Age:
-      - '349'
+      - LKBpYpDmS4nrZ66MbU-trgHF93Ke3R6uzQ-BB-u-X1egfCc7I-50ug==
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/wPU78OPN4BYEgWYdXyg0phMee64.jpg","genre_ids":[18,80],"id":278,"original_language":"en","original_title":"The
@@ -69,5 +67,5 @@ http_interactions:
         Springs Eternal: A Look Back at The Shawshank Redemption","overview":"Documentary
         about the movie.","popularity":1.255,"poster_path":"/vdVab7yNvgYEMd8shCfy2D6nTMu.jpg","release_date":"2004-06-25","title":"Hope
         Springs Eternal: A Look Back at The Shawshank Redemption","video":false,"vote_average":7,"vote_count":1}],"total_pages":1,"total_results":3}'
-  recorded_at: Wed, 23 Mar 2022 21:44:40 GMT
+  recorded_at: Thu, 24 Mar 2022 00:26:25 GMT
 recorded_with: VCR 6.1.0

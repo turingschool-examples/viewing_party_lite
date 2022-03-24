@@ -17,13 +17,13 @@ class UsersMoviesController < ApplicationController
     elsif params[:search]
       response = conn.get("search/movie")
       data = JSON.parse(response.body, symbolize_names: true)
-      
+
       @movies = data[:results].map do |result|
         Movies.new(result)
       end.take(40)
     end
   end
 
-  def show 
-  end 
-end 
+  def show
+  end
+end

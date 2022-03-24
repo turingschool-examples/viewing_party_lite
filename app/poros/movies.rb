@@ -1,7 +1,9 @@
-class Movies 
-  attr_reader :id, :title
+class Movies
+  attr_reader :id, :title, :vote_average
+  
   def initialize(data)
     @id = data[:id]
     @title = data[:title]
-  end 
-end 
+    @vote_average = data[:vote_average]
+  end
+end
