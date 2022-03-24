@@ -1,18 +1,19 @@
 require 'pry'
 require 'faraday'
 require 'figaro'
+require './app/poros/movie_call'
 
 class MovieService
 
-  def conn
-    conn = Faraday.new(
+  def self.connect
+    Faraday.new(
       url: 'https://api.themoviedb.org',
       params: {api_key: ENV["movies_api_key"]})
   end
 
-  def get_movie(api_id)
-    response = conn.get("/3/movie/#{api_id}")
+  def self.get_movie(api_id)
+    response = MovieService.connect.get("/3/movie/#{api_id}")
     attrs = JSON.parse(response.body, symbolize_names: true)
-    Movie.new(attrs)
+    MovieCall.new(attrs)
   end
 end
