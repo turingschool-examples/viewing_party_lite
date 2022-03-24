@@ -20,4 +20,10 @@ class MovieFacade
         MovieCast.new(data)
       end.take(10)
     end
+
+    def reviews(movie_id)
+      MovieService.get_reviews(movie_id).map do |data|
+        MovieReview.new(data)
+      end
+    end 
 end

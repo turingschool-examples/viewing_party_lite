@@ -35,5 +35,13 @@ RSpec.describe 'The Movie Facade' do
         expect(cast.first).to be_instance_of(MovieCast)
       end
     end
+
+    it ".reviews" do
+      VCR.use_cassette('reviews') do
+        reviews = MovieFacade.new.reviews(278)
+        expect(reviews).to be_instance_of(Array)
+        expect(reviews.first).to be_instance_of(MovieReview)
+      end
+    end
   end
 end
