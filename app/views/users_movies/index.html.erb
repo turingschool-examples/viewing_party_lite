@@ -1,0 +1,19 @@
+<% if @top_rated %>
+  <section id="top20">
+    <h2> Top Rated Movies </h2>
+    <% @top_rated.each do |movie| %>
+      <h3> Vote Average: <%= movie.vote_average %> </h3>
+      <%= link_to "#{movie.title}", user_movies_path(@user.id, movie.id) %>
+    <% end %>
+  </section>
+<% end %>
+
+<% if @found_movies %>
+  <section id="results">
+    <h2> Movie Results </h2>
+    <% @found_movies.each do |movie| %>
+      <h3> Vote Average: <%= movie.vote_average %> </h3>
+      <%= link_to "#{movie.title}", user_movies_path(@user.id, movie.id) %>
+    <% end %>
+  </section>
+<% end %>

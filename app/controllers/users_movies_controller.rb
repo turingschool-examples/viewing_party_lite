@@ -10,7 +10,7 @@ class UsersMoviesController < ApplicationController
       top_rated_response = conn.get("movie/top_rated")
       data = JSON.parse(top_rated_response.body, symbolize_names: true)
 
-      @movies = data[:results].map do |result|
+      @top_rated = data[:results].map do |result|
           Movies.new(result)
       end.take(20)
 
@@ -18,7 +18,7 @@ class UsersMoviesController < ApplicationController
       response = conn.get("search/movie")
       data = JSON.parse(response.body, symbolize_names: true)
 
-      @movies = data[:results].map do |result|
+      @found_movies = data[:results].map do |result|
         Movies.new(result)
       end.take(40)
     end
