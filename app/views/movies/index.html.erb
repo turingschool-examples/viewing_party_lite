@@ -1,4 +1,13 @@
+<<<<<<< HEAD
   <h1>Top Rated Films:</h1>
 <% @movies.each do |movie| %>
   <p><%=movie.title %>, Rating:<%= movie.vote_average %> </p>
+=======
+<h1>Movie Results </h1>
+<% @movies.each do |movie| %>
+  <ul class="movies">
+  <li class="Title">Title: <%= link_to "#{movie.title}", "/movies/#{movie.id}"%></li>
+  <li class="Vote Average">Vote Average: <%= movie.vote_average%></li>
+</ul>
+>>>>>>> 598f61bea2d35f85b3c43dc80618afe4fe6c1b67
 <% end %>
