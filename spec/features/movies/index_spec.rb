@@ -67,10 +67,19 @@ RSpec.describe 'Movie Index Page' do
       fill_in 'search', with: 'Avengers'
       click_button 'Find Movies'
       expect(current_path).to eq(user_movies_path(@user1))
-
+      
       expect(page).to have_content("Avengers: Endgame - (Vote Average: 8.3)")
       expect(page).to have_content("Avengers: Age of Ultron - (Vote Average: 7.3)")
       expect(page).to have_content("LEGO Marvel Avengers: Loki in Training - (Vote Average: 7.8)")
+    end
+    it 'names of movies are links to movie show page', :vcr do 
+      visit user_discover_index_path(@user1)
+      fill_in 'search', with: 'Avengers'
+      click_button 'Find Movies'
+      expect(current_path).to eq(user_movies_path(@user1))
+
+      expect(page).to have_link("Avengers: Endgame")
+      expect(page).to have_link("LEGO Marvel Avengers: Loki in Training")
     end
   end
 end 
