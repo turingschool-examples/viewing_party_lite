@@ -10,5 +10,6 @@ RSpec.describe 'the movie results page' do
     click_button "Top Rated Movies"
     expect(current_path).to eq("/users/#{@u1.id}/movies")
     expect(page).to have_content("Top Movies")
+
   end
 end

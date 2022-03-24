@@ -1,0 +1,1376 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/top_rated?api_key=movie_api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 24 Mar 2022 00:05:33 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=21600
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 6c378f62253fc1e443ac0b930892a0d4.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - BOS50-C1
+      X-Amz-Cf-Id:
+      - f671ksQ_fALLEyyToK_zbtJz8B0AGnzW73mmMU5chQk2g_zSNdfKoA==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJwYWdlIjoxLCJyZXN1bHRzIjpbeyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvd1BVNzhPUE40QllFZ1dZZFh5ZzBwaE1lZTY0LmpwZyIsImdlbnJlX2lkcyI6WzE4LDgwXSwiaWQiOjI3OCwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiVGhlIFNoYXdzaGFuayBSZWRlbXB0aW9uIiwib3ZlcnZpZXciOiJGcmFtZWQgaW4gdGhlIDE5NDBzIGZvciB0aGUgZG91YmxlIG11cmRlciBvZiBoaXMgd2lmZSBhbmQgaGVyIGxvdmVyLCB1cHN0YW5kaW5nIGJhbmtlciBBbmR5IER1ZnJlc25lIGJlZ2lucyBhIG5ldyBsaWZlIGF0IHRoZSBTaGF3c2hhbmsgcHJpc29uLCB3aGVyZSBoZSBwdXRzIGhpcyBhY2NvdW50aW5nIHNraWxscyB0byB3b3JrIGZvciBhbiBhbW9yYWwgd2FyZGVuLiBEdXJpbmcgaGlzIGxvbmcgc3RyZXRjaCBpbiBwcmlzb24sIER1ZnJlc25lIGNvbWVzIHRvIGJlIGFkbWlyZWQgYnkgdGhlIG90aGVyIGlubWF0ZXMgLS0gaW5jbHVkaW5nIGFuIG9sZGVyIHByaXNvbmVyIG5hbWVkIFJlZCAtLSBmb3IgaGlzIGludGVncml0eSBhbmQgdW5xdWVuY2hhYmxlIHNlbnNlIG9mIGhvcGUuIiwicG9wdWxhcml0eSI6NzEuNTMyLCJwb3N0ZXJfcGF0aCI6Ii9xNnkwR28xdHNHRXNtdEZyeURPSm8zZEVtcXUuanBnIiwicmVsZWFzZV9kYXRlIjoiMTk5NC0wOS0yMyIsInRpdGxlIjoiVGhlIFNoYXdzaGFuayBSZWRlbXB0aW9uIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjguNywidm90ZV9jb3VudCI6MjEwMDd9LHsiYWR1bHQiOmZhbHNlLCJiYWNrZHJvcF9wYXRoIjoiLzkwZXo2QXJ2cE84YnZweUluZ0J1d1hPcUptNS5qcGciLCJnZW5yZV9pZHMiOlszNSwxOCwxMDc0OV0sImlkIjoxOTQwNCwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJoaSIsIm9yaWdpbmFsX3RpdGxlIjoi4KSm4KS/4KSy4KS14KS+4KSy4KWHIOCkpuClgeCksuCljeCkueCkqOCkv+Ckr+CkviDgpLLgpYcg4KSc4KS+4KSv4KWH4KSC4KSX4KWHIiwib3ZlcnZpZXciOiJSYWogaXMgYSByaWNoLCBjYXJlZnJlZSwgaGFwcHktZ28tbHVja3kgc2Vjb25kIGdlbmVyYXRpb24gTlJJLiBTaW1yYW4gaXMgdGhlIGRhdWdodGVyIG9mIENoYXVkaGFyeSBCYWxkZXYgU2luZ2gsIHdobyBpbiBzcGl0ZSBvZiBiZWluZyBhbiBOUkkgaXMgdmVyeSBzdHJpY3QgYWJvdXQgYWRoZXJlbmNlIHRvIEluZGlhbiB2YWx1ZXMuIFNpbXJhbiBoYXMgbGVmdCBmb3IgSW5kaWEgdG8gYmUgbWFycmllZCB0byBoZXIgY2hpbGRob29kIGZpYW5jw6kuIFJhaiBsZWF2ZXMgZm9yIEluZGlhIHdpdGggYSBtaXNzaW9uIGF0IGhpcyBoYW5kcywgdG8gY2xhaW0gaGlzIGxhZHkgbG92ZSB1bmRlciB0aGUgbm9zZXMgb2YgaGVyIHdob2xlIGZhbWlseS4gVGh1cyBiZWdpbnMgYSBzYWdhLiIsInBvcHVsYXJpdHkiOjIyLjA0LCJwb3N0ZXJfcGF0aCI6Ii8yQ0FMMjQzM1plSWloZlgxSGIyMTM5Q1gwcFcuanBnIiwicmVsZWFzZV9kYXRlIjoiMTk5NS0xMC0yMCIsInRpdGxlIjoiRGlsd2FsZSBEdWxoYW5pYSBMZSBKYXllbmdlIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjguNywidm90ZV9jb3VudCI6MzUyMn0seyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvclNQdzd0Z0NIOWM2TnFJQ1plZjRrWmpGT1E1LmpwZyIsImdlbnJlX2lkcyI6WzE4LDgwXSwiaWQiOjIzOCwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiVGhlIEdvZGZhdGhlciIsIm92ZXJ2aWV3IjoiU3Bhbm5pbmcgdGhlIHllYXJzIDE5NDUgdG8gMTk1NSwgYSBjaHJvbmljbGUgb2YgdGhlIGZpY3Rpb25hbCBJdGFsaWFuLUFtZXJpY2FuIENvcmxlb25lIGNyaW1lIGZhbWlseS4gV2hlbiBvcmdhbml6ZWQgY3JpbWUgZmFtaWx5IHBhdHJpYXJjaCwgVml0byBDb3JsZW9uZSBiYXJlbHkgc3Vydml2ZXMgYW4gYXR0ZW1wdCBvbiBoaXMgbGlmZSwgaGlzIHlvdW5nZXN0IHNvbiwgTWljaGFlbCBzdGVwcyBpbiB0byB0YWtlIGNhcmUgb2YgdGhlIHdvdWxkLWJlIGtpbGxlcnMsIGxhdW5jaGluZyBhIGNhbXBhaWduIG9mIGJsb29keSByZXZlbmdlLiIsInBvcHVsYXJpdHkiOjEwMC40LCJwb3N0ZXJfcGF0aCI6Ii93V0piQm81eWp3MjJBSWpFOGlzQkZvaUJJM1MuanBnIiwicmVsZWFzZV9kYXRlIjoiMTk3Mi0wMy0xNCIsInRpdGxlIjoiVGhlIEdvZGZhdGhlciIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo4LjcsInZvdGVfY291bnQiOjE1Njk1fSx7ImFkdWx0IjpmYWxzZSwiYmFja2Ryb3BfcGF0aCI6Ii9scDZTbXd5TlJzcEVZa2tMWEZFVnVObEN3NzcuanBnIiwiZ2VucmVfaWRzIjpbMTYsMTQsMTA3NDksMThdLCJpZCI6NTMzNTE0LCJvcmlnaW5hbF9sYW5ndWFnZSI6ImphIiwib3JpZ2luYWxfdGl0bGUiOiLliofloLTniYgg44O044Kh44Kk44Kq44Os44OD44OI44O744Ko44O044Kh44O844Ks44O844OH44OzIiwib3ZlcnZpZXciOiJBcyB0aGUgd29ybGQgbW92ZXMgb24gZnJvbSB0aGUgd2FyIGFuZCB0ZWNobm9sb2dpY2FsIGFkdmFuY2VzIGJyaW5nIGNoYW5nZXMgdG8gaGVyIGxpZmUsIFZpb2xldCBzdGlsbCBob3BlcyB0byBzZWUgaGVyIGxvc3QgY29tbWFuZGluZyBvZmZpY2VyIGFnYWluLiIsInBvcHVsYXJpdHkiOjM0LjMwNCwicG9zdGVyX3BhdGgiOiIvYmFqYWprb0VyRHN0MEp4ZEZ5QmtBQmlGOXJXLmpwZyIsInJlbGVhc2VfZGF0ZSI6IjIwMjAtMDktMTgiLCJ0aXRsZSI6IlZpb2xldCBFdmVyZ2FyZGVuOiBUaGUgTW92aWUiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6OC43LCJ2b3RlX2NvdW50IjoyMDN9LHsiYWR1bHQiOmZhbHNlLCJiYWNrZHJvcF9wYXRoIjoiL3Y1Q0V0ODhpRHN1b01hVzFRNU1zdTlVWmRFdC5qcGciLCJnZW5yZV9pZHMiOlsxMDc0OSwxOF0sImlkIjo3MzAxNTQsIm9yaWdpbmFsX2xhbmd1YWdlIjoiamEiLCJvcmlnaW5hbF90aXRsZSI6IuOBjeOBv+OBruees+OBjOWVj+OBhOOBi+OBkeOBpuOBhOOCiyIsIm92ZXJ2aWV3IjoiQSB0cmFnaWMgYWNjaWRlbnQgbGVhZCB0byBLYW9yaSdzIGJsaW5kbmVzcywgYnV0IHNoZSBjbGluZ3MgdG8gbGlmZSBhbmQgdGhlIHNtYWxsZXIgcGxlYXN1cmVzIGl0IGNhbiBzdGlsbCBhZmZvcmQgaGVyLiBTaGUgbWVldHMgUnVpIGFuZCBiZWdpbnMgdG8gdGFsayB0byBoaW0uIFJ1aSB3YXMgb25jZSBhIHByb21pc2luZyBraWNrYm94ZXIsIGJ1dCBzb21ldGhpbmcgaGFwcGVuZWQgaW4gaGlzIHBhc3QuIEthb3JpJ3Mgc21pbGUgYnJpbmdzIG91dCBhIGNoYW5nZSBpbiBSdWkuIEhvd2V2ZXIsIHRoZSB0d28gYXJlIGNvbm5lY3RlZCBpbiBtb3JlIHRoYW4gb25lIHdheS4gUnVpIGF0dGVtcHRzIHRvIGRvIHdoYXQgaXMgcmlnaHQuIiwicG9wdWxhcml0eSI6MTMuMzY4LCJwb3N0ZXJfcGF0aCI6Ii9jVm44RTNGeGJpOEh6WVl0YVNmc2JsWUM0Z2wuanBnIiwicmVsZWFzZV9kYXRlIjoiMjAyMC0xMC0yMyIsInRpdGxlIjoiWW91ciBFeWVzIFRlbGwiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6OC43LCJ2b3RlX2NvdW50IjoyNzJ9LHsiYWR1bHQiOmZhbHNlLCJiYWNrZHJvcF9wYXRoIjoiL2xvUm1SelFYWmVxRzc4VHFadXl2U2xFUWZaYi5qcGciLCJnZW5yZV9pZHMiOlsxOCwzNiwxMDc1Ml0sImlkIjo0MjQsIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6IlNjaGluZGxlcidzIExpc3QiLCJvdmVydmlldyI6IlRoZSB0cnVlIHN0b3J5IG9mIGhvdyBidXNpbmVzc21hbiBPc2thciBTY2hpbmRsZXIgc2F2ZWQgb3ZlciBhIHRob3VzYW5kIEpld2lzaCBsaXZlcyBmcm9tIHRoZSBOYXppcyB3aGlsZSB0aGV5IHdvcmtlZCBhcyBzbGF2ZXMgaW4gaGlzIGZhY3RvcnkgZHVyaW5nIFdvcmxkIFdhciBJSS4iLCJwb3B1bGFyaXR5Ijo0OS45NjgsInBvc3Rlcl9wYXRoIjoiL3NGMVU0RVVRUzhZSFVZak5sM3BNR05JUXlyMC5qcGciLCJyZWxlYXNlX2RhdGUiOiIxOTkzLTExLTMwIiwidGl0bGUiOiJTY2hpbmRsZXIncyBMaXN0IiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjguNiwidm90ZV9jb3VudCI6MTI1MzV9LHsiYWR1bHQiOmZhbHNlLCJiYWNrZHJvcF9wYXRoIjoiLzNSTUxiU0VYT24xQ3pMb05UN3hGZUxmZHhocS5qcGciLCJnZW5yZV9pZHMiOlsxMDc0OSwxNl0sImlkIjozNzI3NTQsIm9yaWdpbmFsX2xhbmd1YWdlIjoiamEiLCJvcmlnaW5hbF90aXRsZSI6IuWQjOe0mueUnyIsIm92ZXJ2aWV3IjoiUmloaXRvIFNham8sIGFuIGhvbm9yIHN0dWRlbnQgd2l0aCBhIHBlcmZlY3Qgc2NvcmUgb24gdGhlIGVudHJhbmNlIGV4YW0gYW5kIEhpa2FydSBLdXNha2FiZSwgaW4gYSBiYW5kIGFuZCBwb3B1bGFyIGFtb25nIGdpcmxzLCB3b3VsZCBoYXZlIG5ldmVyIGNyb3NzZWQgcGF0aHMuIFVudGlsIG9uZSBkYXkgdGhleSBzdGFydGVkIHRhbGtpbmcgYXQgdGhlIHByYWN0aWNlIGZvciB0aGVpciBzY2hvb2zigJlzIHVwY29taW5nIGNob3J1cyBmZXN0aXZhbC4gQWZ0ZXIgc2Nob29sLCB0aGUgdHdvIG1lZXQgcmVndWxhcmx5LCBhcyBIaWthcnUgaGVscHMgUmloaXRvIHRvIGltcHJvdmUgaGlzIHNpbmdpbmcgc2tpbGxzLiBXaGlsZSB0aGV5IGxpc3RlbiB0byBlYWNoIG90aGVy4oCZcyB2b2ljZSBhbmQgaGFybW9uaXplLCB0aGVpciBoZWFydHMgc3RhcnQgdG8gYmVhdCB0b2dldGhlci4iLCJwb3B1bGFyaXR5IjoxNC4wNjIsInBvc3Rlcl9wYXRoIjoiL2NJZlJDQTV3RXZqOXRBcGNhNFVEVWFnUUVpTS5qcGciLCJyZWxlYXNlX2RhdGUiOiIyMDE2LTAyLTIwIiwidGl0bGUiOiJEb3Uga3l1IHNlaSDigJMgQ2xhc3NtYXRlcyIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo4LjYsInZvdGVfY291bnQiOjIxMn0seyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvanRBSTZPSklXTFdpUkl0TlNab1dqcnNVdG1pLmpwZyIsImdlbnJlX2lkcyI6WzEwNzQ5XSwiaWQiOjcyNDA4OSwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiR2FicmllbCdzIEluZmVybm8gUGFydCBJSSIsIm92ZXJ2aWV3IjoiUHJvZmVzc29yIEdhYnJpZWwgRW1lcnNvbiBmaW5hbGx5IGxlYXJucyB0aGUgdHJ1dGggYWJvdXQgSnVsaWEgTWl0Y2hlbGwncyBpZGVudGl0eSwgYnV0IGhpcyByZWFsaXphdGlvbiBjb21lcyBhIG1vbWVudCB0b28gbGF0ZS4gSnVsaWEgaXMgZG9uZSB3YWl0aW5nIGZvciB0aGUgd2VsbC1yZXNwZWN0ZWQgRGFudGUgc3BlY2lhbGlzdCB0byByZW1lbWJlciBoZXIgYW5kIHdhbnRzIG5vdGhpbmcgbW9yZSB0byBkbyB3aXRoIGhpbS4gQ2FuIEdhYnJpZWwgd2luIGJhY2sgaGVyIGhlYXJ0IGJlZm9yZSBzaGUgZmluZHMgbG92ZSBpbiBhbm90aGVyJ3MgYXJtcz8iLCJwb3B1bGFyaXR5IjoxNC44MjgsInBvc3Rlcl9wYXRoIjoiL3g1bzhjTFpmRVhNb1pjelRZV0xyVW8xUDdVSi5qcGciLCJyZWxlYXNlX2RhdGUiOiIyMDIwLTA3LTMxIiwidGl0bGUiOiJHYWJyaWVsJ3MgSW5mZXJubyBQYXJ0IElJIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjguNiwidm90ZV9jb3VudCI6MTM4OX0seyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvcG9lYzZScU9LWTlpU2lJVW1meWZQZmlMdHZCLmpwZyIsImdlbnJlX2lkcyI6WzE4LDgwXSwiaWQiOjI0MCwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiVGhlIEdvZGZhdGhlcjogUGFydCBJSSIsIm92ZXJ2aWV3IjoiSW4gdGhlIGNvbnRpbnVpbmcgc2FnYSBvZiB0aGUgQ29ybGVvbmUgY3JpbWUgZmFtaWx5LCBhIHlvdW5nIFZpdG8gQ29ybGVvbmUgZ3Jvd3MgdXAgaW4gU2ljaWx5IGFuZCBpbiAxOTEwcyBOZXcgWW9yay4gSW4gdGhlIDE5NTBzLCBNaWNoYWVsIENvcmxlb25lIGF0dGVtcHRzIHRvIGV4cGFuZCB0aGUgZmFtaWx5IGJ1c2luZXNzIGludG8gTGFzIFZlZ2FzLCBIb2xseXdvb2QgYW5kIEN1YmEuIiwicG9wdWxhcml0eSI6NzAuNDY5LCJwb3N0ZXJfcGF0aCI6Ii9lY0JSa1hlckFacVJSVWZSOEx0M0wzRGg2SjUuanBnIiwicmVsZWFzZV9kYXRlIjoiMTk3NC0xMi0yMCIsInRpdGxlIjoiVGhlIEdvZGZhdGhlcjogUGFydCBJSSIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo4LjYsInZvdGVfY291bnQiOjk0NTR9LHsiYWR1bHQiOmZhbHNlLCJiYWNrZHJvcF9wYXRoIjoiL3cydUd2Q3BNdHZScVpnNndhQzFodkx5Wm9KYS5qcGciLCJnZW5yZV9pZHMiOlsxMDc0OV0sImlkIjo2OTYzNzQsIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6IkdhYnJpZWwncyBJbmZlcm5vIiwib3ZlcnZpZXciOiJBbiBpbnRyaWd1aW5nIGFuZCBzaW5mdWwgZXhwbG9yYXRpb24gb2Ygc2VkdWN0aW9uLCBmb3JiaWRkZW4gbG92ZSwgYW5kIHJlZGVtcHRpb24sIEdhYnJpZWwncyBJbmZlcm5vIGlzIGEgY2FwdGl2YXRpbmcgYW5kIHdpbGRseSBwYXNzaW9uYXRlIHRhbGUgb2Ygb25lIG1hbidzIGVzY2FwZSBmcm9tIGhpcyBvd24gcGVyc29uYWwgaGVsbCBhcyBoZSB0cmllcyB0byBlYXJuIHRoZSBpbXBvc3NpYmxlLS1mb3JnaXZlbmVzcyBhbmQgbG92ZS4iLCJwb3B1bGFyaXR5IjoxMC4zMDcsInBvc3Rlcl9wYXRoIjoiL295RzlUTDdGY1JQNEVaOVZpZDZ1S3p3ZG5kei5qcGciLCJyZWxlYXNlX2RhdGUiOiIyMDIwLTA1LTI5IiwidGl0bGUiOiJHYWJyaWVsJ3MgSW5mZXJubyIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo4LjYsInZvdGVfY291bnQiOjIyMTV9LHsiYWR1bHQiOmZhbHNlLCJiYWNrZHJvcF9wYXRoIjoiL2ZRcTFGV3AxckM4OXhEclJNdXlGSmRGVWRNZC5qcGciLCJnZW5yZV9pZHMiOlsxMDc0OSwzNV0sImlkIjo3NjEwNTMsIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6IkdhYnJpZWwncyBJbmZlcm5vIFBhcnQgSUlJIiwib3ZlcnZpZXciOiJUaGUgZmluYWwgcGFydCBvZiB0aGUgZmlsbSBhZGFwdGlvbiBvZiB0aGUgZXJvdGljIHJvbWFuY2Ugbm92ZWwgR2FicmllbCdzIEluZmVybm8gd3JpdHRlbiBieSBhbiBhbm9ueW1vdXMgQ2FuYWRpYW4gYXV0aG9yIHVuZGVyIHRoZSBwZW4gbmFtZSBTeWx2YWluIFJleW5hcmQuIiwicG9wdWxhcml0eSI6MjcuNTkzLCJwb3N0ZXJfcGF0aCI6Ii91cW1UeE9QM2dObDVNV1J0MXdsclVuelRwaE0uanBnIiwicmVsZWFzZV9kYXRlIjoiMjAyMC0xMS0xOSIsInRpdGxlIjoiR2FicmllbCdzIEluZmVybm8gUGFydCBJSUkiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6OC42LCJ2b3RlX2NvdW50Ijo5NDh9LHsiYWR1bHQiOmZhbHNlLCJiYWNrZHJvcF9wYXRoIjoiL21NdFV5YlE2aEwyNEZYbzBGM1o0ajJLRzdrWi5qcGciLCJnZW5yZV9pZHMiOlsxMDc0OSwxNiwxOF0sImlkIjozNzIwNTgsIm9yaWdpbmFsX2xhbmd1YWdlIjoiamEiLCJvcmlnaW5hbF90aXRsZSI6IuWQm+OBruWQjeOBr+OAgiIsIm92ZXJ2aWV3IjoiSGlnaCBzY2hvb2xlcnMgTWl0c3VoYSBhbmQgVGFraSBhcmUgY29tcGxldGUgc3RyYW5nZXJzIGxpdmluZyBzZXBhcmF0ZSBsaXZlcy4gQnV0IG9uZSBuaWdodCwgdGhleSBzdWRkZW5seSBzd2l0Y2ggcGxhY2VzLiBNaXRzdWhhIHdha2VzIHVwIGluIFRha2nigJlzIGJvZHksIGFuZCBoZSBpbiBoZXJzLiBUaGlzIGJpemFycmUgb2NjdXJyZW5jZSBjb250aW51ZXMgdG8gaGFwcGVuIHJhbmRvbWx5LCBhbmQgdGhlIHR3byBtdXN0IGFkanVzdCB0aGVpciBsaXZlcyBhcm91bmQgZWFjaCBvdGhlci4iLCJwb3B1bGFyaXR5IjoxNzYuODkxLCJwb3N0ZXJfcGF0aCI6Ii9xNzE5alhYRXpPb1lhcHM2YmFiZ0tuT05PTlguanBnIiwicmVsZWFzZV9kYXRlIjoiMjAxNi0wOC0yNiIsInRpdGxlIjoiWW91ciBOYW1lLiIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo4LjUsInZvdGVfY291bnQiOjg0NzB9LHsiYWR1bHQiOmZhbHNlLCJiYWNrZHJvcF9wYXRoIjoiL2hadGg5TkNlWHZ2TzdYaTk4ZDhxMzRlMUllci5qcGciLCJnZW5yZV9pZHMiOlsxNiwxMDc1MSwxNF0sImlkIjoxMjksIm9yaWdpbmFsX2xhbmd1YWdlIjoiamEiLCJvcmlnaW5hbF90aXRsZSI6IuWNg+OBqOWNg+Wwi+OBruelnumaoOOBlyIsIm92ZXJ2aWV3IjoiQSB5b3VuZyBnaXJsLCBDaGloaXJvLCBiZWNvbWVzIHRyYXBwZWQgaW4gYSBzdHJhbmdlIG5ldyB3b3JsZCBvZiBzcGlyaXRzLiBXaGVuIGhlciBwYXJlbnRzIHVuZGVyZ28gYSBteXN0ZXJpb3VzIHRyYW5zZm9ybWF0aW9uLCBzaGUgbXVzdCBjYWxsIHVwb24gdGhlIGNvdXJhZ2Ugc2hlIG5ldmVyIGtuZXcgc2hlIGhhZCB0byBmcmVlIGhlciBmYW1pbHkuIiwicG9wdWxhcml0eSI6OTUuODIzLCJwb3N0ZXJfcGF0aCI6Ii8zOXdtSXRJV3NnNXNaTXlSVUhMa1dCY3VWQ00uanBnIiwicmVsZWFzZV9kYXRlIjoiMjAwMS0wNy0yMCIsInRpdGxlIjoiU3Bpcml0ZWQgQXdheSIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo4LjUsInZvdGVfY291bnQiOjEyNTg0fSx7ImFkdWx0IjpmYWxzZSwiYmFja2Ryb3BfcGF0aCI6Ii9UVTlOSWp3empvS1B3UUhvSHNoa0ZjUVVDRy5qcGciLCJnZW5yZV9pZHMiOlszNSw1MywxOF0sImlkIjo0OTYyNDMsIm9yaWdpbmFsX2xhbmd1YWdlIjoia28iLCJvcmlnaW5hbF90aXRsZSI6Iuq4sOyDney2qSIsIm92ZXJ2aWV3IjoiQWxsIHVuZW1wbG95ZWQsIEtpLXRhZWsncyBmYW1pbHkgdGFrZXMgcGVjdWxpYXIgaW50ZXJlc3QgaW4gdGhlIHdlYWx0aHkgYW5kIGdsYW1vcm91cyBQYXJrcyBmb3IgdGhlaXIgbGl2ZWxpaG9vZCB1bnRpbCB0aGV5IGdldCBlbnRhbmdsZWQgaW4gYW4gdW5leHBlY3RlZCBpbmNpZGVudC4iLCJwb3B1bGFyaXR5IjoxMjAuMDkzLCJwb3N0ZXJfcGF0aCI6Ii83SWlUVGdsb0p6dkdJMVRBWXltQ2ZiZmwzdlQuanBnIiwicmVsZWFzZV9kYXRlIjoiMjAxOS0wNS0zMCIsInRpdGxlIjoiUGFyYXNpdGUiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6OC41LCJ2b3RlX2NvdW50IjoxMzMyM30seyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvbDVLOWVsdWdmdGxjeUlISG00bnlsdnNuMjZYLmpwZyIsImdlbnJlX2lkcyI6WzE4XSwiaWQiOjI1NTcwOSwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJrbyIsIm9yaWdpbmFsX3RpdGxlIjoi7IaM7JuQIiwib3ZlcnZpZXciOiJBZnRlciA4LXllYXItb2xkIFNvLXdvbiBuYXJyb3dseSBzdXJ2aXZlcyBhIGJydXRhbCBzZXh1YWwgYXNzYXVsdCwgaGVyIGZhbWlseSBsYWJvcnMgdG8gaGVscCBoZXIgaGVhbCB3aGlsZSBjb3Bpbmcgd2l0aCB0aGVpciBvd24gcmFnZSBhbmQgZ3JpZWYuIiwicG9wdWxhcml0eSI6MjAsInBvc3Rlcl9wYXRoIjoiL3o0bE5xc2M3dWhTYnRibmlPUzZyMGZUSXZ2NS5qcGciLCJyZWxlYXNlX2RhdGUiOiIyMDEzLTEwLTAyIiwidGl0bGUiOiJIb3BlIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjguNSwidm90ZV9jb3VudCI6MzM1fSx7ImFkdWx0IjpmYWxzZSwiYmFja2Ryb3BfcGF0aCI6Ii9xcUhRc1N0VjZleGdoQ003emJPYnVZQmlZeHcuanBnIiwiZ2VucmVfaWRzIjpbMThdLCJpZCI6Mzg5LCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiIxMiBBbmdyeSBNZW4iLCJvdmVydmlldyI6IlRoZSBkZWZlbnNlIGFuZCB0aGUgcHJvc2VjdXRpb24gaGF2ZSByZXN0ZWQgYW5kIHRoZSBqdXJ5IGlzIGZpbGluZyBpbnRvIHRoZSBqdXJ5IHJvb20gdG8gZGVjaWRlIGlmIGEgeW91bmcgU3BhbmlzaC1BbWVyaWNhbiBpcyBndWlsdHkgb3IgaW5ub2NlbnQgb2YgbXVyZGVyaW5nIGhpcyBmYXRoZXIuIFdoYXQgYmVnaW5zIGFzIGFuIG9wZW4gYW5kIHNodXQgY2FzZSBzb29uIGJlY29tZXMgYSBtaW5pLWRyYW1hIG9mIGVhY2ggb2YgdGhlIGp1cm9ycycgcHJlanVkaWNlcyBhbmQgcHJlY29uY2VwdGlvbnMgYWJvdXQgdGhlIHRyaWFsLCB0aGUgYWNjdXNlZCwgYW5kIGVhY2ggb3RoZXIuIiwicG9wdWxhcml0eSI6MjYuOTQ0LCJwb3N0ZXJfcGF0aCI6Ii9lMDJzNHdtVEFFeGtLZzB5RjRkRUc5OFpScEsuanBnIiwicmVsZWFzZV9kYXRlIjoiMTk1Ny0wNC0xMCIsInRpdGxlIjoiMTIgQW5ncnkgTWVuIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjguNSwidm90ZV9jb3VudCI6NjI2N30seyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIveE1JeW90b3JVdjJZejd6cFF6MlFZYzh3a1dCLmpwZyIsImdlbnJlX2lkcyI6WzE0LDE4LDgwXSwiaWQiOjQ5Nywib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiVGhlIEdyZWVuIE1pbGUiLCJvdmVydmlldyI6IkEgc3VwZXJuYXR1cmFsIHRhbGUgc2V0IG9uIGRlYXRoIHJvdyBpbiBhIFNvdXRoZXJuIHByaXNvbiwgd2hlcmUgZ2VudGxlIGdpYW50IEpvaG4gQ29mZmV5IHBvc3Nlc3NlcyB0aGUgbXlzdGVyaW91cyBwb3dlciB0byBoZWFsIHBlb3BsZSdzIGFpbG1lbnRzLiBXaGVuIHRoZSBjZWxsIGJsb2NrJ3MgaGVhZCBndWFyZCwgUGF1bCBFZGdlY29tYiwgcmVjb2duaXplcyBDb2ZmZXkncyBtaXJhY3Vsb3VzIGdpZnQsIGhlIHRyaWVzIGRlc3BlcmF0ZWx5IHRvIGhlbHAgc3RhdmUgb2ZmIHRoZSBjb25kZW1uZWQgbWFuJ3MgZXhlY3V0aW9uLiIsInBvcHVsYXJpdHkiOjEwMy43MzUsInBvc3Rlcl9wYXRoIjoiL3ZlbFdQaFZNUWVRS2N4Z2dORVU4WW1JbzUyUi5qcGciLCJyZWxlYXNlX2RhdGUiOiIxOTk5LTEyLTEwIiwidGl0bGUiOiJUaGUgR3JlZW4gTWlsZSIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo4LjUsInZvdGVfY291bnQiOjEzNjY2fSx7ImFkdWx0IjpmYWxzZSwiYmFja2Ryb3BfcGF0aCI6Ii91MXdIVUEwUjQ4Rkg0V1Yzc0dxand4M2FOWm0uanBnIiwiZ2VucmVfaWRzIjpbMTYsMTgsMTA0MDIsMTA3NDldLCJpZCI6NjMyNjMyLCJvcmlnaW5hbF9sYW5ndWFnZSI6ImphIiwib3JpZ2luYWxfdGl0bGUiOiLmmKDnlLsg44Ku44O044OzIiwib3ZlcnZpZXciOiJUaGUgZmlsbSBjZW50ZXJzIG9uIHRoZSBsb3ZlIHJlbGF0aW9uc2hpcCBhbW9uZyB0aGUgYmFuZCdzIGJhc3Npc3QgSGFydWtpIE5ha2F5YW1hLCBkcnVtbWVyIEFraWhpa28gS2FqaSwgYW5kIEFraWhpa28ncyByb29tbWF0ZSBhbmQgZXgtYm95ZnJpZW5kIFVnZXRzdSBNdXJhdGEuIiwicG9wdWxhcml0eSI6MTQwLjUyOSwicG9zdGVyX3BhdGgiOiIveEtDdG9ZSFV5WDh6QWc2OGVlbW5ZYTJvcmVwLmpwZyIsInJlbGVhc2VfZGF0ZSI6IjIwMjAtMDgtMjIiLCJ0aXRsZSI6IkdpdmVuIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjguNSwidm90ZV9jb3VudCI6MzA2fSx7ImFkdWx0IjpmYWxzZSwiYmFja2Ryb3BfcGF0aCI6Ii9uTUtkVVVlcFIwaTV6bjB5MVQ0Q3NTQjVjaHkuanBnIiwiZ2VucmVfaWRzIjpbMTgsMjgsODAsNTNdLCJpZCI6MTU1LCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiJUaGUgRGFyayBLbmlnaHQiLCJvdmVydmlldyI6IkJhdG1hbiByYWlzZXMgdGhlIHN0YWtlcyBpbiBoaXMgd2FyIG9uIGNyaW1lLiBXaXRoIHRoZSBoZWxwIG9mIEx0LiBKaW0gR29yZG9uIGFuZCBEaXN0cmljdCBBdHRvcm5leSBIYXJ2ZXkgRGVudCwgQmF0bWFuIHNldHMgb3V0IHRvIGRpc21hbnRsZSB0aGUgcmVtYWluaW5nIGNyaW1pbmFsIG9yZ2FuaXphdGlvbnMgdGhhdCBwbGFndWUgdGhlIHN0cmVldHMuIFRoZSBwYXJ0bmVyc2hpcCBwcm92ZXMgdG8gYmUgZWZmZWN0aXZlLCBidXQgdGhleSBzb29uIGZpbmQgdGhlbXNlbHZlcyBwcmV5IHRvIGEgcmVpZ24gb2YgY2hhb3MgdW5sZWFzaGVkIGJ5IGEgcmlzaW5nIGNyaW1pbmFsIG1hc3Rlcm1pbmQga25vd24gdG8gdGhlIHRlcnJpZmllZCBjaXRpemVucyBvZiBHb3RoYW0gYXMgdGhlIEpva2VyLiIsInBvcHVsYXJpdHkiOjEzNy45MzIsInBvc3Rlcl9wYXRoIjoiL3FKMnRXNldNVUR1eDkxMXI2bTdoYVJlZjBXSC5qcGciLCJyZWxlYXNlX2RhdGUiOiIyMDA4LTA3LTE0IiwidGl0bGUiOiJUaGUgRGFyayBLbmlnaHQiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6OC41LCJ2b3RlX2NvdW50IjoyNzExOH0seyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvMUVBeE5xZGtWbnA0OGE3TlV1TkJIR2Zsb3dNLmpwZyIsImdlbnJlX2lkcyI6WzE2LDI4LDg3OCwxOF0sImlkIjoyODM1NjYsIm9yaWdpbmFsX2xhbmd1YWdlIjoiamEiLCJvcmlnaW5hbF90aXRsZSI6IuOCt+ODs+ODu+OCqOODtOOCoeODs+OCsuODquOCquODs+WKh+WgtOeJiDp8fCIsIm92ZXJ2aWV3IjoiSW4gdGhlIGFmdGVybWF0aCBvZiB0aGUgRm91cnRoIEltcGFjdCwgc3RyYW5kZWQgd2l0aG91dCB0aGVpciBFdmFuZ2VsaW9ucywgU2hpbmppLCBBc3VrYSwgYW5kIFJlaSBmaW5kIHJlZnVnZSBpbiBvbmUgb2YgdGhlIHJhcmUgcG9ja2V0cyBvZiBodW1hbml0eSB0aGF0IHN0aWxsIGV4aXN0IG9uIHRoZSBydWluZWQgcGxhbmV0IEVhcnRoLiBUaGVyZSwgZWFjaCBvZiB0aGVtIGxpdmUgYSBsaWZlIGZhciBkaWZmZXJlbnQgZnJvbSB0aGVpciBkYXlzIGFzIGFuIEV2YW5nZWxpb24gcGlsb3QuIEhvd2V2ZXIsIHRoZSBkYW5nZXIgdG8gdGhlIHdvcmxkIGlzIGZhciBmcm9tIG92ZXIuIEEgbmV3IGltcGFjdCBpcyBsb29taW5nIG9uIHRoZSBob3Jpem9u4oCUb25lIHRoYXQgd2lsbCBwcm92ZSB0byBiZSB0aGUgdHJ1ZSBlbmQgb2YgRXZhbmdlbGlvbi4iLCJwb3B1bGFyaXR5IjoxNDQuNzE4LCJwb3N0ZXJfcGF0aCI6Ii9tZDV3WlJSajhiaUhyR3R5aXRnQlpvNzY3NHQuanBnIiwicmVsZWFzZV9kYXRlIjoiMjAyMS0wMy0wOCIsInRpdGxlIjoiRXZhbmdlbGlvbjogMy4wKzEuMCBUaHJpY2UgVXBvbiBhIFRpbWUiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6OC41LCJ2b3RlX2NvdW50Ijo0NzR9XSwidG90YWxfcGFnZXMiOjQ5MCwidG90YWxfcmVzdWx0cyI6OTc4NX0=
+  recorded_at: Thu, 24 Mar 2022 00:05:33 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/278?api_key=movie_api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 23 Mar 2022 17:59:51 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - c7d0f1a47010fc55c00fcec4d5c4a5ef91fba03f
+      X-Memc-Age:
+      - '2077'
+      X-Memc-Expires:
+      - '13858'
+      Etag:
+      - W/"2f5428bf3bebc52e323df51d6b286b24"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 94718ab0f44b71d1549a48f2f5573b90.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - BOS50-C1
+      X-Amz-Cf-Id:
+      - ZY0qgqkNiwGnUSPjnA8vdGGu-AtX2h7MSz0mx6TdJm8J81cdsKd3rA==
+      Age:
+      - '21941'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/wPU78OPN4BYEgWYdXyg0phMee64.jpg","belongs_to_collection":null,"budget":25000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"","id":278,"imdb_id":"tt0111161","original_language":"en","original_title":"The
+        Shawshank Redemption","overview":"Framed in the 1940s for the double murder
+        of his wife and her lover, upstanding banker Andy Dufresne begins a new life
+        at the Shawshank prison, where he puts his accounting skills to work for an
+        amoral warden. During his long stretch in prison, Dufresne comes to be admired
+        by the other inmates -- including an older prisoner named Red -- for his integrity
+        and unquenchable sense of hope.","popularity":71.532,"poster_path":"/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg","production_companies":[{"id":97,"logo_path":"/7znWcbDd4PcJzJUlJxYqAlPPykp.png","name":"Castle
+        Rock Entertainment","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1994-09-23","revenue":28341469,"runtime":142,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Fear
+        can hold you prisoner. Hope can set you free.","title":"The Shawshank Redemption","video":false,"vote_average":8.7,"vote_count":21011}'
+  recorded_at: Thu, 24 Mar 2022 00:05:33 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/19404?api_key=movie_api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 23 Mar 2022 18:01:52 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 1fdb9720f7eebbcfee4a843ecae7379d631ec367
+      X-Memc-Age:
+      - '13270'
+      X-Memc-Expires:
+      - '4278'
+      Etag:
+      - W/"d55a153b93f6794b1995fdfbbe6e97c7"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 5729f5da693075d8d779907600e93304.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - BOS50-C1
+      X-Amz-Cf-Id:
+      - SU7lCDJIgZThJwoECV7prZRl7xt_W0kfBbKZLrJOEwWiC6pJE2ubBw==
+      Age:
+      - '21821'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvOTBlejZBcnZwTzhidnB5SW5nQnV3WE9xSm01LmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjoxMzIwMDAwMCwiZ2VucmVzIjpbeyJpZCI6MzUsIm5hbWUiOiJDb21lZHkifSx7ImlkIjoxOCwibmFtZSI6IkRyYW1hIn0seyJpZCI6MTA3NDksIm5hbWUiOiJSb21hbmNlIn1dLCJob21lcGFnZSI6IiIsImlkIjoxOTQwNCwiaW1kYl9pZCI6InR0MDExMjg3MCIsIm9yaWdpbmFsX2xhbmd1YWdlIjoiaGkiLCJvcmlnaW5hbF90aXRsZSI6IuCkpuCkv+CksuCkteCkvuCksuClhyDgpKbgpYHgpLLgpY3gpLngpKjgpL/gpK/gpL4g4KSy4KWHIOCknOCkvuCkr+Clh+CkguCkl+ClhyIsIm92ZXJ2aWV3IjoiUmFqIGlzIGEgcmljaCwgY2FyZWZyZWUsIGhhcHB5LWdvLWx1Y2t5IHNlY29uZCBnZW5lcmF0aW9uIE5SSS4gU2ltcmFuIGlzIHRoZSBkYXVnaHRlciBvZiBDaGF1ZGhhcnkgQmFsZGV2IFNpbmdoLCB3aG8gaW4gc3BpdGUgb2YgYmVpbmcgYW4gTlJJIGlzIHZlcnkgc3RyaWN0IGFib3V0IGFkaGVyZW5jZSB0byBJbmRpYW4gdmFsdWVzLiBTaW1yYW4gaGFzIGxlZnQgZm9yIEluZGlhIHRvIGJlIG1hcnJpZWQgdG8gaGVyIGNoaWxkaG9vZCBmaWFuY8OpLiBSYWogbGVhdmVzIGZvciBJbmRpYSB3aXRoIGEgbWlzc2lvbiBhdCBoaXMgaGFuZHMsIHRvIGNsYWltIGhpcyBsYWR5IGxvdmUgdW5kZXIgdGhlIG5vc2VzIG9mIGhlciB3aG9sZSBmYW1pbHkuIFRodXMgYmVnaW5zIGEgc2FnYS4iLCJwb3B1bGFyaXR5IjoyMi4wNCwicG9zdGVyX3BhdGgiOiIvMkNBTDI0MzNaZUlpaGZYMUhiMjEzOUNYMHBXLmpwZyIsInByb2R1Y3Rpb25fY29tcGFuaWVzIjpbeyJpZCI6MTU2OSwibG9nb19wYXRoIjoiL2x2ek44Nm8zanJQNDRESXZuNFNNQkxPbDlQRi5wbmciLCJuYW1lIjoiWWFzaCBSYWogRmlsbXMiLCJvcmlnaW5fY291bnRyeSI6IklOIn1dLCJwcm9kdWN0aW9uX2NvdW50cmllcyI6W3siaXNvXzMxNjZfMSI6IklOIiwibmFtZSI6IkluZGlhIn1dLCJyZWxlYXNlX2RhdGUiOiIxOTk1LTEwLTIwIiwicmV2ZW51ZSI6MTAwMDAwMDAwLCJydW50aW1lIjoxOTAsInNwb2tlbl9sYW5ndWFnZXMiOlt7ImVuZ2xpc2hfbmFtZSI6IkhpbmRpIiwiaXNvXzYzOV8xIjoiaGkiLCJuYW1lIjoi4KS54KS/4KSo4KWN4KSm4KWAIn1dLCJzdGF0dXMiOiJSZWxlYXNlZCIsInRhZ2xpbmUiOiJDb21lIEZhbGwgSW4gbG92ZSwgQWxsIE92ZXIgQWdhaW4uLiIsInRpdGxlIjoiRGlsd2FsZSBEdWxoYW5pYSBMZSBKYXllbmdlIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjguNywidm90ZV9jb3VudCI6MzUyNH0=
+  recorded_at: Thu, 24 Mar 2022 00:05:33 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=movie_api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 23 Mar 2022 18:01:52 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 647ad0139961d413fe867b26138edd06a9b4ce4d
+      X-Memc-Age:
+      - '3467'
+      X-Memc-Expires:
+      - '12873'
+      Etag:
+      - W/"a9aa1f37f194cd5f67cc7db98c1c26d5"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 980d2a1c9c4f90ad69118c6357f92882.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - BOS50-C1
+      X-Amz-Cf-Id:
+      - Xg6Fc4XHYNnvrv-ssyuFajPKKyGf7mMze2gedZKXA2HltO5PQCDyJg==
+      Age:
+      - '21821'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/9Baumh5J9N1nJUYzNkm0xsgjpwY.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":100.4,"poster_path":"/wWJbBo5yjw22AIjE8isBFoiBI3S.jpg","production_companies":[{"id":4,"logo_path":"/fycMZt242LVjagMByZOLUGbCvv3.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.7,"vote_count":15697}'
+  recorded_at: Thu, 24 Mar 2022 00:05:33 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/533514?api_key=movie_api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 23 Mar 2022 18:01:52 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - dd3cdd213f3e837055835635e1149ccc13b89d51
+      X-Memc-Age:
+      - '3330'
+      X-Memc-Expires:
+      - '13921'
+      Etag:
+      - W/"3aa2c4f56d7b03f7e785338316f1b289"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 844f1d5f6c5723bfa87f9a3a73f6fd58.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - BOS50-C1
+      X-Amz-Cf-Id:
+      - 8Zhd7dFNrTUP6VHXgRTkK62jM54StonLLdPbkLDa6Wd9J419ssf4Fg==
+      Age:
+      - '21821'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvbHA2U213eU5Sc3BFWWtrTFhGRVZ1TmxDdzc3LmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjowLCJnZW5yZXMiOlt7ImlkIjoxNiwibmFtZSI6IkFuaW1hdGlvbiJ9LHsiaWQiOjE0LCJuYW1lIjoiRmFudGFzeSJ9LHsiaWQiOjEwNzQ5LCJuYW1lIjoiUm9tYW5jZSJ9LHsiaWQiOjE4LCJuYW1lIjoiRHJhbWEifV0sImhvbWVwYWdlIjoiaHR0cHM6Ly93d3cubmV0ZmxpeC5jb20vdGl0bGUvODExOTMyMTQiLCJpZCI6NTMzNTE0LCJpbWRiX2lkIjoidHQ4NjUyODE4Iiwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJqYSIsIm9yaWdpbmFsX3RpdGxlIjoi5YqH5aC054mIIOODtOOCoeOCpOOCquODrOODg+ODiOODu+OCqOODtOOCoeODvOOCrOODvOODh+ODsyIsIm92ZXJ2aWV3IjoiQXMgdGhlIHdvcmxkIG1vdmVzIG9uIGZyb20gdGhlIHdhciBhbmQgdGVjaG5vbG9naWNhbCBhZHZhbmNlcyBicmluZyBjaGFuZ2VzIHRvIGhlciBsaWZlLCBWaW9sZXQgc3RpbGwgaG9wZXMgdG8gc2VlIGhlciBsb3N0IGNvbW1hbmRpbmcgb2ZmaWNlciBhZ2Fpbi4iLCJwb3B1bGFyaXR5IjozNC4zMDQsInBvc3Rlcl9wYXRoIjoiL2JhamFqa29FckRzdDBKeGRGeUJrQUJpRjlyVy5qcGciLCJwcm9kdWN0aW9uX2NvbXBhbmllcyI6W3siaWQiOjU0MzgsImxvZ29fcGF0aCI6Ii9ucnZ3ZUQyNUdJWW1mVElhRnlJbmNMeTRwM0cucG5nIiwibmFtZSI6Ikt5b3RvIEFuaW1hdGlvbiIsIm9yaWdpbl9jb3VudHJ5IjoiSlAifSx7ImlkIjo4NjgzOSwibG9nb19wYXRoIjoiL2NuT0pBa1ZWbUtaTEl6bWd3NGZSUloyZGN0VC5wbmciLCJuYW1lIjoiQUJDIEFuaW1hdGlvbiIsIm9yaWdpbl9jb3VudHJ5IjoiSlAifSx7ImlkIjo5MTQ4LCJsb2dvX3BhdGgiOiIvcnRXM05hZGZGNGtSNW1UVzAwYWhpRnh3Nms3LnBuZyIsIm5hbWUiOiJQb255IENhbnlvbiIsIm9yaWdpbl9jb3VudHJ5IjoiSlAifSx7ImlkIjozMTM2NCwibG9nb19wYXRoIjpudWxsLCJuYW1lIjoiUmFrdW9uc2hhIiwib3JpZ2luX2NvdW50cnkiOiJKUCJ9LHsiaWQiOjEzNjIxNywibG9nb19wYXRoIjoiL2RCWXVwbGhCZ2VPc0dQUU9JMEx1a1dOYkZXRS5wbmciLCJuYW1lIjoiQmFuZGFpIE5hbWNvIEFydHMiLCJvcmlnaW5fY291bnRyeSI6IkpQIn0seyJpZCI6NjY4MywibG9nb19wYXRoIjoiL3JlQ2t1azNHRW9tZHg1Z1Fwc20xNVpsMXNnWC5wbmciLCJuYW1lIjoiTGFudGlzIiwib3JpZ2luX2NvdW50cnkiOiJKUCJ9LHsiaWQiOjE1NTI3MSwibG9nb19wYXRoIjoiL3o1RTFqcExJcndEY2tlV2NNcWNQWjlxSHZUdy5wbmciLCJuYW1lIjoiSGVhcnQgQ29tcGFueSIsIm9yaWdpbl9jb3VudHJ5IjoiSlAifSx7ImlkIjoxNTUzMDcsImxvZ29fcGF0aCI6bnVsbCwibmFtZSI6Ik1pcmFjbGUgQnVzIiwib3JpZ2luX2NvdW50cnkiOiJKUCJ9XSwicHJvZHVjdGlvbl9jb3VudHJpZXMiOlt7Imlzb18zMTY2XzEiOiJKUCIsIm5hbWUiOiJKYXBhbiJ9XSwicmVsZWFzZV9kYXRlIjoiMjAyMC0wOS0xOCIsInJldmVudWUiOjIwMzM5NjI0LCJydW50aW1lIjoxNDAsInNwb2tlbl9sYW5ndWFnZXMiOlt7ImVuZ2xpc2hfbmFtZSI6IkphcGFuZXNlIiwiaXNvXzYzOV8xIjoiamEiLCJuYW1lIjoi5pel5pys6KqeIn1dLCJzdGF0dXMiOiJSZWxlYXNlZCIsInRhZ2xpbmUiOiIiLCJ0aXRsZSI6IlZpb2xldCBFdmVyZ2FyZGVuOiBUaGUgTW92aWUiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6OC43LCJ2b3RlX2NvdW50IjoyMDN9
+  recorded_at: Thu, 24 Mar 2022 00:05:33 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/730154?api_key=movie_api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 23 Mar 2022 18:01:52 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - f568366e3665210d7c96f7395daed9724c32fd0b
+      X-Memc-Age:
+      - '13636'
+      X-Memc-Expires:
+      - '3563'
+      Etag:
+      - W/"092cfa646c1467b83562c40428d1f749"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 54b8445d9158cc4f7c8119e8f0a0f664.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - BOS50-C1
+      X-Amz-Cf-Id:
+      - _kmbUptTvUDxlAsf2FVUTSG2rh2wV1w9c5YQtetxDXkgXiRvApSLgg==
+      Age:
+      - '21821'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvdjVDRXQ4OGlEc3VvTWFXMVE1TXN1OVVaZEV0LmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjowLCJnZW5yZXMiOlt7ImlkIjoxMDc0OSwibmFtZSI6IlJvbWFuY2UifSx7ImlkIjoxOCwibmFtZSI6IkRyYW1hIn1dLCJob21lcGFnZSI6Imh0dHBzOi8vd3d3LmdhZ2EuY28uanAvaW50bHMveW91cmV5ZXN0ZWxsLyIsImlkIjo3MzAxNTQsImltZGJfaWQiOiJ0dDExMDUxOTc0Iiwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJqYSIsIm9yaWdpbmFsX3RpdGxlIjoi44GN44G/44Gu556z44GM5ZWP44GE44GL44GR44Gm44GE44KLIiwib3ZlcnZpZXciOiJBIHRyYWdpYyBhY2NpZGVudCBsZWFkIHRvIEthb3JpJ3MgYmxpbmRuZXNzLCBidXQgc2hlIGNsaW5ncyB0byBsaWZlIGFuZCB0aGUgc21hbGxlciBwbGVhc3VyZXMgaXQgY2FuIHN0aWxsIGFmZm9yZCBoZXIuIFNoZSBtZWV0cyBSdWkgYW5kIGJlZ2lucyB0byB0YWxrIHRvIGhpbS4gUnVpIHdhcyBvbmNlIGEgcHJvbWlzaW5nIGtpY2tib3hlciwgYnV0IHNvbWV0aGluZyBoYXBwZW5lZCBpbiBoaXMgcGFzdC4gS2FvcmkncyBzbWlsZSBicmluZ3Mgb3V0IGEgY2hhbmdlIGluIFJ1aS4gSG93ZXZlciwgdGhlIHR3byBhcmUgY29ubmVjdGVkIGluIG1vcmUgdGhhbiBvbmUgd2F5LiBSdWkgYXR0ZW1wdHMgdG8gZG8gd2hhdCBpcyByaWdodC4iLCJwb3B1bGFyaXR5IjoxMy4zNjgsInBvc3Rlcl9wYXRoIjoiL2NWbjhFM0Z4Ymk4SHpZWXRhU2ZzYmxZQzRnbC5qcGciLCJwcm9kdWN0aW9uX2NvbXBhbmllcyI6W3siaWQiOjEzODIwMywibG9nb19wYXRoIjpudWxsLCJuYW1lIjoiRHJhZ29uZmx5IEVudGVydGFpbm1lbnQiLCJvcmlnaW5fY291bnRyeSI6IkpQIn0seyJpZCI6MTQ2MDIsImxvZ29fcGF0aCI6Ii90OWVxeDVRQ0h0dThMeHhnWXppdnFySkFvc3AucG5nIiwibmFtZSI6IkFNVVNFIiwib3JpZ2luX2NvdW50cnkiOiJKUCJ9LHsiaWQiOjg0MDQ4LCJsb2dvX3BhdGgiOiIvbnU4UThJdkcyZmF6ZUk3YXhUblVoQXZ6cnF5LnBuZyIsIm5hbWUiOiJHYWdhIENvcnBvcmF0aW9uIiwib3JpZ2luX2NvdW50cnkiOiJKUCJ9LHsiaWQiOjEwNDE4NCwibG9nb19wYXRoIjpudWxsLCJuYW1lIjoiTGF3c29uIEVudGVydGFpbm1lbnQiLCJvcmlnaW5fY291bnRyeSI6IkpQIn1dLCJwcm9kdWN0aW9uX2NvdW50cmllcyI6W3siaXNvXzMxNjZfMSI6IkpQIiwibmFtZSI6IkphcGFuIn1dLCJyZWxlYXNlX2RhdGUiOiIyMDIwLTEwLTIzIiwicmV2ZW51ZSI6MCwicnVudGltZSI6MTIzLCJzcG9rZW5fbGFuZ3VhZ2VzIjpbeyJlbmdsaXNoX25hbWUiOiJKYXBhbmVzZSIsImlzb182MzlfMSI6ImphIiwibmFtZSI6IuaXpeacrOiqniJ9XSwic3RhdHVzIjoiUmVsZWFzZWQiLCJ0YWdsaW5lIjoiIiwidGl0bGUiOiJZb3VyIEV5ZXMgVGVsbCIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo4LjcsInZvdGVfY291bnQiOjI3Mn0=
+  recorded_at: Thu, 24 Mar 2022 00:05:33 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/424?api_key=movie_api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 23 Mar 2022 18:01:53 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 563748fc39e1dcb8fe48e195c69d7b8e9d009c12
+      X-Memc-Age:
+      - '13176'
+      X-Memc-Expires:
+      - '1556'
+      Etag:
+      - W/"2aa282528fcc996e2663c116c3d8fb27"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 a6b1f1036ef5ce8fe503a14addc801aa.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - BOS50-C1
+      X-Amz-Cf-Id:
+      - jRFYY0lVR_T99nKQXfdPUdSDBEaRnbch_K1Bq0Mn8IPsvlDBIreluw==
+      Age:
+      - '21821'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvbG9SbVJ6UVhaZXFHNzhUcVp1eXZTbEVRZlpiLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjoyMjAwMDAwMCwiZ2VucmVzIjpbeyJpZCI6MTgsIm5hbWUiOiJEcmFtYSJ9LHsiaWQiOjM2LCJuYW1lIjoiSGlzdG9yeSJ9LHsiaWQiOjEwNzUyLCJuYW1lIjoiV2FyIn1dLCJob21lcGFnZSI6Imh0dHA6Ly93d3cuc2NoaW5kbGVyc2xpc3QuY29tLyIsImlkIjo0MjQsImltZGJfaWQiOiJ0dDAxMDgwNTIiLCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiJTY2hpbmRsZXIncyBMaXN0Iiwib3ZlcnZpZXciOiJUaGUgdHJ1ZSBzdG9yeSBvZiBob3cgYnVzaW5lc3NtYW4gT3NrYXIgU2NoaW5kbGVyIHNhdmVkIG92ZXIgYSB0aG91c2FuZCBKZXdpc2ggbGl2ZXMgZnJvbSB0aGUgTmF6aXMgd2hpbGUgdGhleSB3b3JrZWQgYXMgc2xhdmVzIGluIGhpcyBmYWN0b3J5IGR1cmluZyBXb3JsZCBXYXIgSUkuIiwicG9wdWxhcml0eSI6NDkuOTY4LCJwb3N0ZXJfcGF0aCI6Ii9zRjFVNEVVUVM4WUhVWWpObDNwTUdOSVF5cjAuanBnIiwicHJvZHVjdGlvbl9jb21wYW5pZXMiOlt7ImlkIjozMywibG9nb19wYXRoIjoiLzhsdkh5aGpyOG9VS09PeTJkS1hvQUxXS2RwMC5wbmciLCJuYW1lIjoiVW5pdmVyc2FsIFBpY3R1cmVzIiwib3JpZ2luX2NvdW50cnkiOiJVUyJ9LHsiaWQiOjU2LCJsb2dvX3BhdGgiOiIvY0VheEFORWlzQ3FlRW9Sdk9EdjJkTzFJMGlJLnBuZyIsIm5hbWUiOiJBbWJsaW4gRW50ZXJ0YWlubWVudCIsIm9yaWdpbl9jb3VudHJ5IjoiVVMifV0sInByb2R1Y3Rpb25fY291bnRyaWVzIjpbeyJpc29fMzE2Nl8xIjoiVVMiLCJuYW1lIjoiVW5pdGVkIFN0YXRlcyBvZiBBbWVyaWNhIn1dLCJyZWxlYXNlX2RhdGUiOiIxOTkzLTExLTMwIiwicmV2ZW51ZSI6MzIxMzY1NTY3LCJydW50aW1lIjoxOTUsInNwb2tlbl9sYW5ndWFnZXMiOlt7ImVuZ2xpc2hfbmFtZSI6Ikdlcm1hbiIsImlzb182MzlfMSI6ImRlIiwibmFtZSI6IkRldXRzY2gifSx7ImVuZ2xpc2hfbmFtZSI6IlBvbGlzaCIsImlzb182MzlfMSI6InBsIiwibmFtZSI6IlBvbHNraSJ9LHsiZW5nbGlzaF9uYW1lIjoiSGVicmV3IiwiaXNvXzYzOV8xIjoiaGUiLCJuYW1lIjoi16LWtNeR1rDXqNa015nXqiJ9LHsiZW5nbGlzaF9uYW1lIjoiRW5nbGlzaCIsImlzb182MzlfMSI6ImVuIiwibmFtZSI6IkVuZ2xpc2gifV0sInN0YXR1cyI6IlJlbGVhc2VkIiwidGFnbGluZSI6Ildob2V2ZXIgc2F2ZXMgb25lIGxpZmUsIHNhdmVzIHRoZSB3b3JsZCBlbnRpcmUuIiwidGl0bGUiOiJTY2hpbmRsZXIncyBMaXN0IiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjguNiwidm90ZV9jb3VudCI6MTI1Mzd9
+  recorded_at: Thu, 24 Mar 2022 00:05:34 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/372754?api_key=movie_api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 23 Mar 2022 18:01:53 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 60cfdab62417a0bc158781cc977f9e7bef973c94
+      X-Memc-Age:
+      - '2715'
+      X-Memc-Expires:
+      - '13114'
+      Etag:
+      - W/"e6dbe7501dc1eaf352ea97659c6d9b34"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 5374c8a291c9962f98e9cfd5e2b835a4.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - BOS50-C1
+      X-Amz-Cf-Id:
+      - EDfljFUG6s1uj5HeKD58_VGnXzszOY9YfTprzDhaUg2vrHdRjzdSZg==
+      Age:
+      - '21821'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvM1JNTGJTRVhPbjFDekxvTlQ3eEZlTGZkeGhxLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjowLCJnZW5yZXMiOlt7ImlkIjoxMDc0OSwibmFtZSI6IlJvbWFuY2UifSx7ImlkIjoxNiwibmFtZSI6IkFuaW1hdGlvbiJ9XSwiaG9tZXBhZ2UiOiJodHRwOi8vZG91a3l1c2VpbW92aWUuY29tLyIsImlkIjozNzI3NTQsImltZGJfaWQiOiJ0dDU1MjYwMjgiLCJvcmlnaW5hbF9sYW5ndWFnZSI6ImphIiwib3JpZ2luYWxfdGl0bGUiOiLlkIzntJrnlJ8iLCJvdmVydmlldyI6IlJpaGl0byBTYWpvLCBhbiBob25vciBzdHVkZW50IHdpdGggYSBwZXJmZWN0IHNjb3JlIG9uIHRoZSBlbnRyYW5jZSBleGFtIGFuZCBIaWthcnUgS3VzYWthYmUsIGluIGEgYmFuZCBhbmQgcG9wdWxhciBhbW9uZyBnaXJscywgd291bGQgaGF2ZSBuZXZlciBjcm9zc2VkIHBhdGhzLiBVbnRpbCBvbmUgZGF5IHRoZXkgc3RhcnRlZCB0YWxraW5nIGF0IHRoZSBwcmFjdGljZSBmb3IgdGhlaXIgc2Nob29s4oCZcyB1cGNvbWluZyBjaG9ydXMgZmVzdGl2YWwuIEFmdGVyIHNjaG9vbCwgdGhlIHR3byBtZWV0IHJlZ3VsYXJseSwgYXMgSGlrYXJ1IGhlbHBzIFJpaGl0byB0byBpbXByb3ZlIGhpcyBzaW5naW5nIHNraWxscy4gV2hpbGUgdGhleSBsaXN0ZW4gdG8gZWFjaCBvdGhlcuKAmXMgdm9pY2UgYW5kIGhhcm1vbml6ZSwgdGhlaXIgaGVhcnRzIHN0YXJ0IHRvIGJlYXQgdG9nZXRoZXIuIiwicG9wdWxhcml0eSI6MTQuMDYyLCJwb3N0ZXJfcGF0aCI6Ii9jSWZSQ0E1d0V2ajl0QXBjYTRVRFVhZ1FFaU0uanBnIiwicHJvZHVjdGlvbl9jb21wYW5pZXMiOlt7ImlkIjoxMzExMywibG9nb19wYXRoIjoiL3hWNXRQWUtaaFAyS285ZE9oNUEzRmFodUtzeC5wbmciLCJuYW1lIjoiQS0xIFBpY3R1cmVzIiwib3JpZ2luX2NvdW50cnkiOiJKUCJ9XSwicHJvZHVjdGlvbl9jb3VudHJpZXMiOlt7Imlzb18zMTY2XzEiOiJKUCIsIm5hbWUiOiJKYXBhbiJ9XSwicmVsZWFzZV9kYXRlIjoiMjAxNi0wMi0yMCIsInJldmVudWUiOjAsInJ1bnRpbWUiOjYxLCJzcG9rZW5fbGFuZ3VhZ2VzIjpbeyJlbmdsaXNoX25hbWUiOiJKYXBhbmVzZSIsImlzb182MzlfMSI6ImphIiwibmFtZSI6IuaXpeacrOiqniJ9XSwic3RhdHVzIjoiUmVsZWFzZWQiLCJ0YWdsaW5lIjoiU2luY2VyZWx5LCBTbG93bHksIEZhbGxpbmcgaW4gTG92ZS4iLCJ0aXRsZSI6IkRvdSBreXUgc2VpIOKAkyBDbGFzc21hdGVzIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjguNiwidm90ZV9jb3VudCI6MjEyfQ==
+  recorded_at: Thu, 24 Mar 2022 00:05:34 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/724089?api_key=movie_api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 23 Mar 2022 18:01:53 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - f7642139bb6a0c972445e0e44b9c72463b4e64fb
+      X-Memc-Age:
+      - '7279'
+      X-Memc-Expires:
+      - '10711'
+      Etag:
+      - W/"8bfdbd7cbd63b1eaeeffd6112d500b63"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 2c28bd71299b5e0e8f627feeec6c9f2a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - BOS50-C1
+      X-Amz-Cf-Id:
+      - Lqn3lak0qeL-9_7omnhi_jm2i0H5rHEC08hhVDJry1Izdr4HwmYPbw==
+      Age:
+      - '21821'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/jtAI6OJIWLWiRItNSZoWjrsUtmi.jpg","belongs_to_collection":{"id":729322,"name":"Gabriel''s
+        Inferno Collection","poster_path":"/LdSn17U6ybhtPJT3S6fTNRni5Y.jpg","backdrop_path":"/hXF55codODfnzTZDExbUbfFmA9y.jpg"},"budget":0,"genres":[{"id":10749,"name":"Romance"}],"homepage":"https://watch.passionflix.com/watch/f299fa17-5a2b-4fee-b53a-a4651747431b","id":724089,"imdb_id":"tt13535454","original_language":"en","original_title":"Gabriel''s
+        Inferno Part II","overview":"Professor Gabriel Emerson finally learns the
+        truth about Julia Mitchell''s identity, but his realization comes a moment
+        too late. Julia is done waiting for the well-respected Dante specialist to
+        remember her and wants nothing more to do with him. Can Gabriel win back her
+        heart before she finds love in another''s arms?","popularity":14.828,"poster_path":"/x5o8cLZfEXMoZczTYWLrUo1P7UJ.jpg","production_companies":[{"id":92153,"logo_path":"/psjvYkjjgAPtS8utnFYDM8t8yi7.png","name":"PassionFlix","origin_country":"US"}],"production_countries":[],"release_date":"2020-07-31","revenue":0,"runtime":105,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"","title":"Gabriel''s
+        Inferno Part II","video":false,"vote_average":8.6,"vote_count":1389}'
+  recorded_at: Thu, 24 Mar 2022 00:05:34 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/240?api_key=movie_api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 23 Mar 2022 18:01:53 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9e1f147ac42ca646dfd2084980b36706e12992ca
+      X-Memc-Age:
+      - '7811'
+      X-Memc-Expires:
+      - '9146'
+      Etag:
+      - W/"3e7e875bac06de386c0ce61c7d1301e9"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 e672a9473bd80174ece54114220b84e0.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - BOS50-C1
+      X-Amz-Cf-Id:
+      - hoQWw7Rdjw_QukwLZDIyvlKgwf1_chhUu6ds03KanAxOpKZdiAe8Xw==
+      Age:
+      - '21821'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvcG9lYzZScU9LWTlpU2lJVW1meWZQZmlMdHZCLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6eyJpZCI6MjMwLCJuYW1lIjoiVGhlIEdvZGZhdGhlciBDb2xsZWN0aW9uIiwicG9zdGVyX3BhdGgiOiIvOUJhdW1oNUo5TjFuSlVZek5rbTB4c2dqcHdZLmpwZyIsImJhY2tkcm9wX3BhdGgiOiIvM1daVHhwZ3Njc21vVWs4MVR1RUNYZEZPRDBSLmpwZyJ9LCJidWRnZXQiOjEzMDAwMDAwLCJnZW5yZXMiOlt7ImlkIjoxOCwibmFtZSI6IkRyYW1hIn0seyJpZCI6ODAsIm5hbWUiOiJDcmltZSJ9XSwiaG9tZXBhZ2UiOiIiLCJpZCI6MjQwLCJpbWRiX2lkIjoidHQwMDcxNTYyIiwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiVGhlIEdvZGZhdGhlcjogUGFydCBJSSIsIm92ZXJ2aWV3IjoiSW4gdGhlIGNvbnRpbnVpbmcgc2FnYSBvZiB0aGUgQ29ybGVvbmUgY3JpbWUgZmFtaWx5LCBhIHlvdW5nIFZpdG8gQ29ybGVvbmUgZ3Jvd3MgdXAgaW4gU2ljaWx5IGFuZCBpbiAxOTEwcyBOZXcgWW9yay4gSW4gdGhlIDE5NTBzLCBNaWNoYWVsIENvcmxlb25lIGF0dGVtcHRzIHRvIGV4cGFuZCB0aGUgZmFtaWx5IGJ1c2luZXNzIGludG8gTGFzIFZlZ2FzLCBIb2xseXdvb2QgYW5kIEN1YmEuIiwicG9wdWxhcml0eSI6NzAuNDY5LCJwb3N0ZXJfcGF0aCI6Ii9lY0JSa1hlckFacVJSVWZSOEx0M0wzRGg2SjUuanBnIiwicHJvZHVjdGlvbl9jb21wYW5pZXMiOlt7ImlkIjo0LCJsb2dvX3BhdGgiOiIvZnljTVp0MjQyTFZqYWdNQnlaT0xVR2JDdnYzLnBuZyIsIm5hbWUiOiJQYXJhbW91bnQiLCJvcmlnaW5fY291bnRyeSI6IlVTIn0seyJpZCI6NTM2LCJsb2dvX3BhdGgiOm51bGwsIm5hbWUiOiJUaGUgQ29wcG9sYSBDb21wYW55Iiwib3JpZ2luX2NvdW50cnkiOiJVUyJ9XSwicHJvZHVjdGlvbl9jb3VudHJpZXMiOlt7Imlzb18zMTY2XzEiOiJVUyIsIm5hbWUiOiJVbml0ZWQgU3RhdGVzIG9mIEFtZXJpY2EifV0sInJlbGVhc2VfZGF0ZSI6IjE5NzQtMTItMjAiLCJyZXZlbnVlIjoxMDI2MDAwMDAsInJ1bnRpbWUiOjIwMiwic3Bva2VuX2xhbmd1YWdlcyI6W3siZW5nbGlzaF9uYW1lIjoiRW5nbGlzaCIsImlzb182MzlfMSI6ImVuIiwibmFtZSI6IkVuZ2xpc2gifSx7ImVuZ2xpc2hfbmFtZSI6Ikl0YWxpYW4iLCJpc29fNjM5XzEiOiJpdCIsIm5hbWUiOiJJdGFsaWFubyJ9LHsiZW5nbGlzaF9uYW1lIjoiTGF0aW4iLCJpc29fNjM5XzEiOiJsYSIsIm5hbWUiOiJMYXRpbiJ9LHsiZW5nbGlzaF9uYW1lIjoiU3BhbmlzaCIsImlzb182MzlfMSI6ImVzIiwibmFtZSI6IkVzcGHDsW9sIn1dLCJzdGF0dXMiOiJSZWxlYXNlZCIsInRhZ2xpbmUiOiJJIGRvbid0IGZlZWwgSSBoYXZlIHRvIHdpcGUgZXZlcnlib2R5IG91dCwgVG9tLiBKdXN0IG15IGVuZW1pZXMuIiwidGl0bGUiOiJUaGUgR29kZmF0aGVyOiBQYXJ0IElJIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjguNiwidm90ZV9jb3VudCI6OTQ1NX0=
+  recorded_at: Thu, 24 Mar 2022 00:05:34 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/696374?api_key=movie_api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 23 Mar 2022 18:01:53 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 22ba49d2842336cd225fc1f6b566bb1f70ec7b72
+      X-Memc-Age:
+      - '6777'
+      X-Memc-Expires:
+      - '10781'
+      Etag:
+      - W/"b4985853efd30c3b1d1ea12984ee1a66"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 21dd18a4b7e07f4364d52180e2cb2756.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - BOS50-C1
+      X-Amz-Cf-Id:
+      - LoXaR7mO7nmtD-LlE4y8uFwUB3VLJdPNDbxC543tQ4Fc-VUBOOBetg==
+      Age:
+      - '21821'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/w2uGvCpMtvRqZg6waC1hvLyZoJa.jpg","belongs_to_collection":{"id":729322,"name":"Gabriel''s
+        Inferno Collection","poster_path":"/LdSn17U6ybhtPJT3S6fTNRni5Y.jpg","backdrop_path":"/hXF55codODfnzTZDExbUbfFmA9y.jpg"},"budget":0,"genres":[{"id":10749,"name":"Romance"}],"homepage":"https://watch.passionflix.com/watch/fc15dc25-cf48-4d4f-aa8e-9afb032233cc","id":696374,"imdb_id":"tt11316854","original_language":"en","original_title":"Gabriel''s
+        Inferno","overview":"An intriguing and sinful exploration of seduction, forbidden
+        love, and redemption, Gabriel''s Inferno is a captivating and wildly passionate
+        tale of one man''s escape from his own personal hell as he tries to earn the
+        impossible--forgiveness and love.","popularity":10.307,"poster_path":"/oyG9TL7FcRP4EZ9Vid6uKzwdndz.jpg","production_companies":[{"id":92153,"logo_path":"/psjvYkjjgAPtS8utnFYDM8t8yi7.png","name":"PassionFlix","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2020-05-29","revenue":0,"runtime":122,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"","title":"Gabriel''s
+        Inferno","video":false,"vote_average":8.6,"vote_count":2216}'
+  recorded_at: Thu, 24 Mar 2022 00:05:34 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/761053?api_key=movie_api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 23 Mar 2022 18:01:53 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 695021ffea95f6546d373930b913d56b7dd13988
+      X-Memc-Age:
+      - '14953'
+      X-Memc-Expires:
+      - '1080'
+      Etag:
+      - W/"dc18cadf649a8a739ec70f8c85eba9b8"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 caf2b247e5b726bc55b1ffca0b43da60.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - BOS50-C1
+      X-Amz-Cf-Id:
+      - rAus5QPLJoefnHhYkntxV_PKffXXgLX8iR6ZVIfncW3zuBXwHHZRHQ==
+      Age:
+      - '21821'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/fQq1FWp1rC89xDrRMuyFJdFUdMd.jpg","belongs_to_collection":{"id":729322,"name":"Gabriel''s
+        Inferno Collection","poster_path":"/LdSn17U6ybhtPJT3S6fTNRni5Y.jpg","backdrop_path":"/hXF55codODfnzTZDExbUbfFmA9y.jpg"},"budget":0,"genres":[{"id":10749,"name":"Romance"},{"id":35,"name":"Comedy"}],"homepage":"","id":761053,"imdb_id":"tt13535456","original_language":"en","original_title":"Gabriel''s
+        Inferno Part III","overview":"The final part of the film adaption of the erotic
+        romance novel Gabriel''s Inferno written by an anonymous Canadian author under
+        the pen name Sylvain Reynard.","popularity":27.593,"poster_path":"/uqmTxOP3gNl5MWRt1wlrUnzTphM.jpg","production_companies":[{"id":92153,"logo_path":"/psjvYkjjgAPtS8utnFYDM8t8yi7.png","name":"PassionFlix","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2020-11-19","revenue":0,"runtime":105,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"","title":"Gabriel''s
+        Inferno Part III","video":false,"vote_average":8.6,"vote_count":948}'
+  recorded_at: Thu, 24 Mar 2022 00:05:34 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/372058?api_key=movie_api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 23 Mar 2022 18:01:53 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 5cd4b329c97293297dd6f2070497cd427776a1e8
+      X-Memc-Age:
+      - '8044'
+      X-Memc-Expires:
+      - '7272'
+      Etag:
+      - W/"0411f8b2c7b2fa06fb370c9d57050d85"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 55816cf05e8d81696f2f421e217d6204.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - BOS50-C1
+      X-Amz-Cf-Id:
+      - B4MX1KHjKaYzW4MGQF3M6fZB7uncueJJGSb0r1pjZ0IXNrgvtO3TKA==
+      Age:
+      - '21821'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvbU10VXliUTZoTDI0RlhvMEYzWjRqMktHN2taLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjowLCJnZW5yZXMiOlt7ImlkIjoxMDc0OSwibmFtZSI6IlJvbWFuY2UifSx7ImlkIjoxNiwibmFtZSI6IkFuaW1hdGlvbiJ9LHsiaWQiOjE4LCJuYW1lIjoiRHJhbWEifV0sImhvbWVwYWdlIjoiaHR0cHM6Ly93d3cuZnVuaW1hdGlvbmZpbG1zLmNvbS9tb3ZpZS95b3VybmFtZS8iLCJpZCI6MzcyMDU4LCJpbWRiX2lkIjoidHQ1MzExNTE0Iiwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJqYSIsIm9yaWdpbmFsX3RpdGxlIjoi5ZCb44Gu5ZCN44Gv44CCIiwib3ZlcnZpZXciOiJIaWdoIHNjaG9vbGVycyBNaXRzdWhhIGFuZCBUYWtpIGFyZSBjb21wbGV0ZSBzdHJhbmdlcnMgbGl2aW5nIHNlcGFyYXRlIGxpdmVzLiBCdXQgb25lIG5pZ2h0LCB0aGV5IHN1ZGRlbmx5IHN3aXRjaCBwbGFjZXMuIE1pdHN1aGEgd2FrZXMgdXAgaW4gVGFraeKAmXMgYm9keSwgYW5kIGhlIGluIGhlcnMuIFRoaXMgYml6YXJyZSBvY2N1cnJlbmNlIGNvbnRpbnVlcyB0byBoYXBwZW4gcmFuZG9tbHksIGFuZCB0aGUgdHdvIG11c3QgYWRqdXN0IHRoZWlyIGxpdmVzIGFyb3VuZCBlYWNoIG90aGVyLiIsInBvcHVsYXJpdHkiOjE3Ni44OTEsInBvc3Rlcl9wYXRoIjoiL3E3MTlqWFhFek9vWWFwczZiYWJnS25PTk9OWC5qcGciLCJwcm9kdWN0aW9uX2NvbXBhbmllcyI6W3siaWQiOjM3NTYsImxvZ29fcGF0aCI6Ii90Mzh1UGRiS215QkI4YnJLS2VURldJd29qUnoucG5nIiwibmFtZSI6IkNvTWl4IFdhdmUgRmlsbXMiLCJvcmlnaW5fY291bnRyeSI6IkpQIn0seyJpZCI6ODgyLCJsb2dvX3BhdGgiOiIvZlJTV1dqcXV2emNIakFDYnRGNTN1dFpGSWxsLnBuZyIsIm5hbWUiOiJUb2hvIiwib3JpZ2luX2NvdW50cnkiOiJKUCJ9LHsiaWQiOjIwNzMsImxvZ29fcGF0aCI6Ii82RmxUWkdsaVlUTjJIYVM5UXE2dENkWkl0V2MucG5nIiwibmFtZSI6IkthZG9rYXdhIiwib3JpZ2luX2NvdW50cnkiOiJKUCJ9LHsiaWQiOjgxNTcsImxvZ29fcGF0aCI6Ii95SE9DMlBQbWo2ajJ6elJxd2R1ZkNaYXVGeEkucG5nIiwibmFtZSI6IkVhc3QgSmFwYW4gTWFya2V0aW5nICYgQ29tbXVuaWNhdGlvbnMiLCJvcmlnaW5fY291bnRyeSI6IkpQIn0seyJpZCI6MTQ2MDIsImxvZ29fcGF0aCI6Ii90OWVxeDVRQ0h0dThMeHhnWXppdnFySkFvc3AucG5nIiwibmFtZSI6IkFNVVNFIiwib3JpZ2luX2NvdW50cnkiOiJKUCJ9LHsiaWQiOjEyODYxNywibG9nb19wYXRoIjpudWxsLCJuYW1lIjoidm9xdWUgdGluZyIsIm9yaWdpbl9jb3VudHJ5IjoiSlAifSx7ImlkIjoxMDQxODQsImxvZ29fcGF0aCI6bnVsbCwibmFtZSI6Ikxhd3NvbiBFbnRlcnRhaW5tZW50Iiwib3JpZ2luX2NvdW50cnkiOiJKUCJ9XSwicHJvZHVjdGlvbl9jb3VudHJpZXMiOlt7Imlzb18zMTY2XzEiOiJKUCIsIm5hbWUiOiJKYXBhbiJ9XSwicmVsZWFzZV9kYXRlIjoiMjAxNi0wOC0yNiIsInJldmVudWUiOjM1Nzk4NjA4NywicnVudGltZSI6MTA2LCJzcG9rZW5fbGFuZ3VhZ2VzIjpbeyJlbmdsaXNoX25hbWUiOiJKYXBhbmVzZSIsImlzb182MzlfMSI6ImphIiwibmFtZSI6IuaXpeacrOiqniJ9XSwic3RhdHVzIjoiUmVsZWFzZWQiLCJ0YWdsaW5lIjoiIiwidGl0bGUiOiJZb3VyIE5hbWUuIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjguNSwidm90ZV9jb3VudCI6ODQ3Mn0=
+  recorded_at: Thu, 24 Mar 2022 00:05:34 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/129?api_key=movie_api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 23 Mar 2022 18:01:53 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - aeeae71f375662efe30273aebb47808a855e3cd3
+      X-Memc-Age:
+      - '14764'
+      X-Memc-Expires:
+      - '2167'
+      Etag:
+      - W/"87ecffa9530da5c402191d2d5661901c"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 94718ab0f44b71d1549a48f2f5573b90.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - BOS50-C1
+      X-Amz-Cf-Id:
+      - OZMWuxQT0_iycCfNBVMG9fBBZ0A3fDbT-K79SchvSabN2FzNRSKKFQ==
+      Age:
+      - '21821'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvaFp0aDlOQ2VYdnZPN1hpOThkOHEzNGUxSWVyLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjoxOTAwMDAwMCwiZ2VucmVzIjpbeyJpZCI6MTYsIm5hbWUiOiJBbmltYXRpb24ifSx7ImlkIjoxMDc1MSwibmFtZSI6IkZhbWlseSJ9LHsiaWQiOjE0LCJuYW1lIjoiRmFudGFzeSJ9XSwiaG9tZXBhZ2UiOiJodHRwOi8vbW92aWVzLmRpc25leS5jb20vc3Bpcml0ZWQtYXdheSIsImlkIjoxMjksImltZGJfaWQiOiJ0dDAyNDU0MjkiLCJvcmlnaW5hbF9sYW5ndWFnZSI6ImphIiwib3JpZ2luYWxfdGl0bGUiOiLljYPjgajljYPlsIvjga7npZ7pmqDjgZciLCJvdmVydmlldyI6IkEgeW91bmcgZ2lybCwgQ2hpaGlybywgYmVjb21lcyB0cmFwcGVkIGluIGEgc3RyYW5nZSBuZXcgd29ybGQgb2Ygc3Bpcml0cy4gV2hlbiBoZXIgcGFyZW50cyB1bmRlcmdvIGEgbXlzdGVyaW91cyB0cmFuc2Zvcm1hdGlvbiwgc2hlIG11c3QgY2FsbCB1cG9uIHRoZSBjb3VyYWdlIHNoZSBuZXZlciBrbmV3IHNoZSBoYWQgdG8gZnJlZSBoZXIgZmFtaWx5LiIsInBvcHVsYXJpdHkiOjk1LjgyMywicG9zdGVyX3BhdGgiOiIvMzl3bUl0SVdzZzVzWk15UlVITGtXQmN1VkNNLmpwZyIsInByb2R1Y3Rpb25fY29tcGFuaWVzIjpbeyJpZCI6MTAzNDIsImxvZ29fcGF0aCI6Ii9lUzc5cHNsbm9LYldnN3QzUE1BOWF5bDBiR3MucG5nIiwibmFtZSI6IlN0dWRpbyBHaGlibGkiLCJvcmlnaW5fY291bnRyeSI6IkpQIn1dLCJwcm9kdWN0aW9uX2NvdW50cmllcyI6W3siaXNvXzMxNjZfMSI6IkpQIiwibmFtZSI6IkphcGFuIn1dLCJyZWxlYXNlX2RhdGUiOiIyMDAxLTA3LTIwIiwicmV2ZW51ZSI6Mjc0OTI1MDk1LCJydW50aW1lIjoxMjUsInNwb2tlbl9sYW5ndWFnZXMiOlt7ImVuZ2xpc2hfbmFtZSI6IkphcGFuZXNlIiwiaXNvXzYzOV8xIjoiamEiLCJuYW1lIjoi5pel5pys6KqeIn1dLCJzdGF0dXMiOiJSZWxlYXNlZCIsInRhZ2xpbmUiOiIiLCJ0aXRsZSI6IlNwaXJpdGVkIEF3YXkiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6OC41LCJ2b3RlX2NvdW50IjoxMjU4Nn0=
+  recorded_at: Thu, 24 Mar 2022 00:05:34 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/496243?api_key=movie_api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 23 Mar 2022 18:01:53 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - e24a17cc2afe85f98eddc83d7df00bf430693e2e
+      X-Memc-Age:
+      - '3576'
+      X-Memc-Expires:
+      - '13483'
+      Etag:
+      - W/"f977e97d119bfb8a9c599c1ba0b5b1b3"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 54b8445d9158cc4f7c8119e8f0a0f664.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - BOS50-C1
+      X-Amz-Cf-Id:
+      - SWqgFOd4bk46LLfGixKXCjFShB_G_o6qbKwkRncSnG0BsWetNWEDHA==
+      Age:
+      - '21821'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvVFU5Tklqd3pqb0tQd1FIb0hzaGtGY1FVQ0cuanBnIiwiYmVsb25nc190b19jb2xsZWN0aW9uIjpudWxsLCJidWRnZXQiOjExMzYzMDAwLCJnZW5yZXMiOlt7ImlkIjozNSwibmFtZSI6IkNvbWVkeSJ9LHsiaWQiOjUzLCJuYW1lIjoiVGhyaWxsZXIifSx7ImlkIjoxOCwibmFtZSI6IkRyYW1hIn1dLCJob21lcGFnZSI6Imh0dHBzOi8vd3d3LnBhcmFzaXRlLW1vdmllLmNvbS8iLCJpZCI6NDk2MjQzLCJpbWRiX2lkIjoidHQ2NzUxNjY4Iiwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJrbyIsIm9yaWdpbmFsX3RpdGxlIjoi6riw7IOd7LapIiwib3ZlcnZpZXciOiJBbGwgdW5lbXBsb3llZCwgS2ktdGFlaydzIGZhbWlseSB0YWtlcyBwZWN1bGlhciBpbnRlcmVzdCBpbiB0aGUgd2VhbHRoeSBhbmQgZ2xhbW9yb3VzIFBhcmtzIGZvciB0aGVpciBsaXZlbGlob29kIHVudGlsIHRoZXkgZ2V0IGVudGFuZ2xlZCBpbiBhbiB1bmV4cGVjdGVkIGluY2lkZW50LiIsInBvcHVsYXJpdHkiOjEyMC4wOTMsInBvc3Rlcl9wYXRoIjoiLzdJaVRUZ2xvSnp2R0kxVEFZeW1DZmJmbDN2VC5qcGciLCJwcm9kdWN0aW9uX2NvbXBhbmllcyI6W3siaWQiOjQzOTksImxvZ29fcGF0aCI6Ii83YldtYldmeEZOU0dUQ2pMSGtIbjNVanNwWlMucG5nIiwibmFtZSI6IkJhcnVuc29uIEUmQSIsIm9yaWdpbl9jb3VudHJ5IjoiS1IifSx7ImlkIjo3MDM2LCJsb2dvX3BhdGgiOiIvamF2YnlZMFpDdmxGSnRseTN0cFpxZjJOd0xYLnBuZyIsIm5hbWUiOiJDSiBFbnRlcnRhaW5tZW50Iiwib3JpZ2luX2NvdW50cnkiOiJLUiJ9XSwicHJvZHVjdGlvbl9jb3VudHJpZXMiOlt7Imlzb18zMTY2XzEiOiJLUiIsIm5hbWUiOiJTb3V0aCBLb3JlYSJ9XSwicmVsZWFzZV9kYXRlIjoiMjAxOS0wNS0zMCIsInJldmVudWUiOjI1NzU5MTc3NiwicnVudGltZSI6MTMzLCJzcG9rZW5fbGFuZ3VhZ2VzIjpbeyJlbmdsaXNoX25hbWUiOiJFbmdsaXNoIiwiaXNvXzYzOV8xIjoiZW4iLCJuYW1lIjoiRW5nbGlzaCJ9LHsiZW5nbGlzaF9uYW1lIjoiR2VybWFuIiwiaXNvXzYzOV8xIjoiZGUiLCJuYW1lIjoiRGV1dHNjaCJ9LHsiZW5nbGlzaF9uYW1lIjoiS29yZWFuIiwiaXNvXzYzOV8xIjoia28iLCJuYW1lIjoi7ZWc6rWt7Ja0L+yhsOyEoOunkCJ9XSwic3RhdHVzIjoiUmVsZWFzZWQiLCJ0YWdsaW5lIjoiQWN0IGxpa2UgeW91IG93biB0aGUgcGxhY2UuIiwidGl0bGUiOiJQYXJhc2l0ZSIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo4LjUsInZvdGVfY291bnQiOjEzMzI2fQ==
+  recorded_at: Thu, 24 Mar 2022 00:05:34 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/255709?api_key=movie_api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 23 Mar 2022 18:01:54 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9cbb8547b0dfe8888d4a67540620d248485beb20
+      X-Memc-Age:
+      - '3718'
+      X-Memc-Expires:
+      - '13821'
+      Etag:
+      - W/"a7369b629e252529ef019c02133aece8"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 94718ab0f44b71d1549a48f2f5573b90.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - BOS50-C1
+      X-Amz-Cf-Id:
+      - "-Kr5dNoFEx_mxxuatkTyME_wcMvD55fMvjZg_XXIdCrshh5hwJV00Q=="
+      Age:
+      - '21821'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvbDVLOWVsdWdmdGxjeUlISG00bnlsdnNuMjZYLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjowLCJnZW5yZXMiOlt7ImlkIjoxOCwibmFtZSI6IkRyYW1hIn1dLCJob21lcGFnZSI6IiIsImlkIjoyNTU3MDksImltZGJfaWQiOiJ0dDMxNTM2MzQiLCJvcmlnaW5hbF9sYW5ndWFnZSI6ImtvIiwib3JpZ2luYWxfdGl0bGUiOiLshozsm5AiLCJvdmVydmlldyI6IkFmdGVyIDgteWVhci1vbGQgU28td29uIG5hcnJvd2x5IHN1cnZpdmVzIGEgYnJ1dGFsIHNleHVhbCBhc3NhdWx0LCBoZXIgZmFtaWx5IGxhYm9ycyB0byBoZWxwIGhlciBoZWFsIHdoaWxlIGNvcGluZyB3aXRoIHRoZWlyIG93biByYWdlIGFuZCBncmllZi4iLCJwb3B1bGFyaXR5IjoyMC4wLCJwb3N0ZXJfcGF0aCI6Ii96NGxOcXNjN3VoU2J0Ym5pT1M2cjBmVEl2djUuanBnIiwicHJvZHVjdGlvbl9jb21wYW5pZXMiOlt7ImlkIjo3ODE5LCJsb2dvX3BhdGgiOiIvZ2hGWkF0NGVkbG4wTTdCekRFeHlZTXpVR1gxLnBuZyIsIm5hbWUiOiJMb3R0ZSBFbnRlcnRhaW5tZW50Iiwib3JpZ2luX2NvdW50cnkiOiJLUiJ9LHsiaWQiOjExMjg1MCwibG9nb19wYXRoIjpudWxsLCJuYW1lIjoiRmlsbSBNb21lbnR1bSIsIm9yaWdpbl9jb3VudHJ5IjoiS1IifSx7ImlkIjo4MTU5NCwibG9nb19wYXRoIjpudWxsLCJuYW1lIjoiTWljaGlnYW4gVmVudHVyZSBDYXBpdGFsIiwib3JpZ2luX2NvdW50cnkiOiJLUiJ9XSwicHJvZHVjdGlvbl9jb3VudHJpZXMiOlt7Imlzb18zMTY2XzEiOiJLUiIsIm5hbWUiOiJTb3V0aCBLb3JlYSJ9XSwicmVsZWFzZV9kYXRlIjoiMjAxMy0xMC0wMiIsInJldmVudWUiOjAsInJ1bnRpbWUiOjEyMiwic3Bva2VuX2xhbmd1YWdlcyI6W3siZW5nbGlzaF9uYW1lIjoiS29yZWFuIiwiaXNvXzYzOV8xIjoia28iLCJuYW1lIjoi7ZWc6rWt7Ja0L+yhsOyEoOunkCJ9XSwic3RhdHVzIjoiUmVsZWFzZWQiLCJ0YWdsaW5lIjoiV2Ugd29uJ3QgbGV0IGhlciBzaGVkIHRlYXJzIGFnYWluLiIsInRpdGxlIjoiSG9wZSIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo4LjUsInZvdGVfY291bnQiOjMzNn0=
+  recorded_at: Thu, 24 Mar 2022 00:05:35 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/389?api_key=movie_api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 23 Mar 2022 18:01:54 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - e3e13ddce18e34b6b6223106b32a00bcacc1cfc4
+      X-Memc-Age:
+      - '9108'
+      X-Memc-Expires:
+      - '5557'
+      Etag:
+      - W/"b406ea1acc3f7002765b6d8b992ec72a"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 a6b1f1036ef5ce8fe503a14addc801aa.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - BOS50-C1
+      X-Amz-Cf-Id:
+      - mgVOah5ZQTGJ6R3Oh6cLFUFG6H_2Sm8yZCmzothWVvTybzvw6oOtag==
+      Age:
+      - '21821'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/qqHQsStV6exghCM7zbObuYBiYxw.jpg","belongs_to_collection":null,"budget":350000,"genres":[{"id":18,"name":"Drama"}],"homepage":"","id":389,"imdb_id":"tt0050083","original_language":"en","original_title":"12
+        Angry Men","overview":"The defense and the prosecution have rested and the
+        jury is filing into the jury room to decide if a young Spanish-American is
+        guilty or innocent of murdering his father. What begins as an open and shut
+        case soon becomes a mini-drama of each of the jurors'' prejudices and preconceptions
+        about the trial, the accused, and each other.","popularity":26.944,"poster_path":"/e02s4wmTAExkKg0yF4dEG98ZRpK.jpg","production_companies":[{"id":60,"logo_path":"/oJXpAs4I3W46e4dkaOEzCa4yBko.png","name":"United
+        Artists","origin_country":"US"},{"id":10212,"logo_path":null,"name":"Orion-Nova
+        Productions","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1957-04-10","revenue":1000000,"runtime":97,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Life
+        is in their hands. Death is on their minds.","title":"12 Angry Men","video":false,"vote_average":8.5,"vote_count":6267}'
+  recorded_at: Thu, 24 Mar 2022 00:05:35 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/497?api_key=movie_api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 23 Mar 2022 18:01:54 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - c65480d511a35f804eaae09024963b9c8c6ed049
+      X-Memc-Age:
+      - '9659'
+      X-Memc-Expires:
+      - '6042'
+      Etag:
+      - W/"8da6b18c58f2827e3628a98a1bcf9f83"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 3ab520e9829594afd161e678c0434f7a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - BOS50-C1
+      X-Amz-Cf-Id:
+      - eUci206RLzY521AcN8qLUjDk8niAcdkDMi3OacvhsmL712UchGu0dw==
+      Age:
+      - '21821'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIveE1JeW90b3JVdjJZejd6cFF6MlFZYzh3a1dCLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0Ijo2MDAwMDAwMCwiZ2VucmVzIjpbeyJpZCI6MTQsIm5hbWUiOiJGYW50YXN5In0seyJpZCI6MTgsIm5hbWUiOiJEcmFtYSJ9LHsiaWQiOjgwLCJuYW1lIjoiQ3JpbWUifV0sImhvbWVwYWdlIjoiaHR0cDovL3RoZWdyZWVubWlsZS53YXJuZXJicm9zLmNvbS8iLCJpZCI6NDk3LCJpbWRiX2lkIjoidHQwMTIwNjg5Iiwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiVGhlIEdyZWVuIE1pbGUiLCJvdmVydmlldyI6IkEgc3VwZXJuYXR1cmFsIHRhbGUgc2V0IG9uIGRlYXRoIHJvdyBpbiBhIFNvdXRoZXJuIHByaXNvbiwgd2hlcmUgZ2VudGxlIGdpYW50IEpvaG4gQ29mZmV5IHBvc3Nlc3NlcyB0aGUgbXlzdGVyaW91cyBwb3dlciB0byBoZWFsIHBlb3BsZSdzIGFpbG1lbnRzLiBXaGVuIHRoZSBjZWxsIGJsb2NrJ3MgaGVhZCBndWFyZCwgUGF1bCBFZGdlY29tYiwgcmVjb2duaXplcyBDb2ZmZXkncyBtaXJhY3Vsb3VzIGdpZnQsIGhlIHRyaWVzIGRlc3BlcmF0ZWx5IHRvIGhlbHAgc3RhdmUgb2ZmIHRoZSBjb25kZW1uZWQgbWFuJ3MgZXhlY3V0aW9uLiIsInBvcHVsYXJpdHkiOjEwMy43MzUsInBvc3Rlcl9wYXRoIjoiL3ZlbFdQaFZNUWVRS2N4Z2dORVU4WW1JbzUyUi5qcGciLCJwcm9kdWN0aW9uX2NvbXBhbmllcyI6W3siaWQiOjk3LCJsb2dvX3BhdGgiOiIvN3puV2NiRGQ0UGNKekpVbEp4WXFBbFBQeWtwLnBuZyIsIm5hbWUiOiJDYXN0bGUgUm9jayBFbnRlcnRhaW5tZW50Iiwib3JpZ2luX2NvdW50cnkiOiJVUyJ9LHsiaWQiOjM5ODIsImxvZ29fcGF0aCI6Ii9ibGk3SGtQT1hPRVdzRHdESzBXN1hYZmVVVTIucG5nIiwibmFtZSI6IkRhcmt3b29kcyBQcm9kdWN0aW9ucyIsIm9yaWdpbl9jb3VudHJ5IjoiVVMifSx7ImlkIjoxNzQsImxvZ29fcGF0aCI6Ii9JdUFsaEk5ZVZDOVo4VVFXT0lEZFdSS1NFSi5wbmciLCJuYW1lIjoiV2FybmVyIEJyb3MuIFBpY3R1cmVzIiwib3JpZ2luX2NvdW50cnkiOiJVUyJ9XSwicHJvZHVjdGlvbl9jb3VudHJpZXMiOlt7Imlzb18zMTY2XzEiOiJVUyIsIm5hbWUiOiJVbml0ZWQgU3RhdGVzIG9mIEFtZXJpY2EifV0sInJlbGVhc2VfZGF0ZSI6IjE5OTktMTItMTAiLCJyZXZlbnVlIjoyODY4MDEzNzQsInJ1bnRpbWUiOjE4OSwic3Bva2VuX2xhbmd1YWdlcyI6W3siZW5nbGlzaF9uYW1lIjoiRnJlbmNoIiwiaXNvXzYzOV8xIjoiZnIiLCJuYW1lIjoiRnJhbsOnYWlzIn0seyJlbmdsaXNoX25hbWUiOiJFbmdsaXNoIiwiaXNvXzYzOV8xIjoiZW4iLCJuYW1lIjoiRW5nbGlzaCJ9XSwic3RhdHVzIjoiUmVsZWFzZWQiLCJ0YWdsaW5lIjoiTWlyYWNsZXMgZG8gaGFwcGVuLiIsInRpdGxlIjoiVGhlIEdyZWVuIE1pbGUiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6OC41LCJ2b3RlX2NvdW50IjoxMzY2N30=
+  recorded_at: Thu, 24 Mar 2022 00:05:35 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/632632?api_key=movie_api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 23 Mar 2022 18:01:54 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 261b18bcdb231548b62995109be2371e58839d0f
+      X-Memc-Age:
+      - '16065'
+      X-Memc-Expires:
+      - '1900'
+      Etag:
+      - W/"f50cbd305439b992c3b3d06e4bb1f3b1"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 21dd18a4b7e07f4364d52180e2cb2756.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - BOS50-C1
+      X-Amz-Cf-Id:
+      - cKJlFH6w5osggK2cNfIQrOiOW9GJVwFGRUAXwadC2hI3g612LsWA-g==
+      Age:
+      - '21821'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvdTF3SFVBMFI0OEZINFdWM3NHcWp3eDNhTlptLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjowLCJnZW5yZXMiOlt7ImlkIjoxNiwibmFtZSI6IkFuaW1hdGlvbiJ9LHsiaWQiOjE4LCJuYW1lIjoiRHJhbWEifSx7ImlkIjoxMDQwMiwibmFtZSI6Ik11c2ljIn0seyJpZCI6MTA3NDksIm5hbWUiOiJSb21hbmNlIn1dLCJob21lcGFnZSI6Imh0dHA6Ly9naXZlbi1hbmltZS5jb20vIiwiaWQiOjYzMjYzMiwiaW1kYl9pZCI6InR0MTE4MDI5OTIiLCJvcmlnaW5hbF9sYW5ndWFnZSI6ImphIiwib3JpZ2luYWxfdGl0bGUiOiLmmKDnlLsg44Ku44O044OzIiwib3ZlcnZpZXciOiJUaGUgZmlsbSBjZW50ZXJzIG9uIHRoZSBsb3ZlIHJlbGF0aW9uc2hpcCBhbW9uZyB0aGUgYmFuZCdzIGJhc3Npc3QgSGFydWtpIE5ha2F5YW1hLCBkcnVtbWVyIEFraWhpa28gS2FqaSwgYW5kIEFraWhpa28ncyByb29tbWF0ZSBhbmQgZXgtYm95ZnJpZW5kIFVnZXRzdSBNdXJhdGEuIiwicG9wdWxhcml0eSI6MTQwLjUyOSwicG9zdGVyX3BhdGgiOiIveEtDdG9ZSFV5WDh6QWc2OGVlbW5ZYTJvcmVwLmpwZyIsInByb2R1Y3Rpb25fY29tcGFuaWVzIjpbeyJpZCI6NDI4MTEsImxvZ29fcGF0aCI6Ii8yWlBVazNhWU90S2JaazFXNEtwNm1mZWF5czgucG5nIiwibmFtZSI6IkxlcmNoZSIsIm9yaWdpbl9jb3VudHJ5IjoiSlAifV0sInByb2R1Y3Rpb25fY291bnRyaWVzIjpbeyJpc29fMzE2Nl8xIjoiSlAiLCJuYW1lIjoiSmFwYW4ifV0sInJlbGVhc2VfZGF0ZSI6IjIwMjAtMDgtMjIiLCJyZXZlbnVlIjowLCJydW50aW1lIjo2MCwic3Bva2VuX2xhbmd1YWdlcyI6W3siZW5nbGlzaF9uYW1lIjoiSmFwYW5lc2UiLCJpc29fNjM5XzEiOiJqYSIsIm5hbWUiOiLml6XmnKzoqp4ifV0sInN0YXR1cyI6IlJlbGVhc2VkIiwidGFnbGluZSI6IiIsInRpdGxlIjoiR2l2ZW4iLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6OC41LCJ2b3RlX2NvdW50IjozMDZ9
+  recorded_at: Thu, 24 Mar 2022 00:05:35 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/155?api_key=movie_api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 23 Mar 2022 18:01:54 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 89c3ae263476649fa0091cec9618a9dc35ff1fcb
+      X-Memc-Age:
+      - '3714'
+      X-Memc-Expires:
+      - '11380'
+      Etag:
+      - W/"529dcd49bdb1136f201fdcb976ddfcd9"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 086cd0532de45f1c24aa2644656aff62.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - BOS50-C1
+      X-Amz-Cf-Id:
+      - Wja-k3UcfodAi7Ir-ChTsOzwEroffsRB0l1qgJG8_BK2fkNMG4mNFQ==
+      Age:
+      - '21821'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvbk1LZFVVZXBSMGk1em4weTFUNENzU0I1Y2h5LmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6eyJpZCI6MjYzLCJuYW1lIjoiVGhlIERhcmsgS25pZ2h0IENvbGxlY3Rpb24iLCJwb3N0ZXJfcGF0aCI6Ii9oR3ZPTVFCRDg4akFWMG9sUzJEVDFBeHJlSG4uanBnIiwiYmFja2Ryb3BfcGF0aCI6Ii94ZktvdDdscWFpVzRYcEw1VHREbFZCQTllaTkuanBnIn0sImJ1ZGdldCI6MTg1MDAwMDAwLCJnZW5yZXMiOlt7ImlkIjoxOCwibmFtZSI6IkRyYW1hIn0seyJpZCI6MjgsIm5hbWUiOiJBY3Rpb24ifSx7ImlkIjo4MCwibmFtZSI6IkNyaW1lIn0seyJpZCI6NTMsIm5hbWUiOiJUaHJpbGxlciJ9XSwiaG9tZXBhZ2UiOiJodHRwczovL3d3dy53YXJuZXJicm9zLmNvbS9tb3ZpZXMvZGFyay1rbmlnaHQvIiwiaWQiOjE1NSwiaW1kYl9pZCI6InR0MDQ2ODU2OSIsIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6IlRoZSBEYXJrIEtuaWdodCIsIm92ZXJ2aWV3IjoiQmF0bWFuIHJhaXNlcyB0aGUgc3Rha2VzIGluIGhpcyB3YXIgb24gY3JpbWUuIFdpdGggdGhlIGhlbHAgb2YgTHQuIEppbSBHb3Jkb24gYW5kIERpc3RyaWN0IEF0dG9ybmV5IEhhcnZleSBEZW50LCBCYXRtYW4gc2V0cyBvdXQgdG8gZGlzbWFudGxlIHRoZSByZW1haW5pbmcgY3JpbWluYWwgb3JnYW5pemF0aW9ucyB0aGF0IHBsYWd1ZSB0aGUgc3RyZWV0cy4gVGhlIHBhcnRuZXJzaGlwIHByb3ZlcyB0byBiZSBlZmZlY3RpdmUsIGJ1dCB0aGV5IHNvb24gZmluZCB0aGVtc2VsdmVzIHByZXkgdG8gYSByZWlnbiBvZiBjaGFvcyB1bmxlYXNoZWQgYnkgYSByaXNpbmcgY3JpbWluYWwgbWFzdGVybWluZCBrbm93biB0byB0aGUgdGVycmlmaWVkIGNpdGl6ZW5zIG9mIEdvdGhhbSBhcyB0aGUgSm9rZXIuIiwicG9wdWxhcml0eSI6MTM3LjkzMiwicG9zdGVyX3BhdGgiOiIvcUoydFc2V01VRHV4OTExcjZtN2hhUmVmMFdILmpwZyIsInByb2R1Y3Rpb25fY29tcGFuaWVzIjpbeyJpZCI6NDI5LCJsb2dvX3BhdGgiOiIvMlRjMVAzQWM4TTQ3OW5hUHAxa1lUM2l6TFM1LnBuZyIsIm5hbWUiOiJEQyBDb21pY3MiLCJvcmlnaW5fY291bnRyeSI6IlVTIn0seyJpZCI6OTIzLCJsb2dvX3BhdGgiOiIvNVVRc1pyZmJmRzJkWUpieDhEeGZvVHIyQnZ1LnBuZyIsIm5hbWUiOiJMZWdlbmRhcnkgUGljdHVyZXMiLCJvcmlnaW5fY291bnRyeSI6IlVTIn0seyJpZCI6OTk5NiwibG9nb19wYXRoIjoiLzN0dkJxWXNCaHhXZUhsdTYyU0lKMWVsOTNPNy5wbmciLCJuYW1lIjoiU3luY29weSIsIm9yaWdpbl9jb3VudHJ5IjoiR0IifSx7ImlkIjoxMTg4NjUsImxvZ29fcGF0aCI6bnVsbCwibmFtZSI6Iklzb2JlbCBHcmlmZml0aHMiLCJvcmlnaW5fY291bnRyeSI6IkdCIn0seyJpZCI6OTk5MywibG9nb19wYXRoIjoiLzJUYzFQM0FjOE00NzluYVBwMWtZVDNpekxTNS5wbmciLCJuYW1lIjoiREMgRW50ZXJ0YWlubWVudCIsIm9yaWdpbl9jb3VudHJ5IjoiVVMifSx7ImlkIjoxNzQsImxvZ29fcGF0aCI6Ii9JdUFsaEk5ZVZDOVo4VVFXT0lEZFdSS1NFSi5wbmciLCJuYW1lIjoiV2FybmVyIEJyb3MuIFBpY3R1cmVzIiwib3JpZ2luX2NvdW50cnkiOiJVUyJ9XSwicHJvZHVjdGlvbl9jb3VudHJpZXMiOlt7Imlzb18zMTY2XzEiOiJHQiIsIm5hbWUiOiJVbml0ZWQgS2luZ2RvbSJ9LHsiaXNvXzMxNjZfMSI6IlVTIiwibmFtZSI6IlVuaXRlZCBTdGF0ZXMgb2YgQW1lcmljYSJ9XSwicmVsZWFzZV9kYXRlIjoiMjAwOC0wNy0xNCIsInJldmVudWUiOjEwMDQ1NTg0NDQsInJ1bnRpbWUiOjE1Miwic3Bva2VuX2xhbmd1YWdlcyI6W3siZW5nbGlzaF9uYW1lIjoiRW5nbGlzaCIsImlzb182MzlfMSI6ImVuIiwibmFtZSI6IkVuZ2xpc2gifSx7ImVuZ2xpc2hfbmFtZSI6Ik1hbmRhcmluIiwiaXNvXzYzOV8xIjoiemgiLCJuYW1lIjoi5pmu6YCa6K+dIn1dLCJzdGF0dXMiOiJSZWxlYXNlZCIsInRhZ2xpbmUiOiJXZWxjb21lIHRvIGEgd29ybGQgd2l0aG91dCBydWxlcy4iLCJ0aXRsZSI6IlRoZSBEYXJrIEtuaWdodCIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo4LjUsInZvdGVfY291bnQiOjI3MTIzfQ==
+  recorded_at: Thu, 24 Mar 2022 00:05:35 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/283566?api_key=movie_api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 23 Mar 2022 18:01:54 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - ddd2831bb5e161c92a248906f6cb97ed3d346d29
+      X-Memc-Age:
+      - '3055'
+      X-Memc-Expires:
+      - '13267'
+      Etag:
+      - W/"ed368418db8309eace68c7eeb7ad7127"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 eb5edf953cbfd04250489a202551d9ae.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - BOS50-C1
+      X-Amz-Cf-Id:
+      - mdD84j0I7cuCyJV1COk1LX3bpvgM6FDgjmm_kOhw0lX1FoFmCVBBYg==
+      Age:
+      - '21821'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvMUVBeE5xZGtWbnA0OGE3TlV1TkJIR2Zsb3dNLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6eyJpZCI6MjEwMzAzLCJuYW1lIjoiUmVidWlsZCBvZiBFdmFuZ2VsaW9uIENvbGxlY3Rpb24iLCJwb3N0ZXJfcGF0aCI6Ii9jNzhUSGdwbFJpc3hyNk40N0Q1TUhrWUt4MFUuanBnIiwiYmFja2Ryb3BfcGF0aCI6Ii9sYXMwUDREdWE1NFhyWjczVlFtR1VhSDF6MFUuanBnIn0sImJ1ZGdldCI6MCwiZ2VucmVzIjpbeyJpZCI6MTYsIm5hbWUiOiJBbmltYXRpb24ifSx7ImlkIjoyOCwibmFtZSI6IkFjdGlvbiJ9LHsiaWQiOjg3OCwibmFtZSI6IlNjaWVuY2UgRmljdGlvbiJ9LHsiaWQiOjE4LCJuYW1lIjoiRHJhbWEifV0sImhvbWVwYWdlIjoiaHR0cHM6Ly93d3cuZXZhbmdlbGlvbi5jby5qcC9maW5hbC5odG1sIiwiaWQiOjI4MzU2NiwiaW1kYl9pZCI6InR0MjQ1ODk0OCIsIm9yaWdpbmFsX2xhbmd1YWdlIjoiamEiLCJvcmlnaW5hbF90aXRsZSI6IuOCt+ODs+ODu+OCqOODtOOCoeODs+OCsuODquOCquODs+WKh+WgtOeJiDp8fCIsIm92ZXJ2aWV3IjoiSW4gdGhlIGFmdGVybWF0aCBvZiB0aGUgRm91cnRoIEltcGFjdCwgc3RyYW5kZWQgd2l0aG91dCB0aGVpciBFdmFuZ2VsaW9ucywgU2hpbmppLCBBc3VrYSwgYW5kIFJlaSBmaW5kIHJlZnVnZSBpbiBvbmUgb2YgdGhlIHJhcmUgcG9ja2V0cyBvZiBodW1hbml0eSB0aGF0IHN0aWxsIGV4aXN0IG9uIHRoZSBydWluZWQgcGxhbmV0IEVhcnRoLiBUaGVyZSwgZWFjaCBvZiB0aGVtIGxpdmUgYSBsaWZlIGZhciBkaWZmZXJlbnQgZnJvbSB0aGVpciBkYXlzIGFzIGFuIEV2YW5nZWxpb24gcGlsb3QuIEhvd2V2ZXIsIHRoZSBkYW5nZXIgdG8gdGhlIHdvcmxkIGlzIGZhciBmcm9tIG92ZXIuIEEgbmV3IGltcGFjdCBpcyBsb29taW5nIG9uIHRoZSBob3Jpem9u4oCUb25lIHRoYXQgd2lsbCBwcm92ZSB0byBiZSB0aGUgdHJ1ZSBlbmQgb2YgRXZhbmdlbGlvbi4iLCJwb3B1bGFyaXR5IjoxNDQuNzE4LCJwb3N0ZXJfcGF0aCI6Ii9tZDV3WlJSajhiaUhyR3R5aXRnQlpvNzY3NHQuanBnIiwicHJvZHVjdGlvbl9jb21wYW5pZXMiOlt7ImlkIjo0MTQ1LCJsb2dvX3BhdGgiOiIvc3VBbFFvajA0b3pMQzBXYmZJNXFFTWFoVnd2LnBuZyIsIm5hbWUiOiJraGFyYSIsIm9yaWdpbl9jb3VudHJ5IjoiSlAifV0sInByb2R1Y3Rpb25fY291bnRyaWVzIjpbeyJpc29fMzE2Nl8xIjoiSlAiLCJuYW1lIjoiSmFwYW4ifV0sInJlbGVhc2VfZGF0ZSI6IjIwMjEtMDMtMDgiLCJyZXZlbnVlIjo3ODMzNDk0MywicnVudGltZSI6MTU1LCJzcG9rZW5fbGFuZ3VhZ2VzIjpbeyJlbmdsaXNoX25hbWUiOiJKYXBhbmVzZSIsImlzb182MzlfMSI6ImphIiwibmFtZSI6IuaXpeacrOiqniJ9XSwic3RhdHVzIjoiUmVsZWFzZWQiLCJ0YWdsaW5lIjoiQnllLWJ5ZSwgYWxsIG9mIEVWQU5HRUxJT04uIiwidGl0bGUiOiJFdmFuZ2VsaW9uOiAzLjArMS4wIFRocmljZSBVcG9uIGEgVGltZSIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo4LjUsInZvdGVfY291bnQiOjQ3NH0=
+  recorded_at: Thu, 24 Mar 2022 00:05:35 GMT
+recorded_with: VCR 6.1.0

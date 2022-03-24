@@ -9,7 +9,8 @@ class MoviesController < ApplicationController
 
   end
 
-  # def index
-  #   @top_rated = TopFacade.new
-  # end
+  def index
+    @top_rated = TopFacade.new.top_rated
+    @user = User.find(params[:user_id])
+  end
 end

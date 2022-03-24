@@ -24,8 +24,6 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Wed, 23 Mar 2022 15:20:17 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -35,8 +33,6 @@ http_interactions:
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
-      Cache-Control:
-      - public, max-age=28800
       X-Memc:
       - HIT
       X-Memc-Key:
@@ -45,6 +41,10 @@ http_interactions:
       - '7075'
       X-Memc-Expires:
       - '9682'
+      Date:
+      - Thu, 24 Mar 2022 00:05:35 GMT
+      Cache-Control:
+      - public, max-age=28800
       Etag:
       - W/"7a5ff04c178b618bdeb8eb557d516738"
       Vary:
@@ -52,13 +52,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 6b1e633ac9cee1a933fb96b8da595b0e.cloudfront.net (CloudFront)
+      - 1.1 2a551a194d0f3e3f01746710d4c85794.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - BOS50-C1
       X-Amz-Cf-Id:
-      - igRyt9MIh7sUCQDKyeNVbBjnjpzbueRTJuVPEQ_Id74tlmqbfYyqLw==
+      - nM0C92yJ1jAe0Y-OoQidLnGFrLKrsgJBU1dNIuZKwwR5DUxk4QDEYg==
       Age:
-      - '5954'
+      - '1'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/7sFjHJSPMjWS7OdeceTzz2ojKB7.jpg","belongs_to_collection":null,"budget":8000000,"genres":[{"id":80,"name":"Crime"},{"id":18,"name":"Drama"}],"homepage":"","id":235,"imdb_id":"tt0092005","original_language":"en","original_title":"Stand
@@ -70,7 +70,7 @@ http_interactions:
         States of America"}],"release_date":"1986-08-08","revenue":52287414,"runtime":89,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"For
         some, it''s the last real taste of innocence, and the first real taste of
         life.","title":"Stand by Me","video":false,"vote_average":7.9,"vote_count":4492}'
-  recorded_at: Wed, 23 Mar 2022 16:59:31 GMT
+  recorded_at: Thu, 24 Mar 2022 00:05:36 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/235/reviews?api_key=movie_api_key
@@ -95,8 +95,6 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Wed, 23 Mar 2022 15:20:17 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -106,8 +104,6 @@ http_interactions:
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
-      Cache-Control:
-      - public, max-age=28800
       X-Memc:
       - HIT
       X-Memc-Key:
@@ -116,6 +112,10 @@ http_interactions:
       - '13752'
       X-Memc-Expires:
       - '3431'
+      Date:
+      - Thu, 24 Mar 2022 00:05:35 GMT
+      Cache-Control:
+      - public, max-age=28800
       Etag:
       - W/"ee526c9957181240c97ad3d7a5d4e095"
       Vary:
@@ -123,13 +123,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 7cbeba72688c67adb3ad90a78c151742.cloudfront.net (CloudFront)
+      - 1.1 810a9accae2b6588bfefcc0e0dd6f31e.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - BOS50-C1
       X-Amz-Cf-Id:
-      - 4CPGPd-1Rdy5w5GWXMviwz5S3U2UuJVEz_D8W-dmgkGUK5sgC6fcqA==
+      - YW62QbFYRuhFx8JB05TM_5Tk5bFJ06xkPAADAIJKbtujX1HgSKLH5Q==
       Age:
-      - '5954'
+      - '1'
     body:
       encoding: ASCII-8BIT
       string: '{"id":235,"page":1,"results":[{"author":"Joe","author_details":{"name":"Joe","username":"Joeisacoolguy","avatar_path":null,"rating":10.0},"content":"My
@@ -139,7 +139,7 @@ http_interactions:
         sweet on the inside, and I''ve known people like Vern, Teddy and Denny too
         :) Beautiful music, acting and truth about growing up, as relevant today as
         it was in the 80s/50s :) <3","created_at":"2017-07-27T10:17:01.599Z","id":"5979bd9d92514107d10118ed","updated_at":"2021-06-23T15:57:59.512Z","url":"https://www.themoviedb.org/review/5979bd9d92514107d10118ed"}],"total_pages":1,"total_results":1}'
-  recorded_at: Wed, 23 Mar 2022 16:59:31 GMT
+  recorded_at: Thu, 24 Mar 2022 00:05:36 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/235/credits?api_key=movie_api_key
@@ -164,8 +164,6 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Wed, 23 Mar 2022 15:20:18 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -175,8 +173,6 @@ http_interactions:
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
-      Cache-Control:
-      - public, max-age=28800
       X-Memc:
       - HIT
       X-Memc-Key:
@@ -185,6 +181,10 @@ http_interactions:
       - '335'
       X-Memc-Expires:
       - '16676'
+      Date:
+      - Thu, 24 Mar 2022 00:05:36 GMT
+      Cache-Control:
+      - public, max-age=28800
       Etag:
       - W/"5f40600bd10cc794b191ae096554fead"
       Vary:
@@ -192,13 +192,11 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 810a9accae2b6588bfefcc0e0dd6f31e.cloudfront.net (CloudFront)
+      - 1.1 980d2a1c9c4f90ad69118c6357f92882.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - BOS50-C1
       X-Amz-Cf-Id:
-      - FbMKWKS1fnbDDeV-DSFHG0vl-QM-ws2QVhYBtkn9oemjSUAvA9-XMA==
-      Age:
-      - '5953'
+      - D0gq6qmgOs8xDmC5d2xk72uPWkeO0uYgpXF5hJqx81gcS2aS7ttHJA==
     body:
       encoding: ASCII-8BIT
       string: '{"id":235,"cast":[{"adult":false,"gender":2,"id":3033,"known_for_department":"Acting","name":"Wil
@@ -403,5 +401,5 @@ http_interactions:
         Mercier","original_name":"Helen Mercier","popularity":0.6,"profile_path":null,"credit_id":"61c944cdecc7e80061d7c9dd","department":"Crew","job":"Transportation
         Co-Captain"},{"adult":false,"gender":2,"id":3451295,"known_for_department":"Acting","name":"Harvey
         Keith","original_name":"Harvey Keith","popularity":0.6,"profile_path":null,"credit_id":"62211b09c2ff3d006f961108","department":"Crew","job":"Stunts"}]}'
-  recorded_at: Wed, 23 Mar 2022 16:59:31 GMT
+  recorded_at: Thu, 24 Mar 2022 00:05:36 GMT
 recorded_with: VCR 6.1.0
