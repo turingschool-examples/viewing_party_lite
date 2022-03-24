@@ -10,26 +10,26 @@ UserParty.destroy_all
 User.destroy_all
 ViewingParty.destroy_all
 
-@vp1 = ViewingParty.create!(movie_id: 111, duration: 151, date: Time.new(2022, 0o4, 12, 21, 0o0),
-                            start_time: Time.new(2022, 0o4, 12, 21, 0o0))
-@vp2 = ViewingParty.create!(movie_id: 112, duration: 152, date: Time.new(2022, 0o4, 11, 20, 30),
-                            start_time: Time.new(2022, 0o4, 11, 20, 30))
-@vp3 = ViewingParty.create!(movie_id: 113, duration: 153, date: Time.new(2022, 0o4, 14, 20, 0o0),
-                            start_time: Time.new(2022, 0o4, 14, 20, 0o0))
-@vp4 = ViewingParty.create!(movie_id: 114, duration: 154, date: Time.new(2022, 0o4, 13, 19, 30),
-                            start_time: Time.new(2022, 0o4, 13, 19, 30))
-@vp5 = ViewingParty.create!(movie_id: 115, duration: 155, date: Time.new(2022, 0o4, 15, 19, 0o0),
-                            start_time: Time.new(2022, 0o4, 15, 19, 0o0))
-@vp6 = ViewingParty.create!(movie_id: 116, duration: 156, date: Time.new(2022, 0o4, 16, 19, 0o0),
-                            start_time: Time.new(2022, 0o4, 15, 19, 0o0))
-@vp7 = ViewingParty.create!(movie_id: 117, duration: 157, date: Time.new(2022, 0o4, 10, 18, 30),
-                            start_time: Time.new(2022, 0o4, 10, 18, 30))
-@vp8 = ViewingParty.create!(movie_id: 118, duration: 158, date: Time.new(2022, 0o4, 9, 18, 0o0),
-                            start_time: Time.new(2022, 0o4, 9, 18, 0o0))
-@vp9 = ViewingParty.create!(movie_id: 119, duration: 159, date: Time.new(2022, 0o4, 18, 17, 30),
-                            start_time: Time.new(2022, 0o4, 18, 17, 30))
-@vp10 = ViewingParty.create!(movie_id: 120, duration: 161, date: Time.new(2022, 0o4, 21, 17, 0o0),
-                             start_time: Time.new(2022, 0o4, 21, 17, 0o0))
+@vp1 = ViewingParty.create!(movie_id: 111, duration: 151, date: Time.new(2022, 04, 12, 21, 00),
+                            start_time: Time.new(2022, 04, 12, 21, 00))
+@vp2 = ViewingParty.create!(movie_id: 112, duration: 152, date: Time.new(2022, 04, 11, 20, 30),
+                            start_time: Time.new(2022, 04, 11, 20, 30))
+@vp3 = ViewingParty.create!(movie_id: 113, duration: 153, date: Time.new(2022, 04, 14, 20, 00),
+                            start_time: Time.new(2022, 04, 14, 20, 00))
+@vp4 = ViewingParty.create!(movie_id: 114, duration: 154, date: Time.new(2022, 04, 13, 19, 30),
+                            start_time: Time.new(2022, 04, 13, 19, 30))
+@vp5 = ViewingParty.create!(movie_id: 115, duration: 155, date: Time.new(2022, 04, 15, 19, 00),
+                            start_time: Time.new(2022, 04, 15, 19, 00))
+@vp6 = ViewingParty.create!(movie_id: 116, duration: 156, date: Time.new(2022, 04, 16, 19, 00),
+                            start_time: Time.new(2022, 04, 15, 19, 00))
+@vp7 = ViewingParty.create!(movie_id: 117, duration: 157, date: Time.new(2022, 04, 10, 18, 30),
+                            start_time: Time.new(2022, 04, 10, 18, 30))
+@vp8 = ViewingParty.create!(movie_id: 118, duration: 158, date: Time.new(2022, 04, 9, 18, 00),
+                            start_time: Time.new(2022, 04, 9, 18, 00))
+@vp9 = ViewingParty.create!(movie_id: 119, duration: 159, date: Time.new(2022, 04, 18, 17, 30),
+                            start_time: Time.new(2022, 04, 18, 17, 30))
+@vp10 = ViewingParty.create!(movie_id: 120, duration: 161, date: Time.new(2022, 04, 21, 17, 00),
+                             start_time: Time.new(2022, 04, 21, 17, 00))
 
 @user1 = User.create!(name: 'Becky', email: 'becky@example.com')
 @user2 = User.create!(name: 'Steven', email: 'steven@example.com')
