@@ -1,6 +1,6 @@
 <div class="card-deck ">
     <% object.each_with_index do |party, index| %>
-    <% party.try(:viewing_party).nil? ? movie = MovieFacade.new(party.movie_id).movie : movie = MovieFacade.new(party.viewing_party.movie_id).movie %>
+    <% party.try(:viewing_party).nil? ? movie = MovieFacade.movie(party.movie_id) : movie = MovieFacade.movie(party.viewing_party.movie_id) %>
     <div id=<%=index%>>
         <div class="card bg-light mb-3 col-lg-4 d-flex align-items-stretch" style="max-width: 20rem;">
             <div class="card-title">
