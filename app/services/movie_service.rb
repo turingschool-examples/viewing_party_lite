@@ -1,4 +1,3 @@
-require 'pry'
 require 'faraday'
 require 'figaro'
 require './app/poros/movie_call'
