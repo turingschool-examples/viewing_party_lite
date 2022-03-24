@@ -11,17 +11,17 @@ class MovieService
     end
 
     def movie_deets(movie_id)
-      response = conn.get("/3/movie/#{movie_id}?api_key=#{ENV['tmdb_key']}&language=en-US")
+      response = conn.get("/3/movie/#{movie_id}?api_key=#{ENV['api_key']}&language=en-US")
       parse_data(response)
     end
 
     def cast(movie_id)
-      response = conn.get("/3/movie/#{movie_id}/credits?api_key=#{ENV['tmdb_key']}&language=en-US")
+      response = conn.get("/3/movie/#{movie_id}/credits?api_key=#{ENV['api_key']}&language=en-US")
       parse_data(response)
     end
 
     def reviews(movie_id)
-      response = conn.get("/3/movie/#{movie_id}/reviews?api_key=#{ENV['tmdb_key']}&language=en-US")
+      response = conn.get("/3/movie/#{movie_id}/reviews?api_key=#{ENV['api_key']}&language=en-US")
       parse_data(response)
     end
     private

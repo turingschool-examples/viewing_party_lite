@@ -29,7 +29,9 @@ class MovieData
   end
 
   def review(reviews)
+    #binding.pry
     hash = {}
+    accum = []
       reviews[:results].each do |review|
         hash[review[:author]] = review[:content]
       end
