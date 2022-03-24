@@ -1,2 +1,23 @@
-<%= @user.name %>
-<%= @user.email %>
+<h1><%= @user.name %>'s Dashboard</h1><br>
+<section id='discover'>
+<%= button_to 'Discover Movies', '/users/:id/discover' %>
+</section>
+<section id='parties'>
+  <h2>My Viweing Parties:</h2>
+    <% @my_hosting.each_with_index do | party, index | %>
+    <div id="hosting-<%= index %>">
+      <p>party.movie_name</p>
+      <p>party.start_date</p>
+      <p>party.start_time</p>
+      <p>party.user_status</p>
+    </div>
+    <% end %>
+    <% @my_invitations.each_with_index do | party, index | %>
+    <div id="invite-<%= index %>">
+      <p>party.movie_name</p>
+      <p>party.start_date</p>
+      <p>party.start_time</p>
+      <p>party.user_status</p>
+    </div>
+    <% end %>
+</section>
