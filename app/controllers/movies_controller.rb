@@ -3,15 +3,14 @@ class MoviesController < ApplicationController
   before_action :find_user, only: [:index]
 
   def index
-    if params[:query] == "top_rated"
+    if params[:query] == 'top_rated'
       @data = MovieFacade.top_rated
-    elsif params[:query] == "movie_search"
+    elsif params[:query] == 'movie_search'
       @data = MovieFacade.movie_search(params[:search])
-   end
+    end
   end
 
-  def show
-  end
+  def show; end
 
   private
 

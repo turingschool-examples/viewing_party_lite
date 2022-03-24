@@ -13,9 +13,9 @@ RSpec.describe 'user registration' do
   it 'Can create a new user' do
     visit '/register'
 
-    fill_in "name", with: "Ana"
-    fill_in "Email", with: "anita@hotmail.com"
-    click_on "Submit"
+    fill_in 'name', with: 'Ana'
+    fill_in 'Email', with: 'anita@hotmail.com'
+    click_on 'Submit'
 
     ana = User.last
     expect(current_path).to eq("/users/#{ana.id}")
