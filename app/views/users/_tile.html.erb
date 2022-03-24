@@ -1,0 +1,17 @@
+<div class="card-deck">
+                <% object.each do |party, index| %>
+                <% party.try(:viewing_party).nil? ? movie = MovieFacade.new(party.movie_id).movie : movie = MovieFacade.new(party.viewing_party.movie_id).movie %>
+                <div id=<%=index%>>
+                    <div class="card bg-light mb-3" style="max-width: 20rem;">
+                        <div class="card-header"><%=movie.title%></div>
+                        <div class="card-body">
+                            <img class="card-img-top"
+                                src=<%= "https://image.tmdb.org/t/p/original/#{movie.poster_path}"%>>
+                            <p class="card-text"> Date:
+                                <%= party.try(:viewing_party).nil? ? party.date_time.strftime("%m/%d/%Y at %I:%M%p") :party.viewing_party.date_time.strftime("%m/%d/%Y at %I:%M%p") %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <% end %>
+            </div>

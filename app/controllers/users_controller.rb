@@ -6,6 +6,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @invited = @user.user_viewing_parties
+    @hosting = @user.viewing_parties
   end
 
   def create
