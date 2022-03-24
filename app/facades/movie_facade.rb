@@ -10,4 +10,8 @@ class MovieFacade
         Movie.new(data)
       end.take(40)
     end
+
+    def details(movie_id)
+      MovieDetail.new(MovieService.movie_details(movie_id))
+    end 
 end

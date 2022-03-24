@@ -19,5 +19,12 @@ RSpec.describe 'The Movie Facade' do
         expect(movie_search.length).to be <= 40
       end
     end
+
+    it ".details" do
+      VCR.use_cassette('movie_details') do
+        movie_details = MovieFacade.new.details(24126)
+        expect(movie_details).to be_instance_of(MovieDetail)
+      end
+    end
   end
 end
