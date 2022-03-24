@@ -24,5 +24,13 @@ RSpec.describe MovieService do
         expect(movie.count).to eq(20)
       end
     end
+    context '#search' do
+      it "returns movie titles that include search params" do
+        movie = MovieService.search('fight')
+
+        expect(movie.first).to be_a MovieCall
+        expect(movie.count).to eq(20)
+      end
+    end
   end
 end

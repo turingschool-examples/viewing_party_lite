@@ -18,4 +18,12 @@ class MovieService
       MovieCall.new(params)
     end
   end
+
+  def self.search(query)
+    response = MovieService.connect.get("/3/search/movie?query=#{query}")
+    attrs = JSON.parse(response.body, symbolize_names: true)
+    @movies = attrs[:results].map do |params|
+      MovieCall.new(params)
+    end
+  end
 end
