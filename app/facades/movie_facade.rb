@@ -8,6 +8,8 @@ class MovieFacade
   end
 
   def self.keywords(keyword)
+    return self.top_movies if keyword == "top_rated"
+
     data = MovieService.movie_keywords(keyword)
 
     data[:results].map do |movie_data|
