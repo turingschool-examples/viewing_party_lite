@@ -5,5 +5,6 @@ class ViewingPartyController < ApplicationController
     @movie = Movie.new(id: 22, title: "Pirates of the Caribbean: The Curse of the Black Pearl", runtime: 102, vote_average: 10)
     # # @movie = Movie.find(params[:movie_id])
     # @movie = Movie.new.search(params[:movie_id])
+    # @movie = Movie.new(params[:movie_id], params[:title], params[:runtime])
   end
 end
