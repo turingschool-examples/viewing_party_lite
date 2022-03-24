@@ -1,9 +1,8 @@
-<%   %>
 <h1 class="text-center" sample center heading>Title: <%= @movie.title %> </h1>
 <div class="container my-3 bg-light">
    <div class="col-md-12 text-center">
 <button type="button" class="btn btn-link"><%= button_to("Discover Page", '#', method: :get )%></button>
-<button type="button"class="btn btn-link"><%= button_to("Create Viewing Party for #{@movie.title}", "#", method: :get)%></button>
+<button type="button"class="btn btn-link"> <%= button_to("Create Viewing Party for #{@movie.title}", new_user_movie_viewing_party_path(movie_id: params[:id]), method: :get)  %></button>
         </div>
     </div>
    <div class="row">

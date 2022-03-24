@@ -1,0 +1,15 @@
+<div class='form-group'>
+<div class = "container">
+<%movie = MovieFacade.new(params[:movie_id]).movie%>
+<h1>Create a Movie Party for <%= movie.title%></h1>
+    <%= form_with model: @viewing_parties, local: true do |form| %>
+    <p><%= form.label :duration %></p>
+    <p><%= form.number_field :duration, class: "form-control", value: movie.minutes %></p>
+    <p><%= form.label :date %></p>
+    <p><%= form.datetime_field :date_time, class: "form-control" %></p>
+    <p> <%= form.label :invite_other_users%>
+    <%= form.collection_check_boxes(:user, User.where.not(id: params[:user_id]), :id, :name, include_hidden: false)%> 
+<p><%= form.submit 'Create Viewing Party'%></p>
+<% end %>
+</div>
+</div>

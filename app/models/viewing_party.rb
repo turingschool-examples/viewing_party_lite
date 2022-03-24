@@ -5,9 +5,11 @@ class ViewingParty < ApplicationRecord
   has_many :user_viewing_parties
   has_many :users, through: :user_viewing_parties
   validates_presence_of :movie_id
+  validates_presence_of :date_time
+  validates_presence_of :duration
+  validates_numericality_of :duration, greater_than_or_equal_to: :assign_duration, on: :create
 
   after_validation :assign_duration
-  after_save :add_host_to_user_viewing_parties
 
   private
 
@@ -15,7 +17,4 @@ class ViewingParty < ApplicationRecord
     self.duration = MovieFacade.new(movie_id).movie.minutes
   end
 
-  def add_host_to_user_viewing_parties
-    UserViewingParty.create!(viewing_party: self, user: user)
-  end
 end
