@@ -15,5 +15,20 @@ class MovieService
       response = connection.get("movie/top_rated")
       parse_json(response)
     end
+
+    def cast_members(movie_id)
+      response = connection.get("movie/#{movie_id}/credits")
+      parse_json(response)
+    end
+
+    def movie_details(movie_id)
+      response = connection.get("movie/#{movie_id}")
+      parse_json(response)
+    end
+
+    def reviews(movie_id)
+      response = connection.get("movie/#{movie_id}/reviews")
+      parse_json(response)
+    end
   end
 end
