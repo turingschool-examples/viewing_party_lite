@@ -62,5 +62,15 @@ RSpec.describe 'Movie Index Page' do
       expect(page).to have_content("Avengers: Endgame")
       expect(page).to have_content("LEGO Marvel Avengers: Loki in Training")
     end
+    it 'displays vote average for each movie', :vcr do 
+      visit user_discover_index_path(@user1)
+      fill_in 'search', with: 'Avengers'
+      click_button 'Find Movies'
+      expect(current_path).to eq(user_movies_path(@user1))
+
+      expect(page).to have_content("Avengers: Endgame - (Vote Average: 8.3)")
+      expect(page).to have_content("Avengers: Age of Ultron - (Vote Average: 7.3)")
+      expect(page).to have_content("LEGO Marvel Avengers: Loki in Training - (Vote Average: 7.8)")
+    end
   end
 end 
