@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 24 Mar 2022 01:44:39 GMT
+      - Thu, 24 Mar 2022 13:59:44 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,39 +42,11 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-<<<<<<< HEAD
-      - 1.1 28d79637e27f11e3ab19a9515e273a5a.cloudfront.net (CloudFront)
-=======
-      - 1.1 2f66aa06710fece8ed203ab0ea81eb56.cloudfront.net (CloudFront)
->>>>>>> fe78f12e95b6d8e6a3bcf93392cef5a42524cce1
+      - 1.1 cddde15c11afac53ac9fe7978dcfecd6.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - IAD89-C3
+      - DEN50-C2
       X-Amz-Cf-Id:
-<<<<<<< HEAD
-      - FFLSX-iCs-kDooqEXujod5e30TQzyIW3W8mzFiSaKa-vHsEmCFaf0Q==
-    body:
-      encoding: ASCII-8BIT
-      string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/wPU78OPN4BYEgWYdXyg0phMee64.jpg","genre_ids":[18,80],"id":278,"original_language":"en","original_title":"The
-        Shawshank Redemption","overview":"Framed in the 1940s for the double murder
-        of his wife and her lover, upstanding banker Andy Dufresne begins a new life
-        at the Shawshank prison, where he puts his accounting skills to work for an
-        amoral warden. During his long stretch in prison, Dufresne comes to be admired
-        by the other inmates -- including an older prisoner named Red -- for his integrity
-        and unquenchable sense of hope.","popularity":79.48,"poster_path":"/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg","release_date":"1994-09-23","title":"The
-        Shawshank Redemption","video":false,"vote_average":8.7,"vote_count":21011},{"adult":false,"backdrop_path":"/u6hgtSIzW8nDKKWmun9JDhZz2fp.jpg","genre_ids":[99],"id":546312,"original_language":"en","original_title":"Shawshank:
-        The Redeeming Feature","overview":"Film critic and presenter Mark Kermode
-        explores the fascination and praise audiences, fans and critics have behind
-        the classic The Shawshank Redemption (1994) and how its importance grew higher
-        over the years despite being an overlooked film when it was released and not
-        getting any Oscars victories when it was nominated as one of the Best Pictures
-        of the Year.","popularity":2.93,"poster_path":"/b7DGM74MRfiLqEveVKwh0jnQ8zX.jpg","release_date":"2001-09-08","title":"Shawshank:
-        The Redeeming Feature","video":false,"vote_average":8.7,"vote_count":14},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":897459,"original_language":"en","original_title":"Hope
-        Springs Eternal: A Look Back at The Shawshank Redemption","overview":"Documentary
-        about the movie.","popularity":1.255,"poster_path":"/vdVab7yNvgYEMd8shCfy2D6nTMu.jpg","release_date":"2004-06-25","title":"Hope
-        Springs Eternal: A Look Back at The Shawshank Redemption","video":false,"vote_average":7,"vote_count":1}],"total_pages":1,"total_results":3}'
-  recorded_at: Thu, 24 Mar 2022 01:44:39 GMT
-=======
-      - HYlGJwmn2_0ub0jKZ-4zcyrMBuOcGOXegjC-A1cp6k9F2XaZM4NPkw==
+      - S7k1zUY1jOuHNs0RLyyCoaWQC2SfqFyLi3dek4new0noyB17bWhcRQ==
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/k7h4RNAarfOrF2r2YMN0P2FQSr4.jpg","genre_ids":[80,18,53,28],"id":75780,"original_language":"en","original_title":"Jack
@@ -88,6 +60,5 @@ http_interactions:
         treason, ex-investigator Jack Reacher undertakes the challenging task to prove
         her innocence and ends up exposing a shocking conspiracy.","popularity":127.344,"poster_path":"/wxLUQ1pIms3HAlVGYvEG9zg2kDs.jpg","release_date":"2016-10-19","title":"Jack
         Reacher: Never Go Back","video":false,"vote_average":5.9,"vote_count":3937}],"total_pages":1,"total_results":2}'
-  recorded_at: Thu, 24 Mar 2022 01:24:37 GMT
->>>>>>> fe78f12e95b6d8e6a3bcf93392cef5a42524cce1
+  recorded_at: Thu, 24 Mar 2022 13:59:44 GMT
 recorded_with: VCR 6.1.0
