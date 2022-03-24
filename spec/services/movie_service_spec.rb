@@ -4,6 +4,20 @@ require 'rails_helper'
     let(:movie_deets) { MovieService.movie_deets(5244) }
     let(:casts) { MovieService.cast(5244) }
     let(:reviews) { MovieService.reviews(5244) }
+    
+    
+    it "can call for movies", :vcr do 
+      movie = "Aliens"
+      response = MovieService.call_for_a_movie(movie)
+      expect(response).to have_content("Aliens")
+    end 
+
+    it "can call for top movies", :vcr do 
+      response = MovieService.call_for_top_20_movies
+      expect(response).to have_content("The Shawshank Redemption")
+      expect(response).to have_content(8.7)
+    end 
+  
 
     it 'establishes a connection for movie_deets' do
       VCR.use_cassette('movie_results', re_record_interval: 7.days) do
@@ -32,3 +46,4 @@ require 'rails_helper'
     end
 
 end
+
