@@ -14,4 +14,10 @@ class MovieFacade
     def details(movie_id)
       MovieDetail.new(MovieService.movie_details(movie_id))
     end 
+
+    def cast(movie_id)
+      MovieService.get_cast(movie_id).map do |data|
+        MovieCast.new(data)
+      end.take(10)
+    end
 end
