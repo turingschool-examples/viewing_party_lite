@@ -1,7 +1,7 @@
 <h1 class="text-center" sample center heading> <%= @user.name %>'s Dashboard </h1>
 <div class="container my-3 bg-light">
     <div class="col-md-12 text-center">
-        <button type="button" class="btn btn-link"><%= button_to("Discover Movies", '#', method: :get )%></button>
+        <button type="button" class="btn btn-link"><%= button_to("Discover Movies", "/users/#{params[:id]}/discover", method: :get )%></button>
     </div>
 </div>
 <div class="divider py-1 bg-dark"></div>

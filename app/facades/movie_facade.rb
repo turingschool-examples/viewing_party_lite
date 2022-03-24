@@ -2,8 +2,23 @@
 
 require './app/poros/movie'
 class MovieFacade
-  attr_reader :movie
-  def initialize(movie_id)
+  def self.movie(movie_id)
     @movie = Movie.new(MovieService.movie(movie_id))
+  end
+
+  def self.cast(movie_id)
+    complete_cast = []
+    MovieService.credits(movie_id).each do |cast|
+      complete_cast << CastMember.new(cast)
+    end
+    @top_cast = complete_cast.first(10)
+  end
+
+  def self.reviews(movie_id)
+    @reviews = []
+    MovieService.reviews(movie_id)[:results].each do |review|
+      @reviews << Review.new(review)
+    end
+    @reviews
   end
 end

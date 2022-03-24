@@ -14,7 +14,7 @@ class ViewingParty < ApplicationRecord
   private
 
   def assign_duration
-    self.duration = MovieFacade.new(movie_id).movie.minutes
+    self.duration = MovieFacade.movie(movie_id).minutes
   end
 
 end
