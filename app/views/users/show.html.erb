@@ -10,11 +10,9 @@
         <div class="col-md-12 text-center">
             <h2>Viewing Parties</h2>
             <%unless @hosting.empty? %>
-            <h4>Hosting</h4>
             <%=render(:partial => "tile", :locals => { :object => @hosting })%>
             <% end %>
             <%unless @invited.empty? %>
-            <h4>Invited</h4>
             <%=render(:partial => "tile", :locals => { :object => @invited }) %>
             <% end %>
         </div>
