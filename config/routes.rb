@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :create] do
     resources :discover, only: [:index]
 
-    resources :movies, only: [:index, :show]
+    resources :movies, only: [:index, :show] do
+      resources :parties, only: [:new, :create]
+    end
   end
 
   get '/users/:id', to: 'users#show'

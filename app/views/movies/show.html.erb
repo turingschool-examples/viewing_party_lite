@@ -3,7 +3,7 @@
 
 <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %><br>
 
-<%= button_to "Create Viewing Party for #{@movie.title}", "/users/#{@user.id}/movies/#{@movie.id}/viewing-party/new", method: :get %><br>
+<%= button_to "Create Viewing Party for #{@movie.title}", "/users/#{@user.id}/movies/#{@movie.id}/parties/new", method: :get %><br>
 Movie Runtime: <%= @movie.runtime%> minutes
 <% #genres %>
 <ul>
@@ -22,7 +22,7 @@ Movie Runtime: <%= @movie.runtime%> minutes
 <ul><h4>
 Starring:
   <% @movie.cast.each do |cast|%>
-  <% #binding.pry %>
+
   <li> <%=cast[0]%> as
   <%= cast[1]%></li>
   <% end %>
@@ -30,10 +30,11 @@ Starring:
 
 <ul><h4>
 <%if @movie.reviews == {} %>
-<% #placeholder%>
+ <%= "No reviews yet" %>
   <%else @movie.reviews.each do |review|%>
-  <li>Author: <%=review.author %><br>
-  <%=review.content %></li>
+
+  <li>Author: <%=review[0] %><br>
+  <%=review[1] %></li>
   <% end %>
 <%end%>
 Review Count <%= @movie.reviews.count%>
