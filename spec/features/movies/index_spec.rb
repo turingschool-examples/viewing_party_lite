@@ -51,4 +51,13 @@ RSpec.describe 'Movie Index Page' do
       expect(page).to have_link("Evangelion: 3.0+1.0 Thrice Upon a Time")
     end
   end
+
+  context 'find movies form' do 
+    it 'routes to movies index', :vcr do 
+      visit user_discover_index_path(@user1)
+      fill_in 'search', with: 'Marvel'
+      click_button 'Find Movies'
+      expect(current_path).to eq(user_movies_path(@user1))
+    end
+  end
 end 

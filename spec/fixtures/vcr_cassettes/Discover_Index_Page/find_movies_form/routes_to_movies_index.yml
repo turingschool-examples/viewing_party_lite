@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/keyword?api_key=<movie_api_key>&query=Marvel
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 24 Mar 2022 02:23:40 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 51525c5c1a460a7ea73c3a69967d10533a08f347
+      X-Memc-Age:
+      - '306'
+      X-Memc-Expires:
+      - '21294'
+      Etag:
+      - W/"274f4cc55e9b9251f96e1d26a70279d4"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 527e1e2b39815bda71583fd0c39ce026.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DFW56-P1
+      X-Amz-Cf-Id:
+      - eM_bPS23EnsCJXBbjeAZuTwS9QnMvcmmhoYJtAQpHiJojdgG2utG7w==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":1,"results":[{"name":"marvel cinematic universe (mcu)","id":180547},{"name":"marvel
+        comics","id":265894},{"name":"ms marvel","id":294216}],"total_pages":1,"total_results":3}'
+  recorded_at: Thu, 24 Mar 2022 02:23:40 GMT
+recorded_with: VCR 6.1.0
