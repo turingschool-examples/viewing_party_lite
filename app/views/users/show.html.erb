@@ -1,0 +1,36 @@
+<style>
+  .name {
+    text-align: center;
+  }
+  .discover_button {
+    text-align: center;
+  }
+  .viewing_parties {
+    text-align: center;
+  }
+
+  .hr {
+    border-width: 5px;
+  }
+</style>
+
+<div class="name">
+    <h2><%=@user.name%>'s Dashboard</h2>
+</div>
+
+<div class="discover_button">
+  <%= button_to 'Discover Movies', user_discover_index_path(@user), :method => :get %>
+</div>
+
+<div class="hr">
+  <hr>
+</div>
+
+<div class="viewing_parties">
+  <h2>Viewing Parties</h2>
+</div>
+
+<% @parties.each do |party| %>
+  <%=  %>
+  <%= party.date %>
+<% end %>

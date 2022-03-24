@@ -15,7 +15,4 @@ RSpec.describe 'Register Page' do
       expect(current_path).to eq(user_path(logan))
     end
   end
-
-  
-
 end
