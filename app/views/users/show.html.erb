@@ -12,6 +12,12 @@
   .hr {
     border-width: 5px;
   }
+
+  .party_list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
 </style>
 
 <div class="name">
@@ -30,7 +36,10 @@
   <h2>Viewing Parties</h2>
 </div>
 
-<% @parties.each do |party| %>
-  <%=  %>
-  <%= party.date %>
-<% end %>
+<div class="party_list">
+  <% @parties.each do |party| %>
+  <div class="parties-<%=party.id%>">
+    <%= party.date.strftime("%A, %B %d, %Y") %>
+  </div>
+  <% end %>
+</div>
