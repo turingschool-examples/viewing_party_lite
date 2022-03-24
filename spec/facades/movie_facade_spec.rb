@@ -12,5 +12,15 @@ RSpec.describe MovieFacade do
         end
       end
     end
+    describe '#top_twenty' do
+      it 'gets top 20 rated movies' do
+        VCR.use_cassette('top_20_api') do
+          @movies = MovieFacade.top_twenty
+
+          expect(@movies.first.title).to eq('The Shawshank Redemption')
+          expect(@movies.count).to eq(20)
+        end
+      end
+    end
   end
 end
