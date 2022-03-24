@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
 class Movie
-  attr_reader :title, :genres, :summary, :vote_average, :duration, :minutes, :poster_path, :imdb_id
+
+  attr_reader :id, :title, :genres, :summary, :vote_average, :duration, :minutes, :poster_path, :imdb_id
 
   def initialize(data)
+    @id = data[:id]
     @title = data[:title]
     @genres_array = []
     @genres = data[:genres]

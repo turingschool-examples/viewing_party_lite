@@ -22,8 +22,13 @@ class MovieService
   end
 
   def self.top_rated
-    response = conn.get("/movie/top_rated")
+    response = conn.get("movie/top_rated")
+    json = JSON.parse(response.body, symbolize_names: true)
+    #
+  end
 
+  def self.search(title)
+    response = conn.get("search/movie?query=#{title}")
     json = JSON.parse(response.body, symbolize_names: true)
   end
 end
