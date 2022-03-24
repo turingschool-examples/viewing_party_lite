@@ -1,5 +1,9 @@
 class MoviesController < ApplicationController
   def index
-    @movies = MovieFacade.top_twenty
+    if params[:top] == true
+      @movies = MovieFacade.top_twenty
+    else
+      @results = fds
+    end
   end
 end

@@ -4,7 +4,11 @@
 
 <div class="button">
   <%= button_to 'Find Top Rated Movies',
-  user_movies_path(@user), params:{q:'top%20rated'}, method: :get%>
+  user_movies_path(@user), params:{top: true}, method: :get%>
   <p>OR</p>
-  <%= button_to 'Find Movies', user_movies_path(@user) %>
+  <%= form_with url: user_movies_path(@user), method: :get, local: true do |f| %>
+    <%= f.label :search %>
+    <%= f.text_field :search, 'Search by movie title' %>
+    <%= f.text_field 'Find Movies' %>
+  <% end %>
 </div>
