@@ -1,9 +1,16 @@
 
-
 <% if @top_rated %>
 <h1>Top Movies</h1>
   <% @top_rated.each do |movie| %>
 
+    <%= link_to "#{movie.title}", "/users/#{@user.id}/movies/#{movie.id}" %>
+    <p>Vote Average <%= movie.vote_average %></p>
+  <% end %>
+<% end %>
+
+<% if @movies %>
+  <h1>Search Results</h1>
+  <% @movies.each do |movie| %>
     <%= link_to "#{movie.title}", "/users/#{@user.id}/movies/#{movie.id}" %>
     <p>Vote Average <%= movie.vote_average %></p>
   <% end %>
