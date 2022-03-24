@@ -47,5 +47,15 @@ RSpec.describe 'The Movie Service' do
         expect(cast.first[:character]).to be_instance_of(String)
       end 
     end
+
+    it ".get_reviews" do
+      VCR.use_cassette('get_reviews') do
+        reviews = MovieService.get_reviews(278)
+        expect(reviews).to be_instance_of(Array)
+        expect(reviews.first).to be_instance_of(Hash)
+        expect(reviews.first[:author]).to be_instance_of(String)
+        expect(reviews.first[:author_details][:rating]).to be_instance_of(Float)
+      end 
+    end
   end
 end
