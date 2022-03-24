@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 class Movie
-  attr_reader :id, :title, :genres, :summary, :vote_average, :duration, :minutes, :poster_path
+
+  attr_reader :id, :title, :genres, :summary, :vote_average, :duration, :minutes, :poster_path, :imdb_id
 
   def initialize(data)
     @id = data[:id]
@@ -13,6 +14,7 @@ class Movie
     @duration = time_format(data[:runtime])
     @minutes = data[:runtime]
     @poster_path = data[:poster_path]
+    @imdb_id = data[:imdb_id]
   end
 
   def time_format(minutes)
