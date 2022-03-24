@@ -53,11 +53,14 @@ RSpec.describe 'Movie Index Page' do
   end
 
   context 'find movies form' do 
-    it 'routes to movies index', :vcr do 
+    it 'returns movies based on keyword search', :vcr do 
       visit user_discover_index_path(@user1)
-      fill_in 'search', with: 'Marvel'
+      fill_in 'search', with: 'Avengers'
       click_button 'Find Movies'
       expect(current_path).to eq(user_movies_path(@user1))
+
+      expect(page).to have_content("Avengers: Endgame")
+      expect(page).to have_content("LEGO Marvel Avengers: Loki in Training")
     end
   end
 end 
