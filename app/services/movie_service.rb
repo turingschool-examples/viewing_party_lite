@@ -1,12 +1,15 @@
 class MovieService
   class << self
+    class << self 
+    def call_for_a_movie(movie)
+      response = conn.get("/3/search/movie?api_key=#{ENV['api_key']}&query=#{movie}&page=1")
+      parse_data(response)
+    end 
 
-
-
-
-
-
-
+    def call_for_top_20_movies
+      response = conn.get("/3/movie/top_rated?api_key=#{ENV['api_key']}&language=en-US&page=1")
+      parse_data(response)
+    end 
 
     def movie_deets(movie_id)
       response = conn.get("/3/movie/#{movie_id}?api_key=#{ENV['tmdb_key']}&language=en-US")
