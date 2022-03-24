@@ -7,7 +7,8 @@ RSpec.describe 'Cast Member Service' do
       cast = CastMemberService.cast_members(345)
       expect(cast).to be_a(Hash)
       expect(cast[:cast]).to be_an(Array)
-      # expect(cast[:results][0][:original_title]).to eq("The Shawshank Redemption")
+      expect(cast[:cast].first[:character]).to eq("Dr. William 'Bill' Harford")
+      expect(cast[:cast].first[:name]).to eq("Tom Cruise")
     end
   end
 end
