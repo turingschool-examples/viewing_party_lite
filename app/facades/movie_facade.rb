@@ -1,3 +1,3 @@
-class MoviesFacade
+class MovieFacade
 
 end
