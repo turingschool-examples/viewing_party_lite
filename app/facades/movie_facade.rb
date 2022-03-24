@@ -13,7 +13,7 @@ class MovieFacade
     
     def movies(data) 
       data[:results].map do |result| 
-        Movie.new(title: result[:title], vote_average: result[:vote_average])
+        Movie.new(id: result[:id], title: result[:title], vote_average: result[:vote_average])
       end 
     end 
   end
