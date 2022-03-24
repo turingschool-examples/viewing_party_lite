@@ -1,0 +1,407 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/w2PMyoyLU22YvrGK3smVM9fW1jj.jpg",
+      "genre_ids": [
+        28,
+        12,
+        878
+      ],
+      "id": 299537,
+      "original_language": "en",
+      "original_title": "Captain Marvel",
+      "overview": "The story follows Carol Danvers as she becomes one of the universe’s most powerful heroes when Earth is caught in the middle of a galactic war between two alien races. Set in the 1990s, Captain Marvel is an all-new adventure from a previously unseen period in the history of the Marvel Cinematic Universe.",
+      "popularity": 112.633,
+      "poster_path": "/AtsgWhDnHTq68L0lLsUrCnM7TjG.jpg",
+      "release_date": "2019-03-06",
+      "title": "Captain Marvel",
+      "video": false,
+      "vote_average": 6.9,
+      "vote_count": 12827
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/w0y4vRgtB1CvCTBohzkqtlMXTz1.jpg",
+      "genre_ids": [
+        99,
+        10770
+      ],
+      "id": 258670,
+      "original_language": "fr",
+      "original_title": "Marvel Renaissance",
+      "overview": "Documentary about the rise of Marvel Studios after their near-bankruptcy in the mid-1990s.",
+      "popularity": 22.554,
+      "poster_path": "/jRLAVahAT8wOJtp1c1NDeMDRXAo.jpg",
+      "release_date": "2014-02-28",
+      "title": "Marvel Renaissance",
+      "video": false,
+      "vote_average": 5.6,
+      "vote_count": 9
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/kv8KDbi2I4F4MNBbBMCR4LDqP6H.jpg",
+      "genre_ids": [
+        28,
+        12,
+        878,
+        14
+      ],
+      "id": 211387,
+      "original_language": "en",
+      "original_title": "Marvel One-Shot: Agent Carter",
+      "overview": "The film takes place one year after the events of Captain America: The First Avenger, in which Agent Carter, a member of the Strategic Scientific Reserve, is in search of the mysterious Zodiac.",
+      "popularity": 26.936,
+      "poster_path": "/4vFKKWPvCVDJTOWiwReBfpAMScP.jpg",
+      "release_date": "2013-09-03",
+      "title": "Marvel One-Shot: Agent Carter",
+      "video": false,
+      "vote_average": 7.4,
+      "vote_count": 521
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/cmQdrAsmZomfAl3v7WurDvZM7UK.jpg",
+      "genre_ids": [
+        10751,
+        35,
+        16,
+        12,
+        878,
+        10770
+      ],
+      "id": 284019,
+      "original_language": "en",
+      "original_title": "Phineas and Ferb: Mission Marvel",
+      "overview": "Phineas and Ferb team up with the Avengers to save the world from Dr. Doofenshmirtz and a group of dangerous supervillains.",
+      "popularity": 21.836,
+      "poster_path": "/da2AREjdecPInHzWeZ550X1aYDU.jpg",
+      "release_date": "2013-08-16",
+      "title": "Phineas and Ferb: Mission Marvel",
+      "video": false,
+      "vote_average": 6.6,
+      "vote_count": 122
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/h7fyYm1VXCivGtNx6TfEj1AVObI.jpg",
+      "genre_ids": [
+        12,
+        14,
+        878,
+        28
+      ],
+      "id": 76122,
+      "original_language": "en",
+      "original_title": "Marvel One-Shot: The Consultant",
+      "overview": "Agent Coulson informs Agent Sitwell that the World Security Council wishes Emil Blonsky to be released from prison to join the Avengers Initiative. As Nick Fury doesn't want to release Blonsky, the two agents decide to send a patsy to sabotage the meeting...",
+      "popularity": 19.867,
+      "poster_path": "/xqNLXUUvBnfVk6m3QFGGU0Grgs7.jpg",
+      "release_date": "2011-09-13",
+      "title": "Marvel One-Shot: The Consultant",
+      "video": false,
+      "vote_average": 6.5,
+      "vote_count": 345
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/95AKEQdhAF7YlH6XJSOFaqNTW0J.jpg",
+      "genre_ids": [
+        10751,
+        16,
+        28,
+        35,
+        878,
+        10770,
+        12
+      ],
+      "id": 491633,
+      "original_language": "en",
+      "original_title": "Marvel Rising: Secret Warriors",
+      "overview": "When a threat no one could have expected bears down on the Marvel Universe, this ragtag, untrained band of teens have no choice but to rise together and prove to the world that sometimes the difference between a 'hero' and 'misfit' is just in the name.",
+      "popularity": 20.081,
+      "poster_path": "/kY1ufnbv2bTyoNcAtGF4BwapKi6.jpg",
+      "release_date": "2018-09-30",
+      "title": "Marvel Rising: Secret Warriors",
+      "video": false,
+      "vote_average": 7,
+      "vote_count": 70
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/pC36ONAaKMXStlvutYFcAbMemCM.jpg",
+      "genre_ids": [
+        878,
+        28,
+        14
+      ],
+      "id": 119569,
+      "original_language": "en",
+      "original_title": "Marvel One-Shot: Item 47",
+      "overview": "Benny and Claire, a down on their luck couple find a discarded Chitauri gun, referred to as 'Item 47'...",
+      "popularity": 15.789,
+      "poster_path": "/hnSxG8clwLuAXEkp9emc8HCUcHD.jpg",
+      "release_date": "2012-09-13",
+      "title": "Marvel One-Shot: Item 47",
+      "video": false,
+      "vote_average": 6.5,
+      "vote_count": 352
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/EXJrCRBYAPffNuMQbX7irsbrRn.jpg",
+      "genre_ids": [
+        16,
+        28
+      ],
+      "id": 622230,
+      "original_language": "en",
+      "original_title": "LEGO Marvel Spider-Man: Vexed by Venom",
+      "overview": "Thanks to Green Goblin and Venom, tech theft is now at an all-time high. Can our Friendly Neighborhood Spider-Man put an end to their mysterious villainous scheme before all of New York City is destroyed?",
+      "popularity": 23.641,
+      "poster_path": "/gTo2r8nNU3ZYAS6DqdeSp1VEqkq.jpg",
+      "release_date": "2019-08-03",
+      "title": "LEGO Marvel Spider-Man: Vexed by Venom",
+      "video": false,
+      "vote_average": 7.5,
+      "vote_count": 12
+    },
+    {
+      "adult": false,
+      "backdrop_path": null,
+      "genre_ids": [],
+      "id": 945682,
+      "original_language": "en",
+      "original_title": "Coca-Cola: A Mini Marvel",
+      "overview": "Ant Man and The Incredible Hulk challenge themselves to find one Coca-Cola bottle.",
+      "popularity": 18.644,
+      "poster_path": "/hrGtcbsk4tweRBqbtU8WuUIZnZt.jpg",
+      "release_date": "2016-02-07",
+      "title": "Coca-Cola: A Mini Marvel",
+      "video": false,
+      "vote_average": 10,
+      "vote_count": 1
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/e6RHrRaG8t5o2REYMfYkvhoamw2.jpg",
+      "genre_ids": [
+        28,
+        35,
+        14,
+        53
+      ],
+      "id": 253980,
+      "original_language": "en",
+      "original_title": "Marvel One-Shot: All Hail the King",
+      "overview": "A documentary filmmaker interviews the now-famous Trevor Slattery from behind bars.",
+      "popularity": 21.503,
+      "poster_path": "/ozXvopXv1TiOTls8zb09dBmu9dt.jpg",
+      "release_date": "2014-02-04",
+      "title": "Marvel One-Shot: All Hail the King",
+      "video": false,
+      "vote_average": 6.9,
+      "vote_count": 341
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/czHz1DWWE0bcffXybT7u1wNshSx.jpg",
+      "genre_ids": [
+        10770,
+        99
+      ],
+      "id": 259910,
+      "original_language": "en",
+      "original_title": "Marvel Studios: Assembling a Universe",
+      "overview": "A look at the story behind Marvel Studios and the Marvel Cinematic Universe, featuring interviews and behind-the-scenes footage from all of the Marvel films, the Marvel One-Shots and \"Marvel's Agents of S.H.I.E.L.D.\"",
+      "popularity": 19.743,
+      "poster_path": "/41Ke02UzYoPsiTc3YbomPGiQKMl.jpg",
+      "release_date": "2014-03-18",
+      "title": "Marvel Studios: Assembling a Universe",
+      "video": false,
+      "vote_average": 7.1,
+      "vote_count": 125
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/zRWPnVX9KL1LPOQrJfPuY9ynVkX.jpg",
+      "genre_ids": [
+        16
+      ],
+      "id": 375211,
+      "original_language": "en",
+      "original_title": "Marvel Knights: Eternals",
+      "overview": "You are thousands of years old. You have amazing powers. You have watched civilizations rise and fall. So why does no one remember any of this? Best-selling author, Neil Gaiman (Marvel: 1602) is joined by superstar artist, John Romita. Jr. (Amazing Spider-Man), to bring you the extraordinary tale of The Eternals. Medical student Mark Curry's world is turned upside-down when he meets Ike Harris, a man who believes that he is part of a centuries-old race of super-powered beings put here on Earth by aliens to preserve and safeguard the planet — and even crazier, tried to convince Mark that he is one too.",
+      "popularity": 13.934,
+      "poster_path": "/wVWDDzB0sWEIEMh0TXgqRa8X65o.jpg",
+      "release_date": "2014-09-16",
+      "title": "Marvel Knights: Eternals",
+      "video": false,
+      "vote_average": 7.6,
+      "vote_count": 19
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/zvjBC9guJVw32bZu4ODp6wzJ9Vi.jpg",
+      "genre_ids": [
+        10751,
+        16
+      ],
+      "id": 368304,
+      "original_language": "en",
+      "original_title": "LEGO Marvel Super Heroes: Avengers Reassembled!",
+      "overview": "The Avengers are forced to “party” with Ultron when he seeks to disassemble the team by taking control of Iron Man’s armor and enact a nefarious scheme to take over the world.",
+      "popularity": 20.025,
+      "poster_path": "/xUBZNoY7idPfqKZepnDEv7Qc8GC.jpg",
+      "release_date": "2015-11-16",
+      "title": "LEGO Marvel Super Heroes: Avengers Reassembled!",
+      "video": false,
+      "vote_average": 6.5,
+      "vote_count": 89
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/tMOWRvHc7sdsc7UNtK6Nfb0onWD.jpg",
+      "genre_ids": [
+        10751,
+        16,
+        28,
+        12
+      ],
+      "id": 576743,
+      "original_language": "en",
+      "original_title": "Marvel Rising: Chasing Ghosts",
+      "overview": "Hot on the trails of Sheath and Exile, Ghost-Spider teams up with the rest of the Secret Warriors to bring down the villains for good.",
+      "popularity": 11.569,
+      "poster_path": "/pufQvXrrxng95dT4kYlQtXn98kK.jpg",
+      "release_date": "2019-01-16",
+      "title": "Marvel Rising: Chasing Ghosts",
+      "video": false,
+      "vote_average": 7.3,
+      "vote_count": 33
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/43NgWUj0Sr9AoM8Prv0QOWsL92k.jpg",
+      "genre_ids": [
+        99
+      ],
+      "id": 647375,
+      "original_language": "en",
+      "original_title": "Marvel Studios: Expanding the Universe",
+      "overview": "An exciting look into the future of Marvel Studios' films and upcoming Disney+ series.",
+      "popularity": 13.529,
+      "poster_path": "/dU7qXzttvOUvSlwwpEFQDsLnThK.jpg",
+      "release_date": "2019-11-12",
+      "title": "Marvel Studios: Expanding the Universe",
+      "video": false,
+      "vote_average": 5.9,
+      "vote_count": 16
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/vp4PvW8vxWHN8rai42SeOXcimcp.jpg",
+      "genre_ids": [
+        16,
+        10751,
+        878,
+        28
+      ],
+      "id": 583209,
+      "original_language": "en",
+      "original_title": "Marvel Rising: Heart of Iron",
+      "overview": "Ironheart, AKA Riri Williams, is having difficulty adjusting to college life as the youngest student there when the college's engineering lab is demolished by an alien and her best friend is kidnapped. Inspired by Iron Man, she develops a plan to save her friend.",
+      "popularity": 13.607,
+      "poster_path": "/z3lD286jY8iYasC5hJZ2kgZF9uY.jpg",
+      "release_date": "2019-04-03",
+      "title": "Marvel Rising: Heart of Iron",
+      "video": false,
+      "vote_average": 7.4,
+      "vote_count": 46
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/vn8G4EZjKnO5SuXHLYN3YWuDEyz.jpg",
+      "genre_ids": [
+        99
+      ],
+      "id": 877188,
+      "original_language": "en",
+      "original_title": "Marvel Studios' 2021 Disney+ Day Special",
+      "overview": "Explore the Disney+ series of the MCU—past, present and future.",
+      "popularity": 10.591,
+      "poster_path": "/zh0B5DDP93e3zokktb5aHHfIh01.jpg",
+      "release_date": "2021-11-12",
+      "title": "Marvel Studios' 2021 Disney+ Day Special",
+      "video": false,
+      "vote_average": 6.6,
+      "vote_count": 11
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/4oQo2pkNyv5zOqwAdwI2dSJTmEx.jpg",
+      "genre_ids": [
+        16,
+        28,
+        12,
+        10751
+      ],
+      "id": 592689,
+      "original_language": "en",
+      "original_title": "Marvel Rising: Playing with Fire",
+      "overview": "Inferno’s powers are stolen by a young and powerful villain and it’s up to the Secret Warriors to defeat their new foe and help their friend. But does Inferno even WANT his powers back? Meanwhile, America Chavez learns a lesson about friendship and family from teammate Ms. Marvel.",
+      "popularity": 9.099,
+      "poster_path": "/lelNkBnjIi4N1uQBV2TnODgS9UT.jpg",
+      "release_date": "2019-12-18",
+      "title": "Marvel Rising: Playing with Fire",
+      "video": false,
+      "vote_average": 6.7,
+      "vote_count": 31
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/yRbDw6Ly8MSQNDfLQNffHZuPZpS.jpg",
+      "genre_ids": [
+        16,
+        14
+      ],
+      "id": 372631,
+      "original_language": "en",
+      "original_title": "Marvel Super Hero Adventures: Frost Fight!",
+      "overview": "The holiday season gets extra chilly as Loki and the frost giant Ymir plot to conquer the world. Marvel heroes Iron Man, Captain America, Hulk, Thor and others must stop the villains from stealing Santa's power – if anyone can actually find the mysterious Mr. Claus. Fortunately, Rocket Raccoon and Groot are also hot on Santa's trail. Heroes, villains, elves and cosmic bounty hunters collide in an epic quest that leaves the fate of the holiday and the world in the balance.",
+      "popularity": 11.11,
+      "poster_path": "/2StM8Vavf7ukvuj9mxg1o7nKxmi.jpg",
+      "release_date": "2015-12-15",
+      "title": "Marvel Super Hero Adventures: Frost Fight!",
+      "video": true,
+      "vote_average": 5.9,
+      "vote_count": 35
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/p056WP3fMnEcSSYhiN1kV9AyNZW.jpg",
+      "genre_ids": [
+        10751,
+        16,
+        28,
+        35,
+        878
+      ],
+      "id": 592687,
+      "original_language": "en",
+      "original_title": "Marvel Rising: Battle of the Bands",
+      "overview": "On the day of Gwen’s “Battle of the Bands” competition, mysterious attacks force her and the Secret Warriors to investigate. Can they save the city and get Gwen to the concert on time?",
+      "popularity": 9.458,
+      "poster_path": "/mFL0EzAhEj3vscyGUMk6sT7pfQg.jpg",
+      "release_date": "2019-08-28",
+      "title": "Marvel Rising: Battle of the Bands",
+      "video": false,
+      "vote_average": 7.2,
+      "vote_count": 33
+    }
+  ],
+  "total_pages": 9,
+  "total_results": 169
+}
