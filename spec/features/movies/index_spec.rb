@@ -12,7 +12,7 @@ RSpec.describe 'Movie Results Page', type: :feature do
       click_on("Find Top Rated Movies")
       expect(current_path).to eq("/users/#{@user1.id}/movies")
       expect(page.status_code).to eq 200
-      expect(page).to have_content("The Shawshank Redemption")
+      expect(page).to have_link("The Shawshank Redemption")
       expect(page).to have_content(8.7)
     end
   end 
@@ -29,7 +29,7 @@ RSpec.describe 'Movie Results Page', type: :feature do
       fill_in("movie", with: "Aliens")
       click_on("Find Movies")
       expect(current_path).to eq("/users/#{@user1.id}/movies")
-      expect(page).to have_content("Aliens")
+      expect(page).to have_link("Aliens")
     end 
   end 
 end
