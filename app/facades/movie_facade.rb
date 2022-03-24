@@ -5,4 +5,11 @@ class MovieFacade
       Movie.new(result)
     end
   end
+
+  def self.search(params)
+    results = MovieService.get_search_movie(params)
+    results.map do |result|
+      Movie.new(result)
+    end
+  end
 end

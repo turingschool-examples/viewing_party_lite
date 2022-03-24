@@ -1,14 +1,25 @@
 class MovieService
-  def sel.get_url(url)
-    Faraday.new(url)
+  def self.conn
+    Faraday.new(url: 'https://api.themoviedb.org')
   end
 
-  def self.conn
-    get_url(url: 'https://api.themoviedb.org')
+  def self.api_key
+    ENV['movie_api_key']
   end
 
   def self.get_top_movie
-    response = conn.get('3/movie/top_rated?api_key')
-    parsed = JSON.parse(response.body, symbolized_names: true)
+    response_1 = conn.get("3/movie/top_rated?api_key=#{api_key}")
+    response_2 = conn.get("3/movie/top_rated?api_key=#{api_key}&page=2")
+    parsed_1 = JSON.parse(response_1.body, symbolize_names: true)
+    parsed_2 = JSON.parse(response_2.body, symbolize_names: true)
+    results = parsed_1[:results] + parsed_2[:results]
+  end
+
+  def self.get_search_movie(params)
+    response_1 = conn.get("3/search/movie?api_key=#{api_key}&query=#{params}")
+    response_2 = conn.get("3/search/movie?api_key=#{api_key}&query=#{params}&page=2")
+    parsed_1 = JSON.parse(response_1.body, symbolize_names: true)
+    parsed_2 = JSON.parse(response_2.body, symbolize_names: true)
+    results = parsed_1[:results] + parsed_2[:results]
   end
 end
