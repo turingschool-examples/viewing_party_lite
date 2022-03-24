@@ -1,0 +1,219 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/5244?api_key=tmdb_key&language=en-US&x-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 23 Mar 2022 23:25:40 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Key:
+      - 8033e21c8d7bc3c58320ec4d0a4eb0ee25a10e53
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '17388'
+      Last-Modified:
+      - '2021-06-29 02:22:08 +0000'
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 2ad801a60bd36fbeb6a62fab7eabe330.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - EjyfXWD23BYNkHInRR7YvJO7ZCD1JNaOLtHl1HykmmaTS0YqyVVftQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":null,"belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"},{"id":878,"name":"Science
+        Fiction"},{"id":10749,"name":"Romance"}],"homepage":"","id":5244,"imdb_id":"tt0197770","original_language":"en","original_title":"Pleasurecraft","overview":"A
+        crew of astronauts are tasked with delivering three beautiful women to their
+        superiors. Provided that they don''t get seduced by them before reaching their
+        destination.","popularity":1.795,"poster_path":"/A9wVs8unGUBwQgXcsJuL0w0dkcK.jpg","production_companies":[{"id":1889,"logo_path":null,"name":"Surrender
+        Cinema","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1999-01-01","revenue":0,"runtime":82,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"","title":"Pleasurecraft","video":false,"vote_average":1.0,"vote_count":2}'
+  recorded_at: Wed, 23 Mar 2022 23:25:40 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/5244/credits?api_key=tmdb_key&language=en-US&x-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 23 Mar 2022 23:13:30 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Key:
+      - 753b3754afe84496f7d4ba8bc3b3736afdbd2ee8
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '17167'
+      Last-Modified:
+      - '2021-06-29 02:22:08 +0000'
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 9c7e5857d78c5dc89042979317de5842.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - 7Oomi_u0832jcOYV7LenjEM2b5MmX4lfdEuRB3w4Z-vvMaQUUkMtSA==
+      Age:
+      - '731'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":5244,"cast":[{"adult":false,"gender":0,"id":42232,"known_for_department":"Acting","name":"Juan
+        Carlos","original_name":"Juan Carlos","popularity":0.6,"profile_path":null,"cast_id":8,"character":"Jason","credit_id":"52fe43ffc3a36847f807c6cd","order":0},{"adult":false,"gender":0,"id":42233,"known_for_department":"Acting","name":"Billy
+        Riverside","original_name":"Billy Riverside","popularity":0.6,"profile_path":null,"cast_id":9,"character":"Carter","credit_id":"52fe43ffc3a36847f807c6d1","order":1},{"adult":false,"gender":0,"id":42234,"known_for_department":"Acting","name":"Paul
+        Johnson","original_name":"Paul Johnson","popularity":0.84,"profile_path":null,"cast_id":10,"character":"Dax","credit_id":"52fe43ffc3a36847f807c6d5","order":2},{"adult":false,"gender":0,"id":42235,"known_for_department":"Acting","name":"Richard
+        Burns","original_name":"Richard Burns","popularity":2.156,"profile_path":"/x3ch7Vrq39wTanEv6BPmLao09G0.jpg","cast_id":11,"character":"T.J.","credit_id":"52fe43ffc3a36847f807c6d9","order":3},{"adult":false,"gender":0,"id":42236,"known_for_department":"Acting","name":"Vincent
+        Kessler","original_name":"Vincent Kessler","popularity":0.6,"profile_path":null,"cast_id":12,"character":"Len","credit_id":"52fe43ffc3a36847f807c6dd","order":4},{"adult":false,"gender":1,"id":42238,"known_for_department":"Acting","name":"Taimie
+        Hannum","original_name":"Taimie Hannum","popularity":8.467,"profile_path":"/1uHlcpbDCFZtp5Ld9tGAm4b3eXp.jpg","cast_id":14,"character":"Deena","credit_id":"52fe43ffc3a36847f807c6e1","order":6},{"adult":false,"gender":1,"id":31490,"known_for_department":"Acting","name":"Amber
+        Newman","original_name":"Amber Newman","popularity":7.206,"profile_path":"/xSGMle8jJ3aAfeuBeqsyiEPvtqV.jpg","cast_id":15,"character":"Junet","credit_id":"52fe43ffc3a36847f807c6e5","order":7},{"adult":false,"gender":1,"id":42239,"known_for_department":"Acting","name":"Shayna
+        Ryan","original_name":"Shayna Ryan","popularity":2.069,"profile_path":"/wrDZ2jAapWbFGQRY9rzFB7LfCWR.jpg","cast_id":16,"character":"Virtual
+        Reality Girl #1","credit_id":"52fe43ffc3a36847f807c6e9","order":8},{"adult":false,"gender":1,"id":41953,"known_for_department":"Acting","name":"Brandy
+        Davis","original_name":"Brandy Davis","popularity":4.182,"profile_path":null,"cast_id":17,"character":"Reva","credit_id":"52fe43ffc3a36847f807c6ed","order":9}],"crew":[{"adult":false,"gender":2,"id":19707,"known_for_department":"Production","name":"Charles
+        Band","original_name":"Charles Band","popularity":4.21,"profile_path":"/mfTZ5yBOLqxdJ4YG0kHaA5rY0G4.jpg","credit_id":"58f525649251412771002495","department":"Production","job":"Executive
+        Producer"},{"adult":false,"gender":2,"id":31629,"known_for_department":"Editing","name":"Harry
+        James Picardi","original_name":"Harry James Picardi","popularity":0.644,"profile_path":null,"credit_id":"52fe43ffc3a36847f807c6c3","department":"Editing","job":"Editor"},{"adult":false,"gender":0,"id":41943,"known_for_department":"Production","name":"Robert
+        Lombard","original_name":"Robert Lombard","popularity":1.294,"profile_path":null,"credit_id":"52fe43ffc3a36847f807c6c9","department":"Production","job":"Casting"},{"adult":false,"gender":0,"id":42227,"known_for_department":"Acting","name":"Franklin
+        A. Vallette","original_name":"Franklin A. Vallette","popularity":1.4,"profile_path":null,"credit_id":"52fe43ffc3a36847f807c6a5","department":"Directing","job":"Director"},{"adult":false,"gender":0,"id":42228,"known_for_department":"Writing","name":"Louise
+        Dunkirk","original_name":"Louise Dunkirk","popularity":0.6,"profile_path":null,"credit_id":"52fe43ffc3a36847f807c6ab","department":"Writing","job":"Screenplay"},{"adult":false,"gender":0,"id":42229,"known_for_department":"Production","name":"Pat
+        Siciliano","original_name":"Pat Siciliano","popularity":0.98,"profile_path":null,"credit_id":"52fe43ffc3a36847f807c6b1","department":"Production","job":"Producer"},{"adult":false,"gender":2,"id":42230,"known_for_department":"Sound","name":"Wayne
+        Scott Joness","original_name":"Wayne Scott Joness","popularity":0.6,"profile_path":null,"credit_id":"52fe43ffc3a36847f807c6b7","department":"Sound","job":"Original
+        Music Composer"},{"adult":false,"gender":0,"id":42231,"known_for_department":"Camera","name":"Kelley
+        ''Tiger'' Vallette","original_name":"Kelley ''Tiger'' Vallette","popularity":0.6,"profile_path":null,"credit_id":"52fe43ffc3a36847f807c6bd","department":"Camera","job":"Director
+        of Photography"},{"adult":false,"gender":0,"id":3143696,"known_for_department":"Costume
+        \u0026 Make-Up","name":"Lysa Rose","original_name":"Lysa Rose","popularity":0.6,"profile_path":null,"credit_id":"60df27450f3655002f6c45bc","department":"Costume
+        \u0026 Make-Up","job":"Costume Design"}]}'
+  recorded_at: Wed, 23 Mar 2022 23:25:40 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/5244/reviews?api_key=tmdb_key&language=en-US&x-api-key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 23 Mar 2022 23:13:31 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - c856fcbf07872c5fc6bbcf4989d376f966abf707
+      X-Memc-Age:
+      - '1196'
+      X-Memc-Expires:
+      - '14473'
+      Etag:
+      - W/"ac6bb16dc9cc3fa60f1582c90da3dac1"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 ed8294655bb258e13bfb027c25483dda.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - WSwNlDRIJv6qHxs97XCwM6BxdrM5BNXFOnGalAW2Nl2qyXBzH-5kww==
+      Age:
+      - '730'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":5244,"page":1,"results":[],"total_pages":0,"total_results":0}'
+  recorded_at: Wed, 23 Mar 2022 23:25:41 GMT
+recorded_with: VCR 6.1.0

@@ -1,3 +1,4 @@
+
 class MovieFacade 
   class << self
     def get_list_of_movies(movie)
@@ -9,6 +10,15 @@ class MovieFacade
       data = MovieService.call_for_top_20_movies
       movies(data)
     end 
+
+    def movie_show(movie_id)
+      production = MovieService.movie_deets(movie_id)
+      cast = MovieService.cast(movie_id)
+      reviews= MovieService.reviews(movie_id)
+      movie = MovieData.new(production, cast, reviews)
+
+    end
+    
     private 
     
     def movies(data) 
