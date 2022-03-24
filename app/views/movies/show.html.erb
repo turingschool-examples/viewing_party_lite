@@ -1,6 +1,4 @@
 <h1>Viewing Party Lite</h1>
 
+<%= button_to "Discover Page", user_discover_index_path(@user), method: :get %>
 <%= button_to "Create Viewing Party", "/users/#{@user.id}/movies/#{@movie.id}/parties/new", method: :get %>
-
-
-<%= button_to "Discover", user_discover_index_path(@user) %>

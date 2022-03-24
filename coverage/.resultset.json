@@ -33,8 +33,8 @@
           null,
           null,
           1,
-          1,
-          1,
+          2,
+          2,
           null,
           null
         ]
@@ -67,8 +67,8 @@
           null,
           null,
           1,
-          1,
-          1,
+          2,
+          2,
           null,
           null
         ]
@@ -87,14 +87,14 @@
           null,
           null,
           1,
-          1,
-          1,
+          2,
+          2,
           null,
           null,
           null,
           1,
-          1,
-          1,
+          2,
+          2,
           null,
           null
         ]
@@ -112,20 +112,29 @@
           null,
           null,
           1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
           null,
           null
         ]
       },
       "/Users/samsmith/3module/projects/viewing_party_lite/app/controllers/parties_controller.rb": {
         "lines": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/samsmith/3module/projects/viewing_party_lite/app/controllers/discover_controller.rb": {
+        "lines": [
+          1,
           1,
           1,
           null,
@@ -166,17 +175,6 @@
       },
       "/Users/samsmith/3module/projects/viewing_party_lite/app/jobs/application_job.rb": {
         "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/controllers/discover_controller.rb": {
-        "lines": [
-          0,
-          0,
-          0,
           0,
           0
         ],
@@ -246,6 +244,6 @@
         }
       }
     },
-    "timestamp": 1648165615
+    "timestamp": 1648166046
   }
 }
