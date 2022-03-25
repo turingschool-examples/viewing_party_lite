@@ -25,7 +25,6 @@ RSpec.describe MovieFacade do
   it 'creates MovieDetails poros', :vcr do
     details = MovieFacade.movie_details(278)
 
-
     expect(details).to be_an_instance_of(MovieDetails)
   end
 
@@ -33,9 +32,23 @@ RSpec.describe MovieFacade do
     reviews = MovieFacade.reviews(278)
 
     expect(reviews).to be_an(Array)
-    
+
     reviews.each do |review|
       expect(review).to be_a(Reviews)
+    end
+  end
+
+  it 'creates Movie poros via search query', :vcr do
+    movies = MovieFacade.search_movies('godfather')
+
+    expect(movies.first).to be_a(Movie)
+  end
+
+  it 'creates MovDetails poros', :vcr do
+    details = MovieFacade.search_movie_details('bat')
+
+    details.each do |movie_detail|
+      expect(movie_detail).to be_an_instance_of(MovieDetails)
     end
   end
 end

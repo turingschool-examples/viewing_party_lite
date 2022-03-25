@@ -37,5 +37,15 @@ RSpec.describe 'Movie Service' do
       expect(review[:results].first[:author]).to eq("elshaarawy")
       expect(review[:results].first[:content]).to eq("very good movie 9.5/10 محمد الشعراوى")
     end
+
+    it '.search_movies', :vcr do
+      movies = MovieService.search_movies('shawshank')
+
+      expect(movies[0][:original_title]).to eq('The Shawshank Redemption')
+      expect(movies[0]).to be_a(Hash)
+      expect(movies[0]).to have_key(:id)
+      expect(movies[0]).to have_key(:overview)
+      expect(movies[0]).to have_key(:vote_average)
+    end
   end
 end
