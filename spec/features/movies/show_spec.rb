@@ -62,7 +62,7 @@ RSpec.describe 'movie show page' do
   it 'shows a count of reviews with author name and info' do
     visit "users/#{@user1.id}/movies/#{@movie_id}"
     review1 = "If you somehow missed this movie and have never seen it then watch it immediately. As a young boy of 9 on my way to the cinema I wasn't at all prepared for the on-screen awesomeness I was about to witness, one of the defining movies of my childhood and of the modern age. With special effects that simply blew any and all previous dino movies out of the water, compelling story and the odd comic moment such as the Mr Arnolds arm it really did make that evening something I will remember forever. So successful it went on to spawn 3 sequels, the second was enjoyable, the third not so much. The newest Chris Pratt one, I'll leave that for you but its worth a watch, especially if you want to wash the taste of the 3rd one out of your mouth. It gave me nightmares for weeks, really really wonderful nightmares."
-save_and_open_page
+
     within("#reviews") do
       expect(page).to have_content("Rob")
       expect(page).to have_content(review1)
