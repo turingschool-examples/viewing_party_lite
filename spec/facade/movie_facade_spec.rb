@@ -21,7 +21,7 @@ RSpec.describe MovieFacade do
     end
 
     it 'creates cast member poros' do
-      cast_members = MovieFacade.cast_members(278)
+      cast_members = MovieFacade.new.cast_members(278)
 
       expect(cast_members).to be_an(Array)
       expect(cast_members.length).to eq(10)

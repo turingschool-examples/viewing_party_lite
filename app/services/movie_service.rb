@@ -30,8 +30,16 @@ class MovieService
     parsed_results = parsed[:results]
   end
 
+  def self.get_review_count(movie_id)
+    response = connection.get("movie/#{movie_id}/reviews")
+    parsed = parse_json(response)
+    review_count = parsed[:total_results]
+  end
+
   def self.cast_members(movie_id)
     response = connection.get("movie/#{movie_id}/credits")
     parse_json(response)[:cast]
   end
+
+  
 end

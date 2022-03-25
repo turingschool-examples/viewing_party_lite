@@ -16,11 +16,22 @@ class MovieFacade
     end.take(40)
   end
 
-  def self.cast_members(movie_id)
+  def cast_members(movie_id)
     response = MovieService.cast_members(movie_id)
 
     response.map do |data|
       CastMember.new
     end.take(10)
+  end
+
+  def reviews_info(movie_id)
+    response = MovieService.get_review(movie_id)
+    response.map do |data|
+      Reviews.new(data)
+    end
+  end
+
+  def review_count(movie_id)
+    response = MovieService.get_review_count(movie_id)
   end
 end
