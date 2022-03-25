@@ -19,8 +19,8 @@ class MovieService
     end
   end
 
-  def self.search(query)
-    response = MovieService.connect.get("/3/search/movie?query=#{query}")
+  def self.search(query, page = 1)
+    response = MovieService.connect.get("/3/search/movie?query=#{query}&page=#{page}")
     attrs = JSON.parse(response.body, symbolize_names: true)
     @movies = attrs[:results].map do |params|
       MovieCall.new(params)

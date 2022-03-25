@@ -6,4 +6,9 @@ class MovieFacade
   def self.top_twenty
     MovieService.top_rated
   end
+
+  def self.search(search)
+    movies = MovieService.search(search)
+    movies << MovieService.search(search, 2)
+  end
 end
