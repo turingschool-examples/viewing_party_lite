@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   # post '/users', to: 'users#create'
   resources :users, only: [:create, :show] do
     resources :discover, only: [:index]
-    resources :movies, only: [:index]
+    resources :movies, only: [:index, :show] do
+      resources :parties, only: [:new]
+    end
   end
+  
 end
