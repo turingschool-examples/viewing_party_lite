@@ -1,7 +1,57 @@
 <!DOCTYPE html>
 <html>
+<style>
+.results {
+    text-align: center
+  }
+.title {
+  text-align: center;
+}
+.button {
+  text-align: center;
+}
+.form {
+  text-align: center;
+  border-style: solid;
+}
+.all_users {
+  text-align: center;
+}
+.existing_users {
+  font-weight: bold;
+}
+.attributes {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  text-align: center;
+  gap: 2px;
+}
+.cast {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+}
+.review {
+  border-style: solid;
+}
+.party_list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  text-align: center;
+  gap: 10px;
+}
+.party_style {
+  border-style: solid;
+}
+</style>
+
   <head>
-    <title>ViewingPartyLite</title>
+    <div class="home">
+      <%= link_to 'Home', root_path %>
+    </div>
+    <div class="title">
+      <h1>Viewing Party Light</h1>
+    </div>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 

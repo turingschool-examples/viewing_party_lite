@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.2'
+ruby '2.7.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.6'
@@ -33,9 +33,12 @@ gem 'jbuilder', '~> 2.5'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'faraday'
+gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'figaro'
   gem 'pry'
 end
 
@@ -46,12 +49,17 @@ group :development do
   gem 'rubocop-rails'
 end
 
-group :test do 
-  gem 'rspec-rails'
+group :test do
   gem 'capybara'
+  gem 'shoulda-matchers'
   gem 'launchy'
+  gem 'orderly'
   gem 'simplecov'
-end 
+  gem 'pry'
+  gem 'webmock'
+  gem 'vcr'
+  gem 'rspec-rails', '~> 4.0.1'
+end
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
