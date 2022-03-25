@@ -10,5 +10,6 @@ class MovieFacade
   def self.search(search)
     movies = MovieService.search(search)
     movies << MovieService.search(search, 2)
+    movies.flatten
   end
 end

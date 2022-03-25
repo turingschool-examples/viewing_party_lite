@@ -19,7 +19,7 @@ RSpec.describe 'Discover Page' do
       VCR.use_cassette('fight_results_api') do
         fill_in 'Search', with:'fight'
         click_on 'Find Movies'
-        save_and_open_page
+
         expect(current_path).to eq(user_movies_path(@user))
       end
     end

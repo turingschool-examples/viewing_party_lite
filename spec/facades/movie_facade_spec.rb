@@ -28,7 +28,7 @@ RSpec.describe MovieFacade do
           @movies = MovieFacade.search('fight')
 
           expect(@movies.first.title).to eq('Fight Club')
-          expect(@movies.count).to eq(21)
+          expect(@movies.count).to eq(40)
         end
       end
     end

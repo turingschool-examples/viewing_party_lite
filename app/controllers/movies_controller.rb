@@ -5,6 +5,7 @@ class MoviesController < ApplicationController
       @results = MovieFacade.top_twenty
     else
       @results = MovieFacade.search(params[:search])
+      @search = params[:search]
     end
   end
 end
