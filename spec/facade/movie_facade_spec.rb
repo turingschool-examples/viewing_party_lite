@@ -4,9 +4,9 @@ RSpec.describe MovieFacade do
   describe 'class methods' do
     it 'creates movie poros for top rated movies' do
       movies = MovieFacade.find_top_rated_movies
-      
+
       expect(movies).to be_an(Array)
-      
+
       movies.each do |movie|
         expect(movie).to be_a(Movie)
       end
@@ -18,12 +18,12 @@ RSpec.describe MovieFacade do
       # require 'pry'; binding.pry
     end
 
-    it 'creates cast member poros' do
+    xit 'creates cast member poros' do
       cast_members = MovieFacade.cast_members(278)
 
       expect(cast_members).to be_an(Hash)
 
-      # cast_members.each do |cast_member| 
+      # cast_members.each do |cast_member|
       #   expect(cast_member).to be_an_instance_of(CastMember)
       # end
     end
