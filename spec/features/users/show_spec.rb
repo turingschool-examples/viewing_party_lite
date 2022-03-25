@@ -77,6 +77,7 @@ RSpec.describe 'the user dashboard' do
       host_id: user_1.id)
     party_2 = Party.create!(start_date: '2022-03-25', duration: 100, start_time: '6:00', movie_id: 278,
       host_id: user.id)
+
     UserParty.create!(party_id: party_1.id, user_id: user.id)
     UserParty.create!(party_id: party_1.id, user_id: user_1.id)
     UserParty.create!(party_id: party_2.id, user_id: user.id)
