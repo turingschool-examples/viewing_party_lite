@@ -1,4 +1,4 @@
-class Streaming 
+class Streaming
     attr_reader :provider, :link
     def initialize(data)
         @provider = data.first
