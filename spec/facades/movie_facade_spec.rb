@@ -45,8 +45,10 @@ RSpec.describe MovieFacade do
   end
 
   it 'creates MovDetails poros', :vcr do
-    details = MovieFacade.movie_details(278)
+    details = MovieFacade.search_movie_details('bat')
 
-    expect(details).to be_an_instance_of(MovieDetails)
+    details.each do |movie_detail|
+      expect(movie_detail).to be_an_instance_of(MovieDetails)
+    end
   end
 end
