@@ -12,6 +12,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @my_hosting = Party.where(user_id: "#{@user.id}")
+    @my_invitations = @user.parties
   end
 
   private

@@ -7,6 +7,4 @@ class Party < ApplicationRecord
 
   validates_presence_of :duration_time, :start_date, :start_time
 
-  def user_status
-  end
 end
