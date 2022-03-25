@@ -7,14 +7,14 @@
 <div>
 Vote Average: <%= @movie.vote_average %>
 Runtime: <%= @movie.runtime_converted %>
-Genre(s): 
-<% @movie.genres.each do |genre| %> 
+Genre(s):
+<% @movie.genres.each do |genre| %>
    <%= genre[:name] %>
 <% end %>
 </div>
 
 <div>
-Summary 
+Summary
 <p>
 <%= @movie.summary %>
 </p>
@@ -29,8 +29,10 @@ Cast
 </p>
 </div>
 
-<div>
-Reviews
-<p>
-</p>
+<div id="reviews">
+<h5> Reviews</h5>
+<% @reviews.each do |review| %>
+  <p> Author: <%= review.author %></p>
+  <%= review.review_content %>
+<% end %>
 </div>

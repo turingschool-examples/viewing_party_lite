@@ -6,7 +6,7 @@ class Movie
               :vote_count,
               :genres,
               :poster_path,
-              :summary, 
+              :summary,
               :cast
 
   def initialize(movie_data)
@@ -18,11 +18,12 @@ class Movie
     @genres = movie_data[:genres]
     @poster_path = movie_data[:poster_path]
     @summary = movie_data[:overview]
+
   end
 
   def runtime_converted
-    hours = @runtime / 60 
+    hours = @runtime / 60
     minutes = @runtime % 60
     return "#{hours}hr #{minutes}min"
-  end 
+  end
 end
