@@ -10,4 +10,22 @@ class MovieService
     response = Faraday.get(url)
     data = JSON.parse(response.body, symbolize_names: true)
   end
+
+  def self.get_details(id)
+    url = "https://api.themoviedb.org/3/movie/#{id}?api_key=#{ENV['api_key']}&append_to_response=runtime"
+    response = Faraday.get(url)
+    data = JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.get_cast(id)
+    url = "https://api.themoviedb.org/3/movie/#{id}/credits?api_key=#{ENV['api_key']}"
+    response = Faraday.get(url)
+    data = JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.get_reviews(id)
+    url = "https://api.themoviedb.org/3/movie/#{id}/reviews?api_key=#{ENV['api_key']}"
+    response = Faraday.get(url)
+    data = JSON.parse(response.body, symbolize_names: true)
+  end
 end

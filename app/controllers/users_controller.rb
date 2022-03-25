@@ -24,20 +24,6 @@ class UsersController < ApplicationController
   end
 
   def movies
-    # @user = User.find(params[:id])
-    #
-    # url = "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['api_key']}&language=en-US&page=1"
-    #
-    # response = Faraday.get(url)
-    #
-    # data = JSON.parse(response.body, symbolize_names: true)
-    #
-    # all_top_movies = data[:results].map do |movie|
-    #   Movie.new(movie)
-    # end
-    #
-    # @movies = all_top_movies[0..19]
-
     @user = User.find(params[:id])
 
     if params[:q] == 'top rated'
@@ -45,5 +31,10 @@ class UsersController < ApplicationController
     elsif params[:q] == 'keyword'
       @movies = MovieFacade.lookup(params[:title])
     end
+  end
+
+  def movie_show
+    @user = User.find(params[:id])
+    @movie = MovieFacade.details(params[:movie_id])
   end
 end

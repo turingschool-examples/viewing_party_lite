@@ -3,7 +3,7 @@
 <%= button_to "Back to Discover", "/users/#{@user.id}/discover", method: :get %>
 
 <% @movies.each_with_index do |movie, index| %>
-<h3><%= movie.title %></h3>
+<h3><%= link_to movie.title, "/users/#{@user.id}/movies/#{movie.id}" %></h3>
   <p>Rating: <%= movie.vote_average %></p>
   <% break if index >= 39 %>
   <br>
