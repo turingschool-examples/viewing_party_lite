@@ -32,7 +32,7 @@ class MovieFacade
 
   def self.get_reviews(id)
     data = MovieService.find_reviews(id)
-    MovieReview.new(data) # this has total_results in it 
+    MovieReview.new(data) # this has total_results in it
     data[:results].map do |movie_data|
       MovieReview.new(movie_data)
     end
