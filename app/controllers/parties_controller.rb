@@ -9,10 +9,9 @@ class PartiesController <ApplicationController
   def create
     @movie = MovieFacade.movie_show(params[:movie_id])
     #binding.pry
-    params[:users] << params[:user_id]
-    if params[:duration].to_i < @movie.runtime
+    if params[:duration].to_i <= @movie.runtime
       redirect_to "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/parties/new"
-      flash.alert = "if the party ends before the movie no one will love you."
+      flash.alert = "Error! if the party ends before the movie no one will love you."
     elsif params[:users].count < 1
 
       redirect_to "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/parties/new"
