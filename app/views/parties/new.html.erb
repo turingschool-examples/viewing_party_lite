@@ -1,0 +1,20 @@
+<h1>Create a Movie Party for <%= "#{@movie.title}" %></h1>
+
+<p><%= button_to 'Discover Movies', "/users/#{@user.id}/discover", method: :get %></p>
+
+<h2><%= @movie.title %></h2>
+
+<%= form_with url: "/users/#{@user.id}/movies/#{@movie.id}/party/new", method: :post, local: true do |form| %>
+<%= form.label :duration_time %>
+<%= form.number_field :duration_time %>
+<%= form.label :start_date %>
+<%= form.date_field :start_date %>
+<%= form.label :start_time %>
+<%= form.number_field :start_time %>
+<h3>Invite: </h3>
+<% @users.each do |user| %>
+<%= form.label :invite, "#{user.name} (#{user.email})" %>
+<%= form.radio_button :invite, "#{user.name} (#{user.email})" %>
+<% end %>
+<h1><%= form.submit "Create Party" %></h1>
+<% end %>
