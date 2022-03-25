@@ -10,7 +10,8 @@
       </div>
       <div class="text-center">
         <% @movies.each do |movie| %>
-          <%= movie.title %>
+
+          <%= link_to "#{movie.title}", "/users/#{@user.id}/movies/#{movie.id}" %>
           <p>Vote Average: <%= movie.vote_average %> </p><br>
         <% end %>
       </div>

@@ -3,7 +3,8 @@ class MovieDetails
               :genres,
               :run_time,
               :summary,
-              :vote_average
+              :vote_average,
+              :id
 
   def initialize(data)
     @title = data[:title]
@@ -11,6 +12,7 @@ class MovieDetails
     @run_time = data[:runtime]
     @summary = data[:overview]
     @vote_average = data[:vote_average]
+    @id = data[:id]
   end
 
   def get_genres
