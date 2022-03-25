@@ -3,10 +3,9 @@ Rails.application.routes.draw do
   root to: "landing#index"
   resources :users do
     resources :discover, only: [:index]
-    resources :movies, only: [:index, :show] do
-      resources :viewing_party, only: [:new, :create]
-    end
+    resources :movies, only: [:index, :show]
   end
-
+  post '/users/:user_id/movies/:movie_id/viewing_party', to: 'viewing_party#create'
+  get '/users/:user_id/movies/:movie_id/viewing_party/new', to: 'viewing_party#new'
   post '/users/new', to: 'users#create'
 end
