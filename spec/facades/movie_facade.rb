@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+
 RSpec.describe MovieFacade do 
     before :each do 
         @moviefacade = MovieFacade.movie(402)
@@ -47,3 +48,4 @@ RSpec.describe MovieFacade do
         end
     end
 end
+
