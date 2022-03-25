@@ -19,5 +19,29 @@ RSpec.describe 'The Movie Facade' do
         expect(movie_search.length).to be <= 40
       end
     end
+
+    it ".details" do
+      VCR.use_cassette('movie_details') do
+        movie_details = MovieFacade.new.details(24126)
+        expect(movie_details).to be_instance_of(MovieDetail)
+      end
+    end
+
+    it ".cast" do
+      VCR.use_cassette('cast') do
+        cast = MovieFacade.new.cast(24126)
+        expect(cast).to be_instance_of(Array)
+        expect(cast.count).to eq(10)
+        expect(cast.first).to be_instance_of(MovieCast)
+      end
+    end
+
+    it ".reviews" do
+      VCR.use_cassette('reviews') do
+        reviews = MovieFacade.new.reviews(278)
+        expect(reviews).to be_instance_of(Array)
+        expect(reviews.first).to be_instance_of(MovieReview)
+      end
+    end
   end
 end
