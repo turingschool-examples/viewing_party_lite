@@ -19,7 +19,7 @@ class MovieDetail
     @summary = movie_details[:overview]
     @cast = cast_details(movie_cast)
     @reviews = review_details(movie_reviews)
-    @review_count = movie_reviews.count
+    @review_count = movie_reviews[:results].count
   end
 
   def all_genre(movie_details)
