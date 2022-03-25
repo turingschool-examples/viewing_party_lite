@@ -29,4 +29,8 @@ class MovieCall
   end
   list
  end
+
+ def get_poster
+   "https://image.tmdb.org/t/p/w200#{@poster}"
+ end
 end

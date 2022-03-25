@@ -44,12 +44,19 @@ RSpec.describe 'User Dashboard' do
 
       expect(page).to have_content("Viewing Parties")
 
+
       within "div.parties-#{@party_1.id}" do
-        expect(page).to have_content("March 21, 2022")
+        expect(page).to have_content("Fight Club")
+        expect(page).to have_content("Monday, March 21, 2022")
+        expect(page).to have_content("07:00 pm")
+        expect(page).to have_content("Hosting")
       end
 
       within "div.parties-#{@party_2.id}" do
-        expect(page).to have_content("March 22, 2022")
+        expect(page).to have_content("Full Metal Jacket")
+        expect(page).to have_content("Tuesday, March 22, 2022")
+        expect(page).to have_content("08:00 pm")
+        expect(page).to have_content("Invited")
       end
     end
   end

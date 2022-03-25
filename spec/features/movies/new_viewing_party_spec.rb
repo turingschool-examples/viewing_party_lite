@@ -47,6 +47,7 @@ RSpec.describe 'new viewing party page' do
       click_on 'Find Top Rated Movies'
       click_on 'The Shawshank Redemption'
       click_on 'Create Viewing Party for The Shawshank Redemption'
+
       expect(page).to have_content('Duration of party')
       expect(page).to have_content('Day')
       expect(page).to have_content(142)
@@ -55,6 +56,7 @@ RSpec.describe 'new viewing party page' do
   end
 
   it "has checkboxes with other users on the sites names and emails" do
+
     VCR.use_cassette('top_20_api') do
       visit user_discover_index_path(@user)
       click_on 'Find Top Rated Movies'
