@@ -13,7 +13,6 @@ RSpec.describe 'Movie Details Page' do
         it 'has button to create a viewing party' do
           visit user_movie_path(@jax.id, @movie_1.id)
           expect(current_path).to eq(user_movie_path(@jax, @movie_1))
-
             expect(page).to have_button("Create Viewing Party for #{@movie_1.get_info.title}")
             click_on "Create Viewing Party for #{@movie_1.get_info.title}"
             expect(current_path).to eq(user_movie_viewing_party_new_path(@jax, @movie_1))
