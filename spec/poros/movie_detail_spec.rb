@@ -1,6 +1,6 @@
 require 'rails_helper'
 RSpec.describe MovieDetail do
-  it 'exists with attribites' do
+  it 'exists with attributes' do
     detail_data = {
         :adult=>false,
    :backdrop_path=>"/90ez6ArvpO8bvpyIngBuwXOqJm5.jpg",
