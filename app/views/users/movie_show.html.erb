@@ -1,0 +1,14 @@
+<h1><%= @movie.title %></h1>
+<h2>Rating: <%= @movie.vote_average %></h2>
+
+<p>Runtime: <%= @movie.runtime %></p>
+<p>Genres: <% @movie.genres.join(", ") } %></p>
+<p>Summary: <%= @movie.summary %></p>
+<h3>CAST</h3>
+<% @movie.cast.each do |actor, character| %>
+  <p><%= actor %> - <%= character %></p>
+<% end %>
+
+<p><%=  %></p>
+<p><%=  %></p>
+<p><%=  %></p>
