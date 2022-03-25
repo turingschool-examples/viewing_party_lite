@@ -6,4 +6,11 @@ class User < ApplicationRecord
 
   validates_uniqueness_of :email
 
+  def is_host
+    parties.where(host_id: id)
+  end 
+
+  def invitations
+    parties.where.not(host_id: id)
+  end
 end

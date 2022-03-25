@@ -7,6 +7,46 @@
 </section>
 
 <section id="parties">
-  <h3> My Viewing Parties </h3>
+  <h1> My Viewing Parties </h1>
+  <section id="invitations">
+    <h2>My Invitations</h2>
+      <% @invitations.each do |party| %>
+        <p>Date: <%= party.start_date%>
+        <p>Time: <%= party.start_time%>
+        <p>Host: <%= party.find_host %>
+        <p>Invited People</p>
+        <p><% party.users.each do |user| %>
+          <% if user.id == party.host_id %>
+            <p><b><%= user.name %></b></p>
+          <% else %>
+            <p><%= user.name %></p>
+          <% end %>
+        <% end %>
+      <% end %>
+      <% @not_hosted_movies.each do |movie| %>
+      <p>Movie: <%= link_to "#{movie.title}", user_movie_path(@user, movie.id)  %></p>
+      <p> <img src="https://image.tmdb.org/t/p/original<%= movie.poster  %>"alt="No Poster Image Exists For This Movie">
+    <% end %>
+  </section>
+
+  <section id="hosting">
+    <h2>Hosted Parties</h2>
+      <% @host_parties.each do |party| %>
+        <p>Date: <%= party.start_date%>
+        <p>Time: <%= party.start_time%>
+        <p>Invited People</p>
+        <p><% party.users.each do |user| %>
+          <% if user.id == party.host_id %>
+            <p>You are the host of this party! <%= user.name %></p>
+          <% else %>
+            <p><%= user.name %></p>
+          <% end %>
+        <% end %>
+      <% end %>
+      <% @not_hosted_movies.each do |movie| %>
+      <p>Movie: <%= link_to "#{movie.title}", user_movie_path(@user, movie.id)  %></p>
+      <p> <img src="https://image.tmdb.org/t/p/original<%= movie.poster  %>"alt="No Poster Image Exists For This Movie">
+      <% end %>
+  </section>
   
 </section>

@@ -48,7 +48,7 @@ require 'rails_helper'
   it 'displays the first 10 cast members name/character' do 
     user = User.create!(name: 'user', email: 'email')
 
-    VCR.use_cassette('cast') do 
+    VCR.use_cassette('shawshank_cast') do 
       visit "/users/#{user.id}/movies/24126/"
       within '#cast' do
         expect(page).to have_content('Cast')

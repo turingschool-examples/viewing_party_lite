@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 25 Mar 2022 01:41:05 GMT
+      - Thu, 24 Mar 2022 22:10:57 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,23 +42,21 @@ http_interactions:
       X-Memc-Key:
       - 0ba4bec9bbb0ccb47b692c028ddb6ee62fb0052b
       X-Memc-Age:
-      - '2513'
+      - '6630'
       X-Memc-Expires:
-      - '14178'
+      - '10032'
       Etag:
       - W/"a560bbd4a727a71f76c190047e828602"
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Hit from cloudfront
+      - Miss from cloudfront
       Via:
-      - 1.1 98e30e5953336545df428a8f5923a288.cloudfront.net (CloudFront)
+      - 1.1 e1b5abb53c407f0a057625c46693461c.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - IAD89-C3
+      - DEN50-C2
       X-Amz-Cf-Id:
-      - oVDXvrFF-ssHq_owYL0Ox6Ol8kL6PkXqCLpZznbSeU0W9oCxCf92_A==
-      Age:
-      - '1'
+      - T5b7tEnrS1k_hgqKT-eznpk4D3nJszpjY8C1aDKVe_A4TpjeBTi-gw==
     body:
       encoding: ASCII-8BIT
       string: '{"id":24126,"cast":[{"adult":false,"gender":2,"id":6104,"known_for_department":"Acting","name":"Julian
@@ -257,5 +255,5 @@ http_interactions:
         \u0026 Make-Up","job":"Makeup \u0026 Hair"},{"adult":false,"gender":0,"id":3387599,"known_for_department":"Editing","name":"Larry
         Rovetti","original_name":"Larry Rovetti","popularity":0.6,"profile_path":null,"credit_id":"61e65b759653f6008ed8f931","department":"Editing","job":"Color
         Timer"}]}'
-  recorded_at: Fri, 25 Mar 2022 01:41:06 GMT
+  recorded_at: Thu, 24 Mar 2022 22:10:57 GMT
 recorded_with: VCR 6.1.0
