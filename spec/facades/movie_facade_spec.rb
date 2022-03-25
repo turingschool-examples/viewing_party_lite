@@ -44,7 +44,7 @@ RSpec.describe MovieFacade do
           end
 
           expect(@reviews.first.author).to eq("Goddard")
-        end 
+        end
       end
     end
 
@@ -70,6 +70,5 @@ RSpec.describe MovieFacade do
         end
       end
     end
-
   end
 end

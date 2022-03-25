@@ -19,13 +19,13 @@ class MovieService
     end
   end
 
-
-
   def self.get_reviews(api_id)
     response = MovieService.connect.get("/3/movie/#{api_id}/reviews")
     attrs = JSON.parse(response.body, symbolize_names: true)
     @reviews = attrs[:results].map do |info|
       Review.new(info)
+    end
+  end
 
   def self.top_rated
     response = MovieService.connect.get("/3/movie/top_rated")
