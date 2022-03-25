@@ -2,7 +2,7 @@
 
 <center><h3>Viewing Party Details</h3></center>
 
-<%= form_with url: new_user_movie_viewing_party_path(@user, @movie), method: :post, local: true do |form| %>
+<%= form_with url: user_movie_viewing_party_index_path(@user, @movie.id), method: :post, local: true do |form| %>
 
 <center><%= form.label :title %>
 <%= form.text_field :title, placeholder: "#{@movie.title}"%></center>
