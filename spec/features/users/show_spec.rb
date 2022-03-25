@@ -1,4 +1,4 @@
-require "rails_helper"
+require 'rails_helper'
 
 RSpec.describe 'The User Dashboard' do
     before :each do
@@ -16,17 +16,17 @@ RSpec.describe 'The User Dashboard' do
       @inv_2 = UserParty.create!(user_id: @horse.id, party_id: @duck_movie.id)
     end
 
-    it "has a button that goes to discover movies page on persons dashboard" do
+    it 'has a button that goes to discover movies page on persons dashboard' do
       visit  user_path(@lama)
 
       expect(page).to have_content("#{@lama.name}'s Dashboard")
 
-      click_button("Discover Movies")
+      click_button('Discover Movies')
 
       expect(current_path).to eq("/users/#{@lama.id}/discover")
     end
 
-    it "has invites and hosting sections" do
+    it 'has invites and hosting sections' do
       visit  user_path(@lama)
 
       expect(page).to have_content('Viewing Parties')
