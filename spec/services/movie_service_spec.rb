@@ -8,7 +8,7 @@ RSpec.describe MovieService do
 
 
         movie = MovieService.new
-        binding.pry
+        
         movies = movie.top_rated
 
         movie_data = movies.first
