@@ -19,14 +19,11 @@ RSpec.describe MovieFacade do
       expect(search.vote_average).to eq(8.7)
     end
 
-    xit 'creates cast member poros' do
+    it 'creates cast member poros' do
       cast_members = MovieFacade.cast_members(278)
 
-      expect(cast_members).to be_an(Hash)
-
-      # cast_members.each do |cast_member|
-      #   expect(cast_member).to be_an_instance_of(CastMember)
-      # end
+      expect(cast_members).to be_an(Array)
+      expect(cast_members.length).to eq(10)
     end
   end
 end

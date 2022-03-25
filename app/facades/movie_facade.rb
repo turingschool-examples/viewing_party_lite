@@ -15,10 +15,9 @@ class MovieFacade
 
   def self.cast_members(movie_id)
     response = MovieService.cast_members(movie_id)
-    # require 'pry'; binding.pry
 
     response.map do |data|
-      Movie.new(data)
-    end
+      CastMember.new
+    end.take(10)
   end
 end

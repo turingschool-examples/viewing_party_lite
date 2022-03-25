@@ -15,10 +15,10 @@ RSpec.describe MovieService do
       expect(search[:title]).to eq("The Shawshank Redemption")
     end
 
-    it 'creates cast member poros' do
+    it 'looks for cast members' do
       cast_members = MovieService.cast_members(278)
 
-      expect(cast_members).to be_an(Hash)
+      expect(cast_members).to be_an(Array)
     end
 
     it "can get review info" do

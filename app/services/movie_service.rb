@@ -32,6 +32,6 @@ class MovieService
 
   def self.cast_members(movie_id)
     response = connection.get("movie/#{movie_id}/credits")
-    parse_json(response)
+    parse_json(response)[:cast]
   end
 end
