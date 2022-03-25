@@ -5,7 +5,6 @@ class MovieService
   def self.connection
     Faraday.new(url: "https://api.themoviedb.org/3/") do |faraday|
       faraday.params['api_key'] = ENV['api_key']
-      # farday.params[:query] = param unless param == nil
     end
   end
 
@@ -23,25 +22,13 @@ class MovieService
     response = connection.get("search/movie?&query=#{keyword}")
     parsed = parse_json(response)
     parsed[:results][0]
-    # x = connection.get('search/movie')[:results]
-    # require "pry"; binding.pry
-      # faraday.params["query"] = keyword
-
   end
 
   def self.get_review(movie_id)
     response = connection.get("movie/#{movie_id}/reviews")
     parsed = parse_json(response)
     parsed_results = parsed[:results]
-
-    #parsed[:total_results] gets neumber of reviews
-
   end
-
-  # def self.search_for_movie(movie)
-
-  #   connection.get('search/movie', movie)[:results]
-  # end
 
   def self.cast_members(movie_id)
     response = connection.get("movie/#{movie_id}/credits")
