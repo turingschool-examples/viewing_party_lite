@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe Movie do 
+RSpec.describe Movie do
   it 'exists' do
     data = {
-      title: 'Batman Begins', 
+      title: 'Batman Begins',
       vote_average: 6.9
     }
 
