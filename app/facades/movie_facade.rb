@@ -15,8 +15,8 @@ class MovieFacade
       production = MovieService.movie_deets(movie_id)
       cast = MovieService.cast(movie_id)
       reviews= MovieService.reviews(movie_id)
-      movie = MovieData.new(production, cast, reviews)
-      #binding.pry
+      image = MovieService.image(movie_id)
+      movie = MovieData.new(production, cast, reviews, image)
     end
 
     private

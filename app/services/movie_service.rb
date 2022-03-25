@@ -24,6 +24,11 @@ class MovieService
       response = conn.get("/3/movie/#{movie_id}/reviews?api_key=#{ENV['api_key']}&language=en-US")
       parse_data(response)
     end
+
+    def image(movie_id)
+      response = conn.get("/3/movie/#{movie_id}/images?api_key=#{ENV['api_key']}")
+      parse_data(response)
+    end 
     private
 
     def conn
