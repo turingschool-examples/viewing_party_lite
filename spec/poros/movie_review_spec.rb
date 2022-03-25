@@ -1,6 +1,6 @@
 require 'rails_helper'
 RSpec.describe MovieReview do
-  it 'exists with attribites' do
+  it 'exists with attributes' do
 
     review_data = {
     :author=>"MohamedElsharkawy",
