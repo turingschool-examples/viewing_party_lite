@@ -25,7 +25,7 @@ class MovieCall
   list = ''
   @genres.each_with_index do |hash, idx|
     list << hash[:name]
-    idx == (@genres.length - 1) ? next : list << ','
+    idx == (@genres.length - 1) ? next : list << ', '
   end
   list
  end
