@@ -25,11 +25,11 @@ RSpec.describe 'Welcome Page', type: :feature do
     visit "/"
 
     expect(page).to have_content("Existing users:")
-    expect(page).to have_link("katy.perry@turing.io Dashboard")
-    expect(page).to have_link("mark.twain@turing.io Dashboard")
-    expect(page).to have_link("joe.jonas@turing.io Dashboard")
+    expect(page).to have_link("Katy")
+    expect(page).to have_link("Mark")
+    expect(page).to have_link("Joe")
 
-    click_on("joe.jonas@turing.io Dashboard")
+    click_on("Joe")
 
     expect(current_path).to eq("/users/#{user3.id}")
   end
