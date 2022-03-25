@@ -10,6 +10,14 @@ class MovieFacade
 
   def self.get_reviews (api_id)
     MovieService.get_reviews(api_id)
+    
+  def self.top_twenty
+    MovieService.top_rated
+  end
+
+  def self.search(search)
+    movies = MovieService.search(search)
+    movies << MovieService.search(search, 2)
   end
 
   def self.top_twenty

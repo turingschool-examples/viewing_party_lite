@@ -1,0 +1,6 @@
+<div class="resutls">
+  <%@results.map do |movie| %>
+    <%= link_to "#{movie.title}",  %>
+    <%= movie.vote_average %>
+  <% end %>
+</div>
