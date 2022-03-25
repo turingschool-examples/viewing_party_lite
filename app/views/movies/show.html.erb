@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-12 pt-2 pb-3">
+    <div class="col-12  pb-3">
       <div class="text-center">
         <div class="text-center pb-2">
           <%= link_to 'Discover Movies', user_discover_index_path(@user), class: "btn btn-outline-primary" %>
@@ -16,13 +16,13 @@
 <div class="container">
   <div class="row pt-1 pb-4 border-bottom">
     <div class="text-center col-sm">
-      <strong>Rating:</strong> <%= @movie.vote_average %>
+      <strong class="text-primary">Rating:</strong> <%= "#{@movie.vote_average} / 10" %>
     </div>
     <div class="text-center col-sm">
-      <strong>Runtime:</strong> <%= @movie.format_time %>
+      <strong class="text-primary">Runtime:</strong> <%= @movie.format_time %>
     </div>
     <div class="text-center col-sm">
-      <strong>Genre(s):</strong> <%= @movie.get_genres %>
+      <strong class="text-primary">Genre(s):</strong> <%= @movie.get_genres %>
     </div>
   </div>
   <div class="container">
