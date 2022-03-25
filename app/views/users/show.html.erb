@@ -16,6 +16,7 @@
   .party_list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    text-align: center;
     gap: 10px;
 }
 </style>
@@ -39,7 +40,12 @@
 <div class="party_list">
   <% @parties.each do |party| %>
   <div class="parties-<%=party.id%>">
-    <%= party.date.strftime("%A, %B %d, %Y") %>
+    <%= party.movie.get_info.title %><br>
+    <a href="default.asp">
+      <img src=<%= party.movie.get_poster %>><br>
+    </a>
+    <%= party.date.strftime("%A, %B %d, %Y") %><br>
+    <%= party.start %>
   </div>
   <% end %>
 </div>
