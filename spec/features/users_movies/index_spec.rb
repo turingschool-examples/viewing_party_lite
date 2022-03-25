@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'the users_movies results page' do
   scenario "user clicks on top 20 rated" do
+    User.destroy_all
     user = User.create!(name: 'user', email: 'email')
     VCR.use_cassette('top_rated_movies') do
       visit "/users/#{user.id}/discover"
@@ -23,6 +24,7 @@ RSpec.describe 'the users_movies results page' do
   end
 
   scenario "user searches for Jack Reacher" do
+    User.destroy_all
     user = User.create!(name: 'user', email: 'email')
 
     VCR.use_cassette('movie_search') do

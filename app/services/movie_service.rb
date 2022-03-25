@@ -8,7 +8,7 @@ class MovieService
     end
 
     response = conn.get(url)
-    data = JSON.parse(response.body, symbolize_names: true)
+    JSON.parse(response.body, symbolize_names: true)
   end
 
   def self.top_rated
