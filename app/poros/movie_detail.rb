@@ -28,18 +28,14 @@ class MovieDetail
 
   def cast_details(movie_cast)
     hash = {}
-    movie_cast[:cast].each do |actor|
-      hash[actor[:name]] = actor[:character]
-    end
+    movie_cast[:cast].each { |actor| hash[actor[:name]] = actor[:character] }
+
     hash.first(10)
   end
 
   def review_details(movie_reviews)
     hash = {}
-
-    movie_reviews[:results].each do |review|
-      hash[review[:author]] = review[:content]
-    end
+    movie_reviews[:results].each { |review| hash[review[:author]] = review[:content] }
     hash
   end
 end
