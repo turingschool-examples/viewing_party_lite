@@ -16,4 +16,4 @@ class MovieDetail
       genre[:name]
     end
   end
-
+end 
