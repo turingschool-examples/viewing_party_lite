@@ -31,5 +31,20 @@ require 'rails_helper'
       end 
     end 
   end 
+
+  it 'displays review information' do 
+    user = User.create!(name: 'user', email: 'email')
+
+    VCR.use_cassette('reviews_in_view') do 
+      visit "/users/#{user.id}/movies/278/"
+      within '#reviews' do
+        expect(page).to have_content('Author Name: elshaarawy')
+        expect(page).to have_content('Review: Make way for the best film ever made people. **Make way.**')
+        expect(page).to have_content('Rating: 6.0')
+        expect(page).to have_content('Author Handle: thommo_nz')
+        expect(page).to have_content('Review Count: There are 7 reviews for The Shawshank Redemption')
+      end 
+    end 
+  end 
 end
 
