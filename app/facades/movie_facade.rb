@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MovieFacade
   def self.top_movies
     data = MovieService.top_rated_movies
@@ -8,7 +10,7 @@ class MovieFacade
   end
 
   def self.keywords(keyword)
-    return self.top_movies if keyword == "top_rated"
+    return top_movies if keyword == 'top_rated'
 
     data = MovieService.movie_keywords(keyword)
 
@@ -32,7 +34,6 @@ class MovieFacade
 
   def self.get_reviews(id)
     data = MovieService.find_reviews(id)
-    # MovieReview.new(data) 
     data[:results].map do |movie_data|
       MovieReview.new(movie_data)
     end

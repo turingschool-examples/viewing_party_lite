@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   def new
     @user = User.new
@@ -8,13 +10,12 @@ class UsersController < ApplicationController
     if user.save
       redirect_to "/users/#{user.id}"
     else
-      redirect_to '/register', notice: "Please kindly fill in all fields with valid email"
+      redirect_to '/register', notice: 'Please kindly fill in all fields with valid email'
     end
   end
 
   def show
     @user = User.find(params[:id])
-
   end
 
   private

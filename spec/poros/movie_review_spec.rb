@@ -1,17 +1,19 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe MovieReview do
   it 'exists' do
     data = { results: [
-    {
-      author: 'Gimly',
-      review_content: 'I like bathman'
-    },
-    {
-      author: 'Rob',
-      review_content: 'I also like bathman'
-    }]
-  }
+      {
+        author: 'Gimly',
+        review_content: 'I like bathman'
+      },
+      {
+        author: 'Rob',
+        review_content: 'I also like bathman'
+      }
+    ] }
 
     review = data[:results].map do |movie_data|
       MovieReview.new(movie_data)
