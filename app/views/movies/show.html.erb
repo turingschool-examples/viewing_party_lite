@@ -9,7 +9,10 @@
   <li> Genres: <% @movie.genres.each do |genre| %>
     <dd> - <%= genre %></dd>
     <% end %></li>
-<li> <%=  %> </li>
+<li> Cast: <% @movie.cast.each do |actor, character|%>
+  <ol><%= actor %> as <%= character %></ol>
+
+              <% end %></li>
 <li> <%=  %> </li>
 <li> <%=  %> </li>
 
