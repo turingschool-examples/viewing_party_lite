@@ -1,0 +1,11 @@
+<h1>Discover Your NEW Fave Movies RIGHT HERE!!!!!</h1>
+<h2>PRO PICKS:</h2>
+<%= button_to "Top Rated Movies", "/users/#{@user.id}/movies?q=top%20rated" %>
+<br>
+<h2>Movie Lookup:</h2>
+<br>
+<%= form_with url: "/users/#{@user.id}/movies?q=keyword", method: :post, local: true do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.submit "SEARCH" %>
+<% end %>
