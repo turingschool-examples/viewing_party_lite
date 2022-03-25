@@ -1,15 +1,41 @@
 <div class="container">
   <div class="row">
-    <div class="col-12 pt-4 pb-3">
+    <div class="col-12 pt-2 pb-3">
       <div class="text-center">
+        <div class="text-center pb-2">
+          <%= link_to 'Discover Movies', user_discover_index_path(@user), class: "btn btn-outline-primary" %>
+        </div>
+        <div class="text-center pt-2 pb-5 ">
+          <%= link_to "Create Viewing Party for #{@movie.title}", user_discover_index_path(@user), class: "btn btn-outline-primary" %>
+        </div>
         <h3><%=@movie.title%></h3>
-      </div>
-      <div class="text-center pt-4 pb-2">
-        <%= link_to 'Discover Movies', user_discover_index_path(@user), class: "btn btn-outline-primary" %>
-      </div>
-      <div class="text-center pt-2 pb-4 border-bottom">
-        <%= link_to "Create Viewing Party for #{@movie.title}", user_discover_index_path(@user), class: "btn btn-outline-primary" %>
       </div>
     </div>
   </div>
 </div>
+<div class="container">
+  <div class="row pt-1 pb-4 border-bottom">
+    <div class="text-center col-sm">
+      <strong>Rating:</strong> <%= @movie.vote_average %>
+    </div>
+    <div class="text-center col-sm">
+      <strong>Runtime:</strong> <%= @movie.format_time %>
+    </div>
+    <div class="text-center col-sm">
+      <strong>Genre(s):</strong> <%= @movie.get_genres %>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 pt-2 pb-3">
+        <strong>Summary:</strong><br><br>
+        <%= @movie.summary %>
+      </div>
+      <div class="col-12 pt-2 pb-3">
+        <strong>Cast:</strong><br><br>
+        <% @cast.map do |actor| %>
+          <%= "#{actor.name} as #{actor.character}" %><br>
+        <% end.take(10) %>
+      </div>
+    </div>
+  </div>

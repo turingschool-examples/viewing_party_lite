@@ -24,7 +24,7 @@ class MovieFacade
 
     def reviews(movie_id)
       data = MovieService.reviews(movie_id)
-      
+
       data[:results].map do |result|
         Reviews.new(result)
       end
