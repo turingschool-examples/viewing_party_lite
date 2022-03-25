@@ -1,33 +1,20 @@
 class ViewingPartyController < ApplicationController
   def new
-
     @users = User.all
     @host = User.find(params[:user_id])
     @movie = MovieFacade.new.details(params[:id])
-    # binding.pry
-    @party = Party.new
   end
 
   def create
-    # binding.pry
     @host = User.find(params[:user_id])
-    @party = Party.create(
-      start_date: params["start_date"],
-      start_time: params["start_time"],
+    @party = Party.create!(
+      start_date: "#{params['start_date(1i)']}-#{params['start_date(2i)']}-#{params['start_date(3i)']}",
+      start_time: "#{params['start_time(4i)']}:#{params['start_time(5i)']}",
       duration: params["duration"],
       movie_id: params["id"],
       host_id: params["user_id"]
     )
-    if @party.save
-      redirect_to user_path(@host.id)
-    else
-      redirect_to "/users/#{@host.id}/movies/#{params[:id]}/viewing_party/new"
-    end
+    binding.pry
+    redirect_to user_path(@host.id)
   end
 end
-
-private
-
-  def party_params
-    params.permit(:start_date, :start_time, :duration, :movie_id, :host_id)
-  end
