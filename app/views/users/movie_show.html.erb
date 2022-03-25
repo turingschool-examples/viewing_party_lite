@@ -17,5 +17,5 @@
   <p><%= reviewer[:name] %>, username: <%= reviewer[:username] %>, rating: <%= reviewer[:rating] %></p>
 <% end %>
 
-<%= button_to "New Viewing Party" %>
-<%= button_to "Back to Discover" %>
+<%= button_to "New Viewing Party", "/users/#{@user.id}/movies/#{@movie.id}", method: :get %>
+<%= button_to "Back to Discover", "/users/#{@user.id}/discover", method: :get %>
