@@ -2,78 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.themoviedb.org/3/movie/278?api_key=movie_api_key
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.2.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Fri, 25 Mar 2022 16:57:00 GMT
-      Server:
-      - openresty
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, HEAD, POST, PUT, DELETE, OPTIONS
-      Access-Control-Expose-Headers:
-      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
-        Content-Length, Content-Range
-      Cache-Control:
-      - public, max-age=28800
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - c7d0f1a47010fc55c00fcec4d5c4a5ef91fba03f
-      X-Memc-Age:
-      - '11889'
-      X-Memc-Expires:
-      - '3204'
-      Etag:
-      - W/"f69f2397c877e3188b16c0f2bb84e675"
-      Vary:
-      - Accept-Encoding
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 2f66aa06710fece8ed203ab0ea81eb56.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - IAD89-C3
-      X-Amz-Cf-Id:
-      - Gmockyd7FYmHgPO7isjn6-SXKPeAntbreJes1bvQwrwqG26WXKIxOw==
-      Age:
-      - '6005'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/wPU78OPN4BYEgWYdXyg0phMee64.jpg","belongs_to_collection":null,"budget":25000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"","id":278,"imdb_id":"tt0111161","original_language":"en","original_title":"The
-        Shawshank Redemption","overview":"Framed in the 1940s for the double murder
-        of his wife and her lover, upstanding banker Andy Dufresne begins a new life
-        at the Shawshank prison, where he puts his accounting skills to work for an
-        amoral warden. During his long stretch in prison, Dufresne comes to be admired
-        by the other inmates -- including an older prisoner named Red -- for his integrity
-        and unquenchable sense of hope.","popularity":83.122,"poster_path":"/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg","production_companies":[{"id":97,"logo_path":"/7znWcbDd4PcJzJUlJxYqAlPPykp.png","name":"Castle
-        Rock Entertainment","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
-        States of America"}],"release_date":"1994-09-23","revenue":28341469,"runtime":142,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Fear
-        can hold you prisoner. Hope can set you free.","title":"The Shawshank Redemption","video":false,"vote_average":8.7,"vote_count":21018}'
-  recorded_at: Fri, 25 Mar 2022 18:37:05 GMT
-- request:
-    method: get
     uri: https://api.themoviedb.org/3/movie/24126?api_key=movie_api_key
     body:
       encoding: US-ASCII
@@ -124,11 +52,11 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 157ebd6865840045fc8b5ed1cce7e466.cloudfront.net (CloudFront)
+      - 1.1 b471d3775e81a9be536b52b99f39452a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - IAD89-C3
       X-Amz-Cf-Id:
-      - fvtDhYMuAjVBDtnoNTsgJjo144udg88RRutCM0P4EA10rBOmzABQXA==
+      - pFe6RC-gc6RAe3xtTRcNzDmXCQAFK-s5k42z6BROUf5B0lTaR6376Q==
       Age:
       - '18973'
     body:
@@ -198,11 +126,83 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 7eefe38d76087dfad8e2f0b7702246ee.cloudfront.net (CloudFront)
+      - 1.1 4db130e87be66fce9731567ae0669c56.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - IAD89-C3
       X-Amz-Cf-Id:
-      - onu2-N-QcZ2D73n_TcEQ15vgLb5GwOrpLhvyMnu7j1gCrZsbR0e3lA==
+      - ipHonU-CRkKsrxqkOaqqXw3hTXvkWGpzoG-ZsVZZETuBstFhyoQrVA==
+      Age:
+      - '6005'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/wPU78OPN4BYEgWYdXyg0phMee64.jpg","belongs_to_collection":null,"budget":25000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"","id":278,"imdb_id":"tt0111161","original_language":"en","original_title":"The
+        Shawshank Redemption","overview":"Framed in the 1940s for the double murder
+        of his wife and her lover, upstanding banker Andy Dufresne begins a new life
+        at the Shawshank prison, where he puts his accounting skills to work for an
+        amoral warden. During his long stretch in prison, Dufresne comes to be admired
+        by the other inmates -- including an older prisoner named Red -- for his integrity
+        and unquenchable sense of hope.","popularity":83.122,"poster_path":"/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg","production_companies":[{"id":97,"logo_path":"/7znWcbDd4PcJzJUlJxYqAlPPykp.png","name":"Castle
+        Rock Entertainment","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1994-09-23","revenue":28341469,"runtime":142,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Fear
+        can hold you prisoner. Hope can set you free.","title":"The Shawshank Redemption","video":false,"vote_average":8.7,"vote_count":21018}'
+  recorded_at: Fri, 25 Mar 2022 18:37:05 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/278?api_key=movie_api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Mar 2022 16:57:00 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - c7d0f1a47010fc55c00fcec4d5c4a5ef91fba03f
+      X-Memc-Age:
+      - '11889'
+      X-Memc-Expires:
+      - '3204'
+      Etag:
+      - W/"f69f2397c877e3188b16c0f2bb84e675"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 1fa3f854976309f3d11907ad7125291a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-C3
+      X-Amz-Cf-Id:
+      - eblWcfIl_EzfEFE2Uyoj32il9dyjf3su8Cn7Bo_aHY32e1jb-CZ2Wg==
       Age:
       - '6005'
     body:
@@ -270,11 +270,11 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 a497eba714f030335fd7adebea6fe8b6.cloudfront.net (CloudFront)
+      - 1.1 156336391961f724345f6534c674b6ea.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - IAD89-C3
       X-Amz-Cf-Id:
-      - 8ZG3-KvzjJuTyt5wMYB4Dcewz7j5vOscMsYVFH6DKnWCrXLYPexEsw==
+      - YFnP4wsz14Nj064AF5g2Vd8C_Y4I9Q_mgTm06wEhf1NA5PaMwYpZBg==
       Age:
       - '6005'
     body:
@@ -334,11 +334,11 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 a1157b69a14bebe8162237750a074fae.cloudfront.net (CloudFront)
+      - 1.1 51391527dd8c879c45b44b119905c872.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - IAD89-C3
       X-Amz-Cf-Id:
-      - 0VB5yJ0Sc2U8JhjMkWWRdf01XOosWZtNwedRMv1xUJIPIbp08QxEFw==
+      - 5HNKvCgGONvBl8xZIoOAsyXgyy_rG0Nz0s2wztpfS3eHIEcDXWuEuw==
       Age:
       - '6006'
     body:

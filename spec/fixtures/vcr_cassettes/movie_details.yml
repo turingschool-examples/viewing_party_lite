@@ -52,13 +52,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 9c90b41a9e5ac2856624d29ed4da4234.cloudfront.net (CloudFront)
+      - 1.1 10a9e9969f05a75cc05e6f70b8499f7e.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - IAD89-C3
       X-Amz-Cf-Id:
-      - VUfg1mxCZf4FnXV7JnSL-jgNy7miHrr9U5fDuco5H44VlRXIKIGA2A==
+      - xPpnQkebJtdN3Dk3KeN_6XLoxBQayhpfx6pDGVvenkje6T2yA9ZgBQ==
       Age:
-      - '12967'
+      - '18972'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/meOtdGhHZIOCmCdBqVe1AzTG7M2.jpg","belongs_to_collection":{"id":87536,"name":"Warlock
@@ -73,5 +73,5 @@ http_interactions:
         Pictures","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1993-05-01","revenue":3902679,"runtime":98,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"When
         he comes... All hell breaks loose.","title":"Warlock: The Armageddon","video":false,"vote_average":5.2,"vote_count":105}'
-  recorded_at: Fri, 25 Mar 2022 16:56:59 GMT
+  recorded_at: Fri, 25 Mar 2022 18:37:04 GMT
 recorded_with: VCR 6.1.0
