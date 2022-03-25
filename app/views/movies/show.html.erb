@@ -23,6 +23,9 @@ Summary
 <div>
 Cast
 <p>
+<% @cast.each do |actor| %>
+   <%= actor.name %> as <%= actor.character %>
+<% end %>
 </p>
 </div>
 

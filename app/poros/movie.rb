@@ -6,7 +6,8 @@ class Movie
               :vote_count,
               :genres,
               :poster_path,
-              :summary
+              :summary, 
+              :cast
 
   def initialize(movie_data)
     @title = movie_data[:title]
