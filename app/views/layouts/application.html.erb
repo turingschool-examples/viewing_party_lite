@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= link_to "Home Page", "/", method: :get %>
     <title>ViewingPartyLite</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -10,6 +11,11 @@
   </head>
 
   <body>
+  <br>  <% flash.each do |type, msg| %><br>
+  <div>
+    <%= msg %>
+  </div>
+  <%end %>
     <%= yield %>
   </body>
 </html>
