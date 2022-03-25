@@ -14,6 +14,7 @@ RSpec.describe 'User Dashboard' do
 
       @party_user_1 = PartyUser.create!(is_host: true, party_id: @party_1.id, user_id: @jax.id)
       @party_user_2 = PartyUser.create!(is_host: false, party_id: @party_2.id, user_id: @jax.id)
+
     end
 
     it 'has users name' do
