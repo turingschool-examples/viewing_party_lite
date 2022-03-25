@@ -1,0 +1,13 @@
+<h1> Movie Results Page </h1>
+
+<%= button_to "Create Viewing Party", "/users/#{@user.id}/movies/:movie_id/viewing-party/new" %>
+<%= button_to "Return to Discover Page", "/users/#{@user.id}/discover" %>
+
+<p> Movie Title: <%= link_to "" %></p>
+<p> Movie Vote Average: <%=  %></p>
+<p> Runtime (hours and minutes): <%=  %></p>
+<p> Genre: <%=  %></p>
+<p> Summary: <%=  %></p>
+<p> First 10 Cast Members: <%=  %></p>
+<p> Total Reviews: <%=  %></p>
+<p> Review Author and Information: <%=  %></p>

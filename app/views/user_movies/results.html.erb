@@ -1,0 +1,6 @@
+<h1> Movie Results Page </h1>
+
+<% @movies.each do |movie| %>
+  <p>Movie Title: <%= movie.title %></p>
+  <p>Movie Vote Average: <%= movie.vote_average %></p>
+<% end %>

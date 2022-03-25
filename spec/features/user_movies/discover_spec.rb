@@ -7,11 +7,13 @@ RSpec.describe 'discover movies page' do
   end
 
   it 'has a button to discover top rated movies' do
-    expect(page).to have_button("Discover Top Rated Movies")
+    click_button("Discover Top Rated Movies")
+    expect(current_path).to eq("/users/#{@user1.id}/movies")
   end
 
   it 'has a form to fill in keywords and search by movie title' do
-    fill_in :keywords, with: "Shawshank"
-    expect(page).to have_button("Search Movie by Title")
+    fill_in :keywords, with: "Shawsha"
+    click_button("Search Movie by Title")
+    expect(current_path).to eq("/users/#{@user1.id}/movies")
   end
 end
