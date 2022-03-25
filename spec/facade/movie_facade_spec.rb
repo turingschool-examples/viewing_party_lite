@@ -14,8 +14,9 @@ RSpec.describe MovieFacade do
 
     it 'searches for a movie given a keyword' do
       search = MovieFacade.search("shawshank")
-      expect(search).to be_an(Array)
-      # require 'pry'; binding.pry
+      expect(search).to be_an(Movie)
+      expect(search.title).to eq("The Shawshank Redemption")
+      expect(search.vote_average).to eq(8.7)
     end
 
     xit 'creates cast member poros' do
