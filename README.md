@@ -1,3 +1,7 @@
+## Database Design
+https://dbdesigner.page.link/kZJ7uFZ1TcCDtQeH9
+
+
 # Viewing Party
 
 This is the base repo for the [Viewing Party Lite project](https://backend.turing.io/module3/projects/viewing_party_lite) used for Turing's Backend Module 3.

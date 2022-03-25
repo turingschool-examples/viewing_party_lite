@@ -1,0 +1,10 @@
+<h1>Viewing Party PRO</h1>
+
+<%= button_to "Create new user", "/register", method: :get, local: true %>
+<br>
+Existing users:
+<br>
+<% @users.each do |user| %>
+  <%= link_to user.name, "/users/#{user.id}" %>
+  <br>
+<% end %>
