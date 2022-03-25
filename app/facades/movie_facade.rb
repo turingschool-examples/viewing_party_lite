@@ -1,6 +1,6 @@
 class MovieFacade
 
-  def self.search(keyword)
+  def search(keyword)
     response = MovieService.search_for_movie(keyword)
 
     response.map do |data|
@@ -8,7 +8,7 @@ class MovieFacade
     end
   end
 
-  def self.find_top_rated_movies
+  def find_top_rated_movies
     response = MovieService.top_rated
 
     response.map do |data|

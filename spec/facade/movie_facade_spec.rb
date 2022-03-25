@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe MovieFacade do
   describe 'class methods' do
     it 'creates movie poros for top rated movies' do
-      movies = MovieFacade.find_top_rated_movies
+      movies = MovieFacade.new.find_top_rated_movies
 
       expect(movies).to be_an(Array)
 
@@ -13,7 +13,7 @@ RSpec.describe MovieFacade do
     end
 
     it 'searches for a movie given a keyword' do
-      search = MovieFacade.search("shawsha")
+      search = MovieFacade.new.search("shawsha")
       expect(search[0]).to be_an(Movie)
       expect(search[0].title).to eq("The Shawshank Redemption")
       expect(search[0].vote_average).to eq(8.7)

@@ -3,18 +3,22 @@ class UserMoviesController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def results
+  def results_top_rated
     @user = User.find(params[:id])
-    if params[:top_rated_movies] == "top_rated"
-      @top_rated = MovieFacade.find_top_rated_movies
-      render 'results'
-    elsif params[:search]
-      @found_movies = MovieFacade.new.search(params[:search])
-      render 'results'
-    end
-    require 'pry'; binding.pry
+    facade = MovieFacade.new
+    @movies = facade.find_top_rated_movies
+    render 'results'
   end
-  
+
+  # def results_search
+  #   @user = User.find(params[:id])
+  #   require "pry"; binding.pry
+  #   @movies = MovieFacade.new.search(params[:keyword])
+  #   render 'results'
+  # end
+
+  #^method above, we could not get the params to pass to the controller
+
   def details
     @user = User.find(params[:id])
     @review_info = MovieFacade.new.reviews_info(params[:movie_id])
