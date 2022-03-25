@@ -39,6 +39,11 @@ class UsersController < ApplicationController
     # @movies = all_top_movies[0..19]
 
     @user = User.find(params[:id])
-    @movies = MovieFacade.top_movies
+
+    if params[:q] == 'top rated'
+      @movies = MovieFacade.top_movies
+    elsif params[:q] == 'keyword'
+      @movies = MovieFacade.lookup(params[:title])
+    end
   end
 end

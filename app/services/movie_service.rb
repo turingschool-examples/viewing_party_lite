@@ -4,4 +4,10 @@ class MovieService
     response = Faraday.get(url)
     data = JSON.parse(response.body, symbolize_names: true)
   end
+
+  def self.search_movies(keyword)
+    url = "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['api_key']}&query=#{keyword}"
+    response = Faraday.get(url)
+    data = JSON.parse(response.body, symbolize_names: true)
+  end
 end
