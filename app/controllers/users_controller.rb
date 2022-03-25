@@ -46,4 +46,9 @@ class UsersController < ApplicationController
       @movies = MovieFacade.lookup(params[:title])
     end
   end
+
+  def movie_show
+    @user = User.find(params[:id])
+    @movie = MovieFacade.details(params[:movie_id])
+  end
 end
