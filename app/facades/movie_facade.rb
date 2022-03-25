@@ -17,6 +17,6 @@ class MovieFacade
     movie_details = MovieService.get_movie_details(movie_id)
     movie_cast = MovieService.get_cast(movie_id)
     movie_reviews = MovieService.get_reviews(movie_id)
-    MovieDetail.new(movie_details, movie_cast, movie_reviews)
+    Movie.new(movie_details)
   end
 end

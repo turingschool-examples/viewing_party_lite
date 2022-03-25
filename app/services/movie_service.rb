@@ -24,17 +24,17 @@ class MovieService
   end
 
   def self.get_movie_details(movie_id)
-    response_1 = conn.get("3/movie/#{movie_id}?api_key=#{api_key}")
-    parsed_1 = JSON.parse(response_1.body, symbolize_names: true)
+    response = conn.get("3/movie/#{movie_id}?api_key=#{api_key}")
+    parsed = JSON.parse(response.body, symbolize_names: true)
   end
 
   def self.get_cast(movie_id)
-    response_1 = conn.get("3/movie/#{movie_id}/credits?api_key=#{api_key}")
-    parsed_1 = JSON.parse(response_1.body, symbolize_names: true)
+    response = conn.get("3/movie/#{movie_id}/credits?api_key=#{api_key}")
+    parsed = JSON.parse(response.body, symbolize_names: true)
   end
 
   def self.get_reviews(movie_id)
-    response_1 = conn.get("3/movie/#{movie_id}/reviews?api_key=#{api_key}")
-    parsed_1 = JSON.parse(response_1.body, symbolize_names: true)
+    response = conn.get("3/movie/#{movie_id}/reviews?api_key=#{api_key}")
+    parsed = JSON.parse(response.body, symbolize_names: true)
   end
 end
