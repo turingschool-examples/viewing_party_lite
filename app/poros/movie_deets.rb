@@ -1,5 +1,6 @@
 class MovieDeets
-  attr_reader :title,
+  attr_reader :id,
+              :title,
               :vote_average,
               :runtime,
               :summary,
@@ -8,6 +9,7 @@ class MovieDeets
               :review_count,
               :reviewers
   def initialize(details, credits, reviews)
+    @id = details[:id]
     @title = details[:title]
     @vote_average = details[:vote_average]
     @runtime = details[:runtime]
