@@ -33,5 +33,13 @@ RSpec.describe MovieService do
         expect(search[:cast]).to be_a Array
       end
     end
+
+    context '#movie_search' do
+      it 'returns searched' do
+        search = MovieService.get_search_movies("marvel")
+        expect(search).to be_a Hash
+        expect(search[:results]).to be_a Array
+      end
+    end
   end
 end
