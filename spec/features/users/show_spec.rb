@@ -67,6 +67,18 @@ RSpec.describe 'User Dashboard Page' do
         end
       end
     end
+    it 'has name of hosts and invitees', :vcr do 
+      within '#viewing_parties' do 
+        within "##{@vp1.id}" do 
+          expect(page).to have_content("Host: Becky")
+          expect(page).to have_content("Invitee: Steven")
+        end
+        within "##{@vp2.id}" do 
+          expect(page).to have_content("Host: Bruce")
+          expect(page).to have_content("Invitee: Becky")
+        end
+      end
+    end
 
   end
 end
