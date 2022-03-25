@@ -2,6 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'Landing Page' do
   before(:each) do
+    UserParty.destroy_all
+    User.destroy_all
+    ViewingParty.destroy_all
     @vp1 = ViewingParty.create!(movie_id: 111, duration: 151, date: Time.new(2022, 0o4, 12, 21, 0o0),
                                 start_time: Time.new(2022, 0o4, 12, 21, 0o0))
     @vp2 = ViewingParty.create!(movie_id: 112, duration: 152, date: Time.new(2022, 0o4, 11, 20, 30),
