@@ -14,6 +14,19 @@ require 'rails_helper'
       end
     end
 
+    it 'has a button that brings the user to a form to create a new viewing party' do 
+      user = User.create!(name: 'User', email: 'email')
+
+      VCR.use_cassette('movie_title') do 
+        visit "/users/#{user.id}/movies/24126/"
+        within '#buttons' do 
+          expect(page).to have_button('Create Viewing Party for Warlock: The Armageddon')
+          click_button('Create Viewing Party for Warlock: The Armageddon')
+          expect(current_path).to eq("/users/#{user.id}/movies/24126/viewing_party/new")
+        end
+      end
+    end
+
     it 'displays a movies title, vote_average, runtime, genre and summary' do 
       user = User.create!(name: 'user', email: 'email')
 
