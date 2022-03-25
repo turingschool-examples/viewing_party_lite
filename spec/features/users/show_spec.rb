@@ -40,10 +40,10 @@ RSpec.describe 'User Dashboard Page' do
     it 'has movie titles', :vcr do 
       within '#viewing_parties' do 
         within "##{@vp1.id}" do 
-          expect(page).to have_content("Title: Scarface")
+          expect(page).to have_content("Scarface")
         end
         within "##{@vp2.id}" do 
-          expect(page).to have_content("Title: Fight Club")
+          expect(page).to have_content("Fight Club")
         end
       end
     end
