@@ -1,3 +1,5 @@
 class DiscoverController < ApplicationController
-  def index;end
+  def index
+    @user = User.find(params[:user_id])
+  end
 end

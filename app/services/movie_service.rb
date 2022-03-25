@@ -1,9 +1,4 @@
-require 'faraday'
-require 'figaro'
-require './app/poros/movie_call'
-
 class MovieService
-
   def self.connect
     Faraday.new(
       url: 'https://api.themoviedb.org',
@@ -29,6 +24,21 @@ class MovieService
     attrs = JSON.parse(response.body, symbolize_names: true)
     @reviews = attrs[:results].map do |info|
       Review.new(info)
+
+  def self.top_rated
+    response = MovieService.connect.get("/3/movie/top_rated")
+    attrs = JSON.parse(response.body, symbolize_names: true)
+    @movies = attrs[:results].map do |params|
+      MovieCall.new(params)
+    end
+  end
+
+  def self.search(query, page = 1)
+    response = MovieService.connect.get("/3/search/movie?query=#{query}&page=#{page}")
+    attrs = JSON.parse(response.body, symbolize_names: true)
+    @movies = attrs[:results].map do |params|
+      MovieCall.new(params)
+
     end
   end
 end
