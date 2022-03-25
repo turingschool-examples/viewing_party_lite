@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :viewing_party do
     movie_id { Faker::Number.number(digits: 3) }

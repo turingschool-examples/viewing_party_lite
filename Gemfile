@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -29,8 +31,8 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-gem 'faraday'
 gem 'bootstrap', '~> 5.1.3'
+gem 'faraday'
 gem 'jquery-rails'
 
 # Reduces boot times through caching; required in config/boot.rb

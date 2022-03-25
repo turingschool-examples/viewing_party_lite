@@ -1,11 +1,14 @@
+# frozen_string_literal: true
+
 class MoviesController < ApplicationController
   before_action :find_user_and_movie, only: [:show]
   before_action :find_user, only: [:index]
 
   def index
-    if params[:query] == 'top_rated'
+    case params[:query]
+    when 'top_rated'
       @data = MovieFacade.top_rated
-    elsif params[:query] == 'movie_search'
+    when 'movie_search'
       @data = MovieFacade.movie_title_search(params[:search])
     end
   end

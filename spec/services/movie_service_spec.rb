@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe MovieService do
@@ -23,7 +25,7 @@ RSpec.describe MovieService do
     end
     context '#movie_title_search(query)' do
       it 'returns movies based on title provided from user', :vcr do
-        search = MovieService.movie_title_search("Avengers")
+        search = MovieService.movie_title_search('Avengers')
         expect(search).to be_a Hash
         expect(search[:results]).to be_an Array
         movie_data = search[:results].first
