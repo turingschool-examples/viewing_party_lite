@@ -16,6 +16,17 @@ RSpec.describe 'The movie show page' do
   end
 
   it 'will show the movie attributes' do
-    visit user_movies_path(@lama)
+    movie_id =  278
+    visit "/users/#{@user.id}/movie/#{movie_id}"
+
+    expect(page).to have_content(movie.title)
+    expect(page).to have_content(movie.vote_average)
+    expect(page).to have_content(movie.display_runtime)
+    expect(page).to have_content(movie.all_genere_names)
+    expect(page).to have_content(movie.summary_description)
+    expect(page).to have_content(movie.first_ten_cast_members)
+    expect(page).to have_content(movie.count_total_reviews)
+    expect(page).to have_content(movie.review_author)
+    expect(page).to have_content(movie.review_content)
   end
 end
