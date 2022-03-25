@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 24 Mar 2022 21:24:56 GMT
+      - Fri, 25 Mar 2022 01:41:05 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,9 +42,9 @@ http_interactions:
       X-Memc-Key:
       - 0ef9081ef7ce34f15297b5b9c1625bf764bc05fe
       X-Memc-Age:
-      - '10158'
+      - '7958'
       X-Memc-Expires:
-      - '6956'
+      - '9182'
       Etag:
       - W/"9fdfa2392f34126e0aceec21288792c4"
       Vary:
@@ -52,11 +52,11 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 23241b9c368643949e3bb1a1ba4e97c2.cloudfront.net (CloudFront)
+      - 1.1 c974a69619205281e0e6b8e73f95e4b4.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN50-C2
+      - IAD89-C3
       X-Amz-Cf-Id:
-      - 34rNRmfo9NyaQAekuR8clK5uOE21hkoG89aHScCPRV7JEaKUhwJbWg==
+      - 2-4StQAyzIa4AByV3ww-xjyxM6iJB1CtoyBdunP5wJIBTKcgveThMg==
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/meOtdGhHZIOCmCdBqVe1AzTG7M2.jpg","belongs_to_collection":{"id":87536,"name":"Warlock
@@ -71,5 +71,5 @@ http_interactions:
         Pictures","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1993-05-01","revenue":3902679,"runtime":98,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"When
         he comes... All hell breaks loose.","title":"Warlock: The Armageddon","video":false,"vote_average":5.2,"vote_count":105}'
-  recorded_at: Thu, 24 Mar 2022 21:24:56 GMT
+  recorded_at: Fri, 25 Mar 2022 01:41:05 GMT
 recorded_with: VCR 6.1.0

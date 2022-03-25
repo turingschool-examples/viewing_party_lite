@@ -2,19 +2,17 @@
   <h1> <%= @movie.title %> </h1>
 </section>
 
-<%= form_with model: @viewing_party, local: true do |f| %>
+<%= form_with url: "/users/#{@user.id}/movies/#{@movie.id}/viewing_party/new", local: true do |f| %>
   <section id="form">
     <section id="error_messages">
-      <% if @viewing_party.errors.any? %>
-        <% @viewing_party.errors.full_messages.each do |message|%>
-          <p><li><%= message %></p>
-        <% end %>
-      <% end %>
+
     </section>
     <li> <%= f.label :duration %>
       <%= f.text_field :duration %> </li>
-    <li> <%= f.date_select :date %> </li>
-    <li>  <%= f.time_select :time %> </li>
+    <li> <%= f.label :start_date %>
+      <%= f.text_field :start_date %> </li>
+    <li>  <%= f.label :start_time %>
+      <%= f.text_field :start_time %> </li>
       <% @users.each do | user | %>
       <li>  <%= check_box_tag("#{user.name}") %>
         <%= label_tag("#{user.name}", "#{user.name}") %> </li>
