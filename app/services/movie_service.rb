@@ -19,9 +19,18 @@ class MovieService
   end
 
   def self.search_for_movie(keyword)
-    connection.get('/search/movie')[:results] do |faraday|
+    connection.get('search/movie')[:results] do |faraday|
       faraday.params["query"] = keyword
     end
+  end
+
+  def self.get_review(movie_id)
+    response = connection.get("movie/#{movie_id}/reviews")
+    parsed = parse_json(response)
+    parsed_results = parsed[:results]
+    require "pry"; binding.pry
+    #parsed[:total_results] gets neumber of reviews
+
   end
 
   # def self.search_for_movie(movie)
