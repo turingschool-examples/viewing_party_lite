@@ -39,6 +39,7 @@ RSpec.describe 'User Dashboard' do
 
     it 'lists viewing parties' do
       visit user_path(@jax)
+
       expect(current_path).to eq(user_path(@jax))
 
       expect(page).to have_content("Viewing Parties")

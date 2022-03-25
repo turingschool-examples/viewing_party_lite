@@ -23,4 +23,33 @@ RSpec.describe MovieCall do
     expect(@movie.genres).to eq("Drama")
     expect(@movie.poster).to eq("movie/poster.jpeg")
   end
+
+  describe '.instance methods' do
+    describe '.genre_list' do
+      it 'creates a list of genres with , included' do
+        data = {
+          id: "550",
+          title: "Fight Club",
+          overview: "Description here",
+          runtime: 180,
+          vote_average: 5.0,
+          genres: [
+        {
+            "id": 18,
+            "name": "Drama"
+        },
+        {
+            "id": 10752,
+            "name": "War"
+        }
+    ],
+          poster_path: "movie/poster.jpeg"
+        }
+
+        @movie = MovieCall.new(data)
+
+        expect(@movie.genre_list).to eq("Drama, War")
+      end
+    end
+  end
 end
