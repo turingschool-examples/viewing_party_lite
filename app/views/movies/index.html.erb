@@ -1,7 +1,7 @@
 <h1>Movie Results </h1>
 <% @movies.each do |movie| %>
   <ul class="movies">
-  <li class="Title">Title: <%= link_to "#{movie.title}", "/users/#{@user.id}/movies/#{movie.id}"%></li>
+  <li class="Title">Title: <%= link_to "#{movie.title}", "/users/#{@user.id}/movies/#{movie.id}", method: :get%></li>
   <li class="Vote Average">Vote Average: <%= movie.vote_average%></li>
 </ul>
 <% end %>
