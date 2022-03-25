@@ -44,4 +44,14 @@ RSpec.describe MovieFacade do
       end
     end
   end
+  describe '#movie_search' do
+    it 'will return top results of what you search' do
+      credit_objects = MovieFacade.movie_search("Marvel")
+      credit_objects.each do |object|
+        expect(object).to be_a MovieSearch
+        expect(object.title).to_not be_nil
+        expect(object.vote).to_not be_nil
+      end
+    end
+  end
 end

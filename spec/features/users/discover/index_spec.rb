@@ -21,4 +21,13 @@ RSpec.describe 'Discover Page' do
 
     expect(current_path).to eq("/users/#{@user.id}/movies")
   end
+
+  it "can search certain movies" do
+    visit "/users/#{@user.id}/discover"
+
+    fill_in :search, with: "Marvel"
+    click_button('Find Movies')
+
+    expect(page).to have_content("Captain Marvel")
+  end
 end

@@ -16,6 +16,9 @@ class MovieService
     get_url("/3/movie/#{movie_id}/credits?api_key=#{ENV['api_key']}")
   end
 
+  def self.get_search_movies(keyword)
+    get_url("/3/search/movie?api_key=#{ENV['api_key']}&query=#{keyword}")
+  end
 
   def self.get_url(url)
     response = conn.get(url)
