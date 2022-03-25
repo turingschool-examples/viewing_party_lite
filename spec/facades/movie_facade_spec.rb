@@ -59,5 +59,17 @@ RSpec.describe MovieFacade do
       end
     end
 
+
+    describe '#search' do
+      it 'gets up top 40 movies that match search resutls' do
+        VCR.use_cassette('fight_results_api') do
+          @movies = MovieFacade.search('fight')
+
+          expect(@movies.first.title).to eq('Fight Club')
+          expect(@movies.count).to eq(40)
+        end
+      end
+    end
+
   end
 end
