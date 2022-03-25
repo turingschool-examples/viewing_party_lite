@@ -1,13 +1,13 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/helpers/application_helper.rb": {
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/facades/movie_facade.rb": {
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/facades/movie_facade.rb": {
         "lines": [
           1,
           1,
@@ -29,8 +29,8 @@
           null,
           null,
           1,
-          5,
-          5,
+          7,
+          7,
           null,
           null,
           1,
@@ -51,7 +51,7 @@
           null
         ]
       },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/models/party.rb": {
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/models/party.rb": {
         "lines": [
           1,
           1,
@@ -61,14 +61,14 @@
           null
         ]
       },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/models/application_record.rb": {
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/models/party_user.rb": {
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/models/party_user.rb": {
         "lines": [
           1,
           1,
@@ -76,7 +76,7 @@
           null
         ]
       },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/models/user.rb": {
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -87,7 +87,7 @@
           null
         ]
       },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/poros/movie_review.rb": {
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/poros/movie_review.rb": {
         "lines": [
           1,
           1,
@@ -103,7 +103,7 @@
           null
         ]
       },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/poros/movie.rb": {
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/poros/movie.rb": {
         "lines": [
           1,
           1,
@@ -117,14 +117,14 @@
           null,
           null,
           1,
-          87,
-          87,
-          87,
-          87,
-          87,
-          87,
-          87,
-          87,
+          89,
+          89,
+          89,
+          89,
+          89,
+          89,
+          89,
+          89,
           null,
           null,
           null,
@@ -136,7 +136,7 @@
           null
         ]
       },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/services/movie_service.rb": {
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/services/movie_service.rb": {
         "lines": [
           1,
           1,
@@ -150,8 +150,8 @@
           null,
           null,
           1,
-          5,
-          5,
+          7,
+          7,
           null,
           null,
           1,
@@ -165,14 +165,14 @@
           null,
           null,
           1,
-          21,
-          21,
+          23,
+          23,
           null,
           null,
           null
         ]
       },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/controllers/discover_controller.rb": {
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/controllers/discover_controller.rb": {
         "lines": [
           1,
           1,
@@ -181,13 +181,13 @@
           null
         ]
       },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/controllers/application_controller.rb": {
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/controllers/movies_controller.rb": {
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/controllers/movies_controller.rb": {
         "lines": [
           1,
           1,
@@ -203,7 +203,7 @@
           null
         ]
       },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/controllers/welcome_controller.rb": {
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/controllers/welcome_controller.rb": {
         "lines": [
           1,
           1,
@@ -212,7 +212,7 @@
           null
         ]
       },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/poros/movie_cast.rb": {
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/poros/movie_cast.rb": {
         "lines": [
           1,
           1,
@@ -225,15 +225,23 @@
           null
         ]
       },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/controllers/parties_controller.rb": {
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/controllers/parties_controller.rb": {
         "lines": [
+          1,
+          1,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
           1,
           1,
           null,
           null
         ]
       },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/controllers/users_controller.rb": {
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
@@ -250,7 +258,7 @@
           null,
           null,
           1,
-          5,
+          6,
           null,
           null,
           null,
@@ -262,7 +270,7 @@
           null
         ]
       },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
           0,
           0,
@@ -272,7 +280,7 @@
         "branches": {
         }
       },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/jobs/application_job.rb": {
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/jobs/application_job.rb": {
         "lines": [
           0,
           0
@@ -280,7 +288,7 @@
         "branches": {
         }
       },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/channels/application_cable/connection.rb": {
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
           0,
@@ -290,7 +298,7 @@
         "branches": {
         }
       },
-      "/Users/samsmith/3module/projects/viewing_party_lite/app/channels/application_cable/channel.rb": {
+      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/channels/application_cable/channel.rb": {
         "lines": [
           0,
           0,
@@ -301,6 +309,6 @@
         }
       }
     },
-    "timestamp": 1648226519
+    "timestamp": 1648232077
   }
 }

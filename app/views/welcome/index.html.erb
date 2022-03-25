@@ -1,7 +1,7 @@
 <h1>Viewing Party Lite</h1>
 
 
-<button>New User</button>
+<%= button_to "New User", "/register", method: :get %>
 
 <h2>Existing Users:</h2>
 <% @users.each do |user| %>
