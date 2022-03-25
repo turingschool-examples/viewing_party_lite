@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users, except: [:new] do
     resources :discover, only: [:index]
     resources :movies, only: [:index, :show] do
-      get '/viewing-party/new', to:'party#new'
+      get '/viewing-party/new', to:'parties#new'
     end
   end
 end
