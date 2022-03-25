@@ -2,7 +2,10 @@ class MovieFacade
 
   def self.search(keyword)
     response = MovieService.search_for_movie(keyword)
-    Movie.new(response)
+
+    response.map do |data|
+      Movie.new(data)
+    end
   end
 
   def self.find_top_rated_movies
@@ -10,7 +13,7 @@ class MovieFacade
 
     response.map do |data|
       Movie.new(data)
-    end
+    end.take(40)
   end
 
   def self.cast_members(movie_id)

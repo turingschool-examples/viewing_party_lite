@@ -11,8 +11,8 @@ RSpec.describe MovieService do
 
     it 'searches for a movie given a keyword' do
       search = MovieService.search_for_movie("shawshank")
-      expect(search).to be_a(Hash)
-      expect(search[:title]).to eq("The Shawshank Redemption")
+      expect(search).to be_a(Array)
+      expect(search[0][:title]).to eq("The Shawshank Redemption")
     end
 
     it 'looks for cast members' do

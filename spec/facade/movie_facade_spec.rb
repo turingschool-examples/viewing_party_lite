@@ -13,10 +13,11 @@ RSpec.describe MovieFacade do
     end
 
     it 'searches for a movie given a keyword' do
-      search = MovieFacade.search("shawshank")
-      expect(search).to be_an(Movie)
-      expect(search.title).to eq("The Shawshank Redemption")
-      expect(search.vote_average).to eq(8.7)
+      search = MovieFacade.search("shawsha")
+      expect(search[0]).to be_an(Movie)
+      expect(search[0].title).to eq("The Shawshank Redemption")
+      expect(search[0].vote_average).to eq(8.7)
+      expect(search.length).to eq(3)
     end
 
     it 'creates cast member poros' do

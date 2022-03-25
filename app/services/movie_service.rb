@@ -21,7 +21,7 @@ class MovieService
   def self.search_for_movie(keyword)
     response = connection.get("search/movie?&query=#{keyword}")
     parsed = parse_json(response)
-    parsed[:results][0]
+    parsed[:results]
   end
 
   def self.get_review(movie_id)
