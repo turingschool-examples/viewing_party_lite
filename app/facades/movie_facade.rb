@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MovieFacade
   def self.top_rated
     json = MovieService.top_rated

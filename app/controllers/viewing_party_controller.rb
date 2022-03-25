@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class ViewingPartyController < ApplicationController
   before_action :find_user_and_movie, only: [:new]
 
-  def new ; end
+  def new; end
 
   private
 
