@@ -10,7 +10,8 @@ class MovieDetail
   end
 
   def all_genere_names
-    @genres.each do |genre|
+    names = []
+    @genres.map do |genre|
       genre[:name]
     end
   end
