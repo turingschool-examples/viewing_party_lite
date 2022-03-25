@@ -4,7 +4,7 @@ class ViewingPartyController < ApplicationController
   def new ; end
 
   private
-  
+
   def find_user_and_movie
     @user = User.find(params[:user_id])
     @movie = MovieFacade.movie_id_search(params[:movie_id])
