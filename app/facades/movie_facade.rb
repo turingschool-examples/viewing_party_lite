@@ -18,11 +18,18 @@ class MovieFacade
       MovieReview.new(review)
     end
   end
-  
+
   def self.movie_credit(movie_id)
     credit_data = MovieService.get_movie_credits(movie_id)
     credit_data[:cast].map do |credit|
       MovieCredit.new(credit)
+    end
+  end
+
+  def self.movie_search(keyword)
+    search_data = MovieService.get_search_movies(keyword)
+    search_data[:results].map do |result|
+      MovieSearch.new(result)
     end
   end
 end
