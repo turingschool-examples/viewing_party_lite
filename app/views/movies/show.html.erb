@@ -1,1 +1,16 @@
+<h1><%= @movie_details.title %>
+<p><%= button_to 'Discover Movies', "/users/#{@user.id}/discover", method: :get %></p>
+<p><%= button_to 'Create Party with this movie', "/users/#{@user.id}/movies/#{@movie_details.id}/party/new" %></p>
 
+  <p><%= @movie_details.vote %></p>
+  <p><%= @movie_details.runtime %></p>
+  <p><%= @movie_details.all_genere_names %></p>
+  <p><%= @movie_details.summary %></p>
+  <p><%= @movie_cast.each do |cast| %></p>
+    <p><%= cast.name %></p>
+    <p><%= cast.character %></p>
+    <% end %>
+  <p><%= @movie_reviews.each do |review| %></p>
+  <p><%= review.author %></p>
+  <p><%= review.content %></p>
+<% end %>

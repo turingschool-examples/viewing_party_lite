@@ -28,6 +28,6 @@ RSpec.describe 'Movies Index Page' do
 
     click_link("The Shawshank Redemption")
 
-    expect(current_path).to eq("/users/#{@user.id}/movie/#{movie_id}")
+    expect(current_path).to eq("/users/#{@user.id}/movies/#{movie_id}")
   end
 end

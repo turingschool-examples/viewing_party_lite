@@ -2,7 +2,7 @@ require 'rails_helper'
 RSpec.describe MovieDetail do
   it 'exists with attributes' do
     detail_data = {
-        :adult=>false,
+   :adult=>false,
    :backdrop_path=>"/90ez6ArvpO8bvpyIngBuwXOqJm5.jpg",
    :belongs_to_collection=>nil,
    :budget=>13200000,
@@ -32,7 +32,7 @@ RSpec.describe MovieDetail do
 
   details = MovieDetail.new(detail_data)
   expect(details).to be_a MovieDetail
-  expect(details.title).to eq("दिलवाले दुल्हनिया ले जायेंगे")
+  expect(details.title).to eq("Dilwale Dulhania Le Jayenge")
   expect(details.runtime).to eq(190)
   expect(details.all_genere_names).to eq(["Comedy", "Drama", "Romance"])
   expect(details.vote).to eq(8.7)

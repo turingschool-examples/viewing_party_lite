@@ -10,11 +10,10 @@ class MoviesController < ApplicationController
   end
 
   def show
-
-  end
-
-  def show
-    @movie = 
+    @user = User.find(params[:user_id])
+    @movie_details = MovieFacade.movie_details(params[:id])
+    @movie_cast = MovieFacade.movie_credit(params[:id])[0..9]
+    @movie_reviews = MovieFacade.movie_reviews(params[:id])
   end
 
 end
