@@ -1,0 +1,37 @@
+<section id="buttons">
+  <%= button_to "Create Viewing Party for #{@movie.title}", "/users/#{@user.id}/movies/#{@movie.id}/viewing_party/new", method: :get %>
+  <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %>
+</section>
+<section id="info">
+  <h2>Title: <%= @movie.title %></h2>
+  <p>Vote Average: <%= @movie.vote_average %></p>
+  <p>Runtime: <%= "#{@movie.runtime/60} hour(s) " "#{@movie.runtime%60} minutes" %></p>
+  <p>Genre(s): <% @movie.genre.each do |genre| %>
+                  <%= genre[:name] %>
+              <% end %>
+  </p>
+  <p>Summary: <%= @movie.summary %></p>
+</section>
+
+<section id="cast">
+  <h3>Cast</h3>
+  <% @cast.each do |person|%>
+    <p>Name: <%= person.name %></p>
+    <p>Character: <%= person.character %></p>
+  <% end %>
+</section>
+
+<section id="reviews">
+<% if @reviews %>
+  <h3>Reviews</h3>
+    <% @reviews.each do |review|%>
+    <p>Review Count: <%="There are #{@reviews.count} reviews for #{@movie.title}"  %></p>
+      <p>Author Name: <%= review.name %></p>
+      <p>Author Handle: <%= review.user_name %></p>
+      <p>Review: <%= review.content %></p>
+      <p>Rating: <%= review.rating %></p>
+      <br>
+      <br>
+    <% end %>
+  <% end %>
+</section>
