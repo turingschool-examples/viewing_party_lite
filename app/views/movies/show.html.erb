@@ -10,10 +10,11 @@
     <dd> - <%= genre %></dd>
     <% end %></li>
 <li> Cast: <% @movie.cast.each do |actor, character|%>
-  <ol><%= actor %> as <%= character %></ol>
-
+              <dd> - <%= actor %> as <%= character %></dd>
               <% end %></li>
-<li> <%=  %> </li>
-<li> <%=  %> </li>
-
+<li> Reviews: <%= @movie.review_count %> </li>
+<li> <% @movie.reviews.each do |author, review| %>
+  <p><dd><b>Author:</b> <%= author %></dd>
+          <dd><b>Review:</b> <%= review %></dd></p>
+          <% end %>
 </ul>
