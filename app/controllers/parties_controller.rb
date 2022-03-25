@@ -15,7 +15,6 @@ class PartiesController < ApplicationController
     end
 
     def set_users
-      binding.pry
       @users = User.all
     end
 end
