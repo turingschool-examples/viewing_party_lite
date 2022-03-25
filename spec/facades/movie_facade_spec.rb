@@ -13,5 +13,40 @@ RSpec.describe MovieFacade do
         end
       end
     end
+
+    describe '#get_10_cast' do
+      it 'gets 10 cast members from movie' do
+        VCR.use_cassette('fight_club_10_cast') do
+          @cast = MovieFacade.get_10_cast('550')
+
+          expect(@cast).to be_a(Array)
+          expect(@cast.length).to be(10)
+
+          @cast.each do |cast|
+            expect(cast).to be_an_instance_of(Cast)
+          end
+
+          expect(@cast.first.name).to eq("Edward Norton")
+          expect(@cast.first.character).to eq("The Narrator")
+        end
+      end
+    end
+
+    describe '#get_reviews' do
+      it 'gets all reviews from movie' do
+        VCR.use_cassette('fight_club_reviews') do
+          @reviews = MovieFacade.get_reviews('550')
+
+          expect(@reviews).to be_a(Array)
+          expect(@reviews.length).to be(7)
+
+          @reviews.each do |review|
+            expect(review).to be_an_instance_of(Review)
+          end
+
+          expect(@reviews.first.author).to eq("Goddard")
+        end 
+      end
+    end
   end
 end
