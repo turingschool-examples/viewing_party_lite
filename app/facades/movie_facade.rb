@@ -21,4 +21,12 @@ class MovieFacade
     data = MovieService.find_movie(movie_id)
     Movie.new(data)
   end
+
+  def self.get_movie_cast(id)
+    data = MovieService.find_cast(id)
+   
+    data[:cast].map do |cast_member|
+      MovieCast.new(cast_member)
+    end[0..9]
+  end 
 end

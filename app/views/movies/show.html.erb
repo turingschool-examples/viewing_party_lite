@@ -1,4 +1,36 @@
 <h1>Viewing Party Lite</h1>
+<h2><%= @movie.title %></h2>
 
 <%= button_to "Discover Page", user_discover_index_path(@user), method: :get %>
 <%= button_to "Create Viewing Party", "/users/#{@user.id}/movies/#{@movie.id}/parties/new", method: :get %>
+
+<div>
+Vote Average: <%= @movie.vote_average %>
+Runtime: <%= @movie.runtime_converted %>
+Genre(s): 
+<% @movie.genres.each do |genre| %> 
+   <%= genre[:name] %>
+<% end %>
+</div>
+
+<div>
+Summary 
+<p>
+<%= @movie.summary %>
+</p>
+</div>
+
+<div>
+Cast
+<p>
+<% @cast.each do |actor| %>
+   <%= actor.name %> as <%= actor.character %>
+<% end %>
+</p>
+</div>
+
+<div>
+Reviews
+<p>
+</p>
+</div>

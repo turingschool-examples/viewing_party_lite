@@ -8,6 +8,16 @@ class MovieService
     response = conn.get("/3/search/movie?query=#{keyword}")
     JSON.parse(response.body, symbolize_names: true)
   end
+  
+  def self.find_movie(id)
+    response = conn.get("/3/movie/#{id}")
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.find_cast(id) 
+    response = conn.get("/3/movie/#{id}/credits")
+    JSON.parse(response.body, symbolize_names: true)
+  end
 
   def self.conn
     Faraday.new(url: "https://api.themoviedb.org") do |faraday|
@@ -15,8 +25,4 @@ class MovieService
     end
   end
 
-  def self.find_movie(id)
-    response = conn.get("/3/movie/#{id}")
-    JSON.parse(response.body, symbolize_names: true)
-  end
 end
