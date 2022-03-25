@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   validates_uniqueness_of :email
 
-  def host
+  def is_host
     parties.where(host_id: id)
   end 
 

@@ -27,7 +27,7 @@ RSpec.describe User, type: :model do
       user.user_parties.create!(party_id: party_1.id, user_id: user.id)
       user.user_parties.create!(party_id: party_2.id, user_id: user.id)
 
-      expect(user.host).to  eq([party_1])
+      expect(user.is_host).to  eq([party_1])
     end 
   end 
 
