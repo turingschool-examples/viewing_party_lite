@@ -14,7 +14,9 @@ class ViewingPartyController < ApplicationController
       movie_id: params["id"],
       host_id: params["user_id"]
     )
-    binding.pry
+    params[:invitations].drop(1).each do |user_id|
+      UserParty.create!(user_id: user_id, party_id: @party.id)
+    end
     redirect_to user_path(@host.id)
   end
 end

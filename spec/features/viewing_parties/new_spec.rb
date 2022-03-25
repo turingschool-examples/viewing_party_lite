@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'The new viewing party page' do
-  xit "exists and has a movie title" do
+  it "exists and has a movie title" do
     User.destroy_all
     user1 = User.create!(name: 'user1', email: 'user1@email.com')
 
@@ -24,16 +24,13 @@ RSpec.describe 'The new viewing party page' do
 
     VCR.use_cassette('new_party_movie') do
       visit "/users/#{user1.id}/movies/24126/viewing_party/new"
-      save_and_open_page
+
       within '#form' do
         check "#{user1.name}"
         check "#{user3.name}"
         click_button('Create')
       end
+      expect(current_path).to eq("/users/#{user1.id}")
     end
-  end
-
-  xit "confirms a user's dashboard displays a viewing party" do
-
   end
 end
