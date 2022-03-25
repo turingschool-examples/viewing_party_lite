@@ -6,7 +6,6 @@ RSpec.describe 'movie show page', type: :feature do
     user = User.create(name: "Jill Jillian", email: "jill@gmail.com")
 
     visit("users/#{user.id}/movies/75780")
-    save_and_open_page
 
     expect(page).to have_content("Jack Reacher")
     expect(page).to have_content("Rating: 6.6")
