@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'The new viewing party page' do
   it "exists and has a movie title" do
+    UserParty.destroy_all
     User.destroy_all
+    Party.destroy_all
     user1 = User.create!(name: 'user1', email: 'user1@email.com')
 
     VCR.use_cassette('new_party_movie') do
@@ -16,7 +18,9 @@ RSpec.describe 'The new viewing party page' do
   end
 
   it "has a form a user can fill out to make a viewing party" do
+    UserParty.destroy_all
     User.destroy_all
+    Party.destroy_all
     user1 = User.create!(name: 'user1', email: 'user1@email.com')
     user2 = User.create!(name: 'user2', email: 'user2@email.com')
 
