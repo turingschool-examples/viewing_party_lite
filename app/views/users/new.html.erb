@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 pt-4 pb-3">
+      <div class="text-center">
+        <h3>Sign Up</h3>
+        <%= form_with url: users_path, method: :post, local: true do |form| %>
+        <%= form.label :name %>
+        <%= form.text_field :name,class: "form_control" %><br>
+        <%= form.label :email %>
+        <%= form.email_field :email,class: "form_control"  %><br>
+        <%= form.submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 pt-4 pb-3">
+      <div class="text-center">
+        <%= link_to "Create New User", new_user_path, class: "btn btn-outline-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12 pt-4 pb-3">
+      <div class="text-center">
+        <h5>Existing Users:</h5>
+        <% @users.each do |user| %>
+        <%=link_to "#{user.email}", user_path(user.id)%><br>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
