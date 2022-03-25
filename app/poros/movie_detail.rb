@@ -1,8 +1,19 @@
 class MovieDetail
 
-  def initialize(data)
-    binding.pry
-    @argument = argument
+  attr_reader :title, :runtime, :vote, :summary
+
+  def initialize(attributes)
+    @title = attributes[:original_title]
+    @runtime = attributes[:runtime]
+    @genres = attributes[:genres]
+    @vote = attributes[:vote_average]
+    @summary = attributes[:overview]
   end
 
-end
+  def all_genere_names
+    names = []
+    @genres.map do |genre|
+      genre[:name]
+    end
+  end
+
