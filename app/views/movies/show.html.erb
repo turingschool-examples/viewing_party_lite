@@ -1,3 +1,5 @@
+<section>
+
 <h1>Viewing Party Lite</h1>
 <h2><%= @movie.title %></h2>
 
@@ -12,7 +14,9 @@ Genre(s):
    <%= genre[:name] %>
 <% end %>
 </div>
+</section>
 
+<hr>
 <div>
 Summary
 <p>
@@ -24,13 +28,13 @@ Summary
 Cast
 <p>
 <% @cast.each do |actor| %>
-   <%= actor.name %> as <%= actor.character %>
+   <%= actor.name %> as <%= actor.character %><br>
 <% end %>
 </p>
 </div>
 
 <div id="reviews">
-<h5> Reviews</h5>
+<h3><%= @reviews.count %> Reviews</h3>
 <% @reviews.each do |review| %>
   <p> Author: <%= review.author %></p>
   <%= review.review_content %>
