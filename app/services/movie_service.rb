@@ -30,5 +30,12 @@ class MovieService
       response = connection.get("movie/#{movie_id}/reviews")
       parse_json(response)
     end
+
+    def search_movies(keyword)
+      response = connection.get("search/movie") do |faraday|
+        faraday.params['query'] = keyword
+      end
+      parse_json(response)[:results]
+    end
   end
 end

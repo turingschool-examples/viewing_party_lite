@@ -29,5 +29,13 @@ class MovieFacade
         Reviews.new(result)
       end
     end
+
+    def search_movies(keyword)
+      movies_data = MovieService.search_movies(keyword)
+
+      movies_data.map do |movie|
+        Movie.new(movie)
+      end
+    end
   end
 end
