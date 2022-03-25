@@ -1,16 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe 'The new viewing party page' do
-  xit "exists and has a movie title" do
+  it "exists and has a movie title" do
     User.destroy_all
     user1 = User.create!(name: 'user1', email: 'user1@email.com')
 
-    VCR.use_cassette('movie_title') do
-      visit "/users/#{user1.id}/movies/24126/"
-      within '#buttons' do
-        click_button('Create Viewing Party for Warlock: The Armageddon')
-      end
+    VCR.use_cassette('new_party_movie') do
+      visit "/users/#{user1.id}/movies/24126/viewing_party/new"
       expect(current_path).to eq("/users/#{user1.id}/movies/24126/viewing_party/new")
+
       within '#title' do
         expect(page).to have_content("Warlock: The Armageddon")
       end
@@ -22,19 +20,18 @@ RSpec.describe 'The new viewing party page' do
     user1 = User.create!(name: 'user1', email: 'user1@email.com')
     user2 = User.create!(name: 'user2', email: 'user2@email.com')
 
-    VCR.use_cassette('movie_title') do
-      visit "/users/#{user1.id}/movies/24126/"
-      within '#buttons' do
-        click_button('Create Viewing Party for Warlock: The Armageddon')
-      end
+    VCR.use_cassette('new_party_movie') do
+      visit "/users/#{user1.id}/movies/24126/viewing_party/new"
+
       within '#form' do
         fill_in 'Duration', with: '61'
-        fill_in 'start_date', with: 'date'
-        fill_in 'start_time', with: 'time'
-
+        fill_in 'start_date', with: '01-01-2022'
+        fill_in 'start_time', with: '12:00'
         check "#{user1.name}"
         click_button('Create')
       end
+
+      expect(current_path).to eq("/users/#{user1.id}")
     end
   end
 
@@ -52,6 +49,9 @@ RSpec.describe 'The new viewing party page' do
 
       within '#form' do
         fill_in 'Duration', with: ''
+        fill_in 'start_date', with: '01-01-2022'
+        fill_in 'start_time', with: '12:00'
+
         check "#{user1.name}"
         click_button('Create')
       end

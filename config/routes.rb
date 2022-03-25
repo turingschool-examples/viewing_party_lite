@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   get '/users/:user_id/movies/:id/viewing_party/new', to: 'viewing_party#new'
   post '/users/:user_id/movies/:id/viewing_party/new', to: 'viewing_party#create'
 
-  # resources :parties
 
   resources :users, only: [:show, :new, :create] do
     resources :movies, only: [:index, :show], controller: :users_movies
+      # resources :parties, controller: :viewing_party
   end
 end
