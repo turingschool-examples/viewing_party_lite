@@ -37,5 +37,14 @@ class MovieFacade
         Movie.new(movie)
       end
     end
+
+    def search_movie_details(keyword)
+      movies_data = MovieService.search_movies(keyword)
+
+      movies_data.map do |movie|
+        movie_id = movie[:id]
+        movie_details(movie_id)
+      end
+    end
   end
 end
