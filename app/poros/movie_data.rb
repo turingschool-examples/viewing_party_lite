@@ -1,7 +1,7 @@
 class MovieData
-  attr_reader :id, :title, :genres, :overview, :cast, :reviews, :runtime, :vote_avg
+  attr_reader :id, :title, :genres, :overview, :cast, :reviews, :runtime, :vote_avg, :image
 
-  def initialize(production, cast, reviews)
+  def initialize(production, cast, reviews, images)
     @id = production[:id]
     @title = production[:title]
     @genres = set_genres(production)
@@ -10,6 +10,7 @@ class MovieData
     @reviews = review(reviews)
     @runtime = production[:runtime]
     @vote_avg = production[:vote_average]
+    @image = get_image(images) 
   end
 
   def set_genres(production)
@@ -29,15 +30,16 @@ class MovieData
   end
 
   def review(reviews)
-    #binding.pry
     hash = {}
     accum = []
       reviews[:results].each do |review|
         hash[review[:author]] = review[:content]
       end
       hash
+    end
 
+  def get_image(image) 
+    "https://image.tmdb.org/t/p/w200#{image[:logos].first[:file_path]}"
   end
-
 
 end
