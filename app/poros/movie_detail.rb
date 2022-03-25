@@ -14,5 +14,6 @@ class MovieDetail
     @runtime = data[:runtime]
     @genre = data[:genres]
     @summary = data[:overview]
+    @poster = data[:poster_path]
   end
 end
