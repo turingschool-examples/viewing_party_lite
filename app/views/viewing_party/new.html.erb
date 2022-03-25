@@ -14,7 +14,7 @@
   <div class="row">
     <div class="col-12 pt-4 pb-3">
       <div class="text-center">
-        <%= form_with url: "/movies/#{params[:movie_id]}/parties", local: true do |f| %>
+        <%= form_with url: "/users/#{@user.id}/movies/#{@movie.id}/viewing_party", method: :post, local: true do |f| %>
       <p><%= f.label :duration %>
       <%= f.text_field :length, value: @movie.format_time %></p>
 
@@ -28,7 +28,7 @@
         <%= check_box_tag "users[]", user.id %>
         <%= user.name %>  (<%= user.email %>)
       <% end %><br><br>
-      <div class= "btn btn-outline-primary">
+      <div class= "btn btn-primary">
         <%= f.submit "Let's Go Party... Lite!"%>
       </div>
     <% end %>
