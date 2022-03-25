@@ -45,7 +45,7 @@ RSpec.describe 'Movie Show Page', :vcr do
     expect(page).to have_content("Runtime")
     expect(page).to have_content("Genre(s)")
     expect(page).to have_content("Summary")
-    expect(page).to have_content("Reviews")
+    expect(page).to have_content("Total Reviews")
     expect(page).to have_content("Cast")
     expect(page).to have_content("The Shawshank Redemption")
   end
