@@ -6,7 +6,6 @@ RSpec.describe MovieService do
 
       it 'returns top rated movies' do
 
-
         response = MovieService.get_top_movie
 
         expect(response).to be_an(Array)
