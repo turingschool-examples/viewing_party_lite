@@ -1,9 +1,9 @@
 
 <div class="button">
   <h2><%= @movie.title %></h2>
-  <img src= <%= @movie_db.get_poster %>>
+  <img src= <%= @movie.get_poster %>>
   <%= button_to 'Discover Page', user_discover_index_path(@user), :method => :get %><br>
-  <%= button_to "Create Viewing Party for #{@movie.title}", user_movie_viewing_party_new_path(@user, @movie_db), :method => :get %>
+  <%= button_to "Create Viewing Party for #{@movie.title}", user_movie_viewing_party_new_path(@user, @movie.api_id), :method => :get %>
 </div>
 
 <div class="attributes">

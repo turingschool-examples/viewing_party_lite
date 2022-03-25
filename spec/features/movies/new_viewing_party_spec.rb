@@ -48,21 +48,23 @@ RSpec.describe 'new viewing party page' do
       click_on 'The Shawshank Redemption'
       click_on 'Create Viewing Party for The Shawshank Redemption'
 
-      expect(page).to have_content('Duration of Party')
-      expect(page).to have_content('?')
+      expect(page).to have_content('Duration of party')
       expect(page).to have_content('Day')
-      expect(page).to have_content('Start Time')
+      expect(page).to have_content(142)
+      expect(page).to have_content('Start time')
     end
   end
 
   it "has checkboxes with other users on the sites names and emails" do
-    user2 = User.create!(name: 'Carle', email: 'carle@gmail.com')
-    user3 = User.create!(name: 'Jess', email: 'jess@gmail.com')
+
     VCR.use_cassette('top_20_api') do
       visit user_discover_index_path(@user)
       click_on 'Find Top Rated Movies'
       click_on 'The Shawshank Redemption'
       click_on 'Create Viewing Party for The Shawshank Redemption'
+
+      @user2 = User.create!(name: 'Carle', email: 'carle@gmail.com')
+      @user3 = User.create!(name: 'Jess', email: 'jess@gmail.com')
 
       expect(page).to have_content('Carle')
       expect(page).to have_content('carle@gmail.com')
