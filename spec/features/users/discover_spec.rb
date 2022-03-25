@@ -5,8 +5,9 @@ RSpec.describe 'Discover Page' do
     before(:each) do
       @user = User.create!(name: 'Trevor', email: 'trev@yahoo.com')
     end
-    #these two tests might ping the API, not sure
+
     it 'should have a button to discover top 20 rated movies' do
+
       visit user_discover_index_path(@user)
 
       click_on 'Find Top Rated Movies'
