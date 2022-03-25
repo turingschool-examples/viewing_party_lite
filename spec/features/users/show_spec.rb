@@ -44,6 +44,7 @@ RSpec.describe 'the user dashboard' do
     
     VCR.use_cassette('viewing_party_invites') do 
       visit user_path(user.id)
+      save_and_open_page
       within '#parties' do
         expect(page).to have_content("My Viewing Parties")
         within '#invitations' do 
