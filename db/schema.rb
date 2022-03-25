@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2022_03_21_224655) do
   end
 
   create_table "movies", force: :cascade do |t|
-    t.integer "api_key"
+    t.integer "api_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

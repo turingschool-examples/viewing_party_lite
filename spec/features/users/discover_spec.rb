@@ -7,6 +7,7 @@ RSpec.describe 'Discover Page' do
     end
 
     it 'should have a button to discover top 20 rated movies' do
+
       visit user_discover_index_path(@user)
       VCR.use_cassette('top_20_api') do
         click_on 'Find Top Rated Movies'
