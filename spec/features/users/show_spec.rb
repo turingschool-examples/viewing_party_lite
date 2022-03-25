@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'the user dashboard' do
   it "exists and has a dynamic title for a user" do
+    UserParty.destroy_all
     User.destroy_all
+    Party.destroy_all
     user_1 = User.create!(name: 'user_1', email: 'email@gmail.com')
     user_2 = User.create!(name: 'user_2', email: 'email2@gmail.com')
 
@@ -17,7 +19,9 @@ RSpec.describe 'the user dashboard' do
   end
 
   it "has a discover movies button which links to the discover page" do
+    UserParty.destroy_all
     User.destroy_all
+    Party.destroy_all
     user_1 = User.create!(name: 'user_1', email: 'email@gmail.com')
 
     visit user_path(user_1.id)

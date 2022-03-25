@@ -2,7 +2,9 @@ require 'rails_helper'
   RSpec.describe 'The User Movie Show Page' do
 
     it 'has a button to bring the user back to the discover page' do
+      UserParty.destroy_all
       User.destroy_all
+      Party.destroy_all
       user = User.create!(name: 'User', email: 'email')
 
       VCR.use_cassette('movie_title_1') do
@@ -16,7 +18,9 @@ require 'rails_helper'
     end
 
     it 'has a button that brings the user to a form to create a new viewing party' do
+      UserParty.destroy_all
       User.destroy_all
+      Party.destroy_all
       user = User.create!(name: 'User', email: 'email')
 
       VCR.use_cassette('movie_title_2') do
@@ -30,7 +34,9 @@ require 'rails_helper'
     end
 
     it 'displays a movies title, vote_average, runtime, genre and summary' do
+      UserParty.destroy_all
       User.destroy_all
+      Party.destroy_all
       user = User.create!(name: 'user', email: 'email')
 
       VCR.use_cassette('movie_title_3') do
@@ -49,7 +55,9 @@ require 'rails_helper'
   end
 
   it 'displays the first 10 cast members name/character' do
+    UserParty.destroy_all
     User.destroy_all
+    Party.destroy_all
     user = User.create!(name: 'user', email: 'email')
 
     VCR.use_cassette('shawshank_cast') do
@@ -66,7 +74,9 @@ require 'rails_helper'
   end
 
   it 'displays review information' do
+    UserParty.destroy_all
     User.destroy_all
+    Party.destroy_all
     user = User.create!(name: 'user', email: 'email')
 
     VCR.use_cassette('reviews_in_view') do
