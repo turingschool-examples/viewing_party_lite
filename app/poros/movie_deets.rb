@@ -1,7 +1,15 @@
 class MovieDeets
+  attr_reader :title,
+              :vote_average,
+              :runtime,
+              :summary,
+              :genres,
+              :cast,
+              :review_count,
+              :reviewers
   def initialize(details, credits, reviews)
     @title = details[:title]
-    @vote_agerage = details[:vote_average]
+    @vote_average = details[:vote_average]
     @runtime = details[:runtime]
     @summary = details[:overview]
     @genres = get_genres(details)
@@ -18,7 +26,8 @@ class MovieDeets
 
   def get_cast(credits)
     credits[:cast][0..9].map do |hash|
-      { hash[:name] => hash[:character] }
+      { :actor => hash[:name],
+        :character => hash[:character] }
     end
   end
 

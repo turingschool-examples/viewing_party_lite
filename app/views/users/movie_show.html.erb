@@ -1,14 +1,21 @@
 <h1><%= @movie.title %></h1>
-<h2>Rating: <%= @movie.vote_average %></h2>
 
-<p>Runtime: <%= @movie.runtime %></p>
-<p>Genres: <% @movie.genres.join(", ") } %></p>
+<h2>Rating: <%= @movie.vote_average %></h2>
+<p>Runtime: <%= @movie.runtime %> minutes</p>
+<p>Genres: <%= @movie.genres.sort.join(", ") %></p>
 <p>Summary: <%= @movie.summary %></p>
+
 <h3>CAST</h3>
-<% @movie.cast.each do |actor, character| %>
-  <p><%= actor %> - <%= character %></p>
+
+<% @movie.cast.each do |hash| %>
+  <p><%= hash[:actor] %> - <%= hash[:character] %></p>
+  <br>
 <% end %>
 
-<p><%=  %></p>
-<p><%=  %></p>
-<p><%=  %></p>
+<h3>This movie has <%= @movie.review_count %> reviews.</h3>
+<% @movie.reviewers.each do |reviewer| %>
+  <p><%= reviewer[:name] %>, username: <%= reviewer[:username] %>, rating: <%= reviewer[:rating] %></p>
+<% end %>
+
+<%= button_to "New Viewing Party" %>
+<%= button_to "Back to Discover" %>
