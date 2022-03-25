@@ -22,7 +22,7 @@ class MovieFacade
     movie_details_data = MovieService.get_details(id)
     movie_credits_data = MovieService.get_cast(id)
     movie_review_data = MovieService.get_reviews(id)
-binding.pry
+
     movie_detail_hash = "poro stuff"
   end
 end
