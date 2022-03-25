@@ -28,7 +28,7 @@ RSpec.describe 'Landing Page' do
     expect(current_path).to eq(new_user_path)
   end
 
-  it 'has a link to the landing page' do
+  it 'has a link to the landing page', :vcr do
     visit user_path(@user1)
 
     expect(page).to have_link('Home')
@@ -46,7 +46,7 @@ RSpec.describe 'Landing Page' do
     end
   end
 
-  it 'existing users link to user dashboard' do
+  it 'existing users link to user dashboard', :vcr do
     within '#existing_users' do
       expect(page).to have_link(@user1.email.to_s)
       expect(page).to have_link(@user2.email.to_s)
