@@ -1,4 +1,5 @@
 class MovieDetail
+
   attr_reader :title, :runtime, :vote, :summary
 
   def initialize(attributes)
@@ -15,4 +16,4 @@ class MovieDetail
       genre[:name]
     end
   end
-end
+
