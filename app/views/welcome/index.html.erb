@@ -1,11 +1,12 @@
 <h1>Viewing Party Lite</h1>
 
+
+<div class = "container">
 <%= button_to "Create New User", '/register', method: :get %>
-
-
   <div class="registered">
     <% @users.each do |user| %>
-      <p><%= user.name %></p>
-      <p><%= user.email %></p>
+      <h3><%= link_to(user.name, user_path(user)) %></h3>
+      <p>email: <%= user.email %></p>
     <% end %>
   </div>
+</div>

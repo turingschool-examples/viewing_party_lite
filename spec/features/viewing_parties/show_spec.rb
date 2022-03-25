@@ -11,7 +11,7 @@ RSpec.describe 'Viewing Party Show Page' do
     end
     it 'will have the start time and end time', :vcr do 
         visit(user_viewing_party_path(@user_1, @vp))
-        expect(page).to have_content(@vp.date_time.strftime("%I:%M %p"))
+        expect(page).to have_content(@vp.date_time.strftime("%l:%M %p"))
         expect(page).to have_content(@vp.end_time)
     end
     it 'will have a the images and urls to disney and hbo', :vcr do 

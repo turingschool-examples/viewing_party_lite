@@ -6,22 +6,55 @@
       </div>
    </div>
 </div>
-
-<div class="row">
-
-   <div class="col-sm d-flex justify-content-center">
-      <h3>Scheduled from <%= @viewing_party.date_time.strftime("%I:%M  %p") %> to
-         <%= @viewing_party.end_time%></h3>
+<div class="container">
+   <div class="row">
+      <div class="col-md d-flex justify-content-center">
+         <h3>Movie Info</h3>
+      </div>
+      <div class="col-md d-flex justify-content-center">
+         <h3> Viewing Party Info</h3>
+      </div>
    </div>
-   <div class="col-sm d-flex justify-content-center">
-      <h3> Genres: <%= @movie.genres.map{|genre| genre[:name]}.join(', ') %> </h3>
+   <div class="row">
+      <div class="col-md d-flex justify-content-center">
+         <div class="list-group">
+            <ul>
+               <li class="list-group-item">Summary: <%= @movie.summary %></li>
+               <li class="list-group-item">Runtime: <%= @movie.duration %></li>
+               <li class="list-group-item"> Genres: <%= @movie.genres.map{|genre| genre[:name]}.join(', ') %> </li>
+            </ul>
+         </div>
+      </div>
+      <div class="col-md d-flex justify-content-center">
+         <div class="list-group">
+            <ul>
+               <li class="list-group-item">Scheduled for <%= @viewing_party.date_time.strftime("%m/%d/%Y")%>
+                  (<%= @viewing_party.date_time.strftime("%l:%M  %p") %> to <%= @viewing_party.end_time%>)</li>
+               <%=link_to(user_path(@viewing_party.user)) do %>
+               <li class="list-group-item"> Host: <%=@viewing_party.user.name%></li>
+               <%end%>
+               <% if @viewing_party.user_viewing_parties.any?%>
+               <%@viewing_party.user_viewing_parties.map { |vp| User.find(vp.user_id)}.each do |user|%>
+               <%=link_to(user_path(user)) do %>
+               <li class="list-group-item">Invited User: <%=user.name%></li>
+               <%end%>
+               <%end%>
+               <%end%>
+               <%links = StreamingFacade.streaming_links(@movie.imdb_id) %>
+               <%if links.any? %>
+               <%links.each do |streaming|%>
+               <li class="list-group-item"> Watch on
+                  <%= link_to(image_tag("#{streaming.provider.to_s}.png", size: "250"), streaming.link) %>
+               </li>
+               <% end%>
+               <%end%>
+            </ul>
+         </div>
+      </div>
    </div>
-   <div class="divider py-1 bg-dark"></div>
-   <h3>Summary </h3>
-   <p><%= @movie.summary %></p>
-   <%links = StreamingFacade.streaming_links(@movie.imdb_id)%>
-   <%links.each do |streaming|%> %>
-   <%= link_to(image_tag("#{streaming.provider.to_s}.png", size: "250"), streaming.link) %>
-   <% end%>
-</div>
+   <div class="row">
+      <div class="col-md d-flex justify-content-center">
+         <%= link_to 'Back', :back %>
+      </div>
+   </div>
 </div>

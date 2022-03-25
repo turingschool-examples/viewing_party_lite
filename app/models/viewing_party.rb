@@ -11,7 +11,7 @@ class ViewingParty < ApplicationRecord
 
   after_validation :assign_duration
   def end_time
-    (self.date_time + duration.minutes).strftime("%I:%M %p")
+    (self.date_time + duration.minutes).strftime("%l:%M %p")
   end
   private
 

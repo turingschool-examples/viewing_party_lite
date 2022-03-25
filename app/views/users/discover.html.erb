@@ -1,6 +1,16 @@
-<%= button_to 'Top Rated Movies', "/users/#{@user.id}/movies", method: :get, params:{ top_rated: 'top_rated'} %>
-<%= form_with url: "/users/#{@user.id}/movies", local: true do |f| %>
-<%= f.label :title %>
-<%= f.text_field :title %>
+<div class='form-group'>
+    <div class="container">
+<div class="row justify-content-center">
+    <%= button_to 'Top Rated Movies', "/users/#{@user.id}/movies", method: :get, params:{ top_rated: 'top_rated'} %>
+</div>
+<div class="row justify-content-center">
+    OR
+</div>
+
+<form class="col-lg-6 offset-lg-3 "><%= form_with url: "/users/#{@user.id}/movies", local: true do |f| %>
+<div class="row justify-content-center">
+<%= f.text_field :title, placeholder: "Search by Movie Title", class: "form-control" %>
 <%= f.submit "Search by Title" %>
 <% end %>
+    </div>
+</div>
