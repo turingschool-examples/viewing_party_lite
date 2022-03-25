@@ -6,8 +6,10 @@
             <div class="card-title">
                 <h4><%=movie.title%></h4>
             </div>
-            <div class="card-body">
+            <div class="card-body"> 
+            <a href = <%=user_viewing_party_path(@user, party)%>>
                 <img class="card-img-top" src=<%= "https://image.tmdb.org/t/p/original/#{movie.poster_path}"%>>
+            </a>
                 <p class="card-text"> Date:
                     <%= party.try(:viewing_party).nil? ? party.date_time.strftime("%m/%d/%Y at %I:%M%p") :party.viewing_party.date_time.strftime("%m/%d/%Y at %I:%M%p") %>
                     <% party.try(:user_viewing_parties).nil? ? 'something else' : guests = party.user_viewing_parties %>

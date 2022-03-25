@@ -10,7 +10,9 @@ class ViewingParty < ApplicationRecord
   validates_numericality_of :duration, greater_than_or_equal_to: :assign_duration, on: :create
 
   after_validation :assign_duration
-
+  def end_time
+    (self.date_time + duration.minutes).strftime("%I:%M %p")
+  end
   private
 
   def assign_duration

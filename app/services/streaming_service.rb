@@ -5,9 +5,10 @@ class StreamingService
         end
     end
 
-  def self.netflix(movie_id)
-    imdb_id = MovieFacade.new(movie_id).movie
+  def self.link(imdb_id)
     response = conn.get("?imdb_id=#{imdb_id}&output_language=en&country=us")
-    json = JSON.parse(response.body, symbolize_names: true)
+    if response.body != "no records are found for the given id\n"
+      JSON.parse(response.body, symbolize_names: true)
+    end
   end
 end

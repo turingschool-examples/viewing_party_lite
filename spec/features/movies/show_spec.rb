@@ -40,6 +40,6 @@ RSpec.describe 'movie show page' do
     visit(user_movie_path(@user, 235))
     expect(page).to have_button("Create Viewing Party for Stand by Me")
     click_button("Create Viewing Party for Stand by Me")
-    expect(current_path).to eq("/users/#{@user.id}/movies/235/viewing_parties/new")
+    expect(current_path).to eq("/users/#{@user.id}/viewing_parties/new")
   end
 end

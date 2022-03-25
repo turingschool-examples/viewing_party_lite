@@ -1,0 +1,27 @@
+<h1 class="text-center" sample center heading><%= @movie.title %> </h1>
+<div class="container my-3 bg-lightcol d-flex justify-content-center ">
+   <div class="card bg-light mb-3 col-lg-4 d-flex align-items-stretch" style="max-width: 20rem;">
+      <div class="card-body ">
+         <img class="card-img-top rounded" src=<%= "https://image.tmdb.org/t/p/original/#{@movie.poster_path}"%>>
+      </div>
+   </div>
+</div>
+
+<div class="row">
+
+   <div class="col-sm d-flex justify-content-center">
+      <h3>Scheduled from <%= @viewing_party.date_time.strftime("%I:%M  %p") %> to
+         <%= @viewing_party.end_time%></h3>
+   </div>
+   <div class="col-sm d-flex justify-content-center">
+      <h3> Genres: <%= @movie.genres.map{|genre| genre[:name]}.join(', ') %> </h3>
+   </div>
+   <div class="divider py-1 bg-dark"></div>
+   <h3>Summary </h3>
+   <p><%= @movie.summary %></p>
+   <%links = StreamingFacade.streaming_links(@movie.imdb_id)%>
+   <%links.each do |streaming|%> %>
+   <%= link_to(image_tag("#{streaming.provider.to_s}.png", size: "250"), streaming.link) %>
+   <% end%>
+</div>
+</div>

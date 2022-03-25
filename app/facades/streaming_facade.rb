@@ -1,11 +1,12 @@
 require './app/poros/streaming'
 
 class StreamingFacade
-attr_reader :reviews
-  def initialize(movie_id)
-    @reviews = []
-    MovieService.reviews(movie_id)[:results].each do |review|
-      @reviews << Review.new(review)
+attr_reader :links
+  def self.streaming_links(imdb_id)
+    @links = []
+    StreamingService.link(imdb_id)[:streamingInfo].each do |data|
+      @links << Streaming.new(data)
     end
+    @links
   end
 end
