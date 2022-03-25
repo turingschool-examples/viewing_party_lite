@@ -9,5 +9,6 @@ class MovieReview
     @user_name = data[:author_details][:username]
     @content = data[:content]
     @rating = data[:author_details][:rating]
+    @poster = data[:poster_path]
   end 
 end

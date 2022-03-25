@@ -8,7 +8,8 @@ RSpec.describe MovieDetail do
       :vote_average => 3.5,
       :runtime => 90,
       :genres => 'comedy',
-      :overview => 'A great journey'
+      :overview => 'A great journey',
+      :poster_path => '/qpRtxbnLb0qFP93db5vwDDXvWz2.jpg'
     }
 
     single_movie = MovieDetail.new(data)
@@ -20,5 +21,6 @@ RSpec.describe MovieDetail do
     expect(single_movie.runtime).to eq(90)
     expect(single_movie.genre).to eq('comedy')
     expect(single_movie.summary).to eq('A great journey')
+    expect(single_movie.poster).to eq('/qpRtxbnLb0qFP93db5vwDDXvWz2.jpg')
   end
 end
