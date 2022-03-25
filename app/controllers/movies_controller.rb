@@ -15,22 +15,26 @@ class MoviesController < ApplicationController
       @search = params[:search]
     end
   end
-  
+
   private
     def set_user
       @user = User.find(params[:user_id])
     end
 
     def set_movie
-      @movie_db = Movie.find(params[:id])
-      @movie = MovieFacade.get_movie(@movie_db.api_id)
+      if params[:result] != "true"
+        @movie_db = Movie.find(params[:id])
+        @movie = MovieFacade.get_movie(@movie_db.api_id)
+      else
+        @movie = MovieFacade.get_movie(params[:id])
+      end
     end
 
     def get_cast
-      @cast = MovieFacade.get_10_cast(@movie_db.api_id)
+      @cast = MovieFacade.get_10_cast(params[:id])
     end
 
     def get_reviews
-      @reviews = MovieFacade.get_reviews(@movie_db.api_id)
+      @reviews = MovieFacade.get_reviews(params[:id])
     end
 end

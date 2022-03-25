@@ -9,7 +9,7 @@
 
 <div class="results">
   <%@results.each do |movie| %>
-    <%= link_to "#{movie.title}", user_movies_path(@user, @movie)%>
+    <%= link_to "#{movie.title}", user_movie_path(@user, movie.api_id, result: true) %>
     <%= "Vote Average: #{movie.vote_average}" %><br>
   <% end %>
 </div>
