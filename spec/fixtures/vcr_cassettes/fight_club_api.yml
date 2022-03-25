@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.themoviedb.org/3/movie/550?api_key=8122e86ef113e8a8f0006bf44baa66b8
+    uri: https://api.themoviedb.org/3/movie/550?api_key=1ec9e62dd205ce3e903d25e76c1d29f1
     body:
       encoding: US-ASCII
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 24 Mar 2022 11:50:20 GMT
+      - Thu, 24 Mar 2022 21:06:11 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,21 +42,23 @@ http_interactions:
       X-Memc-Key:
       - 8f3dc9fbf00ec8ef64b14b7080f4013a23d639da
       X-Memc-Age:
-      - '633'
+      - '1244'
       X-Memc-Expires:
-      - '16486'
+      - '14376'
       Etag:
-      - W/"7abda3f54fb4ba05e8954c2d5186f521"
+      - W/"1e9b50aaa095bfdd8f47b369ee46b684"
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 2d26ba7e90592f6aaf3e7940a7088a62.cloudfront.net (CloudFront)
+      - 1.1 c55bfc9d9a95cdee8e23989feddaa4b2.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - ATL56-C2
+      - DEN50-C2
       X-Amz-Cf-Id:
-      - buPUL633pZZ5Y67Rn32UqUQgd5Ju_iMMj99dydnARlq25hlA6Fhizw==
+      - OSfJCab3EZyqqx_DrSh1jcNrTBBpqzkj_0vUjyKv7bpTye9B0aOtgw==
+      Age:
+      - '3660'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
@@ -71,6 +73,6 @@ http_interactions:
         Films","origin_country":"US"},{"id":4700,"logo_path":"/A32wmjrs9Psf4zw0uaixF0GXfxq.png","name":"The
         Linson Company","origin_country":"US"}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
-        Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.4,"vote_count":23721}'
-  recorded_at: Thu, 24 Mar 2022 11:50:21 GMT
+        Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.4,"vote_count":23723}'
+  recorded_at: Thu, 24 Mar 2022 22:07:11 GMT
 recorded_with: VCR 6.1.0
