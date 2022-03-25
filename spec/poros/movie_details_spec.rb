@@ -7,7 +7,8 @@ RSpec.describe MovieDetails do
       genres: [{:id=>18, :name=>"Drama"}, {:id=>80, :name=>"Crime"}],
       runtime: 150,
       overview: 'Really good batman movie',
-      vote_average: 8.8
+      vote_average: 8.8,
+      id: 299
     }
   end
   it 'has attributes', :vcr do
@@ -20,6 +21,7 @@ RSpec.describe MovieDetails do
     expect(mov_details.run_time).to eq(150)
     expect(mov_details.summary).to eq('Really good batman movie')
     expect(mov_details.vote_average).to eq(8.8)
+    expect(mov_details.id).to eq(299)
   end
 
   it '.get_genres', :vcr do
