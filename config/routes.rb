@@ -10,7 +10,9 @@ Rails.application.routes.draw do
     resources :discover, only: [:index]
   end
 
+
   namespace :user, only: [:index, :show], module: :user do
     resources :parties, only: [:index, :show, :new, :create]
+
  end
 end

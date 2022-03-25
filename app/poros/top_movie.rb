@@ -1,8 +1,10 @@
-class TopMovies
+
+class TopMovie
+  attr_reader :title, :vote
 
   def initialize(attributes)
-    binding.pry
     @title = attributes[:original_title]
     @vote = attributes[:vote_average]
   end
-end
+
+end 
