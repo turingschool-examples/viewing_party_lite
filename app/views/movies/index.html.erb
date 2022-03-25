@@ -1,7 +1,6 @@
 <div class="resutls">
-  <%@results.map do |movie| %>
-    <% binding.pry %>
-    <%= link_to "#{movie.title}" %>
+  <%@results.each do |movie| %>
     <%= movie.vote_average %>
+    <%= link_to "#{movie.title}", user_movies_path(@user, @movie)%>
   <% end %>
 </div>

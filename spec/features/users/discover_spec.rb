@@ -17,8 +17,9 @@ RSpec.describe 'Discover Page' do
     it 'has a search bar to find up to 40 movies' do
       visit user_discover_index_path(@user)
       VCR.use_cassette('fight_results_api') do
-        fill_in "Search", with: "fight"
+        fill_in 'Search', with:'fight'
         click_on 'Find Movies'
+        save_and_open_page
         expect(current_path).to eq(user_movies_path(@user))
       end
     end
