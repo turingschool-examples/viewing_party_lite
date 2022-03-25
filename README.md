@@ -1,65 +1,49 @@
-# # Viewing Party
+# Viewing Party
 
-Table of Contents
+### Table of Contents
 
-About The Project
-Setup for the use of the project
-Local Setup for any other use
-Versions
-Database Schema
-Built With
-Setup Instructions
+- About The Project
+- Database Design
+- Getting Started
+- Built With
+- Testing
 
-This is the base repo for the [Viewing Party Lite project](https://backend.turing.io/module3/projects/viewing_party_lite) used for Turing's Backend Module 3.
+## About The Project
 
-### About this Project
+- Viewing Part Lite is an application in which users can explore movie options and create a viewing party event for themselves and other users of the application.
+- Utilized API consumption from [The MovieDB](https://www.themoviedb.org/)
+- This is the Pair Project in Mod 3 of Turing's Back-End Program (2111 BE Cohort)
+- Available on Heroku at [ViewingPartyLite](https://enigmatic-sea-76964.herokuapp.com/)
+- [Turing Project Page](https://backend.turing.edu/module3/projects/viewing_party_lite/index)
 
-Viewing Part Lite is an application in which users can explore movie options and create a viewing party event for themselves and other users of the application.
+## Database Design
 
-## Setup for the use of the project
+![viewing_party_db_design](https://user-images.githubusercontent.com/91357724/160152902-de49c3e1-fa1c-4364-b7f4-d4518a609159.png)
 
-1. A conveyor belt link will be sent out at project kickoff so that you can both fork and copy the project board on this base repo. 
-
-## Local Setup for any other use
+## Getting Started
 
 1. Fork and Clone the repo: [GitHub - stevenjames-turing/viewing_party_lite](https://github.com/stevenjames-turing/viewing_party_lite)
 2. Install gem packages: `bundle install`
-3. Setup the database: `rails db:create`
+3. Setup the database: `rails db:{create,migrate,seed}`
 
-
-## Versions
-
-- Ruby 2.7.2
-
-- Rails 5.2.6
-- 
 ## Built With:
 
-Ruby on Rails
-Postgresql
-Bootstrap
-MovieDB API
+- Framework: Ruby on Rails
+- Database: PostgreSQL
+- API: The MovieDB API
+- Styling: Bootstrap, CSS, HTML5
+- Versions
+  - Ruby: 2.7.4
+  - Rails: 5.2.6
 
-## Setup Instructions
-To get a local copy up and running follow these steps:
+## Testing:
 
-1. Clone the repo
-git clone : git@github.com:stevenjames-turing/viewing_party_lite.git
-2. Install dependencies
-bundle install
-3. DB creation/migration
-rails db:create
-rails db:migrate
-rails db:seed
-4. Run tests and view test coverage
-bundle exec rspec
-open coverage/index.html
-5. Run server and navigate to http://localhost:3000/
-rails s
+  - All Features and Models are fully tested using RSpec. 
+  - You can run RSpec on any directory/file using `bundle exec rspec <directory/file>`
+  - SimpleCov is included to ensure tests have full coverage.
+  - To run the Simplecov report type the following into your terminal: open coverage/index.html
+  - See details here: [SimpleCov](https://github.com/simplecov-ruby/simplecov)
 
-OR
-
-Visit heroku: [ViewingPartyLite](https://enigmatic-sea-76964.herokuapp.com/)
-
-
-Example wireframes to follow are found [here](https://backend.turing.io/module3/projects/viewing_party_lite/wireframes)
+### Authors
+   -[Steven James](https://github.com/stevenjames-turing)<br>
+   -[Becky Nisttahuz](https://github.com/benistta)
