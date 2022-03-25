@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 24 Mar 2022 21:26:22 GMT
+      - Fri, 25 Mar 2022 17:17:56 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,28 +42,28 @@ http_interactions:
       X-Memc-Key:
       - d6bf6bb2b223dd56041c3a5b2fbccdb351fcd86c
       X-Memc-Age:
-      - '12886'
+      - '1379'
       X-Memc-Expires:
-      - '4022'
+      - '16509'
       Etag:
-      - W/"385fa6e99f659daf5cb301d450848889"
+      - W/"d1d83f333511a9939096fad806af9660"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 71ac84ce28b8e737049ed30fbe9a65dc.cloudfront.net (CloudFront)
+      - 1.1 25161ee8e0bc1cc9e1cea0d22207b908.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DFW56-P5
       X-Amz-Cf-Id:
-      - QLSOpuW1CKhmKI4mBY7l-CyzZETkCjTJ1NI2iHYNVWlG6_oiEm3hnA==
+      - BWrtZIvorA0QkV7lI8NwJfsrP2HRnFyWCgNUznhRCm0R1J27WXQgVA==
       Age:
-      - '3906'
+      - '699'
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvMXFNMkJZTkUxMVZpYnk4SW1DOUxDMDBEZ0RyLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjoyNTAwMDAwMCwiZ2VucmVzIjpbeyJpZCI6MjgsIm5hbWUiOiJBY3Rpb24ifSx7ImlkIjo4MCwibmFtZSI6IkNyaW1lIn0seyJpZCI6MTgsIm5hbWUiOiJEcmFtYSJ9LHsiaWQiOjUzLCJuYW1lIjoiVGhyaWxsZXIifV0sImhvbWVwYWdlIjoiIiwiaWQiOjExMSwiaW1kYl9pZCI6InR0MDA4NjI1MCIsIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6IlNjYXJmYWNlIiwib3ZlcnZpZXciOiJBZnRlciBnZXR0aW5nIGEgZ3JlZW4gY2FyZCBpbiBleGNoYW5nZSBmb3IgYXNzYXNzaW5hdGluZyBhIEN1YmFuIGdvdmVybm1lbnQgb2ZmaWNpYWwsIFRvbnkgTW9udGFuYSBzdGFrZXMgYSBjbGFpbSBvbiB0aGUgZHJ1ZyB0cmFkZSBpbiBNaWFtaS4gVmljaW91c2x5IG11cmRlcmluZyBhbnlvbmUgd2hvIHN0YW5kcyBpbiBoaXMgd2F5LCBUb255IGV2ZW50dWFsbHkgYmVjb21lcyB0aGUgYmlnZ2VzdCBkcnVnIGxvcmQgaW4gdGhlIHN0YXRlLCBjb250cm9sbGluZyBuZWFybHkgYWxsIHRoZSBjb2NhaW5lIHRoYXQgY29tZXMgdGhyb3VnaCBNaWFtaS4gQnV0IGluY3JlYXNlZCBwcmVzc3VyZSBmcm9tIHRoZSBwb2xpY2UsIHdhcnMgd2l0aCBDb2xvbWJpYW4gZHJ1ZyBjYXJ0ZWxzIGFuZCBoaXMgb3duIGRydWctZnVlbGVkIHBhcmFub2lhIHNlcnZlIHRvIGZ1ZWwgdGhlIGZsYW1lcyBvZiBoaXMgZXZlbnR1YWwgZG93bmZhbGwuIiwicG9wdWxhcml0eSI6NjUuNTMsInBvc3Rlcl9wYXRoIjoiLzMycExET2J0SXQyTUpjZFBHOW1RS3V5YkltTC5qcGciLCJwcm9kdWN0aW9uX2NvbXBhbmllcyI6W3siaWQiOjMzLCJsb2dvX3BhdGgiOiIvOGx2SHloanI4b1VLT095MmRLWG9BTFdLZHAwLnBuZyIsIm5hbWUiOiJVbml2ZXJzYWwgUGljdHVyZXMiLCJvcmlnaW5fY291bnRyeSI6IlVTIn1dLCJwcm9kdWN0aW9uX2NvdW50cmllcyI6W3siaXNvXzMxNjZfMSI6IlVTIiwibmFtZSI6IlVuaXRlZCBTdGF0ZXMgb2YgQW1lcmljYSJ9XSwicmVsZWFzZV9kYXRlIjoiMTk4My0xMi0wOSIsInJldmVudWUiOjY2MDIzMzI5LCJydW50aW1lIjoxNzAsInNwb2tlbl9sYW5ndWFnZXMiOlt7ImVuZ2xpc2hfbmFtZSI6IkVuZ2xpc2giLCJpc29fNjM5XzEiOiJlbiIsIm5hbWUiOiJFbmdsaXNoIn0seyJlbmdsaXNoX25hbWUiOiJTcGFuaXNoIiwiaXNvXzYzOV8xIjoiZXMiLCJuYW1lIjoiRXNwYcOxb2wifV0sInN0YXR1cyI6IlJlbGVhc2VkIiwidGFnbGluZSI6IlRoZSB3b3JsZCBpcyB5b3Vycy4uLiIsInRpdGxlIjoiU2NhcmZhY2UiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6OC4yLCJ2b3RlX2NvdW50Ijo5MTAxfQ==
-  recorded_at: Thu, 24 Mar 2022 22:31:28 GMT
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvMXFNMkJZTkUxMVZpYnk4SW1DOUxDMDBEZ0RyLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjoyNTAwMDAwMCwiZ2VucmVzIjpbeyJpZCI6MjgsIm5hbWUiOiJBY3Rpb24ifSx7ImlkIjo4MCwibmFtZSI6IkNyaW1lIn0seyJpZCI6MTgsIm5hbWUiOiJEcmFtYSJ9LHsiaWQiOjUzLCJuYW1lIjoiVGhyaWxsZXIifV0sImhvbWVwYWdlIjoiIiwiaWQiOjExMSwiaW1kYl9pZCI6InR0MDA4NjI1MCIsIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6IlNjYXJmYWNlIiwib3ZlcnZpZXciOiJBZnRlciBnZXR0aW5nIGEgZ3JlZW4gY2FyZCBpbiBleGNoYW5nZSBmb3IgYXNzYXNzaW5hdGluZyBhIEN1YmFuIGdvdmVybm1lbnQgb2ZmaWNpYWwsIFRvbnkgTW9udGFuYSBzdGFrZXMgYSBjbGFpbSBvbiB0aGUgZHJ1ZyB0cmFkZSBpbiBNaWFtaS4gVmljaW91c2x5IG11cmRlcmluZyBhbnlvbmUgd2hvIHN0YW5kcyBpbiBoaXMgd2F5LCBUb255IGV2ZW50dWFsbHkgYmVjb21lcyB0aGUgYmlnZ2VzdCBkcnVnIGxvcmQgaW4gdGhlIHN0YXRlLCBjb250cm9sbGluZyBuZWFybHkgYWxsIHRoZSBjb2NhaW5lIHRoYXQgY29tZXMgdGhyb3VnaCBNaWFtaS4gQnV0IGluY3JlYXNlZCBwcmVzc3VyZSBmcm9tIHRoZSBwb2xpY2UsIHdhcnMgd2l0aCBDb2xvbWJpYW4gZHJ1ZyBjYXJ0ZWxzIGFuZCBoaXMgb3duIGRydWctZnVlbGVkIHBhcmFub2lhIHNlcnZlIHRvIGZ1ZWwgdGhlIGZsYW1lcyBvZiBoaXMgZXZlbnR1YWwgZG93bmZhbGwuIiwicG9wdWxhcml0eSI6NTcuODMsInBvc3Rlcl9wYXRoIjoiLzMycExET2J0SXQyTUpjZFBHOW1RS3V5YkltTC5qcGciLCJwcm9kdWN0aW9uX2NvbXBhbmllcyI6W3siaWQiOjMzLCJsb2dvX3BhdGgiOiIvOGx2SHloanI4b1VLT095MmRLWG9BTFdLZHAwLnBuZyIsIm5hbWUiOiJVbml2ZXJzYWwgUGljdHVyZXMiLCJvcmlnaW5fY291bnRyeSI6IlVTIn1dLCJwcm9kdWN0aW9uX2NvdW50cmllcyI6W3siaXNvXzMxNjZfMSI6IlVTIiwibmFtZSI6IlVuaXRlZCBTdGF0ZXMgb2YgQW1lcmljYSJ9XSwicmVsZWFzZV9kYXRlIjoiMTk4My0xMi0wOSIsInJldmVudWUiOjY2MDIzMzI5LCJydW50aW1lIjoxNzAsInNwb2tlbl9sYW5ndWFnZXMiOlt7ImVuZ2xpc2hfbmFtZSI6IkVuZ2xpc2giLCJpc29fNjM5XzEiOiJlbiIsIm5hbWUiOiJFbmdsaXNoIn0seyJlbmdsaXNoX25hbWUiOiJTcGFuaXNoIiwiaXNvXzYzOV8xIjoiZXMiLCJuYW1lIjoiRXNwYcOxb2wifV0sInN0YXR1cyI6IlJlbGVhc2VkIiwidGFnbGluZSI6IlRoZSB3b3JsZCBpcyB5b3Vycy4uLiIsInRpdGxlIjoiU2NhcmZhY2UiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6OC4yLCJ2b3RlX2NvdW50Ijo5MTAzfQ==
+  recorded_at: Fri, 25 Mar 2022 17:29:36 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/111?api_key=<movie_api_key>
@@ -89,7 +89,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 24 Mar 2022 21:26:22 GMT
+      - Fri, 25 Mar 2022 17:17:56 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -106,28 +106,28 @@ http_interactions:
       X-Memc-Key:
       - d6bf6bb2b223dd56041c3a5b2fbccdb351fcd86c
       X-Memc-Age:
-      - '12886'
+      - '1379'
       X-Memc-Expires:
-      - '4022'
+      - '16509'
       Etag:
-      - W/"385fa6e99f659daf5cb301d450848889"
+      - W/"d1d83f333511a9939096fad806af9660"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 a1b39ac931c8c7a9dc8f50195bee08a4.cloudfront.net (CloudFront)
+      - 1.1 afd102780059267a882ab641a00a66d6.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DFW56-P5
       X-Amz-Cf-Id:
-      - DfRPBeyOxBpvZtXO6sOpWj3h9K61Px_xnTn-lH6cqu7CnqtW8BGMOg==
+      - aRaeMtf_F2EVUMyvXd_wv3NjvdU8QS-OUDSzekzumtvlG9XI3Afc_A==
       Age:
-      - '3906'
+      - '699'
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvMXFNMkJZTkUxMVZpYnk4SW1DOUxDMDBEZ0RyLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjoyNTAwMDAwMCwiZ2VucmVzIjpbeyJpZCI6MjgsIm5hbWUiOiJBY3Rpb24ifSx7ImlkIjo4MCwibmFtZSI6IkNyaW1lIn0seyJpZCI6MTgsIm5hbWUiOiJEcmFtYSJ9LHsiaWQiOjUzLCJuYW1lIjoiVGhyaWxsZXIifV0sImhvbWVwYWdlIjoiIiwiaWQiOjExMSwiaW1kYl9pZCI6InR0MDA4NjI1MCIsIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6IlNjYXJmYWNlIiwib3ZlcnZpZXciOiJBZnRlciBnZXR0aW5nIGEgZ3JlZW4gY2FyZCBpbiBleGNoYW5nZSBmb3IgYXNzYXNzaW5hdGluZyBhIEN1YmFuIGdvdmVybm1lbnQgb2ZmaWNpYWwsIFRvbnkgTW9udGFuYSBzdGFrZXMgYSBjbGFpbSBvbiB0aGUgZHJ1ZyB0cmFkZSBpbiBNaWFtaS4gVmljaW91c2x5IG11cmRlcmluZyBhbnlvbmUgd2hvIHN0YW5kcyBpbiBoaXMgd2F5LCBUb255IGV2ZW50dWFsbHkgYmVjb21lcyB0aGUgYmlnZ2VzdCBkcnVnIGxvcmQgaW4gdGhlIHN0YXRlLCBjb250cm9sbGluZyBuZWFybHkgYWxsIHRoZSBjb2NhaW5lIHRoYXQgY29tZXMgdGhyb3VnaCBNaWFtaS4gQnV0IGluY3JlYXNlZCBwcmVzc3VyZSBmcm9tIHRoZSBwb2xpY2UsIHdhcnMgd2l0aCBDb2xvbWJpYW4gZHJ1ZyBjYXJ0ZWxzIGFuZCBoaXMgb3duIGRydWctZnVlbGVkIHBhcmFub2lhIHNlcnZlIHRvIGZ1ZWwgdGhlIGZsYW1lcyBvZiBoaXMgZXZlbnR1YWwgZG93bmZhbGwuIiwicG9wdWxhcml0eSI6NjUuNTMsInBvc3Rlcl9wYXRoIjoiLzMycExET2J0SXQyTUpjZFBHOW1RS3V5YkltTC5qcGciLCJwcm9kdWN0aW9uX2NvbXBhbmllcyI6W3siaWQiOjMzLCJsb2dvX3BhdGgiOiIvOGx2SHloanI4b1VLT095MmRLWG9BTFdLZHAwLnBuZyIsIm5hbWUiOiJVbml2ZXJzYWwgUGljdHVyZXMiLCJvcmlnaW5fY291bnRyeSI6IlVTIn1dLCJwcm9kdWN0aW9uX2NvdW50cmllcyI6W3siaXNvXzMxNjZfMSI6IlVTIiwibmFtZSI6IlVuaXRlZCBTdGF0ZXMgb2YgQW1lcmljYSJ9XSwicmVsZWFzZV9kYXRlIjoiMTk4My0xMi0wOSIsInJldmVudWUiOjY2MDIzMzI5LCJydW50aW1lIjoxNzAsInNwb2tlbl9sYW5ndWFnZXMiOlt7ImVuZ2xpc2hfbmFtZSI6IkVuZ2xpc2giLCJpc29fNjM5XzEiOiJlbiIsIm5hbWUiOiJFbmdsaXNoIn0seyJlbmdsaXNoX25hbWUiOiJTcGFuaXNoIiwiaXNvXzYzOV8xIjoiZXMiLCJuYW1lIjoiRXNwYcOxb2wifV0sInN0YXR1cyI6IlJlbGVhc2VkIiwidGFnbGluZSI6IlRoZSB3b3JsZCBpcyB5b3Vycy4uLiIsInRpdGxlIjoiU2NhcmZhY2UiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6OC4yLCJ2b3RlX2NvdW50Ijo5MTAxfQ==
-  recorded_at: Thu, 24 Mar 2022 22:31:28 GMT
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvMXFNMkJZTkUxMVZpYnk4SW1DOUxDMDBEZ0RyLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjoyNTAwMDAwMCwiZ2VucmVzIjpbeyJpZCI6MjgsIm5hbWUiOiJBY3Rpb24ifSx7ImlkIjo4MCwibmFtZSI6IkNyaW1lIn0seyJpZCI6MTgsIm5hbWUiOiJEcmFtYSJ9LHsiaWQiOjUzLCJuYW1lIjoiVGhyaWxsZXIifV0sImhvbWVwYWdlIjoiIiwiaWQiOjExMSwiaW1kYl9pZCI6InR0MDA4NjI1MCIsIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6IlNjYXJmYWNlIiwib3ZlcnZpZXciOiJBZnRlciBnZXR0aW5nIGEgZ3JlZW4gY2FyZCBpbiBleGNoYW5nZSBmb3IgYXNzYXNzaW5hdGluZyBhIEN1YmFuIGdvdmVybm1lbnQgb2ZmaWNpYWwsIFRvbnkgTW9udGFuYSBzdGFrZXMgYSBjbGFpbSBvbiB0aGUgZHJ1ZyB0cmFkZSBpbiBNaWFtaS4gVmljaW91c2x5IG11cmRlcmluZyBhbnlvbmUgd2hvIHN0YW5kcyBpbiBoaXMgd2F5LCBUb255IGV2ZW50dWFsbHkgYmVjb21lcyB0aGUgYmlnZ2VzdCBkcnVnIGxvcmQgaW4gdGhlIHN0YXRlLCBjb250cm9sbGluZyBuZWFybHkgYWxsIHRoZSBjb2NhaW5lIHRoYXQgY29tZXMgdGhyb3VnaCBNaWFtaS4gQnV0IGluY3JlYXNlZCBwcmVzc3VyZSBmcm9tIHRoZSBwb2xpY2UsIHdhcnMgd2l0aCBDb2xvbWJpYW4gZHJ1ZyBjYXJ0ZWxzIGFuZCBoaXMgb3duIGRydWctZnVlbGVkIHBhcmFub2lhIHNlcnZlIHRvIGZ1ZWwgdGhlIGZsYW1lcyBvZiBoaXMgZXZlbnR1YWwgZG93bmZhbGwuIiwicG9wdWxhcml0eSI6NTcuODMsInBvc3Rlcl9wYXRoIjoiLzMycExET2J0SXQyTUpjZFBHOW1RS3V5YkltTC5qcGciLCJwcm9kdWN0aW9uX2NvbXBhbmllcyI6W3siaWQiOjMzLCJsb2dvX3BhdGgiOiIvOGx2SHloanI4b1VLT095MmRLWG9BTFdLZHAwLnBuZyIsIm5hbWUiOiJVbml2ZXJzYWwgUGljdHVyZXMiLCJvcmlnaW5fY291bnRyeSI6IlVTIn1dLCJwcm9kdWN0aW9uX2NvdW50cmllcyI6W3siaXNvXzMxNjZfMSI6IlVTIiwibmFtZSI6IlVuaXRlZCBTdGF0ZXMgb2YgQW1lcmljYSJ9XSwicmVsZWFzZV9kYXRlIjoiMTk4My0xMi0wOSIsInJldmVudWUiOjY2MDIzMzI5LCJydW50aW1lIjoxNzAsInNwb2tlbl9sYW5ndWFnZXMiOlt7ImVuZ2xpc2hfbmFtZSI6IkVuZ2xpc2giLCJpc29fNjM5XzEiOiJlbiIsIm5hbWUiOiJFbmdsaXNoIn0seyJlbmdsaXNoX25hbWUiOiJTcGFuaXNoIiwiaXNvXzYzOV8xIjoiZXMiLCJuYW1lIjoiRXNwYcOxb2wifV0sInN0YXR1cyI6IlJlbGVhc2VkIiwidGFnbGluZSI6IlRoZSB3b3JsZCBpcyB5b3Vycy4uLiIsInRpdGxlIjoiU2NhcmZhY2UiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6OC4yLCJ2b3RlX2NvdW50Ijo5MTAzfQ==
+  recorded_at: Fri, 25 Mar 2022 17:29:36 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/550?api_key=<movie_api_key>
@@ -153,7 +153,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 24 Mar 2022 21:33:12 GMT
+      - Fri, 25 Mar 2022 17:25:09 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -170,23 +170,23 @@ http_interactions:
       X-Memc-Key:
       - 8f3dc9fbf00ec8ef64b14b7080f4013a23d639da
       X-Memc-Age:
-      - '2865'
+      - '7839'
       X-Memc-Expires:
-      - '12755'
+      - '9692'
       Etag:
-      - W/"1e9b50aaa095bfdd8f47b369ee46b684"
+      - W/"71a057d9270f13139fecb25962584c4a"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 e474fa753e7e530faa5c82db12f758ee.cloudfront.net (CloudFront)
+      - 1.1 9989b80323450ea59d9fff734d266c62.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DFW56-P5
       X-Amz-Cf-Id:
-      - RKFucASJQVUGV9qjltvGE-OPDnftwthlT1drMhTy3kiFLtQqZ_id_A==
+      - Rdu0m1imwYXAS9rt80tQUNeEk44Cg44COS1HJ8iDF6VyuBsT9RByvw==
       Age:
-      - '3496'
+      - '267'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
@@ -194,15 +194,15 @@ http_interactions:
         channel primal male aggression into a shocking new form of therapy. Their
         concept catches on, with underground \"fight clubs\" forming in every town,
         until an eccentric gets in the way and ignites an out-of-control spiral toward
-        oblivion.","popularity":66.417,"poster_path":"/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg","production_companies":[{"id":508,"logo_path":"/7PzJdsLGlR7oW4J0J5Xcd0pHGRg.png","name":"Regency
+        oblivion.","popularity":70.914,"poster_path":"/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg","production_companies":[{"id":508,"logo_path":"/7PzJdsLGlR7oW4J0J5Xcd0pHGRg.png","name":"Regency
         Enterprises","origin_country":"US"},{"id":711,"logo_path":"/tEiIH5QesdheJmDAqQwvtN60727.png","name":"Fox
         2000 Pictures","origin_country":"US"},{"id":20555,"logo_path":"/hD8yEGUBlHOcfHYbujp71vD8gZp.png","name":"Taurus
         Film","origin_country":"DE"},{"id":54051,"logo_path":null,"name":"Atman Entertainment","origin_country":""},{"id":54052,"logo_path":null,"name":"Knickerbocker
         Films","origin_country":"US"},{"id":4700,"logo_path":"/A32wmjrs9Psf4zw0uaixF0GXfxq.png","name":"The
         Linson Company","origin_country":"US"}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
-        Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.4,"vote_count":23723}'
-  recorded_at: Thu, 24 Mar 2022 22:31:28 GMT
+        Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.4,"vote_count":23725}'
+  recorded_at: Fri, 25 Mar 2022 17:29:36 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/550?api_key=<movie_api_key>
@@ -228,7 +228,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 24 Mar 2022 21:33:12 GMT
+      - Fri, 25 Mar 2022 17:25:09 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -245,23 +245,23 @@ http_interactions:
       X-Memc-Key:
       - 8f3dc9fbf00ec8ef64b14b7080f4013a23d639da
       X-Memc-Age:
-      - '2865'
+      - '7839'
       X-Memc-Expires:
-      - '12755'
+      - '9692'
       Etag:
-      - W/"1e9b50aaa095bfdd8f47b369ee46b684"
+      - W/"71a057d9270f13139fecb25962584c4a"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 b47da3ec0e7532d35176d3affb527e34.cloudfront.net (CloudFront)
+      - 1.1 49ebf453d90a4d7fa51513af32906a5c.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DFW56-P5
       X-Amz-Cf-Id:
-      - Hnt5dydggb0UBdGUXr95JnO1Tf_-MTbsc2a7lyTiE-agCK6gVmJSlg==
+      - byv3svkeDkuRgeRRIjuIQytmk3GpN2txNTtuqH6HaOaoYhET2PNj5A==
       Age:
-      - '3497'
+      - '267'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
@@ -269,13 +269,13 @@ http_interactions:
         channel primal male aggression into a shocking new form of therapy. Their
         concept catches on, with underground \"fight clubs\" forming in every town,
         until an eccentric gets in the way and ignites an out-of-control spiral toward
-        oblivion.","popularity":66.417,"poster_path":"/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg","production_companies":[{"id":508,"logo_path":"/7PzJdsLGlR7oW4J0J5Xcd0pHGRg.png","name":"Regency
+        oblivion.","popularity":70.914,"poster_path":"/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg","production_companies":[{"id":508,"logo_path":"/7PzJdsLGlR7oW4J0J5Xcd0pHGRg.png","name":"Regency
         Enterprises","origin_country":"US"},{"id":711,"logo_path":"/tEiIH5QesdheJmDAqQwvtN60727.png","name":"Fox
         2000 Pictures","origin_country":"US"},{"id":20555,"logo_path":"/hD8yEGUBlHOcfHYbujp71vD8gZp.png","name":"Taurus
         Film","origin_country":"DE"},{"id":54051,"logo_path":null,"name":"Atman Entertainment","origin_country":""},{"id":54052,"logo_path":null,"name":"Knickerbocker
         Films","origin_country":"US"},{"id":4700,"logo_path":"/A32wmjrs9Psf4zw0uaixF0GXfxq.png","name":"The
         Linson Company","origin_country":"US"}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
-        Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.4,"vote_count":23723}'
-  recorded_at: Thu, 24 Mar 2022 22:31:29 GMT
+        Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.4,"vote_count":23725}'
+  recorded_at: Fri, 25 Mar 2022 17:29:36 GMT
 recorded_with: VCR 6.1.0
