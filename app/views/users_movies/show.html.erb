@@ -1,3 +1,6 @@
+<section id="buttons">
+  <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %>
+</section>
 <section id="info">
   <h2>Title: <%= @movie.title %></h2>
   <p>Vote Average: <%= @movie.vote_average %></p>

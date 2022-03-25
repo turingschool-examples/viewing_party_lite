@@ -1,5 +1,19 @@
 require 'rails_helper'
   RSpec.describe 'The User Movie Show Page' do 
+
+    it 'has a button to bring the user back to the discover page' do 
+      user = User.create!(name: 'User', email: 'email')
+
+      VCR.use_cassette('movie_title') do 
+        visit "/users/#{user.id}/movies/24126/"
+        within '#buttons' do 
+          expect(page).to have_button('Discover Page')
+          click_button('Discover Page')
+          expect(current_path).to eq("/users/#{user.id}/discover")
+        end
+      end
+    end
+
     it 'displays a movies title, vote_average, runtime, genre and summary' do 
       user = User.create!(name: 'user', email: 'email')
 
