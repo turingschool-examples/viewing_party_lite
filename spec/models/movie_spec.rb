@@ -20,10 +20,10 @@ RSpec.describe Movie, type: :model do
 
     describe '.get_info' do
       it 'gets all api attributes' do
-        VCR.use_cassette('fight_club_api') do
+        # VCR.use_cassette('fight_club_api') do
           expect(@movie_1.get_info).to be_an_instance_of(MovieCall)
           expect(@movie_1.get_info.title).to eq("Fight Club")
-        end
+        # end
       end
     end
   end
