@@ -34,6 +34,7 @@ require 'rails_helper'
         visit "/users/#{user.id}/movies/24126/"
         within '#info' do 
           expect(page).to have_content('Warlock: The Armageddon')
+          expect(page).to_not have_content('The Shawshank Redemption')
           expect(page).to have_content('5.2')
           expect(page).to have_content('1 hour(s) 38 minutes')
           expect(page).to have_content('Fantasy')
@@ -51,6 +52,7 @@ require 'rails_helper'
       visit "/users/#{user.id}/movies/24126/"
       within '#cast' do
         expect(page).to have_content('Cast')
+        expect(page).to_not have_content('The Shawshank Redemption')
         expect(page).to have_content('Julian Sands')
         expect(page).to have_content('Warlock')
         expect(page).to have_content('Name: Paula Marshall')
@@ -66,6 +68,7 @@ require 'rails_helper'
       visit "/users/#{user.id}/movies/278/"
       within '#reviews' do
         expect(page).to have_content('Author Name: elshaarawy')
+        expect(page).to_not have_content('Cast')
         expect(page).to have_content('Review: Make way for the best film ever made people. **Make way.**')
         expect(page).to have_content('Rating: 6.0')
         expect(page).to have_content('Author Handle: thommo_nz')
