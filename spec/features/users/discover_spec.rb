@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Discover Page' do
   it 'has a button to discover top rated movies' do
+    User.destroy_all
     user = User.create!(name: 'user', email: 'email')
 
     VCR.use_cassette('top_rated_movies') do
@@ -16,6 +17,7 @@ RSpec.describe 'Discover Page' do
   end
 
   it 'has a search bar to search for specific movies' do
+    User.destroy_all
     user = User.create!(name: 'user', email: 'email')
 
     VCR.use_cassette('movie_search') do

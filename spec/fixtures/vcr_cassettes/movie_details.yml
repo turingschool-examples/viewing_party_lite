@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 25 Mar 2022 01:41:05 GMT
+      - Fri, 25 Mar 2022 13:20:52 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,21 +42,23 @@ http_interactions:
       X-Memc-Key:
       - 0ef9081ef7ce34f15297b5b9c1625bf764bc05fe
       X-Memc-Age:
-      - '7958'
+      - '15657'
       X-Memc-Expires:
-      - '9182'
+      - '1877'
       Etag:
-      - W/"9fdfa2392f34126e0aceec21288792c4"
+      - W/"5cda6db36f6eda21d56e1fc9334c2810"
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 c974a69619205281e0e6b8e73f95e4b4.cloudfront.net (CloudFront)
+      - 1.1 9c90b41a9e5ac2856624d29ed4da4234.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - IAD89-C3
       X-Amz-Cf-Id:
-      - 2-4StQAyzIa4AByV3ww-xjyxM6iJB1CtoyBdunP5wJIBTKcgveThMg==
+      - VUfg1mxCZf4FnXV7JnSL-jgNy7miHrr9U5fDuco5H44VlRXIKIGA2A==
+      Age:
+      - '12967'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/meOtdGhHZIOCmCdBqVe1AzTG7M2.jpg","belongs_to_collection":{"id":87536,"name":"Warlock
@@ -66,10 +68,10 @@ http_interactions:
         opportunity to escape and unleash Armageddon. A group of five stones has the
         power to either free the evil, or banish it for another six hundred years.
         An order of Druids battles with a Warlock determined to unleash his father
-        upon the world.","popularity":17.399,"poster_path":"/qpRtxbnLb0qFP93db5vwDDXvWz2.jpg","production_companies":[{"id":870,"logo_path":null,"name":"Tapestry
+        upon the world.","popularity":14.11,"poster_path":"/qpRtxbnLb0qFP93db5vwDDXvWz2.jpg","production_companies":[{"id":870,"logo_path":null,"name":"Tapestry
         Films","origin_country":"US"},{"id":4063,"logo_path":null,"name":"Trimark
         Pictures","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1993-05-01","revenue":3902679,"runtime":98,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"When
         he comes... All hell breaks loose.","title":"Warlock: The Armageddon","video":false,"vote_average":5.2,"vote_count":105}'
-  recorded_at: Fri, 25 Mar 2022 01:41:05 GMT
+  recorded_at: Fri, 25 Mar 2022 16:56:59 GMT
 recorded_with: VCR 6.1.0

@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'the user dashboard' do
   it "exists and has a dynamic title for a user" do
+    User.destroy_all
     user_1 = User.create!(name: 'user_1', email: 'email@gmail.com')
     user_2 = User.create!(name: 'user_2', email: 'email2@gmail.com')
 
@@ -16,6 +17,7 @@ RSpec.describe 'the user dashboard' do
   end
 
   it "has a discover movies button which links to the discover page" do
+    User.destroy_all
     user_1 = User.create!(name: 'user_1', email: 'email@gmail.com')
 
     visit user_path(user_1.id)
@@ -41,13 +43,12 @@ RSpec.describe 'the user dashboard' do
     user.user_parties.create!(party_id: party_1.id, user_id: user.id)
     user.user_parties.create!(party_id: party_2.id, user_id: user.id)
     user_2.user_parties.create!(party_id: party_2.id, user_id: user_2.id)
-    
-    VCR.use_cassette('viewing_party_invites') do 
+
+    VCR.use_cassette('viewing_party_invites') do
       visit user_path(user.id)
-      save_and_open_page
       within '#parties' do
         expect(page).to have_content("My Viewing Parties")
-        within '#invitations' do 
+        within '#invitations' do
           expect(page).to have_content("My Invitations")
           expect(page).to have_content("Date: 2022-03-25")
           expect(page).to have_content("Time: 2000-01-01 06:00:00 UTC")
@@ -56,7 +57,7 @@ RSpec.describe 'the user dashboard' do
           expect(page).to have_link("The Shawshank Redemption")
           click_link "The Shawshank Redemption"
           expect(current_path).to eq(user_movie_path(user.id, 278))
-        end 
+        end
       end
     end
   end

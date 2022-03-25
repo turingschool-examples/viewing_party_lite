@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 25 Mar 2022 13:40:33 GMT
+      - Fri, 25 Mar 2022 13:20:52 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,21 +42,23 @@ http_interactions:
       X-Memc-Key:
       - 0ef9081ef7ce34f15297b5b9c1625bf764bc05fe
       X-Memc-Age:
-      - '16838'
+      - '15657'
       X-Memc-Expires:
-      - '696'
+      - '1877'
       Etag:
       - W/"5cda6db36f6eda21d56e1fc9334c2810"
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 e4ca364cc5959e3bf697ae231c5b56b0.cloudfront.net (CloudFront)
+      - 1.1 a1157b69a14bebe8162237750a074fae.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN50-C2
+      - IAD89-C3
       X-Amz-Cf-Id:
-      - azQCx9_w4d7vDnDsqmJG8luE0nrvluxyImvFRSxl9WHErhcfabfb1Q==
+      - y3-G5lwmiO68gZ6Q6xzshMYFg08Q0yYqfSlcKREuREEkD70Z9d4SPg==
+      Age:
+      - '13110'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/meOtdGhHZIOCmCdBqVe1AzTG7M2.jpg","belongs_to_collection":{"id":87536,"name":"Warlock
@@ -71,7 +73,7 @@ http_interactions:
         Pictures","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1993-05-01","revenue":3902679,"runtime":98,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"When
         he comes... All hell breaks loose.","title":"Warlock: The Armageddon","video":false,"vote_average":5.2,"vote_count":105}'
-  recorded_at: Fri, 25 Mar 2022 13:40:33 GMT
+  recorded_at: Fri, 25 Mar 2022 16:59:22 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/24126/credits?api_key=movie_api_key
@@ -97,7 +99,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 25 Mar 2022 13:37:04 GMT
+      - Fri, 25 Mar 2022 16:56:59 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -114,9 +116,9 @@ http_interactions:
       X-Memc-Key:
       - 0ba4bec9bbb0ccb47b692c028ddb6ee62fb0052b
       X-Memc-Age:
-      - '13053'
+      - '8034'
       X-Memc-Expires:
-      - '2684'
+      - '8615'
       Etag:
       - W/"ebed6fed37d7b12a04761ef00dde260c"
       Vary:
@@ -124,13 +126,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 b7f0c5734a286f56595c1e1b456020a2.cloudfront.net (CloudFront)
+      - 1.1 fb41e17254dfd781519e95cedd257826.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN50-C2
+      - IAD89-C3
       X-Amz-Cf-Id:
-      - XHwjkk_L39zkvFdtPxy6Bk9Y56PVlqyGUGyLb7X6VPF-vQQmnGInDg==
+      - UVQ4xT9dC57UdbOwfu3EYQByvUVND04HrxFhXesdhkywKDBuP6e9VA==
       Age:
-      - '209'
+      - '143'
     body:
       encoding: ASCII-8BIT
       string: '{"id":24126,"cast":[{"adult":false,"gender":2,"id":6104,"known_for_department":"Acting","name":"Julian
@@ -329,7 +331,7 @@ http_interactions:
         \u0026 Make-Up","job":"Makeup \u0026 Hair"},{"adult":false,"gender":0,"id":3387599,"known_for_department":"Editing","name":"Larry
         Rovetti","original_name":"Larry Rovetti","popularity":0.6,"profile_path":null,"credit_id":"61e65b759653f6008ed8f931","department":"Editing","job":"Color
         Timer"}]}'
-  recorded_at: Fri, 25 Mar 2022 13:40:33 GMT
+  recorded_at: Fri, 25 Mar 2022 16:59:22 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/24126/reviews?api_key=movie_api_key
@@ -354,6 +356,8 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
+      Date:
+      - Fri, 25 Mar 2022 16:59:22 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -363,32 +367,32 @@ http_interactions:
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
       X-Memc:
-      - HIT
+      - MISS, STORE
       X-Memc-Key:
       - 5759651916741685528cb7b987364054b526dcba
       X-Memc-Age:
-      - '10516'
+      - '0'
       X-Memc-Expires:
-      - '5614'
-      Date:
-      - Fri, 25 Mar 2022 13:40:33 GMT
-      Cache-Control:
-      - public, max-age=28800
-      Etag:
-      - W/"271f72ff06a6b5caae17dc8e65a9e91f"
+      - '15937'
+      Last-Modified:
+      - '2022-01-18 05:19:23 +0000'
       Vary:
       - Accept-Encoding
       X-Cache:
-      - RefreshHit from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 6c02603f677dd5669f8ab3b41062340e.cloudfront.net (CloudFront)
+      - 1.1 b471d3775e81a9be536b52b99f39452a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN50-C2
+      - IAD89-C3
       X-Amz-Cf-Id:
-      - GKObnYtALbSpJYkFdHj7yyce8s95uU7oKC_WQdxpDwSQaijLyb1G9w==
+      - 3_fMoB3bwfN3AbI2EdAryJGsDLd1GKbCoQ0H6BsHb_BMWr8S55qkgw==
+      Age:
+      - '1'
     body:
       encoding: ASCII-8BIT
       string: '{"id":24126,"page":1,"results":[],"total_pages":0,"total_results":0}'
-  recorded_at: Fri, 25 Mar 2022 13:40:33 GMT
+  recorded_at: Fri, 25 Mar 2022 16:59:22 GMT
 recorded_with: VCR 6.1.0
