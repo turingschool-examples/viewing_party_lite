@@ -1,0 +1,11 @@
+<h1>Viewing Party Light</h1>
+<h2>Discover Movies</h2>
+<p><%= button_to 'Find Top Rated Movies', "/users/#{@user.id}/movies", method: :get %></p>
+
+<div id=search>
+<%= render partial: 'form', locals: { path: "/users/#{@user.id}/movies",
+                                      method: :get,
+                                      button_text: "Find Movies"
+                                      }
+                                      %>
+</div>
