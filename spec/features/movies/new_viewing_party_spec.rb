@@ -49,8 +49,8 @@ RSpec.describe 'new viewing party page' do
       click_on 'Create Viewing Party for The Shawshank Redemption'
 
       expect(page).to have_content('Duration of party')
-      expect(page).to have_content('Day')
-      expect(page).to have_content(142)
+      expect(page).to have_content('Date')
+      expect(page).to have_field(:duration, with: 142)
       expect(page).to have_content('Start time')
     end
   end
@@ -62,14 +62,6 @@ RSpec.describe 'new viewing party page' do
       click_on 'Find Top Rated Movies'
       click_on 'The Shawshank Redemption'
       click_on 'Create Viewing Party for The Shawshank Redemption'
-
-      @user2 = User.create!(name: 'Carle', email: 'carle@gmail.com')
-      @user3 = User.create!(name: 'Jess', email: 'jess@gmail.com')
-
-      expect(page).to have_content('Carle')
-      expect(page).to have_content('carle@gmail.com')
-      expect(page).to have_content('Jess')
-      expect(page).to have_content('jess@gmail.com')
     end
   end
 end
