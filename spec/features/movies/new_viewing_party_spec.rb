@@ -28,7 +28,6 @@ RSpec.describe 'new viewing party page' do
           expect(page).to have_field(:duration, with: 112)
           expect(page).to have_content('Date')
           expect(page).to have_content('Start time')
-          save_and_open_page
         end
       end
 
