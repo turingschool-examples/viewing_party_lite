@@ -16,7 +16,7 @@
 
    <% @users.each do |user| %>
     <%= f.check_box "invited[#{user.id}]" %>
-    <%= f.label "#{@user.name} (#{@user.email})" %>
-  <% end %>
+    <%= f.label "#{user.name} (#{user.email})" %>
+  <% end %><br>
    <%= f.submit "Create Party" %>
 <% end %>
