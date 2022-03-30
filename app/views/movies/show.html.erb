@@ -1,0 +1,39 @@
+
+<div class="button">
+  <h2><%= @movie.title %></h2>
+  <img src= <%= @movie.get_poster %>>
+  <%= button_to 'Discover Page', user_discover_index_path(@user), :method => :get %><br>
+  <%= button_to "Create Viewing Party for #{@movie.title}", user_movie_viewing_party_new_path(@user, @movie.api_id), :method => :get %>
+</div>
+
+<div class="attributes">
+  <h3>Vote Average: <%= @movie.vote_average %></h3>
+  <h3>Runtime: <%="#{@movie.hours}hr #{@movie.minutes} min" %></h3>
+  <h3>Genre(s): <%= @movie.genre_list %></h3>
+</div>
+
+<hr>
+
+<div class="summary">
+  <h3>Summary</h3>
+  <p><%= @movie.summary %></p>
+</div>
+<h3>Cast</h3>
+
+<div class="cast">
+  <% @cast.each do |cast| %>
+    <li><%= "#{cast.name} as #{cast.character} " %>
+  <% end %>
+</div>
+
+<hr>
+
+<div class="reviews">
+  <h3><%= @reviews.length %> Reviews</h3>
+  <% @reviews.each do |review| %>
+  <div class="review">
+    <p>Author: <%= review.author %></p><br>
+    <p><%= review.content %></p>
+  </div>
+  <% end %>
+</div>

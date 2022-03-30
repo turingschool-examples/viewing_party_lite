@@ -1,0 +1,15 @@
+<div class="title">
+  <% if @search.nil? %>
+    <h3>Top Rated Movies</h3>
+  <% else %>
+    <h3><%= "Movie Results for: #{@search}" %></h3>
+  <% end %>
+  <%= button_to 'Discover Page',user_discover_index_path(@user), method: :get%>
+</div>
+
+<div class="results">
+  <%@results.each do |movie| %>
+    <%= link_to "#{movie.title}", user_movie_path(@user.id, movie.api_id, results: true) %>
+    <%= "Vote Average: #{movie.vote_average}" %><br>
+  <% end %>
+</div>
