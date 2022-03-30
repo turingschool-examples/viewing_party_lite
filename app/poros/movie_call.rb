@@ -13,8 +13,8 @@ class MovieCall
    @api_id = data[:id]
    @title = data[:title]
    @summary = data[:overview]
-   @hours = (data[:runtime])
-   @minutes = (data[:runtime])
+   @hours = (data[:runtime] / 60) unless data[:runtime].nil?
+   @minutes = (data[:runtime] % 60) unless data[:runtime].nil?
    @runtime = data[:runtime]
    @vote_average = data[:vote_average]
    @genres = data[:genres]
