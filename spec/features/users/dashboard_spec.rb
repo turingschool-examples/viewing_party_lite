@@ -53,6 +53,7 @@ RSpec.describe 'User Dashboard' do
       end
 
       within "div.parties-#{@party_2.id}" do
+
         expect(page).to have_content("Full Metal Jacket")
         expect(page).to have_content("Tuesday, March 22, 2022")
         expect(page).to have_content("08:00 pm")

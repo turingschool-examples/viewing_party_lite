@@ -12,12 +12,13 @@ RSpec.describe 'Movie Details Page' do
 
       VCR.use_cassette('fight_club_api') do
         it 'has button to create a viewing party' do
-          visit user_movie_path(@jax.id, @movie_1.id)
+          visit user_movie_path(@jax, @movie_1)
           expect(current_path).to eq(user_movie_path(@jax, @movie_1))
 
           expect(page).to have_button("Create Viewing Party for #{@movie_1.get_info.title}")
           click_on "Create Viewing Party for #{@movie_1.get_info.title}"
-          expect(current_path).to eq(user_movie_viewing_party_new_path(@jax, @movie_1))
+
+          expect(current_path).to eq(user_movie_viewing_party_new_path(@jax, @movie_1.api_id))
         end
 
         it 'has button to return to discover page' do

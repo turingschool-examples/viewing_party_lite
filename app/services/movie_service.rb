@@ -14,6 +14,7 @@ class MovieService
   def self.get_cast(api_id)
     response = MovieService.connect.get("/3/movie/#{api_id}/credits")
     attrs = JSON.parse(response.body, symbolize_names: true)
+    # binding.pry
     @casts = attrs[:cast].map do |person|
       Cast.new(person)
     end
