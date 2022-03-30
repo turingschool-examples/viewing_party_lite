@@ -14,7 +14,7 @@ class PartiesController < ApplicationController
       movie_id: create_movie.id,
     )
     set_host
-    PartyFacade.invite_users(params[:invited].keys, @party)
+    PartyFacade.invite_users(params[:invited].keys, @party) unless params[:invited].nil?
     redirect_to user_path(@user)
   end
 
