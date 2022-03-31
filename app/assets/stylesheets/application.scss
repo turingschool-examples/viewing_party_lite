@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+ html, body {
+	background-image: image-url('/assets/background.jpg'); 
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	background-repeat: no-repeat;
+	background-position: bottom;
+	background-size: cover;
+	background-attachment: fixed;
+}
