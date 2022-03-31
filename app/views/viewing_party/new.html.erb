@@ -1,15 +1,15 @@
 <section id="title">
-  <h1> <%= @movie.title %> </h1>
+  <h1>Viewing Party For: <%= @movie.title %> </h1>
 </section>
 
 <%= form_with url: "/users/#{@host.id}/movies/#{@movie.id}/viewing_party/new", local: true do |f| %>
   <section id="form">
-    <li> <%= f.label :duration %>
+    <p> <%= f.label :duration %>
       <%= f.number_field :duration, :value => "#{@movie.runtime}", :min => "#{@movie.runtime}" %> </li>
-    <li> <%= f.date_select :start_date %> </li>
-    <li> <%= f.time_select :start_time %> </li>
-    <%= f.label :users_to_invite %>
-    <%= f.collection_check_boxes :invitations, User.order(:name), :id, :name %>
-    <li>  <%= f.submit 'Create' %> </li>
+    <p>Date: <%= f.date_select :start_date %> </p>
+    <p>Time: <%= f.time_select :start_time %> </p>
+    <p><%= f.label :users_to_invite %></p>
+    <p><%= f.collection_check_boxes :invitations, User.order(:name), :id, :name %></p>
+    <p>  <%= f.submit 'Create' %> </p>
   </section>
 <% end %>

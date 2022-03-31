@@ -25,7 +25,11 @@
       <% end %>
       <% @not_hosted_movies.each do |movie| %>
       <p>Movie: <%= link_to "#{movie.title}", "/users/#{@user.id}/movies/#{movie.id}"  %></p>
-      <p> <img src="https://image.tmdb.org/t/p/original<%= movie.poster  %>"alt="No Poster Image Exists For This Movie">
+      
+      <div id="poster_image">
+      <p> <img src="https://image.tmdb.org/t/p/original<%= movie.poster%>>
+      </div>
+
     <% end %>
   </section>
 

@@ -1,22 +1,6 @@
 require 'rails_helper'
   RSpec.describe 'The User Movie Show Page' do
 
-    it 'has a button to bring the user back to the discover page' do
-      UserParty.destroy_all
-      User.destroy_all
-      Party.destroy_all
-      user = User.create!(name: 'User', email: 'email')
-
-      VCR.use_cassette('movie_title_1') do
-        visit "/users/#{user.id}/movies/24126/"
-        within '#buttons' do
-          expect(page).to have_button('Discover Page')
-          click_button('Discover Page')
-          expect(current_path).to eq("/users/#{user.id}/discover")
-        end
-      end
-    end
-
     it 'has a button that brings the user to a form to create a new viewing party' do
       UserParty.destroy_all
       User.destroy_all
@@ -67,8 +51,8 @@ require 'rails_helper'
         expect(page).to_not have_content('The Shawshank Redemption')
         expect(page).to have_content('Julian Sands')
         expect(page).to have_content('Warlock')
-        expect(page).to have_content('Name: Paula Marshall')
-        expect(page).to have_content('Character: Samantha Ellison')
+        expect(page).to have_content('Paula Marshall')
+        expect(page).to have_content('Samantha Ellison')
       end
     end
   end
@@ -87,7 +71,7 @@ require 'rails_helper'
         expect(page).to have_content('Review: Make way for the best film ever made people. **Make way.**')
         expect(page).to have_content('Rating: 6.0')
         expect(page).to have_content('Author Handle: thommo_nz')
-        expect(page).to have_content('Review Count: There are 7 reviews for The Shawshank Redemption')
+        expect(page).to have_content('There are 7 reviews for The Shawshank Redemption')
       end
     end
   end

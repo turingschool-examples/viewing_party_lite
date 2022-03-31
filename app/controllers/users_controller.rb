@@ -9,7 +9,6 @@ class UsersController < ApplicationController
     @invitations = @user.invitations
     @host_parties = @user.is_host
     @not_hosted_movies = @user.invitations.map do |party|
-      # binding.pry
       MovieFacade.new.details(party.movie_id)
     end
     @hosted_movies = @user.is_host.map do |party|
