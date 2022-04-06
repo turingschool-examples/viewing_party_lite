@@ -30,5 +30,35 @@ describe 'landing page' do
       click_on 'Home'
       expect(current_path).to eq('/')
     end
+
+    it 'has a link thats logs user in' do
+      visit '/'
+      click_link 'Login!'
+      expect(current_path).to eq('/login')
+      fill_in :email, with: 'sam@supercool.edu'
+      fill_in :password, with: '1234'
+      click_button 'Submit'
+      expect(current_path).to eq('/users/dashboard')
+    end
+    it 'sad path, emial is wrong' do
+      visit '/'
+      click_link 'Login!'
+      expect(current_path).to eq('/login')
+      fill_in :email, with: 'sam@superlame.edu'
+      fill_in :password, with: '1234'
+      click_button 'Submit'
+      expect(current_path).to eq('/login')
+      expect(page).to have_content('No user exists with email sam@superlame.edu.')
+    end
+    it 'sad path, password wrong' do
+      visit '/'
+      click_link 'Login!'
+      expect(current_path).to eq('/login')
+      fill_in :email, with: 'sam@supercool.edu'
+      fill_in :password, with: '2222'
+      click_button 'Submit'
+      expect(current_path).to eq('/login')
+      expect(page).to have_content('Sorry, your credentials are bad.')
+    end
   end
 end
