@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
     else
       redirect_to '/register'
-      flash[:alert] = 'Please enter a valid username/email'
+      flash[:alert] = 'Please enter a valid email/ password'
     end
   end
 
