@@ -15,6 +15,14 @@
   <body>
     <%= render partial: "shared/navbar" %>
 
+    <div class="container"
+      <div class="d-flex align-items-center justify-content-center">
+        <% flash.each do |type, msg| %>
+          <div>
+            <%= msg %>
+          </div>
+        <% end %>
+
     <% if logged_in? %>
       <%= button_to "Logout", login_path, method: :delete %>
     <% else %>

@@ -16,6 +16,7 @@ RSpec.describe 'login page' do
     fill_in "Email", with: "#{user.email}"
     fill_in "Password", with: "gobblegobble"
     click_button('Login')
+    expect(page).to have_content("Invalid email/password")
     expect(current_path).to eq('/login')
   end 
 end

@@ -44,8 +44,7 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to user_path(user.id)
     else 
-      flash[:error] = 'Invalid email/password'
-      render 'login'
+      redirect_to '/login', alert: 'Invalid email/password'
     end 
   end 
 
