@@ -5,8 +5,8 @@ RSpec.describe 'the user dashboard' do
     UserParty.destroy_all
     User.destroy_all
     Party.destroy_all
-    user_1 = User.create!(name: 'user_1', email: 'email@gmail.com')
-    user_2 = User.create!(name: 'user_2', email: 'email2@gmail.com')
+    user_1 = User.create!(name: 'user_1', email: 'email@gmail.com', password: 'pass123')
+    user_2 = User.create!(name: 'user_2', email: 'email2@gmail.com', password: 'pass123')
 
     visit user_path(user_1.id)
 
@@ -22,7 +22,7 @@ RSpec.describe 'the user dashboard' do
     UserParty.destroy_all
     User.destroy_all
     Party.destroy_all
-    user_1 = User.create!(name: 'user_1', email: 'email@gmail.com')
+    user_1 = User.create!(name: 'user_1', email: 'email@gmail.com', password: 'pass123')
 
     visit user_path(user_1.id)
 
@@ -37,9 +37,9 @@ RSpec.describe 'the user dashboard' do
     UserParty.destroy_all
     User.destroy_all
     Party.destroy_all
-    user = User.create!(name: 'Host', email: 'host@mail.com')
-    user_1 = User.create!(name: 'not host', email: 'nohost@mail.com')
-    user_2 = User.create!(name: 'also not host', email: 'neitherhost@mail.com')
+    user = User.create!(name: 'Host', email: 'host@mail.com', password: 'pass123')
+    user_1 = User.create!(name: 'not host', email: 'nohost@mail.com', password: 'pass123')
+    user_2 = User.create!(name: 'also not host', email: 'neitherhost@mail.com', password: 'pass123')
     party_1 = Party.create!(start_date: '2022-03-25', duration: 90, start_time: '5:00', movie_id: 24126,
       host_id: user.id)
     party_2 = Party.create!(start_date: '2022-03-25', duration: 100, start_time: '6:00', movie_id: 278,
@@ -70,9 +70,9 @@ RSpec.describe 'the user dashboard' do
     UserParty.destroy_all
     User.destroy_all
     Party.destroy_all
-    user = User.create!(name: 'Host', email: 'host@mail.com')
-    user_1 = User.create!(name: 'not host', email: 'nohost@mail.com')
-    user_2 = User.create!(name: 'also not host', email: 'neitherhost@mail.com')
+    user = User.create!(name: 'Host', email: 'host@mail.com', password: 'pass123')
+    user_1 = User.create!(name: 'not host', email: 'nohost@mail.com', password: 'pass123')
+    user_2 = User.create!(name: 'also not host', email: 'neitherhost@mail.com', password: 'pass123')
     party_1 = Party.create!(start_date: '2022-03-25', duration: 90, start_time: '5:00', movie_id: 24126,
       host_id: user_1.id)
     party_2 = Party.create!(start_date: '2022-03-25', duration: 100, start_time: '6:00', movie_id: 278,

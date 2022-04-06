@@ -5,7 +5,7 @@ RSpec.describe 'The new viewing party page' do
     UserParty.destroy_all
     User.destroy_all
     Party.destroy_all
-    user1 = User.create!(name: 'user1', email: 'user1@email.com')
+    user1 = User.create!(name: 'user1', email: 'user1@email.com', password: 'pass123')
 
     VCR.use_cassette('new_party_movie_1') do
       visit "/users/#{user1.id}/movies/24126/viewing_party/new"
@@ -21,10 +21,10 @@ RSpec.describe 'The new viewing party page' do
     UserParty.destroy_all
     User.destroy_all
     Party.destroy_all
-    user1 = User.create!(name: 'user1', email: 'user1@email.com')
-    user2 = User.create!(name: 'user2', email: 'user2@email.com')
-    user3 = User.create!(name: 'user3', email: 'user3@email.com')
-    user4 = User.create!(name: 'user4', email: 'user4@email.com')
+    user1 = User.create!(name: 'user1', email: 'user1@email.com', password: 'pass123')
+    user2 = User.create!(name: 'user2', email: 'user2@email.com', password: 'pass123')
+    user3 = User.create!(name: 'user3', email: 'user3@email.com', password: 'pass123')
+    user4 = User.create!(name: 'user4', email: 'user4@email.com', password: 'pass123')
 
     VCR.use_cassette('new_party_movie_2') do
       visit "/users/#{user1.id}/movies/24126/viewing_party/new"

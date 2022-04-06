@@ -5,7 +5,7 @@ RSpec.describe 'Discover Page' do
     UserParty.destroy_all
     User.destroy_all
     Party.destroy_all
-    user = User.create!(name: 'user', email: 'email')
+    user = User.create!(name: 'user', email: 'email', password: 'pass123')
 
     VCR.use_cassette('top_rated_movies') do
       visit "/users/#{user.id}/discover"
@@ -22,7 +22,7 @@ RSpec.describe 'Discover Page' do
     UserParty.destroy_all
     User.destroy_all
     Party.destroy_all
-    user = User.create!(name: 'user', email: 'email')
+    user = User.create!(name: 'user', email: 'email', password: 'pass123')
 
     VCR.use_cassette('movie_search') do
       visit "/users/#{user.id}/discover"
