@@ -17,7 +17,7 @@ describe 'landing page' do
     end
 
     it 'list of existing users which link to the users dashboard' do
-      user = User.create(name: 'Sam', email: 'sam@supercool.edu')
+      user = User.create(name: 'Sam', email: 'sam@supercool.edu', password: '1234')
       visit root_path
       expect(page).to have_link("#{user.name}'s Dashboard")
       click_on "#{user.name}'s Dashboard"
@@ -25,7 +25,7 @@ describe 'landing page' do
     end
 
     it 'header link to go back to landing page' do
-      user = User.create(name: 'Sam', email: 'sam@supercool.edu')
+      user = User.create(name: 'Sam', email: 'sam@supercool.edu', password: '1234')
       visit root_path
       click_on 'Home'
       expect(current_path).to eq('/')
