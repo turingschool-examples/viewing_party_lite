@@ -77,7 +77,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Wed, 30 Mar 2022 22:59:15 GMT
+      - Wed, 06 Apr 2022 21:15:15 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -94,23 +94,23 @@ http_interactions:
       X-Memc-Key:
       - 0ef9081ef7ce34f15297b5b9c1625bf764bc05fe
       X-Memc-Age:
-      - '13503'
+      - '6518'
       X-Memc-Expires:
-      - '3738'
+      - '11118'
       Etag:
-      - W/"107ebef93ed43a651001c1bda5a77717"
+      - W/"cc3dba4af331ca5bd4a17f505e474c52"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 235fa9476ee502b13c0801d1fa3b57a2.cloudfront.net (CloudFront)
+      - 1.1 b7f0c5734a286f56595c1e1b456020a2.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - UV0iqRHUoFaO7JiJ-efUlkdp9FiJiw4mUq8tqg2n5egrUZEC_oRv6g==
+      - CBdTT1YEytq7Jg0Nw7-RSRPn-z_DXQhHILuxwNhsLjoISm0VIbNGmg==
       Age:
-      - '624'
+      - '2761'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/meOtdGhHZIOCmCdBqVe1AzTG7M2.jpg","belongs_to_collection":{"id":87536,"name":"Warlock
@@ -120,12 +120,12 @@ http_interactions:
         opportunity to escape and unleash Armageddon. A group of five stones has the
         power to either free the evil, or banish it for another six hundred years.
         An order of Druids battles with a Warlock determined to unleash his father
-        upon the world.","popularity":15.178,"poster_path":"/qpRtxbnLb0qFP93db5vwDDXvWz2.jpg","production_companies":[{"id":870,"logo_path":null,"name":"Tapestry
+        upon the world.","popularity":15.435,"poster_path":"/qpRtxbnLb0qFP93db5vwDDXvWz2.jpg","production_companies":[{"id":870,"logo_path":null,"name":"Tapestry
         Films","origin_country":"US"},{"id":4063,"logo_path":null,"name":"Trimark
         Pictures","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1993-05-01","revenue":3902679,"runtime":98,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"When
-        he comes... All hell breaks loose.","title":"Warlock: The Armageddon","video":false,"vote_average":5.2,"vote_count":105}'
-  recorded_at: Wed, 30 Mar 2022 23:09:39 GMT
+        he comes... All hell breaks loose.","title":"Warlock: The Armageddon","video":false,"vote_average":5.3,"vote_count":106}'
+  recorded_at: Wed, 06 Apr 2022 22:01:16 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/24126?api_key=movie_api_key
@@ -151,7 +151,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Wed, 30 Mar 2022 22:59:15 GMT
+      - Wed, 06 Apr 2022 21:15:15 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -168,23 +168,23 @@ http_interactions:
       X-Memc-Key:
       - 0ef9081ef7ce34f15297b5b9c1625bf764bc05fe
       X-Memc-Age:
-      - '13503'
+      - '6518'
       X-Memc-Expires:
-      - '3738'
+      - '11118'
       Etag:
-      - W/"107ebef93ed43a651001c1bda5a77717"
+      - W/"cc3dba4af331ca5bd4a17f505e474c52"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 ed8294655bb258e13bfb027c25483dda.cloudfront.net (CloudFront)
+      - 1.1 8bd27032f0d38908fbe32b696e45c288.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - Efji66YO-pRjcgY0yzFexJ4RvVJCgTIutLMdNGlYXoBsBa9uKaIMqg==
+      - 0XWIJfvMUl2skt-_gKdYQTnL5R1fe6zqlTjGmuWgXYp2Z0jWmwoZMg==
       Age:
-      - '624'
+      - '2761'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/meOtdGhHZIOCmCdBqVe1AzTG7M2.jpg","belongs_to_collection":{"id":87536,"name":"Warlock
@@ -194,10 +194,10 @@ http_interactions:
         opportunity to escape and unleash Armageddon. A group of five stones has the
         power to either free the evil, or banish it for another six hundred years.
         An order of Druids battles with a Warlock determined to unleash his father
-        upon the world.","popularity":15.178,"poster_path":"/qpRtxbnLb0qFP93db5vwDDXvWz2.jpg","production_companies":[{"id":870,"logo_path":null,"name":"Tapestry
+        upon the world.","popularity":15.435,"poster_path":"/qpRtxbnLb0qFP93db5vwDDXvWz2.jpg","production_companies":[{"id":870,"logo_path":null,"name":"Tapestry
         Films","origin_country":"US"},{"id":4063,"logo_path":null,"name":"Trimark
         Pictures","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1993-05-01","revenue":3902679,"runtime":98,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"When
-        he comes... All hell breaks loose.","title":"Warlock: The Armageddon","video":false,"vote_average":5.2,"vote_count":105}'
-  recorded_at: Wed, 30 Mar 2022 23:09:39 GMT
+        he comes... All hell breaks loose.","title":"Warlock: The Armageddon","video":false,"vote_average":5.3,"vote_count":106}'
+  recorded_at: Wed, 06 Apr 2022 22:01:16 GMT
 recorded_with: VCR 6.1.0

@@ -5,7 +5,7 @@ require 'rails_helper'
       UserParty.destroy_all
       User.destroy_all
       Party.destroy_all
-      user = User.create!(name: 'User', email: 'email')
+      user = User.create!(name: 'User', email: 'email', password: 'pass123')
 
       VCR.use_cassette('movie_title_2') do
         visit "/users/#{user.id}/movies/24126/"
@@ -21,14 +21,14 @@ require 'rails_helper'
       UserParty.destroy_all
       User.destroy_all
       Party.destroy_all
-      user = User.create!(name: 'user', email: 'email')
+      user = User.create!(name: 'user', email: 'email', password: 'pass123')
 
       VCR.use_cassette('movie_title_3') do
         visit "/users/#{user.id}/movies/24126/"
         within '#info' do
           expect(page).to have_content('Warlock: The Armageddon')
           expect(page).to_not have_content('The Shawshank Redemption')
-          expect(page).to have_content('5.2')
+          expect(page).to have_content('5.3')
           expect(page).to have_content('1 hour(s) 38 minutes')
           expect(page).to have_content('Fantasy')
           expect(page).to have_content('Horror')
@@ -42,7 +42,7 @@ require 'rails_helper'
     UserParty.destroy_all
     User.destroy_all
     Party.destroy_all
-    user = User.create!(name: 'user', email: 'email')
+    user = User.create!(name: 'user', email: 'email', password: 'pass123')
 
     VCR.use_cassette('shawshank_cast') do
       visit "/users/#{user.id}/movies/24126/"
@@ -61,7 +61,7 @@ require 'rails_helper'
     UserParty.destroy_all
     User.destroy_all
     Party.destroy_all
-    user = User.create!(name: 'user', email: 'email')
+    user = User.create!(name: 'user', email: 'email', password: 'pass123')
 
     VCR.use_cassette('reviews_in_view') do
       visit "/users/#{user.id}/movies/278/"

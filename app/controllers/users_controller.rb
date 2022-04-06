@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  # before_action :authorized, only: [:show]
 
   def new
     @user = User.new
@@ -29,8 +30,27 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def login
+  end 
+
+  def logout
+    session[:user_id] = nil 
+    redirect_to login_path 
+  end
+
+  def authenticate_user
+    user = User.find_by(email: params[:email])
+    if user != nil && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect_to user_path(user.id)
+    else 
+      redirect_to '/login', alert: 'Invalid email/password'
+    end 
+  end 
+
+
 private
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:name, :email, :password, :passoword_digest)
   end
 end
