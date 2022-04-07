@@ -3,12 +3,12 @@ require 'rails_helper'
 RSpec.describe 'User dashboard:', type: :feature do
 
   before(:each) do
-    @user1 = User.create!(name: "Bliffert Blankship", email: "Bliff@aol.com")
-    @user2 = User.create!(name: "Blankert Bliffship", email: "Blank@aol.com")
+    @user1 = User.create!(name: "Bliffert Blankship", email: "Bliff@aol.com", password_digest: "12345")
+    @user2 = User.create!(name: "Blankert Bliffship", email: "Blank@aol.com", password_digest: "12345")
   end
 
-  it "has stuff on the page" do
-    VCR.use_cassette('has_stuff') do
+  xit "has stuff on the page" do
+    VCR.use_cassette('has_stuff', :record => :new_episodes) do
 
       visit "/users/#{@user1.id}/movies/5244"
       expect(page).to have_content('"Pleasurecraft" related stuff here')

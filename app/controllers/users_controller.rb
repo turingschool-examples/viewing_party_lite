@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if params.include?("party_id") 
+    if params.include?("party_id")
      @user = User.find(params[:id])
      change_status(params[:party_id])
     else
@@ -23,17 +23,30 @@ class UsersController < ApplicationController
     end
   end
 
+  def login_form
+  end
+
+  def login_user
+    user = User.find_by(email: params[:email])
+    if user.authenticate(params[:password])
+      session[:user_id] = user.id
+      #flash[:success] = "Welcome, #{user.name}."
+      redirect_to "/users/#{user.id}"
+      #binding.pry
+    else
+      flash[:error]= "You ain't nobody"
+      render :login_form
+    end
+  end
 
   private
     def user_params
-      params.permit(:name, :email)
+      params.permit(:name, :email, :password, :password_confirmation)
     end
 
-    def change_status(party_id) 
+    def change_status(party_id)
      view_party = UserParty.find_by(user_id: @user.id, party_id: params[:party_id])
      view_party.status = "1"
-     view_party.save  
-    end  
+     view_party.save
+    end
 end
-
-
