@@ -8,6 +8,6 @@
 
 <section id="users">
   <% @users.each do |user| %>
-      <p>Name: <%= link_to "#{user.name}", user_path(user.id) %><p>
+      <p>Name: <%= link_to "#{user.name}", dashboard_path %><p>
   <% end %>
 </section>

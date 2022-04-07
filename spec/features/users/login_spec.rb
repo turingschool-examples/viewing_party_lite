@@ -7,7 +7,7 @@ RSpec.describe 'login page' do
     fill_in 'Email', with: "#{user.email}"
     fill_in 'Password', with: "#{user.password}"
     click_button('Login')
-    expect(current_path).to eq("/users/#{user.id}")
+    expect(current_path).to eq("/dashboard")
   end
 
   it 'does not log a user in if their email or password is incorrect' do 

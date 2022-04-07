@@ -1,13 +1,25 @@
 require 'rails_helper'
 
 RSpec.describe 'the users_movies results page' do
-  scenario "user clicks on top 20 rated" do
+
+  before :each do 
     UserParty.destroy_all
     User.destroy_all
     Party.destroy_all
-    user = User.create!(name: 'user', email: 'email', password: 'pass123')
+    visit register_path
+    fill_in 'Name', with: 'Plain Name'
+    fill_in 'Email', with: 'User@gmail.com'
+    fill_in 'Password', with: '1234'
+    fill_in 'Password confirmation', with: '1234'
+
+    click_button('Register')
+    @user = User.last
+  end 
+
+  scenario "user clicks on top 20 rated" do
+
     VCR.use_cassette('top_rated_movies') do
-      visit "/users/#{user.id}/discover"
+      visit "/discover"
       within '#discover' do
         click_button 'Top Rated Movies'
       end
@@ -26,13 +38,9 @@ RSpec.describe 'the users_movies results page' do
   end
 
   scenario "user searches for Jack Reacher" do
-    UserParty.destroy_all
-    User.destroy_all
-    Party.destroy_all
-    user = User.create!(name: 'user', email: 'email', password: 'pass123')
 
     VCR.use_cassette('movie_search') do
-      visit "/users/#{user.id}/discover"
+      visit "/discover"
       within '#discover' do
 
         fill_in 'Search For Movie', with: 'Jack Reacher'
