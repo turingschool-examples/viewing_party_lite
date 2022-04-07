@@ -1,4 +1,5 @@
 class ViewingPartyController < ApplicationController
+  before_action :authorized
   def new
     @users = User.all
     @host = User.find(session[:user_id])

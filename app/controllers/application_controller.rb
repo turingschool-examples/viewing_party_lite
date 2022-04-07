@@ -7,12 +7,19 @@ class ApplicationController < ActionController::Base
     end 
   end 
 
+  def authorized
+    if !current_user
+      flash[:alert] = "You shall not pass! Please log in or register for an account"
+      redirect_to login_path
+    end 
+  end 
+
   def logged_in?
     !!current_user
   end 
 
-  def authorized
-    redirect_to login_path unless logged_in?
-  end 
+  # def authorized
+  #   redirect_to login_path unless logged_in?
+  # end 
 
 end

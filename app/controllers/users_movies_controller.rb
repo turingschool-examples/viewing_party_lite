@@ -1,4 +1,5 @@
 class UsersMoviesController < ApplicationController
+  before_action :authorized
 
   def index
     @user = User.find(session[:user_id])

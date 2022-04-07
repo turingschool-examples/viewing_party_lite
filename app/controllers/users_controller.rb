@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  # before_action :require_user, only: [:new, :create, :authenticate_user]
+  before_action :authorized, only: [:discover, :show, :logout]
 
   def new
     @user = User.new
