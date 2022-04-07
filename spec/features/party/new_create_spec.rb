@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'Creating a new party:', type: :feature do
   before(:each)   do
-    @user1 = User.create!(name: "Bliffert Blankship", email: "Bliff@aol.com")
-    @user2 = User.create!(name: "Blankert Bliffship", email: "Blank@aol.com")
-    @user3 = User.create!(name: "Blert Bliip", email: "Bnk@aol.com")
-    @user4 = User.create!(name: "Banker Biffshi", email: "Bla@aol.com")
+    @user1 = User.create!(name: "Bliffert Blankship", email: "Bliff@aol.com", password_digest: "12345")
+    @user2 = User.create!(name: "Blankert Bliffship", email: "Blank@aol.com", password_digest: "12345")
+    @user3 = User.create!(name: "Blert Bliip", email: "Bnk@aol.com", password_digest: "12345")
+    @user4 = User.create!(name: "Banker Biffshi", email: "Bla@aol.com", password_digest: "12345")
   end
 
   xit "has the party stufffffff on the page", :vcr do

@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if params.include?("party_id") 
+    if params.include?("party_id")
      @user = User.find(params[:id])
      change_status(params[:party_id])
     else
@@ -26,14 +26,12 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.permit(:name, :email)
+      params.permit(:name, :email, :password, :password_confirmation)
     end
 
-    def change_status(party_id) 
+    def change_status(party_id)
      view_party = UserParty.find_by(user_id: @user.id, party_id: params[:party_id])
      view_party.status = "1"
-     view_party.save  
-    end  
+     view_party.save
+    end
 end
-
-

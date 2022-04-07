@@ -2,12 +2,12 @@ require 'rails_helper'
 
 RSpec.describe 'User dahsboard:', type: :feature do
   before(:each) do
-    @user1 = User.create!(name: "Bliffert Blankship", email: "Bliff@aol.com")
-    @user2 = User.create!(name: "Blankert Bliffship", email: "Blank@aol.com")
+    @user1 = User.create!(name: "Bliffert Blankship", email: "Bliff@aol.com", password_digest: "12345")
+    @user2 = User.create!(name: "Blankert Bliffship", email: "Blank@aol.com", password_digest: "12345")
     @the_dark_knight = Party.create!(duration: 66, date: "01/12/13", start: "14:00", movie_id: 155)
     @user_party = UserParty.create!(user_id: @user1.id, party_id: @the_dark_knight.id)
   end
-  
+
   it "has stuff on the page" do
     visit "/users/#{@user1.id}"
 
@@ -20,23 +20,23 @@ RSpec.describe 'User dahsboard:', type: :feature do
   xit "has viewing parties user has created" do
     visit "/users/#{@user1.id}"
 
-    within("#viewing-parties") do 
+    within("#viewing-parties") do
       expect(page).to have_content("Insert Movie Here")
       expect(page).to have_content(@the_dark_knight.date)
       expect(page).to have_content(@the_dark_knight.start)
       expect(page).to have_content(@user1.name)
       expect(page).to have_content(@user2.name)
     end
-  end 
+  end
 
   xit "has viewing parties user is invited to" do
 
-    within("#vp") do 
+    within("#vp") do
       expect(page).to have_content("Insert Movie Here")
       expect(page).to have_content(@the_dark_knight.date)
       expect(page).to have_content(@the_dark_knight.start)
       expect(page).to have_content(@user1.name)
       expect(page).to have_content(@user2.name)
     end
-  end 
+  end
 end
