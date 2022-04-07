@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :require_user, only: [:new, :create, :authenticate_user]
-  before_action :authorized, only: [:discover, :show, :logout]
+  before_action :authorized, only: [:show, :logout]
 
   def new
     @user = User.new
@@ -8,7 +7,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(session[:user_id])
-    # @user = User.find(params[:id])
     @invitations = @user.invitations
     @host_parties = @user.is_host
     @not_hosted_movies = @user.invitations.map do |party|
@@ -30,8 +28,6 @@ class UsersController < ApplicationController
   end
 
   def discover
-    @user = User.find(session[:user_id])
-    # @user = User.find(params[:id])
   end
 
   def login

@@ -12,7 +12,16 @@ RSpec.describe 'The landing page' do
     fill_in 'Password confirmation', with: '1234'
 
     click_button('Register')
-    @user = User.last
+    @user_1 = User.last
+
+    visit register_path
+    fill_in 'Name', with: 'Ron Swanson'
+    fill_in 'Email', with: 'Ron@gmail.com'
+    fill_in 'Password', with: '1234'
+    fill_in 'Password confirmation', with: '1234'
+
+    click_button('Register')
+    @user_2 = User.last
   end 
   it 'displays the title of application' do
     visit root_path
@@ -29,9 +38,7 @@ RSpec.describe 'The landing page' do
 
     visit root_path
     within '#users' do
-      expect(page).to have_link(@user.name)
-      click_link(@user.name)
-      expect(current_path).to eq(dashboard_path)
+      expect(page).to have_content(@user_2.email)
     end
   end
 end

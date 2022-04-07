@@ -7,7 +7,9 @@
 </section>
 
 <section id="users">
-  <% @users.each do |user| %>
-      <p>Name: <%= link_to "#{user.name}", dashboard_path %><p>
+   <% if logged_in? %> 
+    <% @users.each do |user| %>
+        <p><%= user.email %><p>
+    <% end %>
   <% end %>
 </section>
