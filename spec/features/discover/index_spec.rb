@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'Discover Index Page' do
   before(:each) do
-    @user1 = User.create(name: "Asil Rolyat", email: "asil.rolyat@yourmom.com")
+    # @user1 = User.create(name: "Asil Rolyat", email: "asil.rolyat@yourmom.com")
+    @user1 = User.create(name: "Asil Rolyat", email: "asil.rolyat@yourmom.com", password: "124", password_confirmation: "124")
+
     visit user_discover_index_path(@user1)
   end
 

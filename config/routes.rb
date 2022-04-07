@@ -10,5 +10,4 @@ Rails.application.routes.draw do
       resources :parties, only: [:new]
     end
   end
-  
 end
