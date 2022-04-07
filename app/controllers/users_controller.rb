@@ -1,12 +1,14 @@
 class UsersController < ApplicationController
-  # before_action :authorized, only: [:show]
+  # before_action :require_user, only: [:new, :create, :authenticate_user]
+  before_action :authorized, only: [:discover, :show, :logout]
 
   def new
     @user = User.new
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
+    # @user = User.find(params[:id])
     @invitations = @user.invitations
     @host_parties = @user.is_host
     @not_hosted_movies = @user.invitations.map do |party|
@@ -20,14 +22,16 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.save
-      redirect_to user_path(@user.id)
+      session[:user_id] = @user.id
+      redirect_to dashboard_path
     else
       render 'new'
     end
   end
 
   def discover
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
+    # @user = User.find(params[:id])
   end
 
   def login
@@ -42,7 +46,7 @@ class UsersController < ApplicationController
     user = User.find_by(email: params[:email])
     if user != nil && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to user_path(user.id)
+      redirect_to dashboard_path
     else 
       redirect_to '/login', alert: 'Invalid email/password'
     end 

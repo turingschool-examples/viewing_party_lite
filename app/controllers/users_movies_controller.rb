@@ -1,7 +1,9 @@
 class UsersMoviesController < ApplicationController
+  before_action :authorized
 
   def index
-    @user = User.find(params[:user_id])
+    @user = User.find(session[:user_id])
+    # @user = User.find(params[:user_id])
     if params[:top_rated] == "top_rated"
       # @top_rated = TopRated.new.movies
       @top_rated = MovieFacade.new.best_movies
@@ -14,7 +16,8 @@ class UsersMoviesController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:user_id])
+    @user = User.find(session[:user_id])
+    # @user = User.find(params[:user_id])
     @movie = MovieFacade.new.details(params[:id])
     @cast = MovieFacade.new.cast(params[:id])
     @reviews = MovieFacade.new.reviews(params[:id])

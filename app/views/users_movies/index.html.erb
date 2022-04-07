@@ -3,7 +3,7 @@
     <h2> Top Rated Movies </h2>
     <% @top_rated.each do |movie| %>
       <h3> Vote Average: <%= movie.vote_average %> </h3>
-      <%= link_to "#{movie.title}", "/users/#{@user.id}/movies/#{movie.id}" %>
+      <%= link_to "#{movie.title}", "/movies/#{movie.id}" %>
     <% end %>
   </section>
 <% end %>
@@ -12,7 +12,7 @@
   <section id="results">
     <h2> Movie Results </h2>
     <% @found_movies.each do |movie| %>
-      <h3><%= link_to "#{movie.title}", "/users/#{@user.id}/movies/#{movie.id}" %></h3>
+      <h3><%= link_to "#{movie.title}", "/movies/#{movie.id}" %></h3>
       <p> Vote Average: <%= movie.vote_average %> </p>
     <% end %>
   </section>
