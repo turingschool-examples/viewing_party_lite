@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
   root to: 'welcome#index'
 
   get '/register', to: 'users#new'
@@ -17,8 +17,5 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create]
   resources :movies, only: [:index, :show], controller: :users_movies
-      # resources :parties, controller: :viewing_party
-  # end
-
 
 end
