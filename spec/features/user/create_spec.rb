@@ -45,4 +45,19 @@ RSpec.describe 'Creating a new user:', type: :feature do
     expect(current_path).to eq('/register')
     expect(page).to have_content("Error: Email can't be blank")
   end
+
+  it ' sad- password doesnt match' do
+    visit '/register'
+
+    fill_in("Name", with: "Bliffert's Blankship")
+    fill_in("Email", with: "Bliff@aol.com")
+    fill_in("password", with:"12345")
+    fill_in("Password confirmation", with:"145")
+    click_button("Save")
+    #save_and_open_page
+    expect(current_path).to eq('/register')
+    expect(page).to have_content("Error: Password confirmation doesn't match Password")
+  end
+
+
 end
