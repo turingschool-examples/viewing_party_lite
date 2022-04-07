@@ -11,7 +11,6 @@ RSpec.describe 'Creating a new user:', type: :feature do
 
   it 'happy path' do
     visit '/register'
-    #
     fill_in("Name", with: "Bliffert Blankship")
     fill_in("Email", with: "Bliff@aol.com")
     fill_in("password", with:"12345")

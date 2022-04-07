@@ -7,10 +7,12 @@ class UsersController < ApplicationController
     user = User.create(user_params)
 
     if user.save
+      session[:user_id] = user.id
       redirect_to "/users/#{user.id}"
     else
       redirect_to "/register"
       flash[:alert] = "Error: #{error_message(user.errors)}"
+      #flash[:alert] = "Error: #{user.errors.full_messages.to_sentence}"
     end
   end
 
@@ -30,7 +32,7 @@ class UsersController < ApplicationController
     user = User.find_by(email: params[:email])
     if user.authenticate(params[:password])
       session[:user_id] = user.id
-      #flash[:success] = "Welcome, #{user.name}."
+      #binding.pry
       redirect_to "/users/#{user.id}"
       #binding.pry
     else
