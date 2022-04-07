@@ -23,6 +23,21 @@ class UsersController < ApplicationController
     end
   end
 
+  def login_form
+  end
+
+  def login_user
+    user = User.find_by(email: params[:email])
+    if user.authenticate(params[:password])
+      session[:user_id] = user.id
+      #flash[:success] = "Welcome, #{user.name}."
+      redirect_to "/users/#{user.id}"
+      #binding.pry
+    else
+      flash[:error]= "You ain't nobody"
+      render :login_form
+    end
+  end
 
   private
     def user_params
