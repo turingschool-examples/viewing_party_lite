@@ -7,8 +7,8 @@ RSpec.describe 'User dashboard:', type: :feature do
     @user2 = User.create!(name: "Blankert Bliffship", email: "Blank@aol.com")
   end
 
-  it "has stuff on the page" do
-    VCR.use_cassette('has_stuff') do
+  xit "has stuff on the page" do
+    VCR.use_cassette('has_stuff', :record => :new_episodes) do
 
       visit "/users/#{@user1.id}/movies/5244"
       expect(page).to have_content('"Pleasurecraft" related stuff here')

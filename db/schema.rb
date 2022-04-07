@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2022_03_25_125105) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
   add_foreign_key "user_parties", "parties"
