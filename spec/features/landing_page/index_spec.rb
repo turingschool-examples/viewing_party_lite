@@ -32,28 +32,49 @@ describe 'landing page' do
     end
 
     it 'has a link thats logs user in' do
+      visit '/register'
+      fill_in 'Name', with: 'Sam'
+      fill_in 'Email', with: 'sam@supercool.edu'
+      fill_in 'Password', with: '1234'
+      fill_in 'Password confirmation', with: '1234'
+      click_on 'Register'
+
       visit '/'
-      click_link 'Login!'
+      click_button 'Login'
       expect(current_path).to eq('/login')
       fill_in :email, with: 'sam@supercool.edu'
       fill_in :password, with: '1234'
       click_button 'Submit'
-      expect(current_path).to eq('/users/dashboard')
+      test_user = User.first
+
+      expect(current_path).to eq("/users/#{test_user.id}")
     end
-    it 'sad path, emial is wrong' do
-      visit '/'
-      click_link 'Login!'
-      expect(current_path).to eq('/login')
+
+    it 'sad path, email is wrong' do
+      visit '/register'
+      fill_in 'Name', with: 'Sam'
+      fill_in 'Email', with: 'sam@supercool.edu'
+      fill_in 'Password', with: '1234'
+      fill_in 'Password confirmation', with: '1234'
+      click_on 'Register'
+
+      visit('/login')
       fill_in :email, with: 'sam@superlame.edu'
       fill_in :password, with: '1234'
       click_button 'Submit'
       expect(current_path).to eq('/login')
-      expect(page).to have_content('No user exists with email sam@superlame.edu.')
+      expect(page).to have_content("No user exists with email 'sam@superlame.edu'.")
     end
+
     it 'sad path, password wrong' do
-      visit '/'
-      click_link 'Login!'
-      expect(current_path).to eq('/login')
+      visit '/register'
+      fill_in 'Name', with: 'Sam'
+      fill_in 'Email', with: 'sam@supercool.edu'
+      fill_in 'Password', with: '1234'
+      fill_in 'Password confirmation', with: '1234'
+      click_on 'Register'
+
+      visit '/login'
       fill_in :email, with: 'sam@supercool.edu'
       fill_in :password, with: '2222'
       click_button 'Submit'

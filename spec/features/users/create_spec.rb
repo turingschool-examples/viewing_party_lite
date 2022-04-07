@@ -37,8 +37,6 @@ RSpec.describe 'User Registration' do
     fill_in 'Password confirmation', with: 'peep'
     click_on 'Register'
 
-    test_user = User.first
-
     expect(current_path).to eq('/register')
     expect(page).to have_content('Please enter a valid email/ password')
   end
