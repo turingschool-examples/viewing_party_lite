@@ -1,4 +1,14 @@
+# frozen_string_literal: true
+
 class PartiesController < ApplicationController
   def new
-  end 
+    @users = User.all
+    @user = User.find(params[:user_id])
+    @movie = MovieFacade.get_movie(params[:movie_id])
+  end
+
+  def create
+    @user = User.find(params[:user_id])
+    redirect_to "/users/#{@user.id}"
+  end
 end

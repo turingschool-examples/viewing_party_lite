@@ -1,0 +1,20 @@
+<%= form_with url: "/users/#{@user.id}/movies/#{@movie.id}/parties", method: :post, local: true do |f| %>
+  <%= f.label :duration %>
+  <%= f.number_field :duration, min: @movie.runtime %><br>
+
+  <%= f.label :date %>
+  <%= f.date_select :date %><br>
+
+  <%= f.label :start_time %>
+  <%= f.time_select :start_time %><br>
+  Invite Other Users:
+  <% @users.each do |user| %>
+    <% if user.id != @user.id %>
+      <%= f.label "#{user.name}" %>
+      <%= f.check_box "#{user.name}" %>
+    <% end %>
+  <% end %><br>
+
+  <%= f.submit 'Create Party' %>
+
+<% end %>
