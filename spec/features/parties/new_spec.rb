@@ -20,7 +20,6 @@ RSpec.describe 'Create Party Page' do
 
     expect(current_path).to eq("/users/#{@user.id}")
 
-    #expect(page).to have_content()
   end
 
 end

@@ -8,7 +8,9 @@ class CreateParties < ActiveRecord::Migration[5.2]
       t.integer :duration_time
       t.date :start_date
       t.time :start_time
+      t.string :movie_name
       t.references :user, foreign_key: true
+
 
       t.timestamps
     end

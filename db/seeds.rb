@@ -7,9 +7,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-@lama = User.create!(name: 'Happy Lama', email: 'Happy_Lama@example.com')
-@duck = User.create!(name: 'Sad Duck', email: 'Sad_Duck@example.com')
-@horse = User.create!(name: 'Confused Horse', email: 'Confused_Horse@example.com')
+@lama = User.create!(name: 'Happy Lama', email: 'Happy_Lama@example.com', password: 'test1')
+@duck = User.create!(name: 'Sad Duck', email: 'Sad_Duck@example.com', password: 'test2')
+@horse = User.create!(name: 'Confused Horse', email: 'Confused_Horse@example.com', password: 'test3')
 
 @lama_movie = Party.create!(movie_id: 1, duration_time: 127, start_date: Date.today, start_time: Time.now, user_id: @lama.id, movie_name: 'Jump for Joy')
 @lama_movie2 = Party.create!(movie_id: 3, duration_time: 127, start_date: Date.today, start_time: Time.now, user_id: @lama.id, movie_name: 'Jump for Joy 2')
