@@ -18,20 +18,23 @@
     <div class="container"
       <div class="d-flex align-items-center justify-content-center">
         <% flash.each do |type, msg| %>
-          <div>
+          <div class="alert alert-secondary" role="alert">
+          <center>
             <%= msg %>
+          </center>
           </div>
         <% end %>
+      </div>
+    </div>
 
     <% if logged_in? %>
-      <%= button_to "Logout", login_path, method: :delete %>
+      <%= button_to "Logout", login_path, method: :delete, class: "btn btn-dark" %>
     <% else %>
-      <%= button_to "Login Page", login_path, method: :get %>
+      <%= button_to "Login Page", login_path, method: :get, class: "btn btn-dark" %>
     <% end %>
 
     <center>
     <%= yield %>
     </center>
-    
   </body>
 </html>

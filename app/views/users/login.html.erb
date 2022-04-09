@@ -1,5 +1,5 @@
 <section id="new-user">
-  <p><%= button_to 'Register', '/register', method: :get %><p>
+  <p><%= button_to 'Register', '/register', method: :get, class: "btn btn-primary" %><p>
 </section>
 
 <%= form_with url: '/login', method: :post, local: true do |f| %>

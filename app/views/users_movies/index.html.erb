@@ -1,19 +1,36 @@
 <% if @top_rated %>
   <section id="top20">
-    <h2> Top Rated Movies </h2>
-    <% @top_rated.each do |movie| %>
-      <h6> Vote Average: <%= movie.vote_average %> : <%= link_to "#{movie.title}", "/movies/#{movie.id}" %> </h6>
-      <br>
-    <% end %>
+    <section class="p-3 mb-2 bg-transparent text-dark">
+      <h2> Top Rated Movies </h2>
+    </section>
+  <section class="container">
+    <section class="row">
+      <% @top_rated.each do |movie| %>
+        <section class="col-6">
+          <h6><%= link_to "#{movie.title}", "/movies/#{movie.id}" %>: Rated <%= movie.vote_average %> </h6>
+          <br>
+        </section>
+      <% end %>
+    </section>
+  </section>
   </section>
 <% end %>
 
 <% if @found_movies %>
   <section id="results">
+    <section class="p-3 mb-2 bg-transparent text-dark">
     <h2> Movie Results </h2>
+    </section>
+  <section class="container">
+    <section class="row">
     <% @found_movies.each do |movie| %>
-      <h6> Vote Average: <%= movie.vote_average %> : <%= link_to "#{movie.title}", "/movies/#{movie.id}" %> </h6>
-      <br>
+      <section class="col-6">
+        <h6><%= link_to "#{movie.title}", "/movies/#{movie.id}" %>: Rated <%= movie.vote_average %> </h6>
+        <br>
+        </section>
     <% end %>
+    </section>
+    </section>
+  </section>
   </section>
 <% end %>
