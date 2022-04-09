@@ -131,7 +131,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 08 Apr 2022 00:13:30 GMT
+      - Sat, 09 Apr 2022 02:30:24 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -148,13 +148,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 ce4b35590464ed34415a13badd946eba.cloudfront.net (CloudFront)
+      - 1.1 045f1e1f031241f3808c557a2b5d6b0a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - eLpp5z1W5q0yJtsR9XqXahE4AgRARP5nP9a4rk2TJIY7mLUI2Rs7cA==
+      - "-4eVDxPSTBXu0QCohnvFUSR4lOTNjqfsSx1LsuHBJbXSl54IPzgP8Q=="
       Age:
-      - '3'
+      - '2'
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/k7h4RNAarfOrF2r2YMN0P2FQSr4.jpg","genre_ids":[80,18,53,28],"id":75780,"original_language":"en","original_title":"Jack
@@ -162,11 +162,11 @@ http_interactions:
         points to the suspect in custody. On interrogation, the suspect offers up
         a single note: \"Get Jack Reacher!\" So begins an extraordinary chase for
         the truth, pitting Jack Reacher against an unexpected enemy, with a skill
-        for violence and a secret to keep.","popularity":141.187,"poster_path":"/zlyhKMi2aLk25nOHnNm43MpZMtQ.jpg","release_date":"2012-12-20","title":"Jack
-        Reacher","video":false,"vote_average":6.6,"vote_count":5732},{"adult":false,"backdrop_path":"/ww1eIoywghjoMzRLRIcbJLuKnJH.jpg","genre_ids":[28,53],"id":343611,"original_language":"en","original_title":"Jack
+        for violence and a secret to keep.","popularity":193.321,"poster_path":"/zlyhKMi2aLk25nOHnNm43MpZMtQ.jpg","release_date":"2012-12-20","title":"Jack
+        Reacher","video":false,"vote_average":6.6,"vote_count":5736},{"adult":false,"backdrop_path":"/ww1eIoywghjoMzRLRIcbJLuKnJH.jpg","genre_ids":[28,53],"id":343611,"original_language":"en","original_title":"Jack
         Reacher: Never Go Back","overview":"When Major Susan Turner is arrested for
         treason, ex-investigator Jack Reacher undertakes the challenging task to prove
-        her innocence and ends up exposing a shocking conspiracy.","popularity":131.426,"poster_path":"/wxLUQ1pIms3HAlVGYvEG9zg2kDs.jpg","release_date":"2016-10-19","title":"Jack
+        her innocence and ends up exposing a shocking conspiracy.","popularity":172.866,"poster_path":"/wxLUQ1pIms3HAlVGYvEG9zg2kDs.jpg","release_date":"2016-10-19","title":"Jack
         Reacher: Never Go Back","video":false,"vote_average":5.9,"vote_count":3954}],"total_pages":1,"total_results":2}'
-  recorded_at: Fri, 08 Apr 2022 00:13:33 GMT
+  recorded_at: Sat, 09 Apr 2022 02:30:27 GMT
 recorded_with: VCR 6.1.0

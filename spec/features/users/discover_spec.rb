@@ -17,27 +17,16 @@ RSpec.describe 'Discover Page' do
   end 
 
   it 'has a button to discover top rated movies' do
-    # UserParty.destroy_all
-    # User.destroy_all
-    # Party.destroy_all
-    # user = User.create!(name: 'user', email: 'email', password: 'pass123')
 
     VCR.use_cassette('top_rated_movies') do
       visit "/discover"
-      within '#discover' do
         expect(page).to have_button('Top Rated Movies')
         click_button 'Top Rated Movies'
         expect(current_path).to eq(movies_path)
-      end
     end
   end
 
   it 'has a search bar to search for specific movies' do
-    # UserParty.destroy_all
-    # User.destroy_all
-    # Party.destroy_all
-    # user = User.create!(name: 'user', email: 'email', password: 'pass123')
-
     VCR.use_cassette('movie_search') do
       visit "/discover"
       within '#discover' do

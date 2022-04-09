@@ -7,7 +7,7 @@
     <section class="row">
       <% @top_rated.each do |movie| %>
         <section class="col-6">
-          <h6><%= link_to "#{movie.title}", "/movies/#{movie.id}" %>: Rated <%= movie.vote_average %> </h6>
+          <h6><%= link_to "#{movie.title}", "/movies/#{movie.id}", class:"link-dark" %>: Rated <%= movie.vote_average %> </h6>
           <br>
         </section>
       <% end %>
@@ -25,7 +25,7 @@
     <section class="row">
     <% @found_movies.each do |movie| %>
       <section class="col-6">
-        <h6><%= link_to "#{movie.title}", "/movies/#{movie.id}" %>: Rated <%= movie.vote_average %> </h6>
+        <h6><%= link_to "#{movie.title}", "/movies/#{movie.id}", class:"link-dark" %>: Rated <%= movie.vote_average %> </h6>
         <br>
         </section>
     <% end %>
