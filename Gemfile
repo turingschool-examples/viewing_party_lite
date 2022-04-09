@@ -14,6 +14,8 @@ gem 'rails', '~> 5.2.6'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'faraday'
+gem 'bcrypt', '~> 3.1.7'
+
 
 group :development, :test do
   gem 'capybara'
@@ -29,6 +31,11 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rubocop-rails'
   gem 'web-console', '>= 3.3.0'
+end
+
+group :test do
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development, :test do

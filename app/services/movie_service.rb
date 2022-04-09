@@ -20,6 +20,7 @@ class MovieService
     get_url("/3/search/movie?api_key=#{ENV['api_key']}&query=#{keyword}")
   end
 
+private 
   def self.get_url(url)
     response = conn.get(url)
     JSON.parse(response.body, symbolize_names: true)

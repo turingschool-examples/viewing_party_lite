@@ -16,11 +16,10 @@ RSpec.describe 'Create Party Page' do
     fill_in :start_date, with: Date.today
     fill_in :start_time, with: Time.now
     click_button("Create Party")
-    save_and_open_page
+
 
     expect(current_path).to eq("/users/#{@user.id}")
 
-    #expect(page).to have_content()
   end
 
 end
