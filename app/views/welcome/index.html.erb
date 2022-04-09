@@ -3,11 +3,13 @@
 </section>
 
 <section id="new-user">
-  <p><%= button_to 'Register', '/register', method: :get %><p>
+  <p><%= button_to 'Register', '/register', method: :get, class: "btn btn-primary" %><p>
 </section>
 
 <section id="users">
-  <% @users.each do |user| %>
-      <p>Name: <%= link_to "#{user.name}", user_path(user.id) %><p>
+   <% if logged_in? %> 
+    <% @users.each do |user| %>
+        <p><%= user.email %><p>
+    <% end %>
   <% end %>
 </section>

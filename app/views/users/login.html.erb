@@ -1,0 +1,13 @@
+<section id="new-user">
+  <p><%= button_to 'Register', '/register', method: :get, class: "btn btn-primary" %><p>
+</section>
+
+<%= form_with url: '/login', method: :post, local: true do |f| %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :password %>
+  <%= f.text_field :password %>
+
+  <%= f.submit "Login" %>
+<% end %>

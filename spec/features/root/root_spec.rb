@@ -1,9 +1,29 @@
 require 'rails_helper'
 
 RSpec.describe 'The landing page' do
-  it 'displays the title of application' do
-    user = User.create!(name: 'user_1', email: 'email@gmail.com')
+  before :each do 
+    UserParty.destroy_all
+    User.destroy_all
+    Party.destroy_all
+    visit register_path
+    fill_in 'Name', with: 'Plain Name'
+    fill_in 'Email', with: 'User@gmail.com'
+    fill_in 'Password', with: '1234'
+    fill_in 'Password confirmation', with: '1234'
 
+    click_button('Register')
+    @user_1 = User.last
+
+    visit register_path
+    fill_in 'Name', with: 'Ron Swanson'
+    fill_in 'Email', with: 'Ron@gmail.com'
+    fill_in 'Password', with: '1234'
+    fill_in 'Password confirmation', with: '1234'
+
+    click_button('Register')
+    @user_2 = User.last
+  end 
+  it 'displays the title of application' do
     visit root_path
 
     within '#title' do
@@ -18,9 +38,7 @@ RSpec.describe 'The landing page' do
 
     visit root_path
     within '#users' do
-      expect(page).to have_link(user.name)
-      click_link(user.name)
-      expect(current_path).to eq(user_path(user.id))
+      expect(page).to have_content(@user_2.email)
     end
   end
 end

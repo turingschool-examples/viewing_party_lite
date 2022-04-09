@@ -10,6 +10,8 @@ RSpec.describe User, type: :model do
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:email) }
     it { should validate_uniqueness_of(:email) }
+    it { should validate_presence_of(:password_digest) }
+    it { should have_secure_password }
   end
 
   describe '#host' do 
@@ -17,9 +19,9 @@ RSpec.describe User, type: :model do
       UserParty.destroy_all
       User.destroy_all
       Party.destroy_all
-      user = User.create!(name: 'Host', email: 'host@mail.com')
-      user_1 = User.create!(name: 'not host', email: 'nohost@mail.com')
-      user_2 = User.create!(name: 'also not host', email: 'neitherhost@mail.com')
+      user = User.create!(name: 'Host', email: 'host@mail.com', password: 'pass123')
+      user_1 = User.create!(name: 'not host', email: 'nohost@mail.com', password: 'pass123')
+      user_2 = User.create!(name: 'also not host', email: 'neitherhost@mail.com', password: 'pass123')
       party_1 = Party.create!(start_date: '2022-03-25', duration: 90, start_time: '5:00', movie_id: 1253,
         host_id: user.id)
       party_2 = Party.create!(start_date: '2022-03-25', duration: 100, start_time: '6:00', movie_id: 352,
@@ -36,10 +38,10 @@ RSpec.describe User, type: :model do
       UserParty.destroy_all
       User.destroy_all
       Party.destroy_all
-      user = User.create!(name: 'Host', email: 'host@mail.com')
-      user_2 = User.create!(name: 'not host', email: 'nohost@mail.com')
-      user_3 = User.create!(name: 'also not host', email: 'neitherhost@mail.com')
-      user_4 = User.create!(name: 'still not host', email: 'neithermost@mail.com')
+      user = User.create!(name: 'Host', email: 'host@mail.com', password: 'pass123')
+      user_2 = User.create!(name: 'not host', email: 'nohost@mail.com', password: 'pass123')
+      user_3 = User.create!(name: 'also not host', email: 'neitherhost@mail.com', password: 'pass123')
+      user_4 = User.create!(name: 'still not host', email: 'neithermost@mail.com', password: 'pass123')
       party_1 = Party.create!(start_date: '2022-03-25', duration: 90, start_time: '5:00', movie_id: 1253,
         host_id: user.id)
       party_2 = Party.create!(start_date: '2022-03-25', duration: 100, start_time: '6:00', movie_id: 352,

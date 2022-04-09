@@ -1,10 +1,15 @@
 <section id="discover">
-  <%= button_to "Top Rated Movies", user_movies_path(@user.id), method: :get, params: {top_rated: 'top_rated'} %>
+<br>
+    <p>
+  <section class="mb-3">
+    <%= form_with url: "/movies", method: :get, local: true do |form| %>
+      <%= form.label :search, 'Search For Movie', class: "form-label" %>
+      <%= form.text_field :search %>
+      <%= form.submit 'Search', class: "btn btn-primary" %>
+    <% end %>
+    </p>
+    </section>
 
-  <%= form_with url: "/users/#{@user.id}/movies", method: :get, local: true do |form| %>
-    <%= form.label :search, 'Search For Movie' %>
-    <%= form.text_field :search %>
-    <%= form.submit 'Search' %>
-  <% end %>
+  <p><%= button_to "Top Rated Movies", movies_path, method: :get, params: {top_rated: 'top_rated'}, class: "btn btn-info" %><p>
 
 </section>

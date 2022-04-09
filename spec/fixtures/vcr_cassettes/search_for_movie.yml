@@ -2,6 +2,58 @@
 http_interactions:
 - request:
     method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key&query=Jack%20Reacher
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 30 Mar 2022 23:04:08 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=300
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 c29390732f5bc4b2c7832623ae6e492e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - Q8fW3kBZoCUe0weuE-KtJIn_yHFngszR4TN6Kn_XgQIrtFHiCAD1hQ==
+    body:
+      encoding: UTF-8
+      string: '{"status_code":7,"status_message":"Invalid API key: You must be granted
+        a valid key.","success":false}
+
+'
+  recorded_at: Wed, 30 Mar 2022 23:04:08 GMT
+- request:
+    method: get
     uri: https://api.themoviedb.org/3/search/movie?api_key=movie_api_key&query=Jack%20Reacher
     body:
       encoding: US-ASCII
@@ -25,7 +77,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 25 Mar 2022 18:37:04 GMT
+      - Sat, 09 Apr 2022 02:30:24 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,13 +94,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 38ecebcaa39c8742da2b6336935bb446.cloudfront.net (CloudFront)
+      - 1.1 e4ca364cc5959e3bf697ae231c5b56b0.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - IAD89-C3
+      - DEN50-C2
       X-Amz-Cf-Id:
-      - XEgHTDMA78k7jkJgtLb3goZMHet08b4mlaFu6fKB-YwR9tk4bPu18A==
+      - 82I9TjWXDTOFQdOQon1z9LkXCoswJoTEgSkajkoQgz3uZIYN86gaUQ==
       Age:
-      - '3'
+      - '4'
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/k7h4RNAarfOrF2r2YMN0P2FQSr4.jpg","genre_ids":[80,18,53,28],"id":75780,"original_language":"en","original_title":"Jack
@@ -56,11 +108,11 @@ http_interactions:
         points to the suspect in custody. On interrogation, the suspect offers up
         a single note: \"Get Jack Reacher!\" So begins an extraordinary chase for
         the truth, pitting Jack Reacher against an unexpected enemy, with a skill
-        for violence and a secret to keep.","popularity":126.666,"poster_path":"/zlyhKMi2aLk25nOHnNm43MpZMtQ.jpg","release_date":"2012-12-20","title":"Jack
-        Reacher","video":false,"vote_average":6.6,"vote_count":5705},{"adult":false,"backdrop_path":"/ww1eIoywghjoMzRLRIcbJLuKnJH.jpg","genre_ids":[28,53],"id":343611,"original_language":"en","original_title":"Jack
+        for violence and a secret to keep.","popularity":193.321,"poster_path":"/zlyhKMi2aLk25nOHnNm43MpZMtQ.jpg","release_date":"2012-12-20","title":"Jack
+        Reacher","video":false,"vote_average":6.6,"vote_count":5736},{"adult":false,"backdrop_path":"/ww1eIoywghjoMzRLRIcbJLuKnJH.jpg","genre_ids":[28,53],"id":343611,"original_language":"en","original_title":"Jack
         Reacher: Never Go Back","overview":"When Major Susan Turner is arrested for
         treason, ex-investigator Jack Reacher undertakes the challenging task to prove
-        her innocence and ends up exposing a shocking conspiracy.","popularity":107.56,"poster_path":"/wxLUQ1pIms3HAlVGYvEG9zg2kDs.jpg","release_date":"2016-10-19","title":"Jack
-        Reacher: Never Go Back","video":false,"vote_average":5.9,"vote_count":3938}],"total_pages":1,"total_results":2}'
-  recorded_at: Fri, 25 Mar 2022 18:37:07 GMT
+        her innocence and ends up exposing a shocking conspiracy.","popularity":172.866,"poster_path":"/wxLUQ1pIms3HAlVGYvEG9zg2kDs.jpg","release_date":"2016-10-19","title":"Jack
+        Reacher: Never Go Back","video":false,"vote_average":5.9,"vote_count":3954}],"total_pages":1,"total_results":2}'
+  recorded_at: Sat, 09 Apr 2022 02:30:29 GMT
 recorded_with: VCR 6.1.0
