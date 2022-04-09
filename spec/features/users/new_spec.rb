@@ -7,6 +7,9 @@ RSpec.describe 'New user' do
 
     fill_in 'Name', with: 'Happy Lama'
     fill_in 'Email', with: 'Happy_Lama@example.com'
+    fill_in 'Password', with: 'happy1'
+    fill_in 'Password confirmation', with: 'happy1'
+
     click_button 'Create User'
 
     lama = User.last

@@ -5,10 +5,16 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.create!(user_params)
-    redirect_to user_path(user.id)
-    flash[:alert] = "Your account was created"
+    user = User.create(user_params)
+    if user.save
+      flash[:alert] = "Your account was created"
+      redirect_to user_path(user.id)
+    else
+      flash[:alert] = "Error: #{error_message(user.errors)}"
+      redirect_to register_path
+    end
   end
+
 
   def show
     @user = User.find(params[:id])
@@ -18,6 +24,6 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end
