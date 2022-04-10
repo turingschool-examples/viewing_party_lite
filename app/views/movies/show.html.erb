@@ -1,9 +1,10 @@
+<% #binding.pry %>
 <h1> "<%= @movie.title%>" related stuff here </h1>
 <h5>Description: <%= @movie.overview%> </h5>
 
-<%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %><br>
+<%= button_to "Discover Movies", "/users/dashboard/discover", method: :get %><br>
 
-<%= button_to "Create Viewing Party for #{@movie.title}", "/users/#{@user.id}/movies/#{@movie.id}/parties/new", method: :get %><br>
+<%= button_to "Create Viewing Party for #{@movie.title}", "/users/dashboard/movies/#{@movie.id}/parties/new", method: :get %><br>
 Movie Runtime: <%= @movie.runtime%> minutes
 <% #genres %>
 <ul>

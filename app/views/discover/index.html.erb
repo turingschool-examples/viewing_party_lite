@@ -1,10 +1,9 @@
+<% #binding.pry %>
 <h1>Discover movies and things about yourself <%=@user.name%>!</h1>
-
-<%= button_to "Find Top Rated Movies", "/users/#{@user.id}/movies?q=top%20rated", method: :get%>
+<%= button_to "Find Top Rated Movies", "/users/dashboard/movies?q=top%20rated", method: :get%>
 <br>
 
-<%= form_tag "/users/#{@user.id}/movies?q=keyword", method: :get do %>
+<%= form_tag "/users/dashboard/movies?q=keyword", method: :get do %>
     <%= text_field_tag :movie %>
     <%= submit_tag "Find Movies" %>
 <% end %>
-

@@ -12,9 +12,9 @@
 # the additional setup, and require it from the spec files that actually need
 # it.
 #
-require 'simplecov'
-require 'shoulda/matchers'
 require 'webmock/rspec'
+require 'shoulda/matchers'
+require 'simplecov'
 SimpleCov.start 'rails'
 SimpleCov.add_filter ['spec', 'config']
 WebMock.disable_net_connect!

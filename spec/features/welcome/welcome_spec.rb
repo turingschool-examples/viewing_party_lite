@@ -17,11 +17,15 @@ RSpec.describe "Welcome Page" do
     expect(page).to have_button("Create a New User")
   end
 
-  it "should have list of exisitng users which links to users dashboard" do
-    expect(page).to have_link(@user.email)
-    expect(page).to have_link(@user2.email)
-    expect(page).to have_link(@user3.email)
+  it "has a log in button" do
+    expect(page).to have_link("Log in")
   end
+
+  # it "should have list of exisitng users which links to users dashboard" do
+  #   expect(page).to have_link(@user.email)
+  #   expect(page).to have_link(@user2.email)
+  #   expect(page).to have_link(@user3.email)
+  # end
 
   it "should have link to home page" do
     expect(page).to have_link("Home Page")
