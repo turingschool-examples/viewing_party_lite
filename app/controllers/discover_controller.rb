@@ -1,6 +1,7 @@
 class DiscoverController < ApplicationController
 
   def index
-    @user = User.find(params[:user_id]) 
+    @user = User.find_by(id: session[:user_id])
+    #binding.pry
   end
 end

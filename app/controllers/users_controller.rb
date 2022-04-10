@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
     if user.save
       session[:user_id] = user.id
-      redirect_to "/users/#{user.id}"
+      redirect_to "/users/dashboard?=#{user.email}"
     else
       redirect_to "/register"
       flash[:alert] = "Error: #{error_message(user.errors)}"
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
      @user = User.find(params[:id])
      change_status(params[:party_id])
     else
-      @user = User.find(params[:id])
+      @user = User.find_by(id: session[:user_id])
     end
   end
 
@@ -30,15 +30,22 @@ class UsersController < ApplicationController
 
   def login_user
     user = User.find_by(email: params[:email])
+    #binding.pry
     if user.authenticate(params[:password])
       session[:user_id] = user.id
-      #binding.pry
-      redirect_to "/users/#{user.id}"
-      #binding.pry
-    else
+      redirect_to "/users/dashboard?=#{user.email}"
+    elsif user.authenticate(params[:password]) == false
       flash[:error]= "You ain't nobody"
       render :login_form
+    elsif !user
+      flash[error] = "You ain't them! Try again"
+      render :login_form
     end
+  end
+
+  def logout
+    session.destroy
+    redirect_to "/"
   end
 
   private

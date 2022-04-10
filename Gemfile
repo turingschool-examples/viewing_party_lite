@@ -43,6 +43,7 @@ group :development, :test do
   gem 'shoulda-matchers' # requires config
   gem 'figaro'
   gem 'faraday'
+  gem 'simplecov'
 end
 
 group :development do

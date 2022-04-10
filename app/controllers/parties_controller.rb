@@ -1,28 +1,34 @@
 class PartiesController <ApplicationController
   def new
-    @user =  User.find(params[:user_id])
-    @users = User.all
-    @movie = MovieFacade.movie_show(params[:movie_id])
+    if user_logged_in
+      @user = User.find_by(id: session[:user_id])
+      #binding.pry
+      @users = User.all
+      @movie = MovieFacade.movie_show(params[:movie_id])
+    else
+      redirect_to "/login"
+      flash[:alert] = "Error: Log In or register. I need data to sell damnit!"
+    end
   end
 
   def create
     @movie = MovieFacade.movie_show(params[:movie_id])
-
+    @user = User.find_by(id: session[:user_id])
     host = User.find(params[:user_id])
-    
+
     params[:users] << params[:user_id]
-    
+
     if params[:duration].to_i < @movie.runtime
       redirect_to "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/parties/new"
       flash.alert = "Error! if the party ends before the movie no one will love you."
     elsif params[:users].count < 1
-      
+
       redirect_to "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/parties/new"
       flash.alert = "You'll die alone if you don't invite someone."
     else
-      
-    partytime = Party.create!(movie_id: params[:movie_id], date: params[:date], start: params[:start], 
-                             duration: params[:duration], user_id: params[:user_id], movie_title: @movie.title, 
+
+    partytime = Party.create!(movie_id: params[:movie_id], date: params[:date], start: params[:start],
+                             duration: params[:duration], user_id: params[:user_id], movie_title: @movie.title,
                              movie_image: @movie.image)
 
       if partytime.save
