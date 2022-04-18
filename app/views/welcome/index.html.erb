@@ -1,9 +1,11 @@
-<h1>Viewing Party Lite</h1>
+<div class='content'>
+   <h1>Viewing Party Lite</h1>
 
 
-<%= button_to "New User", "/register", method: :get %>
+   <%= button_to "New User", "/register", method: :get %>
 
-<h2>Existing Users:</h2>
-<% @users.each do |user| %>
-   <p><%= user.email %></p>
-<% end %>
+   <h2>Existing Users:</h2>
+   <% @users.each do |user| %>
+      <p><%= user.email %></p>
+   <% end %>
+</div>
