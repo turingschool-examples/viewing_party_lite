@@ -6,4 +6,12 @@ class UsersMoviesController < ApplicationController
       render 'users/movies/index'
     end
   end
+
+  def create
+    @user = User.find(params[:user_id])
+    if params[:search].present?
+      @search_movie = MovieFacade.search(params[:search])
+      render 'users/movies/index'
+    end
+  end
 end

@@ -7,4 +7,10 @@ class MovieFacade
     end
   end
 
+  def self.search(query)
+    MovieService.search_movie(query).map do |movie|
+      MoviePoro.new(movie)
+    end
+  end
+
 end
