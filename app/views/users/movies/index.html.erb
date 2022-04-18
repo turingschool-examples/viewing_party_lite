@@ -1,1 +1,7 @@
-saofasfd
+<% @top_movies.each do |movie| %>
+
+  <h1><%= movie.title %></h1>
+  <h3>Movie ID: <%= movie.id %></h3>
+  <h3>Average Rating: <%= movie.average_rating %><br/><br/></h3>
+
+<% end %>
