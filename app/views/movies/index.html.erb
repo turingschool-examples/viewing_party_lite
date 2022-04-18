@@ -1,5 +1,15 @@
-<h1>Here You Go!</h1>
-
-<% @movies.each do |movie| %>
-<p>Title: <%= movie.title %>, Vote Average:<%= movie.vote_average %></p>
-<% end %>
+<div class='content'>
+  <h1>Movie Results</h1>
+  <h2>Select a Movie for your Party!</h2>
+    <% @movies.each do |movie| %>
+      <div class="movie-card">
+        <img src="https://image.tmdb.org/t/p/original<%= movie.poster_path %>" 
+              alt="movie_poster" 
+              class="movie-poster">
+        <div class="movie-info">
+          <h2><%= link_to "#{movie.title}", "/users/#{@user.id}/movies/#{movie.id}"%></h2>
+          <p>Vote Average: <%= movie.vote_average %></p>
+        </div>
+      </div>
+    <% end %>
+</div>

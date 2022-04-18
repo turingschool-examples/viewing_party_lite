@@ -10,7 +10,7 @@ class MovieFacade
   end
 
   def self.keywords(keyword)
-    return top_movies if keyword == 'top_rated'
+    return top_movies if keyword == 'top_rated' 
 
     data = MovieService.movie_keywords(keyword)
 

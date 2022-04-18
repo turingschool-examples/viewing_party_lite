@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/helpers/application_helper.rb": {
+      "/Users/lisataylor/turing/3module/projects/viewing_party_lite/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -9,7 +9,7 @@
           null
         ]
       },
-      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/facades/movie_facade.rb": {
+      "/Users/lisataylor/turing/3module/projects/viewing_party_lite/app/facades/movie_facade.rb": {
         "lines": [
           null,
           null,
@@ -54,7 +54,7 @@
           null
         ]
       },
-      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/models/party.rb": {
+      "/Users/lisataylor/turing/3module/projects/viewing_party_lite/app/models/party.rb": {
         "lines": [
           null,
           null,
@@ -66,7 +66,7 @@
           null
         ]
       },
-      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/models/application_record.rb": {
+      "/Users/lisataylor/turing/3module/projects/viewing_party_lite/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -75,7 +75,7 @@
           null
         ]
       },
-      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/models/party_user.rb": {
+      "/Users/lisataylor/turing/3module/projects/viewing_party_lite/app/models/party_user.rb": {
         "lines": [
           null,
           null,
@@ -85,7 +85,7 @@
           null
         ]
       },
-      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/models/user.rb": {
+      "/Users/lisataylor/turing/3module/projects/viewing_party_lite/app/models/user.rb": {
         "lines": [
           null,
           null,
@@ -98,7 +98,7 @@
           null
         ]
       },
-      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/poros/movie_review.rb": {
+      "/Users/lisataylor/turing/3module/projects/viewing_party_lite/app/poros/movie_review.rb": {
         "lines": [
           null,
           null,
@@ -115,7 +115,7 @@
           null
         ]
       },
-      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/poros/movie.rb": {
+      "/Users/lisataylor/turing/3module/projects/viewing_party_lite/app/poros/movie.rb": {
         "lines": [
           null,
           null,
@@ -149,7 +149,7 @@
           null
         ]
       },
-      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/services/movie_service.rb": {
+      "/Users/lisataylor/turing/3module/projects/viewing_party_lite/app/services/movie_service.rb": {
         "lines": [
           null,
           null,
@@ -187,7 +187,7 @@
           null
         ]
       },
-      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/controllers/discover_controller.rb": {
+      "/Users/lisataylor/turing/3module/projects/viewing_party_lite/app/controllers/discover_controller.rb": {
         "lines": [
           null,
           null,
@@ -198,7 +198,7 @@
           null
         ]
       },
-      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/controllers/application_controller.rb": {
+      "/Users/lisataylor/turing/3module/projects/viewing_party_lite/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -206,7 +206,7 @@
           null
         ]
       },
-      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/controllers/movies_controller.rb": {
+      "/Users/lisataylor/turing/3module/projects/viewing_party_lite/app/controllers/movies_controller.rb": {
         "lines": [
           null,
           null,
@@ -224,7 +224,7 @@
           null
         ]
       },
-      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/controllers/welcome_controller.rb": {
+      "/Users/lisataylor/turing/3module/projects/viewing_party_lite/app/controllers/welcome_controller.rb": {
         "lines": [
           null,
           null,
@@ -235,7 +235,7 @@
           null
         ]
       },
-      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/poros/movie_cast.rb": {
+      "/Users/lisataylor/turing/3module/projects/viewing_party_lite/app/poros/movie_cast.rb": {
         "lines": [
           null,
           null,
@@ -250,7 +250,7 @@
           null
         ]
       },
-      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/controllers/parties_controller.rb": {
+      "/Users/lisataylor/turing/3module/projects/viewing_party_lite/app/controllers/parties_controller.rb": {
         "lines": [
           null,
           null,
@@ -268,7 +268,7 @@
           null
         ]
       },
-      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/controllers/users_controller.rb": {
+      "/Users/lisataylor/turing/3module/projects/viewing_party_lite/app/controllers/users_controller.rb": {
         "lines": [
           null,
           null,
@@ -298,7 +298,7 @@
           null
         ]
       },
-      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
+      "/Users/lisataylor/turing/3module/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
           null,
           null,
@@ -310,7 +310,7 @@
         "branches": {
         }
       },
-      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/jobs/application_job.rb": {
+      "/Users/lisataylor/turing/3module/projects/viewing_party_lite/app/jobs/application_job.rb": {
         "lines": [
           null,
           null,
@@ -320,7 +320,7 @@
         "branches": {
         }
       },
-      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/channels/application_cable/connection.rb": {
+      "/Users/lisataylor/turing/3module/projects/viewing_party_lite/app/channels/application_cable/connection.rb": {
         "lines": [
           null,
           null,
@@ -332,7 +332,7 @@
         "branches": {
         }
       },
-      "/Users/blakedempsey/turing/mod_3/projects/viewing_party_lite/app/channels/application_cable/channel.rb": {
+      "/Users/lisataylor/turing/3module/projects/viewing_party_lite/app/channels/application_cable/channel.rb": {
         "lines": [
           null,
           null,
@@ -345,6 +345,6 @@
         }
       }
     },
-    "timestamp": 1648233002
+    "timestamp": 1648236328
   }
 }

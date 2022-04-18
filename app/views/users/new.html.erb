@@ -1,10 +1,16 @@
 
-<h1>Register</h1>
+<div class="content">
 
-<%= form_with url: "/users", method: :post, local: true do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-  <%= form.label :email %>
-  <%= form.text_field :email %>
-  <%= form.submit "Create New User" %>
-<% end %>
+  <h1>Register</h1>
+    <br>
+    <br>
+  <%= form_with url: "/users", method: :post, local: true do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %> 
+    <%= form.label :email %>
+    <%= form.text_field :email %> 
+    <br>
+    <br>
+    <%= form.submit "Create New User" %>
+  <% end %>
+</div>
