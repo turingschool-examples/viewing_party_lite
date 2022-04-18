@@ -98,8 +98,16 @@ h3 {
   border: 1px solid grey;
   padding: 20px;
   box-shadow: 10px 5px 5px rgb(177, 177, 177);
+}
 
-  .button {
-    text-align: center;
-  }
+.all-parties {
+  display: flex;
+  padding: 20px;
+}
+
+.party {
+  border: 1px solid grey;
+  padding: 20px;
+  width: 20vw;
+  margin: 10px;
 }

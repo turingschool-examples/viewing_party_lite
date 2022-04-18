@@ -33,5 +33,6 @@ RSpec.describe 'Party New Page' do
     check @user2.name.to_s
     click_button 'Create Party'
     expect(current_path).to eq("/users/#{@user1.id}")
+    expect(page).to have_content("Jurrasic Park")
   end
 end
