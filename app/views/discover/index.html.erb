@@ -1,0 +1,12 @@
+<div class='content'>
+  <h1>Find a Movie</h1>
+
+  <%= form_with url: user_movies_path(@user), method: :get, local: true do |form| %>
+    <%= form.label :search, 'Search For Keywords:' %>
+    <%= form.text_field :search %>
+    <%= form.submit 'Find Movies' %>
+  <% end %>
+  <br>
+  <br>
+  <%= button_to "Top Rated Movies", user_movies_path(@user), params: {search: "top_rated"}, method: :get %>
+</div>

@@ -1,0 +1,12 @@
+<div class="content">
+<h1>Register</h1>
+
+  <%= form_with url: "/users", method: :post, local: true do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+    <%= form.submit "Create New User" %>
+  <% end %>
+</div>
+

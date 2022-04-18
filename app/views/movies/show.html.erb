@@ -1,0 +1,48 @@
+<div class="content">
+   <div class="movie-deets">
+      <h1>Viewing Party Lite</h1>
+      <hr>
+      <h2><%= @movie.title %></h2>
+      <div class ="movie-teaser">
+         <img src="https://image.tmdb.org/t/p/original<%= @movie.poster_path %>" alt="movie_poster" class="movie-poster">
+         <br>
+         <div class='cast'>
+            <h3>Cast:</h3>
+            <p>
+            <% @cast.each do |actor| %>
+               <%= actor.name %> as <%= actor.character %><br>
+            <% end %>
+            </p>
+         </div>
+      </div>
+      <br>
+      <div>
+      Vote Average: <%= @movie.vote_average %> ||
+      Runtime: <%= @movie.runtime_converted %> ||
+      Genre(s):
+      <% @movie.genres.each do |genre| %>
+         <%= genre[:name] %>
+      <% end %>
+      </div>
+      <br>
+      <%= button_to "Back to Discover Page", user_discover_index_path(@user), method: :get %>
+      <br>
+      <%= button_to "Create Viewing Party", "/users/#{@user.id}/movies/#{@movie.id}/parties/new", method: :get %>
+      <hr>
+      <div class="summary">
+         <h3>Summary:</h3>
+         <p><%= @movie.summary %></p>
+      </div>
+      <br>
+      <br>
+      <div class="reviews">
+         <h3><%= @reviews.count %> Reviews</h3>
+            <div class="rev">
+               <% @reviews.each do |review| %>
+               <h4>Author: <%= review.author %></h4>
+               <%= review.review_content %>
+               <% end %>
+            </div>
+      </div>
+   </div>
+</div>
