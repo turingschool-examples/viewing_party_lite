@@ -4,7 +4,11 @@ require 'rails_helper'
 
 RSpec.describe 'movie show page' do
   before :each do
-    @user1 = User.create(name: 'Asil Rolyat', email: 'asil.rolyat@yourmom.com')
+
+    # @user1 = User.create(name: "Asil Rolyat", email: "asil.rolyat@yourmom.com")
+    @user1 = User.create(name: "Asil Rolyat", email: "asil.rolyat@yourmom.com", password: "124", password_confirmation: "124")
+
+
     @movie_id = 329
 
     @results_movies = File.read('spec/fixtures/movie_id_jurassic.json')
