@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  get '/users/:id/discover', to: 'users#discover'
+
+  resources :users do
+      resources :movies, only: [:index], controller: :users_movies do
+      end
+    end
 end
