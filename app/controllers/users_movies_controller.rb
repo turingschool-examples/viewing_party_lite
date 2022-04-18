@@ -7,7 +7,7 @@ class UsersMoviesController < ApplicationController
     end
   end
 
-  def create
+  def create # This seems messy
     @user = User.find(params[:user_id])
     if params[:search].present?
       @search_movie = MovieFacade.search(params[:search])
