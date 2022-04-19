@@ -1,0 +1,15 @@
+<div class="row" align="center" id="discover_movies">
+      <%= button_to("Discover Movies", user_discover_index_path(@user), method: :get)%>
+</div>
+<br>
+<br>
+<ol>
+  <% if @data != nil %>
+    <% @data.each do |movie| %>
+      <li>
+       <%= link_to movie.title, user_movie_path(@user, movie.id) %>
+        - (Vote Average: <%= movie.vote_average %>)
+      </li>
+    <% end  %>
+<% end  %>
+</ol>

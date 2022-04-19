@@ -1,0 +1,50 @@
+<div class="container">
+  <h1 align="center"> <%= @user.name %>'s Dashboard </h1>
+</div>
+<div class="container" align="center" id="discover_movies">
+      <%= button_to("Discover Movies", user_discover_index_path(@user), method: :get)%>      
+</div>
+
+<div class="container" align="center" id="viewing_parties">
+  <div class="col-md-12 text-center">
+    <h2>Viewing Parties</h2>
+    <div class="card-deck ">
+      <% @user.viewing_parties.each do |vp| %>
+      <div class="card-block">
+        <div class="card mb-3 col-lg-4 d-flex align-items-stretch" style="max-width: 25rem;" id="<%= vp.id %>">
+          <div class="card-title">
+            <h4><%= vp.movie_data.title %></h4>
+          </div>
+          <div class="card-body">
+            <img class="card-img-top" src=<%= "https://image.tmdb.org/t/p/original/#{vp.movie_data.poster}"%>>
+            <p class="card-text">
+            <ul class="host list-group">
+              <li class="list-group-item"> Date: <%= vp.date %> </li>
+              <li class="list-group-item">Time: <%= vp.start_time.strftime("%l:%M%p") %> </li>
+            </ul>
+            <ul class="list-group">
+              <div class="d-flex justify-content-center">
+                <h5>Invited Guests</h5>
+              </div>
+              <div class="invited">
+                <% vp.user_parties.each do |party| %> 
+                  <% if party.host == true  %>
+                    Host: <%= party.user.name %> <br>
+                  <% else %>
+                    <% if party.user.email == @user.email  %>
+                      <b> Invitee: <%= party.user.name %> </b> <br> 
+                    <% else %>
+                      Invitee: <%= party.user.name %> <br>
+                    <% end  %>
+                  <% end  %>
+                <% end %>
+              </div>
+            </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

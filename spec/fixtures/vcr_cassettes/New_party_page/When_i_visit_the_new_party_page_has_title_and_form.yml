@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/22?api_key=<movie_api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.2.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Mar 2022 17:25:09 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 92f0f4310f9aec63bc8c99b5e9b827912d7866f4
+      X-Memc-Age:
+      - '1371'
+      X-Memc-Expires:
+      - '14179'
+      Etag:
+      - W/"33fe5facdee225a842e9afd903656d35"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 afd102780059267a882ab641a00a66d6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DFW56-P5
+      X-Amz-Cf-Id:
+      - 9QAQSOi1S9c_mFPo5JsdqS1izst38BZmgooBdnlg_rB11i4FMqhmFw==
+      Age:
+      - '3197'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/3rlclw8qHWEX2hYHNi7dAaW1e0.jpg","belongs_to_collection":{"id":295,"name":"Pirates
+        of the Caribbean Collection","poster_path":"/zRBaZxS5YauLvRYjAdL4AUCwlht.jpg","backdrop_path":"/wxgD3fB5lQ2sGJLog0rvXW049Pf.jpg"},"budget":140000000,"genres":[{"id":12,"name":"Adventure"},{"id":14,"name":"Fantasy"},{"id":28,"name":"Action"}],"homepage":"http://disney.go.com/disneyvideos/liveaction/pirates/main_site/main.html","id":22,"imdb_id":"tt0325980","original_language":"en","original_title":"Pirates
+        of the Caribbean: The Curse of the Black Pearl","overview":"Jack Sparrow,
+        a freewheeling 18th-century pirate, quarrels with a rival pirate bent on pillaging
+        Port Royal. When the governor''s daughter is kidnapped, Sparrow decides to
+        help the girl''s love save her.","popularity":144.408,"poster_path":"/z8onk7LV9Mmw6zKz4hT6pzzvmvl.jpg","production_companies":[{"id":2,"logo_path":"/wdrCwmRnLFJhEoH8GSfymY85KHT.png","name":"Walt
+        Disney Pictures","origin_country":"US"},{"id":130,"logo_path":"/c9dVHPOL3cqCr2593Ahk0nEKTEM.png","name":"Jerry
+        Bruckheimer Films","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2003-07-09","revenue":655011224,"runtime":143,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Prepare
+        to be blown out of the water.","title":"Pirates of the Caribbean: The Curse
+        of the Black Pearl","video":false,"vote_average":7.8,"vote_count":17149}'
+  recorded_at: Fri, 25 Mar 2022 18:18:26 GMT
+recorded_with: VCR 6.1.0

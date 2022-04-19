@@ -4,12 +4,18 @@
     <title>ViewingPartyLite</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= link_to "Home", "/" %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="top-container">
+      <h1 style="text-align:center; background-color:#EBEFF3;">    <%= link_to "Viewing Party Light", "/" %> </h1>
+      <% flash.each do |type, notice| %>
+        <h3><b><%= notice %></b></h3>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>
