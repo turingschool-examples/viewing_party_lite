@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   validates_presence_of :name, :email
   validates_uniqueness_of :email
@@ -5,4 +7,4 @@ class User < ApplicationRecord
   has_many :attendees
   has_many :parties
   has_many :parties, through: :attendees
-end 
+end
