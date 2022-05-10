@@ -18,5 +18,4 @@ RSpec.describe 'new user page' do
     expect(current_path).to eq(user_path(user))
     expect(page).to have_content("#{user.name}'s Dashboard")
   end
-  
 end
