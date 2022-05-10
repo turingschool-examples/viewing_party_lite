@@ -8,6 +8,7 @@ RSpec.describe User do
   end
 
   context 'relationships' do
-    it { should have_many :party_users }
+    it { should have_many(:party_users) }
+    it { should have_many(:viewing_parties).through(:party_users) } 
   end
 end
