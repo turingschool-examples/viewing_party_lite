@@ -26,16 +26,16 @@ RSpec.describe 'Landing/Welcome Page' do
       hazel = User.create!(name: 'Hazel', email: 'hazelthehut@food.com')
       
       visit "/"
-
-      within "#user-#{skeeter.id}" do 
+      save_and_open_page
+      within "#user_id-#{skeeter.id}" do 
         expect(page).to have_link("skeeter@example.com's dashboard")
       end 
 
-      within "#user-#{lugnut.id}" do 
+      within "#user_id-#{lugnut.id}" do 
         expect(page).to have_link("fatdog@corgi.com's dashboard")
       end 
 
-      within "#user-#{hazel.id}" do 
+      within "#user_id-#{hazel.id}" do 
         expect(page).to have_link("hazelthehut@food.com's dashboard")
         # click_link "hazelthehut@food.com's dashboard"
         # expect(current_path).to eq("/users/#{hazel.id}")

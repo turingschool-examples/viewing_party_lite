@@ -10,10 +10,11 @@
 <section id="existing_users">
 <h3>Current Users</h3>
   
-  <section id="user<%= user.id %>">
-    <% @users.each do |user| %>
-      <%= user.name %><br>
-    <% end %>
+  <% @users.each do |user| %>
+    <section id="user_id-<%= user.id %>">
+      <%= link_to "#{user.email}'s dashboard", "/users/#{user.id}" %><br>
+    
   </section>
+    <% end %>
 
 </section>
