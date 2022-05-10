@@ -6,11 +6,11 @@ describe "User dashboard/show" do
     @user2 = User.create!(name: "User Two", email: "user2@test.com")
     @user3 = User.create!(name: "User Three", email: "user3@test.com")
 
-    @u1_vp = Party.create!(event_date: Time.new(2002, 0o4, 26, 1, 0, 0), duration: "230 mins", start_time: Time.new(2002, 0o4, 26, 1, 0, 0), user_id: @user1.id)
+    @u1_vp = Party.create!(event_date: Time.new(2002, 04, 26, 1, 0, 0), duration: "230 mins", start_time: Time.new(2002, 04, 26, 1, 0, 0), user_id: @user1.id)
     @u1_vp_inv_1 = Invitation.create!(user_id: @user1.id, party_id: @u1_vp.id)
     @u1_vp_inv_2 = Invitation.create!(user_id: @user3.id, party_id: @u1_vp.id)
 
-    @u2_vp = Party.create!(event_date: Time.new(2002, 0o2, 24, 2, 0, 0), duration: "230 mins", start_time: Time.new(2002, 0o2, 24, 2, 0, 0), user_id: @user2.id)
+    @u2_vp = Party.create!(event_date: Time.new(2002, 02, 24, 2, 0, 0), duration: "230 mins", start_time: Time.new(2002, 02, 24, 2, 0, 0), user_id: @user2.id)
     @u2_vp_inv = Invitation.create!(user_id: @user3.id, party_id: @u2_vp.id)
     visit "/users/#{@user1.id}"
   end
