@@ -10,6 +10,13 @@
   </head>
 
   <body>
+    <%= render "layouts/header" unless @disable_nav %>
+
+    <% flash.each do |type, msg| %>
+      <div>
+        <strong><%= msg %></strong>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
