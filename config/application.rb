@@ -44,5 +44,7 @@ module ViewingPartyLite
       g.routing_specs false
       g.view_specs false
     end
+
+    # config.generators.system_tests = nil
   end
 end
