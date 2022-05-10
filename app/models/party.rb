@@ -1,0 +1,5 @@
+class Party < ApplicationRecord
+
+
+
+end 
