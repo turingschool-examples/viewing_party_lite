@@ -16,11 +16,13 @@ RSpec.describe 'the users show page' do
     visit user_dashboard_path(@user_1)
     within '.name' do
       expect(page).to have_content("Alfonso Diogenes's Dashboard")
+      expect(page).to_not have_content("Cradley Booper's Dashboard")
     end
 
     visit user_dashboard_path(@user_2)
     within '.name' do
       expect(page).to have_content("Cradley Booper's Dashboard")
+      expect(page).to_not have_content("Alfonso Diogenes's Dashboard")
     end
   end
 end
