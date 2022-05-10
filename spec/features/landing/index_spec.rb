@@ -22,14 +22,15 @@ RSpec.describe 'landing page' do
       within(".users") do
         click_link "#{user.name}"
       end
-      
+
       expect(current_path).to eq("/users/#{user.id}")
     end
 
     it 'shows a header link redirecting to landing page' do
-      visit new_user_path
-      click_on 'Home'
-      expect(current_path).to eq('/')
+      visit "/users/new"
+
+      click_link "Home"
+      expect(current_path).to eq(root_path)
     end
 
   end
