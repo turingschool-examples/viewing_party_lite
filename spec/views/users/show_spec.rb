@@ -12,4 +12,11 @@ describe "User dashboard/show" do
     expect(page).to have_content("User One's page")
     expect(page).not_to have_content("User Two's page")
   end
+
+  it 'has a button to discover movies' do
+    click_button("Discover Movies")
+
+    expect(current_path).to eq("/users/#{@user1.id}/discover")
+    expect(current_path).not_to eq("/users/#{@user2.id}/discover")
+  end
 end
