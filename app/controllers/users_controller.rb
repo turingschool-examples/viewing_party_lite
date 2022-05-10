@@ -7,12 +7,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.create!(user_params)
+    user = User.new(user_params)
 
     if user.save
-      redirect_to root_path
+      redirect_to "/users/#{user.id}"
     else
-      redirect_to "/users/new"
+      redirect_to "/register"
+      flash[:alert] = "That email has already been registered. Please enter a new email."
     end
   end
 

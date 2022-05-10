@@ -12,7 +12,7 @@ RSpec.describe 'landing page' do
       visit root_path
       click_link 'Create New User'
 
-      expect(current_path).to eq "/users/new"
+      expect(current_path).to eq "/register"
     end
 
     it 'shows existing user list that is linked to respective user dashboard' do
@@ -27,7 +27,7 @@ RSpec.describe 'landing page' do
     end
 
     it 'shows a header link redirecting to landing page' do
-      visit "/users/new"
+      visit "/register"
 
       click_link "Home"
       expect(current_path).to eq(root_path)
