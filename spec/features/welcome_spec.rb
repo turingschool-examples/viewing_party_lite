@@ -4,8 +4,8 @@ describe "welcome page" do
   describe "as a user" do
     describe "when i visit the root path" do
       before do
-        @user_1 = User.create!(name: "James Harkins", email: "jh.harkins@protonmail.com")
-        @user_2 = User.create!(name: "Sandisz Thieme", email: "sandiszthieme@gmail.com")
+        @user_1 = User.create!(name: "Tony Soprano", email: "wokeupthismorning@gmail.com")
+        @user_2 = User.create!(name: "Junior Soprano", email: "varsityathlete@gmail.com")
         visit "/"
       end
 
@@ -19,12 +19,12 @@ describe "welcome page" do
       end
 
       it "i see a list of existing users, whose names link to their user dashboard" do
-        expect(page).to have_link("James Harkins")
-        expect(page).to have_link("Sandisz Thieme")
-        expect(page).to have_content("jh.harkins@protonmail.com")
-        expect(page).to have_content("sandiszthieme@gmail.com")
+        expect(page).to have_link("Tony Soprano")
+        expect(page).to have_link("Junior Soprano")
+        expect(page).to have_content("wokeupthismorning@gmail.com")
+        expect(page).to have_content("varsityathlete@gmail.com")
 
-        click_link("James Harkins")
+        click_link("Tony Soprano")
 
         expect(current_path).to eq("/users/#{@user_1.id}")
       end
