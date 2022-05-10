@@ -7,14 +7,11 @@
           null
         ]
       },
-      "/Users/alexanderpsitos/turing/3module/week_1/pair_project/viewing_party_lite/app/models/user.rb": {
+      "/Users/alexanderpsitos/turing/3module/week_1/pair_project/viewing_party_lite/app/models/party.rb": {
         "lines": [
           1,
           1,
           1,
-          null,
-          1,
-          null,
           null
         ]
       },
@@ -33,11 +30,14 @@
           null
         ]
       },
-      "/Users/alexanderpsitos/turing/3module/week_1/pair_project/viewing_party_lite/app/models/party.rb": {
+      "/Users/alexanderpsitos/turing/3module/week_1/pair_project/viewing_party_lite/app/models/user.rb": {
         "lines": [
           1,
           1,
           1,
+          null,
+          1,
+          null,
           null
         ]
       },
@@ -88,6 +88,6 @@
         }
       }
     },
-    "timestamp": 1652142800
+    "timestamp": 1652143216
   }
 }
