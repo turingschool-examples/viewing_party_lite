@@ -1,0 +1,8 @@
+<h1>Welcome to Viewing Party!</h1>
+<h3>Current Users:</h3>
+<% @users.each do |user| %>
+  <p><%= link_to "#{user.name}", "/users/#{user.id}" %></p>
+  <p><%= user.email %></p>
+<% end %>
+<%= button_to "Create New User", "/users/new", method: :get %>
+<%= link_to "Return to Home Page", "/" %>
