@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'landing page' do
+RSpec.describe 'landing page' do
 
   describe 'display' do
     it 'shows the title of the application' do
@@ -11,7 +11,8 @@ describe 'landing page' do
     it 'shows a button to create a new user' do
       visit root_path
       click_link 'Create New User'
-      expect(current_path).to eq new_user_path
+      
+      expect(current_path).to eq "/users/new"
     end
 
     it 'shows existing user list that is linked to respective user dashboard' do
