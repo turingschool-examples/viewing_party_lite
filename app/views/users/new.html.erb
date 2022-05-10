@@ -1,0 +1,13 @@
+<%= form_with url: "/users", method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :email %>
+  <%= form.text_field :email %>
+
+  <%= form.submit "Register" %>
+<% end %>
+
+<% flash.each do |type, message| %>
+  <p><%= message %></p>
+<% end %>
