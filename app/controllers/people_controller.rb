@@ -1,7 +1,13 @@
 class PeopleController < ApplicationController
-  def new
-    @person = 
+  def index
+    @people = People.all
+    require "pry"
+    binding.pry
   end
+
+  # def new
+  #   @person = Person.new
+  # end
 
   def create
     person = Person.new(person_params)
