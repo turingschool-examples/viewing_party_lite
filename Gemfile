@@ -41,8 +41,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'faraday'
-  gem 'rspec-rails'
   gem 'pry'
+  gem 'rspec-rails'
   gem 'rubocop', '~> 1.18.0', require: false
   gem 'rubocop-performance', '~> 1.11.0', require: false
   gem 'rubocop-rails', '~> 2.11.0', require: false

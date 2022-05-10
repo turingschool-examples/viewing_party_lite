@@ -6,6 +6,8 @@ Neccesary checkmarks:
 
      The code will run locally   Implemented by_[] Reviewed by []
 
+     Rubocop likes everything    Implemented by_[] Reviewed by []
+
 Type of change
 
     [] New feature
