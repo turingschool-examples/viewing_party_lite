@@ -1,3 +1,5 @@
 <h1>Users#show</h1>
 <p>Find me in app/views/users/show.html.erb</p>
 <h1><%= @user.name %>'s Dashboard</h1>
+
+<h2><%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %></h2>
