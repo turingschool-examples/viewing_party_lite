@@ -1,3 +1,8 @@
 <h1> Viewing Party! </h1>
 
 <%= button_to "Create New User", "/users/new", method: :get%>
+
+<h3> All Users </h3>
+<% @users.each do |user| %>
+<p><%=link_to "#{user.name}", "/users/#{user.id}" %></p>
+<% end %>

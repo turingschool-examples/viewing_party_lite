@@ -30,7 +30,7 @@ RSpec.describe "Home page", type: :feature do
   it 'has a link to return to home page' do
     visit "/"
 
-    click_button("Home")
+    click_on("Home")
     expect(current_path).to eq("/")
   end
 end
