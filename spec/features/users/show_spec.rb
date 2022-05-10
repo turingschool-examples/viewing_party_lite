@@ -25,4 +25,13 @@ RSpec.describe 'the users show page' do
       expect(page).to_not have_content("Alfonso Diogenes's Dashboard")
     end
   end
+
+  it 'has a button that links to discover movies' do
+    visit user_dashboard_path(@user_1)
+    within '.discover-movies' do
+      expect(page).to have_button('Discover Movies')
+      click_on 'Discover Movies'
+      expect(current_path).to eq(user_discover_path(@user_1))
+    end
+  end
 end
