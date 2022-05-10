@@ -2,5 +2,5 @@
   <h1>  <%= @user.name %>'s Dashboard</h1>
 </div>
 
-<%= render partial: 'partials/navbar_user' %>
+<%= render partial: 'partials/navbar_user', :locals => {:user_id => @user.id} %>
 <h3>Viewing Parties</h3>
