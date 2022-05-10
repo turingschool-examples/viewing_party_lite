@@ -8,9 +8,21 @@ RSpec.describe 'landing page' do
 
     visit root_path
   end
+
+  it 'has a link to redirect to root' do
+    link = "Home"
+
+    within '.links' do
+      expect(page).to have_link(link)
+    end
+
+    click_link "Home"
+    expect(page).to have_current_path(root_path)
+  end
+
   it 'has an application title' do
     within '.title' do
-      expect(page).to have_content('Viewing Page Party')
+      expect(page).to have_content('Viewing Party Lite')
     end
   end
 end
