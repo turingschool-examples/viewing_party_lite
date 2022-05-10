@@ -1,0 +1,9 @@
+[user]
+  email = alicia.watt.aw@gmail.com
+  name = alicia watt
+
+[commit]
+  template = ~/.gitmessage
+
+[core]
+  editor = atom --wait
