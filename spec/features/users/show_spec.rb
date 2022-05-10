@@ -1,12 +1,13 @@
 require "rails_helper"
 
-RSpec.describe "users dashboard" do
+RSpec.describe "user dashboard" do
   before :all do
     @user_1 = User.create!(name: "Unreal Ursa", email: "thisaintreal@gotcha.org")
   end
+
   it "displays user name" do
     visit "/users/#{@user_1.id}"
-    save_and_open_page
+
     expect(page).to have_content("Unreal Ursa's Dashboard")
   end
 end

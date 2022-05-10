@@ -11,15 +11,19 @@ RSpec.describe 'landing page' do
     it 'shows a button to create a new user' do
       visit root_path
       click_link 'Create New User'
-      
+
       expect(current_path).to eq "/users/new"
     end
 
     it 'shows existing user list that is linked to respective user dashboard' do
       user = User.create(name: 'Michael', email: 'michael@example.net')
       visit root_path
-      click_on "#{user.email}"
-      expect(current_path).to eq(user_path(user.id))
+
+      within(".users") do
+        click_link "#{user.name}"
+      end
+      
+      expect(current_path).to eq("/users/#{user.id}")
     end
 
     it 'shows a header link redirecting to landing page' do
