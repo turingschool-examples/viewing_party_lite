@@ -1,2 +1,16 @@
 <h1>Landing#index</h1>
 <p>Find me in app/views/landing/index.html.erb</p>
+<h1>Viewing Party Lite</h1>
+
+<div class="users">
+  <% if !@users.empty? %>
+    <h2>Users:</h2>
+    <ul>
+      <% @users.each do |u| %>
+        <li><%= link_to u.name, "/users/#{u.id}", method: :get %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
+<h3><%= link_to "Create New User", "/users/new", method: :get, local: true %></h3>
