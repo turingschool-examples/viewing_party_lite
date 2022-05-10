@@ -53,6 +53,7 @@ group :test do
   gem 'simplecov'
   gem 'webmock'
   gem 'orderly'
+  gem 'shoulda-matchers'
 end 
 
 
