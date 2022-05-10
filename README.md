@@ -8,7 +8,7 @@ Viewing Part Lite is an application in which users can explore movie options and
 
 ## Setup for the use of the project
 
-1. A conveyor belt link will be sent out at project kickoff so that you can both fork and copy the project board on this base repo. 
+1. A conveyor belt link will be sent out at project kickoff so that you can both fork and copy the project board on this base repo.
 
 ## Local Setup for any other use
 
@@ -16,6 +16,9 @@ Viewing Part Lite is an application in which users can explore movie options and
 2. Install gem packages: `bundle install`
 3. Setup the database: `rails db:create`
 
+## Database Schema
+
+![image](https://user-images.githubusercontent.com/93609855/167528725-76b93606-4a60-4212-afe3-99f7ff915d2b.png)
 
 ## Versions
 
