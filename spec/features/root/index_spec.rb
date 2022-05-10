@@ -32,4 +32,19 @@ RSpec.describe 'landing page' do
       expect(current_path).to eq(register_path)
     end
   end
+
+  it 'displays all users' do
+    within '.all-users' do
+      expect(page).to have_link(@user_1.name)
+      expect(page).to have_link(@user_2.name)
+      expect(page).to have_link(@user_3.name)
+    end
+  end
+
+  it 'users name links to show path' do
+    click_link(@user_1.name)
+
+    expect(current_path).to eq(user_path(@user_1))
+    expect(current_path).to_not eq(user_path(@user_2))
+  end
 end
