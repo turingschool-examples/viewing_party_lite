@@ -1,0 +1,19 @@
+<center>
+<h1>Viewing Party Lite</h1>
+</center>
+
+<center>
+<%= button_to "Create a New User", "/users/new" %> 
+</center>
+
+
+<section id="existing_users">
+<h3>Current Users</h3>
+  
+  <section id="user<%= user.id %>">
+    <% @users.each do |user| %>
+      <%= user.name %><br>
+    <% end %>
+  </section>
+
+</section>
