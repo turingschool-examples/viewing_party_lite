@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe "User dashboard/show" do
   before do
@@ -15,19 +15,19 @@ describe "User dashboard/show" do
     visit "/users/#{@user1.id}"
   end
 
-  it 'displays the users name' do
+  it "displays the users name" do
     expect(page).to have_content("User One's page")
     expect(page).not_to have_content("User Two's page")
   end
 
-  it 'has a button to discover movies' do
+  it "has a button to discover movies" do
     click_button("Discover Movies")
 
     expect(current_path).to eq("/users/#{@user1.id}/discover")
     expect(current_path).not_to eq("/users/#{@user2.id}/discover")
   end
 
-  it 'has a section that lists viewing parties' do
+  it "has a section that lists viewing parties" do
     within "#viewing_parties" do
       expect(page).to have_content("Party ##{@u1_vp.id}")
       expect(page).to have_content("Host: User One")
@@ -40,5 +40,11 @@ describe "User dashboard/show" do
 
       expect(page).not_to have_content("User One")
     end
+  end
+
+  it "i see a link to go back to the landing page" do
+    click_link("Return to Home Page")
+
+    expect(current_path).to eq("/")
   end
 end
