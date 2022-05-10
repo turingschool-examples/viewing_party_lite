@@ -16,12 +16,26 @@ RSpec.describe "Registration Page", type: :feature do
     it "creates a new user" do
       expect(User.all).to eq([@user1, @user2])
 
-      user3 = User.create!(name: "Celeste Chere", email: "celesff6@square.com")
 
-      fill_in("name", with: "#{user3.name}")
-      fill_in("email", with: "#{user3.email}")
+      fill_in("name", with: "Celeste Chere")
+      fill_in("email", with: "celesff6@square.com")
       click_on "Register"
-      expect(User.all).to eq([@user1, @user2, user3])
+
+      user3 = User.last
+
+      expect(user3.name).to eq("Celeste Chere")
+      expect(user3.email).to eq("celesff6@square.com")
+    end
+
+    it "redirects to user/dashboard" do
+
+      fill_in("name", with: "Celeste Chere")
+      fill_in("email", with: "celesff6@square.com")
+      click_on "Register"
+
+      user3 = User.last
+
+      expect(current_path).to eq("/users/#{user3.id}")
     end
   end
 end
