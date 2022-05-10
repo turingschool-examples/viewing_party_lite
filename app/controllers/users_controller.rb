@@ -7,16 +7,21 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
       if @user.save
-        redirect_to user_path(@user)
+        flash[:success] = 'Account Successfully Created'
+        redirect_to user_dashboard_path(@user)
       else
-        flash[:alert] = "Error : #{error_message(user.errors)}"
-        render new
-    end
+        flash[:error] = 'Invalid Entry'
+        render 'new'
+      end
+  end
+
+  def show
+    @user = User.find(params[:user_id])
   end
 
 
   private
     def user_params
-      params.permit(:name, :email)
+      params.require(:user).permit(:name, :email)
     end
 end
