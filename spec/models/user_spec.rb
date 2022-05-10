@@ -1,13 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  describe "relationships" do
-    it should { have_many(:user_parties) }
-    it should { have_many(:parties).through(:user_parties) }
+  it "relationships" do
+    should have_many(:user_parties)
+    should have_many(:parties).through(:user_parties)
   end
 
-  describe "validations" do
-    it { should validate_presence_of(:name) }
-    it { should validate_presence_of(:email) }
+  it "validations" do
+    should validate_presence_of(:name)
+    should validate_presence_of(:email)
   end
 end
