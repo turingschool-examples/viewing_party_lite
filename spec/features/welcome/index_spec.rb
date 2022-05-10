@@ -47,12 +47,21 @@ RSpec.describe 'Landing/Welcome Page' do
       hazel = User.create!(name: 'Hazel', email: 'hazelthehut@food.com')
       
       visit "/"
-      save_and_open_page
 
       click_link "Home"
       expect(current_path).to eq('/')
+    end 
 
-
+    it 'has a button to create a new user' do 
+      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com')
+      lugnut = User.create!(name: 'LugNut', email: 'fatdog@corgi.com')
+      hazel = User.create!(name: 'Hazel', email: 'hazelthehut@food.com')
+      
+      visit "/"
+      
+      expect(page).to have_button("Create a New User")
+      # click_button "Create a New User"
+      # expect(current_path).to eq('/register')
     end 
   end 
 end 
