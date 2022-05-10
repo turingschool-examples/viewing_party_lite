@@ -7,7 +7,7 @@
     <h2>Users:</h2>
     <ul>
       <% @users.each do |u| %>
-        <li><%= u.name %></li>
+        <li><%= link_to u.name, "/users/#{u.id}", method: :get %></li>
       <% end %>
     </ul>
   <% end %>

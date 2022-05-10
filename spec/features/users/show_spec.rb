@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe "user dashboard" do
-  before :all do
+  before :each do
     @user_1 = User.create!(name: "Unreal Ursa", email: "thisaintreal@gotcha.org")
   end
 
