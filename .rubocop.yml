@@ -56,8 +56,7 @@ Lint/UselessRuby2Keywords: # new in 1.23
   Enabled: true
 Naming/BlockForwarding: # new in 1.24
   Enabled: true
-Security/CompoundHash: # new in 1.28
-  Enabled: true
+
 Security/IoMethods: # new in 1.22
   Enabled: true
 Style/ArgumentsForwarding: # new in 1.1
@@ -70,8 +69,7 @@ Style/DocumentDynamicEvalDefinition: # new in 1.1
   Enabled: true
 Style/EndlessMethod: # new in 1.8
   Enabled: true
-Style/FetchEnvVar: # new in 1.28
-  Enabled: true
+
 Style/FileRead: # new in 1.24
   Enabled: true
 Style/FileWrite: # new in 1.24
@@ -98,8 +96,7 @@ Style/NumberedParameters: # new in 1.22
   Enabled: true
 Style/NumberedParametersLimit: # new in 1.22
   Enabled: true
-Style/ObjectThen: # new in 1.28
-  Enabled: true
+
 Style/OpenStructUse: # new in 1.23
   Enabled: true
 Style/QuotedSymbols: # new in 1.16
