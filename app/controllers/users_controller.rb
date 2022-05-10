@@ -3,18 +3,19 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def new
-   end
+  def new; end
 
   def create
     user = User.create(user_params)
     if user.save
       redirect_to user_path(user)
     else
-      redirect_to "/register"
+      redirect_to '/register'
       flash[:alert] = 'Error: please enter a name and unique email to register.'
     end
   end
+
+  def discover; end
 
   private
 
