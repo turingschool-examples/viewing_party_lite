@@ -25,4 +25,11 @@ RSpec.describe 'landing page' do
       expect(page).to have_content('Viewing Party Lite')
     end
   end
+
+  it 'has a button to create a new user' do
+    within '.new-user' do
+      click_button 'Register'
+      expect(current_path).to eq(register_path)
+    end
+  end
 end
