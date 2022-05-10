@@ -10,7 +10,12 @@
   </head>
 
   <body>
-    <%= yield %>
     <%= link_to "Home", "/" %>
+    <%= yield %>
+    <div class="flash_message">
+    <% flash.each do |type, message| %>
+        <p><%= message %></p>
+    <% end %>
+  </div>
   </body>
 </html>
