@@ -41,6 +41,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'faraday'
+  gem 'rspec-rails'
   gem 'pry'
   gem 'rubocop', '~> 1.18.0', require: false
   gem 'rubocop-performance', '~> 1.11.0', require: false
@@ -57,7 +58,6 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'orderly'
-  gem 'rspec-rails'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'simplecov'
 end
