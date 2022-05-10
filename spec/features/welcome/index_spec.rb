@@ -10,10 +10,10 @@ RSpec.describe 'Landing/Welcome Page' do
       hazel = User.create!(name: 'Hazel', email: 'hazelthehut@food.com')
       
       visit "/"
+      save_and_open_page
 
       expect(page).to have_content 'Viewing Party Lite'
       expect(page).to have_button 'Create a New User'
-      
       within("#existing_users") do
         expect(page).to have_content("Skeeter")
         expect(page).to have_content("LugNut")
