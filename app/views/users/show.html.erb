@@ -1,3 +1,23 @@
 <h1><%= @user.name %>'s page</h1>
 
 <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %>
+<hr/>
+
+<div id="viewing_parties">
+
+<h1>Viewing Parties</h1>
+
+<ul>
+  <% @user.parties.each do |p| %>
+  <li>
+    <h3>Party #<%= p.id %></h3><br/>
+    <h4>Host: <%= User.find(p.user_id).name %></h4><br/>
+    <p id="<%= p.id %>-invited">Invited:
+      <% p.users.each do |u| %>
+        <%= u.name unless u.name == @user.name %>
+      <% end %>
+    </p>
+  </li>
+<% end %>
+</ul>
+</div>
