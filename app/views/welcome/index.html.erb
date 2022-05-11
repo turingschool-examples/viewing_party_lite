@@ -1,6 +1,6 @@
 <h1>View Party</h1>
 
-<p><%= button_to "Create New User", people_path %></p>
+<p><%= button_to "Create New User", new_person_path, method: :get %></p>
 
 <h2>Current People</h2>
 <% @people.each do |person| %>
