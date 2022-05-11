@@ -5,10 +5,6 @@ RSpec.describe 'new user page' do
     visit '/register'
   end
 
-  it 'shows the title of the app' do
-    expect(page).to have_content('Viewing Party')
-  end
-
   it 'can create new user' do
     fill_in 'user[name]', with: 'Greg'
     fill_in 'user[email]', with: 'greg@email.com'
