@@ -15,6 +15,7 @@
 
 # Ignore uploaded files in development
 /storage/*
+/coverage/* 
 !/storage/.keep
 
 /node_modules
