@@ -1,3 +1,8 @@
 <h1>View Party</h1>
 
 <p><%= button_to "Create New User", people_path %></p>
+
+<h2>Current People</h2>
+<% @people.each do |person| %>
+  <p><%= link_to person.name, people_path %></p>
+<% end %>
