@@ -21,5 +21,20 @@
   </ul>
 </div>
 
+<div id="reviews">
+  <h3>Number of Reviews: <%= @reviews.count %></h3>
+
+  <ul>
+    <% @reviews.each do |r| %>
+      <li>
+        Review: <%= r.content %>
+        <br/>
+        Author: <%= r.author %>
+      </li>
+    <% end %>
+  </ul>
+
+</div>
+
 <%= button_to "Create Viewing Party", "/users/#{@user.id}/movies/#{@movie.id}/parties/new", method: :get %>
 <%= button_to "Return to Discover Page", "/users/#{@user.id}/discover", method: :get %>

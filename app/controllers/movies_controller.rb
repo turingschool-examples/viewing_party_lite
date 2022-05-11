@@ -12,5 +12,6 @@ class MoviesController < ApplicationController
     @user = User.find(params[:user_id])
     @movie = MovieFacade.details(params[:id])
     @cast = CastMemberFacade.cast_members(params[:id])
+    @reviews = ReviewFacade.reviews(params[:id])
   end
 end

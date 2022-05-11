@@ -27,7 +27,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Wed, 11 May 2022 17:01:11 GMT
+      - Wed, 11 May 2022 22:21:27 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -44,9 +44,9 @@ http_interactions:
       X-Memc-Key:
       - d7dca9fc1457d9f7124c477007e07fb817785ee9
       X-Memc-Age:
-      - '10837'
+      - '14562'
       X-Memc-Expires:
-      - '4417'
+      - '3281'
       Etag:
       - W/"20bf1a70ff02f95d98823d1372c64eb6"
       Vary:
@@ -54,13 +54,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 ec4d04f2befcd6652834fd368a8b671e.cloudfront.net (CloudFront)
+      - 1.1 ce4b35590464ed34415a13badd946eba.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - C3w21_fK6SGLaIxwKJlvNUEPkRXrNnCudV3MEs3AVMUh5nI-6ij34Q==
+      - pkaT3zbuA2B-7fqSJYIlnxfolcbf9TIooE0GuUN1gK391ta3-tkWFw==
       Age:
-      - '234'
+      - '319'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/hjGLcwWg2F0BJB1zUFMzwrm7uqg.jpg","belongs_to_collection":null,"budget":9000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"","id":290,"imdb_id":"tt0101410","original_language":"en","original_title":"Barton
@@ -71,5 +71,5 @@ http_interactions:
         Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"GB","name":"United
         Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"1991-08-01","revenue":6153939,"runtime":117,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"What''s
         in his head","title":"Barton Fink","video":false,"vote_average":7.5,"vote_count":1301}'
-  recorded_at: Wed, 11 May 2022 17:05:05 GMT
+  recorded_at: Wed, 11 May 2022 22:26:46 GMT
 recorded_with: VCR 6.1.0
