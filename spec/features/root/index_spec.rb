@@ -44,7 +44,7 @@ RSpec.describe 'landing page' do
   it 'users name links to show path' do
     click_link(@user_1.name)
 
-    expect(current_path).to eq(user_path(@user_1))
-    expect(current_path).to_not eq(user_path(@user_2))
+    expect(current_path).to eq("/users/#{@user_1.id}")
+    expect(current_path).to_not eq("/users/#{@user_2.id}")
   end
 end
