@@ -12,8 +12,8 @@ describe 'Discover Movies' do
     expect(page).to have_content("Discover Movies")
   end
 
-  it 'displays a top 20 movies button that routes to the discover page' do
-    click_button 'Top 20 Movies'
+  it 'displays a top movies button that routes to the discover page' do
+    click_button 'Top Rated Movies'
 
     expect(current_path).to eq("/users/#{@user1.id}/movies")
   end 
