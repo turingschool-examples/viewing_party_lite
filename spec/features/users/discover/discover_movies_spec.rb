@@ -9,7 +9,7 @@ RSpec.describe 'New User Page', type: :feature do
 
       visit "/users/#{skeeter.id}"
       click_button "Discover Movies"
-      save_and_open_page
+
       expect(current_path).to eq("/users/#{skeeter.id}/discover")
     end 
 
