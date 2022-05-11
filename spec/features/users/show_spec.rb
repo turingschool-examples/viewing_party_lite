@@ -23,7 +23,6 @@ RSpec.describe "user/dashboard", type: :feature do
     end
 
     it "has a section to see viewing parties" do
-      save_and_open_page
       expect(page).to have_content("Viewing Parties")
     end
 
