@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get '/', to: 'landing#dashboard'
   get 'users/:id', to: 'users#dashboard'
   get '/register', to: 'registration#dashboard'
+  post '/users', to: 'users#create'
 end
