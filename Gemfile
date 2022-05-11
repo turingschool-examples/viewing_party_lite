@@ -44,6 +44,8 @@ group :development, :test do
   gem "orderly"
   gem "shoulda-matchers"
   gem "standardrb"
+  gem 'figaro'
+  gem 'faraday'
 end
 
 group :development do
@@ -54,6 +56,8 @@ group :development do
 end
 
 group :test do
+  gem 'webmock'
+  gem 'vcr'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
