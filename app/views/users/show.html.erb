@@ -3,3 +3,8 @@
 
 <h2><%= link_to "Discover Movies", "/users/#{@user.id}/discover" %></h2>
 <h2>Viewing Parties</h2>
+<% @user.parties.each do |party| %>
+  <ul>
+    <li><%= party.id %></li>
+  </ul>
+<% end %>
