@@ -1,4 +1,4 @@
 <h1>Viewing Party</h1>
 <% @user.each do |user| %>
-  <%= link_to "#{user.name}", "/user/#{user.id}" %>
+  <%= link_to "#{user.name}", "/users/#{user.id}" %>
 <% end %>
