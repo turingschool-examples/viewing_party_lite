@@ -56,5 +56,17 @@ describe MovieService do
         expect(cast[:cast][0][:name]).to eq("John Turturro")
       end
     end
+
+    context "#reviews" do
+      it "returns all reviews and review authors for specified movie", :vcr do
+        reviews = MovieService.reviews(100)
+
+        expect(reviews).to be_a Hash
+        expect(reviews[:results]).to be_a Array
+        expect(reviews[:results][0]).to be_a Hash
+        expect(reviews[:results][0][:author]).to eq("BradFlix")
+        expect(reviews[:results][0][:content]).to eq("I just plain love this movie!")
+      end
+    end
   end
 end
