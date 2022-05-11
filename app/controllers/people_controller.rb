@@ -17,11 +17,13 @@ class PeopleController < ApplicationController
   # end
   #
   def create
-    # require "pry"
-    # binding.pry
     person = Person.new(person_params)
     person.save
     redirect_to person_path(person.id)
+  end
+
+  def discover
+    @person = Person.find(params[:id])
   end
 
   private
