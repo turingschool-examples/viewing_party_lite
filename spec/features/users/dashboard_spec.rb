@@ -17,4 +17,14 @@ RSpec.describe 'a user dashboard' do
 
       expect(page).to have_current_path("/users/#{user1.id}/discover")
     end
+
+  it 'has a section that lists viewing parties' do
+    user1 = User.create!(name: 'Will', email: 'abc@mail.com')
+
+    visit "/users/#{user1.id}"
+
+    within '#viewing_parties' do
+      expect(page).to have_content('Viewing Parties')
+    end
+  end
 end
