@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "discover movies page" do
   it "has a button to discover top rated movies" do
     json_response = File.read("./spec/fixtures/top_rated.json")
-    stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=131d23d3e9d511ff6fce6fdc6799d9be").
+    stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV["api_key"]}").
          with(
            headers: {
        	  'Accept'=>'*/*',
@@ -20,7 +20,7 @@ RSpec.describe "discover movies page" do
 
   it "has a section to search by movie title" do
     json_response = File.read("./spec/fixtures/search_for_gabriel.json")
-    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=131d23d3e9d511ff6fce6fdc6799d9be&include_adult=false&language=en-US&page=1&query=Gabriel").
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV["api_key"]}&include_adult=false&language=en-US&page=1&query=Gabriel").
       with(
         headers: {
        	  'Accept'=>'*/*',
