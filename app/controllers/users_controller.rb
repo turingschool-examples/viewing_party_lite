@@ -15,6 +15,9 @@ class UsersController < ApplicationController
             flash[:alert] = "Error, Fill in all fields"
         end 
     end
+  
+    def discover
+    end
 
     private 
     def user_params 

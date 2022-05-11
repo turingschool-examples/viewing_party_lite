@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get 'users/:id', to: 'users#show'
+
+  get 'users/:id/discover', to: 'users#discover'
 end
