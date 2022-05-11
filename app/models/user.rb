@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-
-  validates :name, :email, presence: true
-  validates :email, uniqueness: true
-
+  validates :name, presence: true
+  validates :email, presence: true, uniqueness: { scope: :id, message: '** Email Already Exists **' }
 end
