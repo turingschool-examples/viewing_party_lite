@@ -16,7 +16,7 @@
       <li>
         Title: <%= link_to "#{movie.title}", "/users/#{@user.id}/movies/#{movie.id}" %><br/>
         Vote Average: <%= movie.vote_average %>
-      </li>
+      </li><hr>
       <% end %>
   </ul>
 
@@ -27,7 +27,7 @@
       <li>
         Title: <%= link_to "#{movie.title}", "/users/#{@user.id}/movies/#{movie.id}" %><br/>
         Vote Average: <%= movie.vote_average %>
-      </li>
+      </li><hr>
     <% end %>
   </ul>
 
