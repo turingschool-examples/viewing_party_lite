@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def dashboard
+    @user = User.find(params[:id])
   end
 
   def create
@@ -14,6 +15,10 @@ class UsersController < ApplicationController
       new_user.save
       redirect_to "/users/#{new_user.id}"
     end
+  end
+
+  def discover
+
   end
 
   private
