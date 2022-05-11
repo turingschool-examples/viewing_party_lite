@@ -1,6 +1,6 @@
 class PeopleController < ApplicationController
   def index
-  end 
+  end
 
   def show
   end
