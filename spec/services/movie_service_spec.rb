@@ -17,13 +17,31 @@ describe MovieService do
     context "#search" do
       it "lists movies with similar names", :vcr do
         the = MovieService.search("the", 1)
-        expected = the[:results].all? {|movie| movie[:title].downcase.include?("the")}
+        expected = the[:results].all? { |movie| movie[:title].downcase.include?("the") }
 
         expect(the).to be_a Hash
         expect(the[:results]).to be_an Array
         expect(the[:results].first).to be_a Hash
 
         expect(expected).to be true
+      end
+    end
+
+    context "#details" do
+      it "lists all of the complete details for some given movie", :vcr do
+        barton_fink = MovieService.details(290)
+
+        expect(barton_fink).to be_a Hash
+        expect(barton_fink[:id]).to eq(290)
+        expect(barton_fink[:title]).to eq("Barton Fink")
+        expect(barton_fink[:vote_average]).to eq(7.5)
+        expect(barton_fink[:genres]).to be_a Array
+        expect(barton_fink[:genres][0]).to be_a Hash
+        expect(barton_fink[:genres][0][:name]).to eq("Comedy")
+        expect(barton_fink[:genres][1][:name]).to eq("Drama")
+        expect(barton_fink[:genres][2][:name]).to eq("Crime")
+        expect(barton_fink[:runtime]).to eq(117)
+        expect(barton_fink[:overview]).to eq("A renowned New York playwright is enticed to California to write for the movies and discovers the hellish truth of Hollywood.")
       end
     end
   end

@@ -27,7 +27,7 @@ describe Movie do
         {id: 42, name: "Comedy"}
       ],
       runtime: 190,
-      summary: "this is a movie"
+      overview: "this is a movie"
     }
 
     movie = Movie.new(attr)

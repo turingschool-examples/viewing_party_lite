@@ -12,6 +12,6 @@ class Movie
     @vote_average = attributes[:vote_average]
     @genres = attributes[:genres]
     @runtime = attributes[:runtime]
-    @summary = attributes[:summary]
+    @summary = attributes[:overview]
   end
 end
