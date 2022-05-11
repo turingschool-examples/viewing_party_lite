@@ -11,7 +11,7 @@
 </center>
 <br>
 <center>
-<%= form_with url: "/users/#{@user.id}/movies?q=keyword", local: true do |form| %>
+<%= form_with url: "/users/#{@user.id}/movies?q=keyword", method: :get, local: true do |form| %>
   <%= form.label :keyword, 'Search by Movie Title' %>
   <%= form.text_field :keyword %>
   <%= form.submit 'Find Movies' %>
