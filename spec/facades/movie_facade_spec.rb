@@ -17,5 +17,22 @@ describe MovieFacade do
         expect(results.length).to eq(20)
       end
     end
+
+    context "#details" do
+      it "returns one movie poro with complete details", :vcr do
+        barton_fink = MovieFacade.details(290)
+
+        expect(barton_fink.id).to eq(290)
+        expect(barton_fink.title).to eq("Barton Fink")
+        expect(barton_fink.vote_average).to eq(7.5)
+        expect(barton_fink.genres).to be_a Array
+        expect(barton_fink.genres[0]).to be_a Hash
+        expect(barton_fink.genres[0][:name]).to eq("Comedy")
+        expect(barton_fink.genres[1][:name]).to eq("Drama")
+        expect(barton_fink.genres[2][:name]).to eq("Crime")
+        expect(barton_fink.runtime).to eq(117)
+        expect(barton_fink.summary).to eq("A renowned New York playwright is enticed to California to write for the movies and discovers the hellish truth of Hollywood.")
+      end
+    end
   end
 end

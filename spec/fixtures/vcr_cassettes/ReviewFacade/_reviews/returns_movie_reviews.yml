@@ -1,0 +1,88 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/100/reviews?api_key=Sike you thought
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - Sike you thought
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 11 May 2022 22:07:07 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - b8ceef4dd81d362973c4004beb6d29a7067370a0
+      X-Memc-Age:
+      - '6095'
+      X-Memc-Expires:
+      - '11145'
+      Etag:
+      - W/"d25f3f076be38b4e9eecebc49f81a1b5"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 4b2d2d4c49521bf403522140b78283a0.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - 2yiZ2nIF0d86yhtG2HvmWDVKD5rb6UxZPUEf5scN30SUGBFhF0Cung==
+      Age:
+      - '1179'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":100,"page":1,"results":[{"author":"BradFlix","author_details":{"name":"","username":"BradFlix","avatar_path":null,"rating":null},"content":"I
+        just plain love this movie!","created_at":"2013-12-01T23:11:51.416Z","id":"529bc23719c2957215011e7b","updated_at":"2021-06-23T15:57:23.111Z","url":"https://www.themoviedb.org/review/529bc23719c2957215011e7b"},{"author":"Andres
+        Gomez","author_details":{"name":"Andres Gomez","username":"tanty","avatar_path":"/https://www.gravatar.com/avatar/03a53cd53b8254fe582d4fe1acc26c4e.jpg","rating":3.0},"content":"Far
+        from being a good movie, with tons of flaws but already pointing to the pattern
+        of the whole Ritchie''s filmography.","created_at":"2014-04-24T00:11:47.766Z","id":"535856c30e0a26069400064c","updated_at":"2021-06-23T15:57:26.186Z","url":"https://www.themoviedb.org/review/535856c30e0a26069400064c"},{"author":"David
+        Perkins","author_details":{"name":"David Perkins","username":"Prkns","avatar_path":null,"rating":9.0},"content":"Genuinely
+        one of my favorite movies of all time. Watched again recently and realised
+        how well written, brilliantly shot, beautifully cast and cleverly produced
+        this movie actually is!","created_at":"2017-01-09T12:24:47.234Z","id":"5873810f9251410e71009a68","updated_at":"2021-06-23T15:57:52.869Z","url":"https://www.themoviedb.org/review/5873810f9251410e71009a68"},{"author":"r96sk","author_details":{"name":"","username":"r96sk","avatar_path":"/https://www.gravatar.com/avatar/96c2e0e4ac98450f9e8e3c0a0a40aad8.jpg","rating":8.0},"content":"The
+        very entertaining ending makes this film.\r\n\r\nI wasn''t sure about <em>''Lock,
+        Stock and Two Smoking Barrels''</em> up until that point. Like, don''t get
+        me wrong, it is a good film from the get-go but I wasn''t personally convinced
+        by it to be more than that until the credits rolled - at which point, I found
+        myself to have been thoroughly entertained.\r\n\r\nWith Guy Ritchie in his
+        directing debut and a whole host of familiar British faces, it isn''t a difficult
+        film to get into. I did feel at some points that there were too many characters
+        and that they weren''t distinctive enough; there were momentary bits where
+        I had to think a tad harder at which characters were linked with each other.
+        However, that actually turns into the film''s best thing at the end as it
+        does come together brilliantly.\r\n\r\nAll in all, this 1998 gangster flick
+        is something I''d consider as very good and worthy of watching.","created_at":"2022-03-16T01:38:40.389Z","id":"62313fa06517d60045ed073a","updated_at":"2022-03-16T01:38:40.389Z","url":"https://www.themoviedb.org/review/62313fa06517d60045ed073a"}],"total_pages":1,"total_results":4}'
+  recorded_at: Wed, 11 May 2022 22:26:46 GMT
+recorded_with: VCR 6.1.0
