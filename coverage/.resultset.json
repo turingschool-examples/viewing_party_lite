@@ -42,6 +42,15 @@
           null
         ]
       },
+      "/Users/oscarsantos/mod_3/viewing_party_lite/app/controllers/welcome_controller.rb": {
+        "lines": [
+          1,
+          1,
+          3,
+          null,
+          null
+        ]
+      },
       "/Users/oscarsantos/mod_3/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
           0,
@@ -54,16 +63,6 @@
       },
       "/Users/oscarsantos/mod_3/viewing_party_lite/app/jobs/application_job.rb": {
         "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/oscarsantos/mod_3/viewing_party_lite/app/controllers/welcome_controller.rb": {
-        "lines": [
-          0,
-          0,
           0,
           0
         ],
@@ -91,6 +90,6 @@
         }
       }
     },
-    "timestamp": 1652221279
+    "timestamp": 1652228118
   }
 }
