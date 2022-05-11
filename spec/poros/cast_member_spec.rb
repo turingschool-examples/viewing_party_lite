@@ -4,7 +4,7 @@ describe CastMember do
   it "exists and has attributes" do
     attributes = {
       character: "Walter Sobchak",
-      actor: "John Goodman"
+      name: "John Goodman"
     }
 
     walter = CastMember.new(attributes)
