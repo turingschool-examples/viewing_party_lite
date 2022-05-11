@@ -5,7 +5,8 @@ RSpec.describe "discover movies page" do
     user_1 = User.create!(name: "Twitch", email: "twitch@dogmail.com")
     visit "/users/#{user_1.id}/discover"
 
-    expect(page).to have_button("Discover Top Rated Movies")
+    click_link "Discover Top Rated Movies"
+    expect(current_path).to eq("/users/#{user_1.id}/movies")
   end
   
   it "has a section to search by movie title" do
@@ -13,5 +14,11 @@ RSpec.describe "discover movies page" do
     visit "/users/#{user_1.id}/discover"
   
     expect(page).to have_field("Movie Title")
+    fill_in "Movie Title", with: "Gabriel"
+    click_button "Search by Movie Title"
+
+    expect(page).to have_content("Gabriel's Inferno")
+    expect(page).to have_content("Gabriel's Inferno: Part II")
+    expect(page).to have_content("Gabriel's Inferno: Part III")
   end
 end
