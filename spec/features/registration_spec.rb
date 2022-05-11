@@ -9,7 +9,7 @@ RSpec.describe 'registration page' do
     expect(page).to have_content('Register a New User')
   end
 
-  xit 'displays a user registration form' do
+  it 'displays a user registration form' do
     visit '/register'
 
     fill_in :name, with: "George"
