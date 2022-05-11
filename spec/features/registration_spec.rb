@@ -46,7 +46,7 @@ RSpec.describe 'registration page' do
       click_button "Create a New User"
 
       expect(current_path).to eq('/register')
-      expect(page).to have_content('Please fill in all fields.')
+      expect(page).to have_content('Please fill out all fields.')
 
       visit '/register'
 
