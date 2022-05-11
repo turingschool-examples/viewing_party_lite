@@ -14,4 +14,8 @@ class Movie
     @runtime = attributes[:runtime]
     @summary = attributes[:overview]
   end
+
+  def formatted_runtime
+    "#{runtime / 60} Hours and #{runtime % 60} Minutes"
+  end
 end
