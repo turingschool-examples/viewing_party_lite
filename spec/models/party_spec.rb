@@ -8,4 +8,9 @@ RSpec.describe Party do
     it { should validate_presence_of :name }
     it { should validate_presence_of :host_id }
   end
+
+  describe 'relationships' do
+    it { should have_many(:party_users) }
+    it { should have_many(:users).through(:party_users) }
+  end
 end
