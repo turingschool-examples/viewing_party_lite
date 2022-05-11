@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'New User Page', type: :feature do
+RSpec.describe 'User Discovery Page', type: :feature do
 
   describe 'As a Visitor' do 
 
