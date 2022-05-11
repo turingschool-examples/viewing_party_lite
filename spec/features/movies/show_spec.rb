@@ -8,6 +8,18 @@ describe "movie show page" do
         visit "/users/#{@user1.id}/movies/290"
       end
 
+      it "i see a button to create a viewing party", :vcr do
+        click_button "Create Viewing Party"
+
+        expect(current_path).to eq("/users/#{@user1.id}/movies/290/viewing_party/new")
+      end
+
+      it "i see a button to return to the discover page", :vcr do
+        click_button "Return to Discover Page"
+
+        expect(current_path).to eq("/users/#{@user1.id}/discover")
+      end
+
       it "i see the movies title, vote average, runtime, genres, and summary", :vcr do
         expect(page).to have_content("Barton Fink")
         expect(page).to have_content("Vote Average: 7.5")
