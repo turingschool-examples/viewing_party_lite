@@ -41,6 +41,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'capybara'
   gem 'database_cleaner-active_record'
+  gem 'figaro'
 end
 
 group :development do
@@ -50,11 +51,11 @@ group :development do
   gem 'rubocop-rails'
 end
 
-group :test do 
+group :test do
   gem 'rspec-rails'
   gem 'launchy'
   gem 'simplecov'
-end 
+end
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
