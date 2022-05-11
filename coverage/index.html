@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-05-11T08:35:25-06:00">2022-05-11T08:35:25-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-05-11T09:57:21-06:00">2022-05-11T09:57:21-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="red">
-  56.25%
+  54.29%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.59
+         0.57
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>32</b> relevant lines,
-    <span class="green"><b>18</b> lines covered</span> and
-    <span class="red"><b>14</b> lines missed. </span>
+    <b>35</b> relevant lines,
+    <span class="green"><b>19</b> lines covered</span> and
+    <span class="red"><b>16</b> lines missed. </span>
     (<span class="red">
-  56.25%
+  54.29%
 </span>
 )
   </div>
@@ -105,12 +105,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#1431f45f43b3e65c7d8643e7b61996231f1f3e25" class="src_link" title="app/controllers/users_controller.rb">app/controllers/users_controller.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">18</td>
-            <td class="cell--number">10</td>
-            <td class="cell--number">10</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.10</td>
+            <td class="yellow strong cell--number t-file__coverage">84.62 %</td>
+            <td class="cell--number">23</td>
+            <td class="cell--number">13</td>
+            <td class="cell--number">11</td>
+            <td class="cell--number">2</td>
+            <td class="cell--number">0.92</td>
             
           </tr>
         
@@ -180,15 +180,15 @@
   <h2>
     <span class="group_name">Controllers</span>
     (<span class="covered_percent">
-      <span class="green">
-  100.0%
+      <span class="yellow">
+  85.71%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
-       <span class="green">
-         1.09
+       <span class="red">
+         0.93
        </span>
     </span> hits/line
     )
@@ -201,11 +201,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>11</b> relevant lines,
-    <span class="green"><b>11</b> lines covered</span> and
-    <span class="red"><b>0</b> lines missed. </span>
-    (<span class="green">
-  100.0%
+    <b>14</b> relevant lines,
+    <span class="green"><b>12</b> lines covered</span> and
+    <span class="red"><b>2</b> lines missed. </span>
+    (<span class="yellow">
+  85.71%
 </span>
 )
   </div>
@@ -241,12 +241,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#1431f45f43b3e65c7d8643e7b61996231f1f3e25" class="src_link" title="app/controllers/users_controller.rb">app/controllers/users_controller.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">18</td>
-            <td class="cell--number">10</td>
-            <td class="cell--number">10</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.10</td>
+            <td class="yellow strong cell--number t-file__coverage">84.62 %</td>
+            <td class="cell--number">23</td>
+            <td class="cell--number">13</td>
+            <td class="cell--number">11</td>
+            <td class="cell--number">2</td>
+            <td class="cell--number">0.92</td>
             
           </tr>
         
@@ -898,8 +898,8 @@
   <div class="header">
     <h3>app/controllers/users_controller.rb</h3>
     <h4>
-      <span class="green">
-  100.0%
+      <span class="yellow">
+  84.62%
 </span>
 
       lines covered
@@ -908,9 +908,9 @@
     
 
     <div class="t-line-summary">
-      <b>10</b> relevant lines.
-      <span class="green"><b>10</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>13</b> relevant lines.
+      <span class="green"><b>11</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
 
     
@@ -1026,7 +1026,7 @@
 
             
 
-            <code class="ruby">        user = User.create!(user_params)</code>
+            <code class="ruby">        user = User.create(user_params)</code>
           </li>
         </div>
       
@@ -1037,18 +1037,18 @@
 
             
 
-            <code class="ruby">        redirect_to &quot;/users/#{user.id}&quot;</code>
+            <code class="ruby">        if user.save</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="12">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="12">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">    end</code>
+            
+
+            <code class="ruby">            redirect_to &quot;/users/#{user.id}&quot;</code>
           </li>
         </div>
       
@@ -1059,40 +1059,40 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">        else </code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="14">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="14">
+            
             
 
             
 
-            <code class="ruby">    private </code>
+            <code class="ruby">            redirect_to &#39;/register&#39;</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="15">
-            <span class="hits">1</span>
+          <li class="missed" data-hits="0" data-linenumber="15">
+            
             
 
             
 
-            <code class="ruby">    def user_params </code>
+            <code class="ruby">            flash[:alert] = &quot;Error, Fill in all fields&quot;</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="16">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="16">
+            
             
 
             
 
-            <code class="ruby">        params.permit(:name, :email)</code>
+            <code class="ruby">        end </code>
           </li>
         </div>
       
@@ -1109,6 +1109,61 @@
       
         <div>
           <li class="never" data-hits="" data-linenumber="18">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="19">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    private </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="20">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    def user_params </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="21">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">        params.permit(:name, :email)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="22">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="23">
             
             
 
