@@ -1,0 +1,11 @@
+<div class="name">
+  <h3><%= @user.name %>'s Dashboard</h3>
+</div>
+
+<div class="discover-movies">
+  <%= button_to "Discover Movies", user_discover_path(@user), method: :get %>
+</div>
+
+<div class="viewing-parties">
+  <center><h3>Viewing Parties:</h3></center>
+</div>
