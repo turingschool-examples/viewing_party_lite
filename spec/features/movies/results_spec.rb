@@ -17,7 +17,7 @@ RSpec.describe "New User", type: :feature do
     #.to_return(status: 200, body: json_response, headers: {})
 
 
-    save_and_open_page
+  
   expect(page).to have_content("Shawshank Redemption")
   expect(page).to have_content("Vote Average: 8.7")
   expect(page).to have_content("Dilwale Dulhania Le Jayenge")
