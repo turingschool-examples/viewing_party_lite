@@ -1,4 +1,3 @@
-<% @facade.movies.each do |movie| %>
-<%= movie.title %>
-<%= movie.vote_average %>
+<% @movies.each do |movie| %>
+<p> <%= movie.title %> - <%= movie.vote_average %> </p>
 <% end %>

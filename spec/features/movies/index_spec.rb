@@ -14,5 +14,11 @@ RSpec.describe "discover movies page" do
     visit "/users/#{user_1.id}/discover"
   
     expect(page).to have_field("Movie Title")
+    fill_in "Movie Title", with: "Gabriel"
+    click_button "Search by Movie Title"
+
+    expect(page).to have_content("Gabriel's Inferno")
+    expect(page).to have_content("Gabriel's Inferno: Part II")
+    expect(page).to have_content("Gabriel's Inferno: Part III")
   end
 end
