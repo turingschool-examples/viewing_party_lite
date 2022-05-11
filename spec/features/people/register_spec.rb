@@ -12,7 +12,11 @@ RSpec.describe "Register New User" do
     fill_in "Email", with: "jordway@mailg.com"
     click_button "Register"
 
-    # expect(current_path).to eq(person_path(@person.id))
+    person = Person.last
+
+    expect(current_path).to eq(person_path(person.id))
     expect(page).to have_content("Jamison Ordway")
   end
 end
+
+# person = Person.last,  check out 'reload'

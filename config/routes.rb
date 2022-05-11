@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root "welcome#index"
 
   resources :people, only: [:new, :create, :show, :index]
+  # post "/register", to: "people#create", as: "poople"
+  get "/people/:id/discover", to: "people#discover", as: "discover"
 end
