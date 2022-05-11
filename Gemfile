@@ -45,6 +45,7 @@ group :development, :test do
   gem "shoulda-matchers"
   gem "standardrb"
   gem 'figaro'
+  gem 'faraday'
 end
 
 group :development do
