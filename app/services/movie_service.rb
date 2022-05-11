@@ -9,13 +9,13 @@ class MovieService
     body_2 = parse_json(response_2)
     put_returns_together(body_1[:results], body_2[:results])
     #returns an API response that includes the top 20 rated movies in the database.
-    body = parse_json(response)
-    #turns the JSON into a hash
+    #turns the JSON into a hash both times
+    #concats results together 
   end
 
   def search_movies(search_param)
     response = conn.get("/3/search/movie?&language=en-US&page=1&query=#{search_param}")
-    # Takes the argument provided by the form and uses it as the query param when sending request.
+    # Takes the argument provided by the form and uses it as the query keyword param when sending request.
     body = parse_json(response)
   end
 
@@ -38,6 +38,6 @@ class MovieService
     end
 
     def put_returns_together(first, second)
-      first + second 
+      first + second
     end
 end

@@ -8,7 +8,7 @@ class MoviesController < ApplicationController
     elsif params[:search]
       @movie = movie.movie_search(params[:search])
     else
-      @movie = movie.top_20_movies
+      @movie = movie.top_40_movies
     end
   end
 
@@ -16,5 +16,6 @@ class MoviesController < ApplicationController
     @user = User.find(params[:user_id])
     movie = MovieFacade.new
     @movie = movie.find_movie(params[:id])
+    search = (params[:search])
   end
 end

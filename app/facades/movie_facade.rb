@@ -1,6 +1,6 @@
 class MovieFacade
 
-  def top_20_movies
+  def top_40_movies
     service.top_movies.map do |movie_info|
       Movie.new(movie_info)
     end
