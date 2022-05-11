@@ -15,5 +15,19 @@ RSpec.describe 'Movies Results Page', type: :feature do
       
     end 
 
+    it 'searching for a movie by title returns all movies with search word in title' do
+      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com')
+      visit "/users/#{skeeter.id}/discover"
+
+      fill_in "Search by Movie Title", with: "jaws"
+      click_on "Find Movies"
+
+      expect(page).to have_content("Movie Results for: jaws")
+      expect(page).to have_content("Jaws, Average Vote: 7.6")
+      expect(page).to have_content("Jaws 3-D, Average Vote: 4.4")
+      expect(page).to have_content("Jaws of Satan, Average Vote: 5")
+
+    end 
+
   end 
 end 
