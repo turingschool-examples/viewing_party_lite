@@ -5,10 +5,10 @@ describe 'User dashboard' do
     @user1 = User.create!(name: 'John', email: 'john.hennerich@gmail.com')
     @user2 = User.create!(name: 'Brylan', email: 'brylan.gannon112@gmail.com')
 
-    @vp1 = ViewingParty.create!(date: '05/11/22', start_time: '12:00', duration: 120, movie_title: 'Star Wars')
-    @vp1a = ViewingParty.create!(date: '05/11/22', start_time: '15:00', duration: 120, movie_title: 'Star Wars Empire Strikes Back')
+    @vp1 = ViewingParty.create!(date: '2022/05/11', start_time: '12:00', duration: 120, movie_title: 'Star Wars')
+    @vp1a = ViewingParty.create!(date: '2022/05/11', start_time: '15:00', duration: 120, movie_title: 'Star Wars Empire Strikes Back')
 
-    @vp2 = ViewingParty.create!(date: '05/11/22', start_time: '12:00', duration: 120, movie_title: 'The Godfather')
+    @vp2 = ViewingParty.create!(date: '2022/05/11', start_time: '12:00', duration: 120, movie_title: 'The Godfather')
 
     @user1.party_users.create!(viewing_party_id: @vp1.id, host: true )
     @user1.party_users.create!(viewing_party_id: @vp1a.id, host: true )
@@ -29,13 +29,13 @@ describe 'User dashboard' do
   it 'Displays viewing parties for the user' do
     within "#viewing-party-#{@vp1.id}" do
       expect(page).to have_content('Star Wars')
-      expect(page).to have_content('May 11 2022')
+      expect(page).to have_content('May 11, 2022')
       expect(page).to have_content('12:00')
     end
 
     within "#viewing-party-#{@vp1a.id}" do
       expect(page).to have_content('Star Wars Empire Strikes Back')
-      expect(page).to have_content('May 11 2022')
+      expect(page).to have_content('May 11, 2022')
       expect(page).to have_content('15:00')
     end
 
