@@ -38,6 +38,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
   gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'database_cleaner-active_record'
 end
 
 group :development do
@@ -49,7 +51,6 @@ end
 
 group :test do 
   gem 'rspec-rails'
-  gem 'capybara'
   gem 'launchy'
   gem 'simplecov'
 end 
