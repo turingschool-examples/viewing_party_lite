@@ -1,0 +1,12 @@
+<%= form_with url: "/users", method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+
+  <%= form.label :email %>
+  <%= form.text_field :email %>
+
+  <%= form.label :password_digest %>
+  <%= form.number_field :password_digest %>
+
+  <%= form.submit "Submit" %>
+<% end %>

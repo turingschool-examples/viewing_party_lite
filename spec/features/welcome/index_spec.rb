@@ -1,15 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe "Landing Page" do
-  xit 'displays title of application' do
+  it 'displays title of application' do
     visit '/'
     expect(page).to have_content("Viewing Party")
   end
 
-  it 'displays title of application' do
+  it 'has button that links to create new user' do
     visit '/'
 
-    click_button("Create new Button")
+    click_button("Create New User")
   end
 
 
