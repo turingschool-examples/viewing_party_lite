@@ -24,7 +24,7 @@ describe 'Creating a user' do
       fill_in :email, with: 'philly.steak@gmail.com'
       click_button 'Register'
 
-      expect(page).to have_content('Notice: email is invalid')
+      expect(page).to have_content('Notice: Email has already been taken')
       expect(page).to have_content('Register a new User')
     end
 
@@ -32,7 +32,7 @@ describe 'Creating a user' do
       fill_in :name, with: 'Phil'
       click_button 'Register'
 
-      expect(page).to have_content('Notice: fields can not be blank')
+      expect(page).to have_content("Notice: Email can't be blank")
       expect(page).to have_content('Register a new User')
     end
   end
