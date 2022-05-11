@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   before_action :get_user, only: [:show]
 
   def new
-    @user = User.new
   end
 
   def show
@@ -10,15 +9,13 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
-    if params[:name].empty? || params[:email].empty?
-      flash[:notice] = 'fields can not be blank'
-      render :new
-    elsif !user.save
-      flash[:notice] = 'email is invalid'
-      render :new
-    else 
-      user.save
+    if user.save
       redirect_to "/users/#{user.id}"
+    else
+      user.errors.full_messages.each do |message|
+        flash[:notice] = message
+        render :new
+      end
     end
   end
 
