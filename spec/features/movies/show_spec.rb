@@ -45,6 +45,17 @@ describe "movie show page" do
           expect(page).not_to have_content("Det. Deutsch")
         end
       end
+
+      it "i see all the reviews, their authors, and a count of the reviews", :vcr do
+        visit "/users/#{@user1.id}/movies/100"
+        within "#reviews" do
+          expect(page).to have_content("Author: BradFlix")
+          expect(page).to have_content("Review: I just plain love this movie!")
+          expect(page).to have_content("Author: Andres Gomez")
+          expect(page).to have_content("Review: Far from being a good movie, with tons of flaws but already pointing to the pattern of the whole Ritchie's filmography.")
+          expect(page).to have_content("Number of Reviews: 4")
+        end
+      end
     end
   end
 end
