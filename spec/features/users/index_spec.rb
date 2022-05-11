@@ -9,13 +9,11 @@ RSpec.describe 'users dashboard' do
   end
 
   it 'has user names as links to show page' do
-    expect(page).to have_content("Jeff")
-    expect(page).to have_content("Amy")
+    expect(page).to have_content('Jeff')
+    expect(page).to have_content('Amy')
 
     click_link 'Jeff'
 
     expect(current_path).to eq user_path(user1)
   end
-
-  
 end
