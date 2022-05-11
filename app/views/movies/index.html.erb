@@ -1,0 +1,9 @@
+<center><h3>Top Rated Movies</h3></center>
+<center><%= link_to 'Discover Page', user_discover_path, method: :get %></center>
+<hr>
+
+<% @movie.each do |movie| %>
+<div class='movie_id'><=% movie.id %>
+  <p><%= link_to movie.title, user_movie_path(@user, movie.id) %> Vote Average: <%= movie.vote_average %></p>
+</div>
+<% end %>
