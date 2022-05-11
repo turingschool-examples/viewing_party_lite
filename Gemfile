@@ -55,6 +55,7 @@ group :test do
   gem 'rspec-rails'
   gem 'launchy'
   gem 'simplecov'
+  gem 'webmock'
 end
 
 

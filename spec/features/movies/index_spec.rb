@@ -2,6 +2,15 @@ require 'rails_helper'
 
 RSpec.describe "discover movies page" do
   it "has a button to discover top rated movies" do
+    json_response = File.read("./spec/fixtures/top_rated.json")
+    stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=131d23d3e9d511ff6fce6fdc6799d9be").
+         with(
+           headers: {
+       	  'Accept'=>'*/*',
+       	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+       	  'User-Agent'=>'Faraday v2.3.0'
+           }).
+         to_return(status: 200, body: "", headers: {})
     user_1 = User.create!(name: "Twitch", email: "twitch@dogmail.com")
     visit "/users/#{user_1.id}/discover"
 
@@ -10,6 +19,16 @@ RSpec.describe "discover movies page" do
   end
   
   it "has a section to search by movie title" do
+    json_response = File.read("./spec/fixtures/search_for_gabriel.json")
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=131d23d3e9d511ff6fce6fdc6799d9be&include_adult=false&language=en-US&page=1&query=Gabriel").
+      with(
+        headers: {
+       	  'Accept'=>'*/*',
+       	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+       	  'User-Agent'=>'Faraday v2.3.0'
+        })
+        .to_return(status: 200, body: "", headers: {})
+    
     user_1 = User.create!(name: "Twitch", email: "twitch@dogmail.com")
     visit "/users/#{user_1.id}/discover"
   
@@ -20,5 +39,6 @@ RSpec.describe "discover movies page" do
     expect(page).to have_content("Gabriel's Inferno")
     expect(page).to have_content("Gabriel's Inferno: Part II")
     expect(page).to have_content("Gabriel's Inferno: Part III")
+    expect(page.status_code).to eq 200
   end
 end
