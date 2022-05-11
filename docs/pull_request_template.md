@@ -1,3 +1,3 @@
 ## Feature:
 
-Acommplishes the following:
+Accomplishes the following:
