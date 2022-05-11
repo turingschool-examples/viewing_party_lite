@@ -12,6 +12,11 @@ describe "Movies discover page" do
     click_button("Discover top rated movies")
 
     expect(current_path).to eq("/users/#{@user1.id}/discover")
+
+    expect(page).to have_link("The Shawshank Redemption")
+    expect(page).to have_content("Vote Average: 8.7")
+    expect(page).to have_link("The Dark Knight")
+    expect(page).to have_content("Vote Average: 8.5")
   end
 
   it "has a search bar/button" do
@@ -21,5 +26,10 @@ describe "Movies discover page" do
     fill_in "keyword", with: "Nothing"
     click_button("Search by Title")
     expect(current_path).to eq("/users/#{@user1.id}/discover")
+
+    expect(page).to have_link("Nothing to Lose")
+    expect(page).to have_content("Vote Average: 6.4")
+    expect(page).to have_link("Out of Nothing")
+    expect(page).to have_content("Vote Average: 8.3")
   end
 end
