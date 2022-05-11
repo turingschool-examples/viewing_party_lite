@@ -1,1 +1,8 @@
 <h1>Discover Movies</h1>
+
+<%= button_to 'Top 20 Movies', "/users/#{@user.id}/movies?query=top20rated", method: :get  %>
+<%= form_with url: "/users/#{@user.id}/movies", method: :get, local: true do |form| %>
+  <%= form.label :query %>
+  <%= form.text_field :query %>
+  <%= form.submit 'Search by Title' %>
+<% end %>
