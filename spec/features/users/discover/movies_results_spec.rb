@@ -32,5 +32,12 @@ RSpec.describe 'Movies Results Page', type: :feature do
       
     end 
 
+    it 'has a button to return back to the users discovery page' do
+      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com')
+      visit "/users/#{skeeter.id}/discover"
+      click_on "Back to My Discovery Page"
+      expect(current_path).to eq("/users/#{skeeter.id}/discover")
+    end 
+
   end 
 end 
