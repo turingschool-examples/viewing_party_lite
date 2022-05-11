@@ -9,6 +9,3 @@ class MoviesController < ApplicationController
     end
   end
 end
-
-
-# <a href="/users/:id/movies/#{@movie.id}"> @movie.name </a>
