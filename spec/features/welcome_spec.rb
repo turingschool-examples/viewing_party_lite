@@ -20,9 +20,9 @@ RSpec.describe "Welcome Page" do
     expect(page).to have_link(person1.name)
     expect(page).to have_link(person2.name)
 
-    # click_link person1.name
-    #
-    # expect(current_path).to be("/people/#{person1.id}")
+    click_link person1.name
+
+    expect(current_path).to eq(person_path(person1.id))
   end
 
   xit "has link to go back to landing page" do

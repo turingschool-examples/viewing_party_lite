@@ -4,5 +4,6 @@
 
 <h2>Current People</h2>
 <% @people.each do |person| %>
-  <p><%= link_to person.name, people_path %></p>
+
+  <p><%= link_to person.name, person_path(person.id) %></p>
 <% end %>
