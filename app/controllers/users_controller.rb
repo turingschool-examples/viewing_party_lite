@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
+
   before_action :set_user, only: %i[update destroy show]
+
   def index; end
 
   def new; end
-
+  
   def discover; end
 
   def show; end
@@ -12,9 +14,27 @@ class UsersController < ApplicationController
 
   def destroy; end
 
-  private
+  def create
+    user = User.create(user_params)
+    if user.save
+      redirect_to user_path(user)
+    else
+      redirect_to '/register'
+      flash[:alert] = 'Error: please enter a name and unique email to register.'
+    end
+  end
 
+  def discover; end
+
+  private
+  
   def set_user
     @user = User.find(params[:id])
   end
+
+  def user_params
+    params.require(:user).permit(:name, :email)
+  end
+
+
 end

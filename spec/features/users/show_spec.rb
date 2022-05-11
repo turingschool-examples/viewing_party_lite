@@ -1,24 +1,30 @@
 require 'rails_helper'
 
-RSpec.describe 'user show page' do
-  describe '/user/:id' do
-    let!(:user1) { create(:user) }
-    let!(:user2) { create(:user) }
+RSpec.describe 'user dashboard' do
+  let!(:user_1) { User.create(name: 'Jeff', email: 'jeff@email.com') }
+  let!(:user_2) { User.create(name: 'Amy', email: 'amy@email.com') }
 
-    it 'displays appropriate informations and links' do
-      visit user_path(user1)
+  before(:each) do
+    visit user_path(user_1)
+  end
 
-      expect(page).to have_content("#{user1.name}'s Dashboard")
-      expect(page).to have_link 'Discover Movies'
-      expect(page).to have_content('Viewing Parties')
-      expect(page).to_not have_content("#{user2.name}'s Dashboard")
-    end
+  it 'shows page title with user name' do
+    expect(page).to have_content("Jeff's Dashboard")
+  end
 
-    it 'has link to discover page' do
+  it 'has a button to discover movies' do
+    expect(page).to have_link('Discover Movies')
+  end
+
+  it 'has a section for viewing parties' do
+    expect(page).to have_content('Viewing Parties')
+  end
+    
+      it 'has link to discover page' do
       visit user_path(user1)
       click_on 'Discover Movies'
 
       expect(current_path).to eq "/users/#{user1.id}/discover"
     end
   end
-end
+
