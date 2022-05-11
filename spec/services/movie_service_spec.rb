@@ -16,7 +16,7 @@ describe MovieService do
 
     context "#search" do
       it "lists movies with similar names", :vcr do
-        the = MovieService.search("the")
+        the = MovieService.search("the", 1)
         expected = the[:results].all? {|movie| movie[:title].downcase.include?("the")}
 
         expect(the).to be_a Hash
