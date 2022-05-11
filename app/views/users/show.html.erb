@@ -1,5 +1,8 @@
-<h3><%= @user.name %>'s Dashboard</h3>
 
-<%= button_to 'Discover Movies', "/discover", method: :get, local: true %>
+<div class='d-flex align-items-center justify-content-center'>
+  <h1>  <%= @user.name %>'s Dashboard</h1>
+</div>
+<%= render partial: 'partials/navbar_user', :locals => {:user_id => @user.id} %>
+<br>
+<h3>Viewing Parties</h3>
 
-<h4>Viewing Parties</h4>

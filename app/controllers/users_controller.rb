@@ -1,12 +1,18 @@
 class UsersController < ApplicationController
 
-  def show
-    @user = User.find(params[:id])
-  end
-  
+  before_action :set_user, only: %i[update destroy show]
+
   def index; end
 
   def new; end
+  
+  def discover; end
+
+  def show; end
+
+  def update; end
+
+  def destroy; end
 
   def create
     user = User.create(user_params)
@@ -21,9 +27,14 @@ class UsersController < ApplicationController
   def discover; end
 
   private
+  
+  def set_user
+    @user = User.find(params[:id])
+  end
 
   def user_params
     params.require(:user).permit(:name, :email)
   end
+
 
 end
