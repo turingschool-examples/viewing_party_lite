@@ -34,6 +34,17 @@ describe "movie show page" do
 
         expect(page).to have_content("A renowned New York playwright is enticed to California to write for the movies and discovers the hellish truth of Hollywood.")
       end
+
+      it "i see the first 10 members of the movies cast", :vcr do
+        within "#cast" do
+          expect(page).to have_content("John Turturro")
+          expect(page).to have_content("Barton Fink")
+          expect(page).to have_content("Richard Portnow")
+          expect(page).to have_content("Det. Mastrionotti")
+          expect(page).not_to have_content("Christopher Murney")
+          expect(page).not_to have_content("Det. Deutsch")
+        end
+      end
     end
   end
 end
