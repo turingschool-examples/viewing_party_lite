@@ -1,3 +1,11 @@
-<%= render 'nav_bar' %>
 <h1 id="title"; style="text-align:center;">Viewing Party Lite</h1>
-<%= button_to "Create a New User", '/register', method: :get, local: true %>
+<div style="text-align:center;">
+  <%= button_to "Create a New User", '/register', method: :get, local: true %>
+</div>
+<div id="existing_users"; style="text-align:center;">
+  <p>Existing Users: <br>
+    <% @users.each do |user| %>
+      <%= link_to "#{user.name}'s Dashboard", "/users/#{user.id}" %>
+    <% end %>
+  </p>
+</div>
