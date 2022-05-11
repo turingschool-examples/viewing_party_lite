@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[update destroy show]
 
-  def index; end
+  def index
+    @users = User.all
+  end
 
   def new; end
 
