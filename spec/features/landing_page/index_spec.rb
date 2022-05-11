@@ -1,15 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Landing Page' do
-
-
-  # When a user visits the root path they should be on the landing page ('/') which includes:
-  #
-  #  Title of Application
-  #  Button to Create a New User
-  #  List of Existing Users which links to the users dashboard
-  #  Link to go back to the landing page (this link will be present at the top of all pages)
-  it 'displays the application title, create new user, users and landing page link' do
+  it 'displays the application title, new user button, users and landing page link' do
     user_1 = User.create!(name: 'Charles', email:'charlie@gmail.com')
     user_2 = User.create!(name: 'Sally', email:'sally@gmail.com')
 
@@ -17,18 +9,20 @@ RSpec.describe 'Landing Page' do
     expect(page).to have_content('Viewing Party Lite')
     expect(page).to have_button('Create New User')
 
-    within "#user-1#{user_1.id}" do
-      expect(page).to have_content('Charles')
-      click_link 'User Dashboard'
+    within "#user-#{user_1.id}" do
+      expect(page).to have_content('charlie@gmail.com')
+      click_link "charlie@gmail.com's Dashboard"
       expect(current_path).to eq("/users/#{user_1.id}")
     end
 
-    within "#user-2#{user_2.id}" do
-      expect(page).to have_content('Sally')
-      click_link 'User Dashboard'
+    visit '/'
+    within "#user-#{user_2.id}" do
+      expect(page).to have_content('sally@gmail.com')
+      click_link "sally@gmail.com's Dashboard"
       expect(current_path).to eq("/users/#{user_2.id}")
     end
 
+    visit '/'
     click_link 'Home'
     expect(current_path).to eq('/')
   end
