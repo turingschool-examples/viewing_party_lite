@@ -17,6 +17,12 @@ class UserMoviesController < ApplicationController
       @keyword = params[:keyword]
     end 
   end
+
+  def show
+    @user = User.find(params[:user_id])
+    # @movie = api call for movie?
+  end
+  
   
 
 

@@ -17,7 +17,7 @@
 <center>
 <% if @movies %>
   <% @movies.each do |movie| %>
-    <p><%= movie[:title] %>, Average Vote: <%= movie[:vote_average] %></p>
+    <p><%= link_to "#{movie[:title]}", "/users/#{@user.id}/movies/#{movie[:id]}" %>, Average Vote: <%= movie[:vote_average]%></p>
   <% end %>
 <% end %>
 </center>
@@ -29,4 +29,5 @@
   <% end %>
 <% end %>
 </center>
+
 
