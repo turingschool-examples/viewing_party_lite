@@ -1,5 +1,5 @@
 class MovieService < BaseService
-  def self.get_movie_data
+  def self.get_top_rated
 
     response = conn("http://api.themoviedb.org").get("/3/movie/top_rated?api_key=#{ENV['movie_api_key']}")
     get_json(response)
