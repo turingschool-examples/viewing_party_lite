@@ -13,4 +13,15 @@ class MovieService
     end
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  def self.search(keyword)
+    response = conn.get("/3/search/movie") do |c|
+      c.options.params_encoder = Faraday::FlatParamsEncoder
+      c.params = {
+        api_key: ENV['movie_api_key'],
+        query: keyword
+      }
+    end
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end

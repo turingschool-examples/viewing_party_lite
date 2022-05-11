@@ -15,14 +15,15 @@ describe MovieService do
     end
 
     context "#search" do
-      it "lists movies with similar names" do
+      it "lists movies with similar names", :vcr do
         the = MovieService.search("the")
+        expected = the[:results].all? {|movie| movie[:title].downcase.include?("the")}
 
         expect(the).to be_a Hash
         expect(the[:results]).to be_an Array
         expect(the[:results].first).to be_a Hash
 
-        expect(the[:results].first[:title]).to include("the")
+        expect(expected).to be true
       end
     end
   end
