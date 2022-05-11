@@ -26,7 +26,7 @@ RSpec.describe 'New User Page', type: :feature do
       visit "/users/#{skeeter.id}/discover"
 
       click_button "Find Top Rated Movies"
-      expect(current_path).to eq("/users/:user_id/movies?q=keyword")
+      expect(current_path).to eq("/users/#{skeeter.id}/movies?q=keyword")
 
 
     end 
