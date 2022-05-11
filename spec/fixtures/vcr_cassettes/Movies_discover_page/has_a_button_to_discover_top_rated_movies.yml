@@ -44,11 +44,11 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 dc50b0effd72a7b2c19bcb0909cfae82.cloudfront.net (CloudFront)
+      - 1.1 c4fb40b7909e4dd897bba2e297b284e6.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - Av9WPBRHfy8txV4g25dFWDGCEBS8iyAsgezTrIvMfNTKQk49A-NTtA==
+      - n-WNYfCQ4HPqI9fU52p_eSaa79rLfY9kP7NUoIpY0lCDJ8V7l7r-Jg==
       Age:
       - '4300'
     body:
