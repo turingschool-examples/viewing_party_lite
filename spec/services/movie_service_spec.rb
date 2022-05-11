@@ -44,5 +44,17 @@ describe MovieService do
         expect(barton_fink[:overview]).to eq("A renowned New York playwright is enticed to California to write for the movies and discovers the hellish truth of Hollywood.")
       end
     end
+
+    context "#cast_members" do
+      it "returns all the cast members for a given movie", :vcr do
+        cast = MovieService.cast_members(290)
+
+        expect(cast).to be_a Hash
+        expect(cast[:cast]).to be_a Array
+        expect(cast[:cast][0]).to be_a Hash
+        expect(cast[:cast][0][:character]).to eq("Barton Fink")
+        expect(cast[:cast][0][:name]).to eq("John Turturro")
+      end
+    end
   end
 end
