@@ -1,0 +1,24 @@
+<%= render partial: 'partials/navbar_default' %>
+<br>
+<section class="movies">
+  <h3>Top 20 Movies:</h3>
+    <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Vote Average</th>
+      </tr>
+    </thead>
+    <% @movies.each_with_index do |movie, index|%>
+    <div class="movie-<%= movie.title %>">
+    <tbody>
+    <tr>
+      <th scope="row"><%= index+1 %></th>
+      <td> <%= movie.title %></td>
+      <td> <%= movie.vote_average %></td>
+    </div>
+    </tbody>
+    <% end %>
+</table>
+</section>

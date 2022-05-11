@@ -46,6 +46,7 @@ group :development, :test do
   gem 'rubocop', '~> 1.18.0', require: false
   gem 'rubocop-performance', '~> 1.11.0', require: false
   gem 'rubocop-rails', '~> 2.11.0', require: false
+  gem 'figaro'
 end
 
 group :development do
@@ -60,6 +61,7 @@ group :test do
   gem 'orderly'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'simplecov'
+  gem 'vcr'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
