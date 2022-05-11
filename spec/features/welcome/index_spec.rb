@@ -35,8 +35,8 @@ RSpec.describe 'Landing/Welcome Page' do
       
       within "#user_id-#{@hazel.id}" do 
         expect(page).to have_link("hazelthehut@food.com's dashboard")
-        # click_link "hazelthehut@food.com's dashboard"
-        # expect(current_path).to eq("/users/#{hazel.id}")
+        click_link "hazelthehut@food.com's dashboard"
+        expect(current_path).to eq("/users/#{@hazel.id}")
       end 
     end 
     
@@ -53,8 +53,8 @@ RSpec.describe 'Landing/Welcome Page' do
       visit "/"
       
       expect(page).to have_button("Create a New User")
-      # click_button "Create a New User"
-      # expect(current_path).to eq('/register')
+      click_button "Create a New User"
+      expect(current_path).to eq('/users/new')
     end 
   end 
 end 

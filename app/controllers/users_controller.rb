@@ -12,6 +12,10 @@ class UsersController < ApplicationController
     @user = User.where(email: new_user_params[:email]).first
     redirect_to "/users/#{@user.id}"
   end
+    
+  def discover
+    @user = User.find(params[:id])
+  end
 
   private
 

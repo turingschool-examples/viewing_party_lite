@@ -3,7 +3,7 @@
 </div>
 
 <div id="discover-movies">
-<%= button_to "Discover Movies" %>
+<%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %>
 </div>
 
 <div id="watch-parties">
