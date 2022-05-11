@@ -1,13 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe "Landing Page" do
-  it 'displays title of application' do
+  xit 'displays title of application' do
     visit '/'
-
     expect(page).to have_content("Viewing Party")
   end
 
-  xit 'displays title of application' do
+  it 'displays title of application' do
     visit '/'
 
     click_button("Create new Button")
@@ -15,10 +14,11 @@ RSpec.describe "Landing Page" do
 
 
   it 'displays name of user' do
-    visit '/'
 
     drew = User.create(name: "Drew Proebstel", email: "swagmasterd@dopemail.com", password_digest: "@Rush2112" )
     alex = User.create(name: "Alex Peepee", email: "swagmasterp@dopemail.com", password_digest: "@Rush2112" )
+
+    visit '/'
 
     expect(page).to have_content("Drew Proebstel")
     expect(page).to have_content("Alex P")
