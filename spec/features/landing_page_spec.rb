@@ -40,4 +40,10 @@ RSpec.describe 'Landing Page' do
       expect(page).to have_current_path("/users/#{user3.id}")
     end
   end
+  it 'has a link to the landing page at the top of all pages' do
+    # Need to ensure that all pages show the link
+    expect(page).to have_content("Link to Landing Page")
+    visit "/users/#{user1.id}"
+    expect(page).to have_content("Link to Landing Page")
+  end
 end
