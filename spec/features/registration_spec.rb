@@ -21,7 +21,7 @@ RSpec.describe 'registration page' do
   end
 
   describe 'flash messages' do
-    xit 'requires unique email' do
+    it 'requires unique email' do
       visit '/register'
 
       fill_in :name, with: "George"
@@ -38,7 +38,7 @@ RSpec.describe 'registration page' do
       expect(page).to have_content('Sorry. That email address is not available.')
     end
 
-    xit 'rejects empty fields' do
+    it 'rejects empty fields' do
       visit '/register'
 
       fill_in :name, with: ""
@@ -46,7 +46,7 @@ RSpec.describe 'registration page' do
       click_button "Create a New User"
 
       expect(current_path).to eq('/register')
-      expect(page).to have_content('Please fill in all fields.')
+      expect(page).to have_content('Please fill out all fields.')
 
       visit '/register'
 

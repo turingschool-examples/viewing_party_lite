@@ -4,12 +4,12 @@ class UsersController < ApplicationController
 
   def create
     new_user = User.new(user_params)
-    if new_user[:name] == nil || new_user[:email] == nil
-      flash[:notice] = "Please fill in all fields."
-      render '/register'
+    if new_user[:name] == "" || new_user[:email] == ""
+      flash[:notice] = "Please fill out all fields."
+      redirect_to '/register'
     elsif User.email_list.include?(new_user[:email])
       flash[:notice] = "Sorry. That email address is not available."
-      render '/register'
+      redirect_to '/register'
     else
       new_user.save
       redirect_to "/users/#{new_user.id}"
