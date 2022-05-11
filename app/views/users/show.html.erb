@@ -1,1 +1,5 @@
-<h3><%= @user.name %>'s Dashboard'</h3>
+<h3><%= @user.name %>'s Dashboard</h3>
+
+<%= button_to 'Discover Movies', "/discover", method: :get, local: true %>
+
+<h4>Viewing Parties</h4>

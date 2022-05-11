@@ -13,10 +13,12 @@ class UsersController < ApplicationController
     if user.save
       redirect_to user_path(user)
     else
-      redirect_to "/register"
+      redirect_to '/register'
       flash[:alert] = 'Error: please enter a name and unique email to register.'
     end
   end
+
+  def discover; end
 
   private
 
