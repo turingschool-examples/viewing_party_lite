@@ -2,7 +2,16 @@
 <h1>Viewing Party Lite</h1>
 </center>
 <center>
-<h3>Movie Results Page</h3>
+<% if @movies %>
+  <h2>Top Rated Movies</h2>
+<% end %>
+</center>
+
+
+<center>
+<% @movies.each do |movie| %>
+  <%= movie[:title] %>, Average Vote: <%= movie[:vote_average] %><br>
+<% end %>
 </center>
 
 
