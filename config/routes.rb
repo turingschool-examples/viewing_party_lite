@@ -4,5 +4,6 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :new, :create] do
     resources :discover, only: [:index], controller: "movies"
+    resources :movies, only: [:show]
   end
 end

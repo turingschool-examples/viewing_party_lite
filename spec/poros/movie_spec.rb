@@ -42,4 +42,22 @@ describe Movie do
     expect(movie.runtime).to eq(190)
     expect(movie.summary).to eq("this is a movie")
   end
+
+  it "can convert runtime to hours and minutes" do
+    attr = {
+      id: 0,
+      title: "Movie One",
+      vote_average: 7.0,
+      genres: [
+        {id: 35, name: "Drama"},
+        {id: 42, name: "Comedy"}
+      ],
+      runtime: 190,
+      overview: "this is a movie"
+    }
+
+    movie = Movie.new(attr)
+
+    expect(movie.formatted_runtime).to eq("3 Hours and 10 Minutes")
+  end
 end
