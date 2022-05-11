@@ -4,6 +4,8 @@
 <center>
 <% if @movies %>
   <h2>Top Rated Movies</h2>
+<% elsif @results %>
+    <h2>Movie Results for: <%= @keyword %></h2>
 <% end %>
 </center>
 
@@ -16,4 +18,11 @@
 <% end %>
 </center>
 
+<center>
+<% if @results %>
+  <% @results.each do |result| %>
+    <%= result[:title] %>, Average Vote: <%= result[:vote_average] %><br>
+  <% end %>
+<% end %>
+</center>
 

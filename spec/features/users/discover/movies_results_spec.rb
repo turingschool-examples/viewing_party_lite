@@ -21,7 +21,7 @@ RSpec.describe 'Movies Results Page', type: :feature do
 
       fill_in "Search by Movie Title", with: "jaws"
       click_on "Find Movies"
-
+      save_and_open_page
       expect(page).to have_content("Movie Results for: jaws")
       expect(page).to have_content("Jaws, Average Vote: 7.6")
       expect(page).to have_content("Jaws 3-D, Average Vote: 4.4")
