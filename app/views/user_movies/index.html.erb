@@ -9,8 +9,10 @@
 
 
 <center>
-<% @movies.each do |movie| %>
-  <%= movie[:title] %>, Average Vote: <%= movie[:vote_average] %><br>
+<% if @movies %>
+  <% @movies.each do |movie| %>
+    <%= movie[:title] %>, Average Vote: <%= movie[:vote_average] %><br>
+  <% end %>
 <% end %>
 </center>
 
