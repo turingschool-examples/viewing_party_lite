@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_10_200059) do
+ActiveRecord::Schema.define(version: 2022_05_11_001810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,12 +27,12 @@ ActiveRecord::Schema.define(version: 2022_05_10_200059) do
   end
 
   create_table "party_people", force: :cascade do |t|
-    t.bigint "people_id"
-    t.bigint "parties_id"
+    t.bigint "person_id"
+    t.bigint "party_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["parties_id"], name: "index_party_people_on_parties_id"
-    t.index ["people_id"], name: "index_party_people_on_people_id"
+    t.index ["party_id"], name: "index_party_people_on_party_id"
+    t.index ["person_id"], name: "index_party_people_on_person_id"
   end
 
   create_table "people", force: :cascade do |t|
@@ -42,6 +42,6 @@ ActiveRecord::Schema.define(version: 2022_05_10_200059) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "party_people", "parties", column: "parties_id"
-  add_foreign_key "party_people", "people", column: "people_id"
+  add_foreign_key "party_people", "parties"
+  add_foreign_key "party_people", "people"
 end
