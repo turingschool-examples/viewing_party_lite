@@ -58,6 +58,6 @@ describe Movie do
 
     movie = Movie.new(attr)
 
-    expect(movie.formatted_runtime).to eq("3 Hours and 10 Minutes")
+    expect(movie.formatted_runtime).to eq("3 Hour(s) and 10 Minutes")
   end
 end

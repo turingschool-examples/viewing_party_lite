@@ -16,6 +16,6 @@ class Movie
   end
 
   def formatted_runtime
-    "#{runtime / 60} Hours and #{runtime % 60} Minutes"
+    "#{runtime / 60} Hour(s) and #{runtime % 60} Minutes"
   end
 end

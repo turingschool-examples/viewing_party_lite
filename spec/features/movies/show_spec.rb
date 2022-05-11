@@ -11,7 +11,7 @@ describe "movie show page" do
       it "i see the movies title, vote average, runtime, genres, and summary", :vcr do
         expect(page).to have_content("Barton Fink")
         expect(page).to have_content("Vote Average: 7.5")
-        expect(page).to have_content("Runtime: 1 Hour and 57 Minutes")
+        expect(page).to have_content("Runtime: 1 Hour(s) and 57 Minutes")
 
         within "#genres" do
           expect(page).to have_content("Comedy")
@@ -20,7 +20,7 @@ describe "movie show page" do
           expect(page).not_to have_content("Romance")
         end
 
-        expect(page).to have_content("Summary: A renowned New York playwright is enticed to California to write for the movies and discovers the hellish truth of Hollywood.")
+        expect(page).to have_content("A renowned New York playwright is enticed to California to write for the movies and discovers the hellish truth of Hollywood.")
       end
     end
   end
