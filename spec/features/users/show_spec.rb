@@ -34,4 +34,11 @@ RSpec.describe 'the users show page' do
       expect(current_path).to eq(user_discover_path(@user_1))
     end
   end
+
+  it 'has a section that lists viewing parties' do
+    visit user_dashboard_path(@user_2)
+    within '.viewing-parties' do
+      expect(page).to have_content("Viewing Parties:")
+    end
+  end
 end

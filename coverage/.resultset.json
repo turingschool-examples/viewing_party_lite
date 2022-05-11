@@ -94,6 +94,36 @@
         "branches": {
         }
       },
+      "/Users/alexanderpsitos/turing/3module/week_1/pair_project/viewing_party_lite/app/facades/movie_facade.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/alexanderpsitos/turing/3module/week_1/pair_project/viewing_party_lite/app/jobs/application_job.rb": {
         "lines": [
           0,
@@ -102,7 +132,33 @@
         "branches": {
         }
       },
-      "/Users/alexanderpsitos/turing/3module/week_1/pair_project/viewing_party_lite/app/channels/application_cable/connection.rb": {
+      "/Users/alexanderpsitos/turing/3module/week_1/pair_project/viewing_party_lite/app/controllers/concerns/movies_controller.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/alexanderpsitos/turing/3module/week_1/pair_project/viewing_party_lite/app/controllers/channels/application_cable/connection.rb": {
         "lines": [
           0,
           0,
@@ -112,8 +168,44 @@
         "branches": {
         }
       },
-      "/Users/alexanderpsitos/turing/3module/week_1/pair_project/viewing_party_lite/app/channels/application_cable/channel.rb": {
+      "/Users/alexanderpsitos/turing/3module/week_1/pair_project/viewing_party_lite/app/controllers/channels/application_cable/channel.rb": {
         "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/alexanderpsitos/turing/3module/week_1/pair_project/viewing_party_lite/app/services/movie_service.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
           0,
           0,
           0,
@@ -123,6 +215,6 @@
         }
       }
     },
-    "timestamp": 1652219422
+    "timestamp": 1652280570
   }
 }
