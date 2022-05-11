@@ -5,7 +5,7 @@
 <div id="existing_users"; style="text-align:center;">
   <p>Existing Users: <br>
     <% @users.each do |user| %>
-      <%= link_to "#{user.name}'s Dashboard", "/users/#{user.id}" %>
+      <%= link_to "#{user.name}'s Dashboard", "/users/#{user.id}" %><br>
     <% end %>
   </p>
 </div>
