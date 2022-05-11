@@ -25,8 +25,9 @@ RSpec.describe "Welcome Page" do
     expect(current_path).to eq(person_path(person1.id))
   end
 
-  xit "has link to go back to landing page" do
+  it "has link to go back to landing page" do
     visit "/"
+    save_and_open_page
     expect(page).to have_link("Welcome Page")
   end
 end
