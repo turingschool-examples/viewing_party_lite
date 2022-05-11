@@ -1,0 +1,11 @@
+<%= render "layouts/header" %>
+
+<h1>Viewing Party Lite</h1>
+<br>
+<%= button_to "Create New User", "/register", method: :post %>
+<br>
+<% @users.each do |user| %>
+<div class = "<%= user.name %>">
+  <a href="/users/<%= user.id %>"><%= user.name %></a>
+</div>
+<% end %>
