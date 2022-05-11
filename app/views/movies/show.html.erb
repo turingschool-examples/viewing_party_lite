@@ -11,3 +11,6 @@
     <% end %>
   </ul>
 </div>
+
+<%= button_to "Create Viewing Party", "/users/#{@user.id}/movies/#{@movie.id}/parties/new", method: :get %>
+<%= button_to "Return to Discover Page", "/users/#{@user.id}/discover", method: :get %>

@@ -11,7 +11,7 @@ describe "movie show page" do
       it "i see a button to create a viewing party", :vcr do
         click_button "Create Viewing Party"
 
-        expect(current_path).to eq("/users/#{@user1.id}/movies/290/viewing_party/new")
+        expect(current_path).to eq("/users/#{@user1.id}/movies/290/parties/new")
       end
 
       it "i see a button to return to the discover page", :vcr do
