@@ -1,0 +1,20 @@
+<h3>Register a New User</h3>
+  <div>
+      <div class="error-messages">
+        <% if @user.errors.any? %>
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li><%= msg %><li>
+            <% end %>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+
+  <%= form_with model: @user, method: :post, local: true do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.submit 'Register' %>
+<% end %>
