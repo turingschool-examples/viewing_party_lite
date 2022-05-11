@@ -3,10 +3,12 @@ require 'rails_helper'
 RSpec.describe 'a user dashboard' do
   it 'displays a header with the users name' do
     user_1 = User.create!(name: 'Buggs', email: 'buggs@bunny.com')
+    user_2 = User.create!(name: 'Elmer', email: 'elmer@fudd.com')
 
     visit "/users/#{user_1.id}"
 
     expect(page).to have_content("Buggs's Dashboard")
+    expect(page).to have_no_content("Elmer's Dashboard")    
   end
 
   it 'has a Discover Movies button' do
