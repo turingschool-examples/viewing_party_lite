@@ -11,14 +11,14 @@ RSpec.describe 'a user discover page' do
     expect(current_path).to eq("/users/#{user_1.id}/movies")
   end
 
-  xit 'displays a text-field and sumbit button to search by movie title' do
+  it 'displays a text-field and sumbit button to search by movie title' do
     user_1 = User.create!(name: 'Buggs', email: 'buggs@bunny.com')
 
     visit "/users/#{user_1.id}/discover"
 
-    fill_in "Search by Movie Title", with: 'castaway'
+    fill_in :q, with: 'castaway'
     click_button "Search"
 
-    expect(current_path).to eq("/users/#{user_1.id}/movies?q=castaway")
+    expect(current_path).to eq("/users/#{user_1.id}/movies")
   end
 end
