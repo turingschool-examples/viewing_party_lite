@@ -13,6 +13,7 @@ class MovieFacade
 
   def self.movie_info(movie_id)
     production = service.movie_details(movie_id)
+    Movie.new(production)
 #    cast = service.cast(movie_id)
 #    reviews = service.reviews(movie_id)
   end

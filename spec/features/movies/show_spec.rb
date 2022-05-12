@@ -8,9 +8,8 @@ describe 'The movie details page' do
   end
 
   it 'displays movie details for movie' do
-
     expect(page).to have_content('Fight Club')
     expect(page).to have_content('Vote Average 8.4')
-#    save_and_open_page
+    expect(page).to have_content('Runtime: 2 hours 19 minutes')
   end
 end

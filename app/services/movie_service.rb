@@ -18,7 +18,7 @@ class MovieService
 
   def movie_details(movie_id)
 #    binding.pry
-    data = get_url("https://api.themoviedb.org/3/movie/#{movie_id}?api_key=#{ENV['tmdb_key']}")
+    get_url("https://api.themoviedb.org/3/movie/#{movie_id}?api_key=#{ENV['tmdb_key']}")
     #movie_title
     #vote_average
     #runtime
