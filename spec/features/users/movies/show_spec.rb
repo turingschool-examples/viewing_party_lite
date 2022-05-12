@@ -33,7 +33,7 @@ RSpec.describe 'User Movie Show Page', type: :feature do
     visit "/users/#{@user.id}/movies/278"
 
     within "#links" do
-      expect(page).to have_link("Return to Discover", href: "/users/#{@user.id}/movies")
+      expect(page).to have_link("Return to Discover", href: "/users/#{@user.id}/discover")
     end
   end
 end

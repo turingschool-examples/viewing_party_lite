@@ -1,3 +1,7 @@
+<div id="links">
+  <%= link_to "Return to Discover", "/users/#{@user.id}/discover"%>
+</div>
+
 <div id="movie-details">
   <h1><%= @movie_data[:movie][:title] %></h1>
   <h2>Vote Average: <%= @movie_data[:movie][:vote_average]%></h2>
