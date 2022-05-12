@@ -7,9 +7,18 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= link_to "Landing Page", "/" %>
   </head>
 
   <body>
+    <div class="title">
+      <h1>Viewing Party</h1>
+    </div>
+    <% flash.each do |type, msg|  %>
+      <div class ="flash">
+        <%= msg %>
+      </div>
+      <% end %>
     <%= yield %>
   </body>
 </html>
