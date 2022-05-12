@@ -16,4 +16,12 @@ class MovieService
   def self.api_key
     ENV["movie_api_key"]
   end
+
+  def get_search(params)
+    response1 = conn.get("/3/movie/top_rated?api_key=#{api_key}&query=#{params}")
+    response2 = conn.get("/3/movie/top_rated?api_key=#{api_key}&query=#{params}&page=2")
+    parsed1 = JSON.parse(response1.body, symbolize_names: true)
+    parsed2 = JSON.parse(response2.body, symbolize_names: true)
+    parsed1[:results] + parsed2[:results]
+  end
 end

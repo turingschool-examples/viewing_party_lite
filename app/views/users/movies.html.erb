@@ -1,0 +1,9 @@
+<%= render "layouts/header" %>
+
+<center>
+<% @facade.each do |movie| %>
+  <%= movie.title %>
+  <%= movie.vote_average %>
+  <br>
+<% end %>
+</center>

@@ -20,6 +20,14 @@ class UsersController < ApplicationController
     @facade = MovieFacade.new
   end
 
+  def movies
+    @facade = if params[:title].nil?
+      MovieFacade.new.top_movies
+    else
+      @facade = MovieFacade.new.search
+    end
+  end
+
   private
 
   def user_params
