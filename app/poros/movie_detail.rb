@@ -9,4 +9,10 @@ class MovieDetail
     @genre = data[:genres]
     @summary = data[:overview]
   end
+
+  def genre_names
+    @genre.map do |genre|
+      genre[:name]
+    end
+  end
 end
