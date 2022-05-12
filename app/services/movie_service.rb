@@ -1,15 +1,13 @@
-class MovieService
+class MovieService < BaseService
+  def self.top_rated_movies
+    response = conn("https://api.themoviedb.org").get("/3/movie/top_rated?api_key=#{ENV['movie_api_key']}&language=en-US&page=1")
 
-  # def get_json(url)
-  #   response = conn.get(url)
-  #   JSON.parse(response.body, symbolize_names: true)
-  # end
+    get_json(response)
+  end
 
-  # def conn
-  #   Faraday.new(:url => 'https://api.themoviedb.org') do |faraday|
-  #     faraday.headers['X-API-KEY'] = ENV['movie_key']
-  #     faraday.adapter Faraday.default_adapter
-  #   end
-  # end
+  def self.search(keywords)
+    response = conn("https://api.themoviedb.org").get("/3/search/movie?api_key=#{ENV['movie_api_key']}&language=en-US&query=#{keywords}&page=1&include_adult=false")
 
+    get_json(response)
+  end
 end
