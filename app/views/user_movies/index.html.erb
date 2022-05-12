@@ -1,0 +1,34 @@
+<center>
+<h1>Viewing Party Lite</h1>
+</center>
+
+<center>
+<% if @movies %>
+  <h2>Top Rated Movies</h2>
+<% elsif @results %>
+  <h2>Movie Results for: <%= @keyword %></h2>
+<% end %>
+</center>
+
+<center>
+<%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %>
+</center>
+<br><br><br><br>
+
+<center>
+<% if @movies %>
+  <% @movies.each do |movie| %>
+    <p><%= link_to "#{movie[:title]}", "/users/#{@user.id}/movies/#{movie[:id]}" %>, Average Vote: <%= movie[:vote_average]%></p>
+  <% end %>
+<% end %>
+</center>
+
+<center>
+<% if @results %>
+  <% @results.each do |result| %>
+    <p><%= link_to "#{result[:title]}", "/users/#{@user.id}/movies/#{result[:id]}" %>, Average Vote: <%= result[:vote_average]%></p>
+  <% end %>
+<% end %>
+</center>
+
+
