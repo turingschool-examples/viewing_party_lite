@@ -1,8 +1,4 @@
 class UsersController < ApplicationController
-  def dashboard
-    @user = User.find(params[:id])
-  end
-
   def new
   end
 
@@ -21,11 +17,13 @@ class UsersController < ApplicationController
   end
 
   def movies
-    @facade = if params[:title].nil?
-      MovieFacade.new.top_movies
-    else
-      @facade = MovieFacade.new.search
-    end
+    @user = User.find(params[:id])
+    @facade =
+      if params[:title].nil?
+        MovieFacade.new.top_movies
+      else
+        MovieFacade.new.search(params[:title])
+      end
   end
 
   private

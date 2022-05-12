@@ -1,9 +1,11 @@
 <%= render "layouts/header" %>
 
 <center>
-<% @facade.each do |movie| %>
-  <%= movie.title %>
-  <%= movie.vote_average %>
+  <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %>
   <br>
-<% end %>
+  <% @facade.each do |movie| %>
+    <%= movie.title %>
+    <%= movie.vote_average %>
+    <br>
+  <% end %>
 </center>
