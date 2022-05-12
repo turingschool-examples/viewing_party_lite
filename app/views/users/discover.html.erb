@@ -14,7 +14,7 @@
  <%# end %>
 <h2>OR</h2>
 <ul>
-<%= form_with url: "/users/#{@user.id}/movies", method: :get, local:true do |f|%>
+<%= form_with url: "/users/#{@user.id}/movies?keyword=keyword", method: :get, local:true do |f|%>
 <div class="card" style="width: 18rem;">
   <div class="card-body">
     <div class="mb-3">
