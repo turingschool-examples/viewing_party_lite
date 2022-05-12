@@ -18,6 +18,8 @@ RSpec.describe 'the users index page' do
       visit user_discover_path(@user_1)
       click_button("Find Top Rated Movies")
       expect(current_path).to eq(user_movies_path(@user_1))
+      expect(page).to have_content("The Good, the Bad and the Ugly")
+      expect(page).to have_content("The Godfather")
     end
   end
 end
