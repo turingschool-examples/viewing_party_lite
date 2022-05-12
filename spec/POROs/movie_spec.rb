@@ -5,12 +5,9 @@ describe Movie do
     @hash = {
       "adult": false,
             "backdrop_path": "/egoyMDLqCxzjnSrWOz50uLlJWmD.jpg",
-            "genre_ids": [
-                28,
-                878,
-                35,
-                10751,
-                12
+            "genres": [
+              {id: 28, name: 'Drama'},
+              {id: 50, name: 'Action'}
             ],
             "id": 675353,
             "runtime": 139,
@@ -45,6 +42,10 @@ describe Movie do
     expect(movie.cast).to be_a(Array)
     expect(movie.cast).to be_all(Hash)
     expect(movie.cast[0][:name]).to be_a(String)
+
+    expect(movie.genres).to be_a(Array)
+    expect(movie.genres).to be_all(Hash)
+    expect(movie.genres[0][:name]).to be_a(String)
   end
 
   context 'instance methods' do
