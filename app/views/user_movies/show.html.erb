@@ -1,3 +1,20 @@
-<center>
-<h1>Viewing Party Lite</h1>
-</center>
+<div id="links">
+  <%= link_to "Return to Discover", "/users/#{@user.id}/discover"%>
+  <%= button_to "Create New Watch Party", "/users/#{@user.id}/movies/#{@movie_data[:movie][:id]}/viewing-party/new", method: :get %>
+</div>
+
+<div id="movie-details">
+  <h1><%= @movie_data[:movie][:title] %></h1>
+  <h2>Vote Average: <%= @movie_data[:movie][:vote_average]%></h2>
+  <h2>Runtime: <%= (@movie_data[:movie][:runtime]/60).floor %>h <%= (@movie_data[:movie][:runtime]%60) %>m</h2>
+  <h2>Genres:</h2>
+ <% @movie_data[:movie][:genres].each do |genre| %>
+    <h3><%= genre[:name] %></h3>
+  <% end %>
+  <h2>Overview:</h2>
+  <p> <%= @movie_data[:movie][:overview] %></p>
+  <h2>Notable Actors:</h2>
+  <% @movie_data[:cast].each do |actor| %>
+    <h3><%= actor[:name] %></h3>
+  <% end %>
+</div>
