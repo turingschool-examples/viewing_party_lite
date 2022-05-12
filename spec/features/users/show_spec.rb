@@ -31,8 +31,8 @@ describe "User dashboard/show" do
     within "#viewing_parties" do
       expect(page).to have_content("Party ##{@u1_vp.id}")
       expect(page).to have_link("Movie: The Twilight Saga: Eclipse")
-      expect(page).to have_content("Date & Time: April 26, 2002 at 1:00")
-      expect(page).to have_link("Host: User One")
+      expect(page).to have_content("Date & Time: April 26, 2002 at 01:00")
+      expect(page).to have_content("Host: User One")
 
       expect(page).not_to have_content("Host: User Two")
     end
