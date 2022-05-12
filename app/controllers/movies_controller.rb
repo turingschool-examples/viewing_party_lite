@@ -12,6 +12,10 @@ class MoviesController < ApplicationController
     end
   end
 
+    def show
+      @movies = facade.details(params[:id])
+  end
+
 
   def facade
     @facade ||= MovieFacade.new
