@@ -12,9 +12,9 @@
   
   <% @users.each do |user| %>
     <section id="user_id-<%= user.id %>">
-      <%= link_to "#{user.email}'s dashboard", "/users/#{user.id}" %><br>
+    <%= link_to "#{user.email}'s dashboard", "/users/#{user.id}" %><br>
     
-  </section>
+    </section>
     <% end %>
 
 </section>
