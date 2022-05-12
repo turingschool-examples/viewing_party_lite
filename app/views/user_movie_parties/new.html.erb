@@ -16,16 +16,20 @@
 <%= form_with url: "/users/#{@user.id}/movies/#{@movie[:id]}/party/new", method: :post do |f| %>
   <%= f.label :movie_title, "Movie Title:" %>
   <%= f.text_field :movie_title, value: @movie[:original_title] %><br>
+
   <%= f.label :duration, "Duration of Party:" %>
   <%= f.text_field :duration, value: @movie[:runtime] %>
   <%= f.hidden_field :runtime, value: @movie[:runtime] %><br>
+
   <%= f.label :date, "Day:" %>
   <%= f.date_select :date %><br>
+
   <%= f.label :start_time, "Start Time:" %>
   <%= f.text_field :start_time, value: "7:00" %><br>
+
   <%= f.label :users, 'Invite Other Users' %><br>
-  <%= f.collection_check_boxes :attendees, @users, :id, :name %>
-  <br>
+  <%= f.collection_check_boxes :attendees, @users, :id, :name %><br>
+  
   <%= f.submit 'Create Party' %>
 <% end %>
 </div>

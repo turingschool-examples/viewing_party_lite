@@ -7,12 +7,11 @@ RSpec.describe "New Party Page" do
     it 'it has the movie title and a form to create a new party' do
       skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com')
       jaws_id = 578
-      # date = DateTime.now.strftime("%m/%d/%y")
+      
       visit "/users/#{skeeter.id}/movies/#{jaws_id}/party/new"
      
       expect(page).to have_content("Create a Movie Party for Jaws")
       expect(page).to have_field('Duration of Party', with: '124')
-      # expect(page).to have_field('Day')
       expect(page).to have_field('Start Time', with: '7:00')
 
     end 
@@ -33,36 +32,39 @@ RSpec.describe "New Party Page" do
       expect(page).to have_field('Ruby', checked: false) 
       expect(page).to have_field('Woobie', checked: false) 
     end 
+    
+    describe 'when a new party is created' do
+      it 'I am redirected to my dashboard with new party shown, party also show on attendees dashboards' do
+        skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com')
+        lugnut = User.create!(name: 'LugNut', email: 'fatdog@corgi.com')
+        hazel = User.create!(name: 'Hazel', email: 'hazelthehut@food.com')
+        jaws_id = 578
+        
+        visit "/users/#{skeeter.id}/movies/#{jaws_id}/party/new"
+        
+        fill_in "Duration of Party", with: 124
+        select 2022, from: '_date_1i'
+        select 'May', from: '_date_2i'
+        select '12', from: '_date_3i'
 
-    it 'when a new party is created, I am redirected to my dashboard with new party shown' do
-      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com')
-      lugnut = User.create!(name: 'LugNut', email: 'fatdog@corgi.com')
-      hazel = User.create!(name: 'Hazel', email: 'hazelthehut@food.com')
+        fill_in "Start Time", with: "8:00"
+        check("attendees_#{lugnut.id}")
+        check("attendees_#{hazel.id}")
 
-      jaws_id = 578
-      
-      visit "/users/#{skeeter.id}/movies/#{jaws_id}/party/new"
-      
-      fill_in "Duration of Party", with: 124
-      select 2022, from: '_date_1i'
-      select 'May', from: '_date_2i'
-      select '12', from: '_date_3i'
+        click_on "Create Party"
+        expect(current_path).to eq("/users/#{skeeter.id}")
+        expect(page).to have_content("When: 2022-05-12 00:00:00 UTC")
+        expect(page).to have_content("Runtime: 124")
+        
+        visit "/users/#{lugnut.id}"
+        expect(page).to have_content("When: 2022-05-12 00:00:00 UTC")
+        expect(page).to have_content("Runtime: 124")
 
-      fill_in "Start Time", with: "8:00"
-      check("attendees_#{lugnut.id}")
-      check("attendees_#{hazel.id}")
-
-      click_on "Create Party"
-      expect(current_path).to eq("/users/#{skeeter.id}")
-      expect(page).to have_content("When: 2022-05-12 00:00:00 UTC")
-      expect(page).to have_content("Runtime: 124")
-   
+      end 
     end 
-
     it 'cannot make a new party with a duration less than the movies runtime' do
       skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com')
       lugnut = User.create!(name: 'LugNut', email: 'fatdog@corgi.com')
-
       jaws_id = 578
       
       visit "/users/#{skeeter.id}/movies/#{jaws_id}/party/new"
@@ -74,14 +76,11 @@ RSpec.describe "New Party Page" do
 
       fill_in "Start Time", with: "8:00"
       check("attendees_#{lugnut.id}")
-
       click_on "Create Party"
 
       expect(current_path).to eq("/users/#{skeeter.id}/movies/#{jaws_id}/party/new")
       expect(page).to have_content('Duration Cannot Be Less Than Movie Runtime!')
     end 
-
   end 
-
 end 
 

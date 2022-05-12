@@ -16,7 +16,7 @@ class UserMoviePartiesController < ApplicationController
     if params[:runtime].to_i > params[:duration].to_i 
       flash[:notice] = 'Duration Cannot Be Less Than Movie Runtime!'
       redirect_to "/users/#{user_id}/movies/#{movie_id}/party/new"
-    elsif 
+    else 
       new_party = Party.create!({
         duration: params[:duration].to_i,
         when: date_maker,
@@ -30,7 +30,6 @@ class UserMoviePartiesController < ApplicationController
         end 
       end 
       redirect_to "/users/#{user_id}"
-      
     end 
   end
 
