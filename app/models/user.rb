@@ -4,4 +4,8 @@ class User < ApplicationRecord
 
   validates_presence_of :name
   validates_presence_of :email
+
+  def parties_im_hosting
+    Party.all.where(host_id: self.id)
+  end
 end
