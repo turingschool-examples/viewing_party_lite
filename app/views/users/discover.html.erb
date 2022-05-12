@@ -3,3 +3,12 @@
   <ul>
     <a href="/users/<%= @user.id %>/movies?q=top%20rated" class="btn btn-outline-success my-2 my-sm-0" role='button'>Top Movies</a>
  </ul>
+
+ <ul>
+  <%= form_with url: "/users/#{@user.id}/movies", method: :get, local:true do |f|%>
+    <%= f.label :keyword%>
+    <%= f.text_area :keyword%>
+    <%= f.submit "Submit" %>
+ <% end %>
+</ul>
+

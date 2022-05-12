@@ -1,7 +1,12 @@
 <%= render partial: 'partials/navbar_default' %>
 <br>
 <section class="movies">
-  <h3>Top 20 Movies:</h3>
+  <% if !@keyword %>
+    <h3>Top 20 Movies:</h3>
+  <% else %>
+    <h3>Movies by keyword "<%= @keyword %>":</h3>
+  <% end %>
+
     <table class="table table-hover">
     <thead>
       <tr>
@@ -21,4 +26,5 @@
     </tbody>
     <% end %>
 </table>
+  
 </section>

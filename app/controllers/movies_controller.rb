@@ -1,21 +1,25 @@
 class MoviesController < ApplicationController
-before_action :set_user
+  before_action :set_user
   def index
-  	if params[:q] == 'top rated'
-  		@movies = facade.top20
-  		@something = 'something'
-  		# require 'pry'; binding.pry
-  		# redirect_to user_movies_path(@user.id)
-  	end
+    @movies = facade.top20 if params[:q] == 'top rated'
+    if params[:keyword]
+      @movies = facade.search(params[:keyword])
+      @keyword = params[:keyword]
+      if @movies.class == String
+        redirect_to "/users/#{@user.id}/discover"
+        flash[:alert] = "Error: #{@movies}, please try again!."
+      end
+    end
   end
 
 
   def facade
-  	@_facade ||= MovieFacade.new
+    @facade ||= MovieFacade.new
   end
 
   private
+
   def set_user
-  	@user = User.find(params[:user_id])
+    @user = User.find(params[:user_id])
   end
 end
