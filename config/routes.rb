@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :people, only: [:new, :create, :show, :index]
   # post "/register", to: "people#create", as: "poople"
   get "/people/:id/discover", to: "people#discover", as: "discover"
+  post "/people/:id/movies", to: "people#movies", as: "movies"
 end

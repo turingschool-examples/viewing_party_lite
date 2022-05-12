@@ -1,7 +1,7 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "Discover Page" do
-  it 'has a button to discover top rated movies' do
+  it "has a button to discover top rated movies" do
     person = Person.create!(name: "Billy Williams", email: "bwill@mailer.com")
 
     party1 = Party.create!(host_id: 1, movie_id: 2, movie_name: "Star Wars", date: "May 4, 2022", time: "8:00pm", duration: 180)
@@ -11,11 +11,13 @@ RSpec.describe "Discover Page" do
     PartyPerson.create(party_id: party1.id, person_id: person.id)
 
     visit discover_path(person.id)
-save_and_open_page
+
     click_button "Find Top Rated Movies"
+
+    expect(current_path).to eq("people/:person.id/movies?q=top%20rated")
   end
 
-  it 'has a text field to enter keywords to search by movie title' do
+  it "has a text field to enter keywords to search by movie title" do
     person = Person.create!(name: "Billy Williams", email: "bwill@mailer.com")
 
     party1 = Party.create!(host_id: 1, movie_id: 2, movie_name: "Star Wars", date: "May 4, 2022", time: "8:00pm", duration: 180)

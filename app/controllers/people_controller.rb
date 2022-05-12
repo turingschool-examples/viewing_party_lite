@@ -10,12 +10,6 @@ class PeopleController < ApplicationController
     @person = Person.new(person_params)
   end
 
-  # def index
-  #   @people = People.all
-  #   require "pry"
-  #   binding.pry
-  # end
-  #
   def create
     person = Person.new(person_params)
     person.save
@@ -24,6 +18,11 @@ class PeopleController < ApplicationController
 
   def discover
     @person = Person.find(params[:id])
+  end
+
+  def movies
+    require "pry"
+    binding.pry
   end
 
   private
