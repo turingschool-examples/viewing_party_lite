@@ -17,22 +17,14 @@ class MovieService
   end
 
   def movie_details(movie_id)
-#    binding.pry
     get_url("https://api.themoviedb.org/3/movie/#{movie_id}?api_key=#{ENV['tmdb_key']}")
-    #movie_title
-    #vote_average
-    #runtime
-    #genres [{ id, name }]
-    #overview
   end
 
   def cast(movie_id)
-    data = get_url("https://api.themoviedb.org/3/movie/#{movie_id}/credits?api_key=#{ENV['tmdb_key']}")[:cast]
-    #cast [0..10]
+    get_url("https://api.themoviedb.org/3/movie/#{movie_id}/credits?api_key=#{ENV['tmdb_key']}")[:cast]
   end
 
   def reviews(movie_id)
-    data = get_url("https://api.themoviedb.org/3/movie/#{movie_id}/reviews?api_key=#{ENV['tmdb_key']}")
-    #total_results
+    get_url("https://api.themoviedb.org/3/movie/#{movie_id}/reviews?api_key=#{ENV['tmdb_key']}")[:results]
   end
 end

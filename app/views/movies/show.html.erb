@@ -13,3 +13,9 @@
 <% @movie.cast.each do |cast_member| %>
   <p><%= cast_member[:character] %>: <%= cast_member[:name] %></p>
 <% end %>
+
+<h3><%= @movie.reviews.count %> reviews </h3>
+<%= @movie.reviews.each do |review| %>
+  <p>Author: <%= review[:author] %></p>
+  <p>Review: <%= review[:content] %></p>
+<% end %>
