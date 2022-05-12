@@ -6,11 +6,11 @@ describe "User dashboard/show" do
     @user2 = User.create!(name: "User Two", email: "user2@test.com")
     @user3 = User.create!(name: "User Three", email: "user3@test.com")
 
-    @u1_vp = Party.create!(event_date: Time.new(2002, 04, 26, 1, 0, 0), duration: "230 mins", start_time: Time.new(2002, 04, 26, 1, 0, 0), user_id: @user1.id, movie_id: 24021)
+    @u1_vp = Party.create!(event_date: DateTime.new(2002, 04, 26, 6, 0, 0, "-07:00"), duration: "230 mins", start_time: DateTime.new(2002, 04, 26, 6, 0, 0, "-07:00"), user_id: @user1.id, movie_id: 24021)
     @u1_vp_inv_1 = Invitation.create!(user_id: @user1.id, party_id: @u1_vp.id)
     @u1_vp_inv_2 = Invitation.create!(user_id: @user3.id, party_id: @u1_vp.id)
 
-    @u2_vp = Party.create!(event_date: Time.new(2002, 02, 24, 2, 0, 0), duration: "230 mins", start_time: Time.new(2002, 02, 24, 2, 0, 0), user_id: @user2.id, movie_id: 809)
+    @u2_vp = Party.create!(event_date: DateTime.new(2002, 02, 24, 7, 0, 0, "-07:00"), duration: "230 mins", start_time: DateTime.new(2002, 02, 24, 7, 0, 0, "-07:00"), user_id: @user2.id, movie_id: 809)
     @u2_vp_inv = Invitation.create!(user_id: @user3.id, party_id: @u2_vp.id)
     visit "/users/#{@user1.id}"
   end
@@ -27,7 +27,7 @@ describe "User dashboard/show" do
     expect(current_path).not_to eq("/users/#{@user2.id}/discover")
   end
 
-  it "has a section that lists viewing parties" do
+  it "has a section that lists viewing parties", :vcr do
     within "#viewing_parties" do
       expect(page).to have_content("Party ##{@u1_vp.id}")
       expect(page).to have_link("Movie: The Twilight Saga: Eclipse")
