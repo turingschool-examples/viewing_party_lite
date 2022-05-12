@@ -18,12 +18,12 @@ class UsersController < ApplicationController
   end
 
   def discover
-    # require "pry"; binding.pry
+
     @user = User.find(params[:id])
   end
 
   def results
-    # require "pry"; binding.pry
+
   end
 
   private

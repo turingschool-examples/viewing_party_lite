@@ -4,6 +4,5 @@
 </div>
 
 <div style="text-align:center;">
-  <%= button_to "Discover Top Rated Movies", "/users/#{@user.id}/movies?q=top%20rated", method: :get, local: true %>
+  <%= button_to "Discover Top Rated Movies", "/users/#{@user.id}/movies", method: :get, params: {q: 'top%20rated'}, local: true %>
 </div>
-
