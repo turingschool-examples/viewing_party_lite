@@ -1,12 +1,15 @@
 class Movie
-  attr_reader :id, :title, :vote_average, :poster_path, :runtime
+  attr_reader :id, :title, :vote_average, :poster_path, :runtime,
+              :overview, :cast
 
-  def initialize(details)
+  def initialize(details, credits = [], reviews = [])
     @id = details[:id]
     @title = details[:title]
     @vote_average = details[:vote_average]
     @poster_path = details[:poster_path]
     @runtime = formatted_duration(details[:runtime].to_i) 
+    @overview = details[:overview]
+    @cast = credits[0..9]
   end
 
   def formatted_duration(total_minute)

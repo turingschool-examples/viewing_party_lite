@@ -27,7 +27,7 @@ class MovieService
   end
 
   def cast(movie_id)
-    data = get_url("https://api.themoviedb.org/3/movie/#{movie_id}/credits?api_key=#{ENV['tmdb_key']}")
+    data = get_url("https://api.themoviedb.org/3/movie/#{movie_id}/credits?api_key=#{ENV['tmdb_key']}")[:cast]
     #cast [0..10]
   end
 
