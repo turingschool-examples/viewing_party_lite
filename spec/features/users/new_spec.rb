@@ -15,7 +15,7 @@ RSpec.describe 'new user page' do
     expect(page).to have_content("#{user.name}'s Dashboard")
   end
 
-  it 'shows error message when wrong info is entered' do 
+  it 'shows error message when wrong info is entered' do
     User.create!(name: 'greg', email: 'greg@email.com')
 
     fill_in 'user[name]', with: 'Greg2'
@@ -24,6 +24,5 @@ RSpec.describe 'new user page' do
 
     expect(current_path).to eq('/register')
     expect(page).to have_content('Error: please enter a name and unique email to register.')
-
   end
 end

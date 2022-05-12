@@ -5,13 +5,12 @@ class MoviesController < ApplicationController
     if params[:keyword]
       @movies = facade.search(params[:keyword])
       @keyword = params[:keyword]
-      if @movies.class == String
+      if @movies.instance_of?(String)
         redirect_to "/users/#{@user.id}/discover"
         flash[:alert] = "Error: #{@movies}, please try again!."
       end
     end
   end
-
 
   def facade
     @facade ||= MovieFacade.new

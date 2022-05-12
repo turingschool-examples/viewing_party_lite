@@ -28,14 +28,13 @@ RSpec.describe MovieFacade do
     expect(results[0].vote_average).to eq(8.7)
   end
 
-  it 'creates 40 movies from valid search', :vcr do 
+  it 'creates 40 movies from valid search', :vcr do
     results = facade.search('man')
 
     expect(results).to be_an Array
     expect(results[0]).to be_a MovieBrief
-    expect(results.count). to eq(40)
+    expect(results.count).to eq(40)
     expect(results[0].title).to eq("The King's Man")
     expect(results[0].vote_average).to eq(6.9)
   end
-
 end
