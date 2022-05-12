@@ -3,7 +3,7 @@
 </h2>
 
 <div id="discover_button"; style="text-align:center">
-  <%= button_to 'Discover Movies', "/users/#{@user.id}/discover", method: :get, local: true %>
+  <%= link_to 'Discover Top Rated Movies', "/users/#{@user.id}/movies?q=top%20rated" %>
 </div><hr>
 
 <div id="viewing_parties"; style="text-align:center">
