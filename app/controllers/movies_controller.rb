@@ -6,7 +6,11 @@ class MoviesController < ApplicationController
       @movies = MovieFacade.top_rated
     elsif params[:query]
       @movies = MovieFacade.find_movies(params[:query])
-    end 
+    end
+  end
+
+  def show
+#      @movie = MovieFacade.movie_info(params[:id])
   end
 
   private

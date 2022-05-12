@@ -15,4 +15,24 @@ class MovieService
     page2 = get_url("https://api.themoviedb.org/3/search/movie?api_key=#{ENV['tmdb_key']}&query=#{search}&page=2")[:results]
     page1 + page2
   end
+
+  def movie_details(movie_id)
+#    binding.pry
+    data = get_url("https://api.themoviedb.org/3/movie/#{movie_id}?api_key=#{ENV['tmdb_key']}")
+    #movie_title
+    #vote_average
+    #runtime
+    #genres [{ id, name }]
+    #overview
+  end
+
+  def cast(movie_id)
+    data = get_url("https://api.themoviedb.org/3/movie/#{movie_id}/credits?api_key=#{ENV['tmdb_key']}")
+    #cast [0..10]
+  end
+
+  def reviews(movie_id)
+    data = get_url("https://api.themoviedb.org/3/movie/#{movie_id}/reviews?api_key=#{ENV['tmdb_key']}")
+    #total_results
+  end
 end
