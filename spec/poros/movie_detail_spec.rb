@@ -3,22 +3,23 @@ require "rails_helper"
 RSpec.describe MovieDetail do
   it "exists with attributes" do
     data = {
-      :id => 1,
-      :title => "title",
-      :vote_average => 3.5,
-      :runtime => 90,
-      :genres => 'comedy',
-      :overview => 'A great journey'
+      id: 1,
+      title: "Dune",
+      vote_average: 7.9,
+      overview: "Good movie",
+      genres: ["Sci fi", "Adventure"],
+      runtime: 155
     }
 
-    single_movie = MovieDetail.new(data)
+    dune = MovieDetail.new(data)
 
-    expect(single_movie).to be_an_instance_of(MovieDetail)
-    expect(single_movie.id).to eq(1)
-    expect(single_movie.title).to eq("title")
-    expect(single_movie.vote_average).to eq(3.5)
-    expect(single_movie.runtime).to eq(90)
-    expect(single_movie.genre).to eq('comedy')
-    expect(single_movie.summary).to eq('A great journey')
+    expect(dune).to be_an_instance_of(MovieDetail)
+    expect(dune.id).to eq(1)
+    expect(dune.title).to eq("Dune")
+    expect(dune.vote_average).to eq(7.9)
+    expect(dune.runtime).to eq(155)
+    expect(dune.genre.first).to eq('Sci fi')
+    expect(dune.genre.last).to eq('Adventure')
+    expect(dune.summary).to eq('Good movie')
   end
 end
