@@ -7,5 +7,6 @@ Rails.application.routes.draw do
 
   get "/users/:id", to: "users#show"
   get "/users/:id/discover", to: "users#discover"
-  # get "/users/:id/movies", to: "users#"
+  get "/users/:id/users/:id/movies", to: "users#movies"
+  get "/users/:id/movies", to: "users#movies"
 end
