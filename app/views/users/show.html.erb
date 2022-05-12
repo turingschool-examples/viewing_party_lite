@@ -1,3 +1,12 @@
+<div id="user_dashboard_heading">
 <h1> <%= @user.name %> </h1>
-
+</div>
 <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %>
+<h2>My Parties</h2>
+<div id="<%= @user.id %>_viewing_parties">
+<ul>
+<%= @user.parties_im_hosting.each do |party| %>
+  <li>party.date.formatted</li>
+<% end %>
+</ul>
+</div>
