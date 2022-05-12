@@ -6,7 +6,7 @@ class MovieService
     response2 = conn.get("/3/movie/top_rated?api_key=#{api_key}&page=2")
     parsed1 = JSON.parse(response1.body, symbolize_names: true)
     parsed2 = JSON.parse(response2.body, symbolize_names: true)
-    result = parsed1[:results] + parsed2[:results]
+    parsed1[:results] + parsed2[:results]
   end
 
   def self.conn
