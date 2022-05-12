@@ -22,5 +22,11 @@ describe Party, type: :model do
         expect(movie.title).not_to eq("Shrek 2")
       end
     end
+
+    context "#format_start_time" do
+      it "returns a formatted start time and date" do
+        expect(@party_1.format_start_time).to eq("April 26, 2002 at 1:00")
+      end
+    end
   end
 end
