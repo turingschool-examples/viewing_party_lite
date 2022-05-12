@@ -41,13 +41,26 @@ RSpec.describe 'Movies Results Page', type: :feature do
       expect(current_path).to eq("/users/#{skeeter.id}/discover")
     end 
 
-    it 'each movie result displayed is a link to that movies movie detail page' do
+    it 'each top movie result displayed is a link to that movies movie detail page' do
       skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com')
       visit "/users/#{skeeter.id}/discover"
       click_button "Find Top Rated Movies"
  
       click_link "The Shawshank Redemption"
       expect(current_path).to eq("/users/#{skeeter.id}/movies/278")
+    end 
+
+    it 'each search result movie is a link to that movies detail page' do
+
+      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com')
+      visit "/users/#{skeeter.id}/discover"
+
+      fill_in "Search by Movie Title", with: "jaws"
+      click_on "Find Movies"
+
+      click_link "Jaws 3-D"
+      expect(current_path).to eq("/users/#{skeeter.id}/movies/17692")
+
     end 
 
   end 
