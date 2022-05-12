@@ -1,4 +1,5 @@
 <%= link_to 'Discover Page', "/users/#{@user.id}/discover" %>
+<%= button_to 'Create Viewing Party', new_user_movie_viewing_party_path(@user, @movie.id), method: :get %>
 <h1>Movie Details for <%= @movie.title %></h1>
 <p>Vote Average <%= @movie.vote_average %>  </p>
 <p>Runtime: <%= @movie.runtime %>
