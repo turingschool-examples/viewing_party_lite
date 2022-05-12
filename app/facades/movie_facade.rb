@@ -4,7 +4,19 @@ class MovieFacade
   end
 
   def search(params)
-    # cant figure out how to pass/get params here
     MovieService.get_search(params).map { |data| Movie.new(data) }
+  end
+
+  def self.top_10_cast(params)
+    MovieService.get_cast(params)[:cast].each do |actor|
+      actor[:name]
+    end.take(10)
+  end
+
+  def self.reviews(params)
+    MovieService.get_reviews(params)[:results].each do |review|
+      review[:author]
+      review[:content]
+    end
   end
 end

@@ -24,4 +24,22 @@ class MovieService
     parsed2 = JSON.parse(response2.body, symbolize_names: true)
     parsed1[:results] + parsed2[:results]
   end
+
+  def self.get_movie(id)
+    response = conn.get("/3/movie/#{id}?api_key=#{api_key}")
+
+    parsed = JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.get_cast(id)
+    response = conn.get("/3/movie/#{id}/credits?api_key=#{api_key}")
+
+    parsed = JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.get_reviews(id)
+    response = conn.get("/3/movie/#{id}/reviews?api_key=#{api_key}")
+
+    parsed = JSON.parse(response.body, symbolize_names: true)
+  end
 end
