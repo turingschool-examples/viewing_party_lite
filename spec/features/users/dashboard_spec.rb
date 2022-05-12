@@ -25,7 +25,7 @@ RSpec.describe "user dashboard" do
     party1 = Party.create!(host_id: @user_1.id, duration: 1, date: Time.parse("2022.04.23 16:30"), movie_id: 524)
     party2 = Party.create!(host_id: @user_1.id, duration: 15, date: Time.parse("2022.04.25 15:00"), movie_id: 740)
     visit "/users/#{@user_1.id}"
-save_and_open_page
+
     within("##{@user_1.id}_viewing_parties") do
       expect(page).to have_content(party1.date.strftime("%a, %b %e %Y"))
       expect(page).to have_content(party2.date.strftime("%a, %b %e %Y"))

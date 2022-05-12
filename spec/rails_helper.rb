@@ -2,7 +2,7 @@
 require 'simplecov'
 SimpleCov.start
 require 'spec_helper'
-require 'Time'
+require 'time'
 
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
