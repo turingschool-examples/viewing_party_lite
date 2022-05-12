@@ -37,15 +37,15 @@ RSpec.describe 'Movie results page' do
       click_button "Search"
 
       within "#movie-52886" do
+        expect(page).to have_content("6.4")
+      end
+
+      within "#movie-52886" do
         click_link "Castaway"
       end
 
       expect(current_path).to eq("/users/#{user1.id}/movies/52886")
       expect(current_path).to_not eq("/users/#{user2.id}/movies/52886")
-
-      within "#movie-52886" do
-        expect(page).to have_content("6.4")
-      end
     end
   end
 end

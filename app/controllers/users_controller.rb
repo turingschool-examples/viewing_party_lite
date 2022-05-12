@@ -25,6 +25,10 @@ class UsersController < ApplicationController
     @movie_list = MovieFacade.movie_list(params[:q])
   end
 
+  def details
+
+  end
+
   private
   def user_params
     params.permit(:name, :email)
