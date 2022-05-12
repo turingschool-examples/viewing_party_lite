@@ -9,10 +9,10 @@ RSpec.describe "New Party Page" do
       jaws_id = 578
       date = DateTime.now.strftime("%m/%d/%y")
       visit "/users/#{skeeter.id}/movies/#{jaws_id}/party/new"
-
+      save_and_open_page
       expect(page).to have_content("Create a Movie Party for Jaws")
       expect(page).to have_field('Duration of Party', with: '124')
-      expect(page).to have_field('Day', with: "#{date}")
+      expect(page).to have_field('Day')
       expect(page).to have_field('Start Time', with: '7:00')
 
     end 
