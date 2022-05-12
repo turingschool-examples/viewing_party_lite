@@ -19,4 +19,10 @@ RSpec.describe "Movie Details Page", type: :feature do
     click_on "Return to Discover"
     expect(current_path).to eq("/users/#{user.id}/discover")
   end
+
+  it 'has all the movie details' do
+    movie_details = File.read("spec/fixtures/movie_details_test.json")
+    user = User.create!(name: "Tim", email: "Tim@mail.com")
+    visit "/users/#{user.id}/movies/278"
+  end
 end
