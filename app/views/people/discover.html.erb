@@ -1,1 +1,15 @@
-<h1>Hello World</h1>
+<h1>Viewing Party Lite</h1>
+<h2>Discover Movies</h2>
+
+<div class="center-button">
+  <%= button_to "Find Top Rated Movies", "person/:person_id/movies?q=top%20rated", method: :get %>
+</div>
+
+<p>OR</p>
+
+<div class="center-field">
+  <%= form_with url: "/people/:id/dashboard/movies?q=keyword", method: :get do |form| %>
+    <%= form.search_field "Search by movie title" %>
+    <%= form.submit "Find Movies" %>
+  <% end %>
+</div>
