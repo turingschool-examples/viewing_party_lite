@@ -7,6 +7,12 @@ describe 'The movie details page' do
     visit user_movie_path(@user,@movie_id)
   end
 
+  it 'displays a link to create a new viewing party' do
+    click_on 'Create Viewing Party'
+
+    expect(current_path).to eq(new_user_movie_viewing_party_path(@user, @movie_id))
+  end
+
   it 'displays movie details for movie' do
     text = "A ticking-time-bomb insomniac and a slippery"
     expect(page).to have_content('Fight Club')
