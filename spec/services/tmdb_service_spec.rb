@@ -14,7 +14,7 @@ RSpec.describe TmdbService do
     expect(results[0][:vote_average]).to eq(8.7)
   end
 
-  it 'gets movies from keyword search', :vcr do 
+  it 'gets movies from keyword search', :vcr do
     results = service.search('man')
 
     expect(results).to be_a Hash

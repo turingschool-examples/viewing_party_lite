@@ -7,7 +7,7 @@ class TmdbService
     get_url("/movie/top_rated?api_key=#{ENV['tmdb_api_key']}")[:results]
   end
 
-  def search(keyword, page=1)
+  def search(keyword, page = 1)
     get_url("/search/movie?api_key=#{ENV['tmdb_api_key']}&query=#{keyword}&page=#{page}")
   end
 
@@ -16,4 +16,3 @@ class TmdbService
     JSON.parse(response.body, symbolize_names: true)
   end
 end
-

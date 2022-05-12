@@ -15,16 +15,16 @@ RSpec.describe 'users discover' do
 
     expect(current_path).to eq(user_movies_path(user1.id))
 
-    expect(page).to have_content("The Shawshank Redemption") 
-    expect(page).to have_content("Gabriel's Inferno: Part III") 
+    expect(page).to have_content('The Shawshank Redemption')
+    expect(page).to have_content("Gabriel's Inferno: Part III")
   end
 
-  it 'can search by keyword and return relavant video if exists', :vcr do 
+  it 'can search by keyword and return relavant video if exists', :vcr do
     fill_in :keyword, with: 'dog'
     click_button 'Search'
 
     expect(current_path).to eq(user_movies_path(user1.id))
-    expect(page).to have_content("Straight Outta Nowhere: Scooby-Doo! Meets Courage the Cowardly Dog")
-    expect(page).to have_content("Wiener-Dog")
+    expect(page).to have_content('Straight Outta Nowhere: Scooby-Doo! Meets Courage the Cowardly Dog')
+    expect(page).to have_content('Wiener-Dog')
   end
 end
