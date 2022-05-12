@@ -54,7 +54,7 @@ RSpec.describe 'Movies Results Page', type: :feature do
 
       skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com')
       visit "/users/#{skeeter.id}/discover"
-
+  
       fill_in "Search by Movie Title", with: "jaws"
       click_on "Find Movies"
 
