@@ -8,7 +8,6 @@ RSpec.describe 'Movie' do
         }
 
         movie = Movie.new(data)
-binding.pry
         expect(movie).to be_a(Movie)
         expect(movie.title).to eq("frank")
         expect(movie.vote_average).to eq(6.5)

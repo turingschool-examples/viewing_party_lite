@@ -4,8 +4,8 @@ class MovieService
         get_url("3/movie/top_rated?api_key=f57beefd0f3cef1f6183a305da5f8630")
     end
 
-    def seach_data(search) 
-        get_url("3/movie/#{search}?api_key=f57beefd0f3cef1f6183a305da5f8630")
+    def search_movies(search) 
+        get_url("3/search/movie?api_key=f57beefd0f3cef1f6183a305da5f8630&query=#{search}")
     end
 
     #resuable base code
