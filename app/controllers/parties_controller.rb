@@ -14,6 +14,7 @@ class PartiesController < ApplicationController
       movie_id: params[:movie_id]
     )
     if party.save
+      Invitation.create!(user_id: party.user_id, party_id: party.id)
       redirect_to "/users/#{party.user_id}"
     end
   end
