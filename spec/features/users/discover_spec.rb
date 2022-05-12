@@ -11,7 +11,7 @@ RSpec.describe 'users discover' do
   it 'has button to user_movies index page which shows 20 top movies', :vcr do
     expect(page).to have_link('Top Movies')
 
-    click_link 'Top Movies'
+    click_link 'View Top Movies'
 
     expect(current_path).to eq(user_movies_path(user1.id))
 
@@ -21,7 +21,7 @@ RSpec.describe 'users discover' do
 
   it 'can search by keyword and return relavant video if exists', :vcr do 
     fill_in :keyword, with: 'dog'
-    click_button 'Submit'
+    click_button 'Search'
 
     expect(current_path).to eq(user_movies_path(user1.id))
     expect(page).to have_content("Straight Outta Nowhere: Scooby-Doo! Meets Courage the Cowardly Dog")
