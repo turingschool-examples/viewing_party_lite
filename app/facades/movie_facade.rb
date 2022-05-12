@@ -26,11 +26,23 @@ class MovieFacade
     @top_movies_data ||= service.top20
   end
 
-  def details(movie_id)
-    # require 'pry'; binding.pry
-    # MovieDetail.new(TmdbService.movie_details(movie_id))
-    @details ||= service.movie_details(movie_id)
+  def self.movie_details(movie_id)
+
+    MovieDetail.new(TmdbService.movie_details(movie_id))
+    # @details ||= service.movie_details(movie_id)
   end
+
+  def self.movie_cast(movie_id)
+   TmdbService.movie_cast(movie_id)[:cast].map do |data|
+     Cast.new(data)
+   end
+ end
+
+ def self.movie_reviews(movie_id)
+  TmdbService.movie_review(movie_id)[:results].map do |data|
+    Review.new(data)
+  end
+end
 
   def service
     @service ||= TmdbService.new
