@@ -1,11 +1,13 @@
 <%= render "layouts/header" %>
 
-<h1>Viewing Party Lite</h1>
-<br>
-<%= button_to "Create New User", "/register", method: :get %>
-<br>
-<% @users.each do |user| %>
-<div class = "<%= user.name %>">
-  <a href="/users/<%= user.id %>"><%= user.name %></a>
-</div>
-<% end %>
+<center>
+  <h1>Viewing Party Lite</h1>
+  <hr>
+  <%= button_to "Create New User", "/register", method: :get %>
+  <br>
+  <% @users.each do |user| %>
+    <div class = "<%= user.name %>">
+      <a href="/users/<%= user.id %>"><%= user.name %></a>
+    </div>
+  <% end %>
+</center>
