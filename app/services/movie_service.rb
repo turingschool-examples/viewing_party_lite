@@ -1,4 +1,4 @@
-class MovieService < BaseService
+class MovieService 
   def self.get_top_rated
     # response = conn("http://api.themoviedb.org").get("/3/movie/top_rated?api_key=#{ENV['movie_api_key']}")
     response = conn.get('/3/movie/top_rated?')
@@ -17,6 +17,8 @@ class MovieService < BaseService
     end
   end
 
-
+  def self.get_json(response)
+   JSON.parse(response.body, symbolize_names: true)
+  end
 
 end
