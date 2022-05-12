@@ -18,8 +18,8 @@ RSpec.describe 'users discover' do
     expect(page).to have_content('The Shawshank Redemption')
     expect(page).to have_content("Gabriel's Inferno: Part III")
   end
-  
-  describe 'search happy path' do 
+
+  describe 'search happy path' do
     it 'can search by keyword and return relavant video if exists', :vcr do
       fill_in :keyword, with: 'dog'
       click_button 'Search'
@@ -30,7 +30,7 @@ RSpec.describe 'users discover' do
     end
   end
 
-  describe 'search sad path' do 
+  describe 'search sad path' do
     it 'returns error message if no keyword match', :vcr do
       fill_in :keyword, with: 'dogggggggggg'
       click_button 'Search'
@@ -40,5 +40,4 @@ RSpec.describe 'users discover' do
 ")
     end
   end
-
 end
