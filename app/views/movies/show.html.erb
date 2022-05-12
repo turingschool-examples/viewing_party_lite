@@ -2,8 +2,14 @@
 <h1>Movie Details for <%= @movie.title %></h1>
 <p>Vote Average <%= @movie.vote_average %>  </p>
 <p>Runtime: <%= @movie.runtime %>
+<p>Genre(s):
+  <% @movie.genres.each do |genre| %>
+    <%= genre[:name] %> | 
+  <% end %>
+</p>
 <p>Description: <%= @movie.overview %></p>
 
+<h3>Cast:</h3>
 <% @movie.cast.each do |cast_member| %>
   <p><%= cast_member[:character] %>: <%= cast_member[:name] %></p>
 <% end %>
