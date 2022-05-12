@@ -13,4 +13,11 @@ class MovieService
       faraday.params['api_key'] = ENV['api_key']
     end
   end
+
+  #
+  # def self.top_rated_movies_list
+  #   top_rated_movies[:results].map do |movie|
+  #     Movie.new(movie)
+  #   end
+  # end
 end

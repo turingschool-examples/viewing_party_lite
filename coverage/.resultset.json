@@ -14,14 +14,21 @@
           null,
           1,
           1,
-          1,
-          1,
-          1,
+          4,
+          4,
+          4,
           null,
           null,
           1,
-          1,
-          1,
+          4,
+          4,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           null
@@ -39,6 +46,11 @@
           null,
           null,
           1,
+          1,
+          null,
+          null,
+          1,
+          null,
           null,
           null
         ]
@@ -67,6 +79,31 @@
           1,
           1,
           3,
+          null,
+          3,
+          null,
+          null
+        ]
+      },
+      "/Users/katy/archive/Documents/turing/3repeat/projects/viewing_party_lite/app/facades/movie_facade.rb": {
+        "lines": [
+          1,
+          1,
+          4,
+          80,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/katy/archive/Documents/turing/3repeat/projects/viewing_party_lite/app/poros/movie.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          80,
+          80,
           null,
           null
         ]
@@ -110,6 +147,6 @@
         }
       }
     },
-    "timestamp": 1652385988
+    "timestamp": 1652394292
   }
 }

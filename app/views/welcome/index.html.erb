@@ -1,11 +1,11 @@
 <h1>Welcome to Viewing Party Lite!</h1>
 <p>
-  
+
 <%= link_to "create new user", "/users/new" %>
 </p>
 
 
 <% @users.each do |user| %>
-<%= user.name %>
+<%= link_to user.name, "/users/#{user.id}" %>
 <%= user.email %>
 <% end %>
