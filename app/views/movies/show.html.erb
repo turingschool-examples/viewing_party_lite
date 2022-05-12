@@ -5,7 +5,7 @@
 <p>Runtime: <%= @movie.runtime %>
 <p>Genre(s):
   <% @movie.genres.each do |genre| %>
-    <%= genre[:name] %> | 
+    <%= genre[:name] %> |
   <% end %>
 </p>
 <p>Description: <%= @movie.overview %></p>
@@ -16,7 +16,7 @@
 <% end %>
 
 <h3><%= @movie.reviews.count %> reviews </h3>
-<%= @movie.reviews.each do |review| %>
+<% @movie.reviews.each do |review| %>
   <p>Author: <%= review[:author] %></p>
   <p>Review: <%= review[:content] %></p>
 <% end %>
