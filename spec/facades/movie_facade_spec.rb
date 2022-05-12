@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe MovieFacade do
 
-  it '.top_movie' do
-    movies = MovieFacade.top_movie
+  it '.top_movies' do
+    movies = MovieFacade.top_movies
 
     expect(movies).to be_an(Array)
 
