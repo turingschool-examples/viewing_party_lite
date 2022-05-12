@@ -1,13 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe TmdbService do
-  let!(:service) { TmdbService.new }
-
-  it 'exists' do
-    expect(service).to be_a TmdbService
-  end
   it 'gets data for top 20 movies', :vcr do
-    results = service.top20
+    results = TmdbService.top20
     expect(results).to be_an Array
     expect(results.count).to eq(20)
     expect(results[0][:title]).to eq('The Shawshank Redemption')
@@ -15,7 +10,7 @@ RSpec.describe TmdbService do
   end
 
   it 'gets movies from keyword search', :vcr do
-    results = service.search('man')
+    results = TmdbService.search('man')
 
     expect(results).to be_a Hash
     expect(results[:results].count).to eq(20)
@@ -38,12 +33,17 @@ RSpec.describe TmdbService do
     expect(movie_details[:overview]).to be_instance_of(String)
   end
 
-  # it 'movie_cast' do
-  #   credits = service.movie_cast(438631)
-  #   member = credits[:cast].first
-  #
-  #   expect(credits).to be_a Hash
-  #   expect(credits[:cast]).to be_a Array
-  #
-  # end
+  it 'movie_cast', :vcr do
+    credits = TmdbService.movie_cast(438631)
+
+    expect(credits).to be_a Hash
+    expect(credits[:cast]).to be_a Array
+  end
+
+  it 'movie_review', :vcr do
+    reviews = TmdbService.movie_review(438631)
+
+    expect(reviews).to be_a Hash
+    expect(reviews[:results]).to be_a Array
+  end
 end
