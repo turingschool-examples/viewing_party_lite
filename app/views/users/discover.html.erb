@@ -1,12 +1,12 @@
 <h1>Discover your Favorite Movies</h1>
-<%= form_with url: '/movies/top_movies', method: :get do |f|  %>
+<%= form_with url: '/movies/top_movies', method: :get, local: true  do |f|  %>
 <%= f.button 'Top Movies' %>
 <%= f.hidden_field :user_id, value: "#{params[:id]}" %>
 <% end %>
 <br>
 <br>
 <hr>
-<%= form_with url: '/movies/search_results', method: :get do |f|  %>
+<%= form_with url: '/movies/search_results', method: :get, local: true do |f|  %>
 <%= f.label :search, "Search" %>
 <%= f.text_area :search %>
 <%= f.button 'Search' %>
