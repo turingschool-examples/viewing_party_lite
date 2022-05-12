@@ -17,7 +17,8 @@
   <%= f.label :movie_title, "Movie Title:" %>
   <%= f.text_field :movie_title, value: @movie[:original_title] %><br>
   <%= f.label :duration, "Duration of Party:" %>
-  <%= f.text_field :duration, value: @movie[:runtime] %><br>
+  <%= f.text_field :duration, value: @movie[:runtime] %>
+  <%= f.hidden_field :runtime, value: @movie[:runtime] %><br>
   <%= f.label :date, "Day:" %>
   <%= f.date_select :date %><br>
   <%= f.label :start_time, "Start Time:" %>

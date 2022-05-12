@@ -76,8 +76,9 @@ RSpec.describe "New Party Page" do
       check("attendees_#{lugnut.id}")
 
       click_on "Create Party"
+
       expect(current_path).to eq("/users/#{skeeter.id}/movies/#{jaws_id}/party/new")
-   
+      expect(page).to have_content('Duration Cannot Be Less Than Movie Runtime!')
     end 
 
   end 
