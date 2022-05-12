@@ -2,7 +2,7 @@ class Movie
   attr_reader :title, :vote_average, :poster_path
 
   def initialize(details)
-    @title = details[:original_title]
+    @title = details[:title]
     @vote_average = details[:vote_average]
     @poster_path = details[:poster_path]
   end

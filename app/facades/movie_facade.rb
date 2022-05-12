@@ -7,7 +7,7 @@ class MovieFacade
     service.top_movies.map { |details| Movie.new(details) }
   end
 
-  def self.find_movies(query)
-    service.movies_by_query(query).map { |details| Movie.new(details) }
+  def self.find_movies(search)
+    service.movies_by_query(search).map { |details| Movie.new(details) }
   end
 end

@@ -10,9 +10,9 @@ class MovieService
     page1 + page2
   end
 
-  def movies_by_query(query)
-    page1 = get_url("https://api.themoviedb.org/3/search/movie?api_key=#{ENV['tmdb_key']}&query=#{query}")[:results]
-    page2 = get_url("https://api.themoviedb.org/3/search/movie?api_key=#{ENV['tmdb_key']}&query=#{query}&page=2")[:results]
+  def movies_by_query(search)
+    page1 = get_url("https://api.themoviedb.org/3/search/movie?api_key=#{ENV['tmdb_key']}&query=#{search}")[:results]
+    page2 = get_url("https://api.themoviedb.org/3/search/movie?api_key=#{ENV['tmdb_key']}&query=#{search}&page=2")[:results]
     page1 + page2
   end
 end
