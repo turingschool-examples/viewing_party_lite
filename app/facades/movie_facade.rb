@@ -10,4 +10,13 @@ class MovieFacade
   def self.find_movies(search)
     service.movies_by_query(search).map { |details| Movie.new(details) }
   end
+
+  def self.movie_info(movie_id)
+    production = service.movie_details(movie_id)
+    cast = service.cast(movie_id)
+    reviews = service.reviews(movie_id)
+    Movie.new(production, cast, reviews)
+#    cast = service.cast(movie_id)
+#    reviews = service.reviews(movie_id)
+  end
 end
