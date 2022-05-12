@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :get_user, only: [:index]
+  before_action :get_user, only: [:index, :show]
 
   def index
     if params[:query] == 'top40rated'
@@ -10,7 +10,8 @@ class MoviesController < ApplicationController
   end
 
   def show
-#      @movie = MovieFacade.movie_info(params[:id])
+      @movie = MovieFacade.movie_info(params[:id])
+#      binding.pry
   end
 
   private

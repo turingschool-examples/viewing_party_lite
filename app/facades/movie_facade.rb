@@ -12,8 +12,8 @@ class MovieFacade
   end
 
   def self.movie_info(movie_id)
-    production = MovieService.movie_details(movie_id)
-    cast = MovieService.cast(movie_id)
-    reviews = MovieService.reviews(movie_id)
+    production = service.movie_details(movie_id)
+#    cast = service.cast(movie_id)
+#    reviews = service.reviews(movie_id)
   end
 end

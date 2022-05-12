@@ -1,1 +1,3 @@
-<<h1>Movie Details for</h1>
+<%= link_to 'Discover Page', "/users/#{@user.id}/discover" %>
+<h1>Movie Details for <%= @movie[:title] %></h1>
+<p>Vote Average <%= @movie[:vote_average] %>  </p>
