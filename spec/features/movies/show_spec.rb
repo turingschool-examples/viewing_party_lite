@@ -8,8 +8,14 @@ describe 'The movie details page' do
   end
 
   it 'displays movie details for movie' do
+    text = "A ticking-time-bomb insomniac and a slippery"
+
     expect(page).to have_content('Fight Club')
     expect(page).to have_content('Vote Average 8.4')
     expect(page).to have_content('Runtime: 2 hours 19 minutes')
+    expect(page).to have_content("Description: #{text}") 
+    expect(page).to have_content('The Narrator: Edward Norton')
+    expect(page).to have_content('Tyler Durden: Brad Pitt')
+    expect(page).to have_content('Marla Singer: Helena Bonham Carter')
   end
 end

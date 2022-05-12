@@ -39,5 +39,16 @@ describe MovieService do
       expect(response).to have_key(:original_title)
       expect(response[:original_title]).to be_a(String)
     end
+
+    it '.cast returns an array of hashes' do
+      service = MovieService.new
+      response = service.cast(550)
+
+      expect(response).to be_a(Array)
+      expect(response).to be_all(Hash)
+      
+      expect(response[0]).to have_key(:name)
+      expect(response[0]).to have_key(:character)
+    end
   end
 end
