@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Review do
   it 'exists' do
-    data = {author: "Greg", content: "some review"}
+    data = { author: "Greg", content: "some review" }
 
     review = Review.new(data)
 
