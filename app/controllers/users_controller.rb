@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
   def new
-    
+
   end
 
   def create
-    User.create!(user_params)
-    redirect_to "/"
+    new_user = User.create!(user_params)
+    redirect_to "/users/#{new_user.id}/"
   end
 
   def show
