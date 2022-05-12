@@ -2,6 +2,12 @@
 require 'simplecov'
 SimpleCov.start
 
+require 'faraday'
+require 'faraday/net_http'
+Faraday.default_adapter = :net_http
+
+require 'json'
+
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
