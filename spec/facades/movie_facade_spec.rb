@@ -23,7 +23,7 @@ RSpec.describe MovieFacade do
     data = JSON.parse(json, symbolize_names: true)[:results]
     results = facade.top20(data)
     expect(results).to be_an Array
-    expect(results[0]).to be_a MovieBrief
+    expect(results).to be_all MovieBrief
     expect(results[0].title).to eq('The Shawshank Redemption')
     expect(results[0].vote_average).to eq(8.7)
   end
@@ -32,7 +32,7 @@ RSpec.describe MovieFacade do
     results = facade.search('man')
 
     expect(results).to be_an Array
-    expect(results[0]).to be_a MovieBrief
+    expect(results).to be_all MovieBrief
     expect(results.count).to eq(40)
     expect(results[0].title).to eq("The King's Man")
     expect(results[0].vote_average).to eq(6.9)
