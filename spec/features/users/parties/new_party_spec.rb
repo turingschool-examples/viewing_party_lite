@@ -59,6 +59,27 @@ RSpec.describe "New Party Page" do
    
     end 
 
+    it 'cannot make a new party with a duration less than the movies runtime' do
+      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com')
+      lugnut = User.create!(name: 'LugNut', email: 'fatdog@corgi.com')
+
+      jaws_id = 578
+      
+      visit "/users/#{skeeter.id}/movies/#{jaws_id}/party/new"
+      
+      fill_in "Duration of Party", with: 111
+      select 2022, from: '_date_1i'
+      select 'May', from: '_date_2i'
+      select '12', from: '_date_3i'
+
+      fill_in "Start Time", with: "8:00"
+      check("attendees_#{lugnut.id}")
+
+      click_on "Create Party"
+      expect(current_path).to eq("/users/#{skeeter.id}/movies/#{jaws_id}/party/new")
+   
+    end 
+
   end 
 
 end 

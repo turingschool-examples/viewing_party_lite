@@ -11,6 +11,7 @@ class UserMoviePartiesController < ApplicationController
   end
 
   def create
+    binding.pry
     new_party = Party.create!({
       duration: params[:duration].to_i,
       when: date_maker,
