@@ -14,7 +14,7 @@ RSpec.describe "Discover Page" do
 
     click_button "Find Top Rated Movies"
 
-    expect(current_path).to eq("people/:person.id/movies?q=top%20rated")
+    expect(current_path).to eq(movies_path(:id))
   end
 
   it "has a text field to enter keywords to search by movie title" do
@@ -30,9 +30,11 @@ RSpec.describe "Discover Page" do
 
     expect(page).to have_content("Search by movie title")
 
-    fill_in :search, with: "Top Gun"
+    fill_in :query, with: "Top Gun"
 
     click_button "Find Movies"
+
+    expect(current_path).to eq(movies_path(:id))
   end
 
   # it 'has a button to search by movie titles' do

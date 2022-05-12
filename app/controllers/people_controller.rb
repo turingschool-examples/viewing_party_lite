@@ -21,8 +21,8 @@ class PeopleController < ApplicationController
   end
 
   def movies
-    require "pry"
-    binding.pry
+    # require "pry"
+    # binding.pry
   end
 
   private
