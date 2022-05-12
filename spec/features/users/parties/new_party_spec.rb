@@ -12,7 +12,7 @@ RSpec.describe "New Party Page" do
      
       expect(page).to have_content("Create a Movie Party for Jaws")
       expect(page).to have_field('Duration of Party', with: '124')
-      expect(page).to have_field('Day')
+      # expect(page).to have_field('Day')
       expect(page).to have_field('Start Time', with: '7:00')
 
     end 
@@ -40,17 +40,23 @@ RSpec.describe "New Party Page" do
       hazel = User.create!(name: 'Hazel', email: 'hazelthehut@food.com')
 
       jaws_id = 578
-     
+      
       visit "/users/#{skeeter.id}/movies/#{jaws_id}/party/new"
+      
       fill_in "Duration of Party", with: 124
-      # fill_in "Day", with "2022/05/14"
-      page.find('#start_time').set("2022-04-05")
-
+      select 2022, from: '_date_1i'
+      select 'May', from: '_date_2i'
+      select '12', from: '_date_3i'
 
       fill_in "Start Time", with: "8:00"
-      check("invites_#{lugnut.id}")
+      check("attendees_#{lugnut.id}")
+      check("attendees_#{hazel.id}")
 
       click_on "Create Party"
+      expect(current_path).to eq("/users/#{skeeter.id}")
+      expect(page).to have_content("When: 2022-05-12 00:00:00 UTC")
+      expect(page).to have_content("Runtime: 124")
+   
     end 
 
   end 

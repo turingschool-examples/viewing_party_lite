@@ -8,4 +8,9 @@
 
 <div id="watch-parties">
 <h2>Current Scheduled Parties!</h2>
+<% @user.parties.each do |party| %>
+When: <%= party.when %><br>
+Runtime: <%= party.duration %><br>
+
+<% end %>
 </div>
