@@ -17,7 +17,7 @@ describe 'The movie results page' do
 
   context 'after using the search bar' do
     it 'displays the first 40 movies that match your query' do
-      fill_in :query, with: 'max'
+      fill_in :query, with: 'mad'
       click_button 'Search by Title'
       expect(page).to have_css('#movie', count: 40)
       expect(page).to have_content('Mad Max')
