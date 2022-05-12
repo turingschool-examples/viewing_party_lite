@@ -5,8 +5,8 @@
 <h2>My Parties</h2>
 <div id="<%= @user.id %>_viewing_parties">
 <ul>
-<%= @user.parties_im_hosting.each do |party| %>
-  <li>party.date.formatted</li>
+<% @user.parties_im_hosting.each do |party| %>
+  <li> Save the date: <%= party.date.strftime("%a, %b %e  %Y")%> <!-- REFACTOR - no other details are really required here, but ... would make sense --></li>
 <% end %>
 </ul>
 </div>
