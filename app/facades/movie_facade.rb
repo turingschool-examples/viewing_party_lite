@@ -9,6 +9,7 @@ class MovieFacade
 
    def self.find_movie(id)
      movie = MovieService.movie_details(id)
+     Movie.new(movie)
    end
 
 end
