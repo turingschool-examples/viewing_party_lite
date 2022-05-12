@@ -13,9 +13,22 @@ describe 'create a new viewing party' do
   context 'When vailid data is entered' do
     it 'Creates a viewing party ' do
       expect(page).to have_field(:duration, with: '139')
-      select '5/12/2022', from: :date
-      select '7:00', from: :time
-      check 'John (John.Hennerich@gmail.com)'
+
+      within '#date' do
+        select '2022'
+        select 'May'
+        select '12'
+      end
+
+      within '#_time_4i' do
+        select '07'
+      end
+
+      within '#_time_5i' do
+        select '00'
+      end
+
+      check :John
       click_on 'Create Viewing Party'
 
       expect(current_path).to eq user_path(@user)
