@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   end
 
   def results
-    
+    @movie_list = MovieFacade.movie_list(params[:q])
   end
 
   private

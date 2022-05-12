@@ -1,0 +1,10 @@
+<%= form_with url: "/users/#{params[:id]}/discover", method: :get, local: true do |f| %>
+  <%= f.submit "Discover" %>
+<% end %>
+
+<% @movie_list.each do |movie| %>
+  <div id="movie-<%= movie.id %>">
+    <%= link_to "#{movie.title}", "/users/#{params[:id]}/movies/#{movie.id}" %>
+    <p>Vote Average: <%= movie.vote_average %></p>
+  </div>
+<% end %>

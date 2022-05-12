@@ -18,7 +18,6 @@ RSpec.describe 'Movie results page' do
 
     it 'displays the vote average of the movie' do
       user1 = User.create!(name: 'Will', email: '123@mail.com')
-      # user2 = User.create!(name: 'Craig', email: 'abc@mail.com')
 
       visit "/users/#{user1.id}/discover"
       click_button "Discover Top Rated Movies"
@@ -36,7 +35,10 @@ RSpec.describe 'Movie results page' do
       visit "/users/#{user1.id}/discover"
       fill_in :q, with: 'Castaway'
       click_button "Search"
-      click_link "Castaway"
+
+      within "#movie-52886" do
+        click_link "Castaway"
+      end
 
       expect(current_path).to eq("/users/#{user1.id}/movies/52886")
       expect(current_path).to_not eq("/users/#{user2.id}/movies/52886")
