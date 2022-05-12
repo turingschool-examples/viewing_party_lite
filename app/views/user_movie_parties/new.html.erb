@@ -22,9 +22,9 @@
   <%= f.date_field :day %><br>
   <%= f.label :start_time, "Start Time:" %>
   <%= f.text_field :start_time, value: "7:00" %><br>
-
-
-
+  <%= f.label :users, 'Invite Other Users' %><br>
+  <%= f.collection_check_boxes :invites, @users, :id, :name %>
+  <br>
   <%= f.submit 'Create Party' %>
 <% end %>
 </div>
