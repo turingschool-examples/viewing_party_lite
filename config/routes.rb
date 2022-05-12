@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   post '/register', to: 'users#create'
 
   get '/users/:id', to: 'users#show'
+  get '/users/:id/discover', to: 'discover#index'
 end
