@@ -1,6 +1,6 @@
-
+<%= render partial: 'partials/navbar_default' %>
+<button><%= link_to "Create Viewing Party for #{@details.title}", "/movies/#{@details.id}/viewing-party/new" %></button><br>
 <h3><%= @details.title %></h3>
-<button><%= link_to "Discover Page", "/discover" %></button><br>
 Vote Average: <%= @details.vote_average %><br>
 Runtime: <%= "#{@details.runtime/60}hr" %> <%= "#{@details.runtime % 60} min" %> <br>
 Genre(s):

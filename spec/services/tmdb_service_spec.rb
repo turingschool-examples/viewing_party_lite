@@ -25,7 +25,7 @@ RSpec.describe TmdbService do
 
   it "movie_details", :vcr do
     # VCR.use_cassette('movie_details') do
-    movie_details = service.movie_details(438631)
+    movie_details = TmdbService.movie_details(438631)
 
     expect(movie_details).to be_instance_of(Hash)
     expect(movie_details.first).to be_instance_of(Array)
