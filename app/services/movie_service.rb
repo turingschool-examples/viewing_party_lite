@@ -18,4 +18,38 @@ class MovieService
 
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  def self.movie_cast_info(movie_id)
+    require "pry"
+    binding.pry
+    response = conn.get("/3/movie/#{movie_id}/credits?") do |faraday|
+      faraday.params["api_key"] = ENV["tmdb_api_key"]
+    end
+
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.movie_details
+    response = conn.get("/3/movie/#{movie_id}?") do |faraday|
+      faraday.params["api_key"] = ENV["tmdb_api_key"]
+    end
+
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.movie_reviews
+    response = conn.get("/3/movie/#{movie_id}/reviews?") do |faraday|
+      faraday.params["api_key"] = ENV["tmdb_api_key"]
+    end
+
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.movie_picture
+    response = conn.get("/3/movie/#{movie_id}/images?") do |faraday|
+      faraday.params["api_key"] = ENV["tmdb_api_key"]
+    end
+
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end

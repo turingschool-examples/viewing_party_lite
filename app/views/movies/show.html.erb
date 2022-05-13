@@ -1,17 +1,18 @@
 <h1>Viewing Party Lite</h1>
 <h3>Movie Details Page</h3>
 
+<%= button_to "Discover Page", discover_path, method: :get %>
+
 <%= button_to "Create Viewing Party for #{@movie.title}", ass_path, method: :get %>
 
-<%= button_to "Discover Page", discover_path, method: :get %>
 
 <h3>Movie Details:</h3>
 
-<p><strong>@movie.title</strong></p>
-<p><strong>@movie.vote_average</strong></p>
-<p><strong>@movie.runtime</strong></p>
-<p><strong>@movie.genre</strong></p>
-<p><strong>@movie.summary</strong></p>
-<p><strong>@movie.cast_members</strong></p>
-<p><strong>@movie.review_count</strong></p>
-<p><strong>@movie.review_author_info</strong></p>
+<p><strong><%= @movie.title %></strong></p>
+<p><strong>Vote Average: <%= @movie.vote_average %></strong></p>
+<p><strong>Runtime: <%= @movie.runtime %></strong></p>
+<p><strong>Genre(s): <%= @movie.genre %></strong></p>
+<p><strong>Summary: <%= @movie.summary %></strong></p>
+<p><strong>Cast: <%= @movie.cast_members %></strong></p>
+<p><strong>Review Count: <%= @movie.review_count %></strong></p>
+<p><strong>Review Info: <%= @movie.reviews %></strong></p>

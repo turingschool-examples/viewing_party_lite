@@ -18,4 +18,12 @@ RSpec.describe "MovieFacade" do
     expect(movies).to be_all Movie
     expect(movies.length).to be <= 40
   end
+
+  # it "can return array of movie cast members info", :vcr do
+  #   movies = MovieFacade.create_movie_cast_info(550)
+  #
+  #   expect(movies).to be_a Array
+  #
+  #   expect(movies).to be_all Movie
+  # end
 end
