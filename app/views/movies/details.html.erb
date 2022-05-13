@@ -1,0 +1,10 @@
+<%= @movie.title %>
+<%= @movie.vote_average %>
+<%= @movie.runtime %>
+<%= @movie.summary %>
+<%= @movie.review_count %>
+Cast
+ Each review's author and information
+
+<%= button_to "Create Viewing Party", "/users/#{params[:user_id]}/movies/#{@movie.id}/viewing-party/new" %>
+<%= link_to "Discover Page", "/users/#{params[:user_id]}/discover" %>
