@@ -3,7 +3,7 @@
 </center>
 
 <center>
-  <h2>Create a Movie Party for <%= @movie[:original_title] %></h2>
+  <h2>Create a Movie Party for <%= @movie.original_title %></h2>
 </center>
 
 <center>
@@ -13,13 +13,13 @@
 
 <center>
 <div id="new_party_form">
-<%= form_with url: "/users/#{@user.id}/movies/#{@movie[:id]}/party/new", method: :post do |f| %>
+<%= form_with url: "/users/#{@user.id}/movies/#{@movie.id}/party/new", method: :post, local: true do |f| %>
   <%= f.label :movie_title, "Movie Title:" %>
-  <%= f.text_field :movie_title, value: @movie[:original_title], :disabled => true %><br>
+  <%= f.text_field :movie_title, value: @movie.original_title, :disabled => true %><br>
 
   <%= f.label :duration, "Duration of Party:" %>
-  <%= f.text_field :duration, value: @movie[:runtime] %>
-  <%= f.hidden_field :runtime, value: @movie[:runtime] %><br>
+  <%= f.text_field :duration, value: @movie.runtime %>
+  <%= f.hidden_field :runtime, value: @movie.runtime %><br>
 
   <%= f.label :date, "Day:" %>
   <%= f.date_select :date %><br>

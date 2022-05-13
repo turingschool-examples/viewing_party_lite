@@ -71,7 +71,7 @@ RSpec.describe 'User Dashboard', type: :feature do
       attendee2 = Attendee.create!(user_id: @user2.id, party_id: party2.id)
       attendee3 = Attendee.create!(user_id: @user1.id, party_id: party3.id)
       visit "/users/#{@user1.id}"
-
+      
       within "#party_id-#{party1.id}" do 
         expect(page).to have_content("Jaws")
         expect(page).to have_content('When: February 08, 2023')
@@ -111,6 +111,7 @@ RSpec.describe 'User Dashboard', type: :feature do
       end 
       expect(current_path).to eq("/users/#{@user2.id}/movies/1381")
     end 
+
   end 
 
 end

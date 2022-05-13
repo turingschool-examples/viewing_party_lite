@@ -8,23 +8,23 @@
 
 <div id="watch-parties">
 <h2>Current Scheduled Parties!</h2>
-<% @parties.each do |party| %>
+<% @parties.uniq.each do |party| %>
   <div id="party_id-<%= party.id%>">
   <% @movies.detect do |movie| %>
-    <% if movie[:id] == party.movie_id  %>
-      <p><%= link_to "#{movie[:title]}", "/users/#{@user.id}/movies/#{movie[:id]}" %></p>
-      <p><img src="http://image.tmdb.org/t/p/w500/<%=movie[:poster_path]%>" width="200" height="300">
+    <% if movie.id == party.movie_id  %>
+      <p><%= link_to "#{movie.title}", "/users/#{@user.id}/movies/#{movie.id}" %></p>
+      <p><img src="http://image.tmdb.org/t/p/w500/<%=movie.poster_path%>" width="200" height="300">
 
       <p>When: <%= party.when.strftime('%B %d, %Y') %></p>
       <p>Start Time: <%= party.start_time.strftime('%I:%M %p') %></p>
+        <% if party.user_id == @user.id %>
+           <b>Hosting</b>
+       
 
-      <% if party.user_id == @user.id %>
-        <b>Hosting</b>
-      <% end %>
 
-      <% party.attendees.each do |attendee| %>
+      <% elsif party.attendees.each do |attendee| %>
 
-        <% if attendee.user_id == @user.id %>
+        <%  attendee.user_id == @user.id %>
           <i>Invited</i>
         <% end %>
       <% end %>

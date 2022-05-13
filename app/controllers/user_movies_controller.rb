@@ -2,27 +2,16 @@ class UserMoviesController < ApplicationController
 
   def index
     @user = User.find(params[:id])
-    
     if params[:top_rated]
-      conn = Faraday.new(url: "https://api.themoviedb.org") 
-      response = conn.get("/3/movie/top_rated?api_key=#{ENV['movie_db_key']}")
-      data = JSON.parse(response.body, symbolize_names: true)
-      @movies = data[:results]
-
+      @movies = MovieFacade.top_rated
     elsif params[:keyword]
-      conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
-        faraday.params[:query] = params[:keyword]
-      end 
-      response = conn.get("/3/search/movie?api_key=#{ENV['movie_db_key']}")
-      data = JSON.parse(response.body, symbolize_names: true)
-      @results = data[:results]
       @keyword = params[:keyword]
+      @results = MovieFacade.search_for_movies(@keyword)
     end 
   end
 
   def show
     @user = User.find(params[:user_id])
-    # @movie = api call for movie?
 
     conn = Faraday.new(url: "https://api.themoviedb.org")
     response1 = conn.get("/3/movie/#{params[:movie_id]}?api_key=#{ENV['movie_db_key']}")
