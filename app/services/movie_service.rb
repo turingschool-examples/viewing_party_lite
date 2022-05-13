@@ -13,7 +13,8 @@ class MovieService < ApplicationService
   end
 
   def movie_details(movie_id)
-    conn.get("/3/movie/#{movie_id}?api_key=#{ENV['tmdb_key']}")
+    response = conn.get("/3/movie/#{movie_id}")
+    parse_json(response.body)
   end
 
   def cast(movie_id)

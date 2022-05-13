@@ -24,7 +24,7 @@ describe MovieService do
       expect(check_all_titles_for_query).to be_all(true)
     end
 
-    it '.movie_info(movie_id) returns info of a given movie_id' do
+    it '.movie_details(movie_id) returns info of a given movie_id' do
       service = MovieService.new
       movie_id = 550
       response = service.movie_details(movie_id)
