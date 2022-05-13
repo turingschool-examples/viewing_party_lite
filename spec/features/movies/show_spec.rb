@@ -17,10 +17,9 @@ RSpec.describe 'movie details page' do
 	it 'lists movie details' do 
 
 
-
       expect(page).to have_content('Everything Everywhere All at Once')
       expect(page).to have_content('8.9')
-      expect(page).to have_content('2hr 19 min')
+      expect(page).to have_content('2hr 19min')
       expect(page).to have_content('Action / Science Fiction / Comedy / Adventure')
       expect(page).to have_content("An aging Chinese immigrant is swept up in an insane adventure, where she alone can save what's important to her by connecting with the lives she could have led in other universes. 4")
 	end
@@ -38,4 +37,12 @@ RSpec.describe 'movie details page' do
       expect(page).to have_content('MSB')
       expect(page).to have_content("The mother-daughter relationship as the emotional core of the story follows a surprisingly predictable path and needs a few more dialogues to deliver an even more powerful climax, but it still induces tears and a genuine sense of concern for the characters.")
     end
+
+    it 'has a button to create a viewing party' do 
+      click_on 'Start a Viewing Party'
+
+      expect(current_path).to eq new_user_movie_viewing_party_path(user.id, 545611)
+    end
 end
+
+

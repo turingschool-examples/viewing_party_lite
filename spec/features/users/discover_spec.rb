@@ -22,9 +22,9 @@ RSpec.describe 'users discover' do
 
   describe 'search happy path' do
     it 'can search by keyword and return relavant video if exists' do
-      dog1 = MovieDetail.new(genre:nil, id:1, runtime:nil, summary:'a dog movie', title: 'Wiener-Dog', vote_average:7.3)
-      dog2 = MovieDetail.new(genre:nil, id:2, runtime:nil, summary:'a dog movie', title: 'Rock Dog 2: Rock Around the Park', vote_average:7.0)
-      dog3 = MovieDetail.new(genre:nil, id:3, runtime:nil, summary:'a dog movie', title: 'Straight Outta Nowhere: Scooby-Doo! Meets Courage the Cowardly Dog', vote_average:7.6)
+      dog1 = MovieDetail.new(genre:nil, id:1, runtime:120, summary:'a dog movie', title: 'Wiener-Dog', vote_average:7.3)
+      dog2 = MovieDetail.new(genre:nil, id:2, runtime:120, summary:'a dog movie', title: 'Rock Dog 2: Rock Around the Park', vote_average:7.0)
+      dog3 = MovieDetail.new(genre:nil, id:3, runtime:130, summary:'a dog movie', title: 'Straight Outta Nowhere: Scooby-Doo! Meets Courage the Cowardly Dog', vote_average:7.6)
       dogs = [dog1, dog2, dog3]
  
       allow(MovieFacade).to receive(:search).and_return(dogs)

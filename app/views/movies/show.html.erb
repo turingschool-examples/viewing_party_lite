@@ -1,9 +1,10 @@
 <%= render partial: 'partials/navbar_default' %>
-<button><%#= link_to "Create Viewing Party for #{@details.title}", "/movies/#{@details.id}/viewing-party/new" %></button><br>
-
-
-
-
+<br>
+<ul class="nav navbar-nav navbar-right">
+    <li>
+      <a href="/users/<%=@user.id%>/movies/<%=@data[:movie_details].id%>/viewing_party/new?duration=<%=@data[:movie_details].runtime%>" class="btn btn-outline-success my-2 my-sm-0" role='button'>Start a Viewing Party</a>
+  </li>
+</ul>
 
 <br>
 <h4>Movie Details:</h4>
@@ -22,7 +23,7 @@
   <th scope="row"></th>
   <td> <%= @data[:movie_details].title %></td>
   <td> <%= @data[:movie_details].vote_average %></td>
-  <td> <%= "#{@data[:movie_details].runtime/60}hr" %> <%= "#{@data[:movie_details].runtime % 60} min" %></td>
+  <td> <%= @data[:movie_details].runtime %></td>
   <td> <%= @data[:movie_details].genre_names.join(" / ") %></td>
 </div>
 </table>
