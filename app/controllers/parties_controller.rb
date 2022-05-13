@@ -19,7 +19,6 @@ class PartiesController < ApplicationController
         UserParty.create({user_id: guest, party_id: party.id, host: false})
       end
     end
-    binding.pry
     redirect_to "/users/#{host.id}"
   end
 

@@ -1,10 +1,28 @@
-<h1>User Dashboard</h1>
+<h2>User Dashboard</h2>
 <h3>Hello <%= "#{@user.name}"%>!</h3>
 
-<h2><%= link_to "Discover Movies", "/users/#{@user.id}/discover" %></h2>
-<h2>Viewing Parties</h2>
+<h4><%= link_to "Discover Movies", "/users/#{@user.id}/discover" %></h4>
+<h3>Viewing Parties</h3>
 <% @user.parties.each do |party| %>
-  <ul>
-    <li><%= party.id %></li>
-  </ul>
+  <% party.guests.shift %>
+  <% host = User.find(party.host_id) %>
+  <% movie = MovieFacade.search_by_id(party.movie_id) %>
+    <ul>
+      <li>What: <%= link_to "#{movie.title}", "/users/#{@user.id}/movies/#{movie.id}" %></li>
+      <li>When: <%= party.date %></li>
+      <li>Time: <%= party.start_time.strftime("%H : %M") %></li>
+      <li>Who is hosting:  <%= host.name %></li>
+      <li>Who else will be there:<br>
+        <% if party.guests %>
+          <% party.guests.each do |guest| %>
+            <% g = User.find(guest) %>
+            <ul>
+              <li><%= g.name %></li>
+            </ul>
+          <% end %>
+        <% else %>
+          <%= "No one" %><br>
+        <% end %>
+      </li>
+    </ul>
 <% end %>
