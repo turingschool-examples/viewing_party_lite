@@ -16,7 +16,7 @@ RSpec.describe "New Viewing Party", type: :feature do
       page.check("users[]")#all check boxes have the same name
     end
       click_button "submit"
-      # save_and_open_page
+
     expect(Party.all.count).to eq(party_count + 1)
     expect(current_path).to eq("/users/#{user.id}")
     expect(page).to have_content("Viewing Parties")
@@ -39,6 +39,6 @@ RSpec.describe "New Viewing Party", type: :feature do
       click_button "submit"
 
     expect(Party.all.count).to eq(party_count)
-    #expect(current_path).to eq("/users/#{user.id}")
+    # expect(current_path).to eq("/users/#{user.id}")
   end
 end

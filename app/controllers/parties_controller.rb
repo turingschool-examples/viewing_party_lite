@@ -9,9 +9,8 @@ class PartiesController < ApplicationController
   def create
     @movie = MovieFacade.find_movie(params[:movie_id])
     new_party = Party.new(party_params)
-
+    
     if @movie.runtime <= params[:duration].to_i
-      require "pry"; binding.pry
       if new_party.save && params[:users]
         params[:users].each do |user|
           u = User.find(user)
@@ -21,7 +20,7 @@ class PartiesController < ApplicationController
             PartyUser.create(user: u, party: new_party, host: false)
           end
         end
-        redirect_to "/users/#{params[:user_id]}"
+        redirect_to "/users/#{new_party.host}"
       else
         render :new
       end

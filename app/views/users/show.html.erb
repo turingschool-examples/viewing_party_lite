@@ -7,7 +7,7 @@
 <% @user.invited_parties.each do |party| %>
 <p><strong>Movie:</strong> <%= link_to "#{party.movie.title}", "/users/@user.id/movies/#{party.movie.id}" %></p>
 <p><strong>Date:</strong> <%= party.date %></p>
-<p><strong>Time:</strong> <%= party.time %></p>
+<p><strong>Time:</strong> <%= party.time.strftime("%I:%M") %></p>
 <p><strong>Host:</strong> <%= party.host_name %></p>
 <p><strong>Attendees:</strong> <% party.users.each do |user| %>
       <% if user.id == @user.id %>
@@ -25,7 +25,7 @@
 <% @user.hosted_parties.each do |party| %>
 <p><strong>Movie:</strong> <%= link_to "#{party.movie.title}", "/users/#{@user.id}/movies/#{party.movie.id}" %></p>
 <p><strong>Date:</strong> <%= party.date %></p>
-<p><strong>Time:</strong> <%= party.time %></p>
+<p><strong>Time:</strong> <%= party.time.strftime("%I:%M") %></p>
 <p><strong>Host:</strong> Me!! </p>
 <p><strong>Attendees:</strong> <% party.users.each do |user| %>
       <% if user.id != @user.id %>
