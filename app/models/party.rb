@@ -1,5 +1,5 @@
 class Party < ApplicationRecord
-  has_many :party_users
+  has_many :party_users, dependent: :destroy
   has_many :users, through: :party_users
   validates :movie_id, presence: true
 
@@ -16,11 +16,11 @@ class Party < ApplicationRecord
   end
 
   def movie_date
-    time.strftime('%b %-d, %Y')
+    Time.parse(time).strftime('%b %-d, %Y')
   end
 
   def movie_time
-    time.strftime('%l:%M %p').lstrip
+    Time.parse(time).strftime('%l:%M %p').lstrip
   end
 
   def host

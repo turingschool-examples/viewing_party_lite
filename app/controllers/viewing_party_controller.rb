@@ -8,6 +8,7 @@ class ViewingPartyController < ApplicationController
   def create
     if params[:duration_user].to_i >= @movie.runtime_min
       @party = Party.create(party_proper_params)
+
       PartyUser.create(user_id: params[:user_id], party_id: @party.id, is_host: true)
       user_ids.each { |id| PartyUser.create(user_id: id, party_id: @party.id, is_host: false) } if user_ids
       redirect_to user_path(@user)
@@ -35,7 +36,6 @@ class ViewingPartyController < ApplicationController
   def time_format
     params['time(2i)'] = '0' + params['time(2i)'] if params['time(2i)'].length == 1
     time_string = params['time(1i)'] + params['time(2i)'] + params['time(3i)'] + params['time(4i)'] + params['time(3i)']
-    Time.parse(time_string)
   end
 
   def set_user

@@ -18,7 +18,6 @@ RSpec.describe 'movie details page' do
     expect(page).to have_content('8.9')
     expect(page).to have_content('2hr 19min')
     expect(page).to have_content('Action / Science Fiction / Comedy / Adventure')
-    expect(page).to have_content("An aging Chinese immigrant is swept up in an insane adventure, where she alone can save what's important to her by connecting with the lives she could have led in other universes. 4")
   end
 
   it 'displays Cast' do

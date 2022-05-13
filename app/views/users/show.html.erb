@@ -5,17 +5,20 @@
 <%= render partial: 'partials/navbar_user', :locals => {:user_id => @user.id} %>
 <br>
 <h3>Viewing Parties</h3>
+<div class="row">
 <% @user.parties.each do |party| %>
-
+<div class="card" style="width: 25rem;">
+  <div class="card-body"; padding: 10px>
+    <div class="mb-3">
    <div class=<%= "viewing_party_#{party.movie_id}" %>>
-     <img src= <%= party.movie_poster %> alt="" style="width:25%;height:25%;">
-
-     <p><%= link_to "Title: #{party.movie_title}", "/movies/#{party.movie_id}" %></p>
-     <p><%= "Date: #{party.movie_date}" %></p>
-     <p><%= "Time: #{party.movie_time}" %></p>
+     <img src= <%= party.movie_poster %> alt="" style="width:100%;height:100%;">
+    <ul>
+      <br>
+     <h4><%= link_to "#{party.movie_title}", user_movie_path(@user.id, party.movie_id)%></h4>
+     <p><%= "Date: #{party.movie_date}" %> <%= "Time: #{party.movie_time}" %></p>
 
      <% if party.host.id == @user.id %>
-       <p><strong><%= "Hosting"%></strong></p>
+       <p><strong><%= "You are hosting!"%></strong></p>
        <div class=<%= "movie_#{party.movie_id}_viewers" %>>
          <p>Friends Invited:</p>
          <ul>
@@ -31,7 +34,7 @@
         <ul>
           <% party.viewers.each do |viewer| %>
             <% if viewer.id == @user.id %>
-              <li><strong><%= viewer.name %></strong></li>
+              <li><strong><%= viewer.name %>(me)</strong></li>
             <% else %>
               <li><%= viewer.name %></li>
             <% end %>
@@ -39,5 +42,10 @@
         </ul>
       </div>
     <% end %>
+  </ul>
   </div>
+</div>
+</div>
+</div>
      <% end %>
+</div>
