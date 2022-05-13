@@ -45,7 +45,7 @@ RSpec.describe 'a user dashboard' do
     end
 
     click_button "Create Party"
-save_and_open_page
+
     expect(current_path).to eq("/users/#{user_1.id}")
   end
 end
