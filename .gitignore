@@ -38,3 +38,4 @@
 #Ignore cables
 /app/channels/application_cable/connection.rb
 /app/channels/application_cable/channel.rb
+coverage
