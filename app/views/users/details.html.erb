@@ -1,8 +1,10 @@
+<h3>Movie Details Page</h3>
+
 <%= form_with url: "/users/#{params[:user_id]}/discover", method: :get, local: true do |f| %>
   <%= f.submit "Discover" %>
 <% end %>
 
-<%= form_with url: "/users/#{params[:user_id]}/movies/#{params[:id]}/viewing_party/new", method: :post, local: true do |f| %>
+<%= form_with url: "/users/#{params[:user_id]}/movies/#{params[:id]}/viewing-party/new", method: :post, local: true do |f| %>
   <%= f.submit "Create a Viewing Party" %>
 <% end %>
 
@@ -12,6 +14,9 @@ Runtime: <%= @movie_details.runtime %><br>
 Summary: <%= @movie_details.overview %><br>
 Genre(s): <% @movie_details.genres.each do |genre| %>
   <p><%= genre[:name] %></p>
+<% end %>
+Cast: <% @single_movie_credits.cast.first(10).map do |c| %>
+  <p><%= c[:name] %></p>
 <% end %>
 
 
