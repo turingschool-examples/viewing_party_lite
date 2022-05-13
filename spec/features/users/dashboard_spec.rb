@@ -112,25 +112,6 @@ RSpec.describe 'User Dashboard', type: :feature do
       expect(current_path).to eq("/users/#{@user2.id}/movies/1381")
     end 
 
-    it 'only shows each movie once' do 
-      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com')
-      lugnut = User.create!(name: 'LugNut', email: 'fatdog@corgi.com')
-      jaws_id = 578
-      
-      visit "/users/#{skeeter.id}/movies/#{jaws_id}/party/new"
-      
-      fill_in "Duration of Party", with: 150
-      select 2022, from: '_date_1i'
-      select 'May', from: '_date_2i'
-      select '12', from: '_date_3i'
-
-      fill_in "Start Time", with: "8:00"
-      check("attendees_#{lugnut.id}")
-      
-      click_on "Create Party"
-     
-
-    end 
   end 
 
 end
