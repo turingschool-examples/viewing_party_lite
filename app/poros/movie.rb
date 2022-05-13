@@ -8,8 +8,13 @@ class Movie
     @runtime = data[:runtime]
     @summary = data[:overview]
     @review_count = data[:vote_count]
-      @cast = data[:credits][:cast]
-      @reviews = data[:reviews][:results]
-    
+      @cast = data[:credits][:cast] if data[:credits]
+      @reviews = data[:reviews][:results] if data[:reviews]
+  end
+
+  def format_runtime
+    hours = @runtime/60
+    minutes = @runtime%60
+    "#{hours} hours #{minutes} minutes"
   end
 end
