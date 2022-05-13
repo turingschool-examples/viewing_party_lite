@@ -10,8 +10,10 @@ class MoviesController < ApplicationController
 
   def show
     @user = User.find(params[:user_id])
-    @movie = MovieFacade.details(params[:id])
-    @cast = MovieFacade.cast_members(params[:id])
-    @reviews = MovieFacade.reviews(params[:id])
+    @movie_details = {
+      movie: MovieFacade.details(params[:id]),
+      cast: MovieFacade.cast_members(params[:id]),
+      reviews: MovieFacade.reviews(params[:id])
+    }
   end
 end

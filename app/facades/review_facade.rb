@@ -1,3 +1,0 @@
-# class ReviewFacade
-#
-# end
