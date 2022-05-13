@@ -4,7 +4,6 @@ class MoviesController < ApplicationController
   end
 
   def results
-    require "pry"; binding.pry
     @user = User.find(params[:id])
     if params[:q] == "top rated"
       @movies = MovieFacade.top_rated

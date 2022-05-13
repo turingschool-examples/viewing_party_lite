@@ -10,6 +10,7 @@ class Movie
     @genres = get_genres(movie_data)
     @summary = movie_data[:overview]
     @reviews = get_reviews(movie_data)
+    # default_unavailable
   end
 
   def get_cast(movie_data)
@@ -29,4 +30,16 @@ class Movie
       movie_data[:reviews][:results]
     end
   end
+
+  # def default_unavailable
+  #   variables = [@title, @vote_average, @id, @cast, @runtime, @genres, @summary, @reviews]
+  #   variables.each do |var|
+  #     if var == nil
+  #       require "pry"; binding.pry
+  #       var = "N/A"
+  #     end
+  #   end
+  #   # instance_variables.each do |var|
+  #   # end
+  # end
 end
