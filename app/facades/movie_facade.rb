@@ -1,11 +1,11 @@
 class MovieFacade
-  def top20(data = top_movies_data)
-    data.map do |movie_data|
+  def self.top20
+    TmdbService.top20.map do |movie_data|
       MovieDetail.new(movie_data)
     end
   end
 
-  def search(keyword)
+  def self.search(keyword)
     search_movies_data(keyword)
     if @first_20[:total_pages] == 0
       "No movies found containing '#{keyword}'"
@@ -17,13 +17,17 @@ class MovieFacade
     end
   end
 
-  def search_movies_data(keyword)
-    @first_20 ||= service.search(keyword)
-    @second_20 ||= service.search(keyword, 2)
+  def self.search_movies_data(keyword)
+    @first_20 ||= TmdbService.search(keyword)
+    @second_20 ||= TmdbService.search(keyword, 2)
   end
 
-  def top_movies_data
-    @top_movies_data ||= service.top20
+  def self.movie_data(movie_id)
+    data = Hash.new
+    data[:movie_details] = movie_details(movie_id)
+    data[:movie_cast] = movie_cast(movie_id)
+    data[:movie_reviews] = movie_reviews(movie_id)
+    data
   end
 
   def self.movie_details(movie_id)
@@ -40,9 +44,5 @@ class MovieFacade
     TmdbService.movie_review(movie_id)[:results].map do |data|
       Review.new(data)
     end
-  end
-
-  def service
-    @service ||= TmdbService.new
   end
 end

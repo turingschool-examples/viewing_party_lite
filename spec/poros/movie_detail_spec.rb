@@ -20,6 +20,7 @@ RSpec.describe MovieDetail do
     expect(dune.runtime).to eq(155)
     expect(dune.genre.first).to eq('Sci fi')
     expect(dune.genre.last).to eq('Adventure')
+    expect(dune.genre_names).to eq(["Sci fi", "Adventure"])
     expect(dune.summary).to eq('Good movie')
   end
 end
