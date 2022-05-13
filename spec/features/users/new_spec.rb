@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe 'Creating a user' do
-  before :each do 
+  before :each do
     visit '/register'
 
     @phil = User.create!(name: 'Philly Steak', email: 'philly.steak@gmail.com')
@@ -12,7 +14,7 @@ describe 'Creating a user' do
       fill_in :name, with: 'Billy Jonson'
       fill_in :email, with: 'billy.jonson@gmail.com'
       click_button 'Register'
-      
+
       user = User.last
       expect(current_path).to eq(user_path(user))
     end

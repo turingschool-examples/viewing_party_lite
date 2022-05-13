@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe 'The movie results page' do
-  before do 
+  before do
     @user = User.create!(name: 'Brylan', email: 'brylan.gannon112@gmail.com')
     visit "/users/#{@user.id}/discover"
   end
@@ -11,7 +13,7 @@ describe 'The movie results page' do
       click_button 'Top Rated Movies'
 
       expect(current_path).to eq(user_movies_path(@user))
-      expect(page).to have_css('#movie', count: 40) 
+      expect(page).to have_css('#movie', count: 40)
     end
   end
 

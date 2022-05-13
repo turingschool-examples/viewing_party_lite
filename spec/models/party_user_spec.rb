@@ -1,8 +1,10 @@
-require 'rails_helper' 
+# frozen_string_literal: true
 
-describe PartyUser do 
+require 'rails_helper'
+
+describe PartyUser do
   context 'relationships' do
     it { should belong_to :user }
-    it { should belong_to :viewing_party } 
+    it { should belong_to :viewing_party }
   end
 end

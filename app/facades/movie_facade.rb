@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MovieFacade
   def self.service
     MovieService.new
@@ -16,7 +18,7 @@ class MovieFacade
     cast = service.cast(movie_id)
     reviews = service.reviews(movie_id)
     Movie.new(production, cast, reviews)
-#    cast = service.cast(movie_id)
-#    reviews = service.reviews(movie_id)
+    #    cast = service.cast(movie_id)
+    #    reviews = service.reviews(movie_id)
   end
 end

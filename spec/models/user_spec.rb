@@ -1,15 +1,17 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe User do
   context 'validations' do
-    it { should validate_presence_of :name } 
-    it { should validate_presence_of :email } 
-    it { should validate_uniqueness_of :email } 
+    it { should validate_presence_of :name }
+    it { should validate_presence_of :email }
+    it { should validate_uniqueness_of :email }
   end
 
   context 'relationships' do
     it { should have_many(:party_users) }
-    it { should have_many(:viewing_parties).through(:party_users) } 
+    it { should have_many(:viewing_parties).through(:party_users) }
   end
 
   context 'instance methods' do

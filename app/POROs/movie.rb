@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Movie
   attr_reader :id, :title, :vote_average, :poster_path, :runtime,
               :runtime_mins, :overview, :cast, :genres, :reviews
@@ -16,6 +18,6 @@ class Movie
   end
 
   def formatted_duration(total_minute)
-    "#{ total_minute / 60 } hours #{ total_minute % 60 } minutes"
+    "#{total_minute / 60} hours #{total_minute % 60} minutes"
   end
 end
