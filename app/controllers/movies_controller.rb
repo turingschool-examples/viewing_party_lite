@@ -1,9 +1,9 @@
 class MoviesController < ApplicationController
   before_action :set_user
   def index
-    @movies = facade.top20 if params[:q] == 'top rated'
+    @movies = MovieFacade.top20 if params[:q] == 'top rated'
     if params[:keyword]
-      @movies = facade.search(params[:keyword])
+      @movies = MovieFacade.search(params[:keyword])
       @keyword = params[:keyword]
       if @movies.instance_of?(String)
         redirect_to "/users/#{@user.id}/discover"
@@ -14,15 +14,10 @@ class MoviesController < ApplicationController
 
 
   def show
-    @details = MovieFacade.movie_details(params[:id])
-    @cast = MovieFacade.movie_cast(params[:id])
-    @reviews = MovieFacade.movie_reviews(params[:id])
+    @data = MovieFacade.movie_data(params[:id])
   end
 
 
-  def facade
-    @facade ||= MovieFacade.new
-  end
 
   private
 

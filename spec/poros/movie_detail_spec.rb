@@ -1,26 +1,29 @@
 require "rails_helper"
 
 RSpec.describe MovieDetail do
-  it "exists with attributes" do
-    data = {
+     
+    let(:dune) { MovieDetail.new({
       id: 1,
       title: "Dune",
       vote_average: 7.9,
       overview: "Good movie",
-      genres: ["Sci fi", "Adventure"],
+      genres: [{:id=>28, :name=>"Action"}, {:id=>878, :name=>"Science Fiction"}],
       runtime: 155
-    }
+    })}
 
-    dune = MovieDetail.new(data)
+  it "exists with attributes" do
 
     expect(dune).to be_an_instance_of(MovieDetail)
     expect(dune.id).to eq(1)
     expect(dune.title).to eq("Dune")
     expect(dune.vote_average).to eq(7.9)
-    expect(dune.runtime).to eq(155)
-    expect(dune.genre.first).to eq('Sci fi')
-    expect(dune.genre.last).to eq('Adventure')
-    expect(dune.genre_names).to eq(["Sci fi", "Adventure"])
+    expect(dune.runtime).to eq('2hr 35min')
+    expect(dune.genre.first).to eq({:id=>28, :name=>"Action"})
+    expect(dune.genre.last).to eq({:id=>878, :name=>"Science Fiction"})
     expect(dune.summary).to eq('Good movie')
+  end
+   it 'returns genre names as an array' do 
+
+    expect(dune.genre_names).to eq(["Action", "Science Fiction"])
   end
 end
