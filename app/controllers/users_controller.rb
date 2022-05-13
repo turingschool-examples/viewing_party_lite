@@ -7,9 +7,11 @@ class UsersController < ApplicationController
 
     @parties_hosting = @user.parties_hosting
     @hosting_movies = @user.hosting_movies
+    @hosting_party_invitees = @parties_hosting.map { |party| party.users }
 
     @parties_invited_to = @user.parties_invited_to
     @invited_to_movies = @user.invited_to_movies
+    @invited_to_invitees = @parties_invited_to.map { |party| party.users }
   end
 
   def create

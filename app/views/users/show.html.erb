@@ -7,10 +7,20 @@
   <% if !@parties_invited_to.empty? %>
     <% @parties_invited_to.each_with_index do |party, index| %>
       <h3><strong><%= link_to @invited_to_movies[index].title, "/users/#{@user.id}/movies/#{@invited_to_movies[index].id}", method: :get, local: true %></strong></h3>
+      <h3><strong>Invited To</strong></h3>
       <p>Date: <%= party.date %></p>
       <p>Time: <%= party.start_time %></p>
       <p>Duration: <%= party.duration %></p>
-      <p><strong>Invited To</strong></p>
+      <p>Invitees:</p>
+      <ul>
+          <% @invited_to_invitees[index].each do |invitee|%>
+            <% if invitee.name == @user.name %>
+              <li><strong><%= invitee.name %></strong></li>
+            <% else %>
+              <li><%= invitee.name %></li>
+            <% end %>
+          <% end %>
+      </ul>
     <% end %>
   <% end %>
 </div>
@@ -20,10 +30,16 @@
   <% if !@parties_hosting.empty? %>
     <% @parties_hosting.each_with_index do |party, index| %>
       <h3><strong><%= link_to @hosting_movies[index].title, "/users/#{@user.id}/movies/#{@hosting_movies[index].id}", method: :get, local: true %></strong></h3>
+      <h3><strong>Hosting</strong></h3>
       <p>Date: <%= party.date %></p>
       <p>Time: <%= party.start_time %></p>
       <p>Duration: <%= party.duration %></p>
-      <p><strong>Hosting</strong></p>
+      <p>Invitees:</p>
+      <ul>
+          <% @hosting_party_invitees[index].each do |invitee|%>
+            <li><%= invitee.name %></li>
+          <% end %>
+      </ul>
     <% end %>
   <% end %>
 </div>
