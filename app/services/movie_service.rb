@@ -12,6 +12,13 @@ class MovieService
       get_url("3/movie/#{id}?api_key=f57beefd0f3cef1f6183a305da5f8630")
     end
 
+    def get_movie_cast(id)
+      get_url("3/movie/#{id}/credits?api_key=f57beefd0f3cef1f6183a305da5f8630")
+    end
+
+    def get_movie_reviews(id)
+      get_url("3/movie/#{id}/reviews?api_key=f57beefd0f3cef1f6183a305da5f8630")
+    end
     #resuable base code
     def get_url(uri)
         response = Faraday.get("https://api.themoviedb.org/#{uri}")

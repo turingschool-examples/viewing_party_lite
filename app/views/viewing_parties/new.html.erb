@@ -8,3 +8,18 @@
             <p><%= genre[:name] %></p>
            <% end %>
 <% end %>
+<p>Cast: </p> <% @movie.movie_cast_members[:cast].each do |member| %>
+         <p>Actor: <%= member[:name] %> </p>
+         <p>Character: <%= member[:character] %> </p>
+         <br>
+         <% end %>
+</p>
+
+<p>Total Reviews: <%= @movie.movie_reviews[:total_results] %></p>
+
+<p>Reviewers: </p>
+<% @movie.movie_reviews[:results].each do |review| %>
+  <p>Author: <%= review[:author_details][:name] %></p> 
+  <p>Username: <%= review[:author_details][:username] %></p>
+  <p>Rating: <%= review[:author_details][:rating] %></p>
+<% end %>

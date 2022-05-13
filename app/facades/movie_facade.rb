@@ -20,6 +20,14 @@ class MovieFacade
       service.get_movie_by_id(@id)
     end
 
+    def movie_cast_members
+      service.get_movie_cast(@id)
+    end
+
+    def movie_reviews
+      service.get_movie_reviews(@id)
+    end
+
     #reusable base code
     def service
         # @_service ||=
