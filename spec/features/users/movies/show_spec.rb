@@ -22,7 +22,7 @@ RSpec.describe 'Move detail page' do
     # expect(current_path).to eq("/users/#{@user.id}/movies/862/viewing-party/new")
     expect(page).to have_content('Toy Story')
     expect(page).to have_content('Vote Average: 8.0')
-    expect(page).to have_content('Runtime: 1 hour and 21 minutes')
+    expect(page).to have_content('Runtime: 1 hour(s) and 21 minutes')
     expect(page).to have_content('Animation')
     expect(page).to have_content('Adventure')
     expect(page).to have_content('Family')
