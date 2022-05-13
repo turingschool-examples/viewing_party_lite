@@ -17,6 +17,8 @@ class MovieService
     response = conn.get("/3/search/movie?&language=en-US&page=1&query=#{search_param}")
     # Takes the argument provided by the form and uses it as the query keyword param when sending request.
     body = parse_json(response)
+    body[:results]
+    # require 'pry'; binding.pry
   end
 
   def find_movie(id)
@@ -30,7 +32,7 @@ class MovieService
     def conn
       Faraday.new(url: "https://api.themoviedb.org") do |faraday|
         faraday.params['api_key'] = ENV['tmdb_api_key']
-        faraday.params[:query] = param unless param.nil?
+        # faraday.params[:query] = param unless param.nil?
       end
     end
 
