@@ -9,22 +9,27 @@
 
 <ul>
   <% @user.parties.each do |party| %>
-  <li>
-    <img id="movie_poster" src="http://image.tmdb.org/t/p/w300<%= party.movie.poster_path %>" alt="<%= party.movie.title %> poster">
-    <h2><a href="users/<%= @user.id %>/movies/<%= party.movie_id %>">Movie: <%= party.movie.title %></a></h2><br/>
-    <h4>Party #<%= party.id %></h4><br/>
-    <h4>Host: <%= User.find(party.user_id).name %></h4><br/>
-    <h3>Date & Time: <%= party.format_start_time%></h3>
-    <p id="<%= party.id %>-invited">Invited:
-      <% party.users.each do |user| %>
-        <% if user.name != @user.name %>
-          <strong><%= user.name %></strong>
-        <% else %>
-          <%= user.name %>
+  <div id="party_<%= party.id %>">
+    <li>
+      <% movie = party.movie %>
+      <img id="movie_poster" src="http://image.tmdb.org/t/p/w300<%= movie.poster_path %>" alt="<%= movie.title %> poster">
+      <h2><a href="users/<%= @user.id %>/movies/<%= party.movie_id %>">Movie: <%= movie.title %></a></h2><br/>
+      <h4>Party #<%= party.id %></h4><br/>
+      <h4>Host: <%= User.find(party.user_id).name %></h4><br/>
+      <h3>Date & Time: <%= party.format_start_time%></h3>
+      <p id="<%= party.id %>-invited">Invited:
+        <% party.users.each do |user| %>
+          <% unless user.id == party.user_id %>
+            <% if user.id == @user.id %>
+              <strong><%= user.name %></strong>
+            <% else %>
+              <%= user.name %>
+            <% end %>
+          <% end %>
         <% end %>
-      <% end %>
-    </p>
-  </li>
+      </p>
+    </li>
+  </div>
 <% end %>
 </ul>
 </div>
