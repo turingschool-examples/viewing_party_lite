@@ -15,6 +15,11 @@ class PartiesController < ApplicationController
       flash[:notice] = "Party can't be shorter than Movie's runtime."
       redirect_to "/users/#{params[:host_id]}/movies/#{params[:id]}/viewing-party/new"
     elsif party.save
+      PartyUser.create!(party_id: party.id, user_id: host.id)
+      invitees_ids = params[:tag_ids].find_all {|id| id != '0' }
+      invitees = invitees_ids.each do |id|
+        PartyUser.create!(party_id: party.id, user_id: id)       
+      end
        redirect_to "/users/#{params[:host_id]}"
      else
        flash[:notice] = "Please fill out all fields"
@@ -26,4 +31,6 @@ class PartiesController < ApplicationController
   def party_params
     params.permit(:name, :duration, :date, :start_time, :host_id)
   end
+
+
 end

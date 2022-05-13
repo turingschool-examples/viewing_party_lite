@@ -27,10 +27,6 @@ RSpec.describe 'a users new party creation page' do
 
     visit "/users/#{user_1.id}/movies/278/viewing-party/new"
 
-    expect(page).to have_no_unchecked_field("add-#{user_1.id}")
-    expect(page).to have_unchecked_field("add-#{user_2.id}")
-    expect(page).to have_unchecked_field("add-#{user_3.id}")
-    expect(page).to have_unchecked_field("add-#{user_4.id}")
     expect(page).to have_no_content('Will')
     expect(page).to have_content('Charles')
     expect(page).to have_content('Dylan')
@@ -51,8 +47,9 @@ RSpec.describe 'a users new party creation page' do
     fill_in :duration, with: '142'
     fill_in :date, with: Date.current
     fill_in :start_time, with: '00:54 PM'
-    check "add-#{user_2.id}"
-    check "add-#{user_3.id}"
+    within "#user-#{user_2.id}" do
+      check
+    end
 
     click_button "Create Party"
 
@@ -69,8 +66,6 @@ RSpec.describe 'a users new party creation page' do
     fill_in :duration, with: '140'
     fill_in :date, with: Date.current
     fill_in :start_time, with: '00:54 PM'
-    check "add-#{user_2.id}"
-    check "add-#{user_3.id}"
 
     click_button "Create Party"
 
@@ -79,8 +74,6 @@ RSpec.describe 'a users new party creation page' do
 
     fill_in :duration, with: '142'
     fill_in :start_time, with: '00:54 PM'
-    check "add-#{user_2.id}"
-    check "add-#{user_3.id}"
 
     click_button "Create Party"
 
@@ -89,8 +82,6 @@ RSpec.describe 'a users new party creation page' do
 
     fill_in :duration, with: '142'
     fill_in :date, with: Date.current
-    check "add-#{user_2.id}"
-    check "add-#{user_3.id}"
 
     click_button "Create Party"
 

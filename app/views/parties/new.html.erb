@@ -12,7 +12,7 @@
     <p>Start Time: <%= f.time_field :start_time %></p>
     <p><b><%= f.label "Invite Other Users" %></b></p>
     <% @users.each do |user| %>
-      <p><%= f.check_box "add-#{user.id}" %> <%= user.name %> (<%= user.email %>)</p>
+      <p id="user-<%= user.id %>"><%= f.check_box :tag_ids, {multiple: true}, user.id %> <%= user.name %> (<%= user.email %>)</p>
     <% end %>
     <p><%= f.submit "Create Party" %></p>
     <% end %>
