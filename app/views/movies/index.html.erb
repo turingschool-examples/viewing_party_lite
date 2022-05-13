@@ -1,0 +1,7 @@
+<%= link_to "Discover Top Rated Movies", "/users/#{@user.id}/movies?q=top%20rated" %>
+
+<%= form_with url: "/users/#{@user.id}/movies?q=keyword", method: :get, local: :true do |f| %>
+<%= f.label :movie_title, "Movie Title" %>
+<%= f.text_field :movie_title %>
+<%= f.submit "Search by Movie Title" %>
+<% end %>

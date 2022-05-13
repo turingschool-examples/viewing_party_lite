@@ -1,0 +1,3 @@
+<% @movies.each do |movie| %>
+<p> <%= link_to "#{movie.title}", "/users/#{@user.id}/movies/#{movie.id}" %> - <%= movie.vote_average %> </p>
+<% end %>
