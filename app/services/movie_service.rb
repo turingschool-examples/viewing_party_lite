@@ -16,4 +16,16 @@ class MovieService < BaseService
 
     get_json(response)
   end
+
+  def self.reviews(movie_id)
+    response = conn.get("/3/movie/#{movie_id}/reviews?api_key=#{ENV['movie_api_key']}")
+
+    get_json(response)
+  end
+
+  def self.cast_members(movie_id)
+    response = conn.get("/3/movie/#{movie_id}/credits?api_key=#{ENV['movie_api_key']}")
+
+    get_json(response)
+  end
 end
