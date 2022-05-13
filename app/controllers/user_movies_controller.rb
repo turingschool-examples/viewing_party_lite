@@ -2,7 +2,6 @@ class UserMoviesController < ApplicationController
 
   def index
     @user = User.find(params[:id])
-    
     if params[:top_rated]
       @movies = MovieFacade.top_rated
     elsif params[:keyword]

@@ -17,6 +17,11 @@ class MovieFacade
     end 
     results
   end 
+
+  def self.movie_id(movie_id)
+    data = MovieService.find_by_id(movie_id)
+    movie = Movie.new(data)
+  end 
   
 
 end 
