@@ -34,5 +34,24 @@ describe MovieFacade do
         expect(barton_fink.summary).to eq("A renowned New York playwright is enticed to California to write for the movies and discovers the hellish truth of Hollywood.")
       end
     end
+
+    context "cast_members" do
+      it "returns a max of 10 CastMember POROs", :vcr do
+        cast = MovieFacade.cast_members(290)
+
+        expect(cast).to be_a Array
+        expect(cast[0]).to be_a CastMember
+        expect(cast.length).to eq(10)
+      end
+    end
+
+    context "#reviews" do
+      it "returns movie reviews", :vcr do
+        results = MovieFacade.reviews(100)
+        expect(results.first).to be_a Review
+        expect(results.first.author).to eq("BradFlix")
+        expect(results.first.content).to eq("I just plain love this movie!")
+      end
+    end
   end
 end

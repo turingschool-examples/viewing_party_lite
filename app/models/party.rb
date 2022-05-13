@@ -9,7 +9,7 @@ class Party < ApplicationRecord
       duration.to_i >= movie_duration
     end
   end
-  
+
   def movie
     MovieFacade.details(movie_id)
   end
@@ -18,5 +18,9 @@ class Party < ApplicationRecord
     date = event_date.strftime("%B %d, %Y")
     time = start_time.strftime("%I:%M")
     "#{date} at #{time}"
+  end
+
+  def host_name
+    User.find(user_id).name
   end
 end

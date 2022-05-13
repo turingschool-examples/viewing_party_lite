@@ -9,8 +9,8 @@ describe Party, type: :model do
   describe "instance methods" do
     before do
       @user1 = User.create!(name: "User One", email: "user1@test.com")
-      @party_1 = Party.create!(event_date: DateTime.new(2002, 04, 26, 6, 0, 0, "-07:00"), duration: "230 mins", start_time: DateTime.new(2002, 04, 26, 6, 0, 0, "-07:00"), user_id: @user1.id, movie_id: 24021)
-      @party_2 = Party.create!(event_date: DateTime.new(2002, 02, 24, 7, 0, 0, "-07:00"), duration: "230 mins", start_time: DateTime.new(2002, 02, 24, 7, 0, 0, "-07:00"), user_id: @user1.id, movie_id: 809)
+      @party_1 = Party.create!(event_date: DateTime.new(2002, 0o4, 26, 6, 0, 0, "-07:00"), duration: "230 mins", start_time: DateTime.new(2002, 0o4, 26, 6, 0, 0, "-07:00"), user_id: @user1.id, movie_id: 24021)
+      @party_2 = Party.create!(event_date: DateTime.new(2002, 0o2, 24, 7, 0, 0, "-07:00"), duration: "230 mins", start_time: DateTime.new(2002, 0o2, 24, 7, 0, 0, "-07:00"), user_id: @user1.id, movie_id: 809)
     end
 
     context "#movie" do
@@ -26,6 +26,13 @@ describe Party, type: :model do
     context "#format_start_time" do
       it "returns a formatted start time and date" do
         expect(@party_1.format_start_time).to eq("April 26, 2002 at 01:00")
+      end
+    end
+
+    context "#host_name" do
+      it "returns the name of the party's host" do
+        expect(@party_1.host_name).to eq(@user1.name)
+        expect(@party_2.host_name).to eq(@user1.name)
       end
     end
   end

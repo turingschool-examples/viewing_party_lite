@@ -1,13 +1,13 @@
-<h1><%= @movie.title %></h1>
-<h3>Vote Average: <%= @movie.vote_average %></h3>
-<h3>Runtime: <%= @movie.formatted_runtime %></h3>
+<h1><%= @movie_details[:movie].title %></h1>
+<h3>Vote Average: <%= @movie_details[:movie].vote_average %></h3>
+<h3>Runtime: <%= @movie_details[:movie].formatted_runtime %></h3>
 <h3>Summary:</h3>
-<p><%= @movie.summary %></p>
+<p><%= @movie_details[:movie].summary %></p>
 
 <div id="genres">
   <h3>Genres:</h3>
   <ul>
-    <% @movie.genres.each do |genre| %>
+    <% @movie_details[:movie].genres.each do |genre| %>
     <li><%= genre[:name] %></li>
     <% end %>
   </ul>
@@ -16,7 +16,7 @@
 <div id="cast">
   <h3>Cast:</h3>
   <ul>
-    <% @cast.each do |cast_member| %>
+    <% @movie_details[:cast].each do |cast_member| %>
     <li>Actor: <%= cast_member.actor %></li>
     <li>Character: <%= cast_member.character %></li><hr>
     <% end %>
@@ -24,10 +24,10 @@
 </div>
 
 <div id="reviews">
-  <h3>Number of Reviews: <%= @reviews.count %></h3>
+  <h3>Number of Reviews: <%= @movie_details[:reviews].count %></h3>
 
   <ul>
-    <% @reviews.each do |r| %>
+    <% @movie_details[:reviews].each do |r| %>
       <li>
         Review: <%= r.content %>
         <br/>
@@ -38,5 +38,5 @@
 
 </div>
 
-<%= button_to "Create Viewing Party", "/users/#{@user.id}/movies/#{@movie.id}/parties/new", method: :get %>
+<%= button_to "Create Viewing Party", "/users/#{@user.id}/movies/#{@movie_details[:movie].id}/parties/new", method: :get %>
 <%= button_to "Return to Discover Page", "/users/#{@user.id}/discover", method: :get %>

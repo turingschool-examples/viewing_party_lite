@@ -27,7 +27,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 12 May 2022 21:36:48 GMT
+      - Fri, 13 May 2022 02:22:58 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -44,23 +44,23 @@ http_interactions:
       X-Memc-Key:
       - 6c0639b760633039387284a27f8730ee80d57205
       X-Memc-Age:
-      - '1426'
+      - '4094'
       X-Memc-Expires:
-      - '13031'
+      - '12299'
       Etag:
-      - W/"2e359a62c1fa6d729e4af000084a0b5a"
+      - W/"4e47f14e637e886b9b369f12e8d2ea3d"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 a47d45d25cc354507eae77aba89ca252.cloudfront.net (CloudFront)
+      - 1.1 c4fb40b7909e4dd897bba2e297b284e6.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - wxUPVf248_d6gaVrtVGY74BeIBtBJHH-78pChNT9cN6yTqAT-RpHyw==
+      - 886_WVu_VJGGTXBVF3mk4yDNKmeC8s2bp8kkSp9uWgpDdYZzPGqKXg==
       Age:
-      - '16769'
+      - '1'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/yiWfT2Bl1Nul3Xie39Ahs3FqSjA.jpg","belongs_to_collection":{"id":33514,"name":"The
@@ -71,15 +71,15 @@ http_interactions:
         to choose between her love for Edward and her friendship with Jacob, knowing
         that her decision has the potential to ignite the ageless struggle between
         vampire and werewolf. With her graduation quickly approaching, Bella is confronted
-        with the most important decision of her life.","popularity":135.843,"poster_path":"/3mFM80dPzSqoXXuC2UMvLIRWX32.jpg","production_companies":[{"id":491,"logo_path":"/rUp0lLKa1pr4UsPm8fgzmnNGxtq.png","name":"Summit
+        with the most important decision of her life.","popularity":132.979,"poster_path":"/3mFM80dPzSqoXXuC2UMvLIRWX32.jpg","production_companies":[{"id":491,"logo_path":"/rUp0lLKa1pr4UsPm8fgzmnNGxtq.png","name":"Summit
         Entertainment","origin_country":"US"},{"id":12292,"logo_path":"/llGRXF5WYUW2fzXg0ebCoKMXjmT.png","name":"Temple
         Hill Entertainment","origin_country":"US"},{"id":5218,"logo_path":"/dhb42ugM9DzSpDctTWCtABPVOW4.png","name":"Imprint
         Entertainment","origin_country":"US"},{"id":4000,"logo_path":null,"name":"Maverick
         Films","origin_country":"US"},{"id":5219,"logo_path":null,"name":"Sunswept
         Entertainment","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"2010-06-23","revenue":698491347,"runtime":124,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"It
-        all begins... with a choice.","title":"The Twilight Saga: Eclipse","video":false,"vote_average":6.2,"vote_count":7492}'
-  recorded_at: Fri, 13 May 2022 02:16:17 GMT
+        all begins... with a choice.","title":"The Twilight Saga: Eclipse","video":false,"vote_average":6.2,"vote_count":7494}'
+  recorded_at: Fri, 13 May 2022 02:22:59 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/809?api_key=Sike you thought
@@ -107,7 +107,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 13 May 2022 01:43:26 GMT
+      - Fri, 13 May 2022 02:22:59 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -124,23 +124,21 @@ http_interactions:
       X-Memc-Key:
       - 991b4c6713e73a7547942937bebcfd41fada3b8e
       X-Memc-Age:
-      - '5863'
+      - '8236'
       X-Memc-Expires:
-      - '10099'
+      - '7726'
       Etag:
       - W/"b35b77d1f7f4e773eb3cf264c4e7fa6e"
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Hit from cloudfront
+      - Miss from cloudfront
       Via:
-      - 1.1 b2e880ac67c1fba390623b9fc04bd63a.cloudfront.net (CloudFront)
+      - 1.1 7d885ba806a1846198f8b666005bec92.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - _wVpBQ7uFcUxU_t-HTru2-VmHNUGOCPtu1yjevdj_q74omXWd8A2FQ==
-      Age:
-      - '1972'
+      - VO05-v8I57sz20F5XTNAC3AO3Wmtgq-jaYPMPicrYHb_YZ3noOK2sQ==
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/g1EsYgp8GbdztpodCCa2n7xxc5S.jpg","belongs_to_collection":{"id":2150,"name":"Shrek
@@ -155,5 +153,5 @@ http_interactions:
         Animation","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"2004-05-19","revenue":928760770,"runtime":93,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Once
         upon another time...","title":"Shrek 2","video":false,"vote_average":7.2,"vote_count":9936}'
-  recorded_at: Fri, 13 May 2022 02:16:18 GMT
+  recorded_at: Fri, 13 May 2022 02:22:59 GMT
 recorded_with: VCR 6.1.0
