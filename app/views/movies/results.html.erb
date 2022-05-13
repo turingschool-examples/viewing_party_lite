@@ -1,4 +1,4 @@
-Movie results page goes here
+<%= link_to 'back to discover movies', "/users/#{@user.id}/movies/discover" %>
 
 <% if @search_results %>
   <% @search_results.each do |movie| %>
