@@ -21,7 +21,6 @@ class UserMoviePartiesController < ApplicationController
         user_id: user_id,
         movie_id: movie_id
       })
-      user_attendee = Attendee.create!(user_id: user_id, party_id: new_party.id)  
       if params[:attendees].present?
         params[:attendees].each do |attendee|
           Attendee.create(user_id: attendee, party_id: new_party.id)
