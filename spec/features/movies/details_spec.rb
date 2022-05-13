@@ -13,13 +13,13 @@ RSpec.describe "new viewing party page" do
            }).
          to_return(status: 200, body: json_response, headers: {})
     visit "/users/#{user_1.id}/movies/278"
-
     expect(page).to have_button("Create Viewing Party")
     expect(page).to have_link("Discover Page")
+  save_and_open_page
     # Refactor - tests below should really be in a within block to avoid cross-contamination false positives
     expect(page).to have_content("The Shawshank Redemption") # Has movie title
     expect(page).to have_content("8.7") # Average vote
-    expect(page).to have_content("1 hour 22 minutes") # Runtime
+    expect(page).to have_content("2 hour 22 minutes") # Runtime
     expect(page).to have_content("") # Genres
   end
 end

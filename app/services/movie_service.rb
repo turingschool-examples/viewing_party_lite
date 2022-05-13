@@ -8,7 +8,7 @@ class MovieService
   end
 
   def search_by_id(id)
-    get_url("/3/movie/#{id}?api_key=#{ENV['api_key']}")
+    get_url("/3/movie/#{id}?api_key=#{ENV['api_key']}&append_to_response=credits,reviews")
   end
 
   def get_url(url)
