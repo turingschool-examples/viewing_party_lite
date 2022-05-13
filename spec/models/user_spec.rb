@@ -36,7 +36,7 @@ require 'rails_helper'
      end
 
      it "finds movie details for parties hositng and invited to" do
-       expect(@user_1.hosting_movies.first.title).to eq("The Shawshank Redemption")
+       expect(@user_1.hosting_movies.first.title).to eq("Amadeus")
      end
    end
  end
