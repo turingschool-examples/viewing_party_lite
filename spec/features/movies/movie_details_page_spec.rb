@@ -45,5 +45,15 @@ RSpec.describe 'Movie details page' do
 
       expect(page).to_not have_content("Neil Giuntoli")
     end
+
+    it 'displays a count of total views' do
+      user1 = User.create!(name: 'Will', email: '123@mail.com')
+      user2 = User.create!(name: 'Craig', email: 'abc@mail.com')
+
+      visit "/users/#{user1.id}/movies/278?user_id=#{user1.id}"
+
+      expect(page).to have_content("7")
+      save_and_open_page
+    end
   end
 end
