@@ -9,7 +9,8 @@ class UsersController < ApplicationController
 
   def discover; end
 
-  def show; end
+  def show
+  end
 
   def update; end
 
@@ -28,6 +29,7 @@ class UsersController < ApplicationController
   private
 
   def set_user
+
     @user = User.find(params[:id])
   end
 
