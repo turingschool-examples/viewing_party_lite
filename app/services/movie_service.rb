@@ -11,8 +11,8 @@ class MovieService
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  def self.movie_by_keyword(input)
-    response = conn.get("/3/search/movie?query=#{input}") do |faraday|
+  def self.movie_by_keyword(query)
+    response = conn.get("/3/search/movie?query=#{query}") do |faraday|
       faraday.params['api_key'] = ENV['tmdb_api_key']
     end
 
