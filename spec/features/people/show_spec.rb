@@ -18,7 +18,7 @@ RSpec.describe "Person Dashboard" do
 
     click_button "Discover Movies"
 
-    expect(current_path).to eq(discover_path(person.id))
+    expect(current_path).to eq(discover_path)
   end
 
   it "displays viewing parties that the person is a part of" do

@@ -10,20 +10,10 @@ class PeopleController < ApplicationController
     @person = Person.new(person_params)
   end
 
-  # def index
-  #   @people = People.all
-  #   require "pry"
-  #   binding.pry
-  # end
-  #
   def create
     person = Person.new(person_params)
     person.save
     redirect_to person_path(person.id)
-  end
-
-  def discover
-    @person = Person.find(params[:id])
   end
 
   private

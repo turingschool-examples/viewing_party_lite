@@ -1,2 +1,0 @@
-class PartiesController < ApplicationController
-end

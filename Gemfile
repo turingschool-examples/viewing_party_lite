@@ -39,7 +39,6 @@ gem 'standardrb'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
-  gem 'figaro'
   gem 'shoulda-matchers'
 end
 
@@ -55,6 +54,9 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'simplecov'
+  gem 'figaro'
+  gem 'webmock'
+  gem 'vcr'
 end
 
 
