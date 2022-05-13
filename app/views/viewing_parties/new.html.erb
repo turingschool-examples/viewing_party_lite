@@ -6,7 +6,7 @@
 
   <div id="date">
     <%= form.label :date %>
-    <%= form.date_select :date %>
+    <%= form.date_select :date, start_year: Date.today.year %>
   </div>
 
   <%= form.label :time %>
