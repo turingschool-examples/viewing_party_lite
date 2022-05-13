@@ -36,8 +36,8 @@ describe User, type: :model do
         @u2_vp_inv_2 = Invitation.create!(user_id: @user1.id, party_id: @u2_vp.id)
 
         @u3_vp = Party.create!(event_date: DateTime.new(2002, 0o2, 24, 7, 0, 0, "-07:00"), duration: "230 mins", start_time: DateTime.new(2002, 0o2, 24, 7, 0, 0, "-07:00"), user_id: @user2.id, movie_id: 809)
-        @u2_vp_inv_1 = Invitation.create!(user_id: @user2.id, party_id: @u2_vp.id)
-        @u2_vp_inv_2 = Invitation.create!(user_id: @user3.id, party_id: @u2_vp.id)
+        @u2_vp_inv_1 = Invitation.create!(user_id: @user2.id, party_id: @u3_vp.id)
+        @u2_vp_inv_2 = Invitation.create!(user_id: @user3.id, party_id: @u3_vp.id)
 
         expect(@user1.invited_parties).to eq([@u2_vp])
         expect(@user2.invited_parties).to eq([@u1_vp])
