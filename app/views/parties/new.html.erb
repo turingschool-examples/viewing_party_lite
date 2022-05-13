@@ -1,0 +1,9 @@
+<div id="party">
+  <h2>Viewing Party Details</h2>
+  <p>Movie Title: <%= @movie.title %></p>
+  <%= form_with model: @party do |f| %>
+    <%= f.text_field :duration, value: @movie.runtime %>
+    <%= f.text_field :date %>
+    <%= f.text_field :start_time %>
+    <% end %>
+</div>
