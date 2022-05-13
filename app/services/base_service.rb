@@ -1,8 +1,8 @@
 class BaseService
   private
 
-  def self.conn(url)
-    Faraday.new(url)
+  def self.conn
+    Faraday.new("https://api.themoviedb.org")
   end
 
   def self.get_json(response)

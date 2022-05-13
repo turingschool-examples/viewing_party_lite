@@ -16,5 +16,7 @@
     <%= f.label "#{user.name}" %>
   <% end %>
 
+  <%= f.hidden_field :host_id, value: "#{@user.id}" %>
+
   <%= f.submit "Submit" %>
 <% end %>

@@ -24,4 +24,9 @@ class User < ApplicationRecord
       MovieFacade.movie_details(party.movie_id)
     end
   end
+
+  def hosting
+    hosting = {}
+    
+  end
 end
