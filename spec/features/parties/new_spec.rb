@@ -26,10 +26,11 @@ RSpec.describe 'new party page' do
     expect(page).to have_content("#{user1.name}'s Dashboard")
   end
 
-  xit 'shows error message when unable to create party' do
-    click_button('Create New User')
+  it 'shows error message when unable to create party' do
+    fill_in :duration_user, with: 80
+    click_button('Create')
 
-    expect(current_path).to eq('/register')
-    expect(page).to have_content('Error: please enter a duration longer than 2 hr 30 mins.')
+    expect(current_path).to eq("/users/#{user1.id}/movies/545611/viewing_party/new")
+    expect(page).to have_content('Error: please enter a duration longer than movie runtime 2hr 19min (139 mins)!')
   end
 end
