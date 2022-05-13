@@ -17,7 +17,26 @@ class MovieFacade
 
   def self.movie_details(movie_id)
     json = MovieService.movie_details(movie_id)
-    
-    Movie.new(json)
+
+    MovieDetails.new(json)
+  end
+
+  def self.reviews(movie_id)
+    # binding.pry
+    json = MovieService.reviews(movie_id)
+
+    json[:results].map do |result|
+      Reviews.new(result)
+    end
+
+  end
+
+  def self.cast_members(movie_id)
+    json = MovieService.cast_members(movie_id)
+
+    json[:cast][0..9].map do |data|
+      CastMember.new(data)
+    end
+
   end
 end

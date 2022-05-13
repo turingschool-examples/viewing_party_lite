@@ -13,6 +13,13 @@ Rails.application.routes.draw do
   get "/users/:user_id/movies/:movie_id/viewing-party/new", to: "parties#new"
   post "/users/:user_id/movies/:movie_id/viewing-party/create", to: "parties#create"
 
+  resources :users do
+    resources :discover, only: [:index]
+    resources :movies, only: [:index, :show]
+  end
+  post '/users/:user_id/movies/:movie_id/viewing_party', to: 'parties#create'
+  get '/users/:user_id/movies/:movie_id/viewing_party/new', to: 'parties#new'
+  post '/users/new', to: 'users#create'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
