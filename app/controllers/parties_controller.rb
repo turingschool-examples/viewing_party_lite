@@ -11,6 +11,7 @@ class PartiesController < ApplicationController
     new_party = Party.new(party_params)
 
     if @movie.runtime <= params[:duration].to_i
+      require "pry"; binding.pry
       if new_party.save && params[:users]
         params[:users].each do |user|
           u = User.find(user)

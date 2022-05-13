@@ -16,9 +16,10 @@ RSpec.describe "New Viewing Party", type: :feature do
       page.check("users[]")#all check boxes have the same name
     end
       click_button "submit"
-
+      # save_and_open_page
     expect(Party.all.count).to eq(party_count + 1)
     expect(current_path).to eq("/users/#{user.id}")
+    expect(page).to have_content("Viewing Parties")
   end
 
   it 'rejects new party of too short a duration', :vcr do

@@ -25,7 +25,7 @@ gem 'figaro'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'faraday'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -38,8 +38,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
-  gem 'faraday'
-  gem 'vcr'
   #may need webmock here
 end
 
@@ -57,6 +55,7 @@ group :test do
   gem 'simplecov'
   gem 'shoulda-matchers'
   gem 'webmock'
+  gem 'vcr'
 end
 
 
