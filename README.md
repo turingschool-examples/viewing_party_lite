@@ -1,6 +1,6 @@
 # Viewing Party
 
-[Viewing Party](https://viewing-party-jhst.herokuapp.com/) is an application in which users can explore movie options and create a viewing party event for themselves and other users of the application.
+[Viewing Party](https://viewing-party-jhst.herokuapp.com/) is an application in which users can explore movie options and create a viewing party event for themselves and other users of the application. This app consumes the [TheMovieDatabase API](https://developers.themoviedb.org/3/getting-started/introduction).
 
 ## Production
 
