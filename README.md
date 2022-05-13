@@ -27,3 +27,8 @@ To pull down this repository and inspect the code locally, see below instruction
 This app uses a many-to-many relational database: Users have many Invitations, and many Parties through Invitations. Parties have many Invitations, and many Users through Invitations. Invitations belong to a User and a Party. Movie data are displayed using a Movie PORO Class, objects of which are generated through the MovieService and MovieFacade classes. 
 
 ![image](https://user-images.githubusercontent.com/93609855/168385176-bb2a65fc-19d9-41b7-8ac7-1aae385d09cb.png)
+
+## Contributors 
+
+- James Harkins ([GitHub](https://github.com/James-Harkins))
+- Sandisz Thieme ([GitHub](https://github.com/sandisz-d734m37))
