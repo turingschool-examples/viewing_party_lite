@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe 'new party page' do
-    let!(:user1) {User.create(name: 'person1', email: 'email1@email1.com')}
-    let!(:user2) {User.create(name: 'person2', email: 'email1@email2.com')}
-    let!(:user3) {User.create(name: 'person3', email: 'email1@email3.com')}
-    let!(:user4) {User.create(name: 'person4', email: 'email1@email4.com')}
+  let!(:user1) { User.create(name: 'person1', email: 'email1@email1.com') }
+  let!(:user2) { User.create(name: 'person2', email: 'email1@email2.com') }
+  let!(:user3) { User.create(name: 'person3', email: 'email1@email3.com') }
+  let!(:user4) { User.create(name: 'person4', email: 'email1@email4.com') }
   before(:each) do
     details = JSON.parse(File.read('spec/fixtures/movie_details.json'), symbolize_names: true)
     allow(TmdbService).to receive(:movie_details).and_return(details)
@@ -17,8 +17,7 @@ RSpec.describe 'new party page' do
   end
 
   it 'can create new party' do
-
-    within(".user-#{user2.id}") do 
+    within(".user-#{user2.id}") do
       page.check
     end
 
@@ -28,8 +27,6 @@ RSpec.describe 'new party page' do
   end
 
   xit 'shows error message when unable to create party' do
-    
-
     click_button('Create New User')
 
     expect(current_path).to eq('/register')
