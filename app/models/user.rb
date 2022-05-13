@@ -4,4 +4,13 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true
   validates_presence_of :name, :email
+
+  def invited_parties
+    parties.where.not(host: self.id)
+  end
+
+  def hosted_parties
+    parties.where(host: self.id)
+  end
+
 end

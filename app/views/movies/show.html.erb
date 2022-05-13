@@ -4,7 +4,7 @@
 
 <h3> About </h3>
 <p> Rating: <%= @movie.vote_average %></p>
-<p> Runtime: <%= @movie.runtime %> minutes </p>
+<p> Runtime: <%= @movie.runtime_with_hours %> </p>
 <p> Genres: <% if @movie.genres %>
               <% @movie.genres.each do |g| %>
               <%= g %>

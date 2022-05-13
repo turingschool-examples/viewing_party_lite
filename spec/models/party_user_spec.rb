@@ -7,7 +7,7 @@ RSpec.describe PartyUser, type: :model do
   end
 
   describe 'validations' do
-    it { should validate_presence_of(:host) }
+    # it { should validate_presence_of(:host) }
   end
 
 end
