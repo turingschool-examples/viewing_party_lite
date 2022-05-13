@@ -1,1 +1,21 @@
 <h1>NEW PARTY<h1>
+
+<div id="new_party_form">
+  <%= form_with url: "/users/#{@user.id}/movies/#{@movie.id}/viewing_party", method: :post do |f| %>
+    <%= f.label :duration, "Duration: " %>
+    <%= f.number_field :duration %>
+    <%= f.label :date, "Date: " %>
+    <%= f.date_field :date %>
+    <%= f.label :time, "Start Time " %>
+    <%= f.time_field :time %>
+
+    <%= f.hidden_field :host, value: @user.id  %>
+    <%= f.submit :submit %>
+  <% end %>
+  <%= @users.each do |user| %>
+  <%= form_with url: "/users/#{@user.id}/movies/#{@movie.id}/viewing_party_users", method: :post do |f| %>
+    <%=f.check_box :user_id %>
+    <%=f.label :user_id, "#{user.name} " %>
+    <%= f.hidden_field :party_id, value: uhhhhh it doesnt exist yet? %>
+  <% end %>
+</div>
