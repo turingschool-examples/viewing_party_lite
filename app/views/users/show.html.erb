@@ -8,7 +8,7 @@
 
 <div id="watch-parties">
 <h2>Current Scheduled Parties!</h2>
-<% @parties.each do |party| %>
+<% @parties.uniq.each do |party| %>
   <div id="party_id-<%= party.id%>">
   <% @movies.detect do |movie| %>
     <% if movie[:id] == party.movie_id  %>
@@ -17,14 +17,14 @@
 
       <p>When: <%= party.when.strftime('%B %d, %Y') %></p>
       <p>Start Time: <%= party.start_time.strftime('%I:%M %p') %></p>
+        <% if party.user_id == @user.id %>
+           <b>Hosting</b>
+       
 
-      <% if party.user_id == @user.id %>
-        <b>Hosting</b>
-      <% end %>
 
-      <% party.attendees.each do |attendee| %>
+      <% elsif party.attendees.each do |attendee| %>
 
-        <% if attendee.user_id == @user.id %>
+        <%  attendee.user_id == @user.id %>
           <i>Invited</i>
         <% end %>
       <% end %>

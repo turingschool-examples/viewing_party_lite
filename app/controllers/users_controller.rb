@@ -2,6 +2,7 @@
 
 class UsersController < ApplicationController
   def show
+  
     @user = User.find(params[:id])
     @parties = []
     Party.all.each do |party|
@@ -20,6 +21,7 @@ class UsersController < ApplicationController
       @movies << JSON.parse(response.body, symbolize_names: true)
     end 
     @movies 
+    # binding.pry
   end
 
   def new; end

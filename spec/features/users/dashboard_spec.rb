@@ -71,7 +71,7 @@ RSpec.describe 'User Dashboard', type: :feature do
       attendee2 = Attendee.create!(user_id: @user2.id, party_id: party2.id)
       attendee3 = Attendee.create!(user_id: @user1.id, party_id: party3.id)
       visit "/users/#{@user1.id}"
-
+      save_and_open_page
       within "#party_id-#{party1.id}" do 
         expect(page).to have_content("Jaws")
         expect(page).to have_content('When: February 08, 2023')
@@ -110,6 +110,26 @@ RSpec.describe 'User Dashboard', type: :feature do
         click_link "The Fountain"
       end 
       expect(current_path).to eq("/users/#{@user2.id}/movies/1381")
+    end 
+
+    it 'only shows each movie once' do 
+      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com')
+      lugnut = User.create!(name: 'LugNut', email: 'fatdog@corgi.com')
+      jaws_id = 578
+      
+      visit "/users/#{skeeter.id}/movies/#{jaws_id}/party/new"
+      
+      fill_in "Duration of Party", with: 150
+      select 2022, from: '_date_1i'
+      select 'May', from: '_date_2i'
+      select '12', from: '_date_3i'
+
+      fill_in "Start Time", with: "8:00"
+      check("attendees_#{lugnut.id}")
+      
+      click_on "Create Party"
+     
+
     end 
   end 
 
