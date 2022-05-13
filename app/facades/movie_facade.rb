@@ -19,5 +19,10 @@ class MovieFacade
         Movie.new(result)
       end
     end
+
+    def search_by_id(movie_id)
+      result = MovieService.get_data("movie/#{movie_id}?&append_to_response=credits,reviews")
+      Movie.new(result)
+    end
   end
 end
