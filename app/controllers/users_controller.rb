@@ -1,11 +1,11 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   before_action :get_user, only: [:show]
 
-  def new
-  end
+  def new; end
 
-  def show
-  end
+  def show; end
 
   def create
     user = User.new(user_params)
@@ -20,11 +20,12 @@ class UsersController < ApplicationController
   end
 
   private
-    def get_user
-      @user = User.find(params[:id])
-    end
 
-    def user_params
-      params.permit(:name, :email)
-    end
+  def get_user
+    @user = User.find(params[:id])
+  end
+
+  def user_params
+    params.permit(:name, :email)
+  end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MovieService
   def get_url(url)
     response = Faraday.get(url)

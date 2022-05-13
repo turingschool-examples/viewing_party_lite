@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe 'create a new viewing party' do
@@ -5,7 +7,7 @@ describe 'create a new viewing party' do
     @user = User.create!(name: 'Brylan', email: 'brylan.gannon112@gmail.com')
     @user2 = User.create!(name: 'John', email: 'John.Hennerich@gmail.com')
     @movie_id = 550
-    visit user_movie_path(@user,@movie_id)
+    visit user_movie_path(@user, @movie_id)
 
     click_on 'Create Viewing Party'
   end
@@ -30,7 +32,7 @@ describe 'create a new viewing party' do
 
       check :John
       click_on 'Create Viewing Party'
-      
+
       viewing_party_id = ViewingParty.last.id
       expect(current_path).to eq user_path(@user)
 

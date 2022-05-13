@@ -13,5 +13,15 @@
     <% else %>
       <p>Invited</p>
     <% end %>
+    <ul>
+    <p>Users Invited:</p>
+    <% party.users.each do |user| %>
+      <% if user.name == @user.name %>
+        <li> <strong><%= user.name %></strong></li>
+      <% else %>
+        <li><%= user.name %></li>
+      <% end %>
+    <% end %>
+    </ul>
   </div>
 <% end %>

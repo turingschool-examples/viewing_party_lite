@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ViewingPartiesController < ApplicationController
   before_action :all_users, only: [:new]
 
@@ -9,9 +11,9 @@ class ViewingPartiesController < ApplicationController
     host_user = User.find(params[:id])
     party = ViewingParty.create!(
       duration: params[:duration],
-      date: "#{params["date(1i)"]}/#{params["date(2i)"]}/#{params["date(3i)"]}",
-      start_time: "#{params["time(4i)"]}:#{params["time(5i)"]}",
-      movie_title: params[:movie_title],
+      date: "#{params['date(1i)']}/#{params['date(2i)']}/#{params['date(3i)']}",
+      start_time: "#{params['time(4i)']}:#{params['time(5i)']}",
+      movie_title: params[:movie_title]
     )
 
     User.all.each do |user|
@@ -25,8 +27,9 @@ class ViewingPartiesController < ApplicationController
   end
 
   private
-    def all_users
-      @users = User.all.compact
-      @users.keep_if {|user| user.id != params[:user_id]}
-    end
+
+  def all_users
+    @users = User.all.compact
+    @users.keep_if { |user| user.id != params[:user_id] }
+  end
 end

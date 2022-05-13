@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe MovieFacade do
@@ -17,7 +19,7 @@ describe MovieFacade do
 
     it '.find_movies(query) returns the first 40 movie POROs that match the query' do
       poros = MovieFacade.find_movies('mad')
-      movie_titles = poros.map { |movie| movie.title }
+      movie_titles = poros.map(&:title)
       titles_include_query = movie_titles.map { |title| title.downcase.include?('mad') }
 
       expect(poros.count).to eq(40)
