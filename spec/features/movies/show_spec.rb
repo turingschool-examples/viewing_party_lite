@@ -28,7 +28,7 @@ RSpec.describe "movie detail page" do
       expect(page).to have_content("Drama")
       expect(page).to have_content("A ticking-time-bomb")
       expect("Edward Norton").to appear_before("David Andrews")
-      expect(page).to have_content("24038")
+      expect(page).to have_content(movie[:vote_count])
 
       within("#Goddard") do
         expect(page).to have_content("Goddard")
