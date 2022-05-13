@@ -1,0 +1,9 @@
+<center>
+  <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %>
+  <br>
+  <% @facade.each do |movie| %>
+    <%= movie.title %>
+    <%= movie.vote_average %>
+    <br>
+  <% end %>
+</center>
