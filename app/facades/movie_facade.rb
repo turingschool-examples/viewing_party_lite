@@ -1,5 +1,4 @@
 class MovieFacade
-
   def self.top20
     TmdbService.top20.map do |movie_data|
       MovieDetail.new(movie_data)
@@ -12,7 +11,7 @@ class MovieFacade
       "No movies found containing '#{keyword}'"
     else
       data = @first_20[:results] + @second_20[:results]
-        data.map do |movie_data|
+      data.map do |movie_data|
         MovieDetail.new(movie_data)
       end
     end
@@ -24,7 +23,7 @@ class MovieFacade
   end
 
   def self.movie_data(movie_id)
-    data = Hash.new
+    data = {}
     data[:movie_details] = movie_details(movie_id)
     data[:movie_cast] = movie_cast(movie_id)
     data[:movie_reviews] = movie_reviews(movie_id)
