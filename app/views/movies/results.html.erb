@@ -1,0 +1,15 @@
+<%= link_to 'back to discover movies', "/users/#{@user.id}/movies/discover" %>
+
+<% if @search_results %>
+  <% @search_results.each do |movie| %>
+    <p>Title: <%= movie.original_title %></p>
+    <p>Vote Average: <%= movie.vote_average %></p>
+  <% end %>
+<% end %>
+
+<% if @top_movies %>
+  <% @top_movies.each do |movie| %>
+    <p>Title: <%= link_to "#{movie.original_title}", "/users/#{@user.id}/movies/#{movie.id}" %></p>
+    <p>Vote Average: <%= movie.vote_average %></p>
+  <% end %>
+<% end  %>

@@ -1,0 +1,8 @@
+
+<%= link_to 'see top 20 movies', "/users/#{@user.id}/movies?q=top%20rated" %>
+
+<%= form_with url: "/users/#{@user.id}/movies?q=keyword", method: :get, local: true do |form| %>
+<%= form.label :keyword, "Search by title" %>
+<%= form.text_field :keyword %>
+<%= form.submit "search" %>
+<% end %>
