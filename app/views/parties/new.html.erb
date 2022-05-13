@@ -11,9 +11,17 @@
   <%= form.time_select :start_time, prompt: {hour: 'Hour', minute: 'Minute'} %><br>
 
   <% @users.each do |user| %>
-    <br><%= form.label "#{user.name}" %>
-    <%= form.check_box "#{user.name}" %><br>
+    <% unless user.id == @user.id %>
+      <%= check_box_tag 'invited_users[]', user.id %>
+      <%= user.name %>
+    <% end %>
   <% end %>
 
+  <%= form.hidden_field(:runtime, value: @movie.runtime) %>
+
   <br><%= form.submit "Create Party" %>
+<% end %>
+
+<% flash.each do |type, message| %>
+  <p><%= message %></p>
 <% end %>
