@@ -7,6 +7,7 @@ RSpec.describe "MovieFacade" do
     expect(movies).to be_a Array
 
     expect(movies).to be_all Movie
+    expect(movies.length).to be <= 40
   end
 
   it "can return array of movie_info for a given keyword search", :vcr do
@@ -15,5 +16,6 @@ RSpec.describe "MovieFacade" do
     expect(movies).to be_a Array
 
     expect(movies).to be_all Movie
+    expect(movies.length).to be <= 40
   end
 end

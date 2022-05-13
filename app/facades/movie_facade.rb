@@ -4,7 +4,7 @@ class MovieFacade
 
     json[:results].map do |movie_data|
       Movie.new(movie_data)
-    end
+    end.take(40)
   end
 
   def self.create_search_movies(query)
@@ -12,6 +12,6 @@ class MovieFacade
 
     json[:results].map do |movie_data|
       Movie.new(movie_data)
-    end
+    end.take(40)
   end
 end
