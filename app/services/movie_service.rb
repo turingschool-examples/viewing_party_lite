@@ -22,8 +22,9 @@ class MovieService
   end
 
   def find_movie(id)
-    response = conn.get("/3/movie/#{id}?")
+    response = conn.get("/3/movie/#{id}?&append_to_response=credits,reviews")
     body = parse_json(response)
+    # require 'pry'; binding.pry
   end
 
 

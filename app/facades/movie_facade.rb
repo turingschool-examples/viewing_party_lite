@@ -14,9 +14,11 @@ class MovieFacade
   end
 
   def find_movie(id)
-    service.find_movie(id).map do |info|
-      MovieDetails.new(info)
-    end
+    # require 'pry'; binding.pry
+    info = service.find_movie(id)
+    MovieDetails.new(info)
+    # require 'pry'; binding.pry
+    # end
   end
 
   def service
