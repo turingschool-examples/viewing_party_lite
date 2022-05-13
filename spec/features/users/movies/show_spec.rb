@@ -16,7 +16,6 @@ RSpec.describe 'Move detail page' do
     expect(page).to have_content('Family')
     expect(page).to have_content('Comedy')
     expect(page).to have_content("Led by Woody, Andy's toys live happily in his room until Andy's birthday brings Buzz Lightyear onto the scene. Afraid of losing his place in Andy's heart, Woody plots against Buzz. But when circumstances separate Buzz and Woody from their owner, the duo eventually learns to put aside their differences.")
-    # new endpoint, /credits
     expect(page).to have_content('Tom Hanks')
     expect(page).to have_content('Woody')
     expect(page).to have_content('Tim Allen')
