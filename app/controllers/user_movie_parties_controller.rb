@@ -21,7 +21,8 @@ class UserMoviePartiesController < ApplicationController
         duration: params[:duration].to_i,
         when: date_maker,
         start_time: params[:start_time],
-        user_id: user_id
+        user_id: user_id,
+        movie_id: movie_id
       })
       user_attendee = Attendee.create!(user_id: user_id, party_id: new_party.id)  
       if params[:attendees].present?

@@ -26,4 +26,34 @@ RSpec.describe 'User Dashboard', type: :feature do
       expect(page).to have_content('Current Scheduled Parties!')
     end
   end
+  describe 'If I have any parties I am invited to' do 
+
+    it 'should have movie image, title (as link), date/time and who is hosting event, others invited' do
+      date1 = 	"2023-02-08 09:30:00 UTC".to_datetime
+      date2 = 	"2022-05-08 14:30:00 UTC".to_datetime
+      #jaws
+      party1 = Party.create!(user_id: @user1.id, duration: 124, when: date1, start_time: date1, movie_id: 578)
+      #the fountain
+      party2 = Party.create!(user_id: @user1.id, duration: 124, when: date2, start_time: date2, movie_id: 1381)
+      
+      attendee1 = Attendee.create!(user_id: @user2.id, party_id: party1.id)
+      attendee2 = Attendee.create!(user_id: @user2.id, party_id: party2.id)
+      visit "/users/#{@user2.id}"
+
+      within '#movie_id-578' do 
+        expect(page).to have_content("Jaws")
+        expect(page).to have_content("When: Febuary 8, 2023")
+        expect(page).to have_content("Start Time: 9:30 AM")
+        expect(page).to have_content("Invited")
+      end 
+      within '#movie_id-1381' do 
+        expect(page).to have_content("The Fountain")
+        expect(page).to have_content("When: May 8, 2022")
+        expect(page).to have_content("Start Time: 2:30 PM")
+        expect(page).to have_content("Invited")
+      end 
+      save_and_open_page
+    end 
+  end 
+
 end
