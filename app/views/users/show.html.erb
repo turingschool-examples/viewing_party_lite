@@ -5,4 +5,39 @@
 <%= render partial: 'partials/navbar_user', :locals => {:user_id => @user.id} %>
 <br>
 <h3>Viewing Parties</h3>
+<% @user.parties.each do |party| %>
 
+   <div class=<%= "viewing_party_#{party.movie_id}" %>>
+     <img src= <%= party.movie_poster %> alt="" style="width:25%;height:25%;">
+
+     <p><%= link_to "Title: #{party.movie_title}", "/movies/#{party.movie_id}" %></p>
+     <p><%= "Date: #{party.movie_date}" %></p>
+     <p><%= "Time: #{party.movie_time}" %></p>
+
+     <% if party.host.id == @user.id %>
+       <p><strong><%= "Hosting"%></strong></p>
+       <div class=<%= "movie_#{party.movie_id}_viewers" %>>
+         <p>Friends Invited:</p>
+         <ul>
+           <% party.viewers.each do |viewer| %>
+             <li><%= viewer.name %></li>
+           <% end %>
+         </ul>
+       </div>
+       <% else %>
+      <p><%= "Host: #{party.host_name}" %></p>
+      <div class=<%= "movie_#{party.movie_id}_viewers" %>>
+        <p><%= "Viewers:" %></p>
+        <ul>
+          <% party.viewers.each do |viewer| %>
+            <% if viewer.id == @user.id %>
+              <li><strong><%= viewer.name %></strong></li>
+            <% else %>
+              <li><%= viewer.name %></li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+     <% end %>

@@ -1,5 +1,7 @@
 class MovieDetail
-  attr_reader :title, :vote_average, :runtime_min, :runtime, :genre, :summary, :id, :poster
+
+  attr_reader :title, :vote_average, :runtime_min, :runtime, :genre, :summary, :id, :poster_path
+
 
   def initialize(data)
     @id = data[:id]
@@ -9,6 +11,7 @@ class MovieDetail
     @runtime_min = data[:runtime]
     @genre = data[:genres]
     @summary = data[:overview]
+    @poster_path = "https://image.tmdb.org/t/p/original#{data[:poster_path]}"
   end
 
   def genre_names
