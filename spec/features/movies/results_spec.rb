@@ -2,7 +2,7 @@ require 'rails_helper'
 
 
 RSpec.describe "New User", type: :feature do
-  it 'displays top 20 rated movies' do
+  it 'displays top 20 rated movies', :vcr do
     user = User.create!(name: "Tim", email: "Tim@mail.com")
     visit "/users/#{user.id}/movies?q=top%20rated"
 
@@ -25,7 +25,7 @@ RSpec.describe "New User", type: :feature do
   expect(page).to have_content("Vote Average: 8.7")
   end
 
-  it 'has links to movie detail page' do
+  it 'has links to movie detail page', :vcr do
     user = User.create!(name: "Tim", email: "Tim@mail.com")
     visit "/users/#{user.id}/movies?q=top%20rated"
     click_link "Shawshank Redemption"

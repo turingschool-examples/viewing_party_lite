@@ -39,6 +39,8 @@ group :development, :test do
   gem 'pry'
   gem 'figaro'
   gem 'faraday'
+  gem 'vcr'
+  #may need webmock here
 end
 
 group :development do
