@@ -7,19 +7,22 @@ class PartiesController < ApplicationController
   end
 
   def create
+
     new_party = Party.new(party_params)
     if new_party.save
-      params[:users].each do |user|
-        u = User.find(user)
-        if u.id == params[:host].to_i
-          PartyUser.create(user: u, party: new_party, host: true)
-        else
-          PartyUser.create(user: u, party: new_party, host: false)
+      if params[:users]
+        params[:users].each do |user|
+          u = User.find(user)
+          if u.id == params[:host].to_i
+            PartyUser.create(user: u, party: new_party, host: true)
+          else
+            PartyUser.create(user: u, party: new_party, host: false)
+          end
         end
+        redirect_to "/users/#{params[:user_id]}"
+      else
+        render :new
       end
-      redirect_to "/users/#{params[:user_id]}"
-    else
-      render :new
     end
   end
 
