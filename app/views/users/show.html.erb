@@ -1,4 +1,13 @@
 <h1> <%= @user.name%>'s Dashboard</h1>
 
 <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %>
-<h3> Viewing Parties </h3>
+
+<div class="invited_to">
+<h3> Viewing Parties I am Invited To </h3>
+<% @user.invited_parties.each do |party| %>
+<p>Movie: <%= party.movie.title %></p>
+<p>Date: <%= party.date %></p>
+<p>Time: <%= party.time %></p>
+<p>Host: <%= party.host_name %></p>
+<% end %>
+</div>
