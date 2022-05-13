@@ -38,7 +38,7 @@ describe "User dashboard/show" do
     within "#viewing_parties" do
       expect(page.find("#movie_poster")["src"]).to have_content "http://image.tmdb.org/t/p/w300/3mFM80dPzSqoXXuC2UMvLIRWX32.jpg"
       expect(page).to have_content("Party ##{@u1_vp.id}")
-      expect(page).to have_link("Movie: The Twilight Saga: Eclipse")
+      expect(page).to have_link("The Twilight Saga: Eclipse")
       expect(page).to have_content("Date & Time: April 26, 2002 at 01:00")
       expect(page).to have_content("You are hosting!")
 
@@ -68,7 +68,7 @@ describe "User dashboard/show" do
       within "#party_#{@u2_vp.id}" do
         expect(page.find("#movie_poster")["src"]).to have_content "http://image.tmdb.org/t/p/w300/2yYP0PQjG8zVqturh1BAqu2Tixl.jpg"
         expect(page).to have_content("Party ##{@u2_vp.id}")
-        expect(page).to have_link("Movie: Shrek 2")
+        expect(page).to have_link("Shrek 2")
         expect(page).to have_content("Date & Time: February 24, 2002 at 02:00")
         expect(page).to have_content("Host: User Two")
 

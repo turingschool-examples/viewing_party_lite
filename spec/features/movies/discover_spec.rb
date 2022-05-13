@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe "Movies discover page" do
   before do
@@ -20,10 +20,10 @@ describe "Movies discover page" do
   end
 
   it "has a search bar/button", :vcr do
-    expect(page).to have_field("keyword")
+    expect(page).to have_field("q")
     expect(page).to have_button("Search by Title")
 
-    fill_in "keyword", with: "Nothing"
+    fill_in "q", with: "Nothing"
     click_button("Search by Title")
     expect(current_path).to eq("/users/#{@user1.id}/discover")
 
