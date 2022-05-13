@@ -12,7 +12,7 @@ class MovieService < BaseService
   end
 
   def self.movie_details(movie_id)
-    response = conn.get("/3/movie/278?api_key=#{ENV['movie_api_key']}")
+    response = conn.get("/3/movie/#{movie_id}?api_key=#{ENV['movie_api_key']}")
 
     get_json(response)
   end
