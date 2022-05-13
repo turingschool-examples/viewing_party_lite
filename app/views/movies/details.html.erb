@@ -1,10 +1,24 @@
-<%= @movie.title %>
-<%= @movie.vote_average %>
-<%= @movie.runtime %>
-<%= @movie.summary %>
-<%= @movie.review_count %>
-Cast
- Each review's author and information
+<h1> <%= @movie.title %> </h1>
+<h3> Vote Average:</h3> <%= @movie.vote_average %>
+<h3> Runtime:</h3> <%= @movie.format_runtime %> minutes
+<h3> Summary:</h3> <%= @movie.summary %>
+<h3> Review Count:</h3> <%= @movie.review_count %>
+<h3> Genres: </h3>  <% @movie.genres.each do |genre| %>
+                      <%= genre %>
+                    <% end %>
+<br>
+<% if @movie.cast %>
+  <h3> Cast: </h3> <% @movie.cast.each do |cast| %>
+    <p> <%= cast[:name] %> - <%= cast[:character] %> </p>
+  <% end %>
+<% end %>
+<% if @movie.reviews %>
+  <h3> Reviews: </h3> <% @movie.reviews.each do |review| %>
+    <p> Author: <%= review[:author] %> </p>
+    <p> Rating: <%= review[:author_details][:rating] %>
+    <p> Content: <%= review[:content] %></p>
+  <% end %>
+<% end %>
 
-<%= button_to "Create Viewing Party", "/users/#{params[:user_id]}/movies/#{@movie.id}/viewing-party/new" %>
+<%= button_to "Create Viewing Party", "/users/#{params[:user_id]}/movies/#{@movie.id}/viewing-party/new", method: :get %>
 <%= link_to "Discover Page", "/users/#{params[:user_id]}/discover" %>
