@@ -31,6 +31,16 @@ class Movie
     end
   end
 
+  def runtime_with_hours
+    hours = @runtime / 60
+    minutes = @runtime.modulo(60)
+    if hours == 1
+      "#{hours} hour #{minutes} minutes"
+    else
+      "#{hours} hours #{minutes} minutes"
+    end
+  end
+
   # def default_unavailable
   #   variables = [@title, @vote_average, @id, @cast, @runtime, @genres, @summary, @reviews]
   #   variables.each do |var|
