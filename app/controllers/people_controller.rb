@@ -21,8 +21,8 @@ class PeopleController < ApplicationController
   end
 
   def movies
-    # require "pry"
-    # binding.pry
+    movie = params[:movie]
+    @movie_names = MoviesFacade.titles(movie)
   end
 
   private
