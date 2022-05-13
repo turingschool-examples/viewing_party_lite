@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'a users new party creation page' do
-  it 'displays the name of the movie title' do
+  it 'displays the name of the movie title', :vcr do
     user_1 = User.create!(name: 'Will', email: '123@mail.com')
 
     visit "/users/#{user_1.id}/movies/278/viewing-party/new"
@@ -9,7 +9,7 @@ RSpec.describe 'a users new party creation page' do
     expect(page).to have_content('The shawshank redemption')
   end
 
-  it 'has a form with fields for duration, day, and start time' do
+  it 'has a form with fields for duration, day, and start time', :vcr do
     user_1 = User.create!(name: 'Will', email: '123@mail.com')
 
     visit "/users/#{user_1.id}/movies/278/viewing-party/new"
@@ -19,7 +19,7 @@ RSpec.describe 'a users new party creation page' do
     expect(page).to have_field(:start_time)
   end
 
-  it 'has checkboxes for all the registered users' do
+  it 'has checkboxes for all the registered users', :vcr do
     user_1 = User.create!(name: 'Will', email: '123@mail.com')
     user_2 = User.create!(name: 'Charles', email: 'abc@mail.com')
     user_3 = User.create!(name: 'Dylan', email: 'xyz@mail.com')
@@ -37,7 +37,7 @@ RSpec.describe 'a users new party creation page' do
     expect(page).to have_content("#{user_4.email}")
   end
 
-  it 'creates a new party' do
+  it 'creates a new party', :vcr do
     user_1 = User.create!(name: 'Will', email: '123@mail.com')
     user_2 = User.create!(name: 'Charles', email: 'abc@mail.com')
     user_3 = User.create!(name: 'Dylan', email: 'xyz@mail.com')
@@ -56,7 +56,7 @@ RSpec.describe 'a users new party creation page' do
     expect(current_path).to eq("/users/#{user_1.id}")
   end
 
-  it 'flash messages' do
+  it 'flash messages', :vcr do
     user_1 = User.create!(name: 'Will', email: '123@mail.com')
     user_2 = User.create!(name: 'Charles', email: 'abc@mail.com')
     user_3 = User.create!(name: 'Dylan', email: 'xyz@mail.com')
