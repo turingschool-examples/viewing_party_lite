@@ -15,7 +15,7 @@
       <img id="movie_poster" src="http://image.tmdb.org/t/p/w300<%= movie.poster_path %>" alt="<%= movie.title %> poster">
       <h2><a href="users/<%= @user.id %>/movies/<%= party.movie_id %>">Movie: <%= movie.title %></a></h2><br/>
       <h4>Party #<%= party.id %></h4><br/>
-      <h4>Host: <%= User.find(party.user_id).name %></h4><br/>
+      <h4>Host: <%= party.host_name %></h4><br/>
       <h3>Date & Time: <%= party.format_start_time%></h3>
       <p id="<%= party.id %>-invited">Invited:
         <% party.users.each do |user| %>
