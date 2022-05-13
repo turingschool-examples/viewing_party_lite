@@ -6,8 +6,12 @@ RSpec.describe Movie do
     attributes = {
       id: "2",
       title: "Scream",
+      vote_average: "5",
+      vote_average: "5",
+      vote_average: "5",
       vote_average: "5"
     }
+
     movie = Movie.new(attributes)
 
     expect(movie).to be_an_instance_of(Movie)
