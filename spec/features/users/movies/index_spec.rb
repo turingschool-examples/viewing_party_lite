@@ -23,15 +23,27 @@ RSpec.describe 'the users index page' do
     end
   end
 
-  it 'shows search results' do
+  it 'shows search results with vote averages and titles as links of movies that match search params' do
     @user_1 = User.create!(name: 'Alfonso Diogenes', email: 'alphonsodiogenes420@hotmail.com')
     VCR.use_cassette("shows search results") do
       visit user_discover_path(@user_1)
 
       fill_in 'search', with: "fight club"
       click_button("Find Movies")
+      save_and_open_page
       expect(current_path).to eq(user_movies_path(@user_1))
-      expect(page).to have_content("Fight Club")
+
+      within "#movie-550" do
+        expect(page).to have_content("Fight Club")
+        expect(page).to have_content("Vote Average: 8.4")
+        expect(page).to have_link("Fight Club")
+      end
+
+      within "#movie-883656" do
+        expect(page).to have_content("GCW Fight Club")
+        expect(page).to have_content("Vote Average: 0")
+        expect(page).to have_link("GCW Fight Club")
+      end
     end
   end
 end
