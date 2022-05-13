@@ -1,0 +1,15 @@
+<h1><%= "#{@person.name}" %>'s Dashboard</h1>
+
+<p><strong><%= button_to "Discover Movies", discover_path, method: :get  %></strong></p>
+
+<hr>
+
+<section>
+  <h2>Viewing Parties</h2>
+  <% @person.parties.each do |party| %>
+    <p><strong><%= party.movie_name %></strong></p>
+    <p><strong><%= party.date %></strong></p>
+    <p><strong><%= party.time %></strong></p>
+    <p><strong><%= party.duration %></strong></p>
+    <% end %>
+</section>

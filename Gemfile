@@ -33,10 +33,13 @@ gem 'jbuilder', '~> 2.5'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'faraday'
+gem 'standardrb'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
+  gem 'shoulda-matchers'
 end
 
 group :development do
@@ -46,12 +49,15 @@ group :development do
   gem 'rubocop-rails'
 end
 
-group :test do 
+group :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'
   gem 'simplecov'
-end 
+  gem 'figaro'
+  gem 'webmock'
+  gem 'vcr'
+end
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
