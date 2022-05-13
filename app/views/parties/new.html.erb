@@ -1,6 +1,6 @@
 <div id="party">
   <h2>Viewing Party Details</h2>
-  <%= form_with url: "/users/#{@host.id}/movies/#{@movie.id}/viewing-party/new" do |f| %>
+  <%= form_with url: "/users/#{@host.id}/movies/#{@movie.id}/viewing-party/new", local: true do |f| %>
     <p>Movie Title: <%= f.label "#{@movie.title}" %></p>
     <%= f.hidden_field :name, value: "#{@movie.title}" %>
     <p>Duration of Party: <%= f.text_field :duration, value: @movie.runtime %></p>

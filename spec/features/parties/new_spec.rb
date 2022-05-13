@@ -58,4 +58,43 @@ RSpec.describe 'a users new party creation page' do
 
     expect(current_path).to eq("/users/#{user_1.id}")
   end
+
+  it 'flash messages' do
+    user_1 = User.create!(name: 'Will', email: '123@mail.com')
+    user_2 = User.create!(name: 'Charles', email: 'abc@mail.com')
+    user_3 = User.create!(name: 'Dylan', email: 'xyz@mail.com')
+    user_4 = User.create!(name: 'Samantha', email: 'sam@mail.com')
+
+    visit "/users/#{user_1.id}/movies/278/viewing-party/new"
+    fill_in :duration, with: '140'
+    fill_in :date, with: Date.current
+    fill_in :start_time, with: '00:54 PM'
+    check "add-#{user_2.id}"
+    check "add-#{user_3.id}"
+
+    click_button "Create Party"
+
+    expect(current_path).to eq("/users/#{user_1.id}/movies/278/viewing-party/new")
+    expect(page).to have_content("Party can't be shorter than Movie's runtime.")
+
+    fill_in :duration, with: '142'
+    fill_in :start_time, with: '00:54 PM'
+    check "add-#{user_2.id}"
+    check "add-#{user_3.id}"
+
+    click_button "Create Party"
+
+    expect(current_path).to eq("/users/#{user_1.id}/movies/278/viewing-party/new")
+    expect(page).to have_content("Please fill out all fields")
+
+    fill_in :duration, with: '142'
+    fill_in :date, with: Date.current
+    check "add-#{user_2.id}"
+    check "add-#{user_3.id}"
+
+    click_button "Create Party"
+
+    expect(current_path).to eq("/users/#{user_1.id}/movies/278/viewing-party/new")
+    expect(page).to have_content("Please fill out all fields")
+  end
 end
