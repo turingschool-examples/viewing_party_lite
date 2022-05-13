@@ -20,8 +20,6 @@ class MovieService
   end
 
   def self.movie_cast_info(movie_id)
-    require "pry"
-    binding.pry
     response = conn.get("/3/movie/#{movie_id}/credits?") do |faraday|
       faraday.params["api_key"] = ENV["tmdb_api_key"]
     end

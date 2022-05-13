@@ -1,21 +1,28 @@
 require "rails_helper"
 
 RSpec.describe "Movie Detail Page" do
-  xit "has a button to create a viewing party" do
-    # movie =
-    visit movie_path
-    click_button "Create Viewing Party for #{movie.title}"
-    expect(current_path).to eq
+  it "has a button to create a viewing party" do
+    movie1 = Movie.new(title: "Who Killed Mike Dao", vote_average: 10, id: 20)
+
+    visit movie_path(20)
+
+    click_button "Create Viewing Party for #{movie1.title}"
+
+    expect(current_path).to eq(new_person_party_path)
   end
 
   xit "has a button to return to Discover Page" do
+    movie1 = Movie.new(title: "Who Killed Mike Dao", vote_average: 10, id: 20)
+
     visit movie_path
+
     click_button "Discover Page"
+
     expect(current_path).to eq(discover_path)
   end
 
   xit "displays movie information" do
-    # movie =
+    movie1 = Movie.new(title: "Who Killed Mike Dao", vote_average: 10, id: 20)
 
     visit movie_path
 
