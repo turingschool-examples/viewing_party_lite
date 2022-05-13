@@ -19,6 +19,12 @@ Cast: <% @single_movie_credits.cast.first(10).map do |c| %>
   <p><%= c[:name] %></p>
 <% end %>
 
+Reviews: <%= @single_movie_reviews.count %>
+<% @single_movie_reviews.each do |review| %>
+  <p>Author: <%= review.author %></p>
+  <p>Content: <%= review.content %></p>
+<% end %>
+
 
 
 
