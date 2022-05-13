@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
   get '/users/:id/movies', to: 'users#results'
   get '/users/:id/movies/:id', to: 'users#details'
+  post '/users/:id/movies/:id/viewing_party/new', to: 'viewing_party#new'
 end

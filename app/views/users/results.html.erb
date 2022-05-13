@@ -4,7 +4,7 @@
 
 <% @movie_list.each do |movie| %>
   <div id="movie-<%= movie.id %>">
-    <%= link_to "#{movie.title}", "/users/#{params[:id]}/movies/#{movie.id}" %>
+    <%= link_to "#{movie.title}", "/users/#{params[:id]}/movies/#{movie.id}?user_id=#{params[:id]}" %>
     <p>Vote Average: <%= movie.vote_average %></p>
   </div>
 <% end %>
