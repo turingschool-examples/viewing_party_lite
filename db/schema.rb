@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20_220_513_045_145) do
   create_table 'parties', force: :cascade do |t|
     t.integer 'movie_id'
     t.string 'duration'
+    t.date 'date'
     t.time 'time'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false

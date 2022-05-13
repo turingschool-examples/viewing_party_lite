@@ -9,6 +9,7 @@ RSpec.describe MovieDetail do
                       overview: 'Good movie',
                       genres: [{ id: 28, name: 'Action' }, { id: 878, name: 'Science Fiction' }],
                       runtime: 155
+
                     })
   end
 
