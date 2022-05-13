@@ -8,4 +8,22 @@
 
 <div id="viewing_parties"; style="text-align:center">
   <h3>Viewing Parties</h3>
+  <% @parties.each do |party| %>
+    <div id="party-<%= party.id %>"; style="border:2px solid black">
+      <% movie = @movies.find {|movie| movie.id ==  party.name.to_i } %>
+      <% img = @images.find {|image| movie.id ==  image.id } %>
+      <% url = ["https://image.tmdb.org/t/p/w500", img.file_path].join %>
+      <img src="<%= url %>", alt: "movie poster"><br>
+      <%= movie.title %><br>
+      <%= party.date.strftime('%B %d, %Y') %><br>
+      <%= party.start_time.strftime('%l:%M %p') %><br>
+      <% party.users.each do |user| %>
+        <% if user.id == @user.id %>
+          <p>Host: <b><%= user.name %></b></p>
+        <% else %>
+          <p>Invited: <%= user.name %></p>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
 </div>

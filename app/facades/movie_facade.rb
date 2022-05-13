@@ -23,4 +23,9 @@ class MovieFacade
       Movie.new(result)
     end
   end
+
+  def self.single_movie_image(id)
+    json = MovieService.find_images_with_id(id)
+    Image.new(json)
+  end
 end

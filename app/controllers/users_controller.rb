@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   def dashboard
     @user = User.find(params[:id])
+    @parties = @user.parties
+    @movies = @parties.map {|party| MovieFacade.single_movie(party.name)}
+    @images = @parties.map {|party| MovieFacade.single_movie_image(party.name)}
   end
 
   def create
