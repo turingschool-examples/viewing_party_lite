@@ -1,20 +1,37 @@
 <%= render partial: 'partials/navbar_default' %>
-<button><%= link_to "Create Viewing Party for #{@details.title}", "/movies/#{@details.id}/viewing-party/new" %></button><br>
-<h3><%= @details.title %></h3>
-Vote Average: <%= @details.vote_average %><br>
-Runtime: <%= "#{@details.runtime/60}hr" %> <%= "#{@details.runtime % 60} min" %> <br>
+<button><%#= link_to "Create Viewing Party for #{@details.title}", "/movies/#{@details.id}/viewing-party/new" %></button><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3><%= @data[:movie_details].title %></h3>
+Vote Average: <%= @data[:movie_details].vote_average %><br>
+Runtime: <%= "#{@data[:movie_details].runtime/60}hr" %> <%= "#{@data[:movie_details].runtime % 60} min" %> <br>
 Genre(s):
-<%= @details.genre_names.join(", ") %>
+<%= @data[:movie_details].genre_names.join(", ") %>
 <hr>
-Summary: <%= @details.summary %>
+Summary: <%= @data[:movie_details].summary %>
 <hr>
 Cast:<br>
-<% @cast.first(10).each do |member| %>
+<% @data[:movie_cast].first(10).each do |member| %>
   <%= member.name %> as <%= member.character %><br>
 <% end %>
 <hr>
-<%= @reviews.count %> Reviews <br>
-<% @reviews.each do |review| %>
+<%= @data[:movie_reviews].count %> Reviews <br>
+<% @data[:movie_reviews].each do |review| %>
   Author: <%= review.author %><br>
   <%= review.content %><br>
   <% end %>
