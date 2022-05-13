@@ -15,8 +15,8 @@ RSpec.describe "Landing Page" do
 
   it 'displays name of user' do
 
-    drew = User.create(name: "Drew Proebstel", email: "swagmasterd@dopemail.com", password_digest: "@Rush2112" )
-    alex = User.create(name: "Alex Peepee", email: "swagmasterp@dopemail.com", password_digest: "@Rush2112" )
+    drew = User.create!(name: "Drew Proebstel", email: "swagmasterd@dopemail.com")
+    alex = User.create!(name: "Alex P", email: "swagmasterp@dopemail.com")
 
     visit '/'
 
@@ -27,15 +27,15 @@ RSpec.describe "Landing Page" do
   end
 
   it 'links to users dashboard' do
-    drew = User.create(name: "Drew Proebstel", email: "swagmasterd@dopemail.com", password_digest: "@Rush2112" )
+    drew = User.create(name: "Drew Proebstel", email: "swagmasterd@dopemail.com")
     visit '/'
     click_link("Drew Proebstel")
-    expect(current_path).to eq("/users/#{drew.id}")
+    expect(current_path).to eq("/users/#{drew.id}/dashboard")
   end
 
   it 'links to landing page' do
     visit '/'
-    drew = User.create(name: "Drew Proebstel", email: "swagmasterd@dopemail.com", password_digest: "@Rush2112" )
+    drew = User.create(name: "Drew Proebstel", email: "swagmasterd@dopemail.com")
     click_link("Landing Page")
     expect(current_path).to eq("/")
   end
