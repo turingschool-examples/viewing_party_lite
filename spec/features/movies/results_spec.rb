@@ -33,4 +33,16 @@ RSpec.describe "New User", type: :feature do
     expect(current_path).to eq("/users/#{user.id}/movies/278")
 
   end
+
+
+  it 'has a button to return to the discover page' do
+    user = User.create!(name: "Tim", email: "Tim@mail.com")
+    movie = Movie.new(id: 1, title: "Movie", vote_average: "8.2")
+    visit "/users/#{user.id}/movies?q=top%20rated"
+    save_and_open_page
+    click_on "Return to Discover"
+    expect(current_path).to eq("/users/#{user.id}/discover")
+  end
+
+
 end
