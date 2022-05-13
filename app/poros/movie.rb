@@ -4,7 +4,8 @@ class Movie
     :vote_average,
     :genres,
     :runtime,
-    :summary
+    :summary,
+    :poster_path
 
   def initialize(attributes)
     @id = attributes[:id]
@@ -13,6 +14,7 @@ class Movie
     @genres = attributes[:genres]
     @runtime = attributes[:runtime]
     @summary = attributes[:overview]
+    @poster_path = attributes[:poster_path]
   end
 
   def formatted_runtime

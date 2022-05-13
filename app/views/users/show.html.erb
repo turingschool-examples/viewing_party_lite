@@ -10,13 +10,18 @@
 <ul>
   <% @user.parties.each do |party| %>
   <li>
+    <img id="movie_poster" src="http://image.tmdb.org/t/p/w300<%= party.movie.poster_path %>" alt="<%= party.movie.title %> poster">
     <h2><a href="users/<%= @user.id %>/movies/<%= party.movie_id %>">Movie: <%= party.movie.title %></a></h2><br/>
     <h4>Party #<%= party.id %></h4><br/>
     <h4>Host: <%= User.find(party.user_id).name %></h4><br/>
     <h3>Date & Time: <%= party.format_start_time%></h3>
     <p id="<%= party.id %>-invited">Invited:
       <% party.users.each do |user| %>
-        <%= user.name unless user.name == @user.name %>
+        <% if user.name != @user.name %>
+          <strong><%= user.name %></strong>
+        <% else %>
+          <%= user.name %>
+        <% end %>
       <% end %>
     </p>
   </li>
