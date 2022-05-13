@@ -12,12 +12,9 @@ class MoviesController < ApplicationController
     end
   end
 
-
   def show
     @data = MovieFacade.movie_data(params[:id])
   end
-
-
 
   private
 

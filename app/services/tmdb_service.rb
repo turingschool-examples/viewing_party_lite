@@ -1,7 +1,6 @@
 class TmdbService
-
   def self.top20
-    get_url("/movie/top_rated?")[:results]
+    get_url('/movie/top_rated?')[:results]
   end
 
   def self.search(keyword, page = 1)
@@ -27,5 +26,4 @@ class TmdbService
     end
     parsed = JSON.parse(response.body, symbolize_names: true)
   end
-
 end
