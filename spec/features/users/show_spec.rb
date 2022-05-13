@@ -41,4 +41,10 @@ describe 'User dashboard' do
 
     expect(page).to_not have_css("#viewing-party-#{@vp2.id}")
   end
+
+  it 'Movie title is link to movie details page' do
+    click_on 'Star Wars'
+
+    expect(current_path).to eq("/users/#{@user1.id}/movies/11")
+  end
 end
