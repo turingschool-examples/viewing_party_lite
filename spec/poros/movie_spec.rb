@@ -127,4 +127,110 @@ RSpec.describe Movie do
     expect(movie.cast.include?(character12)).to be false
   end
 
+  it 'if the key does not exist it returns nil' do
+    movie_data = {
+      title: "Fun Movie",
+      id: 4,
+      overview: "Lots of laughs for half your family",
+      vote_average: 7.2,
+      runtime: 102,
+      genres: [
+        {id: 2,
+          name: "Comedy"},
+        {id: 5,
+          name: "Science Fiction"},
+        {id: 1,
+          name: "Drama"}
+        ]
+      }
+
+    movie = Movie.new(movie_data)
+    expect(movie.cast).to eq nil
+    expect(movie.reviews).to eq nil
+  end
+
+  it 'get_cast' do
+    cast1 = {name: "Matthew Lewis", character: "Neville Longbottom"}
+    cast2 = {name: "Emilia Clark", character: "Khaleesi"},
+    cast3 = {name: "Orlando Bloom", character: "Legolas"},
+    cast4 = {name: "Johnny Depp", character: "Captain Jack Sparrow"}
+    movie_data = {
+      title: "Fun Movie",
+      id: 4,
+      overview: "Lots of laughs for half your family",
+      vote_average: 7.2,
+      runtime: 102,
+      credits: {
+        cast: [cast1, cast2, cast3, cast4]
+      },
+      reviews: {
+        results: [
+          {author: "Samwise Gamgee",
+         content: "This movie is WILD"},
+          {author: "Draco Malfoy",
+         content: "It would have been better if my father produced it"}
+        ]
+      },
+      genres: [
+        {id: 2,
+          name: "Comedy"},
+        {id: 5,
+          name: "Science Fiction"},
+        {id: 1,
+          name: "Drama"}
+        ]
+      }
+
+    movie = Movie.new(movie_data)
+    expect(movie.get_cast(movie_data)).to eq([cast1, cast2, cast3, cast4])
+  end
+
+  it 'get_genres' do
+    movie_data = {
+      title: "Fun Movie",
+      id: 4,
+      overview: "Lots of laughs for half your family",
+      genres: [
+        {id: 2,
+          name: "Comedy"},
+        {id: 5,
+          name: "Science Fiction"},
+        {id: 1,
+          name: "Drama"}
+        ]
+      }
+
+    movie = Movie.new(movie_data)
+    expect(movie.get_genres(movie_data)).to eq(["Comedy", "Science Fiction", "Drama"])
+  end
+
+  it 'get_reviews' do
+    review1 = {author: "Samwise Gamgee", content: "This movie is WILD"},
+    review2 = {author: "Draco Malfoy", content: "It would have been better if my father produced it"}
+
+    movie_data = {
+      title: "Fun Movie",
+      id: 4,
+      overview: "Lots of laughs for half your family",
+      vote_average: 7.2,
+      runtime: 102,
+      credits: {
+        cast: []
+      },
+      reviews: {
+        results: [review1, review2]
+      },
+      genres: [
+        {id: 2,
+          name: "Comedy"},
+        {id: 5,
+          name: "Science Fiction"},
+        {id: 1,
+          name: "Drama"}
+        ]
+      }
+    movie = Movie.new(movie_data)
+    expect(movie.get_reviews(movie_data)).to eq([review1, review2])
+  end
+
 end
