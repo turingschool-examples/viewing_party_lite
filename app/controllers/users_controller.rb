@@ -27,6 +27,7 @@ class UsersController < ApplicationController
 
   def details
     @movie_details = MovieFacade.single_movie(params[:id])
+    @single_movie_credits = MovieFacade.single_movie_credits(params[:id])
     require "pry"; binding.pry
   end
 

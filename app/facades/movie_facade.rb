@@ -11,4 +11,9 @@ class MovieFacade
     json = MovieService.find_with_id(id)
     Movie.new(json)
   end
+
+  def self.single_movie_credits(id)
+    json = MovieService.find_credits_with_id(id)
+    Movie.new(json)
+  end
 end

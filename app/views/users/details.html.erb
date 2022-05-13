@@ -6,6 +6,13 @@
   <%= f.submit "Create a Viewing Party" %>
 <% end %>
 
+Title: <%= @movie_details.title %><br>
+Vote Average: <%= @movie_details.vote_average %><br>
+Runtime: <%= @movie_details.runtime %><br>
+Summary: <%= @movie_details.overview %><br>
+Genre(s): <% @movie_details.genres.each do |genre| %>
+  <p><%= genre[:name] %></p>
+<% end %>
 
 
 
