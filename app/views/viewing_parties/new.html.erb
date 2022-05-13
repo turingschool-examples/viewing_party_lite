@@ -1,7 +1,7 @@
 <h1>New Viewing Party</h1>
 <% if @movie.movie_details %>
-  <%=  @movie.movie_details[:title]%>
-  <%=  @movie.movie_details[:vote_average]%>
-  <%=  @movie.movie_details[:runtime]%>
-  <%=  @movie.movie_details[:overview]%>
+<p>Title: <%=  @movie.movie_details[:title]%></p>
+<p>Vote Average: <%=  @movie.movie_details[:vote_average]%>
+<p>Runtime: <%=  "#{@movie.movie_details[:runtime]/60} hour and #{@movie.movie_details[:runtime]%60} minutes" %>
+<p>Overview: <%=  @movie.movie_details[:overview]%>
 <% end %>
