@@ -6,6 +6,6 @@
 
 <div class="api-info">
   <% @movies.each do |movie| %>
-    <%= link_to movie.title, movies_path(:id), method: :get %> Vote Average: <%= movie.vote_average %><br>
+    <%= link_to movie.title, movie_path(:id), method: :get %> Vote Average: <%= movie.vote_average %><br>
   <% end %>
 </div>

@@ -9,4 +9,9 @@ class MoviesController < ApplicationController
 
   def discover
   end
+
+  def show
+    binding.pry
+    @movie = Movie.find(params[:id])
+  end
 end
