@@ -12,7 +12,9 @@ class UsersController < ApplicationController
   end
 
   def discover
-    @top_movies = MovieFacade.top_rated_movies
+    # params q = top rated !!!!!!!
+    @user = User.find(params[:user_id])
+    # @top_movies = MovieFacade.top_rated_movies
     # if params[top_rated]
     #   do this
     # elsif params[search]

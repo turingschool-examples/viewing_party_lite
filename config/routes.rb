@@ -7,5 +7,14 @@ Rails.application.routes.draw do
   post '/users/new', to: 'users#create'
   get '/users/:id', to: 'users#show'
 
-  get 'users/:user_id/movies', to: 'users#discover'
+  get 'users/:user_id/movies/discover', to: 'users#discover'
+
+  get '/users/:id/movies', to: 'movies#results'
+
+  # get "/users/:user_id/movies/search", to: 'movies#search'
+
+  get '/users/:user_id/movies/:movie_id', to: 'movies#show'
+
+  # post '/users/:id/movies', to: 'movies#discover'
+
 end

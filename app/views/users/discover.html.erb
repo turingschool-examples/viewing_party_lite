@@ -1,6 +1,8 @@
-<h1>Top 20 Movies</h1>
 
-<% @top_movies.each do |movie| %>
-  <p>Title: <%= movie.original_title %></p>
-  <p>Vote Average: <%= movie.vote_average %></p>
+<%= link_to 'see top 20 movies', "/users/#{@user.id}/movies?q=top%20rated" %>
+
+<%= form_with url: "/users/#{@user.id}/movies?q=keyword", method: :get, local: true do |form| %>
+<%= form.label :keyword, "Search by title" %>
+<%= form.text_field :keyword %>
+<%= form.submit "search" %>
 <% end %>
