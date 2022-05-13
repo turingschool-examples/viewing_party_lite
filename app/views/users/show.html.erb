@@ -11,7 +11,7 @@
 
 <h3>Invited:</h3>
 <ul>
-  <% @user.parties.each do |party| %>
+  <% @user.invited_parties.each do |party| %>
   <div id="party_<%= party.id %>">
     <li>
       <% movie = party.movie %>

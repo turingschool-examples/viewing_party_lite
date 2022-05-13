@@ -44,5 +44,30 @@ describe User, type: :model do
         expect(@user3.invited_parties).to eq([@u2_vp, @u3_vp])
       end
     end
+
+    describe "hosting_parties" do
+      it "should return parties that the user is hosting" do
+        @user1 = User.create!(name: "User One", email: "user1@test.com")
+        @user2 = User.create!(name: "User Two", email: "user2@test.com")
+        @user3 = User.create!(name: "User Three", email: "user3@test.com")
+
+        @u1_vp = Party.create!(event_date: DateTime.new(2002, 0o4, 26, 6, 0, 0, "-07:00"), duration: "230 mins", start_time: DateTime.new(2002, 0o4, 26, 6, 0, 0, "-07:00"), user_id: @user1.id, movie_id: 24021)
+        @u1_vp_inv_1 = Invitation.create!(user_id: @user1.id, party_id: @u1_vp.id)
+        @u1_vp_inv_2 = Invitation.create!(user_id: @user2.id, party_id: @u1_vp.id)
+
+        @u2_vp_1 = Party.create!(event_date: DateTime.new(2002, 0o2, 24, 7, 0, 0, "-07:00"), duration: "230 mins", start_time: DateTime.new(2002, 0o2, 24, 7, 0, 0, "-07:00"), user_id: @user2.id, movie_id: 809)
+        @u2_vp_inv_1 = Invitation.create!(user_id: @user2.id, party_id: @u2_vp_1.id)
+        @u2_vp_inv_2 = Invitation.create!(user_id: @user3.id, party_id: @u2_vp_1.id)
+        @u2_vp_inv_3 = Invitation.create!(user_id: @user1.id, party_id: @u2_vp_1.id)
+
+        @u2_vp_2 = Party.create!(event_date: DateTime.new(2002, 0o2, 24, 7, 0, 0, "-07:00"), duration: "230 mins", start_time: DateTime.new(2002, 0o2, 24, 7, 0, 0, "-07:00"), user_id: @user2.id, movie_id: 809)
+        @u2_vp_inv_1 = Invitation.create!(user_id: @user2.id, party_id: @u2_vp_2.id)
+        @u2_vp_inv_2 = Invitation.create!(user_id: @user3.id, party_id: @u2_vp_2.id)
+
+        expect(@user1.hosting_parties).to eq([@u1_vp])
+        expect(@user2.hosting_parties).to eq([@u2_vp_1, @u2_vp_2])
+        expect(@user3.hosting_parties).to eq([])
+      end
+    end
   end
 end
