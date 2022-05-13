@@ -18,10 +18,11 @@ class MovieService < ApplicationService
   end
 
   def cast(movie_id)
-    conn.get("/3/movie/#{movie_id}/credits?api_key=#{ENV['tmdb_key']}")[:cast]
+    response = conn.get("/3/movie/#{movie_id}/credits")
+    parse_json(response.body)[:cast]
   end
 
   def reviews(movie_id)
-    conn.get("/movie/#{movie_id}/reviews?api_key=#{ENV['tmdb_key']}")[:results]
+    response = conn.get("/movie/#{movie_id}/reviews?api_key=#{ENV['tmdb_key']}")[:results]
   end
 end
