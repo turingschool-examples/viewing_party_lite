@@ -43,28 +43,28 @@ RSpec.describe "User Dashboard/Show Page", type: :feature do
     visit "/users/#{user_1.id}"
     save_and_open_page
     within ".invited_to" do
-      expect(page).to have_content("Shawshank Redemption")
-      expect(page).to have_content("Schindler's List")
-      expect(page).not_to have_content("The Godfather")
+      expect(page).to have_link("Shawshank Redemption")
+      expect(page).to have_link("Schindler's List")
+      expect(page).not_to have_link("The Godfather")
     end
 
     within ".hosting" do
-      expect(page).to have_content("The Godfather")
-      expect(page).not_to have_content("Shawshank Redemption")
-      expect(page).not_to have_content("Schindler's List")
+      expect(page).to have_link("The Godfather")
+      expect(page).not_to have_link("Shawshank Redemption")
+      expect(page).not_to have_link("Schindler's List")
     end
 
     visit "/users/#{user_2.id}"
     within ".invited_to" do
-      expect(page).to have_content(movie_2.title)
-      expect(page).not_to have_content(movie_1.title)
-      expect(page).not_to have_content(movie_3.title)
+      expect(page).to have_link("The Godfather")
+      expect(page).not_to have_link("Shawshank Redemption")
+      expect(page).not_to have_link("Schindler's List")
     end
 
     within ".hosting" do
-      expect(page).to have_content(movie_1.title)
-      expect(page).to have_content(movie_3.title)
-      expect(page).not_to have_content(movie_2.title)
+      expect(page).to have_link("Shawshank Redemption")
+      expect(page).to have_link("Schindler's List")
+      expect(page).not_to have_link("The Godfather")
     end
   end
 end
