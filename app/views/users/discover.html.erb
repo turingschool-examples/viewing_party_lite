@@ -1,0 +1,14 @@
+<div style="text-align:center;">
+  <h1 id="title">Viewing Party Lite</h1>
+  <h2>Discover Movies</h2>
+</div>
+
+<div style="text-align:center;">
+  <%= button_to "Discover Top Rated Movies", "/users/#{@user.id}/movies", method: :get, params: {q: 'top%20rated'}, local: true %>
+</div>
+
+<%= form_with url: "/users/#{@user.id}/movies", method: :get, local: true do |f| %>
+  <%= f.label "Find Movies" %>
+  <%= f.text_field :q %>
+  <%= f.submit "Search" %>
+<% end %>
