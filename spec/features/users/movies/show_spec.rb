@@ -6,8 +6,11 @@ RSpec.describe 'Move detail page' do
     visit "/users/#{@user.id}/movies/862"
   end
 
-  it 'has a button to create a new viewing party and displays movie details' do
-    click_button 'Create Viewing Party'
+it 'has a button to create a viewing party' do
+  click_button 'Create Viewing Party'
+  expect(current_path).to eq("/users/#{@user.id}/movies/862/viewing-party/new")
+end
+  it 'displays movie details' do
     expect(page).to have_content('Toy Story')
     expect(page).to have_content('Vote Average: 8.0')
     expect(page).to have_content('Runtime: 1 hour(s) and 21 minutes')
