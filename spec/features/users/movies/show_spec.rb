@@ -6,20 +6,8 @@ RSpec.describe 'Move detail page' do
     visit "/users/#{@user.id}/movies/862"
   end
 
-  it 'has a button to create a viewing party and to return to the discover page' do
+  it 'has a button to create a new viewing party and displays movie details' do
     click_button 'Create Viewing Party'
-    # expect(current_path).to eq("/users/#{@user.id}/movies/862/viewing-party/new")
-    # visit "/users/#{@user.id}/movies/862"
-    # click_button 'Discover Page'
-    # expect(current_path).to eq("/users/#{@user.id}/discover")
-  # end
-
-  # it 'viewing party page displays movie details' do
-    # user = User.create!(name: 'Chris', email: 'chrisr@gmail.com')
-    # visit "/users/#{user.id}/movies/862"
-    # visit "/users/#{@user.id}/movies/862"
-    # click_button 'Create Viewing Party'
-    # expect(current_path).to eq("/users/#{@user.id}/movies/862/viewing-party/new")
     expect(page).to have_content('Toy Story')
     expect(page).to have_content('Vote Average: 8.0')
     expect(page).to have_content('Runtime: 1 hour(s) and 21 minutes')
@@ -48,7 +36,6 @@ RSpec.describe 'Move detail page' do
     expect(page).to have_content('Sid')
     expect(page).to have_content('Laurie Metcalf')
     expect(page).to have_content('Mrs. Davis')
-    # new endpoint, /reviews
     expect(page).to have_content('Total Reviews: 3')
     expect(page).to have_content('Gimly')
     expect(page).to have_content('Ruuz')
@@ -57,5 +44,9 @@ RSpec.describe 'Move detail page' do
     expect(page).to have_content('Rating: 9.0')
     expect(page).to have_content('r96sk')
     expect(page).to have_content('Rating: 10.0')
+  end
+  it 'has a button to the discover page' do
+    click_button 'Discover Page'
+    expect(current_path).to eq("/users/#{@user.id}/discover")
   end
 end
