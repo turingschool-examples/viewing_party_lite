@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
       end 
       response = conn.get("/3/movie/#{id}?api_key=#{ENV['movie_db_key']}")
-      @movies << JSON.parse(response.body, symbolize_names: true)
+      @movies << Movie.new(JSON.parse(response.body, symbolize_names: true))
     end 
     @movies 
   end
