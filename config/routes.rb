@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/', to: 'landing#index'
 
   get '/register', to: 'users#new'
+  post '/users/:id', to: 'viewing_parties#create'
 
   resources :users, only: [:show, :create] do
     resources :movies, only: [:index, :show] do

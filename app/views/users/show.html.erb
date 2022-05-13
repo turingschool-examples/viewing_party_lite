@@ -6,6 +6,12 @@
   <div id="viewing-party-<%= party.id %>">
     <h3><%= party.movie_title %></h3>
     <p><%= party.date.strftime('%B %d, %Y') %></p>
+    <p><%= party.duration %></p>
     <p><%= party.start_time %></p>
+    <% if @user.is_host?(party.id) %>
+      <p>Hosting</p>
+    <% else %>
+      <p>Invited</p>
+    <% end %>
   </div>
 <% end %>
