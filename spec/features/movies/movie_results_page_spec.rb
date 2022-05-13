@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Movie results page' do
   describe 'As a user when I visit the Movie Results page top movies' do
-    it 'displays the titles of the top rated movies as a link the movie details page' do
+    it 'displays the titles of the top rated movies as a link the movie details page', :vcr do
       user1 = User.create!(name: 'Will', email: '123@mail.com')
       user2 = User.create!(name: 'Craig', email: 'abc@mail.com')
 
@@ -16,7 +16,7 @@ RSpec.describe 'Movie results page' do
       expect(current_path).to_not eq("/users/#{user2.id}/movies/278")
     end
 
-    it 'displays the vote average of the movie' do
+    it 'displays the vote average of the movie', :vcr do
       user1 = User.create!(name: 'Will', email: '123@mail.com')
 
       visit "/users/#{user1.id}/discover"
@@ -28,7 +28,7 @@ RSpec.describe 'Movie results page' do
     end
   end
   describe 'Search for title by name' do
-    it 'returns search results for movie title' do
+    it 'returns search results for movie title', :vcr do
       user1 = User.create!(name: 'Will', email: '123@mail.com')
       user2 = User.create!(name: 'Craig', email: 'abc@mail.com')
 
