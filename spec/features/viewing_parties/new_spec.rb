@@ -30,10 +30,11 @@ describe 'create a new viewing party' do
 
       check :John
       click_on 'Create Viewing Party'
-
+      
+      viewing_party_id = ViewingParty.last.id
       expect(current_path).to eq user_path(@user)
 
-      within("#movie-#{@movie_id}") do
+      within("#viewing-party-#{viewing_party_id}") do
         expect(page).to have_content('Fight Club')
         expect(page).to have_content('May 12, 2022')
         expect(page).to have_content('7:00')
@@ -42,7 +43,7 @@ describe 'create a new viewing party' do
 
       visit user_path(@user2)
 
-      within("#movie-#{@movie_id}") do
+      within("#viewing-party-#{viewing_party_id}") do
         expect(page).to have_content('Fight Club')
         expect(page).to have_content('May 12, 2022')
         expect(page).to have_content('7:00')

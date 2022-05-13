@@ -1,6 +1,6 @@
 <h1>Create a Movie Party for <%= params[:movie_title] %></h1>
 <%= form_with url: user_path(@user), local: true do |form|  %>
-<%= hidden_field_tag :movie_title, params[:movie_title] %>
+  <%= hidden_field_tag :movie_title, params[:movie_title] %>
   <%= form.label :duration %>
   <%= form.number_field :duration, value: params[:duration] %>
 
@@ -13,8 +13,10 @@
   <%= form.time_select :time %>
 
   <% @users.each do |user| %>
-    <%= form.label user.name.to_sym %>
-    <%= form.check_box user.name.to_sym %>
+    <% if @user.name != user.name %>
+      <%= form.label user.name.to_sym %>
+      <%= form.check_box user.name.to_sym %>
+    <% end %>
   <% end %>
 
   <%= form.submit 'Create Viewing Party' %>

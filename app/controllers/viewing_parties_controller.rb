@@ -6,15 +6,22 @@ class ViewingPartiesController < ApplicationController
   end
 
   def create
-binding.pry
+    host_user = User.find(params[:id])
+    party = ViewingParty.create!(
+      duration: params[:duration],
+      date: "#{params["date(1i)"]}/#{params["date(2i)"]}/#{params["date(3i)"]}",
+      start_time: "#{params["time(4i)"]}:#{params["time(5i)"]}",
+      movie_title: params[:movie_title],
+    )
 
-    user = User.find(params[:id])
-#    user.viewing_parties.create!(viewing_party_params)
-  user.viewing_parties.create!( duration: params[:duration],
-    date: "#{params["date(1i)"]}/#{params["date(2i)"]}/#{params["date(3i)"]}",
-    start_time: "#{params["time(4i)"]}:#{params["time(5i)"]}",
-    movie_title: params[:movie_title])
-    redirect_to user_path(user)
+    User.all.each do |user|
+      if user.name == host_user.name
+        PartyUser.create!(user_id: host_user.id, viewing_party_id: party.id, host: true)
+      elsif params.keys.include?(user.name)
+        PartyUser.create!(user_id: user.id, viewing_party_id: party.id)
+      end
+    end
+    redirect_to user_path(host_user)
   end
 
   private
