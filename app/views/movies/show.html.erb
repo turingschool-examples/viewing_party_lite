@@ -5,33 +5,79 @@
 
 
 
+<br>
+<h4>Movie Details:</h4>
+<table class="table table-hover">
+<thead>
+  <tr>
+    <th scope="row"></th>
+    <th scope="col">Title</th>
+    <th scope="col">Vote Average</th>
+    <th scope="col">Runtime</th>
+    <th scope="col">Genre(s)</th>
+  </tr>
+</thead>
+<tbody>
+<tr>
+  <th scope="row"></th>
+  <td> <%= @data[:movie_details].title %></td>
+  <td> <%= @data[:movie_details].vote_average %></td>
+  <td> <%= "#{@data[:movie_details].runtime/60}hr" %> <%= "#{@data[:movie_details].runtime % 60} min" %></td>
+  <td> <%= @data[:movie_details].genre_names.join(" / ") %></td>
+</div>
+</table>
+<ul>
+<h5>Summary:</h5>
+ <%= @data[:movie_details].summary %>
+4</ul>
 
-
-
-
-
-
-
-
-
-
-
-
-<h3><%= @data[:movie_details].title %></h3>
-Vote Average: <%= @data[:movie_details].vote_average %><br>
-Runtime: <%= "#{@data[:movie_details].runtime/60}hr" %> <%= "#{@data[:movie_details].runtime % 60} min" %> <br>
-Genre(s):
-<%= @data[:movie_details].genre_names.join(", ") %>
-<hr>
-Summary: <%= @data[:movie_details].summary %>
-<hr>
-Cast:<br>
-<% @data[:movie_cast].first(10).each do |member| %>
-  <%= member.name %> as <%= member.character %><br>
+<br><br>
+ <h4>Cast:</h4>
+<table class="table table-hover">
+<thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Character</th>
+    <th scope="col">Played by</th>
+  </tr>
+</thead>
+<tbody>
+<% @data[:movie_cast].first(10).each_with_index do |cast, index|%>
+  <th scope="row"><%= index+1 %></th>
+  <td> <%= cast.character %></td>
+  <td> <%= cast.name %></td>
+</div>
+</tbody>
 <% end %>
-<hr>
-<%= @data[:movie_reviews].count %> Reviews <br>
-<% @data[:movie_reviews].each do |review| %>
-  Author: <%= review.author %><br>
-  <%= review.content %><br>
-  <% end %>
+</table>
+ <br>
+
+<h4>Reviews(<%= @data[:movie_reviews].count%>)</h4>
+<table class="table table-hover">
+<thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Author</th>
+    <th scope="col">Content</th>
+  </tr>
+</thead>
+<tbody>
+<% @data[:movie_reviews].each_with_index do |review, index|%>
+  <th scope="row"><%= index+1 %></th>
+  <td> <%= review.author%></td>
+  <td> <%= review.content%></td>
+</div>
+</tbody>
+<% end %>
+</table>
+
+
+
+
+
+
+
+
+
+
+

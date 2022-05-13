@@ -12,7 +12,7 @@ class MovieDetail
 
   def genre_names
     @genre.map do |genre|
-      genre
+      genre[:name]
     end
   end
 end
