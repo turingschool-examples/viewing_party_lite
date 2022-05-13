@@ -1,0 +1,37 @@
+<%= render partial: 'partials/navbar_default' %>
+<br>
+<h4>Start a Viewing Party for <%=@movie.title%></h4>
+<%= form_with url: user_movie_viewing_party_index_path(@user.id, @party.movie_id), method: :post, local:true do |f|%>
+<div class="card" style="width: 25rem;">
+  <div class="card-body">
+    <div class="mb-3">
+      <ul>
+      <strong><%= f.label :duration, "Duration in mins",  { class: "form-label"} %></strong>
+      <%= f.text_field :duration_user, { class: "form-control", value: @movie.runtime_min } %>
+     </ul>
+     <ul>
+      <strong><%= f.label :date, "Viewing Date", { class: "form-label"}%></strong><br/>
+      <%= f.date_select :date, order: [:month, :day, :year], prompt: { month: Date::MONTHNAMES[Date.today.month], day: Date.today.day, year: Date.today.year }, start_year: Date.today.year+2, end_year: Date.today.year %>
+    </ul>
+    <ul>
+      <strong><%= f.label :time, "Viewing Time", { class: "form-label"}%></strong><br/>
+      <%= f.time_select :time, {:default => {:hour => '19', :minute => '30'}} %>
+    </ul>
+    <ul>
+      <strong><%= f.label :users, "Invite Friends:", { class: "form-label"}%></strong><br/>
+    <% @users.each do |user| %>
+    <li>
+      <div class="user-<%=user.id%>">
+      <%= f.label :user, user.name %>
+      <%= check_box_tag "user_ids[]", user.id, false %>
+    </div>
+   </li>
+    <% end %>
+    </ul>
+  
+<br>
+    <%= f.submit "Create", class: "btn btn-primary" %>
+  </div>
+</div>
+<% end %>
+</ul>

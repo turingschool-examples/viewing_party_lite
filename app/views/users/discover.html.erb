@@ -1,0 +1,30 @@
+
+<%= render partial: 'partials/navbar_default' %>
+<br><br>
+<h1>Discover Movies You'll Enjoy: </h1>
+<br>
+  <ul>
+    <a href="/users/<%= @user.id %>/movies?q=top%20rated" class="btn btn-outline-success my-2 my-sm-0" role='button'>View Top Movies</a>
+ </ul>
+
+ <%#= form_with url: "/users/#{@user.id}/movies", method: :get, local:true do |f|%>
+  <%#= f.label :keyword%>
+  <%#= f.text_area :keyword%>
+  <%#= f.submit "Searach" %>
+ <%# end %>
+<h2>OR</h2>
+<ul>
+<%= form_with url: "/users/#{@user.id}/movies?keyword=keyword", method: :get, local:true do |f|%>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <div class="mb-3">
+      <%= f.label :Search_by_keyword, { class: "form-label"} %>
+      <%= f.text_field :keyword, { class: "form-control", placeholder: "Enter Keyword Here..." } %>
+    </div>
+
+    <%= f.submit "Search", class: "btn btn-primary" %>
+
+  </div>
+</div>
+<% end %>
+</ul>

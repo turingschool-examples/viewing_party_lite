@@ -1,0 +1,51 @@
+
+<div class='d-flex align-items-center justify-content-center'>
+  <h1>  <%= @user.name %>'s Dashboard</h1>
+</div>
+<%= render partial: 'partials/navbar_user', :locals => {:user_id => @user.id} %>
+<br>
+<h3>Viewing Parties</h3>
+<div class="row">
+<% @user.parties.each do |party| %>
+<div class="card" style="width: 25rem;">
+  <div class="card-body"; padding: 10px>
+    <div class="mb-3">
+   <div class=<%= "viewing_party_#{party.movie_id}" %>>
+     <img src= <%= party.movie_poster %> alt="" style="width:100%;height:100%;">
+    <ul>
+      <br>
+     <h4><%= link_to "#{party.movie_title}", user_movie_path(@user.id, party.movie_id)%></h4>
+     <p><%= "Date: #{party.movie_date}" %> <%= "Time: #{party.movie_time}" %></p>
+
+     <% if party.host.id == @user.id %>
+       <p><strong><%= "You are hosting!"%></strong></p>
+       <div class=<%= "movie_#{party.movie_id}_viewers" %>>
+         <p>Friends Invited:</p>
+         <ul>
+           <% party.viewers.each do |viewer| %>
+             <li><%= viewer.name %></li>
+           <% end %>
+         </ul>
+       </div>
+       <% else %>
+      <p><%= "Host: #{party.host_name}" %></p>
+      <div class=<%= "movie_#{party.movie_id}_viewers" %>>
+        <p><%= "Viewers:" %></p>
+        <ul>
+          <% party.viewers.each do |viewer| %>
+            <% if viewer.id == @user.id %>
+              <li><strong><%= viewer.name %>(me)</strong></li>
+            <% else %>
+              <li><%= viewer.name %></li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </ul>
+  </div>
+</div>
+</div>
+</div>
+     <% end %>
+</div>
