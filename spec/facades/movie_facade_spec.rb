@@ -17,7 +17,7 @@ RSpec.describe "Movie Facade" do
 
   it "finds movie details by id", :vcr do
     movie = MovieFacade.movie_details(278)
-    
-    expect(movie).to be_a Movie
+
+    expect(movie).to be_a MovieDetails
   end
 end

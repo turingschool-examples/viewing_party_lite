@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 13 May 2022 14:54:32 GMT
+      - Fri, 13 May 2022 17:55:03 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -40,13 +40,15 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 34d83bdced2ff151ec8c14c89b681518.cloudfront.net (CloudFront)
+      - 1.1 28d79637e27f11e3ab19a9515e273a5a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - SLC50-C1
+      - DEN50-C2
       X-Amz-Cf-Id:
-      - g4hGxhn5h3LzYeCgm9ZJKhCxvvMhP5gsw5Js7ciE018UPC_dwndQyQ==
+      - LpZbn-4KGHY8Vr1mzOgQqP2slEepuyJWkt2Fk7hkrDpq7orAWwUicA==
+      Age:
+      - '567'
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/1riTqK5ouEgjTs69MVm0F8dXilZ.jpg","genre_ids":[28,35,12,10752],"id":7446,"original_language":"en","original_title":"Tropic
@@ -67,5 +69,5 @@ http_interactions:
         vs Mark Andrews vs Dave Mastiff vs Zack Gibson vs Nathan Cruz vs Pastor William
         Eaver  PROGRESS World Title Match: Pete Dunne (c) vs Jimmy Havoc","popularity":0.6,"poster_path":"/bTEJ3D6QsmJpPcE3BvxmJvW42OM.jpg","release_date":"2017-01-29","title":"PROGRESS
         Chapter 43: Tropic Thunderbastard","video":true,"vote_average":0,"vote_count":0}],"total_pages":1,"total_results":3}'
-  recorded_at: Fri, 13 May 2022 14:54:32 GMT
+  recorded_at: Fri, 13 May 2022 18:04:30 GMT
 recorded_with: VCR 6.1.0
