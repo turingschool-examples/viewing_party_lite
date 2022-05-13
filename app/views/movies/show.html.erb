@@ -5,6 +5,7 @@
 <p><%= @movie.summary %></p>
 
 <div id="genres">
+  <h3>Genres:</h3>
   <ul>
     <% @movie.genres.each do |genre| %>
     <li><%= genre[:name] %></li>
@@ -13,10 +14,11 @@
 </div>
 
 <div id="cast">
+  <h3>Cast:</h3>
   <ul>
     <% @cast.each do |cast_member| %>
     <li>Actor: <%= cast_member.actor %></li>
-    <li>Character: <%= cast_member.character %></li>
+    <li>Character: <%= cast_member.character %></li><hr>
     <% end %>
   </ul>
 </div>
@@ -30,7 +32,7 @@
         Review: <%= r.content %>
         <br/>
         Author: <%= r.author %>
-      </li>
+      </li><hr>
     <% end %>
   </ul>
 

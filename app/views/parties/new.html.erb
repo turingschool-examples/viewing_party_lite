@@ -1,0 +1,27 @@
+<h1><%= @movie.title %></h1>
+
+<%= form_with url: "/users/#{@user.id}/movies/#{@movie.id}/parties", method: :post, local: true do |form| %>
+  <%= form.label :duration, "Duration" %>
+  <%= form.number_field :duration, value: @movie.runtime %><br>
+
+  <br><%= form.label :event_date, "Event Date" %>
+  <%= form.date_select :event_date, order: [:month, :day, :year] %><br>
+
+  <br><%= form.label :start_time, "Start Time" %>
+  <%= form.time_select :start_time, prompt: {hour: 'Hour', minute: 'Minute'} %><br>
+
+  <% @users.each do |user| %>
+    <% unless user.id == @user.id %>
+      <%= check_box_tag 'invited_users[]', user.id %>
+      <%= user.name %>
+    <% end %>
+  <% end %>
+
+  <%= form.hidden_field(:runtime, value: @movie.runtime) %>
+
+  <br><%= form.submit "Create Party" %>
+<% end %>
+
+<% flash.each do |type, message| %>
+  <p><%= message %></p>
+<% end %>

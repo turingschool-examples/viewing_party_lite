@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :new, :create] do
     resources :discover, only: [:index], controller: "movies"
     resources :movies, only: [:show] do
-      resources :parties, only: [:new]
+      resources :parties, only: [:new, :create]
     end
   end
 end
