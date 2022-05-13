@@ -8,4 +8,8 @@ class User < ApplicationRecord
   def invited_parties
     parties.where("parties.user_id != ?", id)
   end
+
+  def hosting_parties
+    parties.where("parties.user_id = ?", id)
+  end
 end
