@@ -2,5 +2,5 @@ class PartyUser < ApplicationRecord
   belongs_to :user
   belongs_to :party
 
-  validates_presence_of :host
+  validates :host, inclusion: { in: [true, false] }
 end
