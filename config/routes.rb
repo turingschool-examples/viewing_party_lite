@@ -5,11 +5,11 @@ Rails.application.routes.draw do
 
   post '/users', to: 'users#create'
 
+  get '/users/:id', to: 'users#show', as: :users_dashboard
   get '/users/:user_id/movies/:id/viewing-party/new', to: 'parties#new'
   get '/users/:user_id/movies/:id', to: 'movies#details'
   get '/users/:id/movies', to: 'movies#results'
   get '/users/:id/discover', to: 'movies#index'
-  get '/users/:id', to: 'users#show', as: :users_dashboard
   post '/users/:user_id/movies/:id/viewing-party', to: 'parties#create'
 
 end
