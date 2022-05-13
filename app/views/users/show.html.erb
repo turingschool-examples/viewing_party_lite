@@ -17,15 +17,15 @@
 
       <p>When: <%= party.when.strftime('%B %d, %Y') %></p>
       <p>Start Time: <%= party.start_time.strftime('%I:%M %p') %></p>
-        <% if party.user_id == @user.id %>
-           <b>Hosting</b>
-       
-
-
-      <% elsif party.attendees.each do |attendee| %>
-
-        <%  attendee.user_id == @user.id %>
-          <i>Invited</i>
+      <p>Host: <%= party.user.name %></p>
+      <p>Attendees:</p>
+      <% if party.attendees.each do |attendee| %>
+        <% if attendee.user_id == @user.id %>
+        <b><%= attendee.user.name %></b>
+        <% else %>
+          <%= attendee.user.name %>
+          
+        <% end %>
         <% end %>
       <% end %>
 

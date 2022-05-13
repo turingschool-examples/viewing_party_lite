@@ -45,13 +45,18 @@ RSpec.describe 'User Dashboard', type: :feature do
         expect(page).to have_content("Jaws")
         expect(page).to have_content('When: February 08, 2023')
         expect(page).to have_content("Start Time: 09:30 AM")
-        expect(page).to have_content("Invited")
+        expect(page).to have_content("Host: Zel")
+        expect(page).to have_content("Attendees:")
+        expect(page).to have_content("Alex")
       end 
       within "#party_id-#{party2.id}" do 
         expect(page).to have_content("The Fountain")
         expect(page).to have_content("When: May 08, 2022")
         expect(page).to have_content("Start Time: 02:30 PM")
-        expect(page).to have_content("Invited")
+        expect(page).to have_content("Host: Zel")
+        expect(page).to have_content("Attendees:")
+        expect(page).to have_content("Alex")
+
       end 
     end 
   end 
@@ -76,19 +81,21 @@ RSpec.describe 'User Dashboard', type: :feature do
         expect(page).to have_content("Jaws")
         expect(page).to have_content('When: February 08, 2023')
         expect(page).to have_content("Start Time: 09:30 AM")
-        expect(page).to have_content("Hosting")
+        expect(page).to have_content("Host: Zel")
       end 
       within "#party_id-#{party2.id}" do 
         expect(page).to have_content("The Fountain")
         expect(page).to have_content("When: May 08, 2022")
         expect(page).to have_content("Start Time: 02:30 PM")
-        expect(page).to have_content("Hosting")
+        expect(page).to have_content("Host: Zel")
+
       end 
       within "#party_id-#{party3.id}" do 
         expect(page).to have_content("Jaws")
         expect(page).to have_content('When: June 08, 2022')
         expect(page).to have_content("Start Time: 04:00 PM")
-        expect(page).to have_content("Invited")
+        expect(page).to have_content("Attendees:")
+        expect(page).to have_content("Zel")
       end 
     end 
     it 'each movie title links to that movies details/show page' do 
