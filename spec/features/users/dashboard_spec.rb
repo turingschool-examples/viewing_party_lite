@@ -10,7 +10,7 @@ RSpec.describe 'User Dashboard', type: :feature do
 
   it 'contains all expected attributes of the selected user' do
     visit "/users/#{@user1.id}"
-
+    
     within '#title' do
       expect(page).to have_content(@user1.name)
       expect(page).to_not have_content(@user1.email)

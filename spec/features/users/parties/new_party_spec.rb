@@ -53,12 +53,12 @@ RSpec.describe "New Party Page" do
 
         click_on "Create Party"
         expect(current_path).to eq("/users/#{skeeter.id}")
-        expect(page).to have_content("When: 2022-05-12 00:00:00 UTC")
-        expect(page).to have_content("Runtime: 124")
+        expect(page).to have_content("Jaws")
+        expect(page).to have_content("When: May 12, 2022")
         
         visit "/users/#{lugnut.id}"
-        expect(page).to have_content("When: 2022-05-12 00:00:00 UTC")
-        expect(page).to have_content("Runtime: 124")
+        expect(page).to have_content("When: May 12, 2022")
+        expect(page).to have_content("Jaws")
 
       end 
     end 

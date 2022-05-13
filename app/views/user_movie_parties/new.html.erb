@@ -15,7 +15,7 @@
 <div id="new_party_form">
 <%= form_with url: "/users/#{@user.id}/movies/#{@movie[:id]}/party/new", method: :post do |f| %>
   <%= f.label :movie_title, "Movie Title:" %>
-  <%= f.text_field :movie_title, value: @movie[:original_title] %><br>
+  <%= f.text_field :movie_title, value: @movie[:original_title], :disabled => true %><br>
 
   <%= f.label :duration, "Duration of Party:" %>
   <%= f.text_field :duration, value: @movie[:runtime] %>
