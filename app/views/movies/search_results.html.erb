@@ -1,0 +1,8 @@
+<h1>Search Results</h1>
+<% @movies.each do |movie| %>
+<h3><%= movie.title %> - With an average rating of: <%= movie.vote_average %></h3>
+<br>
+<hr>
+<br>
+<% end %>
+<%= button_to 'Return to Discover Page', "/users/#{params[:user_id]}/discover", method: :get, local: true  %>
