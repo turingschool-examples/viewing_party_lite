@@ -8,13 +8,13 @@ RSpec.describe "Movies Show Page" do
   end
 
   it "has button to create viewing party" do
-    click_button "Create Viewing Party"
+    click_on "Create Viewing Party"
 
-    expect(current_path).to eq("/users/#{@user_1.id}/movies/278/viewing-party/new")
+    expect(current_path).to eq("/users/#{@user_1.id}/movies/278/viewing_party/new")
   end
 
   it "has button leading to discover page" do
-    click_button "Discover Page"
+    click_on "Discover Movies"
 
     expect(current_path).to eq("/users/#{@user_1.id}/discover")
   end
