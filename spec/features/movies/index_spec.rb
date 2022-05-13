@@ -14,4 +14,20 @@ RSpec.describe "Movies Index" do
       expect(page).to have_content("Vote Average: 8.7")
     end
   end
+
+  it "has a button leading back to discover page" do
+    click_button "Top Movies"
+
+    click_button "Discover Page"
+
+    expect(current_path).to eq("/users/#{@user_1.id}/discover")
+  end
+
+  it "has links to movie show pages" do
+    click_button "Top Movies"
+
+    click_link "The Shawshank Redemption"
+    
+    expect(current_path).to eq("/users/#{@user_1.id}/movies/278")
+  end
 end
