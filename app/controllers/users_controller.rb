@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       if user.save
         redirect_to "/users/#{user.id}"
       else
-        redirect_to "/users/new"
+        redirect_to "/users/register"
         flash[:notice] = "Error: User already exists with this email"
 
       end

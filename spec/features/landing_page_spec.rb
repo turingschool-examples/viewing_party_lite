@@ -11,7 +11,7 @@ RSpec.describe "Home page", type: :feature do
     visit "/"
 
     click_button("Create New User")
-    expect(current_path).to eq("/users/new")
+    expect(current_path).to eq("/users/register")
   end
 
   it 'lists all existing users' do
