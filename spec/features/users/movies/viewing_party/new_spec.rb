@@ -20,13 +20,14 @@ RSpec.describe "create a new viewing party" do
     end
 
     it "creates a new party" do
-      save_and_open_page
-      fill_in(:duration, with: 127)
-      fill_in(:when, with: "05/17/2022")
+      fill_in(:length, with: 127)
+      fill_in(:date, with: "05/17/2022")
       fill_in(:start_time, with: "19:00")
-      find(:label, for: "Joseph").click
-      find(:label, for: "Sherman").click
+      check "Joseph"
+      check "Sherman"
       click_button "Create New Party!"
+
+      expect(current_path).to eq("/users/#{@user1.id}")
     end
   end
 end
