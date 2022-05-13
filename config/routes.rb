@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   # post "/register", to: "people#create", as: "poople"
   get "/discover", to: "movies#discover", as: "discover"
 
-  resources :movies, only: [:index]
+  resources :movies, only: [:index, :show]
 end

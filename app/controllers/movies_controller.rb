@@ -8,5 +8,6 @@ class MoviesController < ApplicationController
   end
 
   def discover
+    # @person = Person.find(params[:id])
   end
 end
