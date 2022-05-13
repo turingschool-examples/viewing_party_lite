@@ -7,8 +7,9 @@ class MovieFacade
   end
 
   def movie_search(search_param)
+    # require 'pry'; binding.pry
     service.search_movies(search_param).map do |movie_info|
-      Movie.new(movie_info)
+    Movie.new(movie_info)
     end
   end
 

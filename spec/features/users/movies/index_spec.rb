@@ -12,7 +12,7 @@ RSpec.describe 'the users index page' do
   #   @user_party_2 = UserParty.create!(user_id: @user_1.id, party_id: @party_2.id)
   # end
 
-  xit 'shows top 40 movies' do
+  it 'shows top 40 movies' do
     @user_1 = User.create!(name: 'Alfonso Diogenes', email: 'alphonsodiogenes420@hotmail.com')
     VCR.use_cassette("shows_top_40_movies") do
       visit user_discover_path(@user_1)
@@ -22,14 +22,16 @@ RSpec.describe 'the users index page' do
       expect(page).to have_content("The Godfather")
     end
   end
-  it 'shows search results', :vcr do
+
+  it 'shows search results' do
     @user_1 = User.create!(name: 'Alfonso Diogenes', email: 'alphonsodiogenes420@hotmail.com')
-    # VCR.use_cassette("shows search results") do
+    VCR.use_cassette("shows search results") do
       visit user_discover_path(@user_1)
+
       fill_in 'search', with: "fight club"
       click_button("Find Movies")
-      expect(current_path).to eq(user_movie_path(@user_1))
+      expect(current_path).to eq(user_movies_path(@user_1))
       expect(page).to have_content("Fight Club")
-    # end
+    end
   end
 end
