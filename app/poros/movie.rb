@@ -10,7 +10,6 @@ class Movie
     @genres = get_genres(movie_data)
     @summary = movie_data[:overview]
     @reviews = get_reviews(movie_data)
-    # default_unavailable
   end
 
   def get_cast(movie_data)
@@ -32,24 +31,16 @@ class Movie
   end
 
   def runtime_with_hours
-    hours = @runtime / 60
-    minutes = @runtime.modulo(60)
-    if hours == 1
-      "#{hours} hour #{minutes} minutes"
+    if !@runtime.nil?
+      hours = @runtime / 60
+      minutes = @runtime.modulo(60)
+      if hours == 1
+        "#{hours} hour #{minutes} minutes"
+      else
+        "#{hours} hours #{minutes} minutes"
+      end
     else
-      "#{hours} hours #{minutes} minutes"
+      "N/A"
     end
   end
-
-  # def default_unavailable
-  #   variables = [@title, @vote_average, @id, @cast, @runtime, @genres, @summary, @reviews]
-  #   variables.each do |var|
-  #     if var == nil
-  #       require "pry"; binding.pry
-  #       var = "N/A"
-  #     end
-  #   end
-  #   # instance_variables.each do |var|
-  #   # end
-  # end
 end
