@@ -19,7 +19,7 @@ class ViewingPartiesController < ApplicationController
     User.all.each do |user|
       if user.name == host_user.name
         PartyUser.create!(user_id: host_user.id, viewing_party_id: party.id, host: true)
-      elsif params.keys.include?(user.name)
+      elsif params.keys.include?(user.name) && params[user.name.to_sym] == '1'
         PartyUser.create!(user_id: user.id, viewing_party_id: party.id)
       end
     end
