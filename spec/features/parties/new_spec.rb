@@ -21,7 +21,7 @@ RSpec.describe "Parties New Page" do
     fill_in "Start time", with: "09:00 PM"
     check "invited[#{@user_2.id}]"
     click_button "Submit"
-    
+
     expect(current_path).to eq("/users/#{@user_1.id}")
   end
 end
