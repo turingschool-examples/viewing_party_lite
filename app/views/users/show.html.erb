@@ -4,7 +4,6 @@
 <h4><%= link_to "Discover Movies", "/users/#{@user.id}/discover" %></h4>
 <h3>Viewing Parties</h3>
 <% @user.parties.each do |party| %>
-  <% party.guests.shift %>
   <% host = User.find(party.host_id) %>
   <% movie = MovieFacade.search_by_id(party.movie_id) %>
     <ul>
