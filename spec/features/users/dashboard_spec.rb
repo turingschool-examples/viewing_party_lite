@@ -40,19 +40,19 @@ RSpec.describe 'User Dashboard', type: :feature do
       attendee2 = Attendee.create!(user_id: @user2.id, party_id: party2.id)
       visit "/users/#{@user2.id}"
 
-      within '#movie_id-578' do 
-        expect(page).to have_content("Jaws")
-        expect(page).to have_content("When: Febuary 8, 2023")
-        expect(page).to have_content("Start Time: 9:30 AM")
-        expect(page).to have_content("Invited")
-      end 
-      within '#movie_id-1381' do 
-        expect(page).to have_content("The Fountain")
-        expect(page).to have_content("When: May 8, 2022")
-        expect(page).to have_content("Start Time: 2:30 PM")
-        expect(page).to have_content("Invited")
-      end 
       save_and_open_page
+      within "#party_id-#{party1.id}" do 
+        expect(page).to have_content("Jaws")
+        expect(page).to have_content('When: February 08, 2023')
+        expect(page).to have_content("Start Time: 09:30 AM")
+        # expect(page).to have_content("Invited")
+      end 
+      within "#party_id-#{party2.id}" do 
+        expect(page).to have_content("The Fountain")
+        expect(page).to have_content("When: May 08, 2022")
+        expect(page).to have_content("Start Time: 02:30 PM")
+        # expect(page).to have_content("Invited")
+      end 
     end 
   end 
 
