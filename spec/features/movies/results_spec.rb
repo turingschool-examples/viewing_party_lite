@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 
-RSpec.describe "New User", type: :feature do
+RSpec.describe "Movie Results", type: :feature do
   it 'displays top 20 rated movies', :vcr do
     user = User.create!(name: "Tim", email: "Tim@mail.com")
     visit "/users/#{user.id}/movies?q=top%20rated"
@@ -35,7 +35,7 @@ RSpec.describe "New User", type: :feature do
   end
 
 
-  it 'has a button to return to the discover page' do
+  it 'has a button to return to the discover page', :vcr do
     user = User.create!(name: "Tim", email: "Tim@mail.com")
     movie = Movie.new(id: 1, title: "Movie", vote_average: "8.2")
     visit "/users/#{user.id}/movies?q=top%20rated"
