@@ -19,12 +19,26 @@ RSpec.describe 'users discover' do
     expect(page).to have_content("Gabriel's Inferno: Part III")
   end
 
-  it 'can search by keyword and return relavant video if exists', :vcr do
-    fill_in :keyword, with: 'dog'
-    click_button 'Search'
 
-    expect(current_path).to eq(user_movies_path(user1.id))
-    expect(page).to have_content("Straight Outta Nowhere: Scooby-Doo! Meets Courage the Cowardly Dog")
-    expect(page).to have_content("Wiener-Dog")
+  describe 'search happy path' do
+    it 'can search by keyword and return relavant video if exists', :vcr do
+      fill_in :keyword, with: 'dog'
+      click_button 'Search'
+
+      expect(current_path).to eq(user_movies_path(user1.id))
+      expect(page).to have_content('Straight Outta Nowhere: Scooby-Doo! Meets Courage the Cowardly Dog')
+      expect(page).to have_content('Wiener-Dog')
+    end
+  end
+
+  describe 'search sad path' do
+    it 'returns error message if no keyword match', :vcr do
+      fill_in :keyword, with: 'dogggggggggg'
+      click_button 'Search'
+
+      expect(current_path).to eq("/users/#{user1.id}/discover")
+      expect(page).to have_content("Error: No movies found containing 'dogggggggggg', please try again!.
+")
+    end
   end
 end

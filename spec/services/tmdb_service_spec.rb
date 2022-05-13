@@ -10,7 +10,9 @@ RSpec.describe TmdbService do
   end
 
   it 'gets movies from keyword search', :vcr do
+
     results = TmdbService.search('man')
+
 
     expect(results).to be_a Hash
     expect(results[:results].count).to eq(20)

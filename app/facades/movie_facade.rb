@@ -1,4 +1,5 @@
 class MovieFacade
+
   def self.top20
     TmdbService.top20.map do |movie_data|
       MovieDetail.new(movie_data)
