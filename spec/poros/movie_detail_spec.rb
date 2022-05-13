@@ -8,7 +8,8 @@ RSpec.describe MovieDetail do
                       vote_average: 7.9,
                       overview: 'Good movie',
                       genres: [{ id: 28, name: 'Action' }, { id: 878, name: 'Science Fiction' }],
-                      runtime: 155
+                      runtime: 155,
+                      poster_path: "dune.jpg"
                     })
   end
 
@@ -22,6 +23,7 @@ RSpec.describe MovieDetail do
     expect(dune.genre.first).to eq({ id: 28, name: 'Action' })
     expect(dune.genre.last).to eq({ id: 878, name: 'Science Fiction' })
     expect(dune.summary).to eq('Good movie')
+    expect(dune.poster_path).to eq("https://image.tmdb.org/t/p/originaldune.jpg")
   end
   it 'returns genre names as an array' do
     expect(dune.genre_names).to eq(['Action', 'Science Fiction'])
