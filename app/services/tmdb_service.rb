@@ -22,7 +22,7 @@ class TmdbService
   def self.get_url(url)
     # response = Faraday.get("https://api.themoviedb.org/3#{url}")
     response = Faraday.get("https://api.themoviedb.org/3#{url}") do |faraday|
-      faraday.params['api_key'] = ENV['tmdb_api_key']
+      faraday.params['api_key'] = ENV.fetch('tmdb_api_key', nil)
     end
     parsed = JSON.parse(response.body, symbolize_names: true)
   end
