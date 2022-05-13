@@ -31,6 +31,5 @@ class PartiesController < ApplicationController
   def party_params
     params.permit(:name, :duration, :date, :start_time, :host_id)
   end
-
-
 end
+

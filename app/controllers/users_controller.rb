@@ -26,7 +26,9 @@ class UsersController < ApplicationController
   end
 
   def details
-
+    @movie_details = MovieFacade.single_movie(params[:id])
+    @single_movie_credits = MovieFacade.single_movie_credits(params[:id])
+    @single_movie_reviews = MovieFacade.single_movie_reviews(params[:id])
   end
 
   private
