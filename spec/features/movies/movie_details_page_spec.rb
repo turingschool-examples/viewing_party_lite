@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Movie details page' do
   describe 'As a user when I visit the Movie details page' do
-    it 'displays a button to create a viewing party and a button to return to the discover page' do
+    it 'displays a button to create a viewing party and a button to return to the discover page', :vcr do
       user1 = User.create!(name: 'Will', email: '123@mail.com')
       user2 = User.create!(name: 'Craig', email: 'abc@mail.com')
 
@@ -18,7 +18,7 @@ RSpec.describe 'Movie details page' do
       expect(current_path).to_not eq("/users/#{user1.id}/movies/52886/viewing_party/new")
     end
 
-    it 'displays movie details' do
+    it 'displays movie details', :vcr do
       user1 = User.create!(name: 'Will', email: '123@mail.com')
       user2 = User.create!(name: 'Craig', email: 'abc@mail.com')
 
@@ -46,7 +46,7 @@ RSpec.describe 'Movie details page' do
       expect(page).to_not have_content("Neil Giuntoli")
     end
 
-    it 'displays a count of total views' do
+    it 'displays a count of total views', :vcr do
       user1 = User.create!(name: 'Will', email: '123@mail.com')
       user2 = User.create!(name: 'Craig', email: 'abc@mail.com')
 
