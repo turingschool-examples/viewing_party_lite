@@ -52,8 +52,10 @@ RSpec.describe 'Movie details page' do
 
       visit "/users/#{user1.id}/movies/278?user_id=#{user1.id}"
 
-      expect(page).to have_content("7")
-      save_and_open_page
+      expect(page).to have_content("Review Count: 7")
+
+      expect(page).to have_content("Make way for the best film ever made people. **Make way.**")
+      expect(page).to have_content("tmdb73913433")
     end
   end
 end
