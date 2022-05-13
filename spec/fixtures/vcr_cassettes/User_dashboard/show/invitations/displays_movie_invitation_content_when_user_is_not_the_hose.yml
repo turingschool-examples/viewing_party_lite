@@ -1,0 +1,159 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/24021?api_key=Sike you thought
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - Sike you thought
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 12 May 2022 21:36:48 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 6c0639b760633039387284a27f8730ee80d57205
+      X-Memc-Age:
+      - '1426'
+      X-Memc-Expires:
+      - '13031'
+      Etag:
+      - W/"2e359a62c1fa6d729e4af000084a0b5a"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 a47d45d25cc354507eae77aba89ca252.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - wxUPVf248_d6gaVrtVGY74BeIBtBJHH-78pChNT9cN6yTqAT-RpHyw==
+      Age:
+      - '16769'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/yiWfT2Bl1Nul3Xie39Ahs3FqSjA.jpg","belongs_to_collection":{"id":33514,"name":"The
+        Twilight Collection","poster_path":"/aKAX2HO5V94JYeSIkOMFNlRI71E.jpg","backdrop_path":"/kriNR9A8Lhk2tFzbVQkhepXymEr.jpg"},"budget":68000000,"genres":[{"id":12,"name":"Adventure"},{"id":14,"name":"Fantasy"},{"id":18,"name":"Drama"},{"id":10749,"name":"Romance"}],"homepage":"http://eclipsethemovie.com","id":24021,"imdb_id":"tt1325004","original_language":"en","original_title":"The
+        Twilight Saga: Eclipse","overview":"Bella once again finds herself surrounded
+        by danger as Seattle is ravaged by a string of mysterious killings and a malicious
+        vampire continues her quest for revenge. In the midst of it all, she is forced
+        to choose between her love for Edward and her friendship with Jacob, knowing
+        that her decision has the potential to ignite the ageless struggle between
+        vampire and werewolf. With her graduation quickly approaching, Bella is confronted
+        with the most important decision of her life.","popularity":135.843,"poster_path":"/3mFM80dPzSqoXXuC2UMvLIRWX32.jpg","production_companies":[{"id":491,"logo_path":"/rUp0lLKa1pr4UsPm8fgzmnNGxtq.png","name":"Summit
+        Entertainment","origin_country":"US"},{"id":12292,"logo_path":"/llGRXF5WYUW2fzXg0ebCoKMXjmT.png","name":"Temple
+        Hill Entertainment","origin_country":"US"},{"id":5218,"logo_path":"/dhb42ugM9DzSpDctTWCtABPVOW4.png","name":"Imprint
+        Entertainment","origin_country":"US"},{"id":4000,"logo_path":null,"name":"Maverick
+        Films","origin_country":"US"},{"id":5219,"logo_path":null,"name":"Sunswept
+        Entertainment","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2010-06-23","revenue":698491347,"runtime":124,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"It
+        all begins... with a choice.","title":"The Twilight Saga: Eclipse","video":false,"vote_average":6.2,"vote_count":7492}'
+  recorded_at: Fri, 13 May 2022 02:16:17 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/809?api_key=Sike you thought
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - Sike you thought
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 13 May 2022 01:43:26 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 991b4c6713e73a7547942937bebcfd41fada3b8e
+      X-Memc-Age:
+      - '5863'
+      X-Memc-Expires:
+      - '10099'
+      Etag:
+      - W/"b35b77d1f7f4e773eb3cf264c4e7fa6e"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 b2e880ac67c1fba390623b9fc04bd63a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - _wVpBQ7uFcUxU_t-HTru2-VmHNUGOCPtu1yjevdj_q74omXWd8A2FQ==
+      Age:
+      - '1972'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/g1EsYgp8GbdztpodCCa2n7xxc5S.jpg","belongs_to_collection":{"id":2150,"name":"Shrek
+        Collection","poster_path":"/qNHZMe92A7Pyl46qUH29hVOtbSK.jpg","backdrop_path":"/gMWrKQjoTIpYjhc8SxZF20EDIES.jpg"},"budget":150000000,"genres":[{"id":16,"name":"Animation"},{"id":10751,"name":"Family"},{"id":35,"name":"Comedy"},{"id":14,"name":"Fantasy"},{"id":12,"name":"Adventure"}],"homepage":"http://www.shrek2.com/","id":809,"imdb_id":"tt0298148","original_language":"en","original_title":"Shrek
+        2","overview":"Shrek, Fiona and Donkey set off to Far, Far Away to meet Fiona''s
+        mother and father. But not everyone is happy. Shrek and the King find it hard
+        to get along, and there''s tension in the marriage. The fairy godmother discovers
+        that Shrek has married Fiona instead of her Son Prince Charming and sets about
+        destroying their marriage.","popularity":121.907,"poster_path":"/2yYP0PQjG8zVqturh1BAqu2Tixl.jpg","production_companies":[{"id":7,"logo_path":"/vru2SssLX3FPhnKZGtYw00pVIS9.png","name":"DreamWorks
+        Pictures","origin_country":"US"},{"id":520,"logo_path":"/pU7YTI9FfrICurXpl5V9TfCO0oJ.png","name":"Pacific
+        Data Images","origin_country":"US"},{"id":521,"logo_path":"/kP7t6RwGz2AvvTkvnI1uteEwHet.png","name":"DreamWorks
+        Animation","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2004-05-19","revenue":928760770,"runtime":93,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Once
+        upon another time...","title":"Shrek 2","video":false,"vote_average":7.2,"vote_count":9936}'
+  recorded_at: Fri, 13 May 2022 02:16:18 GMT
+recorded_with: VCR 6.1.0
