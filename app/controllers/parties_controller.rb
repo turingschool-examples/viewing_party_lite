@@ -11,13 +11,20 @@ class PartiesController < ApplicationController
                         movie_id: params[:movie_id],
                         date: params[:date],
                         start_time: params[:start_time],
-                        length: params[:length]})
+                        length: params[:length],
+                        guests: params[:guests]})
+    UserParty.create({user_id: host.id, party_id: party.id, host: true})
+    if party[:guests]
+      party[:guests].each do |guest|
+        UserParty.create({user_id: guest, party_id: party.id, host: false})
+      end
+    end
     binding.pry
     redirect_to "/users/#{host.id}"
   end
 
   private
     def party_params
-      params.permit(:movie_id, :date, :start_time, :length)
+      params.permit(:movie_id, :date, :start_time, :length, :host_id)
     end
 end
