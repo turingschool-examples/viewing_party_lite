@@ -16,15 +16,6 @@ class PeopleController < ApplicationController
     redirect_to person_path(person.id)
   end
 
-  def discover
-    @person = Person.find(params[:id])
-  end
-
-  def movies
-    movie = params[:movie]
-    @movie_names = MoviesFacade.titles(movie)
-  end
-
   private
 
   def person_params
