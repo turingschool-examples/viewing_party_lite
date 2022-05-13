@@ -17,7 +17,7 @@ RSpec.describe "Discover Page" do
     expect(current_path).to eq(movies_path)
   end
 
-  xit "has a text field to enter keywords to search by movie title", :vcr do
+  it "has a text field to enter keywords to search by movie title", :vcr do
     person = Person.create!(name: "Billy Williams", email: "bwill@mailer.com")
 
     party1 = Party.create!(host_id: 1, movie_id: 2, movie_name: "Star Wars", date: "May 4, 2022", time: "8:00pm", duration: 180)
@@ -27,8 +27,6 @@ RSpec.describe "Discover Page" do
     PartyPerson.create(party_id: party1.id, person_id: person.id)
 
     visit discover_path(person.id)
-
-    expect(page).to have_content("Search by movie title")
 
     fill_in :query, with: "Top Gun"
 

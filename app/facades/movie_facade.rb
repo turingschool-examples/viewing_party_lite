@@ -6,4 +6,12 @@ class MovieFacade
       Movie.new(movie_data)
     end
   end
+
+  def self.create_search_movies
+    json = MovieService.movie_by_keyword(input)
+
+    json[:results].map do |movie_data|
+      Movie.new(movie_data)
+    end
+  end
 end
