@@ -26,8 +26,6 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Wed, 11 May 2022 22:07:07 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -37,8 +35,6 @@ http_interactions:
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
-      Cache-Control:
-      - public, max-age=28800
       X-Memc:
       - HIT
       X-Memc-Key:
@@ -47,20 +43,22 @@ http_interactions:
       - '6095'
       X-Memc-Expires:
       - '11145'
+      Date:
+      - Fri, 13 May 2022 01:27:51 GMT
+      Cache-Control:
+      - public, max-age=28800
       Etag:
       - W/"d25f3f076be38b4e9eecebc49f81a1b5"
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Hit from cloudfront
+      - RefreshHit from cloudfront
       Via:
-      - 1.1 4b2d2d4c49521bf403522140b78283a0.cloudfront.net (CloudFront)
+      - 1.1 045f1e1f031241f3808c557a2b5d6b0a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - 2yiZ2nIF0d86yhtG2HvmWDVKD5rb6UxZPUEf5scN30SUGBFhF0Cung==
-      Age:
-      - '1179'
+      - ZS3LEp_UQ3rLVrZZUuefnxugkqyUKCwz87avjdW3tycoaXcMW64S2g==
     body:
       encoding: ASCII-8BIT
       string: '{"id":100,"page":1,"results":[{"author":"BradFlix","author_details":{"name":"","username":"BradFlix","avatar_path":null,"rating":null},"content":"I
@@ -84,5 +82,5 @@ http_interactions:
         However, that actually turns into the film''s best thing at the end as it
         does come together brilliantly.\r\n\r\nAll in all, this 1998 gangster flick
         is something I''d consider as very good and worthy of watching.","created_at":"2022-03-16T01:38:40.389Z","id":"62313fa06517d60045ed073a","updated_at":"2022-03-16T01:38:40.389Z","url":"https://www.themoviedb.org/review/62313fa06517d60045ed073a"}],"total_pages":1,"total_results":4}'
-  recorded_at: Wed, 11 May 2022 22:26:46 GMT
+  recorded_at: Fri, 13 May 2022 01:27:51 GMT
 recorded_with: VCR 6.1.0
