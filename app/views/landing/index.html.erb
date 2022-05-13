@@ -1,5 +1,6 @@
-<h1>Viewing Party</h1>
-<% @user.each do |user| %>
-  <p><%= link_to "#{user.name}", "/users/#{user.id}" %></p>
-<% end %>
-<%= button_to "Create New User", "/users/new", :method => "get" %>
+<center><%= button_to 'Create New User', '/register', method: :get %></center>
+
+<center><p>Existing Users:</p></center>
+<center><% @users.each do |user| %>
+  <p><%= link_to "#{user.name}'s Dashboard", user_dashboard_path(user) %></p>
+  <% end %></center>

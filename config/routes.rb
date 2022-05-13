@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  get '/', to: 'landing#index'
-
+  # get '/', to: 'landing#index'
+  root 'landing#index'
 
 
   get '/register', to: 'users#new'
@@ -13,5 +13,5 @@ Rails.application.routes.draw do
     get '/dashboard', to: 'users#show'
     post '/dashboard', to: 'users#show'
     get '/discover', to: 'users#discover'
-  end 
+  end
 end
