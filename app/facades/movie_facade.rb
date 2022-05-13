@@ -6,4 +6,9 @@ class MovieFacade
       Movie.new(result)
     end
   end
+
+  def self.single_movie(id)
+    json = MovieService.find_with_id(id)
+    Movie.new(json)
+  end
 end
