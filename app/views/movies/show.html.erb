@@ -1,0 +1,5 @@
+<%= render "layouts/to_discover_page" %>
+
+<h2><%= @movie.title %></h2>
+
+<h3><%= button_to "Create Viewing Party", "/users/#{@user.id}/movies/#{@movie.id}/viewing-party/new", method: :get, local: true %></h3>
