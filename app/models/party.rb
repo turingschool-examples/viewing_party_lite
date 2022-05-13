@@ -20,7 +20,7 @@ class Party < ApplicationRecord
   end
 
   def movie_time
-   Time.parse(time).strftime('%l:%M %p').lstrip
+    Time.parse(time).strftime('%l:%M %p').lstrip
   end
 
   def host
