@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   get '/register', to: 'registration#dashboard'
   post '/users', to: 'users#create'
   get '/users/:id/movies', to: 'users#results'
-  get '/users/:id/movies/:id', to: 'users#details'
-  post '/users/:id/movies/:id/viewing_party/new', to: 'viewing_party#new'
+  get '/users/:user_id/movies/:id', to: 'users#details'
+  post '/users/:user_id/movies/:id/viewing-party/new', to: 'parties#new'
 end
