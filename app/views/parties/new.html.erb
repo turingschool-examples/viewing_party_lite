@@ -1,10 +1,15 @@
 <div id="party">
   <h2>Viewing Party Details</h2>
-  <%= form_with model: @party do |f| %>
+  <%= form_with url: "/users/#{@host.id}/movies/#{@movie.id}/viewing-party/new" do |f| %>
     <p>Movie Title: <%= f.label "#{@movie.title}" %></p>
     <%= f.hidden_field :name, value: "#{@movie.title}" %>
     <p>Duration of Party: <%= f.text_field :duration, value: @movie.runtime %></p>
     <p>Day: <%= f.date_field :date %></p>
     <p>Start Time: <%= f.time_field :start_time %></p>
+    <p><b><%= f.label "Invite Other Users" %></b></p>
+    <% @users.each do |user| %>
+      <p><%= f.check_box "add-#{user.id}" %> <%= user.name %> (<%= user.email %>)</p>
+    <% end %>
+    <%= f.submit "Create Party" %>
     <% end %>
 </div>
