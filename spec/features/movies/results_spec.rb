@@ -33,4 +33,6 @@ RSpec.describe "New User", type: :feature do
     expect(current_path).to eq("/users/#{user.id}/movies/278")
 
   end
+
+
 end

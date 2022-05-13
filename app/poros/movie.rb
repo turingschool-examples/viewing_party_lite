@@ -1,5 +1,6 @@
 class Movie
   attr_reader :title, :vote_average, :id, :cast, :runtime, :genres, :summary, :reviews
+
   def initialize(movie_data)
     @title = movie_data[:title]
     @vote_average = movie_data[:vote_average]
