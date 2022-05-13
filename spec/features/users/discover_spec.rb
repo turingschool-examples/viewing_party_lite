@@ -15,9 +15,10 @@ RSpec.describe 'users discover' do
 
     expect(current_path).to eq(user_movies_path(user1.id))
 
-    expect(page).to have_content('The Shawshank Redemption')
+    expect(page).to have_content("The Shawshank Redemption")
     expect(page).to have_content("Gabriel's Inferno: Part III")
   end
+
 
   describe 'search happy path' do
     it 'can search by keyword and return relavant video if exists', :vcr do
