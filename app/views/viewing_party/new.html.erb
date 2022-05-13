@@ -6,8 +6,8 @@
   <div class="card-body">
     <div class="mb-3">
       <ul>
-      <strong><%= f.label :duration, { class: "form-label"} %></strong>
-      <%= f.text_field :duration, { class: "form-control", value: @movie.runtime } %>
+      <strong><%= f.label :duration, "Duration in mins",  { class: "form-label"} %></strong>
+      <%= f.text_field :duration_user, { class: "form-control", value: @movie.runtime_min } %>
      </ul>
      <ul>
       <strong><%= f.label :date, "Viewing Date", { class: "form-label"}%></strong><br/>

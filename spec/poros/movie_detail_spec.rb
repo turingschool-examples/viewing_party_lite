@@ -18,6 +18,7 @@ RSpec.describe MovieDetail do
     expect(dune.title).to eq('Dune')
     expect(dune.vote_average).to eq(7.9)
     expect(dune.runtime).to eq('2hr 35min')
+    expect(dune.runtime_min).to eq(155)
     expect(dune.genre.first).to eq({ id: 28, name: 'Action' })
     expect(dune.genre.last).to eq({ id: 878, name: 'Science Fiction' })
     expect(dune.summary).to eq('Good movie')
