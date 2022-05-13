@@ -1,0 +1,27 @@
+<h1><%= @user.name %>'s dashboard </h1>
+<%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %>
+<hr>
+<h2>Viewing Parties</h2>
+<% @user.viewing_parties.each do |party| %>
+  <div id="viewing-party-<%= party.id %>">
+    <h3><%= party.movie_title %></h3>
+    <p><%= party.date.strftime('%B %d, %Y') %></p>
+    <p><%= party.duration %></p>
+    <p><%= party.start_time %></p>
+    <% if @user.is_host?(party.id) %>
+      <p>Hosting</p>
+    <% else %>
+      <p>Invited</p>
+    <% end %>
+    <ul>
+    <p>Users Invited:</p>
+    <% party.users.each do |user| %>
+      <% if user.name == @user.name %>
+        <li> <strong><%= user.name %></strong></li>
+      <% else %>
+        <li><%= user.name %></li>
+      <% end %>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

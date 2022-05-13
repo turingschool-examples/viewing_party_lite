@@ -1,0 +1,8 @@
+<h1>Discover Movies</h1>
+
+<%= button_to 'Top Rated Movies', "/users/#{@user.id}/movies?query=top40rated", method: :get, params: {query: 'top40rated'}  %>
+<%= form_with url: "/users/#{@user.id}/movies", method: :get, local: true do |form| %>
+  <%= form.label :query %>
+  <%= form.text_field :query, required: true %>
+  <%= form.submit 'Search by Title' %>
+<% end %>
