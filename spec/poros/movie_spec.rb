@@ -233,4 +233,27 @@ RSpec.describe Movie do
     expect(movie.get_reviews(movie_data)).to eq([review1, review2])
   end
 
+  it 'can give the runtime in hours and minutes' do
+    movie_data = {
+      title: "Fun Movie",
+      id: 4,
+      overview: "Lots of laughs for half your family",
+      vote_average: 7.2,
+      runtime: 102
+    }
+
+    movie = Movie.new(movie_data)
+    expect(movie.runtime_with_hours).to eq("1 hour 42 minutes")
+
+    movie_data_2 = {
+      title: "Fun Movie",
+      id: 4,
+      overview: "Lots of laughs for half your family",
+      vote_average: 7.2,
+      runtime: 210
+    }
+
+    movie2 = Movie.new(movie_data_2)
+    expect(movie2.runtime_with_hours).to eq("3 hours 30 minutes")
+  end
 end
