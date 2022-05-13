@@ -7,8 +7,10 @@ RSpec.describe 'discover page' do
         click_button 'Top Movies'
         expect(current_path).to eq('/movies/top_movies')
         expect(page).to have_content("Top Movies")
-        expect(page).to have_content("Shawshank Redemption - 8.7")
+        expect(page).to have_content("Shawshank Redemption - With an average rating of: 8.7")
         expect(page).to_not have_content("Fight Club")
+        click_button 'Return to Discover Page'
+        expect(current_path).to eq("/users/#{user.id}/discover")
     end
 
     # it 'has a search field to find a movie' do

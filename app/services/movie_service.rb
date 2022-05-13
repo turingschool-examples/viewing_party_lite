@@ -4,8 +4,8 @@ class MovieService
         get_url("3/movie/top_rated?api_key=f57beefd0f3cef1f6183a305da5f8630")
     end
 
-    def search_movies(search)
-        get_url("3/search/movie?api_key=f57beefd0f3cef1f6183a305da5f8630&query=#{search}")
+    def get_search_results(query) 
+        get_url("3/search/movie?api_key=f57beefd0f3cef1f6183a305da5f8630&query=#{query}")
     end
 
     def get_movie_by_id(id)

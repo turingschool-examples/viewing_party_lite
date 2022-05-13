@@ -7,6 +7,13 @@ class MoviesController < ApplicationController
     @movie = MovieFacade.new(params[:id])
     @movie_id = params[:id]
     @user = User.first
-    # require 'pry'; binding.pry
   end
+
+  def top_movies 
+     @movies = MovieFacade.new
+  end
+
+   def search_results 
+     @movies = MovieFacade.new.search_results(params[:search])
+   end
 end
