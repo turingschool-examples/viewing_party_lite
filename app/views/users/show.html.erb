@@ -6,7 +6,10 @@
 <div id="viewing_parties">
 
 <h1>Viewing Parties</h1>
+<h3>Hosting:</h3>
 
+
+<h3>Invited:</h3>
 <ul>
   <% @user.parties.each do |party| %>
   <div id="party_<%= party.id %>">
@@ -21,7 +24,7 @@
         <% party.users.each do |user| %>
           <% unless user.id == party.user_id %>
             <% if user.id == @user.id %>
-              <strong><%= user.name %></strong>
+              <strong><%= user.name %></strong><br>
             <% else %>
               <%= user.name %>
             <% end %>
