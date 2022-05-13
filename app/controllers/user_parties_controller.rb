@@ -1,2 +1,0 @@
-class UserPartiesController < ApplicationController
-end
