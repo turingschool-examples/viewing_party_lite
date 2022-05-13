@@ -9,5 +9,29 @@
 <p>Date: <%= party.date %></p>
 <p>Time: <%= party.time %></p>
 <p>Host: <%= party.host_name %></p>
+<p>Attendees: <% party.users.each do |user| %>
+      <% if user.id == @user.id %>
+      <p><strong><%= user.name %></strong></p>
+      <% else %>
+      <p> <%= user.name %></p>
+      <% end %>
+      <% end %>
+      <br/>
+<% end %>
+</div>
+
+<div class="hosting">
+<h3> Viewing Parties I am Hosting </h3>
+<% @user.hosted_parties.each do |party| %>
+<p>Movie: <%= party.movie.title %></p>
+<p>Date: <%= party.date %></p>
+<p>Time: <%= party.time %></p>
+<p>Host: Me!! </p>
+<p>Attendees: <% party.users.each do |user| %>
+      <% if user.id != @user.id %>
+      <p> <%= user.name %></p>
+      <% end %>
+      <br/>
+<% end %>
 <% end %>
 </div>
