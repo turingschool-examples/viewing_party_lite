@@ -1,19 +1,31 @@
 class PartiesController < ApplicationController
 
   def new
-    @movie = MovieFacade.find_movie(params[:id])
-    @user = User.find(params[:id])
+    @movie = MovieFacade.find_movie(params[:movie_id])
+    @user = User.find(params[:user_id])
     @users = User.all
   end
 
   def create
-    party = Party.new(party_params)
-    if party.save
-      redirect_to
+    new_party = Party.new(party_params)
+    if new_party.save
+      params[:users].each do |user|
+        u = User.find(user)
+        if u.id == params[:host].to_i
+          PartyUser.create(user: u, party: new_party, host: true)
+        else
+          PartyUser.create(user: u, party: new_party, host: false)
+        end
+      end
+      redirect_to "/users/#{params[:user_id]}"
+    else
+      render :new
+    end
   end
 
 private
 
     def party_params
-      params.permit(:id, :duration, :date, :time, :host)
+      params.permit(:id, :duration, :date, :time, :host, :movie_id)
+    end
 end
