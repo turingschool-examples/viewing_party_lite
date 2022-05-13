@@ -4,14 +4,6 @@ require 'rails_helper'
 
 describe MovieService do
   context 'instance methods' do
-    it '.get_url(url) returns an array with a ruby hash' do
-      service = MovieService.new
-      response = service.get_url('https://api.coinbase.com/v2/currencies')
-
-      expect(response[:data]).to be_a(Array)
-      expect(response[:data][0]).to be_a(Hash)
-    end
-
     it '.top_movies returns an array with 40 movie hashes' do
       service = MovieService.new
       response = service.top_movies
