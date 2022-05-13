@@ -3,13 +3,14 @@ class ViewingPartyController < ApplicationController
   def new
     @party = Party.new(party_params)
     @movie = MovieFacade.movie_details(params[:movie_id])
-    @users = User.all
+    @users = User.where.not(id: params[:user_id])
   end
 
   def create
     @party = Party.create(party_proper_params)
     PartyUser.create(user_id: params[:user_id], party_id: @party.id, is_host: true)
     user_ids.each { |id| PartyUser.create(user_id: id, party_id: @party.id, is_host: false) }
+    redirect_to user_path(@user)
   end
 
   private
