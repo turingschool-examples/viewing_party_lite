@@ -8,4 +8,12 @@ RSpec.describe "MovieFacade" do
 
     expect(movies).to be_all Movie
   end
+
+  it "can return array of movie_info for a given keyword search", :vcr do
+    movies = MovieFacade.create_search_movies("Mary Poppins")
+
+    expect(movies).to be_a Array
+
+    expect(movies).to be_all Movie
+  end
 end
