@@ -2,15 +2,14 @@
 
 <%= form_with url: "/users/#{@user.id}/movies/#{@movie.id}/viewing-party", method: :post, local: true do |f| %>
   <%= f.label "Duration of party: " %>
-  <%= f.number_field :duration, min: @movie.runtime, value: @movie.runtime  %><br><br>
+  <%= f.number_field :duration, min: @movie.runtime, value: @movie.runtime  %> minutes<br><br>
   <%= f.label "When: " %>
   <%= f.date_field :when, as: :date %><br><br>
   <%= f.label "Start time: " %>
   <%= f.time_field :start_time, as: :time %><br>
   <p>"Who do want to invite?"</p>
-  <% @users.each do |user| %>
-    <%= f.check_box :invitee %>
-    <%= f.label user.name %><br>
-  <% end %><br><br>
+  <%= f.collection_check_boxes :invitee, User.where.not(name: "#{@user.name}"), :id, :name %>
+  <br>
+  <br>
   <%= f.submit "Create New Party!" %>
 <% end %>

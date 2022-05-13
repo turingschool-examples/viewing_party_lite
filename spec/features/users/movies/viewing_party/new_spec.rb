@@ -11,14 +11,22 @@ RSpec.describe "create a new viewing party" do
 
   context "visiting the page" do
     it "displays a form" do
-      save_and_open_page
       expect(page).to have_content("Stardust")
       expect(page).to have_content("Duration of party")
       expect(page).to have_content("When")
       expect(page).to have_content("Start time")
-      expect(page).to have_content("Max")
       expect(page).to have_content("Joseph")
       expect(page).to have_content("Sherman")
+    end
+
+    it "creates a new party" do
+      save_and_open_page
+      fill_in(:duration, with: 127)
+      fill_in(:when, with: "05/17/2022")
+      fill_in(:start_time, with: "19:00")
+      find(:label, for: "Joseph").click
+      find(:label, for: "Sherman").click
+      click_button "Create New Party!"
     end
   end
 end
