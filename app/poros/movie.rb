@@ -1,5 +1,5 @@
 class Movie
-  
+
   attr_reader :title,
               :vote_average,
               :id,
@@ -8,7 +8,8 @@ class Movie
               :overview,
               :cast,
               :author,
-              :content
+              :content,
+              :file_path
 
   def initialize(data)
     @title          = data[:title]
