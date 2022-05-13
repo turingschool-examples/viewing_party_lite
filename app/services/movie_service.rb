@@ -3,8 +3,16 @@ require 'faraday/net_http'
 
 class MovieService
   def self.top_rated_movies
-    top_rated_movies = '/3/movie/top_rated'
-    response = conn.get(top_rated_movies)
+    endpoint = '/3/movie/top_rated'
+    response = conn.get(endpoint)
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.search_movies(movie_title)
+    endpoint = '/3/search/movie'
+    response = conn.get(endpoint) do |request|
+      request.params['query'] = movie_title
+    end
     JSON.parse(response.body, symbolize_names: true)
   end
 

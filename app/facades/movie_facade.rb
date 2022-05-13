@@ -4,4 +4,10 @@ class MovieFacade
       Movie.new(movie)
     end
   end
+
+  def self.search_movies(movie_title)
+    MovieService.search_movies(movie_title)[:results].map do |movie|
+      Movie.new(movie)
+    end
+  end
 end
