@@ -104,7 +104,7 @@ RSpec.describe 'User Dashboard', type: :feature do
       attendee1 = Attendee.create!(user_id: @user2.id, party_id: party1.id)
       attendee2 = Attendee.create!(user_id: @user2.id, party_id: party2.id)
       visit "/users/#{@user2.id}"
-
+      save_and_open_page
       within "#party_id-#{party1.id}" do 
         expect(page).to have_link("Jaws")
       end 
