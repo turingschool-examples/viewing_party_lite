@@ -22,6 +22,16 @@ class MovieFacade
     data = MovieService.find_by_id(movie_id)
     movie = Movie.new(data)
   end 
-  
 
+  def self.multiple_movies(movie_ids)
+    @movies = []
+    movie_ids.uniq.each do |id|
+      conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
+      end 
+      response = conn.get("/3/movie/#{id}?api_key=#{ENV['movie_db_key']}")
+      @movies << Movie.new(JSON.parse(response.body, symbolize_names: true))
+    end 
+    @movies 
+
+  end 
 end 
