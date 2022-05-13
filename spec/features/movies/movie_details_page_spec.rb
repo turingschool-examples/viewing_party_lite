@@ -13,7 +13,7 @@ RSpec.describe 'Movie details page' do
       click_link "The Shawshank Redemption"
       click_button "Create a Viewing Party"
 
-      expect(current_path).to eq("/users/#{user1.id}/movies/278/viewing_party/new")
+      expect(current_path).to eq("/users/#{user1.id}/movies/278/viewing-party/new")
       expect(current_path).to_not eq("/users/#{user2.id}/movies/278/viewing_party/new")
       expect(current_path).to_not eq("/users/#{user1.id}/movies/52886/viewing_party/new")
     end
@@ -33,8 +33,17 @@ RSpec.describe 'Movie details page' do
       expect(page).to have_content("Crime")
       expect(page).to have_content(summary)
       expect(page).to have_content("Tim Robbins")
-      # expect(page).to have_content(summary)
-      # expect(page).to have_content(summary)
+      expect(page).to have_content("Morgan Freeman")
+      expect(page).to have_content("Bob Gunton")
+      expect(page).to have_content("William Sadler")
+      expect(page).to have_content("Clancy Brown")
+      expect(page).to have_content("Gil Bellows")
+      expect(page).to have_content("Mark Rolston")
+      expect(page).to have_content("James Whitmore")
+      expect(page).to have_content("Jeffrey DeMunn")
+      expect(page).to have_content("Larry Brandenburg")
+
+      expect(page).to_not have_content("Neil Giuntoli")
     end
   end
 end
