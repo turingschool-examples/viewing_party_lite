@@ -20,8 +20,6 @@ class UsersController < ApplicationController
       @movies << JSON.parse(response.body, symbolize_names: true)
     end 
     @movies 
-    # binding.pry
-
   end
 
   def new; end
