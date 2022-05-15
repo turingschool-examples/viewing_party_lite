@@ -13,4 +13,7 @@ class User < ApplicationRecord
     parties.where(host: self.id)
   end
 
+  def self.all_except_host(host_id)
+    where.not(id: host_id)
+  end
 end
