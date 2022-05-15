@@ -41,7 +41,7 @@ RSpec.describe "User Dashboard/Show Page", type: :feature do
     party_user_6 = PartyUser.create!(party: party_3, user: user_1, host: false)
 
     visit "/users/#{user_1.id}"
-    
+  
     within ".invited_to" do
       expect(page).to have_link("Shawshank Redemption")
       expect(page).to have_link("Schindler's List")

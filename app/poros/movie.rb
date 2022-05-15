@@ -1,5 +1,5 @@
 class Movie
-  attr_reader :title, :vote_average, :id, :cast, :runtime, :genres, :summary, :reviews
+  attr_reader :title, :vote_average, :id, :cast, :runtime, :genres, :summary, :reviews, :poster
 
   def initialize(movie_data)
     @title = movie_data[:title]
@@ -10,6 +10,7 @@ class Movie
     @genres = get_genres(movie_data)
     @summary = movie_data[:overview]
     @reviews = get_reviews(movie_data)
+    @poster = movie_data[:poster_path]
   end
 
   def get_cast(movie_data)
