@@ -1,6 +1,7 @@
 class PartiesController < ApplicationController
 
   def new
+    require "pry"; binding.pry
     @movie = MovieFacade.find_movie(params[:movie_id])
     @user = User.find(params[:user_id])
     @users = User.all_except_host(params[:user_id])
@@ -11,7 +12,7 @@ class PartiesController < ApplicationController
     new_party = Party.new(party_params)
 
     if @movie.runtime <= params[:duration].to_i
-      if new_party.save
+      if new_party.save && params[:users]
         params[:users].each do |user|
           PartyUser.create(user_id: User.find(user), party: new_party, host: false)
         end
@@ -20,6 +21,11 @@ class PartiesController < ApplicationController
       else
         render :new
       end
+    else
+      @user = User.find(params[:user_id])
+      @users = User.all_except_host(params[:user_id])
+      flash[:notice] = "Party cannot be shorter than movie's duration!"
+      render :new
     end
   end
 
