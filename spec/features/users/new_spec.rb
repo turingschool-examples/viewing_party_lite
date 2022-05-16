@@ -8,9 +8,9 @@ RSpec.describe 'the new user view' do
     fill_in 'Name', with: 'Terry Crews'
 
     click_on 'Register'
-
-    expect(current_path).to eq(user_dashboard_path(User.first))
-    expect(User.first.name).to eq('Terry Crews')
+    new_user = User.last
+    expect(current_path).to eq(user_dashboard_path(new_user))
+    expect(new_user.name).to eq('Terry Crews')
   end
 
   it 'will not register an invalid user' do

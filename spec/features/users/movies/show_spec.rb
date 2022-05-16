@@ -10,7 +10,7 @@ RSpec.describe 'the movie detail page' do
     VCR.use_cassette("has_a_button_to_create_a_viewing_party_that_links_to_the_new_viewing_party_page") do
         # visit "/users/#{@user.id}/movies/278"
         visit user_movie_path(@user, 278)
-        save_and_open_page
+      
         expect(page).to have_button("Create Viewing Party")
         # click_button "Create Viewing Party"
         # expect(current_path).to eq("/users/#{@user.id}/movies/278/parties/new")
