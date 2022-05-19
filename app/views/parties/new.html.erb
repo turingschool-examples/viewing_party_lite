@@ -10,10 +10,11 @@
   <br><%= form.label :start_time, "Start Time" %>
   <%= form.time_select :start_time, prompt: {hour: 'Hour', minute: 'Minute'} %><br>
 
+  <h4>Friends to Invite:</h4>
   <% @users.each do |user| %>
     <% unless user.id == @user.id %>
       <%= check_box_tag 'invited_users[]', user.id %>
-      <%= user.name %>
+      <%= user.name %><br>
     <% end %>
   <% end %>
 
