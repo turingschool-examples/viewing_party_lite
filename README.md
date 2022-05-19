@@ -1,29 +1,34 @@
 # Viewing Party
 
-This is the base repo for the [Viewing Party Lite project](https://backend.turing.io/module3/projects/viewing_party_lite) used for Turing's Backend Module 3.
+[Viewing Party](https://viewing-party-jhst.herokuapp.com/) is an application in which users can explore movie options and create a viewing party event for themselves and other users of the application. This app consumes the [TheMovieDatabase API](https://developers.themoviedb.org/3/getting-started/introduction).
 
-### About this Project
+## Production
 
-Viewing Part Lite is an application in which users can explore movie options and create a viewing party event for themselves and other users of the application.
+This app is currently deployed to Heroku at [this link](https://viewing-party-jhst.herokuapp.com/).
 
-## Setup for the use of the project
+## Technology
 
-1. A conveyor belt link will be sent out at project kickoff so that you can both fork and copy the project board on this base repo.
+- Ruby 2.7.2
+- Rails 5.2.8
 
-## Local Setup for any other use
+## Installation
 
-1. Fork and Clone the repo
-2. Install gem packages: `bundle install`
-3. Setup the database: `rails db:create`
+To pull down this repository and inspect the code locally, see below instructions: 
+
+1. Fork this repository. 
+2. Clone your fork to your local computer. 
+3. Set your Ruby version to 2.7.2 and your Rails version to 5.2.8.
+4. Install gem packages: `bundle install`
+5. Setup the database: `rails db:{create,migrate}`
+6. Tests can be run by running `bundle exec rspec` in your CLI. 
 
 ## Database Schema
 
-![image](https://user-images.githubusercontent.com/93609855/167528725-76b93606-4a60-4212-afe3-99f7ff915d2b.png)
+This app uses a many-to-many relational database: Users have many Invitations, and many Parties through Invitations. Parties have many Invitations, and many Users through Invitations. Invitations belong to a User and a Party. Movie data are displayed using a Movie PORO Class, objects of which are generated through the MovieService and MovieFacade classes. 
 
-## Versions
+![image](https://user-images.githubusercontent.com/93609855/168385176-bb2a65fc-19d9-41b7-8ac7-1aae385d09cb.png)
 
-- Ruby 2.7.2
+## Contributors 
 
-- Rails 5.2.6
-
-Example wireframes to follow are found [here](https://backend.turing.io/module3/projects/viewing_party_lite/wireframes)
+- James Harkins ([GitHub](https://github.com/James-Harkins))
+- Sandisz Thieme ([GitHub](https://github.com/sandisz-d734m37))

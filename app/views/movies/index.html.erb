@@ -3,12 +3,11 @@
 <%= button_to "Discover top rated movies", "/users/#{@user.id}/discover", method: :get, params: { q: "top%20rated" } %><br>
 
 <%= form_with url: "/users/#{@user.id}/discover", method: :get, local: true do |form| %>
-  <%= form.label :q, "keyword" %>
-  <%= form.text_field :q %>
+  <%= form.text_field :q, label: false %><br>
   <%= form.submit "Search by Title" %>
 <% end %>
 
-<hr/>
+<br><hr/>
 <% if @top_20 %>
 
   <ul>
