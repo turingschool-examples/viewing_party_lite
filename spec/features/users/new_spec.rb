@@ -6,6 +6,8 @@ RSpec.describe "New User", type: :feature do
 
     fill_in(:name, with: "Jim")
     fill_in(:email, with: "Jim@mail.com")
+    fill_in(:password, with: "password")
+    fill_in(:password_confirmation, with: "password")
     click_on "Register"
     new_user = User.last
 

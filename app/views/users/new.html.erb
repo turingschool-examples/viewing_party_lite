@@ -5,5 +5,9 @@
   <%= form.text_field :name  %>
   <%= form.label "Email: " %>
   <%= form.text_field :email  %>
+  <%= form.label "Password" %>
+  <%= form.password_field :password %>
+  <%= form.label "Confirm Password" %>
+  <%= form.password_field :password_confirmation %>
   <%= form.submit "Register" %>
 <% end %>
