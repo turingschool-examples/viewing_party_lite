@@ -51,4 +51,30 @@ RSpec.describe "Home page", type: :feature do
     click_on("Login")
     expect(current_path).to eq("/users/#{user.id}")
   end
+
+  it 'does not allow a sign in with the wrong password' do
+    user = User.create!(name: "Joe", email: "joe@mail.com", password: "secret", password_confirmation: "secret")
+
+    visit("/login")
+
+    fill_in(:email, with: "joe@mail.com")
+    fill_in(:password, with: "secretss")
+    click_on("Login")
+
+    expect(current_path).to eq("/login")
+    expect(page).to have_content("Email or password are incorrect")
+  end
+
+  it 'needs a valid email to login' do
+    user = User.create!(name: "Joe", email: "joe@mail.com", password: "secret", password_confirmation: "secret")
+
+    visit("/login")
+
+    fill_in(:email, with: "joey@mail.com")
+    fill_in(:password, with: "secrets")
+    click_on("Login")
+
+    expect(current_path).to eq("/login")
+    expect(page).to have_content("Email or password are incorrect")
+  end
 end

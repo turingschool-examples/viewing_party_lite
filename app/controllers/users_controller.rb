@@ -24,6 +24,10 @@ class UsersController < ApplicationController
     if user.authenticate(params[:password])
       flash[:success] = "Welcome #{user.name}!"
       redirect_to "/users/#{user.id}"
+    else
+      flash[:notice] = "Email or password are incorrect"
+      render :login_form
+      # require "pry"; binding.pry
     end
   end
 
