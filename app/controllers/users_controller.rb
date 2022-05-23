@@ -12,14 +12,14 @@ class UsersController < ApplicationController
         redirect_to "/users/#{user.id}"
       else
         redirect_to "/users/register"
-        flash[:notice] = "Error: User already exists with this email"
-
+        # require "pry"; binding.pry
+        flash[:notice] = user.errors.full_messages
       end
   end
 
 private
   def user_params
-    params.permit(:name, :email)
+    params.permit(:name, :email, :password_confirmation, :password)
   end
 
 end

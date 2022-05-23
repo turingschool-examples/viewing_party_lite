@@ -10,7 +10,7 @@ RSpec.describe "New User", type: :feature do
     fill_in(:password_confirmation, with: "password")
     click_on "Register"
     new_user = User.last
-    require "pry"; binding.pry
+
     expect(current_path).to eq("/users/#{new_user.id}")
   end
 
@@ -26,7 +26,19 @@ RSpec.describe "New User", type: :feature do
     click_on "Register"
 
     expect(current_path).to eq("/users/register")
-    expect(page).to have_content("Error: User already exists with this email")
+    expect(page).to have_content("Email has already been taken")
   end
 
+  it 'rejects it if the two passwords do not match' do
+    visit "/users/register"
+
+    fill_in(:name, with: "Jim")
+    fill_in(:email, with: "Jim@mail.com")
+    fill_in(:password, with: "password")
+    fill_in(:password_confirmation, with: "passworddd")
+    click_on "Register"
+
+    expect(current_path).to eq("/users/register")
+    expect(page).to have_content("Password confirmation doesn't match Password")
+  end
 end
