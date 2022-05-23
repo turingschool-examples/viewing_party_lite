@@ -46,16 +46,17 @@ RSpec.describe 'New User Page', type: :feature do
       expect(page).to have_content("Email has already been taken")
     end
 
-
+    it 'blank name results in redirect back to /register w/ error message' do
+      visit '/register'
+     
+      fill_in :email, with: 'skeeter@example.com'
+      fill_in :password, with: 'password'
+      fill_in :password_confirmation, with: 'password'
+      click_on 'Create User'
+      expect(current_path).to eq("/register")
+      expect(page).to have_content("Name can't be blank")
+    end
 
   end
 end
 
-# within '#new-user-form' do
-#   fill_in :name,	with: 'Zel'
-#   fill_in :email, with: 'lorem@ipsum.dorum'
-#   click_on :submit
-# end
-
-# new_user = User.where(email: 'lorem@ipsum.dorum').first
-# expect(current_path).to eq("/users/#{new_user.id}")
