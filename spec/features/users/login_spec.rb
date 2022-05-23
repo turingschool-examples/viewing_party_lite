@@ -23,6 +23,26 @@ describe "user login page" do
 
         expect(current_path).to eq("/users/#{@user_1.id}")
       end
+
+      it "if i enter an email that does not exist, then i see an error message" do
+        visit "/login"
+
+        fill_in "Email", with: "woke_up_this_morning@gmail.com"
+        fill_in "Password", with: "test123"
+
+        expect(current_path).to eq("/login")
+        expect(page).to have_content("There is no account associated with this email address.")
+      end
+
+      it "if i enter the wrong password, then i see an error message" do
+        visit "/login"
+
+        fill_in "Email", with: "wokeupthismorning@gmail.com"
+        fill_in "Password", with: "123test"
+
+        expect(current_path).to eq("/login")
+        expect(page).to have_content("Invalid password.")
+      end
     end
   end
 end
