@@ -43,7 +43,7 @@ describe "welcome page" do
         fill_in "Email", with: "wokeupthismorning@gmail.com"
         fill_in "Password", with: "test123"
 
-        click_button "Login"
+        click_button "Log In"
 
         expect(current_path).to eq("/users/#{@user_1.id}")
       end
