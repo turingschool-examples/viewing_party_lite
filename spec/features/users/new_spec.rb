@@ -39,11 +39,11 @@ RSpec.describe 'New User Page', type: :feature do
       fill_in :name, with: 'skeeter'
       fill_in :email, with: 'skeeter@example.com'
       fill_in :password, with: 'password'
-      fill_in :password_confirmation, with: 'not password'
+      fill_in :password_confirmation, with: 'password'
       click_on 'Create User'
-      # save_and_open_page
+      save_and_open_page
       expect(current_path).to eq("/register")
-      expect(page).to have_content("Password must be unique")
+      expect(page).to have_content("Email has already been taken")
     end
 
 
