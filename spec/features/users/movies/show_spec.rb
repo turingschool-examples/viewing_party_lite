@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'User Movie Show Page', type: :feature do
 
   before :each do
-    @user = User.create!(name: "Zel", email: "lorem@ipsum.dorum")
+    @user = User.create!(name: "Zel", email: "lorem@ipsum.dorum", password_digest: 'test123', password_confirmation: 'test123')
   end
 
   it 'Provides details for an individual movie' do

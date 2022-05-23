@@ -4,8 +4,8 @@ require 'rails_helper'
 
 RSpec.describe 'User Dashboard', type: :feature do
   before :each do
-    @user1 = User.create!(name: 'Zel', email: 'lorem@ipsum.com')
-    @user2 = User.create!(name: 'Alex', email: 'ipsum@lorem.com')
+    @user1 = User.create!(name: 'Zel', email: 'lorem@ipsum.com', password_digest: 'test', password_confirmation: 'test')
+    @user2 = User.create!(name: 'Alex', email: 'ipsum@lorem.com', password_digest: 'test123', password_confirmation: 'test123')
   end
 
   it 'contains all expected attributes of the selected user' do

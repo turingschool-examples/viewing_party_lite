@@ -4,9 +4,9 @@ RSpec.describe 'Landing/Welcome Page' do
 
   describe 'As a Visitor' do
     before do 
-      @skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com')
-      @lugnut = User.create!(name: 'LugNut', email: 'fatdog@corgi.com')
-      @hazel = User.create!(name: 'Hazel', email: 'hazelthehut@food.com')
+      @skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
+      @lugnut = User.create!(name: 'LugNut', email: 'fatdog@corgi.com', password_digest: 'test12', password_confirmation: 'test12')
+      @hazel = User.create!(name: 'Hazel', email: 'hazelthehut@food.com', password_digest: 'test1', password_confirmation: 'test1')
     end 
 
     it 'has the title of the application, and a list of existing users' do
@@ -54,7 +54,7 @@ RSpec.describe 'Landing/Welcome Page' do
       
       expect(page).to have_button("Create a New User")
       click_button "Create a New User"
-      expect(current_path).to eq('/users/new')
+      expect(current_path).to eq('/register')
     end 
   end 
 end 

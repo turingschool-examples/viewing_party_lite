@@ -5,7 +5,7 @@ RSpec.describe "New Party Page" do
   describe "As a Visitor" do 
 
     it 'it has the movie title and a form to create a new party' do
-      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com')
+      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
       jaws_id = 578
       
       visit "/users/#{skeeter.id}/movies/#{jaws_id}/party/new"
@@ -17,11 +17,11 @@ RSpec.describe "New Party Page" do
     end 
 
     it 'the new party form has a checkbox list of all users to add them to the party' do
-      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com')
-      lugnut = User.create!(name: 'LugNut', email: 'fatdog@corgi.com')
-      hazel = User.create!(name: 'Hazel', email: 'hazelthehut@food.com')
-      ruby = User.create!(name: 'Ruby', email: 'rubythehut@food.com')
-      woobie = User.create!(name: 'Woobie', email: 'woobiethehut@food.com')
+      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
+      lugnut = User.create!(name: 'LugNut', email: 'fatdog@corgi.com', password_digest: 'test12', password_confirmation: 'test12')
+      hazel = User.create!(name: 'Hazel', email: 'hazelthehut@food.com', password_digest: 'test1', password_confirmation: 'test1')
+      ruby = User.create!(name: 'Ruby', email: 'rubythehut@food.com', password_digest: 'test', password_confirmation: 'test')
+      woobie = User.create!(name: 'Woobie', email: 'woobiethehut@food.com', password_digest: 'test1234', password_confirmation: 'test1234')
       jaws_id = 578
      
       visit "/users/#{skeeter.id}/movies/#{jaws_id}/party/new"
@@ -35,9 +35,9 @@ RSpec.describe "New Party Page" do
     
     describe 'when a new party is created' do
       it 'I am redirected to my dashboard with new party shown, party also show on attendees dashboards' do
-        skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com')
-        lugnut = User.create!(name: 'LugNut', email: 'fatdog@corgi.com')
-        hazel = User.create!(name: 'Hazel', email: 'hazelthehut@food.com')
+        skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
+        lugnut = User.create!(name: 'LugNut', email: 'fatdog@corgi.com', password_digest: 'test12', password_confirmation: 'test12')
+        hazel = User.create!(name: 'Hazel', email: 'hazelthehut@food.com', password_digest: 'test1', password_confirmation: 'test1')
         jaws_id = 578
         
         visit "/users/#{skeeter.id}/movies/#{jaws_id}/party/new"
@@ -63,8 +63,8 @@ RSpec.describe "New Party Page" do
       end 
     end 
     it 'cannot make a new party with a duration less than the movies runtime' do
-      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com')
-      lugnut = User.create!(name: 'LugNut', email: 'fatdog@corgi.com')
+      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
+      lugnut = User.create!(name: 'LugNut', email: 'fatdog@corgi.com', password_digest: 'test12', password_confirmation: 'test12')
       jaws_id = 578
       
       visit "/users/#{skeeter.id}/movies/#{jaws_id}/party/new"

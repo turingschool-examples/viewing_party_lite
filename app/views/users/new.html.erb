@@ -1,10 +1,10 @@
 <h1>Create New User</h1>
 <div id="new-user-form">
-<%= form_with url: "/users", method: :post, local: true do |f| %>
-  <%= f.label :name, "Name:" %>
-  <%= f.text_field :name %>
-  <%= f.label :email, "Email:" %>
-  <%= f.text_field :email %>
-  <%= f.submit :submit %>
+<%= form_with model: @user do |form| %>
+  <%= form.label :username, 'Username:' %>
+  <%= form.text_field :username %>
+  <%= form.label :password, 'Password:' %>
+  <%= form.password_field :password %>
+  <%= form.submit 'Create User' %>
 <% end %>
 </div>

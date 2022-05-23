@@ -5,7 +5,7 @@ RSpec.describe 'User Discovery Page', type: :feature do
   describe 'As a Visitor' do 
 
     it 'the discover movies button takes me to the discover movies page' do
-      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com')
+      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
 
       visit "/users/#{skeeter.id}"
       click_button "Discover Movies"
@@ -14,7 +14,7 @@ RSpec.describe 'User Discovery Page', type: :feature do
     end 
 
     it 'has a Top Rated Movies button and a Search by Movie Title field' do
-      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com')
+      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
       visit "/users/#{skeeter.id}/discover"
     
       expect(page).to have_button("Find Top Rated Movies")
@@ -22,7 +22,7 @@ RSpec.describe 'User Discovery Page', type: :feature do
     end 
 
     it 'clicking the Top Rated Movies button takes me to the movie results page' do
-      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com')
+      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
       visit "/users/#{skeeter.id}/discover"
 
       click_button "Find Top Rated Movies"
@@ -34,7 +34,7 @@ RSpec.describe 'User Discovery Page', type: :feature do
     end 
 
     it 'clicking the Find Movies button takes me to the movie results page' do
-      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com')
+      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
       visit "/users/#{skeeter.id}/discover"
 
       fill_in "Search by Movie Title", with: "Jaws"
