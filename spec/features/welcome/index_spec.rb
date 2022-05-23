@@ -40,21 +40,32 @@ RSpec.describe 'Landing/Welcome Page' do
       end 
     end 
     
-    it 'has a link to return back to the landing/welcome page' do #link will be present on every page of application
-      
+    it 'has a link to return back to the landing/welcome page' do #link will be present on every page of application 
       visit "/"
 
       click_link "Home"
       expect(current_path).to eq('/')
     end 
 
-    it 'has a button to create a new user' do 
-      
+    it 'has a button to create a new user' do  
       visit "/"
       
       expect(page).to have_button("Create a New User")
       click_button "Create a New User"
       expect(current_path).to eq('/register')
     end 
+  end 
+
+  describe 'Login Featured' do
+    it 'clicking link to login, takes me to login page /login' do
+      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
+      visit "/"
+      save_and_open_page
+      click_button 'Login'
+
+      expect(current_path).to eq('/login')
+    end
+
+
   end 
 end 
