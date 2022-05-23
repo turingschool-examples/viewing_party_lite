@@ -10,8 +10,6 @@ describe "user login page" do
       end
 
       it "i see a link to log in, which takes me to a login page, where i can log in successfully" do
-        visit "/"
-
         click_link "Log In"
 
         expect(current_path).to eq("/login")
