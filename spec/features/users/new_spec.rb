@@ -20,6 +20,7 @@ RSpec.describe "Registration Page", type: :feature do
       fill_in("name", with: "Celeste Chere")
       fill_in("email", with: "celesff6@square.com")
       fill_in("password", with: "celesff6")
+      fill_in("password_confirmation", with: "celesff6")
       click_on "Register"
 
       user3 = User.last
@@ -53,6 +54,26 @@ RSpec.describe "Registration Page", type: :feature do
 
       expect(user4.name).to eq("Joseph")
       expect(user4).to_not have_attribute(:password)
+    end
+
+    it "cannot have blank fields" do
+      fill_in(:email, with: "joseph@turing.edu")
+      fill_in(:password, with: "ThisTest")
+      fill_in(:password_confirmation, with: "ThisTest")
+      click_on "Register"
+
+      expect(current_path).to eq(register_path)
+    end
+
+    it "verifies that password matches" do
+      fill_in(:name, with: "Joseph")
+      fill_in(:email, with: "joseph@turing.edu")
+      fill_in(:password, with: "ThisTest")
+      fill_in(:password_confirmation, with: "This")
+      click_on "Register"
+
+      expect(current_path).to eq(register_path)
+      expect(page).to have_content("Passwords must match")
     end
   end
 end

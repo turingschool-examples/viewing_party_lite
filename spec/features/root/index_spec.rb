@@ -47,4 +47,12 @@ RSpec.describe 'landing page' do
     expect(current_path).to eq("/users/#{@user_1.id}")
     expect(current_path).to_not eq("/users/#{@user_2.id}")
   end
+
+  it "has a button to log in" do
+    expect(page).to have_button("Log In")
+
+    click_button "Log In"
+
+    expect(current_path).to eq("/login")
+  end
 end
