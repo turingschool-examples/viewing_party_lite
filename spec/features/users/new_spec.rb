@@ -13,7 +13,7 @@ describe "user new page" do
         fill_in "Name", with: "Junior Soprano"
         fill_in "Email", with: "varsityathlete@gmail.com"
         fill_in "Password", with: "test123"
-        fill_in "Password Confirmation", with: "test123"
+        fill_in "Password confirmation", with: "test123"
 
         click_button "Register"
 
