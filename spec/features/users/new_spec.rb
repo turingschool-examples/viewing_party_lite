@@ -59,6 +59,18 @@ describe "user new page" do
         expect(page).to have_content("Please confirm your password in the 'Password confirmation' field.")
       end
 
+      it "the form will not accept the submission if the user only submits a password confirmation without an original password" do
+        visit "/register"
+
+        fill_in "Name", with: "Junior Soprano"
+        fill_in "Email", with: "wokeupthismorning@gmail.com"
+        fill_in "Password confirmation", with: "test123"
+
+        click_button "Register"
+
+        expect(page).to have_content("Please confirm your password in the 'Password confirmation' field.")
+      end
+
       it "the form will not accept the submission if the user only submits passwords that do not match" do
         visit "/register"
 
