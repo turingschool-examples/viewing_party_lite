@@ -26,10 +26,37 @@ describe "user new page" do
 
         fill_in "Name", with: "Junior Soprano"
         fill_in "Email", with: "wokeupthismorning@gmail.com"
+        fill_in "Password", with: "test123"
+        fill_in "Password confirmation", with: "test123"
 
         click_button "Register"
 
         expect(page).to have_content("There is already an account associated with this e-mail address.")
+      end
+
+      it "the form will not accept the submission if the user only submits a password without a confirmation" do
+        visit "/register"
+
+        fill_in "Name", with: "Junior Soprano"
+        fill_in "Email", with: "wokeupthismorning@gmail.com"
+        fill_in "Password", with: "test123"
+
+        click_button "Register"
+
+        expect(page).to have_content("Please confirm your password in the 'Password confirmation' field.")
+      end
+
+      it "the form will not accept the submission if the user only submits passwords that do not match" do
+        visit "/register"
+
+        fill_in "Name", with: "Junior Soprano"
+        fill_in "Email", with: "wokeupthismorning@gmail.com"
+        fill_in "Password", with: "test123"
+        fill_in "Password confirmation", with: "123test"
+
+        click_button "Register"
+
+        expect(page).to have_content("Passwords must match.")
       end
     end
   end
