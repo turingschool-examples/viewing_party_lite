@@ -18,15 +18,18 @@ class UsersController < ApplicationController
   def new; end
 
   def create
+    # binding.pry
     if params[:password] == params[:password_confirmation]
       @user = User.create(new_user_params)
       if @user.save
         flash[:success] = "Welcome, #{@user.name}!"
         redirect_to "/users/#{@user.id}"
       else
-        flash[:error] = "Something went wrong"
+        binding.pry
+        flash[:error] = "something went wrong"
       end 
-    else
+    else #params[:password] != params[:password_confirmation]
+      flash[:error] = "Passwords do not match"
       render :new
     end 
   end
