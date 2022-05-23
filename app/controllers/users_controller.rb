@@ -8,13 +8,15 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
-      if user.save
-        redirect_to "/users/#{user.id}"
-      else
-        redirect_to "/users/register"
-        # require "pry"; binding.pry
-        flash[:notice] = user.errors.full_messages
-      end
+    if user.save
+      redirect_to "/users/#{user.id}"
+    else
+      redirect_to "/users/register"
+      flash[:notice] = user.errors.full_messages
+    end
+  end
+
+  def login
   end
 
 private
