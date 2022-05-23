@@ -48,6 +48,7 @@ group :development, :test do
   gem "standardrb"
   gem "figaro"
   gem "faraday"
+  gem "bcrypt"
 end
 
 group :development do

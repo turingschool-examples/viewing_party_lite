@@ -4,11 +4,11 @@ describe "new party page" do
   describe "as a user" do
     describe "when i visit a new party page for some movie", :vcr do
       before do
-        @user1 = User.create!(name: "Tony Soprano", email: "woke_up_this_morning@gmail.com")
-        @user2 = User.create!(name: "Junior Soprano", email: "varsity_athlete@gmail.com")
-        @user3 = User.create!(name: "Christopher Moltisanti", email: "the_hare_apparent@gmail.com")
-        @user4 = User.create!(name: "Paulie Gualtieri", email: "watch_it_chrissie@gmail.com")
-        @user5 = User.create!(name: "Bobby Baccalieri", email: "bobby_baccala@gmail.com")
+        @user1 = User.create!(name: "Tony Soprano", email: "woke_up_this_morning@gmail.com", password: "test123", password_confirmation: "test123")
+        @user2 = User.create!(name: "Junior Soprano", email: "varsity_athlete@gmail.com", password: "test123", password_confirmation: "test123")
+        @user3 = User.create!(name: "Christopher Moltisanti", email: "the_hare_apparent@gmail.com", password: "test123", password_confirmation: "test123")
+        @user4 = User.create!(name: "Paulie Gualtieri", email: "watch_it_chrissie@gmail.com", password: "test123", password_confirmation: "test123")
+        @user5 = User.create!(name: "Bobby Baccalieri", email: "bobby_baccala@gmail.com", password: "test123", password_confirmation: "test123")
         visit "/users/#{@user2.id}/movies/290/parties/new"
       end
 

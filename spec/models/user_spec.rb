@@ -12,23 +12,29 @@ describe User, type: :model do
 
     describe "email" do
       before do
-        @user_1 = User.create!(name: "Tony Soprano", email: "wokeupthismorning@gmail.com")
+        @user_1 = User.create!(name: "Tony Soprano", email: "wokeupthismorning@gmail.com", password: "test123", password_confirmation: "test123")
       end
 
       it { should allow_value("cleavermovie@gmail.com").for(:email) }
       it { should_not allow_value("wokeupthismorning@gmail.com").for(:email) }
     end
 
-    it { should validate_presence_of(:password_digest) }
+    it { should validate_presence_of(:password) }
     it { should have_secure_password }
+
+    it "should not have a password attribute and the password_digest attribute should be a hash" do
+      user = User.create(name: "Meg", email: "meg@test.com", password: "password123", password_confirmation: "password123")
+      expect(user).to_not have_attribute(:password)
+      expect(user.password_digest).to_not eq("password123")
+    end
   end
 
   describe "instance methods" do
     describe "invited_parties" do
       it "should return parties the user is invited to and for which they are not the host" do
-        @user1 = User.create!(name: "User One", email: "user1@test.com")
-        @user2 = User.create!(name: "User Two", email: "user2@test.com")
-        @user3 = User.create!(name: "User Three", email: "user3@test.com")
+        @user1 = User.create!(name: "User One", email: "user1@test.com", password: "test123", password_confirmation: "test123")
+        @user2 = User.create!(name: "User Two", email: "user2@test.com", password: "test123", password_confirmation: "test123")
+        @user3 = User.create!(name: "User Three", email: "user3@test.com", password: "test123", password_confirmation: "test123")
 
         @u1_vp = Party.create!(event_date: DateTime.new(2002, 0o4, 26, 6, 0, 0, "-07:00"), duration: "230 mins", start_time: DateTime.new(2002, 0o4, 26, 6, 0, 0, "-07:00"), user_id: @user1.id, movie_id: 24021)
         @u1_vp_inv_1 = Invitation.create!(user_id: @user1.id, party_id: @u1_vp.id)
@@ -51,9 +57,9 @@ describe User, type: :model do
 
     describe "hosting_parties" do
       it "should return parties that the user is hosting" do
-        @user1 = User.create!(name: "User One", email: "user1@test.com")
-        @user2 = User.create!(name: "User Two", email: "user2@test.com")
-        @user3 = User.create!(name: "User Three", email: "user3@test.com")
+        @user1 = User.create!(name: "User One", email: "user1@test.com", password: "test123", password_confirmation: "test123")
+        @user2 = User.create!(name: "User Two", email: "user2@test.com", password: "test123", password_confirmation: "test123")
+        @user3 = User.create!(name: "User Three", email: "user3@test.com", password: "test123", password_confirmation: "test123")
 
         @u1_vp = Party.create!(event_date: DateTime.new(2002, 0o4, 26, 6, 0, 0, "-07:00"), duration: "230 mins", start_time: DateTime.new(2002, 0o4, 26, 6, 0, 0, "-07:00"), user_id: @user1.id, movie_id: 24021)
         @u1_vp_inv_1 = Invitation.create!(user_id: @user1.id, party_id: @u1_vp.id)

@@ -4,7 +4,7 @@ describe "movie show page" do
   describe "as a user" do
     describe "when i visit a movie show page" do
       before do
-        @user1 = User.create!(name: "User One", email: "user1@test.com")
+        @user1 = User.create!(name: "User One", email: "user1@test.com", password: "test123", password_confirmation: "test123")
         visit "/users/#{@user1.id}/movies/290"
       end
 
