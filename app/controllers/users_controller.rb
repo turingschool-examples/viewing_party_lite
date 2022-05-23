@@ -13,9 +13,12 @@ class UsersController < ApplicationController
     elsif params[:name].empty?
       redirect_to "/register"
       flash[:no_name] = "Name cannot be empty."
+    elsif params[:password].empty?
+      redirect_to "/register"
+      flash[:password_match] = "Passwords must match."
     elsif params[:password_confirmation].empty?
       redirect_to "/register"
-      flash[:password_confirmation] = "Please confirm your password in the 'Password confirmation' field."
+      flash[:password_confirmation] = "Passwords must match."
     elsif params[:password] != params[:password_confirmation]
       redirect_to "/register"
       flash[:password_match] = "Passwords must match."

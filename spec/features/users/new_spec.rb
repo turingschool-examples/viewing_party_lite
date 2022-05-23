@@ -56,7 +56,7 @@ describe "user new page" do
 
         click_button "Register"
 
-        expect(page).to have_content("Please confirm your password in the 'Password confirmation' field.")
+        expect(page).to have_content("Passwords must match.")
       end
 
       it "the form will not accept the submission if the user only submits a password confirmation without an original password" do
@@ -68,7 +68,7 @@ describe "user new page" do
 
         click_button "Register"
 
-        expect(page).to have_content("Please confirm your password in the 'Password confirmation' field.")
+        expect(page).to have_content("Passwords must match.")
       end
 
       it "the form will not accept the submission if the user only submits passwords that do not match" do
