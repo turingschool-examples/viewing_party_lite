@@ -39,6 +39,5 @@ RSpec.describe "New Viewing Party", type: :feature do
       click_button "submit"
 
     expect(Party.all.count).to eq(party_count)
-    # expect(current_path).to eq("/users/#{user.id}")
   end
 end

@@ -1,7 +1,7 @@
 class PartiesController < ApplicationController
 
   def new
-    require "pry"; binding.pry
+    # require "pry"; binding.pry
     @movie = MovieFacade.find_movie(params[:movie_id])
     @user = User.find(params[:user_id])
     @users = User.all_except_host(params[:user_id])
