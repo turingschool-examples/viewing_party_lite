@@ -31,7 +31,7 @@ describe "user new page" do
         click_button "Register"
 
         expect(current_path).to eq("/register")
-        expect(page).to have_content("Name cannot be empty.")
+        expect(page).to have_content("Name can't be blank")
       end
 
       it "the form will not accept an email that already exists for some other user in the database" do
@@ -44,44 +44,44 @@ describe "user new page" do
 
         click_button "Register"
 
-        expect(page).to have_content("There is already an account associated with this e-mail address.")
+        expect(page).to have_content("Email has already been taken")
       end
 
       it "the form will not accept the submission if the user only submits a password without a confirmation" do
         visit "/register"
 
         fill_in "Name", with: "Junior Soprano"
-        fill_in "Email", with: "wokeupthismorning@gmail.com"
+        fill_in "Email", with: "varsityathlete@gmail.com"
         fill_in "Password", with: "test123"
 
         click_button "Register"
 
-        expect(page).to have_content("Passwords must match.")
+        expect(page).to have_content("Password confirmation doesn't match Password")
       end
 
       it "the form will not accept the submission if the user only submits a password confirmation without an original password" do
         visit "/register"
 
         fill_in "Name", with: "Junior Soprano"
-        fill_in "Email", with: "wokeupthismorning@gmail.com"
+        fill_in "Email", with: "varsityathlete@gmail.com"
         fill_in "Password confirmation", with: "test123"
 
         click_button "Register"
 
-        expect(page).to have_content("Passwords must match.")
+        expect(page).to have_content("Password can't be blank")
       end
 
       it "the form will not accept the submission if the user only submits passwords that do not match" do
         visit "/register"
 
         fill_in "Name", with: "Junior Soprano"
-        fill_in "Email", with: "wokeupthismorning@gmail.com"
+        fill_in "Email", with: "varsityathlete@gmail.com"
         fill_in "Password", with: "test123"
         fill_in "Password confirmation", with: "123test"
 
         click_button "Register"
 
-        expect(page).to have_content("Passwords must match.")
+        expect(page).to have_content("Password confirmation doesn't match Password")
       end
     end
   end
