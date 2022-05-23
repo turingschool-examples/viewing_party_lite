@@ -27,7 +27,7 @@ RSpec.describe "Login Page" do
       expect(page).to have_content("Welcome #{meatball.name}!")
     end
 
-    it 'If I enter bad credentails, I am redirected back to login page with error telling me my credentials are bad' do
+    it 'If I enter a bad password, I am redirected back to login page with error telling me my password was bad' do
       meatball = User.create(name: 'meatball', email: 'meatball@example.com', password: '123')
 
       visit "/login"
@@ -39,6 +39,19 @@ RSpec.describe "Login Page" do
       expect(current_path).to eq("/login")
       # save_and_open_page
       expect(page).to have_content("Incorrect Password")
+    end 
+    it 'If I enter a bad email, I am redirected back to login page with error telling me my email was bad' do
+      meatball = User.create(name: 'meatball', email: 'meatball@example.com', password: '123')
+
+      visit "/login"
+
+      fill_in :name, with: 'meatball'
+      fill_in :email, with: 'skeeter@example.com'
+      fill_in :password, with: '123'
+      click_on "Log In"   
+      expect(current_path).to eq("/login")
+      # save_and_open_page
+      expect(page).to have_content("Incorrect Email")
     end 
 
 
