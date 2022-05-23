@@ -21,6 +21,19 @@ describe "user new page" do
         expect(page).not_to have_content("Tony Soprano's page")
       end
 
+      it "the form will not accept the input if the user does not input a name" do
+        visit "/register"
+
+        fill_in "Email", with: "varsityathlete@gmail.com"
+        fill_in "Password", with: "test123"
+        fill_in "Password confirmation", with: "test123"
+
+        click_button "Register"
+
+        expect(current_path).to eq("/register")
+        expect(page).to have_content("Name cannot be empty.")
+      end
+
       it "the form will not accept an email that already exists for some other user in the database" do
         visit "/register"
 
