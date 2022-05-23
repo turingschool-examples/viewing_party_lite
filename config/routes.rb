@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/register', to: 'users#new'
   post '/register', to: 'users#create'
 
+  get '/login', to: 'users#login_form'
 
   get '/users/:id/movies', to: 'user_movies#index'
   get '/users/:user_id/movies/:movie_id', to: 'user_movies#show'

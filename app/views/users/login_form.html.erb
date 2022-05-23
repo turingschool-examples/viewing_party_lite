@@ -1,10 +1,8 @@
-<h1>Create New User</h1>
-<div id="new-user-form">
-<%= form_with model: @user do |form| %>
-  <%= form.label :name, 'Name:' %>
+<%= form_with url: login_path, method: :post do |form| %>
+  <%= form.label :name, "Name:" %>
   <%= form.text_field :name %><br>
 
-  <%= form.label :email, 'Email:' %>
+  <%= form.label :email, "@mail:" %>
   <%= form.text_field :email %><br>
 
   <%= form.label :password, 'Password:' %>
@@ -12,6 +10,6 @@
   
   <%= form.label :password_confirmation, 'Password Confirmation:' %>
   <%= form.password_field :password_confirmation %><br>
-  <%= form.submit 'Create User' %>
+  <%= form.submit 'Login' %>
+
 <% end %>
-</div>
