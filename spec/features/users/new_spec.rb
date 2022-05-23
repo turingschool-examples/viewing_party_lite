@@ -7,11 +7,13 @@ describe "user new page" do
         @user_1 = User.create!(name: "Tony Soprano", email: "wokeupthismorning@gmail.com", password: "test123", password_confirmation: "test123")
       end
 
-      it "i see a form to register, including name and email" do
+      it "i see a form to register, including name, email, and password" do
         visit "/register"
 
         fill_in "Name", with: "Junior Soprano"
-        fill_in "Email", with: "avarsityathlete@gmail.com"
+        fill_in "Email", with: "varsityathlete@gmail.com"
+        fill_in "Password", with: "test123"
+        fill_in "Password Confirmation", with: "test123"
 
         click_button "Register"
 
