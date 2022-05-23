@@ -40,6 +40,7 @@ RSpec.describe "Login Page" do
       # save_and_open_page
       expect(page).to have_content("Incorrect Password")
     end 
+
     it 'If I enter a bad email, I am redirected back to login page with error telling me my email was bad' do
       meatball = User.create(name: 'meatball', email: 'meatball@example.com', password: '123')
 
