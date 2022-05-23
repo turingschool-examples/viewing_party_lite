@@ -14,6 +14,7 @@ RSpec.describe 'New User Page', type: :feature do
       click_on 'Create User'
 
       new_user = User.last
+      # binding.pry
       expect(current_path).to eq("/users/#{new_user.id}")
     end
   end 
@@ -27,7 +28,7 @@ RSpec.describe 'New User Page', type: :feature do
       fill_in :password, with: 'password'
       fill_in :password_confirmation, with: 'not password'
       click_on 'Create User'
-      save_and_open_page
+      # save_and_open_page
       expect(current_path).to eq("/register")
       expect(page).to have_content("Passwords do not match")
     end
@@ -41,7 +42,7 @@ RSpec.describe 'New User Page', type: :feature do
       fill_in :password, with: 'password'
       fill_in :password_confirmation, with: 'password'
       click_on 'Create User'
-      save_and_open_page
+      # save_and_open_page
       expect(current_path).to eq("/register")
       expect(page).to have_content("Email has already been taken")
     end
