@@ -29,7 +29,5 @@ describe "Movies discover page" do
 
     expect(page).to have_link("Nothing to Lose")
     expect(page).to have_content("Vote Average: 6.4")
-    expect(page).to have_link("Out of Nothing")
-    expect(page).to have_content("Vote Average: 8.3")
   end
 end
