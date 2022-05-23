@@ -10,6 +10,9 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       redirect_to "/users/#{user.id}"
+    elsif params[:name].empty?
+      redirect_to "/register"
+      flash[:no_name] = "Name cannot be empty."
     elsif params[:password_confirmation].empty?
       redirect_to "/register"
       flash[:password_confirmation] = "Please confirm your password in the 'Password confirmation' field."
