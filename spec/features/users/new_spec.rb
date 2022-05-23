@@ -10,17 +10,19 @@ RSpec.describe "New User", type: :feature do
     fill_in(:password_confirmation, with: "password")
     click_on "Register"
     new_user = User.last
-
+    require "pry"; binding.pry
     expect(current_path).to eq("/users/#{new_user.id}")
   end
 
   it 'rejects duplicate emails' do
     visit "/users/register"
 
-    User.create!(name: "Tim", email: "Jim@mail.com")
+    User.create!(name: "Tim", email: "Jim@mail.com", password: "password", password_confirmation: "password")
 
     fill_in(:name, with: "Jim")
     fill_in(:email, with: "Jim@mail.com")
+    fill_in(:password, with: "password")
+    fill_in(:password_confirmation, with: "password")
     click_on "Register"
 
     expect(current_path).to eq("/users/register")

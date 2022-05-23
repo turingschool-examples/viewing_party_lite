@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "User Dashboard/Show Page", type: :feature do
   it 'has the users info' do
-    user1 = User.create!(name: "Amy", email: 'amy@mail.com')
-    user2 = User.create!(name: "James", email: 'james@mail.com')
+    user1 = User.create!(name: "Amy", email: 'amy@mail.com', password: "password", password_confirmation: "password")
+    user2 = User.create!(name: "James", email: 'james@mail.com', password: "password", password_confirmation: "password")
 
     visit "/users/#{user1.id}"
 
@@ -14,8 +14,8 @@ RSpec.describe "User Dashboard/Show Page", type: :feature do
   end
 
   it 'has a button to discover movies' do
-    user1 = User.create!(name: "Amy", email: 'amy@mail.com')
-    user2 = User.create!(name: "James", email: 'james@mail.com')
+    user1 = User.create!(name: "Amy", email: 'amy@mail.com', password: "password", password_confirmation: "password")
+    user2 = User.create!(name: "James", email: 'james@mail.com', password: "password", password_confirmation: "password")
 
     visit "/users/#{user1.id}"
 
@@ -24,8 +24,8 @@ RSpec.describe "User Dashboard/Show Page", type: :feature do
   end
 
   it 'shows the viewing parties they were invited to', :vcr do
-    user_1 = User.create!(name: "Joe", email: "joe@mail.com")
-    user_2 = User.create!(name: "Amy", email: "amy@mail.com")
+    user_1 = User.create!(name: "Joe", email: "joe@mail.com", password: "password", password_confirmation: "password")
+    user_2 = User.create!(name: "Amy", email: "amy@mail.com", password: "password", password_confirmation: "password")
 
     date = Date.today
     time = Time.now
@@ -41,7 +41,7 @@ RSpec.describe "User Dashboard/Show Page", type: :feature do
     party_user_6 = PartyUser.create!(party: party_3, user: user_1, host: false)
 
     visit "/users/#{user_1.id}"
-  
+
     within ".invited_to" do
       expect(page).to have_link("Shawshank Redemption")
       expect(page).to have_link("Schindler's List")

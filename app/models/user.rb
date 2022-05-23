@@ -4,6 +4,9 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true
   validates_presence_of :name, :email
+  validates_presence_of :password, :password_confirmation, require: true
+
+  has_secure_password
 
   def invited_parties
     parties.where.not(host: self.id)

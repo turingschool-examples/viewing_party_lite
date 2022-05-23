@@ -4,8 +4,8 @@ RSpec.describe "New Viewing Party", type: :feature do
   it 'has a form to create new party', :vcr do
     party_count=Party.all.count
 
-    user = User.create!(name: "Tim", email: "Tim@mail.com")
-    user2 = User.create!(name: "Tom", email: "Tom@mail.com")
+    user = User.create!(name: "Tim", email: "Tim@mail.com", password: "password", password_confirmation: "password")
+    user2 = User.create!(name: "Tom", email: "Tom@mail.com", password: "password", password_confirmation: "password")
     visit "/users/#{user.id}/movies/278/viewing_party/new"
 
     fill_in "duration", with: 200
@@ -25,8 +25,8 @@ RSpec.describe "New Viewing Party", type: :feature do
   it 'rejects new party of too short a duration', :vcr do
     party_count=Party.all.count
 
-    user = User.create!(name: "Tim", email: "Tim@mail.com")
-    user2 = User.create!(name: "Tom", email: "Tom@mail.com")
+    user = User.create!(name: "Tim", email: "Tim@mail.com", password: "password", password_confirmation: "password")
+    user2 = User.create!(name: "Tom", email: "Tom@mail.com", password: "password", password_confirmation: "password")
     visit "/users/#{user.id}/movies/278/viewing_party/new"
 
     fill_in "duration", with: 4
