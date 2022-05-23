@@ -6,9 +6,6 @@ RSpec.describe Movie do
     attributes = {
       id: "2",
       title: "Scream",
-      vote_average: "5",
-      vote_average: "5",
-      vote_average: "5",
       vote_average: "5"
     }
 

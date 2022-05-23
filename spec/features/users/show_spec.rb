@@ -5,7 +5,7 @@ RSpec.describe "user/dashboard", type: :feature do
   before (:each) do
     @date = Date.new(2022, 05, 17)
     @time = Time.now
-    @user = User.create!(name: "Terra Branford", email: "terraff6@square.com")
+    @user = User.create!(name: "Terra Branford", email: "terraff6@square.com", password: "terraff6")
     @party1 = Party.create!(host_id: @user.id, movie_id: 16, date: @date, start_time: @time, length: 120)
     @party2 = Party.create!(host_id: @user.id, movie_id: 19, date: @date, start_time: @time, length: 120)
     UserParty.create!(user_id: @user.id, party_id: @party1.id, host: true)

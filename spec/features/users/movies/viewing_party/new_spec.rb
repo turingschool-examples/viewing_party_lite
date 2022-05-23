@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe "create a new viewing party" do
   before(:each) do
-    @user1 = User.create!(name: "Max", email: "max@yahoo.com")
-    @user2 = User.create!(name: "Susan", email: "susan@yahoo.com")
-    @user3 = User.create!(name: "Sherman", email: "sherman@yahoo.com")
-    @user4 = User.create!(name: "Joseph", email: "joseph@yahoo.com")
+    @user1 = User.create!(name: "Max", email: "max@yahoo.com", password: "Max")
+    @user2 = User.create!(name: "Susan", email: "susan@yahoo.com", password: "Susans")
+    @user3 = User.create!(name: "Sherman", email: "sherman@yahoo.com", password: "Sherman")
+    @user4 = User.create!(name: "Joseph", email: "joseph@yahoo.com", password: "Joseph")
     @movie = MovieFacade.search("Stardust").first
     visit "/users/#{@user1.id}/movies/#{@movie.id}/viewing-party/new"
   end
@@ -27,7 +27,7 @@ RSpec.describe "create a new viewing party" do
       check "Joseph"
       check "Sherman"
       click_button "Create New Party!"
-      
+
       expect(current_path).to eq("/users/#{@user1.id}")
     end
   end
