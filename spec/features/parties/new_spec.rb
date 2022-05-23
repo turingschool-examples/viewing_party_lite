@@ -2,10 +2,10 @@ require "rails_helper"
 
 RSpec.describe "Parties New Page" do
   before :each do
-    @user_1 = User.create!(name: "Unreal Ursa", email: "thisaintreal@gotcha.org")
-    @user_2 = User.create!(name: "Fake Fanny", email: "nonsense@fake.com")
-    @user_3 = User.create!(name: "Ghastly Gary", email: "spooky@dead.org")
-    @user_4 = User.create!(name: "Flake Fred", email: "wontshowup@oops.org")
+    @user_1 = User.create!(name: "Unreal Ursa", email: "thisaintreal@gotcha.org", password: "password123", password_confirmation: "password123")
+    @user_2 = User.create!(name: "Fake Fanny", email: "nonsense@fake.com", password: "password123", password_confirmation: "password123")
+    @user_3 = User.create!(name: "Ghastly Gary", email: "spooky@dead.org", password: "password123", password_confirmation: "password123")
+    @user_4 = User.create!(name: "Flake Fred", email: "wontshowup@oops.org", password: "password123", password_confirmation: "password123")
   end
 
   it "has form to create new party" do

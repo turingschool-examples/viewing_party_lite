@@ -16,7 +16,7 @@ RSpec.describe 'landing page' do
     end
 
     it 'shows existing user list that is linked to respective user dashboard' do
-      user = User.create(name: 'Michael', email: 'michael@example.net')
+      user = User.create(name: 'Michael', email: 'michael@example.net', password: "password123", password_confirmation: "password123")
       visit root_path
 
       within(".users") do

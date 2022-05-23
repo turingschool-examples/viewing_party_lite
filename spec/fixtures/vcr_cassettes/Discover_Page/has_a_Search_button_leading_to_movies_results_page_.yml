@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 13 May 2022 17:55:03 GMT
+      - Mon, 23 May 2022 20:12:18 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -40,15 +40,13 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Hit from cloudfront
+      - Miss from cloudfront
       Via:
-      - 1.1 28d79637e27f11e3ab19a9515e273a5a.cloudfront.net (CloudFront)
+      - 1.1 ed42e29cddf5cc10b8ba8ca7b99004ce.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN50-C2
+      - SLC50-C1
       X-Amz-Cf-Id:
-      - LpZbn-4KGHY8Vr1mzOgQqP2slEepuyJWkt2Fk7hkrDpq7orAWwUicA==
-      Age:
-      - '567'
+      - BxxMQNHp43mTY5q9Pf6l_5wvUMKrgVbJLPrQQf2MXtcmgwar1FDP2Q==
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/1riTqK5ouEgjTs69MVm0F8dXilZ.jpg","genre_ids":[28,35,12,10752],"id":7446,"original_language":"en","original_title":"Tropic
@@ -57,10 +55,10 @@ http_interactions:
         actors who set out to make the most expensive war film. After ballooning costs
         force the studio to cancel the movie, the frustrated director refuses to stop
         shooting, leading his cast into the jungles of Southeast Asia, where they
-        encounter real bad guys.","popularity":33.537,"poster_path":"/zAurB9mNxfYRoVrVjAJJwGV3sPg.jpg","release_date":"2008-08-09","title":"Tropic
-        Thunder","video":false,"vote_average":6.6,"vote_count":4909},{"adult":false,"backdrop_path":null,"genre_ids":[28,35],"id":36131,"original_language":"en","original_title":"Tropic
+        encounter real bad guys.","popularity":45.009,"poster_path":"/zAurB9mNxfYRoVrVjAJJwGV3sPg.jpg","release_date":"2008-08-09","title":"Tropic
+        Thunder","video":false,"vote_average":6.6,"vote_count":4927},{"adult":false,"backdrop_path":null,"genre_ids":[28,35],"id":36131,"original_language":"en","original_title":"Tropic
         Thunder: Rain of Madness","overview":"A behind-the-scenes mockumentary of
-        Tropic Thunder.","popularity":3.844,"poster_path":"/a1Lfo4lZbrhHXOmj32a0XsGjBk7.jpg","release_date":"2008-08-26","title":"Tropic
+        Tropic Thunder.","popularity":3.422,"poster_path":"/a1Lfo4lZbrhHXOmj32a0XsGjBk7.jpg","release_date":"2008-08-26","title":"Tropic
         Thunder: Rain of Madness","video":false,"vote_average":6.6,"vote_count":47},{"adult":false,"backdrop_path":"/te53U4eIxg2GdjpNCfmhHK7IXTo.jpg","genre_ids":[],"id":453544,"original_language":"en","original_title":"PROGRESS
         Chapter 43: Tropic Thunderbastard","overview":"Chapter 43: Tropic Thunderbastard  Show
         date: 29th January 2017  The Riots vs Kings Of The North  Chakara vs Laura
@@ -69,5 +67,5 @@ http_interactions:
         vs Mark Andrews vs Dave Mastiff vs Zack Gibson vs Nathan Cruz vs Pastor William
         Eaver  PROGRESS World Title Match: Pete Dunne (c) vs Jimmy Havoc","popularity":0.6,"poster_path":"/bTEJ3D6QsmJpPcE3BvxmJvW42OM.jpg","release_date":"2017-01-29","title":"PROGRESS
         Chapter 43: Tropic Thunderbastard","video":true,"vote_average":0,"vote_count":0}],"total_pages":1,"total_results":3}'
-  recorded_at: Fri, 13 May 2022 18:04:30 GMT
+  recorded_at: Mon, 23 May 2022 20:12:18 GMT
 recorded_with: VCR 6.1.0

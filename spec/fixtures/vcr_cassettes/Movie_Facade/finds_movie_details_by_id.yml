@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 13 May 2022 15:28:25 GMT
+      - Mon, 23 May 2022 20:10:58 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,34 +42,32 @@ http_interactions:
       X-Memc-Key:
       - c7d0f1a47010fc55c00fcec4d5c4a5ef91fba03f
       X-Memc-Age:
-      - '15365'
+      - '5725'
       X-Memc-Expires:
-      - '1366'
+      - '9623'
       Etag:
-      - W/"3932bac0242a93bb103fbd515cb2904a"
+      - W/"c964e13584b4de6cd12296dfbc380666"
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Hit from cloudfront
+      - Miss from cloudfront
       Via:
-      - 1.1 48ea53c7edffa2cdbdc32f7d94966344.cloudfront.net (CloudFront)
+      - 1.1 024f97192fe648974da2251fbcc71f38.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN50-C2
+      - SLC50-C1
       X-Amz-Cf-Id:
-      - yp2867zhoofJc7FWMXacJHjl5BvjjSOULtLmr2Cq6LGFyUHPJ8BXJw==
-      Age:
-      - '9365'
+      - 5GaxMxqp6sf_VtmZtRnKiA2U_k4KoFluWRpkeC2xisfnXjOE9LyBEg==
     body:
       encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/wPU78OPN4BYEgWYdXyg0phMee64.jpg","belongs_to_collection":null,"budget":25000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"","id":278,"imdb_id":"tt0111161","original_language":"en","original_title":"The
+      string: '{"adult":false,"backdrop_path":"/iNh3BivHyg5sQRPP1KOkzguEX0H.jpg","belongs_to_collection":null,"budget":25000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"","id":278,"imdb_id":"tt0111161","original_language":"en","original_title":"The
         Shawshank Redemption","overview":"Framed in the 1940s for the double murder
         of his wife and her lover, upstanding banker Andy Dufresne begins a new life
         at the Shawshank prison, where he puts his accounting skills to work for an
         amoral warden. During his long stretch in prison, Dufresne comes to be admired
         by the other inmates -- including an older prisoner named Red -- for his integrity
-        and unquenchable sense of hope.","popularity":63.965,"poster_path":"/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg","production_companies":[{"id":97,"logo_path":"/7znWcbDd4PcJzJUlJxYqAlPPykp.png","name":"Castle
+        and unquenchable sense of hope.","popularity":64.924,"poster_path":"/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg","production_companies":[{"id":97,"logo_path":"/7znWcbDd4PcJzJUlJxYqAlPPykp.png","name":"Castle
         Rock Entertainment","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1994-09-23","revenue":28341469,"runtime":142,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Fear
-        can hold you prisoner. Hope can set you free.","title":"The Shawshank Redemption","video":false,"vote_average":8.7,"vote_count":21382}'
-  recorded_at: Fri, 13 May 2022 18:04:30 GMT
+        can hold you prisoner. Hope can set you free.","title":"The Shawshank Redemption","video":false,"vote_average":8.7,"vote_count":21445}'
+  recorded_at: Mon, 23 May 2022 20:10:58 GMT
 recorded_with: VCR 6.1.0
