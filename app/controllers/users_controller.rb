@@ -42,14 +42,15 @@ class UsersController < ApplicationController
 
   def login
     user = User.find_by(email: params[:email])
-    # binding.pry
+
     if user.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:success] = "Welcome #{user.name}!"
       redirect_to "/users/#{user.id}"
     else
-      flash[:error] = user.errors.full_messages.join
-      redirect :login_form
+
+      flash[:error] = "Incorrect Password"
+      render :login_form
     end 
   end 
   

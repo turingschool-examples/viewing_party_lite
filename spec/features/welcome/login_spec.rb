@@ -36,9 +36,9 @@ RSpec.describe "Login Page" do
       fill_in :email, with: 'meatball@example.com'
       fill_in :password, with: 'not my password'
       click_on "Log In"   
-
       expect(current_path).to eq("/login")
-      expect(page).to have_content("Incorrect password")
+      # save_and_open_page
+      expect(page).to have_content("Incorrect Password")
     end 
 
 
