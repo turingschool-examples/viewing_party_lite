@@ -27,7 +27,17 @@ class UsersController < ApplicationController
 
   def login_user
     user = User.find_by(email: params[:email])
-    redirect_to "/users/#{user.id}"
+    if user
+      if user.authenticate(params[:password])
+        redirect_to "/users/#{user.id}"
+      else
+        flash[:invalid_password] = "Invalid password."
+        render :login_form
+      end
+    else
+      flash[:invalid_email] = "There is no account associated with this email address."
+      render :login_form
+    end
   end
 
   private

@@ -30,6 +30,8 @@ describe "user login page" do
         fill_in "Email", with: "woke_up_this_morning@gmail.com"
         fill_in "Password", with: "test123"
 
+        click_button "Log In"
+
         expect(current_path).to eq("/login")
         expect(page).to have_content("There is no account associated with this email address.")
       end
@@ -39,6 +41,8 @@ describe "user login page" do
 
         fill_in "Email", with: "wokeupthismorning@gmail.com"
         fill_in "Password", with: "123test"
+
+        click_button "Log In"
 
         expect(current_path).to eq("/login")
         expect(page).to have_content("Invalid password.")
