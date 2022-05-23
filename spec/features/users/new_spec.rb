@@ -6,7 +6,7 @@ RSpec.describe 'New User Page', type: :feature do
   describe 'happy path' do
     it 'filling in the form correctly redirects me to my new user dashboard/show page' do
       visit '/register'
-      save_and_open_page
+      # save_and_open_page
       fill_in :name, with: 'skeeter'
       fill_in :email, with: 'skeeter@example.com'
       fill_in :password, with: 'password'

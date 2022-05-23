@@ -18,9 +18,17 @@ class UsersController < ApplicationController
   def new; end
 
   def create
-    User.create(new_user_params)
-    @user = User.where(email: new_user_params[:email]).first
-    redirect_to "/users/#{@user.id}"
+    if params[:password] == params[:password_confirmation]
+      @user = User.create(new_user_params)
+      if @user.save
+        flash[:success] = "Welcome, #{@user.name}!"
+        redirect_to "/users/#{@user.id}"
+      else
+        flash[:error] = "Something went wrong"
+      end 
+    else
+      render :new
+    end 
   end
     
   def discover
@@ -30,7 +38,7 @@ class UsersController < ApplicationController
   private
 
   def new_user_params
-    params.permit(:name, :email)
+    params.permit(:name, :email, :password, :password_confirmation)
   end
 
 end
