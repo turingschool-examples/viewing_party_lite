@@ -13,7 +13,7 @@ RSpec.describe "create a new viewing party" do
     fill_in(:password, with: @user1.password)
     click_on "Log In"
 
-    visit "/users/#{@user1.id}/movies/#{@movie.id}/viewing-party/new"
+    visit "/dashboard/movies/#{@movie.id}/viewing-party/new"
   end
 
   context "visiting the page" do
