@@ -3,15 +3,17 @@ class UsersController < ApplicationController
   end
 
   def show
+    # require "pry"; binding.pry
     @user = User.find(params[:id])
   end
 
   def create
     user = User.new(user_params)
     if user.save
+      session[:user_id] = user.id
       redirect_to "/users/#{user.id}"
     else
-      redirect_to "/users/register"
+      redirect_to "/register"
       flash[:notice] = user.errors.full_messages.to_sentence
     end
   end
