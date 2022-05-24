@@ -54,13 +54,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 2c7d387775f2e52dd268d2f49202b5d2.cloudfront.net (CloudFront)
+      - 1.1 45abe1833dce03139cbfcdfadefbc17a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - EWR53-P1
       X-Amz-Cf-Id:
-      - 5EqM7NI_7OlelQNMHOKOLnxWl1g51cPtpNXPKZAfAbN9Wvv1WnBFHw==
+      - kBYQClmZPVqeLajI2dz4-JFW9xHpUR3E7PB1BffvpKb42KYn7EqiRg==
       Age:
-      - '12577'
+      - '12714'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/hjGLcwWg2F0BJB1zUFMzwrm7uqg.jpg","belongs_to_collection":null,"budget":9000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"","id":290,"imdb_id":"tt0101410","original_language":"en","original_title":"Barton
@@ -71,5 +71,5 @@ http_interactions:
         Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"GB","name":"United
         Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"1991-08-01","revenue":6153939,"runtime":117,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"What''s
         in his head","title":"Barton Fink","video":false,"vote_average":7.5,"vote_count":1304}'
-  recorded_at: Tue, 24 May 2022 21:09:46 GMT
+  recorded_at: Tue, 24 May 2022 21:12:03 GMT
 recorded_with: VCR 6.1.0

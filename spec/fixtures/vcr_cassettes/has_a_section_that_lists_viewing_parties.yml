@@ -54,13 +54,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 4b6e1bc9480bffb0b8980e408fffa59e.cloudfront.net (CloudFront)
+      - 1.1 19e58616339f974c22a3a07f8f637718.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - EWR53-P1
       X-Amz-Cf-Id:
-      - rMV3MkUFlwK8I_ZNcsnHyR6rj4sGjQhH2Vig-62nJX3BoKGUbHAuGQ==
+      - tWcyMSn4y5uMpxnE-S9K3p3aG1p6-aaOlSMI8KBXg_Dj16Jk_NuofA==
       Age:
-      - '12567'
+      - '12704'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/r4OqScx7hVXsG1obaJjJKJNaxHT.jpg","belongs_to_collection":{"id":33514,"name":"The
@@ -79,5 +79,5 @@ http_interactions:
         Entertainment","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"2010-06-23","revenue":698491347,"runtime":124,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"It
         all begins... with a choice.","title":"The Twilight Saga: Eclipse","video":false,"vote_average":6.2,"vote_count":7508}'
-  recorded_at: Tue, 24 May 2022 21:09:44 GMT
+  recorded_at: Tue, 24 May 2022 21:12:01 GMT
 recorded_with: VCR 6.1.0
