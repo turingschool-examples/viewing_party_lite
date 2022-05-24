@@ -7,6 +7,75 @@
           null
         ]
       },
+      "/Users/alexanderpsitos/turing/3module/week_1/pair_project/viewing_party_lite/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/alexanderpsitos/turing/3module/week_1/pair_project/viewing_party_lite/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/alexanderpsitos/turing/3module/week_1/pair_project/viewing_party_lite/app/models/user.rb": {
         "lines": [
           1,
@@ -27,59 +96,29 @@
           null
         ]
       },
-      "/Users/alexanderpsitos/turing/3module/week_1/pair_project/viewing_party_lite/app/controllers/users_controller.rb": {
+      "/Users/alexanderpsitos/turing/3module/week_1/pair_project/viewing_party_lite/app/controllers/sessions_controller.rb": {
         "lines": [
           1,
           null,
           1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
           null,
           null,
           1,
           1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          0,
+          0,
+          null,
           null,
           null,
           1,
           0,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          2,
-          2,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
           0,
           null,
-          null
-        ]
-      },
-      "/Users/alexanderpsitos/turing/3module/week_1/pair_project/viewing_party_lite/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
           null
         ]
       },
@@ -388,6 +427,6 @@
         }
       }
     },
-    "timestamp": 1653428156
+    "timestamp": 1653435568
   }
 }
