@@ -34,9 +34,11 @@ describe "welcome page" do
         expect(page).not_to have_link("Log Out")
       end
 
-      it "i see a list of existing users and their email addresses" do
-        expect(page).to have_link("Tony Soprano")
-        expect(page).to have_link("Junior Soprano")
+      it "i see a list of existing users, which are not links, and their email addresses" do
+        expect(page).to have_content("Tony Soprano")
+        expect(page).to have_content("Junior Soprano")
+        expect(page).not_to have_link("Tony Soprano")
+        expect(page).not_to have_link("Junior Soprano")
         expect(page).to have_content("wokeupthismorning@gmail.com")
         expect(page).to have_content("varsityathlete@gmail.com")
       end
@@ -72,6 +74,13 @@ describe "welcome page" do
           click_button "Log In"
 
           expect(current_path).to eq("/dashboard")
+        end
+
+        it "i do not see a list of existing users and their email addresses" do
+          expect(page).not_to have_link("Tony Soprano")
+          expect(page).not_to have_link("Junior Soprano")
+          expect(page).not_to have_content("wokeupthismorning@gmail.com")
+          expect(page).not_to have_content("varsityathlete@gmail.com")
         end
       end
     end
