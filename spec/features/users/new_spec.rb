@@ -42,7 +42,7 @@ RSpec.describe "New User", type: :feature do
     expect(page).to have_content("Password confirmation doesn't match Password")
   end
 
-  it 'requires a password to create a user' do
+  it 'requires a password confirmation to create a user' do
     visit "/users/register"
 
     fill_in(:name, with: "Jim")
