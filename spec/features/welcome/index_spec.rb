@@ -87,8 +87,21 @@ RSpec.describe 'Landing/Welcome Page' do
       expect(page).to have_button('Login')
       expect(page).to have_button('Create a New User')
       expect(page).to_not have_button('Log Out')
-
     end
+  end 
+  describe 'as a visitor vs as a registered user' do
+    it 'as a visitor, I dont see the section listing all the users' do
+      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password: 'test123', password_confirmation: 'test123')
+      lugnut = User.create!(name: 'LugNut', email: 'fatdog@corgi.com', password: 'test12')
+      hazel = User.create!(name: 'Hazel', email: 'hazelthehut@food.com', password: 'test1')
+   
+      visit '/'
+      # save_and_open_page
+      expect(page).to_not have_content("Current Users")
+      expect(page).to_not have_content(skeeter.email)
+      expect(page).to_not have_content(lugnut.email)
+      expect(page).to_not have_content(hazel.email)
+    end 
 
   end 
 
