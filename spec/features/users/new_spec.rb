@@ -10,7 +10,14 @@ RSpec.describe 'the new user view' do
     fill_in 'Password confirmation', with: 'password123'
 
     click_on 'Register'
+
+    expect(current_path).to eq("/login")
+
     new_user = User.last
+
+    fill_in "Email", with: 'NewUserOne@gmail.com'
+    fill_in "Password", with: 'password123'
+    click_button "Login"
 
     expect(current_path).to eq(user_dashboard_path(new_user))
     expect(new_user.name).to eq('Terry Crews')

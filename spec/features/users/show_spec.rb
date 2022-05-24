@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'the users show page' do
+RSpec.describe 'the users dashboard/show page' do
 
   before :each do
     @user_1 = User.create!(name: 'Alfonso Diogenes', email: 'alphonsodiogenes420@hotmail.com', password: 'password123', password_confirmation: 'password123')
