@@ -5,16 +5,8 @@
 <center>
 <% if current_user %>
   Welcome back! <br>
-  <%= button_to 'Log Out', '/logout', method: :delete %>
-<% else  %>
-</center>
 
-<center>
-<%= button_to "Login", "/login", method: :get %> 
-<%= button_to "Create a New User", "/register", method: :get %> 
-</center>
-<% end %>
-
+<%= button_to 'Log Out', '/logout', method: :delete %>
 
 <section id="existing_users">
 <h3>Current Users</h3>
@@ -27,3 +19,12 @@
     <% end %>
 
 </section>
+<% else  %>
+</center>
+
+<center>
+<%= button_to "Login", "/login", method: :get %> 
+<%= button_to "Create a New User", "/register", method: :get %> 
+</center>
+<% end %>
+

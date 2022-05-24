@@ -15,30 +15,30 @@ RSpec.describe 'Landing/Welcome Page' do
 
       expect(page).to have_content 'Viewing Party Lite'
       
-      within "#existing_users" do
-        expect(page).to have_content("skeeter@example.com")
-        expect(page).to have_content("fatdog@corgi.com")
-        expect(page).to have_content("hazelthehut@food.com")
-      end
+      # within "#existing_users" do
+      #   expect(page).to have_content("skeeter@example.com")
+      #   expect(page).to have_content("fatdog@corgi.com")
+      #   expect(page).to have_content("hazelthehut@food.com")
+      # end
     end 
 
-    it 'each existing user links to their respective user dashboard', :vcr do
+    # it 'each existing user links to their respective user dashboard', :vcr do
       
-      visit "/"
-      within "#user_id-#{@skeeter.id}" do 
-        expect(page).to have_link("skeeter@example.com's dashboard")
-      end 
+    #   visit "/"
+    #   within "#user_id-#{@skeeter.id}" do 
+    #     expect(page).to have_link("skeeter@example.com's dashboard")
+    #   end 
       
-      within "#user_id-#{@lugnut.id}" do 
-        expect(page).to have_link("fatdog@corgi.com's dashboard")
-      end 
+    #   within "#user_id-#{@lugnut.id}" do 
+    #     expect(page).to have_link("fatdog@corgi.com's dashboard")
+    #   end 
       
-      within "#user_id-#{@hazel.id}" do 
-        expect(page).to have_link("hazelthehut@food.com's dashboard")
-        # click_link "hazelthehut@food.com's dashboard"
-        # expect(current_path).to eq("/users/#{@hazel.id}")
-      end 
-    end 
+    #   within "#user_id-#{@hazel.id}" do 
+    #     expect(page).to have_link("hazelthehut@food.com's dashboard")
+    #     # click_link "hazelthehut@food.com's dashboard"
+    #     # expect(current_path).to eq("/users/#{@hazel.id}")
+    #   end 
+    # end 
     
     it 'has a link to return back to the landing/welcome page', :vcr do #link will be present on every page of application 
       visit "/"
@@ -96,7 +96,6 @@ RSpec.describe 'Landing/Welcome Page' do
       hazel = User.create!(name: 'Hazel', email: 'hazelthehut@food.com', password: 'test1')
    
       visit '/'
-      # save_and_open_page
       expect(page).to_not have_content("Current Users")
       expect(page).to_not have_content(skeeter.email)
       expect(page).to_not have_content(lugnut.email)
