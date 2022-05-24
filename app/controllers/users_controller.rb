@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def new
+    @user = User.new
   end
 
   def show
@@ -17,17 +18,33 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    if @user.save
+    if @user.save && user_params[:password] == user_params[:password_confirmation]
       redirect_to "/users/#{@user.id}"
     else
       redirect_to "/register"
-      flash[:alert] = "That email has already been registered. Please enter a new email."
+      flash[:error] = @user.errors.full_messages
+    end
+  end
+
+  def login_form
+  end
+
+  def login
+    user = User.find_by(email: params[:email])
+  
+    if !user == nil && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      flash[:success] = "Welcome, #{user.email}!"
+      redirect_to "/users/#{user.id}"
+    else
+      flash[:error] = "Sorry, your credentials are bad."
+      render :login_form
     end
   end
 
   private
 
   def user_params
-    params.permit(:name, :email)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end

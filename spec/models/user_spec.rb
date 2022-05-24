@@ -8,13 +8,15 @@ require 'rails_helper'
 
    describe 'validations' do
      it { should validate_presence_of :name }
-     it { should validate_presence_of :email }
+     it { should validate_uniqueness_of :email }
+     it { should validate_presence_of :password_digest }
+     it { should have_secure_password }
    end
 
    describe "instance methods" do
      before :each do
-       @user_1 = User.create!(name: "Unreal Ursa", email: "thisaintreal@gotcha.org")
-       @user_2 = User.create!(name: "Fake Fanny", email: "nonsense@fake.com")
+       @user_1 = User.create!(name: "Unreal Ursa", email: "thisaintreal@gotcha.org", password: "password123", password_confirmation: "password123")
+       @user_2 = User.create!(name: "Fake Fanny", email: "nonsense@fake.com", password: "password123", password_confirmation: "password123")
 
        @party_invited_to = Party.create!(date: "2022/07/01", start_time: "09:00 PM", duration: 300, host_id: @user_2.id, movie_id: 278)
 

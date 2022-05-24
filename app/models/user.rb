@@ -3,7 +3,10 @@ class User < ApplicationRecord
   has_many :parties, through: :party_users
 
   validates_presence_of :name, :email
+  validates_presence_of :password, :password_confirmation, :password_digest, require: true
   validates :email, uniqueness: true
+
+  has_secure_password
 
   def parties_invited_to
     parties

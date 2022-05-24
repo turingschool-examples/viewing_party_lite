@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root to: 'landing#index'
 
+  get "/login", to: "users#login_form"
+  post "/login", to: "users#login"
+
   get "/users/new", to: "users#new"
   get "/users/:id", to: "users#show"
   post "/users/create", to: "users#create"

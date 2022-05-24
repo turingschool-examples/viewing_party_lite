@@ -1,5 +1,7 @@
 <h1>Viewing Party Lite</h1>
 
+<%= link_to "Log In", "/login", method: :get, local: true %>
+
 <div class="users">
   <% if !@users.empty? %>
     <h2>Users:</h2>

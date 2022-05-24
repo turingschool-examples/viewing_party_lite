@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.describe "Movies Index" do
   before :each do
-    @user_1 = User.create!(name: "Unreal Ursa", email: "thisaintreal@gotcha.org")
+    @user_1 = User.create!(name: "Unreal Ursa", email: "thisaintreal@gotcha.org", password: "password123", password_confirmation: "password123")
     visit "/users/#{@user_1.id}/discover"
   end
 
@@ -27,7 +27,7 @@ RSpec.describe "Movies Index" do
     click_button "Top Movies"
 
     click_link "The Shawshank Redemption"
-    
+
     expect(current_path).to eq("/users/#{@user_1.id}/movies/278")
   end
 end

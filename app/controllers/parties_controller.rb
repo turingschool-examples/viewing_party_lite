@@ -6,7 +6,6 @@ class PartiesController < ApplicationController
   end
 
   def create
-    # party = Party.create!(date: params[:date], start_time: params[:start_time], duration: params[:duration], host_id: params[:user_id], movie_id: params[:movie_id])
     party = Party.create!(party_params)
     params[:invited].each do |user_id, value|
       PartyUser.create!(party_id: party.id, user_id: user_id) if value == "1"
