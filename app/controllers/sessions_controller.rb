@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       if user.authenticate(params[:password])
         session[:user_id] = user.id
         flash[:success] = "Welcome #{user.name}!"
-        redirect_to "/users/#{user.id}"
+        redirect_to "/dashboard"
       else
       flash[:error] = "Incorrect Password"
       render :login_form

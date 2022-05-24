@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#login_form'
   post '/login', to: 'sessions#create'
 
+  # post '/dashboard', to: 'users#show'
   get '/dashboard', to: 'users#show'
   
   get '/users/:id/movies', to: 'user_movies#index'
@@ -18,7 +19,7 @@ Rails.application.routes.draw do
   post '/users/:user_id/movies/:movie_id/party/new', to: 'user_movie_parties#create'
   get '/users/:id/discover', to: 'users#discover'
   
-  resources :users, only: %i[show new create]
+  resources :users, only: %i[new create]
 
   # get '/users/:id', to: 'users#show'
   # get '/user'

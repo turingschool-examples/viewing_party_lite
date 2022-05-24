@@ -15,8 +15,8 @@ RSpec.describe 'User Dashboard', type: :feature do
 
   it 'doesnt need an id in the uri' do
     visit '/dashboard'
-    # save_and_open_page
-    expect(page).to have_content('Welcome, Skeeter!')
+    save_and_open_page
+    expect(page).to have_content('Skeeter')
     # expect(page).to have_content('skeeter@skeeter.com')
     expect(page).to_not have_content('Alex')
     expect(page).to_not have_content('alex@alex.com')
