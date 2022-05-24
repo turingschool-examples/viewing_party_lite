@@ -66,10 +66,29 @@ RSpec.describe 'Landing/Welcome Page' do
       fill_in 'Password', with: 'test'
       click_on 'Log In'
       visit '/'
-      save_and_open_page
+      # save_and_open_page
       expect(page).to_not have_button('Login')
       expect(page).to_not have_button('Create a New User')
+      expect(page).to have_button('Log Out')
     end 
+    
+    it 'clicking log out logs out user, returns them to root, buttons to log in/create user appear' do
+      user1 = User.create!(name: 'Skeeter', email: 'skeeter@skeeter.com', password: 'test')
+      visit '/'
+
+      click_button 'Login'
+      fill_in 'Name:', with: 'Skeeter'
+      fill_in 'Email:', with: 'skeeter@skeeter.com'
+      fill_in 'Password', with: 'test'
+      click_on 'Log In'
+      visit '/'
+
+      click_button 'Log Out'
+      expect(page).to have_button('Login')
+      expect(page).to have_button('Create a New User')
+      expect(page).to_not have_button('Log Out')
+
+    end
 
   end 
 
