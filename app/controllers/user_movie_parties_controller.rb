@@ -1,10 +1,14 @@
 class UserMoviePartiesController < ApplicationController
 
   def new
-    @user = User.find(params[:user_id])
-    @users = User.all
-    movie_id = params[:movie_id].to_i
-    @movie = MovieFacade.movie_id(movie_id)
+    # @user = User.find(params[:user_id])
+    if current_user
+      @users = User.all
+      movie_id = params[:movie_id].to_i
+      @movie = MovieFacade.movie_id(movie_id)
+    else
+      render file: "/public/404"   
+    end 
   end
 
   def create

@@ -7,13 +7,13 @@
 </center>
 
 <center>
-<%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %>
+<%= button_to "Discover Page", "/discover", method: :get %>
 </center>
 <br><br><br><br>
 
 <center>
 <div id="new_party_form">
-<%= form_with url: "/users/#{@user.id}/movies/#{@movie.id}/party/new", method: :post, local: true do |f| %>
+<%= form_with url: "/movies/#{@movie.id}/party/new", method: :post, local: true do |f| %>
   <%= f.label :movie_title, "Movie Title:" %>
   <%= f.text_field :movie_title, value: @movie.original_title, :disabled => true %><br>
 
