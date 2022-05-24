@@ -8,7 +8,7 @@ RSpec.describe 'User Dashboard', type: :feature do
     @user2 = User.create!(name: 'Alex', email: 'ipsum@lorem.com', password_digest: 'test123', password_confirmation: 'test123')
   end
 
-  it 'contains all expected attributes of the selected user' do
+  it 'contains all expected attributes of the selected user', :vcr do
     visit "/users/#{@user1.id}"
     
     within '#title' do
@@ -28,7 +28,7 @@ RSpec.describe 'User Dashboard', type: :feature do
   end
   describe 'If I have any parties I am invited to' do 
 
-    it 'should have movie image, title (as link), date/time and who is hosting event, others invited' do
+    it 'should have movie image, title (as link), date/time and who is hosting event, others invited', :vcr do
       date1 = 	"2023-02-08 09:30:00 UTC".to_datetime
       date2 = 	"2022-05-08 14:30:00 UTC".to_datetime
       #jaws
@@ -61,7 +61,7 @@ RSpec.describe 'User Dashboard', type: :feature do
     end 
   end 
   describe 'When I am the host of one or more parties' do
-    it 'shows me when I am host of a party and/or just an attendee' do
+    it 'shows me when I am host of a party and/or just an attendee', :vcr do
       date1 = 	"2023-02-08 09:30:00 UTC".to_datetime
       date2 = 	"2022-05-08 14:30:00 UTC".to_datetime
       date3 = 	"2022-06-08 16:00:00 UTC".to_datetime
@@ -98,7 +98,7 @@ RSpec.describe 'User Dashboard', type: :feature do
         expect(page).to have_content("Zel")
       end 
     end 
-    it 'each movie title links to that movies details/show page' do 
+    it 'each movie title links to that movies details/show page', :vcr do
       date1 = 	"2023-02-08 09:30:00 UTC".to_datetime
       date2 = 	"2022-05-08 14:30:00 UTC".to_datetime
       #jaws

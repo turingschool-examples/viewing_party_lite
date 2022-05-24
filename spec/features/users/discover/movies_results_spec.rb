@@ -4,7 +4,7 @@ RSpec.describe 'Movies Results Page', type: :feature do
 
   describe 'As a Visitor' do 
 
-    it 'clicking Find Top Rated Movies displays the top rated movies and their vote average on the results page' do
+    it 'clicking Find Top Rated Movies displays the top rated movies and their vote average on the results page', :vcr do
       skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
       visit "/users/#{skeeter.id}/discover"
 
@@ -16,7 +16,7 @@ RSpec.describe 'Movies Results Page', type: :feature do
       expect(page).to_not have_content("Cars 2, Average Vote: 9.9")
     end 
 
-    it 'searching for a movie by title returns all movies with search word in title' do
+    it 'searching for a movie by title returns all movies with search word in title', :vcr do
       skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
       visit "/users/#{skeeter.id}/discover"
 
@@ -32,7 +32,7 @@ RSpec.describe 'Movies Results Page', type: :feature do
       
     end 
 
-    it 'has a button to return back to the users discovery page' do
+    it 'has a button to return back to the users discovery page', :vcr do
       skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
       visit "/users/#{skeeter.id}/discover"
       click_button "Find Top Rated Movies"
@@ -41,7 +41,7 @@ RSpec.describe 'Movies Results Page', type: :feature do
       expect(current_path).to eq("/users/#{skeeter.id}/discover")
     end 
 
-    it 'each top movie result displayed is a link to that movies movie detail page' do
+    it 'each top movie result displayed is a link to that movies movie detail page', :vcr do
       skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
       visit "/users/#{skeeter.id}/discover"
       click_button "Find Top Rated Movies"
@@ -50,7 +50,7 @@ RSpec.describe 'Movies Results Page', type: :feature do
       expect(current_path).to eq("/users/#{skeeter.id}/movies/278")
     end 
 
-    it 'each search result movie is a link to that movies detail page' do
+    it 'each search result movie is a link to that movies detail page', :vcr do
 
       skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
       visit "/users/#{skeeter.id}/discover"

@@ -9,7 +9,7 @@ RSpec.describe 'Landing/Welcome Page' do
       @hazel = User.create!(name: 'Hazel', email: 'hazelthehut@food.com', password: 'test1')
     end 
 
-    it 'has the title of the application, and a list of existing users' do
+    it 'has the title of the application, and a list of existing users', :vcr do
       
       visit "/"
 
@@ -22,7 +22,7 @@ RSpec.describe 'Landing/Welcome Page' do
       end
     end 
 
-    it 'each existing user links to their respective user dashboard' do
+    it 'each existing user links to their respective user dashboard', :vcr do
       
       visit "/"
       within "#user_id-#{@skeeter.id}" do 
@@ -40,7 +40,7 @@ RSpec.describe 'Landing/Welcome Page' do
       end 
     end 
     
-    it 'has a link to return back to the landing/welcome page' do #link will be present on every page of application 
+    it 'has a link to return back to the landing/welcome page', :vcr do #link will be present on every page of application 
       visit "/"
 
       click_link "Home"

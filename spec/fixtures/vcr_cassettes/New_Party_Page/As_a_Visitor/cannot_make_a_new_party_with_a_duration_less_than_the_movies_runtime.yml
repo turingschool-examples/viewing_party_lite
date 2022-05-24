@@ -1,0 +1,145 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/578?api_key=e2d1402726608719026ca6424f229bcf
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 24 May 2022 18:27:13 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 0fe9fd8be945926db00f194c8081c5bf70aee2e0
+      X-Memc-Age:
+      - '13864'
+      X-Memc-Expires:
+      - '763'
+      Etag:
+      - W/"97bd07e406d2ab2745c91cd504b2bec2"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 e4ca364cc5959e3bf697ae231c5b56b0.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - WibXuuVWSTQJuiZcPkeUHWfg3dS7e8fidLz-aY1j76VUI_IGmdmvNw==
+      Age:
+      - '4'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/idWj39RpSeIzb7t3XwIiCuwDTqC.jpg","belongs_to_collection":{"id":2366,"name":"Jaws
+        Collection","poster_path":"/fgraZdDCvAtBr0MHczmL6raonHd.jpg","backdrop_path":"/1e2QvI2u7Q4d2admK6Xw0AjLjVp.jpg"},"budget":7000000,"genres":[{"id":27,"name":"Horror"},{"id":53,"name":"Thriller"},{"id":12,"name":"Adventure"}],"homepage":"https://www.uphe.com/movies/jaws","id":578,"imdb_id":"tt0073195","original_language":"en","original_title":"Jaws","overview":"When
+        an insatiable great white shark terrorizes the townspeople of Amity Island,
+        the police chief, an oceanographer and a grizzled shark hunter seek to destroy
+        the blood-thirsty beast.","popularity":41.996,"poster_path":"/s2xcqSFfT6F7ZXHxowjxfG0yisT.jpg","production_companies":[{"id":1865,"logo_path":null,"name":"Zanuck/Brown
+        Productions","origin_country":"US"},{"id":33,"logo_path":"/8lvHyhjr8oUKOOy2dKXoALWKdp0.png","name":"Universal
+        Pictures","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1975-06-20","revenue":470653000,"runtime":124,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Don''t
+        go in the water","title":"Jaws","video":false,"vote_average":7.6,"vote_count":8345}'
+  recorded_at: Tue, 24 May 2022 18:27:17 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/578?api_key=e2d1402726608719026ca6424f229bcf
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 24 May 2022 18:27:13 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 0fe9fd8be945926db00f194c8081c5bf70aee2e0
+      X-Memc-Age:
+      - '13864'
+      X-Memc-Expires:
+      - '763'
+      Etag:
+      - W/"97bd07e406d2ab2745c91cd504b2bec2"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 e158a5cd644f102abc630a9f56b59d78.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - XIjHMVBmk0JxgD8uALxPr_XHnEhDufeMOulNO7ZZ6YKztunrrHCrLw==
+      Age:
+      - '4'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/idWj39RpSeIzb7t3XwIiCuwDTqC.jpg","belongs_to_collection":{"id":2366,"name":"Jaws
+        Collection","poster_path":"/fgraZdDCvAtBr0MHczmL6raonHd.jpg","backdrop_path":"/1e2QvI2u7Q4d2admK6Xw0AjLjVp.jpg"},"budget":7000000,"genres":[{"id":27,"name":"Horror"},{"id":53,"name":"Thriller"},{"id":12,"name":"Adventure"}],"homepage":"https://www.uphe.com/movies/jaws","id":578,"imdb_id":"tt0073195","original_language":"en","original_title":"Jaws","overview":"When
+        an insatiable great white shark terrorizes the townspeople of Amity Island,
+        the police chief, an oceanographer and a grizzled shark hunter seek to destroy
+        the blood-thirsty beast.","popularity":41.996,"poster_path":"/s2xcqSFfT6F7ZXHxowjxfG0yisT.jpg","production_companies":[{"id":1865,"logo_path":null,"name":"Zanuck/Brown
+        Productions","origin_country":"US"},{"id":33,"logo_path":"/8lvHyhjr8oUKOOy2dKXoALWKdp0.png","name":"Universal
+        Pictures","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1975-06-20","revenue":470653000,"runtime":124,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Don''t
+        go in the water","title":"Jaws","video":false,"vote_average":7.6,"vote_count":8345}'
+  recorded_at: Tue, 24 May 2022 18:27:17 GMT
+recorded_with: VCR 6.1.0

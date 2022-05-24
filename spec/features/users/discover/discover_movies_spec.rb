@@ -4,7 +4,7 @@ RSpec.describe 'User Discovery Page', type: :feature do
 
   describe 'As a Visitor' do 
 
-    it 'the discover movies button takes me to the discover movies page' do
+    it 'the discover movies button takes me to the discover movies page', :vcr do
       skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
 
       visit "/users/#{skeeter.id}"
@@ -13,7 +13,7 @@ RSpec.describe 'User Discovery Page', type: :feature do
       expect(current_path).to eq("/users/#{skeeter.id}/discover")
     end 
 
-    it 'has a Top Rated Movies button and a Search by Movie Title field' do
+    it 'has a Top Rated Movies button and a Search by Movie Title field', :vcr do
       skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
       visit "/users/#{skeeter.id}/discover"
     
@@ -21,7 +21,7 @@ RSpec.describe 'User Discovery Page', type: :feature do
       expect(page).to have_button("Find Movies")
     end 
 
-    it 'clicking the Top Rated Movies button takes me to the movie results page' do
+    it 'clicking the Top Rated Movies button takes me to the movie results page', :vcr do
       skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
       visit "/users/#{skeeter.id}/discover"
 
@@ -33,7 +33,7 @@ RSpec.describe 'User Discovery Page', type: :feature do
       expect(page).to_not have_content("Movie Results for:")
     end 
 
-    it 'clicking the Find Movies button takes me to the movie results page' do
+    it 'clicking the Find Movies button takes me to the movie results page', :vcr do
       skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
       visit "/users/#{skeeter.id}/discover"
 

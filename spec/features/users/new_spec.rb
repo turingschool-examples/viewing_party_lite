@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'New User Page', type: :feature do
   describe 'happy path' do
-    it 'filling in the form correctly redirects me to my new user dashboard/show page' do
+    it 'filling in the form correctly redirects me to my new user dashboard/show page', :vcr do
       visit '/register'
       # save_and_open_page
       fill_in :user_name, with: 'skeeter'
@@ -20,7 +20,7 @@ RSpec.describe 'New User Page', type: :feature do
   end 
 
   describe 'sad path' do
-    it 'bad passwords results in redirect back to /register w/ error message' do
+    it 'bad passwords results in redirect back to /register w/ error message', :vcr do
       visit '/register'
      
       fill_in :user_name, with: 'skeeter'
@@ -33,7 +33,7 @@ RSpec.describe 'New User Page', type: :feature do
       expect(page).to have_content("Password confirmation doesn't match Password")
     end
 
-    it 'bad/non-unique email results in redirect back to /register w/ error message' do
+    it 'bad/non-unique email results in redirect back to /register w/ error message', :vcr do
       user1 = User.create!(name: 'bob', email: 'skeeter@example.com', password: 'password123', password_confirmation: 'password123')
       visit '/register'
      
@@ -47,7 +47,7 @@ RSpec.describe 'New User Page', type: :feature do
       expect(page).to have_content("Email has already been taken")
     end
 
-    it 'blank name results in redirect back to /register w/ error message' do
+    it 'blank name results in redirect back to /register w/ error message', :vcr do
       visit '/register'
      
       fill_in :user_email, with: 'skeeter@example.com'

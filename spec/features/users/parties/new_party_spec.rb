@@ -4,7 +4,7 @@ RSpec.describe "New Party Page" do
 
   describe "As a Visitor" do 
 
-    it 'it has the movie title and a form to create a new party' do
+    it 'it has the movie title and a form to create a new party', :vcr do
       skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
       jaws_id = 578
       
@@ -16,7 +16,7 @@ RSpec.describe "New Party Page" do
 
     end 
 
-    it 'the new party form has a checkbox list of all users to add them to the party' do
+    it 'the new party form has a checkbox list of all users to add them to the party', :vcr do
       skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
       lugnut = User.create!(name: 'LugNut', email: 'fatdog@corgi.com', password_digest: 'test12', password_confirmation: 'test12')
       hazel = User.create!(name: 'Hazel', email: 'hazelthehut@food.com', password_digest: 'test1', password_confirmation: 'test1')
@@ -34,7 +34,7 @@ RSpec.describe "New Party Page" do
     end 
     
     describe 'when a new party is created' do
-      it 'I am redirected to my dashboard with new party shown, party also show on attendees dashboards' do
+      it 'I am redirected to my dashboard with new party shown, party also show on attendees dashboards', :vcr do
         skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
         lugnut = User.create!(name: 'LugNut', email: 'fatdog@corgi.com', password_digest: 'test12', password_confirmation: 'test12')
         hazel = User.create!(name: 'Hazel', email: 'hazelthehut@food.com', password_digest: 'test1', password_confirmation: 'test1')
@@ -62,7 +62,7 @@ RSpec.describe "New Party Page" do
 
       end 
     end 
-    it 'cannot make a new party with a duration less than the movies runtime' do
+    it 'cannot make a new party with a duration less than the movies runtime', :vcr do
       skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
       lugnut = User.create!(name: 'LugNut', email: 'fatdog@corgi.com', password_digest: 'test12', password_confirmation: 'test12')
       jaws_id = 578

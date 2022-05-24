@@ -6,7 +6,7 @@ RSpec.describe 'User Movie Show Page', type: :feature do
     @user = User.create!(name: "Zel", email: "lorem@ipsum.dorum", password_digest: 'test123', password_confirmation: 'test123')
   end
 
-  it 'Provides details for an individual movie' do
+  it 'Provides details for an individual movie', :vcr do
     visit "/users/#{@user.id}/movies/278"
 
     within '#movie-details' do
@@ -29,7 +29,7 @@ RSpec.describe 'User Movie Show Page', type: :feature do
     end
   end
 
-  it 'Possesses functional link back to discover page' do
+  it 'Possesses functional link back to discover page', :vcr do
     visit "/users/#{@user.id}/movies/278"
 
     within "#links" do
@@ -37,7 +37,7 @@ RSpec.describe 'User Movie Show Page', type: :feature do
     end
   end
 
-  it 'Possesses link to create new party' do
+  it 'Possesses link to create new party', :vcr do
     visit "/users/#{@user.id}/movies/278"
 
     within "#links" do
