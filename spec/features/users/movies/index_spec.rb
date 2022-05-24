@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'the users index page' do
 
   before :each do
-    @user_1 = User.create!(name: 'Alfonso Diogenes', email: 'alphonsodiogenes420@hotmail.com')
+    @user_1 = User.create!(name: 'Alfonso Diogenes', email: 'alphonsodiogenes420@hotmail.com', password: 'password123', password_confirmation: 'password123')
   #   @user_2 = User.create!(name: 'Cradley Booper', email: 'cradleybooper420@hotmail.com')
   #   @user_3 = User.create!(name: 'Jangelina Aolie', email: 'jangelinaaolie420@hotmail.com')
   #   @party_1 = Party.create!(date: '2022-05-10', duration: 147, start_time: '7:00', movie: 'Jurassic Park', host: @user_1.id)
