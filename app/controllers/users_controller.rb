@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       redirect_to "/users/#{user.id}"
     else
       redirect_to "/users/register"
-      flash[:notice] = user.errors.full_messages
+      flash[:notice] = user.errors.full_messages.to_sentence
     end
   end
 
@@ -21,13 +21,12 @@ class UsersController < ApplicationController
 
   def login
     user = User.find_by(email: params[:email])
-    if user.authenticate(params[:password])
-      flash[:success] = "Welcome #{user.name}!"
-      redirect_to "/users/#{user.id}"
-    else
+    if user.nil? || !user.authenticate(params[:password])
       flash[:notice] = "Email or password are incorrect"
       render :login_form
-      # require "pry"; binding.pry
+    else
+      flash[:success] = "Welcome #{user.name}!"
+      redirect_to "/users/#{user.id}"
     end
   end
 
@@ -35,5 +34,4 @@ private
   def user_params
     params.permit(:name, :email, :password_confirmation, :password)
   end
-
 end

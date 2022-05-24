@@ -11,17 +11,11 @@
 
   <body>
     <%= link_to "Home", "/" %>
-    <%= yield %>
     <div class="flash_message">
     <% flash.each do |type, message| %>
-      <% if message.class == Array %>
-        <% message.each do |mess| %>
-            <p><%= mess %></p>
-          <% end %>
-      <% else %>
         <p><%= message %></p>
-      <% end %>
     <% end %>
   </div>
+  <%= yield %>
   </body>
 </html>
