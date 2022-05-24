@@ -17,6 +17,12 @@ describe "user new page" do
 
         click_button "Register"
 
+        expect(current_path).to eq("/login")
+
+        fill_in "Email", with: "varsityathlete@gmail.com"
+        fill_in "Password", with: "test123"
+        click_button "Log In"
+
         expect(page).to have_content("Junior Soprano's page")
         expect(page).not_to have_content("Tony Soprano's page")
       end

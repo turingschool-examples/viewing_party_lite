@@ -1,8 +1,8 @@
 <h1>Discover movies</h1>
 
-<%= button_to "Discover top rated movies", "/users/#{@user.id}/discover", method: :get, params: { q: "top%20rated" } %><br>
+<%= button_to "Discover top rated movies", "/discover", method: :get, params: { q: "top%20rated" } %><br>
 
-<%= form_with url: "/users/#{@user.id}/discover", method: :get, local: true do |form| %>
+<%= form_with url: "/discover", method: :get, local: true do |form| %>
   <%= form.text_field :q, label: false %><br>
   <%= form.submit "Search by Title" %>
 <% end %>
@@ -13,7 +13,7 @@
   <ul>
     <% @top_20.each do |movie| %>
       <li>
-        Title: <%= link_to "#{movie.title}", "/users/#{@user.id}/movies/#{movie.id}" %><br/>
+        Title: <%= link_to "#{movie.title}", "/movies/#{movie.id}" %><br/>
         Vote Average: <%= movie.vote_average %>
       </li><hr>
       <% end %>
@@ -24,7 +24,7 @@
   <ul>
     <% @search_results.each do |movie| %>
       <li>
-        Title: <%= link_to "#{movie.title}", "/users/#{@user.id}/movies/#{movie.id}" %><br/>
+        Title: <%= link_to "#{movie.title}", "movies/#{movie.id}" %><br/>
         Vote Average: <%= movie.vote_average %>
       </li><hr>
     <% end %>
