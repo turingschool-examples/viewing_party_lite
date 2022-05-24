@@ -4,3 +4,7 @@
 <center><% @users.each do |user| %>
   <p><%= link_to "#{user.name}'s Dashboard", user_dashboard_path(user) %></p>
   <% end %></center>
+
+  <div class="login">
+    <%= button_to 'Login', '/login', method: :get %>
+  </div>

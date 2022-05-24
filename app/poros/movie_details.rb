@@ -7,7 +7,8 @@ class MovieDetails
               :summary,
               :cast,
               :count_of_reviews,
-              :review_author_details
+              :review_author_details,
+              :poster
 
   def initialize(data)
 
@@ -20,6 +21,7 @@ class MovieDetails
     @cast = data[:credits][:cast][(0..9)]
     @count_of_reviews = data[:reviews][:total_results]
     @review_author_details = data[:reviews][:results].map { |author| author[:author_details] }
+    @poster = data[:poster_path]
     # require 'pry'; binding.pry
   end
 end
