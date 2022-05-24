@@ -12,7 +12,6 @@ class UsersController < ApplicationController
     else
       redirect_to "/register"
       flash[:alert] = "Error: #{error_message(user.errors)}"
-      #flash[:alert] = "Error: #{user.errors.full_messages.to_sentence}"
     end
   end
 
