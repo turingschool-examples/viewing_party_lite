@@ -43,13 +43,13 @@ RSpec.describe 'User Discovery Page', type: :feature do
     end 
 
     it 'clicking the Find Movies button takes me to the movie results page', :vcr do
-      # skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password: 'test123')
-      visit "/users/#{@user1.id}/discover"
+      # skeeter= User.create!(name: 'Skeeter', email: 'skeeter@example.com', password: 'test123')
+      visit "/discover"
 
       fill_in "Search by Movie Title", with: "Jaws"
       click_on "Find Movies"
       
-      expect(current_path).to eq("/users/#{@user1.id}/movies")
+      expect(current_path).to eq("/movies")
       expect(page).to have_content("Movie Results for: Jaws")
       
       expect(page).to_not have_content("Top Rated Movies")
