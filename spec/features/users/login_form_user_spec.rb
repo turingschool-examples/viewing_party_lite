@@ -10,7 +10,7 @@ RSpec.describe "login form" do
     fill_in(:email, with: @user.email)
     fill_in(:password, with: @user.password)
     click_on "Log In"
-    expect(current_path).to eq("/users/#{@user.id}")
+    expect(current_path).to eq("/dashboard")
   end
 
   it "does not work with wrong id" do

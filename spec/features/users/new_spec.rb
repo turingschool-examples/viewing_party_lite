@@ -39,7 +39,7 @@ RSpec.describe "Registration Page", type: :feature do
 
       user3 = User.last
 
-      expect(current_path).to eq("/users/#{user3.id}")
+      expect(current_path).to eq("/dashboard")
     end
 
     it "requires a password" do

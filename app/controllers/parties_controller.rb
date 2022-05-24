@@ -1,12 +1,12 @@
 class PartiesController < ApplicationController
   def new
     @users = User.all
-    @host = User.find(params[:user_id])
+    @host = User.find(session[:user_id])
     @movie = MovieFacade.search_by_id(params[:movie_id])
   end
 
   def create
-    host = User.find(params[:user_id])
+    host = User.find(session[:user_id])
     party = Party.create({host_id: host.id,
                         movie_id: params[:movie_id],
                         date: params[:date],
@@ -19,7 +19,7 @@ class PartiesController < ApplicationController
         UserParty.create({user_id: guest, party_id: party.id, host: false})
       end
     end
-    redirect_to "/users/#{host.id}"
+    redirect_to "/dashboard"
   end
 
   private

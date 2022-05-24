@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   def index
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
     @movies = if params[:keyword]
                 MovieFacade.search(params[:keyword])
               else
