@@ -1,13 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe 'User Movie Show Page', type: :feature do
-
   before :each do
-    @user = User.create!(name: "Zel", email: "lorem@ipsum.dorum", password_digest: 'test123', password_confirmation: 'test123')
+    @user1 = User.create!(name: 'Skeeter', email: 'skeeter@skeeter.com', password: 'test')
+    @user2 = User.create!(name: 'Alex', email: 'alex@alex.com', password: 'test123')
+    visit '/'
+
+    click_button 'Login'
+    fill_in 'Name:', with: 'Skeeter'
+    fill_in 'Email:', with: 'skeeter@skeeter.com'
+    fill_in 'Password', with: 'test'
+    click_on 'Log In'
   end
 
+
   it 'Provides details for an individual movie', :vcr do
-    visit "/users/#{@user.id}/movies/278"
+    visit "/movies/278"
 
     within '#movie-details' do
       expect(page).to have_content("The Shawshank Redemption")
@@ -30,15 +38,15 @@ RSpec.describe 'User Movie Show Page', type: :feature do
   end
 
   it 'Possesses functional link back to discover page', :vcr do
-    visit "/users/#{@user.id}/movies/278"
+    visit "/movies/278"
 
     within "#links" do
-      expect(page).to have_link("Return to Discover", href: "/users/#{@user.id}/discover")
+      expect(page).to have_link("Return to Discover", href: "/discover")
     end
   end
 
   it 'Possesses link to create new party', :vcr do
-    visit "/users/#{@user.id}/movies/278"
+    visit "/movies/278"
 
     within "#links" do
       expect(page).to have_button("Create New Watch Party")
