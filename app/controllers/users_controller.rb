@@ -12,7 +12,6 @@ class UsersController < ApplicationController
     else
       redirect_to "/register"
       flash[:alert] = "Error: #{error_message(user.errors)}"
-      #flash[:alert] = "Error: #{user.errors.full_messages.to_sentence}"
     end
   end
 
@@ -30,7 +29,6 @@ class UsersController < ApplicationController
 
   def login_user
     user = User.find_by(email: params[:email])
-    #binding.pry
     if user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to "/users/dashboard?=#{user.email}"

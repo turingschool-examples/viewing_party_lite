@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'User dahsboard:', type: :feature do
   before(:each) do
     @user1 = User.create!(name: "Bliffert Blankship", email: "Bliff@aol.com", password: "12345", password_confirmation: "12345")
-    @user2 = User.create!(name: "Blankert Bliffship", email: "Blank@aol.com", password: "12345", password: "12345" )
+    @user2 = User.create!(name: "Blankert Bliffship", email: "Blank@aol.com", password: "12345", password_confirmation: "12345" )
     @the_dark_knight = Party.create!(duration: 66, date: "01/12/13", start: "14:00", movie_id: 155)
     @user_party = UserParty.create!(user_id: @user1.id, party_id: @the_dark_knight.id)
 
@@ -12,39 +12,35 @@ RSpec.describe 'User dahsboard:', type: :feature do
     fill_in("email", with: @user1.email)
     fill_in("Password", with: @user1.password)
     click_button("Log in")
-    #binding.pry
-    #save_and_open_page
+
   end
 
   it "has stuff on the page" do
-    #visit "/users/dashboard?=#{@user1.email}"
-    #save_and_open_page
     expect(page).to have_content("#{@user1.name}'s Magical dashboard")
     expect(page).to_not have_content("#{@user2.name}'s Magical dashboard")
     expect(page).to have_button("Discover Movies")
     expect(page).to have_content("Viewing Parties")
   end
 
-  xit "has viewing parties user has created" do
+  it "has viewing parties user has created" do
     visit "/users/dashboard?=#{@user1.email}"
 
     within("#viewing-parties") do
-      expect(page).to have_content("Insert Movie Here")
       expect(page).to have_content(@the_dark_knight.date)
       expect(page).to have_content(@the_dark_knight.start)
       expect(page).to have_content(@user1.name)
-      expect(page).to have_content(@user2.name)
+      expect(page).to_not have_content(@user2.name)
     end
   end
 
-  xit "has viewing parties user is invited to" do
+  it "has viewing parties user is invited to" do
+    visit "/users/dashboard?=#{@user1.email}"
 
-    within("#vp") do
-      expect(page).to have_content("Insert Movie Here")
+    within("#viewing-parties") do
       expect(page).to have_content(@the_dark_knight.date)
       expect(page).to have_content(@the_dark_knight.start)
       expect(page).to have_content(@user1.name)
-      expect(page).to have_content(@user2.name)
+      expect(page).to_not have_content(@user2.name)
     end
   end
 end

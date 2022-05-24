@@ -10,7 +10,7 @@ class MovieData
     @reviews = review(reviews)
     @runtime = production[:runtime]
     @vote_avg = production[:vote_average]
-    @image = get_image(images) 
+    @image = get_image(images)
   end
 
   def set_genres(production)
@@ -38,8 +38,8 @@ class MovieData
       hash
     end
 
-  def get_image(image) 
-    "https://image.tmdb.org/t/p/w200#{image[:logos].first[:file_path]}"
+  def get_image(image)
+    "https://image.tmdb.org/t/p/w200#{image[:posters].first[:file_path]}"
   end
 
 end
