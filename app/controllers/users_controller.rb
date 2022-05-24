@@ -41,7 +41,11 @@ class UsersController < ApplicationController
   end
     
   def discover
-    @user = User.find(params[:id])
+    if current_user
+
+    else
+      render file: "/public/404"
+    end 
   end
   
   private

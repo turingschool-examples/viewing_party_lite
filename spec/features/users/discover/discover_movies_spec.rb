@@ -21,7 +21,7 @@ RSpec.describe 'User Discovery Page', type: :feature do
       visit "/dashboard"
       click_button "Discover Movies"
   
-      expect(current_path).to eq("/users/#{@user1.id}/discover")
+      expect(current_path).to eq("/discover")
     end 
 
     it 'has a Top Rated Movies button and a Search by Movie Title field', :vcr do

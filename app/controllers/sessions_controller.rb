@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def login_form
   end
   
-  def create
+  def create #login
     user = User.find_by(email: params[:email])
     if user.nil?
       flash[:error] = "Incorrect Email"
