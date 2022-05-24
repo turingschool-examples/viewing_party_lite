@@ -1,9 +1,15 @@
 <%= form_with url: "/users", method: :post, local: true do |form| %>
   <%= form.label :name %>
-  <%= form.text_field :name %>
+  <%= form.text_field :name %><br>
 
   <%= form.label :email %>
-  <%= form.text_field :email %>
+  <%= form.text_field :email %><br>
+
+  <%= form.label :password %>
+  <%= form.password_field :password %><br>
+
+  <%= form.label :password_confirmation %>
+  <%= form.password_field :password_confirmation %><br>
 
   <%= form.submit "Register" %>
 <% end %>

@@ -4,8 +4,8 @@ describe "welcome page" do
   describe "as a user" do
     describe "when i visit the root path" do
       before do
-        @user_1 = User.create!(name: "Tony Soprano", email: "wokeupthismorning@gmail.com")
-        @user_2 = User.create!(name: "Junior Soprano", email: "varsityathlete@gmail.com")
+        @user_1 = User.create!(name: "Tony Soprano", email: "wokeupthismorning@gmail.com", password: "test123", password_confirmation: "test123")
+        @user_2 = User.create!(name: "Junior Soprano", email: "varsityathlete@gmail.com", password: "test123", password_confirmation: "test123")
         visit "/"
       end
 

@@ -12,13 +12,31 @@ class UsersController < ApplicationController
       redirect_to "/users/#{user.id}"
     else
       redirect_to "/register"
-      flash[:invalid_email] = "There is already an account associated with this e-mail address."
+      flash[:notice] = user.errors.full_messages.to_sentence
+    end
+  end
+
+  def login_form
+  end
+
+  def login_user
+    user = User.find_by(email: params[:email])
+    if user
+      if user.authenticate(params[:password])
+        redirect_to "/users/#{user.id}"
+      else
+        flash[:invalid_password] = "Invalid password."
+        render :login_form
+      end
+    else
+      flash[:invalid_email] = "There is no account associated with this email address."
+      render :login_form
     end
   end
 
   private
 
   def user_params
-    params.permit(:name, :email)
+    params.permit(:name, :email, :password, :password_confirmation)
   end
 end

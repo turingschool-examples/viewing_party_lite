@@ -27,7 +27,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 12 May 2022 20:29:58 GMT
+      - Mon, 23 May 2022 17:08:52 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -44,34 +44,34 @@ http_interactions:
       X-Memc-Key:
       - d7dca9fc1457d9f7124c477007e07fb817785ee9
       X-Memc-Age:
-      - '11991'
+      - '4693'
       X-Memc-Expires:
-      - '2548'
+      - '12322'
       Etag:
-      - W/"bf13dc9a61e376b985ed7cb52f6dd7df"
+      - W/"25a794c8b58da4bb2fdf36f4f69300eb"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 9cefde3a3c84cc779d3c26a39c2e4430.cloudfront.net (CloudFront)
+      - 1.1 17da55c14108bb8cae904f764f67c0e0.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN50-C2
+      - EWR53-P1
       X-Amz-Cf-Id:
-      - tvvuzYQcH6M_UW6OEinyVXJvFj9cOKGaD6NsX-caK54mNgMvDjIOVw==
+      - tqnn1V1H7FFL7ywnT_j0lrSfs59ICsSlz7kUFGbdB1KVcaR9fpZb5g==
       Age:
-      - '21179'
+      - '6'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/hjGLcwWg2F0BJB1zUFMzwrm7uqg.jpg","belongs_to_collection":null,"budget":9000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"","id":290,"imdb_id":"tt0101410","original_language":"en","original_title":"Barton
         Fink","overview":"A renowned New York playwright is enticed to California
-        to write for the movies and discovers the hellish truth of Hollywood.","popularity":9.84,"poster_path":"/846d8FclibtOIoUW7PxpT0nCG4C.jpg","production_companies":[{"id":10163,"logo_path":"/16KWBMmfPX0aJzDExDrPxSLj0Pg.png","name":"Working
+        to write for the movies and discovers the hellish truth of Hollywood.","popularity":9.957,"poster_path":"/846d8FclibtOIoUW7PxpT0nCG4C.jpg","production_companies":[{"id":10163,"logo_path":"/16KWBMmfPX0aJzDExDrPxSLj0Pg.png","name":"Working
         Title Films","origin_country":"GB"},{"id":11273,"logo_path":null,"name":"Circle
         Films","origin_country":""},{"id":25,"logo_path":"/qZCc1lty5FzX30aOCVRBLzaVmcp.png","name":"20th
         Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"GB","name":"United
         Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"1991-08-01","revenue":6153939,"runtime":117,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"What''s
-        in his head","title":"Barton Fink","video":false,"vote_average":7.5,"vote_count":1302}'
-  recorded_at: Fri, 13 May 2022 02:22:57 GMT
+        in his head","title":"Barton Fink","video":false,"vote_average":7.5,"vote_count":1303}'
+  recorded_at: Mon, 23 May 2022 17:08:58 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/290?api_key=Sike you thought
@@ -99,7 +99,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 12 May 2022 20:29:58 GMT
+      - Mon, 23 May 2022 17:08:52 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -116,32 +116,32 @@ http_interactions:
       X-Memc-Key:
       - d7dca9fc1457d9f7124c477007e07fb817785ee9
       X-Memc-Age:
-      - '11991'
+      - '4693'
       X-Memc-Expires:
-      - '2548'
+      - '12322'
       Etag:
-      - W/"bf13dc9a61e376b985ed7cb52f6dd7df"
+      - W/"25a794c8b58da4bb2fdf36f4f69300eb"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 b7f0c5734a286f56595c1e1b456020a2.cloudfront.net (CloudFront)
+      - 1.1 acbc1e922360be31edf0371abdc7a3a4.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN50-C2
+      - EWR53-P1
       X-Amz-Cf-Id:
-      - KvXPluZmWvP7eleJgRlFOAjAr8MfojcixbJNW5DrIrpQABN_lWCLuQ==
+      - HoaEVc6B4Tk2iFXOMOyGGMXht7B0SiLhNiMgKlPIiRGeLv3ERBRpKQ==
       Age:
-      - '21180'
+      - '6'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/hjGLcwWg2F0BJB1zUFMzwrm7uqg.jpg","belongs_to_collection":null,"budget":9000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"","id":290,"imdb_id":"tt0101410","original_language":"en","original_title":"Barton
         Fink","overview":"A renowned New York playwright is enticed to California
-        to write for the movies and discovers the hellish truth of Hollywood.","popularity":9.84,"poster_path":"/846d8FclibtOIoUW7PxpT0nCG4C.jpg","production_companies":[{"id":10163,"logo_path":"/16KWBMmfPX0aJzDExDrPxSLj0Pg.png","name":"Working
+        to write for the movies and discovers the hellish truth of Hollywood.","popularity":9.957,"poster_path":"/846d8FclibtOIoUW7PxpT0nCG4C.jpg","production_companies":[{"id":10163,"logo_path":"/16KWBMmfPX0aJzDExDrPxSLj0Pg.png","name":"Working
         Title Films","origin_country":"GB"},{"id":11273,"logo_path":null,"name":"Circle
         Films","origin_country":""},{"id":25,"logo_path":"/qZCc1lty5FzX30aOCVRBLzaVmcp.png","name":"20th
         Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"GB","name":"United
         Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"1991-08-01","revenue":6153939,"runtime":117,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"What''s
-        in his head","title":"Barton Fink","video":false,"vote_average":7.5,"vote_count":1302}'
-  recorded_at: Fri, 13 May 2022 02:22:58 GMT
+        in his head","title":"Barton Fink","video":false,"vote_average":7.5,"vote_count":1303}'
+  recorded_at: Mon, 23 May 2022 17:08:58 GMT
 recorded_with: VCR 6.1.0

@@ -8,7 +8,7 @@ describe Party, type: :model do
 
   describe "instance methods" do
     before do
-      @user1 = User.create!(name: "User One", email: "user1@test.com")
+      @user1 = User.create!(name: "User One", email: "user1@test.com", password: "test123", password_confirmation: "test123")
       @party_1 = Party.create!(event_date: DateTime.new(2002, 0o4, 26, 6, 0, 0, "-07:00"), duration: "230 mins", start_time: DateTime.new(2002, 0o4, 26, 6, 0, 0, "-07:00"), user_id: @user1.id, movie_id: 24021)
       @party_2 = Party.create!(event_date: DateTime.new(2002, 0o2, 24, 7, 0, 0, "-07:00"), duration: "230 mins", start_time: DateTime.new(2002, 0o2, 24, 7, 0, 0, "-07:00"), user_id: @user1.id, movie_id: 809)
     end
