@@ -7,7 +7,8 @@ class UserMoviePartiesController < ApplicationController
       movie_id = params[:movie_id].to_i
       @movie = MovieFacade.movie_id(movie_id)
     else
-      render file: "/public/404"   
+      flash[:error] = "You must be logged in or registered to create a movie party"
+      redirect_to "/movies/#{params[:movie_id]}"
     end 
   end
 
