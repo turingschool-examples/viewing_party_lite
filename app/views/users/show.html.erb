@@ -3,35 +3,37 @@
 <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %>
 
 <div class="invited_to">
-<h3> Viewing Parties I am Invited To </h3>
-<% @user.invited_parties.each do |party| %>
-<p><strong>Movie:</strong> <%= link_to "#{party.movie.title}", "/users/@user.id/movies/#{party.movie.id}" %></p>
-<p><strong>Date:</strong> <%= party.date %></p>
-<p><strong>Time:</strong> <%= party.time.strftime("%I:%M") %></p>
-<p><strong>Host:</strong> <%= party.host_name %></p>
-<p><strong>Attendees:</strong> <% party.users.each do |user| %>
-      <% if user.id == @user.id %>
-      <p><strong>**<%= user.name %>**</strong></p>
-      <% else %>
-      <p> <%= user.name %></p>
-      <% end %>
+  <h3> Viewing Parties I am Invited To </h3>
+    <% @user.invited_parties.each do |party| %>
+      <p> <%= image_tag "https://image.tmdb.org/t/p/w200/#{party.movie.poster}" %></p>
+      <p><strong>Movie:</strong> <%= link_to "#{party.movie.title}", "/users/@user.id/movies/#{party.movie.id}" %></p>
+      <p><strong>Date:</strong> <%= party.date %></p>
+      <p><strong>Time:</strong> <%= party.time.strftime("%I:%M") %></p>
+      <p><strong>Host:</strong> <%= party.host_name %></p>
+      <p><strong>Attendees:</strong> <% party.users.each do |user| %>
+        <% if user.id == @user.id %>
+          <p><strong>**<%= user.name %>**</strong></p>
+        <% else %>
+          <p> <%= user.name %></p>
+        <% end %>
       <% end %>
       <br/>
-<% end %>
+    <% end %>
 </div>
 
 <div class="hosting">
-<h3> Viewing Parties I am Hosting </h3>
-<% @user.hosted_parties.each do |party| %>
-<p><strong>Movie:</strong> <%= link_to "#{party.movie.title}", "/users/#{@user.id}/movies/#{party.movie.id}" %></p>
-<p><strong>Date:</strong> <%= party.date %></p>
-<p><strong>Time:</strong> <%= party.time.strftime("%I:%M") %></p>
-<p><strong>Host:</strong> Me!! </p>
-<p><strong>Attendees:</strong> <% party.users.each do |user| %>
-      <% if user.id != @user.id %>
-      <p> <%= user.name %></p>
+  <h3> Viewing Parties I am Hosting </h3>
+    <% @user.hosted_parties.each do |party| %>
+      <p> <%= image_tag "https://image.tmdb.org/t/p/w200/#{party.movie.poster}" %></p>
+      <p><strong>Movie:</strong> <%= link_to "#{party.movie.title}", "/users/#{@user.id}/movies/#{party.movie.id}" %></p>
+      <p><strong>Date:</strong> <%= party.date %></p>
+      <p><strong>Time:</strong> <%= party.time.strftime("%I:%M") %></p>
+      <p><strong>Host:</strong> Me!! </p>
+      <p><strong>Attendees:</strong> <% party.users.each do |user| %>
+        <% if user.id != @user.id %>
+          <p> <%= user.name %></p>
+          <br/>
+        <% end %>
       <% end %>
-      <br/>
-<% end %>
-<% end %>
+    <% end %>
 </div>
