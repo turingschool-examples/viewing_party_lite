@@ -12,25 +12,29 @@ class UserMoviePartiesController < ApplicationController
   end
 
   def create
-    user_id = params[:user_id]
-    movie_id = params[:movie_id]
-    if params[:runtime].to_i > params[:duration].to_i 
-      flash[:notice] = 'Duration Cannot Be Less Than Movie Runtime!'
-      redirect_to "/users/#{user_id}/movies/#{movie_id}/party/new"
-    else 
-      new_party = Party.create!({
-        duration: params[:duration].to_i,
-        when: date_maker,
-        start_time: params[:start_time],
-        user_id: user_id,
-        movie_id: movie_id
-      })
-      if params[:attendees].present?
-        params[:attendees].each do |attendee|
-          Attendee.create(user_id: attendee, party_id: new_party.id)
+    if current_user
+      user_id = current_user.id
+      movie_id = params[:movie_id]
+      if params[:runtime].to_i > params[:duration].to_i 
+        flash[:notice] = 'Duration Cannot Be Less Than Movie Runtime!'
+        redirect_to "/movies/#{movie_id}/party/new"
+      else 
+        new_party = Party.create!({
+          duration: params[:duration].to_i,
+          when: date_maker,
+          start_time: params[:start_time],
+          user_id: user_id,
+          movie_id: movie_id
+        })
+        if params[:attendees].present?
+          params[:attendees].each do |attendee|
+            Attendee.create(user_id: attendee, party_id: new_party.id)
+          end 
         end 
+        redirect_to "/dashboard"
       end 
-      redirect_to "/users/#{user_id}"
+    else
+      render file: "/public/404"   
     end 
   end
 
