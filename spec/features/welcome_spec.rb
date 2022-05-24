@@ -15,19 +15,19 @@ describe "welcome page" do
 
       it "i see a button to create a new user" do
         click_button "Create New User"
-        expect(current_path).to eq("/users/new")
+        expect(current_path).to eq("/register")
       end
 
-      it "i see a list of existing users, whose names link to their user dashboard" do
-        expect(page).to have_link("Tony Soprano")
-        expect(page).to have_link("Junior Soprano")
-        expect(page).to have_content("wokeupthismorning@gmail.com")
-        expect(page).to have_content("varsityathlete@gmail.com")
-
-        click_link("Tony Soprano")
-
-        expect(current_path).to eq("/users/#{@user_1.id}")
-      end
+      # it "i see a list of existing users, whose names link to their user dashboard" do
+      #   expect(page).to have_link("Tony Soprano")
+      #   expect(page).to have_link("Junior Soprano")
+      #   expect(page).to have_content("wokeupthismorning@gmail.com")
+      #   expect(page).to have_content("varsityathlete@gmail.com")
+      #
+      #   click_link("Tony Soprano")
+      #
+      #   expect(current_path).to eq("/dashboard")
+      # end
 
       it "i see a link to go back to the landing page" do
         click_link("Return to Home Page")

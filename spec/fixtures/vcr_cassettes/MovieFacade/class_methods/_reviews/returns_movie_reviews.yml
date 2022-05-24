@@ -52,13 +52,15 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 4a8de0adddd15d5e8cadba8208771b58.cloudfront.net (CloudFront)
+      - 1.1 2e7e64e85275c7c3d580e9eab0385c02.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - JFK51-C1
       X-Amz-Cf-Id:
-      - aOchHBNbfaZFjpQTzfDHdwMKw3XFUYPvqLeb7G09pH_37YNQe3WKkg==
+      - kE_XQ4wN68cSYrRDE6BunBWiah_a7E4Aq9yMtgB27wythY4NF0cb0Q==
+      Age:
+      - '8861'
     body:
       encoding: ASCII-8BIT
       string: '{"id":100,"page":1,"results":[{"author":"BradFlix","author_details":{"name":"","username":"BradFlix","avatar_path":null,"rating":null},"content":"I
@@ -82,5 +84,5 @@ http_interactions:
         However, that actually turns into the film''s best thing at the end as it
         does come together brilliantly.\r\n\r\nAll in all, this 1998 gangster flick
         is something I''d consider as very good and worthy of watching.","created_at":"2022-03-16T01:38:40.389Z","id":"62313fa06517d60045ed073a","updated_at":"2022-03-16T01:38:40.389Z","url":"https://www.themoviedb.org/review/62313fa06517d60045ed073a"}],"total_pages":1,"total_results":4}'
-  recorded_at: Tue, 24 May 2022 17:40:10 GMT
+  recorded_at: Tue, 24 May 2022 20:07:51 GMT
 recorded_with: VCR 6.1.0

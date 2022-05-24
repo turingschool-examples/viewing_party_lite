@@ -2,9 +2,9 @@
 <h3>Current Users:</h3>
 <hr>
 <% @users.each do |user| %>
-  <h3><%= link_to "#{user.name}", "/users/#{user.id}" %></h3>
+  <h3><%= link_to "#{user.name}", "/dashboard" %></h3>
   <p><%= user.email %></p>
   <hr>
 <% end %>
 <%= link_to "Log In", "/login", method: :get %><br>
-<br><%= button_to "Create New User", "/users/new", method: :get %><br>
+<br><%= button_to "Create New User", "/register", method: :get %><br>

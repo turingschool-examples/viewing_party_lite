@@ -6,7 +6,8 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user
       if user.authenticate(params[:password])
-        redirect_to "/users/#{user.id}"
+        session[:user_id] = user.id
+        redirect_to "/dashboard"
       else
         flash[:invalid_password] = "Invalid password."
         redirect_to "/login"

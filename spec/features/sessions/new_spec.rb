@@ -19,7 +19,7 @@ describe "user login page" do
 
         click_button "Log In"
 
-        expect(current_path).to eq("/users/#{@user_1.id}")
+        expect(current_path).to eq("/dashboard")
       end
 
       it "if i enter an email that does not exist, then i see an error message" do

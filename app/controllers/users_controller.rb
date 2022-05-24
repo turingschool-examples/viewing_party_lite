@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
   end
 
   def new
@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
-      redirect_to "/users/#{user.id}"
+      redirect_to "/login"
     else
       redirect_to "/register"
       flash[:notice] = user.errors.full_messages.to_sentence

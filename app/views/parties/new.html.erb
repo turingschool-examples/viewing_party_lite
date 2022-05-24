@@ -1,6 +1,6 @@
 <h1><%= @movie.title %></h1>
 
-<%= form_with url: "/users/#{@user.id}/movies/#{@movie.id}/parties", method: :post, local: true do |form| %>
+<%= form_with url: "/movies/#{@movie.id}/parties", method: :post, local: true do |form| %>
   <%= form.label :duration, "Duration" %>
   <%= form.number_field :duration, value: @movie.runtime %><br>
 
