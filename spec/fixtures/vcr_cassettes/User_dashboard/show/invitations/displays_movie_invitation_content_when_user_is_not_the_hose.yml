@@ -27,7 +27,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Mon, 23 May 2022 17:09:00 GMT
+      - Tue, 24 May 2022 17:40:17 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -44,21 +44,23 @@ http_interactions:
       X-Memc-Key:
       - 6c0639b760633039387284a27f8730ee80d57205
       X-Memc-Age:
-      - '15915'
+      - '3174'
       X-Memc-Expires:
-      - '1020'
+      - '11535'
       Etag:
-      - W/"4bbf39ce0fb1390bb4a32f42015c5b81"
+      - W/"58b91f6f9a9ac1d814731f0f68f9194f"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 13f845dfc86f469c48ead16a985011ba.cloudfront.net (CloudFront)
+      - 1.1 73d76685a18ed386cef8f6fb5f61f844.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - EWR53-P1
+      - JFK51-C1
       X-Amz-Cf-Id:
-      - EBeR6kT0jvoo3eXsdEHhdT6qtEAWzDrYQcXs7YAtcQY1PFyJbPOdSQ==
+      - 5-JdEI9LtPuLw6EitvgNLuL6IhvkJhCpsLC-393yOhEHP6f6B-RY2g==
+      Age:
+      - '1'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/r4OqScx7hVXsG1obaJjJKJNaxHT.jpg","belongs_to_collection":{"id":33514,"name":"The
@@ -69,15 +71,15 @@ http_interactions:
         to choose between her love for Edward and her friendship with Jacob, knowing
         that her decision has the potential to ignite the ageless struggle between
         vampire and werewolf. With her graduation quickly approaching, Bella is confronted
-        with the most important decision of her life.","popularity":213.603,"poster_path":"/3mFM80dPzSqoXXuC2UMvLIRWX32.jpg","production_companies":[{"id":491,"logo_path":"/rUp0lLKa1pr4UsPm8fgzmnNGxtq.png","name":"Summit
+        with the most important decision of her life.","popularity":173.793,"poster_path":"/3mFM80dPzSqoXXuC2UMvLIRWX32.jpg","production_companies":[{"id":491,"logo_path":"/rUp0lLKa1pr4UsPm8fgzmnNGxtq.png","name":"Summit
         Entertainment","origin_country":"US"},{"id":12292,"logo_path":"/llGRXF5WYUW2fzXg0ebCoKMXjmT.png","name":"Temple
         Hill Entertainment","origin_country":"US"},{"id":5218,"logo_path":"/dhb42ugM9DzSpDctTWCtABPVOW4.png","name":"Imprint
         Entertainment","origin_country":"US"},{"id":4000,"logo_path":null,"name":"Maverick
         Films","origin_country":"US"},{"id":5219,"logo_path":null,"name":"Sunswept
         Entertainment","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"2010-06-23","revenue":698491347,"runtime":124,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"It
-        all begins... with a choice.","title":"The Twilight Saga: Eclipse","video":false,"vote_average":6.2,"vote_count":7507}'
-  recorded_at: Mon, 23 May 2022 17:09:00 GMT
+        all begins... with a choice.","title":"The Twilight Saga: Eclipse","video":false,"vote_average":6.2,"vote_count":7508}'
+  recorded_at: Tue, 24 May 2022 17:40:18 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/809?api_key=Sike you thought
@@ -105,7 +107,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Mon, 23 May 2022 17:09:00 GMT
+      - Tue, 24 May 2022 17:40:18 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -122,21 +124,21 @@ http_interactions:
       X-Memc-Key:
       - 991b4c6713e73a7547942937bebcfd41fada3b8e
       X-Memc-Age:
-      - '8005'
+      - '11220'
       X-Memc-Expires:
-      - '9588'
+      - '5795'
       Etag:
-      - W/"3935c54fb24d72a3d6b31376da62d755"
+      - W/"6fb95a21b707ea2eb0f986e0f3ed67bf"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 957a0e737a088bdc07cb5cc9dcc9e826.cloudfront.net (CloudFront)
+      - 1.1 4fe583422d0b309b9b1d4505e54b137c.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - EWR53-P1
+      - JFK51-C1
       X-Amz-Cf-Id:
-      - RspVG7Hxnwyo4AUvmnvIBRxZ-_FlTQBhvLbpo0QMGaFocoT786zLTA==
+      - hZI4iM8N6eb-H5DduXjdVqi-e-llrp3rco1sDFM8xJnBNr5XgyX4IA==
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/g1EsYgp8GbdztpodCCa2n7xxc5S.jpg","belongs_to_collection":{"id":2150,"name":"Shrek
@@ -145,11 +147,11 @@ http_interactions:
         mother and father. But not everyone is happy. Shrek and the King find it hard
         to get along, and there''s tension in the marriage. The fairy godmother discovers
         that Shrek has married Fiona instead of her Son Prince Charming and sets about
-        destroying their marriage.","popularity":165.675,"poster_path":"/2yYP0PQjG8zVqturh1BAqu2Tixl.jpg","production_companies":[{"id":7,"logo_path":"/vru2SssLX3FPhnKZGtYw00pVIS9.png","name":"DreamWorks
+        destroying their marriage.","popularity":153.902,"poster_path":"/2yYP0PQjG8zVqturh1BAqu2Tixl.jpg","production_companies":[{"id":7,"logo_path":"/vru2SssLX3FPhnKZGtYw00pVIS9.png","name":"DreamWorks
         Pictures","origin_country":"US"},{"id":520,"logo_path":"/pU7YTI9FfrICurXpl5V9TfCO0oJ.png","name":"Pacific
         Data Images","origin_country":"US"},{"id":521,"logo_path":"/kP7t6RwGz2AvvTkvnI1uteEwHet.png","name":"DreamWorks
         Animation","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"2004-05-19","revenue":928760770,"runtime":93,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Once
-        upon another time...","title":"Shrek 2","video":false,"vote_average":7.2,"vote_count":9969}'
-  recorded_at: Mon, 23 May 2022 17:09:00 GMT
+        upon another time...","title":"Shrek 2","video":false,"vote_average":7.2,"vote_count":9970}'
+  recorded_at: Tue, 24 May 2022 17:40:18 GMT
 recorded_with: VCR 6.1.0

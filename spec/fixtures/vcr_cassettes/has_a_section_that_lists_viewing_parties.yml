@@ -27,7 +27,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Mon, 23 May 2022 17:09:00 GMT
+      - Tue, 24 May 2022 17:40:17 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -44,21 +44,21 @@ http_interactions:
       X-Memc-Key:
       - 6c0639b760633039387284a27f8730ee80d57205
       X-Memc-Age:
-      - '15915'
+      - '3174'
       X-Memc-Expires:
-      - '1020'
+      - '11535'
       Etag:
-      - W/"4bbf39ce0fb1390bb4a32f42015c5b81"
+      - W/"58b91f6f9a9ac1d814731f0f68f9194f"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 0812978283e8debc2d404f4a7b32d866.cloudfront.net (CloudFront)
+      - 1.1 ab00cdb05d9e58b648b9b6b09875b196.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - EWR53-P1
+      - JFK51-C1
       X-Amz-Cf-Id:
-      - Ro0mHvNtqJLWyh56LNJ7hbvJNlbtH2_G2CU3KIHdsXQ50RV-pyX27Q==
+      - 1R0BLBBGnyU3qqIUD3ECuorE04BDU5re2KK1N2MMuCB6a6bd-xd4ZA==
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/r4OqScx7hVXsG1obaJjJKJNaxHT.jpg","belongs_to_collection":{"id":33514,"name":"The
@@ -69,13 +69,13 @@ http_interactions:
         to choose between her love for Edward and her friendship with Jacob, knowing
         that her decision has the potential to ignite the ageless struggle between
         vampire and werewolf. With her graduation quickly approaching, Bella is confronted
-        with the most important decision of her life.","popularity":213.603,"poster_path":"/3mFM80dPzSqoXXuC2UMvLIRWX32.jpg","production_companies":[{"id":491,"logo_path":"/rUp0lLKa1pr4UsPm8fgzmnNGxtq.png","name":"Summit
+        with the most important decision of her life.","popularity":173.793,"poster_path":"/3mFM80dPzSqoXXuC2UMvLIRWX32.jpg","production_companies":[{"id":491,"logo_path":"/rUp0lLKa1pr4UsPm8fgzmnNGxtq.png","name":"Summit
         Entertainment","origin_country":"US"},{"id":12292,"logo_path":"/llGRXF5WYUW2fzXg0ebCoKMXjmT.png","name":"Temple
         Hill Entertainment","origin_country":"US"},{"id":5218,"logo_path":"/dhb42ugM9DzSpDctTWCtABPVOW4.png","name":"Imprint
         Entertainment","origin_country":"US"},{"id":4000,"logo_path":null,"name":"Maverick
         Films","origin_country":"US"},{"id":5219,"logo_path":null,"name":"Sunswept
         Entertainment","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"2010-06-23","revenue":698491347,"runtime":124,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"It
-        all begins... with a choice.","title":"The Twilight Saga: Eclipse","video":false,"vote_average":6.2,"vote_count":7507}'
-  recorded_at: Mon, 23 May 2022 17:09:00 GMT
+        all begins... with a choice.","title":"The Twilight Saga: Eclipse","video":false,"vote_average":6.2,"vote_count":7508}'
+  recorded_at: Tue, 24 May 2022 17:40:17 GMT
 recorded_with: VCR 6.1.0

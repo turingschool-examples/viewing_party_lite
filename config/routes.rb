@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   get "/", to: "welcome#index"
   get "/register", to: "users#new"
-  get "/login", to: "users#login_form"
-  post "/login", to: "users#login_user"
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
 
   resources :users, only: [:show, :new, :create] do
     resources :discover, only: [:index], controller: "movies"
