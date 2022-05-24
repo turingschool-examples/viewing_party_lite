@@ -1,7 +1,6 @@
 class PartiesController < ApplicationController
 
   def new
-    # require "pry"; binding.pry
     @movie = MovieFacade.find_movie(params[:movie_id])
     @user = User.find(params[:user_id])
     @users = User.all_except_host(params[:user_id])
@@ -17,7 +16,7 @@ class PartiesController < ApplicationController
           PartyUser.create(user_id: User.find(user), party: new_party, host: false)
         end
         PartyUser.create(user_id: params[:host] , party: new_party, host: true)
-        redirect_to "/users/#{new_party.host}"
+        redirect_to "/dashboard"
       else
         render :new
       end

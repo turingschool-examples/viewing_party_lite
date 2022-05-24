@@ -11,7 +11,7 @@ RSpec.describe "New User", type: :feature do
     click_on "Register"
     new_user = User.last
 
-    expect(current_path).to eq("/users/#{new_user.id}")
+    expect(current_path).to eq("/dashboard")
   end
 
   it 'rejects duplicate emails' do

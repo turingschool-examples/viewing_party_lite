@@ -3,7 +3,8 @@
 <%= button_to "Create New User", "/register", method: :get%>
 <%= button_to "Login", "/login", method: :get %>
 
+
 <h3> All Users </h3>
 <% @users.each do |user| %>
-<p><%=link_to "#{user.name}", "/users/#{user.id}" %></p>
+<p><%=link_to "#{user.name}", "/dashboard" %></p>
 <% end %>

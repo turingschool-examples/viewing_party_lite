@@ -19,11 +19,16 @@ RSpec.describe "Home page", type: :feature do
     user2 = User.create!(name: "Tyler", email: "tyler@mail.com", password: "password", password_confirmation: "password")
     user3 = User.create!(name: "Sherman", email: "sherman@mail.com", password: "password", password_confirmation: "password")
 
+    # User.all.each do |user|
+    #   visit "/"
+    #   click_on("Login")
+    #   fill_in :email, with: user.email
+    #   fill_in :password, with: user.password
+    # end
+    visit "/"
     User.all.each do |user|
-      visit "/"
-      expect(page).to have_content(user.name)
-      click_link("#{user.name}")
-      expect(current_path).to eq("/users/#{user.id}")
+      expect(page).to have_link("#{user.name}")
+      # expect(current_path).to eq("/dashboard")
     end
   end
 
@@ -49,7 +54,7 @@ RSpec.describe "Home page", type: :feature do
     fill_in(:email, with: "joe@mail.com")
     fill_in(:password, with: "secret")
     click_on("Login")
-    expect(current_path).to eq("/users/#{user.id}")
+    expect(current_path).to eq("/dashboard")
   end
 
   it 'does not allow a sign in with the wrong password' do
