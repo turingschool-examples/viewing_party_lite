@@ -82,6 +82,13 @@ describe "welcome page" do
           expect(page).not_to have_content("wokeupthismorning@gmail.com")
           expect(page).not_to have_content("varsityathlete@gmail.com")
         end
+
+        it "if i try to visit the dashboard page, then i remain on the landing page and see an error message" do
+          visit "/dashboard"
+
+          expect(current_path).to eq("/")
+          expect(page).to have_content("You must be logged in to access the Dashboard.")
+        end
       end
     end
   end
