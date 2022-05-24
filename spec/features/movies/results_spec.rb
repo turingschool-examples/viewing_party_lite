@@ -10,7 +10,7 @@ RSpec.describe "Movie Results", type: :feature do
     fill_in :password, with: user.password
     click_on "Login"
 
-    visit "/users/#{user.id}/movies?q=top%20rated"
+    visit "/movies?q=top%20rated"
 
     expect(page).to have_content("Shawshank Redemption")
     expect(page).to have_content("Vote Average: 8.7")
@@ -28,7 +28,7 @@ RSpec.describe "Movie Results", type: :feature do
     fill_in :password, with: user.password
     click_on "Login"
 
-    visit "/users/#{user.id}/movies?q=top%20rated"
+    visit "/movies?q=top%20rated"
     click_link "Shawshank Redemption"
 
     expect(current_path).to eq("/users/#{user.id}/movies/278")
@@ -44,7 +44,7 @@ RSpec.describe "Movie Results", type: :feature do
     fill_in :password, with: user.password
     click_on "Login"
 
-    visit "/users/#{user.id}/movies?q=top%20rated"
+    visit "/movies?q=top%20rated"
 
     click_on "Return to Discover"
     expect(current_path).to eq("/discover")

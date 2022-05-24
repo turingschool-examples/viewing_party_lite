@@ -12,6 +12,6 @@ RSpec.describe "Move Index/Discover Page", type: :feature do
     visit "/discover"
     fill_in :search, with: "Movie"
     click_on "Search"
-    expect(current_path).to eq("/users/#{user.id}/movies")
+    expect(current_path).to eq("/movies")
   end
 end
