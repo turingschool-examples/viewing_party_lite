@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Movie Results Page', type: :feature do
   before(:each) do
     @user1 = User.create!(name: "Bliffert Blankship", email: "Bliff@aol.com", password: "12345", password_confirmation: "12345")
-    @user2 = User.create!(name: "Blankert Bliffship", email: "Blank@aol.com", password: "12345", password: "12345" )
+    @user2 = User.create!(name: "Blankert Bliffship", email: "Blank@aol.com", password: "12345", password_confirmation: "12345")
     visit '/login'
     fill_in("name", with: @user1.name)
     fill_in("email", with: @user1.email)

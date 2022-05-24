@@ -30,7 +30,6 @@ class UsersController < ApplicationController
 
   def login_user
     user = User.find_by(email: params[:email])
-    #binding.pry
     if user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to "/users/dashboard?=#{user.email}"

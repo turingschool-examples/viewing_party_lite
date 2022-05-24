@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'User dahsboard:', type: :feature do
   before(:each) do
     @user1 = User.create!(name: "Bliffert Blankship", email: "Bliff@aol.com", password: "12345", password_confirmation: "12345")
-    @user2 = User.create!(name: "Blankert Bliffship", email: "Blank@aol.com", password: "12345", password: "12345" )
+    @user2 = User.create!(name: "Blankert Bliffship", email: "Blank@aol.com", password: "12345", password_confirmation: "12345" )
     @the_dark_knight = Party.create!(duration: 66, date: "01/12/13", start: "14:00", movie_id: 155)
     @user_party = UserParty.create!(user_id: @user1.id, party_id: @the_dark_knight.id)
 
