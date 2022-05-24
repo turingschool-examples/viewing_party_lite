@@ -78,7 +78,7 @@ RSpec.describe "New Party Page" do
       lugnut = User.create!(name: 'LugNut', email: 'fatdog@corgi.com', password: 'test12')
       jaws_id = 578
       
-      visit "/users/#{skeeter.id}/movies/#{jaws_id}/party/new"
+      visit "/movies/#{jaws_id}/party/new"
       
       fill_in "Duration of Party", with: 111
       select 2022, from: '_date_1i'
@@ -89,7 +89,7 @@ RSpec.describe "New Party Page" do
       check("attendees_#{lugnut.id}")
       click_on "Create Party"
 
-      expect(current_path).to eq("/users/#{skeeter.id}/movies/#{jaws_id}/party/new")
+      expect(current_path).to eq("/movies/#{jaws_id}/party/new")
       expect(page).to have_content('Duration Cannot Be Less Than Movie Runtime!')
     end 
   end 

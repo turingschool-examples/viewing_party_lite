@@ -15,7 +15,7 @@ RSpec.describe 'New User Page', type: :feature do
 
       new_user = User.last
       # binding.pry
-      expect(current_path).to eq("/users/#{new_user.id}")
+      expect(current_path).to eq("/dashboard")
     end
   end 
 

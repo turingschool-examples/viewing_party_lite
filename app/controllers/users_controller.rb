@@ -27,7 +27,7 @@ class UsersController < ApplicationController
       @user = User.create(new_user_params)
       if @user.save
         flash[:success] = "Welcome, #{@user.name}!"
-        redirect_to "/users/#{@user.id}"
+        redirect_to "/dashboard"
       else
         flash[:error] = @user.errors.full_messages.join
         redirect_to "/register"    

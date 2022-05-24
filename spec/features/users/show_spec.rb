@@ -4,12 +4,19 @@ require 'rails_helper'
 
 RSpec.describe 'User Dashboard', type: :feature do
   before :each do
-    @user1 = User.create!(name: 'Zel', email: 'lorem@ipsum.com', password: 'test')
-    @user2 = User.create!(name: 'Alex', email: 'ipsum@lorem.com', password: 'test123')
+    @user1 = User.create!(name: 'Skeeter', email: 'skeeter@skeeter.com', password: 'test')
+    @user2 = User.create!(name: 'Alex', email: 'alex@alex.com', password: 'test123')
+    visit '/'
+
+    click_button 'Login'
+    fill_in 'Name:', with: 'Skeeter'
+    fill_in 'Email:', with: 'skeeter@skeeter.com'
+    fill_in 'Password', with: 'test'
+    click_on 'Log In'
   end
 
   it 'contains all expected attributes of the selected user', :vcr do
-    visit "/users/#{@user1.id}"
+    visit "/dashboard"
     # visit '/dashboard'
     within '#title' do
       expect(page).to have_content(@user1.name)
@@ -38,14 +45,13 @@ RSpec.describe 'User Dashboard', type: :feature do
       
       attendee1 = Attendee.create!(user_id: @user2.id, party_id: party1.id)
       attendee2 = Attendee.create!(user_id: @user2.id, party_id: party2.id)
-      visit "/users/#{@user2.id}"
+      visit "/dashboard"
 
-   
       within "#party_id-#{party1.id}" do 
         expect(page).to have_content("Jaws")
         expect(page).to have_content('When: February 08, 2023')
         expect(page).to have_content("Start Time: 09:30 AM")
-        expect(page).to have_content("Host: Zel")
+        expect(page).to have_content("Host: Skeeter")
         expect(page).to have_content("Attendees:")
         expect(page).to have_content("Alex")
       end 
@@ -53,7 +59,7 @@ RSpec.describe 'User Dashboard', type: :feature do
         expect(page).to have_content("The Fountain")
         expect(page).to have_content("When: May 08, 2022")
         expect(page).to have_content("Start Time: 02:30 PM")
-        expect(page).to have_content("Host: Zel")
+        expect(page).to have_content("Host: Skeeter")
         expect(page).to have_content("Attendees:")
         expect(page).to have_content("Alex")
 
@@ -75,19 +81,19 @@ RSpec.describe 'User Dashboard', type: :feature do
       attendee1 = Attendee.create!(user_id: @user2.id, party_id: party1.id)
       attendee2 = Attendee.create!(user_id: @user2.id, party_id: party2.id)
       attendee3 = Attendee.create!(user_id: @user1.id, party_id: party3.id)
-      visit "/users/#{@user1.id}"
-      
+      visit "/dashboard"
+
       within "#party_id-#{party1.id}" do 
         expect(page).to have_content("Jaws")
         expect(page).to have_content('When: February 08, 2023')
         expect(page).to have_content("Start Time: 09:30 AM")
-        expect(page).to have_content("Host: Zel")
+        expect(page).to have_content("Host: Skeeter")
       end 
       within "#party_id-#{party2.id}" do 
         expect(page).to have_content("The Fountain")
         expect(page).to have_content("When: May 08, 2022")
         expect(page).to have_content("Start Time: 02:30 PM")
-        expect(page).to have_content("Host: Zel")
+        expect(page).to have_content("Host: Skeeter")
 
       end 
       within "#party_id-#{party3.id}" do 
@@ -95,7 +101,7 @@ RSpec.describe 'User Dashboard', type: :feature do
         expect(page).to have_content('When: June 08, 2022')
         expect(page).to have_content("Start Time: 04:00 PM")
         expect(page).to have_content("Attendees:")
-        expect(page).to have_content("Zel")
+        expect(page).to have_content("Skeeter")
       end 
     end 
     it 'each movie title links to that movies details/show page', :vcr do
@@ -108,7 +114,7 @@ RSpec.describe 'User Dashboard', type: :feature do
       
       attendee1 = Attendee.create!(user_id: @user2.id, party_id: party1.id)
       attendee2 = Attendee.create!(user_id: @user2.id, party_id: party2.id)
-      visit "/users/#{@user2.id}"
+      visit "/dashboard"
       
       within "#party_id-#{party1.id}" do 
         expect(page).to have_link("Jaws")
@@ -116,7 +122,7 @@ RSpec.describe 'User Dashboard', type: :feature do
       within "#party_id-#{party2.id}" do 
         click_link "The Fountain"
       end 
-      expect(current_path).to eq("/users/#{@user2.id}/movies/1381")
+      expect(current_path).to eq("/movies/1381")
     end 
 
   end 
