@@ -20,10 +20,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    # binding.pry
     if params[:password] == params[:password_confirmation]
       @user = User.create(new_user_params)
-    
       if @user.save
         flash[:success] = "Welcome, #{@user.name}!"
         redirect_to "/users/#{@user.id}"
