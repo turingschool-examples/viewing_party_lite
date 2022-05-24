@@ -26,7 +26,7 @@ RSpec.describe "User Dashboard/Show Page", type: :feature do
     click_on "Login"
 
     click_on "Discover Movies"
-    expect(current_path).to eq("/users/#{user1.id}/discover")
+    expect(current_path).to eq("/discover")
   end
 
   it 'shows the viewing parties they were invited to', :vcr do

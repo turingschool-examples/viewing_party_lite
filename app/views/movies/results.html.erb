@@ -1,5 +1,5 @@
 <h1>Movie Results</h1>
-<%= link_to "Return to Discover", "/users/#{@user.id}/discover" %>
+<%= link_to "Return to Discover", "/discover" %>
 
 <% @movies.each do |movie| %>
 <p>Title: <%= link_to "#{movie.title}", "/users/#{@user.id}/movies/#{movie.id}"  %></p>
