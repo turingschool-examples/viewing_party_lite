@@ -7,21 +7,6 @@
           null
         ]
       },
-      "/Users/alexanderpsitos/turing/3module/week_1/pair_project/viewing_party_lite/app/controllers/landing_controller.rb": {
-        "lines": [
-          1,
-          1,
-          7,
-          null,
-          null
-        ]
-      },
-      "/Users/alexanderpsitos/turing/3module/week_1/pair_project/viewing_party_lite/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
       "/Users/alexanderpsitos/turing/3module/week_1/pair_project/viewing_party_lite/app/models/user.rb": {
         "lines": [
           1,
@@ -47,33 +32,10 @@
           1,
           null,
           1,
-          1,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
           0,
           null,
           null,
           1,
-          null,
-          null,
-          null,
-          1,
           0,
           0,
           0,
@@ -81,14 +43,43 @@
           null,
           0,
           0,
-          null,
           null,
           null,
           null,
           1,
           1,
+          null,
+          null,
+          1,
           0,
           null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/alexanderpsitos/turing/3module/week_1/pair_project/viewing_party_lite/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
           null
         ]
       },
@@ -207,6 +198,17 @@
       },
       "/Users/alexanderpsitos/turing/3module/week_1/pair_project/viewing_party_lite/app/jobs/application_job.rb": {
         "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/alexanderpsitos/turing/3module/week_1/pair_project/viewing_party_lite/app/controllers/landing_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
           0,
           0
         ],
@@ -386,6 +388,6 @@
         }
       }
     },
-    "timestamp": 1653340914
+    "timestamp": 1653428156
   }
 }
