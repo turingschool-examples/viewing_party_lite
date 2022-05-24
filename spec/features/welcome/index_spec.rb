@@ -127,11 +127,9 @@ RSpec.describe 'Landing/Welcome Page' do
     it 'Visitor cannot access /dashboard unless logged in' do
       visit '/'
       visit '/dashboard'
-      save_and_open_page
+      
       expect(current_path).to eq('/')
       expect(page).to have_content("You must log in or regiester to access your dashboard")
-
-
     end 
 
   end 

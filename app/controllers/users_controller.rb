@@ -14,7 +14,8 @@ class UsersController < ApplicationController
       movie_ids = @parties.map { |party| party.movie_id }
       @movies = MovieFacade.multiple_movies(movie_ids)
     else
-      render file: "/public/404"
+      flash[:error] = "You must log in or regiester to access your dashboard"
+      redirect_to root_path
     end 
   end
 
