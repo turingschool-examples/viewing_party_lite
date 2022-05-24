@@ -52,4 +52,20 @@ RSpec.describe 'User Movie Show Page', type: :feature do
       expect(page).to have_button("Create New Watch Party")
     end
   end
+
+  describe 'As a visitor not registered user' do
+
+    it 'Visitor cannot click button to create a viewing party', :vcr do
+    visit '/'
+    click_button "Log Out"
+    visit "/movies/278"
+
+    click_button "Create New Watch Party"
+    save_and_open_page
+    expect(current_path).to eq('/movies/278')
+    expect(page).to have_content("You must be logged in or registered to create a movie party")
+    end 
+
+
+  end 
 end
