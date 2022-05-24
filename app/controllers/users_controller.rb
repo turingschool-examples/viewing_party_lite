@@ -2,6 +2,7 @@
 
 class UsersController < ApplicationController
   def show
+    binding.pry
     @user = User.find(params[:id])
     @parties = []
     Party.all.each do |party|
@@ -40,34 +41,31 @@ class UsersController < ApplicationController
   def discover
     @user = User.find(params[:id])
   end
-
-  def login_form
-  end
-
-  def login
-    user = User.find_by(email: params[:email])
-    if user.nil?
-      # binding.pry
-      flash[:error] = "Incorrect Email"
-      render :login_form
-    else
-      if user.authenticate(params[:password])
-        # binding.pry
-        session[:user_id] = user.id
-        flash[:success] = "Welcome #{user.name}!"
-        redirect_to "/users/#{user.id}"
-      else
-      flash[:error] = "Incorrect Password"
-      render :login_form
-      end 
-    end 
-  end 
   
-
   private
-
+  
   def new_user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
-
+  
 end
+
+  # def login_form
+  # end
+
+  # def login
+  #   user = User.find_by(email: params[:email])
+  #   if user.nil?
+  #     flash[:error] = "Incorrect Email"
+  #     render :login_form
+  #   else
+  #     if user.authenticate(params[:password])
+  #       session[:user_id] = user.id
+  #       flash[:success] = "Welcome #{user.name}!"
+  #       redirect_to "/users/#{user.id}"
+  #     else
+  #     flash[:error] = "Incorrect Password"
+  #     render :login_form
+  #     end 
+  #   end 
+  # end 

@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get '/login', to: 'sessions#login_form'
   post '/login', to: 'sessions#create'
+
+  get '/dashboard', to: 'users#show'
   
   get '/users/:id/movies', to: 'user_movies#index'
   get '/users/:user_id/movies/:movie_id', to: 'user_movies#show'
