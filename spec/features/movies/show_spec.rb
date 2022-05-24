@@ -10,7 +10,7 @@ RSpec.describe "Movie Details Page", type: :feature do
     fill_in :password, with: user.password
     click_on "Login"
 
-    visit "/users/#{user.id}/movies/278"
+    visit "/movies/278"
     click_button "Create new viewing party"
 
     expect(current_path).to eq("/users/#{user.id}/movies/278/viewing_party/new")
@@ -25,7 +25,7 @@ RSpec.describe "Movie Details Page", type: :feature do
     fill_in :password, with: user.password
     click_on "Login"
 
-    visit "/users/#{user.id}/movies/#{movie.id}"
+    visit "/movies/#{movie.id}"
     click_on "Return to Discover"
     expect(current_path).to eq("/discover")
   end

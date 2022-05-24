@@ -31,7 +31,7 @@ RSpec.describe "Movie Results", type: :feature do
     visit "/movies?q=top%20rated"
     click_link "Shawshank Redemption"
 
-    expect(current_path).to eq("/users/#{user.id}/movies/278")
+    expect(current_path).to eq("/movies/278")
   end
 
 
