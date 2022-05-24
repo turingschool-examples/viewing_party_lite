@@ -62,4 +62,17 @@ describe "movie show page" do
       end
     end
   end
+
+  describe "as a visitor" do
+    describe "when i visit the movies show page" do
+      it "if i click the button to create a viewing party, i am redirected to the show page with an error message" do
+        visit "/movies/100"
+
+        click_button "Create Viewing Party"
+
+        expect(current_path).to eq("/movies/100")
+        expect(page).to have_content("You must be logged in to access the Dashboard.")
+      end
+    end
+  end
 end
