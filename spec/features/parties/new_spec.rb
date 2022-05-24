@@ -4,8 +4,8 @@ RSpec.describe "New Viewing Party", type: :feature do
   it 'has a form to create new party', :vcr do
     party_count=Party.all.count
 
-    user = User.create!(name: "Tim", email: "Tim@mail.com")
-    user2 = User.create!(name: "Tom", email: "Tom@mail.com")
+    user = User.create!(name: "Tim", email: "Tim@mail.com", password: "password", password_confirmation: "password")
+    user2 = User.create!(name: "Tom", email: "Tom@mail.com", password: "password", password_confirmation: "password")
     visit "/users/#{user.id}/movies/278/viewing_party/new"
 
     fill_in "duration", with: 200
@@ -16,7 +16,7 @@ RSpec.describe "New Viewing Party", type: :feature do
       page.check("users[]")#all check boxes have the same name
     end
       click_button "submit"
-      # save_and_open_page
+
     expect(Party.all.count).to eq(party_count + 1)
     expect(current_path).to eq("/users/#{user.id}")
     expect(page).to have_content("Viewing Parties")
@@ -25,8 +25,8 @@ RSpec.describe "New Viewing Party", type: :feature do
   it 'rejects new party of too short a duration', :vcr do
     party_count=Party.all.count
 
-    user = User.create!(name: "Tim", email: "Tim@mail.com")
-    user2 = User.create!(name: "Tom", email: "Tom@mail.com")
+    user = User.create!(name: "Tim", email: "Tim@mail.com", password: "password", password_confirmation: "password")
+    user2 = User.create!(name: "Tom", email: "Tom@mail.com", password: "password", password_confirmation: "password")
     visit "/users/#{user.id}/movies/278/viewing_party/new"
 
     fill_in "duration", with: 4
@@ -39,6 +39,5 @@ RSpec.describe "New Viewing Party", type: :feature do
       click_button "submit"
 
     expect(Party.all.count).to eq(party_count)
-    #expect(current_path).to eq("/users/#{user.id}")
   end
 end
