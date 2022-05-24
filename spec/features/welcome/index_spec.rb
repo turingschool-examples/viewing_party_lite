@@ -102,6 +102,28 @@ RSpec.describe 'Landing/Welcome Page' do
       expect(page).to_not have_content(hazel.email)
     end 
 
+    it 'As a registered user, I see current users email' do #emails will no longer link to show pages
+      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password: 'test123', password_confirmation: 'test123')
+      lugnut = User.create!(name: 'LugNut', email: 'fatdog@corgi.com', password: 'test12')
+      hazel = User.create!(name: 'Hazel', email: 'hazelthehut@food.com', password: 'test1')
+
+      visit '/'
+      click_button 'Login'
+
+      fill_in 'Name:', with: 'Skeeter'
+      fill_in 'Email:', with: 'skeeter@example.com'
+      fill_in 'Password', with: 'test123'
+      click_on 'Log In'
+      visit '/'
+
+      expect(page).to have_content("Current Users")
+      expect(page).to have_content(lugnut.email)
+      expect(page).to have_content(hazel.email)
+
+      expect(page).to_not have_link(lugnut.email)
+      expect(page).to_not have_link(hazel.email)
+    end 
+
   end 
 
 end 

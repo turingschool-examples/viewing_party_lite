@@ -13,14 +13,14 @@
   
   <% @users.each do |user| %>
     <section id="user_id-<%= user.id %>">
-    <%= link_to "#{user.email}'s dashboard", "/users/#{user.id}" %><br>
+    <%= user.email %><br>
     
     </section>
     <% end %>
 
 </section>
-<% else  %>
 </center>
+<% else  %>
 
 <center>
 <%= button_to "Login", "/login", method: :get %> 
