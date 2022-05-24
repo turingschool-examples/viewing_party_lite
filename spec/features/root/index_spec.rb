@@ -42,9 +42,16 @@ RSpec.describe 'landing page' do
   end
 
   it 'users name links to show path' do
+    visit "/login"
+    fill_in(:email, with: @user_1.email)
+    fill_in(:password, with: @user_1.password)
+    click_on "Log In"
+
+    visit root_path
+
     click_link(@user_1.name)
 
-    expect(current_path).to eq("/users/#{@user_1.id}")
+    expect(current_path).to eq("/dashboard")
     expect(current_path).to_not eq("/users/#{@user_2.id}")
   end
 

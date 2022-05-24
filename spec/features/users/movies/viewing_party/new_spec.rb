@@ -7,6 +7,12 @@ RSpec.describe "create a new viewing party" do
     @user3 = User.create!(name: "Sherman", email: "sherman@yahoo.com", password: "Sherman")
     @user4 = User.create!(name: "Joseph", email: "joseph@yahoo.com", password: "Joseph")
     @movie = MovieFacade.search("Stardust").first
+
+    visit "/login"
+    fill_in(:email, with: @user1.email)
+    fill_in(:password, with: @user1.password)
+    click_on "Log In"
+
     visit "/users/#{@user1.id}/movies/#{@movie.id}/viewing-party/new"
   end
 
@@ -28,7 +34,7 @@ RSpec.describe "create a new viewing party" do
       check "Sherman"
       click_button "Create New Party!"
 
-      expect(current_path).to eq("/users/#{@user1.id}")
+      expect(current_path).to eq("/dashboard")
     end
   end
 end

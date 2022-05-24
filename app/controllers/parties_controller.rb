@@ -19,7 +19,7 @@ class PartiesController < ApplicationController
         UserParty.create({user_id: guest, party_id: party.id, host: false})
       end
     end
-    redirect_to "/users/#{host.id}"
+    redirect_to "/dashboard"
   end
 
   private

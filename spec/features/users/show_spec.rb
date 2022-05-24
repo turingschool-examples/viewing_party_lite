@@ -10,7 +10,13 @@ RSpec.describe "user/dashboard", type: :feature do
     @party2 = Party.create!(host_id: @user.id, movie_id: 19, date: @date, start_time: @time, length: 120)
     UserParty.create!(user_id: @user.id, party_id: @party1.id, host: true)
     UserParty.create!(user_id: @user.id, party_id: @party2.id, host: false)
-    visit "/users/#{@user.id}"
+
+    visit "/login"
+    fill_in(:email, with: @user.email)
+    fill_in(:password, with: @user.password)
+    click_on "Log In"
+
+    visit "/dashboard"
   end
 
   describe "when I visit user/dashboard" do
