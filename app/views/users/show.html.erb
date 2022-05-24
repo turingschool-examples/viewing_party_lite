@@ -1,9 +1,9 @@
 <div id="title">
-<h1><%= @user.name %></h1>
+<h1>Welcome, <%= current_user.name %>!</h1>
 </div>
 
 <div id="discover-movies">
-<%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %>
+<%= button_to "Discover Movies", "/users/#{current_user.id}/discover", method: :get %>
 </div>
 
 <div id="watch-parties">
@@ -12,7 +12,7 @@
   <div id="party_id-<%= party.id%>">
   <% @movies.detect do |movie| %>
     <% if movie.id == party.movie_id  %>
-      <p><%= link_to "#{movie.title}", "/users/#{@user.id}/movies/#{movie.id}" %></p>
+      <p><%= link_to "#{movie.title}", "/users/#{current_user.id}/movies/#{movie.id}" %></p>
       <p><img src="http://image.tmdb.org/t/p/w500/<%=movie.poster_path%>" width="200" height="300">
 
       <p>When: <%= party.when.strftime('%B %d, %Y') %></p>
@@ -20,7 +20,7 @@
       <p>Host: <%= party.user.name %></p>
       <p>Attendees:</p>
       <% if party.attendees.each do |attendee| %>
-        <% if attendee.user_id == @user.id %>
+        <% if attendee.user_id == current_user.id %>
         <b><%= attendee.user.name %></b>
         <% else %>
           <%= attendee.user.name %>

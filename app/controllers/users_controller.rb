@@ -2,18 +2,20 @@
 
 class UsersController < ApplicationController
   def show
-    binding.pry
-    @user = User.find(params[:id])
-    @parties = []
-    Party.all.each do |party|
-      party.attendees.each do |attendee|
-        if party.user_id == @user.id || attendee.user_id == @user.id
-          @parties << party
-        end
+    if current_user
+      @parties = []
+      Party.all.each do |party|
+        party.attendees.each do |attendee|
+          if party.user_id == current_user.id || attendee.user_id == current_user.id
+            @parties << party
+          end
+        end 
       end 
+      movie_ids = @parties.map { |party| party.movie_id }
+      @movies = MovieFacade.multiple_movies(movie_ids)
+    else
+      render file: "/public/404"
     end 
-    movie_ids = @parties.map { |party| party.movie_id }
-    @movies = MovieFacade.multiple_movies(movie_ids)
   end
 
   def new
