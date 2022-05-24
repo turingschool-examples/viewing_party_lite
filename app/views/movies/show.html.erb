@@ -1,6 +1,6 @@
 <ul>
   <%= link_to 'Back to Discover Page', discover_index_path(@user.id) %>
-  <%= link_to "Create Viewing Party", "/users/#{@user.id}/movies/#{@movie.id}/viewing-party/new", method: :get %>
+  <%= link_to "Create Viewing Party", "dashboard/movies/#{@movie.id}/viewing-party/new", method: :get %>
 </ul>
 
 <div class="movie-info">
@@ -35,4 +35,3 @@
     <hr>
     <% end %>
   </p>
-
