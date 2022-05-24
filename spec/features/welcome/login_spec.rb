@@ -23,7 +23,7 @@ RSpec.describe "Login Page" do
       fill_in :password, with: '123'
       click_on "Log In"   
 
-      expect(current_path).to eq("/users/#{meatball.id}")
+      expect(current_path).to eq("/dashboard")
       expect(page).to have_content("Welcome #{meatball.name}!")
     end
 
