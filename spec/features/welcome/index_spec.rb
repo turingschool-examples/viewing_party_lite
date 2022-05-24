@@ -55,33 +55,22 @@ RSpec.describe 'Landing/Welcome Page' do
       expect(current_path).to eq('/register')
     end 
   end 
+  describe 'logging out' do
+    it 'landing page no longer has create user or login link if I am already signed in' do
+      user1 = User.create!(name: 'Skeeter', email: 'skeeter@skeeter.com', password: 'test')
+      visit '/'
 
-  # describe 'Login Featured' do
-  #   it 'clicking link to login, takes me to login page /login' do
-  #     skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
-  #     visit "/"
-  #     click_button 'Login'
-    
-  #     expect(current_path).to eq('/login')
-  #   end
-    
-  #   it 'When I enter my email and password correctly I am taken to my dashboard' do
-  #     meatball = User.create!(name: 'meatball', email: 'meatball@example.com', password_digest: '123', password_confirmation: '123')
-  #     # binding.pry
-  #     visit "/login"
+      click_button 'Login'
+      fill_in 'Name:', with: 'Skeeter'
+      fill_in 'Email:', with: 'skeeter@skeeter.com'
+      fill_in 'Password', with: 'test'
+      click_on 'Log In'
+      visit '/'
+      save_and_open_page
+      expect(page).to_not have_button('Login')
+      expect(page).to_not have_button('Create a New User')
+    end 
 
-  #     fill_in :name, with: 'meatball'
-  #     fill_in :email, with: 'meatball@example.com'
-  #     fill_in :password, with: '123'
-  #     fill_in :password_confirmation, with: '123'
+  end 
 
-
-  #     click_on "Log In"   
-
-  #     expect(current_path).to eq("/users/#{meatball.id}")
-  #     expect(page).to have_content("Welcome #{meatball.name}!")
-  #   end
-
-
-  # end 
 end 

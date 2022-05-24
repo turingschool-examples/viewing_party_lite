@@ -58,5 +58,6 @@ RSpec.describe 'New User Page', type: :feature do
       expect(page).to have_content("Name can't be blank")
     end
   end
+
 end
 
