@@ -43,7 +43,6 @@ RSpec.describe 'User Discovery Page', type: :feature do
     end 
 
     it 'clicking the Find Movies button takes me to the movie results page', :vcr do
-      # skeeter= User.create!(name: 'Skeeter', email: 'skeeter@example.com', password: 'test123')
       visit "/discover"
 
       fill_in "Search by Movie Title", with: "Jaws"
