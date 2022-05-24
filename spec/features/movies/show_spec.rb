@@ -65,7 +65,7 @@ describe "movie show page" do
 
   describe "as a visitor" do
     describe "when i visit the movies show page" do
-      it "if i click the button to create a viewing party, i am redirected to the show page with an error message" do
+      it "if i click the button to create a viewing party, i am redirected to the show page with an error message", :vcr do
         visit "/movies/100"
 
         click_button "Create Viewing Party"
