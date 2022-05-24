@@ -12,18 +12,31 @@ RSpec.describe "Log In Page" do
     fill_in :email, with: user.email
     fill_in :password, with: user.password
     click_button "Log In"
-    # save_and_open_page
+
     expect(current_path).to eq("/users/#{user.id}")
     expect(page).to have_content("Welcome, #{user.email}")
   end
 
-  it "can't log in with bad credentials" do
+  it "can't log in with invalid password" do
     user = User.create(name: "Unreal Ursa", email: "thisaintreal@gotcha.org", password: "password123", password_confirmation: "password123")
 
     visit "/login"
 
     fill_in :email, with: user.email
     fill_in :password, with: "zzzz"
+    click_button "Log In"
+
+    expect(current_path).to eq(login_path)
+    expect(page).to have_content("Sorry, your credentials are bad.")
+  end
+
+  it "can't log in with invalid email" do
+    user = User.create(name: "Unreal Ursa", email: "thisaintreal@gotcha.org", password: "password123", password_confirmation: "password123")
+
+    visit "/login"
+
+    fill_in :email, with: "zzzzz"
+    fill_in :password, with: "password123"
     click_button "Log In"
 
     expect(current_path).to eq(login_path)
