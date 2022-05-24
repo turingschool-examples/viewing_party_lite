@@ -16,7 +16,6 @@ RSpec.describe 'User Discovery Page', type: :feature do
   describe 'As a Visitor' do 
 
     it 'the discover movies button takes me to the discover movies page', :vcr do
-      # skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password: 'test123')
 
       visit "/dashboard"
       click_button "Discover Movies"
@@ -26,19 +25,18 @@ RSpec.describe 'User Discovery Page', type: :feature do
 
     it 'has a Top Rated Movies button and a Search by Movie Title field', :vcr do
       # skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password: 'test123')
-      visit "/users/#{@user1.id}/discover"
+      visit "/discover"
     
       expect(page).to have_button("Find Top Rated Movies")
       expect(page).to have_button("Find Movies")
     end 
 
     it 'clicking the Top Rated Movies button takes me to the movie results page', :vcr do
-      # skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password: 'test123')
-      visit "/users/#{@user1.id}/discover"
+      visit "/discover"
 
       click_button "Find Top Rated Movies"
       
-      expect(current_path).to eq("/users/#{@user1.id}/movies")
+      expect(current_path).to eq("/movies")
       expect(page).to have_content("Top Rated Movies")
 
       expect(page).to_not have_content("Movie Results for:")
