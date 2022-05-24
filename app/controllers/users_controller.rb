@@ -27,6 +27,7 @@ class UsersController < ApplicationController
     if params[:password] == params[:password_confirmation]
       @user = User.create(new_user_params)
       if @user.save
+        session[:user_id] = @user.id
         flash[:success] = "Welcome, #{@user.name}!"
         redirect_to "/dashboard"
       else

@@ -13,32 +13,8 @@ RSpec.describe 'Landing/Welcome Page' do
       
       visit "/"
 
-      expect(page).to have_content 'Viewing Party Lite'
-      
-      # within "#existing_users" do
-      #   expect(page).to have_content("skeeter@example.com")
-      #   expect(page).to have_content("fatdog@corgi.com")
-      #   expect(page).to have_content("hazelthehut@food.com")
-      # end
+      expect(page).to have_content 'Viewing Party Lite' 
     end 
-
-    # it 'each existing user links to their respective user dashboard', :vcr do
-      
-    #   visit "/"
-    #   within "#user_id-#{@skeeter.id}" do 
-    #     expect(page).to have_link("skeeter@example.com's dashboard")
-    #   end 
-      
-    #   within "#user_id-#{@lugnut.id}" do 
-    #     expect(page).to have_link("fatdog@corgi.com's dashboard")
-    #   end 
-      
-    #   within "#user_id-#{@hazel.id}" do 
-    #     expect(page).to have_link("hazelthehut@food.com's dashboard")
-    #     # click_link "hazelthehut@food.com's dashboard"
-    #     # expect(current_path).to eq("/users/#{@hazel.id}")
-    #   end 
-    # end 
     
     it 'has a link to return back to the landing/welcome page', :vcr do #link will be present on every page of application 
       visit "/"
@@ -55,6 +31,7 @@ RSpec.describe 'Landing/Welcome Page' do
       expect(current_path).to eq('/register')
     end 
   end 
+  
   describe 'logging out' do
     it 'landing page no longer has create user or login link if I am already signed in' do
       user1 = User.create!(name: 'Skeeter', email: 'skeeter@skeeter.com', password: 'test')
@@ -127,7 +104,7 @@ RSpec.describe 'Landing/Welcome Page' do
     it 'Visitor cannot access /dashboard unless logged in' do
       visit '/'
       visit '/dashboard'
-      
+
       expect(current_path).to eq('/')
       expect(page).to have_content("You must log in or regiester to access your dashboard")
     end 
