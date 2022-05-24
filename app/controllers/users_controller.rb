@@ -40,6 +40,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def logout
+    session.destroy
+    redirect_to "/"
+  end
+
   private
 
   def user_params

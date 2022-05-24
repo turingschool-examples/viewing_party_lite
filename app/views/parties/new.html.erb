@@ -9,7 +9,6 @@
   <%= f.time_field :start_time, as: :time %><br>
   <p>"Who do want to invite?"</p>
   <%= f.collection_check_boxes :guests, User.where.not(name: "#{@host.name}"), :id, :name, include_hidden: false %>
-  <br>
-  <br>
+  <br><br>
   <%= f.submit "Create New Party!" %>
 <% end %>
