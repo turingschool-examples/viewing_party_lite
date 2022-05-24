@@ -18,7 +18,7 @@
 <center>
 <% if @movies %>
   <% @movies.each do |movie| %>
-    <p><%= link_to "#{movie.title}", "/users/#{current_user.id}/movies/#{movie.id}" %>, Average Vote: <%= movie.vote_average%></p>
+    <p><%= link_to "#{movie.title}", "/movies/#{movie.id}" %>, Average Vote: <%= movie.vote_average%></p>
   <% end %>
 <% end %>
 </center>
@@ -26,7 +26,7 @@
 <center>
 <% if @results %>
   <% @results.each do |result| %>
-    <p><%= link_to "#{result.title}", "/users/#{current_user.id}/movies/#{result.id}" %>, Average Vote: <%= result.vote_average%></p>
+    <p><%= link_to "#{result.title}", "/movies/#{result.id}" %>, Average Vote: <%= result.vote_average%></p>
   <% end %>
 <% end %>
 </center>
