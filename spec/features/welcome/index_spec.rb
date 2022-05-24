@@ -124,6 +124,16 @@ RSpec.describe 'Landing/Welcome Page' do
       expect(page).to_not have_link(hazel.email)
     end 
 
+    it 'Visitor cannot access /dashboard unless logged in' do
+      visit '/'
+      visit '/dashboard'
+      save_and_open_page
+      expect(current_path).to eq('/')
+      expect(page).to have_content("You must log in or regiester to access your dashboard")
+
+
+    end 
+
   end 
 
 end 
