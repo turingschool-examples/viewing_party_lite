@@ -1,14 +1,25 @@
 require 'rails_helper'
 
 RSpec.describe "New Party Page" do 
+  before :each do
+    @user1 = User.create!(name: 'Skeeter', email: 'skeeter@skeeter.com', password: 'test')
+    @user2 = User.create!(name: 'Alex', email: 'alex@alex.com', password: 'test123')
+    visit '/'
+
+    click_button 'Login'
+    fill_in 'Name:', with: 'Alex'
+    fill_in 'Email:', with: 'alex@alex.com'
+    fill_in 'Password', with: 'test123'
+    click_on 'Log In'
+  end
 
   describe "As a Visitor" do 
 
     it 'it has the movie title and a form to create a new party', :vcr do
-      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
+      # skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
       jaws_id = 578
       
-      visit "/users/#{skeeter.id}/movies/#{jaws_id}/party/new"
+      visit "/movies/#{jaws_id}/party/new"
      
       expect(page).to have_content("Create a Movie Party for Jaws")
       expect(page).to have_field('Duration of Party', with: '124')
@@ -17,7 +28,7 @@ RSpec.describe "New Party Page" do
     end 
 
     it 'the new party form has a checkbox list of all users to add them to the party', :vcr do
-      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
+      # skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
       lugnut = User.create!(name: 'LugNut', email: 'fatdog@corgi.com', password_digest: 'test12', password_confirmation: 'test12')
       hazel = User.create!(name: 'Hazel', email: 'hazelthehut@food.com', password_digest: 'test1', password_confirmation: 'test1')
       ruby = User.create!(name: 'Ruby', email: 'rubythehut@food.com', password_digest: 'test', password_confirmation: 'test')
@@ -35,7 +46,7 @@ RSpec.describe "New Party Page" do
     
     describe 'when a new party is created' do
       it 'I am redirected to my dashboard with new party shown, party also show on attendees dashboards', :vcr do
-        skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
+        # skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
         lugnut = User.create!(name: 'LugNut', email: 'fatdog@corgi.com', password_digest: 'test12', password_confirmation: 'test12')
         hazel = User.create!(name: 'Hazel', email: 'hazelthehut@food.com', password_digest: 'test1', password_confirmation: 'test1')
         jaws_id = 578
@@ -63,7 +74,7 @@ RSpec.describe "New Party Page" do
       end 
     end 
     it 'cannot make a new party with a duration less than the movies runtime', :vcr do
-      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
+      # skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
       lugnut = User.create!(name: 'LugNut', email: 'fatdog@corgi.com', password_digest: 'test12', password_confirmation: 'test12')
       jaws_id = 578
       
