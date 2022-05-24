@@ -15,21 +15,27 @@ class UsersController < ApplicationController
     @movies = MovieFacade.multiple_movies(movie_ids)
   end
 
-  def new; end
+  def new
+    @user = User.new
+  end
 
   def create
+    # binding.pry
     if params[:password] == params[:password_confirmation]
       @user = User.create(new_user_params)
+    
       if @user.save
         flash[:success] = "Welcome, #{@user.name}!"
         redirect_to "/users/#{@user.id}"
       else
         flash[:error] = @user.errors.full_messages.join
-        render :new
+        redirect_to "/register"    
+        # render :new
       end 
-    else #params[:password] != params[:password_confirmation]
+    elsif new_user_params[:password] != new_user_params[:password_confirmation]
       flash[:error] = "Passwords do not match"
-      render :new
+      redirect_to "/register"
+      # render :new
     end 
   end
     
@@ -43,10 +49,12 @@ class UsersController < ApplicationController
   def login
     user = User.find_by(email: params[:email])
     if user.nil?
+      # binding.pry
       flash[:error] = "Incorrect Email"
       render :login_form
     else
       if user.authenticate(params[:password])
+        # binding.pry
         session[:user_id] = user.id
         flash[:success] = "Welcome #{user.name}!"
         redirect_to "/users/#{user.id}"
@@ -61,7 +69,7 @@ class UsersController < ApplicationController
   private
 
   def new_user_params
-    params.permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 
 end

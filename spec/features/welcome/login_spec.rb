@@ -5,7 +5,7 @@ RSpec.describe "Login Page" do
 
   describe 'Login Featured' do
     it 'clicking link to login, takes me to login page /login' do
-      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
+      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password: 'test123')
       # binding.pry
       visit "/"
       click_button 'Login'

@@ -4,9 +4,9 @@ RSpec.describe 'Landing/Welcome Page' do
 
   describe 'As a Visitor' do
     before do 
-      @skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password_digest: 'test123', password_confirmation: 'test123')
-      @lugnut = User.create!(name: 'LugNut', email: 'fatdog@corgi.com', password_digest: 'test12', password_confirmation: 'test12')
-      @hazel = User.create!(name: 'Hazel', email: 'hazelthehut@food.com', password_digest: 'test1', password_confirmation: 'test1')
+      @skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password: 'test123')
+      @lugnut = User.create!(name: 'LugNut', email: 'fatdog@corgi.com', password: 'test12')
+      @hazel = User.create!(name: 'Hazel', email: 'hazelthehut@food.com', password: 'test1')
     end 
 
     it 'has the title of the application, and a list of existing users' do
