@@ -1,0 +1,435 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/290?api_key=Sike you thought
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - Sike you thought
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 24 May 2022 17:40:09 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - d7dca9fc1457d9f7124c477007e07fb817785ee9
+      X-Memc-Age:
+      - '7765'
+      X-Memc-Expires:
+      - '9214'
+      Etag:
+      - W/"7ae7936c3cee9d031ef0dea6506ddb68"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 e832d261a0bb86f8ba09ea0550c8e77e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - EWR53-P1
+      X-Amz-Cf-Id:
+      - byF4xs0kC_ClXMKu1qbOGJRb-1U4kMFQIAC8DUTAEnu1IcfTtmnueg==
+      Age:
+      - '12573'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/hjGLcwWg2F0BJB1zUFMzwrm7uqg.jpg","belongs_to_collection":null,"budget":9000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"","id":290,"imdb_id":"tt0101410","original_language":"en","original_title":"Barton
+        Fink","overview":"A renowned New York playwright is enticed to California
+        to write for the movies and discovers the hellish truth of Hollywood.","popularity":9.494,"poster_path":"/846d8FclibtOIoUW7PxpT0nCG4C.jpg","production_companies":[{"id":10163,"logo_path":"/16KWBMmfPX0aJzDExDrPxSLj0Pg.png","name":"Working
+        Title Films","origin_country":"GB"},{"id":11273,"logo_path":null,"name":"Circle
+        Films","origin_country":""},{"id":25,"logo_path":"/qZCc1lty5FzX30aOCVRBLzaVmcp.png","name":"20th
+        Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"GB","name":"United
+        Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"1991-08-01","revenue":6153939,"runtime":117,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"What''s
+        in his head","title":"Barton Fink","video":false,"vote_average":7.5,"vote_count":1304}'
+  recorded_at: Tue, 24 May 2022 21:09:42 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/290?api_key=Sike you thought
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - Sike you thought
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 24 May 2022 17:40:09 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - d7dca9fc1457d9f7124c477007e07fb817785ee9
+      X-Memc-Age:
+      - '7765'
+      X-Memc-Expires:
+      - '9214'
+      Etag:
+      - W/"7ae7936c3cee9d031ef0dea6506ddb68"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 79455aeea26d3c071fd96c3c1432669a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - EWR53-P1
+      X-Amz-Cf-Id:
+      - bB8mqM5RXgM_Hgt1V-3_6tneKQcAa0MINYAjD_oD2zu-oML_USwaHQ==
+      Age:
+      - '12573'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/hjGLcwWg2F0BJB1zUFMzwrm7uqg.jpg","belongs_to_collection":null,"budget":9000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"","id":290,"imdb_id":"tt0101410","original_language":"en","original_title":"Barton
+        Fink","overview":"A renowned New York playwright is enticed to California
+        to write for the movies and discovers the hellish truth of Hollywood.","popularity":9.494,"poster_path":"/846d8FclibtOIoUW7PxpT0nCG4C.jpg","production_companies":[{"id":10163,"logo_path":"/16KWBMmfPX0aJzDExDrPxSLj0Pg.png","name":"Working
+        Title Films","origin_country":"GB"},{"id":11273,"logo_path":null,"name":"Circle
+        Films","origin_country":""},{"id":25,"logo_path":"/qZCc1lty5FzX30aOCVRBLzaVmcp.png","name":"20th
+        Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"GB","name":"United
+        Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"1991-08-01","revenue":6153939,"runtime":117,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"What''s
+        in his head","title":"Barton Fink","video":false,"vote_average":7.5,"vote_count":1304}'
+  recorded_at: Tue, 24 May 2022 21:09:42 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/290?api_key=Sike you thought
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - Sike you thought
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 24 May 2022 17:40:09 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - d7dca9fc1457d9f7124c477007e07fb817785ee9
+      X-Memc-Age:
+      - '7765'
+      X-Memc-Expires:
+      - '9214'
+      Etag:
+      - W/"7ae7936c3cee9d031ef0dea6506ddb68"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 c22d4946ef5faea12b8d3942ceb9259a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - EWR53-P1
+      X-Amz-Cf-Id:
+      - Tlk00-dZcNykliG2BWLtA8E9xNh0D4uvKq3PCBphAoo4lIREYfTPWQ==
+      Age:
+      - '12574'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/hjGLcwWg2F0BJB1zUFMzwrm7uqg.jpg","belongs_to_collection":null,"budget":9000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"","id":290,"imdb_id":"tt0101410","original_language":"en","original_title":"Barton
+        Fink","overview":"A renowned New York playwright is enticed to California
+        to write for the movies and discovers the hellish truth of Hollywood.","popularity":9.494,"poster_path":"/846d8FclibtOIoUW7PxpT0nCG4C.jpg","production_companies":[{"id":10163,"logo_path":"/16KWBMmfPX0aJzDExDrPxSLj0Pg.png","name":"Working
+        Title Films","origin_country":"GB"},{"id":11273,"logo_path":null,"name":"Circle
+        Films","origin_country":""},{"id":25,"logo_path":"/qZCc1lty5FzX30aOCVRBLzaVmcp.png","name":"20th
+        Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"GB","name":"United
+        Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"1991-08-01","revenue":6153939,"runtime":117,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"What''s
+        in his head","title":"Barton Fink","video":false,"vote_average":7.5,"vote_count":1304}'
+  recorded_at: Tue, 24 May 2022 21:09:43 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/290?api_key=Sike you thought
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - Sike you thought
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 24 May 2022 17:40:09 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - d7dca9fc1457d9f7124c477007e07fb817785ee9
+      X-Memc-Age:
+      - '7765'
+      X-Memc-Expires:
+      - '9214'
+      Etag:
+      - W/"7ae7936c3cee9d031ef0dea6506ddb68"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 2ba01a121d51ee735a8dde7a86ed73b6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - EWR53-P1
+      X-Amz-Cf-Id:
+      - QpBZtyDYLFltzeiynJxggEaXXmYL0YAKKsr470Fg-gAUN1mY7z5y6Q==
+      Age:
+      - '12574'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/hjGLcwWg2F0BJB1zUFMzwrm7uqg.jpg","belongs_to_collection":null,"budget":9000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"","id":290,"imdb_id":"tt0101410","original_language":"en","original_title":"Barton
+        Fink","overview":"A renowned New York playwright is enticed to California
+        to write for the movies and discovers the hellish truth of Hollywood.","popularity":9.494,"poster_path":"/846d8FclibtOIoUW7PxpT0nCG4C.jpg","production_companies":[{"id":10163,"logo_path":"/16KWBMmfPX0aJzDExDrPxSLj0Pg.png","name":"Working
+        Title Films","origin_country":"GB"},{"id":11273,"logo_path":null,"name":"Circle
+        Films","origin_country":""},{"id":25,"logo_path":"/qZCc1lty5FzX30aOCVRBLzaVmcp.png","name":"20th
+        Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"GB","name":"United
+        Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"1991-08-01","revenue":6153939,"runtime":117,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"What''s
+        in his head","title":"Barton Fink","video":false,"vote_average":7.5,"vote_count":1304}'
+  recorded_at: Tue, 24 May 2022 21:09:43 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/290?api_key=Sike you thought
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - Sike you thought
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 24 May 2022 17:40:09 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - d7dca9fc1457d9f7124c477007e07fb817785ee9
+      X-Memc-Age:
+      - '7765'
+      X-Memc-Expires:
+      - '9214'
+      Etag:
+      - W/"7ae7936c3cee9d031ef0dea6506ddb68"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 c45a9630d6506aeeffefe81fbc0ed0ae.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - EWR53-P1
+      X-Amz-Cf-Id:
+      - eytZwDw-tNtm0du4ge4_75Pp1xEOr7iOncUOoDjk2rtRKmrA1AoZnA==
+      Age:
+      - '12574'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/hjGLcwWg2F0BJB1zUFMzwrm7uqg.jpg","belongs_to_collection":null,"budget":9000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"","id":290,"imdb_id":"tt0101410","original_language":"en","original_title":"Barton
+        Fink","overview":"A renowned New York playwright is enticed to California
+        to write for the movies and discovers the hellish truth of Hollywood.","popularity":9.494,"poster_path":"/846d8FclibtOIoUW7PxpT0nCG4C.jpg","production_companies":[{"id":10163,"logo_path":"/16KWBMmfPX0aJzDExDrPxSLj0Pg.png","name":"Working
+        Title Films","origin_country":"GB"},{"id":11273,"logo_path":null,"name":"Circle
+        Films","origin_country":""},{"id":25,"logo_path":"/qZCc1lty5FzX30aOCVRBLzaVmcp.png","name":"20th
+        Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"GB","name":"United
+        Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"1991-08-01","revenue":6153939,"runtime":117,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"What''s
+        in his head","title":"Barton Fink","video":false,"vote_average":7.5,"vote_count":1304}'
+  recorded_at: Tue, 24 May 2022 21:09:43 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/290?api_key=Sike you thought
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - Sike you thought
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 24 May 2022 17:40:09 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - d7dca9fc1457d9f7124c477007e07fb817785ee9
+      X-Memc-Age:
+      - '7765'
+      X-Memc-Expires:
+      - '9214'
+      Etag:
+      - W/"7ae7936c3cee9d031ef0dea6506ddb68"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 e5bd532dbdee524acdf00690205f3b5a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - EWR53-P1
+      X-Amz-Cf-Id:
+      - eCtHnV_0qhQiI1h8kaYAgJYKdF6eMk3Wp7IbemACEMcqlG52hZqKDA==
+      Age:
+      - '12575'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/hjGLcwWg2F0BJB1zUFMzwrm7uqg.jpg","belongs_to_collection":null,"budget":9000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"","id":290,"imdb_id":"tt0101410","original_language":"en","original_title":"Barton
+        Fink","overview":"A renowned New York playwright is enticed to California
+        to write for the movies and discovers the hellish truth of Hollywood.","popularity":9.494,"poster_path":"/846d8FclibtOIoUW7PxpT0nCG4C.jpg","production_companies":[{"id":10163,"logo_path":"/16KWBMmfPX0aJzDExDrPxSLj0Pg.png","name":"Working
+        Title Films","origin_country":"GB"},{"id":11273,"logo_path":null,"name":"Circle
+        Films","origin_country":""},{"id":25,"logo_path":"/qZCc1lty5FzX30aOCVRBLzaVmcp.png","name":"20th
+        Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"GB","name":"United
+        Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"1991-08-01","revenue":6153939,"runtime":117,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"What''s
+        in his head","title":"Barton Fink","video":false,"vote_average":7.5,"vote_count":1304}'
+  recorded_at: Tue, 24 May 2022 21:09:44 GMT
+recorded_with: VCR 6.1.0

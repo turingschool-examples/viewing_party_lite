@@ -55,34 +55,56 @@ describe "new party page" do
         end
       end
 
-      # it "the new party should also be listed on other user dashboards if they were invited" do
-      #   fill_in "Duration", with: 137
-      #   select "April", from: "_event_date_2i"
-      #   select "26", from: "_event_date_3i"
-      #   select "2026", from: "_event_date_1i"
-      #   select "20", from: "_start_time_4i"
-      #   select "00", from: "_start_time_5i"
-      #   find(:css, "#invited_users_[value=#{@user1.id}]").set(true)
-      #   find(:css, "#invited_users_[value=#{@user5.id}]").set(true)
-      #   click_button "Create Party"
-      #
-      #   party = Party.where(movie_id: 290).first
-      #
-      #   visit "/users/#{@user1.id}"
-      #   expect(page).to have_content("Party ##{party.id}")
-      #
-      #   visit "/dashboard"
-      #   expect(page).to have_content("Party ##{party.id}")
-      #
-      #   visit "/users/#{@user5.id}"
-      #   expect(page).to have_content("Party ##{party.id}")
-      #
-      #   visit "/users/#{@user3.id}"
-      #   expect(page).not_to have_content("Party ##{party.id}")
-      #
-      #   visit "/users/#{@user4.id}"
-      #   expect(page).not_to have_content("Party ##{party.id}")
-      # end
+      it "the new party should also be listed on other user dashboards if they were invited", :vcr do
+        fill_in "Duration", with: 137
+        select "April", from: "_event_date_2i"
+        select "26", from: "_event_date_3i"
+        select "2026", from: "_event_date_1i"
+        select "20", from: "_start_time_4i"
+        select "00", from: "_start_time_5i"
+        find(:css, "#invited_users_[value=#{@user1.id}]").set(true)
+        find(:css, "#invited_users_[value=#{@user5.id}]").set(true)
+        click_button "Create Party"
+
+        party = Party.find_by(movie_id: 290)
+
+        visit "/"
+        click_link "Log Out"
+
+        visit "/login"
+        fill_in "Email", with: @user1.email.to_s
+        fill_in "Password", with: @user1.password.to_s
+        click_button "Log In"
+        visit "/dashboard"
+        expect(page).to have_content("Party ##{party.id}")
+        visit "/"
+        click_link "Log Out"
+
+        visit "/login"
+        fill_in "Email", with: @user5.email.to_s
+        fill_in "Password", with: @user5.password.to_s
+        click_button "Log In"
+        visit "/dashboard"
+        expect(page).to have_content("Party ##{party.id}")
+        visit "/"
+        click_link "Log Out"
+
+        visit "/login"
+        fill_in "Email", with: @user3.email.to_s
+        fill_in "Password", with: @user3.password.to_s
+        click_button "Log In"
+        visit "/dashboard"
+        expect(page).not_to have_content("Party ##{party.id}")
+        visit "/"
+        click_link "Log Out"
+
+        visit "/login"
+        fill_in "Email", with: @user4.email.to_s
+        fill_in "Password", with: @user4.password.to_s
+        click_button "Log In"
+        visit "/dashboard"
+        expect(page).not_to have_content("Party ##{party.id}")
+      end
     end
   end
 end
