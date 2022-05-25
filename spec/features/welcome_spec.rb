@@ -22,15 +22,15 @@ describe "welcome page" do
       end
 
       it "i do not see a button to create a new user" do
-        expect(page).not_to have_button("Create New User")
+        expect(page).not_to have_button("Register")
       end
 
       it "i see a link to log out, which ends my session takes me back to the landing page" do
         click_link "Log Out"
 
         expect(current_path).to eq("/")
-        expect(page).to have_link("Log In")
-        expect(page).to have_button("Create New User")
+        expect(page).to have_button("Log In")
+        expect(page).to have_button("Register")
         expect(page).not_to have_link("Log Out")
       end
 
@@ -59,12 +59,12 @@ describe "welcome page" do
         end
 
         it "i see a button to create a new user" do
-          click_button "Create New User"
+          click_button "Register"
           expect(current_path).to eq("/register")
         end
 
         it "i see a link to log in, which takes me to a login page, where i can log in successfully" do
-          click_link "Log In"
+          click_button "Log In"
 
           expect(current_path).to eq("/login")
 
