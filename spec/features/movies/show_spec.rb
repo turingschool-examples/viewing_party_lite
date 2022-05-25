@@ -13,7 +13,7 @@ RSpec.describe "Movie Details Page", type: :feature do
     visit "/movies/278"
     click_button "Create new viewing party"
 
-    expect(current_path).to eq("/users/#{user.id}/movies/278/viewing_party/new")
+    expect(current_path).to eq("/movies/278/viewing_party/new")
   end
 
   it 'has a button to return to the discover page', :vcr do

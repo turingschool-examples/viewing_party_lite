@@ -13,7 +13,7 @@ RSpec.describe "New Viewing Party", type: :feature do
     fill_in :password, with: user.password
     click_on "Login"
 
-    visit "/users/#{user.id}/movies/278/viewing_party/new"
+    visit "/movies/278/viewing_party/new"
 
     fill_in "duration", with: 200
     fill_in "date", with: "2023/01/01"
@@ -35,7 +35,13 @@ RSpec.describe "New Viewing Party", type: :feature do
 
     user = User.create!(name: "Tim", email: "Tim@mail.com", password: "password", password_confirmation: "password")
     user2 = User.create!(name: "Tom", email: "Tom@mail.com", password: "password", password_confirmation: "password")
-    visit "/users/#{user.id}/movies/278/viewing_party/new"
+
+    visit "/login"
+    fill_in :email, with: user.email
+    fill_in :password, with: user.password
+    click_on "Login"
+
+    visit "/movies/278/viewing_party/new"
 
     fill_in "duration", with: 4
     fill_in "date", with: "2023/01/01"
@@ -44,7 +50,7 @@ RSpec.describe "New Viewing Party", type: :feature do
     within "#check_box-Tom" do
       page.check("users[]")#all check boxes have the same name
     end
-      click_button "submit"
+    click_button "submit"
 
     expect(Party.all.count).to eq(party_count)
   end

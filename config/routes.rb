@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "welcome#index"
 
   get "/login", to: "sessions#new"
@@ -13,7 +12,7 @@ Rails.application.routes.draw do
   get "/movies", to: "movies#results"
   get "/movies/:id", to: "movies#show"
 
-  get "/users/:user_id/movies/:movie_id/viewing_party/new", to: "parties#new"
-  post "/users/:user_id/movies/:movie_id/viewing_party", to: "parties#create"
+  get "/movies/:movie_id/viewing_party/new", to: "parties#new"
+  post "/movies/:movie_id/viewing_party", to: "parties#create"
 
 end
