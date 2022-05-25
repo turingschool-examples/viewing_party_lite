@@ -4,7 +4,9 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true
   validates_presence_of :name, :email, :password_digest, :password, :password_confirmation
-  
+
+  enum role: %w(default manager admin)
+
   has_secure_password
 
   def invited_parties
