@@ -6,7 +6,6 @@ class PartiesController < ApplicationController
       flash[:notice] = "You must be log in or register to create a viewing party"
     else
       @movie = MovieFacade.find_movie(params[:movie_id])
-      # @user = current_user
       @users = User.all_except_host(current_user.id)
     end
   end
@@ -26,7 +25,6 @@ class PartiesController < ApplicationController
         render :new
       end
     else
-      @user = current_user
       @users = User.all_except_host(params[:user_id])
       flash[:notice] = "Party cannot be shorter than movie's duration!"
       render :new
@@ -34,12 +32,7 @@ class PartiesController < ApplicationController
   end
 
 private
-
     def party_params
       params.permit(:id, :duration, :date, :time, :host, :movie_id)
     end
-
-    # def current_user
-    #   User.find(session[:user_id])
-    # end
 end
