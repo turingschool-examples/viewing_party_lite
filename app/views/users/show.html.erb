@@ -1,0 +1,55 @@
+<h1><%= @user.name %>'s page</h1>
+
+<%= button_to "Discover Movies", "/discover", method: :get %><br>
+<hr/>
+
+<div id="viewing_parties">
+
+<h1>Viewing Parties</h1>
+<hr>
+<h2>Hosting:</h2>
+<hr>
+  <% @user.hosting_parties.each do |party| %>
+  <div id="party_<%= party.id %>">
+      <% movie = party.movie %>
+      <img id="movie_poster" src="http://image.tmdb.org/t/p/w300<%= movie.poster_path %>" alt="<%= movie.title %> poster">
+      <h3><a href="/users/<%= @user.id %>/movies/<%= party.movie_id %>"><%= movie.title %></a></h3>
+      <h4>Party #<%= party.id %></h4>
+      <h4>You are hosting!</h4>
+      <p id="<%= party.id %>-invited">Invited:<br><br>
+        <% party.users.each do |user| %>
+          <% unless user.id == party.user_id %>
+            <%= user.name %><br>
+          <% end %>
+        <% end %>
+      </p>
+      <h3>Date & Time: <%= party.format_start_time%></h3>
+    <hr>
+  </div>
+<% end %>
+
+<h2>Invited:</h2>
+<hr>
+  <% @user.invited_parties.each do |party| %>
+  <div id="party_<%= party.id %>">
+      <% movie = party.movie %>
+      <img id="movie_poster" src="http://image.tmdb.org/t/p/w300<%= movie.poster_path %>" alt="<%= movie.title %> poster">
+      <h3><a href="/users/<%= @user.id %>/movies/<%= party.movie_id %>"><%= movie.title %></a></h3>
+      <h4>Party #<%= party.id %></h4>
+      <h4>Host: <%= party.host_name %></h4>
+      <p id="<%= party.id %>-invited">Invited:<br><br>
+        <% party.users.each do |user| %>
+          <% unless user.id == party.user_id %>
+            <% if user.id == @user.id %>
+              <strong><%= user.name %></strong><br>
+            <% else %>
+              <%= user.name %><br>
+            <% end %>
+          <% end %>
+        <% end %>
+      </p>
+      <h3>Date & Time: <%= party.format_start_time%></h3>
+    <hr>
+  </div>
+<% end %>
+</div>

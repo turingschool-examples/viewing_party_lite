@@ -1,0 +1,581 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/100?api_key=Sike you thought
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - Sike you thought
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 24 May 2022 17:40:14 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 6f4c2280f4a0a7993e5dfaea76a290f45af97d9d
+      X-Memc-Age:
+      - '6715'
+      X-Memc-Expires:
+      - '9303'
+      Etag:
+      - W/"e12b938b8d18ec2714047fe8d1fe573c"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 c4460641b6e6b194f0c11732a1b10d1c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - EWR53-P1
+      X-Amz-Cf-Id:
+      - iveAzeRR_iDZJT3kMqALLHFwWbh4M4Oyu2qvG2vQ-5YAj3vIs-a7PA==
+      Age:
+      - '12702'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/cXQH2u7wUIX1eoIdEj51kHXoWhX.jpg","belongs_to_collection":null,"budget":1350000,"genres":[{"id":35,"name":"Comedy"},{"id":80,"name":"Crime"}],"homepage":"http://www.universalstudiosentertainment.com/lock-stock-and-two-smoking-barrels/","id":100,"imdb_id":"tt0120735","original_language":"en","original_title":"Lock,
+        Stock and Two Smoking Barrels","overview":"A card shark and his unwillingly-enlisted
+        friends need to make a lot of cash quick after losing a sketchy poker match.
+        To do this they decide to pull a heist on a small-time gang who happen to
+        be operating out of the flat next door.","popularity":9.462,"poster_path":"/8kSerJrhrJWKLk1LViesGcnrUPE.jpg","production_companies":[{"id":491,"logo_path":"/rUp0lLKa1pr4UsPm8fgzmnNGxtq.png","name":"Summit
+        Entertainment","origin_country":"US"},{"id":21920,"logo_path":null,"name":"The
+        Steve Tisch Company","origin_country":""},{"id":13419,"logo_path":null,"name":"SKA
+        Films","origin_country":"GB"},{"id":1382,"logo_path":"/sOg7LGESPH5vCTOIdbMhLuypoLL.png","name":"PolyGram
+        Filmed Entertainment","origin_country":"US"},{"id":20076,"logo_path":"/i9qXGJIP9fGN22PP5jXUVENbyHi.png","name":"HandMade
+        Films","origin_country":"GB"}],"production_countries":[{"iso_3166_1":"GB","name":"United
+        Kingdom"}],"release_date":"1998-08-28","revenue":28356188,"runtime":105,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"A
+        Disgrace to Criminals Everywhere.","title":"Lock, Stock and Two Smoking Barrels","video":false,"vote_average":8.2,"vote_count":5424}'
+  recorded_at: Tue, 24 May 2022 21:11:56 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/100/credits?api_key=Sike you thought
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - Sike you thought
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 24 May 2022 17:40:14 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 597b7f36dbcd3b0dbd191ade215b2feac47b954b
+      X-Memc-Age:
+      - '4890'
+      X-Memc-Expires:
+      - '11112'
+      Etag:
+      - W/"700c8fd1a742e41e32405c8607d8e9c3"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 35c803afef083002d824403342d4c62e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - EWR53-P1
+      X-Amz-Cf-Id:
+      - NhmovXS6bNJ5GWaCVGq0-CseRJswV5PTpZ9dPknLOrxkp0F9kwTahw==
+      Age:
+      - '12703'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":100,"cast":[{"adult":false,"gender":2,"id":973,"known_for_department":"Acting","name":"Jason
+        Flemyng","original_name":"Jason Flemyng","popularity":9.981,"profile_path":"/6E5KfjDwm00jIfN3LNLL9jZAvx3.jpg","cast_id":12,"character":"Tom","credit_id":"52fe4217c3a36847f80035fb","order":0},{"adult":false,"gender":2,"id":974,"known_for_department":"Acting","name":"Dexter
+        Fletcher","original_name":"Dexter Fletcher","popularity":5.084,"profile_path":"/yRI8MDB5sg8b8EZkzFz5cCBrnKL.jpg","cast_id":13,"character":"Soap","credit_id":"52fe4217c3a36847f80035ff","order":1},{"adult":false,"gender":2,"id":975,"known_for_department":"Acting","name":"Nick
+        Moran","original_name":"Nick Moran","popularity":5.321,"profile_path":"/kfWebCAm72JBZLXcNbA2Myr950E.jpg","cast_id":14,"character":"Eddie","credit_id":"52fe4217c3a36847f8003603","order":2},{"adult":false,"gender":2,"id":976,"known_for_department":"Acting","name":"Jason
+        Statham","original_name":"Jason Statham","popularity":64.795,"profile_path":"/lldeQ91GwIVff43JBrpdbAAeYWj.jpg","cast_id":15,"character":"Bacon","credit_id":"52fe4217c3a36847f8003607","order":3},{"adult":false,"gender":2,"id":980,"known_for_department":"Acting","name":"Vinnie
+        Jones","original_name":"Vinnie Jones","popularity":9.243,"profile_path":"/tkYWG9gY2QpoBfOh4OWNz8yQfsw.jpg","cast_id":17,"character":"Big
+        Chris","credit_id":"52fe4217c3a36847f800360f","order":4},{"adult":false,"gender":2,"id":982,"known_for_department":"Acting","name":"Sting","original_name":"Sting","popularity":3.154,"profile_path":"/y6gpCAf6LTHcqFXEZ2udXJkucAm.jpg","cast_id":18,"character":"JD","credit_id":"52fe4217c3a36847f8003613","order":5},{"adult":false,"gender":2,"id":978,"known_for_department":"Acting","name":"Steven
+        Mackintosh","original_name":"Steven Mackintosh","popularity":9.932,"profile_path":"/vDA4mmVe0XMnqd6qMyGWI8bUEeC.jpg","cast_id":16,"character":"Winston","credit_id":"52fe4217c3a36847f800360b","order":6},{"adult":false,"gender":2,"id":984,"known_for_department":"Acting","name":"Nicholas
+        Rowe","original_name":"Nicholas Rowe","popularity":7.182,"profile_path":"/mAR7cSZO9V9v0fFlDxiKDfvHlkQ.jpg","cast_id":19,"character":"J","credit_id":"52fe4217c3a36847f8003617","order":7},{"adult":false,"gender":2,"id":987,"known_for_department":"Acting","name":"Lenny
+        McLean","original_name":"Lenny McLean","popularity":1.105,"profile_path":null,"cast_id":22,"character":"Barry
+        the Baptist","credit_id":"52fe4217c3a36847f8003623","order":8},{"adult":false,"gender":2,"id":989,"known_for_department":"Acting","name":"P.H.
+        Moriarty","original_name":"P.H. Moriarty","popularity":4.347,"profile_path":"/k0geInO1w0hWGqN5A2fx0l6K8NM.jpg","cast_id":24,"character":"''Hatchet''
+        Harry Lonsdale","credit_id":"52fe4217c3a36847f800362b","order":9},{"adult":false,"gender":2,"id":990,"known_for_department":"Acting","name":"Frank
+        Harper","original_name":"Frank Harper","popularity":3.41,"profile_path":"/zKwgaKyONNll56OY7xw5NIYHnis.jpg","cast_id":25,"character":"Dog","credit_id":"52fe4217c3a36847f800362f","order":10},{"adult":false,"gender":2,"id":992,"known_for_department":"Acting","name":"Huggy
+        Leaver","original_name":"Huggy Leaver","popularity":1.4,"profile_path":null,"cast_id":27,"character":"Paul","credit_id":"52fe4217c3a36847f8003637","order":11},{"adult":false,"gender":2,"id":994,"known_for_department":"Acting","name":"Stephen
+        Marcus","original_name":"Stephen Marcus","popularity":2.233,"profile_path":"/oQ6iNYr3KjiHWZYACtX7dao0C37.jpg","cast_id":29,"character":"Nick
+        the Greek","credit_id":"52fe4217c3a36847f800363f","order":12},{"adult":false,"gender":2,"id":988,"known_for_department":"Acting","name":"Peter
+        McNicholl","original_name":"Peter McNicholl","popularity":1.531,"profile_path":null,"cast_id":23,"character":"Little
+        Chris","credit_id":"52fe4217c3a36847f8003627","order":13},{"adult":false,"gender":0,"id":985,"known_for_department":"Acting","name":"Nick
+        Marcq","original_name":"Nick Marcq","popularity":0.702,"profile_path":"/c38EBmS4VL902Uci9KcBQCDWTnH.jpg","cast_id":20,"character":"Charles","credit_id":"52fe4217c3a36847f800361b","order":14},{"adult":false,"gender":2,"id":993,"known_for_department":"Acting","name":"Tony
+        McMahon","original_name":"Tony McMahon","popularity":0.6,"profile_path":"/uMjxDXO3w6CmrfOI8f4DOvyWXmZ.jpg","cast_id":28,"character":"John","credit_id":"52fe4217c3a36847f800363b","order":15},{"adult":false,"gender":0,"id":2638789,"known_for_department":"Acting","name":"Steve
+        Sweeney","original_name":"Steve Sweeney","popularity":1.614,"profile_path":null,"cast_id":47,"character":"Plank","credit_id":"5fa2cc8c5a5ed000384fa653","order":16},{"adult":false,"gender":2,"id":986,"known_for_department":"Acting","name":"Charles
+        Forbes","original_name":"Charles Forbes","popularity":1.62,"profile_path":"/qgzmMOhELprvMvzSHEyKiF0Ucm8.jpg","cast_id":21,"character":"Willie","credit_id":"52fe4217c3a36847f800361f","order":17},{"adult":false,"gender":2,"id":995,"known_for_department":"Acting","name":"Vas
+        Blackwood","original_name":"Vas Blackwood","popularity":4.676,"profile_path":"/eyDooWKb9e4WRx69nuxUrsO49e8.jpg","cast_id":30,"character":"Rory
+        Breaker","credit_id":"52fe4217c3a36847f8003643","order":18},{"adult":false,"gender":2,"id":4317,"known_for_department":"Acting","name":"Jake
+        Abraham","original_name":"Jake Abraham","popularity":1.034,"profile_path":null,"cast_id":31,"character":"Dean","credit_id":"52fe4217c3a36847f8003647","order":19},{"adult":false,"gender":2,"id":4318,"known_for_department":"Acting","name":"Victor
+        McGuire","original_name":"Victor McGuire","popularity":2.182,"profile_path":"/tJBZU4NrQWYFxtPs0ltqOuQgW9K.jpg","cast_id":32,"character":"Gary","credit_id":"52fe4217c3a36847f800364b","order":20},{"adult":false,"gender":2,"id":115787,"known_for_department":"Acting","name":"Danny
+        John-Jules","original_name":"Danny John-Jules","popularity":3.41,"profile_path":"/7528spgohTTHUBVSLZDPWzmlsIi.jpg","cast_id":35,"character":"Barfly
+        Jack","credit_id":"550c8bc89251413443001cbb","order":21},{"adult":false,"gender":2,"id":1473866,"known_for_department":"Acting","name":"Elwin
+        ''Chopper'' David","original_name":"Elwin ''Chopper'' David","popularity":3.27,"profile_path":"/osG8WiN92HUceFxk1Rk9sAt0Ryl.jpg","cast_id":36,"character":"Nathan","credit_id":"56d9cf72c3a36870ac0109c2","order":22},{"adult":false,"gender":1,"id":236388,"known_for_department":"Acting","name":"Vera
+        Day","original_name":"Vera Day","popularity":1.62,"profile_path":"/748jk8tZ8SGN4u2H2PgRvnko8Uf.jpg","cast_id":37,"character":"Tanya","credit_id":"57676387c3a36840b4000d4a","order":23},{"adult":false,"gender":2,"id":47632,"known_for_department":"Acting","name":"Rob
+        Brydon","original_name":"Rob Brydon","popularity":5.427,"profile_path":"/xoKLZVwzaUgTUEvPX4vymXpC1fU.jpg","cast_id":38,"character":"Traffic
+        Warden","credit_id":"588289d5925141303e01291d","order":24},{"adult":false,"gender":2,"id":1116,"known_for_department":"Acting","name":"Alan
+        Ford","original_name":"Alan Ford","popularity":3.667,"profile_path":"/nSlngfcFsCPENxiqCwZnB1twKuC.jpg","cast_id":39,"character":"Alan
+        / Narrator","credit_id":"588289e9c3a368146701265e","order":25},{"adult":false,"gender":2,"id":17290,"known_for_department":"Acting","name":"Andrew
+        Tiernan","original_name":"Andrew Tiernan","popularity":9.516,"profile_path":"/co8FxSWaRuYW3bhsJBTXO3GNkdg.jpg","cast_id":40,"character":"Man
+        in Pub","credit_id":"588289fd925141303a012ecb","order":26},{"adult":false,"gender":2,"id":957,"known_for_department":"Production","name":"Matthew
+        Vaughn","original_name":"Matthew Vaughn","popularity":6.055,"profile_path":"/Dnbz3B7yy4u0abixuD5LakZgsy.jpg","cast_id":41,"character":"Yuppy
+        In Car","credit_id":"5b85eb509251414a06002965","order":27},{"adult":false,"gender":2,"id":192943,"known_for_department":"Acting","name":"Richard
+        Vanstone","original_name":"Richard Vanstone","popularity":2.655,"profile_path":"/yklWV3XlWKwcHeqSFWkUHNmFAUI.jpg","cast_id":42,"character":"Frazer","credit_id":"5c36cc030e0a2631c654375d","order":28},{"adult":false,"gender":0,"id":67214,"known_for_department":"Acting","name":"Jimmy
+        Flint","original_name":"Jimmy Flint","popularity":0.6,"profile_path":"/qmk1dXmA1ELOMnxwmOvhjaPCjy9.jpg","cast_id":43,"character":"Don","credit_id":"5c36ccee925141531c24bbf9","order":29}],"crew":[{"adult":false,"gender":2,"id":960,"known_for_department":"Sound","name":"John
+        Murphy","original_name":"John Murphy","popularity":0.6,"profile_path":"/zjCRjbBQ8zoaKwka9iS7zbmBrTr.jpg","credit_id":"52fe4217c3a36847f80035d3","department":"Sound","job":"Original
+        Music Composer"},{"adult":false,"gender":2,"id":956,"known_for_department":"Directing","name":"Guy
+        Ritchie","original_name":"Guy Ritchie","popularity":11.071,"profile_path":"/9pLUnjMgIEWXi0mlHYzie9cKUTD.jpg","credit_id":"52fe4217c3a36847f8003651","department":"Writing","job":"Screenplay"},{"adult":false,"gender":2,"id":956,"known_for_department":"Directing","name":"Guy
+        Ritchie","original_name":"Guy Ritchie","popularity":11.071,"profile_path":"/9pLUnjMgIEWXi0mlHYzie9cKUTD.jpg","credit_id":"52fe4217c3a36847f80035c1","department":"Directing","job":"Director"},{"adult":false,"gender":2,"id":956,"known_for_department":"Directing","name":"Guy
+        Ritchie","original_name":"Guy Ritchie","popularity":11.071,"profile_path":"/9pLUnjMgIEWXi0mlHYzie9cKUTD.jpg","credit_id":"52fe4217c3a36847f80035f1","department":"Production","job":"Casting"},{"adult":false,"gender":2,"id":957,"known_for_department":"Production","name":"Matthew
+        Vaughn","original_name":"Matthew Vaughn","popularity":6.055,"profile_path":"/Dnbz3B7yy4u0abixuD5LakZgsy.jpg","credit_id":"52fe4217c3a36847f80035c7","department":"Production","job":"Producer"},{"adult":false,"gender":2,"id":959,"known_for_department":"Sound","name":"David
+        A. Hughes","original_name":"David A. Hughes","popularity":0.98,"profile_path":null,"credit_id":"52fe4217c3a36847f80035cd","department":"Sound","job":"Original
+        Music Composer"},{"adult":false,"gender":2,"id":966,"known_for_department":"Camera","name":"Tim
+        Maurice-Jones","original_name":"Tim Maurice-Jones","popularity":0.695,"profile_path":null,"credit_id":"52fe4217c3a36847f80035d9","department":"Camera","job":"Director
+        of Photography"},{"adult":false,"gender":0,"id":967,"known_for_department":"Art","name":"Iain
+        Andrews","original_name":"Iain Andrews","popularity":0.6,"profile_path":null,"credit_id":"52fe4217c3a36847f80035df","department":"Art","job":"Production
+        Design"},{"adult":false,"gender":0,"id":968,"known_for_department":"Art","name":"Eve
+        Mavrakis","original_name":"Eve Mavrakis","popularity":0.694,"profile_path":null,"credit_id":"52fe4217c3a36847f80035e5","department":"Art","job":"Production
+        Design"},{"adult":false,"gender":1,"id":970,"known_for_department":"Production","name":"Celestia
+        Fox","original_name":"Celestia Fox","popularity":0.6,"profile_path":null,"credit_id":"52fe4217c3a36847f80035eb","department":"Production","job":"Casting"},{"adult":false,"gender":0,"id":971,"known_for_department":"Editing","name":"Niven
+        Howie","original_name":"Niven Howie","popularity":1.38,"profile_path":null,"credit_id":"52fe4217c3a36847f80035f7","department":"Editing","job":"Editor"},{"adult":false,"gender":1,"id":39670,"known_for_department":"Costume
+        \u0026 Make-Up","name":"Stephanie Collie","original_name":"Stephanie Collie","popularity":2.631,"profile_path":null,"credit_id":"534feadf0e0a267eab000f7c","department":"Costume
+        \u0026 Make-Up","job":"Costume Design"},{"adult":false,"gender":0,"id":1340728,"known_for_department":"Crew","name":"Glenn
+        Marks","original_name":"Glenn Marks","popularity":0.6,"profile_path":null,"credit_id":"5c36d4c70e0a2631bc543df9","department":"Crew","job":"Stunt
+        Coordinator"},{"adult":false,"gender":0,"id":1417831,"known_for_department":"Crew","name":"Sy
+        Hollands","original_name":"Sy Hollands","popularity":0.6,"profile_path":null,"credit_id":"5c36d5e4c3a3685eef27933c","department":"Crew","job":"Stunt
+        Driver"},{"adult":false,"gender":2,"id":1616303,"known_for_department":"Acting","name":"Richard
+        Graydon","original_name":"Richard Graydon","popularity":0.985,"profile_path":"/8T9i8DUKbk8pco4UG5KjzKWLnZX.jpg","credit_id":"5c36d4e2c3a3685ee9279074","department":"Crew","job":"Stunts"}]}'
+  recorded_at: Tue, 24 May 2022 21:11:57 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/100/reviews?api_key=Sike you thought
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - Sike you thought
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - b8ceef4dd81d362973c4004beb6d29a7067370a0
+      X-Memc-Age:
+      - '707'
+      X-Memc-Expires:
+      - '14225'
+      Date:
+      - Tue, 24 May 2022 20:50:00 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"d25f3f076be38b4e9eecebc49f81a1b5"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 4b6e1bc9480bffb0b8980e408fffa59e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - EWR53-P1
+      X-Amz-Cf-Id:
+      - Ch4yCIWJZ6P84v48DwegPKs4M6FAm5WhVS4YKNttsBF8i_ob3X9eCw==
+      Age:
+      - '12707'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":100,"page":1,"results":[{"author":"BradFlix","author_details":{"name":"","username":"BradFlix","avatar_path":null,"rating":null},"content":"I
+        just plain love this movie!","created_at":"2013-12-01T23:11:51.416Z","id":"529bc23719c2957215011e7b","updated_at":"2021-06-23T15:57:23.111Z","url":"https://www.themoviedb.org/review/529bc23719c2957215011e7b"},{"author":"Andres
+        Gomez","author_details":{"name":"Andres Gomez","username":"tanty","avatar_path":"/https://www.gravatar.com/avatar/03a53cd53b8254fe582d4fe1acc26c4e.jpg","rating":3.0},"content":"Far
+        from being a good movie, with tons of flaws but already pointing to the pattern
+        of the whole Ritchie''s filmography.","created_at":"2014-04-24T00:11:47.766Z","id":"535856c30e0a26069400064c","updated_at":"2021-06-23T15:57:26.186Z","url":"https://www.themoviedb.org/review/535856c30e0a26069400064c"},{"author":"David
+        Perkins","author_details":{"name":"David Perkins","username":"Prkns","avatar_path":null,"rating":9.0},"content":"Genuinely
+        one of my favorite movies of all time. Watched again recently and realised
+        how well written, brilliantly shot, beautifully cast and cleverly produced
+        this movie actually is!","created_at":"2017-01-09T12:24:47.234Z","id":"5873810f9251410e71009a68","updated_at":"2021-06-23T15:57:52.869Z","url":"https://www.themoviedb.org/review/5873810f9251410e71009a68"},{"author":"r96sk","author_details":{"name":"","username":"r96sk","avatar_path":"/https://www.gravatar.com/avatar/96c2e0e4ac98450f9e8e3c0a0a40aad8.jpg","rating":8.0},"content":"The
+        very entertaining ending makes this film.\r\n\r\nI wasn''t sure about <em>''Lock,
+        Stock and Two Smoking Barrels''</em> up until that point. Like, don''t get
+        me wrong, it is a good film from the get-go but I wasn''t personally convinced
+        by it to be more than that until the credits rolled - at which point, I found
+        myself to have been thoroughly entertained.\r\n\r\nWith Guy Ritchie in his
+        directing debut and a whole host of familiar British faces, it isn''t a difficult
+        film to get into. I did feel at some points that there were too many characters
+        and that they weren''t distinctive enough; there were momentary bits where
+        I had to think a tad harder at which characters were linked with each other.
+        However, that actually turns into the film''s best thing at the end as it
+        does come together brilliantly.\r\n\r\nAll in all, this 1998 gangster flick
+        is something I''d consider as very good and worthy of watching.","created_at":"2022-03-16T01:38:40.389Z","id":"62313fa06517d60045ed073a","updated_at":"2022-03-16T01:38:40.389Z","url":"https://www.themoviedb.org/review/62313fa06517d60045ed073a"}],"total_pages":1,"total_results":4}'
+  recorded_at: Tue, 24 May 2022 21:11:57 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/100?api_key=Sike you thought
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - Sike you thought
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 24 May 2022 17:40:14 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 6f4c2280f4a0a7993e5dfaea76a290f45af97d9d
+      X-Memc-Age:
+      - '6715'
+      X-Memc-Expires:
+      - '9303'
+      Etag:
+      - W/"e12b938b8d18ec2714047fe8d1fe573c"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 11140291d542e546b40770525cf1e1b4.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - EWR53-P1
+      X-Amz-Cf-Id:
+      - Q8db9PVficPntKKyjMN29nQFZVxPKdIT6erNPBisPG5MT0HwDCc2zw==
+      Age:
+      - '12703'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/cXQH2u7wUIX1eoIdEj51kHXoWhX.jpg","belongs_to_collection":null,"budget":1350000,"genres":[{"id":35,"name":"Comedy"},{"id":80,"name":"Crime"}],"homepage":"http://www.universalstudiosentertainment.com/lock-stock-and-two-smoking-barrels/","id":100,"imdb_id":"tt0120735","original_language":"en","original_title":"Lock,
+        Stock and Two Smoking Barrels","overview":"A card shark and his unwillingly-enlisted
+        friends need to make a lot of cash quick after losing a sketchy poker match.
+        To do this they decide to pull a heist on a small-time gang who happen to
+        be operating out of the flat next door.","popularity":9.462,"poster_path":"/8kSerJrhrJWKLk1LViesGcnrUPE.jpg","production_companies":[{"id":491,"logo_path":"/rUp0lLKa1pr4UsPm8fgzmnNGxtq.png","name":"Summit
+        Entertainment","origin_country":"US"},{"id":21920,"logo_path":null,"name":"The
+        Steve Tisch Company","origin_country":""},{"id":13419,"logo_path":null,"name":"SKA
+        Films","origin_country":"GB"},{"id":1382,"logo_path":"/sOg7LGESPH5vCTOIdbMhLuypoLL.png","name":"PolyGram
+        Filmed Entertainment","origin_country":"US"},{"id":20076,"logo_path":"/i9qXGJIP9fGN22PP5jXUVENbyHi.png","name":"HandMade
+        Films","origin_country":"GB"}],"production_countries":[{"iso_3166_1":"GB","name":"United
+        Kingdom"}],"release_date":"1998-08-28","revenue":28356188,"runtime":105,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"A
+        Disgrace to Criminals Everywhere.","title":"Lock, Stock and Two Smoking Barrels","video":false,"vote_average":8.2,"vote_count":5424}'
+  recorded_at: Tue, 24 May 2022 21:11:57 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/100/credits?api_key=Sike you thought
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - Sike you thought
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 24 May 2022 17:40:14 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 597b7f36dbcd3b0dbd191ade215b2feac47b954b
+      X-Memc-Age:
+      - '4890'
+      X-Memc-Expires:
+      - '11112'
+      Etag:
+      - W/"700c8fd1a742e41e32405c8607d8e9c3"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 3f65d34f6010e326e59d2f311de6e202.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - EWR53-P1
+      X-Amz-Cf-Id:
+      - RGm_liQBKICGiVLAEYUXtKHdSYiOYpTgP8oXJzl7dhjfBVvSdiSXjQ==
+      Age:
+      - '12703'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":100,"cast":[{"adult":false,"gender":2,"id":973,"known_for_department":"Acting","name":"Jason
+        Flemyng","original_name":"Jason Flemyng","popularity":9.981,"profile_path":"/6E5KfjDwm00jIfN3LNLL9jZAvx3.jpg","cast_id":12,"character":"Tom","credit_id":"52fe4217c3a36847f80035fb","order":0},{"adult":false,"gender":2,"id":974,"known_for_department":"Acting","name":"Dexter
+        Fletcher","original_name":"Dexter Fletcher","popularity":5.084,"profile_path":"/yRI8MDB5sg8b8EZkzFz5cCBrnKL.jpg","cast_id":13,"character":"Soap","credit_id":"52fe4217c3a36847f80035ff","order":1},{"adult":false,"gender":2,"id":975,"known_for_department":"Acting","name":"Nick
+        Moran","original_name":"Nick Moran","popularity":5.321,"profile_path":"/kfWebCAm72JBZLXcNbA2Myr950E.jpg","cast_id":14,"character":"Eddie","credit_id":"52fe4217c3a36847f8003603","order":2},{"adult":false,"gender":2,"id":976,"known_for_department":"Acting","name":"Jason
+        Statham","original_name":"Jason Statham","popularity":64.795,"profile_path":"/lldeQ91GwIVff43JBrpdbAAeYWj.jpg","cast_id":15,"character":"Bacon","credit_id":"52fe4217c3a36847f8003607","order":3},{"adult":false,"gender":2,"id":980,"known_for_department":"Acting","name":"Vinnie
+        Jones","original_name":"Vinnie Jones","popularity":9.243,"profile_path":"/tkYWG9gY2QpoBfOh4OWNz8yQfsw.jpg","cast_id":17,"character":"Big
+        Chris","credit_id":"52fe4217c3a36847f800360f","order":4},{"adult":false,"gender":2,"id":982,"known_for_department":"Acting","name":"Sting","original_name":"Sting","popularity":3.154,"profile_path":"/y6gpCAf6LTHcqFXEZ2udXJkucAm.jpg","cast_id":18,"character":"JD","credit_id":"52fe4217c3a36847f8003613","order":5},{"adult":false,"gender":2,"id":978,"known_for_department":"Acting","name":"Steven
+        Mackintosh","original_name":"Steven Mackintosh","popularity":9.932,"profile_path":"/vDA4mmVe0XMnqd6qMyGWI8bUEeC.jpg","cast_id":16,"character":"Winston","credit_id":"52fe4217c3a36847f800360b","order":6},{"adult":false,"gender":2,"id":984,"known_for_department":"Acting","name":"Nicholas
+        Rowe","original_name":"Nicholas Rowe","popularity":7.182,"profile_path":"/mAR7cSZO9V9v0fFlDxiKDfvHlkQ.jpg","cast_id":19,"character":"J","credit_id":"52fe4217c3a36847f8003617","order":7},{"adult":false,"gender":2,"id":987,"known_for_department":"Acting","name":"Lenny
+        McLean","original_name":"Lenny McLean","popularity":1.105,"profile_path":null,"cast_id":22,"character":"Barry
+        the Baptist","credit_id":"52fe4217c3a36847f8003623","order":8},{"adult":false,"gender":2,"id":989,"known_for_department":"Acting","name":"P.H.
+        Moriarty","original_name":"P.H. Moriarty","popularity":4.347,"profile_path":"/k0geInO1w0hWGqN5A2fx0l6K8NM.jpg","cast_id":24,"character":"''Hatchet''
+        Harry Lonsdale","credit_id":"52fe4217c3a36847f800362b","order":9},{"adult":false,"gender":2,"id":990,"known_for_department":"Acting","name":"Frank
+        Harper","original_name":"Frank Harper","popularity":3.41,"profile_path":"/zKwgaKyONNll56OY7xw5NIYHnis.jpg","cast_id":25,"character":"Dog","credit_id":"52fe4217c3a36847f800362f","order":10},{"adult":false,"gender":2,"id":992,"known_for_department":"Acting","name":"Huggy
+        Leaver","original_name":"Huggy Leaver","popularity":1.4,"profile_path":null,"cast_id":27,"character":"Paul","credit_id":"52fe4217c3a36847f8003637","order":11},{"adult":false,"gender":2,"id":994,"known_for_department":"Acting","name":"Stephen
+        Marcus","original_name":"Stephen Marcus","popularity":2.233,"profile_path":"/oQ6iNYr3KjiHWZYACtX7dao0C37.jpg","cast_id":29,"character":"Nick
+        the Greek","credit_id":"52fe4217c3a36847f800363f","order":12},{"adult":false,"gender":2,"id":988,"known_for_department":"Acting","name":"Peter
+        McNicholl","original_name":"Peter McNicholl","popularity":1.531,"profile_path":null,"cast_id":23,"character":"Little
+        Chris","credit_id":"52fe4217c3a36847f8003627","order":13},{"adult":false,"gender":0,"id":985,"known_for_department":"Acting","name":"Nick
+        Marcq","original_name":"Nick Marcq","popularity":0.702,"profile_path":"/c38EBmS4VL902Uci9KcBQCDWTnH.jpg","cast_id":20,"character":"Charles","credit_id":"52fe4217c3a36847f800361b","order":14},{"adult":false,"gender":2,"id":993,"known_for_department":"Acting","name":"Tony
+        McMahon","original_name":"Tony McMahon","popularity":0.6,"profile_path":"/uMjxDXO3w6CmrfOI8f4DOvyWXmZ.jpg","cast_id":28,"character":"John","credit_id":"52fe4217c3a36847f800363b","order":15},{"adult":false,"gender":0,"id":2638789,"known_for_department":"Acting","name":"Steve
+        Sweeney","original_name":"Steve Sweeney","popularity":1.614,"profile_path":null,"cast_id":47,"character":"Plank","credit_id":"5fa2cc8c5a5ed000384fa653","order":16},{"adult":false,"gender":2,"id":986,"known_for_department":"Acting","name":"Charles
+        Forbes","original_name":"Charles Forbes","popularity":1.62,"profile_path":"/qgzmMOhELprvMvzSHEyKiF0Ucm8.jpg","cast_id":21,"character":"Willie","credit_id":"52fe4217c3a36847f800361f","order":17},{"adult":false,"gender":2,"id":995,"known_for_department":"Acting","name":"Vas
+        Blackwood","original_name":"Vas Blackwood","popularity":4.676,"profile_path":"/eyDooWKb9e4WRx69nuxUrsO49e8.jpg","cast_id":30,"character":"Rory
+        Breaker","credit_id":"52fe4217c3a36847f8003643","order":18},{"adult":false,"gender":2,"id":4317,"known_for_department":"Acting","name":"Jake
+        Abraham","original_name":"Jake Abraham","popularity":1.034,"profile_path":null,"cast_id":31,"character":"Dean","credit_id":"52fe4217c3a36847f8003647","order":19},{"adult":false,"gender":2,"id":4318,"known_for_department":"Acting","name":"Victor
+        McGuire","original_name":"Victor McGuire","popularity":2.182,"profile_path":"/tJBZU4NrQWYFxtPs0ltqOuQgW9K.jpg","cast_id":32,"character":"Gary","credit_id":"52fe4217c3a36847f800364b","order":20},{"adult":false,"gender":2,"id":115787,"known_for_department":"Acting","name":"Danny
+        John-Jules","original_name":"Danny John-Jules","popularity":3.41,"profile_path":"/7528spgohTTHUBVSLZDPWzmlsIi.jpg","cast_id":35,"character":"Barfly
+        Jack","credit_id":"550c8bc89251413443001cbb","order":21},{"adult":false,"gender":2,"id":1473866,"known_for_department":"Acting","name":"Elwin
+        ''Chopper'' David","original_name":"Elwin ''Chopper'' David","popularity":3.27,"profile_path":"/osG8WiN92HUceFxk1Rk9sAt0Ryl.jpg","cast_id":36,"character":"Nathan","credit_id":"56d9cf72c3a36870ac0109c2","order":22},{"adult":false,"gender":1,"id":236388,"known_for_department":"Acting","name":"Vera
+        Day","original_name":"Vera Day","popularity":1.62,"profile_path":"/748jk8tZ8SGN4u2H2PgRvnko8Uf.jpg","cast_id":37,"character":"Tanya","credit_id":"57676387c3a36840b4000d4a","order":23},{"adult":false,"gender":2,"id":47632,"known_for_department":"Acting","name":"Rob
+        Brydon","original_name":"Rob Brydon","popularity":5.427,"profile_path":"/xoKLZVwzaUgTUEvPX4vymXpC1fU.jpg","cast_id":38,"character":"Traffic
+        Warden","credit_id":"588289d5925141303e01291d","order":24},{"adult":false,"gender":2,"id":1116,"known_for_department":"Acting","name":"Alan
+        Ford","original_name":"Alan Ford","popularity":3.667,"profile_path":"/nSlngfcFsCPENxiqCwZnB1twKuC.jpg","cast_id":39,"character":"Alan
+        / Narrator","credit_id":"588289e9c3a368146701265e","order":25},{"adult":false,"gender":2,"id":17290,"known_for_department":"Acting","name":"Andrew
+        Tiernan","original_name":"Andrew Tiernan","popularity":9.516,"profile_path":"/co8FxSWaRuYW3bhsJBTXO3GNkdg.jpg","cast_id":40,"character":"Man
+        in Pub","credit_id":"588289fd925141303a012ecb","order":26},{"adult":false,"gender":2,"id":957,"known_for_department":"Production","name":"Matthew
+        Vaughn","original_name":"Matthew Vaughn","popularity":6.055,"profile_path":"/Dnbz3B7yy4u0abixuD5LakZgsy.jpg","cast_id":41,"character":"Yuppy
+        In Car","credit_id":"5b85eb509251414a06002965","order":27},{"adult":false,"gender":2,"id":192943,"known_for_department":"Acting","name":"Richard
+        Vanstone","original_name":"Richard Vanstone","popularity":2.655,"profile_path":"/yklWV3XlWKwcHeqSFWkUHNmFAUI.jpg","cast_id":42,"character":"Frazer","credit_id":"5c36cc030e0a2631c654375d","order":28},{"adult":false,"gender":0,"id":67214,"known_for_department":"Acting","name":"Jimmy
+        Flint","original_name":"Jimmy Flint","popularity":0.6,"profile_path":"/qmk1dXmA1ELOMnxwmOvhjaPCjy9.jpg","cast_id":43,"character":"Don","credit_id":"5c36ccee925141531c24bbf9","order":29}],"crew":[{"adult":false,"gender":2,"id":960,"known_for_department":"Sound","name":"John
+        Murphy","original_name":"John Murphy","popularity":0.6,"profile_path":"/zjCRjbBQ8zoaKwka9iS7zbmBrTr.jpg","credit_id":"52fe4217c3a36847f80035d3","department":"Sound","job":"Original
+        Music Composer"},{"adult":false,"gender":2,"id":956,"known_for_department":"Directing","name":"Guy
+        Ritchie","original_name":"Guy Ritchie","popularity":11.071,"profile_path":"/9pLUnjMgIEWXi0mlHYzie9cKUTD.jpg","credit_id":"52fe4217c3a36847f8003651","department":"Writing","job":"Screenplay"},{"adult":false,"gender":2,"id":956,"known_for_department":"Directing","name":"Guy
+        Ritchie","original_name":"Guy Ritchie","popularity":11.071,"profile_path":"/9pLUnjMgIEWXi0mlHYzie9cKUTD.jpg","credit_id":"52fe4217c3a36847f80035c1","department":"Directing","job":"Director"},{"adult":false,"gender":2,"id":956,"known_for_department":"Directing","name":"Guy
+        Ritchie","original_name":"Guy Ritchie","popularity":11.071,"profile_path":"/9pLUnjMgIEWXi0mlHYzie9cKUTD.jpg","credit_id":"52fe4217c3a36847f80035f1","department":"Production","job":"Casting"},{"adult":false,"gender":2,"id":957,"known_for_department":"Production","name":"Matthew
+        Vaughn","original_name":"Matthew Vaughn","popularity":6.055,"profile_path":"/Dnbz3B7yy4u0abixuD5LakZgsy.jpg","credit_id":"52fe4217c3a36847f80035c7","department":"Production","job":"Producer"},{"adult":false,"gender":2,"id":959,"known_for_department":"Sound","name":"David
+        A. Hughes","original_name":"David A. Hughes","popularity":0.98,"profile_path":null,"credit_id":"52fe4217c3a36847f80035cd","department":"Sound","job":"Original
+        Music Composer"},{"adult":false,"gender":2,"id":966,"known_for_department":"Camera","name":"Tim
+        Maurice-Jones","original_name":"Tim Maurice-Jones","popularity":0.695,"profile_path":null,"credit_id":"52fe4217c3a36847f80035d9","department":"Camera","job":"Director
+        of Photography"},{"adult":false,"gender":0,"id":967,"known_for_department":"Art","name":"Iain
+        Andrews","original_name":"Iain Andrews","popularity":0.6,"profile_path":null,"credit_id":"52fe4217c3a36847f80035df","department":"Art","job":"Production
+        Design"},{"adult":false,"gender":0,"id":968,"known_for_department":"Art","name":"Eve
+        Mavrakis","original_name":"Eve Mavrakis","popularity":0.694,"profile_path":null,"credit_id":"52fe4217c3a36847f80035e5","department":"Art","job":"Production
+        Design"},{"adult":false,"gender":1,"id":970,"known_for_department":"Production","name":"Celestia
+        Fox","original_name":"Celestia Fox","popularity":0.6,"profile_path":null,"credit_id":"52fe4217c3a36847f80035eb","department":"Production","job":"Casting"},{"adult":false,"gender":0,"id":971,"known_for_department":"Editing","name":"Niven
+        Howie","original_name":"Niven Howie","popularity":1.38,"profile_path":null,"credit_id":"52fe4217c3a36847f80035f7","department":"Editing","job":"Editor"},{"adult":false,"gender":1,"id":39670,"known_for_department":"Costume
+        \u0026 Make-Up","name":"Stephanie Collie","original_name":"Stephanie Collie","popularity":2.631,"profile_path":null,"credit_id":"534feadf0e0a267eab000f7c","department":"Costume
+        \u0026 Make-Up","job":"Costume Design"},{"adult":false,"gender":0,"id":1340728,"known_for_department":"Crew","name":"Glenn
+        Marks","original_name":"Glenn Marks","popularity":0.6,"profile_path":null,"credit_id":"5c36d4c70e0a2631bc543df9","department":"Crew","job":"Stunt
+        Coordinator"},{"adult":false,"gender":0,"id":1417831,"known_for_department":"Crew","name":"Sy
+        Hollands","original_name":"Sy Hollands","popularity":0.6,"profile_path":null,"credit_id":"5c36d5e4c3a3685eef27933c","department":"Crew","job":"Stunt
+        Driver"},{"adult":false,"gender":2,"id":1616303,"known_for_department":"Acting","name":"Richard
+        Graydon","original_name":"Richard Graydon","popularity":0.985,"profile_path":"/8T9i8DUKbk8pco4UG5KjzKWLnZX.jpg","credit_id":"5c36d4e2c3a3685ee9279074","department":"Crew","job":"Stunts"}]}'
+  recorded_at: Tue, 24 May 2022 21:11:57 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/100/reviews?api_key=Sike you thought
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - Sike you thought
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - b8ceef4dd81d362973c4004beb6d29a7067370a0
+      X-Memc-Age:
+      - '707'
+      X-Memc-Expires:
+      - '14225'
+      Date:
+      - Tue, 24 May 2022 20:50:00 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"d25f3f076be38b4e9eecebc49f81a1b5"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 13f845dfc86f469c48ead16a985011ba.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - EWR53-P1
+      X-Amz-Cf-Id:
+      - Ak9FvHcSMbFGfwwX55EcQPPUtMYo-Ifg-vgGhA_HoGA9NTVNKNKUDg==
+      Age:
+      - '12708'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":100,"page":1,"results":[{"author":"BradFlix","author_details":{"name":"","username":"BradFlix","avatar_path":null,"rating":null},"content":"I
+        just plain love this movie!","created_at":"2013-12-01T23:11:51.416Z","id":"529bc23719c2957215011e7b","updated_at":"2021-06-23T15:57:23.111Z","url":"https://www.themoviedb.org/review/529bc23719c2957215011e7b"},{"author":"Andres
+        Gomez","author_details":{"name":"Andres Gomez","username":"tanty","avatar_path":"/https://www.gravatar.com/avatar/03a53cd53b8254fe582d4fe1acc26c4e.jpg","rating":3.0},"content":"Far
+        from being a good movie, with tons of flaws but already pointing to the pattern
+        of the whole Ritchie''s filmography.","created_at":"2014-04-24T00:11:47.766Z","id":"535856c30e0a26069400064c","updated_at":"2021-06-23T15:57:26.186Z","url":"https://www.themoviedb.org/review/535856c30e0a26069400064c"},{"author":"David
+        Perkins","author_details":{"name":"David Perkins","username":"Prkns","avatar_path":null,"rating":9.0},"content":"Genuinely
+        one of my favorite movies of all time. Watched again recently and realised
+        how well written, brilliantly shot, beautifully cast and cleverly produced
+        this movie actually is!","created_at":"2017-01-09T12:24:47.234Z","id":"5873810f9251410e71009a68","updated_at":"2021-06-23T15:57:52.869Z","url":"https://www.themoviedb.org/review/5873810f9251410e71009a68"},{"author":"r96sk","author_details":{"name":"","username":"r96sk","avatar_path":"/https://www.gravatar.com/avatar/96c2e0e4ac98450f9e8e3c0a0a40aad8.jpg","rating":8.0},"content":"The
+        very entertaining ending makes this film.\r\n\r\nI wasn''t sure about <em>''Lock,
+        Stock and Two Smoking Barrels''</em> up until that point. Like, don''t get
+        me wrong, it is a good film from the get-go but I wasn''t personally convinced
+        by it to be more than that until the credits rolled - at which point, I found
+        myself to have been thoroughly entertained.\r\n\r\nWith Guy Ritchie in his
+        directing debut and a whole host of familiar British faces, it isn''t a difficult
+        film to get into. I did feel at some points that there were too many characters
+        and that they weren''t distinctive enough; there were momentary bits where
+        I had to think a tad harder at which characters were linked with each other.
+        However, that actually turns into the film''s best thing at the end as it
+        does come together brilliantly.\r\n\r\nAll in all, this 1998 gangster flick
+        is something I''d consider as very good and worthy of watching.","created_at":"2022-03-16T01:38:40.389Z","id":"62313fa06517d60045ed073a","updated_at":"2022-03-16T01:38:40.389Z","url":"https://www.themoviedb.org/review/62313fa06517d60045ed073a"}],"total_pages":1,"total_results":4}'
+  recorded_at: Tue, 24 May 2022 21:11:57 GMT
+recorded_with: VCR 6.1.0
