@@ -17,13 +17,19 @@ RSpec.describe 'landing page' do
 
     it 'shows existing user list that is linked to respective user dashboard' do
       user = User.create(name: 'Michael', email: 'michael@example.net', password: "password123", password_confirmation: "password123")
+
+      visit "/login"
+      fill_in :email, with: user.email
+      fill_in :password, with: user.password
+      click_button "Log In"
+
       visit root_path
 
       within(".users") do
         click_link "#{user.name}"
       end
 
-      expect(current_path).to eq("/users/#{user.id}")
+      expect(current_path).to eq("/dashboard")
     end
 
     it 'shows a header link redirecting to landing page' do
@@ -33,6 +39,27 @@ RSpec.describe 'landing page' do
       expect(current_path).to eq(root_path)
     end
 
+    it "has link to log out if logged in" do
+      user = User.create(name: 'Michael', email: 'michael@example.net', password: "password123", password_confirmation: "password123")
+
+      visit "/login"
+      fill_in :email, with: user.email
+      fill_in :password, with: user.password
+      click_button "Log In"
+
+      visit root_path
+
+      expect(page).to_not have_content("Log In")
+      expect(page).to_not have_content("Create New User")
+
+      click_link "Logout"
+
+      expect(current_path).to eq(root_path)
+      expect(page).to have_content("Log In")
+      expect(page).to have_content("Create New User")
+      expect(page).to_not have_content("Logout")
+
+    end
   end
 
 end

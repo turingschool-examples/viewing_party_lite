@@ -17,7 +17,12 @@ RSpec.describe "user dashboard" do
     @pu_3 = PartyUser.create!(party_id: @party_2.id, user_id: @user_1.id)
     @pu_4 = PartyUser.create!(party_id: @party_2.id, user_id: @user_3.id)
 
-    visit "/users/#{@user_1.id}"
+    visit "/login"
+    fill_in :email, with: @user_1.email
+    fill_in :password, with: @user_1.password
+    click_button "Log In"
+    
+    visit "/dashboard"
   end
 
   it "displays user name" do
@@ -27,7 +32,7 @@ RSpec.describe "user dashboard" do
   it "has button that directs to discover page" do
     click_button("Discover Movies")
 
-    expect(current_path).to eq("/users/#{@user_1.id}/discover")
+    expect(current_path).to eq("/discover")
   end
 
   it "displays parties user is hosting" do

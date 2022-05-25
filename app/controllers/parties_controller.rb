@@ -1,6 +1,6 @@
 class PartiesController < ApplicationController
   def new
-    @user = User.find(params[:user_id])
+    @user = User.find(session[:user_id])
     @users = User.where("users.id != ?", @user.id)
     @movie = MovieFacade.movie_details(params[:movie_id])
   end
@@ -12,9 +12,9 @@ class PartiesController < ApplicationController
     end
 
     if party.save
-      redirect_to "/users/#{params[:user_id]}"
+      redirect_to "/dashboard"
     else
-      redirect_to "/users/#{@user_1.id}/movies/278/viewing-party/new"
+      redirect_to "/movies/278/viewing-party/new"
       flash[:alert] = "Please Enter Valid Data."
     end
   end
