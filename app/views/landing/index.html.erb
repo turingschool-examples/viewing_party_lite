@@ -1,10 +1,16 @@
-<center><%= button_to 'Create New User', '/register', method: :get %></center>
 
+<% if current_user %>
 <center><p>Existing Users:</p></center>
 <center><% @users.each do |user| %>
-  <p><%= link_to "#{user.name}'s Dashboard", user_dashboard_path(user) %></p>
+  <p><%= "#{user.name}" %></p>
+  <p><%= "#{user.email}" %></p>
   <% end %></center>
+  <%= link_to "Logout", '/logout', method: :get %><br>
 
+<% else %>
+
+<center><%= button_to 'Create New User', '/register', method: :get %></center>
   <div class="login">
     <%= button_to 'Login', '/login', method: :get %>
   </div>
+<% end %>

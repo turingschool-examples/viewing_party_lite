@@ -23,7 +23,7 @@ RSpec.describe 'login page' do
 
       expect(current_path).to eq('/login')
       within '.flash' do
-        expect(page).to have_content('Invalid email/password')
+        expect(page).to have_content('Invalid credentials')
       end
     end
   end
