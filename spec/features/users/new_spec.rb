@@ -16,8 +16,7 @@ RSpec.describe "users#new" do
     fill_in :user_password_confirmation, with: "password"
     click_button "Register"
 
-    user = User.where(name: "Fake Joe").first
-    expect(current_path).to eq("/users/#{user.id}")
+    expect(current_path).to eq("/dashboard")
     expect(page).to have_content("Fake Joe")
 
     visit root_path
@@ -50,7 +49,7 @@ RSpec.describe "users#new" do
     fill_in :user_password, with: "password"
     fill_in :user_password_confirmation, with: "zzzzz"
     click_button "Register"
-    
+
     expect(current_path).to eq("/register")
     expect(page).to have_content("Password confirmation doesn't match Password")
   end

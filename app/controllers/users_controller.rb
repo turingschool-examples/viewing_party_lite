@@ -4,7 +4,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    if params[:user_id]
+      @user = User.find(params[:user_id])
+    else
+      @user = User.find(session[:user_id])
+    end
 
     @parties_hosting = @user.parties_hosting
     @hosting_movies = @user.hosting_movies
@@ -17,28 +21,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
     if @user.save && user_params[:password] == user_params[:password_confirmation]
-      redirect_to "/users/#{@user.id}"
+      session[:user_id] = @user.id
+      redirect_to "/dashboard"
     else
       redirect_to "/register"
       flash[:error] = @user.errors.full_messages
-    end
-  end
-
-  def login_form
-  end
-
-  def login
-    user = User.find_by(email: params[:email])
-  
-    if !user == nil && user.authenticate(params[:password])
-      session[:user_id] = user.id
-      flash[:success] = "Welcome, #{user.email}!"
-      redirect_to "/users/#{user.id}"
-    else
-      flash[:error] = "Sorry, your credentials are bad."
-      render :login_form
     end
   end
 

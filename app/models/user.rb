@@ -8,6 +8,8 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  enum role: %w(default manager admin)
+
   def parties_invited_to
     parties
   end

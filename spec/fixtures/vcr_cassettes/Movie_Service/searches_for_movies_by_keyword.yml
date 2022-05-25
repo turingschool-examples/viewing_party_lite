@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Mon, 23 May 2022 20:10:58 GMT
+      - Wed, 25 May 2022 04:47:02 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,13 +42,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 f8e91eeca584f530dcca3e3417221c88.cloudfront.net (CloudFront)
+      - 1.1 3917d15f2f5fbcd37ae2fb2846d0022e.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - SLC50-C1
       X-Amz-Cf-Id:
-      - 6in00Ie6Kl9Z8J4jjK3HGDYYGJDdQbM-IgqLtxqajV-jyMM8cSMcGw==
+      - 6eNCn_oFLb3WVCsGXhQ-HMhlqBNNiW_o1lZv9ksPMqXsAe7wiF7JAA==
       Age:
-      - '1'
+      - '3'
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/iNh3BivHyg5sQRPP1KOkzguEX0H.jpg","genre_ids":[18,80],"id":278,"original_language":"en","original_title":"The
@@ -57,17 +57,17 @@ http_interactions:
         at the Shawshank prison, where he puts his accounting skills to work for an
         amoral warden. During his long stretch in prison, Dufresne comes to be admired
         by the other inmates -- including an older prisoner named Red -- for his integrity
-        and unquenchable sense of hope.","popularity":64.924,"poster_path":"/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg","release_date":"1994-09-23","title":"The
-        Shawshank Redemption","video":false,"vote_average":8.7,"vote_count":21437},{"adult":false,"backdrop_path":"/u6hgtSIzW8nDKKWmun9JDhZz2fp.jpg","genre_ids":[99],"id":546312,"original_language":"en","original_title":"Shawshank:
+        and unquenchable sense of hope.","popularity":62.636,"poster_path":"/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg","release_date":"1994-09-23","title":"The
+        Shawshank Redemption","video":false,"vote_average":8.7,"vote_count":21456},{"adult":false,"backdrop_path":"/u6hgtSIzW8nDKKWmun9JDhZz2fp.jpg","genre_ids":[99],"id":546312,"original_language":"en","original_title":"Shawshank:
         The Redeeming Feature","overview":"Film critic and presenter Mark Kermode
         explores the fascination and praise audiences, fans and critics have behind
         the classic The Shawshank Redemption (1994) and how its importance grew higher
         over the years despite being an overlooked film when it was released and not
         getting any Oscars victories when it was nominated as one of the Best Pictures
-        of the Year.","popularity":1.515,"poster_path":"/b7DGM74MRfiLqEveVKwh0jnQ8zX.jpg","release_date":"2001-09-08","title":"Shawshank:
+        of the Year.","popularity":1.607,"poster_path":"/b7DGM74MRfiLqEveVKwh0jnQ8zX.jpg","release_date":"2001-09-08","title":"Shawshank:
         The Redeeming Feature","video":false,"vote_average":8.7,"vote_count":14},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":897459,"original_language":"en","original_title":"Hope
         Springs Eternal: A Look Back at The Shawshank Redemption","overview":"Documentary
-        about the movie.","popularity":1.737,"poster_path":"/vdVab7yNvgYEMd8shCfy2D6nTMu.jpg","release_date":"2004-06-25","title":"Hope
+        about the movie.","popularity":1.187,"poster_path":"/vdVab7yNvgYEMd8shCfy2D6nTMu.jpg","release_date":"2004-06-25","title":"Hope
         Springs Eternal: A Look Back at The Shawshank Redemption","video":false,"vote_average":7,"vote_count":1}],"total_pages":1,"total_results":3}'
-  recorded_at: Mon, 23 May 2022 20:10:59 GMT
+  recorded_at: Wed, 25 May 2022 04:47:05 GMT
 recorded_with: VCR 6.1.0

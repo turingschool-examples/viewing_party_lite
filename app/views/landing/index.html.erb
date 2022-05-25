@@ -1,16 +1,19 @@
 <h1>Viewing Party Lite</h1>
 
-<%= link_to "Log In", "/login", method: :get, local: true %>
+<% if !session[:user_id] %>
+  <%= link_to "Log In", "/login", method: :get, local: true %>
+  <h3><%= link_to "Create New User", "/register", method: :get, local: true %></h3>
+<% else %>
+  <%= link_to "Logout", "/logout", method: :delete, local: true %>
+<% end %>
 
 <div class="users">
   <% if !@users.empty? %>
     <h2>Users:</h2>
     <ul>
       <% @users.each do |u| %>
-        <li><%= link_to u.name, "/users/#{u.id}", method: :get %></li>
+        <li><%= link_to u.name, "/dashboard?user_id=#{u.id}", method: :get %></li>
       <% end %>
     </ul>
   <% end %>
 </div>
-
-<h3><%= link_to "Create New User", "/register", method: :get, local: true %></h3>

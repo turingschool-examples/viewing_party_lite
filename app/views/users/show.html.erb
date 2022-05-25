@@ -1,12 +1,12 @@
 <h1><%= @user.name %>'s Dashboard</h1>
 
-<h2><%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %></h2>
+<h2><%= button_to "Discover Movies", "/discover", method: :get %></h2>
 
 <h2>Viewing Parties This User Is Invited To:</h2>
 <div class="invited_to">
   <% if !@parties_invited_to.empty? %>
     <% @parties_invited_to.each_with_index do |party, index| %>
-      <h3><strong><%= link_to @invited_to_movies[index].title, "/users/#{@user.id}/movies/#{@invited_to_movies[index].id}", method: :get, local: true %></strong></h3>
+      <h3><strong><%= link_to @invited_to_movies[index].title, "/movies/#{@invited_to_movies[index].id}", method: :get, local: true %></strong></h3>
       <h3><strong>Invited To</strong></h3>
       <p>Date: <%= party.date %></p>
       <p>Time: <%= party.start_time %></p>
@@ -29,7 +29,7 @@
 <div class="hosting">
   <% if !@parties_hosting.empty? %>
     <% @parties_hosting.each_with_index do |party, index| %>
-      <h3><strong><%= link_to @hosting_movies[index].title, "/users/#{@user.id}/movies/#{@hosting_movies[index].id}", method: :get, local: true %></strong></h3>
+      <h3><strong><%= link_to @hosting_movies[index].title, "/movies/#{@hosting_movies[index].id}", method: :get, local: true %></strong></h3>
       <h3><strong>Hosting</strong></h3>
       <p>Date: <%= party.date %></p>
       <p>Time: <%= party.start_time %></p>
