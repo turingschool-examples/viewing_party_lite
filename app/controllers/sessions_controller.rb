@@ -13,4 +13,9 @@ class SessionsController < ApplicationController
       redirect_to "/dashboard"
     end
   end
+
+  def destroy
+    session.destroy
+    redirect_to "/"
+  end
 end

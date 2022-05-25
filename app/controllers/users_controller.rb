@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :current_user, only: [:show]
 
   def new
   end
@@ -24,7 +23,4 @@ private
     params.permit(:name, :email, :password_confirmation, :password)
   end
 
-  def current_user
-    User.find(session[:user_id])
-  end
 end
