@@ -1,0 +1,22 @@
+<%= form_with url: "/movies/#{@movie.id}/viewing-party/create", method: :post do |f| %>
+  <p>Duration of Party (must be at least ast long as movie duration):</p>
+
+  <%# <%= f.label :duration %>
+  <%# f.number_field :duration,  value: @movie.runtime %>
+
+  <%= f.label :date %>
+  <%= f.date_field :date%><br>
+
+  <%= f.label :start_time %>
+  <%= f.time_field :start_time%><br>
+
+  <p><strong>Select Users to Invite:</strong></p>
+  <% @users.each do |user| %>
+    <%= f.check_box "invited[#{user.id}]" %>
+    <%= f.label "#{user.name}" %>
+  <% end %>
+
+  <%= f.hidden_field :host_id, value: "#{@user.id}" %>
+
+  <%= f.submit "Submit" %>
+<% end %>

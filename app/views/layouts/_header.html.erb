@@ -1,0 +1,16 @@
+<%= link_to "Home", root_path, method: :get %>
+<br>
+<% if flash[:error] %>
+  <% if flash[:error].class == Array %>
+    <% flash[:error].each do |error| %>
+      <strong><%= error %></strong>
+      <br>
+    <% end %>
+  <% else %>
+    <%= flash[:error] %>
+  <% end %>
+<% end %>
+
+<% if flash[:success] %>
+  <%= flash[:success] %>
+<% end %>

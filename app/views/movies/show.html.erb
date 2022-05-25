@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12  pb-3">
+      <div class="text-center">
+        <div class="text-center pb-2">
+          <%= link_to 'Discover Movies', "/discover", class: "btn btn-outline-primary" %>
+        </div>
+        <div class="text-center pt-2 pb-5 ">
+          <%= link_to "Create Viewing Party for #{@movie.title}", "/movies/#{@movie.id}/viewing_party/new", class: "btn btn-outline-primary" %>
+        </div>
+        <h3><%=@movie.title%></h3>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row pt-1 pb-4 border-bottom">
+    <div class="text-center col-sm">
+      <strong class="text-primary">Rating:</strong> <%= "#{@movie.vote_average} / 10" %>
+    </div>
+    <div class="text-center col-sm">
+      <strong class="text-primary">Runtime:</strong> <%= @movie.format_time %>
+    </div>
+    <div class="text-center col-sm">
+      <strong class="text-primary">Genre(s):</strong> <%= @movie.get_genres %>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 pt-2 pb-3 border-bottom">
+        <p class="h5">Summary:</p><br>
+        <div class="font-weight-light">
+          <%= @movie.summary %>
+        </div>
+      <div class="col-12 pt-2 pb-3">
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col pt-4">
+      <p class="h5">Total Reviews: <%= @review.count %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8 ">
+      <% @review.each do |review| %>
+      <div class="card mt-4">
+        <div class="card-header">
+          <div class="text-primary">
+            <%= "Username: #{review.author}" %>
+          </div>
+        </div>
+        <div class="card-body">
+          <blockquote class="font-weight-light">
+            <p><%= truncate review.review, length: 500 %></p>
+          </blockquote>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <div class="col-4">
+      <p class="h5">Cast:</p>
+      <div class="card">
+        <ul class="list-group list-group-flush">
+          <div class="font-weight-light">
+            <% @cast.map do |actor| %>
+            <%= "*#{actor.name} as #{actor.character}" %><br>
+            <% end %>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>

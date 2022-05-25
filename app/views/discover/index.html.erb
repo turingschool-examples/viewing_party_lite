@@ -1,0 +1,9 @@
+<h1>Discover Page</h1>
+
+<h2><%= button_to "Top Movies", "/movies?q=top%20rated", method: :get %></h2>
+
+<h2>Search for Movie:</h2>
+<%= form_with url: "/movies?q=keyword", method: :get, local: true do |f| %>
+  <%= f.text_field :keyword %>
+  <%= f.submit "Search"%>
+<% end %>

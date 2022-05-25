@@ -1,0 +1,13 @@
+<%= render "layouts/to_discover_page" %>
+
+<h2>Movies:</h2>
+<ul>
+  <% @movies.each do |movie| %>
+    <div id=<%= movie.id %>>
+      <li><strong>Title: </strong><%= link_to movie.title, "/movies/#{movie.id}", method: :get, local: true %></li>
+
+      <li><strong>Vote Average: </strong><%= movie.vote_average %></li>
+      <br>
+    </div>
+  <% end %>
+</ul>
