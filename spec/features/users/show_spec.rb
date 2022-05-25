@@ -4,6 +4,7 @@ RSpec.describe "User Dashboard/Show Page", type: :feature do
   it 'has the users info' do
     user1 = User.create!(name: "Amy", email: 'amy@mail.com', password: "password", password_confirmation: "password")
     user2 = User.create!(name: "James", email: 'james@mail.com', password: "password", password_confirmation: "password")
+
     visit "/login"
     fill_in :email, with: user1.email
     fill_in :password, with: user1.password
@@ -80,5 +81,11 @@ RSpec.describe "User Dashboard/Show Page", type: :feature do
       expect(page).to have_link("Schindler's List")
       expect(page).not_to have_link("The Godfather")
     end
+  end
+
+  it 'does not allow visitors to go to the dashboard' do
+    visit '/dashboard'
+    expect(current_path).to eq('/')
+    expect(page).to have_content("You must login or register to visit your dashboard.")
   end
 end

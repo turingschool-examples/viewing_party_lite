@@ -7,8 +7,9 @@
   <%= button_to "Login", "/login", method: :get %>
 <% end %>
 
-
-<h3> All Users </h3>
-<% @users.each do |user| %>
-<p><%=link_to "#{user.name}", "/dashboard" %></p>
+<% if current_user %>
+  <h3> All Users </h3>
+  <% @users.each do |user| %>
+  <p><%= user.name %>: <%= user.email %></p>
+  <% end %>
 <% end %>

@@ -19,10 +19,14 @@ RSpec.describe "Home page", type: :feature do
     user2 = User.create!(name: "Tyler", email: "tyler@mail.com", password: "password", password_confirmation: "password")
     user3 = User.create!(name: "Sherman", email: "sherman@mail.com", password: "password", password_confirmation: "password")
 
-    visit "/"
+    visit "/login"
+    fill_in :email, with: user1.email
+    fill_in :password, with: user1.password
+    click_on "Login"
+    click_on "Home"
+
     User.all.each do |user|
-      expect(page).to have_link("#{user.name}")
-      # expect(current_path).to eq("/dashboard")
+      expect(page).to have_content(user.name)
     end
   end
 
@@ -42,7 +46,7 @@ RSpec.describe "Home page", type: :feature do
   end
 
   it 'has a button to log out if you are logged in' do
-    user = user = User.create!(name: "Joe", email: "joe@mail.com", password: "secret", password_confirmation: "secret")
+    user = User.create!(name: "Joe", email: "joe@mail.com", password: "secret", password_confirmation: "secret")
 
     visit "/login"
     fill_in :email, with: user.email
@@ -101,5 +105,25 @@ RSpec.describe "Home page", type: :feature do
 
     expect(current_path).to eq("/login")
     expect(page).to have_content("Email or password are incorrect")
+  end
+
+  it 'does not show existing users to a visitor' do
+    user1 = User.create!(name: "Joe", email: "joe@mail.com", password: "secret", password_confirmation: "secret")
+    user2 = User.create!(name: "Amy", email: "amy@mail.com", password: "test", password_confirmation: "test")
+
+    visit "/"
+    expect(page).not_to have_content(user1.name)
+    expect(page).not_to have_content(user2.name)
+
+    click_on("Login")
+    fill_in :email, with: user1.email
+    fill_in :password, with: user1.password
+    click_on("Login")
+    click_on("Home")
+
+    expect(page).to have_content(user1.name)
+    expect(page).to have_content(user2.name)
+    expect(page).not_to have_link(user1.name)
+    expect(page).not_to have_link(user2.name)
   end
 end
