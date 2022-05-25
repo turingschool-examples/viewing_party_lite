@@ -1,10 +1,14 @@
 class PartiesController < ApplicationController
-  before_action :current_user
 
   def new
-    @movie = MovieFacade.find_movie(params[:movie_id])
-    @user = current_user
-    @users = User.all_except_host(@user.id)
+    if current_user.nil?
+      redirect_to "/movies/#{params[:movie_id]}"
+      flash[:notice] = "You must be log in or register to create a viewing party"
+    else
+      @movie = MovieFacade.find_movie(params[:movie_id])
+      # @user = current_user
+      @users = User.all_except_host(current_user.id)
+    end
   end
 
   def create
@@ -35,7 +39,7 @@ private
       params.permit(:id, :duration, :date, :time, :host, :movie_id)
     end
 
-    def current_user
-      User.find(session[:user_id])
-    end
+    # def current_user
+    #   User.find(session[:user_id])
+    # end
 end

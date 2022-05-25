@@ -17,7 +17,7 @@
       </div>
       <% end %>
 
-    <%= f.hidden_field :host, value: @user.id  %>
+    <%= f.hidden_field :host, value: current_user.id  %>
     <%= f.submit :submit %>
   <% end %>
 

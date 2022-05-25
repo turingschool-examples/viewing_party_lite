@@ -4,6 +4,10 @@ class UsersController < ApplicationController
   end
 
   def show
+    if current_user.nil?
+      redirect_to "/"
+      flash[:notice] = "You must login or register to visit your dashboard."
+    end
     @user = current_user
   end
 
