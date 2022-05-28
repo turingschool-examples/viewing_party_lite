@@ -6,16 +6,22 @@ This is the base repo for the [Viewing Party Lite project](https://backend.turin
 
 Viewing Part Lite is an application in which users can explore movie options and create a viewing party event for themselves and other users of the application.
 
-## Setup for the use of the project
+## Learning Goals for this Project
+1. Consume multiple endpoints from an external API that requires authentication 
+2. Test consumption of APIs with RSpec
+3. Utlize Facade/Service/Poro design 
+4. Organize and refactor code to be more maintainable
+5. Implement login functionality and authentication in app using session 
 
-1. A conveyor belt link will be sent out at project kickoff so that you can both fork and copy the project board on this base repo. 
 
-## Local Setup for any other use
+## Local Setup for Project
 
 1. Fork and Clone the repo
 2. Install gem packages: `bundle install`
 3. Setup the database: `rails db:create`
 
+## Project Progress
+This project was originally a paired project completed over 4 days, using both Driver/Navigator and working asynchronously reviewing each other's code on GitHub before merging to main and deploying to Heroku. 
 
 ## Versions
 
