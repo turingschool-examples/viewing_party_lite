@@ -4,8 +4,11 @@ RSpec.describe "User Dashboard/Show Page", type: :feature do
   it 'has the users info' do
     user1 = User.create!(name: "Amy", email: 'amy@mail.com', password: "password", password_confirmation: "password")
     user2 = User.create!(name: "James", email: 'james@mail.com', password: "password", password_confirmation: "password")
-
-    visit "/users/#{user1.id}"
+    visit "/login"
+    fill_in :email, with: user1.email
+    fill_in :password, with: user1.password
+    click_on "Login"
+    expect(current_path).to eq("/dashboard")
 
     expect(page).to have_content("Amy's Dashboard")
     expect(page).not_to  have_content("James's Dashboard")
@@ -17,30 +20,37 @@ RSpec.describe "User Dashboard/Show Page", type: :feature do
     user1 = User.create!(name: "Amy", email: 'amy@mail.com', password: "password", password_confirmation: "password")
     user2 = User.create!(name: "James", email: 'james@mail.com', password: "password", password_confirmation: "password")
 
-    visit "/users/#{user1.id}"
+    visit "/login"
+    fill_in :email, with: user1.email
+    fill_in :password, with: user1.password
+    click_on "Login"
 
     click_on "Discover Movies"
-    expect(current_path).to eq("/users/#{user1.id}/discover")
+    expect(current_path).to eq("/discover")
   end
 
   it 'shows the viewing parties they were invited to', :vcr do
-    user_1 = User.create!(name: "Joe", email: "joe@mail.com", password: "password", password_confirmation: "password")
-    user_2 = User.create!(name: "Amy", email: "amy@mail.com", password: "password", password_confirmation: "password")
+    user1 = User.create!(name: "Joe", email: "joe@mail.com", password: "password", password_confirmation: "password")
+    user2 = User.create!(name: "Amy", email: "amy@mail.com", password: "password", password_confirmation: "password")
 
     date = Date.today
     time = Time.now
-    party_1 = Party.create!(date: date, time: time, duration: 97, movie_id: 278, host: user_2.id)
-    party_2 = Party.create!(date: date, time: time, duration: 120, movie_id: 238, host: user_1.id)
-    party_3 = Party.create!(date: date, time: time, duration: 100, movie_id: 424, host: user_2.id)
+    party_1 = Party.create!(date: date, time: time, duration: 97, movie_id: 278, host: user2.id)
+    party_2 = Party.create!(date: date, time: time, duration: 120, movie_id: 238, host: user1.id)
+    party_3 = Party.create!(date: date, time: time, duration: 100, movie_id: 424, host: user2.id)
+    party_user_1 = PartyUser.create!(party: party_1, user: user2, host: true)
+    party_user_2 = PartyUser.create!(party: party_1, user: user1, host: false)
+    party_user_3 = PartyUser.create!(party: party_2, user: user1, host: true)
+    party_user_4 = PartyUser.create!(party: party_2, user: user2, host: false)
+    party_user_5 = PartyUser.create!(party: party_3, user: user2, host: true)
+    party_user_6 = PartyUser.create!(party: party_3, user: user1, host: false)
 
-    party_user_1 = PartyUser.create!(party: party_1, user: user_2, host: true)
-    party_user_2 = PartyUser.create!(party: party_1, user: user_1, host: false)
-    party_user_3 = PartyUser.create!(party: party_2, user: user_1, host: true)
-    party_user_4 = PartyUser.create!(party: party_2, user: user_2, host: false)
-    party_user_5 = PartyUser.create!(party: party_3, user: user_2, host: true)
-    party_user_6 = PartyUser.create!(party: party_3, user: user_1, host: false)
+    visit "/login"
+    fill_in :email, with: user1.email
+    fill_in :password, with: user1.password
+    click_on "Login"
 
-    visit "/users/#{user_1.id}"
+    visit "/dashboard"
 
     within ".invited_to" do
       expect(page).to have_link("Shawshank Redemption")
@@ -54,7 +64,11 @@ RSpec.describe "User Dashboard/Show Page", type: :feature do
       expect(page).not_to have_link("Schindler's List")
     end
 
-    visit "/users/#{user_2.id}"
+    visit "/login"
+    fill_in :email, with: user2.email
+    fill_in :password, with: user2.password
+    click_on "Login"
+
     within ".invited_to" do
       expect(page).to have_link("The Godfather")
       expect(page).not_to have_link("Shawshank Redemption")

@@ -1,7 +1,7 @@
 <h1>NEW PARTY<h1>
 
 <div id="new_party_form">
-  <%= form_with url: "/users/#{@user.id}/movies/#{@movie.id}/viewing_party", method: :post, local: true do |f| %>
+  <%= form_with url: "/movies/#{@movie.id}/viewing_party", method: :post, local: true do |f| %>
     <%= f.label :duration, "Duration: " %>
     <%= f.number_field :duration %><br>
     <%= f.label :date, "Date: " %>

@@ -1,6 +1,6 @@
 <h1><%= @movie.title %></h1>
-<%= button_to "Create new viewing party", "/users/#{@user.id}/movies/#{@movie.id}/viewing_party/new", method: :get %> <br/>
-<%= link_to "Return to Discover", "/users/#{@user.id}/discover" %>
+<%= button_to "Create new viewing party", "/movies/#{@movie.id}/viewing_party/new", method: :get %> <br/>
+<%= link_to "Return to Discover", "/discover" %>
 
 <h3> About </h3>
 <p> Rating: <%= @movie.vote_average %></p>

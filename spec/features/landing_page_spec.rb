@@ -11,7 +11,7 @@ RSpec.describe "Home page", type: :feature do
     visit "/"
 
     click_button("Create New User")
-    expect(current_path).to eq("/users/register")
+    expect(current_path).to eq("/register")
   end
 
   it 'lists all existing users' do
@@ -19,11 +19,10 @@ RSpec.describe "Home page", type: :feature do
     user2 = User.create!(name: "Tyler", email: "tyler@mail.com", password: "password", password_confirmation: "password")
     user3 = User.create!(name: "Sherman", email: "sherman@mail.com", password: "password", password_confirmation: "password")
 
+    visit "/"
     User.all.each do |user|
-      visit "/"
-      expect(page).to have_content(user.name)
-      click_link("#{user.name}")
-      expect(current_path).to eq("/users/#{user.id}")
+      expect(page).to have_link("#{user.name}")
+      # expect(current_path).to eq("/dashboard")
     end
   end
 
@@ -34,11 +33,37 @@ RSpec.describe "Home page", type: :feature do
     expect(current_path).to eq("/")
   end
 
-  it 'has a button to log in' do
+  it 'if you are a visitor it has a button to log in' do
     visit "/"
 
+    expect(page).not_to have_link("Log out")
     click_on("Login")
     expect(current_path).to eq("/login")
+  end
+
+  it 'has a button to log out if you are logged in' do
+    user = user = User.create!(name: "Joe", email: "joe@mail.com", password: "secret", password_confirmation: "secret")
+
+    visit "/login"
+    fill_in :email, with: user.email
+    fill_in :password, with: user.password
+    click_on "Login"
+    click_on "Home"
+    expect(page).not_to have_link("Login")
+    expect(page).to have_button("Log Out")
+  end
+
+  it 'allows a user to log out' do
+    user = user = User.create!(name: "Joe", email: "joe@mail.com", password: "secret", password_confirmation: "secret")
+
+    visit "/login"
+    fill_in :email, with: user.email
+    fill_in :password, with: user.password
+    click_on "Login"
+    click_on "Home"
+    click_on "Log Out"
+    expect(page).to have_button("Login")
+    expect(page).not_to have_button("Log Out")
   end
 
   it 'takes a user to their dashboard if password is right' do
@@ -49,7 +74,7 @@ RSpec.describe "Home page", type: :feature do
     fill_in(:email, with: "joe@mail.com")
     fill_in(:password, with: "secret")
     click_on("Login")
-    expect(current_path).to eq("/users/#{user.id}")
+    expect(current_path).to eq("/dashboard")
   end
 
   it 'does not allow a sign in with the wrong password' do
