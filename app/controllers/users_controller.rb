@@ -45,8 +45,8 @@ class UsersController < ApplicationController
   def discover
     if current_user
 
-    else
-      render file: "/public/404"
+    # else
+    #   render file: "/public/404"
     end 
   end
   
