@@ -13,7 +13,7 @@ RSpec.describe 'Landing/Welcome Page' do
       
       visit "/"
 
-      expect(page).to have_content 'Viewing Party Lite' 
+      expect(page).to have_content 'Viewing Party' 
     end 
     
     it 'has a link to return back to the landing/welcome page', :vcr do #link will be present on every page of application 
@@ -46,7 +46,7 @@ RSpec.describe 'Landing/Welcome Page' do
       # save_and_open_page
       expect(page).to_not have_button('Login')
       expect(page).to_not have_button('Create a New User')
-      expect(page).to have_button('Log Out')
+      expect(page).to have_link('Log Out')
     end 
     
     it 'clicking log out logs out user, returns them to root, buttons to log in/create user appear' do
@@ -60,7 +60,7 @@ RSpec.describe 'Landing/Welcome Page' do
       click_on 'Log In'
       visit '/'
 
-      click_button 'Log Out'
+      click_link 'Log Out'
       expect(page).to have_button('Login')
       expect(page).to have_button('Create a New User')
       expect(page).to_not have_button('Log Out')

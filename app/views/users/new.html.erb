@@ -12,6 +12,28 @@
   
   <%= form.label :password_confirmation, 'Password Confirmation:' %>
   <%= form.password_field :password_confirmation %><br>
-  <%= form.submit 'Create User' %>
+  <button type="submit" class="btn btn-primary">Submit</button>
 <% end %>
 
+<%# <form>
+  <div class="form-group">
+    <label for="InputName">Name:</label>
+    <input type="name" class="form-control-sm" id="name" aria-describedby="nameHelp" placeholder="enter your name">
+    <small id="emailHelp" class="form-text text-muted"></small>
+  </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" class="form-control-sm" id="email" aria-describedby="emailHelp" placeholder="enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" class="form-control-sm" id="password" placeholder="password">
+  </div>
+  <div class="form-group">
+    <label for="password_confirmation">Password Confirmation:</label>
+    <input type="password_confirmation" class="form-control-sm" id="password_confirmation" placeholder="confirm your password">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form> %>

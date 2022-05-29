@@ -57,9 +57,9 @@ RSpec.describe 'User Movie Show Page', type: :feature do
 
     it 'Visitor cannot click button to create a viewing party', :vcr do
       VCR.use_cassette('Visitor cannot click button to create a viewing party') do
-
+  
       visit '/'
-      click_button "Log Out"
+      click_link "Log Out"
       visit "/movies/278"
 
       click_button "Create New Watch Party"

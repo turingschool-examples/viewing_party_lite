@@ -11,7 +11,7 @@ RSpec.describe 'New User Page', type: :feature do
       fill_in :user_email, with: 'skeeter@example.com'
       fill_in :user_password, with: 'password'
       fill_in :user_password_confirmation, with: 'password'
-      click_on 'Create User'
+      click_on 'Submit'
 
       new_user = User.last
    
@@ -27,7 +27,7 @@ RSpec.describe 'New User Page', type: :feature do
       fill_in :user_email, with: 'skeeter@example.com'
       fill_in :user_password, with: 'password'
       fill_in :user_password_confirmation, with: 'not password'
-      click_on 'Create User'
+      click_on 'Submit'
       
       expect(current_path).to eq("/register")
       expect(page).to have_content("Password confirmation doesn't match Password")
@@ -41,7 +41,7 @@ RSpec.describe 'New User Page', type: :feature do
       fill_in :user_email, with: 'skeeter@example.com'
       fill_in :user_password, with: 'password'
       fill_in :user_password_confirmation, with: 'password'
-      click_on 'Create User'
+      click_on 'Submit'
       # save_and_open_page
       expect(current_path).to eq("/register")
       expect(page).to have_content("Email has already been taken")
@@ -53,7 +53,7 @@ RSpec.describe 'New User Page', type: :feature do
       fill_in :user_email, with: 'skeeter@example.com'
       fill_in :user_password, with: 'password'
       fill_in :user_password_confirmation, with: 'password'
-      click_on 'Create User'
+      click_on 'Submit'
       expect(current_path).to eq("/register")
       expect(page).to have_content("Name can't be blank")
     end

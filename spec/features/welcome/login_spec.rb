@@ -24,7 +24,7 @@ RSpec.describe "Login Page" do
       click_on "Log In"   
 
       expect(current_path).to eq("/dashboard")
-      expect(page).to have_content("Welcome #{meatball.name}!")
+      # expect(page).to have_content("Welcome #{meatball.name}!") changed welcome msg to be flash message
     end
 
     it 'If I enter a bad password, I am redirected back to login page with error telling me my password was bad', :vcr do
