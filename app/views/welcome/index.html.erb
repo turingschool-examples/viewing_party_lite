@@ -13,8 +13,11 @@
   
   <% @users.each do |user| %>
     <section id="user_id-<%= user.id %>">
-    <%= user.email %><br>
-    
+    <ul class="list-group">
+
+      <li class="list-group-item"><%= user.email %></li>
+
+    </ul>
     </section>
     <% end %>
 
@@ -23,8 +26,13 @@
 <% else  %>
 
 <center>
-<%= button_to "Login", "/login", method: :get %> 
-<%= button_to "Create a New User", "/register", method: :get %> 
+ 
+  <%= button_to "Login", "/login", method: :get %> 
+
+
+
+  <%= button_to "Create a New User", "/register", method: :get %> 
+ 
 </center>
 <% end %>
 
