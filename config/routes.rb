@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
 
   delete '/logout', to: 'sessions#destroy'
-  # post '/dashboard', to: 'users#show'
   get '/dashboard', to: 'users#show'
   
   get '/movies', to: 'user_movies#index'
@@ -21,7 +20,8 @@ Rails.application.routes.draw do
   get '/discover', to: 'users#discover'
   
   resources :users, only: %i[new create]
-
+  
   # get '/users/:id', to: 'users#show'
+  # post '/dashboard', to: 'users#show'
   # get '/user'
 end
