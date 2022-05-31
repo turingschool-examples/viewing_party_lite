@@ -77,7 +77,9 @@ Don't forget to give the project a star! Thanks again!
 <!-- CONTACT -->
 ## Contact
 
-Reuben Davison - creubend@gmail.com
+Owner - Reuben Davison - creubend@gmail.com
+
+Collaborators - [Chris Romero](https://github.com/CLRM1) 
 
 Project Link: [Rails Engine](https://github.com/Reuben-Davison/rails-engine)
 
