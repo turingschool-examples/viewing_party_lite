@@ -5,7 +5,14 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[Heroku Deployment](https://infinite-sierra-63770.herokuapp.com/)
+Check it out on our [Heroku Deployment](https://infinite-sierra-63770.herokuapp.com/)
+
+## Preview 
+
+
+https://user-images.githubusercontent.com/97201304/171202751-e9b7fdf9-48c6-425d-a2a8-c1ac5a0f96ee.mov
+
+
 
 
 This project's purpose was to apply the following:
