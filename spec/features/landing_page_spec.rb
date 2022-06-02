@@ -53,12 +53,12 @@ RSpec.describe "Home page", type: :feature do
     fill_in :password, with: user.password
     click_on "Login"
     click_on "Home"
-    expect(page).not_to have_link("Login")
+    expect(page).not_to have_button("Login")
     expect(page).to have_button("Log Out")
   end
 
   it 'allows a user to log out' do
-    user = user = User.create!(name: "Joe", email: "joe@mail.com", password: "secret", password_confirmation: "secret")
+    user = User.create!(name: "Joe", email: "joe@mail.com", password: "secret", password_confirmation: "secret")
 
     visit "/login"
     fill_in :email, with: user.email
@@ -125,5 +125,12 @@ RSpec.describe "Home page", type: :feature do
     expect(page).to have_content(user2.name)
     expect(page).not_to have_link(user1.name)
     expect(page).not_to have_link(user2.name)
+  end
+
+  it 'has a button to discover movies for visitors' do
+    visit '/'
+
+    click_on 'Discover Movies'
+    expect(current_path).to eq('/discover')
   end
 end

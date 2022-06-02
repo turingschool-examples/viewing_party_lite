@@ -13,3 +13,7 @@
   <p><%= user.name %>: <%= user.email %></p>
   <% end %>
 <% end %>
+
+<% if current_user.nil? %>
+ <%= button_to "Discover Movies", "/discover", method: :get %>
+<% end %>
