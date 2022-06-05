@@ -1,36 +1,46 @@
 <div id="title">
-<h1><%= @user.name %></h1>
+<h1>Welcome, <%= current_user.name %>!</h1>
 </div>
 
 <div id="discover-movies">
-<%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %>
+<%= button_to "Discover Movies", "/discover", method: :get %>
 </div>
 
 <div id="watch-parties">
 <h2>Current Scheduled Parties!</h2>
+
+
 <% @parties.uniq.each do |party| %>
+
+
+<div class="card" style="width: 18rem;">
   <div id="party_id-<%= party.id%>">
+  
   <% @movies.detect do |movie| %>
     <% if movie.id == party.movie_id  %>
-      <p><%= link_to "#{movie.title}", "/users/#{@user.id}/movies/#{movie.id}" %></p>
-      <p><img src="http://image.tmdb.org/t/p/w500/<%=movie.poster_path%>" width="200" height="300">
+      <p><%= link_to "#{movie.title}", "/movies/#{movie.id}", class: "card-link" %></p>
+      <p><img class="card-img-top" src="http://image.tmdb.org/t/p/w500/<%=movie.poster_path%>" width="200" height="300">
 
-      <p>When: <%= party.when.strftime('%B %d, %Y') %></p>
-      <p>Start Time: <%= party.start_time.strftime('%I:%M %p') %></p>
-      <p>Host: <%= party.user.name %></p>
-      <p>Attendees:</p>
+      <li class="list-group-item">When: <%= party.when.strftime('%B %d, %Y') %></li>
+      <li class="list-group-item">Start Time: <%= party.start_time.strftime('%I:%M %p') %></li>
+      <li class="list-group-item">Host: <%= party.user.name %></li>
+        <ul class="list-group list-group-flush">Attendees:
       <% if party.attendees.each do |attendee| %>
-        <% if attendee.user_id == @user.id %>
-        <b><%= attendee.user.name %></b>
+        <% if attendee.user_id == current_user.id %>
+        <li class="list-group-item"><b><%= attendee.user.name %></b></li>
         <% else %>
-          <%= attendee.user.name %>
-          
+          <li class="list-group-item"><%= attendee.user.name %></li>
+          </li>
         <% end %>
         <% end %>
       <% end %>
 
-      <br><br><br>
+      <br>
   </div>
+  </div>
+
+
+
     <% end %>
   <% end %>
 <% end %>

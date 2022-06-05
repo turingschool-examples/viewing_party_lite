@@ -1,6 +1,6 @@
 <div id="links">
-  <%= link_to "Return to Discover", "/users/#{@user.id}/discover"%>
-  <%= button_to "Create New Watch Party", "/users/#{@user.id}/movies/#{@movie_data[:movie][:id]}/party/new", method: :get %>
+  <%= link_to "Return to Discover", "/discover"%>
+  <%= button_to "Create New Watch Party", "/movies/#{@movie_data[:movie][:id]}/party/new", method: :get %>
 </div>
 
 <div id="movie-details">

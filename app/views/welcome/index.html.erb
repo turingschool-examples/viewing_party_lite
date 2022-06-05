@@ -1,20 +1,38 @@
-<center>
+<%# <center>
 <h1>Viewing Party Lite</h1>
-</center>
+</center> %>
 
 <center>
-<%= button_to "Create a New User", "/users/new", method: :get %> 
-</center>
+<% if current_user %>
+  Welcome back! <br>
 
+<%# <%= button_to 'Log Out', '/logout', method: :delete %> 
 
 <section id="existing_users">
 <h3>Current Users</h3>
   
   <% @users.each do |user| %>
     <section id="user_id-<%= user.id %>">
-    <%= link_to "#{user.email}'s dashboard", "/users/#{user.id}" %><br>
-    
+    <ul class="list-group">
+
+      <li class="list-group-item"><%= user.email %></li>
+
+    </ul>
     </section>
     <% end %>
 
 </section>
+</center>
+<% else  %>
+
+<center>
+ 
+  <%= button_to "Login", "/login", method: :get %> 
+
+
+
+  <%= button_to "Create a New User", "/register", method: :get %> 
+ 
+</center>
+<% end %>
+

@@ -1,10 +1,39 @@
 <h1>Create New User</h1>
-<div id="new-user-form">
-<%= form_with url: "/users", method: :post, local: true do |f| %>
-  <%= f.label :name, "Name:" %>
-  <%= f.text_field :name %>
-  <%= f.label :email, "Email:" %>
-  <%= f.text_field :email %>
-  <%= f.submit :submit %>
+
+<%= form_with model: @user, local: true do |form| %>
+  <%= form.label :name, 'Name:' %>
+  <%= form.text_field :name %><br>
+
+  <%= form.label :email, 'Email:' %>
+  <%= form.text_field :email %><br>
+
+  <%= form.label :password, 'Password:' %>
+  <%= form.password_field :password %><br>
+  
+  <%= form.label :password_confirmation, 'Password Confirmation:' %>
+  <%= form.password_field :password_confirmation %><br>
+  <button type="submit" class="btn btn-primary">Submit</button>
 <% end %>
-</div>
+
+<%# <form>
+  <div class="form-group">
+    <label for="InputName">Name:</label>
+    <input type="name" class="form-control-sm" id="name" aria-describedby="nameHelp" placeholder="enter your name">
+    <small id="emailHelp" class="form-text text-muted"></small>
+  </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" class="form-control-sm" id="email" aria-describedby="emailHelp" placeholder="enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" class="form-control-sm" id="password" placeholder="password">
+  </div>
+  <div class="form-group">
+    <label for="password_confirmation">Password Confirmation:</label>
+    <input type="password_confirmation" class="form-control-sm" id="password_confirmation" placeholder="confirm your password">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form> %>

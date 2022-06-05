@@ -1,18 +1,18 @@
-<center>
+<%# <center>
 <h1>Viewing Party Lite</h1>
-</center>
+</center> %>
 
 <center>
 <h2>Discover Movies</h2>
 </center>
 
 <center>
-<%= button_to "Find Top Rated Movies", "/users/#{@user.id}/movies", method: :get, params: {top_rated: 'top_rated'} %> 
+<%= button_to "Find Top Rated Movies", "/movies", method: :get, params: {top_rated: 'top_rated'} %> 
 </center>
 <br>
 
 <center>
-<%= form_with url: "/users/#{@user.id}/movies?q=keyword", method: :get, local: true do |form| %>
+<%= form_with url: "/movies?q=keyword", method: :get, local: true do |form| %>
   <%= form.label :keyword, 'Search by Movie Title' %>
   <%= form.text_field :keyword %>
   <%= form.submit 'Find Movies' %>

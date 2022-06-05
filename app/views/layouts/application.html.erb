@@ -6,14 +6,23 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
+
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
     <%= render "layouts/header" %>
-    <% flash.each do |type, msg| %>
-      <%= msg %>
+    <% flash.each do |name, msg| %>
+    <div class="alert alert-danger" role="alert">
+      <%= content_tag :div, msg, class: name %>
+    </div>
     <% end %>
+    <center>
+    <div class="jumbotron jumbotron-fluid">
+      <h1 class="display-4">Viewing Party</h1>
+
+    </div>
+    </center>
     <%= yield %>
   </body>
 </html>

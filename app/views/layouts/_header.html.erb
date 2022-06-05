@@ -1,1 +1,26 @@
- <%= link_to "Home", "/" %>
+
+
+ <div class="btn btn-outline-primary">
+  <%= link_to "Home", "/", method: :get %>
+ </div>
+
+ <div class="btn btn-outline-primary">
+  <%= link_to "Search Movies", "/", method: :get %>
+ </div>
+
+ <% if current_user %>
+  <div style="float: right; width: auto;">  
+    <div class="btn btn-outline-danger" >
+      <%= link_to 'Log Out', '/logout', method: :delete %>
+    </div>
+  </div>
+
+    <div style="float: right; width: auto;">  
+      <div class="btn btn-outline-primary" >
+        <%= link_to 'My Dashboard', '/dashboard' %>
+    </div>
+  </div> 
+    
+
+<% end %>
+
