@@ -30,6 +30,7 @@
       <p><strong>Time:</strong> <%= party.time.strftime("%I:%M") %></p>
       <p><strong>Host:</strong> Me!! </p>
       <p><strong>Attendees:</strong> <% party.users.each do |user| %>
+        <%= require "pry"; binding.pry %>
         <% if user.id != current_user.id %>
           <p> <%= user.name %></p>
         <% end %>
