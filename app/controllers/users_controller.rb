@@ -4,7 +4,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
+    if current_user.nil?
+      redirect_to "/"
+      flash[:notice] = "You must login or register to visit your dashboard."
+    end
   end
 
   def create
@@ -22,5 +25,4 @@ private
   def user_params
     params.permit(:name, :email, :password_confirmation, :password)
   end
-
 end

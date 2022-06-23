@@ -1,12 +1,8 @@
 class MoviesController < ApplicationController
-  # before_action :current_user
 
-  def index
-    @user = current_user
-  end
+  def index; end
 
   def results
-    @user = current_user
     if params[:q] == "top rated"
       @movies = MovieFacade.top_rated
     elsif params[:search]
@@ -15,7 +11,6 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @user = current_user
     @movie = MovieFacade.find_movie(params[:id])
   end
 end

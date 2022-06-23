@@ -7,8 +7,13 @@
   <%= button_to "Login", "/login", method: :get %>
 <% end %>
 
+<% if current_user %>
+  <h3> All Users </h3>
+  <% @users.each do |user| %>
+  <p><%= user.name %>: <%= user.email %></p>
+  <% end %>
+<% end %>
 
-<h3> All Users </h3>
-<% @users.each do |user| %>
-<p><%=link_to "#{user.name}", "/dashboard" %></p>
+<% if current_user.nil? %>
+ <%= button_to "Discover Movies", "/discover", method: :get %>
 <% end %>
