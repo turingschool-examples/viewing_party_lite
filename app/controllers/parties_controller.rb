@@ -34,6 +34,11 @@ class PartiesController < ApplicationController
     end
   end
 
+  def destroy
+    Party.destroy(params[:id])
+    redirect_to "/dashboard"
+  end
+
 private
     def party_params
       params.permit(:id, :duration, :date, :time, :host, :movie_id)
