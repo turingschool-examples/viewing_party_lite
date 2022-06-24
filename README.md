@@ -21,14 +21,18 @@ Viewing Part Lite is an application in which users can explore movie options and
 
 1. Fork and Clone the repo
 2. Install gem packages: `bundle install`
-3. Setup the database: `rails db:create`
+3. Setup the database: `rails db:{create,migrate}`
 
 ## Project Progress
 This project was originally a paired project completed over 4 days, using both Driver/Navigator and working asynchronously reviewing each other's code on GitHub before merging to main and deploying to Heroku. The `original_submission` branch hosts the code that was completed when the project was due.
 
 After it was submitted I used it to practice refactoring and apply the features and tests that did not make it into our original submission. These additions can be found on the branch `post_project`.
 
-In the weeks after this project we learned about authentication and sessions and I implemented those new skills into this app, followed by authorization. The latest version of the complete project is found on the `main` branch.
+In the weeks after this project we learned about authentication and sessions and I implemented those new skills into this app, followed by authorization.
+
+This project is also the first time I implemented any type of styling with Bootstrap.
+
+The latest version of the complete project is found on the `main` branch.
 
 ## Deployment
 Since this was a backend project the deployment might not be the most pleasing to the eye, but it is functional and I plan to practice frontend skills on this project at some point in the future.
