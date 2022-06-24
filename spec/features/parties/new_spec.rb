@@ -11,13 +11,13 @@ RSpec.describe "New Viewing Party", type: :feature do
     click_on "Login"
     fill_in :email, with: user.email
     fill_in :password, with: user.password
-    click_on "Login"
+    click_on "LogIn"
 
     visit "/movies/278/viewing_party/new"
-
-    fill_in "duration", with: 200
-    fill_in "date", with: "2023/01/01"
-    fill_in "time", with: Time.now.strftime("%I:%M:%S")
+    
+    fill_in :duration, with: 200
+    fill_in :date, with: "2023/01/01"
+    fill_in :time, with: Time.now.strftime("%I:%M:%S")
 
 
     within "#check_box-Tom" do
@@ -39,7 +39,7 @@ RSpec.describe "New Viewing Party", type: :feature do
     visit "/login"
     fill_in :email, with: user.email
     fill_in :password, with: user.password
-    click_on "Login"
+    click_on "LogIn"
 
     visit "/movies/278/viewing_party/new"
 

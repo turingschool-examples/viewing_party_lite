@@ -1,19 +1,8 @@
 <h1> Viewing Party! </h1>
 
 <% if current_user %>
-  <%= button_to "Log Out", "/logout", method: :delete %>
-<% else %>
-  <%= button_to "Create New User", "/register", method: :get%>
-  <%= button_to "Login", "/login", method: :get %>
-<% end %>
-
-<% if current_user %>
   <h3> All Users </h3>
   <% @users.each do |user| %>
   <p><%= user.name %>: <%= user.email %></p>
   <% end %>
-<% end %>
-
-<% if current_user.nil? %>
- <%= button_to "Discover Movies", "/discover", method: :get %>
 <% end %>

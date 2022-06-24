@@ -10,7 +10,8 @@
   </head>
 
   <body>
-    <%= link_to "Home", "/" %>
+    <%= render "layouts/navbar" %>
+
     <div class="flash_message">
     <% flash.each do |type, message| %>
         <p><%= message %></p>

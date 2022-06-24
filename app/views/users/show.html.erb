@@ -1,39 +1,57 @@
 <h1> <%= current_user.name%>'s Dashboard</h1>
 
-<%= button_to "Discover Movies", "/discover", method: :get %>
-
 <div class="invited_to">
+  <div class="split right">
+
   <h3> Viewing Parties I am Invited To </h3>
+
     <% current_user.invited_parties.each do |party| %>
-      <p> <%= image_tag "https://image.tmdb.org/t/p/w200/#{party.movie.poster}" %></p>
-      <p><strong>Movie:</strong> <%= link_to "#{party.movie.title}", "/movies/#{party.movie.id}" %></p>
-      <p><strong>Date:</strong> <%= party.date %></p>
-      <p><strong>Time:</strong> <%= party.time.strftime("%I:%M") %></p>
-      <p><strong>Host:</strong> <%= party.host_name %></p>
-      <p><strong>Attendees:</strong> <% party.users.each do |user| %>
-        <% if user.id == current_user.id %>
-          <p><strong>**<%= user.name %>**</strong></p>
-        <% else %>
-          <p> <%= user.name %></p>
+      <div class="card" style="width: 600px">
+        <img class="card-img-top" src=<%="https://image.tmdb.org/t/p/w200/#{party.movie.poster}"%>>
+
+      <div class="card-body">
+        <p><strong>Movie:</strong> <%= link_to "#{party.movie.title}", "/movies/#{party.movie.id}" %></p>
+        <p><strong>Date:</strong> <%= party.date %></p>
+        <p><strong>Time:</strong> <%= party.time.strftime("%I:%M") %></p>
+        <p><strong>Host:</strong> <%= party.host_name %></p>
+        <p><strong>Attendees:</strong> <% party.users.each do |user| %>
+          <% if user.id == current_user.id %>
+            <p><strong>**<%= user.name %>**</strong></p>
+          <% else %>
+            <p> <%= user.name %></p>
+          <% end %>
         <% end %>
+        </div>
+      </div>
+      <br><br>
       <% end %>
-      <br/>
-    <% end %>
+    </div>
 </div>
 
 <div class="hosting">
+  <div class="split left">
+
   <h3> Viewing Parties I am Hosting </h3>
+
     <% current_user.hosted_parties.each do |party| %>
-      <p> <%= image_tag "https://image.tmdb.org/t/p/w200/#{party.movie.poster}" %></p>
-      <p><strong>Movie:</strong> <%= link_to "#{party.movie.title}", "/movies/#{party.movie.id}" %></p>
-      <p><strong>Date:</strong> <%= party.date %></p>
-      <p><strong>Time:</strong> <%= party.time.strftime("%I:%M") %></p>
-      <p><strong>Host:</strong> Me!! </p>
-      <p><strong>Attendees:</strong> <% party.users.each do |user| %>
-        <% if user.id != current_user.id %>
-          <p> <%= user.name %></p>
-        <% end %>
-      <% end %>
-      <%= button_to "Delete Party", "/parties/#{party.id}", method: :delete %>
+
+    <div class="card" style="width: 600px">
+        <img class="card-img-top" src=<%="https://image.tmdb.org/t/p/w200/#{party.movie.poster}"%>>
+
+        <div class="card-body">
+          <p><strong>Movie:</strong> <%= link_to "#{party.movie.title}", "/movies/#{party.movie.id}" %></p>
+          <p><strong>Date:</strong> <%= party.date %></p>
+          <p><strong>Time:</strong> <%= party.time.strftime("%I:%M") %></p>
+          <p><strong>Host:</strong> Me!! </p>
+          <p><strong>Attendees:</strong> <% party.users.each do |user| %>
+            <% if user.id != current_user.id %>
+              <p> <%= user.name %></p>
+            <% end %>
+          <% end %>
+          <%= button_to "Delete Party", "/parties/#{party.id}", method: :delete %>
+        </div>
+    </div>
+    <br><br>
     <% end %>
+  </div>
 </div>

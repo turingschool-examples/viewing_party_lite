@@ -10,7 +10,7 @@ RSpec.describe "Home page", type: :feature do
   it 'has a button to create a new user' do
     visit "/"
 
-    click_button("Create New User")
+    click_on("Register")
     expect(current_path).to eq("/register")
   end
 
@@ -22,8 +22,8 @@ RSpec.describe "Home page", type: :feature do
     visit "/login"
     fill_in :email, with: user1.email
     fill_in :password, with: user1.password
-    click_on "Login"
-    click_on "Home"
+    click_on "LogIn"
+    click_on "Viewing Party"
 
     User.all.each do |user|
       expect(page).to have_content(user.name)
@@ -33,7 +33,7 @@ RSpec.describe "Home page", type: :feature do
   it 'has a link to return to home page' do
     visit "/"
 
-    click_on("Home")
+    click_on("Viewing Party")
     expect(current_path).to eq("/")
   end
 
@@ -51,10 +51,11 @@ RSpec.describe "Home page", type: :feature do
     visit "/login"
     fill_in :email, with: user.email
     fill_in :password, with: user.password
-    click_on "Login"
-    click_on "Home"
-    expect(page).not_to have_button("Login")
-    expect(page).to have_button("Log Out")
+
+    click_on "LogIn"
+    click_on "Viewing Party"
+    expect(page).not_to have_link("Login")
+    expect(page).to have_link("Log Out")
   end
 
   it 'allows a user to log out' do
@@ -63,11 +64,11 @@ RSpec.describe "Home page", type: :feature do
     visit "/login"
     fill_in :email, with: user.email
     fill_in :password, with: user.password
-    click_on "Login"
-    click_on "Home"
+    click_on "LogIn"
+    click_on "Viewing Party"
     click_on "Log Out"
-    expect(page).to have_button("Login")
-    expect(page).not_to have_button("Log Out")
+    expect(page).to have_link("Login")
+    expect(page).not_to have_link("Log Out")
   end
 
   it 'takes a user to their dashboard if password is right' do
@@ -77,7 +78,7 @@ RSpec.describe "Home page", type: :feature do
 
     fill_in(:email, with: "joe@mail.com")
     fill_in(:password, with: "secret")
-    click_on("Login")
+    click_on("LogIn")
     expect(current_path).to eq("/dashboard")
   end
 
@@ -88,7 +89,7 @@ RSpec.describe "Home page", type: :feature do
 
     fill_in(:email, with: "joe@mail.com")
     fill_in(:password, with: "secretss")
-    click_on("Login")
+    click_on("LogIn")
 
     expect(current_path).to eq("/login")
     expect(page).to have_content("Email or password are incorrect")
@@ -101,7 +102,7 @@ RSpec.describe "Home page", type: :feature do
 
     fill_in(:email, with: "joey@mail.com")
     fill_in(:password, with: "secrets")
-    click_on("Login")
+    click_on("LogIn")
 
     expect(current_path).to eq("/login")
     expect(page).to have_content("Email or password are incorrect")
@@ -118,8 +119,8 @@ RSpec.describe "Home page", type: :feature do
     click_on("Login")
     fill_in :email, with: user1.email
     fill_in :password, with: user1.password
-    click_on("Login")
-    click_on("Home")
+    click_on("LogIn")
+    click_on("Viewing Party")
 
     expect(page).to have_content(user1.name)
     expect(page).to have_content(user2.name)

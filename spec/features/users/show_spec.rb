@@ -8,7 +8,7 @@ RSpec.describe "User Dashboard/Show Page", type: :feature do
     visit "/login"
     fill_in :email, with: user1.email
     fill_in :password, with: user1.password
-    click_on "Login"
+    click_on "LogIn"
     expect(current_path).to eq("/dashboard")
 
     expect(page).to have_content("Amy's Dashboard")
@@ -49,7 +49,7 @@ RSpec.describe "User Dashboard/Show Page", type: :feature do
     visit "/login"
     fill_in :email, with: user1.email
     fill_in :password, with: user1.password
-    click_on "Login"
+    click_on "LogIn"
 
     visit "/dashboard"
 
@@ -68,7 +68,7 @@ RSpec.describe "User Dashboard/Show Page", type: :feature do
     visit "/login"
     fill_in :email, with: user2.email
     fill_in :password, with: user2.password
-    click_on "Login"
+    click_on "LogIn"
 
     within ".invited_to" do
       expect(page).to have_link("The Godfather")
