@@ -5,7 +5,7 @@
     <center>
       <%= form_with url: "/movies/#{@movie.id}/viewing_party", method: :post, local: true do |form| %>
         <%= form.label :duration, "Duration: " %>
-        <%= form.number_field :duration %><br>
+        <%= form.number_field :duration, in: @movie.runtime.to_i..1000 %><br>
         <%= form.label :date, "Date: " %>
         <%= form.date_field :date %><br>
         <%= form.label :time, "Start Time " %>

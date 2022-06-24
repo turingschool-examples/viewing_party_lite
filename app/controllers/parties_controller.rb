@@ -1,5 +1,5 @@
 class PartiesController < ApplicationController
-  before_action :duration_vs_runtime, only: [:create]
+  # before_action :duration_vs_runtime, only: [:create]
 
   def new
     if current_user.nil?
@@ -23,7 +23,8 @@ class PartiesController < ApplicationController
       PartyUser.create(user_id: params[:host] , party: new_party, host: true)
       redirect_to "/dashboard"
     else
-      render :new
+      flash[:alert] = new_party.errors.full_messages.to_sentence
+      redirect_to "/movies/#{@movie.id}/viewing_party/new"
     end
   end
 
@@ -37,17 +38,17 @@ private
       params.permit(:id, :duration, :date, :time, :host, :movie_id)
     end
 
-    def duration_vs_runtime
-      @movie = MovieFacade.find_movie(params[:movie_id])
-      if params[:duration].empty?
-        flash[:notice] = "Duration can not be empty"
-        redirect_to "/movies/#{@movie.id}/viewing_party/new"
-      else
-        new_party = Party.new(party_params)
-        if new_party.duration < @movie.runtime
-          flash[:notice] = "Party cannot be shorter than movie's duration!"
-          redirect_to "/movies/#{@movie.id}/viewing_party/new"
-        end
-      end
-    end
+    # def duration_vs_runtime
+    #   @movie = MovieFacade.find_movie(params[:movie_id])
+    #   if params[:duration].empty?
+    #     flash[:notice] = "Duration can not be empty"
+    #     redirect_to "/movies/#{@movie.id}/viewing_party/new"
+    #   else
+    #     new_party = Party.new(party_params)
+    #     if new_party.duration < @movie.runtime
+    #       flash[:notice] = "Party cannot be shorter than movie's duration!"
+    #       redirect_to "/movies/#{@movie.id}/viewing_party/new"
+    #     end
+    #   end
+    # end
 end
