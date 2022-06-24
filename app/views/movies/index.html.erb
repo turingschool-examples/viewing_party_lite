@@ -1,9 +1,15 @@
 <h1>Discover Movies!!</h1>
+<br>
 
-<%= button_to "Top Rated Movies", "/movies", method: :get, params: {q: 'top rated'} %>
+<a class="btn btn-light" href="/movies?q=top rated" role="button">Top Rated Movies</a>
+<br/>
 
+<div class="area_container">
+  <center>
 <%= form_with url: "/movies", method: :get, local: true do |form| %>
 <%= form.label :search %>
 <%= form.text_field :search %>
 <%= form.submit "Search" %>
 <% end %>
+  </center>
+</div>
