@@ -8,7 +8,7 @@ RSpec.describe "Movie Details Page", type: :feature do
     visit "/login"
     fill_in :email, with: user.email
     fill_in :password, with: user.password
-    click_on "Login"
+    click_on "LogIn"
 
     visit "/movies/278"
     click_link "Create New Viewing Party"
