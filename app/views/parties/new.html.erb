@@ -1,24 +1,27 @@
 <h1>NEW PARTY<h1>
 
 <div id="new_party_form">
-  <%= form_with url: "/movies/#{@movie.id}/viewing_party", method: :post, local: true do |f| %>
-    <%= f.label :duration, "Duration: " %>
-    <%= f.number_field :duration %><br>
-    <%= f.label :date, "Date: " %>
-    <%= f.date_field :date %><br>
-    <%= f.label :time, "Start Time " %>
-    <%= f.time_field :time %><br>
+  <div class="area_container">
+    <center>
+      <%= form_with url: "/movies/#{@movie.id}/viewing_party", method: :post, local: true do |form| %>
+        <%= form.label :duration, "Duration: " %>
+        <%= form.number_field :duration %><br>
+        <%= form.label :date, "Date: " %>
+        <%= form.date_field :date %><br>
+        <%= form.label :time, "Start Time " %>
+        <%= form.time_field :time %><br>
 
-    <%= f.label "Invite Users" %>
-      <% @users.each do |user| %>
-      <div id="check_box-<%= user.name %>">
-        <p><%= "#{user.name}" %>
-           <%= check_box_tag "users[]", user.id  %></p>
-      </div>
+        <%= form.label "Invite Users" %>
+          <% @users.each do |user| %>
+          <div id="check_box-<%= user.name %>">
+            <p><%= "#{user.name}" %>
+               <%= check_box_tag "users[]", user.id  %></p>
+          </div>
+          <% end %>
+
+        <%= form.hidden_field :host, value: current_user.id  %>
+        <%= form.submit :submit %>
       <% end %>
-
-    <%= f.hidden_field :host, value: current_user.id  %>
-    <%= f.submit :submit %>
-  <% end %>
-
+    </center>
+  </div>
 </div>

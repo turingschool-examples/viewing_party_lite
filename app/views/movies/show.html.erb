@@ -22,11 +22,11 @@
             <% end %>
 </div>
 
-  <% if @movie.reviews %>
-<div class="area_container review">
-  <h4> Reviews: <% @movie.reviews.each do |r| %></h4>
-          <p> <strong><%= r[:author]%></strong> <%= r[:content] %></p>
-          <% end %>
-  <p> Number of Reviews: <%= @movie.reviews.count %><p>
-</div>
+<% if @movie.reviews %>
+  <div class="area_container review">
+    <h4> Reviews: <% @movie.reviews.each do |r| %></h4>
+            <p> <strong><%= r[:author]%></strong> <%= r[:content] %></p>
+            <% end %>
+    <p> Number of Reviews: <%= @movie.reviews.count %><p>
+  </div>
 <% end %>

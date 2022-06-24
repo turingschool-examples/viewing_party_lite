@@ -2,6 +2,7 @@ class PartiesController < ApplicationController
   before_action :duration_vs_runtime, only: [:create]
 
   def new
+    require "pry"; binding.pry
     if current_user.nil?
       redirect_to "/movies/#{params[:movie_id]}"
       flash[:notice] = "You must be log in or register to create a viewing party"
@@ -39,10 +40,15 @@ private
 
     def duration_vs_runtime
       @movie = MovieFacade.find_movie(params[:movie_id])
-      new_party = Party.new(party_params)
-      if new_party.duration < @movie.runtime
-        flash[:notice] = "Party cannot be shorter than movie's duration!"
+      if params[:duration].empty?
+        flash[:notice] = "Duration can not be empty"
         redirect_to "/movies/#{@movie.id}/viewing_party/new"
+      else
+        new_party = Party.new(party_params)
+        if new_party.duration < @movie.runtime
+          flash[:notice] = "Party cannot be shorter than movie's duration!"
+          redirect_to "/movies/#{@movie.id}/viewing_party/new"
+        end
       end
     end
 end
