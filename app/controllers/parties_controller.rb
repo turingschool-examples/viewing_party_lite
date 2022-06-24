@@ -2,7 +2,6 @@ class PartiesController < ApplicationController
   before_action :duration_vs_runtime, only: [:create]
 
   def new
-    require "pry"; binding.pry
     if current_user.nil?
       redirect_to "/movies/#{params[:movie_id]}"
       flash[:notice] = "You must be log in or register to create a viewing party"
