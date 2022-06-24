@@ -1,24 +1,32 @@
 <h1><%= @movie.title %></h1>
-<%= button_to "Create new viewing party", "/movies/#{@movie.id}/viewing_party/new", method: :get %> <br/>
-<%= link_to "Return to Discover", "/discover" %>
 
-<h3> About </h3>
-<p> Rating: <%= @movie.vote_average %></p>
-<p> Runtime: <%= @movie.runtime_with_hours %> </p>
-<p> Genres: <% if @movie.genres %>
-              <% @movie.genres.each do |g| %>
-              <%= g %>
-              <% end %>
-              <% end %></p>
-<p> Summary: <%= @movie.summary %></p>
-<p> Cast: <% if @movie.cast %>
-            <% @movie.cast.each do |cast| %></p>
-        <p>  <%= cast[:name] + ": " + cast[:character] %> </p>
-          <% end %>
-          <% end %>
+<a class="btn btn-light" href=<%="/movies/#{@movie.id}/viewing_party/new"%> role="button">Create New Viewing Party</a>
+
+<div class="area_container about">
+  <h4> About </h4>
+  <p> Rating: <%= @movie.vote_average %></p>
+  <p> Runtime: <%= @movie.runtime_with_hours %> </p>
+  <p> Genres: <% if @movie.genres %>
+                <% @movie.genres.each do |g| %>
+                <%= g %>
+                <% end %>
+                <% end %></p>
+  <p> Summary: <%= @movie.summary %></p>
+</div>
+
+<div class="area_container">
+  <h4> Cast: <% if @movie.cast %>
+              <% @movie.cast.each do |cast| %></h4>
+          <p>  <%= cast[:name] + ": " + cast[:character] %> </p>
+            <% end %>
+            <% end %>
+</div>
+
   <% if @movie.reviews %>
-<p> Number of Reviews: <%= @movie.reviews.count %><p>
-<p> Reviews: <% @movie.reviews.each do |r| %></p>
-        <p> <%= r[:author] + ": " + r[:content] %></p>
-        <% end %>
-  <% end %>
+<div class="area_container review">
+  <h4> Reviews: <% @movie.reviews.each do |r| %></h4>
+          <p> <strong><%= r[:author]%></strong> <%= r[:content] %></p>
+          <% end %>
+  <p> Number of Reviews: <%= @movie.reviews.count %><p>
+</div>
+<% end %>
