@@ -2,6 +2,7 @@
 <h1>Viewing Party Lite</h1>
 </center> %>
 
+
 <center>
 <% if current_user %>
   Welcome back! <br>
@@ -13,11 +14,15 @@
   
   <% @users.each do |user| %>
     <section id="user_id-<%= user.id %>">
-    <ul class="list-group">
+    <div class="container-sm">
 
-      <li class="list-group-item"><%= user.email %></li>
+      <ul class="list-group">
+    <div class="user_container">
+        <li class="list-group-item"><%= user.email %></li>
+    </div>
+      </ul>
+    </div>
 
-    </ul>
     </section>
     <% end %>
 
