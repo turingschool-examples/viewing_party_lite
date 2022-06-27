@@ -1,0 +1,11 @@
+<h1>Movie Results</h1>
+
+<div class="card-columns">
+  <% @movies.each do |movie| %>
+    <div class="card">
+      <br>
+      <h6 class="card-title"> Title: <%= link_to "#{movie.title}", "/movies/#{movie.id}"%></h6>
+      <p class="card-text">Vote Average: <%= movie.vote_average  %></p><br>
+    </div>
+<% end %>
+</div>

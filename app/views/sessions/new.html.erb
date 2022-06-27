@@ -1,0 +1,13 @@
+<h1> Login </h1>
+
+<div class="area_container">
+  <center>
+    <%=form_with url: "/login", method: :post, local: true do |form| %>
+    <%= form.label "Email" %>
+    <%= form.text_field :email %><br>
+    <%= form.label "Password" %>
+    <%= form.password_field :password %><br>
+    <%= form.submit "LogIn" %>
+    <% end %>
+  </center>
+</div>

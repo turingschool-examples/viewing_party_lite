@@ -1,0 +1,17 @@
+<h1> Create New User </h1>
+
+<div class="area_container">
+  <center>
+    <%= form_with url: "/users", method: :post, local: true do |form| %>
+      <%= form.label "Name: " %>
+      <%= form.text_field :name  %><br>
+      <%= form.label "Email: " %>
+      <%= form.text_field :email  %><br>
+      <%= form.label "Password" %>
+      <%= form.password_field :password %><br>
+      <%= form.label "Confirm Password" %>
+      <%= form.password_field :password_confirmation %><br>
+      <%= form.submit "Register" %>
+    <% end %>
+  </center>
+</div>
