@@ -16,27 +16,30 @@ Viewing Part Lite is an application in which users can explore movie options and
 5. Implement login functionality and authentication in app using session 
 6. Test API calls using webmock, VCR 
 
+## Deployment
+The Viewing Party app is deployed on Heroku. 
+Check it out 👀 [here](https://dashboard.heroku.com/apps/salty-oasis-88675)
 
 ## Local Setup for Project
 
 1. Fork and Clone the repo
 2. Install gem packages: `bundle install`
 3. Setup the database: `rails db:{create,migrate}`
+4. Run `bundle exec figaro install`
+5. Go to [The Movie Database](https://www.themoviedb.org/signup) create an account and request an API key
+6. Add your API key to the `application.yml` file that the Figaro gem creates 
+  ```rb
+  movie_api_key: your_api_key
+  ```
 
 ## Project Progress
 This project was originally a paired project completed over 4 days, using both Driver/Navigator and working asynchronously reviewing each other's code on GitHub before merging to main and deploying to Heroku. The `original_submission` branch hosts the code that was completed when the project was due.
 
 After it was submitted I used it to practice refactoring and apply the features and tests that did not make it into our original submission. These additions can be found on the branch `post_project`.
 
-In the weeks after this project we learned about authentication and sessions and I implemented those new skills into this app, followed by authorization.
-
-This project is also the first time I implemented any type of styling with Bootstrap.
+In the weeks after this project we learned about authentication and sessions and I implemented those features into this app, followed by authorization and Bootstrap.
 
 The latest version of the complete project is found on the `main` branch.
-
-## Deployment
-Since this was a backend project the deployment might not be the most pleasing to the eye, but it is functional and I plan to practice frontend skills on this project at some point in the future.
-You can find the deployed app [here](https://dashboard.heroku.com/apps/salty-oasis-88675)
 
 ## Versions
 
