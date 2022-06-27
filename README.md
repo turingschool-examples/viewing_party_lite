@@ -1,12 +1,12 @@
 # Viewing Party
 
+## About this Project
+
+Viewing Part Lite is an application in which users can explore movie options and create a movie viewing event for themselves and other users of the application.
+
 This project was completed during my 13th week at Turing School of Software and Design in the Backend Software Development Program. It was assigned as a paired project to be completed in a 4 day sprint. Since the original submission I have refactored and added features as I learned new skills. It was my first time consuming an external API that required authentication, and my first time implementing the Service/Facade/Poro design. I will continue to practice new skills on this application as I learn them. More details about what I have added are listed below in **Project Progress**. Thank you for taking an interest and I look forward to any questions you may have.
 
 This is the base repo for the [Viewing Party Lite project](https://backend.turing.io/module3/projects/viewing_party_lite) used for Turing's Backend Module 3.
-
-### About this Project
-
-Viewing Part Lite is an application in which users can explore movie options and create a viewing party event for themselves and other users of the application.
 
 ## Learning Goals for this Project
 1. Consume multiple endpoints from an external API that requires authentication 
