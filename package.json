@@ -1,5 +1,7 @@
 {
   "name": "viewing_party_lite",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "animate.css": "^4.1.1"
+  }
 }

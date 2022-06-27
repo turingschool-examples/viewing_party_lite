@@ -13,11 +13,26 @@
  */
 /* Custom bootstrap variables must be set or imported *before* bootstrap. */
 @import "bootstrap";
-
+@font-face {
+  font-family: 'Titan One';
+  src: url('/assets/Titan_One.TitanOne-Regular.ttf')
+}
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anek+Latin:wght@200&family=Titan+One&display=swap');
 
 .list-group-item {
-  background-color: rgb(191, 146, 112);
+  background-color: rgba(188, 140, 242, 0.575);
+  font-family: 'Anek Latin';
+  margin: 5px;
+  font-size: 1.3em;
 }
+
+.list-group {
+  width: 50%;
+  border-radius: 66px;
+}
+
+
 .btn-outline-primary {
    background-color: rgb(43, 172, 170);
    color: rgb(170, 162, 155)
@@ -30,9 +45,36 @@ body {
 }
 
 //root
+.title {
+  // border: 2px solid rgb(188, 140, 242);
+  margin: 15px;
+  // width: 25%;
 
+  h1 { 
+  font-family: 'Titan One';
+  font-size: 4.5em;
+  border: 5px solid rgb(188, 140, 242);
+  margin-left: 215px;
+  margin-right: 215px;
+  padding: 20px;
+  border-radius: 50px;
+  }
+}
+.become_user_button {
+  padding: 100px;
+}
 
+.welcome_back {
+  h1{
+  font-family: 'Titan One';
+  font-size: 3em;
+  }
+  h3{
+  font-family: 'Titan One';
+  font-size: 2em;
+  }
 
+}
 
 
 

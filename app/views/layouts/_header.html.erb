@@ -1,26 +1,84 @@
+<style>
+#top_bar {
+    width:100%;
+    text-align: center;
+    /* height: 48px; */
+    /* line-height: 48px; */
+}
+.inner{
+
+      display: inline-block;
+}
+.btn-outline-primary{
+  margin: 1px;
+  background-color: rgb(188, 140, 242);
+
+  font-size: 1.2em;
+  color: black !important;
+  outline: 0 none !important;
+  box-shadow: none !important;
+  border-color: black !important;
+  font-family: 'Anek Latin';
+
+}
+.btn-outline-primary:hover {
+  background-color: rgba(141, 46, 250, 0.451);
+}
+.btn-outline-primary:focus, .btn-outline-primary:active:focus, .btn.active-outline-primary:focus {
+  outline: 0 none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+.btn-outline-danger{
+  margin: 1px;
+  font-family: 'Anek Latin';
 
 
- <div class="btn btn-outline-primary">
-  <%= link_to "Home", "/", method: :get %>
- </div>
+  font-size: 1.2em;
+  color: black !important;
+  outline: 0 none !important;
+  box-shadow: none !important;
+  border-color: black !important;
+  background-color: rgba(200, 73, 71, 0.843);
+ 
+}
+.btn-outline-danger:hover {
+  background-color: rgba(200, 73, 71, 0.573);}
+.a-primary {
+  color: black;
+}
+</style>
 
- <div class="btn btn-outline-primary">
-  <%= link_to "Search Movies", "/", method: :get %>
- </div>
 
- <% if current_user %>
-  <div style="float: right; width: auto;">  
-    <div class="btn btn-outline-danger" >
-      <%= link_to 'Log Out', '/logout', method: :delete %>
-    </div>
+<div id="outer">
+  <div class="inner">
+    <form action="/">
+      <button id="dashboard_header" type="submit" class="btn btn-outline-primary">Home</button>
+    </form>
   </div>
 
-    <div style="float: right; width: auto;">  
-      <div class="btn btn-outline-primary" >
-        <%= link_to 'My Dashboard', '/dashboard' %>
-    </div>
-  </div> 
-    
 
-<% end %>
 
+  <div class="inner">
+    <% if current_user %>
+      <form action="/dashboard">
+        <button id="dashboard_header" type="submit" class="btn btn-outline-primary">Dashboard</button>
+      </form>
+  </div>
+  <% else %>
+    <div class="inner">
+    <form action="/login">
+      <button id="dashboard_header" type="submit" class="btn btn-outline-primary">Login</button>
+    </form>
+  </div>
+    <% end %>
+
+  <div class="inner">
+    <div class="inner_right">
+      <% if current_user %>
+        <div class="btn btn-outline-danger" >
+          <%= link_to 'Log Out', '/logout', method: :delete, class: "a-primary" %>
+      <% end %>
+        </div>
+  </div>
+</div>

@@ -5,18 +5,20 @@
 
 <center>
 <% if current_user %>
-  Welcome back! <br>
-
-<%# <%= button_to 'Log Out', '/logout', method: :delete %> 
+ <div class="welcome_back">
+ <h1> Welcome back! </h1>
+</div>
 
 <section id="existing_users">
-<h3>Current Users</h3>
+ <div class="welcome_back">
+    <h3>Active Users</h3>
+  </div>
   
   <% @users.each do |user| %>
     <section id="user_id-<%= user.id %>">
     <div class="container-sm">
 
-      <ul class="list-group">
+      <ul class="list-group list-group-flush">
     <div class="user_container">
         <li class="list-group-item"><%= user.email %></li>
     </div>
@@ -32,12 +34,11 @@
 
 <center>
  
-  <%= button_to "Login", "/login", method: :get %> 
-
-
-
-  <%= button_to "Create a New User", "/register", method: :get %> 
- 
+   <div class="become_user_button">
+    <form action="/register">
+      <button id="dashboard_header" type="submit" class="btn btn-outline-primary">Become a User!</button>
+    </form>
+  </div>
 </center>
 <% end %>
 
