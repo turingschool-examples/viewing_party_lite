@@ -50,8 +50,7 @@ The latest version of the complete project is found on the `main` branch.
 * [faraday](https://github.com/lostisland/faraday)
 * [figaro](https://github.com/laserlemon/figaro)
 * [bootstrap](https://getbootstrap.com/)
-
-## Testing
+* [bycrypt](https://github.com/bcrypt-ruby/bcrypt-ruby)
 
 ## Versions
 
