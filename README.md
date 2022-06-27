@@ -41,6 +41,18 @@ In the weeks after this project we learned about authentication and sessions and
 
 The latest version of the complete project is found on the `main` branch.
 
+## Gems Used
+* [rspec-rails](https://github.com/rspec/rspec-rails)
+* [capybara](https://github.com/teamcapybara/capybara)
+* [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers)
+* [simplecov](https://github.com/simplecov-ruby/simplecov)
+* [webmock](https://github.com/bblimke/webmock)
+* [faraday](https://github.com/lostisland/faraday)
+* [figaro](https://github.com/laserlemon/figaro)
+* [bootstrap](https://getbootstrap.com/)
+
+## Testing
+
 ## Versions
 
 - Ruby 2.7.2
