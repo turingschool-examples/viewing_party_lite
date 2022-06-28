@@ -76,7 +76,20 @@ body {
 
 }
 
-
+.about_app {
+    padding-top: 10%;
+  h3 {
+    border: 3px solid rgb(188, 140, 242);
+    border-radius: 10px;
+    box-shadow: 5px 5px #888888;
+    padding: 15px;
+    width: 70%;
+    font-family: 'Anek Latin';
+    font-size: 1.7em;
+    font-weight: 500;
+ 
+  } 
+}
 
 //dashboard
 
@@ -207,3 +220,71 @@ body {
 
 
 // dashboard 
+
+
+
+
+
+
+
+//movie show page
+.movie_title {
+  h1 {
+    font-family: 'Titan One';
+    font-size: 3em;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+.movie_info {
+  padding-left: 5%;
+  font-family: 'Anek Latin';
+  font-size: 1.8em;
+
+  h2 {
+    font-family: 'Titan One';
+    font-size: 1em;
+
+    span {
+      font-family: 'Anek Latin';
+    }
+  }
+
+  .movie_overview {
+    border: 3px solid rgb(188, 140, 242);
+    border-radius: 10px;
+    box-shadow: 5px 5px #888888;
+    padding: 15px;
+    width: 40%;
+    font-size: .7em;
+  }
+}
+.movie_image {
+  width: 50%;
+  height: 100%;
+  top: 0;
+  padding-top: 25%;
+  margin-left: 0;
+  position: absolute;
+  right: 0;
+  overflow: hidden;
+}
+
+.actors {
+  padding-top: 40px;
+  padding-left: 5%;
+  h2 {
+  font-family: 'Titan One';
+  }
+  .actor_names {
+    border: 3px solid rgb(188, 140, 242);
+    border-radius: 10px;
+    box-shadow: 5px 5px #888888;
+    padding: 15px;
+    width: 40%;
+    font-size: .7em;
+    h3{
+    font-family: 'Anek Latin';
+    }
+  }
+}

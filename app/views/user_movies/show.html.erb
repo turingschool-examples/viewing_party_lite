@@ -1,20 +1,37 @@
 <div id="links">
-  <%= link_to "Return to Discover", "/discover"%>
-  <%= button_to "Create New Watch Party", "/movies/#{@movie.id}/party/new", method: :get %>
+  <%= button_to "Discover Page", "/discover", class: "btn btn-primary btn-lg btn-block", method: :get %>
+
+  <%= button_to "Create New Watch Party", "/movies/#{@movie.id}/party/new", class: "btn btn-primary btn-lg btn-block", method: :get %>
 </div>
 
 <div id="movie-details">
-  <h1><%= @movie.title %></h1>
-  <h2>Vote Average: <%= @movie.vote_average%></h2>
-  <h2>Runtime: <%= (@movie.runtime/60).floor %>h <%= (@movie.runtime%60) %>m</h2>
-  <h2>Genres:</h2>
- <% @movie.genres.each do |genre| %>
-    <h3><%= genre %></h3>
-  <% end %>
-  <h2>Overview:</h2>
-  <p> <%= @movie.overview %></p>
-  <h2>Notable Actors:</h2>
-  <% @cast.cast.each do |actor| %>
-    <h3><%= actor %></h3>
-  <% end %>
+  <div class="movie_title">
+    <center>
+      <h1><%= @movie.title %></h1>
+    <center>
+  </div>
+  <div class="movie_info">
+
+    <h2>Vote Average:<span> <%= @movie.vote_average%></span></h2>
+    <h2>Runtime:<span> <%= (@movie.runtime/60).floor %>h <%= (@movie.runtime%60) %>m</span></h2>
+    <h2>Genres:</h2>
+  <% @movie.genres.each do |genre| %>
+      <h3><%= genre %></h3>
+    <% end %>
+    <h2>Overview:</h2>
+      <div class="movie_overview">
+        <p> <%= @movie.overview %></p>
+      </div>
+      <div class="movie_image">
+        <img  src="http://image.tmdb.org/t/p/w500/<%=@movie.poster_path%>" width="400" height="500">
+      </div>
+  </div>
+  <div class="actors">
+    <h2>Notable Actors:</h2>
+    <% @cast.cast.each do |actor| %>
+    <div class="actor_names">
+      <h3><%= actor %></h3>
+    </div>
+    <% end %>
+  </div>
 </div>

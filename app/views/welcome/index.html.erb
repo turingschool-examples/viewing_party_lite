@@ -36,11 +36,13 @@
 <% else  %>
 
 <center>
- 
-   <div class="become_user_button">
-    <form action="/register">
-      <button id="dashboard_header" type="submit" class="btn btn-outline-primary">Become a User!</button>
-    </form>
+  <div class="top_movies_button">
+    <%= button_to "Become a User!", "/register", method: :get, class: "btn btn-primary btn-lg btn-block"%> 
+  </div>
+
+
+  <div class="about_app">
+    <h3>Viewing Party is an app to plan movie watch parties with your friends!<br> <br> As a site visitor you can search for movies, and get movie details.  <br><br>As a logged in user you can create watch parties and invite your friends!</h3>
   </div>
 </center>
 <% end %>
