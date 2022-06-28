@@ -168,3 +168,35 @@ body {
 }
   
 }
+
+
+// movie results index page
+
+.movie_results_header {
+
+  h2 {
+    font-family: 'Titan One';
+    font-size: 3em;
+  }
+}
+
+.movie_results {
+  padding-top: 3%;
+
+  .movie_title {
+    font-family: 'Anek Latin';
+    font-size: 2em;
+    color: rgb(68, 0, 255);
+
+    &:hover {
+      color: rgb(255, 255, 255);
+    }
+  }
+  span {
+    font-family: 'Anek Latin';
+    font-size: 1.8em;
+    color: rgb(0, 0, 0);
+
+  }
+
+}

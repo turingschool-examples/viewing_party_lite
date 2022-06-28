@@ -1,34 +1,38 @@
-<%# <center>
-<h1>Viewing Party Lite</h1>
-</center> %>
 
 <center>
 <% if @movies %>
-  <h2>Top Rated Movies</h2>
+  <div class="movie_results_header">
+    <h2>Top Rated Movies</h2>
+  </div>
 <% elsif @results %>
-  <h2>Movie Results for: <%= @keyword %></h2>
+  <div class="movie_results_header">
+    <h2>Movie Results for: <%= @keyword %></h2>
+  </div>
 <% end %>
 </center>
 
 <center>
-<%= button_to "Discover Page", "/discover", method: :get %>
-</center>
-<br><br><br><br>
 
-<center>
-<% if @movies %>
-  <% @movies.each do |movie| %>
-    <p><%= link_to "#{movie.title}", "/movies/#{movie.id}" %>, Average Vote: <%= movie.vote_average%></p>
+<%= button_to "Discover Page", "/discover", class: "btn btn-primary btn-lg btn-block", method: :get %>
+
+</center>
+
+
+
+<div class="movie_results">
+  <center>
+  <% if @movies %>
+    <% @movies.each do |movie| %>
+    <% end %>
   <% end %>
-<% end %>
-</center>
+  </center>
 
-<center>
-<% if @results %>
-  <% @results.each do |result| %>
-    <p><%= link_to "#{result.title}", "/movies/#{result.id}" %>, Average Vote: <%= result.vote_average%></p>
+  <center>
+  <% if @results %>
+    <% @results.each do |result| %>
+      <p><%= link_to "#{result.title}", "/movies/#{result.id}", class: "movie_title" %><span> | Average Rating: <%= result.vote_average%></span></p>
+    <% end %>
   <% end %>
-<% end %>
-</center>
-
+  </center>
+</div>
 
