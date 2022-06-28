@@ -288,3 +288,44 @@ body {
     }
   }
 }
+
+
+
+//new user page / form
+
+.new_form {
+  margin-left: 20%;
+  margin-top: 5%;
+  border: 3px solid rgb(188, 140, 242);
+  border-radius: 10px;
+  box-shadow: 5px 5px #888888;
+  padding: 15px;
+  width: 60%;
+  font-family: 'Anek Latin';
+  font-size: 1.7em;
+  font-weight: 500;
+
+  .left {
+    width: 49%;
+    margin-left: 2%;
+    float: left;
+    clear: none;
+  }
+  .right {
+    background-color:rgba(188, 140, 242, 0.471);
+  }
+  button {
+    margin-left: 35%;
+  }
+}
+.new_user_heading {
+  h1 {
+  font-family: 'Titan One';
+  font-size: 4.5em;
+  border: 5px solid rgb(188, 140, 242);
+  margin-left: 215px;
+  margin-right: 215px;
+  padding: 20px;
+  border-radius: 50px;
+  }
+}

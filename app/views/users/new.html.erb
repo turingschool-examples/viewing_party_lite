@@ -1,39 +1,27 @@
-<h1>Create New User</h1>
-
-<%= form_with model: @user, class: "form-group", local: true do |form| %>
-  <%= form.label :name, 'Name:' %>
-  <%= form.text_field :name %><br>
-
-  <%= form.label :email, 'Email:' %>
-  <%= form.text_field :email %><br>
-
-  <%= form.label :password, 'Password:' %>
-  <%= form.password_field :password %><br>
+<div class="new_user_heading">
+  <center>
+    <h1>Become a User</h1>
+  </center>
+</div>
+<%= form_with model: @user, class: "new_form", local: true do |form| %>
   
-  <%= form.label :password_confirmation, 'Password Confirmation:' %>
-  <%= form.password_field :password_confirmation %><br>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <div class="name_field">
+    <%= form.label :name, 'Name:', class: "left" %>
+    <%= form.text_field :name, class: "right" %>
+  </div>
+
+  <div class="email_field">
+    <%= form.label :email, 'Email:', class: "left" %>
+    <%= form.text_field :email, class: "right" %>
+  </div>
+  <div class="password_field">
+    <%= form.label :password, 'Password:', class: "left" %>
+    <%= form.password_field :password, class: "right" %>
+  </div>
+  <div class="confirm_field">
+    <%= form.label :password_confirmation, 'Password Confirmation:', class: "left" %>
+    <%= form.password_field :password_confirmation, class: "right" %>
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
 <% end %>
-
-<%# <form>
-  <div class="form-group">
-    <label for="InputName">Name:</label>
-    <input type="name" class="form-control-sm" id="name" aria-describedby="nameHelp" placeholder="enter your name">
-    <small id="emailHelp" class="form-text text-muted"></small>
-  </div>
-  <div class="form-group">
-    <label for="email">Email:</label>
-    <input type="email" class="form-control-sm" id="email" aria-describedby="emailHelp" placeholder="enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  </div>
-  <div class="form-group">
-    <label for="password">Password:</label>
-    <input type="password" class="form-control-sm" id="password" placeholder="password">
-  </div>
-  <div class="form-group">
-    <label for="password_confirmation">Password Confirmation:</label>
-    <input type="password_confirmation" class="form-control-sm" id="password_confirmation" placeholder="confirm your password">
-  </div>
-
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form> %>
