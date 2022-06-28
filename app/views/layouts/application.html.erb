@@ -8,6 +8,10 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
 
     <%= javascript_include_tag 'application' %>
+         <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
   </head>
 
   <body>
@@ -18,11 +22,7 @@
       <%= content_tag :div, msg, class: name %>
     </div>
     <% end %>
-    <center>
-    <div class="title">
-      <h1>Viewing Party</h1>
-      </div>
-    </center>
+
     <%= yield %>
   </body>
 </html>

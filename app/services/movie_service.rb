@@ -12,7 +12,7 @@ class MovieService
       faraday.params[:query] = keyword
     end 
     response = conn.get("/3/search/movie?api_key=#{ENV['movie_db_key']}")
-    o
+    data = JSON.parse(response.body, symbolize_names: true)
     data[:results]
   end 
 
