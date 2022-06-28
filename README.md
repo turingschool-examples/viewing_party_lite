@@ -56,6 +56,7 @@ Installation Steps:
 
 - [ ] Impliment Figaro to hide API key 
 - [ ] Refactor movies data into POROs
+- [ ] Link to movie show page from search results
 
 
 
