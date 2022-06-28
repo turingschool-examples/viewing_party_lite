@@ -88,6 +88,5 @@ Owner - Reuben Davison - creubend@gmail.com
 
 Collaborators - [Chris Romero](https://github.com/CLRM1) 
 
-Project Link: [Rails Engine](https://github.com/Reuben-Davison/rails-engine)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
