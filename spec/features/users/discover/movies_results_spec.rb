@@ -2,15 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Movies Results Page', type: :feature do
   before :each do
-    @user1 = User.create!(name: 'Skeeter', email: 'skeeter@skeeter.com', password: 'test')
-    @user2 = User.create!(name: 'Alex', email: 'alex@alex.com', password: 'test123')
-    visit '/'
-
-    click_button 'Login'
-    fill_in 'Name:', with: 'Skeeter'
-    fill_in 'Email:', with: 'skeeter@skeeter.com'
-    fill_in 'Password', with: 'test'
-    click_on 'Log In'
+    user1 = User.create!(name: 'Skeeter', email: 'skeeter@skeeter.com', password: 'test')
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
   end
 
   describe 'As a Visitor' do 
@@ -19,11 +12,12 @@ RSpec.describe 'Movies Results Page', type: :feature do
       visit "/discover"
 
       click_button "Find Top Rated Movies"
+     
       expect(page).to have_content("Top Rated Movies") 
-      expect(page).to have_content("The Shawshank Redemption, Average Vote: 8.7")
-      expect(page).to have_content("The Godfather, Average Vote: 8.7")
+      expect(page).to have_content("The Shawshank Redemption | Average Rating: 8.7")
+      expect(page).to have_content("\nThe Godfather | Average Rating: 8.7\n")
       
-      expect(page).to_not have_content("Cars 2, Average Vote: 9.9")
+      expect(page).to_not have_content("Cars 2 | Average Rating: 9.9")
     end 
 
     it 'searching for a movie by title returns all movies with search word in title', :vcr do
@@ -31,13 +25,13 @@ RSpec.describe 'Movies Results Page', type: :feature do
 
       fill_in "Search by Movie Title", with: "jaws"
       click_on "Find Movies"
-  
+      
       expect(page).to have_content("Movie Results for: jaws")
-      expect(page).to have_content("Jaws, Average Vote: 7.6")
-      expect(page).to have_content("Jaws 3-D, Average Vote: 4.4")
-      expect(page).to have_content("Jaws of Satan, Average Vote: 5")
+      expect(page).to have_content("\nJaws | Average Rating: 7.6\n")
+      expect(page).to have_content("\nJaws 3-D | Average Rating: 4.4\n")
+      expect(page).to have_content("\nJaws of Satan | Average Rating: 5\n")
 
-      expect(page).to_not have_content("The Shawshank Redemption, Average Vote: 8.7")
+      expect(page).to_not have_content("The Shawshank Redemption, Average Rating: 8.7")
       
     end 
 

@@ -13,6 +13,6 @@ class Movie
   end
   
   def genres
-    data[:genres].map { |genre| genre.values[1]}
+    @data[:genres].map { |genre| genre.values[1]}
   end 
 end 
