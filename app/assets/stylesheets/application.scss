@@ -1,0 +1,331 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ */
+/* Custom bootstrap variables must be set or imported *before* bootstrap. */
+@import "bootstrap";
+@font-face {
+  font-family: 'Titan One';
+  src: url('/assets/Titan_One.TitanOne-Regular.ttf')
+}
+@import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anek+Latin:wght@200&family=Titan+One&display=swap');
+
+.list-group-item {
+  background-color: rgba(188, 140, 242, 0.575);
+  font-family: 'Anek Latin';
+  margin: 5px;
+  font-size: 1.3em;
+}
+
+.list-group {
+  width: 50%;
+  border-radius: 66px;
+}
+
+
+.btn-outline-primary {
+   background-color: rgb(43, 172, 170);
+   color: rgb(170, 162, 155)
+  
+ }
+
+//all pages
+body {
+  background-color: rgb(183, 179, 174);
+}
+
+//root
+.title {
+  // border: 2px solid rgb(188, 140, 242);
+  margin: 15px;
+  // width: 25%;
+
+  h1 { 
+  font-family: 'Titan One';
+  font-size: 4.5em;
+  border: 5px solid rgb(188, 140, 242);
+  margin-left: 215px;
+  margin-right: 215px;
+  padding: 20px;
+  border-radius: 50px;
+  }
+}
+.become_user_button {
+  padding: 100px;
+}
+
+.welcome_back {
+  h1{
+  font-family: 'Titan One';
+  font-size: 3em;
+  }
+  h3{
+  font-family: 'Titan One';
+  font-size: 2em;
+  }
+
+}
+
+.about_app {
+    padding-top: 10%;
+  h3 {
+    border: 3px solid rgb(188, 140, 242);
+    border-radius: 10px;
+    box-shadow: 5px 5px #888888;
+    padding: 15px;
+    width: 70%;
+    font-family: 'Anek Latin';
+    font-size: 1.7em;
+    font-weight: 500;
+ 
+  } 
+}
+
+//dashboard
+
+
+
+//discover/search page
+.page_container {
+  width: 100%;  
+  height: 5px;
+  .search_container {
+    h2{
+      font-family: 'Titan One';
+      font-size: 3em;
+    }
+  }
+
+  .glass {
+      padding-left: 15%;
+      padding-top: 20%;
+    img {
+      padding-left: 400px;
+    }
+  }
+}
+.btn-lg {
+  margin: 1px;
+  background-color: rgb(188, 140, 242);
+  font-size: 1.2em;
+  color: black !important;
+  // border-color: black !important;
+  font-family: 'Anek Latin';
+  border-radius: 25px;
+  border: 1px solid rgb(8, 253, 216);
+  margin-top: 25px;
+
+  animation: fadeInAnimation 1s 1.8s backwards;
+  white-space: nowrap;
+  background-color: #7b8083;
+  transition: transform 0.1s ease-out;
+  box-shadow: 0 5px 0 rgb(188, 140, 242);
+  border-radius: 6px;
+    
+  &:hover {
+    box-shadow: 0 0 0 rgba(5, 191, 163, 0.638);
+    background: rgba(124, 111, 140, 0.786);
+    color: rgb(255, 255, 255);
+    transform: translateY(5px);
+    border-color:rgb(87, 255, 244)
+  }
+  }
+
+.search_form_label {
+  background: rgba(191, 149, 239, 0.749);
+  font-family: 'Anek Latin';
+  font-size: 1.4em;
+  font-weight: 300;
+  height: 66px;
+  width: 600px;
+  display: inline-block;
+  padding-top: 15px;
+  border-radius: 20px;
+
+  .text_field {
+    background: rgb(216, 192, 229);
+  }
+
+  .flat_button {
+    margin: 1px;
+    background-color: rgb(188, 140, 242);
+    font-size: 1.1em;
+    color: black !important;
+    font-family: 'Anek Latin';
+    border-radius: 25px;
+    border: 1px solid rgb(8, 253, 216);
+
+    white-space: nowrap;
+    background-color: #7b8083;
+    transition: transform 0.1s ease-out;
+    box-shadow: 0 5px 0 rgb(188, 140, 242);
+    border-radius: 6px;
+
+  &:hover {
+    box-shadow: 0 0 0 rgba(5, 191, 163, 0.638);
+    background: rgba(124, 111, 140, 0.786);
+    color: rgb(255, 255, 255);
+    // transform: translateY(5px);
+    border-color: rgb(87, 255, 244)
+  }
+}
+  
+}
+
+
+// movie results index page
+
+.movie_results_header {
+
+  h2 {
+    font-family: 'Titan One';
+    font-size: 3em;
+  }
+}
+
+.movie_results {
+  padding-top: 3%;
+
+  .movie_title {
+    font-family: 'Anek Latin';
+    font-size: 2em;
+    color: rgb(68, 0, 255);
+
+    &:hover {
+      color: rgb(255, 255, 255);
+    }
+  }
+  span {
+    font-family: 'Anek Latin';
+    font-size: 1.8em;
+    color: rgb(0, 0, 0);
+
+  }
+}
+
+
+
+
+
+
+
+// dashboard 
+
+
+
+
+
+
+
+//movie show page
+.movie_title {
+  h1 {
+    font-family: 'Titan One';
+    font-size: 3em;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+.movie_info {
+  padding-left: 5%;
+  font-family: 'Anek Latin';
+  font-size: 1.8em;
+
+  h2 {
+    font-family: 'Titan One';
+    font-size: 1em;
+
+    span {
+      font-family: 'Anek Latin';
+    }
+  }
+
+  .movie_overview {
+    border: 3px solid rgb(188, 140, 242);
+    border-radius: 10px;
+    box-shadow: 5px 5px #888888;
+    padding: 15px;
+    width: 40%;
+    font-size: .7em;
+  }
+}
+.movie_image {
+  width: 50%;
+  height: 100%;
+  top: 0;
+  padding-top: 35%;
+  margin-left: 0;
+  position: absolute;
+  right: 0;
+  overflow: hidden;
+}
+
+.actors {
+  padding-top: 40px;
+  padding-left: 5%;
+  h2 {
+  font-family: 'Titan One';
+  }
+  .actor_names {
+    border: 3px solid rgb(188, 140, 242);
+    border-radius: 10px;
+    box-shadow: 5px 5px #888888;
+    padding: 15px;
+    width: 40%;
+    font-size: .7em;
+    h3{
+    font-family: 'Anek Latin';
+    }
+  }
+}
+
+
+
+//new user page / form
+
+.new_form {
+  margin-left: 20%;
+  margin-top: 5%;
+  border: 3px solid rgb(188, 140, 242);
+  border-radius: 10px;
+  box-shadow: 5px 5px #888888;
+  padding: 15px;
+  width: 60%;
+  font-family: 'Anek Latin';
+  font-size: 1.7em;
+  font-weight: 500;
+
+  .left {
+    width: 49%;
+    margin-left: 2%;
+    float: left;
+    clear: none;
+  }
+  .right {
+    background-color:rgba(188, 140, 242, 0.471);
+  }
+  button {
+    margin-left: 35%;
+  }
+}
+.new_user_heading {
+  h1 {
+  font-family: 'Titan One';
+  font-size: 4.5em;
+  border: 5px solid rgb(188, 140, 242);
+  margin-left: 215px;
+  margin-right: 215px;
+  padding: 20px;
+  border-radius: 50px;
+  }
+}

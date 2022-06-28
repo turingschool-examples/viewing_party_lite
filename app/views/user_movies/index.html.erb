@@ -1,0 +1,40 @@
+
+<center>
+<% if @movies %>
+  <div class="movie_results_header">
+    <h2>Top Rated Movies</h2>
+  </div>
+<% elsif @results %>
+  <div class="movie_results_header">
+    <h2>Movie Results for: <%= @keyword %></h2>
+  </div>
+<% end %>
+</center>
+
+<center>
+
+<%= button_to "Discover Page", "/discover", class: "btn btn-primary btn-lg btn-block", method: :get %>
+
+</center>
+
+
+
+<div class="movie_results">
+  <center>
+  <% if @movies %>
+    <% @movies.each do |movie| %>
+        <p><%= link_to "#{movie.title}", "/movies/#{movie.id}", class: "movie_title" %><span> | Average Rating: <%= movie.vote_average%></span></p>
+
+    <% end %>
+  <% end %>
+  </center>
+
+  <center>
+  <% if @results %>
+    <% @results.each do |result| %>
+      <p><%= link_to "#{result.title}", "/movies/#{result.id}", class: "movie_title" %><span> | Average Rating: <%= result.vote_average%></span></p>
+    <% end %>
+  <% end %>
+  </center>
+</div>
+

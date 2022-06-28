@@ -1,0 +1,49 @@
+
+<center>
+
+  <div class="title">
+    <h1 class="animate__animated animate__tada">Viewing Party</h1>
+  </div>
+</center>
+
+<center>
+<% if current_user %>
+ <div class="welcome_back">
+ <h1> Welcome back! </h1>
+</div>
+
+<section id="existing_users">
+ <div class="welcome_back">
+    <h3>Active Users</h3>
+  </div>
+  
+  <% @users.each do |user| %>
+    <section id="user_id-<%= user.id %>">
+    <div class="container-sm">
+
+      <ul class="list-group list-group-flush">
+    <div class="user_container">
+        <li class="list-group-item"><%= user.email %></li>
+    </div>
+      </ul>
+    </div>
+
+    </section>
+    <% end %>
+
+</section>
+</center>
+<% else  %>
+
+<center>
+  <div class="top_movies_button">
+    <%= button_to "Become a User!", "/register", method: :get, class: "btn btn-primary btn-lg btn-block"%> 
+  </div>
+
+
+  <div class="about_app">
+    <h3>Viewing Party is an app to plan movie watch parties with your friends!<br> <br> As a site visitor you can search for movies, and get movie details.  <br><br>As a logged in user you can create watch parties and invite your friends!</h3>
+  </div>
+</center>
+<% end %>
+

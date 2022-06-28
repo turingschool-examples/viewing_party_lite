@@ -1,0 +1,15 @@
+
+
+<%= form_with url: 'login', class: "new_form", method: :post, local: true do |form| %>
+  <%= form.label :name, "Name:", class: "left" %>
+  <%= form.text_field :name, class: "right" %>
+
+  <%= form.label :email, "Email:", class: "left" %>
+  <%= form.text_field :email, class: "right" %>
+
+  <%= form.label :password, 'Password:', class: "left" %>
+  <%= form.password_field :password, class: "right"%>
+
+  <button type="Login" class="btn btn-primary btn-lg btn-block">Submit</button>
+
+<% end %>
