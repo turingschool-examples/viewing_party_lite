@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <% flash.each do |type, msg| %>
+      <div>
+        <%= msg %>
+      </div>
+    <% end %>
+    <%= link_to 'Home', '/' %>
+    <br>
+    <br>
     <%= yield %>
   </body>
 </html>
