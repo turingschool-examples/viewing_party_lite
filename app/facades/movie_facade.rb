@@ -31,5 +31,12 @@ class MovieFacade
     end 
     movies
   end 
+
+  def self.cast(movie_id)
+      conn = Faraday.new(url: "https://api.themoviedb.org")
+      response2 = conn.get("/3/movie/#{movie_id}/credits?api_key=#{ENV['movie_db_key']}")
+      data2 = JSON.parse(response2.body, symbolize_names: true)
+      cast = Cast.new(data2)
+  end 
   
 end 

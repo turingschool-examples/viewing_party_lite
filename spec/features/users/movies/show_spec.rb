@@ -2,15 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'User Movie Show Page', type: :feature do
   before :each do
-    @user1 = User.create!(name: 'Skeeter', email: 'skeeter@skeeter.com', password: 'test')
-    @user2 = User.create!(name: 'Alex', email: 'alex@alex.com', password: 'test123')
-    visit '/'
-
-    click_button 'Login'
-    fill_in 'Name:', with: 'Skeeter'
-    fill_in 'Email:', with: 'skeeter@skeeter.com'
-    fill_in 'Password', with: 'test'
-    click_on 'Log In'
+    user1 = User.create!(name: 'Skeeter', email: 'skeeter@skeeter.com', password: 'test')
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
   end
 
 
@@ -39,9 +32,9 @@ RSpec.describe 'User Movie Show Page', type: :feature do
 
   it 'Possesses functional link back to discover page', :vcr do
     visit "/movies/278"
-
+  
     within "#links" do
-      expect(page).to have_link("Return to Discover", href: "/discover")
+      expect(page).to have_button("Discover Page")
     end
   end
 
@@ -52,20 +45,4 @@ RSpec.describe 'User Movie Show Page', type: :feature do
       expect(page).to have_button("Create New Watch Party")
     end
   end
-
-  describe 'As a visitor not registered user' do
-
-    it 'Visitor cannot click button to create a viewing party', :vcr do
-      VCR.use_cassette('Visitor cannot click button to create a viewing party') do
-  
-      visit '/'
-      click_link "Log Out"
-      visit "/movies/278"
-
-      click_button "Create New Watch Party"
-      expect(current_path).to eq('/movies/278')
-      expect(page).to have_content("You must be logged in or registered to create a movie party")
-      end 
-    end 
-  end 
 end

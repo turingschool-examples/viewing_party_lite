@@ -1,20 +1,69 @@
-<%# <center>
-<h1>Viewing Party Lite</h1>
-</center> %>
+<style>
 
-<center>
-<h2>Discover Movies</h2>
-</center>
+.rotate {
+  animation: rotation 3s infinite linear;
+}
 
-<center>
-<%= button_to "Find Top Rated Movies", "/movies", method: :get, params: {top_rated: 'top_rated'} %> 
-</center>
-<br>
+@keyframes rotation {
+    0.0%{
+      transform: rotate3d(0, 1, 0, 0deg);
+    }
 
-<center>
-<%= form_with url: "/movies?q=keyword", method: :get, local: true do |form| %>
-  <%= form.label :keyword, 'Search by Movie Title' %>
-  <%= form.text_field :keyword %>
-  <%= form.submit 'Find Movies' %>
-<% end %>
-</center>
+    12.5%{
+        transform: rotate3d(0, 1, 0, 45deg);
+    }
+    25%{
+        transform: rotate3d(0, 1, 0, 90deg);
+    }
+    37.5%{
+        transform: rotate3d(0, 1, 0, 135deg);
+    }
+
+    50{
+        transform: rotate3d(0, 1, 0, 180deg);
+    }
+    62.5%{
+        transform: rotate3d(0, 1, 0, 215deg);
+    }
+    75%{
+        transform: rotate3d(0, 1, 0, 270deg);
+    }
+    87.5%{
+        transform: rotate3d(0, 1, 0, 305deg);
+    }
+    100%{
+        transform: rotate3d(0, 1, 0, 360deg);
+    }
+}
+</style>    
+<div class="page_container">
+    
+  <div class="glass">
+    <img style="margin:0px; padding:0px;" src="<%= image_path('glass.png') %>" class="rotate" width="250" height="250" />
+  </div>
+
+  <div class="search_container">
+
+    <center>
+    <h2>Search for Movies . . .</h2>
+    </center>
+
+    <center>
+    <div class="top_movies_button">
+    <%= button_to "Find Top Rated Movies", "/movies", method: :get, params: {top_rated: 'top_rated'}, class: "btn btn-primary btn-lg btn-block"%> 
+  </div>
+    
+    </center>
+    <br>
+
+    <center>
+    <%= form_with url: "/movies?q=keyword", method: :get, class: "search_form_label", local: true do |form| %>
+      
+      <%= form.label :keyword, 'Search by Movie Title' %>
+      <%= form.text_field :keyword, class: "text_field" %>
+      
+      <%= form.submit 'Find Movies', class: 'flat_button' %>
+    <% end %>
+    </center>
+  </div>
+</div>

@@ -24,8 +24,6 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Tue, 24 May 2022 18:27:13 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -35,42 +33,44 @@ http_interactions:
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
-      Cache-Control:
-      - public, max-age=28800
       X-Memc:
       - HIT
       X-Memc-Key:
       - 0fe9fd8be945926db00f194c8081c5bf70aee2e0
       X-Memc-Age:
-      - '13864'
+      - '10882'
       X-Memc-Expires:
-      - '763'
+      - '3802'
+      Date:
+      - Tue, 28 Jun 2022 18:28:13 GMT
+      Cache-Control:
+      - public, max-age=28800
       Etag:
-      - W/"97bd07e406d2ab2745c91cd504b2bec2"
+      - W/"e799a28a32be89695934e6a608b2928f"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 cddde15c11afac53ac9fe7978dcfecd6.cloudfront.net (CloudFront)
+      - 1.1 f0b290c4e2273a7586bc6f080031d9bc.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - IWdGh_hj7iStyVZdCjanA7f__38gJEHEoZlCGiml1ESs53hLDkWRuQ==
+      - OknVmgL3JfIpdBM-HqQGQAz9sWOEa9L4hgagzpq8_KGRv9TXK7W1Vw==
       Age:
-      - '1'
+      - '3796'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/idWj39RpSeIzb7t3XwIiCuwDTqC.jpg","belongs_to_collection":{"id":2366,"name":"Jaws
         Collection","poster_path":"/fgraZdDCvAtBr0MHczmL6raonHd.jpg","backdrop_path":"/1e2QvI2u7Q4d2admK6Xw0AjLjVp.jpg"},"budget":7000000,"genres":[{"id":27,"name":"Horror"},{"id":53,"name":"Thriller"},{"id":12,"name":"Adventure"}],"homepage":"https://www.uphe.com/movies/jaws","id":578,"imdb_id":"tt0073195","original_language":"en","original_title":"Jaws","overview":"When
         an insatiable great white shark terrorizes the townspeople of Amity Island,
         the police chief, an oceanographer and a grizzled shark hunter seek to destroy
-        the blood-thirsty beast.","popularity":41.996,"poster_path":"/s2xcqSFfT6F7ZXHxowjxfG0yisT.jpg","production_companies":[{"id":1865,"logo_path":null,"name":"Zanuck/Brown
-        Productions","origin_country":"US"},{"id":33,"logo_path":"/8lvHyhjr8oUKOOy2dKXoALWKdp0.png","name":"Universal
-        Pictures","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        the blood-thirsty beast.","popularity":61.142,"poster_path":"/s2xcqSFfT6F7ZXHxowjxfG0yisT.jpg","production_companies":[{"id":33,"logo_path":"/8lvHyhjr8oUKOOy2dKXoALWKdp0.png","name":"Universal
+        Pictures","origin_country":"US"},{"id":1865,"logo_path":null,"name":"Zanuck/Brown
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1975-06-20","revenue":470653000,"runtime":124,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Don''t
-        go in the water","title":"Jaws","video":false,"vote_average":7.6,"vote_count":8345}'
-  recorded_at: Tue, 24 May 2022 18:27:14 GMT
+        go in the water","title":"Jaws","video":false,"vote_average":7.6,"vote_count":8417}'
+  recorded_at: Tue, 28 Jun 2022 19:31:29 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/1381?api_key=e2d1402726608719026ca6424f229bcf
@@ -96,7 +96,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Tue, 24 May 2022 18:27:13 GMT
+      - Tue, 28 Jun 2022 18:28:13 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -113,11 +113,11 @@ http_interactions:
       X-Memc-Key:
       - e451622255e495378b9fb685aaa29ea034614a35
       X-Memc-Age:
-      - '2102'
+      - '7351'
       X-Memc-Expires:
-      - '15154'
+      - '10282'
       Etag:
-      - W/"e24ef46f951adbad1372ec3086eb6c29"
+      - W/"01a22c0cd90ee4abf3bdc8e489c5fa57"
       Vary:
       - Accept-Encoding
       X-Cache:
@@ -127,23 +127,23 @@ http_interactions:
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - Ydcc4Ae3KUOoxK6wuKRFnk6rLY5K1RmzmAGjY00vnh5rcfsxuzV36g==
+      - wXiMBn25Vf9YxkT1i5zedMXW1ImYaj7RdtIQ5BiSmXgO5KuGbsn3Ag==
       Age:
-      - '1'
+      - '3796'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/9RNJ0pKYA8EQiMa0lFZ68gzeElH.jpg","belongs_to_collection":null,"budget":35000000,"genres":[{"id":18,"name":"Drama"},{"id":12,"name":"Adventure"},{"id":878,"name":"Science
         Fiction"},{"id":10749,"name":"Romance"}],"homepage":"http://thefountainmovie.warnerbros.com/","id":1381,"imdb_id":"tt0414993","original_language":"en","original_title":"The
         Fountain","overview":"Spanning over one thousand years, and three parallel
         stories, The Fountain is a story of love, death, spirituality, and the fragility
-        of our existence in this world.","popularity":12.235,"poster_path":"/tnmkVAYrHITpdKgmZ7CzVBEI4ho.jpg","production_companies":[{"id":508,"logo_path":"/7PzJdsLGlR7oW4J0J5Xcd0pHGRg.png","name":"Regency
-        Enterprises","origin_country":"US"},{"id":7503,"logo_path":"/3K8wbNkTn7O4wX89ucnp1ZYR1XF.png","name":"Protozoa
+        of our existence in this world.","popularity":14.494,"poster_path":"/tnmkVAYrHITpdKgmZ7CzVBEI4ho.jpg","production_companies":[{"id":174,"logo_path":"/IuAlhI9eVC9Z8UQWOIDdWRKSEJ.png","name":"Warner
+        Bros. Pictures","origin_country":"US"},{"id":508,"logo_path":"/7PzJdsLGlR7oW4J0J5Xcd0pHGRg.png","name":"Regency
+        Enterprises","origin_country":"US"},{"id":6438,"logo_path":"/hQVRii7CRnfG0rowSEc6ibt2Pke.png","name":"Muse
+        Entertainment","origin_country":"CA"},{"id":7503,"logo_path":"/3K8wbNkTn7O4wX89ucnp1ZYR1XF.png","name":"Protozoa
         Pictures","origin_country":"US"},{"id":10104,"logo_path":"/hNuGhsKVlmhnwSRcmOejDBDjh6w.png","name":"New
-        Regency Pictures","origin_country":"US"},{"id":6438,"logo_path":"/hQVRii7CRnfG0rowSEc6ibt2Pke.png","name":"Muse
-        Entertainment","origin_country":"CA"},{"id":174,"logo_path":"/IuAlhI9eVC9Z8UQWOIDdWRKSEJ.png","name":"Warner
-        Bros. Pictures","origin_country":"US"},{"id":54502,"logo_path":null,"name":"Mel''s
+        Regency Pictures","origin_country":"US"},{"id":54502,"logo_path":null,"name":"Mel''s
         Cite du Cinema","origin_country":""}],"production_countries":[{"iso_3166_1":"CA","name":"Canada"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"2006-11-22","revenue":15304890,"runtime":96,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Death
-        is the road to awe","title":"The Fountain","video":false,"vote_average":6.9,"vote_count":2223}'
-  recorded_at: Tue, 24 May 2022 18:27:14 GMT
+        is the road to awe","title":"The Fountain","video":false,"vote_average":6.9,"vote_count":2235}'
+  recorded_at: Tue, 28 Jun 2022 19:31:29 GMT
 recorded_with: VCR 6.1.0

@@ -2,15 +2,11 @@ require 'rails_helper'
 
 RSpec.describe 'User Dashboard', type: :feature do
   before :each do
-    @user1 = User.create!(name: 'Skeeter', email: 'skeeter@skeeter.com', password: 'test')
     @user2 = User.create!(name: 'Alex', email: 'alex@alex.com', password: 'test123')
-    visit '/'
+    user1 = User.create!(name: 'Skeeter', email: 'skeeter@skeeter.com', password: 'test')
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
-    click_button 'Login'
-    fill_in 'Name:', with: 'Skeeter'
-    fill_in 'Email:', with: 'skeeter@skeeter.com'
-    fill_in 'Password', with: 'test'
-    click_on 'Log In'
+    # save_and_open_page
   end
 
   it 'doesnt need an id in the uri' do

@@ -19,15 +19,15 @@ RSpec.describe 'Landing/Welcome Page' do
     it 'has a link to return back to the landing/welcome page', :vcr do #link will be present on every page of application 
       visit "/"
 
-      click_link "Home"
+      click_button "Home"
       expect(current_path).to eq('/')
     end 
 
     it 'has a button to create a new user' do  
       visit "/"
       
-      expect(page).to have_button("Create a New User")
-      click_button "Create a New User"
+      expect(page).to have_button("Become a User!")
+      click_button "Become a User!"
       expect(current_path).to eq('/register')
     end 
   end 
@@ -37,34 +37,16 @@ RSpec.describe 'Landing/Welcome Page' do
       user1 = User.create!(name: 'Skeeter', email: 'skeeter@skeeter.com', password: 'test')
       visit '/'
 
-      click_button 'Login'
-      fill_in 'Name:', with: 'Skeeter'
-      fill_in 'Email:', with: 'skeeter@skeeter.com'
-      fill_in 'Password', with: 'test'
-      click_on 'Log In'
+      user1 = User.create!(name: 'Skeeter', email: 'skeeter.com', password: 'test')
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
+
       visit '/'
-      # save_and_open_page
+     
       expect(page).to_not have_button('Login')
       expect(page).to_not have_button('Create a New User')
       expect(page).to have_link('Log Out')
     end 
     
-    it 'clicking log out logs out user, returns them to root, buttons to log in/create user appear' do
-      user1 = User.create!(name: 'Skeeter', email: 'skeeter@skeeter.com', password: 'test')
-      visit '/'
-
-      click_button 'Login'
-      fill_in 'Name:', with: 'Skeeter'
-      fill_in 'Email:', with: 'skeeter@skeeter.com'
-      fill_in 'Password', with: 'test'
-      click_on 'Log In'
-      visit '/'
-
-      click_link 'Log Out'
-      expect(page).to have_button('Login')
-      expect(page).to have_button('Create a New User')
-      expect(page).to_not have_button('Log Out')
-    end
   end 
   describe 'as a visitor vs as a registered user' do
     it 'as a visitor, I dont see the section listing all the users' do
@@ -80,20 +62,15 @@ RSpec.describe 'Landing/Welcome Page' do
     end 
 
     it 'As a registered user, I see current users email' do #emails will no longer link to show pages
-      skeeter = User.create!(name: 'Skeeter', email: 'skeeter@example.com', password: 'test123', password_confirmation: 'test123')
       lugnut = User.create!(name: 'LugNut', email: 'fatdog@corgi.com', password: 'test12')
       hazel = User.create!(name: 'Hazel', email: 'hazelthehut@food.com', password: 'test1')
+      
+      user1 = User.create!(name: 'Skeeter', email: 'skeeter.com', password: 'test')
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
       visit '/'
-      click_button 'Login'
 
-      fill_in 'Name:', with: 'Skeeter'
-      fill_in 'Email:', with: 'skeeter@example.com'
-      fill_in 'Password', with: 'test123'
-      click_on 'Log In'
-      visit '/'
-
-      expect(page).to have_content("Current Users")
+      expect(page).to have_content("Active Users")
       expect(page).to have_content(lugnut.email)
       expect(page).to have_content(hazel.email)
 
