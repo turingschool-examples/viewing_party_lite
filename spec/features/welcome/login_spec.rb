@@ -13,47 +13,33 @@ RSpec.describe "Login Page" do
       expect(current_path).to eq('/login')
     end
     
-    it 'When I enter my email and password correctly I am taken to my dashboard', :vcr do
-      meatball = User.create(name: 'meatball', email: 'meatball@example.com', password: '123')
+    # it 'If I enter a bad password, I am redirected back to login page with error telling me my password was bad', :vcr do
+    #   meatball = User.create(name: 'meatball', email: 'meatball@example.com', password: '123')
 
-      visit "/login"
+    #   visit "/login"
 
-      fill_in :name, with: 'meatball'
-      fill_in :email, with: 'meatball@example.com'
-      fill_in :password, with: '123'
-      click_on "Log In"   
+    #   fill_in :name, with: 'meatball'
+    #   fill_in :email, with: 'meatball@example.com'
+    #   fill_in :password, with: 'not my password'
+    #   click_on "Log In"   
+    #   expect(current_path).to eq("/login")
+    #   # save_and_open_page
+    #   expect(page).to have_content("Incorrect Password")
+    # end 
 
-      expect(current_path).to eq("/dashboard")
-      # expect(page).to have_content("Welcome #{meatball.name}!") changed welcome msg to be flash message
-    end
+    # it 'If I enter a bad email, I am redirected back to login page with error telling me my email was bad', :vcr do
+    #   meatball = User.create(name: 'meatball', email: 'meatball@example.com', password: '123')
 
-    it 'If I enter a bad password, I am redirected back to login page with error telling me my password was bad', :vcr do
-      meatball = User.create(name: 'meatball', email: 'meatball@example.com', password: '123')
+    #   visit "/login"
 
-      visit "/login"
-
-      fill_in :name, with: 'meatball'
-      fill_in :email, with: 'meatball@example.com'
-      fill_in :password, with: 'not my password'
-      click_on "Log In"   
-      expect(current_path).to eq("/login")
-      # save_and_open_page
-      expect(page).to have_content("Incorrect Password")
-    end 
-
-    it 'If I enter a bad email, I am redirected back to login page with error telling me my email was bad', :vcr do
-      meatball = User.create(name: 'meatball', email: 'meatball@example.com', password: '123')
-
-      visit "/login"
-
-      fill_in :name, with: 'meatball'
-      fill_in :email, with: 'skeeter@example.com'
-      fill_in :password, with: '123'
-      click_on "Log In"   
-      expect(current_path).to eq("/login")
-      # save_and_open_page
-      expect(page).to have_content("Incorrect Email")
-    end 
+    #   fill_in :name, with: 'meatball'
+    #   fill_in :email, with: 'skeeter@example.com'
+    #   fill_in :password, with: '123'
+    #   click_on "Log In"   
+    #   expect(current_path).to eq("/login")
+    #   # save_and_open_page
+    #   expect(page).to have_content("Incorrect Email")
+    # end 
 
 
   end 

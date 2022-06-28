@@ -2,15 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "New Party Page" do 
   before :each do
-    @user1 = User.create!(name: 'Skeeter', email: 'skeeter@skeeter.com', password: 'test')
-    @user2 = User.create!(name: 'Alex', email: 'alex@alex.com', password: 'test123')
-    visit '/'
-
-    click_button 'Login'
-    fill_in 'Name:', with: 'Alex'
-    fill_in 'Email:', with: 'alex@alex.com'
-    fill_in 'Password', with: 'test123'
-    click_on 'Log In'
+    user1 = User.create!(name: 'Skeeter', email: 'skeeter@skeeter.com', password: 'test')
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
   end
 
   describe "As a Visitor" do 
