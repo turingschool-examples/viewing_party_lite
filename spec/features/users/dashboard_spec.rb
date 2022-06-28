@@ -5,15 +5,18 @@ RSpec.describe 'User Dashboard', type: :feature do
     @user1 = User.create!(name: 'Skeeter', email: 'skeeter@skeeter.com', password: 'test')
     @user2 = User.create!(name: 'Alex', email: 'alex@alex.com', password: 'test123')
     visit '/'
-
-    click_button 'Login'
+    # save_and_open_page
+    within '#login_button' do
+      click_button 'Login'
+    end
     fill_in 'Name:', with: 'Skeeter'
     fill_in 'Email:', with: 'skeeter@skeeter.com'
     fill_in 'Password', with: 'test'
-    click_on 'Log In'
+    click_on 'Submit'
+    # save_and_open_page
   end
 
-  it 'doesnt need an id in the uri' do
+  xit 'doesnt need an id in the uri' do
     visit '/dashboard'
     # save_and_open_page
     expect(page).to have_content('Skeeter')
