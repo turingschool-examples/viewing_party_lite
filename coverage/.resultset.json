@@ -17,6 +17,7 @@
           1,
           null,
           1,
+          1,
           null
         ]
       },
@@ -35,6 +36,19 @@
           null,
           0,
           0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/thomashaines/turing/3mod/intermission/projects/viewing_party_lite/app/models/viewing_party.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
+          null,
           0,
           0
         ],
@@ -86,6 +100,6 @@
         }
       }
     },
-    "timestamp": 1657063031
+    "timestamp": 1657063440
   }
 }
