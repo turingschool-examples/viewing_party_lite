@@ -30,6 +30,18 @@
           null
         ]
       },
+      "/Users/thomashaines/turing/3mod/intermission/projects/viewing_party_lite/app/models/user_viewing_party.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/thomashaines/turing/3mod/intermission/projects/viewing_party_lite/app/models/viewing_party.rb": {
         "lines": [
           1,
@@ -98,6 +110,6 @@
         }
       }
     },
-    "timestamp": 1657063987
+    "timestamp": 1657064143
   }
 }
