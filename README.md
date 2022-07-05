@@ -24,3 +24,7 @@ Viewing Part Lite is an application in which users can explore movie options and
 - Rails 5.2.6
 
 Example wireframes to follow are found [here](https://backend.turing.edu/module3/projects/viewing_party_lite/wireframes)
+
+## Database Diagram
+
+<img width="913" alt="Screen Shot 2022-07-05 at 5 45 11 PM" src="https://user-images.githubusercontent.com/99001315/177434540-9cb967ce-00c7-4b8c-a33c-0c701952c47d.png">
