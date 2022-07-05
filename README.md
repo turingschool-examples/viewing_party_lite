@@ -19,7 +19,7 @@ Viewing Part Lite is an application in which users can explore movie options and
 
 ## Versions
 
-- Ruby 2.7.2
+- Ruby 2.7.4
 
 - Rails 5.2.6
 
