@@ -1,5 +1,0 @@
-Issue Reference:
-
-Description:
-
-Author:
