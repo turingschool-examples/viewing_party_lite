@@ -44,6 +44,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rubocop-rails'
+  gem 'solargraph'
 end
 
 group :test do 
@@ -51,6 +52,7 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'simplecov'
+  gem 'orderly'
 end 
 
 
