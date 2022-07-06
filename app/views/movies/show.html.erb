@@ -1,0 +1,37 @@
+<ul>
+  <%= link_to 'Back to Discover Page', discover_index_path(@user.id) %>
+  <%= link_to "Create Viewing Party", "dashboard/movies/#{@movie.id}/viewing-party/new", method: :get %>
+</ul>
+
+<div class="movie-info">
+  <center>
+    <h2>Title: <%= @movie.title %></h2>
+    <p><strong>Vote Average:</strong> <%= @movie.vote_average %></p>
+    <p><strong>Runtime:</strong> <%= "#{@movie.runtime/60} hours #{@movie.runtime%60} minutes" %></p>
+  </center>
+  <p><strong>Genre(s):</strong> <% @movie.genres.each do |genre| %>
+                                  <ul>
+                                    <li><%= genre[:name] %></li>
+                                  </ul>
+                                <% end %>
+  </p>
+  <hr>
+  <p><strong>Summary:</strong> <i><%= @movie.overview %></i></p>
+  <h3>Cast</h3>
+  <p>
+    <% @movie.cast.each do |member| %>
+    <ul>
+      <li><p><%= member[:name] %> as <%= member[:character] %></p></li>
+    </ul>
+    <% end %>
+  </p>
+
+  <hr>
+  <h3>Review</h3>
+  <p>Total Reviews: <%= @movie.reviews.count %></p>
+  <p><% @movie.reviews.each do |review| %>
+    Author: <%= review[:author_details][:username] %><br>
+    <p>Review: <%= review[:content] %></p>
+    <hr>
+    <% end %>
+  </p>

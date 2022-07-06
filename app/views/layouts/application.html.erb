@@ -10,6 +10,19 @@
   </head>
 
   <body>
+    <div class="links">
+      <%= link_to 'Home', root_path %>
+    </div>
+    <center>
+      <div class="title">
+        <h1>Viewing Party Lite</h1>
+      </div>
+    </center>
     <%= yield %>
+    <% flash.each do |type, msg| %>
+    <div>
+      <%= msg %>
+    </div>
+    <% end %>
   </body>
 </html>
