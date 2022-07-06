@@ -13,22 +13,22 @@ RSpec.describe 'landing page', type: :feature do
     click_link('Home')
     expect(current_path).to eq('/')
     expect(page).to have_button('Create a New User')
-    # click_button('Create a New User')
-    # expect(current_path).to eq('/register')
-    # visit '/'
+    click_button('Create a New User')
+    expect(current_path).to eq('/register')
+    visit '/'
     expect(page).to have_content('Existing Users:')
     within '#user-0' do
       expect(page).to have_link("Jane Powell's Dashboard")
       expect(page).to_not have_link("Ann Miller's Dashboard")
-      # click_link("Jane Powell's Dashboard")
-      # expect(current_path).to eq("/users/#{user1.id}")
-      # visit "/"
+      click_link("Jane Powell's Dashboard")
+      expect(current_path).to eq("/users/#{user1.id}")
+      visit '/'
     end
     within '#user-1' do
       expect(page).to have_link("Ann Miller's Dashboard")
       expect(page).to_not have_link("Jane Powell's Dashboard")
-      # click_link("Ann Miller's Dashboard")
-      # expect(current_path).to eq("/users/#{user2.id}")
+      click_link("Ann Miller's Dashboard")
+      expect(current_path).to eq("/users/#{user2.id}")
     end
   end
 end
