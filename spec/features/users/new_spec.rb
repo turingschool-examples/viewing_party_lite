@@ -1,11 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "Registration Page" do
-  it 'has a form for Name and email' do
-    visit '/users/register'
-    expect(page).to have_form("Name")
-    expect(page).to have_form("Email")
-  end
   it 'creates a new user' do
     user_count = User.all.length
     visit '/users/register'
@@ -29,5 +24,4 @@ RSpec.describe "Registration Page" do
     click_button "Register"
     expect(flash[:alert]).to match(/Email is Already Used*/)
   end
-
 end
