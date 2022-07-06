@@ -31,14 +31,36 @@
       "/Users/drewproebstel/turing/rmodule/viewing_party_lite/app/models/user.rb": {
         "lines": [
           1,
+          1,
+          1,
           null
         ]
       },
-      "/Users/drewproebstel/turing/rmodule/viewing_party_lite/app/controllers/landing_controller.rb": {
+      "/Users/drewproebstel/turing/rmodule/viewing_party_lite/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
-          6,
+          3,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null,
+          1,
+          3,
+          3,
+          2,
+          2,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          3,
           null,
           null
         ]
@@ -49,15 +71,11 @@
           null
         ]
       },
-      "/Users/drewproebstel/turing/rmodule/viewing_party_lite/app/controllers/users_controller.rb": {
+      "/Users/drewproebstel/turing/rmodule/viewing_party_lite/app/controllers/landing_controller.rb": {
         "lines": [
           1,
           1,
-          1,
-          null,
-          null,
-          1,
-          null,
+          6,
           null,
           null
         ]
@@ -101,6 +119,6 @@
         }
       }
     },
-    "timestamp": 1657119351
+    "timestamp": 1657150090
   }
 }
