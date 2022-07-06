@@ -20,7 +20,6 @@ RSpec.describe "Landing Page" do
 
     visit '/'
 
-    save_and_open_page
     expect(page).to have_content("Drew Proebstel")
     expect(page).to have_content("Zac Hazelwood")
 
