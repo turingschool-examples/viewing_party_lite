@@ -20,9 +20,9 @@ RSpec.describe "Landing Page" do
 
     visit '/'
 
-
+    save_and_open_page
     expect(page).to have_content("Drew Proebstel")
-    expect(page).to have_content("Zach Hazelwood")
+    expect(page).to have_content("Zac Hazelwood")
 
   end
 
@@ -30,7 +30,7 @@ RSpec.describe "Landing Page" do
     drew = User.create(name: "Drew Proebstel", email: "drew@turdmail.com")
     visit '/'
     click_link("Drew Proebstel")
-    expect(current_path).to eq("/users/#{drew.id}/dashboard")
+    expect(current_path).to eq("/users/#{drew.id}")
   end
 
   it 'links to landing page' do

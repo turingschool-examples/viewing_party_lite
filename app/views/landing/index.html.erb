@@ -1,0 +1,6 @@
+<h1>Viewing Party</h1>
+<% @users.each do |user| %>
+  <%= link_to "#{user.name}'s Dashboard", "users/#{user.id}" %>
+  <br>
+<% end %>
+<%= button_to "Create New User", "users/new", method: :get %>

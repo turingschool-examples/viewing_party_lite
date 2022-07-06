@@ -38,7 +38,7 @@
         "lines": [
           1,
           1,
-          5,
+          6,
           null,
           null
         ]
@@ -46,6 +46,19 @@
       "/Users/drewproebstel/turing/rmodule/viewing_party_lite/app/controllers/application_controller.rb": {
         "lines": [
           1,
+          null
+        ]
+      },
+      "/Users/drewproebstel/turing/rmodule/viewing_party_lite/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
           null
         ]
       },
@@ -88,6 +101,6 @@
         }
       }
     },
-    "timestamp": 1657086822
+    "timestamp": 1657119351
   }
 }
