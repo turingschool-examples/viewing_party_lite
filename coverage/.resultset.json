@@ -11,6 +11,12 @@
       },
       "/Users/jenniferhalloran/turing/3mod/projects/viewing_party_lite/app/controllers/users_controller.rb": {
         "lines": [
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
           1,
           1,
           null,
@@ -37,8 +43,9 @@
       },
       "/Users/jenniferhalloran/turing/3mod/projects/viewing_party_lite/app/models/user.rb": {
         "lines": [
-          1,
           null,
+          null,
+          1,
           null
         ]
       },
@@ -98,6 +105,6 @@
         }
       }
     },
-    "timestamp": 1657065127
+    "timestamp": 1657065579
   }
 }

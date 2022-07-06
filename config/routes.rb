@@ -5,5 +5,5 @@ Rails.application.routes.draw do
 
   get '/register', to: 'users#new'
 
-  resources :users, only: [:create, :show]
+  resources :users, only: %i[create show]
 end
