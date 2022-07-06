@@ -1,28 +1,13 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/antoniosalmeron/turing/3module/projects/viewing_party_lite/app/helpers/application_helper.rb": {
+      "/Users/oscarsantos/3_mod/project/viewing_party_lite/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/antoniosalmeron/turing/3module/projects/viewing_party_lite/app/models/party.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/antoniosalmeron/turing/3module/projects/viewing_party_lite/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/antoniosalmeron/turing/3module/projects/viewing_party_lite/app/models/party_user.rb": {
+      "/Users/oscarsantos/3_mod/project/viewing_party_lite/app/models/party.rb": {
         "lines": [
           1,
           1,
@@ -30,7 +15,14 @@
           null
         ]
       },
-      "/Users/antoniosalmeron/turing/3module/projects/viewing_party_lite/app/models/user.rb": {
+      "/Users/oscarsantos/3_mod/project/viewing_party_lite/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/oscarsantos/3_mod/project/viewing_party_lite/app/models/party_user.rb": {
         "lines": [
           1,
           1,
@@ -38,7 +30,43 @@
           null
         ]
       },
-      "/Users/antoniosalmeron/turing/3module/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
+      "/Users/oscarsantos/3_mod/project/viewing_party_lite/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/oscarsantos/3_mod/project/viewing_party_lite/app/controllers/landing_page_controller.rb": {
+        "lines": [
+          1,
+          1,
+          5,
+          null,
+          null
+        ]
+      },
+      "/Users/oscarsantos/3_mod/project/viewing_party_lite/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/oscarsantos/3_mod/project/viewing_party_lite/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/oscarsantos/3_mod/project/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
           0,
           0,
@@ -48,7 +76,7 @@
         "branches": {
         }
       },
-      "/Users/antoniosalmeron/turing/3module/projects/viewing_party_lite/app/jobs/application_job.rb": {
+      "/Users/oscarsantos/3_mod/project/viewing_party_lite/app/jobs/application_job.rb": {
         "lines": [
           0,
           0
@@ -56,15 +84,7 @@
         "branches": {
         }
       },
-      "/Users/antoniosalmeron/turing/3module/projects/viewing_party_lite/app/controllers/application_controller.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/antoniosalmeron/turing/3module/projects/viewing_party_lite/app/channels/application_cable/connection.rb": {
+      "/Users/oscarsantos/3_mod/project/viewing_party_lite/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
           0,
@@ -74,7 +94,7 @@
         "branches": {
         }
       },
-      "/Users/antoniosalmeron/turing/3module/projects/viewing_party_lite/app/channels/application_cable/channel.rb": {
+      "/Users/oscarsantos/3_mod/project/viewing_party_lite/app/channels/application_cable/channel.rb": {
         "lines": [
           0,
           0,
@@ -85,6 +105,6 @@
         }
       }
     },
-    "timestamp": 1657067679
+    "timestamp": 1657133410
   }
 }
