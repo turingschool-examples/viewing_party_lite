@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/nick/Turing/3mod/projects/viewing_party_lite/app/helpers/application_helper.rb": {
+      "/Users/jamesriddle/turing/3module/projects/viewing_party_lite/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -9,26 +9,7 @@
           null
         ]
       },
-      "/Users/nick/Turing/3mod/projects/viewing_party_lite/app/models/party.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/nick/Turing/3mod/projects/viewing_party_lite/app/models/application_record.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/nick/Turing/3mod/projects/viewing_party_lite/app/models/user_party.rb": {
+      "/Users/jamesriddle/turing/3module/projects/viewing_party_lite/app/models/party.rb": {
         "lines": [
           null,
           null,
@@ -38,7 +19,16 @@
           null
         ]
       },
-      "/Users/nick/Turing/3mod/projects/viewing_party_lite/app/models/user.rb": {
+      "/Users/jamesriddle/turing/3module/projects/viewing_party_lite/app/models/application_record.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/jamesriddle/turing/3module/projects/viewing_party_lite/app/models/user_party.rb": {
         "lines": [
           null,
           null,
@@ -48,7 +38,53 @@
           null
         ]
       },
-      "/Users/nick/Turing/3mod/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
+      "/Users/jamesriddle/turing/3module/projects/viewing_party_lite/app/models/user.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/jamesriddle/turing/3module/projects/viewing_party_lite/app/controllers/landing_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          6,
+          null,
+          null
+        ]
+      },
+      "/Users/jamesriddle/turing/3module/projects/viewing_party_lite/app/controllers/application_controller.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/jamesriddle/turing/3module/projects/viewing_party_lite/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/jamesriddle/turing/3module/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
           null,
           null,
@@ -60,7 +96,7 @@
         "branches": {
         }
       },
-      "/Users/nick/Turing/3mod/projects/viewing_party_lite/app/jobs/application_job.rb": {
+      "/Users/jamesriddle/turing/3module/projects/viewing_party_lite/app/jobs/application_job.rb": {
         "lines": [
           null,
           null,
@@ -70,17 +106,7 @@
         "branches": {
         }
       },
-      "/Users/nick/Turing/3mod/projects/viewing_party_lite/app/controllers/application_controller.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/nick/Turing/3mod/projects/viewing_party_lite/app/channels/application_cable/connection.rb": {
+      "/Users/jamesriddle/turing/3module/projects/viewing_party_lite/app/channels/application_cable/connection.rb": {
         "lines": [
           null,
           null,
@@ -92,7 +118,7 @@
         "branches": {
         }
       },
-      "/Users/nick/Turing/3mod/projects/viewing_party_lite/app/channels/application_cable/channel.rb": {
+      "/Users/jamesriddle/turing/3module/projects/viewing_party_lite/app/channels/application_cable/channel.rb": {
         "lines": [
           null,
           null,
@@ -105,6 +131,6 @@
         }
       }
     },
-    "timestamp": 1657141248
+    "timestamp": 1657144298
   }
 }
