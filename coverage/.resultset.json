@@ -9,58 +9,31 @@
           null
         ]
       },
-      "/Users/jenniferhalloran/turing/3mod/projects/viewing_party_lite/app/controllers/users_controller.rb": {
+      "/Users/jenniferhalloran/turing/3mod/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
           null,
           null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/jenniferhalloran/turing/3mod/projects/viewing_party_lite/app/controllers/application_controller.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/jenniferhalloran/turing/3mod/projects/viewing_party_lite/app/models/user.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null
-        ]
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       },
       "/Users/jenniferhalloran/turing/3mod/projects/viewing_party_lite/app/models/application_record.rb": {
         "lines": [
           null,
           null,
-          1,
-          1,
-          null
-        ]
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       },
-      "/Users/jenniferhalloran/turing/3mod/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
+      "/Users/jenniferhalloran/turing/3mod/projects/viewing_party_lite/app/models/user.rb": {
         "lines": [
-          null,
           null,
           0,
           0,
@@ -74,6 +47,53 @@
         "lines": [
           null,
           null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/jenniferhalloran/turing/3mod/projects/viewing_party_lite/app/controllers/application_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/jenniferhalloran/turing/3mod/projects/viewing_party_lite/app/controllers/users_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
           0,
           0
         ],
@@ -105,6 +125,6 @@
         }
       }
     },
-    "timestamp": 1657065579
+    "timestamp": 1657069073
   }
 }
