@@ -1,0 +1,8 @@
+<h1>Movie Madness</h1>
+
+<h4><%= button_to 'New User', '/register', method: :get %></h4>
+
+<h3>Existing Users</h3>
+<% @users.each do |user| %>
+  <%= link_to user.name, "/users/#{user.id}" %>
+<% end %>
