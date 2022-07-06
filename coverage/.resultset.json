@@ -9,45 +9,16 @@
           null
         ]
       },
-      "/Users/thomashaines/turing/3mod/intermission/projects/viewing_party_lite/app/models/user.rb": {
+      "/Users/thomashaines/turing/3mod/intermission/projects/viewing_party_lite/app/controllers/welcome_controller.rb": {
         "lines": [
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/thomashaines/turing/3mod/intermission/projects/viewing_party_lite/app/models/application_record.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/thomashaines/turing/3mod/intermission/projects/viewing_party_lite/app/models/user_viewing_party.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          null,
           1,
           null,
           null
         ]
       },
-      "/Users/thomashaines/turing/3mod/intermission/projects/viewing_party_lite/app/models/viewing_party.rb": {
+      "/Users/thomashaines/turing/3mod/intermission/projects/viewing_party_lite/app/controllers/application_controller.rb": {
         "lines": [
-          1,
           null,
-          1,
-          1,
           null,
           1,
           null
@@ -65,9 +36,26 @@
         "branches": {
         }
       },
-      "/Users/thomashaines/turing/3mod/intermission/projects/viewing_party_lite/app/jobs/application_job.rb": {
+      "/Users/thomashaines/turing/3mod/intermission/projects/viewing_party_lite/app/models/user_viewing_party.rb": {
         "lines": [
+          0,
           null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/thomashaines/turing/3mod/intermission/projects/viewing_party_lite/app/models/viewing_party.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
           null,
           0,
           0
@@ -75,7 +63,32 @@
         "branches": {
         }
       },
-      "/Users/thomashaines/turing/3mod/intermission/projects/viewing_party_lite/app/controllers/application_controller.rb": {
+      "/Users/thomashaines/turing/3mod/intermission/projects/viewing_party_lite/app/models/application_record.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/thomashaines/turing/3mod/intermission/projects/viewing_party_lite/app/models/user.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/thomashaines/turing/3mod/intermission/projects/viewing_party_lite/app/jobs/application_job.rb": {
         "lines": [
           null,
           null,
@@ -110,6 +123,6 @@
         }
       }
     },
-    "timestamp": 1657064143
+    "timestamp": 1657065644
   }
 }
