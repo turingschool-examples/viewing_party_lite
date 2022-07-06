@@ -1,0 +1,7 @@
+<h3 align='center'><%= button_to "Create a New User", "/register" %></h3>
+<h3>Existing Users: </h3>
+<% @users.each_with_index do |user, index| %>
+  <div id="user-<%= index %>">
+    <%= link_to "#{user.name}'s Dashboard", "/users/#{user.id}" %>
+  </div>  
+<% end %>
