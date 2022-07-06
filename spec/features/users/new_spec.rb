@@ -38,7 +38,6 @@ describe 'user new/registration page' do
   end
 
   it 'displays an error message if a name is not entered on the form and the email is not unique' do
-    
     User.create!(name: 'Jane', email: 'eleven@upsidedown.com')
 
     fill_in 'user[name]', with: ''
