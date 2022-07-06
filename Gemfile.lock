@@ -68,6 +68,8 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.9)
+    crack (0.4.5)
+      rexml
     crass (1.0.6)
     diff-lcs (1.4.4)
     docile (1.4.0)
@@ -76,6 +78,7 @@ GEM
     ffi (1.15.4)
     globalid (0.5.2)
       activesupport (>= 5.0)
+    hashdiff (1.0.1)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.3)
@@ -226,6 +229,10 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
+    webmock (3.14.0)
+      addressable (>= 2.8.0)
+      crack (>= 0.3.2)
+      hashdiff (>= 0.4.0, < 2.0.0)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -256,6 +263,7 @@ DEPENDENCIES
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
+  webmock
 
 RUBY VERSION
    ruby 2.7.2p137
