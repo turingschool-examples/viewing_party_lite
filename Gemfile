@@ -53,6 +53,7 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'rspec-rails'
+  gem 'shoulda-matchers'
   gem 'simplecov'
   gem 'shoulda-matchers'
 end
