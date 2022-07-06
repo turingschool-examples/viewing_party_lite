@@ -1,12 +1,7 @@
-<%= render partial: "shared/header" %>
+<h3>Existing Users</h3>
 
-<h1>
-  Welcome to Viewing Party Lite
-</h1>
-
-<%= button_to 'New User', new_user_path, method: :get %>
-<%# @users.each do  |user| %>
+<% @users.each do  |user| %>
   <h4>
-    <%#= link_to "#{user.name}", user_path %>
-    </h4>
-    <%# end %>
+    <%= link_to "#{user.name}'s Dashboard'", user_path(user.id) %>
+  </h4>
+<% end %>

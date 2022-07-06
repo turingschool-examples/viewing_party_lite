@@ -1,4 +1,14 @@
 <br>
-<div class="btn-group col-4" role="group">
+<div class="btn-group col-1" role="group">
   <p type="button" class="btn btn-outline-primary"><%= link_to "Landing", root_path %></p>
+  <% if Current.user %>
+    <p type="button" class="btn btn-outline-primary"><%= link_to "Logout", logout_path, method: :delete %></p>
+  <%else %>
+    <p type="button" class="btn btn-outline-primary"><%= link_to "Sign In", sign_in_path %></p>
+    <p type="button" class="btn btn-outline-primary"><%= link_to "Create New User", register_path %></p>
+  <% end %>
 </div>
+
+<h1>
+  Viewing Party Lite
+</h1>
