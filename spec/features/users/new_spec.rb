@@ -4,7 +4,6 @@ RSpec.describe "Registration Page" do
   it 'creates a new user' do
     user_count = User.all.length
     visit '/users/register'
-    save_and_open_page
     fill_in "Name", with: 'Drew'
     fill_in "Email", with: 'Drew@testemail.com'
     click_button "Register"
