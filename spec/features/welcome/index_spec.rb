@@ -27,4 +27,5 @@ RSpec.describe 'landing page', type: :feature do
       # expect(current_path).to eq("/users/#{user2.id}")
     end
   end
+
 end
