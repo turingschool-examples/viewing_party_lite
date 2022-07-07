@@ -5,4 +5,6 @@ Rails.application.routes.draw do
 
   get '/register', to: 'users#new'
   resources :users, only: [:show]
+  # get '/login', to: 'sessions#new', as: 'login_form'
+  
 end
