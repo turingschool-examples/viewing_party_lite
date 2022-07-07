@@ -8,8 +8,9 @@ Rails.application.routes.draw do
   resources :users, except: [:new]
   resources :parties
 
-  get '/users/:id/discover', to: 'users#discover'
   get '/register', to: 'users#new'
   post '/register', to: 'users#create'
   # get '/admin', to: 'admins#dashboard'
+  get '/users/:id/discover', to: 'users#discover'
+  get '/users/:id/movies', to: 'users#movies'
 end
