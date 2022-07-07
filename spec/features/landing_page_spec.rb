@@ -4,7 +4,7 @@ RSpec.describe "Home page", type: :feature do
   it "Has title of application" do
     visit '/'
 
-    expect(page).to contain("Viewing Party")
+    expect(page).to have_content("Viewing Party")
   end
 
   it "Has button to create new user" do
