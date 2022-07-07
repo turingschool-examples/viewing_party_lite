@@ -10,7 +10,7 @@ RSpec.describe "Home page", type: :feature do
   it "Has button to create new user" do
     visit '/'
 
-    expect(page).to have_button("Create user")
+    expect(page).to have_link("Create user")
   end
 
   it "Has a list of existing users" do
