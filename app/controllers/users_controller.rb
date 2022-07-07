@@ -18,6 +18,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def movies
+    @movies = MovieFacade.top_20_movies
+  end
+
   private
 
   def user_params
