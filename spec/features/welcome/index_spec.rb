@@ -33,7 +33,7 @@ RSpec.describe 'Welcome Index' do
       expect(current_path).to eq(user_path(user1.id))
     end
 
-    xit 'has a link to go back to the landing page' do 
+    it 'has a link to go back to the landing page' do 
       visit root_path
 
       click_link "Home"
