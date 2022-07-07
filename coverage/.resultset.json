@@ -1,0 +1,105 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/matthewdeming/turing/3Module/viewing_party_lite/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/matthewdeming/turing/3Module/viewing_party_lite/app/models/party.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/matthewdeming/turing/3Module/viewing_party_lite/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/matthewdeming/turing/3Module/viewing_party_lite/app/models/user.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/matthewdeming/turing/3Module/viewing_party_lite/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/matthewdeming/turing/3Module/viewing_party_lite/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/matthewdeming/turing/3Module/viewing_party_lite/app/mailers/application_mailer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/matthewdeming/turing/3Module/viewing_party_lite/app/jobs/application_job.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/matthewdeming/turing/3Module/viewing_party_lite/app/channels/application_cable/connection.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/matthewdeming/turing/3Module/viewing_party_lite/app/channels/application_cable/channel.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      }
+    },
+    "timestamp": 1657155539
+  }
+}
