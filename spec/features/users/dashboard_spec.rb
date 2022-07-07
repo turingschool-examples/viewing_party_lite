@@ -20,6 +20,4 @@ RSpec.describe "User Dashboard", type: :feature do
     expect(current_path).to eq(user_discover_index_path(users[0].id))
 
   end
-
-  
 end
