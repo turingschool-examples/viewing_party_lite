@@ -43,6 +43,16 @@
           null
         ]
       },
+      "/Users/andrewk/turing/3module/projects/viewing_party_lite/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/andrewk/turing/3module/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
           0,
@@ -54,14 +64,6 @@
         }
       },
       "/Users/andrewk/turing/3module/projects/viewing_party_lite/app/jobs/application_job.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/andrewk/turing/3module/projects/viewing_party_lite/app/controllers/application_controller.rb": {
         "lines": [
           0,
           0
@@ -90,6 +92,6 @@
         }
       }
     },
-    "timestamp": 1657171480
+    "timestamp": 1657172827
   }
 }
