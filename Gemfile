@@ -47,11 +47,12 @@ group :development do
   gem 'solargraph'
 end
 
-group :test do 
+group :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'
   gem 'simplecov'
+  gem 'shoulda-matchers'
   gem 'orderly'
   gem 'shoulda-matchers'
 end 
