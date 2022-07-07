@@ -1,6 +1,15 @@
 <center>
   <h1> Viewing Party Lite </h1>
 
-  <h2> User's Dashboard </h2>
+  <h2>
+    <%= "#{@user.name}'s Dashboard" %> <br>
+  </h2>
 
+    <div class="button">
+      <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %>
+    </div>
+  <div class="#viewing_party_container">
+    <h3> ___Viewing Parties___ </h3>
+
+  </div>
 </center>
