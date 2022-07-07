@@ -3,14 +3,6 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  # def create
-  #   @user = User.new(user_params)
-  #   if @user.save
-  #     render :new
-  #   else
-  #     flash[:alert] = "Error: invalid input, please try again"
-  #   end
-  # end
   def show
     @user = User.find(params[:id])
   end
@@ -27,11 +19,6 @@ def create
       flash[:error] = 'Email address is blank/already in use.'
       redirect_to register_path
     end
-  end
-
-
-  def index
-    @users = User.all
   end
 
   private
