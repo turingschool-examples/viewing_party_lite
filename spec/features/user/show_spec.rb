@@ -6,13 +6,28 @@ RSpec.describe 'The User Show Page', type: :feature do
       user = User.create!(name: "Rand", email: "randalthor@gmail.com")
 
       visit "/users/#{user.id}"
-      # save_and_open_page
+
       expect(page).to have_content("Viewing Party Lite")
       expect(page).to have_content("#{user.name}'s Dashboard")
     end
 
-    it 'has a button to discover movies'
+    it 'has a button to discover movies' do
+      user = User.create!(name: "Rand", email: "randalthor@gmail.com")
 
-    it 'has a section that lists viewing parties'
+      visit "/users/#{user.id}"
+
+      click_button "Discover Movies"
+
+      expect(current_path).to eq("/users/#{user.id}/discover")
+    end
+
+    it 'has a section that lists viewing parties' do
+      user = User.create!(name: "Rand", email: "randalthor@gmail.com")
+      #will need to add more to this test, select a movie, create a view party etc.
+
+      visit "/users/#{user.id}"
+
+      expect(page).to have_content("___Viewing Parties___")
+    end
   end
 end
