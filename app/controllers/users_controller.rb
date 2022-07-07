@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if new_user.save
       redirect_to user_path(new_user.id), notice: "Welcome, #{new_user.name}!"
     else
-      redirect_to register_path, alert: "Cannot register, missing information"
+      redirect_to register_path, alert: "Cannot register, missing or repeated information"
    end 
   end
 

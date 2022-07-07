@@ -24,13 +24,8 @@ RSpec.describe 'New User Form' do
       fill_in 'Email', with: 'superbadismyfave@yahoo.com'
       click_on 'Register'
 
-      user = User.last
       expect(current_path).to eq(register_path)
-      expect(page).to have_content("Cannot register, missing information")
-    end
-
-    xit 'has an error message if email is already in use' do 
-
+      expect(page).to have_content("Cannot register, missing or repeated information")
     end
   end
 end
