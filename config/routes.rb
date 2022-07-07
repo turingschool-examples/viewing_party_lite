@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :users, only: %i[create show] do
     resources :movies, only: [:show], controller: :user_movies, param: :movie_id
   end
+
+  get '/users/:user_id/movies/:movie_id/viewing_party/new', to: 'viewing_parties#new'
 end
