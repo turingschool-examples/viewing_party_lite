@@ -1,0 +1,7 @@
+<%= form_with url: user_path(id: User.last.id), method: :post, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :email %>
+  <%= form.text_field :email %>
+  <%= form.submit "Register" %>
+<% end %>

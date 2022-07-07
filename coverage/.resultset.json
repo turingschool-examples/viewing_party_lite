@@ -20,6 +20,19 @@
           null
         ]
       },
+      "/Users/zachprince/turing/3module/projects/viewing_party_lite/app/models/user.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/zachprince/turing/3module/projects/viewing_party_lite/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/zachprince/turing/3module/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
           0,
@@ -42,23 +55,6 @@
         "lines": [
           0,
           0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/zachprince/turing/3module/projects/viewing_party_lite/app/models/application_record.rb": {
-        "lines": [
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/zachprince/turing/3module/projects/viewing_party_lite/app/models/user.rb": {
-        "lines": [
           0,
           0
         ],
@@ -94,6 +90,6 @@
         }
       }
     },
-    "timestamp": 1657156538
+    "timestamp": 1657157036
   }
 }
