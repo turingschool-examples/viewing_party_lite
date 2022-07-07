@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe "Home page", type: :feature do
   it "Has title of application" do
     visit '/'
+    save_and_open_page
 
     expect(page).to have_content("Viewing Party")
   end

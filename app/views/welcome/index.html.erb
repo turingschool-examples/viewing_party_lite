@@ -2,5 +2,5 @@
 
 <%= button_to "Create user" %>
 <% @users.each do |user| %>
-<%= link_to user.name, to "/users/#{user.id}" %>
+<%= link_to user.name, "/users/#{user.id}" %>
 <%end%>
