@@ -9,7 +9,7 @@ RSpec.describe "MovieService" do
     end
   end
 
-  describe "MovieService#top_40" do
+  describe "MovieService#top_movies" do
     it "retrieves data and parses response", :vcr do
       parsed_json = MovieService.top_movies
 
