@@ -9,5 +9,8 @@ Rails.application.routes.draw do
 
   delete 'logout', to: 'sessions#destroy'
 
-  resources :users, only: %i[create show]
+  resources :users, only: %i[create show] do
+    get '/discover', to: 'movies#discover', as: 'movies_discover'
+    get '/movies', to: 'movies#index'
+  end
 end
