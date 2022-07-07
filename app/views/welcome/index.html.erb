@@ -2,6 +2,6 @@
 
 <% @users.each do  |user| %>
   <h4>
-    <%= link_to "#{user.name}'s Dashboard'", user_path(user.id) %>
+    <%= link_to "#{user.name}'s Dashboard", user_path(user.id) %>
   </h4>
 <% end %>
