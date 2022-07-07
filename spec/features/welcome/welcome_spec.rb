@@ -14,9 +14,9 @@ RSpec.describe 'landing page' do
   end
 
   it 'has a list of existing users' do
-    user1 = User.create!(name: 'Tommy Tanktop', email: 'tanktoptitan@aol.com')
-    user2 = User.create!(name: 'Sarah Smallapoo', email: 'ssmallapoo@aol.com')
-    user3 = User.create!(name: 'Godrick Mjordenstein', email: 'pickofthegods@aol.com')
+    User.create!(name: 'Tommy Tanktop', email: 'tanktoptitan@aol.com')
+    User.create!(name: 'Sarah Smallapoo', email: 'ssmallapoo@aol.com')
+    User.create!(name: 'Godrick Mjordenstein', email: 'pickofthegods@aol.com')
     visit '/'
 
     expect(page).to have_link('Tommy Tanktop')
