@@ -9,7 +9,7 @@ RSpec.describe MovieFacade do
         top_movies = MovieFacade.top_rated_movies
 
         expect(top_movies.length).to eq(40)
-        expect(top_movies.first).to be_a(Movie)
+        expect(top_movies).to be_all(Movie)
       end
     end
   end
