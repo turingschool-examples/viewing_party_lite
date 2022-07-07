@@ -15,5 +15,59 @@ RSpec.describe 'application welcome page' do
     expect(page).to have_link("Home")
   end
 
+  it 'has a list of existing users that link to their dashboard' do
+    user1 = User.create!(name: "Bob", email: "bob@gmail.com")
+    user2 = User.create!(name: "Drew", email: "drew@gmail.com")
+    user3 = User.create!(name: "Gary", email: "gary@gmail.com")
+    user4 = User.create!(name: "Sue", email: "sue@gmail.com")
+    user5 = User.create!(name: "Lou", email: "lou@gmail.com")
+    visit '/'
+    within "#user-#{user1.id}" do
+      expect(page).to have_content("Bob")
+      expect(page).to_not have_content("Drew")
+      expect(page).to_not have_content("Gary")
+      expect(page).to_not have_content("Sue")
+      expect(page).to_not have_content("Lou")
+      click_link "Bob"
+      expect(path).to eq("/users/#{user1.id}")
+    end
+    within "#user-#{user2.id}" do
+      expect(page).to have_content("Drew")
+      expect(page).to_not have_content("Bob")
+      expect(page).to_not have_content("Gary")
+      expect(page).to_not have_content("Sue")
+      expect(page).to_not have_content("Lou")
+      click_link "Drew"
+      expect(path).to eq("/users/#{user2.id}")
+    end
+    within "#user-#{user3.id}" do
+      expect(page).to have_content("Gary")
+      expect(page).to_not have_content("Bob")
+      expect(page).to_not have_content("Drew")
+      expect(page).to_not have_content("Sue")
+      expect(page).to_not have_content("Lou")
+      click_link "Gary"
+      expect(path).to eq("/users/#{user3.id}")
+    end
+    within "#user-#{user4.id}" do
+      expect(page).to have_content("Sue")
+      expect(page).to_not have_content("Bob")
+      expect(page).to_not have_content("Drew")
+      expect(page).to_not have_content("Gary")
+      expect(page).to_not have_content("Lou")
+      click_link "Sue"
+      expect(path).to eq("/users/#{user4.id}")
+    end
+    within "#user-#{user5.id}" do
+      expect(page).to have_content("Lou")
+      expect(page).to_not have_content("Bob")
+      expect(page).to_not have_content("Drew")
+      expect(page).to_not have_content("Gary")
+      expect(page).to_not have_content("Sue")
+      click_link "Lou"
+      expect(path).to eq("/users/#{user5.id}")
+    end
+  end
+
 
 end
