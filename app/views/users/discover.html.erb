@@ -1,0 +1,3 @@
+<h1><%= @user.user_name %>'s Movie Discover Page</h1>
+
+<%= button_to 'Discover Top Rated Movies', "/users/#{@user.id}/movies?q=top%20rated", method: :get %> 
