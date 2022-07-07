@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'users#index'
 
   get '/users/:id/discover', to: "users#discover"
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show, :create]
 
   get '/register', to: "users#new"
 end
