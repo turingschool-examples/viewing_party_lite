@@ -5,7 +5,9 @@ RSpec.describe 'Top Rated Movies' do
     user = User.create!(name: "Bernie", email: "bernie@gmail.com")
     visit user_movies_discover_path(user)
 
+
     click_button 'Top Rated Movies'
+    save_and_open_page
 
     expect(page.status_code).to eq 200
     within "#movie-0" do
