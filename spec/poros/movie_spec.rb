@@ -16,6 +16,6 @@ RSpec.describe Movie do
     expect(movie.title).to eq('Titanic')
     expect(movie.id).to eq(1)
     expect(movie.vote_average).to eq(9.1)
-    expect(movie.runtime).to eq(194)
+    expect(movie.runtime).to eq("3hr 14 min")
   end
 end
