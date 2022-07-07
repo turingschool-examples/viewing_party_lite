@@ -45,12 +45,14 @@
           null
         ]
       },
-      "/Users/clayash/turing/3module/projects/viewing_party_lite/app/controllers/welcome_controller.rb": {
+      "/Users/clayash/turing/3module/projects/viewing_party_lite/app/controllers/users_controller.rb": {
         "lines": [
           1,
+          1,
+          4,
+          null,
           null,
           1,
-          5,
           null,
           null
         ]
@@ -61,15 +63,12 @@
           null
         ]
       },
-      "/Users/clayash/turing/3module/projects/viewing_party_lite/app/controllers/users_controller.rb": {
+      "/Users/clayash/turing/3module/projects/viewing_party_lite/app/controllers/welcome_controller.rb": {
         "lines": [
           1,
-          1,
-          1,
-          null,
           null,
           1,
-          null,
+          5,
           null,
           null
         ]
@@ -86,6 +85,18 @@
       },
       "/Users/clayash/turing/3module/projects/viewing_party_lite/app/jobs/application_job.rb": {
         "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/clayash/turing/3module/projects/viewing_party_lite/app/controllers/movies_controller.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          null,
           0,
           0
         ],
@@ -113,6 +124,6 @@
         }
       }
     },
-    "timestamp": 1657148705
+    "timestamp": 1657152226
   }
 }
