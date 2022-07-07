@@ -16,5 +16,18 @@ RSpec.describe MovieService do
         expect(first_movie[:vote_average]).to be_a(Float)
       end
     end
+
+    describe '#search' do
+      it 'returns movies that include the keyword searched in their titles', :vcr do
+        movies = MovieService.search("titanic")
+
+        expect(movies[:results]).to be_an(Array)
+        
+        movies[:results].each do |movie|
+          expect(movie[:title]).to include("Titanic")
+        end
+
+      end
+    end
   end
 end

@@ -14,7 +14,7 @@ describe 'user show page (dashboard)' do
   end
 
   it 'has a button to link to the users movie discover page' do
-    click_button("Discover Movies")
+    click_button('Discover Movies')
 
     expect(current_path).to eq("/users/#{@user1.id}/discover")
     # expect(current_path).to_not eq("/users/#{@user2.id}/discover")
