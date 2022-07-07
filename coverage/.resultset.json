@@ -10,10 +10,54 @@
           null
         ]
       },
+      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/models/party.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/models/application_record.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/models/party_user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/controllers/welcome_controller.rb": {
         "lines": [
           1,
           1,
+          null,
+          null,
+          null,
           null,
           null
         ]
@@ -31,18 +75,6 @@
           null,
           null,
           0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/models/application_record.rb": {
-        "lines": [
-          null,
-          null,
-          null,
           0,
           0,
           0
@@ -85,6 +117,6 @@
         }
       }
     },
-    "timestamp": 1657156529
+    "timestamp": 1657158388
   }
 }
