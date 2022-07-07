@@ -20,12 +20,12 @@ RSpec.describe 'user dashboard page' do
   it 'has a section that lists viewing parties' do
     user = User.create!(name: 'Tommy Tanktop', email: 'tanktoptitan@aol.com')
 
-    Party.new(movie_name: 'Fight Club', movie_id: 1, date: Time.now.strftime('%d/%m/%Y'),
-              time: Time.now.strftime('%H:%M'), duration: 120)
-    Party.new(movie_name: 'Fight Club 2', movie_id: 1,
-              date: Time.now.strftime('%d/%m/%Y'), time: Time.now.strftime('%H:%M'), duration: 120)
-    Party.new(movie_name: 'Fight Club 3', movie_id: 1, date: Time.now.strftime('%d/%m/%Y'),
-              time: Time.now.strftime('%H:%M'), duration: 120)
+    Party.create!(movie_name: 'Fight Club', movie_id: 1, date: Time.now.strftime('%d/%m/%Y'),
+                  start_time: Time.now.strftime('%H:%M'), duration: 120)
+    Party.create!(movie_name: 'Fight Club 2', movie_id: 1,
+                  date: Time.now.strftime('%d/%m/%Y'), start_time: Time.now.strftime('%H:%M'), duration: 120)
+    Party.create!(movie_name: 'Fight Club 3', movie_id: 1, date: Time.now.strftime('%d/%m/%Y'),
+                  start_time: Time.now.strftime('%H:%M'), duration: 120)
 
     visit "/users/#{user.id}"
 
