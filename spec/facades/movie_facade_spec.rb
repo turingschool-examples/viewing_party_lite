@@ -12,5 +12,11 @@ RSpec.describe MovieFacade do
         expect(top_movies.first).to be_a(Movie)
       end
     end
+
+    describe '#first_10_movie_cast' do
+      it 'returns the first ten cast members', :vcr do
+        first_10_cast = MovieFacade.first_10_cast_members(120)
+      end
+    end
   end
 end

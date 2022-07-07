@@ -15,6 +15,16 @@ class MovieService
     json = JSON.parse(response.body, symbolize_names: true)
   end
 
+  def self.movie_reviews(id)
+    response = connection.get("/3/movie/#{id}/reviews")
+    json = JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.movie_details(id)
+    response = connection.get("/3/movie/120?append_to_response=reviews,credits")
+    json = JSON.parse(response.body, symbolize_names: true)
+  end
+
   def self.connection
     Faraday.new(url: 'https://api.themoviedb.org') do |f|
       f.params['api_key'] = ENV['tmdb_api_key']
