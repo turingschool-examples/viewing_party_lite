@@ -1,0 +1,8 @@
+<h1>REGISTER</h1>
+<%= form_with model: @user_new, url: users_path, method: :post, local: true do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.submit "Register" %>
+<% end %>
