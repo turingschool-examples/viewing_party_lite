@@ -39,4 +39,10 @@ RSpec.describe 'the landing page', type: :feature do
       expect(current_path).to eq("/users/#{user1.id}")
       expect(current_path).to_not eq("/users/#{user2.id}")
     end
+
+    it 'has link to go back to landing page' do
+      visit '/'
+      click_link("Home")
+      expect(current_path).to eq('/')
+    end 
 end
