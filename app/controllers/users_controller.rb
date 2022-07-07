@@ -5,10 +5,7 @@ class UsersController < ApplicationController
 
 
   def show
-    # @user = User.find(session[:user_id]) if session[:user_id]
-    # if @user.nil?
-    #   redirect_to root_path
-    #   flash.notice = "Please login or register to access dashboard"
-    # end
+    # require "pry"; binding.pry
+    @user = User.find(params[:id])
   end
 end

@@ -1,6 +1,8 @@
-
-<p>
+<h1> <%= @user.name %>'s Dashboard</h3>
+  <p>
 <div class="container" align="center" id="discover_movies">
-      <%= button_to("Discover Movies", discover_index_path, method: :get)%>
+      <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get%>
 </div>
 </p>
+<br>
+<h3>Viewing Parties</h3>

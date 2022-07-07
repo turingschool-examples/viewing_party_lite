@@ -18,31 +18,32 @@ RSpec.describe 'User Dashboard Page' do
     @user2 = User.create!(name: 'Lola', email: 'lola@example.com')
     @user3 = User.create!(name: 'Manolo', email: 'manolo@example.com')
     @uvparty1 = UserViewingParty.create!(viewing_party: @vparty1, user: @user1, host: true)
-    @uvparty2 = UserViewingParty.create!(viewing_party: @vparty1, user: @user2, host: true)
-    @uvparty3 = UserViewingParty.create!(viewing_party: @vparty2, user: @user3, host: true)
+    @uvparty2 = UserViewingParty.create!(viewing_party: @vparty1, user: @user2, host: false)
+    @uvparty3 = UserViewingParty.create!(viewing_party: @vparty2, user: @user3, host: false)
     @uvparty4 = UserViewingParty.create!(viewing_party: @vparty2, user: @user1, host: true)
 
     # visit '/users/:id'
   end
 
-  describe 'data is displayed on page', :vcr do
+  describe 'data is displayed on page'do
 
-    xit 'shows user name on dashboard' do
+    it 'shows user name on dashboard' do
       # save_and_open_page
+      visit user_path(@user1.id)
       expect(page).to have_content("#{@user1.name}'s Dashboard")
       expect(page).to_not have_content("#{@user2.name}'s Dashboard")
     end
 
-    it 'has a button to Discover Movies', :vcr do
+    it 'has a button to Discover Movies' do
+      visit user_path(@user1.id)
       expect(page).to have_button('Discover Movies')
       click_button('Discover Movies')
-      
+
     end
 
-    xit 'has a section that lists viewing parties', :vcr do
-      within '#viewing_parties' do
-        expect(page).to have_content('Viewing Parties')
-      end
+    it "has a section that listing viewing parties" do
+      visit user_path(@user1.id)
+      expect(page).to have_content("Viewing Parties")
     end
   end
 end
