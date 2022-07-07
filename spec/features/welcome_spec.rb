@@ -11,7 +11,7 @@ RSpec.describe 'welcome page' do
     expect(page).to have_content("Viewing Party")
   end
 
-  it 'has button to create new user' do 
+  it 'has button to navegate to user registration' do 
     visit root_path
 
     click_button "Register"
