@@ -10,7 +10,9 @@ RSpec.describe 'landing page' do
   it 'has a button to create a new user' do
     visit '/'
 
-    expect(page).to have_button('New User')
+    click_button('New User')
+
+    expect(current_path).to eq('/register')
   end
 
   it 'has a list of existing users' do
