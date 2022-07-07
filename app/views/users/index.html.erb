@@ -8,7 +8,7 @@
   <div class="link">
     Existing Users: <br>
       <% @users.each do |user| %>
-        <%= link_to "#{user.email}'s Dashboard", "/users/#{user.id}" %>
+        <%= link_to "#{user.email}'s Dashboard", "/users/#{user.id}" %> </br>
       <% end %>
   </div>
 </center>

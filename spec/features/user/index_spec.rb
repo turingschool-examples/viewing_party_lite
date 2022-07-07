@@ -31,6 +31,20 @@ RSpec.describe "User Index Page", type: :feature do
       expect(current_path).to eq("/users/#{hazel.id}")
     end
 
-    it "has a link to go back to the landing/user index page"
+    it "has a link to go back to the landing/user index page" do
+      visit root_path
+
+      click_link "Home"
+
+      expect(current_path).to eq(root_path)
+
+      click_button "Create a New User"
+
+      expect(current_path).to eq(register_path)
+      
+      click_link "Home"
+
+      expect(current_path).to eq(root_path)
+    end
   end
 end
