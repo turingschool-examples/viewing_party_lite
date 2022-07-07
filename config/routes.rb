@@ -6,6 +6,4 @@ Rails.application.routes.draw do
     resources :discover, controller: :movies
   end
   get 'register' => 'users#new'
-
-  resources :movies, only: :index
 end
