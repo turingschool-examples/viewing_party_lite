@@ -16,7 +16,20 @@ RSpec.describe "User Index Page", type: :feature do
       expect(current_path).to eq("/register")
     end
 
-    it "has a list of existing users as links to the user dashboard"
+    it "has a list of existing users as links to the user dashboard" do
+      oakley = User.create!(name: "Oakley", email: "good_dog@gmail.com")
+      kona = User.create!(name: "Kona", email: "goodd_dog@gmail.com")
+      hazel = User.create!(name: "Hazel", email: "a_dog@gmail.com")
+
+      visit root_path
+
+      expect(page).to have_link("#{oakley.email}'s Dashboard")
+      expect(page).to have_link("#{kona.email}'s Dashboard")
+
+      click_link("#{hazel.email}'s Dashboard")
+
+      expect(current_path).to eq("/users/#{hazel.id}")
+    end
 
     it "has a link to go back to the landing/user index page"
   end
