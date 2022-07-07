@@ -9,8 +9,7 @@ RSpec.describe 'User Discover Page' do
 
     visit user_path(@user1.id)
 
-
-    click_button "Discover Movies"
+    click_button 'Discover Movies'
     expect(current_path).to eq("/users/#{@user1.id}/discover")
   end
 
@@ -18,8 +17,7 @@ RSpec.describe 'User Discover Page' do
     @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com')
 
     visit "/users/#{@user1.id}/discover"
-    expect(page).to have_button("Top Rated Movies")
-
+    expect(page).to have_button('Top Rated Movies')
   end
 
   it 'tells details the user discover page', :vcr do
@@ -27,18 +25,15 @@ RSpec.describe 'User Discover Page' do
 
     visit "/users/#{@user1.id}/discover"
 
-    click_button "Top Rated Movies"
+    click_button 'Top Rated Movies'
     expect(current_path).to eq("/users/#{@user1.id}/movies")
 
-    expect(page).to have_content("Top 20 Movies:")
-    expect(page).to have_content("Title: The Shawshank Redemption")
-    expect(page).to have_content("Average Vote: 8.7")
+    expect(page).to have_content('Top 20 Movies:')
+    expect(page).to have_content('Title: The Shawshank Redemption')
+    expect(page).to have_content('Average Vote: 8.7')
 
-    expect(page).to_not have_content("Title: Ariel")
-    expect(page).to_not have_content("Average Vote: 6.8")
-
-
-
+    expect(page).to_not have_content('Title: Ariel')
+    expect(page).to_not have_content('Average Vote: 6.8')
   end
 
   it 'tells details a search param', :vcr do
@@ -55,11 +50,5 @@ RSpec.describe 'User Discover Page' do
     #
     # expect(page).to_not have_content("Title: Ariel")
     # expect(page).to_not have_content("Average Vote: 6.8")
-
-
-
   end
-
-
-
 end

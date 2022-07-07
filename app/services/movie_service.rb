@@ -1,5 +1,6 @@
-class MovieService
+# frozen_string_literal: true
 
+class MovieService
   def self.top_20_movies
     response = connection.get("/3/movie/top_rated?api_key=#{ENV['api_key']}")
     # results = (parse_response(movies))[:results]
@@ -8,9 +9,8 @@ class MovieService
   end
 
   def self.connection
-    Faraday.new(url: "https://api.themoviedb.org")
+    Faraday.new(url: 'https://api.themoviedb.org')
   end
-
 end
 
 # conn = Faraday.new(url: "https://api.propublica.org") do |faraday|
