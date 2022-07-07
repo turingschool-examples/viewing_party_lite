@@ -1,0 +1,5 @@
+<center>
+    <h2> Discover Movies </h2>
+    <%= button_to "Find Top Rated Movies", "/users/#{@user.id}/movies", method: :get, params: {q: 'top rated'} %>
+   
+</center>
