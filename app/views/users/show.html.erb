@@ -3,3 +3,7 @@
 <h3>User Information</h3><hr>
 <h4><%= "Name: #{@user.name}" %></h4>
 <h4><%= "E-mail: #{@user.email}" %></h4>
+<br>
+<h4><%= button_to "Discover Movies", user_discover_index_path(@user.id), method: :get %></h4>
+<br>
+<h3>Viewing Parties</h3>

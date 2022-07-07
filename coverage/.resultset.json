@@ -57,7 +57,7 @@
         "lines": [
           1,
           1,
-          2,
+          4,
           null,
           null,
           1,
@@ -71,6 +71,16 @@
           null,
           1,
           null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/antoniosalmeron/turing/3module/projects/viewing_party_lite/app/controllers/discover_controller.rb": {
+        "lines": [
           1,
           1,
           null,
@@ -118,6 +128,6 @@
         }
       }
     },
-    "timestamp": 1657150497
+    "timestamp": 1657152076
   }
 }
