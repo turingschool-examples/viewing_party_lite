@@ -14,5 +14,36 @@ RSpec.describe 'User Discover Page' do
     expect(current_path).to eq("/users/#{@user1.id}/discover")
   end
 
+  it 'tells details the user discover page' do
+    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com')
+
+    visit "/users/#{@user1.id}/discover"
+    expect(page).to have_button("Top Rated Movies")
+
+  end
+
+  it 'tells details the user discover page' do
+    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com')
+
+    visit "/users/#{@user1.id}/discover"
+    # click_button "Top Rated Movies"
+    # expect(current_path).to eq("/users/#{@user1.id}/movies")
+    # expect(page).to have
+
+    #
+
+
+    # json_response = File.read('./spec/fixtures/top_20_movies.json')
+    # stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated").
+    #    with(
+    #      headers: {
+    #  	  'Api-Key'=> ENV['api_key']
+    #      }).
+    #    to_return(status: 200, body: json_response, headers: {})
+    #
+    #    binding.pry
+    end
+
+
 
 end
