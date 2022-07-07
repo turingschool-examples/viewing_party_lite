@@ -1,21 +1,71 @@
 {
   "RSpec": {
     "coverage": {
+<<<<<<< HEAD
       "/Users/cadenjarrett/mod_3_work/viewing_party_lite/app/helpers/application_helper.rb": {
+=======
+      "/Users/andrewk/turing/3module/projects/viewing_party_lite/app/helpers/application_helper.rb": {
+>>>>>>> 96681145c7cbceb8c72bf1e9807ead92d9d70b7a
         "lines": [
           1,
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/cadenjarrett/mod_3_work/viewing_party_lite/app/models/user.rb": {
         "lines": [
           1,
           1,
           null,
+=======
+      "/Users/andrewk/turing/3module/projects/viewing_party_lite/app/models/party.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/andrewk/turing/3module/projects/viewing_party_lite/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/andrewk/turing/3module/projects/viewing_party_lite/app/models/party_user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/andrewk/turing/3module/projects/viewing_party_lite/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/andrewk/turing/3module/projects/viewing_party_lite/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          5,
+>>>>>>> 96681145c7cbceb8c72bf1e9807ead92d9d70b7a
           null,
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/cadenjarrett/mod_3_work/viewing_party_lite/app/models/application_record.rb": {
         "lines": [
           1,
@@ -24,6 +74,9 @@
         ]
       },
       "/Users/cadenjarrett/mod_3_work/viewing_party_lite/app/mailers/application_mailer.rb": {
+=======
+      "/Users/andrewk/turing/3module/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
+>>>>>>> 96681145c7cbceb8c72bf1e9807ead92d9d70b7a
         "lines": [
           0,
           0,
@@ -33,7 +86,11 @@
         "branches": {
         }
       },
+<<<<<<< HEAD
       "/Users/cadenjarrett/mod_3_work/viewing_party_lite/app/jobs/application_job.rb": {
+=======
+      "/Users/andrewk/turing/3module/projects/viewing_party_lite/app/jobs/application_job.rb": {
+>>>>>>> 96681145c7cbceb8c72bf1e9807ead92d9d70b7a
         "lines": [
           0,
           0
@@ -41,14 +98,25 @@
         "branches": {
         }
       },
+<<<<<<< HEAD
       "/Users/cadenjarrett/mod_3_work/viewing_party_lite/app/controllers/application_controller.rb": {
         "lines": [
           0,
+=======
+      "/Users/andrewk/turing/3module/projects/viewing_party_lite/app/controllers/user_controller.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          null,
+          0,
+>>>>>>> 96681145c7cbceb8c72bf1e9807ead92d9d70b7a
           0
         ],
         "branches": {
         }
       },
+<<<<<<< HEAD
       "/Users/cadenjarrett/mod_3_work/viewing_party_lite/app/controllers/user/dashboard_controller.rb": {
         "lines": [
           0,
@@ -62,6 +130,9 @@
         }
       },
       "/Users/cadenjarrett/mod_3_work/viewing_party_lite/app/channels/application_cable/connection.rb": {
+=======
+      "/Users/andrewk/turing/3module/projects/viewing_party_lite/app/channels/application_cable/connection.rb": {
+>>>>>>> 96681145c7cbceb8c72bf1e9807ead92d9d70b7a
         "lines": [
           0,
           0,
@@ -71,7 +142,11 @@
         "branches": {
         }
       },
+<<<<<<< HEAD
       "/Users/cadenjarrett/mod_3_work/viewing_party_lite/app/channels/application_cable/channel.rb": {
+=======
+      "/Users/andrewk/turing/3module/projects/viewing_party_lite/app/channels/application_cable/channel.rb": {
+>>>>>>> 96681145c7cbceb8c72bf1e9807ead92d9d70b7a
         "lines": [
           0,
           0,
@@ -82,6 +157,10 @@
         }
       }
     },
+<<<<<<< HEAD
     "timestamp": 1657222823
+=======
+    "timestamp": 1657174940
+>>>>>>> 96681145c7cbceb8c72bf1e9807ead92d9d70b7a
   }
 }
