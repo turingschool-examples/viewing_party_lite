@@ -3,9 +3,9 @@
 <%= button_to "Discover Movies", movies_path %>
 
 <h5>Viewing Parties</h5>
-<%# <% @user.parties.each do |party| %>
-<%# <%= party.date %> %>
-<%# <%= party.start_time %> %>
-<%# <%= party.duration %> %>
-<%# <%= party.movie_title %> %>
-<%# <%end%> %> %>
+<% @user.parties.each do |party| %>
+<%= party.date %> 
+<%= party.start_time %>
+<%= party.duration %> 
+<%# <%= party.movie_title %>  %>
+<%end%> 
