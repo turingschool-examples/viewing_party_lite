@@ -6,3 +6,10 @@
 </p>
 <br>
 <h3>Viewing Parties</h3>
+
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+
