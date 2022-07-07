@@ -11,7 +11,6 @@ RSpec.describe 'register new user' do
     fill_in "Email", with: "lee@gmail.com"
     click_button "Register"
     expect(page).to have_content("Lee")
-    expect(page).to have_content("lee@gmail.com")
   end
 
 end
