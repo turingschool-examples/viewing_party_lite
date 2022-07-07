@@ -8,5 +8,18 @@ RSpec.describe "User Dashboard", type: :feature do
     visit user_path(users[0])
 
     expect(page).to have_content("#{users[0].user_name} Dashboard")
+    expect(page).to_not have_content("#{users[1].user_name} Dashboard")
   end
+
+  it "has a button to take you to the movies page" do
+    visit user_path(users[0])
+
+    expect(page).to have_button("Discover Movies")
+    click_button "Discover Movies"
+
+    expect(current_path).to eq(user_discover_index_path(users[0].id))
+
+  end
+
+  
 end
