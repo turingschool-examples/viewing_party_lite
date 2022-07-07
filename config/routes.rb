@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   get '/', to: 'application#welcome'
   get '/register', to: 'users#new'
 
-  resources :users, only: %i[show]
+  resources :users, only: [:create, :show, :edit, :update, :index] do
+ 
 end
