@@ -1,7 +1,7 @@
 class MovieService
 
-  def self.top_rated_movies(uri)
-    response = connection.get(uri)
+  def self.top_rated_movies(page_num)
+    response = connection.get("/3/movie/top_rated?page=#{page_num}")
     json = JSON.parse(response.body, symbolize_names: true)
   end
 
