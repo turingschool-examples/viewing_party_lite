@@ -1,6 +1,10 @@
 <h1>Viewing Party</h1>
 
+<<<<<<< HEAD
 <%= button_to "Create user", "/register" %>
+=======
+<%= link_to "Create user", "/register" %>
+>>>>>>> de4934d85868fc413e6dc64083cd365130978b9f
 <% @users.each do |user| %>
 <%= link_to user.name, "/users/#{user.id}" %>
 <%end%>
