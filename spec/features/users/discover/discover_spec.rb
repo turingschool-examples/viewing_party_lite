@@ -18,7 +18,7 @@ RSpec.describe "User Discover" do
 
     click_link "Top Rated Movies"
 
-    expect(current_path).to eq("/users/#{user_1.id}/movies?q=top%20rated")
+    expect(current_path).to eq("/users/#{user_1.id}/movies")
   end
 
   it "links to top rated movies" do

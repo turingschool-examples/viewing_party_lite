@@ -73,24 +73,24 @@
           1,
           null,
           1,
-          5,
+          0,
           null,
           null,
           1,
           null,
           null,
           1,
-          1,
-          1,
+          0,
+          0,
           null,
           null,
           1,
-          5,
+          2,
           null,
           null,
           1,
           1,
-          1,
+          0,
           null,
           null,
           null
@@ -98,7 +98,6 @@
       },
       "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/controllers/movies_controller.rb": {
         "lines": [
-          1,
           1,
           1,
           1,
@@ -112,6 +111,54 @@
         "lines": [
           1,
           1,
+          1,
+          1,
+          1,
+          1,
+          20,
+          null,
+          1,
+          20,
+          null,
+          1,
+          1,
+          40,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/services/movie_service.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/poros/movie.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          40,
+          40,
           null,
           null,
           null
@@ -164,6 +211,6 @@
         }
       }
     },
-    "timestamp": 1657234085
+    "timestamp": 1657237916
   }
 }
