@@ -1,4 +1,4 @@
 class Party < ApplicationRecord
-  has_many :user_parties
-  has_many :users, :through => :user_parties
+  has_many :party_users
+  has_many :users, :through => :party_users
 end
