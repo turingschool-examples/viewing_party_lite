@@ -8,7 +8,9 @@ RSpec.describe "New User" do
     expect(page).to have_field("Name")
     expect(page).to have_field("Email")
     expect(page).to have_button("Register")
+    fill_in "Name", with: "Jimbo"
+    fill_in "Email", with: "Jimbo@gmail.com"
     click_button "Register"
-    expect(current_path).to eq("/users/#{user_id}") 
+    expect(current_path).to eq("/users/#{user.id}")
   end
 end

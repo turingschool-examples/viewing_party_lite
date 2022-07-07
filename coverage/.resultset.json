@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/helpers/application_helper.rb": {
+      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -10,7 +10,7 @@
           null
         ]
       },
-      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/models/party.rb": {
+      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/models/party.rb": {
         "lines": [
           1,
           1,
@@ -20,7 +20,7 @@
           null
         ]
       },
-      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/models/application_record.rb": {
+      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -30,7 +30,7 @@
           null
         ]
       },
-      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/models/party_user.rb": {
+      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/models/party_user.rb": {
         "lines": [
           1,
           1,
@@ -39,7 +39,7 @@
           null
         ]
       },
-      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/models/user.rb": {
+      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -51,18 +51,16 @@
           null
         ]
       },
-      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/controllers/welcome_controller.rb": {
+      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/controllers/welcome_controller.rb": {
         "lines": [
           1,
           1,
-          3,
-          null,
-          2,
+          4,
           null,
           null
         ]
       },
-      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/controllers/application_controller.rb": {
+      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -70,7 +68,27 @@
           null
         ]
       },
-      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/mailers/application_mailer.rb": {
+      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          null,
+          1,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
           null,
           null,
@@ -82,7 +100,7 @@
         "branches": {
         }
       },
-      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/jobs/application_job.rb": {
+      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/jobs/application_job.rb": {
         "lines": [
           null,
           null,
@@ -92,7 +110,7 @@
         "branches": {
         }
       },
-      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/channels/application_cable/connection.rb": {
+      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/channels/application_cable/connection.rb": {
         "lines": [
           null,
           null,
@@ -104,7 +122,7 @@
         "branches": {
         }
       },
-      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/channels/application_cable/channel.rb": {
+      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/channels/application_cable/channel.rb": {
         "lines": [
           null,
           null,
@@ -117,6 +135,6 @@
         }
       }
     },
-    "timestamp": 1657159170
+    "timestamp": 1657226415
   }
 }
