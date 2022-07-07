@@ -1,13 +1,18 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "User Registration Page" do
+RSpec.describe 'User Show Page' do
+  it 'show me a users dashboard ' do
+    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com')
+    @user2 = User.create!(name: 'NickT', email: 'NickT@jimar.com')
 
-  it "can create a new user " do
-    visit register_path
-    fill_in "name", with: "Jamar"
-    fill_in "email", with: "Jamar@sucks.com"
-    click_on "Create User"
-    expect(current_path).to eq(user_path(User.last.id))
+    visit user_path(@user1.id)
+
+    expect(page).to have_content("Jimar's Dashboard")
+    expect(page).to_not have_content("NickT's Dashboard")
+
+    expect(page).to have_content('Viewing Parties:')
+    expect(page).to have_button('Discover Movies')
   end
-
 end
