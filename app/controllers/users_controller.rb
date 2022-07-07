@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
     new_user = User.create!(user_params)
 
-    redirect_to "/users/#{new_user.id}"
+    redirect_to user_path(id: new_user.id)
   end
 
   private
