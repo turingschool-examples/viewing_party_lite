@@ -1,5 +1,6 @@
-class MovieService
+# frozen_string_literal: true
 
+class MovieService
   def self.top_rated_movies(uri)
     response = connection.get(uri)
     json = JSON.parse(response.body, symbolize_names: true)
