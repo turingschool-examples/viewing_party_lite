@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe PartyUser, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'associations' do
+    it { should belong_to(:user)}
+    it { should belong_to(:party)}
+  end
 end
