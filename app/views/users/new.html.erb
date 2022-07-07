@@ -1,0 +1,12 @@
+<% if flash.key? :error %>
+  <p><%= flash[:error] %></p>
+<% end %>
+<%= form_with url: "/users/#{@user.id}", method: :post, local: true do |f| %> 
+  <%= f.label :user_name %>
+  <%= f.text_field :user_name %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.submit 'Create User' %>
+<% end %>
