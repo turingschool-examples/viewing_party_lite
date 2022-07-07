@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_06_004220) do
+ActiveRecord::Schema.define(version: 2022_07_07_211744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,8 +37,11 @@ ActiveRecord::Schema.define(version: 2022_07_06_004220) do
     t.integer "duration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "host_id"
+    t.index ["host_id"], name: "index_viewing_parties_on_host_id"
   end
 
   add_foreign_key "attendees", "users"
   add_foreign_key "attendees", "viewing_parties"
+  add_foreign_key "viewing_parties", "users", column: "host_id"
 end
