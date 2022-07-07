@@ -20,9 +20,18 @@ RSpec.describe "Dashboard Page" do
     user1 = User.create(name: 'Geddy', email: '2112@yyz.com')
     user2 = User.create(name: 'Alex', email: 'cygnus@xanadu.com')
     user3 = User.create(name: 'Neil', email: 'bytor@snowdog.com')
-    party1 = Party.create(date: '2022-05-10', duration: 147,  movie: 'Jurassic Park', host: user1.id, movie_image: 'movie picture')
+    party1 = Party.create(date: '2022-05-10', duration: 147,  movie: 'Jurassic Park', host: user1.id, movie_image: 'movie picture', host_name:user1.name, start_time: '7:00')
     PartyUser.create(user_id: user2.id, party_id: party1.id )
     PartyUser.create(user_id: user3.id, party_id: party1.id )
-    binding.pry
+
+    visit "/users/#{user2.id}"
+    save_and_open_page
+    within ".invited" do
+      expect(page).to have_content("Geddy")
+      expect(page).to have_content("Alex")
+      expect(page).to have_content("Neil")
+      expect(page).to have_content("147 minutes")
+      expect(page).to have_content("Jurassic Park")
+    end
   end
 end

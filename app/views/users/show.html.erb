@@ -1,3 +1,47 @@
 <h1><%= @user.name %>'s Dashboard</h1>
 <br>
 <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %>
+
+<div class="invited">
+<h2><%= @user.name %>'s Invites</h2>
+  <% @user.parties.each do |party| %>
+    <h3><%= party.movie %></h3>
+    Host: <%= party.host_name  %>
+    <br>
+    <%= party.date %> <%= party.start_time %>
+    <br>
+    <h4>Invited</h4>
+    <ol>
+    <% party.users.each do |user| %>
+        <% if user.id == @user.id %>
+          <li><b><%= user.name %></b></li>
+        <% else %>
+          <li><%= user.name %></li>
+        <% end %>
+      <% end %>
+    </ol>
+  <% end %>
+</div>
+<br>
+<br>
+<div class="hosting">
+<h2>Parties <%= @user.name %> is Hosting</h2>
+  <% @user.parties.each do |party| %>
+    <% if party.host == @user.id %>
+      <h3><%= party.movie %></h3>
+      <br>
+      <%= party.date %> <%= party.start_time %>
+      <br>
+      <h4>Invited</h4>
+      <ol>
+      <% party.users.each do |user| %>
+          <% if user.id == @user.id %>
+            <li><b><%= user.name %></b></li>
+          <% else %>
+            <li><%= user.name %></li>
+          <% end %>
+        <% end %>
+      </ol>
+    <% end %>
+  <% end %>
+</div>
