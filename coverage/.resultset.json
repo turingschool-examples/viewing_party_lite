@@ -85,6 +85,10 @@
           null,
           null,
           1,
+          5,
+          null,
+          null,
+          1,
           1,
           1,
           null,
@@ -96,6 +100,19 @@
         "lines": [
           1,
           1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/facade/movie_facade.rb": {
+        "lines": [
+          1,
+          1,
+          null,
           null,
           null
         ]
@@ -147,6 +164,6 @@
         }
       }
     },
-    "timestamp": 1657229353
+    "timestamp": 1657234085
   }
 }
