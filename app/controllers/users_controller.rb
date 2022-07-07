@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    new_user = User.create(user_params)
+    new_user = User.new(user_params)
     if new_user.save
       redirect_to user_path(new_user.id), notice: "Welcome, #{new_user.name}!"
     else
