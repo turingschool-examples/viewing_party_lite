@@ -83,7 +83,6 @@
         "lines": [
           1,
           1,
-          null,
           1,
           null,
           null,
@@ -99,6 +98,36 @@
           null,
           null,
           null,
+          null,
+          null
+        ]
+      },
+      "/Users/oscarsantos/3_mod/project/viewing_party_lite/app/facades/movies_facade.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/oscarsantos/3_mod/project/viewing_party_lite/app/services/movies_service.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
           null,
           null
         ]
@@ -142,6 +171,6 @@
         }
       }
     },
-    "timestamp": 1657155086
+    "timestamp": 1657163794
   }
 }
