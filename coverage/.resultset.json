@@ -82,11 +82,11 @@
           null,
           null,
           1,
-          4,
+          5,
           null,
           null,
           1,
-          0,
+          3,
           null,
           null,
           1,
@@ -119,6 +119,26 @@
         "branches": {
         }
       },
+      "/Users/jamesriddle/turing/3module/projects/viewing_party_lite/app/services/movie_service.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/jamesriddle/turing/3module/projects/viewing_party_lite/app/channels/application_cable/connection.rb": {
         "lines": [
           null,
@@ -144,6 +164,6 @@
         }
       }
     },
-    "timestamp": 1657225894
+    "timestamp": 1657231136
   }
 }
