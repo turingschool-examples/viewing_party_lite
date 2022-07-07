@@ -10,5 +10,10 @@ RSpec.describe 'application welcome page' do
     expect(page).to have_button("Create New User")
   end
 
+  it 'has a link back to welcome page' do
+    visit '/'
+    expect(page).to have_link("Home")
+  end
+
 
 end
