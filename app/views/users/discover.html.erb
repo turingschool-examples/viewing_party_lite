@@ -1,5 +1,5 @@
 
-<p><%= button_to "Top Rated Movies", "/users/:id/movies?q=top%20rated", method: :get %></p>
+<p><%= button_to "Top Rated Movies", "/users/#{@user.id}/movies?q=top%20rated", method: :get %></p>
 
 <%= form_with url: "/users/:id/movies?q=keyword", local: true do |form| %>
   <%= form.text_field :search %>
