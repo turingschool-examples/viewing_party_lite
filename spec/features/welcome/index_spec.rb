@@ -16,7 +16,7 @@ RSpec.describe 'Welcome Index' do
       expect(current_path).to eq("/register")
     end
 
-    xit 'has a list of existing users which links to the users dashboard' do 
+    it 'has a list of existing users which links to the users dashboard' do 
       user1 = User.create!(name: 'Deannah', email: 'rockyhorrorfan@gmail.com')
       user2 = User.create!(name: 'Sai', email: 'movieluvr55@hotmail.com')
 
@@ -24,11 +24,13 @@ RSpec.describe 'Welcome Index' do
 
       expect(page).to have_link "#{user1.name}"
       expect(page).to have_link "#{user2.name}"
+      expect(page).to have_content "#{user2.email}"
 
-        within "#user-#{user1.id}" do 
-          click_link "#{user1.name}"
-        end
-      expect(current_path).to eq("/users/#{user1.id}")
+      within "#user-#{user1.id}" do
+        expect(page).to have_content(user1.email)
+        click_link "#{user1.name}"
+      end
+      expect(current_path).to eq(user_path(user1.id))
     end
 
     xit 'has a link to go back to the landing page' do 
