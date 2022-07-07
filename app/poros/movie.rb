@@ -8,7 +8,16 @@ class Movie
     @title = attributes[:title]
     @vote_average = attributes[:vote_average]
     @runtime = attributes[:runtime]
-    attributes[:reviews] ? @reviews = attributes[:reviews][:results] : @reviews = nil
-    attributes[:credits] ? @cast = attributes[:credits][:cast] : @cast = nil 
+    @reviews = get_reviews(attributes)
+    @cast = get_cast(attributes)
   end
+
+  def get_reviews(attributes)
+    attributes[:reviews] ? reviews = attributes[:reviews][:results] : reviews = nil
+  end
+
+  def get_cast(attributes)
+    attributes[:credits] ? cast = attributes[:credits][:cast] : cast = nil 
+  end
+
 end
