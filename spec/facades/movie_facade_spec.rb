@@ -19,10 +19,9 @@ RSpec.describe MovieFacade do
 
         expect(movie).to be_a(Movie)
         expect(movie.title).to be_a(String)
-        expect(movie.reviews).to be_a(Hash)
+        expect(movie.reviews).to be_a(Array)
         expect(movie.reviews.length).to be_a(Integer)
-        expect(movie.cast).to be_a(Hash)
-        expect(movie.cast.length).to be <= 10
+        expect(movie.cast).to be_a(Array)
       end
     end
   end
