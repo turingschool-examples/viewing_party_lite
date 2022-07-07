@@ -30,8 +30,8 @@ Fixes # (issue)
 - [ ] Zachary Prince
 - [ ] Chris Kjolhede
 
-# Reviewer Comments:
 
-
+# Change Approval:
 
 - [ ] All changes have been verified
+- [ ] Changes are required (see comments)
