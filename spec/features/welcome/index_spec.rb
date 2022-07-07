@@ -5,5 +5,10 @@ RSpec.describe 'welcome page index' do
     expect(page).to have_content("Viewing Party Lite")
   end
 
+  it 'has a button to create new user' do
+    visit '/'
+    expect(page).to have_button("Create New User")
+  end
+
 
 end
