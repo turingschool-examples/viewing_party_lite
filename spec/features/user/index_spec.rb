@@ -13,7 +13,7 @@ RSpec.describe "User Index Page", type: :feature do
 
       click_button "Create a New User"
 
-      expect(current_path).to eq("/users/new")
+      expect(current_path).to eq("/register")
     end
 
     it "has a list of existing users as links to the user dashboard"
