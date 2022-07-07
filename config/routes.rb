@@ -5,7 +5,10 @@ Rails.application.routes.draw do
 
   root "landing#home"
 
-  resources :users
+  resources :users, except: [:new]
   resources :parties
+
+  get '/register', to: 'users#new'
+  post '/register', to: 'users#create'
   # get '/admin', to: 'admins#dashboard'
 end
