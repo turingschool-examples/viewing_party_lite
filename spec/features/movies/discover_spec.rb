@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe '#discover' do
-  it 'has movie selectors' do
+  it 'has movie selectors', :vcr do
     @jose = User.create!(name: 'Jose Andres', email: 'jose.andres@gmail.com', password: '111',
                          password_confirmation: '111')
 

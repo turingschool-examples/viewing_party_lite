@@ -48,7 +48,6 @@ group :development do
   gem 'rubocop-rails'
   gem 'vcr'
   gem 'web-console', '>= 3.3.0'
-  gem 'webmock'
 end
 
 group :test do
@@ -58,6 +57,8 @@ group :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'simplecov'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
