@@ -49,6 +49,18 @@
         "branches": {
         }
       },
+      "/Users/cadenjarrett/mod_3_work/viewing_party_lite/app/controllers/user/dashboard_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/cadenjarrett/mod_3_work/viewing_party_lite/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
@@ -70,6 +82,6 @@
         }
       }
     },
-    "timestamp": 1657221593
+    "timestamp": 1657222823
   }
 }
