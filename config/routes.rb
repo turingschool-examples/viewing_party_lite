@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   # get '/register', to: 'users#new'
   # post '/users', to: 'users#create'
 
-  resources :users, only: :show
+  resources :users, only: %i[show create]
   get 'register' => 'users#new'
 end
