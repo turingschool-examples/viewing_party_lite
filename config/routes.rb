@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
   
-  post '/registration', to: 'users#new'
+  get '/registration', to: 'users#new'
+  # post '/registration', to: 'users#new'
 
   resources :users, only: %i[show create]
  

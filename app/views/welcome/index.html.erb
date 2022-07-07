@@ -1,6 +1,6 @@
 <h3> Viewing Party </h3>
 
-<%= button_to "Register", registration_path %>
+<%= button_to 'Register', registration_path, method: :get %>
 
 <h5>Current Users:</h5>
 <% @users.each do |user| %>
