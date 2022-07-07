@@ -3,8 +3,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.create!(name: params[:name], email: params[:email])
-    redirect_to "/users/#{user.id}"
+    user = User.new(name: params[:name], email: params[:email])
+    if user.save
+      redirect_to "/users/#{user.id}"
+    else
+      flash[:notice] = "Please enter a valid name and email address to register."
+      redirect_to "/register"
+    end
   end
 
   def show
