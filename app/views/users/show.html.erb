@@ -1,2 +1,8 @@
-<%= @user.name %>
-<%= @user.email %>
+<h1><%= @user.name %>'s Dashboard </h1>
+
+
+<%= button_to 'Discover Movies', user_movies_discover_path(@user), method: :get%>
+
+<h3> Viewing Parties (Host) </h3>
+
+<h3> Viewing Parties (Guest) </h3>
