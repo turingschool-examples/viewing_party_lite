@@ -16,6 +16,21 @@ RSpec.describe 'New User Form' do
   end
 
   describe 'sad path' do 
-    
+    it 'has an error message if information is missing' do 
+      visit register_path
+      expect(page).to have_content("Create an Account")
+
+      fill_in 'Name', with: ''
+      fill_in 'Email', with: 'superbadismyfave@yahoo.com'
+      click_on 'Register'
+
+      user = User.last
+      expect(current_path).to eq(register_path)
+      expect(page).to have_content("Cannot register, missing information")
+    end
+
+    xit 'has an error message if email is already in use' do 
+
+    end
   end
 end

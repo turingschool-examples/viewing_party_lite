@@ -1,6 +1,11 @@
 <h2>Create an Account</h2>
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
 
 <%= render partial: 'form', locals: {model: @user,
                                     button_text: 'Register'
                                     }%>
-
+                                    
