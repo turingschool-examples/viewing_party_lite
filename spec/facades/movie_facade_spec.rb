@@ -13,9 +13,16 @@ RSpec.describe MovieFacade do
       end
     end
 
-    describe '#first_10_movie_cast' do
-      it 'returns the first ten cast members', :vcr do
-        first_10_cast = MovieFacade.first_10_cast_members(120)
+    describe '#movie_details' do
+      it 'returns the details, reviews, and cast of a movie', :vcr do
+        movie = MovieFacade.movie_details(120)
+
+        expect(movie).to be_a(Movie)
+        expect(movie.title).to be_a(String)
+        expect(movie.reviews).to be_a(Hash)
+        expect(movie.reviews.length).to be_a(Integer)
+        expect(movie.cast).to be_a(Hash)
+        expect(movie.cast.length).to be <= 10
       end
     end
   end
