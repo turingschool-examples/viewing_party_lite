@@ -1,1 +1,16 @@
 <h2> <%= @user.name %>'s Discover Page </h2>
+
+
+<br>
+<div align="center" id="top_rated_movies">
+      <%= button_to("Discover Top Rated Movies", movies_path(@user), params: {query: "top_rated"}, method: :get) %>
+</div>
+<br>
+<br>
+<div align="center" class="movie_search">
+  <%= form_with url: movies_path(@user), method: :get, local: true do |f| %>
+  <%= f.hidden_field :query, value: "movie_search" %>
+  <%= f.text_field :search, placeholder: "Search by movie title" %>
+  <%= f.submit "Find Movies" %>
+  <% end %>
+</div>
