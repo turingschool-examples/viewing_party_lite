@@ -8,7 +8,13 @@ RSpec.describe "User Index Page", type: :feature do
       expect(page).to have_content("Viewing Party Lite")
     end
 
-    it "has a button to create a new user"
+    it "has a button to create a new user" do
+      visit root_path
+
+      click_button "Create a New User"
+
+      expect(current_path).to eq("/users/new")
+    end
 
     it "has a list of existing users as links to the user dashboard"
 
