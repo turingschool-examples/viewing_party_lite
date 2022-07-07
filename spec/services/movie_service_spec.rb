@@ -6,7 +6,7 @@ RSpec.describe MovieService do
   describe 'class methods' do
     describe '#top_rated_movies' do
       it 'returns data for the top 20 movies', :vcr do
-        movies = MovieService.top_rated_movies('/3/movie/top_rated?api_key=02f6db89ebe8897a06342829374c182c&language=en-US&page=1')
+        movies = MovieService.top_rated_movies(1)
 
         expect(movies[:results]).to be_an(Array)
         expect(movies[:results].length).to eq(20)
@@ -19,12 +19,13 @@ RSpec.describe MovieService do
 
     describe '#search' do
       it 'returns movies that include the keyword searched in their titles', :vcr do
-        movies = MovieService.search("titanic")
+        movies = MovieService.search("titanic", 1)
 
         expect(movies[:results]).to be_an(Array)
-        
+
         movies[:results].each do |movie|
           expect(movie[:title]).to include("Titanic")
+          expect(movie[:title]).to be_a(String)
         end
 
       end

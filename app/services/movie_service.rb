@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
 class MovieService
-  def self.top_rated_movies(uri)
-    response = connection.get(uri)
+  def self.top_rated_movies(page_num)
+    response = connection.get("/3/movie/top_rated?page=#{page_num}")
     json = JSON.parse(response.body, symbolize_names: true)
   end
 
-  def self.search(keyword)
-    response = connection.get("/3/search/movie?query=#{keyword}")
+  def self.search(keyword, page_num)
+    response = connection.get("/3/search/movie?query=#{keyword}&page=#{page_num}")
     json = JSON.parse(response.body, symbolize_names: true)
   end
 

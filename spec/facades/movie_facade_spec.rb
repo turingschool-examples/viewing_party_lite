@@ -10,6 +10,17 @@ RSpec.describe MovieFacade do
 
         expect(top_movies.length).to eq(40)
         expect(top_movies).to be_all(Movie)
+        
+        
+      end
+    end
+    
+    describe '#search' do
+      it 'returns 40 movies that include the keyword in the title', :vcr do
+        search_results = MovieFacade.search("cat")
+        
+        expect(search_results.length).to eq(40)
+        expect(search_results).to be_all(Movie)
       end
     end
   end
