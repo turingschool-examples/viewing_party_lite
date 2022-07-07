@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'MoviesFacade', :vcr do
+RSpec.describe 'MovieFacade', :vcr do
   it 'makes services call and returns an array of movie objects' do
     movies = MovieFacade.create_top_movies
 
