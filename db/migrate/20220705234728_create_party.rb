@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Shut up rubocop
 class CreateParty < ActiveRecord::Migration[5.2]
   def change
     create_table :parties do |t|
