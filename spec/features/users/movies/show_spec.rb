@@ -12,7 +12,7 @@ RSpec.describe 'movie details page' do
     }
     movie = Movie.new(attributes)
     visit "/users/#{user1.id}/movies/#{movie.id}"
-
+save_and_open_page
     expect(page).to have_button("Create a Viewing Party")
     click_button("Create a Viewing Party")
     expect(current_path).to eq("/users/#{user1.id}/movies/#{movie.id}/viewing_party/new")

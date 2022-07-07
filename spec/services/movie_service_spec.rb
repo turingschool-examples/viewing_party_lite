@@ -5,7 +5,7 @@ RSpec.describe MovieService do
     describe '#top_rated_movies' do
       it 'returns data for the top 20 movies' do
         movies = MovieService.top_rated_movies(1)
-        
+
         expect(movies[:results]).to be_an(Array)
         expect(movies[:results].length).to eq(20)
         first_movie = movies[:results].first
@@ -24,6 +24,20 @@ RSpec.describe MovieService do
         expect(movie[:runtime]).to be_a(Integer)
         expect(movie[:genres]).to be_a(Array)
         expect(movie[:overview]).to be_a(String)
+      end
+    end
+
+    describe '#movie_cast' do
+      it 'returns the case for a movie with the given id', :vcr do
+        movie_cast = MovieService.movie_cast(120)
+        cast = movie_cast[:cast]
+
+        expect(cast).to be_a(Array)
+        expect(cast).to be_all(Hash)
+
+        actor = cast[0]
+        expect(actor[:character]).to be_a(String)
+        expect(actor[:name]).to be_a(String)
       end
     end
   end
