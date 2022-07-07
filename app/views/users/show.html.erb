@@ -1,1 +1,6 @@
-this is my users show page
+
+<h2><%= @user.name %>'s Dashboard</h2>
+
+<h3>Viewing Parties:</h3>
+
+<p><%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %></p>
