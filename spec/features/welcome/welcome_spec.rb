@@ -21,9 +21,11 @@ RSpec.describe 'landing page' do
     User.create!(name: 'Godrick Mjordenstein', email: 'pickofthegods@aol.com')
     visit '/'
 
-    expect(page).to have_link('Tommy Tanktop')
-    expect(page).to have_link('Sarah Smallapoo')
-    expect(page).to have_link('Godrick Mjordenstein')
+    within '#existingUsers' do
+      expect(page).to have_link('Tommy Tanktop')
+      expect(page).to have_link('Sarah Smallapoo')
+      expect(page).to have_link('Godrick Mjordenstein')
+    end
   end
 
   it 'has a link to return to the landing page' do
