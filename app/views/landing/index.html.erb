@@ -1,0 +1,11 @@
+<center><h1>Viewing Party Lite</h1></center><br>
+
+<center><%= button_to "Create a New User", "/register", method: :get %></center>
+<br><br>
+
+<center>Existing Users:</center>
+<% @users.each do |user| %>
+  <div id="user-<%=user.id%>">
+    <center><%= link_to user.email, "/users/#{user.id}" %><center>
+  </div>
+<% end %>
