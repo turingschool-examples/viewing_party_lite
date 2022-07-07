@@ -14,4 +14,12 @@ describe 'user discover page' do
         expect(current_path).to eq("/users/#{@user1.id}/movies")
         #will want to add test to check content of page once API is consumed
     end
+
+    it 'has a text field to enter a keyword and a button to search by movie title '  do
+        fill_in 'search', with: "titanic"
+        click_button('Find Movies')
+
+        expect(current_path).to eq("/users/#{@user1.id}/movies")
+        #will want to add test to check content of page once API is consumed
+    end
 end
