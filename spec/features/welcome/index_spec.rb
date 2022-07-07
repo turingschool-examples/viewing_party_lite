@@ -6,7 +6,7 @@ RSpec.describe 'Welcome Index' do
       visit root_path
 
       expect(page).to have_content('Viewing Party Lite')
-    end 
+    end
 
     it 'has a button to create a new user' do
       visit root_path
@@ -22,9 +22,9 @@ RSpec.describe 'Welcome Index' do
       click_link 'Home'
       expect(current_path).to eq(root_path)
     end
-  end 
+  end
 
-  describe 'user lists' do 
+  describe 'user lists' do
     it 'has a list of existing users which links to the users dashboard' do
       user1 = User.create!(name: 'Deannah', email: 'rockyhorrorfan@gmail.com')
       user2 = User.create!(name: 'Sai', email: 'movieluvr55@hotmail.com')
