@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'landing_page#index'
    resources :users, only: [:show, :create] do
     resources :discover, only: [:index]
+    resources :movies, only: [:index]
    end
    get '/register', to: 'users#new'
 end
