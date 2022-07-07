@@ -19,15 +19,14 @@ RSpec.describe MovieService do
 
     describe '#search' do
       it 'returns movies that include the keyword searched in their titles', :vcr do
-        movies = MovieService.search("titanic", 1)
+        movies = MovieService.search('titanic', 1)
 
         expect(movies[:results]).to be_an(Array)
 
         movies[:results].each do |movie|
-          expect(movie[:title]).to include("Titanic")
+          expect(movie[:title]).to include('Titanic')
           expect(movie[:title]).to be_a(String)
         end
-
       end
     end
   end

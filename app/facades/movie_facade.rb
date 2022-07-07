@@ -17,10 +17,9 @@ class MovieFacade
     json2 = MovieService.search(keyword, 2)
 
     first_40 = json[:results] + json2[:results]
-    
+
     first_40.map do |movie_data|
       Movie.new(movie_data)
     end
-    
   end
 end
