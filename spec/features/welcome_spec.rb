@@ -19,7 +19,7 @@ RSpec.describe 'welcome page' do
     expect(current_path).to eq(registration_path)
   end
 
-  it 'has list of existing users that link to user show page' do 
+  it 'has list of existing users that link to user dashboard page' do 
     visit root_path 
 
     expect(page).to have_content(user_1.name)

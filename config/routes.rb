@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root 'welcome#index'
   
   post '/registration', to: 'users#new'
+
   resources :users, only: %i[show create]
  
+  resources :movies, only: %i[index show]
 
 end
