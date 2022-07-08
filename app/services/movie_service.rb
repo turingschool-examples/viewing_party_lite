@@ -1,4 +1,8 @@
 class MovieService
+  def self.find_movies(title, page)
+    response = conn.get("/3/search/movie?&query=#{title}&page=#{page}")
+    get_json(response)
+  end
 
   def self.get_top_rated(page)
     response = conn.get("/3/movie/top_rated?&page=#{page}")

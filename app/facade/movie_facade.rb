@@ -15,4 +15,21 @@ class MovieFacade
     end
     return top_movie_poros
   end
+
+  def self.search(title)
+    movie_search = []
+    movie_poros = []
+    movie_search_1 = MovieService.find_movies(title, 1)
+    movie_search_2 = MovieService.find_movies(title, 2)
+    movie_search_1[:results].each do |movie|
+      movie_search << movie
+    end
+    movie_search_2[:results].each do |movie|
+      movie_search << movie
+    end
+    movie_search.each do |movie|
+      movie_poros << Movie.new(movie)
+    end
+    return movie_poros
+  end
 end
