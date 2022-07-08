@@ -5,8 +5,9 @@ Rails.application.routes.draw do
 
 
   resources :users, only: [:create, :show, :edit, :update, :index] do
-      resources :movies, only: %i[index]
+     resources :movies, only: %i[index]
 
-      get '/discover', to: 'users#discover'
+     get '/discover', to: 'users#discover'
+
   end
 end
