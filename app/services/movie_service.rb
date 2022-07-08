@@ -8,6 +8,18 @@ class MovieService
     get_url("http://api.themoviedb.org/3/search/movie?api_key=#{ENV['api_key']}&query=#{string}")
   end
 
+  def self.get_movie_credits(id)
+    get_url("https://api.themoviedb.org/3/movie/#{id}/credits?api_key=#{ENV['api_key']}")
+  end
+  
+  def self.get_movie_details(id)    
+    get_url("https://api.themoviedb.org/3/movie/#{id}?api_key=#{ENV['api_key']}")
+  end
+
+  def self.get_movie_reviews(id)
+    get_url("https://api.themoviedb.org/3/movie/#{id}/reviews?api_key=#{ENV['api_key']}")
+  end
+
   def self.get_url(url)
     response = Faraday.get(url)
     JSON.parse(response.body, symbolize_names: true)
