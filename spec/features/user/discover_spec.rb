@@ -12,7 +12,7 @@ RSpec.describe "The User's Discover Movies Page", type: :feature do
     expect(page).to have_content("Discover Movies")
   end
 
-  xit 'has a button that returns top rated movies' do
+  it 'has a button that returns top rated movies' do
     user = User.create!(name: "Rand", email: "randalthor@gmail.com")
 
     visit "/users/#{user.id}/discover"

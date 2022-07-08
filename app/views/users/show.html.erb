@@ -8,8 +8,16 @@
     <div class="button">
       <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %>
     </div>
+    
   <div class="#viewing_party_container">
     <h3> ___Viewing Parties___ </h3>
-
+    <% @user.view_parties.each do |party| %>
+      <div class="party">
+        <%= party.movie_name %> <br>
+        <%= party.picture %> <br>
+        <%= party.date %> <br>
+        <%= party.time %> <br>
+      </div>
+    <% end %>
   </div>
 </center>
