@@ -8,7 +8,6 @@ RSpec.describe 'movie details page' do
     attributes = JSON.parse(File.read('./spec/fixtures/movie_details.json'), symbolize_names: true)
 
     @movie = Movie.new(attributes)
-    
   end
 
   it 'has a button to create a new viewing party and a link to the discover page', :vcr do
