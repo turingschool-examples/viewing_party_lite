@@ -1,11 +1,9 @@
 class MovieFacade
 
-  def self.top_rated
-    top_movies = []
-    data = MovieService.get_top_rated_movies
-    data.each do |movie|
-      top_movies << Movie.new(movie)
+  def self.movie_results(query)
+    json = MovieService.movie_query_results(query)
+    json[:results].map do |movie_result|
+      Movie.new(movie_result)
     end
-    top_movies
   end
 end

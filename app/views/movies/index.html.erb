@@ -1,0 +1,7 @@
+<h5>Found Movies: </h5>
+
+<ol>
+  <% @movies.each do |movie| %>
+    <li><%= link_to movie.title, "/users/#{@user.id}/movies/#{movie.id}", method: :get %> | Vote Average: <%= movie.vote_average %> </li>
+  <%end  %>
+</ol>
