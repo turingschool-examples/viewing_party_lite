@@ -8,6 +8,7 @@ RSpec.describe "Movie index" do
 
     expect(page).to have_content("Doctor Strange")
     expect(page).to have_content(7.5)
+    #need expect for limit 40 
   end
 
   it 'has link to movie show page', :vcr do 
