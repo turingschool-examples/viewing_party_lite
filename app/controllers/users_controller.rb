@@ -1,5 +1,6 @@
-class UsersController < ApplicationController
+# frozen_string_literal: true
 
+class UsersController < ApplicationController
   def new
     @user = User.new
   end
@@ -11,6 +12,14 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+  end
+
+  def discover
+    @user = User.find(params[:id])
+  end
+
+  def movies
+    @movies = MovieFacade.top_20_movies
   end
 
   private

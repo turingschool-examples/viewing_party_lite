@@ -71,3 +71,11 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
+VCR.configure do |config|
+  config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+  config.hook_into :webmock
+  config.configure_rspec_metadata!
+  config.filter_sensitive_data('fake_api_key') { ENV['api_key'] }
+  config.default_cassette_options = { re_record_interval: 1.months }
+end
