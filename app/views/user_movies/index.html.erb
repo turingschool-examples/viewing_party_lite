@@ -1,3 +1,13 @@
 <center>
+<% if params[:q]%>
     <h2> Top Rated Movies </h2>
+    <% @top_movies.each do |movie|%>
+        <p> <%= movie.title %> <b> Vote Average: </b> <%=movie.vote_average %>
+    <% end %>
+<%else %>
+    <h2> Movie results for: <%=params[:search]%> </h2>
+    <% @movie_search_results.each do |movie|%>
+        <p> <%= movie.title %> <b> Vote Average: </b> <%=movie.vote_average %>
+    <% end %>
+<% end %>
 </center>
