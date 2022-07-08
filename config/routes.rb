@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   # get '/admin', to: 'admins#dashboard'
   get '/users/:id/discover', to: 'users#discover'
   get '/users/:id/movies', to: 'users#movies'
+  get '/users/:id/movies/:movie_id', to: 'users#movie_details'
+  get '/users/:id/movies/:movie_id/viewing-party/new', to: 'parties#new'
 end
