@@ -12,5 +12,17 @@ RSpec.describe MovieFacade do
         expect(top_movies.first).to be_a(Movie)
       end
     end
+
+    describe '#movie_details' do
+      it 'returns the details, reviews, and cast of a movie', :vcr do
+        movie = MovieFacade.movie_details(120)
+
+        expect(movie).to be_a(Movie)
+        expect(movie.title).to be_a(String)
+        expect(movie.reviews).to be_a(Array)
+        expect(movie.reviews.length).to be_a(Integer)
+        expect(movie.cast).to be_a(Array)
+      end
+    end
   end
 end
