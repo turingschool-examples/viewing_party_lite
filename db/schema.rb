@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2022_07_06_223703) do
+ActiveRecord::Schema.define(version: 2022_07_08_222139) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,8 +19,9 @@ ActiveRecord::Schema.define(version: 2022_07_06_223703) do
     t.integer "duration"
     t.date "date"
     t.time "time"
-    t.string "host"
-
+    t.string "user"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_parties_on_user_id"
   end
 
   create_table "party_users", force: :cascade do |t|
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2022_07_06_223703) do
     t.string "name"
   end
 
+  add_foreign_key "parties", "users"
   add_foreign_key "party_users", "parties"
   add_foreign_key "party_users", "users"
 end

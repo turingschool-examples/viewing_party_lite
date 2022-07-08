@@ -7,8 +7,10 @@ RSpec.describe Party do
   end
 
   describe 'validations' do
+    binding.pry
     it { should validate_presence_of :duration }
     it { should validate_presence_of :date }
     it { should validate_presence_of :time }
+    it { should validate_presence_of :user }
   end
 end
