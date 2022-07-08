@@ -26,4 +26,38 @@ RSpec.describe MovieService do
       expect(parsed_json[:results]).to be_a Array
     end
   end
+
+  describe "single movie endpoints" do
+    it "gets a movie endpoint from ID", :vcr do
+      shawshank_json = MovieService.get_movie_from_id(278)
+
+      expect(shawshank_json).to be_a Hash
+      expect(shawshank_json[:results]). to be_a Array
+      #expect a key of some sort
+    end
+
+    it "gets a movie's credits endpoint from ID", :vcr do
+      shawshank_json = MovieService.get_movie_credits_from_id(278)
+
+      expect(shawshank_json).to be_a Hash
+      expect(shawshank_json[:results]). to be_a Array
+      #expect a key of some sort
+    end
+
+    it "gets a movie's poster image endpoint from ID", :vcr do
+      shawshank_json = MovieService.get_movie_image_from_id(278)
+
+      expect(shawshank_json).to be_a Hash
+      expect(shawshank_json[:results]). to be_a Array
+      #expect a key of some sort
+    end
+
+    it "gets a movie's reviews endpoint from ID", :vcr do
+      shawshank_json = MovieService.get_movie_reviews_from_id(278)
+
+      expect(shawshank_json).to be_a Hash
+      expect(shawshank_json[:results]). to be_a Array
+      #expect a key of some sort
+    end
+  end
 end
