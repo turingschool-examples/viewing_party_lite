@@ -21,7 +21,11 @@ RSpec.describe "User Dash/Show page", type: :feature do
     expect(page).to have_button("Discover Movies")
   end
 
-  xit 'has a section that lists viewing parties' do #This is a placeholder for now, full functionality on separate ticket
+  it 'has a section that lists viewing parties' do #This is a placeholder for now, full functionality on separate ticket
+    visit "/users/#{@user1.id}"
 
+    within '#viewingparty' do
+      expect(page).to have_content("Viewing Parties")
+    end
   end
 end
