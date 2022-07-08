@@ -6,7 +6,8 @@ RSpec.describe 'Discover Page', type: :feature do
       user1 = User.create!(name: 'Parker', email: 'mangaforever@hootube.net')
       user2 = User.create!(name: 'Jim', email: 'musk42@trenches.org')
 
-      visit "/users/#{user1.id}/discover"
+      visit user_discover_path(user1.id)
+
       expect(page).to have_content("#{user1.name}'s Discover Page")
       expect(page).to_not have_content("#{user2.name}'s Discover Page")
     end
@@ -16,11 +17,12 @@ RSpec.describe 'Discover Page', type: :feature do
     it 'has button to discover top rated movies' do
       user1 = User.create!(name: 'Parker', email: 'mangaforever@hootube.net')
 
-      visit "/users/#{user1.id}/discover"
+      visit user_discover_path(user1.id)
+
       expect(page).to have_button('Discover Top Rated Movies')
 
       click_button "Discover Top Rated Movies"
-      expect(current_path).to eq("/users/#{user1.id}/movies?q=top%20rated")
+      expect(current_path).to eq(user_movies_path(user1.id))
     end
   end 
 
@@ -28,7 +30,7 @@ RSpec.describe 'Discover Page', type: :feature do
     it 'has a text field to enter keyword(s) to search by movie title' do
       user1 = User.create!(name: 'Parker', email: 'mangaforever@hootube.net')
 
-      visit "/users/#{user1.id}/discover"
+      visit user_discover_path(user1.id)
 
       within '.movie_search' do
         expect(page).to have_field('search', placeholder: 'Search by movie title')
@@ -38,7 +40,7 @@ RSpec.describe 'Discover Page', type: :feature do
     it 'has a Button to Search by Movie Title' do
       user1 = User.create!(name: 'Parker', email: 'mangaforever@hootube.net')
       
-      visit "/users/#{user1.id}/discover"
+      visit user_discover_path(user1.id)
 
       within '.movie_search' do 
         expect(page).to have_button('Find Movies')
