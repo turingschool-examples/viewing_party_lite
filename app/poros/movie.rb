@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Movie
-  attr_reader :id, :title, :vote_average, :runtime, :genres, :reviews, :cast
+  attr_reader :id, :title, :vote_average, :runtime, :genres, :overview, :reviews, :cast
 
   def initialize(attributes)
     @id = attributes[:id]
@@ -9,6 +9,7 @@ class Movie
     @vote_average = attributes[:vote_average]
     @runtime = convert_runtime(attributes[:runtime])
     @genres = attributes[:genres]
+    @overview = attributes[:overview]
     @reviews = get_reviews(attributes)
     @cast = get_cast(attributes)
   end
