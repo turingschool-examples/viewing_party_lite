@@ -7,7 +7,7 @@ RSpec.describe "User Discover" do
     visit "/users/#{user_1.id}/discover"
 
     expect(page).to have_link("Top Rated Movies")
-    expect(page).to have_field("Search By Movie Title")
+    expect(page).to have_field("Search")
     expect(page).to have_button("Search")
   end
 
@@ -18,17 +18,18 @@ RSpec.describe "User Discover" do
 
     click_link "Top Rated Movies"
 
-    expect(current_path).to eq("/users/#{user_1.id}/movies")
+    expect(path).to ("/users/#{user_1.id}/movies?q=top%20rated")
   end
 
-  it "links to top rated movies" do
+  it "Can search movies by name" do
     user_1 = User.create!(name: "Jimbo", email: "Jimbo@gmail.com")
 
     visit "/users/#{user_1.id}/discover"
 
-    fill_in "Search By Movie Title", with: "Titanic"
+    fill_in "Search", with: "Titanic"
     click_button "Search"
 
-    expect(current_path).to eq("/users/#{user_1.id}/movies?q=Titanic")
+    expect(page).to have_current_path("/users/#{user_1.id}/movies?q=Titanic")
+    expect(page).to have_content("Titanic 666")
   end
 end

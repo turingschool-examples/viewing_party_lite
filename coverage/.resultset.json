@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/helpers/application_helper.rb": {
+      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -10,7 +10,7 @@
           null
         ]
       },
-      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/models/party.rb": {
+      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/models/party.rb": {
         "lines": [
           1,
           1,
@@ -20,7 +20,7 @@
           null
         ]
       },
-      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/models/application_record.rb": {
+      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -30,7 +30,7 @@
           null
         ]
       },
-      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/models/party_user.rb": {
+      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/models/party_user.rb": {
         "lines": [
           1,
           1,
@@ -39,7 +39,7 @@
           null
         ]
       },
-      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/models/user.rb": {
+      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -51,7 +51,7 @@
           null
         ]
       },
-      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/controllers/welcome_controller.rb": {
+      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/controllers/welcome_controller.rb": {
         "lines": [
           1,
           1,
@@ -60,7 +60,7 @@
           null
         ]
       },
-      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/controllers/application_controller.rb": {
+      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -68,37 +68,39 @@
           null
         ]
       },
-      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/controllers/users_controller.rb": {
+      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/controllers/users_controller.rb": {
         "lines": [
           1,
           null,
           1,
-          0,
+          5,
           null,
           null,
           1,
           null,
           null,
           1,
-          0,
-          0,
+          1,
+          1,
           null,
           null,
+          1,
+          4,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/controllers/movies_controller.rb": {
+        "lines": [
+          1,
           1,
           2,
-          null,
-          null,
-          1,
-          1,
-          0,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/controllers/movies_controller.rb": {
-        "lines": [
-          1,
           1,
           1,
           1,
@@ -107,7 +109,7 @@
           null
         ]
       },
-      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/facade/movie_facade.rb": {
+      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/facade/movie_facade.rb": {
         "lines": [
           1,
           1,
@@ -126,45 +128,66 @@
           null,
           1,
           null,
-          null
-        ]
-      },
-      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/services/movie_service.rb": {
-        "lines": [
-          1,
           null,
           1,
-          2,
-          2,
-          null,
-          null,
-          1,
-          2,
-          2,
-          null,
-          null,
-          null,
-          1,
-          2,
-          null,
-          null
-        ]
-      },
-      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/poros/movie.rb": {
-        "lines": [
           1,
           1,
+          1,
+          1,
+          1,
+          20,
           null,
+          1,
+          20,
           null,
           1,
           40,
-          40,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/services/movie_service.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          4,
+          4,
+          null,
+          null,
+          null,
+          1,
+          4,
+          null,
+          null
+        ]
+      },
+      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/poros/movie.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          80,
+          80,
           null,
           null,
           null
         ]
       },
-      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
+      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
           null,
           null,
@@ -176,7 +199,7 @@
         "branches": {
         }
       },
-      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/jobs/application_job.rb": {
+      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/jobs/application_job.rb": {
         "lines": [
           null,
           null,
@@ -186,7 +209,7 @@
         "branches": {
         }
       },
-      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/channels/application_cable/connection.rb": {
+      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/channels/application_cable/connection.rb": {
         "lines": [
           null,
           null,
@@ -198,7 +221,7 @@
         "branches": {
         }
       },
-      "/Users/colinreinhart/turing/3Module/projects/viewing_party_lite/app/channels/application_cable/channel.rb": {
+      "/Users/pistachiojoe/turing/3mod2/proj/viewing/viewing_party_lite/app/channels/application_cable/channel.rb": {
         "lines": [
           null,
           null,
@@ -211,6 +234,6 @@
         }
       }
     },
-    "timestamp": 1657237916
+    "timestamp": 1657295580
   }
 }
