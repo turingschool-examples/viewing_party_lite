@@ -18,6 +18,9 @@ RSpec.describe 'Discover Page', type: :feature do
 
       visit "/users/#{user1.id}/discover"
       expect(page).to have_button('Discover Top Rated Movies')
+
+      click_button "Discover Top Rated Movies"
+      expect(current_path).to eq("/users/#{user1.id}/movies?q=top%20rated")
     end
   end 
 
@@ -27,7 +30,7 @@ RSpec.describe 'Discover Page', type: :feature do
 
       visit "/users/#{user1.id}/discover"
 
-      within '.movie_search' do 
+      within '.movie_search' do
         expect(page).to have_field('search', placeholder: 'Search by movie title')
       end 
     end
