@@ -1,1 +1,4 @@
-<h1>Discover Movies</h1>
+<h1>Top 40 Movies</h1>
+<%= @all_movies.map do |movie| %>
+<p> Title: <%= movie.name %>,  Average Rating: <%= movie.avg %> </p>
+<% end %>
