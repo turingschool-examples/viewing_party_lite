@@ -1,7 +1,7 @@
-class MoviesController < ApplicationController
-  def index
-    @user = User.find(params[:user_id])
+class MovieService
 
+
+  def self.top_40_rated_movies
     conn = Faraday.new(url: 'https://api.themoviedb.org') do | faraday |
       faraday.params['api_key'] = ENV['movie_api_key']
     end
@@ -12,8 +12,5 @@ class MoviesController < ApplicationController
     data_1 = JSON.parse(response_1.body, symbolize_names: true)
     data_2 = JSON.parse(response_2.body, symbolize_names: true)
     combo_data = data_1[:results] + data_2[:results]
-    movies_top_40 = combo_data.map do | movie_data |
-      Movie.new(movie_data)
-    end
   end
 end
