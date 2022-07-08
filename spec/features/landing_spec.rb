@@ -11,8 +11,10 @@ RSpec.describe 'the landing page', type: :feature do
     visit '/'
 
     expect(page).to have_button("Create New User")
-    #will add to this test to have button link to user registration page once this is pushed, then I can pull down user registration code :) -DB
+    click_button("Create New User")
+    expect(page).to have_current_path("/register")
   end
+  
   it 'has list of existing users' do
     user1 = User.create!(name: 'Sai', email: 'SaiLent@overlord.com')
     user2 = User.create!(name: 'Deannah', email: 'DMB@donuts.com')
@@ -44,5 +46,5 @@ RSpec.describe 'the landing page', type: :feature do
       visit '/'
       click_link("Home")
       expect(current_path).to eq('/')
-    end 
+    end
 end
