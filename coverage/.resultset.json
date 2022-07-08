@@ -25,12 +25,6 @@
           1,
           1,
           1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
           null
         ]
       },
@@ -54,116 +48,6 @@
           1,
           1,
           1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/drewproebstel/turing/rmodule/viewing_party_lite/app/poros/movie.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          104,
-          104,
-          104,
-          104,
-          104,
-          104,
-          104,
-          104,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/drewproebstel/turing/rmodule/viewing_party_lite/app/services/movie_service.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          9,
-          9,
-          null,
-          null,
-          null,
-          1,
-          9,
-          4,
-          null,
-          5,
-          null,
-          9,
-          9,
-          null,
-          null
-        ]
-      },
-      "/Users/drewproebstel/turing/rmodule/viewing_party_lite/app/controllers/discover_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/drewproebstel/turing/rmodule/viewing_party_lite/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          14,
-          null,
-          null
-        ]
-      },
-      "/Users/drewproebstel/turing/rmodule/viewing_party_lite/app/controllers/movies_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          5,
-          null,
-          null,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/drewproebstel/turing/rmodule/viewing_party_lite/app/controllers/viewing_parties_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          null,
-          null,
           null
         ]
       },
@@ -171,7 +55,7 @@
         "lines": [
           1,
           1,
-          5,
+          7,
           null,
           null,
           1,
@@ -248,6 +132,5 @@
         }
       }
     },
-    "timestamp": 1657309277
   }
 }
