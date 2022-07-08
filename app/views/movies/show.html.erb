@@ -1,1 +1,44 @@
-<% binding.pry %>
+<%= link_to "Discover", user_movies_discover_path(params[:user_id]) %>
+
+<%# <%= button_to "Create Viewing Party", party_path(params[:user_id], @data[:id]) %> %>
+
+<div id='movie-title'>
+    <h1> Movie Title </h1>
+    <%= @data[:title] %>
+</div>
+
+<div id='movie-title'>
+    <h1> Movie Title </h1>
+    <%= @data[:title] %>
+</div>
+
+<div id='movie-vote'>
+    <h1> Average Rating </h1>
+    <%= @data[:vote_average] %>
+</div>
+
+<div id='movie-runtime'>
+    <h1> Movie Title </h1>
+    <%= "#{@data[:runtime]/60} hours, #{@data[:runtime] % 60} minutes" %>
+</div>
+
+<div id='movie-genre'>
+    <h1> Average Rating </h1>
+    <% @data[:genres].each do |genre| %>
+        <%= genre[:name] %><br>
+    <% end %>
+</div>
+
+<div id='movie-genre'>
+    <h1> Summary </h1>
+    <%= @data[:overview] %>
+</div>
+
+<div id='movie-actors'>
+    <h1> Actors </h1>
+</div>
+
+<div id='movie-reviews'>
+    <h1> Total Reviews </h1>
+    <%= @data[:vote_count]%>
+</div>
