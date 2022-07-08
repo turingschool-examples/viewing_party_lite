@@ -7,7 +7,11 @@ class Movie
               :overview,
               :runtime,
               :vote_average,
-              :vote_count
+              :vote_count,
+              :genres,
+              :cast,
+              :author,
+              :content
 
   def initialize(data)
     @data = data
@@ -18,7 +22,9 @@ class Movie
     @runtime = data[:runtime]
     @vote_average = data[:vote_average]
     @vote_count = data[:vote_count]
-    # not sure what to do with genre, yet. the json shows multiple values
-    # need to account for cast, reviewers
+    @genres = data[:genre]
+    @cast = data[:cast]
+    @author = data[:author]
+    @content = data[:content]
   end
 end

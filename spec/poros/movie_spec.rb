@@ -22,4 +22,24 @@ RSpec.describe Movie do
     expect(movie.vote_count).to eq(1)
     expect(movie.overview).to eq("Seriously, this movie exists and has attributes.")
   end
+
+  it "test attributes from different pulls" do
+    data = {
+      genre: [18],
+      cast: [{name: "Tim Robbins"}],
+    }
+    movie = Movie.new(data)
+
+    expect(movie.genres).to eq [18]
+    expect(movie.cast.length).to eq 1
+
+    data_2 = {
+      author: "reviewer",
+      content: "is movie"
+    }
+    movie_2 = Movie.new(data_2)
+
+    expect(movie_2.author).to eq("reviewer")
+    expect(movie_2.content).to eq("is movie")
+  end
 end
