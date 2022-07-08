@@ -15,7 +15,7 @@ RSpec.describe 'movie details page' do
     expect(page).to have_button('Create a Viewing Party')
     click_button('Create a Viewing Party')
     expect(current_path).to eq("/users/#{@user1.id}/movies/#{@movie.id}/viewing_party/new")
-  
+
     visit "/users/#{@user1.id}/movies/#{@movie.id}"
     expect(page).to have_button('Discover Page')
     click_button('Discover Page')
@@ -46,5 +46,4 @@ RSpec.describe 'movie details page' do
     expect(page).to have_content("Author: #{@movie.reviews.last[:author]}")
     # expect(page).to have_content(@movie.reviews.last[:content])
   end
-
 end

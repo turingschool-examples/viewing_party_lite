@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   end
 
   resources :viewing_parties, only: %i[create]
-  
-  get '/users/:user_id/movies/:movie_id/viewing_party/new', to: 'viewing_parties#new'
 
+  get '/users/:user_id/movies/:movie_id/viewing_party/new', to: 'viewing_parties#new'
 end

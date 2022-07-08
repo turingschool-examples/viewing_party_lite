@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class UserMoviesController < ApplicationController
-
   def index
     if params[:q] == 'top rated'
       @top_movies = MovieFacade.top_rated_movies
