@@ -32,14 +32,5 @@ RSpec.describe Movie do
 
     expect(movie.genres).to eq [18]
     expect(movie.cast.length).to eq 1
-
-    data_2 = {
-      author: "reviewer",
-      content: "is movie"
-    }
-    movie_2 = Movie.new(data_2)
-
-    expect(movie_2.author).to eq("reviewer")
-    expect(movie_2.content).to eq("is movie")
   end
 end
