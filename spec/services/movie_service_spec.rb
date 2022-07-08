@@ -31,7 +31,7 @@ RSpec.describe MovieService do
     end
 
     describe '#movie_details' do
-      it 'returns movie informaiton, reviews, and credits', :vcr do
+      it 'returns movie information, reviews, and credits', :vcr do
         movie_details = MovieService.movie_details(120)
         reviews = movie_details[:reviews][:results]
         cast = movie_details[:credits][:cast]

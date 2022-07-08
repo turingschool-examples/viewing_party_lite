@@ -18,16 +18,16 @@ RSpec.describe 'landing page', type: :feature do
     visit '/'
     expect(page).to have_content('Existing Users:')
     within '#user-0' do
-      expect(page).to have_link("Jane Powell's Dashboard")
-      expect(page).to_not have_link("Ann Miller's Dashboard")
-      click_link("Jane Powell's Dashboard")
+      expect(page).to have_link("jpowell38@gmail.com's Dashboard")
+      expect(page).to_not have_link("amiller@gmail.com's Dashboard")
+      click_link("jpowell38@gmail.com's Dashboard")
       expect(current_path).to eq("/users/#{user1.id}")
       visit '/'
     end
     within '#user-1' do
-      expect(page).to have_link("Ann Miller's Dashboard")
-      expect(page).to_not have_link("Jane Powell's Dashboard")
-      click_link("Ann Miller's Dashboard")
+      expect(page).to have_link("amiller@gmail.com's Dashboard")
+      expect(page).to_not have_link("jpowell38@gmail.com's Dashboard")
+      click_link("amiller@gmail.com's Dashboard")
       expect(current_path).to eq("/users/#{user2.id}")
     end
   end
