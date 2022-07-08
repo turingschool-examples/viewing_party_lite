@@ -22,4 +22,9 @@ class MovieFacade
       Movie.new(movie_data)
     end
   end
+
+  def self.movie_details(id)
+    json = MovieService.movie_details(id)
+    Movie.new(json)
+  end
 end
