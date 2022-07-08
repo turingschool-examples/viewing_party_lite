@@ -7,6 +7,19 @@
           null
         ]
       },
+      "/Users/drewproebstel/turing/rmodule/viewing_party_lite/app/facades/movie_facade.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          7,
+          7,
+          103,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/drewproebstel/turing/rmodule/viewing_party_lite/app/models/party.rb": {
         "lines": [
           1,
@@ -32,8 +45,6 @@
       },
       "/Users/drewproebstel/turing/rmodule/viewing_party_lite/app/models/user.rb": {
         "lines": [
-          1,
-          1,
           1,
           1,
           1,
@@ -70,12 +81,6 @@
           1,
           3,
           null,
-          null
-        ]
-      },
-      "/Users/drewproebstel/turing/rmodule/viewing_party_lite/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
           null
         ]
       },
@@ -127,6 +132,5 @@
         }
       }
     },
-    "timestamp": 1657249068
   }
 }
