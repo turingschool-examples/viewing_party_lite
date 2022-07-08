@@ -15,4 +15,24 @@ class MovieService
     response = conn.get(endpoint)
     json = JSON.parse(response.body, symbolize_names: true)
   end
+
+  def self.get_movie_from_id(id)
+    response = conn.get("movie/#{id}")
+    json = JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.get_movie_credits_from_id(id)
+    response = conn.get("movie/#{id}/credits")
+    json = JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.get_movie_reviews_from_id(id)
+    response = conn.get("movie/#{id}/reviews")
+    json = JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.get_movie_images_from_id(id)
+    response = conn.get("movie/#{id}/images")
+    json = JSON.parse(response.body, symbolize_names: true)
+  end
 end

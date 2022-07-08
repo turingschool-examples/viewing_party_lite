@@ -30,34 +30,32 @@ RSpec.describe MovieService do
   describe "single movie endpoints" do
     it "gets a movie endpoint from ID", :vcr do
       shawshank_json = MovieService.get_movie_from_id(278)
-
+      
       expect(shawshank_json).to be_a Hash
-      expect(shawshank_json[:results]). to be_a Array
-      #expect a key of some sort
+      expect(shawshank_json).to have_key(:original_title)
     end
 
     it "gets a movie's credits endpoint from ID", :vcr do
       shawshank_json = MovieService.get_movie_credits_from_id(278)
 
       expect(shawshank_json).to be_a Hash
-      expect(shawshank_json[:results]). to be_a Array
-      #expect a key of some sort
+      expect(shawshank_json).to have_key(:cast)
+      expect(shawshank_json[:cast].length).to eq 61
     end
 
-    it "gets a movie's poster image endpoint from ID", :vcr do
-      shawshank_json = MovieService.get_movie_image_from_id(278)
+    it "gets a movie's images endpoint from ID", :vcr do
+      shawshank_json = MovieService.get_movie_images_from_id(278)
 
       expect(shawshank_json).to be_a Hash
-      expect(shawshank_json[:results]). to be_a Array
-      #expect a key of some sort
+      expect(shawshank_json).to have_key(:backdrops)
     end
 
     it "gets a movie's reviews endpoint from ID", :vcr do
       shawshank_json = MovieService.get_movie_reviews_from_id(278)
 
       expect(shawshank_json).to be_a Hash
-      expect(shawshank_json[:results]). to be_a Array
-      #expect a key of some sort
+      expect(shawshank_json[:results]).to be_a Array
+      expect(shawshank_json[:results].length).to eq 7
     end
   end
 end
