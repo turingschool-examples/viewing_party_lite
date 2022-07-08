@@ -30,6 +30,7 @@ class UsersController < ApplicationController
 
   def movie_details
     @user = User.find(params[:id])
+    @movie = MovieFacade.movie_details(params[:movie_id])
   end
 
   private
