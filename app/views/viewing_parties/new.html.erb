@@ -1,0 +1,13 @@
+<%= form_with url: "/users/#{@user.id}/movies/#{@movie.id}", method: :post, local: true do |form| %>
+  <% binding.pry %>
+  <%= form.label :duration %>
+  <%= form.text_field :duration %>
+
+  <%= form.label :date %>
+  <%= form.text_field :date %>
+
+  <%= form.label :start_time %>
+  <%= form.datetime_local_field :start_time %>
+
+  <%= form.submit "Submit" %>
+<% end %>
