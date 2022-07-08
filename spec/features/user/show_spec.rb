@@ -14,10 +14,19 @@ RSpec.describe "User Dash/Show page", type: :feature do
     expect(page).to_not have_content("Sai's Dashboard")
   end
 
-  it 'has a button to discover movies' do #Testing for appearance, funtionality contained in separate ticket
+  it 'has a button to discover movies' do 
     visit "/users/#{@user1.id}"
 
     expect(page).to have_button("Discover Movies")
+  end
+
+  it 'button to discover movies redirects to discover page' do
+    visit "/users/#{@user1.id}"
+
+    click_button("Discover Movies")
+
+    expect(current_path).to eq("/users/#{@user1.id}/discover")
+    expect(current_path).to_not eq("/users/#{@user2.id}/discover")
   end
 
   it 'has a section that lists viewing parties' do #This is a placeholder for now, full functionality on separate ticket
