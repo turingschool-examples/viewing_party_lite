@@ -1,5 +1,9 @@
 <h1>Movie Search Results</h1>
+<%= button_to "Discover Movies", user_discover_index_path(@user.id), method: :get %>
 
 <% @movies.each do |movie| %>
-    <h3><%= movie.title %></h3>
+
+    <h3>Title: <%= movie.title %></h3>
+    <h4>Average Rating: <%= movie.vote_average %></h4><hr>
+
 <% end %>
