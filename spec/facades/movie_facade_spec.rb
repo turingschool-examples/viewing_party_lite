@@ -30,10 +30,10 @@ RSpec.describe MovieFacade do
     end
 
     it "can acquire movie reviews", :vcr do
-      movie = MovieFacade.create_single_movie_reviews(278)
+      reviews = MovieFacade.create_single_movie_reviews(278)
 
-      expect(movie).to be_a Review
-      expect(movie.reviews.length).to eq 7
+      expect(reviews).to be_all Review
+      expect(reviews.length).to eq 7
     end
 
     it "creates an image object", :vcr do
