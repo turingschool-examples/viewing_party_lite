@@ -4,6 +4,7 @@
     <br><br>
     <hr>
     <h3> Viewing Parties </h3>
+    <br>
     <%@user.viewing_parties.each do |party|%>
     <div id="viewing-party<%= party.id%>">
         
@@ -16,5 +17,7 @@
             <p> Invited </p>
         <%end%>
     </div>
+    <br>
     <%end%>
+
 </center>
