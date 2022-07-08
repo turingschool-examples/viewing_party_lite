@@ -64,6 +64,5 @@ RSpec.describe "Dashboard Page" do
 
     visit "/users/#{user2.id}"
     click_link("Jack Ass 3.5")
-    save_and_open_page
   end
 end
