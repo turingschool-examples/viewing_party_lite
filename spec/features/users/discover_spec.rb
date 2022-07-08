@@ -8,6 +8,7 @@ RSpec.describe 'Discover Page', type: :feature do
 
       visit "/users/#{user1.id}/discover"
       expect(page).to have_content("#{user1.name}'s Discover Page")
+      expect(page).to_not have_content("#{user2.name}'s Discover Page")
     end
   end 
 
@@ -25,6 +26,7 @@ RSpec.describe 'Discover Page', type: :feature do
       user1 = User.create!(name: 'Parker', email: 'mangaforever@hootube.net')
 
       visit "/users/#{user1.id}/discover"
+
       within '.movie_search' do 
         expect(page).to have_field('search', placeholder: 'Search by movie title')
       end 
@@ -34,8 +36,10 @@ RSpec.describe 'Discover Page', type: :feature do
       user1 = User.create!(name: 'Parker', email: 'mangaforever@hootube.net')
       
       visit "/users/#{user1.id}/discover"
-        within '.movie_search'
-      expect(page).to have_button('Find Movies')
+
+      within '.movie_search' do 
+        expect(page).to have_button('Find Movies')
+      end 
     end
   end
 end
