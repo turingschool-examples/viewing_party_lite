@@ -14,7 +14,6 @@ RSpec.describe 'discover page' do
   end
 
   it 'has a text field to enter keyword(s) to search by movie title', :vcr do
-    save_and_open_page
     expect(page).to have_field("movie_title")
     expect(page).to have_button("Search By Movie Title")
   end
