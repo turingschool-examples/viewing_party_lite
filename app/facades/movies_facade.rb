@@ -1,10 +1,11 @@
 class MoviesFacade
 
   def self.top_movies
-    parsed_json = MovieService.top_movies
-
-    parsed_json.each do |movie|
-      Movie.new(movie)
+    movies = []
+    parsed_json = MovieService.top_rated
+    parsed_json[:results].each do |movie|
+      movies << Movie.new(movie)
     end
+    return movies
   end
 end
