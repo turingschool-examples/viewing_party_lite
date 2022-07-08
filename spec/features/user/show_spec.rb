@@ -16,7 +16,6 @@ RSpec.describe "User Dash/Show page", type: :feature do
 
   it 'has a button to discover movies' do #Testing for appearance, funtionality contained in separate ticket
     visit "/users/#{@user1.id}"
-    save_and_open_page
 
     expect(page).to have_button("Discover Movies")
   end
@@ -24,7 +23,7 @@ RSpec.describe "User Dash/Show page", type: :feature do
   it 'has a section that lists viewing parties' do #This is a placeholder for now, full functionality on separate ticket
     visit "/users/#{@user1.id}"
 
-    within '#viewingparty' do
+    within '#viewingparties' do
       expect(page).to have_content("Viewing Parties")
     end
   end
