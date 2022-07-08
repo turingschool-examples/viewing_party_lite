@@ -19,4 +19,13 @@ RSpec.describe 'MovieFacade' do
     expect(movies.first.title).to eq("Django Unchained")
     expect(movies.length).to eq(40)
   end
+
+  it "can retrieve from movie details page", :vcr do
+    movie = MovieFacade.movie_details(550)
+
+    expect(movie).to be_a Movie
+
+    expect(movie.title).to eq("Fight Club")
+    expect(movie.runtime).to eq(139)
+  end
 end
