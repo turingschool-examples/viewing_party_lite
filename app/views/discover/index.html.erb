@@ -1,0 +1,11 @@
+<div style="text_align:center;">
+  <h2>Discover Movies</h2>
+</div>
+
+<%= button_to "Discover Top Rated Movies", "/users/#{@user.id}/movies", method: :get, params: {search: 'top%20rated'}, local: true %>
+
+<%= form_with url: "/users/#{@user.id}/movies", method: :get, local: true do |f| %>
+  <%= f.label "Search by Title" %>
+  <%= f.text_field :search %>
+  <%= f.submit "Search" %>
+<% end %>

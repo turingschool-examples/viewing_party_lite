@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Discover Index Page' do
   describe "button link paths" do
     before :each do
-      @user  = User.create!(name: 'Drewb', email: 'Drew@testemail.com')
+      @user = User.create!(name: 'Drewb', email: 'Drew@testemail.com')
     end
 
     it "has a button to discover top rated movies", :vcr do
@@ -13,7 +13,7 @@ RSpec.describe 'Discover Index Page' do
 
       click_button("Discover Top Rated Movies")
 
-      expect(current_path).to eq("/users/#{@user.id}/movies?q=top%20rated")
+      expect(current_path).to eq("/users/#{@user.id}/movies")
     end
 
     it "has a search field to find movies by title", :vcr do
@@ -22,7 +22,7 @@ RSpec.describe 'Discover Index Page' do
       fill_in "search", with: "Shaw"
       click_button("Search")
 
-      expect(current_path).to eq("/users/#{@user.id}/movies?q=Shaw")
+      expect(current_path).to eq("/users/#{@user.id}/movies")
     end
   end
 end
