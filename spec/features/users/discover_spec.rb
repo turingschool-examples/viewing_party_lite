@@ -31,7 +31,7 @@ describe 'user discover page' do
     click_button('Find Top Rated Movies')
 
     expect(current_path).to eq("/users/#{@user1.id}/movies")
-    
+
     click_button('Discover Page')
 
     expect(current_path).to eq("/users/#{@user1.id}/discover")

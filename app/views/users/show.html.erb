@@ -4,5 +4,9 @@
     <br><br>
     <hr>
     <h3> Viewing Parties </h3>
-    
+    <%@user.viewing_parties.each do |party|%>
+    <div id="viewing-party<%= party.id%>">
+        <p><b><%= party.movie.title %></b></p>
+    </div>
+    <%end%>
 </center>
