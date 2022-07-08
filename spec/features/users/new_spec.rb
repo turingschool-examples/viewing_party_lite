@@ -15,7 +15,9 @@ RSpec.describe "Registration Page" do
     fill_in "Name", with: 'Drew'
     fill_in "Email", with: 'Drew@testemail.com'
     click_button "Register"
-    expect(current_path).to eq("/users/#{User.first.id}")
+
+    user = User.last
+    expect(current_path).to eq("/users/#{user.id}")
   end
 
   it 'flashes an error with invalid credentials' do
