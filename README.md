@@ -25,4 +25,3 @@ Viewing Part Lite is an application in which users can explore movie options and
 
 Example wireframes to follow are found [here](https://backend.turing.io/module3/projects/viewing_party_lite/wireframes)
 
-api_key=51fff6623cd61b27680d2a6ecd472f09

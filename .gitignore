@@ -6,8 +6,6 @@
 
 # Ignore bundler config.
 /.bundle
-/coverage/* 
-/coverage 
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -25,5 +23,11 @@
 /public/assets
 .byebug_history
 
+
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore application configuration
+/config/application.yml
+
+/coverage
