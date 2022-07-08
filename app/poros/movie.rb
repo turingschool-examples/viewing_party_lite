@@ -3,19 +3,29 @@ class Movie
                     :id, 
                     :vote_average, 
                     :runtime,
+                    :image,
                     :genres,
-                    :overview
+                    :overview,
+                    :cast,
+                    :reviews
 
-  def initialize(info)
+  def initialize(info, credits = nil, reviews = nil)
     @title = info[:title]
     @id = info[:id]
     @vote_average = info[:vote_average]
-    @runtime = duration(info[:runtime])
+    @runtime = info[:runtime]
+    @image = info[:poster_path]
     @genres = info[:genres]
     @overview = info[:overview]
-  end
-
-  def duration(minutes)
-    "#{minutes / 60 } h #{minutes % 60} m"
+    if credits.nil?
+      @cast = nil
+    else
+      @cast = credits[:cast]
+    end
+    if reviews.nil?
+      @reviews = nil
+    else
+      @reviews = reviews[:results]
+    end
   end
 end

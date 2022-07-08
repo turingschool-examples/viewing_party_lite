@@ -11,7 +11,7 @@ class MovieService
   def self.get_movie_credits(id)
     get_url("https://api.themoviedb.org/3/movie/#{id}/credits?api_key=#{ENV['api_key']}")
   end
-
+  
   def self.get_movie_details(id)    
     get_url("https://api.themoviedb.org/3/movie/#{id}?api_key=#{ENV['api_key']}")
   end
