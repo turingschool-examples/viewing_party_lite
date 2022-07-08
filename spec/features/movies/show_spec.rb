@@ -13,7 +13,7 @@ RSpec.describe 'Movie details page', :vcr do
 
         expect(page).to have_link("Discover")
 
-        # expect(page).to have_button("Create Viewing Party")
+        expect(page).to have_button("Create Viewing Party")
 
         expect(page).to have_content('The Shawshank Redemption')
         expect(page).to have_content('8.7')

@@ -1,11 +1,6 @@
 <%= link_to "Discover", user_movies_discover_path(params[:user_id]) %>
 
-<%# <%= button_to "Create Viewing Party", party_path(params[:user_id], @data[:id]) %> %>
-
-<div id='movie-title'>
-    <h1> Movie Title </h1>
-    <%= @data[:title] %>
-</div>
+<%= button_to "Create Viewing Party", user_movie_parties_path(params[:user_id], @data[:id]) %>
 
 <div id='movie-title'>
     <h1> Movie Title </h1>
