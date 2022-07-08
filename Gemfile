@@ -55,7 +55,6 @@ group :test do
   gem 'simplecov'
   gem 'shoulda-matchers'
   gem 'orderly'
-  gem 'shoulda-matchers'
   gem 'webmock'
   gem 'vcr'
 end
