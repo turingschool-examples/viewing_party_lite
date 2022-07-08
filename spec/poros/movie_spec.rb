@@ -25,12 +25,19 @@ RSpec.describe Movie do
 
   it "test attributes from different pulls" do
     data = {
-      genre: [18],
+      genres: [18],
       cast: [{name: "Tim Robbins"}],
     }
     movie = Movie.new(data)
 
     expect(movie.genres).to eq [18]
     expect(movie.cast.length).to eq 1
+  end
+
+  it "formats runtime into hour/minute" do
+    data = {runtime: 134}
+    movie = Movie.new(data)
+
+    expect(movie.format_runtime(movie.runtime)). to eq "2:14"
   end
 end
