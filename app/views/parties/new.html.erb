@@ -1,0 +1,14 @@
+<h1> New Viewing Party!</h1>
+
+<%= form_with url: "/users/#{@user.id}/movies/#{@movie.id}/viewing_party", method: :post do |f| %>
+    <%= f.label :duration, "Duration: " %>
+    <%= f.number_field :duration %>
+    <%= f.label :date, "Date: " %>
+    <%= f.date_field :date %>
+    <%= f.label :time, "Start Time " %>
+    <%= f.time_field :time %>
+
+    <%= f.label "Invite Users to the Party" %>
+    <% @users.each do |user| %>
+      <p><%= "#{user.name}" %></p>
+    <% end %>
