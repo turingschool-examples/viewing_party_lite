@@ -11,8 +11,8 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[create show] do
     get '/discover', to: 'movies#discover', as: 'movies_discover'
-    get '/movies', to: 'movies#index'
-    get '/movies/:id', to: 'movies#show', as: 'movies_show'
-    get '/movies/:id', to: 'viewing_party#new', as:'party_new'
+    resources :movies, only: %i[index show] do
+      resources :viewing_parties, only: %i[new create]
+    end
   end
 end
