@@ -1,21 +1,19 @@
 class MoviesController < ApplicationController
   def top_rated
-    conn = Faraday.new(
-      url: "https://api.themoviedb.org",
-      headers: {'Content-Type' => 'application/json'}
-    )
-
-    response = conn.get("/3/movie/top_rated") do |req|
-      req.params['api_key'] = ENV['movie_api_key']
+    conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
+      faraday.params['api_key'] = ENV['movie_api_key']
     end
-    
-    
-    
-    @data = JSON.parse(response.body, symbolize_names: true)
-    
-    # movies = @data[:results].first(40)
 
-    render user_movies_discover_path(params[:user_id], :q => 'top%20rated')
+    response1 = conn.get("/3/movie/top_rated?page=1&")
+    response2 = conn.get("/3/movie/top_rated?page=2&")
+    
+    data1 = JSON.parse(response1.body, symbolize_names: true)
+    data2 = JSON.parse(response2.body, symbolize_names: true)
+    
+    movies1 = data1[:results]
+    movies2 = data2[:results]
+    @movies = movies1 + movies2
+    render "movies/index"
 
   end
   def discover 
@@ -23,8 +21,6 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @user = User.find(params[:user_id])
-    @movies = @data[:results].first(40)
   end
 
 end

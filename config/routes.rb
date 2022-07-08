@@ -6,7 +6,8 @@ Rails.application.routes.draw do
  get '/users/:id', to: 'users#show'
  resources :users, only: %i[create show] do 
   get '/discover', to: 'movies#discover', as: 'movies_discover'
-  get '/movies', to: 'movies#top_rated', as: 'top_rated'
+  post '/movies', to: 'movies#top_rated', as: 'top_rated'
+  resources :movies, only: %i[index show]
  end
 
 end
