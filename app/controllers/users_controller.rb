@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(name: params[:name], email: params[:email])
+    user = User.create(user_params)
     if user.save
       redirect_to "/users/#{user.id}"
     else
@@ -17,5 +17,9 @@ class UsersController < ApplicationController
   end
 
   def discover
+  end
+
+  def user_params
+    params.permit(:name, :email)
   end
 end
