@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_08_222139) do
+ActiveRecord::Schema.define(version: 2022_07_08_233545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(version: 2022_07_08_222139) do
     t.integer "duration"
     t.date "date"
     t.time "time"
-    t.string "user"
     t.bigint "user_id"
+    t.integer "movie_id"
+    t.string "user_name"
     t.index ["user_id"], name: "index_parties_on_user_id"
   end
 
