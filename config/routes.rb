@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root 'users#index'
 
   get '/users/:id/discover', to: "users#discover"
-  resources :users, only: [:index, :show, :create]
+  resources :users, only: [:index, :show, :create] do
+    resources :movies, controller: "user_movies", only: [:index]
+  end
 
   get '/register', to: "users#new"
 end

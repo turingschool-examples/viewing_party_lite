@@ -4,10 +4,13 @@
   <h2> Discover Movies </h2>
 
   <div class="button">
-    Put your buttons here
+    <%= button_to "Find Top Rated Movies", "/users/#{@user.id}/movies", params: { q: "top 20rated" }, method: :get %>
   </div>
-
+<p> OR </p>
   <div class="form">
-    put your form here
+    <%= form_with url: "/users/#{@user.id}/movies", method: :get, local: true do |form| %>
+      <%= form.text_field :q, placeholder: "Search by movie title" %>
+      <%= form.submit "Find Movies" %>
+    <% end %>
   </div>
 </center>

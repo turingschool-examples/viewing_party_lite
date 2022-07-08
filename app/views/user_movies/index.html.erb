@@ -1,0 +1,10 @@
+<center>
+  <h1> Viewing Party Lite </h1>
+
+  <h2> Top Rated Movies </h2> <br>
+  <% @movies.each do |movie| %>
+    <div>
+      <p><%= link_to movie.title, "/users/#{params[:user_id]}/movies/#{movie.id}", method: :get %>, Vote Average: <%= movie.vote_average %></p>
+    </div>
+  <% end %>
+</center>
