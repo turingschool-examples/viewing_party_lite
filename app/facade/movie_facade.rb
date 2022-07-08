@@ -1,5 +1,5 @@
 class MovieFacade
-  def self.top_rated
+  def self.get_top_rated
     top_movies = []
     top_movies_1 = MovieService.get_top_rated(1)
     top_movies_2 = MovieService.get_top_rated(2)

@@ -19,8 +19,11 @@ RSpec.describe "User Discover" do
     click_link "Top Rated Movies"
 
     expect(current_path).to eq("/users/#{user_1.id}/movies")
-    expect(page).to have_content("Shawshank Redemption")
+    expect(page).to have_link("Shawshank Redemption")
     expect(page).to_not have_content("Dumb and Dumber")#sadly
+
+    click_link "Shawshank Redemption"
+    expect(current_path).to eq("/movies/#{movie.id}/show")
   end
 
   it "Can search movies by name" do
@@ -32,7 +35,11 @@ RSpec.describe "User Discover" do
     click_button "Search"
 
     expect(current_path).to eq("/users/#{user_1.id}/movies")
-    expect(page).to have_content("Titanic 666")
+    expect(page).to have_link("Titanic 666")
     expect(page).to_not have_content("Shawshank Redemption")
+
+    click_link "Titanic 666"
+
+    expect(current_path).to eq("movies/#{movie.id}/show")
   end
 end
