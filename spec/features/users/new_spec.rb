@@ -10,7 +10,6 @@ RSpec.describe 'register new user form' do
     fill_in 'Email', with: 'itachi.uchiha@gmail.com'
     click_button 'Register'
 
-    expect(page).to have_content('Itachi Uchiha')
-    expect(page).to have_content('itachi.uchiha@gmail.com')
+    expect(page).to have_content("Itachi Uchiha's Dashboard")
   end
 end
