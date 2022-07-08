@@ -15,11 +15,11 @@ class Movie
   end
 
   def get_reviews(attributes)
-    attributes[:reviews] ? reviews = attributes[:reviews][:results] : reviews = nil
+    reviews = attributes[:reviews] ? attributes[:reviews][:results] : nil
   end
 
   def get_cast(attributes)
-    attributes[:credits] ? cast = attributes[:credits][:cast] : cast = nil 
+    cast = attributes[:credits] ? attributes[:credits][:cast] : nil
   end
 
   def convert_runtime(runtime_mins)
@@ -29,5 +29,4 @@ class Movie
       "#{runtime_hours}hr #{runtime_mins} min"
     end
   end
-
 end

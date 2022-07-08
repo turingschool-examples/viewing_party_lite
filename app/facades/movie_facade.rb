@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class MovieFacade
-  
   def self.top_rated_movies
     json = MovieService.top_rated_movies(1)
     json2 = MovieService.top_rated_movies(2)
@@ -17,5 +16,4 @@ class MovieFacade
     json = MovieService.movie_details(id)
     Movie.new(json)
   end
-
 end
