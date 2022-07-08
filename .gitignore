@@ -8,6 +8,10 @@
 /.bundle
 echo coverage >> .gitignore
 
+# Ignore coverage
+/coverage/*
+/coverage/index.html
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -26,3 +30,6 @@ echo coverage >> .gitignore
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore application configuration
+/config/application.yml
