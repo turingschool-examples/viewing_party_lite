@@ -19,7 +19,13 @@ class UsersController < ApplicationController
   end
 
   def movies
-    @movies = MovieFacade.top_20_movies
+    @user = User.find(params[:id])
+
+    if params[:search].present?
+      @movies = MovieFacade.movie_by_keyword(params[:search])
+    else
+      @movies = MovieFacade.top_20_movies
+    end
   end
 
   private
