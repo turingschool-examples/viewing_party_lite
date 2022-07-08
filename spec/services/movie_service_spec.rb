@@ -17,7 +17,6 @@ RSpec.describe MovieService do
       end
     end
 
-
     describe '#search' do
       it 'returns movies that include the keyword searched in their titles', :vcr do
         movies = MovieService.search('titanic', 1)
@@ -30,7 +29,7 @@ RSpec.describe MovieService do
         end
       end
     end
-    
+
     # describe '#find_movie' do
     #   it 'returns details for a movie with the given id', :vcr do
     #     movie = MovieService.find_movie(120)

@@ -1,7 +1,9 @@
-<h3 align='center'><%= button_to "Create a New User", "/register", method: :get %></h3>
+<center>
+<h3><%= button_to "Create a New User", "/register", method: :get %></h3>
 <h3>Existing Users: </h3>
 <% @users.each_with_index do |user, index| %>
   <div id="user-<%= index %>">
-    <%= link_to "#{user.name}'s Dashboard", "/users/#{user.id}" %>
+    <%= link_to "#{user.email}'s Dashboard", "/users/#{user.id}" %>
   </div>  
 <% end %>
+</center>
