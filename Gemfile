@@ -40,6 +40,7 @@ gem 'faraday'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
+  gem 'figaro'
 end
 
 group :development do
@@ -58,6 +59,7 @@ group :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'simplecov'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

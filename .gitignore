@@ -28,3 +28,6 @@
 Gemfile.lock
 /coverage.data
 /coverage/
+
+# Ignore application configuration
+/config/application.yml
