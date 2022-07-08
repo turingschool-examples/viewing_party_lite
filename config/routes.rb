@@ -12,5 +12,7 @@ Rails.application.routes.draw do
   resources :users, only: %i[create show] do
     get '/discover', to: 'movies#discover', as: 'movies_discover'
     get '/movies', to: 'movies#index'
+    get '/movies/:id', to: 'movies#show', as: 'movies_show'
+
   end
 end

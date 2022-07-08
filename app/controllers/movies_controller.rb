@@ -14,4 +14,9 @@ class MoviesController < ApplicationController
                 MovieFacade.create_movie_search(params[:q])
               end
   end
+  
+  def show 
+    @movie = MovieFacade.create_movie_details(params[:id])
+  end
+
 end
