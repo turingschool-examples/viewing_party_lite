@@ -4,7 +4,7 @@ RSpec.describe 'MovieService' do
   context 'happy path' do
     it 'retrieves data and parses response', :vcr do
 
-      parsed_json = MovieService.top_40_rated_movies
+      parsed_json = MovieService.new.top_40_rated_movies
 
       expect(parsed_json).to be_a Array
       movie = parsed_json.first

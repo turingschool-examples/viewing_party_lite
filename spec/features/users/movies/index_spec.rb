@@ -11,10 +11,10 @@ RSpec.describe 'Movies Results Page', type: :feature do
     expect(current_path).to eq(user_discover_path(users[0].id))
   end
 
-  xit "allows to display top 40 movies", :vcr do
+  it "allows to display top 40 movies", :vcr do
     visit user_discover_path(users[0].id)
     click_button "Top Rated Movies"
-    expect(current_path).to eq("users/#{users.id}/movies?q=top%20rated")
+    expect(current_path).to eq("/users/#{users[0].id}/movies")
     expect(page).to have_content("The Shawshank Redemption")
     expect(page).to have_content("The Godfather")
   end

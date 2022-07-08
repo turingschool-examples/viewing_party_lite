@@ -9,8 +9,7 @@ RSpec.describe 'Movies Discover Page', type: :feature do
 
     click_button('Top Rated Movies')
     expect(current_path).to eq("/users/#{users[0].id}/movies")
-
-    # expect(page).to have_content(TOP20MOVIESCONTENT)
+    expect(page).to have_content("Shawshank Redemption")
   end
 
   it 'has a text field to enter keywords to search by movie title and a button to search', :vcr do
@@ -25,9 +24,6 @@ RSpec.describe 'Movies Discover Page', type: :feature do
     fill_in 'Movie Title', with: "Shawshank"
     click_button 'Search'
     expect(current_path).to eq(user_movies_path("#{users[0].id}"))
-
-    #expect(page).to have_content('Shawshank Redemption')
+    expect(page).to have_content('The Shawshank Redemption')
   end
-
-
 end
