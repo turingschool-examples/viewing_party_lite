@@ -13,7 +13,7 @@ describe 'user show page (dashboard)' do
     expect(page).to_not have_content("Dustin's Dashboard")
   end
 
-  it 'has a button to link to the users movie discover page' do
+  it 'has a button to link to the users movie discover page', :vcr do
     visit user_path(@user1)
     click_button('Discover Movies')
 
@@ -60,7 +60,5 @@ describe 'user show page (dashboard)' do
     within "#viewing-party#{party2.id}" do
       expect(page).to have_content("Invited")
     end
-
-
   end
 end

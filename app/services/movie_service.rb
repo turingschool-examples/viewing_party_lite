@@ -11,21 +11,6 @@ class MovieService
     json = JSON.parse(response.body, symbolize_names: true)
   end
 
-  # def self.find_movie(id)
-  #   response = connection.get("/3/movie/#{id}")
-  #   json = JSON.parse(response.body, symbolize_names: true)
-  # end
-
-  # def self.movie_cast(id)
-  #   response = connection.get("/3/movie/#{id}/credits")
-  #   json = JSON.parse(response.body, symbolize_names: true)
-  # end
-
-  # def self.movie_reviews(id)
-  #   response = connection.get("/3/movie/#{id}/reviews")
-  #   json = JSON.parse(response.body, symbolize_names: true)
-  # end
-
   def self.movie_details(id)
     response = connection.get("/3/movie/#{id}?append_to_response=reviews,credits")
     json = JSON.parse(response.body, symbolize_names: true)
