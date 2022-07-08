@@ -27,6 +27,14 @@ describe 'user discover page' do
     expect(page).to have_content('Titanic 666')
   end
 
+  it 'displays an error if there was not a valid search input', :vcr do
+    fill_in 'search', with: '   '
+    click_button('Find Movies')
+
+    expect(current_path).to eq("/users/#{@user1.id}/discover")
+    expect(page).to have_content('Uh oh, something went wrong. Please try again.')
+  end
+
   it 'can be returned to from the movie results page', :vcr do
     click_button('Find Top Rated Movies')
 

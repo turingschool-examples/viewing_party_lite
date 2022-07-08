@@ -9,4 +9,12 @@ class ViewingParty < ApplicationRecord
   def movie
     MovieFacade.movie_details(movie_id)
   end
+
+  def formatted_date
+    date.to_date.strftime('%A, %B %d')
+  end
+
+  def formatted_time
+    start_time.to_time.strftime('%l:%M %p')
+  end
 end

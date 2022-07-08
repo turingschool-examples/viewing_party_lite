@@ -6,7 +6,15 @@
     <h3> Viewing Parties </h3>
     <%@user.viewing_parties.each do |party|%>
     <div id="viewing-party<%= party.id%>">
+        
         <p><b><%= party.movie.title %></b></p>
+        <p><%= party.formatted_date %></p>
+        <p><%= party.formatted_time %></p>
+       <% if @user.is_host?(party.id)%>
+            <p> Hosting </p>
+        <% else %>
+            <p> Invited </p>
+        <%end%>
     </div>
     <%end%>
 </center>
