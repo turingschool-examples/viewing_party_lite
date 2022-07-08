@@ -7,7 +7,18 @@ class MovieFacade
 
     top_40 = json[:results] + json2[:results]
 
-    @movies = top_40.map do |movie_data|
+    top_40.map do |movie_data|
+      Movie.new(movie_data)
+    end
+  end
+
+  def self.search(keyword)
+    json = MovieService.search(keyword, 1)
+    json2 = MovieService.search(keyword, 2)
+
+    first_40 = json[:results] + json2[:results]
+
+    first_40.map do |movie_data|
       Movie.new(movie_data)
     end
   end

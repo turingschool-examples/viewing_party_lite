@@ -6,6 +6,10 @@ class MovieService
     json = JSON.parse(response.body, symbolize_names: true)
   end
 
+  def self.search(keyword, page_num)
+    response = connection.get("/3/search/movie?query=#{keyword}&page=#{page_num}")
+  end
+
   # def self.find_movie(id)
   #   response = connection.get("/3/movie/#{id}")
   #   json = JSON.parse(response.body, symbolize_names: true)
