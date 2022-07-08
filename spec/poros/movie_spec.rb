@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Movie do
-  it 'exists, has title and average' do
+  it 'exists, has title, vote average, id, duration, genre, summary, cast members, review authors/count' do
     data =
       {
       "adult": false,
@@ -27,5 +27,6 @@ RSpec.describe Movie do
       expect(movie).to be_a(Movie)
       expect(movie.title).to eq("The Shawshank Redemption")
       expect(movie.vote_average).to eq(8.7)
+      expect(movie.movie_id).to eq(278)
   end
 end

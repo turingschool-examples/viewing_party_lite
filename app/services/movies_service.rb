@@ -1,9 +1,8 @@
-
-class MoviesService
-
+class MoviesService < BaseService
+  
   def self.top_rated_movies
     end_point = '/3/movie/top_rated'
-    response = connection.get(end_point) do |faraday|
+    response = movie_connection.get(end_point) do |faraday|
       faraday.params['api_key'] = ENV['movies_db_api_key']
       faraday.params['language'] = 'en-US'
     end
@@ -12,12 +11,12 @@ class MoviesService
 
   def self.get_movies_keyword(keyword)
     end_point = '/3/search/movie'
-    response_1 = connection.get(end_point) do |faraday|
+    response_1 = movie_connection.get(end_point) do |faraday|
       faraday.params['api_key'] = ENV['movies_db_api_key']
       faraday.params['query'] = keyword
     end
 
-    response_2 = connection.get(end_point) do |faraday|
+    response_2 = movie_connection.get(end_point) do |faraday|
       faraday.params['api_key'] = ENV['movies_db_api_key']
       faraday.params['query'] = keyword
       faraday.params['page'] = 2
@@ -27,8 +26,27 @@ class MoviesService
     [json_1, json_2]
   end
 
-  def self.connection
-    url = 'https://api.themoviedb.org'
-    Faraday.new(url: url)
+  def self.get_movie_cast(movie_id)
+    end_point = "/3/movie/#{movie_id}/credits"
+    response = movie_connection.get(end_point) do |faraday|
+      faraday.params['api_key'] = ENV['movies_db_api_key']
+    end
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.get_movie_details(movie_id)
+    end_point = "/3/movie/#{movie_id}"
+    response = movie_connection.get(end_point) do |faraday|
+      faraday.params['api_key'] = ENV['movies_db_api_key']
+    end
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.get_movie_reviews(movie_id)
+    end_point = "/3/movie/#{movie_id}/reviews"
+    response = movie_connection.get(end_point) do |faraday|
+      faraday.params['api_key'] = ENV['movies_db_api_key']
+    end
+    JSON.parse(response.body, symbolize_names: true)
   end
 end

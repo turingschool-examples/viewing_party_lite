@@ -15,4 +15,23 @@
         end
       end.flatten
     end
+
+    def self.get_cast(movie_id)
+      json = MoviesService.get_movie_cast(movie_id)
+      json[:cast].map do |actor|
+        Actor.new(actor)
+      end
+    end
+
+    def self.get_details(movie_id)
+      json = MoviesService.get_movie_details(movie_id)
+      MovieDetails.new(json)
+    end
+
+    def self.get_reviews(movie_id)
+      json = MoviesService.get_movie_reviews(movie_id)
+      json[:results].map do |author|
+        MovieReview.new(author)
+      end
+    end
   end
