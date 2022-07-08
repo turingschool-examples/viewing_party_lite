@@ -12,6 +12,10 @@ class UsersController < ApplicationController
     redirect_to "/users/#{@user.id}"
   end
 
+  def discover
+    @user = User.find(params[:id])
+  end
+
   private
 
   def user_params
