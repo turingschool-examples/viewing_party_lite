@@ -13,18 +13,20 @@ RSpec.describe 'new viewing party page' do
     @movie = Movie.new(attributes)
     @movie2 = Movie.new(attributes2)
 
-    visit "/users/#{@user1.id}/movies/#{@movie.id}/viewing_party/new"
-
     # save_and_open_page
   end
-  it 'has movie title and link to discover page' do
+  it 'has movie title and link to discover page', :vcr do
+    visit "/users/#{@user1.id}/movies/#{@movie.id}/viewing_party/new"
+
     expect(page).to have_content("Create a Viewing Party for #{@movie.title}")
     expect(page).to_not have_content("Create a Viewing Party for #{@movie2.title}")
     expect(page).to have_button('Discover Page')
     click_button('Discover Page')
     expect(current_path).to eq("/users/#{@user1.id}/discover")
   end
-  it 'has form with default values for duration, day, start time, and a section to invite others' do
+  it 'has form with default values for duration, day, start time, and a section to invite others', :vcr do
+    visit "/users/#{@user1.id}/movies/#{@movie.id}/viewing_party/new"
+
     expect(page).to have_content('Movie Title')
     expect(find_field('Duration').value).to eq(@movie.runtime_mins.to_s)
     expect(page).to have_content('Date')

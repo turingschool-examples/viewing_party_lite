@@ -13,7 +13,7 @@ describe 'user show page (dashboard)' do
     expect(page).to_not have_content("Dustin's Dashboard")
   end
 
-  it 'has a button to link to the users movie discover page' do
+  it 'has a button to link to the users movie discover page', :vcr do
     click_button('Discover Movies')
 
     expect(current_path).to eq("/users/#{@user1.id}/discover")

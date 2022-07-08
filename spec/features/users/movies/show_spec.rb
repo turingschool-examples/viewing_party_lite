@@ -8,10 +8,12 @@ RSpec.describe 'movie details page' do
     attributes = JSON.parse(File.read('./spec/fixtures/movie_details.json'), symbolize_names: true)
 
     @movie = Movie.new(attributes)
-    visit "/users/#{@user1.id}/movies/#{@movie.id}"
+    
   end
 
-  it 'has a button to create a new viewing party and a link to the discover page' do
+  it 'has a button to create a new viewing party and a link to the discover page', :vcr do
+    visit "/users/#{@user1.id}/movies/#{@movie.id}"
+
     expect(page).to have_button('Create a Viewing Party')
     click_button('Create a Viewing Party')
     expect(current_path).to eq("/users/#{@user1.id}/movies/#{@movie.id}/viewing_party/new")
@@ -22,14 +24,18 @@ RSpec.describe 'movie details page' do
     expect(current_path).to eq("/users/#{@user1.id}/discover")
   end
 
-  it 'displays the title, vote average, runtime, and genres' do
+  it 'displays the title, vote average, runtime, and genres', :vcr do
+    visit "/users/#{@user1.id}/movies/#{@movie.id}"
+
     expect(page).to have_content(@movie.title.to_s)
     expect(page).to have_content("Vote Average: #{@movie.vote_average}")
     expect(page).to have_content("Runtime: #{@movie.runtime}")
     expect(page).to have_content("Genre(s): #{@movie.genres.map { |genre| genre[:name] }.join(', ')}")
   end
 
-  it 'displays the summary and cast' do
+  it 'displays the summary and cast', :vcr do
+    visit "/users/#{@user1.id}/movies/#{@movie.id}"
+
     expect(page).to have_content('Summary')
     expect(page).to have_content(@movie.overview)
     expect(page).to have_content('Cast')
@@ -39,7 +45,9 @@ RSpec.describe 'movie details page' do
     expect(page).to have_content(@movie.cast[9][:character])
   end
 
-  it 'displays reviews and their authors and the total count of reviews' do
+  it 'displays reviews and their authors and the total count of reviews', :vcr do
+    visit "/users/#{@user1.id}/movies/#{@movie.id}"
+
     expect(page).to have_content("#{@movie.reviews.count} Reviews")
     expect(page).to have_content("Author: #{@movie.reviews.first[:author]}")
     # expect(page).to have_content(@movie.reviews.first[:content])
