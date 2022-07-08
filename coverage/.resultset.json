@@ -14,10 +14,9 @@
           1,
           null,
           1,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
+          20,
           null,
           null,
           null
@@ -88,6 +87,18 @@
           null
         ]
       },
+      "/Users/ruezheng/turing/3module/projects/viewing_party_lite/app/poros/movie.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          20,
+          20,
+          null,
+          null
+        ]
+      },
       "/Users/ruezheng/turing/3module/projects/viewing_party_lite/app/controllers/landing_controller.rb": {
         "lines": [
           1,
@@ -145,20 +156,6 @@
         "branches": {
         }
       },
-      "/Users/ruezheng/turing/3module/projects/viewing_party_lite/app/poros/movie.rb": {
-        "lines": [
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/Users/ruezheng/turing/3module/projects/viewing_party_lite/app/jobs/application_job.rb": {
         "lines": [
           null,
@@ -204,6 +201,6 @@
         }
       }
     },
-    "timestamp": 1657312706
+    "timestamp": 1657315843
   }
 }
