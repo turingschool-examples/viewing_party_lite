@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Movie
-  attr_reader :id, :title, :vote_average, :runtime, :runtime_mins, :genres, :overview, :reviews, :cast
+  attr_reader :id, :title, :vote_average, :runtime, :runtime_mins, :genres, :overview, :reviews, :cast, :image_uri
 
   def initialize(attributes)
     @id = attributes[:id]
@@ -13,6 +13,7 @@ class Movie
     @overview = attributes[:overview]
     @reviews = get_reviews(attributes)
     @cast = get_cast(attributes)
+    @image_uri = attributes[:poster_path]
   end
 
   def get_reviews(attributes)

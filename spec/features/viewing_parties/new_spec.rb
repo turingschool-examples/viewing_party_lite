@@ -12,8 +12,6 @@ RSpec.describe 'new viewing party page' do
 
     @movie = Movie.new(attributes)
     @movie2 = Movie.new(attributes2)
-
-    # save_and_open_page
   end
   it 'has movie title and link to discover page', :vcr do
     visit "/users/#{@user1.id}/movies/#{@movie.id}/viewing_party/new"

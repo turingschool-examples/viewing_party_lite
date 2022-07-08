@@ -4,9 +4,10 @@
     <br><br>
     <hr>
     <h3> Viewing Parties </h3>
+    <br>
     <%@user.viewing_parties.each do |party|%>
     <div id="viewing-party<%= party.id%>">
-        
+        <%= image_tag("https://image.tmdb.org/t/p/w185#{party.movie.image_uri}")%>
         <p><b><%= party.movie.title %></b></p>
         <p><%= party.formatted_date %></p>
         <p><%= party.formatted_time %></p>
@@ -16,5 +17,7 @@
             <p> Invited </p>
         <%end%>
     </div>
+    <br>
     <%end%>
+
 </center>
