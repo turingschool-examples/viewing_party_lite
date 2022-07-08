@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/users/:id/movies', to: 'movies#index'
   post '/register', to: 'users#create'
 
+  get '/movies/:id/show', to: 'movies#show'
 
 
 end

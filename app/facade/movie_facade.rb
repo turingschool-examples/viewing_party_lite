@@ -1,4 +1,5 @@
 class MovieFacade
+
   def self.get_top_rated
     top_movies = []
     top_movies_1 = MovieService.get_top_rated(1)
@@ -32,4 +33,9 @@ class MovieFacade
     end
     return movie_poros
   end
+
+  def self.movie_data(id)
+    MovieService.movie_data(id)
+  end
+
 end
