@@ -25,14 +25,3 @@ RSpec.describe 'Movies Page', type: :feature do
     expect(current_path).to eq(user_discover_index_path(user.id))
   end
 end
-
-
-# When I visit the discover movies page,
-# and click on either the Top Movies button or the Search button,
-# I should be taken to the movies results page (users/:user_id/movies?q=top%20rated, /users/:user_id/movies?q=keyword respectively) where I see:
-#
-#  Title (As a Link to the Movie Details page)
-#  Vote Average of the movie
-# Details: There should only be a maximum of 40 results. The above details should be listed for each movie.
-#
-# I should also see a button to return to the Discover Page.
