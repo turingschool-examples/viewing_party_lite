@@ -1,0 +1,3 @@
+<%= button_to "Discover Movies", user_discover_index_path(@user.id), method: :get %>
+
+<%= button_to "Create Viewing Party", new_user_movie_party_path(@user.id, @movie.id), method: :get %>
