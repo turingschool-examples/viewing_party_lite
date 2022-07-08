@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2022_07_07_185614) do
     t.integer "duration"
     t.string "date"
     t.string "movie"
-    t.integer "host"
+    t.string "host"
     t.string "movie_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
