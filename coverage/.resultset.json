@@ -9,6 +9,20 @@
           null
         ]
       },
+      "/Users/ruezheng/turing/3module/projects/viewing_party_lite/app/facades/movie_facade.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/ruezheng/turing/3module/projects/viewing_party_lite/app/models/user.rb": {
         "lines": [
           null,
@@ -55,6 +69,25 @@
           null
         ]
       },
+      "/Users/ruezheng/turing/3module/projects/viewing_party_lite/app/services/movie_service.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/ruezheng/turing/3module/projects/viewing_party_lite/app/controllers/landing_controller.rb": {
         "lines": [
           1,
@@ -76,7 +109,7 @@
         "lines": [
           1,
           1,
-          2,
+          4,
           null,
           null,
           1,
@@ -86,6 +119,10 @@
           1,
           1,
           1,
+          null,
+          null,
+          1,
+          4,
           null,
           null,
           1,
@@ -108,10 +145,34 @@
         "branches": {
         }
       },
+      "/Users/ruezheng/turing/3module/projects/viewing_party_lite/app/poros/movie.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/ruezheng/turing/3module/projects/viewing_party_lite/app/jobs/application_job.rb": {
         "lines": [
           null,
           null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/ruezheng/turing/3module/projects/viewing_party_lite/app/controllers/movie_controller.rb": {
+        "lines": [
+          0,
+          0,
           0,
           0
         ],
@@ -143,6 +204,6 @@
         }
       }
     },
-    "timestamp": 1657243664
+    "timestamp": 1657312706
   }
 }
