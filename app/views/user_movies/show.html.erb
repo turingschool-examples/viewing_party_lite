@@ -1,5 +1,5 @@
 <h2 align='center'><%= @movie.title %></h2>
-<div align='center'><%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %></div>
+<%= render partial: 'partials/discover_button' %>
 <div align='center'><%= button_to "Create a Viewing Party", "/users/#{@user.id}/movies/#{@movie.id}/viewing_party/new", method: :get %></div>
 <h3>Vote Average: <%= @movie.vote_average %>  Runtime: <%= @movie.runtime %>  Genre(s): <%= @movie.genres.map{ |genre| genre[:name]}.join(", ") %></h3>
 <h3>Summary</h3>

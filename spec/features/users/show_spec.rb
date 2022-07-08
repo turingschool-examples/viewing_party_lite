@@ -32,8 +32,7 @@ describe 'user show page (dashboard)' do
     user_party4 = UserViewingParty.create!(user: @user2, viewing_party: party2, hosting: true)
     
     visit user_path(@user1)
-    save_and_open_page
-
+   
     within "#viewing-party#{party1.id}" do
       expect(page).to have_content(party1.movie.title)
       expect(page).to have_content(party1.formatted_date)

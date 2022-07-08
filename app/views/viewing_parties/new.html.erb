@@ -1,5 +1,5 @@
 <h2 align='center'>Create a Viewing Party for <%= @movie.title %></h2>
-<div align='center'><%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %></div>
+<%= render partial: 'partials/discover_button' %>
 <div align='center'>
   <p> Viewing Party Details </p>
   <p>Movie Title <%= @movie.title %></p>
