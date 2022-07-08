@@ -10,6 +10,8 @@
       "/Users/drewproebstel/turing/rmodule/viewing_party_lite/app/models/party.rb": {
         "lines": [
           1,
+          1,
+          1,
           null
         ]
       },
@@ -33,6 +35,8 @@
           1,
           1,
           1,
+          1,
+          1,
           null
         ]
       },
@@ -40,7 +44,7 @@
         "lines": [
           1,
           1,
-          5,
+          7,
           null,
           null,
           1,
@@ -123,6 +127,6 @@
         }
       }
     },
-    "timestamp": 1657157631
+    "timestamp": 1657249068
   }
 }
