@@ -9,8 +9,8 @@
 <p> OR </p>
   <div class="form">
     <%= form_with url: "/users/#{@user.id}/movies", method: :get, local: true do |form| %>
-      <% form.text_field :q, placeholder: "Search by movie title" %>
-      <% form.submit "Find Movies" %>
+      <%= form.text_field :q, placeholder: "Search by movie title" %>
+      <%= form.submit "Find Movies" %>
     <% end %>
   </div>
 </center>

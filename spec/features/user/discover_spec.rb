@@ -12,20 +12,23 @@ RSpec.describe "The User's Discover Movies Page", type: :feature do
     expect(page).to have_content("Discover Movies")
   end
 
-  it 'has a button that returns top rated movies' do
+  it 'has a button that returns top rated movies', :vcr do
     user = User.create!(name: "Rand", email: "randalthor@gmail.com")
 
     visit "/users/#{user.id}/discover"
 
     click_button "Find Top Rated Movies"
+
+    expect(current_path).to eq("/users/#{user.id}/movies")
+    # expect(page).to have_content("Vote Average")
   end
 
-  xit 'has a search field based on keyword' do
+  it 'has a search field based on keyword', :vcr do
     user = User.create!(name: "Rand", email: "randalthor@gmail.com")
 
     visit "/users/#{user.id}/discover"
 
-    fill_in :search, with: "Fight"
+    fill_in :q, with: "Fight"
     click_button "Find Movies"
 
     expect(page).to have_content("Fight Club")
