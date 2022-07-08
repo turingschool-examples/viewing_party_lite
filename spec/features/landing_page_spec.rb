@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe "Landing page" do
-  before :each do
+  before do
     @user1 = User.create!(name: "Pabu", email: "pabu@pabu.com")
     @user2 = User.create(name: Faker::JapaneseMedia::OnePiece.character ,email: "#{Faker::JapaneseMedia::OnePiece.island}@onepiece.com")
     @user3 = User.create(name: Faker::JapaneseMedia::SwordArtOnline.real_name ,email: "#{Faker::JapaneseMedia::SwordArtOnline.game_name}@swordart.com")
