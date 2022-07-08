@@ -11,11 +11,12 @@ RSpec.describe "MovieService" do
 
   describe "MovieService#top_movies" do
     it "retrieves data and parses response", :vcr do
-      parsed_json = MovieService.top_movies
+      json_array = MovieService.top_movies
 
-      expect(parsed_json).to be_a Hash
-      expect(parsed_json[:results]).to be_a Array
-      movie = parsed_json[:results].first
+      expect(json_array).to be_a Array
+      expect(json_array.first).to be_a Hash
+      expect(json_array.first[:results]).to be_a Array
+      movie = json_array.first[:results].first
 
       expect(movie).to include :original_title, :vote_average
       expect(movie[:original_title]).to be_a String

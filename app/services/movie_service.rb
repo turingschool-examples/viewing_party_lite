@@ -7,8 +7,12 @@ class MovieService
   end
 
   def self.top_movies
-    response = MovieService.conn.get('/3/movie/top_rated')
+    response1 = MovieService.conn.get('/3/movie/top_rated')
+    response2 = MovieService.conn.get('/3/movie/top_rated?page=2')
 
-    JSON.parse(response.body, symbolize_names: true)
+    json_hash1 = JSON.parse(response1.body, symbolize_names: true)
+    json_hash2 = JSON.parse(response2.body, symbolize_names: true)
+
+    [json_hash1, json_hash2]
   end
 end
