@@ -6,7 +6,7 @@
     <%= render partial: 'discover_button' %>
     <% @top_movies.each do |movie|%>
         <div id="top-movie-<%= movie.id %>">
-            <p> <%= movie.title %> <b> Vote Average: </b> <%=movie.vote_average %>
+            <p> <%= link_to "#{movie.title}", user_movie_path(params[:user_id], movie.id) %> <b> Vote Average: </b> <%=movie.vote_average %>
         </div>
     <% end %>
 <%else %>
