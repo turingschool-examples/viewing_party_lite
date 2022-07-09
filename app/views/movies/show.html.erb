@@ -1,5 +1,5 @@
 <%= link_to "Discover Page"  %>
-<%= link_to "Create Viewing Party" %><hr>
+<%= link_to "Create Viewing Party", "/users/#{@user.id}/movies/#{params[:movie_id]}/viewing_party/new" %><hr>
 <h1><%= @movie.name %></h1>
 Average Rating: <%= @movie.avg %><br>
 

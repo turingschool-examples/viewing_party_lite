@@ -1,7 +1,7 @@
 <% if @all_movies %>
   <h1>Top 40 Movies</h1>
   <% @all_movies.map do |movie| %>
-    <p> Title: <%= link_to movie.name, "/movies/#{movie.id}/show" %>,  Average Rating: <%= movie.avg %> </p>
+    <p> Title: <%= link_to movie.name, "./movies/#{movie.id}/show" %>,  Average Rating: <%= movie.avg %> </p>
   <% end %>
   <%= link_to "Back To Discover Page", :back %>
 <% end %>
@@ -9,7 +9,7 @@
 <% if @movie_search %>
   <h1>Movie Results</h1>
   <% @movie_search.map do |movie| %>
-    <p> Title: <%= link_to movie.name, "/movies/#{movie.id}/show" %>,  Average Rating: <%= movie.avg %> </p>
+    <p> Title: <%= link_to movie.name, "/users/#{@user.id}/movies/#{movie.id}/show" %>,  Average Rating: <%= movie.avg %> </p>
   <% end %>
   <%= link_to "Back To Discover Page", :back %>
 <% end %>
