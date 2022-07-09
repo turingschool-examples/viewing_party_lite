@@ -50,7 +50,8 @@ RSpec.describe "Dashboard Page" do
       expect(page).to_not have_content("Alex")
     end
   end
-  it 'shows all viewing parties the user is invited or hosting with details' do
+
+  it 'shows all viewing parties the user is invited or hosting with details', :vcr do
     user1 = User.create(name: 'Geddy', email: '2112@yyz.com')
     user2 = User.create(name: 'Alex', email: 'cygnus@xanadu.com')
     user3 = User.create(name: 'Neil', email: 'bytor@snowdog.com')

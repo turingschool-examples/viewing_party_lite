@@ -6,7 +6,7 @@
 <div class="invited">
   <% @user.parties.each do |party| %>
     <% if party.host != @user.id %>
-      <h3><%= link_to "#{party.movie}", "users/#{@user.id}/movies/#{party.movie_id}" %></h3>
+      <h3><%= link_to "#{party.movie}", "/users/#{@user.id}/movies/#{party.movie_id}" %></h3>
       Host: <%= party.host_name  %>
       <br>
       <%= party.date %> <%= party.start_time %>
@@ -30,7 +30,7 @@
 <div class="hosting">
   <% @user.parties.each do |party| %>
     <% if party.host == @user.id %>
-      <h3><%= link_to "#{party.movie}", "users/#{@user.id}/movies/#{party.movie_id}" %></h3>
+      <h3><%= link_to "#{party.movie}", "/users/#{@user.id}/movies/#{party.movie_id}" %></h3>
       <br>
       <%= party.date %> <%= party.start_time %>
       <br>

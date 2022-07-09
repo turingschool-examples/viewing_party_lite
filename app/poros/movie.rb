@@ -7,7 +7,9 @@ class Movie
               :overview,
               :runtime,
               :vote_average,
-              :vote_count
+              :vote_count,
+              :genres,
+              :cast
 
   def initialize(data)
     @data = data
@@ -18,7 +20,21 @@ class Movie
     @runtime = data[:runtime]
     @vote_average = data[:vote_average]
     @vote_count = data[:vote_count]
-    # not sure what to do with genre, yet. the json shows multiple values
-    # need to account for cast, reviewers
+    @genres = data[:genres]
+    @cast = data[:cast]
+  end
+
+  def format_runtime(runtime)
+    hour = runtime / 60
+    minute = runtime % 60
+    "#{hour}:#{minute}"
+  end
+
+  def format_genres(genres)
+    genre_list = []
+    genres.map do |genre|
+      genre_list << genre[:name]
+    end
+    genre_list
   end
 end
