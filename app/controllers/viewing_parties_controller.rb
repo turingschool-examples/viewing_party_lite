@@ -31,10 +31,9 @@ class ViewingPartiesController < ApplicationController
 
   private
 
-    def viewing_party_params
-      permitted = params.require(:viewing_party).permit(:date, :duration, :start_time)
-      permitted[:movie_id] = params[:movie_id]
-      permitted
-    end
-
+  def viewing_party_params
+    permitted = params.require(:viewing_party).permit(:date, :duration, :start_time)
+    permitted[:movie_id] = params[:movie_id]
+    permitted
+  end
 end

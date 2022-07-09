@@ -37,7 +37,7 @@ RSpec.describe 'movie details page' do
 
     expect(page).to have_content('Summary')
     expect(page).to have_content(@movie.overview)
-    within "#cast" do
+    within '#cast' do
       expect(page).to have_content('Cast')
       expect(page).to have_content(@movie.cast.first[:name])
       expect(page).to have_content(@movie.cast.first[:character])
