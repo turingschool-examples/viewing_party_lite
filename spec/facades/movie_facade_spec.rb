@@ -8,4 +8,12 @@ RSpec.describe 'MovieFacade' do
     expect(movies).to be_a Array
     expect(movies).to be_all Movie
   end
+
+  it "makes services call and returns movie objects", :vcr do
+    query = "shawshank"
+    movies = MovieFacade.new.search_movie(query)
+
+    expect(movies).to be_a Array
+    expect(movies).to be_all Movie
+  end
 end
