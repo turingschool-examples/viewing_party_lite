@@ -1,6 +1,4 @@
 class MovieService
-
-
   def top_40_rated_movies
 
     response_1 = conn.get("/3/movie/top_rated?page=1")
@@ -49,3 +47,4 @@ end
 
  #endpoint /movies/{movie_id}/credits
  #Top 10 actors
+

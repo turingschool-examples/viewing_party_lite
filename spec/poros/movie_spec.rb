@@ -27,5 +27,6 @@ RSpec.describe Movie do
     expect(movie).to be_a Movie
     expect(movie.title).to eq("The Shawshank Redemption")
     expect(movie.vote_average).to eq(8.7)
+    expect(movie.id).to eq(278)
   end
 end
