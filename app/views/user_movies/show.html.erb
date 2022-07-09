@@ -22,4 +22,12 @@
       <p><%= cast_info.name %> as <%= cast_info.character %></p>
     <% end %>
   </div>
+  <div class="reviews">
+    <h3><%= @review.count %> Reviews</h3>
+    <% @review.each do |media| %>
+      Author: <%= media.author %><br>
+      <%= media.content %><br>
+      <br>
+    <% end %>
+  </div>
 </center>

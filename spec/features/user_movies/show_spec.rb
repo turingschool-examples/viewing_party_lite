@@ -61,7 +61,7 @@ RSpec.describe "The UserMovie Show Page" do
 
     it 'has each reviews author and information' do
       expect(page).to have_content("Author: Goddard")
-      expect(page).to have_content("Pretty awesome movie.  It shows what one crazy person can convince other crazy people to do.  Everyone needs something to believe in.  I recommend Jesus Christ, but they want Tyler Durden.")
+      expect(page).to have_content("Pretty awesome movie. It shows what one crazy person can convince other crazy people to do. Everyone needs something to believe in. I recommend Jesus Christ, but they want Tyler Durden.")
     end
   end
 end

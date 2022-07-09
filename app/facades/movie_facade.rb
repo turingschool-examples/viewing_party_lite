@@ -30,4 +30,11 @@ class MovieFacade
       MovieCast.new(crew)
     end[0..9]
   end
+
+  def self.find_review(id)
+    json = MovieService.review_lookup(id)
+    json[:results].map do |critiques|
+      MovieReview.new(critiques)
+    end 
+  end
 end

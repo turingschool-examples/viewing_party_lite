@@ -35,4 +35,9 @@ class MovieService
     response = MovieService.conn.get("/3/movie/#{id}/credits")
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  def self.review_lookup(id)
+    response = MovieService.conn.get("/3/movie/#{id}/reviews")
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end
