@@ -9,7 +9,10 @@ class MovieFacade
 
   def self.film_search(search_param)
     parsed_json_2 = MovieService.search_films(search_param)
-    binding.pry
+    
+    parsed_json_2[:results].map do |search_result|
+      Movie.new(search_result)
+    end
   end 
 
   def self.movie_id_search(id)
