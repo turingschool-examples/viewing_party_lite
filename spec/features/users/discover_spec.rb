@@ -44,7 +44,10 @@ RSpec.describe 'Discover Page', type: :feature do
 
       within '.movie_search' do 
         expect(page).to have_button('Find Movies')
+        fill_in :search, with: 'Godfather'
+        click_button 'Find Movies'
       end 
+      expect(current_path).to eq(user_movies_path(user1.id))
     end
   end
 end
