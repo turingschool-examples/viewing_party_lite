@@ -3,5 +3,5 @@
 <%= button_to 'Create an Account', '/register', method: :get  %>
 
 <% @users.each do |user| %>
-    <p><%= link_to "#{user.name}'s Dashboard", "/users/#{user.id}/dashboard" %></p>
+    <p><%= link_to "#{user.name}'s Dashboard", user_path(user.id) %></p>
 <% end %>
