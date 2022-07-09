@@ -1,5 +1,9 @@
-PLACE HOLDER
-This page will have:
-  -button to discover top rated movies
-  -text field to enter keyword(s) to search by movie title
-  -button to search by movie title
+<h1>Discover Movies Page</h1>
+
+<%= button_to "Discover Top Rated Movies", "/users/#{@user.id}/movies", method: :get, params: {q: 'top%20rated'}, local: true %><br>
+
+<%= form_with url: "/search", method: :get, local: true do |f| %>
+  <%= f.label :search, "Enter Keyword" %>
+  <%= f.text_field :search %>
+  <%= f.submit "Search by Movie Title" %>
+  <% end %>
