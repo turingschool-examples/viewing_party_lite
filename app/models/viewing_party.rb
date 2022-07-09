@@ -9,5 +9,4 @@ class ViewingParty < ApplicationRecord
                         :start_date,
                         :start_time,
                         :image
-
 end
