@@ -16,8 +16,7 @@ class ViewingPartiesController < ApplicationController
       flash[:alert] = 'Date of party must be in the future.'
       redirect_to "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/viewing_party/new"
     else
-      viewing_party = ViewingParty.create!(date: params[:viewing_party][:date],
-                                           duration: params[:viewing_party][:duration], start_time: params[:viewing_party][:start_time], movie_id: params[:movie_id])
+      viewing_party = ViewingParty.create!(viewing_party_params)
       invite_ids = []
       params[:viewing_party].each do |key, _value|
         invite_ids << key if key.to_i.positive? && params[:viewing_party][key] == '1'
@@ -30,4 +29,11 @@ class ViewingPartiesController < ApplicationController
     end
   end
 
+  private
+
+  def viewing_party_params
+    permitted = params.require(:viewing_party).permit(:date, :duration, :start_time)
+    permitted[:movie_id] = params[:movie_id]
+    permitted
+  end
 end
