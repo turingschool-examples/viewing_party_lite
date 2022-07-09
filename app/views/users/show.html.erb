@@ -7,10 +7,12 @@
 
 <div id='invited_to'>
     <%= @user.viewing_parties.each do | party | %>
-        <p><%= "party.image" %>  </p>
-        <p><%= party.start_date %>  </p>
-        <p><%= party.start_time %>  </p>
-        <p><%= party.host_id %>  </p>
+        <h2> <%= party.movie_title %></h2>
+        <p>Movie image: <%= "party.image" %>  </p>
+        <p>Date: <%= party.start_date %>  </p>
+        <p>Start time: <%= party.start_time %>  </p>
+        <p>Host: <%= party.host_id %>  </p>
+        <h3> Attendees </h3>
         <% party.users.each do |attendee| %>
             <p><%= attendee.name %>  </p>
         <% end %>
