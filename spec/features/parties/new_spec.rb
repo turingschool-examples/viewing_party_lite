@@ -12,13 +12,13 @@ RSpec.describe 'Party New Page', :vcr do
 
     # save_and_open_page
 
-    expect(page).to have_content("Fight Club")
-    expect(page).to have_content("Duration: 139 minutes")
+    expect(page).to have_content('Fight Club')
+    expect(page).to have_content('Duration: 139 minutes')
 
     fill_in 'Date', with: '12/1/2022'
     fill_in 'Start', with: '18:00'
     fill_in 'Duration', with: '18:00'
-    fill_in 'Invite Other Users', with: "#{@user2.name}"
+    fill_in 'Invite Other Users', with: @user2.name.to_s
     click_on 'Create Party'
 
     expect(current_path).to eq("/users/#{@user1.id}/viewing-party/dashboard")
