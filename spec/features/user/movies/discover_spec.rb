@@ -26,4 +26,12 @@ RSpec.describe "User discover page", type: :feature do
 
     expect(current_path).to eq("/users/#{@user1.id}/movies")#Will visually confirm that query params are appearing as expected on heroku
   end
+
+  it 'can search a key word and return matching titles, and their rating' do
+    visit "/users/#{@user1.id}/discover"
+
+    fill_in(:q, with: 'Howl')
+    click_button("Search by Movie Title")
+    expect(current_path).to eq("/users/#{@user1.id}/movies")#Will visually confirm that query params are appearing as expected on heroku
+  end
 end
