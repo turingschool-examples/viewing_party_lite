@@ -62,7 +62,6 @@ RSpec.describe "Dashboard Page" do
     PartyUser.create(user_id: user2.id, party_id: party2.id )
 
     visit "/users/#{user2.id}"
-    save_and_open_page
     click_link("The Lord of the Rings")
 
     expect(current_path).to eq("/users/#{user2.id}/movies/123")
