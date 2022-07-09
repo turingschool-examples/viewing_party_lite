@@ -1,3 +1,5 @@
 class ViewingPartyController < ApplicationController
-  def new; end
+  def new
+    @movie = MoviesFacade.movie(params[:movie_id])
+  end
 end
