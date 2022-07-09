@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe 'movie show page' do
   before(:each) do
-    # require "pry"; binding.pry
     @user1 = User.create!(name: 'Ana', email: 'ana@example.com')
     @movie1 = Movie.new(title: 'The Godfather', id: 238, genres:[
         {
@@ -58,5 +57,41 @@ RSpec.describe 'movie show page' do
     visit user_movie_path(@user1.id, @movie1.id)
     expect(page).to have_content("Drama Crime")
     expect(page).to_not have_content("Romance")
+  end
+
+  context 'cast members , reviews and authors' do
+
+  it "displays list of 10 first cast members", :vcr do
+    @user = User.create!(name: 'Badger', email: 'honey@gmail.com')
+    visit user_movie_path(@user.id, 238)
+
+    expect(page).to have_content("Actor: Marlon Brando is Character: Don Vito Corleone")
+    expect(page).to have_content("Actor: Al Pacino is Character: Don Michael Corleone")
+    expect(page).to have_content("Actor: James Caan is Character: Santino 'Sonny' Corleone")
+    expect(page).to have_content("Actor: Robert Duvall is Character: Tom Hagen")
+    expect(page).to have_content("Actor: Richard S. Castellano is Character: Pete Clemenza")
+    expect(page).to have_content("Actor: Diane Keaton is Character: Kay Adams")
+    expect(page).to have_content("Actor: Talia Shire is Character: Constanzia 'Connie' Corleone-Rizzi")
+    expect(page).to have_content("Actor: Gianni Russo is Character: Carlo Rizzi")
+    expect(page).to have_content("Actor: Sterling Hayden is Character: Capt. Mark McCluskey")
+    expect(page).to have_content("Actor: Al Lettieri is Character: Virgil 'The Turk' Sollozzo")
+    expect(page).to_not have_content("Actor: Al Pacino is Character: Virgil 'The Turk' Sollozzo")
+  end
+
+  it "displays count of total reviews", :vcr do
+    @user = User.create!(name: 'Badger', email: 'honey@gmail.com')
+    visit user_movie_path(@user.id, 238)
+
+    expect(page).to have_content("1")
+    expect(page).to_not have_content("3")
+  end
+
+  it "displays each review's author and information", :vcr do
+    @user = User.create!(name: 'Badger', email: 'honey@gmail.com')
+    visit user_movie_path(@user.id, 238)
+
+    expect(page).to have_content("The Godfather Review")
+    expect(page).to_not have_content("none")
+    end
   end
 end
