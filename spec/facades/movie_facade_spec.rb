@@ -27,5 +27,4 @@ RSpec.describe MovieFacade do
     expect(movie_reviews[0][:author]).to eq("Chris Sawin")
     expect(movie_reviews[1][:author]).to eq("MSB")
   end
-
 end

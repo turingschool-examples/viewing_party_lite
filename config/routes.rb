@@ -7,10 +7,9 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[show create] do
     resources :discover, only: %i[index]
+
     resources :movies, only: %i[index show] do
       resources :parties, only: %i[new create]
     end
   end
-
-  # get '/users/:id/discover', to: 'movies#index'
 end

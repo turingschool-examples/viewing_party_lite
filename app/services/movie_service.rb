@@ -37,7 +37,3 @@ class MovieService
     parse_json(movie)[:results]
   end
 end
-
-# cast
-# reviews
-# movie details

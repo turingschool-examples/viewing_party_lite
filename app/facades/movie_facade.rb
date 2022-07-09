@@ -9,19 +9,17 @@ class MovieFacade
   end
 
   def self.search_by_id(movie_id)
-    movie = MovieService.find_movie_by_id(movie_id) #.map { |info| Movie.new(info) }
+
+    movie = MovieService.find_movie_by_id(movie_id)
     Movie.new(movie)
   end
 
   def self.movie_cast(movie_id)
     movie = MovieService.cast_for_movie(movie_id)
-    # Movie.new(movie)
   end
 
   def self.movie_reviews(movie_id)
     movie = MovieService.reviews_for_movie(movie_id)
   end 
-
-  # def self.movie_info(movie_id)
-  # end
 end
+
