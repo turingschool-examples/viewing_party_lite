@@ -20,6 +20,10 @@ This is the base repo for the [Viewing Party Lite project](https://backend.turin
 The Viewing Party app is deployed on Heroku. 
 Check it out 👀 [here](https://dashboard.heroku.com/apps/salty-oasis-88675)
 
+To Login and explore without creating a new user you can use these names/passwords
+`email` : taylor@example.com `password` : taylor123
+`email` : michael@example.com `password` : michael123
+
 ## Local Setup for Project
 
 1. Fork and Clone the repo
