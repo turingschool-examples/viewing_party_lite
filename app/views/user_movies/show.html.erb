@@ -1,6 +1,6 @@
 <div id="whitespace">
   <center>
-    <h1> Viewing Party Light </h1>
+    <h1> Viewing Party Lite </h1>
     <h2> <%= @movie.title %> </h2>
 
     <div class="button">
@@ -14,23 +14,26 @@
       <strong><p>Vote Average: <%= @movie.vote_average %>&nbsp;&nbsp;&nbsp;&nbsp; Runtime: <%= @movie.runtime_formatted %>&nbsp;&nbsp;&nbsp;&nbsp; Genre(s): <%= @movie.genres %></p></strong>
     </div>
 
-    <div class="text_field">
+    <div id="textfield">
       <hr>
       <h3>Summary</h3>
       <p><%= @movie.overview %></p>
-    </div>
-    <div class="cast">
+
       <h3>Cast</h3>
-      <% @cast.each do |cast_info| %>
-        <p><%= cast_info.name %> as <%= cast_info.character %></p>
-      <% end %>
+      <ul>
+        <% @cast.each do |cast_info| %>
+            <li><%= cast_info.name %> as <%= cast_info.character %></li>
+        <% end %>
+      </ul>
+      <br><br>
     </div>
-    <div class="reviews">
-      <hr>
-      <h3><%= @review.count %> Reviews</h3>
+  <br>
+    <div class="reviews" id="textfield">
+      <br><hr>
+      <h3 id="textfield"><%= @review.count %> Reviews</h3>
         <% @review.each do |media| %>
           <div id="box">
-            <strong>Author: <%= media.author %></strong><br>
+            Author: <strong><%= media.author %></strong><br>
             <%= media.content %><br>
           </div>
           <br>
