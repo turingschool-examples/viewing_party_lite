@@ -19,11 +19,11 @@ RSpec.describe "User discover page", type: :feature do
     expect(page).to have_button("Search by Movie Title")
   end
 
-  xit 'button routes to movie results page' do
+  it 'Discover top rated movies button routes to movie results page-for top rated', :vcr do
     visit "/users/#{@user1.id}/discover"
 
     click_button("Discover Top Rated Movies")
 
-    expect(current_path).to eq("?")
+    expect(current_path).to eq("/users/#{@user1.id}/movies")#Will visually confirm that query params are appearing as expected on heroku
   end
 end
