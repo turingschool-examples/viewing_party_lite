@@ -23,7 +23,7 @@ RSpec.describe "User Discover" do
     expect(page).to_not have_content("Dumb and Dumber")#sadly
 
     click_link "Shawshank Redemption"
-    expect(current_path).to eq("/movies/278/show")
+    expect(current_path).to eq("/users/#{user_1.id}/movies/278/show")
   end
 
   it "Can search movies by name" do
@@ -39,7 +39,7 @@ RSpec.describe "User Discover" do
     expect(page).to_not have_content("Shawshank Redemption")
 
     click_link "Titanic 666"
-    expect(current_path).to eq("/movies/945657/show")
+    expect(current_path).to eq("/users/#{user_1.id}/movies/945657/show")
   end
 
   it "has link back to disvover page" do

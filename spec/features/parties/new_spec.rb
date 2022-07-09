@@ -24,7 +24,7 @@ RSpec.describe "New Viewing Party" do
     fill_in "Duration", with: 200
     fill_in "Date", with: "2022/08/09"
     fill_in "Start Time", with: Time.now.strftime("%I:%M:%S")
-    
+
     within "#check_box-Bubba" do
       page.check("users[]")
     end
@@ -32,7 +32,6 @@ RSpec.describe "New Viewing Party" do
       page.check("users[]")
     end
     click_button "submit"
-
     expect(Party.all.count).to eq(all_parties + 1)
   end
 end
