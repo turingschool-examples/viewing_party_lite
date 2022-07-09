@@ -9,10 +9,10 @@
 
 <div class='invites'>
 <p></p><h4>My Invitations<h4>
-<% @user.viewing_parties.each do |party| %>
-  <% if @user.host == false %>
-    <%= link_to "#{movie_id_search(party.movie_id).first.title}" %>
-    <%= movie poster %>
+<% @user.not_hosting.each do |party| %>
+  <h3>Movie: <%= link_to "" %></h3>
+  <img src= <%= movie.poster%> alt="an image of the movie poster" style="width>
+    
   <% end %>
 <% end %>
 </div>

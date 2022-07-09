@@ -6,4 +6,8 @@ class ViewingParty < ApplicationRecord
                         :duration,
                         :date,
                         :start_time
+
+  def formatted_time
+    start_time.strftime("%l:%M %p")
+  end
 end
