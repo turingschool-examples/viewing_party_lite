@@ -13,6 +13,17 @@ RSpec.describe 'User Movies Index Page' do
     expect(page).to have_content('Vote Average: 8.6')
   end
 
+   it 'has returned movie titles as links to their detail page' do
+    user = User.create!(name: 'User', email: 'user@email.com')
+
+    visit "user/#{user.id}/discover"
+
+    click_button('Discover Top Rated Movies')
+    click_on 'The Shawshank Redemption'
+    expect(current_path).to eq("users/#{user.id}/movies/19404")
+  end
+
+
   it 'displays movies containing searched keyword' do
     user = User.create!(name: 'User', email: 'user@email.com')
 
