@@ -52,18 +52,17 @@ RSpec.describe 'new viewing party page' do
 
     fill_in 'Duration', with: (@movie.runtime_mins - 30)
     click_button('Create Party')
-    
+
     expect(current_path).to eq("/users/#{@user1.id}/movies/#{@movie.id}/viewing_party/new")
     expect(page).to have_content("Duration of party must be longer than the runtime of the movie. #{@movie.runtime_mins} mins")
   end
   it 'does not allow date to be filled in with value in the past', :vcr do
     visit "/users/#{@user1.id}/movies/#{@movie.id}/viewing_party/new"
 
-    fill_in 'Date', with: ("08/08/2020")
+    fill_in 'Date', with: '08/08/2020'
     click_button('Create Party')
-    
-    expect(current_path).to eq("/users/#{@user1.id}/movies/#{@movie.id}/viewing_party/new")
-    expect(page).to have_content("Date of party must be in the future.")
-  end
 
+    expect(current_path).to eq("/users/#{@user1.id}/movies/#{@movie.id}/viewing_party/new")
+    expect(page).to have_content('Date of party must be in the future.')
+  end
 end
