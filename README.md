@@ -21,7 +21,9 @@ The Viewing Party app is deployed on Heroku.
 Check it out 👀 [here](https://dashboard.heroku.com/apps/salty-oasis-88675)
 
 To Login and explore without creating a new user you can use these names/passwords
+
 `email` : taylor@example.com `password` : taylor123
+
 `email` : michael@example.com `password` : michael123
 
 ## Local Setup for Project
