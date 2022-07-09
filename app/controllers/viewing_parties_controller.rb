@@ -12,6 +12,9 @@ class ViewingPartiesController < ApplicationController
     if params[:viewing_party][:duration].to_i < movie.runtime_mins
       flash[:alert] = "Duration of party must be longer than the runtime of the movie. #{movie.runtime_mins} mins"
       redirect_to "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/viewing_party/new"
+    elsif params[:viewing_party][:date].to_date < Date.today
+      flash[:alert] = "Date of party must be in the future."
+      redirect_to "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/viewing_party/new"
     else
       viewing_party = ViewingParty.create!(date: params[:viewing_party][:date],
                                            duration: params[:viewing_party][:duration], start_time: params[:viewing_party][:start_time], movie_id: params[:movie_id])
