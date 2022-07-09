@@ -17,7 +17,7 @@ RSpec.describe 'Viewing Party New Page' do
     user = User.create!(name: 'User', email: 'user@email.com')
     movie = MoviesFacade.movie(550)
 
-    visit new_user_movie_viewing_party_path(user_id: user.id, movie_id: movie.id)
+    visit new_user_movie_viewing_party_path(user_id: user.id, movie_id: movie.movie_id)
 
     within '#castMembers' do
       expect(page).to have_content('Edward Norton')
