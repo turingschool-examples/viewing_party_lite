@@ -1,34 +1,40 @@
-<center>
-  <h1> Viewing Party Light </h1>
-  <h2> <%= @movie.title %> </h2>
+<div id="whitespace">
+  <center>
+    <h1> Viewing Party Light </h1>
+    <h2> <%= @movie.title %> </h2>
 
-  <div class="button">
-    <%= button_to "Discover Page", "/users/#{params[:user_id]}/discover", method: :get %>
-  </div> <br>
-  <div class="button">
-    <%= button_to "Create Viewing Party for #{@movie.title}", "/users/#{params[:user_id]}/movies/#{@movie.id}/view_parties/new", method: :get %>
-  </div>
+    <div class="button">
+      <%= button_to "Discover Page", "/users/#{params[:user_id]}/discover", method: :get %>
+    </div> <br>
+    <div class="button">
+      <%= button_to "Create Viewing Party for #{@movie.title}", "/users/#{params[:user_id]}/movies/#{@movie.id}/view_parties/new", method: :get %>
+    </div>
 
-  <div class="stats-bar">
-    <p>Vote Average: <%= @movie.vote_average %>&nbsp;&nbsp;&nbsp;&nbsp; Runtime: <%= @movie.runtime_formatted %>&nbsp;&nbsp;&nbsp;&nbsp; Genre(s): <%= @movie.genres %></p>
-  </div>
+    <div class="stats-bar">
+      <strong><p>Vote Average: <%= @movie.vote_average %>&nbsp;&nbsp;&nbsp;&nbsp; Runtime: <%= @movie.runtime_formatted %>&nbsp;&nbsp;&nbsp;&nbsp; Genre(s): <%= @movie.genres %></p></strong>
+    </div>
 
-  <div class="text_field">
-    <h3>Summary</h3>
-    <p><%= @movie.overview %></p>
-  </div>
-  <div class="cast">
-    <h3>Cast</h3>
-    <% @cast.each do |cast_info| %>
-      <p><%= cast_info.name %> as <%= cast_info.character %></p>
-    <% end %>
-  </div>
-  <div class="reviews">
-    <h3><%= @review.count %> Reviews</h3>
-    <% @review.each do |media| %>
-      Author: <%= media.author %><br>
-      <%= media.content %><br>
-      <br>
-    <% end %>
-  </div>
-</center>
+    <div class="text_field">
+      <hr>
+      <h3>Summary</h3>
+      <p><%= @movie.overview %></p>
+    </div>
+    <div class="cast">
+      <h3>Cast</h3>
+      <% @cast.each do |cast_info| %>
+        <p><%= cast_info.name %> as <%= cast_info.character %></p>
+      <% end %>
+    </div>
+    <div class="reviews">
+      <hr>
+      <h3><%= @review.count %> Reviews</h3>
+        <% @review.each do |media| %>
+          <div id="box">
+            <strong>Author: <%= media.author %></strong><br>
+            <%= media.content %><br>
+          </div>
+          <br>
+        <% end %>
+    </div>
+  </center>
+</div>
