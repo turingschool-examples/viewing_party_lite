@@ -63,5 +63,16 @@ RSpec.describe MovieService do
       expect(movie[:title]).to be_a(String)
       expect(movie[:vote_average]).to be_a(Float)
     end
+
+    it 'returns partial searches', :vcr do 
+      search = MovieService.search_films('spirit')
+
+      expect(search).to be_a(Hash)
+      expect(search[:results]).to be_a(Array)
+      first_returned = search[:results].first
+
+      expect(first_returned).to include(:title)
+      expect(first_returned[:title]).to be_a(String)
+    end
   end
 end
