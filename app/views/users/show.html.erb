@@ -3,3 +3,19 @@
 </div>
 
 <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %>
+
+
+<div id='invited_to'>
+    <%= @user.viewing_parties.each do | party | %>
+        <p><%= "party.image" %>  </p>
+        <p><%= party.start_date %>  </p>
+        <p><%= party.start_time %>  </p>
+        <p><%= party.host_id %>  </p>
+        <% party.users.each do |attendee| %>
+            <p><%= attendee.name %>  </p>
+        <% end %>
+    <% end %>
+</div>
+
+
+        <%#% link_to party.movie_title, <movie_path>  %>
