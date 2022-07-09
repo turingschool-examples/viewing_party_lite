@@ -1,4 +1,5 @@
 <%= link_to "Discover", user_movies_discover_path(params[:user_id]) %>
+
 <% if params[:query] %>
   <h1>Search Results</h1>
 <% else %>
@@ -10,3 +11,4 @@
       Average Rating: <%= movie[:vote_average] %>
     </div>
   <% end %>
+
