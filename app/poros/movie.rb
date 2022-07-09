@@ -1,12 +1,12 @@
-class Movie 
+class Movie
   attr_reader :id,
-              :title, 
-              :vote_average, 
-              :runtime, 
-              :genres, 
+              :title,
+              :vote_average,
+              :runtime,
+              :genres,
               :overview,
               :poster_path
-              # :cast, 
+              # :cast,
               # :reviews
   def initialize(attributes)
     @id           = attributes[:id]
@@ -16,7 +16,11 @@ class Movie
     @poster_path  = attributes[:poster_path]
     @genres       = attributes[:genres]
     @runtime      = attributes[:runtime]
-    # @cast 
+    # @cast
     # @reviews
+  end
+
+  def min_to_hours
+    "#{@runtime / 60}hr #{@runtime % 60}min"
   end
 end

@@ -26,6 +26,16 @@ class MovieService
     movie = conn.get("/3/movie/#{movie_id}")
     parse_json(movie)
   end
+
+  def self.cast_for_movie(movie_id)
+    movie = conn.get("/3/movie/#{movie_id}/credits")
+    parse_json(movie)[:cast]
+  end
+
+  def self.reviews_for_movie(movie_id)
+    movie = conn.get("/3/movie/#{movie_id}/reviews")
+    parse_json(movie)[:results]
+  end
 end
 
 # cast
