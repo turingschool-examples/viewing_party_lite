@@ -10,9 +10,9 @@ class MoviesFacade
 
   def self.search(keyword)
     search_results = MoviesService.find_movies(keyword)
-binding.pry
+
     search_results.map do |movie|
-      MovieSearch.new(movie)
+      Movie.new(movie)
     end
   end
 end
