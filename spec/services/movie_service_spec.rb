@@ -18,19 +18,18 @@ RSpec.describe MovieService do
     end
   end
 
-  # describe 'search endpoint' do
-  #   it 'can search for a movie JSON and parse into hash', :vcr do
-  #     response = MovieService.search("The Shawshank Redemption")
-  #
-  #     expect(response).to be_a Hash
-  #     expect(response[:results]).to be_a Array
-  #     expect(response[:results].count).to eq 20
-  #
-  #     first_movie = response[:results][0]
-  #
-  #     expect(first_movie).to have_key :title
-  #     expect(first_movie).to have_key :overview
-  #     expect(first_movie).to have_key :vote_average
-  #   end
-  # end
+  describe 'search endpoint' do
+    it 'can search for a movie JSON and parse into hash', :vcr do
+      response = MovieService.search_movie_by_name("the shawshank redemption")
+      expect(response).to be_a Hash
+      expect(response[:results]).to be_a Array
+      expect(response[:results].count).to eq 2
+
+      first_movie = response[:results][0]
+
+      expect(first_movie).to have_key :title
+      expect(first_movie).to have_key :overview
+      expect(first_movie).to have_key :vote_average
+    end
+  end
 end
