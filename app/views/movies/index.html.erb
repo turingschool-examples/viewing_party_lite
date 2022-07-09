@@ -1,3 +1,4 @@
+<%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get, local: true %>
 <h1><% if params[:commit]%>
         <%= "Movie results for: #{params[:q]}"%>
       <% else %>
