@@ -40,4 +40,11 @@ RSpec.describe Movie do
 
     expect(movie.format_runtime(movie.runtime)). to eq "2:14"
   end
+
+  it "formats genres into a list" do
+    data = { genres: [{:id=>18, :name=>"Drama"}, {:id=>80, :name=>"Crime"}]}
+    movie = Movie.new(data)
+
+    expect(movie.format_genres(movie.genres)).to eq ["Drama", "Crime"]
+  end
 end
