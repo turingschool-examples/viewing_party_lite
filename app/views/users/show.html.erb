@@ -13,8 +13,17 @@
     <% end %>
 <% end %>
 <h3>Viewing Party Invites</h3>
+
 <% @user.parties.each do |party| %>
     <% if party.host != @user.email %>
-        <%= party.movie_name %>
+      <p>Title: <%= party.movie_name %></p>
+      <p>Host Email: <%= party.host %></p>
+      <p>Date: <%= party.date.strftime('%T') %></p>
+      <p>Start Time: <%= party.start_time %></p>
+      <p>Duration: <%= party.duration / 60 %> h <%= party.duration % 60 %> min</p>
+      <p>Guests </p>
+      <% party.users.each do |user| %>
+        <p><%= user.name %></p>
+      <% end %>
     <% end %>
 <% end %>
