@@ -1,0 +1,16 @@
+<h2><%= @movie.title %></h2>
+
+<%= form_with url: user_movie_viewing_parties_path(user_id: @user.id, movie_id: params[:movie_id]), method: post, local: true do |f| %>
+  <%= f.label :duration %>
+  <%= f.number_field :duration %>
+
+  <%= f.label :date %>
+  <%= f.date_field :date %>
+
+  <%= f.label :time %>
+  <%= f.time_field :time %>
+
+  <%= f.label user.name %>
+  <%= f.collection_check_boxes :user_ids, User.all, :id, :name %>
+  <%= f.submit %>
+<% end %>
