@@ -18,4 +18,9 @@ class MovieFacade
       end.flatten
     end
   end
+
+  def self.find_movie(id)
+    json = MovieService.movie_lookup(id)
+    Movie.new(json)
+  end
 end

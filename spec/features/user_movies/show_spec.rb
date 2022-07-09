@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "The UserMovie Show Page" do
-  describe 'has buttons' do
+  describe 'has buttons', :vcr do
     it 'has a button to create a viewing party' do
       user = User.create!(name: "Rand", email: "randalthor@gmail.com")
       movie = Movie.new(id: 550, title: "Fight Club", vote_average: 8.4)
@@ -9,10 +9,10 @@ RSpec.describe "The UserMovie Show Page" do
 
       click_button("Create Viewing Party for #{movie.title}")
       # expect(page).to have_button("Create Viewing Party for #{movie.title}")
-      expect(current_path).to eq(viewing_party_path)
+      expect(current_path).to eq("/users/#{user.id}/movies/#{movie.id}/view_parties/new")
     end
 
-    xit 'has a button to return to the discover page' do
+    it 'has a button to return to the discover page' do
       user = User.create!(name: "Rand", email: "randalthor@gmail.com")
       movie = Movie.new(id: 550, title: "Fight Club", vote_average: 8.4)
       visit "/users/#{user.id}/movies/#{movie.id}"

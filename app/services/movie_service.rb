@@ -25,4 +25,9 @@ class MovieService
 
     [json_hash1, json_hash2]
   end
+
+  def self.movie_lookup(id)
+    response = MovieService.conn.get("/3/movie/#{id}")
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end
