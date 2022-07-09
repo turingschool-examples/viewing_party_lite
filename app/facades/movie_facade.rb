@@ -14,4 +14,12 @@ class MovieFacade
       Movie.new(movie_json)
     end
   end
+
+  def movie_search(id)
+    parsed_json = MovieService.new.poro_search(id)
+     # require "pry"; binding.pry
+    # parsed_json[:results].map do |movie_json|
+    Movie.new(parsed_json)
+    
+  end
 end

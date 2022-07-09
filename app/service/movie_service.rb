@@ -17,6 +17,12 @@ class MovieService
     data = JSON.parse(response.body, symbolize_names: true)
   end
 
+  def poro_search(id)
+    response = conn.get("https://api.themoviedb.org/3/movie/#{id}?&language=en-US")
+
+    data = JSON.parse(response.body, symbolize_names: true)
+  end
+
   private
 
   def conn
