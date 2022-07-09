@@ -4,7 +4,9 @@ class UserMoviesController < ApplicationController
   end
 
   def search
+    user = User.find(params[:id])
     keyword = params[:search]
     @search_results = MoviesFacade.search(keyword)
+    redirect_to "/users/#{user.id}/movies"
   end
 end
