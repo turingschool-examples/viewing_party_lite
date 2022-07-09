@@ -2,7 +2,7 @@ class MovieService
 
 
   def top_40_rated_movies
-  
+
     response_1 = conn.get("/3/movie/top_rated?page=1")
     response_2 = conn.get("/3/movie/top_rated?page=2")
 
@@ -23,6 +23,11 @@ class MovieService
     data = JSON.parse(response.body, symbolize_names: true)
   end
 
+  def details_of_movie(id)
+    response = conn.get("/3/movie/#{id}?append_to_response=credits,reviews")
+
+    data = JSON.parse(response.body, symbolize_names: true)
+  end
   private
 
   def conn
@@ -31,3 +36,16 @@ class MovieService
     end
   end
 end
+
+#endpoint /movie/{movie_id}
+ #genres
+ #Title
+ #runtime
+ #overview (might be summary)
+
+ #endpoint /movies/{movie_id}/reviews
+ #count of total reviews
+ #each review author and Info
+
+ #endpoint /movies/{movie_id}/credits
+ #Top 10 actors
