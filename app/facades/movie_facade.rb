@@ -14,4 +14,9 @@ class MovieFacade
       Movie.new(movie_json)
     end
   end
+
+  def movie_search(id)
+    parsed_json = MovieService.new.poro_search(id)
+    Movie.new(parsed_json)  
+  end
 end
