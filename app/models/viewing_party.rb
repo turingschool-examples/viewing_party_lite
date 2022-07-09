@@ -5,7 +5,7 @@ class ViewingParty < ApplicationRecord
 
   validates_presence_of :movie_title,
                         :duration,
-                        :attendees,
+                        # :attendees,
                         :start_date,
                         :start_time,
                         :image
