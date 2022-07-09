@@ -9,14 +9,6 @@ RSpec.describe 'MovieFacade' do
     expect(movies).to be_all Movie
   end
 
-
-
-
-
-
-
-
-
   it 'can create a new movie object from an api search', :vcr do
     movie = MovieFacade.new.movie_search(278)
 
@@ -26,3 +18,13 @@ RSpec.describe 'MovieFacade' do
     expect(movie.vote_average).to be_a Float
   end
 end
+
+  it "makes services call and returns movie objects", :vcr do
+    query = "shawshank"
+    movies = MovieFacade.new.search_movie(query)
+
+    expect(movies).to be_a Array
+    expect(movies).to be_all Movie
+  end
+end
+

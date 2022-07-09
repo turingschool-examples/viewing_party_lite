@@ -3,6 +3,7 @@ class MoviesController < ApplicationController
     @user = User.find(params[:user_id])
     if params[:search] && params[:search].blank?
       @movies = []
+      flash[:error] = "0 Search Results"
     elsif params[:search]
       @movies = MovieFacade.new.search_movie(params[:search])
     else
@@ -13,5 +14,6 @@ class MoviesController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @movie = MovieFacade.new.movie_search(params[:id])
+
   end
 end
