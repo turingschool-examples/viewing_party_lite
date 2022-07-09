@@ -1,0 +1,16 @@
+<h3><%= @movie.title %></h3>
+<%= form_with model: @party, url: user_movie_parties_path(@user.id, @movie.id), method: :post, local: true do |f| %>
+  <%= f.label :duration %>
+  <%= f.number_field :duration %>
+  <%= f.label :date %>
+  <%= f.date_field :date %>
+  <%= f.label :start_time %>
+  <%= f.time_field :start_time %>
+  <% @users.each do |guest| %>
+    <% if @user.id != guest.id %>
+      <%= f.label guest.name.to_sym %>
+      <%= f.check_box guest.name.to_sym %>
+   <%end%>
+  <%end%>
+  <%= f.submit "Create Party" %>
+<% end %>

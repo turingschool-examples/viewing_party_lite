@@ -7,4 +7,5 @@ class Party < ApplicationRecord
   validates_presence_of :start_time
   validates_presence_of :host 
   validates_presence_of :movie_id
+  validates_presence_of :movie_title
 end

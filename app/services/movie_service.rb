@@ -21,8 +21,10 @@ class MovieService
     page2 = conn.get("/3/search/movie?query=#{search}&page=2")
     parse_json(page1)[:results] + parse_json(page2)[:results]
   end
+
+  def self.find_movie_by_id(movie_id)
+    movie = conn.get("/3/movie/#{movie_id}")
+    parse_json(movie)
+  end
 end
 
-# cast  
-# reviews 
-# movie details 
