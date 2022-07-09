@@ -49,8 +49,8 @@ RSpec.describe 'movie details page' do
 
     expect(page).to have_content("#{@movie.reviews.count} Reviews")
     expect(page).to have_content("Author: #{@movie.reviews.first[:author]}")
-    # expect(page).to have_content(@movie.reviews.first[:content])
+    expect(page).to have_content(@movie.reviews.first[:content][0..20])
     expect(page).to have_content("Author: #{@movie.reviews.last[:author]}")
-    # expect(page).to have_content(@movie.reviews.last[:content])
+    expect(page).to have_content(@movie.reviews.last[:content][0..20])
   end
 end
