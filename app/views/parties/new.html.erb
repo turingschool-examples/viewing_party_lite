@@ -1,14 +1,3 @@
 <h1>Create <%= @movie.title %> Viewing Party</h1>
 
 <hr>
-
-<%= form_with url: users_path, local: true do |f| %>
-
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-
-  <%= f.submit 'Create User'%>
-<% end %>
