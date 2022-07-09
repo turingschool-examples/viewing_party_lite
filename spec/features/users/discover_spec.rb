@@ -18,7 +18,7 @@ RSpec.describe 'Discover' do
     visit "user/#{user.id}/discover"
 
     fill_in 'search', with: 'Star Wars'
-    click_on 'submit'
+    click_on 'Search'
     expect(current_path).to eq("/users/#{user.id}/movies")
 
   end

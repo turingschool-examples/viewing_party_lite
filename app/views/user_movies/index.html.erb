@@ -1,4 +1,12 @@
-<% @top_movies.each do |movie| %>
-<h3><%= movie.title %></h3>
-<p>Vote Average: <%= movie.vote_average %></p>
+<% if @top_movies.nil? %>
+    <% @search_results.each do |movie| %>
+      <h3><%= movie.title %></h3>
+      <p>Vote Average: <%= movie.vote_average %></p>
+    <% end %>
+<% else %>
+  <% @top_movies.each do |movie| %>
+    <h3><%= movie.title %></h3>
+    <p>Vote Average: <%= movie.vote_average %></p>
+  <% end %>
 <% end %>
+

@@ -14,7 +14,6 @@ class UsersController < ApplicationController
 
   def discover
     @user = User.find(params[:id])
-    # @top_rated_movies = TopMoviesFacade.top_rated_movies
   end
 
   private
