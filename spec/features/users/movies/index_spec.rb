@@ -27,4 +27,13 @@ RSpec.describe 'User Movies Index Page' do
     expect(page).to have_content('Star Wars: The Last Jedi')
     expect(page).to have_content('Vote Average: 6.9')
   end
+
+  it 'has a button that takes user back to the discover page' do
+        user = User.create!(name: 'User', email: 'user@email.com')
+
+    visit user_movies_path(user.id)
+    click_on "Discover Movies"
+    expect(current_path).to eq("/user/#{user.id}/discover")
+  end
+
 end
