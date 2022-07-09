@@ -1,4 +1,5 @@
 class MovieService
+
   def self.all_movie_id_search(id)
     end_point = "/3/movie/#{id}"
     response = connection.get(end_point) do |faraday|
@@ -24,8 +25,16 @@ class MovieService
     JSON.parse(response_3.body, symbolize_names: true)
   end
 
+  def self.find_top_rated
+    response_4 = connection.get('/3/movie/top_rated') do |f|
+      f.params['api_key'] = ENV['moviedb_api_key']
+    end
+    JSON.parse(response.body, symbolize_names: true)
+  end
+  
   def self.connection
-      url = 'https://api.themoviedb.org'
-      Faraday.new(url: url)
+    url = 'https://api.themoviedb.org'
+    Faraday.new(url: url)
   end
 end
+

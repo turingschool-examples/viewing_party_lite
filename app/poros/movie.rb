@@ -1,4 +1,5 @@
 class Movie
+
   attr_reader :id, :title, :runtime, :vote_average, :genres, :summary
 
   def initialize(attributes)
@@ -10,3 +11,4 @@ class Movie
     @summary = attributes[:overview]
   end
 end
+
