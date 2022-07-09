@@ -1,10 +1,15 @@
 class UsersController < ApplicationController
   def new
     @user = User.new
-end
+  end
 
   def show
     @user = User.find(params[:id])
+    @viewing_parties = @user.party_users.map do |party|
+      { movie: MovieFacade.create_movie_details(party.viewing_party.movie_id), party: party.viewing_party,
+        host: party.host }
+    end
+    # binding.pry
   end
 
   def create
