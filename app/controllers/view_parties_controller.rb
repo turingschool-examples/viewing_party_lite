@@ -1,4 +1,5 @@
 class ViewPartiesController < ApplicationController
   def new
-  end 
+    @movie = MovieFacade.find_movie(params[:movie_id])
+  end
 end
