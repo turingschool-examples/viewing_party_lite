@@ -61,24 +61,29 @@ RSpec.describe 'User Dashboard Page', type: :feature do
       user_viewing1 = UserViewingParty.create!(user_id: user1.id, viewing_party_id: party1.id, host: false)
 
       visit user_path(user1.id)
-      save_and_open_page
+
       within '.invites' do 
         expect(page).to have_content("Date: Sep 7, 2022")
         expect(page).to have_content(" 4:00 PM")
       end
     end
 
-    it 'can identify and list the host' do 
+    it 'can identify the host', :vcr do 
       user1 = User.create!(name: 'Parker', email: 'mangaforever@hootube.net')
       user2 = User.create!(name: 'Lola', email: 'lola@example.com')
+      user3 = User.create!(name: 'Squiggles', email: 'goblindog@dogsshouldbeabletovote.org')
 
       party1 = ViewingParty.create!(movie_id: 129, duration: 96, date: Date.new(2022,9,7), start_time: "16:00:00")
-      party2 = ViewingParty.create!(movie_id: 545611, duration: 175, date: Date.new(2023,4,4), start_time: "19:00:00")
-      party3 = ViewingParty.create!(movie_id: 284053, duration: 145, date: Date.new(2022,10,5), start_time: "17:30:00")
 
       user_viewing1 = UserViewingParty.create!(user_id: user1.id, viewing_party_id: party1.id, host: false)
-      user_viewing2 = UserViewingParty.create!(user_id: user1.id, viewing_party_id: party2.id, host: false)
-      user_viewing3 = UserViewingParty.create!(user_id: user2.id, viewing_party_id: party3.id, host: false)
+      user_viewing2 = UserViewingParty.create!(user_id: user2.id, viewing_party_id: party1.id, host: false)
+      user_viewing3 = UserViewingParty.create!(user_id: user3.id, viewing_party_id: party1.id, host: true)
+
+      visit user_path(user1.id)
+      within '.invites' do 
+        expect(page).to have_content("Host: Squiggles")
+        expect(page).to_not have_content("Host: Parker")
+      end
     end
-  end
+  end 
 end
