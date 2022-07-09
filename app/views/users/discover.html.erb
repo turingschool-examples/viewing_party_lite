@@ -2,5 +2,6 @@
 <p><%= form_with url: search_path, method: :post, local: true do |form| %>
   <%= form.label :search, 'Search for Movies by their title:' %>
   <%= form.text_field :search %>
+  <%= form.hidden_field :id, value: @user.id %>
   <%= form.submit 'Search' %>
 <% end %>
