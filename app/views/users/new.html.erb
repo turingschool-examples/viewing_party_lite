@@ -1,21 +1,22 @@
-<center>
+<div id="whitespace">
+  <center>
 
-  <h1> Viewing Party Lite </h1>
+    <h1> Viewing Party Lite </h1>
 
-  <h2> Register a New User </h2>
+    <h2> Register a New User </h2>
 
-  <% flash.each do |type, msg| %>
-    <div> <%= msg %> </div>
-  <% end %>
-
-  <div class="form">
-    <%= form_with url: '/users', method: :post, local: true do |f| %>
-      <p><%= f.label :name %></p>
-      <%= f.text_field :name %>
-      <p><%= f.label :email %></p>
-      <%= f.text_field :email %>
-      <%= f.submit "Create New User" %>
+    <% flash.each do |type, msg| %>
+      <div> <%= msg %> </div>
     <% end %>
-  </div/>
 
-</center>
+    <div class="form">
+      <%= form_with url: '/users', method: :post, local: true do |f| %>
+        <p><%= f.label "Name:  " %>
+        <%= f.text_field :name %><br></p>
+        <p><%= f.label "Email:  " %>
+        <%= f.text_field :email %><br></p>
+        <p><%= f.submit "Create New User" %></p>
+      <% end %>
+    </div/>
+  </center>
+</div>

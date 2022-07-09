@@ -27,7 +27,7 @@ RSpec.describe 'The User Show Page', type: :feature do
 
       visit "/users/#{user.id}"
 
-      expect(page).to have_content("___Viewing Parties___")
+      expect(page).to have_content("Viewing Parties")
     end
   end
 end
