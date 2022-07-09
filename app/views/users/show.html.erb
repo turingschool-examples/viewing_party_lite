@@ -6,4 +6,15 @@
 <br>
 <h4><%= button_to "Discover Movies", user_discover_index_path(@user.id), method: :get %></h4>
 <br>
-<h3>Viewing Parties</h3>
+<h3>Host Viewing Parties</h3>
+<% @user.parties.each do |party| %>
+    <% if party.host == @user.email %>
+        <%= party.movie_name %>
+    <% end %>
+<% end %>
+<h3>Viewing Party Invites</h3>
+<% @user.parties.each do |party| %>
+    <% if party.host != @user.email %>
+        <%= party.movie_name %>
+    <% end %>
+<% end %>
