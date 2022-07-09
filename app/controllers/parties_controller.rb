@@ -1,4 +1,5 @@
 class PartiesController < ApplicationController
+
   def new 
     @user = User.find(params[:user_id])
     @users = User.all 
@@ -27,3 +28,4 @@ class PartiesController < ApplicationController
     redirect_to user_path(host.id) 
   end
 end
+
