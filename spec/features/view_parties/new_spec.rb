@@ -10,23 +10,23 @@ RSpec.describe "User Movies View Parties New page" do
     end
 
     it "exists and has the name of the movie" do
-      expect(page).to have_content("Dracula")
+      expect(page).to have_content(@movie.title)
     end
 
-    xit "has a 'Duration of Party' field with a default value of movie runtime in minutes" do
-      expect(page).to have_field('Duration of Party', with: '82')
+    it "has a 'Duration of Party' field with a default value of movie runtime in minutes" do
+      expect(page).to have_field(:duration, with: '82')
     end
 
-    xit "has a 'When' field to select date" do
-      expect(page).to have_field('When')
+    it "has a 'When' field to select date" do
+      expect(page).to have_field(:date)
     end
 
-    xit "has a 'Start Time' field to select time" do
-      expect(page).to have_field('Start Time')
+    it "has a 'Start Time' field to select time" do
+      expect(page).to have_field(:time)
     end
 
-    xit "has checkboxes next to each existing user in the system" do
-      expect(page).to have_checkbox(@user2.name)
+    it "has checkboxes next to each existing user in the system" do
+      expect(page).to have_field("#{@user2.id}")
     end
 
     xit "has a button to create a party" do
@@ -38,8 +38,8 @@ RSpec.describe "User Movies View Parties New page" do
       expect(page).to_not have_content(@movie.title)
       visit "/users/#{@user.id}/movies/#{@movie.id}/view_parties/new"
 
-      fill_in('When', with: '10/31/22')
-      fill_in('Start Time', with: '22:00')
+      fill_in(:date, with: '10/31/22')
+      fill_in(:time, with: '22:00')
       check(@user2.name)
       click_button('Create Party')
 
@@ -48,9 +48,9 @@ RSpec.describe "User Movies View Parties New page" do
     end
 
     xit "will not create a party if the value is less than the duration of the movie" do
-      fill_in('Duration of Party', with: '81')
-      fill_in('When', with: '10/31/22')
-      fill_in('Start Time', with: '22:00')
+      fill_in(:duration, with: '81')
+      fill_in(:date, with: '10/31/22')
+      fill_in(:time, with: '22:00')
       click_button('Create Party')
 
       expect(current_path).to eq("/users/#{@user.id}/movies/#{@movie.id}/view_parties/new")
