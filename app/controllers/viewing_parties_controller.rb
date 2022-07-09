@@ -23,7 +23,8 @@ class ViewingPartiesController < ApplicationController
       start_time: params[:start_time],
       host: params[:id],
       duration: params[:duration],
-      movie_id: params[:movie_id]
+      movie_id: params[:movie_id],
+      host_name: @user.name
     }
   end
 end

@@ -20,8 +20,8 @@ RSpec.describe "Dashboard Page" do
     user1 = User.create(name: 'Geddy', email: '2112@yyz.com')
     user2 = User.create(name: 'Alex', email: 'cygnus@xanadu.com')
     user3 = User.create(name: 'Neil', email: 'bytor@snowdog.com')
-    party1 = Party.create(start_time: '2022-05-10', duration: 147, host: user2.id, movie_id: 123)
-    party2 = Party.create(start_time: '2022-05-14', duration: 147, host: user1.id, movie_id: 124)
+    party1 = Party.create(start_time: '2022-05-10', duration: 147, host: user2.id, movie_id: 123, host_name: "Alex")
+    party2 = Party.create(start_time: '2022-05-14', duration: 147, host: user1.id, movie_id: 124, host_name: "Neil")
     PartyUser.create(user_id: user1.id, party_id: party1.id )
     PartyUser.create(user_id: user2.id, party_id: party1.id )
     PartyUser.create(user_id: user3.id, party_id: party1.id )
@@ -37,7 +37,6 @@ RSpec.describe "Dashboard Page" do
       expect(page).to have_content("2022-05-14")
 
       expect(page).to_not have_content("The Lord of the Rings")
-      expect(page).to_not have_content("Neil")
     end
 
     within "#hosting" do
@@ -47,7 +46,6 @@ RSpec.describe "Dashboard Page" do
       expect(page).to have_content('2022-05-10')
 
       expect(page).to_not have_content("No End")
-      expect(page).to_not have_content("Alex")
     end
   end
 
@@ -55,8 +53,8 @@ RSpec.describe "Dashboard Page" do
     user1 = User.create(name: 'Geddy', email: '2112@yyz.com')
     user2 = User.create(name: 'Alex', email: 'cygnus@xanadu.com')
     user3 = User.create(name: 'Neil', email: 'bytor@snowdog.com')
-    party1 = Party.create(start_time: '2022-05-10', duration: 147, host: user2.id, start_time: '7:00', movie_id: 123)
-    party2 = Party.create(start_time: '2022-05-14', duration: 147, host: user1.id, start_time: '1:00', movie_id: 124)
+    party1 = Party.create(start_time: '2022-05-10', duration: 147, host: user2.id, start_time: '7:00', movie_id: 123, host_name: "Alex")
+    party2 = Party.create(start_time: '2022-05-14', duration: 147, host: user1.id, start_time: '1:00', movie_id: 124, host_name: "Geddy")
     PartyUser.create(user_id: user1.id, party_id: party1.id )
     PartyUser.create(user_id: user2.id, party_id: party1.id )
     PartyUser.create(user_id: user3.id, party_id: party1.id )
@@ -64,6 +62,7 @@ RSpec.describe "Dashboard Page" do
     PartyUser.create(user_id: user2.id, party_id: party2.id )
 
     visit "/users/#{user2.id}"
+    save_and_open_page
     click_link("The Lord of the Rings")
 
     expect(current_path).to eq("/users/#{user2.id}/movies/123")
