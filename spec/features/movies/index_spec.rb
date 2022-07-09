@@ -4,12 +4,12 @@ RSpec.describe 'Movie Index Page', type: :feature do
   describe 'title section' do 
     it 'has a list of the top rated films', :vcr do 
       user1 = User.create!(name: 'Andrew', email: 'concertenthusiast@musac.org')
-      
-      visit user_movies_path(user1.id)
 
+      visit user_movies_path(user1.id)
+      save_and_open_page
       within '.topMovies' do 
-        expect(page).to have_content('Doctor Strange in the Multiverse of Madness')
-        expect(page).to have_content('Shark Bait')
+        expect(page).to have_content('Spirited Away')
+        expect(page).to have_content('Pulp Fiction')
       end
     end
   end
