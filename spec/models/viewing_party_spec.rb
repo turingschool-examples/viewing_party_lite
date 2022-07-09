@@ -17,27 +17,24 @@ RSpec.describe ViewingParty, type: :model do
 
   describe 'instance methods' do
     before do
-      @party1 = ViewingParty.create!(date: "Sat, 09 Jul 2022", start_time: "2022-07-09 19:14:46.264435 -0400", duration: 180, movie_id: 120)
-
+      @party1 = ViewingParty.create!(date: 'Sat, 09 Jul 2022', start_time: '2022-07-09 19:14:46.264435 -0400',
+                                     duration: 180, movie_id: 120)
     end
     describe '.movie' do
       it 'returns the movie that is being watched at the viewing party', :vcr do
-
-        expect(@party1.movie.title).to eq("The Lord of the Rings: The Fellowship of the Ring")
+        expect(@party1.movie.title).to eq('The Lord of the Rings: The Fellowship of the Ring')
       end
     end
 
     describe '.formatted_date' do
       it 'returns the formatted date of the party for display on page', :vcr do
-
-        expect(@party1.formatted_date).to eq("Saturday, July 09")
+        expect(@party1.formatted_date).to eq('Saturday, July 09')
       end
     end
 
     describe '.formatted_time' do
       it 'returns the formatted date of the party for display on page', :vcr do
-
-        expect(@party1.formatted_time).to eq(" 7:14 PM")
+        expect(@party1.formatted_time).to eq(' 7:14 PM')
       end
     end
 
