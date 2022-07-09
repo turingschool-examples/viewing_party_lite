@@ -3,7 +3,7 @@
 <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %>
 
 <h2><%= @user.name %>'s Invites</h2>
-<div class="invited">
+<div id="invited">
   <% @user.parties.each do |party| %>
     <% if party.host != @user.id %>
     <% movie = @movies.find{ |movie| movie.id == party.movie_id } %>
@@ -30,7 +30,7 @@
 <br>
 <br>
 <h2>Parties <%= @user.name %> is Hosting</h2>
-<div class="hosting">
+<div id="hosting">
   <% @user.parties.each do |party| %>
     <% if party.host == @user.id %>
     <% movie = @movies.find{ |movie| movie.id == party.movie_id } %>
