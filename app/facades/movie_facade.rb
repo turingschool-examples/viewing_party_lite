@@ -8,4 +8,9 @@ class MovieFacade
     json = MovieService.get_by_keyword(keywords)
     json.map { |data| MovieResult.new(data) }
   end
+
+  def self.create_movie_details(id)
+    json = MovieService.get_details(id)
+    MovieDetails.new(json)
+  end
 end

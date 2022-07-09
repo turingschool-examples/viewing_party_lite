@@ -13,4 +13,11 @@ RSpec.describe MovieFacade do
 
     expect(movie_by_keyword[0]).to be_an_instance_of(MovieResult)
   end
+
+  it 'creates a MovieDetails poro from details call', :vcr do
+    id = 465
+    movie_details = MovieFacade.create_movie_details(id)
+
+    expect(movie_details).to be_an_instance_of(MovieDetails)
+  end
 end

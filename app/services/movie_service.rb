@@ -10,4 +10,9 @@ class MovieService < BaseService
     data = get_json(response)
     data[:results]
   end
+
+  def self.get_details(id)
+    response = conn.get("/3/movie/#{id}?api_key=#{ENV['api_key']}")
+    get_json(response)
+  end
 end
