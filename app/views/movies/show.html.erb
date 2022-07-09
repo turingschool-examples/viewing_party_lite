@@ -3,3 +3,10 @@
 <%= button_to "Create Viewing Party", "/users/#{@user.id}/movies/#{@movie.id}/viewing_partys/new", method: :get %>
 
 <%= button_to "Discover Page", user_discover_path(@user.id), method: :get %>
+
+<p><%= @movie_details.title %></p>
+<p><%= @movie_details.vote_average %></p>
+  <p><% @movie_details.genre.each do |genre|  %></p>
+    <%= genre %>
+  <% end %>
+  <p><%= @movie_details.runtime %></p>
