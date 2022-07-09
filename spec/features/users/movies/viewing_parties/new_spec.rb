@@ -51,7 +51,7 @@ RSpec.describe 'Viewing Party New Page' do
     movie = MoviesFacade.movie(550)
     review = MoviesFacade.movie_reviews(550)
     visit new_user_movie_viewing_party_path(user_id: user.id, movie_id: movie.movie_id)
-    save_and_open_page
+
     within '#reviews' do
       expect(page).to have_content('Goddard')
       expect(page).to have_content('Brett Pascoe')
