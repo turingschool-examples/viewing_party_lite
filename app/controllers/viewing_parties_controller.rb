@@ -11,9 +11,10 @@ class ViewingPartiesController < ApplicationController
     params[:invite_users].shift
     invitees_id = params[:invite_users]
     invitees_id.each do |invitee_id|
-      PartyUser.create(user_id: invitee_id, party_id: params[:movie_id])
+      PartyUser.create!(user_id: invitee_id, party_id: @party.id)
     end
-    PartyUser.create(user_id: params[:id], party_id: params[:movie_id])
+    PartyUser.create!(user_id: params[:id], party_id: @party.id)
+    redirect_to "/users/#{@user.id}"
   end
 
   private
