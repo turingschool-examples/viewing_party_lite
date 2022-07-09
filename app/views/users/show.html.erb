@@ -26,8 +26,12 @@
             <p> Friends Invited: </p>
             <ul>
             <% party.users.each do |user| %>
-                <% if user != @user && user != party.host %>
-                    <%=user.name%> (<%=user.email %>) <br>
+                <% if user != party.host %>
+                    <% if user == @user%>
+                        <b> <%=user.name%> (<%=user.email %>) </b><br>
+                    <% else %>
+                        <%=user.name%> (<%=user.email %>) <br>
+                    <% end %>
                 <% end %>
             <%end%> 
         <%end%>
