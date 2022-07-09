@@ -9,9 +9,7 @@ class PartiesController < ApplicationController
   def create
     @movie = MovieFacade.movie_data(params[:movie_id])
     party = Party.new(party_params)
-    binding.pry
     params[:users].each do |user|
-      this_user = User.find(user).id
       PartyUser.create(user_id: this_user, party: party)
     end
     redirect_to "/users/#{params[:user_id]}"
