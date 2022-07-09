@@ -41,9 +41,7 @@ RSpec.describe 'Viewing Party New Page' do
 
     visit new_user_movie_viewing_party_path(user_id: user.id, movie_id: movie.movie_id)
 
-    within '#reviews' do
-      expect(page).to have_content('Total Reviews: 7')
-    end
+    expect(page).to have_content('Total Reviews: 7')
   end
 
   it "displays the review author's name and review content" do
