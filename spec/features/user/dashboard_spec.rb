@@ -63,10 +63,8 @@ RSpec.describe 'user dashboard' do
         uservp8 = UserViewingParty.create!(user_id: user8.id, viewing_party_id: party3.id)
         uservp9 = UserViewingParty.create!(user_id: user9.id, viewing_party_id: party3.id)
         uservp10 = UserViewingParty.create!(user_id: user1.id, viewing_party_id: party3.id)
+
     visit user_path(user1.id)
-
-    binding.pry
-
     # must include: movie image,
     #               movie title(as link to movie show page),
     #               date and time of event,
