@@ -29,7 +29,6 @@ RSpec.describe "Dashboard Page" do
     PartyUser.create(user_id: user2.id, party_id: party2.id )
 
     visit "/users/#{user2.id}"
-    save_and_open_page
 
     within "#invited" do
       expect(page).to have_content("Geddy")
