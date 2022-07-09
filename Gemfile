@@ -40,6 +40,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
   gem 'rspec-rails', '~> 3.5'
+  gem 'figaro'
 end
 
 group :development do
@@ -59,7 +60,6 @@ group :test do
   gem 'database_cleaner'
   gem 'vcr'
   gem 'webmock'
-  gem 'figaro'
 end
 
 
