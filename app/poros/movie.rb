@@ -29,4 +29,12 @@ class Movie
     minute = runtime % 60
     "#{hour}:#{minute}"
   end
+
+  def format_genres(genres)
+    genre_list = []
+    genres.map do |genre|
+      genre_list << genre[:name]
+    end
+    genre_list
+  end
 end
