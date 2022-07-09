@@ -8,10 +8,10 @@
 <h5> Title: <%= @movie.title %></h5>
 <h5> Vote Average: <%= @movie.vote_average %></h5>
 <h5> Runtime: <%= (@movie.runtime)/60  %>h <%= (@movie.runtime) % 60 %>mins</h5>
-<p><h5>Genre(s):</h5> 
+<p><h5>Genre(s):
     <% @movie.genres.each do |genre| %>  
-        <h5><%= genre[:name] %></h5>
-    <% end  %>
+        <%= genre[:name] %>
+    <% end  %></h5>
 </p>
 <h5> Description: <%= @movie.overview %></h5>
 <p><h5>Characters/Actors: </h5>
@@ -19,8 +19,8 @@
         <h5><%= cast_member[:name] %> plays <%= cast_member[:character] %></h5>
     <% end %>
 </p>
-<h5>Total Reviews: <p><%= @movie.reviews.count  %></p></h5>
+<h5>Total Reviews: <%= @movie.reviews.count  %></h5>
     <% @movie.reviews.each do |review| %>
-        <h5><%= review[:author] %> says<%= review[:content] %></h5>
+        <h5><%= review[:author] %>: <%= review[:content] %></h5>
     <% end %>
 </p>

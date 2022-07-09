@@ -15,4 +15,7 @@ RSpec.describe 'MovieFacade', :vcr do
     expect(movies).to be_a(Array)
     expect(movies).to be_all(Movie)
   end
+   
+
+
 end
