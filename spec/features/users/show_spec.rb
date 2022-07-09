@@ -64,6 +64,7 @@ RSpec.describe 'User Dashboard Page', type: :feature do
       save_and_open_page
       within '.invites' do 
         expect(page).to have_content("Date: Sep 7, 2022")
+        expect(page).to have_content(" 4:00 PM")
       end
     end
   end
