@@ -23,6 +23,19 @@ end
     data = JSON.parse(response.body, symbolize_names: true)
   end
 
+  def self.movie_cast(id)
+    response = connection.get("/3/movie/#{id}/credits?api_key=#{ENV['api_key']}")
+    data = JSON.parse(response.body, symbolize_names: true)
+    data[:cast]
+
+  end
+
+  def self.movie_reviews(id)
+    response = connection.get("/3/movie/#{id}/reviews?api_key=#{ENV['api_key']}")
+    data = JSON.parse(response.body, symbolize_names: true)
+    data[:results]
+  end
+
   def self.connection
     Faraday.new(url: 'https://api.themoviedb.org')
   end
