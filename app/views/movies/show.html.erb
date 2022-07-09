@@ -4,6 +4,7 @@
 </div></p>
 
 <h3>Movie Details</h3>
+<br>
 <p>Title: <%= @movie.title %></p>
 <p>Vote Average: <%= @movie.vote_average %></p>
 <p>Runtime: <%= "#{@movie.runtime / 60}h #{@movie.runtime % 60}min" %></p>
@@ -11,3 +12,22 @@
 <p>Genres: <% @movie.genres.each do |genre| %>
               <%= genre[:name] %>
             <% end %></p>
+<br>
+<br>
+<h3>Cast: </h3>
+<% @movie_cast.each do |actor| %>
+<p><%= actor.character %> played by <%= actor.name %></p>
+<% end %>
+<br>
+<br>
+<h3>Movie Reviews</h3>
+
+<h4>Total Reviews: </h4><p><%= @movie_review.count %></p>
+<% @movie_review.each do |author| %>
+<br>
+<h4>Author: </h4>
+<p><%= author.name %></p>
+<br>
+<h4>Review:</h4>
+<p><%= author.review %></p>
+<% end %>
