@@ -1,6 +1,6 @@
 <h1>Discover Movies Page</h1>
 
-<%= button_to "Discover Top Rated Movies" %><br>
+<%= button_to "Discover Top Rated Movies", "/users/#{@user.id}/movies", method: :get, params: {q: 'top%20rated'}, local: true %><br>
 
 <%= form_with url: "/search", method: :get, local: true do |f| %>
   <%= f.label :search, "Enter Keyword" %>
