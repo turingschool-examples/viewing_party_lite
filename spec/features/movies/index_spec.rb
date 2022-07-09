@@ -28,16 +28,15 @@ RSpec.describe 'Movie Index Page', type: :feature do
     end
   end
 
-  xdescribe 'search section' do 
+  describe 'search section' do 
     it 'can find partial matches', :vcr do 
       user1 = User.create!(name: 'Andrew', email: 'concertenthusiast@musac.org')
 
       visit user_discover_path(user1.id)
-      fill_in :search, with: ''
-
-      within '.searchMovies' do 
-        
-      end
+      fill_in :search, with: 'Home'
+      click_on 'Find Movies'
+      expect(current_path).to eq(user_movies_path(user1.id))
+      save_and_open_page
     end
   end
 end
