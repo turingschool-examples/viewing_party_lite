@@ -1,9 +1,22 @@
 <h2><%= @movie.title %></h2>
 
-<p>Vote Average: <%= @movie.vote_average %></p>
+<p><b>Vote Average:</b> <%= @movie.vote_average %></p>
 
-<p>Runtime: <%= @movie.runtime %></p>
+<p><b>Runtime:</b> <%= @movie.runtime %></p>
 
-<p>Genre: <%= @movie.genre %></p>
+<p><b>Genre:</b> <%= @movie.genre %></p>
 
-<p>Summary Description: "<%= @movie.summary_description %>"</p>
+<p><b>Summary Description:</b> "<%= @movie.summary_description %>"</p>
+
+<h2>Reviews</h2>
+<br>
+<h3>Total Reviews: <%= @reviews.count %></h3>
+<br>
+<div id="reviews">
+  <% @reviews.each do |review| %>
+    <p><b>Author:</b> <%= review.author %></p>
+    <p><b>Review:</b> "<%= review.content %>"</p>
+  <br>
+  <br>
+  <% end %>
+</div>
