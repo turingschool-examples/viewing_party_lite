@@ -16,8 +16,8 @@ RSpec.describe 'MovieService' do
       expect(movie[:vote_average]).to be_a(Float)
     end
 
-    it "searches for movies", :vcr do
-      parsed_json = MovieService.movie_by_keyword("Django")
+    it 'searches for movies', :vcr do
+      parsed_json = MovieService.movie_by_keyword('Django')
       expect(parsed_json).to be_a Array
       movie = parsed_json.first
 
@@ -27,7 +27,7 @@ RSpec.describe 'MovieService' do
       expect(parsed_json.length).to eq(40)
     end
 
-    it "gets details for specific movie", :vcr do
+    it 'gets details for specific movie', :vcr do
       fight_club = MovieService.movie_details(550)
 
       expect(fight_club).to include :title, :vote_average, :runtime, :genres, :overview
@@ -35,7 +35,7 @@ RSpec.describe 'MovieService' do
       expect(fight_club[:vote_average]).to be_a(Float)
     end
 
-    it "gets reviews for specific movie", :vcr do
+    it 'gets reviews for specific movie', :vcr do
       fight_club_reviews = MovieService.movie_reviews(550)
 
       expect(fight_club_reviews).to be_a Array

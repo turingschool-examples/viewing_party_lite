@@ -19,5 +19,4 @@ class Movie
       genre[:name]
     end
   end
-
 end

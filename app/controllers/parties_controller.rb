@@ -5,7 +5,6 @@ class PartiesController < ApplicationController
     @party = Party.new
   end
 
-
   private
 
   def party_params

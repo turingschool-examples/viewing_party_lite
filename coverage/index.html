@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-07-09T16:00:32-05:00">2022-07-09T16:00:32-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-07-09T16:04:50-05:00">2022-07-09T16:04:50-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -117,7 +117,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#f8b6e04fbfd2fe7ac9d6a04be3edee9357c738a1" class="src_link" title="app/controllers/parties_controller.rb">app/controllers/parties_controller.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">14</td>
+            <td class="cell--number">13</td>
             <td class="cell--number">5</td>
             <td class="cell--number">5</td>
             <td class="cell--number">0</td>
@@ -227,7 +227,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#590b9d2eb06cf71caab3d2236a9913c92112608c" class="src_link" title="app/poros/movie.rb">app/poros/movie.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">23</td>
+            <td class="cell--number">22</td>
             <td class="cell--number">14</td>
             <td class="cell--number">14</td>
             <td class="cell--number">0</td>
@@ -238,7 +238,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#12a410dfc8e04a2c39701d67ac483a71164bd4f7" class="src_link" title="app/services/movie_service.rb">app/services/movie_service.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">52</td>
+            <td class="cell--number">51</td>
             <td class="cell--number">24</td>
             <td class="cell--number">24</td>
             <td class="cell--number">0</td>
@@ -330,7 +330,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#f8b6e04fbfd2fe7ac9d6a04be3edee9357c738a1" class="src_link" title="app/controllers/parties_controller.rb">app/controllers/parties_controller.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">14</td>
+            <td class="cell--number">13</td>
             <td class="cell--number">5</td>
             <td class="cell--number">5</td>
             <td class="cell--number">0</td>
@@ -868,7 +868,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#590b9d2eb06cf71caab3d2236a9913c92112608c" class="src_link" title="app/poros/movie.rb">app/poros/movie.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">23</td>
+            <td class="cell--number">22</td>
             <td class="cell--number">14</td>
             <td class="cell--number">14</td>
             <td class="cell--number">0</td>
@@ -879,7 +879,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#12a410dfc8e04a2c39701d67ac483a71164bd4f7" class="src_link" title="app/services/movie_service.rb">app/services/movie_service.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">52</td>
+            <td class="cell--number">51</td>
             <td class="cell--number">24</td>
             <td class="cell--number">24</td>
             <td class="cell--number">0</td>
@@ -1384,18 +1384,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="8">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="9">
+          <li class="covered" data-hits="1" data-linenumber="8">
             <span class="hits">1</span>
             
 
@@ -1406,7 +1395,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="10">
+          <li class="never" data-hits="" data-linenumber="9">
             
             
 
@@ -1417,7 +1406,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="11">
+          <li class="covered" data-hits="1" data-linenumber="10">
             <span class="hits">1</span>
             
 
@@ -1428,7 +1417,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="12">
+          <li class="never" data-hits="" data-linenumber="11">
             
             
 
@@ -1439,7 +1428,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="13">
+          <li class="never" data-hits="" data-linenumber="12">
             
             
 
@@ -1450,7 +1439,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="14">
+          <li class="never" data-hits="" data-linenumber="13">
             
             
 
@@ -1751,7 +1740,7 @@
 
             
 
-            <code class="ruby">    if params[:search].present?</code>
+            <code class="ruby">    @movies = if params[:search].present?</code>
           </li>
         </div>
       
@@ -1762,7 +1751,7 @@
 
             
 
-            <code class="ruby">      @movies = MovieFacade.movie_by_keyword(params[:search])</code>
+            <code class="ruby">                MovieFacade.movie_by_keyword(params[:search])</code>
           </li>
         </div>
       
@@ -1773,7 +1762,7 @@
 
             
 
-            <code class="ruby">    else</code>
+            <code class="ruby">              else</code>
           </li>
         </div>
       
@@ -1784,7 +1773,7 @@
 
             
 
-            <code class="ruby">      @movies = MovieFacade.top_20_movies</code>
+            <code class="ruby">                MovieFacade.top_20_movies</code>
           </li>
         </div>
       
@@ -1795,7 +1784,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">              end</code>
           </li>
         </div>
       
@@ -3306,17 +3295,6 @@
 
             
 
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="23">
-            
-            
-
-            
-
             <code class="ruby">end</code>
           </li>
         </div>
@@ -3480,7 +3458,7 @@
 
             
 
-            <code class="ruby">  response1 = connection.get(&quot;/3/search/movie?query=#{query}&amp;api_key=#{ENV[&#39;api_key&#39;]}&quot;)</code>
+            <code class="ruby">    response1 = connection.get(&quot;/3/search/movie?query=#{query}&amp;api_key=#{ENV[&#39;api_key&#39;]}&quot;)</code>
           </li>
         </div>
       
@@ -3491,7 +3469,7 @@
 
             
 
-            <code class="ruby">  response2 = connection.get(&quot;/3/search/movie?query=#{query}&amp;page=2&amp;api_key=#{ENV[&#39;api_key&#39;]}&quot;)</code>
+            <code class="ruby">    response2 = connection.get(&quot;/3/search/movie?query=#{query}&amp;page=2&amp;api_key=#{ENV[&#39;api_key&#39;]}&quot;)</code>
           </li>
         </div>
       
@@ -3513,7 +3491,7 @@
 
             
 
-            <code class="ruby">  data1 = JSON.parse(response1.body, symbolize_names: true)</code>
+            <code class="ruby">    data1 = JSON.parse(response1.body, symbolize_names: true)</code>
           </li>
         </div>
       
@@ -3524,7 +3502,7 @@
 
             
 
-            <code class="ruby">  data2 = JSON.parse(response2.body, symbolize_names: true)</code>
+            <code class="ruby">    data2 = JSON.parse(response2.body, symbolize_names: true)</code>
           </li>
         </div>
       
@@ -3546,7 +3524,7 @@
 
             
 
-            <code class="ruby">  data1[:results] + data2[:results]</code>
+            <code class="ruby">    data1[:results] + data2[:results]</code>
           </li>
         </div>
       
@@ -3557,7 +3535,7 @@
 
             
 
-            <code class="ruby">end</code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -3678,7 +3656,7 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -3689,23 +3667,12 @@
 
             
 
-            <code class="ruby">  end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="32">
-            
-            
-
-            
-
             <code class="ruby"></code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="33">
+          <li class="covered" data-hits="1" data-linenumber="32">
             <span class="hits">1</span>
             
 
@@ -3716,7 +3683,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="34">
+          <li class="covered" data-hits="5" data-linenumber="33">
             <span class="hits">5</span>
             
 
@@ -3727,7 +3694,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="35">
+          <li class="covered" data-hits="5" data-linenumber="34">
             <span class="hits">5</span>
             
 
@@ -3738,7 +3705,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="5" data-linenumber="36">
+          <li class="covered" data-hits="5" data-linenumber="35">
             <span class="hits">5</span>
             
 
@@ -3749,7 +3716,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="37">
+          <li class="never" data-hits="" data-linenumber="36">
             
             
 
@@ -3760,7 +3727,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="38">
+          <li class="never" data-hits="" data-linenumber="37">
             
             
 
@@ -3771,7 +3738,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="39">
+          <li class="covered" data-hits="1" data-linenumber="38">
             <span class="hits">1</span>
             
 
@@ -3782,7 +3749,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="24" data-linenumber="40">
+          <li class="covered" data-hits="24" data-linenumber="39">
             <span class="hits">24</span>
             
 
@@ -3793,7 +3760,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="41">
+          <li class="never" data-hits="" data-linenumber="40">
             
             
 
@@ -3804,7 +3771,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="42">
+          <li class="never" data-hits="" data-linenumber="41">
             
             
 
@@ -3815,7 +3782,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="43">
+          <li class="never" data-hits="" data-linenumber="42">
             
             
 
@@ -3826,7 +3793,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="44">
+          <li class="never" data-hits="" data-linenumber="43">
             
             
 
@@ -3837,7 +3804,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="45">
+          <li class="never" data-hits="" data-linenumber="44">
             
             
 
@@ -3848,7 +3815,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="46">
+          <li class="never" data-hits="" data-linenumber="45">
             
             
 
@@ -3859,7 +3826,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="47">
+          <li class="never" data-hits="" data-linenumber="46">
             
             
 
@@ -3870,7 +3837,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="48">
+          <li class="never" data-hits="" data-linenumber="47">
             
             
 
@@ -3881,7 +3848,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="49">
+          <li class="never" data-hits="" data-linenumber="48">
             
             
 
@@ -3892,7 +3859,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="50">
+          <li class="never" data-hits="" data-linenumber="49">
             
             
 
@@ -3903,7 +3870,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="51">
+          <li class="never" data-hits="" data-linenumber="50">
             
             
 
@@ -3914,7 +3881,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="52">
+          <li class="never" data-hits="" data-linenumber="51">
             
             
 
