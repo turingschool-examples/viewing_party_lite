@@ -12,8 +12,11 @@ class ViewingParty < ApplicationRecord
   end
 
   def movie_title
-    # binding.pry
     movie = MovieFacade.movie_id_search(movie_id)
     movie.title
+  end
+
+  def poster_path
+    
   end
 end

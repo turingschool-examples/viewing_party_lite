@@ -19,6 +19,12 @@ RSpec.describe ViewingParty, type: :model do
     expect(party1.movie_title).to eq('Spirited Away')
   end
 
+  it 'returns the poster of the movie through the id', :vcr do 
+    party1 = ViewingParty.create!(movie_id: 129, duration: 96, date: Date.new(2022,9,7), start_time: "16:00:00")
+
+    expect(party1.poster_path).to eq("/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg")
+  end
+
   it 'formats the date for the party' do
     party1 = ViewingParty.create!(movie_id: 129, duration: 96, date: Date.new(2022,9,7), start_time: "16:00:00")
 
