@@ -1,11 +1,17 @@
+<p><%= button_to "Discover Movies", "/user/#{@user.id}/discover", method: :get %></p>
+
+
 <% if @top_movies.nil? %>
+  <h2><strong>Search Results</h2>
     <% @search_results.each do |movie| %>
-      <h3><%= movie.title %></h3>
+      <h3><%= link_to "#{movie.title}", user_movie_path(user_id: @user.id, id: movie.movie_id)%></h3>
+    
       <p>Vote Average: <%= movie.vote_average %></p>
     <% end %>
 <% else %>
+  <h2><strong>Top Rated Movies</h2>
   <% @top_movies.each do |movie| %>
-    <h3><%= movie.title %></h3>
+      <h3><%= link_to "#{movie.title}", user_movie_path(user_id: @user.id, id: movie.movie_id) %></h3>
     <p>Vote Average: <%= movie.vote_average %></p>
   <% end %>
 <% end %>
