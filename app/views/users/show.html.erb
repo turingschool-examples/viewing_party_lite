@@ -8,7 +8,7 @@
     <%@user.viewing_parties.each do |party|%>
     <div id="viewing-party<%= party.id%>">
         <%= image_tag("https://image.tmdb.org/t/p/w185#{party.movie.image_uri}")%>
-        <p><b><%= party.movie.title %></b></p>
+        <p><b><%= link_to "#{party.movie.title}", user_movie_path(@user.id, party.movie.id) %> </b></p>
         <p><%= party.formatted_date %></p>
         <p><%= party.formatted_time %></p>
        <% if @user.is_host?(party.id)%>

@@ -44,6 +44,20 @@ describe 'user show page (dashboard)' do
     expect(page).to_not have_content(party3.movie.title)
   end
 
+  it  'links to each movies details page', :vcr do 
+  party1 = ViewingParty.create!(date: Date.today, start_time: Time.now, duration: 180, movie_id: 120)
+
+  user_party1 = UserViewingParty.create!(user: @user1, viewing_party: party1, hosting: true)
+
+  visit user_path(@user1)
+
+  within "#viewing-party#{party1.id}" do
+    click_link(party1.movie.title)
+    expect(current_path).to eq(user_movie_path(@user1.id, party1.movie.id))
+  end
+
+  end
+
   it 'displays whether the user is the host or an attendee', :vcr do
     party1 = ViewingParty.create!(date: Date.today, start_time: Time.now, duration: 180, movie_id: 120)
     party2 = ViewingParty.create!(date: Date.today, start_time: Time.now, duration: 80, movie_id: 1362)
