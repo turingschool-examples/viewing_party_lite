@@ -18,7 +18,7 @@ class Movie
   end
 
   def genres
-    @genre.map { |g| g[:name] }.join(",")
+    @genre.map { |g| g[:name] }.join(", ")
   end
 
   def runtime_formatted
