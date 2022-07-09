@@ -7,8 +7,7 @@
 <p>Title: <%= @movie.title %></p>
 <p>Vote Average: <%= @movie.vote_average %></p>
 <p>Runtime: <%= "#{@movie.runtime / 60}h #{@movie.runtime % 60}min" %></p>
+<p>Summary: <%= @movie.summary %></p>
 <p>Genres: <% @movie.genres.each do |genre| %>
               <%= genre[:name] %>
-            <% end %>
-
-<p>Summary: <%= @movie.summary %></p><hr>
+            <% end %></p>
