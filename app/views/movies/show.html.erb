@@ -1,0 +1,21 @@
+<h2><%= @movie.title %>'s Details Page</h2>
+
+<%= button_to "Return to Discover", "/users/#{@user.id}/discover", method: :get %>
+<%= button_to "Create Viewing Party", "/users/#{@user.id}/movies/#{@movie.id}/viewing-party/new", method: :get %><br><br>
+
+<img  src="http://image.tmdb.org/t/p/w500/<%=@image.file_path%>" width="400" height="500"><br><br>
+
+<b>Title:</b> <%= @movie.title %><br>
+<b>Vote Average:</b> <%= @movie.vote_average %><br>
+<b>Runtime:</b> <%= @movie.format_runtime(@movie.runtime) %><br>
+<b>Summary:</b> <%= @movie.overview %><br>
+<b>Genre(s):</b> <%= @movie.format_genres(@movie.genres).join(", ") %><br>
+<b>Cast:</b> <% @credits.cast.first(10).map do |actor| %>
+            <ul><%= actor[:name] %></ul>
+      <% end %><br>
+
+<b>Number of Reviews:</b> <%= @reviews.count %><br>
+<h3>Reviews:</h3> <% @reviews.each do |review| %>
+            <p><b>Author:</b> <%= review.author %><br>
+            <b>Content:</b> <%= review.content %></p>
+          <% end %>

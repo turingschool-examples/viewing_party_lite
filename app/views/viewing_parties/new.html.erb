@@ -1,0 +1,11 @@
+<%= form_with url: "/users/#{@user.id}/movies/#{@movie.id}", method: :post, local: true do |form| %>
+  <%= form.label :duration %>
+  <%= form.number_field :duration, min: @movie.runtime, max:1000 %>
+
+  <%= form.label :start_time %>
+  <%= form.datetime_local_field :start_time %>
+
+  <%= form.collection_check_boxes :invite_users, User.where.not(id: @user.id).order(:name), :id, :name %></br>
+
+  <%= form.submit "Submit" %>
+<% end %>
