@@ -17,4 +17,9 @@
     <h3>Summary</h3>
     <p><%= @movie.overview %></p>
   </div>
+  <div class="cast">
+    <% @cast.each do |cast_info| %>
+      <p><%= cast_info.name %> as <%= cast_info.character %></p>
+    <% end %>
+  </div>
 </center>
