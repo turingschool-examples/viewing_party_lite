@@ -20,5 +20,12 @@ class MoviesFacade
     Movie.new(movie)
   end
 
-  def movie_reviews; end
+  def self.movie_reviews(movie_id)
+    review_array = []
+    movie_reviews = MoviesService.get_movie_reviews(movie_id)
+    movie_reviews.each do |result|
+      review_array << MovieReview.new(result)
+    end
+    review_array
+  end
 end
