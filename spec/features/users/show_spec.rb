@@ -33,7 +33,7 @@ RSpec.describe 'User Dashboard Page', type: :feature do
   end
 
   describe 'viewing parties section' do 
-    it 'shows the movie attributes' do 
+    it 'shows the movie attributes', :vcr do 
       user1 = User.create!(name: 'Parker', email: 'mangaforever@hootube.net')
       user2 = User.create!(name: 'Lola', email: 'lola@example.com')
 
@@ -52,8 +52,7 @@ RSpec.describe 'User Dashboard Page', type: :feature do
         expect(page).to_not have_content('Thor Ragnarok')
         click_link 'Spirited Away'
       end
-      expect(current_path).to eq(user_movie_path(user1.id, 129))
-
+      expect(current_path).to eq(user_movie_path(user1.id, party1.movie_id))
     end
   end
 end

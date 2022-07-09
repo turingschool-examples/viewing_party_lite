@@ -2,31 +2,33 @@ require 'rails_helper'
 
 RSpec.describe MovieService do
   describe 'methods for service' do
-    it 'returns movie search', :vcr do
-      movie = MovieService.all_movie_id_search(238)
+    it 'returns movie search' do
+      VCR.use_cassette("MovieService") do 
+        movie = MovieService.all_movie_id_search(238)
 
-      expect(movie).to be_a(Hash)
+        expect(movie).to be_a(Hash)
 
-      expect(movie).to have_key(:id)
-      expect(movie[:id]).to be_a(Integer)
+        expect(movie).to have_key(:id)
+        expect(movie[:id]).to be_a(Integer)
 
-      expect(movie).to have_key(:title)
-      expect(movie[:title]).to be_a(String)
+        expect(movie).to have_key(:title)
+        expect(movie[:title]).to be_a(String)
 
-      expect(movie).to have_key(:runtime)
-      expect(movie[:runtime]).to be_a(Integer)
+        expect(movie).to have_key(:runtime)
+        expect(movie[:runtime]).to be_a(Integer)
 
-      expect(movie).to have_key(:vote_average)
-      expect(movie[:vote_average]).to be_a(Float)
+        expect(movie).to have_key(:vote_average)
+        expect(movie[:vote_average]).to be_a(Float)
 
-      expect(movie).to have_key(:genres)
-      expect(movie[:genres]).to be_an(Array)
+        expect(movie).to have_key(:genres)
+        expect(movie[:genres]).to be_an(Array)
 
-      expect(movie).to have_key(:overview)
-      expect(movie[:overview]).to be_a(String)
-      
-      expect(movie).to have_key(:poster_path)
-      expect(movie[:poster_path]).to be_a(String)
+        expect(movie).to have_key(:overview)
+        expect(movie[:overview]).to be_a(String)
+        
+        expect(movie).to have_key(:poster_path)
+        expect(movie[:poster_path]).to be_a(String)
+      end 
     end
 
     it 'returns cast', :vcr do
