@@ -52,11 +52,11 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 a9a3eef6ee6df44793fb3d5e366a7238.cloudfront.net (CloudFront)
+      - 1.1 6bddabf0adf0131ec8169647c939d30c.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - ORD58-P1
       X-Amz-Cf-Id:
-      - NfiVEk6C-u7xwwFfZPNHNX1s6WKDrckUOh6ZyXHL-vpk3KQ8xuz1nw==
+      - f46M2LEY3vyrHIyqhdgLhvhazaAlXqEjPKT2orRK1FnfC3arKkBxVg==
       Age:
       - '3967'
     body:
