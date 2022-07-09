@@ -1,9 +1,8 @@
 <h2> <%= @user.name %>'s Discover Page </h2>
 
-
 <br>
 <div align="center" id="top_rated_movies">
-   <%= button_to("Discover Top Rated Movies", user_movies_path(@user), params: {query: "top_rated"}, method: :get) %>
+  <%= button_to "Discover Top Rated Movies", user_movies_path(@user.id), method: :get, params: {q: 'top%20rated'} %>
 </div>
 <br>
 <br>

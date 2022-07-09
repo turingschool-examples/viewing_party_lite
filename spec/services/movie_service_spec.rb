@@ -51,5 +51,17 @@ RSpec.describe MovieService do
       expect(reviews[:results].first).to have_key(:content)
       expect(reviews[:results].first[:content]).to be_a(String)
     end
+
+    it 'retrieves data and parses response', :vcr do
+      top_rated = MovieService.find_top_rated
+
+      expect(top_rated).to be_a(Hash)
+      expect(top_rated[:results]).to be_a(Array)
+      movie = top_rated[:results].first
+
+      expect(movie).to include(:title, :vote_average)
+      expect(movie[:title]).to be_a(String)
+      expect(movie[:vote_average]).to be_a(Float)
+    end
   end
 end
