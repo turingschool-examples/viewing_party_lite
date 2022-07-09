@@ -17,8 +17,13 @@
   require 'webmock/rspec'
  WebMock.disable_net_connect!
 
-SimpleCov.start 'rails'
-SimpleCov.add_filter ['spec', 'config']
+SimpleCov.start 'rails' do 
+  add_filter ['spec', 'config']
+  add_filter '/app/channels/'
+  add_filter '/app/jobs/'
+  add_filter  '/app/mailers/'
+end 
+
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
