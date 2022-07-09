@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find(params[:user_id])
+    @user = User.find(params[:id])
   end
 
   def discover; end
@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       flash[:notice] = "Welcome #{user.name}"
-      redirect_to "/users/#{user.id}/dashboard"
+      redirect_to user_path(user.id)
     else
       flash[:alert] = 'Could not create user, email must be unique.'
       redirect_to register_path
