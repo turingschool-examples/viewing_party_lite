@@ -10,4 +10,10 @@ class ViewingParty < ApplicationRecord
   def formatted_time
     start_time.strftime("%l:%M %p")
   end
+
+  def movie_title
+    # binding.pry
+    movie = MovieFacade.movie_id_search(movie_id)
+    movie.title
+  end
 end
