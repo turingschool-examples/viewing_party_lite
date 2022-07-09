@@ -36,4 +36,19 @@ RSpec.describe ViewingParty, type: :model do
 
     expect(party1.formatted_date).to eq("Sep 7, 2022")
   end
+
+  it 'can identify the host' do 
+    user1 = User.create!(name: 'Parker', email: 'mangaforever@hootube.net')
+    user2 = User.create!(name: 'Lola', email: 'lola@example.com')
+    user3 = User.create!(name: 'Squiggles', email: 'goblindog@dogsshouldbeabletovote.org')
+
+    party1 = ViewingParty.create!(movie_id: 129, duration: 96, date: Date.new(2022,9,7), start_time: "16:00:00")
+
+    user_viewing1 = UserViewingParty.create!(user_id: user1.id, viewing_party_id: party1.id, host: false)
+    user_viewing2 = UserViewingParty.create!(user_id: user2.id, viewing_party_id: party1.id, host: false)
+    user_viewing3 = UserViewingParty.create!(user_id: user3.id, viewing_party_id: party1.id, host: true)
+
+    expect(party1.host).to eq('Squiggles')
+    expect(party1.host).to_not eq('Parker')
+  end
 end

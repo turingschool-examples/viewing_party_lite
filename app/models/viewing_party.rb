@@ -24,4 +24,8 @@ class ViewingParty < ApplicationRecord
     movie = MovieFacade.movie_id_search(movie_id)
     movie.poster
   end
+
+  def host
+    users.where(user_viewing_parties: {host: true}).pluck(:name).join
+  end
 end
