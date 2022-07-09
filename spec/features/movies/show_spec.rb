@@ -29,10 +29,11 @@ RSpec.describe "Movies Detail/Show Page" do
     expect(page).to have_content("Vote Average: 8.4")
     expect(page).to have_content("Runtime: 139")
     expect(page).to have_content("Description: A ticking-time-bomb insomniac and a slippery soap salesman")
-    # expect(page).to have_content("Cast Members: Edward Norton, Brad Pitt, Helena Bonham Carter")
-    # expect(page).to have_content("Total Reviews: 7")
-    # expect(page).to have_content("Author: Goddard")
-    # expect(page).to have_content("Pretty awesome movie.  It shows what one crazy person can convince other crazy people to do")
+    expect(page).to have_content("Cast Members:")
+    expect(page).to have_content("Edward Norton, Brad Pitt, Helena Bonham Carter")
+    expect(page).to have_content("Total Reviews: 7")
+    expect(page).to have_content("Author: Goddard")
+    expect(page).to have_content("Pretty awesome movie. It shows what one crazy person can convince other crazy people to do")
 
 
     expect(page).to_not have_content("Christina Cabot")
