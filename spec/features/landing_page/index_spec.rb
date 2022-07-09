@@ -16,4 +16,18 @@ RSpec.describe LandingPage: :Index do
 
     expect(current_path).to eq('/register')
   end
+
+  it 'contains a list of all users that link to the users show page' do
+    user1 = User.create!(name: 'Jim', email: 'Jimmyb@gmail.com')
+    user2 = User.create!(name: 'John', email: 'johnnybgud@gmail.com')
+
+    visit root_path
+
+    expect(page).to have_link("Jim's Dashboard")
+    expect(page).to have_link("John's Dashboard")
+
+    click_link "Jim's Dashboard"
+
+    expect(current_path).to eq("/users/#{user1.id}/dashboard")
+  end
 end
