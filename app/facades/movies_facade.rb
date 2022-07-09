@@ -28,4 +28,11 @@ class MoviesFacade
     end
     review_array
   end
+
+  def self.ten_movie_cast(movie_id)
+    movie_cast = MoviesService.get_movie_cast(movie_id)
+    movie_cast.map do |member|
+      MovieCastMember.new(member)
+    end[0..9]
+  end
 end
