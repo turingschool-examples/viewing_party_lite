@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'User Movies Show Page' do
-  it 'has a button to create a viewing party' do
+  it 'has a button to create a viewing party', :vcr do
     user = User.create!(name: 'User', email: 'user@email.com')
     movie = MoviesFacade.movie(550)
 
@@ -12,7 +12,7 @@ RSpec.describe 'User Movies Show Page' do
     expect(current_path).to eq new_user_movie_viewing_party_path(user_id: user.id, movie_id: movie.movie_id)
   end
 
-  it 'has a button to return to discover page' do
+  it 'has a button to return to discover page', :vcr do
     user = User.create!(name: 'User', email: 'user@email.com')
     movie = MoviesFacade.movie(550)
     visit user_movie_path(user_id: user.id, id: movie.movie_id)
@@ -21,7 +21,7 @@ RSpec.describe 'User Movies Show Page' do
     expect(current_path).to eq("/user/#{user.id}/discover")
   end
 
-  it 'displays movie attributes' do
+  it 'displays movie attributes', :vcr do
     user = User.create!(name: 'User', email: 'user@email.com')
     movie = MoviesFacade.movie(550)
 
@@ -33,7 +33,7 @@ RSpec.describe 'User Movies Show Page' do
     expect(page).to have_content('Summary Description: "A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground "fight clubs" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion."')
   end
 
-  it 'displays the first ten cast members' do
+  it 'displays the first ten cast members', :vcr do
     user = User.create!(name: 'User', email: 'user@email.com')
     movie = MoviesFacade.movie(550)
 
@@ -55,7 +55,7 @@ RSpec.describe 'User Movies Show Page' do
     end
   end
 
-  it 'displays the review count' do
+  it 'displays the review count', :vcr do
     user = User.create!(name: 'User', email: 'user@email.com')
     movie = MoviesFacade.movie(550)
 
@@ -64,7 +64,7 @@ RSpec.describe 'User Movies Show Page' do
     expect(page).to have_content('Total Reviews: 7')
   end
 
-  it "displays the review author's name and review content" do
+  it "displays the review author's name and review content", :vcr do
     user = User.create!(name: 'User', email: 'user@email.com')
     movie = MoviesFacade.movie(550)
     review = MoviesFacade.movie_reviews(550)
