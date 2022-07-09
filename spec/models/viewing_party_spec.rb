@@ -25,9 +25,15 @@ RSpec.describe ViewingParty, type: :model do
     expect(party1.poster_path).to eq("/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg")
   end
 
-  it 'formats the date for the party' do 
+  it 'formats the time for the party' do 
     party1 = ViewingParty.create!(movie_id: 129, duration: 96, date: Date.new(2022,9,7), start_time: "16:00:00")
 
     expect(party1.formatted_time).to eq(" 4:00 PM")
+  end
+
+  it 'formats the date for the party' do 
+    party1 = ViewingParty.create!(movie_id: 129, duration: 96, date: Date.new(2022,9,7), start_time: "16:00:00")
+
+    expect(party1.formatted_date).to eq("Sep 7, 2022")
   end
 end

@@ -54,5 +54,17 @@ RSpec.describe 'User Dashboard Page', type: :feature do
       end
       expect(current_path).to eq(user_movie_path(user1.id, party1.movie_id))
     end
+
+    it 'shows the party attributes', :vcr do 
+      user1 = User.create!(name: 'Parker', email: 'mangaforever@hootube.net')
+      party1 = ViewingParty.create!(movie_id: 129, duration: 96, date: Date.new(2022,9,7), start_time: "16:00:00")
+      user_viewing1 = UserViewingParty.create!(user_id: user1.id, viewing_party_id: party1.id, host: false)
+
+      visit user_path(user1.id)
+      save_and_open_page
+      within '.invites' do 
+        expect(page).to have_content("Date: Sep 7, 2022")
+      end
+    end
   end
 end
