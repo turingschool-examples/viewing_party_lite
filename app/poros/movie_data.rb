@@ -5,9 +5,7 @@ class MovieData
               :genres,
               :summary,
               :cast,
-              :review_count,
-              :review_authors,
-              :review_author_details
+              :reviews
 
   def initialize(movie_data)
     @name = movie_data[:title]
@@ -15,9 +13,7 @@ class MovieData
     @runtime = movie_data[:runtime]
     @genres = movie_data[:genres]
     @summary = movie_data[:overview]
-    @cast = movie_data[:cast]
-    @review_count = movie_data[:reviews]
-    @review_authors = movie_data[:review_authors]
-    @review_author_details = movie_data[:review_author_details]
+    @cast = movie_data[:credits]
+    @reviews = movie_data[:reviews]
   end
 end
