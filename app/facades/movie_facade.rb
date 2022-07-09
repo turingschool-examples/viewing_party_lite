@@ -18,4 +18,23 @@ class MovieFacade
       end.flatten
     end
   end
+
+  def self.find_movie(id)
+    json = MovieService.movie_lookup(id)
+    Movie.new(json)
+  end
+
+  def self.find_cast(id)
+    json = MovieService.cast_lookup(id)
+    json[:cast].map do |crew|
+      MovieCast.new(crew)
+    end[0..9]
+  end
+
+  def self.find_review(id)
+    json = MovieService.review_lookup(id)
+    json[:results].map do |critiques|
+      MovieReview.new(critiques)
+    end 
+  end
 end

@@ -6,4 +6,10 @@ class UserMoviesController < ApplicationController
       @search_movies = MovieFacade.search_by_keyword(params[:q])
     end
   end
+
+  def show
+    @movie = MovieFacade.find_movie(params[:id])
+    @cast = MovieFacade.find_cast(params[:id])
+    @review = MovieFacade.find_review(params[:id])
+  end
 end
