@@ -7,9 +7,9 @@ RSpec.describe 'User Movies Index Page' do
     visit "user/#{user.id}/discover"
 
     click_button('Discover Top Rated Movies')
-    expect(page).to have_content('The Shawshank Redemption')
+    expect(page).to have_link('The Shawshank Redemption')
     expect(page).to have_content('Vote Average: 8.7')
-    expect(page).to have_content("Schindler's List")
+    expect(page).to have_link("Schindler's List")
     expect(page).to have_content('Vote Average: 8.6')
   end
 
