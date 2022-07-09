@@ -1,0 +1,14 @@
+<p><div class="container" align="center">
+  <%=button_to "Create Viewing Party for #{@movie.title}", new_user_movie_viewing_party_path(@user.id, @movie.id), method: :get %>
+  <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %>
+</div></p>
+
+<h3>Movie Details</h3>
+<p>Title: <%= @movie.title %></p>
+<p>Vote Average: <%= @movie.vote_average %></p>
+<p>Runtime: <%= "#{@movie.runtime / 60}h #{@movie.runtime % 60}min" %></p>
+<p>Genres: <% @movie.genres.each do |genre| %>
+              <%= genre[:name] %>
+            <% end %>
+
+<p>Summary: <%= @movie.summary %></p><hr>
