@@ -1,21 +1,29 @@
-<h3> <%= @user.name %>'s Dashboard </h3>
-<hr>
-
-<h5> Viewing Parties as Guest </h5>
-<h6> image goes here </h6>
-<h6>Title: </h6>
-<h6> When: </h6>
-<h6> Host: </h6>
-<h6> Guests: </h6>
-<hr>
-
-<h5> Viewing Parties as Host </h5>
-<h6> image goes here </h6>
-<h6>Title: </h6>
-<h6> When: </h6>
-<h6> Host: </h6>
-<h6> Guests: </h6>
+<h3>
+  <%= @user.name %>'s Dashboard
+</h3>
 <hr>
 
 <p type="button" class="btn btn-outline-primary"><%= link_to "Discover Movies", user_movies_discover_path(@user) %></p>
 <hr>
+<div class="card-group">
+  <% @viewing_parties.each do |party| %>
+
+    <div class="card text-center" style="width: 18rem;">
+
+      <img src="https://image.tmdb.org/t/p/w500<%= party[:movie].image %>" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= party[:movie].title%></h5>
+        <hr>
+        <p class="card-text"><%= party[:party].date.strftime("%B %d, %Y") %></p>
+        <p class="card-text"><%= party[:party].time %></p>
+        <hr>
+        <% if party[:host] == false %>
+          <p class="card-text">Invited</p>
+        <% else %>
+          <p class="card-text">Hosting</p>
+        <% end %>
+      </div>
+    </div>
+
+  <% end %>
+</div>
