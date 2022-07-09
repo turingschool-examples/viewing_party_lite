@@ -34,5 +34,14 @@ RSpec.describe 'MovieService' do
       expect(fight_club[:title]).to be_a(String)
       expect(fight_club[:vote_average]).to be_a(Float)
     end
+
+    it "gets reviews for specific movie", :vcr do
+      fight_club_reviews = MovieService.movie_reviews(550)
+
+      expect(fight_club_reviews).to be_a Array
+      review = fight_club_reviews.first
+      expect(review[:author]).to be_a(String)
+      expect(review[:content]).to be_a(String)
+    end
   end
 end
