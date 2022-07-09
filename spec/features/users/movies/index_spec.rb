@@ -19,15 +19,12 @@ RSpec.describe 'User Movies Index Page' do
       visit "user/#{user.id}/discover"
       fill_in 'search', with: 'Star Wars'
       click_on 'Search'
-
+      
       expect(page).to have_content("Star Wars")
       expect(page).to have_content("Vote Average: 8.2")
       expect(page).to have_content("Star Wars: The Force Awakens")
       expect(page).to have_content("Vote Average: 7.3")
       expect(page).to have_content("Star Wars: The Last Jedi")
       expect(page).to have_content("Vote Average: 6.9")
-  end
-      
-    
-  end
+  end    
 end
