@@ -8,6 +8,10 @@ class MovieService
       call_api("/3/search/movie?api_key=#{ENV['api_key']}&query=#{movie_name}")
     end
 
+    def get_movie_info(movie_id)
+      call_api("/3/movie/#{movie_id}?api_key=#{ENV['api_key']}")
+    end
+
   private
 
     def call_api(path)
