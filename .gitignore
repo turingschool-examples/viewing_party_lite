@@ -26,8 +26,8 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 Gemfile.lock
-./coverage
-coverage
+/coverage.data
+/coverage/
 
 # Ignore application configuration
 /config/application.yml

@@ -1,4 +1,10 @@
 class MovieService
+
+  def self.movie_data(id)
+    response = conn.get("/3/movie/#{id}?append_to_response=credits,reviews")
+    get_json(response)
+  end
+
   def self.find_movies(title, page)
     response = conn.get("/3/search/movie?&query=#{title}&page=#{page}")
     get_json(response)
@@ -18,4 +24,5 @@ class MovieService
   def self.get_json(response)
     JSON.parse(response.body, symbolize_names: true)
   end
+
 end
