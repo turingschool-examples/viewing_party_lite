@@ -45,7 +45,7 @@ RSpec.describe 'new viewing party page' do
     click_button 'Create Party'
     expect(current_path).to eq("/users/#{@user1.id}")
     expect(page).to have_content(@movie.title)
-    expect(page).to have_content('Hosting')
+    expect(page).to have_content('You are hosting!')
   end
   it 'does not allow duration to be filled in with value less than movie runtime', :vcr do
     visit "/users/#{@user1.id}/movies/#{@movie.id}/viewing_party/new"

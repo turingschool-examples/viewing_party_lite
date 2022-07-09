@@ -44,6 +44,19 @@ describe 'user show page (dashboard)' do
     expect(page).to_not have_content(party3.movie.title)
   end
 
+  it 'links to each movies details page', :vcr do
+    party1 = ViewingParty.create!(date: Date.today, start_time: Time.now, duration: 180, movie_id: 120)
+
+    user_party1 = UserViewingParty.create!(user: @user1, viewing_party: party1, hosting: true)
+
+    visit user_path(@user1)
+
+    within "#viewing-party#{party1.id}" do
+      click_link(party1.movie.title)
+      expect(current_path).to eq(user_movie_path(@user1.id, party1.movie.id))
+    end
+  end
+
   it 'displays whether the user is the host or an attendee', :vcr do
     party1 = ViewingParty.create!(date: Date.today, start_time: Time.now, duration: 180, movie_id: 120)
     party2 = ViewingParty.create!(date: Date.today, start_time: Time.now, duration: 80, movie_id: 1362)
@@ -57,11 +70,13 @@ describe 'user show page (dashboard)' do
     visit user_path(@user1)
 
     within "#viewing-party#{party1.id}" do
-      expect(page).to have_content('Hosting')
+      expect(page).to have_content('You are hosting!')
+      expect(page).to have_content('Dustin (hellfire@hawkins.edu)')
+      expect(page).to_not have_content('Jane (eleven@upsidedown.com)')
     end
 
     within "#viewing-party#{party2.id}" do
-      expect(page).to have_content('Invited')
+      expect(page).to have_content('Dustin is hosting a party!')
     end
   end
 end

@@ -20,7 +20,7 @@ RSpec.describe User, type: :model do
         user2 = User.create!(name: 'Judy Garland', email: 'jgarland@gmail.com')
         user3 = User.create!(name: 'Fred Astaire', email: 'tapshoes@gmail.com')
 
-        expect(User.other_users(user1.id)).to eq([user2, user3])
+        expect(User.other_users(user1.id)).to match_array([user2, user3])
       end
     end
   end

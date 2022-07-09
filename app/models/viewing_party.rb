@@ -17,4 +17,9 @@ class ViewingParty < ApplicationRecord
   def formatted_time
     start_time.to_time.strftime('%l:%M %p')
   end
+
+  def host
+    host_id = user_viewing_parties.find_by(hosting: true).user_id
+    User.find(host_id)
+  end
 end
