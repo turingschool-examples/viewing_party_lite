@@ -28,4 +28,3 @@ RSpec.describe 'User Movies Index Page' do
     expect(page).to have_content('Vote Average: 6.9')
   end
 end
-
