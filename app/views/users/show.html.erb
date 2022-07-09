@@ -10,10 +10,8 @@
 <div class='invites'>
 <p></p><h4>My Invitations<h4>
 <% @user.not_hosting.each do |party| %>
-  <h3>Movie: <%= link_to "" %></h3>
-  <img src= <%= movie.poster%> alt="an image of the movie poster" style="width>
-    
-  <% end %>
+  <h3>Movie: <%= link_to "#{party.movie_title}", user_movie_path(@user.id, party.movie_id) %></h3>
+  <img src='image.tmdb.org/t/p/w500<%= party.poster_path %>' alt="the movie poster for <%= party.movie_title %>">
 <% end %>
 </div>
 

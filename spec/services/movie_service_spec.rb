@@ -24,6 +24,9 @@ RSpec.describe MovieService do
 
       expect(movie).to have_key(:overview)
       expect(movie[:overview]).to be_a(String)
+      
+      expect(movie).to have_key(:poster_path)
+      expect(movie[:poster_path]).to be_a(String)
     end
 
     it 'returns cast', :vcr do
