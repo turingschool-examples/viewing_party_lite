@@ -33,8 +33,16 @@ RSpec.describe "User Movie Results Page", type: :feature do
     end
   end
   describe 'search bar' do
-    it 'has multiple titles' do
-      
+    it 'returns matches and partial matches based off entered keyword', :vcr do
+      visit "/users/#{@user2.id}/discover"
+
+      fill_in(:q, with: 'castle')
+      click_button("Search by Movie Title")
+
+      expect(page).to have_content('Castle Freak')
+      expect(page).to have_content('Winter Castle')
+      expect(page).to have_content('The Glass Castle')
+      expect(page).to_not have_content('The Godfather')
     end
   end
 end
