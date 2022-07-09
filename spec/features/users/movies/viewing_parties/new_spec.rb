@@ -5,13 +5,12 @@ RSpec.describe 'Viewing Party New Page' do
     user = User.create!(name: 'User', email: 'user@email.com')
     movie = MoviesFacade.movie(550)
 
-    visit new_user_movie_viewing_party_path(user_id: user.id, movie_id: movie.id)
-
-    expect(page).to have_content('Title: Fight Club')
+    visit new_user_movie_viewing_party_path(user_id: user.id, movie_id: movie.movie_id)
+    expect(page).to have_content('Fight Club')
     expect(page).to have_content('Vote Average: 8.4')
     expect(page).to have_content('Runtime: 2:19')
     expect(page).to have_content('Genre: Drama')
-    expect(page).to have_content('Summary Description: "A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion."')
+    expect(page).to have_content('Summary Description: "A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground "fight clubs" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion."')
   end
 
   it 'displays the first ten cast members' do
