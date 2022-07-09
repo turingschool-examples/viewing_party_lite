@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    binding.pry
+    @movies = @user.parties.map { |party| MovieFacade.create_single_movie(party.movie_id) }
+    @images = @user.parties.map { |party| MovieFacade.create_single_movie_images(party.movie_id) }
   end
 
   def new

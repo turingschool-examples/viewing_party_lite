@@ -6,10 +6,13 @@
 <div class="invited">
   <% @user.parties.each do |party| %>
     <% if party.host != @user.id %>
-      <h3><%= link_to "#{party.movie}", "/users/#{@user.id}/movies/#{party.movie_id}" %></h3>
+    <% movie = @movies.find{ |movie| movie.id == party.movie_id } %>
+    <% image = @images.find{ |image| image.id == party.movie_id } %>
+      <h3><%= link_to "#{movie.title}", "/users/#{@user.id}/movies/#{party.movie_id}" %></h3>
+      <img  src="http://image.tmdb.org/t/p/w500/<%=image.file_path%>" width="40" height="50">
       Host: <%= party.host_name  %>
       <br>
-      <%= party.date %> <%= party.start_time %>
+      <%= party.start_time %>
       <br>
       <h4>Invited</h4>
       <ol>
@@ -30,9 +33,13 @@
 <div class="hosting">
   <% @user.parties.each do |party| %>
     <% if party.host == @user.id %>
-      <h3><%= link_to "#{party.movie}", "/users/#{@user.id}/movies/#{party.movie_id}" %></h3>
+    <% movie = @movies.find{ |movie| movie.id == party.movie_id } %>
+    <% image = @images.find{ |image| image.id == party.movie_id } %>
+      <h3><%= link_to "#{movie.title}", "/users/#{@user.id}/movies/#{party.movie_id}" %></h3>
       <br>
-      <%= party.date %> <%= party.start_time %>
+      <%# movie.title %>
+      <img  src="http://image.tmdb.org/t/p/w500/<%=image.file_path%>" width="40" height="50">
+      <%= party.start_time %>
       <br>
       <h4>Invited</h4>
       <ol>
