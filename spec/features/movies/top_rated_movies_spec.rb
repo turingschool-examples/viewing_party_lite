@@ -6,7 +6,9 @@ RSpec.describe 'Top Rated Movies' do
     visit user_movies_discover_path(user)
 
     click_button 'Top Rated Movies'
-    
+
+
+
     expect(page.status_code).to eq 200
     within "#movie-0" do
       expect(page).to have_link("Shawshank Redemption")
@@ -15,6 +17,10 @@ RSpec.describe 'Top Rated Movies' do
     within "#movie-2" do
       expect(page).to have_link("The Godfather")
       expect(page).to have_content("Average Rating: 8.7")
+    end
+    within "#movie-39" do
+      expect(page).to have_link("Hotarubi no Mori e")
+      expect(page).to have_content("Average Rating: 8.4")
     end
   end
 end

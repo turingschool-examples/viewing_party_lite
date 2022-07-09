@@ -1,9 +1,14 @@
 <%= link_to "Discover", user_movies_discover_path(params[:user_id]) %>
-<h1>Top Rated Movies</h1>
 
-<% @movies.each_with_index do |movie, index| %>
-  <div id=<%="movie-#{index}"%>>
-    <%= link_to movie[:title], user_movie_path(params[:user_id], movie[:id]) %>
-    Average Rating: <%= movie[:vote_average] %>
-  </div>
+<% if params[:query] %>
+  <h1>Search Results</h1>
+<% else %>
+  <h1>Top Rated Movies</h1>
 <% end %>
+  <% @movies.each_with_index do |movie, index| %>
+    <div id=<%="movie-#{index}"%>>
+      <%= link_to movie[:title], user_movie_path(params[:user_id], movie[:id]) %>
+      Average Rating: <%= movie[:vote_average] %>
+    </div>
+  <% end %>
+
