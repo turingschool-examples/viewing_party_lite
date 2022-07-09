@@ -32,4 +32,15 @@ RSpec.describe MovieService do
       expect(first_movie).to have_key :vote_average
     end
   end
+
+  describe 'movie details endpoint' do
+    it 'can get movie info JSON and parse into hash', :vcr do
+      response = MovieService.get_movie_info(278)
+      expect(response).to be_a Hash
+      expect(response[:poster_path]).to be_a String
+
+      expect(response).to have_key :poster_path
+      expect(response).to have_key :runtime
+    end
+  end
 end
