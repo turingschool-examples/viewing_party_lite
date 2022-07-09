@@ -28,4 +28,17 @@ RSpec.describe 'MovieFacade' do
     expect(movie.title).to eq("Fight Club")
     expect(movie.runtime).to eq(139)
   end
+
+  it "can retrieve from movie cast members", :vcr do
+    cast = MovieFacade.movie_cast(550)
+    expect(cast).to be_a Array
+
+    expect(cast.length).to eq(10)
+  end
+
+  it "can retrieve from movie reviews", :vcr do
+    review = MovieFacade.movie_reviews(550)
+    expect(review).to be_a Array
+    expect(review.first.author).to eq("Goddard")
+  end
 end
