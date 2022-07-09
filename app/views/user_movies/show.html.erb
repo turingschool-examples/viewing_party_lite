@@ -1,16 +1,18 @@
-<h2 align='center'><%= @movie.title %></h2>
+<center>
+<h2><%= @movie.title %></h2>
 <%= render partial: 'partials/discover_button' %>
-<div align='center'><%= button_to "Create a Viewing Party", "/users/#{@user.id}/movies/#{@movie.id}/viewing_party/new", method: :get %></div>
+<div><%= button_to "Create a Viewing Party", "/users/#{@user.id}/movies/#{@movie.id}/viewing_party/new", method: :get %></div>
+</center>
 <h3>Vote Average: <%= @movie.vote_average %>  Runtime: <%= @movie.runtime %>  Genre(s): <%= @movie.genres.map{ |genre| genre[:name]}.join(", ") %></h3>
 <h3>Summary</h3>
 <p><%= @movie.overview %><p>
-<h3>Cast</h3>
-<div>
+<div id="cast">
+  <h3>Cast</h3>
   <% @cast.each do |actor| %>
     <%= actor[:name] %> / <%= actor[:character] %>
     <br>
   <% end %>
-<div>
+</div>
 <h3><%= @movie.reviews.length %> Reviews</h3>
 <% @movie.reviews.each do |review| %>
   <h4>Author: <%= review[:author] %></h4>

@@ -37,11 +37,15 @@ RSpec.describe 'movie details page' do
 
     expect(page).to have_content('Summary')
     expect(page).to have_content(@movie.overview)
-    expect(page).to have_content('Cast')
-    expect(page).to have_content(@movie.cast.first[:name])
-    expect(page).to have_content(@movie.cast.first[:character])
-    expect(page).to have_content(@movie.cast[9][:name])
-    expect(page).to have_content(@movie.cast[9][:character])
+    within "#cast" do
+      expect(page).to have_content('Cast')
+      expect(page).to have_content(@movie.cast.first[:name])
+      expect(page).to have_content(@movie.cast.first[:character])
+      expect(page).to have_content(@movie.cast[9][:name])
+      expect(page).to have_content(@movie.cast[9][:character])
+      expect(page).to_not have_content(@movie.cast[10][:name])
+      expect(page).to_not have_content(@movie.cast[10][:character])
+    end
   end
 
   it 'displays reviews and their authors and the total count of reviews', :vcr do
@@ -49,8 +53,8 @@ RSpec.describe 'movie details page' do
 
     expect(page).to have_content("#{@movie.reviews.count} Reviews")
     expect(page).to have_content("Author: #{@movie.reviews.first[:author]}")
-    # expect(page).to have_content(@movie.reviews.first[:content])
+    expect(page).to have_content(@movie.reviews.first[:content][0..20])
     expect(page).to have_content("Author: #{@movie.reviews.last[:author]}")
-    # expect(page).to have_content(@movie.reviews.last[:content])
+    expect(page).to have_content(@movie.reviews.last[:content][0..20])
   end
 end
