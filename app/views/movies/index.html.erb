@@ -1,5 +1,5 @@
 <div class="topMovies">
 <% @movies.each do |movie| %>
-  <p><%= movie.title %></p>
+  <p class='movies'><%= link_to movie.title, user_movie_path(@user.id, movie.id) %></p>
 <% end %>
 </div>

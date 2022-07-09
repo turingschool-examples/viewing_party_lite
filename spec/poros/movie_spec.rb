@@ -27,5 +27,6 @@ RSpec.describe Movie do
     expect(movie).to be_an_instance_of(Movie)
     expect(movie.title).to eq(data[:title])
     expect(movie.vote_average).to eq(data[:vote_average])
+    expect(movie.id).to eq(data[:id])
   end
 end
