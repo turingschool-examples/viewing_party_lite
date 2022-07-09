@@ -38,12 +38,12 @@ RSpec.describe 'User Dashboard Page', type: :feature do
       user2 = User.create!(name: 'Lola', email: 'lola@example.com')
 
       party1 = ViewingParty.create!(movie_id: 129, duration: 96, date: Date.new(2022,9,7), start_time: "16:00:00")
-      party1 = ViewingParty.create!(movie_id: 545611, duration: 175, date: Date.new(2023,4,4), start_time: "19:00:00")
+      party2 = ViewingParty.create!(movie_id: 545611, duration: 175, date: Date.new(2023,4,4), start_time: "19:00:00")
       party3 = ViewingParty.create!(movie_id: 284053, duration: 145, date: Date.new(2022,10,5), start_time: "17:30:00")
 
       user_viewing1 = UserViewingParty.create!(user_id: user1.id, viewing_party_id: party1.id, host: false)
-      user_viewing1 = UserViewingParty.create!(user_id: user1.id, viewing_party_id: party2.id, host: false)
-      user_viewing1 = UserViewingParty.create!(user_id: user2.id, viewing_party_id: party3.id, host: false)
+      user_viewing2 = UserViewingParty.create!(user_id: user1.id, viewing_party_id: party2.id, host: false)
+      user_viewing3 = UserViewingParty.create!(user_id: user2.id, viewing_party_id: party3.id, host: false)
 
       visit user_path(user1.id)
       within '.invites' do 

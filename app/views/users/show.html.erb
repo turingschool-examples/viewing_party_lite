@@ -9,6 +9,12 @@
 
 <div class='invites'>
 <p></p><h4>My Invitations<h4>
+<% @user.viewing_parties.each do |party| %>
+  <% if @user.host == false %>
+    <%= link_to "#{movie_id_search(party.movie_id).first.title}" %>
+    <%= movie poster %>
+  <% end %>
+<% end %>
 </div>
 
 <% flash.each do |type, msg| %>
