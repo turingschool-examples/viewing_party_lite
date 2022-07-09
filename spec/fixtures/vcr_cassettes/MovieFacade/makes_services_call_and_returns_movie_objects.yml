@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.themoviedb.org/3/search/movie?api_key=<movie_api_key>&language=en-US&page=1&query=Shawshank
+    uri: https://api.themoviedb.org/3/search/movie?api_key=<movie_api_key>&language=en-US&page=1&query=shawshank
     body:
       encoding: US-ASCII
       string: ''
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 08 Jul 2022 22:36:30 GMT
+      - Fri, 08 Jul 2022 22:36:19 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -52,13 +52,13 @@ http_interactions:
       Cdn-Requestpullcode:
       - '200'
       Cdn-Cachedat:
-      - 07/08/2022 22:36:30
+      - 07/08/2022 22:36:19
       Cdn-Edgestorageid:
       - '642'
       Cdn-Status:
       - '200'
       Cdn-Requestid:
-      - 5f7407a0dc8b1b296d6b3de7078bf91f
+      - 9424959f9b74c1b4752f2b70eb7be4ef
       Cdn-Cache:
       - MISS
     body:
@@ -81,5 +81,5 @@ http_interactions:
         Springs Eternal: A Look Back at The Shawshank Redemption","overview":"Documentary
         about the movie.","popularity":1.467,"poster_path":"/vdVab7yNvgYEMd8shCfy2D6nTMu.jpg","release_date":"2004-06-25","title":"Hope
         Springs Eternal: A Look Back at The Shawshank Redemption","video":false,"vote_average":7,"vote_count":1}],"total_pages":1,"total_results":3}'
-  recorded_at: Fri, 08 Jul 2022 22:36:30 GMT
+  recorded_at: Fri, 08 Jul 2022 22:36:19 GMT
 recorded_with: VCR 6.1.0

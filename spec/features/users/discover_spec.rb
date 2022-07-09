@@ -26,4 +26,13 @@ RSpec.describe 'Movies Discover Page', type: :feature do
     expect(current_path).to eq(user_movies_path("#{users[0].id}"))
     expect(page).to have_content('The Shawshank Redemption')
   end
+
+  it "can return nothing when search by title" do
+    visit user_discover_path("#{users[0].id}")
+    fill_in 'Movie Title', with: ""
+    click_button 'Search'
+
+    expect(current_path).to eq(user_movies_path("#{users[0].id}"))
+    expect(page).to have_content("0 Search Results")
+  end
 end
