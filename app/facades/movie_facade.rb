@@ -13,6 +13,15 @@ class MovieFacade
     Movie.new(movie)
   end
 
+  def self.movie_cast(movie_id)
+    movie = MovieService.cast_for_movie(movie_id)
+    # Movie.new(movie)
+  end
+
+  def self.movie_reviews(movie_id)
+    movie = MovieService.reviews_for_movie(movie_id)
+  end 
+
   # def self.movie_info(movie_id)
   # end
 end
