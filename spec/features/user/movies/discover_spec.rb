@@ -19,10 +19,11 @@ RSpec.describe "User discover page", type: :feature do
     expect(page).to have_button("Search by Movie Title")
   end
 
-  it 'button routes to movie results page' do
+  xit 'button routes to movie results page' do
     visit "/users/#{@user1.id}/discover"
 
     click_button("Discover Top Rated Movies")
-    save_and_open_page
+
+    expect(current_path).to eq("?")
   end
 end

@@ -14,10 +14,11 @@ RSpec.describe "User Movie Results Page", type: :feature do
     expect(page.all(".movie").count).to eq(20)
   end
 
-  # it 'has links to movie show pages', :vcr do
-  #   visit "/users/#{@user2.id}/discover"
-  #
-  #   click_button("Discover Top Rated Movies")
-  #
-  #
+  it 'has links to movie show pages', :vcr do
+    visit "/users/#{@user2.id}/discover"
+
+    click_button("Discover Top Rated Movies")
+
+  expect(page).to have_link("The Godfather")
+  end
 end
