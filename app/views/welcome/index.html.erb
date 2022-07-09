@@ -1,9 +1,9 @@
-<h1>Viewing Party</h1>
 
-<p><%= button_to "Create New User", '/register', method: :get, local: true %></p>
 
+<p style="text-align:center;"><%= button_to "Create New User", '/register', method: :get, local: true %></p><br>
+<p style="text-align:center;">Existing Users:</p>
 <div id="existingUsers">
   <% @users.each do |user| %>
-    <p><%= link_to "#{user.name}", user_path(id: user.id) %></p>
+    <p style="text-align:center;"><%= link_to "#{user.name}", user_path(id: user.id) %></p>
   <% end %>
 </div>
