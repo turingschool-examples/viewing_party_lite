@@ -12,6 +12,11 @@ class UsersController < ApplicationController
     redirect_to user_path(id: new_user.id)
   end
 
+  def discover
+    @user = User.find(params[:id])
+    # @top_rated_movies = TopMoviesFacade.top_rated_movies
+  end
+
   private
 
   def user_params
