@@ -29,7 +29,7 @@ RSpec.describe 'Discover Page', type: :feature do
 
     it 'has a Button to Search by Movie Title' do
       user1 = User.create!(name: 'Parker', email: 'mangaforever@hootube.net')
-      
+
       visit "/users/#{user1.id}/discover"
         within '.movie_search'
       expect(page).to have_button('Find Movies')
