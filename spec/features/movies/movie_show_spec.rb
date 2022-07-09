@@ -6,7 +6,7 @@ RSpec.describe "Movie show page" do
 
     expect(page).to have_content("Terminator 3: Rise of the Machines")
     expect(page).to have_content("6.1")
-    expect(page).to have_content("109")
+    expect(page).to have_content("1:49")
     expect(page).to have_content("Action")
     expect(page).to have_content("Thriller")
     expect(page).to have_content("Science Fiction")
@@ -17,11 +17,9 @@ RSpec.describe "Movie show page" do
     expect(page).to have_content("Number of Reviews: 3")
     expect(page).to have_content("Gimly")
     expect(page).to have_content("Ruuz")
-    expect(page).to have_content("/xUObnJSvHrFPsIpoDmb1jiQZLq7.jpg")
     expect(page).to have_content("Rating: 3.0")
     expect(page).to have_content("CinemaSerf")
     expect(page).to have_content("Geronimo1967")
-    expect(page).to have_content("/1kks3YnVkpyQxzw36CObFPvhL5f.jpg")
     expect(page).to have_content("Rating: 5.0")
   end
 end

@@ -1,16 +1,27 @@
+<%= link_to "Discover Page"  %>
+<%= link_to "Create Viewing Party" %><hr>
 <h1><%= @movie.name %></h1>
 Average Rating: <%= @movie.avg %><br>
-Runtime: <%= @movie.runtime %><br>
+
+Runtime: <%= (@movie.runtime)/60 %>:<%= (@movie.runtime) % 60 %><br>
+
 Genres: <% @movie.genres.each do |genre| %>
 <%= genre[:name] %>,
 <% end %><br>
+
 Description: <%= @movie.summary %><br>
+
 Cast: <% @movie.cast[:cast].take(10).each do |actor|%>
-  <%= actor[:name] %>,
-  <% end %><br>
+  <ul> <%= actor[:name] %></ul>
+  <% end %><br><br>
+
   Number of Reviews: <%= @movie.reviews[:results].count %><br><br>
+
+  <ul>
   <% @movie.reviews[:results].each do |review| %>
-  Review Author: <%= review[:author] %><br><br>
-  Review: <%= review[:content] %><br>
-  Review Author Details: <%= review[:author_details] %> <br>
+  <b>Review Author:</b> <%= review[:author] %><br><br>
+  Review: <%= review[:content] %><br><br>
+  Review Author Details: <ul> <li>Name: <%= review[:author_details][:name] %>,</li>
+    <li>Username: <%= review[:author_details][:username] %>,</li>  <li>Rating: <%= review[:author_details][:rating] %> </li> </ul><br><br><br>
   <% end %>
+  </ul>
