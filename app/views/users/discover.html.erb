@@ -7,7 +7,7 @@
 <br>
 <br>
 <div align="center" class="movie_search">
-  <%= form_with url: user_movies_path(@user.id), method: :get, params: {q: 'keyword'}, local: true do |f| %>
+  <%= form_with url: user_movies_path(@user.id), method: :get, local: true do |f| %>
     <%= f.hidden_field :query, value: "movie_search" %>
     <%= f.text_field :search, placeholder: "Search by movie title" %>
     <%= f.submit "Find Movies" %>
