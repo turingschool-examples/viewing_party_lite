@@ -6,8 +6,7 @@ class MoviesController < ApplicationController
       @movies = MovieFacade.all_movie_id_search(id)
     else
       @movies = MovieFacade.top_rated_array
-
-    binding.pry
+    end
   end
 
   def show

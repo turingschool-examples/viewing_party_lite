@@ -14,7 +14,7 @@ RSpec.describe 'Discover Page', type: :feature do
   end 
 
   describe 'top rated movies button' do 
-    it 'has button to discover top rated movies' do
+    it 'has button to discover top rated movies', :vcr do
       user1 = User.create!(name: 'Parker', email: 'mangaforever@hootube.net')
 
       visit user_discover_path(user1.id)
@@ -37,7 +37,7 @@ RSpec.describe 'Discover Page', type: :feature do
       end 
     end
 
-    it 'has a Button to Search by Movie Title' do
+    it 'has a Button to Search by Movie Title', :vcr do
       user1 = User.create!(name: 'Parker', email: 'mangaforever@hootube.net')
       
       visit user_discover_path(user1.id)

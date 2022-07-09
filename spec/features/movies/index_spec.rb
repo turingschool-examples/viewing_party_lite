@@ -36,7 +36,6 @@ RSpec.describe 'Movie Index Page', type: :feature do
       fill_in :search, with: 'Home'
       click_on 'Find Movies'
       expect(current_path).to eq(user_movies_path(user1.id))
-      save_and_open_page
     end
   end
 end
