@@ -1,0 +1,3 @@
+<p><%= button_to "Discover Top Rated Movies", "/user/#{@user.id}/discover", method: :get %></p>
+
+<p><%= button_to "Create Viewing Party", new_user_movie_viewing_party_path(movie_id: params[:id]), method: :get %></p>
