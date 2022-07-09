@@ -4,4 +4,10 @@ class MovieService < BaseService
     data = get_json(response)
     data[:results]
   end
+
+  def self.get_by_keyword(keywords)
+    response = conn.get("/3/search/movie?api_key=#{ENV['api_key']}&query=#{keywords}")
+    data = get_json(response)
+    data[:results]
+  end
 end
