@@ -4,8 +4,17 @@
 
   <div class="button">
     <%= button_to "Discover Page", "/users/#{params[:user_id]}/discover", method: :get %>
-  </div>
+  </div> <br>
   <div class="button">
     <%= button_to "Create Viewing Party for #{@movie.title}", "/users/#{params[:user_id]}/movies/#{@movie.id}/view_parties/new", method: :get %>
+  </div>
+
+  <div class="stats-bar">
+    <p>Vote Average: <%= @movie.vote_average %>&nbsp;&nbsp;&nbsp;&nbsp; Runtime: <%= @movie.runtime_formatted %>&nbsp;&nbsp;&nbsp;&nbsp; Genre(s): <%= @movie.genres %></p>
+  </div>
+
+  <div class="text_field">
+    <h3>Summary</h3>
+    <p><%= @movie.overview %></p>
   </div>
 </center>

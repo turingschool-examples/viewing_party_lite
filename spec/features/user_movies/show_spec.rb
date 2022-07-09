@@ -23,30 +23,30 @@ RSpec.describe "The UserMovie Show Page" do
     end
   end
 
-  describe 'contains movie information' do
+  describe 'contains movie information', :vcr do
     before(:each) do
       @user = User.create!(name: "Rand", email: "randalthor@gmail.com")
       @movie = Movie.new(id: 550, title: "Fight Club", vote_average: 8.4)
       visit "/users/#{@user.id}/movies/#{@movie.id}"
     end
 
-    xit 'has the movie title' do
+    it 'has the movie title' do
       expect(page).to have_content("Fight Club")
     end
 
-    xit 'contains the vote average for the movie' do
+    it 'contains the vote average for the movie' do
       expect(page).to have_content("Vote Average: #{@movie.vote_average}")
     end
 
-    xit 'has runtime in hours and minutes' do
+    it 'has runtime in hours and minutes' do
       expect(page).to have_content("Runtime: 2hr 19 min")
     end
 
-    xit 'has the genres associated with the movies' do
+    it 'has the genres associated with the movies' do
       expect(page).to have_content("Genre(s): Drama")
     end
 
-    xit 'contains a summary description of the movie' do
+    it 'contains a summary description of the movie' do
       expect(page).to have_content("A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.")
     end
 
