@@ -39,14 +39,14 @@ RSpec.describe 'Viewing Party New Page' do
     user = User.create!(name: 'User', email: 'user@email.com')
     movie = MoviesFacade.movie(550)
 
-    visit new_user_movie_viewing_party_path(user_id: user.id, movie_id: movie.id)
+    visit new_user_movie_viewing_party_path(user_id: user.id, movie_id: movie.movie_id)
 
     within '#reviews' do
       expect(page).to have_content('Total Reviews: 7')
     end
   end
 
-  it 'displays the review count' do
+  it "displays the review author's name and review content" do
     user = User.create!(name: 'User', email: 'user@email.com')
     movie = MoviesFacade.movie(550)
     review = MoviesFacade.movie_reviews(550)
