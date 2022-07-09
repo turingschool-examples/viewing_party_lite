@@ -32,17 +32,7 @@ RSpec.describe "Movie Deatils/Show Page" do
 
     it "displays a movies details", :vcr do
       visit "/users/#{@user.id}/movies/278"
-      # Movie Title
-      # Vote Average of the movie
-      # Runtime in hours & minutes
-      # Genre(s) associated to movie
-      # Summary description
-      # List the first 10 cast members (characters&actress/actors)
-      # Count of total reviews
-      # Each review's author and information
 
-      # endpoints: images, reviews, cast, genre
-save_and_open_page
       expect(page).to have_content("The Shawshank Redemption's Details Page")
       expect(page).to have_content("Title: The Shawshank Redemption")
       expect(page).to have_content("Vote Average: 8.7")
