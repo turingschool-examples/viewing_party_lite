@@ -8,6 +8,16 @@ RSpec.describe MovieFacade do
     expect(movies).to be_all(Movie)
   end
 
+  it 'can produce an array of movies when searched', :vcr do 
+    movies = MovieFacade.film_search('spirit')
+
+    expect(movies).to be_a(Array)
+    expect(movies).to be_all(Movie)
+    first_returned = movies[0]
+
+    expect(first_returned.title).to eq('Spirit Untamed')
+  end
+
   describe 'methods for facade' do
     it 'returns cast', :vcr do
       cast = MovieFacade.movie_cast(238)

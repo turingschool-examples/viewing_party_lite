@@ -18,47 +18,59 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Date:
+      - Sat, 09 Jul 2022 15:13:31 GMT
       Content-Type:
-      - application/json;charset=utf-8
+      - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Sat, 09 Jul 2022 13:44:33 GMT
+      Vary:
+      - Accept-Encoding
       Server:
-      - openresty
-      Access-Control-Allow-Origin:
-      - "*"
+      - BunnyCDN-DEN-616
+      Cdn-Pullzone:
+      - '775334'
+      Cdn-Uid:
+      - 29af4e0e-bcbd-4fcb-8635-74ddc38a1ebf
+      Cdn-Requestcountrycode:
+      - US
       Access-Control-Allow-Methods:
       - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
       Cache-Control:
       - public, max-age=28800
+      Etag:
+      - W/"ab195863e0436f5974d425c88861c5f3"
       X-Memc:
       - HIT
       X-Memc-Key:
       - 647ad0139961d413fe867b26138edd06a9b4ce4d
       X-Memc-Age:
-      - '4033'
+      - '9369'
       X-Memc-Expires:
-      - '12640'
-      Etag:
-      - W/"ab195863e0436f5974d425c88861c5f3"
-      Vary:
-      - Accept-Encoding
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 23241b9c368643949e3bb1a1ba4e97c2.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - DEN50-C2
-      X-Amz-Cf-Id:
-      - tEhMH5SmNaDYKyKvNrQxhjWkPIB65I1_yFujy_bb1zbt8oFJz4df-A==
-      Age:
-      - '3'
+      - '7304'
+      Cdn-Proxyver:
+      - '1.02'
+      Cdn-Requestpullsuccess:
+      - 'True'
+      Cdn-Requestpullcode:
+      - '200'
+      Cdn-Cachedat:
+      - 07/09/2022 15:13:30
+      Cdn-Edgestorageid:
+      - '616'
+      Cdn-Status:
+      - '200'
+      Cdn-Requestid:
+      - a02cb29398e94d28766d82503f2126b2
+      Cdn-Cache:
+      - HIT
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg","belongs_to_collection":{"id":230,"name":"The
@@ -71,5 +83,5 @@ http_interactions:
         Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
         offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.7,"vote_count":16190}'
-  recorded_at: Sat, 09 Jul 2022 13:44:36 GMT
+  recorded_at: Sat, 09 Jul 2022 15:13:31 GMT
 recorded_with: VCR 6.1.0

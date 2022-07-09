@@ -34,12 +34,12 @@ RSpec.describe 'Movie Index Page', type: :feature do
       user1 = User.create!(name: 'Andrew', email: 'concertenthusiast@musac.org')
 
       visit user_discover_path(user1.id)
-      fill_in :search, with: 'y'
+      fill_in :search, with: 'spirit'
       click_on 'Find Movies'
       expect(current_path).to eq(user_movies_path(user1.id))
-      expect(page).to have_content('Dilwale Dulhania Le Jayenge')
-      expect(page).to have_content('Your Name')
-      expect(page).to have_content('The Good, the Bad and the Ugly')
+      expect(page).to have_content('Teen Spirit')
+      expect(page).to have_content('Spirit Untamed')
+      expect(page).to have_content('Blithe Spirit')
       expect(page).to_not have_content('The Green Mile')
     end
   end

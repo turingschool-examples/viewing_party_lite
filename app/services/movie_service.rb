@@ -5,8 +5,7 @@ class MovieService
     response = connection.get(end_point) do |faraday|
       faraday.params['api_key'] = ENV['moviedb_api_key']
     end
-    x = JSON.parse(response.body, symbolize_names: true)
-    # require "pry"; binding.pry
+    JSON.parse(response.body, symbolize_names: true)
   end
 
   def self.get_movie_cast(id)
@@ -30,6 +29,13 @@ class MovieService
       f.params['api_key'] = ENV['moviedb_api_key']
     end
     JSON.parse(response_4.body, symbolize_names: true)
+  end
+
+  def self.search_films(search_param)
+    response_5 = connection.get("/3/search/movie?query=#{search_param}") do |f|
+      f.params['api_key'] = ENV['moviedb_api_key']
+    end
+    JSON.parse(response_5.body, symbolize_names: true)
   end
   
   def self.connection
