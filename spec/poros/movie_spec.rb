@@ -121,7 +121,7 @@ RSpec.describe Movie do
     "vote_average": 8.4,
     "vote_count": 24346
 }
-  movie = Movie.new(movie_data)
+    movie = Movie.new(movie_data)
 
     expect(movie).to be_a Movie
     expect(movie.title).to eq(movie_data[:title])
@@ -130,4 +130,30 @@ RSpec.describe Movie do
     expect(movie.get_genre).to eq(["Drama"])
     expect(movie.overview).to eq(movie_data[:overview])
   end
+
+  it 'gets reviews of a movie' do
+    review_data =
+		{
+			"author": "Goddard",
+			"author_details": {
+				"name": "",
+				"username": "Goddard",
+				"avatar_path": "/https://www.gravatar.com/avatar/f248ec34f953bc62cafcbdd81fddd6b6.jpg",
+				"rating": nil
+			},
+			"content": "Pretty awesome movie.  It shows what one crazy person can convince other crazy people to do.  Everyone needs something to believe in.  I recommend Jesus Christ, but they want Tyler Durden.",
+			"created_at": "2018-06-09T17:51:53.359Z",
+			"id": "5b1c13b9c3a36848f2026384",
+			"updated_at": "2021-06-23T15:58:09.421Z",
+			"url": "https://www.themoviedb.org/review/5b1c13b9c3a36848f2026384"
+		}
+
+    review = Movie.new(review_data)
+
+    expect(review).to be_a Movie
+    expect(review.author).to eq(review_data[:author])
+    expect(review.review).to eq(review_data[:content])
+
+  end
+
 end
