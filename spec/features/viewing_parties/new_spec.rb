@@ -37,10 +37,9 @@ RSpec.describe 'new viewing party page' do
 
     expect(page).to have_content('Invite Other Users')
 
-    expect(page).to have_field("viewing_party_#{@user1.id}")
+    expect(page).to_not have_field("viewing_party_#{@user1.id}")
     expect(page).to have_field("viewing_party_#{@user2.id}")
     expect(page).to have_field("viewing_party_#{@user3.id}")
-    check("viewing_party_#{@user1.id}")
     check("viewing_party_#{@user2.id}")
 
     click_button 'Create Party'
