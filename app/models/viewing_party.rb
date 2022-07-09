@@ -17,6 +17,7 @@ class ViewingParty < ApplicationRecord
   end
 
   def poster_path
-    
+    movie = MovieFacade.movie_id_search(movie_id)
+    movie.poster
   end
 end
