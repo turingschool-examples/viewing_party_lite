@@ -14,7 +14,7 @@ RSpec.describe 'the landing page', type: :feature do
     click_button("Create New User")
     expect(page).to have_current_path("/register")
   end
-  
+
   it 'has list of existing users' do
     user1 = User.create!(name: 'Sai', email: 'SaiLent@overlord.com')
     user2 = User.create!(name: 'Deannah', email: 'DMB@donuts.com')
@@ -40,11 +40,5 @@ RSpec.describe 'the landing page', type: :feature do
       click_link("Sai's Dashboard")
       expect(current_path).to eq("/users/#{user1.id}")
       expect(current_path).to_not eq("/users/#{user2.id}")
-    end
-
-    it 'has link to go back to landing page' do
-      visit '/'
-      click_link("Home")
-      expect(current_path).to eq('/')
     end
 end
