@@ -10,7 +10,7 @@
     <p><b>Movie: </b><%= link_to "#{party.movie_name}", user_movie_path(user_id: @user.id, id: party.movie_id) %></p>
     <p><b>Date: </b><%= party.date %></p>
     <p><b>Start Time: </b><%= party.start_time.strftime('%H:%M') %></p>
-    <p><b>Host: </b></p>
+    <b>Host: </b>
       <% party.users.each do |user| %>
         <% if user.host?(party.id) %>
           <%= user.email %>
@@ -31,7 +31,7 @@
   <% end %>
       <br>
   <% end %>
-
+</div>
 <div id="viewingPartiesCreated">
   <h2>Created Viewing Parties</h2>
   <% @parties.each do |party| %>
@@ -40,7 +40,7 @@
     <p><b>Movie: </b><%= link_to "#{party.movie_name}", user_movie_path(user_id: @user.id, id: party.movie_id) %></p>
     <p><b>Date: </b><%= party.date %></p>
     <p><b>Start Time: </b><%= party.start_time.strftime('%H:%M') %></p>
-    <p><b>Host: </b></p>
+    <b>Host: </b>
       <% party.users.each do |user| %>
         <% if user.host?(party.id) %>
           <%= user.email %>
