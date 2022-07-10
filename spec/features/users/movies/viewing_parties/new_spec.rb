@@ -23,6 +23,11 @@ RSpec.describe 'Viewing Party New Page' do
     click_on('Create Viewing Party')
 
     expect(current_path).to eq(user_path(id: user.id))
-    save_and_open_page
+
+    expect(page).to have_content('Movie: Fight Club')
+
+    expect(page).to have_content('Movie: Fight Club')
+
+    expect(page).to have_content('Movie: Fight Club')
   end
 end
