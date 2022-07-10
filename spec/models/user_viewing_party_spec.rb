@@ -7,7 +7,7 @@ RSpec.describe UserViewingParty, type: :model do
   end
 
   describe 'validations' do
-      it { should allow_value(:true).for(:host) }
-      it { should allow_value(:false).for(:host) }
-    end
+    it { should allow_value(:true).for(:host) }
+    it { should allow_value(:false).for(:host) }
+  end
 end

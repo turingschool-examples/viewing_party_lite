@@ -117,6 +117,7 @@ RSpec.describe Movie do
     expect(movie.title).to eq(data[:title])
     expect(movie.vote_average).to eq(data[:vote_average])
     expect(movie.id).to eq(data[:id])
+    expect(movie.poster).to eq(data[:poster_path])
   end
 end
 
