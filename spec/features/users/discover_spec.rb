@@ -11,6 +11,9 @@ RSpec.describe 'discover page' do
 
   it 'has a button to Discover Top Rated Movies', :vcr do
     click_button "Discover Top Rated Movies"
+    
+    expect(current_path).to eq("/users/#{@user1.id}/movies")
+    expect(page).to have_content('The Shawshank Redemption')
   end
 
   it 'has a text field to enter keyword(s) to search by movie title', :vcr do
