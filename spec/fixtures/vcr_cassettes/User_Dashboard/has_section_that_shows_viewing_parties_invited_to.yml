@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Sun, 10 Jul 2022 01:01:37 GMT
+      - Sun, 10 Jul 2022 14:19:40 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,28 +42,28 @@ http_interactions:
       X-Memc-Key:
       - 78a427e6290e30c7470452b7f14035957ebc7f2e
       X-Memc-Age:
-      - '605'
+      - '16655'
       X-Memc-Expires:
-      - '14437'
+      - '331'
       Etag:
-      - W/"f9f55d340a7df581c5b3bf0f53e5715b"
+      - W/"b00875810809e0240a218083cf29d959"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 8bd27032f0d38908fbe32b696e45c288.cloudfront.net (CloudFront)
+      - 1.1 23d87d8c2ce38e34462e6c134d187eea.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - XvVXoOd3yOZAYvNAgI03vpBKOgXfIMYjwDeH6heO32K9B9ZZa_BRZg==
+      - 6ltIHuQnt3ISjmPaNfP3RfGuXNhneRA_bbsEZTTlP-j3PDQm4eZh4g==
       Age:
-      - '5079'
+      - '2068'
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvd2NLRllJaVZEdlJVUnJ6Z2xWOWtHdTdmcGZZLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6eyJpZCI6NjE4NTI5LCJuYW1lIjoiRG9jdG9yIFN0cmFuZ2UgQ29sbGVjdGlvbiIsInBvc3Rlcl9wYXRoIjoiL29hNXVRT1RZOVk0RVJOcnNEazdFMGVDMUUzaC5qcGciLCJiYWNrZHJvcF9wYXRoIjoiLzVadWN0Smg1dVg1TDJkejFDakE3V3NUSndaay5qcGcifSwiYnVkZ2V0IjoyMDAwMDAwMDEsImdlbnJlcyI6W3siaWQiOjE0LCJuYW1lIjoiRmFudGFzeSJ9LHsiaWQiOjI4LCJuYW1lIjoiQWN0aW9uIn0seyJpZCI6MTIsIm5hbWUiOiJBZHZlbnR1cmUifV0sImhvbWVwYWdlIjoiaHR0cHM6Ly93d3cubWFydmVsLmNvbS9tb3ZpZXMvZG9jdG9yLXN0cmFuZ2UtaW4tdGhlLW11bHRpdmVyc2Utb2YtbWFkbmVzcyIsImlkIjo0NTMzOTUsImltZGJfaWQiOiJ0dDk0MTk4ODQiLCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiJEb2N0b3IgU3RyYW5nZSBpbiB0aGUgTXVsdGl2ZXJzZSBvZiBNYWRuZXNzIiwib3ZlcnZpZXciOiJEb2N0b3IgU3RyYW5nZSwgd2l0aCB0aGUgaGVscCBvZiBteXN0aWNhbCBhbGxpZXMgYm90aCBvbGQgYW5kIG5ldywgdHJhdmVyc2VzIHRoZSBtaW5kLWJlbmRpbmcgYW5kIGRhbmdlcm91cyBhbHRlcm5hdGUgcmVhbGl0aWVzIG9mIHRoZSBNdWx0aXZlcnNlIHRvIGNvbmZyb250IGEgbXlzdGVyaW91cyBuZXcgYWR2ZXJzYXJ5LiIsInBvcHVsYXJpdHkiOjYzNDMuMTczLCJwb3N0ZXJfcGF0aCI6Ii85R3RnMkR6QmhtWWFtWEJTMWhLQWhpd2JCS1MuanBnIiwicHJvZHVjdGlvbl9jb21wYW5pZXMiOlt7ImlkIjo0MjAsImxvZ29fcGF0aCI6Ii9oVXplb3NkMzNuekU1TUNOc1p4Q0dFS1RYYVEucG5nIiwibmFtZSI6Ik1hcnZlbCBTdHVkaW9zIiwib3JpZ2luX2NvdW50cnkiOiJVUyJ9LHsiaWQiOjE3Njc2MiwibG9nb19wYXRoIjpudWxsLCJuYW1lIjoiS2V2aW4gRmVpZ2UgUHJvZHVjdGlvbnMiLCJvcmlnaW5fY291bnRyeSI6IlVTIn1dLCJwcm9kdWN0aW9uX2NvdW50cmllcyI6W3siaXNvXzMxNjZfMSI6IlVTIiwibmFtZSI6IlVuaXRlZCBTdGF0ZXMgb2YgQW1lcmljYSJ9XSwicmVsZWFzZV9kYXRlIjoiMjAyMi0wNS0wNCIsInJldmVudWUiOjk1MzIwMDAwMCwicnVudGltZSI6MTI2LCJzcG9rZW5fbGFuZ3VhZ2VzIjpbeyJlbmdsaXNoX25hbWUiOiJDYW50b25lc2UiLCJpc29fNjM5XzEiOiJjbiIsIm5hbWUiOiLlub/lt57or50gLyDlu6Plt57oqbEifSx7ImVuZ2xpc2hfbmFtZSI6IkVuZ2xpc2giLCJpc29fNjM5XzEiOiJlbiIsIm5hbWUiOiJFbmdsaXNoIn0seyJlbmdsaXNoX25hbWUiOiJTcGFuaXNoIiwiaXNvXzYzOV8xIjoiZXMiLCJuYW1lIjoiRXNwYcOxb2wifV0sInN0YXR1cyI6IlJlbGVhc2VkIiwidGFnbGluZSI6IkVudGVyIGEgbmV3IGRpbWVuc2lvbiBvZiBTdHJhbmdlLiIsInRpdGxlIjoiRG9jdG9yIFN0cmFuZ2UgaW4gdGhlIE11bHRpdmVyc2Ugb2YgTWFkbmVzcyIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo3LjUsInZvdGVfY291bnQiOjQxNjZ9
-  recorded_at: Sun, 10 Jul 2022 02:26:16 GMT
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvd2NLRllJaVZEdlJVUnJ6Z2xWOWtHdTdmcGZZLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6eyJpZCI6NjE4NTI5LCJuYW1lIjoiRG9jdG9yIFN0cmFuZ2UgQ29sbGVjdGlvbiIsInBvc3Rlcl9wYXRoIjoiL29hNXVRT1RZOVk0RVJOcnNEazdFMGVDMUUzaC5qcGciLCJiYWNrZHJvcF9wYXRoIjoiLzVadWN0Smg1dVg1TDJkejFDakE3V3NUSndaay5qcGcifSwiYnVkZ2V0IjoyMDAwMDAwMDEsImdlbnJlcyI6W3siaWQiOjE0LCJuYW1lIjoiRmFudGFzeSJ9LHsiaWQiOjI4LCJuYW1lIjoiQWN0aW9uIn0seyJpZCI6MTIsIm5hbWUiOiJBZHZlbnR1cmUifV0sImhvbWVwYWdlIjoiaHR0cHM6Ly93d3cubWFydmVsLmNvbS9tb3ZpZXMvZG9jdG9yLXN0cmFuZ2UtaW4tdGhlLW11bHRpdmVyc2Utb2YtbWFkbmVzcyIsImlkIjo0NTMzOTUsImltZGJfaWQiOiJ0dDk0MTk4ODQiLCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiJEb2N0b3IgU3RyYW5nZSBpbiB0aGUgTXVsdGl2ZXJzZSBvZiBNYWRuZXNzIiwib3ZlcnZpZXciOiJEb2N0b3IgU3RyYW5nZSwgd2l0aCB0aGUgaGVscCBvZiBteXN0aWNhbCBhbGxpZXMgYm90aCBvbGQgYW5kIG5ldywgdHJhdmVyc2VzIHRoZSBtaW5kLWJlbmRpbmcgYW5kIGRhbmdlcm91cyBhbHRlcm5hdGUgcmVhbGl0aWVzIG9mIHRoZSBNdWx0aXZlcnNlIHRvIGNvbmZyb250IGEgbXlzdGVyaW91cyBuZXcgYWR2ZXJzYXJ5LiIsInBvcHVsYXJpdHkiOjYzODguNTYxLCJwb3N0ZXJfcGF0aCI6Ii85R3RnMkR6QmhtWWFtWEJTMWhLQWhpd2JCS1MuanBnIiwicHJvZHVjdGlvbl9jb21wYW5pZXMiOlt7ImlkIjo0MjAsImxvZ29fcGF0aCI6Ii9oVXplb3NkMzNuekU1TUNOc1p4Q0dFS1RYYVEucG5nIiwibmFtZSI6Ik1hcnZlbCBTdHVkaW9zIiwib3JpZ2luX2NvdW50cnkiOiJVUyJ9LHsiaWQiOjE3Njc2MiwibG9nb19wYXRoIjpudWxsLCJuYW1lIjoiS2V2aW4gRmVpZ2UgUHJvZHVjdGlvbnMiLCJvcmlnaW5fY291bnRyeSI6IlVTIn1dLCJwcm9kdWN0aW9uX2NvdW50cmllcyI6W3siaXNvXzMxNjZfMSI6IlVTIiwibmFtZSI6IlVuaXRlZCBTdGF0ZXMgb2YgQW1lcmljYSJ9XSwicmVsZWFzZV9kYXRlIjoiMjAyMi0wNS0wNCIsInJldmVudWUiOjk1MzIwMDAwMCwicnVudGltZSI6MTI2LCJzcG9rZW5fbGFuZ3VhZ2VzIjpbeyJlbmdsaXNoX25hbWUiOiJDYW50b25lc2UiLCJpc29fNjM5XzEiOiJjbiIsIm5hbWUiOiLlub/lt57or50gLyDlu6Plt57oqbEifSx7ImVuZ2xpc2hfbmFtZSI6IkVuZ2xpc2giLCJpc29fNjM5XzEiOiJlbiIsIm5hbWUiOiJFbmdsaXNoIn0seyJlbmdsaXNoX25hbWUiOiJTcGFuaXNoIiwiaXNvXzYzOV8xIjoiZXMiLCJuYW1lIjoiRXNwYcOxb2wifV0sInN0YXR1cyI6IlJlbGVhc2VkIiwidGFnbGluZSI6IkVudGVyIGEgbmV3IGRpbWVuc2lvbiBvZiBTdHJhbmdlLiIsInRpdGxlIjoiRG9jdG9yIFN0cmFuZ2UgaW4gdGhlIE11bHRpdmVyc2Ugb2YgTWFkbmVzcyIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo3LjUsInZvdGVfY291bnQiOjQxNzZ9
+  recorded_at: Sun, 10 Jul 2022 14:54:08 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/123?api_key=51fff6623cd61b27680d2a6ecd472f09
@@ -88,6 +88,8 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
+      Date:
+      - Sun, 10 Jul 2022 14:54:07 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -97,114 +99,40 @@ http_interactions:
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
       X-Memc:
       - HIT
       X-Memc-Key:
       - c33f1ae3ad898e8abd8e3235daac6c22b7770a22
       X-Memc-Age:
-      - '4075'
+      - '13145'
       X-Memc-Expires:
-      - '10939'
-      Date:
-      - Sun, 10 Jul 2022 02:17:33 GMT
-      Cache-Control:
-      - public, max-age=28800
+      - '1685'
       Etag:
-      - W/"37d6edc8b38f7ad25cdc61f4a586aa65"
+      - W/"66258638729f7ea98f376bfbb3c900a0"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 e1b5abb53c407f0a057625c46693461c.cloudfront.net (CloudFront)
+      - 1.1 dc50b0effd72a7b2c19bcb0909cfae82.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - TlrmyjF8c9v4fs9THRDl_Ya75Gu956X96UvScw7bSo_fp8J3qTXCIw==
-      Age:
-      - '523'
-    body:
-      encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/jOuCWdh0BE6XPu2Vpjl08wDAeFz.jpg","belongs_to_collection":null,"budget":4000000,"genres":[{"id":12,"name":"Adventure"},{"id":16,"name":"Animation"},{"id":14,"name":"Fantasy"}],"homepage":"","id":123,"imdb_id":"tt0077869","original_language":"en","original_title":"The
-        Lord of the Rings","overview":"The Fellowship of the Ring embark on a journey
-        to destroy the One Ring and end Sauron''s reign over Middle-earth.","popularity":31.682,"poster_path":"/liW0mjvTyLs7UCumaHhx3PpU4VT.jpg","production_companies":[{"id":286,"logo_path":null,"name":"Fantasy
-        Films","origin_country":""},{"id":4921,"logo_path":null,"name":"Bakshi Productions","origin_country":""},{"id":141322,"logo_path":null,"name":"Saul
-        Zaentz Film Productions","origin_country":""}],"production_countries":[{"iso_3166_1":"ES","name":"Spain"},{"iso_3166_1":"GB","name":"United
-        Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"1978-11-15","revenue":30471420,"runtime":132,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Fantasy...beyond
-        your imagination","title":"The Lord of the Rings","video":false,"vote_average":6.6,"vote_count":657}'
-  recorded_at: Sun, 10 Jul 2022 02:26:16 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/345?api_key=51fff6623cd61b27680d2a6ecd472f09
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.3.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Date:
-      - Sun, 10 Jul 2022 02:26:15 GMT
-      Server:
-      - openresty
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, HEAD, POST, PUT, DELETE, OPTIONS
-      Access-Control-Expose-Headers:
-      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
-        Content-Length, Content-Range
-      Cache-Control:
-      - public, max-age=28800
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 577e57d9bc9ded5a762c535aeadfb54a0cea2a9a
-      X-Memc-Age:
-      - '7961'
-      X-Memc-Expires:
-      - '9628'
-      Etag:
-      - W/"6dcae708981caddd4411383489b3f0ef"
-      Vary:
-      - Accept-Encoding
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 4d0ecb5905192435c3fd204705c9fc24.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - DEN50-C2
-      X-Amz-Cf-Id:
-      - gGTvx8BushKakeyy6dCs5WkO6GtvEpEq5xw29k941Kb-bcQO0quvsg==
+      - yZsGFfvbiIrQLFy4X-7rVzepu7dQjc7JzHGIUwDJe6iWlmN9BQcxcQ==
       Age:
       - '1'
     body:
       encoding: ASCII-8BIT
-      string: '{"adult":false,"backdrop_path":"/AklO85uUDAL3O7iSOtFGfqT3w8n.jpg","belongs_to_collection":null,"budget":65000000,"genres":[{"id":18,"name":"Drama"},{"id":53,"name":"Thriller"},{"id":9648,"name":"Mystery"}],"homepage":"http://eyeswideshut.warnerbros.com/","id":345,"imdb_id":"tt0120663","original_language":"en","original_title":"Eyes
-        Wide Shut","overview":"After Dr. Bill Harford''s wife, Alice, admits to having
-        sexual fantasies about a man she met, Bill becomes obsessed with having a
-        sexual encounter. He discovers an underground sexual group and attends one
-        of their meetings -- and quickly discovers that he is in over his head.","popularity":39.168,"poster_path":"/knEIz1eNGl5MQDbrEAVWA7iRqF9.jpg","production_companies":[{"id":174,"logo_path":"/IuAlhI9eVC9Z8UQWOIDdWRKSEJ.png","name":"Warner
-        Bros. Pictures","origin_country":"US"},{"id":194,"logo_path":null,"name":"Hobby
-        Films","origin_country":""},{"id":195,"logo_path":null,"name":"Pole Star","origin_country":"US"},{"id":385,"logo_path":null,"name":"Stanley
-        Kubrick Productions","origin_country":"GB"}],"production_countries":[{"iso_3166_1":"GB","name":"United
-        Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"1999-07-16","revenue":162091208,"runtime":159,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Cruise.
-        Kidman. Kubrick.","title":"Eyes Wide Shut","video":false,"vote_average":7.5,"vote_count":4827}'
-  recorded_at: Sun, 10 Jul 2022 02:26:16 GMT
+      string: '{"adult":false,"backdrop_path":"/jOuCWdh0BE6XPu2Vpjl08wDAeFz.jpg","belongs_to_collection":null,"budget":4000000,"genres":[{"id":12,"name":"Adventure"},{"id":16,"name":"Animation"},{"id":14,"name":"Fantasy"}],"homepage":"","id":123,"imdb_id":"tt0077869","original_language":"en","original_title":"The
+        Lord of the Rings","overview":"The Fellowship of the Ring embark on a journey
+        to destroy the One Ring and end Sauron''s reign over Middle-earth.","popularity":23.652,"poster_path":"/liW0mjvTyLs7UCumaHhx3PpU4VT.jpg","production_companies":[{"id":286,"logo_path":null,"name":"Fantasy
+        Films","origin_country":""},{"id":4921,"logo_path":null,"name":"Bakshi Productions","origin_country":""},{"id":141322,"logo_path":null,"name":"Saul
+        Zaentz Film Productions","origin_country":""}],"production_countries":[{"iso_3166_1":"ES","name":"Spain"},{"iso_3166_1":"GB","name":"United
+        Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"1978-11-15","revenue":30471420,"runtime":132,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Fantasy...beyond
+        your imagination","title":"The Lord of the Rings","video":false,"vote_average":6.6,"vote_count":657}'
+  recorded_at: Sun, 10 Jul 2022 14:54:08 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/678?api_key=51fff6623cd61b27680d2a6ecd472f09
@@ -229,8 +157,6 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Sun, 10 Jul 2022 02:26:16 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -240,8 +166,6 @@ http_interactions:
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
-      Cache-Control:
-      - public, max-age=28800
       X-Memc:
       - HIT
       X-Memc-Key:
@@ -250,18 +174,24 @@ http_interactions:
       - '3862'
       X-Memc-Expires:
       - '11081'
+      Date:
+      - Sun, 10 Jul 2022 14:54:07 GMT
+      Cache-Control:
+      - public, max-age=28800
       Etag:
       - W/"f92011edff8a6e37ce7755104e83f338"
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 c4fb40b7909e4dd897bba2e297b284e6.cloudfront.net (CloudFront)
+      - 1.1 b7f0c5734a286f56595c1e1b456020a2.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - poHpEB5Qzh72z9-eVs-XSsQp5Vgsp2vZvZqj91q6FDXxCpNdU-d4XA==
+      - eYjjPTCcndJCq3QnXlhVIWiQx_i-6Wm3jCkLNHZcf3DaQn9Z0nFhMw==
+      Age:
+      - '1'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/y5piuei6sm2D8QI8CETZzboY1AZ.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":80,"name":"Crime"},{"id":18,"name":"Drama"},{"id":10749,"name":"Romance"},{"id":53,"name":"Thriller"}],"homepage":"","id":678,"imdb_id":"tt0039689","original_language":"en","original_title":"Out
@@ -273,7 +203,7 @@ http_interactions:
         States of America"}],"release_date":"1947-11-25","revenue":0,"runtime":97,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"A
         MAN - Trying to run away from his past... A WOMAN - Trying to escape her future...","title":"Out
         of the Past","video":false,"vote_average":7.7,"vote_count":417}'
-  recorded_at: Sun, 10 Jul 2022 02:26:16 GMT
+  recorded_at: Sun, 10 Jul 2022 14:54:08 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/345?api_key=51fff6623cd61b27680d2a6ecd472f09
@@ -299,7 +229,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Sun, 10 Jul 2022 02:26:15 GMT
+      - Sun, 10 Jul 2022 14:54:07 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -316,21 +246,21 @@ http_interactions:
       X-Memc-Key:
       - 577e57d9bc9ded5a762c535aeadfb54a0cea2a9a
       X-Memc-Age:
-      - '7961'
+      - '2306'
       X-Memc-Expires:
-      - '9628'
+      - '12942'
       Etag:
-      - W/"6dcae708981caddd4411383489b3f0ef"
+      - W/"f23e0486977f5fa799cea7acecd7c185"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 f0b290c4e2273a7586bc6f080031d9bc.cloudfront.net (CloudFront)
+      - 1.1 a47d45d25cc354507eae77aba89ca252.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - KvMdeuS9XyAy2jsEAFiRk6yq7qZqbj8PYnKV5BgppQH--Nqk54jJrg==
+      - EBwDgWZRfV11YMIlGDQ6kvPEMte8uDWA76S04em-ai4wzyTgkbUQdw==
       Age:
       - '1'
     body:
@@ -339,11 +269,11 @@ http_interactions:
         Wide Shut","overview":"After Dr. Bill Harford''s wife, Alice, admits to having
         sexual fantasies about a man she met, Bill becomes obsessed with having a
         sexual encounter. He discovers an underground sexual group and attends one
-        of their meetings -- and quickly discovers that he is in over his head.","popularity":39.168,"poster_path":"/knEIz1eNGl5MQDbrEAVWA7iRqF9.jpg","production_companies":[{"id":174,"logo_path":"/IuAlhI9eVC9Z8UQWOIDdWRKSEJ.png","name":"Warner
+        of their meetings -- and quickly discovers that he is in over his head.","popularity":38.576,"poster_path":"/knEIz1eNGl5MQDbrEAVWA7iRqF9.jpg","production_companies":[{"id":174,"logo_path":"/IuAlhI9eVC9Z8UQWOIDdWRKSEJ.png","name":"Warner
         Bros. Pictures","origin_country":"US"},{"id":194,"logo_path":null,"name":"Hobby
         Films","origin_country":""},{"id":195,"logo_path":null,"name":"Pole Star","origin_country":"US"},{"id":385,"logo_path":null,"name":"Stanley
         Kubrick Productions","origin_country":"GB"}],"production_countries":[{"iso_3166_1":"GB","name":"United
         Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"1999-07-16","revenue":162091208,"runtime":159,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Cruise.
         Kidman. Kubrick.","title":"Eyes Wide Shut","video":false,"vote_average":7.5,"vote_count":4827}'
-  recorded_at: Sun, 10 Jul 2022 02:26:16 GMT
+  recorded_at: Sun, 10 Jul 2022 14:54:08 GMT
 recorded_with: VCR 6.1.0

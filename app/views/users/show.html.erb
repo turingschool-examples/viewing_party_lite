@@ -4,16 +4,21 @@
 
 <h3>Viewing Party Invitations</h3>
 <% @user.parties.each do |party| %>
-<div id="invitations-<%= party.id%>">
-<%= image_tag("https://image.tmdb.org/t/p/original#{party.get_poster}") %>
-
-  <h4><%= party.movie_title %></h4>
-  Date: <%= party.date.strftime("%d/%m/%Y") %></br>
-  Time: <%= party.start_time.strftime("%I:%M %p") %></br>
-  Duration in minutes: <%= party.duration %></br>
-  Party Host: <%= party.host_name %></br>
-  Users Invited: <% party.users.each do |guest| %>
-    <%= guest.name %>
+<%if party.host_name != @user.name %>
+  <div id="invitations-<%= party.id%>">
+  <%= image_tag("https://image.tmdb.org/t/p/original#{party.get_poster}", size: "100") %>
+    <h4><%= party.movie_title %></h4>
+    Date: <%= party.date.strftime("%d/%m/%Y") %></br>
+    Time: <%= party.start_time.strftime("%I:%M %p") %></br>
+    Duration in minutes: <%= party.duration %></br>
+    Party Host: <%= party.host_name %></br>
+    Users Invited: <% party.users.each do |guest| %>
+    <%if guest.name == @user.name %>
+      <strong><%= @user.name %></strong>
+    <%else%>
+      <%= guest.name %>
+      <%end%>
+    <%end%>
   <%end%>
 </div>
 <%end%> 
@@ -21,14 +26,17 @@
 <h3>Viewing Parties I am Hosting</h3>
 <% @user.parties.each do |party| %>
 <% if party.host == @user.id %>
-<div id="hosting-<%= party.id%>">
-<%= image_tag("https://image.tmdb.org/t/p/original#{party.get_poster}") %>
+  <div id="hosting-<%= party.id%>">
+  <%= image_tag("https://image.tmdb.org/t/p/original#{party.get_poster}", size: "100") %>
     <h4><%= party.movie_title %></h4>
     Date: <%= party.date.strftime("%d/%m/%Y") %></br>
     Time: <%= party.start_time.strftime("%I:%M %p") %></br>
     Duration in minutes: <%= party.duration %></br>
+    Party Host: <%= party.host_name %></br>
     Users Invited: <% party.users.each do |guest| %>
+    <% if guest.name != party.host_name%>
       <%= guest.name %>
+     <%end%>
     <%end%>
   <%end%> 
 </div>

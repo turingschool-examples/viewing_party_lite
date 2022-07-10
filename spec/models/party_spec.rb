@@ -11,6 +11,8 @@ RSpec.describe Party, type: :model do
   it { should validate_presence_of(:movie_id) } 
   it { should validate_presence_of(:movie_title) } 
 
+  # it { should validate_numericality_of(:height).is_greater_than_or_equal_to(movie_duration) } 
+
   let!(:user_1) { User.create!(name: "Sam", email: "sam@zmail.com" ) }
   let!(:user_2) { User.create!(name: "Hank", email: "hank@zmail.com" ) } 
   let!(:user_3) { User.create!(name: "Tom", email: "tom@zmail.com") }
