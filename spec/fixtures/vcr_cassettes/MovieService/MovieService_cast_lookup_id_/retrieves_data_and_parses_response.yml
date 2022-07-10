@@ -18,47 +18,59 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Date:
+      - Sun, 10 Jul 2022 21:21:53 GMT
       Content-Type:
-      - application/json;charset=utf-8
+      - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Sun, 10 Jul 2022 20:52:45 GMT
+      Vary:
+      - Accept-Encoding
       Server:
-      - openresty
-      Access-Control-Allow-Origin:
-      - "*"
+      - BunnyCDN-SIL-915
+      Cdn-Pullzone:
+      - '775334'
+      Cdn-Uid:
+      - 29af4e0e-bcbd-4fcb-8635-74ddc38a1ebf
+      Cdn-Requestcountrycode:
+      - US
       Access-Control-Allow-Methods:
       - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
       Cache-Control:
       - public, max-age=28800
+      Last-Modified:
+      - Wed, 24 Nov 2021 15:42:50 GMT
       X-Memc:
-      - HIT
+      - MISS, STORE
       X-Memc-Key:
       - 58459869b5f260c52ae59d366fb37d8adb1f4e49
       X-Memc-Age:
-      - '13158'
+      - '0'
       X-Memc-Expires:
-      - '1627'
-      Etag:
-      - W/"cc8f61b81ecb1a0e003b62c5522fb8cd"
-      Vary:
-      - Accept-Encoding
-      X-Cache:
-      - Hit from cloudfront
-      Via:
-      - 1.1 63567b6e742908d5c6723c5c474bb27e.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - LAX53-P1
-      X-Amz-Cf-Id:
-      - dXxm633At29FLEhBz8N1LCm_hRNVMTMpABOwswRh1goPl5QAazObPQ==
-      Age:
-      - '861'
+      - '17531'
+      Cdn-Proxyver:
+      - '1.02'
+      Cdn-Requestpullsuccess:
+      - 'True'
+      Cdn-Requestpullcode:
+      - '200'
+      Cdn-Cachedat:
+      - 07/10/2022 21:21:53
+      Cdn-Edgestorageid:
+      - '915'
+      Cdn-Status:
+      - '200'
+      Cdn-Requestid:
+      - 53e430e07f0bcfb9cd15fe05dba38979
+      Cdn-Cache:
+      - MISS
     body:
       encoding: ASCII-8BIT
       string: '{"id":11868,"cast":[{"adult":false,"gender":2,"id":5,"known_for_department":"Acting","name":"Peter
@@ -133,5 +145,5 @@ http_interactions:
         Powell","original_name":"Nosher Powell","popularity":0.759,"profile_path":"/w1h7eeWxDb8NdAYOy3NqYWwD3un.jpg","credit_id":"599012fb9251416759027408","department":"Crew","job":"Stunts"},{"adult":false,"gender":0,"id":1340059,"known_for_department":"Crew","name":"Sydney
         Pearson","original_name":"Sydney Pearson","popularity":0.6,"profile_path":null,"credit_id":"599012d6c3a3687473027cbf","department":"Crew","job":"Special
         Effects"}]}'
-  recorded_at: Sun, 10 Jul 2022 21:07:06 GMT
+  recorded_at: Sun, 10 Jul 2022 21:21:53 GMT
 recorded_with: VCR 6.1.0
