@@ -29,4 +29,23 @@ RSpec.describe ViewingParty, type: :model do
       expect(godfather.display_image).to eq("http://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg")
     end
   end
+
+  describe 'class methods' do
+    before(:each) do
+      @spirit = @user1.viewing_parties.create!(duration: 180, date: Date.today, time: Time.now, movie_id: 129)
+      PartyUser.create!(user_id: @user2.id, viewing_party_id: @spirit.id)
+      PartyUser.create!(user_id: @user3.id, viewing_party_id: @spirit.id)
+      PartyUser.create!(user_id: @user4.id, viewing_party_id: @spirit.id)
+
+      @rocky = @user3.viewing_parties.create!(duration: 180, date: Date.tomorrow, time: Time.now, movie_id: 36685)
+      PartyUser.create!(user_id: @user2.id, viewing_party_id: @rocky.id)
+      PartyUser.create!(user_id: @user1.id, viewing_party_id: @rocky.id)
+      PartyUser.create!(user_id: @user4.id, viewing_party_id: @rocky.id)
+    end
+
+    it 'can display viewing parties that a user is invited to' do
+      parties = ViewingParty.invited(@user1.id)
+      expect(parties).to eq([@rocky])
+    end
+  end
 end
