@@ -5,8 +5,17 @@
 
 <div id='hosted-parties'>
     <h3> Viewing Parties (Host) </h3>
+    <% @user.parties.each do |party| if party.user_name == @user.name%>
+        <% binding.pry %>
+        <%= party.movie.title %> Viewing Party <br>
+        <% end %>
+    <% end %>
 </div>
 
 <div id='guest-parties'>
     <h3> Viewing Parties (Guest) </h3>
+    <% @user.parties.each do |party| if party.user_name != @user.name%>
+        <%= party.movie.title %>
+        <% end %>
+    <% end %>
 </div>

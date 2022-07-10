@@ -4,9 +4,9 @@ Rails.application.routes.draw do
  get '/', to: 'welcome#index'
  get '/register', to: 'users#new'
  get '/users/:id', to: 'users#show'
- post '/users/:id/movies/:id/parties/new', to: 'parties#create'
+#  post '/users/:id/movies/:id/parties/new', to: 'parties#create'
  
- resources :users, only: %i[create show] do 
+ resources :users, only: %i[create show new] do 
   get '/discover', to: 'movies#discover', as: 'movies_discover'
   post '/movies', to: 'movies#top_rated', as: 'top_rated' 
   post '/movies_search', to: 'movies#search', as: 'search'
