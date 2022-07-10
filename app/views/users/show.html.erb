@@ -18,10 +18,10 @@
   <div class="guests">
   <p>Attendees: <% party.users.each do |guest|%>
                   <% if guest.id != @user.id && guest.name != party.host %>
-                    <%= guest.name %>
+                    <p><%= guest.name %></p>
                   <% end %>
                 <% end %>
-                <strong><%= @user.name %></strong>
+                <p><strong><%= @user.name %></strong></p>
   </p>
   </div>
 <% end %>
