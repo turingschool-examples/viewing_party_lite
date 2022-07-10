@@ -1,0 +1,41 @@
+New Viewing Party for <%= @movie[0].title%>
+
+<%= form_with url: user_movie_parties_path(@user, @movie), model: @viewing_party, local: true do |form| %>
+<div>
+  <%= form.label :duration %>
+  <%= form.number_field :duration %>
+</div><br>
+
+<div>
+  <%= form.label :date %>
+  <%= form.date_field :date %>
+</div><br>
+
+<div>
+  <%= form.label :time %>
+  <%= form.time_field :time %>
+</div><br>
+
+<div>
+  <%= form.label :user_name %>
+  <%= form.text_field :user_name %>
+</div><br>
+
+
+<div id="user-invites">
+  Invite Friends!
+  <% @all_users.each do |user| %>
+    <% unless user.id == @user.id %>
+      <%= form.label user.name %>
+      <%=form.check_box("invites", {:multiple => true}, user.id, nil) %>
+    <% end %>
+  <% end %>
+</div>
+<%# <% binding.pry%> %>
+<%= form.hidden_field :movie_id, value: @movie[0].id %>
+<%= form.hidden_field :user_id, value: @user.id %>
+
+
+  <%= form.submit%>
+
+<%end %>

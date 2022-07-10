@@ -10,6 +10,7 @@ class MovieService
     
     data1 = JSON.parse(response1.body, symbolize_names: true)
     data2 = JSON.parse(response2.body, symbolize_names: true)
+    
     data1[:results] + data2[:results]
   end
 
