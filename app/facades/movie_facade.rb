@@ -9,7 +9,6 @@ class MovieFacade
   end
 
   def self.search_by_id(movie_id)
-
     movie = MovieService.find_movie_by_id(movie_id)
     Movie.new(movie)
   end
