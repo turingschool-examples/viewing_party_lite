@@ -1,3 +1,28 @@
 <h1>Create <%= @movie.title %> Viewing Party</h1>
 
 <hr>
+
+<%= form_with url: "/users/#{@host.id}/viewing-party/dashboard", local: true do |f| %>
+
+  <%= f.label :duration %>
+  <%= f.number_field :duration, value: @movie.runtime %>
+  <br>
+
+  <%= f.label :date %>
+  <%= f.date_field :date %>
+  <br>
+
+  <%= f.label :start %>
+  <%= f.time_field :start %>
+
+  <br>
+
+  <%= f.label :users, 'Invite Other Users' %><br>
+  <%= f.collection_check_boxes :invitees, @users.where.not(id: @host.id), :id, :name %><br>
+  <br>
+
+  <%= f.hidden_field :title, value: @movie.title %>
+  <%= f.hidden_field :movie_id, value: @movie.id %>
+
+  <%= f.submit 'Create Party'%>
+<% end %>
