@@ -12,6 +12,4 @@ Rails.application.routes.draw do
   post '/register', to: 'users#create'
   get 'users/:user_id/movies/:movie_id/viewing_party/new', to: 'parties#new'
   post 'users/:user_id/movies/:movie_id/viewing_party', to: 'parties#create'
-
-
 end

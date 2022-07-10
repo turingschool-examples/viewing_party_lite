@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Movie
   attr_reader :name,
               :avg,
@@ -8,5 +10,4 @@ class Movie
     @avg = movie_data[:vote_average]
     @id = movie_data[:id]
   end
-
 end
