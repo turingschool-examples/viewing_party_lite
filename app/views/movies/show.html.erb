@@ -13,6 +13,6 @@
   <%= actor %>
 <% end %>
 <p><strong>Count of reviews: </strong><%= @movie.total_reviews %></p>
-<p><strong>Movie reviews: </strong><%= @reviews.each do |review| %></p>
+<p><strong>Movie reviews: </strong><% @reviews.each do |review| %></p>
   <%= review %>
 <% end %>
