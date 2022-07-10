@@ -16,4 +16,20 @@
     <% end %>
     </div>
   <% end %>
+  <% @invited.each do |party| %>
+  <div id="party<%= party.movie_id %>">
+    <img src="<%= party.display_image %>" alt="The poster image for <%= party.display_title%>">
+    <p>Invited</p>
+    <%= party.display_title %><br>
+    <%= party.date.strftime("%b %d, %Y")%><br>
+    <%= party.time.strftime("%l:%M %p") %><br>
+    <% party.users.each do |user| %>
+      <% if @user.name == user.name %>
+        <b><%= user.name %></b><br>
+      <% else %>
+        <%= user.name %><br>
+      <% end %>
+    <% end %>
+    </div>
+  <% end %>
 </section>
