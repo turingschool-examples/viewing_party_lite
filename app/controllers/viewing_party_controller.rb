@@ -9,7 +9,7 @@ class ViewingPartyController < ApplicationController
 
   def create
     users = User.all
-    host_id = params[:user_id]
+    host_id = params[:user_id].to_i
     movie = MovieFacade.movie_id_search(params[:movie_id])
 
     if params[:duration].to_i < movie.runtime.to_i
