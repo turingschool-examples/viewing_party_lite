@@ -18,4 +18,9 @@ class MovieFacade
     json = MovieService.get_cast(id)
     json[0..9].map { |data| CastMember.new(data) }
   end
+
+  def self.create_reviews(id)
+    json = MovieService.get_reviews(id)
+    Reviews.new(json)
+  end
 end

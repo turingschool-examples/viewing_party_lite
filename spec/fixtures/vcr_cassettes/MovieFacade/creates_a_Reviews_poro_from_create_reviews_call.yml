@@ -1,0 +1,84 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/36685/reviews?api_key=<api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Sun, 10 Jul 2022 02:50:32 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 28c6efbcf0d91c297e3dd57a88df7975bab3c39a
+      X-Memc-Age:
+      - '16787'
+      X-Memc-Expires:
+      - '150'
+      Etag:
+      - W/"87cbf29fd0efeb5f1f25e4bfb8476021"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 cddde15c11afac53ac9fe7978dcfecd6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - g6CCEqFlnvtpKXeCt0fhd-Xp-27EiE3VHEnNWDeeX3zcgPrmWkqlCg==
+      Age:
+      - '2298'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":36685,"page":1,"results":[{"author":"tricksy","author_details":{"name":"","username":"tricksy","avatar_path":null,"rating":null},"content":"Moving
+        on from the riotous cult stage show which was born in a small studio theatre
+        in the early 70s, this movie version is a well-cast, outrageous romp showcasing
+        the absurdity and sci-fi obsession of Richard O''Brien''s inventive musical.\r\n\r\nThe
+        small cast - the wonderful Tim Curry as Frank ''n Furter (the sweet transvestite
+        from transsexual Transylvania''); Barry Bostwick and Susan Sarandon as the
+        odd science students Brad and Janet; Patricia Quinn as Magenta (''a domestic'');
+        Little Nell as Columbia (''a groupie''), Jonathan Adams as Dr Scott; Meat
+        Loaf as Eddie; Richard O''Brien himself as the handyman Riff Raff; Peter Hinwood
+        as the muscle man Rocky, created by Frank in a spoof on Frankenstein; and
+        Charles Gray having a great time as the Criminologist - are all really good,
+        and the songs are terrific, from the madness of ''The Timewarp'' and ''Sweet
+        Transvestite'', to the ethereal ''There''s a Light'' and ''I''m Going Home'',
+        by way of the rocky ''Whatever Happened To Saturday Night?'' and the film-reference
+        heavy ''Science Fiction Double Feature''.\r\n\r\nGreat, great fun and the
+        floor show sequence in particular, showcasing Frank''s obsession with Fay
+        Wray and the RKO cheapies, is exceptional, with its statues in basques and
+        its huge swimming pool. Trash, yes, but classy trash, and most enjoyable.","created_at":"2015-06-10T04:32:48.391Z","id":"5577bdf09251413e3e0009cb","updated_at":"2021-06-23T15:57:35.067Z","url":"https://www.themoviedb.org/review/5577bdf09251413e3e0009cb"},{"author":"Peter89Spencer","author_details":{"name":"","username":"Peter89Spencer","avatar_path":"/https://www.gravatar.com/avatar/dadb1b759a8516c815cdcc58abcefc85.jpg","rating":8.0},"content":"A
+        time(warp)less classic!","created_at":"2021-06-03T09:00:33.632Z","id":"60b89a31899da2006f0afb43","updated_at":"2021-06-23T15:58:56.536Z","url":"https://www.themoviedb.org/review/60b89a31899da2006f0afb43"}],"total_pages":1,"total_results":2}'
+  recorded_at: Sun, 10 Jul 2022 03:28:50 GMT
+recorded_with: VCR 6.1.0

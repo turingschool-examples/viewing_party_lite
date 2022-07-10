@@ -30,5 +30,14 @@ RSpec.describe MovieService do
       expect(json[0]).to have_key(:name)
       expect(json[0]).to have_key(:character)
     end
+
+    it 'can retrieve review info from review endpoint', :vcr do
+      json = MovieService.get_reviews(238)
+
+      expect(json).to be_a(Hash)
+      expect(json[:results][0]).to have_key(:author)
+      expect(json[:results][0]).to have_key(:content)
+      expect(json).to have_key(:total_results)
+    end
   end
 end

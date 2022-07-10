@@ -28,5 +28,11 @@ RSpec.describe MovieFacade do
     expect(cast_member[0]).to be_an_instance_of(CastMember)
     expect(cast_member).to be_a(Array)
     expect(cast_member.length).to be(10)
-  end 
+  end
+
+  it 'creates a Reviews poro from create reviews call', :vcr do
+    reviews = MovieFacade.create_reviews(36685)
+
+    expect(reviews).to be_an_instance_of(Reviews)
+  end
 end

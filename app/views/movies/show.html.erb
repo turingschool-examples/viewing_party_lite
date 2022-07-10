@@ -10,4 +10,12 @@ Genre(s): <%= @movie.genre.join(', ') %><br>
 <h4>Cast</h4>
   <% @cast.each do |member| %>
     <p class="castMember"><%= "#{member.name} as #{member.character}" %></p>
-  <% end %>
+  <% end %><br>
+<h4><%= @reviews.total_results %> Reviews</h4><br>
+<% @reviews.paired_reviews.each do |review| %>
+<div id="<%=review[:author]%>Review">
+
+  <p><%= review[:author] %></p><br>
+  <p><%= review[:content] %></p><<br>
+</div>
+<% end %>
