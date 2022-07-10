@@ -20,3 +20,6 @@ PartyUser.create!(user_id: @user4.id, viewing_party_id: @spirit.id)
 PartyUser.create!(user_id: @user2.id, viewing_party_id: @rocky.id)
 PartyUser.create!(user_id: @user1.id, viewing_party_id: @rocky.id)
 PartyUser.create!(user_id: @user4.id, viewing_party_id: @rocky.id)
+
+@godfather = @user1.viewing_parties.create!(duration: 175, date: Date.today, time: Time.now, movie_id: 238)
+PartyUser.create!(user_id: @user2.id, viewing_party_id: @godfather.id)
