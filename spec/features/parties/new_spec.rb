@@ -7,8 +7,8 @@ RSpec.describe 'Creating a viewing party from a movie show page', :vcr do
 
     it 'has a button to create a viewing party', :vcr do
 
-        visit user_movies_path(@user1.id)
-
+        visit user_movies_discover_path(@user1.id)
+        click_on 'Top Rated'
         click_on 'The Shawshank Redemption'
         
         click_on 'Create Viewing Party'

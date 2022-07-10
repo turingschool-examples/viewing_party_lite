@@ -5,8 +5,9 @@ RSpec.describe 'Movie details page', :vcr do
         @user1 = User.create!(email: 'jake.taffer@gmail.com', name: 'Jake')
     end
 
-    it 'has a button to reate a viewing party' do
-        visit user_movies_path(@user1.id)
+    it 'has a button to create a viewing party' do
+        visit user_movies_discover_path(@user1.id)
+        click_on 'Top Rated'
         
         click_on 'The Shawshank Redemption'
         expect(current_path).to eq(user_movie_path(@user1.id, 278))
@@ -23,6 +24,7 @@ RSpec.describe 'Movie details page', :vcr do
         expect(page).to have_content("Framed in the 1940s for the double murder of his wife")
         expect(page).to have_content('Actor/Actress: Tim Robbins Character: Andy Dufresne')
         expect(page).to have_content('7')
+        save_and_open_page
     end
 
 end
