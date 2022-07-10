@@ -5,7 +5,7 @@ RSpec.describe MovieService do
     it 'makes a service call and returns data for one movie' do
       movie = MovieService.get_search_movie('Spirited Away')
 
-      expect(movie[0][:title]).to eq('Spirited Away')
+      expect(movie[0][:title]).to eq("The Art of 'Spirited Away'")
     end
   end
 end

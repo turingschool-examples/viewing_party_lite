@@ -14,16 +14,16 @@
           1,
           null,
           1,
-          2,
-          2,
-          80,
+          4,
+          4,
+          160,
           null,
           null,
           null,
           1,
-          0,
-          0,
-          0,
+          1,
+          1,
+          2,
           null,
           null,
           null
@@ -78,26 +78,26 @@
           1,
           null,
           1,
-          5,
+          10,
           null,
           null,
           1,
-          5,
+          10,
+          null,
+          null,
+          1,
+          4,
+          4,
+          null,
+          4,
+          4,
+          null,
+          4,
           null,
           null,
           1,
           2,
           2,
-          null,
-          2,
-          2,
-          null,
-          2,
-          null,
-          null,
-          1,
-          1,
-          1,
           null,
           null
         ]
@@ -108,8 +108,8 @@
           1,
           null,
           1,
-          80,
-          80,
+          162,
+          162,
           null,
           null
         ]
@@ -128,7 +128,7 @@
           1,
           null,
           1,
-          10,
+          8,
           null,
           null
         ]
@@ -162,19 +162,20 @@
       "/Users/ruezheng/turing/3module/projects/viewing_party_lite/app/controllers/movies_controller.rb": {
         "lines": [
           1,
-          1,
           null,
           1,
-          0,
-          0,
+          3,
           null,
-          0,
+          3,
+          1,
+          null,
+          2,
           null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1657423761
+    "timestamp": 1657471066
   }
 }
