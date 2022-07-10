@@ -1,0 +1,5 @@
+<% @movies.each do |movie| %>
+  <% require "pry"; binding.pry %>
+  <%= movie.title %>
+  <p>Vote Average: <%= movie.vote_average %><p><br>
+<% end %>
