@@ -32,4 +32,13 @@ RSpec.describe MoviesService do
       expect(parsed_json[:title]).to eq("Fight Club")
   end
       
+
+  it '#get_movie_review returns an array of hashes', :vcr do
+    movie_id = 550
+    parsed_json = MoviesService.get_movie_reviews(movie_id)
+    expect(parsed_json).to be_a Array 
+    movie = parsed_json.first
+    expect(movie[:content]).to be_a String
+    expect(movie).to include(:author, :content)
+  end
 end
