@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Movie
-  attr_reader :title, :vote_average, :runtime, :id, :overview, :author, :review
+  attr_reader :title, :vote_average, :runtime, :id, :overview, :author, :review, :poster_path
 
   def initialize(movie_data)
     @data = movie_data
@@ -12,6 +12,7 @@ class Movie
     @overview = movie_data[:overview]
     @author = movie_data[:author]
     @review = movie_data[:content]
+    @poster = movie_data[:poster_path]
   end
 
   def get_genre
