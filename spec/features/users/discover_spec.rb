@@ -34,14 +34,4 @@ describe 'user discover page' do
     expect(current_path).to eq("/users/#{@user1.id}/discover")
     expect(page).to have_content('Uh oh, something went wrong. Please try again.')
   end
-
-  it 'can be returned to from the movie results page', :vcr do
-    click_button('Find Top Rated Movies')
-
-    expect(current_path).to eq("/users/#{@user1.id}/movies")
-
-    click_button('Discover Page')
-
-    expect(current_path).to eq("/users/#{@user1.id}/discover")
-  end
 end

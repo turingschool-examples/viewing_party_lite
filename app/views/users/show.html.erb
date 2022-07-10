@@ -12,14 +12,17 @@
             <% if @user == party.host %>
                 <p> <b>You are hosting!</b> </p>
                 <p> Friends Invited: </p>
+                <div class="attendees">
                 <% party.users.each do |user| %>
-                        <% if user != @user %>
-                            <%=user.name%> (<%=user.email %>) <br>
-                        <%end%> 
-                    <%end%>
+                    <% if user != @user %>
+                        <%=user.name%> (<%=user.email %>) <br>
+                    <%end%> 
+                <%end%>
+                </div>
             <% else %>
                 <p> <b><%= party.host.name %> is hosting a party!</b> </p>
                 <p> Friends Invited: </p>
+                <div class="attendees">
                 <% party.users.each do |user| %>
                     <% if user != party.host %>
                         <% if user == @user%>
@@ -29,6 +32,7 @@
                         <% end %>
                     <% end %>
                 <%end%> 
+                </div>
             <%end%>
         </div>
     <%end%>
