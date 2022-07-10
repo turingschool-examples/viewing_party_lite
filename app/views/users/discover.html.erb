@@ -4,3 +4,9 @@
       <%= f.hidden_field :q, value: "toprated" %>
       <%= f.submit 'Top Movies' %>
   <% end %>
+
+  <%= form_with url: user_movies_url(@user.id), method: :get, local: true do |f| %>
+    <%= f.label :q, "Search for:" %>
+    <%= f.text_field :q %>
+    <%= f.submit 'Search' %>
+  <% end %>
