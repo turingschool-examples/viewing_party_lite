@@ -52,13 +52,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 824a5d9ed02451bcb68b15ae5991dce0.cloudfront.net (CloudFront)
+      - 1.1 9cefde3a3c84cc779d3c26a39c2e4430.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - pFlzT5-W8Sj0XKH6CTRgze8W7BL5XkX4NPeJigpBd0I3mbSQCCqUVQ==
+      - tC9BT1_uJ6_xJvirEbJCOwjoUWos1CRlBXqrE7hsPjFEbvrcWdWAhA==
       Age:
-      - '2366'
+      - '20127'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg","belongs_to_collection":null,"budget":25000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"","id":278,"imdb_id":"tt0111161","original_language":"en","original_title":"The
@@ -73,5 +73,5 @@ http_interactions:
         Bros. Pictures","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1994-09-23","revenue":28341469,"runtime":142,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Fear
         can hold you prisoner. Hope can set you free.","title":"The Shawshank Redemption","video":false,"vote_average":8.7,"vote_count":21753}'
-  recorded_at: Sun, 10 Jul 2022 15:42:30 GMT
+  recorded_at: Sun, 10 Jul 2022 20:38:31 GMT
 recorded_with: VCR 6.1.0

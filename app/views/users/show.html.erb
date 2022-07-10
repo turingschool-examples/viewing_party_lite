@@ -2,6 +2,45 @@
 
 <h2><%= button_to "Discover Movies", user_discover_path(@user.id), method: :get %></h2>
 
-<% @user.viewing_partys.each do |party| %>
-    <h3><%= party.movie %>' viewing party </h3>
-  <% end %>
+<div id="invited">
+    <% @user.viewing_partys.each do |party| %>
+        <% if party.host_id != @user.id %>
+            <div id="party-<%= party.id %>">
+                <img src="https://image.tmdb.org/t/p/w200/<%= find_movie(party.movie_id).image %>?api_key<%=ENV['movie_api_key']%>">
+                <h3>Title: <%= link_to "#{party.movie}", user_movie_path(@user.id,party.movie_id) %></h3> 
+                <h4>
+                    <p>Date: <%=party.date.strftime('%a, %B %d, %Y')%></p>  
+                    <p>Start time: <%=party.start_time.strftime("%I:%M%p")%></p>
+                </h4>
+                <h4>
+                    Host: <%= party.user.user_name %>
+                </h4>
+                    <% party.users.each do |user| %>
+                        <% if user.id == @user.id %>
+                            <p><b><%= user.user_name %></b></p>
+                        <% else %>
+                            <p><%= user.user_name %></p>
+                        <% end %>
+                    <% end %>
+            </div>
+</div>
+
+<div id="created">
+        <% elsif party.host_id == @user.id %>
+                <img src="https://image.tmdb.org/t/p/w200/<%= find_movie(party.movie_id).image %>?api_key<%=ENV['movie_api_key']%>">
+                <h3>Title: <%= link_to "#{party.movie}", user_movie_path(@user.id,party.movie_id) %></h3> 
+                <h4>
+                    <p>Date: <%=party.date.strftime('%a, %B %d, %Y')%></p>  
+                    <p>Start time: <%=party.start_time.strftime("%I:%M%p")%></p>
+                </h4>
+                <h4>
+                    I'm the host
+                </h4>
+                    <% party.users.each do |user| %>
+                        <% if user.id != party.host_id %>
+                            <p><%= user.user_name %></p>
+                        <% end %>
+                    <% end %>
+        <% end %>
+    <% end %>
+</div>
