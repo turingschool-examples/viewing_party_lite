@@ -1,5 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe MovieService do
-  
+  describe '::get_search_movie' do
+    it 'makes a service call and returns data for one movie' do
+      movie = MovieService.get_search_movie('Spirited Away')
+
+      expect(movie[0][:title]).to eq('Spirited Away')
+    end
+  end
 end
