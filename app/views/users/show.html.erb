@@ -5,7 +5,8 @@
 <div id="viewingPartiesInvited">
   <h2>Invited Viewing Parties</h2>
   <% @parties.each do |party| %>
-    <% unless  %>
+    <% unless  party.find_host == @user.id%>
+      <img src="https://image.tmdb.org/t/p/w500<%= party.movie_image %>" alt=<%= party.movie_name %>>
     <p><b>Movie: </b><%= link_to "#{party.movie_name}", user_movie_path(user_id: @user.id, id: party.movie_id) %></p>
     <p><b>Date: </b><%= party.date %></p>
     <p><b>Start Time: </b><%= party.start_time.strftime('%H:%M') %></p>
@@ -17,23 +18,47 @@
       <% end %>
     <p><b>Participants: </b></p>
     <% party.users.each do |user| %>
+      <% unless user.host?(party.id) %>
         <% if user.id == @user.id %>
       <ul>
           <li><b><%= user.email %></b></li>
         <% else %>
           <li><%= user.email %></li>
-      </ul>
+        </ul>
+      <% end %>
     <% end %>
-  <% end %>    
+    <% end %>    
+  <% end %>
       <br>
   <% end %>
 
 <div id="viewingPartiesCreated">
   <h2>Created Viewing Parties</h2>
   <% @parties.each do |party| %>
-    <b>Movie: </b><%= party.movie_name %>
-    <b>Date: </b><%= party.date %>
-    <b>Start Time: </b><%= party.start_time.strftime('%H:%M') %>
+    <% unless  party.find_host != @user.id%>
+    <img src="https://image.tmdb.org/t/p/w500<%= party.movie_image %>" alt=<%= party.movie_name %>>
+    <p><b>Movie: </b><%= link_to "#{party.movie_name}", user_movie_path(user_id: @user.id, id: party.movie_id) %></p>
+    <p><b>Date: </b><%= party.date %></p>
+    <p><b>Start Time: </b><%= party.start_time.strftime('%H:%M') %></p>
+    <p><b>Host: </b></p>
+      <% party.users.each do |user| %>
+        <% if user.host?(party.id) %>
+          <%= user.email %>
+        <% end %>
+      <% end %>
+    <p><b>Participants: </b></p>
+    <% party.users.each do |user| %>
+      <% unless user.host?(party.id) %>
+        <% if user.id == @user.id %>
+      <ul>
+          <li><b><%= user.email %></b></li>
+        <% else %>
+          <li><%= user.email %></li>
+        </ul>
+      <% end %>
+    <% end %>
+    <% end %>    
+  <% end %>
       <br>
   <% end %>
 </div>
