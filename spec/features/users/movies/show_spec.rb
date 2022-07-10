@@ -24,7 +24,7 @@ RSpec.describe 'Movies Show page', type: :feature do
       expect(page).to have_content("Vote Average: 8.7")
       expect(page).to have_content("Runtime: 2:22")
       expect(page).to have_content("Genre(s): Drama | Crime |")
-      expect(page).to have_content("Movie Summary")\
+      expect(page).to have_content("Movie Summary")
     end
 
     within "#cast-members" do
