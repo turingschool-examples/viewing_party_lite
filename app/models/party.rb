@@ -1,5 +1,4 @@
 class Party < ApplicationRecord
-
   validates_presence_of :movie_name
   validates_presence_of :movie_id
   validates_presence_of :date
@@ -8,4 +7,8 @@ class Party < ApplicationRecord
 
   has_many :party_users
   has_many :users, through: :party_users
+
+  def find_host
+    party_users.where(host: true).first.user_id
+  end
 end
