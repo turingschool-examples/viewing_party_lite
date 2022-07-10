@@ -7,6 +7,10 @@ class ViewingParty < ApplicationRecord
   validates_presence_of :time
   validates_presence_of :movie_id
 
+  def display_image
+    movie = MovieFacade.create_movie_details(movie_id)
+    "http://image.tmdb.org/t/p/w500#{movie.img_path}"
+  end
 
   def display_title
     movie = MovieFacade.create_movie_details(movie_id)

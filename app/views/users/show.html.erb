@@ -1,9 +1,19 @@
 <h1><%= @user.name %>'s Dashboard</h1>
 
 <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %>
-
 <section id="viewingparties">
-  <h3>Viewing Parties</h3>
-  <h4>My Viewing Parties</h4>
-  <h4>My Invites</h4>
+<h3>Viewing Parties</h3>
+<h4>My Viewing Parties</h4>
+  <% @user.viewing_parties.each do |party| %>
+  <div id="party<%= party.movie_id %>">
+    <img src="<%= party.display_image %>" alt="The poster image for <%= party.display_title%>">
+    <p>Hosting</p>
+    <%= party.display_title %><br>
+    <%= party.date.strftime("%b %d, %Y")%><br>
+    <%= party.time.strftime("%l:%M %p") %><br>
+    <% party.users.each do |user| %>
+      <%= user.name %><br>
+    <% end %>
+    </div>
+  <% end %>
 </section>
