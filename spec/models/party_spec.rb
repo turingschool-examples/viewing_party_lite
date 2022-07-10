@@ -24,9 +24,9 @@ RSpec.describe Party, type: :model do
       PartyUser.create(party_id: party1.id, user_id: user1.id, host: true)
       PartyUser.create(party_id: party1.id, user_id: user2.id, host: false)
       PartyUser.create(party_id: party1.id, user_id: user3.id, host: false)
+
       expect(party1.find_host).to eq user1.id
       expect(party1.find_host).to_not eq user2.id
     end
   end
 end
-
