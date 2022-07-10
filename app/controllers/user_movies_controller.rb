@@ -4,10 +4,12 @@ class UserMoviesController < ApplicationController
     if params[:search].present?
       keyword = params[:search]
       @search_results = MoviesFacade.search(keyword)
+    # elsif params[:search] = ""
+    #   redirect_to "/user/#{@user.id}/discover"
+    #   flash[:alert] = "Please enter a word found in the movie title for which you are searching"
     else
       @top_movies = MoviesFacade.top_rated
     end
-
   end
 
   def show

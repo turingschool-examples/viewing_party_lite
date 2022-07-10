@@ -22,6 +22,7 @@ RSpec.describe 'User Movies Index Page' do
     click_on 'The Shawshank Redemption'
     expect(current_path).to eq("/users/#{user.id}/movies/278")
   end
+
   it 'has returned top rated movie titles as links to their detail page', :vcr do
     user = User.create!(name: 'User', email: 'user@email.com')
 

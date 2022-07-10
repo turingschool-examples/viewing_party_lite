@@ -14,6 +14,7 @@ class ViewingPartiesController < ApplicationController
       party = Party.create!(movie_name: movie.title, movie_id: movie.movie_id, date: params[:date], start_time: params[:time],
                             duration: params[:duration], movie_image: movie.image)
       PartyUser.create!(party_id: party.id, user_id: params[:user_id], host: true)
+      
       params[:invites].each do |invite|
         PartyUser.create!(party_id: party.id, user_id: invite, host: false)
       end
