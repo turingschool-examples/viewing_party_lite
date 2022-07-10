@@ -1,5 +1,6 @@
-class MovieFacade
+# frozen_string_literal: true
 
+class MovieFacade
   def self.get_top_rated
     top_movies = []
     top_movies_1 = MovieService.get_top_rated(1)
@@ -14,7 +15,7 @@ class MovieFacade
     top_movies.each do |movie|
       top_movie_poros << Movie.new(movie)
     end
-    return top_movie_poros
+    top_movie_poros
   end
 
   def self.search(title)
@@ -31,11 +32,10 @@ class MovieFacade
     movie_search.each do |movie|
       movie_poros << Movie.new(movie)
     end
-    return movie_poros
+    movie_poros
   end
 
   def self.movie_data(id)
     MovieData.new(MovieService.movie_data(id))
   end
-
 end

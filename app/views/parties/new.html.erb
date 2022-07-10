@@ -1,6 +1,6 @@
 <h1> New Viewing Party!</h1>
 
-<%= form_with url: "/users/#{@user.id}/movies/#{@movie_id}/viewing_party", method: :post do |f| %>
+<%= form_with url: "/users/#{@user.id}/movies/#{@movie_id}/viewing_party", method: :post, local: true do |f| %>
     <%= f.label :duration, "Duration: " %>
     <%= f.number_field :duration %>
     <%= f.label :date, "Date: " %>
@@ -15,5 +15,6 @@
           </div>
           <% end %>
         <%= f.hidden_field :host, value: @user.id  %>
+        <%= f.hidden_field :movie_name, value: @movie.name %>
         <%= f.submit :submit %>
       <% end %>

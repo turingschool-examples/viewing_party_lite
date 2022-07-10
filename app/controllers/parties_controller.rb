@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PartiesController < ApplicationController
   def new
     @users = User.all
@@ -7,17 +9,20 @@ class PartiesController < ApplicationController
   end
 
   def create
+    @user = User.find(params[:user_id])
     @movie = MovieFacade.movie_data(params[:movie_id])
-    party = Party.create!(party_params)
-    params[:users].each do |user|
-      PartyUser.create(user_id: user, party: party)
+    if @movie.runtime < params[:duration].to_i
+      party = Party.create!(party_params)
+      params[:users].each do |user|
+        PartyUser.create(user_id: user, party: party)
+      end
+      redirect_to "/users/#{@user.id}"
     end
-    redirect_to "/users/#{params[:user_id]}"
   end
 
-private
+  private
 
   def party_params
-    params.permit(:id, :duration, :date, :start_time, :user_id, :movie_id)
-    end
+    params.permit(:id, :duration, :date, :start_time, :user_id, :movie_id, :movie_name)
+  end
 end
