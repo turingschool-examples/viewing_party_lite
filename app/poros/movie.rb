@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Movie
-  attr_reader :title, :vote_average, :runtime, :id, :overview, :author, :review, :poster_path
+  attr_reader :title, :vote_average, :runtime, :id, :overview, :author, :review, :poster
 
   def initialize(movie_data)
     @data = movie_data
@@ -19,5 +19,11 @@ class Movie
     @data[:genres].map do |genre|
       genre[:name]
     end
+  end
+
+  def time_conversion(minutes)
+      hours = minutes / 60
+      remainder = minutes % 60
+      "#{hours}:#{remainder}"
   end
 end
