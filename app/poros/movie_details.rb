@@ -7,7 +7,8 @@ class MovieDetails
               :cast_members,
               :total_reviews,
               :author,
-              :id
+              :id,
+              :image
 
   def initialize(data)
     @id = data[:id]
@@ -19,6 +20,7 @@ class MovieDetails
     @cast_members = data[:credits][:cast][(0..9)]
     @total_reviews = data[:reviews][:total_results]
     @author = data[:reviews][:results].map {|author| author[:author_details]}
+    @image = data[:poster_path]
   end
 
   def time_conversion(runtime)

@@ -15,7 +15,6 @@ class ViewingPartysController < ApplicationController
       flash[:error] = 'Duration can not be shorter than movie runtime'
       redirect_to new_user_movie_viewing_party_path(host_id, movie.id)
     end
-
     attendees = params[:usernames]
 
     if defined?(@new_party)
@@ -31,7 +30,7 @@ class ViewingPartysController < ApplicationController
   private
 
   def party_params
-    params.permit(:movie, :date, :start_time, :duration, :host_id)
+    params.permit(:movie, :movie_id, :date, :start_time, :duration, :host_id)
   end
 
   def attendee_params
