@@ -1,0 +1,29 @@
+<h1>Create Viewing Party for <%= @movie.title %></h1>
+
+<% if flash.key? :error %>
+  <p><%= flash[:error] %></p>
+<% end %>
+<%= form_with url: user_movie_viewing_partys_path(@user.id, @movie.id), method: :post, local: true do |f| %>
+  <p><%= f.label :duration %>
+  <%= f.number_field :duration, :value => @movie.runtime %></p>
+
+  <p><%= f.label :date %>
+  <%= f.date_select :date %></p>
+
+  <p><%= f.label :start_time %>
+  <%= f.time_select :start_time, { ampm: true, ignore_date: true } %></p>
+
+  <% @users.each do |user| %>
+    <div id=user-<%= user.id %>>
+      <%= f.label "#{user.user_name}" %>
+      
+
+      <%= f.check_box "usernames[#{user.id}]" %>
+    </div>
+  <% end %>
+
+  <%= f.hidden_field :host_id, value: params[:user_id] %>
+  <%= f.hidden_field :movie, value: @movie.title %>
+
+  <%= f.submit 'Create Party' %>
+ <% end %>
