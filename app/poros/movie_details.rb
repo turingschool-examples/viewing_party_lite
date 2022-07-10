@@ -18,7 +18,7 @@ class MovieDetails
     @summary = data[:overview]
     @cast_members = data[:credits][:cast][(0..9)]
     @total_reviews = data[:reviews][:total_results]
-    @author = data[:reviews][:results].map {|author| author[:author_details]}
+    @author = data[:reviews][:results].map {|author| author[:author_details]
   end
 
   def time_conversion(runtime)

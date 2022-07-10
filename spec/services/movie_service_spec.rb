@@ -19,7 +19,6 @@ RSpec.describe 'MovieService' do
       expect(movie[:vote_average]).to be_a(Float)
     end
 
-
     it 'can consume the movie search api and return a parsed response body', :vcr do
       parsed_json = @movie_service.poro_search(278)
 
@@ -29,17 +28,15 @@ RSpec.describe 'MovieService' do
       expect(parsed_json[:vote_average]).to be_a Float
     end
 
-    it "accepts query and parses data for movie search", :vcr do
+   it "accepts query and parses data for movie search", :vcr do
      parsed_json = @movie_service.movie_search("Shawshank")
 
      expect(parsed_json). to be_a Hash
      movie = parsed_json[:results].first
-
      expect(movie).to include :id, :title, :vote_average
      expect(movie[:id]).to be_a(Integer)
      expect(movie[:title]).to be_a(String)
      expect(movie[:vote_average]).to be_a(Float)
-
    end
 
    it "can consume API and parse response for movie details", :vcr do
