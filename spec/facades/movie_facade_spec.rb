@@ -20,4 +20,13 @@ RSpec.describe MovieFacade do
 
     expect(movie_details).to be_an_instance_of(MovieDetails)
   end
+
+  it 'creates a CastMember poro from create cast call', :vcr do
+    id = 238
+    cast_member = MovieFacade.create_cast(id)
+
+    expect(cast_member[0]).to be_an_instance_of(CastMember)
+    expect(cast_member).to be_a(Array)
+    expect(cast_member.length).to be(10)
+  end 
 end

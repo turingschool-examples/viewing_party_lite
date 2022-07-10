@@ -13,4 +13,9 @@ class MovieFacade
     json = MovieService.get_details(id)
     MovieDetails.new(json)
   end
+
+  def self.create_cast(id)
+    json = MovieService.get_cast(id)
+    json[0..9].map { |data| CastMember.new(data) }
+  end
 end

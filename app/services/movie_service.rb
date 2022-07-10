@@ -20,5 +20,5 @@ class MovieService < BaseService
     response = conn.get("/3/movie/238/credits?api_key=#{ENV['api_key']}")
     data = get_json(response)
     data[:cast]
-  end 
+  end
 end

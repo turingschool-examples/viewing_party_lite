@@ -41,4 +41,20 @@ RSpec.describe "Movie details/show page", type: :feature do
     expect(page).to have_content("Drama, Crime")
     expect(page).to have_content(godfather.overview)
   end
+
+  it 'displays cast details', :vcr do
+    godfather_cast = MovieFacade.create_cast(238)
+
+    visit "/users/#{@user1.id}/movies/238"
+
+    expect(page).to have_content(godfather_cast[0].name)
+    expect(page).to have_content(godfather_cast[0].character)
+  end
+
+  it 'displays 10 cast members', :vcr do
+
+    visit "/users/#{@user1.id}/movies/238"
+
+    expect(page.all(".castMember").count).to eq(10)
+  end 
 end
