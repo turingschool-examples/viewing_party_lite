@@ -17,7 +17,6 @@ RSpec.describe 'MovieFacade' do
     expect(movie.title).to be_a String
     expect(movie.vote_average).to be_a Float
   end
-end
 
   it "makes services call and returns movie objects", :vcr do
     query = "shawshank"
@@ -26,5 +25,20 @@ end
     expect(movies).to be_a Array
     expect(movies).to be_all Movie
   end
-end
 
+  it "makes a service call and returns an array of movie detail objects", :vcr do
+    movies = MovieFacade.new.movie_details(278)
+
+    expect(movies).to be_a MovieDetails
+    expect(movies.id).to be_a Integer
+    expect(movies.title).to be_a String
+    expect(movies.vote_average).to be_a Float
+    expect(movies.genre).to be_a Array
+    expect(movies.genre).to be_all String
+    expect(movies.runtime).to be_a Integer
+    expect(movies.summary).to be_a String
+    expect(movies.cast_members).to be_a Array
+    expect(movies.total_reviews).to be_a Integer
+    expect(movies.author).to be_a Array
+  end
+end

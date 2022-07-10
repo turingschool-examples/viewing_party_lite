@@ -18,49 +18,35 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Fri, 08 Jul 2022 22:36:19 GMT
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json;charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Vary:
-      - Accept-Encoding
+      Date:
+      - Sat, 09 Jul 2022 22:15:16 GMT
       Server:
-      - BunnyCDN-WA-642
-      Cdn-Pullzone:
-      - '775334'
-      Cdn-Uid:
-      - 29af4e0e-bcbd-4fcb-8635-74ddc38a1ebf
-      Cdn-Requestcountrycode:
-      - US
-      Access-Control-Allow-Methods:
-      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      - openresty
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
       Cache-Control:
       - public, max-age=600
-      Cdn-Proxyver:
-      - '1.02'
-      Cdn-Requestpullsuccess:
-      - 'True'
-      Cdn-Requestpullcode:
-      - '200'
-      Cdn-Cachedat:
-      - 07/08/2022 22:36:19
-      Cdn-Edgestorageid:
-      - '642'
-      Cdn-Status:
-      - '200'
-      Cdn-Requestid:
-      - 9424959f9b74c1b4752f2b70eb7be4ef
-      Cdn-Cache:
-      - MISS
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 2ad801a60bd36fbeb6a62fab7eabe330.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - icYAqs92GYZCF8Zn1OzlyR54nQ0ovuz4fM-eQWKJICIkHqNokoTiZQ==
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg","genre_ids":[18,80],"id":278,"original_language":"en","original_title":"The
@@ -69,17 +55,17 @@ http_interactions:
         at the Shawshank prison, where he puts his accounting skills to work for an
         amoral warden. During his long stretch in prison, Dufresne comes to be admired
         by the other inmates -- including an older prisoner named Red -- for his integrity
-        and unquenchable sense of hope.","popularity":85.804,"poster_path":"/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg","release_date":"1994-09-23","title":"The
-        Shawshank Redemption","video":false,"vote_average":8.7,"vote_count":21727},{"adult":false,"backdrop_path":"/u6hgtSIzW8nDKKWmun9JDhZz2fp.jpg","genre_ids":[99],"id":546312,"original_language":"en","original_title":"Shawshank:
+        and unquenchable sense of hope.","popularity":84.321,"poster_path":"/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg","release_date":"1994-09-23","title":"The
+        Shawshank Redemption","video":false,"vote_average":8.7,"vote_count":21741},{"adult":false,"backdrop_path":"/u6hgtSIzW8nDKKWmun9JDhZz2fp.jpg","genre_ids":[99],"id":546312,"original_language":"en","original_title":"Shawshank:
         The Redeeming Feature","overview":"Film critic and presenter Mark Kermode
         explores the fascination and praise audiences, fans and critics have behind
         the classic The Shawshank Redemption (1994) and how its importance grew higher
         over the years despite being an overlooked film when it was released and not
         getting any Oscars victories when it was nominated as one of the Best Pictures
-        of the Year.","popularity":1.623,"poster_path":"/b7DGM74MRfiLqEveVKwh0jnQ8zX.jpg","release_date":"2001-09-08","title":"Shawshank:
+        of the Year.","popularity":1.914,"poster_path":"/b7DGM74MRfiLqEveVKwh0jnQ8zX.jpg","release_date":"2001-09-08","title":"Shawshank:
         The Redeeming Feature","video":false,"vote_average":8.7,"vote_count":14},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":897459,"original_language":"en","original_title":"Hope
         Springs Eternal: A Look Back at The Shawshank Redemption","overview":"Documentary
-        about the movie.","popularity":1.467,"poster_path":"/vdVab7yNvgYEMd8shCfy2D6nTMu.jpg","release_date":"2004-06-25","title":"Hope
+        about the movie.","popularity":1.251,"poster_path":"/vdVab7yNvgYEMd8shCfy2D6nTMu.jpg","release_date":"2004-06-25","title":"Hope
         Springs Eternal: A Look Back at The Shawshank Redemption","video":false,"vote_average":7,"vote_count":1}],"total_pages":1,"total_results":3}'
-  recorded_at: Fri, 08 Jul 2022 22:36:19 GMT
+  recorded_at: Sat, 09 Jul 2022 22:15:16 GMT
 recorded_with: VCR 6.1.0
