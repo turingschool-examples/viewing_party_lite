@@ -15,7 +15,10 @@ RSpec.describe 'MovieFacade', :vcr do
     expect(movies).to be_a(Array)
     expect(movies).to be_all(Movie)
   end
-   
 
+  it 'makes services call returns a detailed movie object' do
+    movie = MovieFacade.create_movie_details(278)
 
+    expect(movie).to be_a(Movie)
+  end
 end
