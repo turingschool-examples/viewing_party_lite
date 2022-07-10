@@ -23,7 +23,7 @@ class ViewingPartyController < ApplicationController
       users.each do |user|
         if host_id != user.id && params[user.name.to_sym] == '1'
           UserViewingParty.create!(user_id: user.id, viewing_party_id: viewing_party.id, host: false)
-        else
+        elsif host_id == user.id
           UserViewingParty.create!(user_id: host_id, viewing_party_id: viewing_party.id, host: true)
         end
       end
