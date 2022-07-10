@@ -25,4 +25,11 @@ RSpec.describe MoviesService do
         expect(movie[:title]).to include(keyword)
     end
   end
+  
+  it '#get_movie returns a hash of a single movies attributes', :vcr do
+      parsed_json = MoviesService.get_movie(550)
+      expect(parsed_json).to be_a Hash 
+      expect(parsed_json[:title]).to eq("Fight Club")
+  end
+      
 end
