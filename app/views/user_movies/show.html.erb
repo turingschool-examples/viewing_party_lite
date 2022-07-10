@@ -1,9 +1,10 @@
 <center>
 <h2><%= @movie.title %></h2>
-<%= render partial: 'partials/discover_button' %>
-<div><%= button_to "Create a Viewing Party", "/users/#{@user.id}/movies/#{@movie.id}/viewing_party/new", method: :get %></div>
+<%= render partial: 'partials/buttons/discover_button' %>
+<br>
+<%= render partial: 'partials/buttons/viewing_party_button' %>
 </center>
-<h3>Vote Average: <%= @movie.vote_average %>  Runtime: <%= @movie.runtime %>  Genre(s): <%= @movie.genres.map{ |genre| genre[:name]}.join(", ") %></h3>
+<h3>Vote Average: <%= @movie.vote_average %> | Runtime: <%= @movie.runtime %> | Genre(s): <%= @movie.genres.map{ |genre| genre[:name]}.join(", ") %></h3>
 <h3>Summary</h3>
 <p><%= @movie.overview %><p>
 <div id="cast">

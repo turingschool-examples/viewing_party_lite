@@ -1,26 +1,7 @@
-<div align='center'>
+<center>
   <h2>Create a Viewing Party for <%= @movie.title %></h2>
-  <%= render partial: 'partials/discover_button' %>
-  <p> Viewing Party Details </p>
-  <p>Movie Title <%= @movie.title %></p>
-  <%= form_with model: ViewingParty.new, local: true do |f| %>
-    <%= f.label :duration, "Duration of Party" %>
-    <%= f.number_field :duration, value: @movie.runtime_mins %>
-    <br>
-    <%= f.label :date %>
-    <%= f.date_field :date, value: Date.today %>
-    <br>
-    <%= f.label :start_time %>
-    <%= f.time_field :start_time, value: "19:00:00" %>
-    <h4>Invite Other Users</h4>
-    <% @users.each do |user| %>
-      <%= f.label "#{user.id}", "#{user.name} (#{user.email})" %>
-      <%= f.check_box "#{user.id}" %>
-    <% end %>
-    <br>
-    <br>
-    <%= hidden_field_tag(:user_id, @user.id) %>
-    <%= hidden_field_tag(:movie_id, @movie.id) %>
-    <%= f.submit "Create Party" %>
-  <% end %>
-<div>
+  <%= render partial: 'partials/buttons/discover_button' %>
+  <h3> Viewing Party Details </h3>
+  <h4>Movie Title: <%= @movie.title %></h4>
+  <%= render partial: 'partials/forms/new_viewing_party' %>
+</center>

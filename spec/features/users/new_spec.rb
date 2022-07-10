@@ -14,8 +14,9 @@ describe 'user new/registration page' do
     click_button('Create New User')
 
     user = User.last
+
     expect(current_path).to eq(user_path(user))
-    expect(page).to have_content("#{user.name}'s Dashboard")
+    expect(page).to have_content("Jane's Dashboard")
   end
 
   it 'displays an error message if the email entered is not unique' do
@@ -24,6 +25,7 @@ describe 'user new/registration page' do
     fill_in 'user[name]', with: 'Max'
     fill_in 'user[email]', with: 'eleven@upsidedown.com'
     click_button('Create New User')
+
     expect(current_path).to eq('/register')
     expect(page).to have_content('Oops, that email is already in use! Please try again with a unique email.')
   end
@@ -43,6 +45,7 @@ describe 'user new/registration page' do
     fill_in 'user[name]', with: ''
     fill_in 'user[email]', with: 'eleven@upsidedown.com'
     click_button('Create New User')
+    
     expect(current_path).to eq('/register')
     expect(page).to have_content('Please enter a valid name and unique e-mail address.')
   end

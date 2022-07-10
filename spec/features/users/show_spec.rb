@@ -9,6 +9,7 @@ describe 'user show page (dashboard)' do
   end
   it 'displays the users name' do
     visit user_path(@user1)
+
     expect(page).to have_content("Jane's Dashboard")
     expect(page).to_not have_content("Dustin's Dashboard")
   end
@@ -36,17 +37,17 @@ describe 'user show page (dashboard)' do
     within "#viewing-party#{party1.id}" do
       find("img[src='https://image.tmdb.org/t/p/w185/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg']")
       expect(page).to have_content(party1.movie.title)
+      expect(page).to_not have_content(party2.movie.title)
       expect(page).to have_content(party1.formatted_date)
       expect(page).to have_content(party1.formatted_time.strip)
     end
-    expect(page).to have_content(party2.movie.title)
 
+    expect(page).to have_content(party2.movie.title)
     expect(page).to_not have_content(party3.movie.title)
   end
 
   it 'links to each movies details page', :vcr do
     party1 = ViewingParty.create!(date: Date.today, start_time: Time.now, duration: 180, movie_id: 120)
-
     user_party1 = UserViewingParty.create!(user: @user1, viewing_party: party1, hosting: true)
 
     visit user_path(@user1)
@@ -71,12 +72,17 @@ describe 'user show page (dashboard)' do
 
     within "#viewing-party#{party1.id}" do
       expect(page).to have_content('You are hosting!')
-      expect(page).to have_content('Dustin (hellfire@hawkins.edu)')
-      expect(page).to_not have_content('Jane (eleven@upsidedown.com)')
+      within ".attendees" do
+        expect(page).to have_content('Dustin (hellfire@hawkins.edu)')
+        expect(page).to_not have_content('Jane (eleven@upsidedown.com)')
+      end
     end
 
     within "#viewing-party#{party2.id}" do
       expect(page).to have_content('Dustin is hosting a party!')
+      within ".attendees" do
+        expect(page).to have_content('Jane (eleven@upsidedown.com)')
+      end
     end
   end
 end

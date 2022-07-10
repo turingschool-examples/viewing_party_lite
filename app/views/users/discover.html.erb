@@ -1,11 +1,7 @@
 <center>
-    <h2> Discover Movies </h2>
-    <%= button_to "Find Top Rated Movies", "/users/#{@user.id}/movies", method: :get, params: {q: 'top rated'} %>
+<h2> Discover Movies </h2>
+    <%= render partial: 'partials/buttons/top_movies_button' %>
 <br>
 <p> OR </p>
-    <%= form_with url: "/users/#{@user.id}/movies", method: :get, local: true do |form| %>
-    <%= form.text_field :search, placeholder: "Search by Movie Title" %>
-    <%= form.submit "Find Movies" %>
-    <% end %>
-   
+    <%= render partial: 'partials/forms/movie_keyword_search' %>
 </center>
