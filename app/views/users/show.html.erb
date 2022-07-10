@@ -8,7 +8,7 @@
   <div id="party<%= party.movie_id %>">
     <img src="<%= party.display_image %>" alt="The poster image for <%= party.display_title%>">
     <p>Hosting</p>
-    <%= party.display_title %><br>
+    <%= link_to "#{party.display_title}", "/users/#{@user.id}/movies/#{party.movie_id}"%><br>
     <%= party.date.strftime("%b %d, %Y")%><br>
     <%= party.time.strftime("%l:%M %p") %><br>
     <% party.users.each do |user| %>
@@ -20,7 +20,7 @@
   <div id="party<%= party.movie_id %>">
     <img src="<%= party.display_image %>" alt="The poster image for <%= party.display_title%>">
     <p>Invited</p>
-    <%= party.display_title %><br>
+    <%= link_to "#{party.display_title}", "/users/#{@user.id}/movies/#{party.movie_id}"%><br>
     <%= party.date.strftime("%b %d, %Y")%><br>
     <%= party.time.strftime("%l:%M %p") %><br>
     <% party.users.each do |user| %>
