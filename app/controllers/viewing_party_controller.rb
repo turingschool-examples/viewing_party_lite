@@ -1,22 +1,21 @@
 class ViewingPartyController < ApplicationController
 
   def new
-     @movie = MovieFacade.movie_id_search(params[:movie_id])
-     @movie_id = params[:movie_id]
-     @user_id = params[:user_id]
-     @users = User.all
+    @movie = MovieFacade.movie_id_search(params[:movie_id])
+    # @movie_id = params[:movie_id]
+    @user_id = params[:user_id].to_i
+    @users = User.all
   end
 
   def create
-      users = User.all
-      host_id = params[:user_id]
-      movie = MovieFacade.movie_id_search(params[:movie_id])
+    users = User.all
+    host_id = params[:user_id]
+    movie = MovieFacade.movie_id_search(params[:movie_id])
 
-      if params[:duration].to_i < movie.runtime.to_i
-        flash[:notice] = "Please enter a duration that is longer than the movie runtime"
-        redirect_to new_user_movie_viewing_party_path(host_id, movie.id)
-      else
-
+    if params[:duration].to_i < movie.runtime.to_i
+      flash[:notice] = "Please enter a duration that is longer than the movie runtime"
+      redirect_to new_user_movie_viewing_party_path(host_id, movie.id)
+    else
       viewing_party = ViewingParty.create!(movie_id: params[:movie_id],
                                             duration: params[:duration],
                                             date: "#{params['date(1i)']}-#{params['date(2i)']}-#{params['date(3i)']}",

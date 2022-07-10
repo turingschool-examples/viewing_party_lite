@@ -19,7 +19,7 @@ RSpec.describe 'New party page' do
   describe 'sad path' do
     it 'When I visit the new party page has a form to fill out', :vcr do
       visit new_user_movie_viewing_party_path(@user1.id, @movie_id)
-
+      save_and_open_page
       within '#form' do
         fill_in :duration, with: '5'
         select 2022, from: "_date_1i"
@@ -29,6 +29,7 @@ RSpec.describe 'New party page' do
         select 36, from: "_start_time_5i"
         check "#{@user2.name}"
         check "#{@user3.name}"
+        expect(page).to_not have_content(@user1.name)
         click_button('Create')
       end
 
@@ -38,8 +39,8 @@ RSpec.describe 'New party page' do
   end
 
 
-  describe 'happy path' do
-    it 'When I visit the new party page has a form to fill out', :vcr do
+  xdescribe 'happy path' do
+    it 'When I fill out the form it appears on the host dashboard', :vcr do
       visit new_user_movie_viewing_party_path(@user1.id, @movie_id)
 
       within '#form' do
@@ -49,12 +50,14 @@ RSpec.describe 'New party page' do
         select 10, from: "_date_3i"
         select 14, from: "_start_time_4i"
         select 36, from: "_start_time_5i"
-        check "#{@user1.name}"
+        check "#{@user2.name}"
         check "#{@user3.name}"
+        expect(page).to_not have_content(@user1.name)
         click_button('Create')
       end
 
       expect(current_path).to eq(user_path(@user1.id))
+      save_and_open_page
       within ".hostParty" do
         expect(page).to have_content("The Godfather")
         expect(page).to have_content("2022 July 10")
