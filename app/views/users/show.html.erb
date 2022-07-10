@@ -5,12 +5,14 @@
 
 <p type="button" class="btn btn-outline-primary"><%= link_to "Discover Movies", user_movies_discover_path(@user) %></p>
 <hr>
+<h4>Viewing Parties:</h4>
+<hr>
 <div class="card-group">
   <% @viewing_parties.each do |party| %>
 
-    <div class="card text-center" style="width: 18rem;">
+    <div class="card text-center" id="movie-<%= party[:movie].id %>" style="width: 18rem;">
 
-      <img src="https://image.tmdb.org/t/p/w500<%= party[:movie].image %>" class="card-img-top" alt="...">
+      <img src="https://image.tmdb.org/t/p/w500<%= party[:movie].image %>" class="card-img-top" alt=<%= party[:movie].title %>>
       <div class="card-body">
         <h5 class="card-title"><%= party[:movie].title%></h5>
         <hr>
@@ -22,6 +24,16 @@
         <% else %>
           <p class="card-text">Hosting</p>
         <% end %>
+        <hr>
+        <% party[:party].users.each do |user| %>
+          <% if user.id == @user.id %>
+            <p>
+              <strong><%= user.name %></strong>
+            </p>
+          <% else %>
+            <p><%= user.name %></p>
+          <%end %>
+        <% end  %>
       </div>
     </div>
 

@@ -9,7 +9,6 @@ class UsersController < ApplicationController
       { movie: MovieFacade.create_movie_details(party.viewing_party.movie_id), party: party.viewing_party,
         host: party.host }
     end
-    # binding.pry
   end
 
   def create
@@ -20,7 +19,7 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
     else
       flash[:alert] = 'Must Include Unique Email'
-      render :new
+      redirect_to register_path
     end
   end
 

@@ -13,8 +13,6 @@ class ViewingPartiesController < ApplicationController
                          host: true })
       invite_guests(params[:viewing_party][:invites], viewing_party.id)
       redirect_to user_path(params[:user_id])
-    else
-      render :new
     end
   end
 
@@ -23,9 +21,11 @@ class ViewingPartiesController < ApplicationController
   end
 
   def invite_guests(list, viewing_party_id)
-    list.each do |user_id|
-      PartyUser.create({ user_id: user_id, viewing_party_id: viewing_party_id,
-                         host: false })
+    unless list.nil?
+      list.each do |user_id|
+        PartyUser.create({ user_id: user_id, viewing_party_id: viewing_party_id,
+                           host: false })
+      end
     end
   end
 end

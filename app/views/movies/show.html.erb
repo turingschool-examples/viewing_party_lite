@@ -4,23 +4,55 @@
 <p type="button" class="btn btn-outline-success"><%= link_to "Create Viewing Party for #{@movie.title}", new_user_movie_viewing_party_path(@user, @movie.id) %></p>
 <hr>
 
+<h2>
+  Movie Details
+</h2>
+<hr>
+<h5>
+  Title:
+  <strong><%= @movie.title %></strong>
+</h5>
+<h5>
+  Vote Average:
+  <%= @movie.vote_average %></h5>
+<h5>
+  Runtime:
+  <%= (@movie.runtime)/60 %>h
+  <%= (@movie.runtime) % 60 %>mins</h5>
+<hr>
+<h5>Genre(s):
+</h5>
+<% @movie.genres.each do |genre| %>
+  <p>
+    <%= genre[:name] %></p>
+<% end  %>
 
-<h2> Movie Details </h2>
-<h5> Title: <%= @movie.title %></h5>
-<h5> Vote Average: <%= @movie.vote_average %></h5>
-<h5> Runtime: <%= (@movie.runtime)/60  %>h <%= (@movie.runtime) % 60 %>mins</h5>
-<p><h5>Genre(s):
-    <% @movie.genres.each do |genre| %>  
-        <%= genre[:name] %>
-    <% end  %></h5>
+<h5>
+  Description:</h5>
+<p><%= @movie.overview %></p>
+<p>
+  <h5>Characters/Actors:
+  </h5>
+  <% @movie.cast[0..9].each do |cast_member| %>
+    <p><%= cast_member[:name] %>
+      plays
+      <%= cast_member[:character] %></p>
+  <% end %>
 </p>
-<h5> Description: <%= @movie.overview %></h5>
-<p><h5>Characters/Actors: </h5>
-    <% @movie.cast[0..9].each do |cast_member| %>
-        <h5><%= cast_member[:name] %> plays <%= cast_member[:character] %></h5>
-    <% end %>
-</p>
-<h5>Total Reviews: <%= @movie.reviews.count  %></h5>
-    <% @movie.reviews.each do |review| %>
-        <h5><%= review[:author] %>: <%= review[:content] %></h5>
-    <% end %>
+<hr>
+<h5>Total Reviews:
+  <%= @movie.reviews.count %></h5>
+<% @movie.reviews.each do |review| %>
+  <div class="card">
+    <div class="card-header">
+      <%= review[:author] %>
+    </div>
+    <div class="card-body">
+      <blockquote class="blockquote mb-0">
+        <p>A well-known quote, contained in a blockquote element.</p>
+        <footer class="blockquote-footer"><%= review[:content] %></footer>
+      </blockquote>
+    </div>
+  </div>
+  <br>
+<% end %>
