@@ -4,7 +4,8 @@ class MovieDetails
               :id,
               :runtime,
               :genre,
-              :overview
+              :overview,
+              :img_path
 
   def initialize(data)
     @title = data[:title]
@@ -13,5 +14,6 @@ class MovieDetails
     @runtime = data[:runtime]
     @genre = data[:genres].collect { |genre| genre[:name] }
     @overview = data[:overview]
+    @img_path = data[:poster_path]
   end
 end
