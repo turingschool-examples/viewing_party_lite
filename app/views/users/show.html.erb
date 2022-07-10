@@ -15,6 +15,7 @@
   <p>Date: <%= party.formatted_date %></p>
   <p>Time of Movie: <%= party.formatted_time %> </p>
   <p>Host: <%= party.host %> </p>
+  <div class="guests">
   <p>Attendees: <% party.users.each do |guest|%>
                   <% if guest.id != @user.id && guest.name != party.host %>
                     <%= guest.name %>
@@ -22,6 +23,7 @@
                 <% end %>
                 <strong><%= @user.name %></strong>
   </p>
+  </div>
 <% end %>
 </div>
 

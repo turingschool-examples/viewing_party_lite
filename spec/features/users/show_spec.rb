@@ -101,10 +101,11 @@ RSpec.describe 'User Dashboard Page', type: :feature do
 
       visit user_path(user1.id)
 
-      within '.invites' do 
+      within ".guests" do 
         expect(page).to have_content("Parker")
         expect(page).to have_content("Pancakes")
         expect(page).to have_content("Lola")
+        expect(page).to_not have_content("Squiggles")
       end
     end
   end 
