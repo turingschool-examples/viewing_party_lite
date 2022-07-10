@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20_220_707_203_629) do
     t.datetime 'updated_at', null: false
   end
 
+
   create_table 'party_users', force: :cascade do |t|
     t.bigint 'parties_id'
     t.bigint 'users_id'
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(version: 20_220_707_203_629) do
     t.boolean 'host'
     t.index ['parties_id'], name: 'index_party_users_on_parties_id'
     t.index ['users_id'], name: 'index_party_users_on_users_id'
+
   end
 
   create_table 'users', force: :cascade do |t|
@@ -41,6 +43,8 @@ ActiveRecord::Schema.define(version: 20_220_707_203_629) do
     t.datetime 'updated_at', null: false
   end
 
+
   add_foreign_key 'party_users', 'parties', column: 'parties_id'
   add_foreign_key 'party_users', 'users', column: 'users_id'
+
 end
