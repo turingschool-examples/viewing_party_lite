@@ -302,54 +302,8 @@
           null,
           null
         ]
-      },
-      "/Users/jamesriddle/turing/3module/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/jamesriddle/turing/3module/projects/viewing_party_lite/app/jobs/application_job.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/jamesriddle/turing/3module/projects/viewing_party_lite/app/channels/application_cable/connection.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/jamesriddle/turing/3module/projects/viewing_party_lite/app/channels/application_cable/channel.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1657485642
+    "timestamp": 1657486166
   }
 }
