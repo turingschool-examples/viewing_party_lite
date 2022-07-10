@@ -10,5 +10,7 @@ RSpec.describe Party do
     it { should validate_presence_of :duration }
     it { should validate_presence_of :date }
     it { should validate_presence_of :time }
+    it { should validate_presence_of :user_name }
+    it { should validate_presence_of :movie_id }
   end
 end

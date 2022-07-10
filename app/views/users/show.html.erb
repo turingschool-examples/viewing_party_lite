@@ -3,6 +3,18 @@
 
 <%= button_to 'Discover Movies', user_movies_discover_path(@user), method: :get%>
 
-<h3> Viewing Parties (Host) </h3>
+<div id='hosted-parties'>
+    <h3> Viewing Parties (Host) </h3>
+    <% @user.parties.each do |party| if party.user_name == @user.name%>
+        <%= party.user_name%>, <%= party.movie_title %> Viewing Party <br>
+        <% end %>
+    <% end %>
+</div>
 
-<h3> Viewing Parties (Guest) </h3>
+<div id='guest-parties'>
+    <h3> Viewing Parties (Guest) </h3>
+    <% @user.parties.each do |party| if party.user_name != @user.name%>
+        <%= party.movie.title %>
+        <% end %>
+    <% end %>
+</div>

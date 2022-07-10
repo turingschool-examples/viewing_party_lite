@@ -4,15 +4,16 @@ Rails.application.routes.draw do
  get '/', to: 'welcome#index'
  get '/register', to: 'users#new'
  get '/users/:id', to: 'users#show'
+#  post '/users/:id/movies/:id/parties/new', to: 'parties#create'
  
- resources :users, only: %i[create show] do 
+ resources :users, only: %i[create show new] do 
   get '/discover', to: 'movies#discover', as: 'movies_discover'
-  post '/movies', to: 'movies#top_rated', as: 'top_rated'
-
-  resources :movies, only: %i[index show] do
-    resources :parties, only: %i[new create]
-  end
+  post '/movies', to: 'movies#top_rated', as: 'top_rated' 
   post '/movies_search', to: 'movies#search', as: 'search'
-  end
+  resources :movies, only: %i[index show] do
+      resources :parties, only: %i[create new]
+    end
+
+end
 
 end
