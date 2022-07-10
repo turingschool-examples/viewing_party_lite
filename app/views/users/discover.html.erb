@@ -1,4 +1,4 @@
-<%= form_with url: "/users/#{@user.id}?search=movie_title", method: :get, local: true do |f| %>
+<%= form_with url: user_movies_path(@user), method: :get, local: true do |f| %>
   <%= f.label :movie_title %>
   <%= f.text_field :movie_title, placeholder: 'Enter a Movie Title' %>
   <%= f.submit 'Search By Movie Title' %>
@@ -6,4 +6,4 @@
 
 <br>
 
-<%= button_to "Discover Top Rated Movies", "/users/#{@user.id}/discover", method: :get %>
+<%= button_to "Discover Top Rated Movies", "/users/#{@user.id}/movies", method: :get %>
