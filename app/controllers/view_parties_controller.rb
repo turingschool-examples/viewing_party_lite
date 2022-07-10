@@ -5,7 +5,7 @@ class ViewPartiesController < ApplicationController
   end
 
   def create
-    party = ViewParty.create!(
+    party = ViewParty.new(
       movie_api_id: params[:movie_id],
       duration: params[:duration],
       date: params[:date],
@@ -13,20 +13,24 @@ class ViewPartiesController < ApplicationController
       movie_image_path: params[:movie_image_path],
       movie_title: params[:movie_title]
     )
-    UserViewParty.create!(
-      user_id: params[:user_id],
-      view_party_id: party.id,
-      host: true
-    )
-    if params[:invited].present?
-      params[:invited].each do |invited_id|
-        UserViewParty.create!(
-          user_id: invited_id.to_i,
-          view_party_id: party.id,
-          host: false
-        )
+    if party.save
+      UserViewParty.create!(
+        user_id: params[:user_id],
+        view_party_id: party.id,
+        host: true
+      )
+      if params[:invited].present?
+        params[:invited].each do |invited_id|
+          UserViewParty.create!(
+            user_id: invited_id.to_i,
+            view_party_id: party.id,
+            host: false
+          )
+        end
       end
+      redirect_to "/users/#{params[:user_id]}"
+    else
+      redirect_to "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/view_parties/new", notice: "Invalid Data. Please keep data in the displayed format."
     end
-    redirect_to "/users/#{params[:user_id]}"
   end
 end

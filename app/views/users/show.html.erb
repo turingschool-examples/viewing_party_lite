@@ -11,14 +11,18 @@
     <div>
       <hr><br>
       <h2>Viewing Parties</h2>
-      <% if !@user.view_parties.empty? %>
-        <% @user.view_parties.each do |party| %>
+      <% if !@user.user_view_parties.empty? %>
+        <% @user.user_view_parties.each do |uvp| %>
           <div id="box">
-            <%= party.movie_name %> <br>
-            <%= party.picture %> <br>
-            <%= party.date %> <br>
-            <%= party.time %> <br>
-            <%= party.status %> <br>
+            <%= image_tag "https://image.tmdb.org/t/p/original#{uvp.view_party.movie_image_path}", width: '200' %><br>
+            <strong><%= uvp.view_party.movie_title %></strong> <br>
+            <%= uvp.view_party.date.strftime("%b %d, %Y") %> <br>
+            <%= uvp.view_party.time.strftime("%I:%M %p") %> <br>
+            <% if uvp.host %>
+              <p>Hosting</p>
+            <% else %>
+              <p>Invited</p>
+            <% end %>
           </div>
         <% end %>
       <% end %>

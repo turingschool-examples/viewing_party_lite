@@ -36,6 +36,10 @@ RSpec.describe "The User Movies Index page" do
     end
 
     xit 'will not run if search field is blank', :vcr do
+      # FIXME: this sad path test will error because even though the page
+      # is setup to not allow a user to enter an empty value,
+      # for some reason the test does allow an empty value to be
+      # entered so it does not fail as expected
       oakley = User.create!(name: "Oakley", email: "good_dog@gmail.com")
 
       visit "/users/#{oakley.id}/discover"

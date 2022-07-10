@@ -6,6 +6,9 @@
   </div> <br>
   <div id="box2">
     <h2>Viewing Party Details</h2>
+    <% flash.each do |type, msg| %>
+      <div> <%= msg %> </div>
+    <% end %>
     <div class="form">
       <%= form_with url: "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/view_parties", method: :post, local: true do |f| %>
         <p>
@@ -13,7 +16,7 @@
         </p>
         <p>
           <%= f.label "Duration of Party" %></p>
-          <%= f.text_field :duration, value: @movie.runtime, :required => true %>
+          <%= f.number_field :duration, value: @movie.runtime, min: @movie.runtime, :required => true %>
         </p>
         <p>
           <%= f.label "Day" %></p>
