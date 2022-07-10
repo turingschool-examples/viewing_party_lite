@@ -36,7 +36,7 @@ RSpec.describe 'MovieFacade' do
   end
 
   describe 'find_cast(id)' do
-    it 'makes a service call and returns the a MovieCast PORO', :vcr do
+    it 'makes a service call and returns a MovieCast PORO', :vcr do
       movie_cast = MovieFacade.find_cast(550)
 
       expect(movie_cast).to be_a Array
@@ -44,5 +44,15 @@ RSpec.describe 'MovieFacade' do
       expect(movie_cast).to be_all MovieCast
     end
   end
-  describe 'find_review(id)'
+
+  describe 'find_review(id)' do
+    it 'makes a service call and returns an array of MovieReview POROs', :vcr do
+      movie_review = MovieFacade.find_review(550)
+
+      expect(movie_review).to be_a(Array)
+      expect(movie_review).to be_all(MovieReview)
+      expect(movie_review.first.author).to eq("Goddard")
+      expect(movie_review.first.content).to eq("Pretty awesome movie.  It shows what one crazy person can convince other crazy people to do.  Everyone needs something to believe in.  I recommend Jesus Christ, but they want Tyler Durden.")
+    end
+  end
 end
