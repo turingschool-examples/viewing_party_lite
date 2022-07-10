@@ -33,10 +33,23 @@
     <h1> Actors </h1>
     <% @data.cast.each do |member| %>
         Actor/Actress: <%= member[:name] %> Character: <%= member[:character] %>
+        <br>
     <% end %>
 </div>
 
 <div id='movie-reviews'>
     <h1> Total Reviews </h1>
-    <%= @data.reviews%>
+    <%= @data.review_count %>
+</div>
+
+<div id='movie-review-content'>
+    <h1> Reviews </h1>
+    <% @data.review_content.each do |review| %>
+        <%= review[:author] %>:
+        <br>
+        <%= review[:content] %>
+        <br>
+        <br>
+        <br>
+    <% end %>
 </div>

@@ -44,7 +44,7 @@ class MovieService
 
     data[:cast] = cast_data[:cast].first(10)
     data[:review_count] = review_data[:total_results]
-    data[:review_content] = review_data[:total_results]
+    data[:review_content] = review_data[:results]
     data
   end
 end
