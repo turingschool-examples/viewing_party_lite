@@ -28,6 +28,18 @@
 <% end %>
 </div>
 
+<div class="hostParty">
+<h3>My Parties</h3>
+<% @user.party_host.each do |party| %>
+  <h3>Movie: <%= link_to "#{party.movie_title}", user_movie_path(@user.id, party.movie_id) %></h3>  
+  <p><%= image_tag "https://image.tmdb.org/t/p/original#{party.poster_path}", data:{title: "#{party.movie_title} Poster"} %></p>
+  <p>Date: <%= party.formatted_date %></p>
+  <p>Time of Movie: <%= party.formatted_time %></p>
+  <p>Host: <%= party.host %> </p>
+<% end %>
+</div>
+
+
 <% flash.each do |type, msg| %>
   <div>
     <%= msg %>
