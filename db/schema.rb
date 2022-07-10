@@ -12,23 +12,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_220_706_202_702) do
+ActiveRecord::Schema.define(version: 20_220_710_181_346) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
   create_table 'parties', force: :cascade do |t|
-    t.string 'thumbnail'
     t.string 'title'
     t.datetime 'date'
     t.datetime 'start'
     t.integer 'duration'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
+    t.integer 'movie_id'
   end
 
   create_table 'user_parties', force: :cascade do |t|
     t.bigint 'user_id'
     t.bigint 'party_id'
+    t.boolean 'host'
     t.index ['party_id'], name: 'index_user_parties_on_party_id'
     t.index ['user_id'], name: 'index_user_parties_on_user_id'
   end

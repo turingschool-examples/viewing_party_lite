@@ -1,9 +1,10 @@
 <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %>
+<br>
 <%= button_to "Create Viewing Party", "/users/#{@user.id}/movies/#{@movie.id}/viewing-party/new", method: :get %>
 
 <p>Title: <%= @movie.title %> </p>
 <p>Vote Average: <%= @movie.vote_average %> </p>
-<p>Runtime: <%= @movie.runtime %> </p>
+<p>Runtime: <%= @movie.time_conversion(@movie.runtime) %> </p>
 <p>Description: <%= @movie.overview %> </p>
 
 <h3>Cast Members:</h3>
