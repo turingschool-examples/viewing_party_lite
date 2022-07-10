@@ -32,6 +32,11 @@ RSpec.describe ViewingParty, type: :model do
 
   describe 'class methods' do
     before(:each) do
+      @user1 = User.create!(name: 'Sai', email: 'SaiLent@overlord.com')
+      @user2 = User.create!(name: 'Parker', email: 'GriffithDidNothing@Wrong.com')
+      @user3 = User.create!(name: 'Deannah', email: 'FrogStomper9000@Muahaha.com')
+      @user4 = User.create!(name: 'Casey', email: 'EternalPancakes@Geemail.com')
+
       @spirit = @user1.viewing_parties.create!(duration: 180, date: Date.today, time: Time.now, movie_id: 129)
       PartyUser.create!(user_id: @user2.id, viewing_party_id: @spirit.id)
       PartyUser.create!(user_id: @user3.id, viewing_party_id: @spirit.id)
@@ -44,8 +49,9 @@ RSpec.describe ViewingParty, type: :model do
     end
 
     it 'can display viewing parties that a user is invited to' do
-      parties = ViewingParty.invited(@user1.id)
+      parties = ViewingParty.invited(@user1)
       expect(parties).to eq([@rocky])
+      expect(parties).to_not eq([@rocky, @spirit])
     end
   end
 end
