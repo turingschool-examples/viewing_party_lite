@@ -17,4 +17,11 @@ RSpec.describe 'MovieFacade' do
       expect(results.count).to be <= 40
     end
   end
+
+  describe 'movie detail page facade', :vcr do
+    it 'can return a movie object using id' do
+      id = 18
+      expect(MoviesFacade.movie(id).title).to eq("The Fifth Element")
+    end
+  end
 end
