@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @parties = Party.all
+    require 'pry'
+    binding.pry
+    @parties = @user.parties.all
   end
 
   def new; end

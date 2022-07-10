@@ -1,16 +1,22 @@
 <h2><%= @movie.title %></h2>
 
-<%= form_with url: user_movie_viewing_parties_path(user_id: @user.id, movie_id: params[:movie_id]), method: post, local: true do |f| %>
-  <%= f.label :duration %>
-  <%= f.number_field :duration %>
+<%= form_with url: user_movie_viewing_parties_path(user_id: @user.id, movie_id: params[:movie_id]), model: @viewing_party, local: true do |f| %>
+  <p><%= f.label :duration %>
+  <%= f.number_field :duration %></p>
 
-  <%= f.label :date %>
-  <%= f.date_field :date %>
+  <p><%= f.label :when %>
+  <%= f.date_field :date %></p>
 
-  <%= f.label :time %>
-  <%= f.time_field :time %>
+  <p><%= f.label :time %>
+  <%= f.time_field :time %></p>
 
-  <%= f.label user.name %>
-  <%= f.collection_check_boxes :user_ids, User.all, :id, :name %>
-  <%= f.submit %>
+  <% @all_users.each do |user| %>
+    <% unless user.id == @user.id %>
+      <p><%= f.check_box("invites", {:multiple => true}, user.id, nil) %>
+      <%= f.label user.email %></p>
+    <% end %>
+  <% end %>
+
+  <%= f.submit 'Create Viewing Party' %>
+
 <% end %>

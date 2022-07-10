@@ -1,4 +1,5 @@
 class Party < ApplicationRecord
+
   validates_presence_of :movie_name
   validates_presence_of :movie_id
   validates_presence_of :date
