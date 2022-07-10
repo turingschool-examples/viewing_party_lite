@@ -14,9 +14,16 @@
           1,
           null,
           1,
+          2,
+          2,
+          80,
+          null,
+          null,
+          null,
           1,
-          1,
-          20,
+          0,
+          0,
+          0,
           null,
           null,
           null
@@ -24,8 +31,6 @@
       },
       "/Users/ruezheng/turing/3module/projects/viewing_party_lite/app/models/user.rb": {
         "lines": [
-          null,
-          null,
           1,
           1,
           1,
@@ -73,11 +78,21 @@
           1,
           null,
           1,
-          1,
+          5,
           null,
           null,
           1,
+          5,
+          null,
+          null,
           1,
+          2,
+          2,
+          null,
+          2,
+          2,
+          null,
+          2,
           null,
           null,
           1,
@@ -93,8 +108,8 @@
           1,
           null,
           1,
-          20,
-          20,
+          80,
+          80,
           null,
           null
         ]
@@ -110,9 +125,11 @@
       },
       "/Users/ruezheng/turing/3module/projects/viewing_party_lite/app/controllers/application_controller.rb": {
         "lines": [
-          null,
+          1,
           null,
           1,
+          10,
+          null,
           null
         ]
       },
@@ -120,8 +137,8 @@
         "lines": [
           1,
           1,
-          4,
           null,
+          1,
           null,
           1,
           2,
@@ -133,8 +150,6 @@
           null,
           null,
           1,
-          4,
-          null,
           null,
           1,
           null,
@@ -144,63 +159,22 @@
           null
         ]
       },
-      "/Users/ruezheng/turing/3module/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
+      "/Users/ruezheng/turing/3module/projects/viewing_party_lite/app/controllers/movies_controller.rb": {
         "lines": [
+          1,
+          1,
           null,
-          null,
+          1,
           0,
           0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/ruezheng/turing/3module/projects/viewing_party_lite/app/jobs/application_job.rb": {
-        "lines": [
-          null,
           null,
           0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/ruezheng/turing/3module/projects/viewing_party_lite/app/controllers/movie_controller.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/ruezheng/turing/3module/projects/viewing_party_lite/app/channels/application_cable/connection.rb": {
-        "lines": [
           null,
           null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/ruezheng/turing/3module/projects/viewing_party_lite/app/channels/application_cable/channel.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
+          null
+        ]
       }
     },
-    "timestamp": 1657315843
+    "timestamp": 1657423761
   }
 }

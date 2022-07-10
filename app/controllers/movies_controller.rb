@@ -1,8 +1,10 @@
 class MoviesController < ApplicationController
 
   def index
-    @top_movies = MovieFacade.create_movies
-    
-    @search_movie = MovieFacade.create_search_movie(params[:movie_title])
+    if params[:movie_title]
+      @search_movie = MovieFacade.create_search_movie(params[:movie_title])
+    elsif params[]
+      @top_movies = MovieFacade.create_top_movies
+    end
   end
 end

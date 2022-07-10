@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  def show
-    @user = User.find(params[:id])
-  end
+  before_action :find_user, only: [:show, :discover]
+
+  def show; end
 
   def new
     @user = User.new
@@ -12,9 +12,7 @@ class UsersController < ApplicationController
     redirect_to "/users/#{@user.id}"
   end
 
-  def discover
-    @user = User.find(params[:id])
-  end
+  def discover; end
 
   private
 
