@@ -16,8 +16,10 @@
   <p>Host: <%= party.host %> </p>
   <div class="guests">
   <p>Attendees: <% party.guests.each do |guest| %>
-                  <p><%= guest.name %></p>
-                <% end %></p>
+                  <% if guest.id != @user.id %>
+                    <p><%= guest.name %></p>
+                  <% end %></p>
+                <% end %>
                 <p><strong><%= @user.name %></strong></p>
   </p>
   </div>
@@ -34,8 +36,10 @@
   <p>Host: <%= party.host %> </p>
   <div class='friends'>
   <p>Guests: <% party.guests.each do |guest| %>
-                <p><%= guest.name %></p>
-              <% end %></p>
+                <% if guest.id != @user.id %>
+                  <p><%= guest.name %></p>
+                <% end %></p>
+              <% end %>
   </div>
 <% end %>
 </div>

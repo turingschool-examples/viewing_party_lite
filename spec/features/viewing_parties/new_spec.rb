@@ -82,7 +82,7 @@ RSpec.describe 'New party page' do
       end
 
       visit user_path(@user2.id)
-      save_and_open_page
+
       within ".invites" do
         expect(page).to have_content("The Godfather")
         expect(page).to have_content("Jul 10, 2022")
