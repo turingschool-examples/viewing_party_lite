@@ -23,5 +23,10 @@ RSpec.describe 'MovieFacade' do
       id = 18
       expect(MoviesFacade.movie(id).title).to eq("The Fifth Element")
     end
+
+    it 'can return an array of movie reviews', :vcr do
+      movie_id = 18
+      expect(MoviesFacade.movie_reviews(movie_id)).to be_a Array
+    end
   end
 end
