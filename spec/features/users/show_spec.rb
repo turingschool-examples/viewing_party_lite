@@ -17,8 +17,10 @@ RSpec.describe 'User Dashboard Page', type: :feature do
       user2 = User.create!(name: 'Lola', email: 'lola@example.com')
 
       visit user_path(user1.id)
+
       expect(page).to have_button('Discover Movies')
       click_button('Discover Movies')
+
       expect(current_path).to eq("/users/#{user1.id}/discover")
       expect(page).to have_content("#{user1.name}'s Discover Page")
     end
@@ -46,6 +48,7 @@ RSpec.describe 'User Dashboard Page', type: :feature do
       user_viewing3 = UserViewingParty.create!(user_id: user2.id, viewing_party_id: party3.id, host: false)
 
       visit user_path(user1.id)
+
       within '.invites' do 
         expect(page).to have_content('Spirited Away')
         expect(page).to have_content('Everything Everywhere All at Once')
@@ -80,6 +83,7 @@ RSpec.describe 'User Dashboard Page', type: :feature do
       user_viewing3 = UserViewingParty.create!(user_id: user3.id, viewing_party_id: party1.id, host: true)
 
       visit user_path(user1.id)
+
       within '.invites' do 
         expect(page).to have_content("Host: Squiggles")
         expect(page).to_not have_content("Host: Parker")
@@ -155,7 +159,7 @@ RSpec.describe 'User Dashboard Page', type: :feature do
       user_viewing4 = UserViewingParty.create!(user_id: user4.id, viewing_party_id: party1.id, host: false)
 
       visit user_path(user1.id)
-
+      save_and_open_page
       within '.friends' do 
         expect(page).to have_content('Lola')
         expect(page).to have_content('Pancakes')

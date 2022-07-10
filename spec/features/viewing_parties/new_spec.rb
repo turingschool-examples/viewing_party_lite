@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'New party page' do
+RSpec.describe 'New party page', type: :feature do
   before(:each) do
     @user1 = User.create!(name: 'Ana', email: 'ana@example.com')
     @user2 = User.create!(name: 'Dana', email: 'dana@example.com')
