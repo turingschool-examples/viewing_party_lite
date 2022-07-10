@@ -1,0 +1,27 @@
+<h2><%= @user.name %>'s Viewing Parties</h2>
+
+<% @user.parties.each do |party| %>
+  <p>Title: <%= link_to "#{party.title}", "/users/#{@user.id}/movies/#{party.movie_id}" %></p>
+  <%= image_tag("https://image.tmdb.org/t/p/w185#{party.movie.poster}")%>
+  <p> Date: <%= party.date.strftime("%d/%m/%Y") %></p>
+  <p> Start Time: <%= party.start.strftime("%k:%M") %></p>
+  <p> Duration: <%= party.duration %> minutes</p>
+
+  <% if @user == party.find_host %>
+    <h3>You are the host of this party!</h3>
+    <h4>Invitees:</h4>
+    <% party.users.where.not(id: @user.id).each do |invitee|%>
+      <%= invitee.name %>,
+    <% end %>
+
+  <% else %>
+    <p>You are not the host of this party!</p>
+    <h4>Guests:</h4>
+    <b><%= @user.name %></b>
+    <% party.users.where.not(id: @user.id).each do |invitee|%>
+      <%= invitee.name %>,
+    <% end %>
+
+  <% end %>
+
+<% end %>
