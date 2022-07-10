@@ -84,6 +84,28 @@ RSpec.describe 'User Dashboard Page', type: :feature do
         expect(page).to have_content("Host: Squiggles")
         expect(page).to_not have_content("Host: Parker")
       end
+    end 
+
+    it 'can list the attendees', :vcr do 
+      user1 = User.create!(name: 'Parker', email: 'mangaforever@hootube.net')
+      user2 = User.create!(name: 'Lola', email: 'lola@example.com')
+      user3 = User.create!(name: 'Squiggles', email: 'goblindog@dogsshouldbeabletovote.org')
+      user4 = User.create!(name: 'Pancakes', email: 'spacecadet42@hootmail.com')
+
+      party1 = ViewingParty.create!(movie_id: 129, duration: 96, date: Date.new(2022,9,7), start_time: "16:00:00")
+
+      user_viewing1 = UserViewingParty.create!(user_id: user1.id, viewing_party_id: party1.id, host: false)
+      user_viewing2 = UserViewingParty.create!(user_id: user2.id, viewing_party_id: party1.id, host: false)
+      user_viewing3 = UserViewingParty.create!(user_id: user3.id, viewing_party_id: party1.id, host: true)
+      user_viewing4 = UserViewingParty.create!(user_id: user4.id, viewing_party_id: party1.id, host: false)
+
+      visit user_path(user1.id)
+
+      within '.invites' do 
+        expect(page).to have_content("Parker")
+        expect(page).to have_content("Pancakes")
+        expect(page).to have_content("Lola")
+      end
     end
   end 
 end
