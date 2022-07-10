@@ -1,6 +1,6 @@
 <div align='center'>
   <h2>Create a Viewing Party for <%= @movie.title %></h2>
-  <%= render partial: 'partials/discover_button' %>
+  <%= render partial: 'partials/buttons/discover_button' %>
   <p> Viewing Party Details </p>
   <p>Movie Title <%= @movie.title %></p>
   <%= form_with model: ViewingParty.new, local: true do |f| %>
