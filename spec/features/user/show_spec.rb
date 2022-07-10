@@ -56,18 +56,38 @@ RSpec.describe "User Dash/Show page", type: :feature do
       end
     end
 
-    it 'displays information about the viewing parties', :vcr do
+    it 'displays information about the hosted viewing parties', :vcr do
       visit "/users/#{@user3.id}"
       formatted_time = @rocky.time.strftime("%l:%M %p")
       formatted_date = @rocky.date.strftime("%b %d, %Y")
 
       within "#party#{@rocky.movie_id}" do
         expect(page).to have_content("The Rocky Horror Picture Show")
+        expect(page).to_not have_content("Spirited Away")
         expect(page).to have_content(formatted_date)
         expect(page).to have_content(formatted_time)
         expect(page).to have_content(@user1.name)
         expect(page).to have_content(@user2.name)
         expect(page).to have_content(@user4.name)
+        expect(page).to have_content("Hosting")
+      end
+    end
+
+    it 'displays information about the invited party correctly', :vcr do
+      visit "/users/#{@user3.id}"
+      formatted_time = @spirit.time.strftime("%l:%M %p")
+      formatted_date = @spirit.date.strftime("%b %d, %Y")
+
+      within "#party#{@spirit.movie_id}" do
+        expect(page).to_not have_content("The Rocky Horror Picture Show")
+        expect(page).to have_content("Spirited Away")
+        expect(page).to have_content(formatted_date)
+        expect(page).to have_content(formatted_time)
+        expect(page).to have_content(@user3.name)
+        expect(page).to have_content(@user2.name)
+        expect(page).to have_content(@user4.name)
+        expect(page).to_not have_content(@user1.name)
+        expect(page).to have_content("Invited")
       end
     end
   end
