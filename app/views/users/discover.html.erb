@@ -1,0 +1,6 @@
+<h1>Discover Movies<h1>
+
+  <%= form_with url: user_movies_url(@user.id), method: :get, local: true do |f| %>
+      <%= f.hidden_field :q, value: "toprated" %>
+      <%= f.submit 'Top Movies' %>
+  <% end %>
