@@ -1,14 +1,33 @@
-<br>
-<div class="btn-group col-1" role="group">
-  <p type="button" class="btn btn-outline-primary"><%= link_to "Landing", root_path %></p>
-  <% if Current.user %>
-    <p type="button" class="btn btn-outline-primary"><%= link_to "Logout", logout_path, method: :delete %></p>
-  <%else %>
-    <p type="button" class="btn btn-outline-primary"><%= link_to "Sign In", sign_in_path %></p>
-    <p type="button" class="btn btn-outline-primary"><%= link_to "Create New User", register_path %></p>
-  <% end %>
-</div>
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">VP</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href=<%= root_path %>>Landing</a>
+        </li>
 
-<h1>
-  Viewing Party Lite
+        <% if Current.user %>
+          <li class="nav-item">
+            <a class="nav-link" href=<%= logout_path %> method="delete">Logout</a>
+          </li>
+
+        <%else %>
+          <li class="nav-item">
+            <a class="nav-link" href=<%= sign_in_path %>>Sign In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href=<%= register_path %>>Create New User</a>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<h1 class="position-relative mt-5">
+  <strong class="position-absolute top-99 start-50 translate-middle mt-1">Viewing Party Lite</strong>
 </h1>

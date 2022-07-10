@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'sign_in', to: 'sessions#new'
   post 'sign_in', to: 'sessions#create'
 
-  delete 'logout', to: 'sessions#destroy'
+  get 'logout', to: 'sessions#destroy'
 
   resources :users, only: %i[create show] do
     get '/discover', to: 'movies#discover', as: 'movies_discover'
