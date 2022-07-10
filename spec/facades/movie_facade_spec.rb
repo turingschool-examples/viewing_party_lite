@@ -17,7 +17,6 @@ RSpec.describe 'MovieFacade' do
     expect(movie.title).to be_a String
     expect(movie.vote_average).to be_a Float
   end
-end
 
   it "makes services call and returns movie objects", :vcr do
     query = "shawshank"

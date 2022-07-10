@@ -8,7 +8,8 @@ RSpec.describe ViewingParty, type: :model do
 
   describe 'Validations' do
     it { should validate_presence_of :movie }
-    it { should validate_presence_of :date_time }
+    it { should validate_presence_of :date }
+    it { should validate_presence_of :start_time }
     it { should validate_presence_of :duration }
 
   end

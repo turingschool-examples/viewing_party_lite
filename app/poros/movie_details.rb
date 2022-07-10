@@ -6,7 +6,8 @@ class MovieDetails
               :summary,
               :cast_members,
               :total_reviews,
-              :author
+              :author,
+              :id
 
   def initialize(data)
     @title = data[:title]
@@ -17,6 +18,6 @@ class MovieDetails
     @cast_members = data[:credits][:cast][(1..10)]
     @total_reviews = data[:reviews][:total_results]
     @author = data[:reviews][:results].map {|author| author[:author_details]}
-
+    @id = data[:id]
   end
 end
