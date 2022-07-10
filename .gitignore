@@ -32,3 +32,6 @@
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore potentially sensitive fixture files
+/spec/fixtures
