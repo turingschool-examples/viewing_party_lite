@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Search Movies', :vcr do
-  it 'shows movies based on search' do
+  it 'shows movies based on search', :vcr do
     user = User.create!(name: "Bernie", email: "bernie@gmail.com")
     visit user_movies_discover_path(user)
 
@@ -20,10 +20,10 @@ RSpec.describe 'Search Movies', :vcr do
       expect(page).to have_link("Harry Potter and the Chamber of Secrets")
       expect(page).to have_content("Average Rating: 7.7")
     end
-    
+    save_and_open_page
     within "#movie-39" do
-      expect(page).to have_link("Harry Price: Ghost Hunter")
-      expect(page).to have_content("Average Rating: 5.7")
+      expect(page).to have_link("Harry Tracy, Desperado")
+      expect(page).to have_content("Average Rating: 5")
     end
   end
 end

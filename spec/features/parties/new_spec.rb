@@ -25,8 +25,7 @@ RSpec.describe 'Creating a viewing party from a movie show page', :vcr do
         
         expect(current_path).to eq(user_path(@user1))
         
-        save_and_open_page
-
+        
         expect(page).to have_content("Jake, The Shawshank Redemption Viewing Party")
     end
 end

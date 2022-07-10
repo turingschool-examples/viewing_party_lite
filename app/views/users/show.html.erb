@@ -6,7 +6,6 @@
 <div id='hosted-parties'>
     <h3> Viewing Parties (Host) </h3>
     <% @user.parties.each do |party| if party.user_name == @user.name%>
-        <% binding.pry %>
         <%= party.user_name%>, <%= party.movie_title %> Viewing Party <br>
         <% end %>
     <% end %>
