@@ -66,5 +66,6 @@ RSpec.describe ViewingParty, type: :model do
     user_viewing4 = UserViewingParty.create!(user_id: user4.id, viewing_party_id: party1.id, host: false)
 
     expect(party1.guests).to eq([user2, user3, user4])
+    expect(party1.guests).to_not eq([user1])
   end
 end
