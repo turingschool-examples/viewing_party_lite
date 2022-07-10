@@ -17,5 +17,6 @@ RSpec.describe 'MovieService', :vcr do
     parsed_json = MovieService.movie_details('278')
     
     expect(parsed_json).to be_a Hash
+
     end
 end

@@ -20,7 +20,7 @@ RSpec.describe 'Search Movies', :vcr do
       expect(page).to have_link("Harry Potter and the Chamber of Secrets")
       expect(page).to have_content("Average Rating: 7.7")
     end
-    save_and_open_page
+    
     within "#movie-39" do
       expect(page).to have_link("Harry Tracy, Desperado")
       expect(page).to have_content("Average Rating: 5")
