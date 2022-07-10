@@ -6,7 +6,7 @@ RSpec.describe User, type: :model do
     it { shoulld have_many(:parties).through(:party_users) }
   end
 
-  describe 'validations'
+  describe 'validations' do
     it {should validate_presence_of :email}
     it {should validate_presence_of :name}
     it {should valideate_uniqueness_of :email}

@@ -6,7 +6,7 @@ RSpec.describe PartyUser, type: :model do
     it { should belong_to(:user) }
   end
 
-  describe 'validations'
+  describe 'validations' do
     it {should validate_presence_of :party_id}
     it {should validate_presence_of :user_id}
     #shoulda documentation recommends not #validation testing booleans
