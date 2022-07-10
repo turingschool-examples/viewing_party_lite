@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2022_07_07_203629) do
     t.bigint "users_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "host"
+    t.boolean "host", default: false
     t.index ["parties_id"], name: "index_party_users_on_parties_id"
     t.index ["users_id"], name: "index_party_users_on_users_id"
   end
