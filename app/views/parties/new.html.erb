@@ -33,8 +33,9 @@ New Viewing Party for <%= @movie.title%>
   <% end %>
 </div>
 
-<%= form.hidden_field :movie_id, value: @movie.id %>
-<%= form.hidden_field :user_id, value: @user.id %>
+<% form.hidden_field :movie_title, value: '#' %>
+<% form.hidden_field :movie_id, value: @movie.id %>
+<% form.hidden_field :user_id, value: @user.id %>
 
 
   <%= form.submit 'Create Party' %>

@@ -15,7 +15,8 @@ class PartiesController < ApplicationController
                                     time: params[:time],
                                     user_id: user.id,
                                     movie_id: movie.id,
-                                    user_name: user.name
+                                    user_name: user.name,
+                                    movie_title: movie.title
                                     })
 
         redirect_to "/users/#{user.id}"
