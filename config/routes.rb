@@ -8,7 +8,7 @@ Rails.application.routes.draw do
  
  resources :users, only: %i[create show new] do 
   get '/discover', to: 'movies#discover', as: 'movies_discover'
-  post '/movies', to: 'movies#top_rated', as: 'top_rated' 
+  get '/movies', to: 'movies#top_rated', as: 'top_rated' 
   post '/movies_search', to: 'movies#search', as: 'search'
   resources :movies, only: %i[index show] do
       resources :parties, only: %i[create new]
