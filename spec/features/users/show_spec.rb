@@ -22,15 +22,19 @@ RSpec.describe 'user dashboard page' do
   it 'has a section that lists viewing parties' do
     user = User.create!(name: 'Tommy Tanktop', email: 'tanktoptitan@aol.com')
 
-    Party.create!(movie_name: 'Fight Club', movie_id: 1, date: Time.now.strftime('%d/%m/%Y'),
-                  start_time: Time.now.strftime('%H:%M'), duration: 120)
-    Party.create!(movie_name: 'Fight Club 2', movie_id: 1,
-                  date: Time.now.strftime('%d/%m/%Y'), start_time: Time.now.strftime('%H:%M'), duration: 120)
-    Party.create!(movie_name: 'Fight Club 3', movie_id: 1, date: Time.now.strftime('%d/%m/%Y'),
-                  start_time: Time.now.strftime('%H:%M'), duration: 120)
+    party1 = Party.create!(movie_name: 'Fight Club', movie_id: 1, date: Time.now.strftime('%d/%m/%Y'),
+                           start_time: Time.now.strftime('%H:%M'), duration: 120)
+    party2 = Party.create!(movie_name: 'Fight Club 2', movie_id: 4,
+                           date: Time.now.strftime('%d/%m/%Y'), start_time: Time.now.strftime('%H:%M'), duration: 120)
+    party3 = Party.create!(movie_name: 'Fight Club 3', movie_id: 3, date: Time.now.strftime('%d/%m/%Y'),
+                           start_time: Time.now.strftime('%H:%M'), duration: 120)
+    PartyUser.create(party_id: party1.id, user_id: user.id, host: true)
+
+    PartyUser.create(party_id: party2.id, user_id: user.id, host: false)
+
+    PartyUser.create(party_id: party3.id, user_id: user.id, host: false)
 
     visit "/users/#{user.id}"
-
     within '#viewingParties' do
       expect(page).to have_content('Fight Club')
       expect(page).to have_content('Fight Club 2')
