@@ -13,6 +13,23 @@ RSpec.describe "Movie details/show page", type: :feature do
     expect(page).to have_button("Discover Page")
   end
 
+  it 'discover page button routes to discover page', :vcr do
+
+    visit "/users/#{@user1.id}/movies/238"
+
+    click_button("Discover Page")
+
+    expect(current_path).to eq("/users/#{@user1.id}/discover")
+  end
+
+  xit 'create viewing party button routes to new viewing party page', :vcr do
+    visit "/users/#{@user1.id}/movies/238"
+
+    click_button("Create Viewing Party")
+
+    expect(current_path).to eq("/users/#{@user1.id}/movies/238/viewing-party/new")
+  end
+
   it 'displays movie details', :vcr do
     godfather = MovieFacade.create_movie_details(238)
 
