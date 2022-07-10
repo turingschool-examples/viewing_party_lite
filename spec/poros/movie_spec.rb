@@ -53,6 +53,6 @@ RSpec.describe Movie do
         }
   movie1 = Movie.new(data)
   expect(movie1.image).to be_a String
-  expect(movie1.image).to eq ("/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg")
+  expect(movie1.image).to eq ("https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg")
   end
 end

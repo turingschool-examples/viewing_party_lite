@@ -13,6 +13,8 @@ class ViewingPartiesController < ApplicationController
   #     Movie.new(movie)
   #   end
 
-    @top_movies = MoviesService.top_movies
+    # @top_movies = MoviesService.top_movies
+
+  def new
   end
 end

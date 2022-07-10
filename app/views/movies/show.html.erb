@@ -1,0 +1,4 @@
+<%= link_to "Discover", user_movies_url %>
+<%= link_to "Create Viewing Party", "/users/#{@user.id}/movies/#{@movie.id}/viewing-party/new" %>
+<p><%= @movie.title %></p>
+<p><%= "Vote Average: #{@movie.vote_average}" %></p>
