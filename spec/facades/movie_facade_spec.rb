@@ -28,5 +28,12 @@ RSpec.describe 'MovieFacade' do
       movie_id = 18
       expect(MoviesFacade.movie_reviews(movie_id)).to be_a Array
     end
+
+    it 'can return an array of 10 cast members', :vcr do
+      movie_id = 550
+      expect(MoviesFacade.ten_movie_cast(movie_id)).to be_a Array
+      expect(MoviesFacade.ten_movie_cast(movie_id)[0].name).to eq('Edward Norton')
+      expect(MoviesFacade.ten_movie_cast(movie_id)[1].name).to eq('Brad Pitt')
+    end
   end
 end
