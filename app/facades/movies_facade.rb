@@ -34,4 +34,8 @@
         MovieReview.new(author)
       end
     end
+    
+    def self.get_poster(movie_id)
+      Movie.new(MoviesService.get_movie_details(movie_id))
+    end
   end

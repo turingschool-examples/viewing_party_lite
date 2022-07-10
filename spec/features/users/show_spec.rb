@@ -67,7 +67,7 @@ RSpec.describe 'User Dashboard/Show Page', type: :feature do
     party_1 = Party.create!(host: 'chealsea@comcast.net',
                             movie_name: 'The Shawshank Redemption',
                             movie_id: 278,
-                            date: Date.new(2022, 10, 15),
+                            date: Date.today,
                             duration: 205,
                             start_time: '12:00:00')
 
@@ -78,11 +78,20 @@ RSpec.describe 'User Dashboard/Show Page', type: :feature do
                             duration: 185,
                             start_time: '12:00:00')
 
-     PartyUser.create!(party_id: party_1.id, user_id: user_1.id)
-     PartyUser.create!(party_id: party_1.id, user_id: user_2.id)
-     PartyUser.create!(party_id: party_1.id, user_id: user_3.id)
-     PartyUser.create!(party_id: party_2.id, user_id: user_2.id)
-     PartyUser.create!(party_id: party_2.id, user_id: user_3.id)
-     PartyUser.create!(party_id: party_2.id, user_id: user_4.id)
+    PartyUser.create!(party_id: party_1.id, user_id: user_1.id)
+    PartyUser.create!(party_id: party_1.id, user_id: user_2.id)
+    PartyUser.create!(party_id: party_1.id, user_id: user_3.id)
+    PartyUser.create!(party_id: party_2.id, user_id: user_2.id)
+    PartyUser.create!(party_id: party_2.id, user_id: user_3.id)
+    PartyUser.create!(party_id: party_2.id, user_id: user_4.id)
+    visit user_path(user_1.id)
+
+    expect(page).to have_content("Title: The Shawshank Redemption")
+    expect(page).to have_content("Date: #{Date.today.strftime("%T")}")
+    expect(page).to have_content("Start Time: 12:00:00")
+    expect(page).to have_content("Duration: 3 h 25 min")
+    expect(page).to have_content("Leo")
+    expect(page).to have_content("Pedro")
+    expect(page).to_not have_content("Noel")
   end
 end

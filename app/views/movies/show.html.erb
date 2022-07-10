@@ -14,6 +14,7 @@
 <% end %>
 </p>
 <p>Summary: <%= @movie_details.summary %></p><hr>
+<p>Movie Poster: <img src=<%= "https://image.tmdb.org/t/p/original#{@movie_details.poster}" %>></p>
 <h3>Cast: </h3>
 <% @movie_cast.each do |actor| %>
 <p><%= actor.character %> played by <%= actor.name %></p>
