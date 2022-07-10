@@ -17,10 +17,10 @@ RSpec.describe "User Dashboard/Show Page", type: :feature do
     user1 = User.create!(name: "Jim", email: 'jim@mail.com')
     user2 = User.create!(name: "Tommy", email: 'tommy@mail.com')
     user3 = User.create!(name: "Hoju", email: 'hoju@mail.com')
-    party1 = Party.create!(duration: 300, date: Date.today, start_time: Time.now, user_id: user1.id, movie_id: 298)
+    party1 = Party.create!(duration: 300, date: Date.today, start_time: Time.now, user_id: user1.id, movie_id: 298, movie_name: "Shawshank Redemption")
     partyuser1 = PartyUser.create!(party: party1, user: user1)
     partyuser2 = PartyUser.create!(party: party1, user: user2)
-    party2 = Party.create!(duration: 300, date: Date.today, start_time: Time.now, user_id: user2.id, movie_id: 19404)
+    party2 = Party.create!(duration: 300, date: Date.today, start_time: Time.now, user_id: user2.id, movie_id: 19404, movie_name: "Parasite")
     partyuser3 = PartyUser.create!(party: party2, user: user1)
     partyuser4 = PartyUser.create!(party: party2, user: user2)
 
@@ -31,14 +31,14 @@ RSpec.describe "User Dashboard/Show Page", type: :feature do
 
     within ".invited" do
     expect(page).to have_content("Parties I am invited to")
-    expect(page).to have_content("298")
-    expect(page).to_not have_content("19404")
+    expect(page).to have_content("Shawshank Redemption")
+    expect(page).to_not have_content("Parasite")
     end
 
     within ".hosting" do
     expect(page).to have_content("Parties I am hosting")
-    expect(page).to_not have_content("298")
-    expect(page).to have_content("19404")
+    expect(page).to_not have_content("Shawshank Redemption")
+    expect(page).to have_content("Parasite")
     end
 
 
