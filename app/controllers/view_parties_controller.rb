@@ -5,33 +5,37 @@ class ViewPartiesController < ApplicationController
   end
 
   def create
-    party = ViewParty.new(
-      movie_api_id: params[:movie_id],
-      duration: params[:duration],
-      date: params[:date],
-      time: params[:time],
-      movie_image_path: params[:movie_image_path],
-      movie_title: params[:movie_title],
-      host_id: params[:user_id]
-    )
-    if party.save
-      UserViewParty.create!(
-        user_id: params[:user_id],
-        view_party_id: party.id,
-        host: true
+    if params[:movie_runtime].to_i <= params[:duration].to_i
+      party = ViewParty.new(
+        movie_api_id: params[:movie_id],
+        duration: params[:duration],
+        date: params[:date],
+        time: params[:time],
+        movie_image_path: params[:movie_image_path],
+        movie_title: params[:movie_title],
+        host_id: params[:user_id]
       )
-      if params[:invited].present?
-        params[:invited].each do |invited_id|
-          UserViewParty.create!(
-            user_id: invited_id.to_i,
-            view_party_id: party.id,
-            host: false
-          )
+      if party.save
+        UserViewParty.create!(
+          user_id: params[:user_id],
+          view_party_id: party.id,
+          host: true
+        )
+        if params[:invited].present?
+          params[:invited].each do |invited_id|
+            UserViewParty.create!(
+              user_id: invited_id.to_i,
+              view_party_id: party.id,
+              host: false
+            )
+          end
         end
+        redirect_to "/users/#{params[:user_id]}"
+      else
+        redirect_to "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/view_parties/new", notice: "Invalid Data. Please keep data in the displayed format."
       end
-      redirect_to "/users/#{params[:user_id]}"
     else
-      redirect_to "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/view_parties/new", notice: "Invalid Data. Please keep data in the displayed format."
+      redirect_to "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/view_parties/new", notice: "Duration of party cannot be less than movie runtime."
     end
   end
 end

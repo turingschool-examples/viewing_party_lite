@@ -57,18 +57,29 @@ RSpec.describe "User Movies View Parties New page" do
       expect(page).to have_content(@movie.title)
     end
 
-    xit "will not create a party if the value is less than the duration of the movie" do
-      # FIXME: this sad path test will error because even though the page
-      # is setup to not allow a user to enter a value less than the movie
-      # duration, for some reason the test allows an invalid value to be
-      # entered so it does not fail as expected
+    it "will display an error if invalid data is entered" do
+      fill_in(:date, with: '10/31/2022')
+      fill_in(:time, with: '22:00')
+      within "#user-#{@user2.id}" do
+        check("invited[]")
+      end
+      within "#user-#{@user3.id}" do
+        check("invited[]")
+      end
+      click_button('Create Party')
+
+      expect(current_path).to eq("/users/#{@user.id}/movies/#{@movie.id}/view_parties/new")
+      expect(page).to have_content("Invalid Data. Please keep data in the displayed format.")
+    end
+
+    it "will not create a party if the value is less than the duration of the movie" do
       fill_in(:duration, with: '81')
       fill_in(:date, with: '2022-10-31')
       fill_in(:time, with: '22:00')
       click_button('Create Party')
 
       expect(current_path).to eq("/users/#{@user.id}/movies/#{@movie.id}/view_parties/new")
-      # expect(page).to have_content("Duration of party cannot be less than movie runtime")
+      expect(page).to have_content("Duration of party cannot be less than movie runtime")
     end
   end
 end
