@@ -6,4 +6,31 @@ class ViewingParty < ApplicationRecord
                         :duration,
                         :date,
                         :start_time
+
+  def formatted_time
+    start_time.strftime("%l:%M %p")
+  end
+
+  def formatted_date
+    date.strftime("%b %-d, %Y")
+  end
+
+  def movie_title
+    movie = MovieFacade.movie_id_search(movie_id)
+    movie.title
+  end
+
+  def poster_path
+    movie = MovieFacade.movie_id_search(movie_id)
+    movie.poster
+  end
+
+  def host
+    users.where(user_viewing_parties: {host: true}).pluck(:name).join
+  end
+
+  # def attendees
+  #   binding.pry
+  #   users.where.not(user_viewing_parties: {host: true})
+  # end
 end

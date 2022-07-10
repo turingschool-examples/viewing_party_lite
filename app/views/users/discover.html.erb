@@ -2,7 +2,7 @@
 
 <br>
 <div align="center" id="top_rated_movies">
-  <%= button_to "Discover Top Rated Movies", user_movies_path(@user.id), method: :get, params: {q: 'top%20rated'} %>
+  <%= button_to "Discover Top Rated Movies", user_movies_path(@user.id), method: :get, local: true %>
 </div>
 <br>
 <br>
