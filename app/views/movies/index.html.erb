@@ -5,6 +5,7 @@
 <% else %>
   <h1>Top Rated Movies</h1>
 <% end %>
+
   <% @movies.each_with_index do |movie, index| %>
     <div id=<%="movie-#{index}"%>>
       <%= link_to movie.title, user_movie_path(params[:user_id], movie.id) %>

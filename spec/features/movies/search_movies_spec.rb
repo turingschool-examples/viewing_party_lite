@@ -8,6 +8,7 @@ RSpec.describe 'Search Movies', :vcr do
     fill_in 'query', with: 'Harry'
 
     click_button 'Search'
+    save_and_open_page
 
     expect(current_path).to eq("/users/#{user.id}/movies_search")
     expect(page.status_code).to eq 200

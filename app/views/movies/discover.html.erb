@@ -1,5 +1,5 @@
 <h1>Discover Movies</h1>
-<%= form_with url: user_search_path(@user) do |form| %>
+<%= form_with url: user_search_path(@user), method: :get, local: true do |form| %>
   <%= form.label :query, "Search by title:" %>
   <br>
   <%= form.text_field :query %>
