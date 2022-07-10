@@ -1,5 +1,18 @@
-<% @movies.each do |movie| %>
-  <% require "pry"; binding.pry %>
-  <%= movie.title %>
-  <p>Vote Average: <%= movie.vote_average %><p><br>
+<h1><%= @movie.title %></h1>
+
+<%= button_to "Return to Discover Page", "/users/#{@user.id}/discover", method: :get %>
+<%= button_to "Create a viewing party", "/users/#{@user.id}/movies/#{@movie.id}/viewing-party/new", method: :get %>
+
+<p><strong>Vote average: </strong><%= @movie.vote_average %></p>
+<p><strong>Runtime: </strong><%= @movie.runtime / 60 %> hours <%= @movie.runtime % 60 %> minutes</p>
+<p><strong>Genres: </strong><% @movie.genres.each do |genre| %></p>
+  <%= genre[:name] %>
+<% end %>
+<p><strong>Summary description: </strong><%= @movie.description %></p>
+<p><strong>First 10 cast: </strong><% @cast.each do |actor| %></p>
+  <%= actor %>
+<% end %>
+<p><strong>Count of reviews: </strong><%= @movie.total_reviews %></p>
+<p><strong>Movie reviews: </strong><%= @reviews.each do |review| %></p>
+  <%= review %>
 <% end %>
