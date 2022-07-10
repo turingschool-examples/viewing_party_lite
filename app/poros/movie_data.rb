@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MovieData
   attr_reader :name,
               :avg,

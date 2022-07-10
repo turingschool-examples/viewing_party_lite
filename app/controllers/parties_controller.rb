@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PartiesController < ApplicationController
   def new
     @users = User.all
@@ -14,13 +16,13 @@ class PartiesController < ApplicationController
       params[:users].each do |user|
         PartyUser.create(user_id: user, party: party)
       end
-      redirect_to "/users/#{@user.id}" 
+      redirect_to "/users/#{@user.id}"
     end
   end
 
-private
+  private
 
   def party_params
     params.permit(:id, :duration, :date, :start_time, :user_id, :movie_id, :movie_name)
-    end
+  end
 end
