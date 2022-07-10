@@ -5,9 +5,9 @@
 <div id="viewingParties">
   <h2>Viewing Parties</h2>
   <% @parties.each do |party| %>
-    <%= party.movie_name %>
-    <%= party.date %>
-    <%= party.start_time %>
-    <%= party.movie_name %>
+    <b>Movie: </b><%= party.movie_name %>
+    <b>Date: </b><%= party.date %>
+    <b>Start Time: </b><%= party.start_time.strftime('%H:%M') %>
+      <br>
   <% end %>
 </div>
