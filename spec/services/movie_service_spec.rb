@@ -41,7 +41,7 @@ RSpec.describe 'MovieService' do
 
   describe 'MovieService.movie_lookup(id)', :vcr do
     it 'retrieves data and parses response' do
-      json = MovieService.movie_lookup(11868)
+      json = MovieService.movie_lookup(11_868)
 
       expect(json).to be_a(Hash)
       expect(json).to include :title, :runtime, :poster_path, :overview, :genres
@@ -50,7 +50,7 @@ RSpec.describe 'MovieService' do
 
   describe 'MovieService.cast_lookup(id)', :vcr do
     it 'retrieves data and parses response' do
-      json = MovieService.cast_lookup(11868)
+      json = MovieService.cast_lookup(11_868)
       cast = json[:cast]
 
       expect(cast).to be_a(Array)
@@ -62,7 +62,7 @@ RSpec.describe 'MovieService' do
 
   describe 'MovieService.review_lookup(id)', :vcr do
     it 'retrieves data and parses response' do
-      json = MovieService.review_lookup(11868)
+      json = MovieService.review_lookup(11_868)
       reviews = json[:results]
 
       expect(reviews).to be_a(Array)
@@ -71,6 +71,4 @@ RSpec.describe 'MovieService' do
       end
     end
   end
-
-
 end
