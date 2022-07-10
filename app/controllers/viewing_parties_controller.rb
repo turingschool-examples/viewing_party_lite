@@ -1,6 +1,6 @@
 class ViewingPartiesController < ApplicationController
   def new
-    @movie = MoviesFacade.movie(params[:id])
+    @movie = MoviesFacade.movie(params[:movie_id])
     @all_users = User.all
     @user = User.find(params[:user_id])
   end
