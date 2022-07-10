@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MovieCast
   attr_reader :name,
               :character

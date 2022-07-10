@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MovieReview
   attr_reader :author,
               :content
