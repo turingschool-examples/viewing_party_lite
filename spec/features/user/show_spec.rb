@@ -90,5 +90,16 @@ RSpec.describe "User Dash/Show page", type: :feature do
         expect(page).to have_content("Invited")
       end
     end
+
+    it 'displays each title as a link to the movie details page', :vcr do
+      visit "/users/#{@user3.id}"
+
+      expect(page).to have_link("Spirited Away")
+      expect(page).to have_link("The Rocky Horror Picture Show")
+
+      click_link("Spirited Away")
+
+      expect(page).to have_current_path("/users/#{@user3.id}/movies/#{@spirit.movie_id}")
+    end
   end
 end
