@@ -56,7 +56,7 @@ RSpec.describe 'New party page' do
       end
 
       expect(current_path).to eq(user_path(@user1.id))
-      save_and_open_page
+
       within ".hostParty" do
         expect(page).to have_content("The Godfather")
         expect(page).to have_content("Jul 10, 2022")
@@ -107,7 +107,7 @@ RSpec.describe 'New party page' do
       end
 
       expect(current_path).to eq(user_path(@user1.id))
-      save_and_open_page
+
       within ".hostParty" do
         expect(page).to have_content("The Godfather")
         expect(page).to have_content("Jul 10, 2022")
