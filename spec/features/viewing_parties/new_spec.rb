@@ -64,5 +64,31 @@ RSpec.describe 'New party page' do
         expect(page).to have_content('Dana')
       end
     end
+
+    it 'shows up on the guests dashboard', :vcr do 
+      visit new_user_movie_viewing_party_path(@user1.id, @movie_id)
+
+      within '#form' do
+        fill_in :duration, with: '175'
+        select 2022, from: "_date_1i"
+        select "July", from: "_date_2i"
+        select 10, from: "_date_3i"
+        select 14, from: "_start_time_4i"
+        select 36, from: "_start_time_5i"
+        check "#{@user2.name}"
+        check "#{@user3.name}"
+        expect(page).to_not have_content(@user1.name)
+        click_button('Create')
+      end
+
+      visit user_path(@user2.id)
+      save_and_open_page
+      within ".invites" do
+        expect(page).to have_content("The Godfather")
+        expect(page).to have_content("Jul 10, 2022")
+        expect(page).to have_content('Host: Ana')
+        expect(page).to have_content('Dana')
+      end
+    end
   end
 end
