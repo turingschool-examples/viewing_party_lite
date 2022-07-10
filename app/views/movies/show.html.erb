@@ -1,1 +1,4 @@
-PLACE HOLDER
+<h1><%= @movie.title %></h1>
+
+<%= button_to "Create Viewing Party", "/users/#{@user.id}/movies/#{@movie.id}/viewing-party/new" %>
+<%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get, local: true %>
