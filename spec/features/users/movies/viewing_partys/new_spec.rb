@@ -32,4 +32,28 @@ RSpec.describe 'Viewing Partys new page' do
 
     expect(current_path).to eq(user_path("#{users[0].id}"))
   end
+
+    it 'can test duration', :vcr do
+#save_and_open_page
+    expect(page).to have_field("Duration", with: 142)
+    fill_in "Duration", with: "140"
+    select('2022', from: '_date_1i')
+    select('August', from: '_date_2i')
+    select('22', from: '_date_3i')
+    select('08 PM', from: '_start_time_4i')
+    select('45', from: '_start_time_5i')
+
+    within "#user-#{users[0].id}" do
+      check
+    end
+
+    within "#user-#{users[1].id}" do
+      check
+    end
+
+    click_button('Create Party')
+
+    expect(current_path).to eq(new_user_movie_viewing_party_path(users[0].id, 278))
+  end
+
 end

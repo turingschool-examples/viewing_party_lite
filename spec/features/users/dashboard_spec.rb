@@ -6,7 +6,6 @@ RSpec.describe "User Dashboard", type: :feature do
 
   it "can display the users name at the top of the page" do
     visit user_path(users[0])
-require "pry"; binding.pry
     expect(page).to have_content("#{users[0].user_name} Dashboard")
     expect(page).to_not have_content("#{users[1].user_name} Dashboard")
   end
