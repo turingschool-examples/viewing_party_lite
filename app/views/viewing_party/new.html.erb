@@ -1,24 +1,25 @@
 <section id="title">
 <br>
-  <h1>Viewing Party For: <%= @movie.title %> </h1>
-
-
+<h1>Viewing Party For: <%= @movie.title %> </h1>
 </section>
-<%= form_with url: user_movie_viewing_party_index_path(@user_id, @movie_id), local: true do |f| %>
+
+<%= form_with url: user_movie_viewing_party_index_path(@user_id, @movie.id), local: true do |f| %>
   <section id="form">
-    <p><%= f.label :duration %>
-    <%= f.number_field :duration, :value => "#{@movie.runtime}", :min => "#{@movie.runtime}" %> minutes >
-    <p><%= f.label :date %>
-    <%= f.date_select :date %></p>
-    <p><%= f.label :time %>
-    <%= f.time_select :start_time %> </p>
-    <p><%= f.label :users_to_invite %></p>
-    <ul><%= @users.each do |guest| %></ul>
-    <ul><%=f.label guest.name.to_sym %></ul>
-    <ul><%=f.check_box guest.name.to_sym %></ul>
-    <ul><% end %></ul>
-    <p><%= f.submit 'Create' %> </p>
-  </section>
+  <p><%= f.label :duration %>
+  <%= f.number_field :duration, :value => "#{@movie.runtime}", :min => "#{@movie.runtime}" %> minutes >
+  <p><%= f.label :date %>
+  <%= f.date_select :date %></p>
+  <p><%= f.label :time %>
+  <%= f.time_select :start_time %> </p>
+  <p><%= f.label :users_to_invite %></p>
+  <% @users.each do |guest| %>
+    <% if guest.id != @user_id %>
+    <p><%=f.label guest.name.to_sym %>
+      <%=f.check_box guest.name.to_sym %></p>
+    <% end %>
+  <% end %>
+  <p><%= f.submit 'Create' %> </p>
+</section>
 <% end %>
 
 <% flash.each do |type, msg| %>

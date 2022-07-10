@@ -1,28 +1,45 @@
 <h1> <%= @user.name %>'s Dashboard</h3>
-  <p>
-<div class="container" align="center" id="discover_movies">
-      <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get%>
-</div>
-</p>
-<br>
-<h3>Viewing Parties</h3>
 
+<div class="container" align="center" id="discover_movies">
+<%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get%>
+</div>
+
+<br>
+<h2>Viewing Parties</h2>
 <div class='invites'>
-<p></p><h4>My Invitations<h4>
+<h3>My Invitations<h3>
 <% @user.not_hosting.each do |party| %>
-  <h3>Movie: <%= link_to "#{party.movie_title}", user_movie_path(@user.id, party.movie_id) %></h3>
-  <img src='image.tmdb.org/t/p/w500<%= party.poster_path %>' alt="the movie poster for <%= party.movie_title %>">
+  <h4>Movie: <%= link_to "#{party.movie_title}", user_movie_path(@user.id, party.movie_id) %></h4>
+  <p><%= image_tag "https://image.tmdb.org/t/p/original#{party.poster_path}", size:"175", data:{title: "#{party.movie_title} Poster"} %></p>
   <p>Date: <%= party.formatted_date %></p>
   <p>Time of Movie: <%= party.formatted_time %> </p>
   <p>Host: <%= party.host %> </p>
   <div class="guests">
-  <p>Attendees: <% party.users.each do |guest|%>
-                  <% if guest.id != @user.id && guest.name != party.host %>
-                    <%= guest.name %>
-                  <% end %>
+  <p>Attendees: <% party.guests.each do |guest| %>
+                  <% if guest.id != @user.id %>
+                    <p><%= guest.name %></p>
+                  <% end %></p>
                 <% end %>
-                <strong><%= @user.name %></strong>
+                <p><strong><%= @user.name %></strong></p>
   </p>
+  </div>
+<% end %>
+</div>
+
+<div class="hostParty">
+<h3>My Parties</h3>
+<% @user.party_host.each do |party| %>
+  <h4>Movie: <%= link_to "#{party.movie_title}", user_movie_path(@user.id, party.movie_id) %></h4>  
+  <p><%= image_tag "https://image.tmdb.org/t/p/original#{party.poster_path}", size:"175", data:{title: "#{party.movie_title} Poster"} %></p>
+  <p>Date: <%= party.formatted_date %></p>
+  <p>Time of Movie: <%= party.formatted_time %></p>
+  <p>Host: <%= party.host %> </p>
+  <div class='friends'>
+  <p>Guests: <% party.guests.each do |guest| %>
+                <% if guest.id != @user.id %>
+                  <p><%= guest.name %></p>
+                <% end %></p>
+              <% end %>
   </div>
 <% end %>
 </div>

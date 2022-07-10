@@ -32,7 +32,7 @@ RSpec.describe 'Discover Page', type: :feature do
 
       visit user_discover_path(user1.id)
 
-      within '.movie_search' do
+      within '.movieSearch' do
         expect(page).to have_field('search', placeholder: 'Search by movie title')
       end 
     end
@@ -42,12 +42,14 @@ RSpec.describe 'Discover Page', type: :feature do
       
       visit user_discover_path(user1.id)
 
-      within '.movie_search' do 
+      within '.movieSearch' do 
         expect(page).to have_button('Find Movies')
         fill_in :search, with: 'Godfather'
         click_button 'Find Movies'
       end 
       expect(current_path).to eq(user_movies_path(user1.id))
+      expect(page).to have_content('The Godfather')
+      expect(page).to_not have_content('Spirited Away')
     end
   end
 end

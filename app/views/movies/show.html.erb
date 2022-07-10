@@ -13,16 +13,15 @@
               <%= genre[:name] %>
             <% end %></p>
 <br>
-<br>
 <h3>Cast: </h3>
 <% @movie_cast.each do |actor| %>
 <p>Actor: <%= actor.name %> is Character: <%= actor.character %> </p>
 <% end %>
 <br>
-<br>
 <h3>Movie Reviews</h3>
-
-<h4>Total Reviews: </h4><p><%= @movie_review.count %></p>
+<br>
+<h4>Total Reviews: </h4>
+<p><%= @movie_review.count %></p>
 <% @movie_review.each do |author| %>
 <br>
 <h4>Author: </h4>
