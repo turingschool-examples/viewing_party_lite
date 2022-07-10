@@ -14,7 +14,7 @@ RSpec.describe "User Dash/Show page", type: :feature do
     expect(page).to_not have_content("Sai's Dashboard")
   end
 
-  it 'has a button to discover movies' do 
+  it 'has a button to discover movies' do
     visit "/users/#{@user1.id}"
 
     expect(page).to have_button("Discover Movies")
@@ -34,6 +34,8 @@ RSpec.describe "User Dash/Show page", type: :feature do
 
     within '#viewingparties' do
       expect(page).to have_content("Viewing Parties")
+      expect(page).to have_content("My Viewing Parties")
+      expect(page).to have_content("My Invites")
     end
   end
 end
