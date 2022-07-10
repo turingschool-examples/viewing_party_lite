@@ -11,6 +11,7 @@
     <%= link_to "#{party.display_title}", "/users/#{@user.id}/movies/#{party.movie_id}"%><br>
     <%= party.date.strftime("%b %d, %Y")%><br>
     <%= party.time.strftime("%l:%M %p") %><br>
+    <p>Host: <%= party.user.name %></p><br>
     <% party.users.each do |user| %>
       <%= user.name %><br>
     <% end %>
@@ -23,6 +24,7 @@
     <%= link_to "#{party.display_title}", "/users/#{@user.id}/movies/#{party.movie_id}"%><br>
     <%= party.date.strftime("%b %d, %Y")%><br>
     <%= party.time.strftime("%l:%M %p") %><br>
+    <p>Host: <%= party.user.name %></p><br>
     <% party.users.each do |user| %>
       <% if @user.name == user.name %>
         <b><%= user.name %></b><br>

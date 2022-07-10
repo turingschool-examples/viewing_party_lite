@@ -70,6 +70,7 @@ RSpec.describe "User Dash/Show page", type: :feature do
         expect(page).to have_content(@user2.name)
         expect(page).to have_content(@user4.name)
         expect(page).to have_content("Hosting")
+        expect(page).to have_content("Host: Deannah")
       end
     end
 
@@ -86,8 +87,8 @@ RSpec.describe "User Dash/Show page", type: :feature do
         expect(page).to have_content(@user3.name)
         expect(page).to have_content(@user2.name)
         expect(page).to have_content(@user4.name)
-        expect(page).to_not have_content(@user1.name)
         expect(page).to have_content("Invited")
+        expect(page).to have_content("Host: Sai")
       end
     end
 
