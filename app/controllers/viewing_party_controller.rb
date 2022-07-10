@@ -11,7 +11,7 @@ class ViewingPartyController < ApplicationController
       @users = User.where("id != #{@host.id}")
       
       
-      if params[:duration] > params[:movie_runtime]
+      if params[:duration] >= params[:movie_runtime]
         party = Party.create!(party_params)
         
         # turn into model method
