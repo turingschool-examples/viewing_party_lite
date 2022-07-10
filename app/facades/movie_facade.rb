@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MovieFacade
   def self.top_40
     json_array = MovieService.top_movies
@@ -10,7 +12,7 @@ class MovieFacade
 
   def self.search_by_keyword(keyword)
     json_array = MovieService.movie_search(keyword)
-    if !json_array.first[:errors].present?
+    unless json_array.first[:errors].present?
       json_array.map do |page_hash|
         page_hash[:results].map do |movie_data|
           Movie.new(movie_data)
@@ -35,6 +37,6 @@ class MovieFacade
     json = MovieService.review_lookup(id)
     json[:results].map do |critiques|
       MovieReview.new(critiques)
-    end 
+    end
   end
 end

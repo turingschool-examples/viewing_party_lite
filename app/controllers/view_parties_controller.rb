@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ViewPartiesController < ApplicationController
   def new
     @movie = MovieFacade.find_movie(params[:movie_id])
@@ -32,10 +34,12 @@ class ViewPartiesController < ApplicationController
         end
         redirect_to "/users/#{params[:user_id]}"
       else
-        redirect_to "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/view_parties/new", notice: "Invalid Data. Please keep data in the displayed format."
+        redirect_to "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/view_parties/new",
+                    notice: 'Invalid Data. Please keep data in the displayed format.'
       end
     else
-      redirect_to "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/view_parties/new", notice: "Duration of party cannot be less than movie runtime."
+      redirect_to "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/view_parties/new",
+                  notice: 'Duration of party cannot be less than movie runtime.'
     end
   end
 end

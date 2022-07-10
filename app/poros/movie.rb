@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Movie
   attr_reader :title,
               :vote_average,
@@ -18,10 +20,10 @@ class Movie
   end
 
   def genres
-    @genre.map { |g| g[:name] }.join(", ")
+    @genre.map { |g| g[:name] }.join(', ')
   end
 
   def runtime_formatted
-    "#{@runtime/60}hr #{@runtime % 60} min"
+    "#{@runtime / 60}hr #{@runtime % 60} min"
   end
 end

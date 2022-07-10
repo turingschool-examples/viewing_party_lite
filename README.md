@@ -1,5 +1,7 @@
 # Viewing Party
 
+[Evaluation Video Link](https://drive.google.com/file/d/1LpG5MKv968TNfHjpYB1nWkZD47i1Xrrb/view?usp=sharing)
+
 This is the base repo for the [Viewing Party Lite project](https://backend.turing.io/module3/projects/viewing_party_lite) used for Turing's Backend Module 3.
 
 ### About this Project
@@ -8,7 +10,7 @@ Viewing Part Lite is an application in which users can explore movie options and
 
 ## Setup for the use of the project
 
-1. A conveyor belt link will be sent out at project kickoff so that you can both fork and copy the project board on this base repo. 
+1. A conveyor belt link will be sent out at project kickoff so that you can both fork and copy the project board on this base repo.
 
 ## Local Setup for any other use
 

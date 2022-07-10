@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddColumnToViewParties < ActiveRecord::Migration[5.2]
   def change
     add_column :view_parties, :movie_image_path, :string
