@@ -5,7 +5,6 @@ class ViewPartiesController < ApplicationController
   end
 
   def create
-    # binding.pry
     party = ViewParty.create!(
       movie_api_id: params[:movie_id],
       duration: params[:duration],

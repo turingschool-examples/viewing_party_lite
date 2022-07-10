@@ -11,14 +11,16 @@
     <div>
       <hr><br>
       <h2>Viewing Parties</h2>
-      <% @user.view_parties.each do |party| %>
-        <div id="box">
-          <%= party.movie_name %> <br>
-          <%= party.picture %> <br>
-          <%= party.date %> <br>
-          <%= party.time %> <br>
-          <%= party.status %> <br>
-        </div>
+      <% if !@user.view_parties.empty? %>
+        <% @user.view_parties.each do |party| %>
+          <div id="box">
+            <%= party.movie_name %> <br>
+            <%= party.picture %> <br>
+            <%= party.date %> <br>
+            <%= party.time %> <br>
+            <%= party.status %> <br>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </center>
