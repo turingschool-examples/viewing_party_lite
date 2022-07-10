@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.themoviedb.org/3/movie/11868/credits?api_key=7fd3e34e3d973aa106520ced8310b3eb
+    uri: https://api.themoviedb.org/3/movie/11868/credits?api_key=<api_key>
     body:
       encoding: US-ASCII
       string: ''
@@ -50,13 +50,15 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 c591b9d4784301b692cc1051c256991a.cloudfront.net (CloudFront)
+      - 1.1 63567b6e742908d5c6723c5c474bb27e.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - LAX50-C2
+      - LAX53-P1
       X-Amz-Cf-Id:
-      - "-SvNbCIDStCGKZC9pR8ByLfLFXCjJfzP031y27meNh9SX0v1DzHytA=="
+      - dXxm633At29FLEhBz8N1LCm_hRNVMTMpABOwswRh1goPl5QAazObPQ==
+      Age:
+      - '861'
     body:
       encoding: ASCII-8BIT
       string: '{"id":11868,"cast":[{"adult":false,"gender":2,"id":5,"known_for_department":"Acting","name":"Peter
@@ -131,5 +133,5 @@ http_interactions:
         Powell","original_name":"Nosher Powell","popularity":0.759,"profile_path":"/w1h7eeWxDb8NdAYOy3NqYWwD3un.jpg","credit_id":"599012fb9251416759027408","department":"Crew","job":"Stunts"},{"adult":false,"gender":0,"id":1340059,"known_for_department":"Crew","name":"Sydney
         Pearson","original_name":"Sydney Pearson","popularity":0.6,"profile_path":null,"credit_id":"599012d6c3a3687473027cbf","department":"Crew","job":"Special
         Effects"}]}'
-  recorded_at: Sun, 10 Jul 2022 20:52:45 GMT
+  recorded_at: Sun, 10 Jul 2022 21:07:06 GMT
 recorded_with: VCR 6.1.0

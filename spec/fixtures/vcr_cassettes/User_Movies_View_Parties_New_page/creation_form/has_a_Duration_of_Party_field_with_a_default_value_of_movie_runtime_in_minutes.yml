@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.themoviedb.org/3/movie/11868?api_key=7fd3e34e3d973aa106520ced8310b3eb
+    uri: https://api.themoviedb.org/3/movie/11868?api_key=<api_key>
     body:
       encoding: US-ASCII
       string: ''
@@ -24,6 +24,8 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
+      Date:
+      - Sun, 10 Jul 2022 20:47:50 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -33,35 +35,33 @@ http_interactions:
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
       X-Memc:
       - HIT
       X-Memc-Key:
       - 94965285d6c51b6832c193636fa8568d33bd0051
       X-Memc-Age:
-      - '9446'
+      - '3883'
       X-Memc-Expires:
-      - '6526'
-      Date:
-      - Sat, 09 Jul 2022 23:23:12 GMT
-      Cache-Control:
-      - public, max-age=28800
+      - '12413'
       Etag:
-      - W/"428d4d85356d8fec47316401858be939"
+      - W/"7a3c99d645a2fc8f795591a737598356"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 8c0cf74a8ac4637a28b8ef40ac35c710.cloudfront.net (CloudFront)
+      - 1.1 0f1b5c9a722055c150d7b22666dacf6a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - LAX53-P1
       X-Amz-Cf-Id:
-      - ITvdveYUd0rfVD6_u-OFk0aV0LHAGMcQVJxmnOv6MZ9nSOky4MeE6A==
+      - nnFcXmF5Qok6UvZEom-PqhdaeH2nc5uaB_HGD-E36-J4o4eWNT1QiQ==
       Age:
-      - '19819'
+      - '1154'
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvaWpiQnpsS1NLd1dOUnBlYkxVR2ZtWGhCcnZnLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6eyJpZCI6MTIzNzI0LCJuYW1lIjoiRHJhY3VsYSAoSGFtbWVyKSBDb2xsZWN0aW9uIiwicG9zdGVyX3BhdGgiOiIvNmFSbzlxTFpYNTBUQkJVS3hFWXdaWk5wRnBXLmpwZyIsImJhY2tkcm9wX3BhdGgiOiIvaHliWVl3QnFhb21mZVBVM3VhaUpmcGc3eWtDLmpwZyJ9LCJidWRnZXQiOjEwNDg4MCwiZ2VucmVzIjpbeyJpZCI6MjcsIm5hbWUiOiJIb3Jyb3IifV0sImhvbWVwYWdlIjoiIiwiaWQiOjExODY4LCJpbWRiX2lkIjoidHQwMDUxNTU0Iiwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiRHJhY3VsYSIsIm92ZXJ2aWV3IjoiQWZ0ZXIgSm9uYXRoYW4gSGFya2VyIGF0dGFja3MgRHJhY3VsYSBhdCBoaXMgY2FzdGxlLCB0aGUgdmFtcGlyZSB0cmF2ZWxzIHRvIGEgbmVhcmJ5IGNpdHksIHdoZXJlIGhlIHByZXlzIG9uIHRoZSBmYW1pbHkgb2YgSGFya2VyJ3MgZmlhbmPDqWUuIFRoZSBvbmx5IG9uZSB3aG8gbWF5IGJlIGFibGUgdG8gcHJvdGVjdCB0aGVtIGlzIERyLiB2YW4gSGVsc2luZywgSGFya2VyJ3MgZnJpZW5kIGFuZCBmZWxsb3ctc3R1ZGVudCBvZiB2YW1waXJlcywgd2hvIGlzIGRldGVybWluZWQgdG8gZGVzdHJveSBEcmFjdWxhLCB3aGF0ZXZlciB0aGUgY29zdC4iLCJwb3B1bGFyaXR5IjoxMi45NjYsInBvc3Rlcl9wYXRoIjoiLzFMNDVod1V1MVA0TlJoYlJSckU1ZDlvSGFtbS5qcGciLCJwcm9kdWN0aW9uX2NvbXBhbmllcyI6W3siaWQiOjEzMTQsImxvZ29fcGF0aCI6Ii9nUUJsdURxZTZkYzJaZHpmSmJhYkVIb1NHb0cucG5nIiwibmFtZSI6IkhhbW1lciBGaWxtIFByb2R1Y3Rpb25zIiwib3JpZ2luX2NvdW50cnkiOiJHQiJ9XSwicHJvZHVjdGlvbl9jb3VudHJpZXMiOlt7Imlzb18zMTY2XzEiOiJHQiIsIm5hbWUiOiJVbml0ZWQgS2luZ2RvbSJ9XSwicmVsZWFzZV9kYXRlIjoiMTk1OC0wNS0yMiIsInJldmVudWUiOjM1MDAwMDAsInJ1bnRpbWUiOjgyLCJzcG9rZW5fbGFuZ3VhZ2VzIjpbeyJlbmdsaXNoX25hbWUiOiJFbmdsaXNoIiwiaXNvXzYzOV8xIjoiZW4iLCJuYW1lIjoiRW5nbGlzaCJ9XSwic3RhdHVzIjoiUmVsZWFzZWQiLCJ0YWdsaW5lIjoiV2hvIHdpbGwgaGlzIGJyaWRlIGJlIHRvbmlnaHQ/IiwidGl0bGUiOiJEcmFjdWxhIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjcuMywidm90ZV9jb3VudCI6NDM2fQ==
-  recorded_at: Sun, 10 Jul 2022 04:53:31 GMT
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvaWpiQnpsS1NLd1dOUnBlYkxVR2ZtWGhCcnZnLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6eyJpZCI6MTIzNzI0LCJuYW1lIjoiRHJhY3VsYSAoSGFtbWVyKSBDb2xsZWN0aW9uIiwicG9zdGVyX3BhdGgiOiIvNmFSbzlxTFpYNTBUQkJVS3hFWXdaWk5wRnBXLmpwZyIsImJhY2tkcm9wX3BhdGgiOiIvaHliWVl3QnFhb21mZVBVM3VhaUpmcGc3eWtDLmpwZyJ9LCJidWRnZXQiOjEwNDg4MCwiZ2VucmVzIjpbeyJpZCI6MjcsIm5hbWUiOiJIb3Jyb3IifV0sImhvbWVwYWdlIjoiIiwiaWQiOjExODY4LCJpbWRiX2lkIjoidHQwMDUxNTU0Iiwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiRHJhY3VsYSIsIm92ZXJ2aWV3IjoiQWZ0ZXIgSm9uYXRoYW4gSGFya2VyIGF0dGFja3MgRHJhY3VsYSBhdCBoaXMgY2FzdGxlLCB0aGUgdmFtcGlyZSB0cmF2ZWxzIHRvIGEgbmVhcmJ5IGNpdHksIHdoZXJlIGhlIHByZXlzIG9uIHRoZSBmYW1pbHkgb2YgSGFya2VyJ3MgZmlhbmPDqWUuIFRoZSBvbmx5IG9uZSB3aG8gbWF5IGJlIGFibGUgdG8gcHJvdGVjdCB0aGVtIGlzIERyLiB2YW4gSGVsc2luZywgSGFya2VyJ3MgZnJpZW5kIGFuZCBmZWxsb3ctc3R1ZGVudCBvZiB2YW1waXJlcywgd2hvIGlzIGRldGVybWluZWQgdG8gZGVzdHJveSBEcmFjdWxhLCB3aGF0ZXZlciB0aGUgY29zdC4iLCJwb3B1bGFyaXR5IjoxMS40NDYsInBvc3Rlcl9wYXRoIjoiLzFMNDVod1V1MVA0TlJoYlJSckU1ZDlvSGFtbS5qcGciLCJwcm9kdWN0aW9uX2NvbXBhbmllcyI6W3siaWQiOjEzMTQsImxvZ29fcGF0aCI6Ii9nUUJsdURxZTZkYzJaZHpmSmJhYkVIb1NHb0cucG5nIiwibmFtZSI6IkhhbW1lciBGaWxtIFByb2R1Y3Rpb25zIiwib3JpZ2luX2NvdW50cnkiOiJHQiJ9XSwicHJvZHVjdGlvbl9jb3VudHJpZXMiOlt7Imlzb18zMTY2XzEiOiJHQiIsIm5hbWUiOiJVbml0ZWQgS2luZ2RvbSJ9XSwicmVsZWFzZV9kYXRlIjoiMTk1OC0wNS0yMiIsInJldmVudWUiOjM1MDAwMDAsInJ1bnRpbWUiOjgyLCJzcG9rZW5fbGFuZ3VhZ2VzIjpbeyJlbmdsaXNoX25hbWUiOiJFbmdsaXNoIiwiaXNvXzYzOV8xIjoiZW4iLCJuYW1lIjoiRW5nbGlzaCJ9XSwic3RhdHVzIjoiUmVsZWFzZWQiLCJ0YWdsaW5lIjoiV2hvIHdpbGwgaGlzIGJyaWRlIGJlIHRvbmlnaHQ/IiwidGl0bGUiOiJEcmFjdWxhIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjcuMywidm90ZV9jb3VudCI6NDM2fQ==
+  recorded_at: Sun, 10 Jul 2022 21:07:04 GMT
 recorded_with: VCR 6.1.0
