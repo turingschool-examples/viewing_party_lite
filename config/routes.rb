@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[show create] do
     resources :movies, controller: :user_movies do
-      resources :viewing_party
+      resources :viewing_parties
     end
   end
 end
