@@ -38,7 +38,18 @@ RSpec.describe MoviesService do
     parsed_json = MoviesService.get_movie_reviews(movie_id)
     expect(parsed_json).to be_a Array 
     movie = parsed_json.first
+    expect(movie).to be_a Hash 
     expect(movie[:content]).to be_a String
     expect(movie).to include(:author, :content)
+  end
+
+  it '#get_movie_cast returns an array of hashes', :vcr do
+    movie_id = 550
+    parsed_json = MoviesService.get_movie_cast(movie_id)
+    expect(parsed_json).to be_a Array 
+    movie = parsed_json.first
+    expect(movie).to be_a Hash 
+    expect(movie).to include(:name)
+    expect(movie[:name]).to be_a String
   end
 end
