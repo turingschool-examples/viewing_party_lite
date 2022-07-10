@@ -1,0 +1,97 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=7fd3e34e3d973aa106520ced8310b3eb&query=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 422
+      message: Unknown
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Sun, 10 Jul 2022 05:01:41 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 3364d01d27e5eefe2ce5d7ce499e55b2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - LAX53-P1
+      X-Amz-Cf-Id:
+      - 2Bb6QOISrZpOLjg763yO1qQgjowSeNBqMk7uYM7bslFjJ37_A6SKbw==
+    body:
+      encoding: UTF-8
+      string: '{"errors":["query must be provided"]}'
+  recorded_at: Sun, 10 Jul 2022 05:01:41 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=7fd3e34e3d973aa106520ced8310b3eb&page=2&query=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 422
+      message: Unknown
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Sun, 10 Jul 2022 05:01:41 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 b7b1a2eee8508a9a20c99d23ed8145ce.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - LAX53-P1
+      X-Amz-Cf-Id:
+      - GZzdNX4TGb--sgJ9-6PZYajqCUwpTuTf_ylDYAKaq03MkSIOovabpQ==
+    body:
+      encoding: UTF-8
+      string: '{"errors":["query must be provided"]}'
+  recorded_at: Sun, 10 Jul 2022 05:01:41 GMT
+recorded_with: VCR 6.1.0

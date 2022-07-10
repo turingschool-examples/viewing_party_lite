@@ -11,14 +11,30 @@
     <div>
       <hr><br>
       <h2>Viewing Parties</h2>
-      <% @user.view_parties.each do |party| %>
-        <div id="box">
-          <%= party.movie_name %> <br>
-          <%= party.picture %> <br>
-          <%= party.date %> <br>
-          <%= party.time %> <br>
-          <%= party.status %> <br>
-        </div>
+      <% if !@user.view_parties.empty? %>
+        <% @user.view_parties.each do |party| %>
+          <div id="box">
+            <%= image_tag "https://image.tmdb.org/t/p/original#{party.movie_image_path}", width: '200' %><br>
+            <strong><%= link_to party.movie_title, "/users/#{params[:id]}/movies/#{party.movie_api_id}" %></strong> <br>
+            <%= party.date.strftime("%b %d, %Y") %> <br>
+            <%= party.time.strftime("%I:%M %p") %> <br>
+            <% if party.host_id == @user.id %>
+              <p><strong>HOSTING</strong></p>
+            <% else %>
+              <p><strong>INVITED</strong></p>
+            <% end %>
+            <p><strong>Party Invites:</strong></p>
+            <% party.users.each do |invitee| %>
+              <% if invitee.id == party.host_id %>
+                <p>Hosted by: <%= invitee.name %></p>
+              <% elsif invitee.id == @user.id %>
+                <p><strong>Invitee: <%= invitee.name %></strong></p>
+              <% else %>
+                <p>Invitee: <%= invitee.name %></p>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </center>
