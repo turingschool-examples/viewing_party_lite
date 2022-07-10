@@ -14,7 +14,7 @@ class Movie
   end
 
   def image
-    "https://image.tmdb.org/t/p/w500/#{@info[:poster_path]}"
+    "https://image.tmdb.org/t/p/w500#{@info[:poster_path]}"
   end
 
   def runtime
