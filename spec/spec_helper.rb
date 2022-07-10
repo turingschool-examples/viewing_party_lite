@@ -15,7 +15,7 @@
 # it.
 #
 require 'simplecov'
-SimpleCov.start 'rails'
+SimpleCov.start
 SimpleCov.add_filter %w[spec config app/jobs app/mailers app/channels]
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
