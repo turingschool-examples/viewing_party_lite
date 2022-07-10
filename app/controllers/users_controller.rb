@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    require 'pry'
-    binding.pry
     @parties = @user.parties.all
   end
 

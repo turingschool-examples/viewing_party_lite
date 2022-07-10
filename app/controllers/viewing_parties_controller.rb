@@ -13,9 +13,9 @@ class ViewingPartiesController < ApplicationController
     else
       party = Party.create!(movie_name: movie.title, movie_id: movie.movie_id, date: params[:date], start_time: params[:time],
                             duration: params[:duration])
-      PartyUser.create!(parties_id: party.id, users_id: params[:user_id], host: true)
+      PartyUser.create!(party_id: party.id, user_id: params[:user_id], host: true)
       params[:invites].each do |invite|
-        PartyUser.create!(parties_id: party.id, users_id: invite, host: false)
+        PartyUser.create!(party_id: party.id, user_id: invite, host: false)
       end
       redirect_to user_path(id: params[:user_id])
     end
