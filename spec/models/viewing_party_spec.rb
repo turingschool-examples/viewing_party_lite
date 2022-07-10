@@ -21,5 +21,12 @@ RSpec.describe ViewingParty, type: :model do
 
       expect(spirit.display_title).to eq("Spirited Away")
     end
+
+    it 'will return an image path', :vcr do
+      user1 = User.create!(name: 'Casey', email: 'EternalSquiggles@Geemail.com')
+      godfather = user1.viewing_parties.create!(duration: 200, date: Date.today, time: Time.now, movie_id: 238)
+
+      expect(godfather.display_image).to eq("http://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg")
+    end
   end
 end
