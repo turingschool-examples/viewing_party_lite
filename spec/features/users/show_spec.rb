@@ -12,7 +12,7 @@ RSpec.describe 'User Show Page' do
     expect(page).to have_content("Jimar's Dashboard")
     expect(page).to_not have_content("NickT's Dashboard")
 
-    expect(page).to have_content('Viewing Parties:')
+    expect(page).to have_link('Viewing Parties')
     expect(page).to have_button('Discover Movies')
   end
 end
