@@ -1,3 +1,9 @@
+<% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
+
 <h2><%= @movie.title %></h2>
 
 <%= form_with url: user_movie_viewing_parties_path(user_id: @user.id, movie_id: params[:movie_id]), model: @viewing_party, local: true do |f| %>
