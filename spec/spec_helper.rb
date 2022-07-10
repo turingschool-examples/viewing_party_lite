@@ -18,10 +18,10 @@ require 'webmock/rspec'
 require 'simplecov'
 SimpleCov.start 'rails'
 SimpleCov.add_filter %w[spec config]
-SimpleCov.add_filter "app/channels/application_cable/channel.rb"
-SimpleCov.add_filter "app/channels/application_cable/connection.rb"
-SimpleCov.add_filter "app/jobs/application_job.rb"
-SimpleCov.add_filter "app/mailers/application_mailer.rb"
+SimpleCov.add_filter 'app/channels/application_cable/channel.rb'
+SimpleCov.add_filter 'app/channels/application_cable/connection.rb'
+SimpleCov.add_filter 'app/jobs/application_job.rb'
+SimpleCov.add_filter 'app/mailers/application_mailer.rb'
 
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|

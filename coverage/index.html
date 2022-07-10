@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-07-10T15:49:26-05:00">2022-07-10T15:49:26-05:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-07-10T15:50:22-05:00">2022-07-10T15:50:22-05:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -161,7 +161,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#deacbb56bfba1925a18186797423f629c44cbc6e" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">7</td>
+            <td class="cell--number">6</td>
             <td class="cell--number">3</td>
             <td class="cell--number">3</td>
             <td class="cell--number">0</td>
@@ -446,7 +446,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#deacbb56bfba1925a18186797423f629c44cbc6e" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">7</td>
+            <td class="cell--number">6</td>
             <td class="cell--number">3</td>
             <td class="cell--number">3</td>
             <td class="cell--number">0</td>
@@ -1163,7 +1163,7 @@
 
             
 
-            <code class="ruby">    params[:invitees].delete(&quot;&quot;)</code>
+            <code class="ruby">    params[:invitees].delete(&#39;&#39;)</code>
           </li>
         </div>
       
@@ -1207,7 +1207,7 @@
 
             
 
-            <code class="ruby">    elsif (params[:invitees].length &gt; 0)</code>
+            <code class="ruby">    elsif params[:invitees].length.positive?</code>
           </li>
         </div>
       
@@ -1394,7 +1394,7 @@
 
             
 
-            <code class="ruby">    </code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -2922,17 +2922,6 @@
 
             
 
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="7">
-            
-            
-
-            
-
             <code class="ruby">end</code>
           </li>
         </div>
@@ -3336,7 +3325,7 @@
 
             
 
-            <code class="ruby">      hours = minutes / 60</code>
+            <code class="ruby">    hours = minutes / 60</code>
           </li>
         </div>
       
@@ -3347,7 +3336,7 @@
 
             
 
-            <code class="ruby">      remainder = minutes % 60</code>
+            <code class="ruby">    remainder = minutes % 60</code>
           </li>
         </div>
       
@@ -3358,7 +3347,7 @@
 
             
 
-            <code class="ruby">      &quot;#{hours}:#{remainder}&quot;</code>
+            <code class="ruby">    &quot;#{hours}:#{remainder}&quot;</code>
           </li>
         </div>
       

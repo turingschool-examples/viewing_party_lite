@@ -22,8 +22,8 @@ class Movie
   end
 
   def time_conversion(minutes)
-      hours = minutes / 60
-      remainder = minutes % 60
-      "#{hours}:#{remainder}"
+    hours = minutes / 60
+    remainder = minutes % 60
+    "#{hours}:#{remainder}"
   end
 end

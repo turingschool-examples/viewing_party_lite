@@ -19,8 +19,8 @@ RSpec.describe 'Party New Page', :vcr do
     fill_in 'Duration', with: '150'
     fill_in 'Date', with: '12/1/2022'
     fill_in 'Start', with: '18:00'
-    check "#{@user2.name}"
-    check "#{@user3.name}"
+    check @user2.name.to_s
+    check @user3.name.to_s
     # check "#{@user4.name}"
     click_on 'Create Party'
 
@@ -36,7 +36,6 @@ RSpec.describe 'Party New Page', :vcr do
     visit "/users/#{@user1.id}/movies/550/viewing-party/new"
 
     expect(page).to have_content('Fight Club')
-
 
     fill_in 'Duration', with: '150'
     fill_in 'Date', with: '12/1/2022'
@@ -62,9 +61,9 @@ RSpec.describe 'Party New Page', :vcr do
     fill_in 'Duration', with: '120'
     fill_in 'Date', with: '12/1/2022'
     fill_in 'Start', with: '18:00'
-    check "#{@user2.name}"
-    check "#{@user3.name}"
-    check "#{@user4.name}"
+    check @user2.name.to_s
+    check @user3.name.to_s
+    check @user4.name.to_s
     click_on 'Create Party'
     # save_and_open_page
 
