@@ -8,7 +8,6 @@ class Party < ApplicationRecord
   validates_presence_of :host 
   validates_presence_of :movie_id
   validates_presence_of :movie_title
-
   # validates_numericality_of :duration, greater_than_or_equal_to: movie_duration
 
   def host_name 
