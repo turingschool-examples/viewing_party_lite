@@ -13,4 +13,13 @@ RSpec.describe ViewingParty, type: :model do
     it {should have_many :party_users}
     it {should have_many(:users).through(:party_users)}
   end
+
+  describe 'instance methods' do
+    it 'can display a title', :vcr do
+      user1 = User.create!(name: 'Casey', email: 'EternalSquiggles@Geemail.com')
+      spirit = user1.viewing_parties.create!(duration: 180, date: Date.today, time: Time.now, movie_id: 129)
+
+      expect(spirit.display_title).to eq("Spirited Away")
+    end
+  end
 end
