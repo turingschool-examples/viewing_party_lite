@@ -5,4 +5,4 @@
   <%= form.text_field :query %>
   <%= form.submit "Search" %>
 <% end %>
-<%= button_to "Top Rated Movies", user_top_rated_path(@user, :q => "top rated") %>
+<%= button_to "Top Rated Movies", user_top_rated_path(@user, :q => "top rated"), method: :get %>
