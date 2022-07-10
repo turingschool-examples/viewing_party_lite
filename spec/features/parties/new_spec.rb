@@ -18,7 +18,7 @@ RSpec.describe "create party page" do
     fill_in 'start_time', with: '09:48 PM'
 
     check 'Hank'
-    check 'Tom'
+    # check 'Tom'
     click_button 'Create Party'
 
     expect(current_path).to eq(user_path(user_1.id))
@@ -26,5 +26,8 @@ RSpec.describe "create party page" do
 
     visit user_path(user_2.id)
    expect(page).to have_content("Doctor Strange in the Multiverse of Madness")
+
+    visit user_path(user_3.id)
+   expect(page).to_not have_content("Doctor Strange in the Multiverse of Madness")
   end
 end
