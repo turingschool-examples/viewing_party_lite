@@ -159,7 +159,7 @@ RSpec.describe 'User Dashboard Page', type: :feature do
       user_viewing4 = UserViewingParty.create!(user_id: user4.id, viewing_party_id: party1.id, host: false)
 
       visit user_path(user1.id)
-      save_and_open_page
+
       within '.friends' do 
         expect(page).to have_content('Lola')
         expect(page).to have_content('Pancakes')
