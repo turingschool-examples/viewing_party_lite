@@ -28,9 +28,4 @@ class ViewingParty < ApplicationRecord
   def host
     users.where(user_viewing_parties: {host: true}).pluck(:name).join
   end
-
-  # def attendees
-  #   binding.pry
-  #   users.where.not(user_viewing_parties: {host: true})
-  # end
 end

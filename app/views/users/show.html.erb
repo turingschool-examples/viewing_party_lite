@@ -6,12 +6,13 @@
 </p>
 <br>
 <h3>Viewing Parties</h3>
-
+<br>
+</br>
 <div class='invites'>
-<p></p><h4>My Invitations<h4>
+<h4>My Invitations<h4>
 <% @user.not_hosting.each do |party| %>
   <h3>Movie: <%= link_to "#{party.movie_title}", user_movie_path(@user.id, party.movie_id) %></h3>
-  <img src='image.tmdb.org/t/p/w500<%= party.poster_path %>' alt="the movie poster for <%= party.movie_title %>">
+  <p><%= image_tag "https://image.tmdb.org/t/p/original#{party.poster_path}", data:{title: "#{party.movie_title} Poster"} %></p>
   <p>Date: <%= party.formatted_date %></p>
   <p>Time of Movie: <%= party.formatted_time %> </p>
   <p>Host: <%= party.host %> </p>

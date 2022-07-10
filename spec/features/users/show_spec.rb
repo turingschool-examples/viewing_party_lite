@@ -22,17 +22,17 @@ RSpec.describe 'User Dashboard Page', type: :feature do
       expect(current_path).to eq("/users/#{user1.id}/discover")
       expect(page).to have_content("#{user1.name}'s Discover Page")
     end
-
-    it "has a section that listing viewing parties" do
+  end
+  
+  describe 'viewing parties section' do 
+    it "has a section that lists the viewing parties" do
       user1 = User.create!(name: 'Parker', email: 'mangaforever@hootube.net')
       user2 = User.create!(name: 'Lola', email: 'lola@example.com')
-
+  
       visit user_path(user1.id)
       expect(page).to have_content("Viewing Parties")
     end
-  end
 
-  describe 'viewing parties section' do 
     it 'shows the movie attributes', :vcr do 
       user1 = User.create!(name: 'Parker', email: 'mangaforever@hootube.net')
       user2 = User.create!(name: 'Lola', email: 'lola@example.com')
