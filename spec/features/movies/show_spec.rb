@@ -23,7 +23,7 @@ RSpec.describe '#show' do
 
   it 'displays movie details', :vcr do
     visit user_movie_path(@jose, @movie_id)
-    # save_and_open_page
+
     expect(page).to have_content('Reservoir Dogs')
     expect(page).to have_content('Vote Average: 8.1')
     expect(page).to have_content('Runtime: 1h 39mins')
@@ -46,5 +46,4 @@ RSpec.describe '#show' do
     expect(page).to have_content('talisencrw: This unique take on the heist-film-gone-wrong was excellent')
     expect(page).to have_content('Wuchak: The cuss-oriented squabbles of lowlife crooks for 99 minutes')
   end
-  # tests for the buttons before
 end
