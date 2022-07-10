@@ -42,9 +42,9 @@ class MovieService
     cast_data = JSON.parse(cast_response.body, symbolize_names: true)
     review_data = JSON.parse(review_response.body, symbolize_names: true)
 
-    
     data[:cast] = cast_data[:cast].first(10)
     data[:review_count] = review_data[:total_results]
     data
+
   end
 end

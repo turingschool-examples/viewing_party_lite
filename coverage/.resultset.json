@@ -7,42 +7,6 @@
           null
         ]
       },
-      "/Users/cadenjarrett/mod_3_work/viewing_party_lite/app/models/party.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/cadenjarrett/mod_3_work/viewing_party_lite/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/cadenjarrett/mod_3_work/viewing_party_lite/app/models/party_user.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/cadenjarrett/mod_3_work/viewing_party_lite/app/models/user.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
       "/Users/cadenjarrett/mod_3_work/viewing_party_lite/app/controllers/welcome_controller.rb": {
         "lines": [
           1,
@@ -61,6 +25,24 @@
           1,
           0,
           null,
+          null
+        ]
+      },
+      "/Users/cadenjarrett/mod_3_work/viewing_party_lite/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/cadenjarrett/mod_3_work/viewing_party_lite/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
           null
         ]
       },
@@ -132,12 +114,110 @@
           2,
           null,
           2,
-          null,
-          null,
-          null,
+          2,
           null,
           2,
           null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/cadenjarrett/mod_3_work/viewing_party_lite/app/facades/movie_facade.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          null,
+          4,
+          null,
+          null
+        ]
+      },
+      "/Users/cadenjarrett/mod_3_work/viewing_party_lite/app/poros/movie.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          null,
+          null
+        ]
+      },
+      "/Users/cadenjarrett/mod_3_work/viewing_party_lite/app/services/movie_service.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          null,
+          4,
+          4,
+          null,
+          null,
+          4,
+          4,
+          4,
+          null,
+          4,
+          4,
+          4,
+          null,
+          4,
+          4,
+          4,
           null,
           null,
           null
@@ -177,103 +257,21 @@
           null
         ]
       },
-      "/Users/cadenjarrett/mod_3_work/viewing_party_lite/app/facades/movie_facade.rb": {
+      "/Users/cadenjarrett/mod_3_work/viewing_party_lite/app/models/party_user.rb": {
         "lines": [
           1,
-          null,
           1,
-          0,
-          null,
-          null,
           1,
-          0,
-          null,
-          null,
-          1,
-          null,
-          2,
-          null,
           null
         ]
       },
-      "/Users/cadenjarrett/mod_3_work/viewing_party_lite/app/poros/movie.rb": {
+      "/Users/cadenjarrett/mod_3_work/viewing_party_lite/app/models/party.rb": {
         "lines": [
           1,
           1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
-          null,
-          null
-        ]
-      },
-      "/Users/cadenjarrett/mod_3_work/viewing_party_lite/app/services/movie_service.rb": {
-        "lines": [
           1,
           null,
           1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          1,
-          null,
-          3,
-          3,
-          null,
-          null,
-          3,
-          3,
-          3,
-          null,
-          3,
-          3,
-          3,
-          null,
-          null,
-          3,
-          3,
-          3,
-          null,
           null
         ]
       },
@@ -340,6 +338,6 @@
         }
       }
     },
-    "timestamp": 1657481371
+    "timestamp": 1657484617
   }
 }

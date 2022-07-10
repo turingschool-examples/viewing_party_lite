@@ -1,39 +1,42 @@
 <%= link_to "Discover", user_movies_discover_path(params[:user_id]) %>
-<%# <% binding.pry %> %>
-<%= link_to "Create Viewing Party", new_user_movie_party_path(params[:user_id], @data[:id]) %>
+
+<%= link_to "Create Viewing Party", new_user_movie_party_path(params[:user_id], @data.id) %>
 
 <div id='movie-title'>
     <h1> Movie Title </h1>
-    <%= @data[:title] %>
+    <%= @data.title %>
 </div>
 
 <div id='movie-vote'>
     <h1> Average Rating </h1>
-    <%= @data[:vote_average] %>
+    <%= @data.vote_average %>
 </div>
 
 <div id='movie-runtime'>
-    <h1> Movie Title </h1>
-    <%= "#{@data[:runtime]/60} hours, #{@data[:runtime] % 60} minutes" %>
+    <h1> Movie Runtime </h1>
+    <%= "#{@data.runtime/60} hours, #{@data.runtime % 60} minutes" %>
 </div>
 
 <div id='movie-genre'>
     <h1> Average Rating </h1>
-    <% @data[:genres].each do |genre| %>
+    <% @data.genres.each do |genre| %>
         <%= genre[:name] %><br>
     <% end %>
 </div>
 
 <div id='movie-genre'>
     <h1> Summary </h1>
-    <%= @data[:overview] %>
+    <%= @data.overview %>
 </div>
 
 <div id='movie-actors'>
     <h1> Actors </h1>
+    <% @data.cast.each do |member| %>
+        Actor/Actress: <%= member[:name] %> Character: <%= member[:character] %>
+    <% end %>
 </div>
 
 <div id='movie-reviews'>
     <h1> Total Reviews </h1>
-    <%= @data[:vote_count]%>
+    <%= @data.reviews%>
 </div>

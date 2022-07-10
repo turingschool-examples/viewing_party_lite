@@ -61,15 +61,13 @@ class MoviesController < ApplicationController
         faraday.params['api_key'] = ENV['movie_api_key']
     end
     
-    response = conn.get("/3/movie/#{params[:id]}?api_key=1098280f620c97241161cc71e626fd97")
-    
-    @data = JSON.parse(response.body, symbolize_names: true)
-    
-    # @movie = data[:results]
-    
-    # binding.pry
+    response = conn.get("/3/movie/#{params[:id]}")
+
+    @user = User.find(params[:user_id])
+    @data = MovieFacade.movie_info(params[:id])
+
     render "movies/show"
-    # @movie = Movies.find(params[:id])
+ 
   end
 
 end
