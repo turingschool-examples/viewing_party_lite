@@ -33,6 +33,8 @@
             </div>
           <% end %>
         </p>
+        <%= f.hidden_field :movie_image_path, value: @movie.image_path %>
+        <%= f.hidden_field :movie_title, value: @movie.title %>
         <%= f.submit "Create Party" %>
       <% end %>
     </div>

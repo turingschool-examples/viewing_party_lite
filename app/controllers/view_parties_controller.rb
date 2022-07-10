@@ -9,7 +9,9 @@ class ViewPartiesController < ApplicationController
       movie_api_id: params[:movie_id],
       duration: params[:duration],
       date: params[:date],
-      time: params[:time]
+      time: params[:time],
+      movie_image_path: params[:movie_image_path],
+      movie_title: params[:movie_title]
     )
     UserViewParty.create!(
       user_id: params[:user_id],
