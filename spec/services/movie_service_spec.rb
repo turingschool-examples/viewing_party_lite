@@ -25,4 +25,11 @@ RSpec.describe 'MovieService' do
       expect(movie[:vote_average]).to be_a Float
     end
   end
+
+  describe 'movie_search(keyword)'
+  describe 'movie_lookup(id)'
+  describe 'cast_lookup(id)'
+  describe 'review_lookup(id)'
+
+
 end
