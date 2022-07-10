@@ -27,8 +27,10 @@ RSpec.describe '#show' do
     expect(page).to have_content('Reservoir Dogs')
     expect(page).to have_content('Vote Average: 8.1')
     expect(page).to have_content('Runtime: 1h 39mins')
-    expect(page).to have_content('Genre(s): Crime Thriller')
-    expect(page).to have_content('Description: A botched robbery indicates a police informant, and the pressure mounts in the aftermath at a warehouse. Crime begets violence as the survivors -- veteran Mr. White, newcomer Mr. Orange, psychopathic parolee Mr. Blonde, bickering weasel Mr. Pink and Nice Guy Eddie -- unravel.')
+    expect(page).to have_content('Genre(s):')
+    expect(page).to have_content('Crime')
+    expect(page).to have_content('Thriller')
+    expect(page).to have_content('A botched robbery indicates a police informant, and the pressure mounts in the aftermath at a warehouse. Crime begets violence as the survivors -- veteran Mr. White, newcomer Mr. Orange, psychopathic parolee Mr. Blonde, bickering weasel Mr. Pink and Nice Guy Eddie -- unravel.')
   end
 
   it 'displays movie characters and actors', :vcr do
@@ -43,7 +45,9 @@ RSpec.describe '#show' do
     visit user_movie_path(@jose, @movie_id)
 
     expect(page).to have_content('Total Reviews: 2')
-    expect(page).to have_content('talisencrw: This unique take on the heist-film-gone-wrong was excellent')
-    expect(page).to have_content('Wuchak: The cuss-oriented squabbles of lowlife crooks for 99 minutes')
+    expect(page).to have_content('talisencrw')
+    expect(page).to have_content('This unique take on the heist-film-gone-wrong was excellent')
+    expect(page).to have_content('Wuchak')
+    expect(page).to have_content('The cuss-oriented squabbles of lowlife crooks for 99 minutes')
   end
 end
