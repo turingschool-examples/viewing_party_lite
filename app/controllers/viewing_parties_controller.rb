@@ -8,10 +8,11 @@ class ViewingPartiesController < ApplicationController
   def create
     movie = MoviesFacade.movie(params[:movie_id])
     if movie.minutes > params[:duration].to_i
-      redirect_to new_user_movie_viewing_party_path(user_id: params[:user_id], movie_id: params[:movie_id])
       flash[:alert] = 'Error: Your movie is longer than the party time!'
+      redirect_to new_user_movie_viewing_party_path(user_id: params[:user_id], movie_id: params[:movie_id])
     else
-      party = Party.create!(movie_name: movie.title, movie_id: movie.movie_id, date: params[:date], start_time: params[:time], duration: params[:duration])
+      party = Party.create!(movie_name: movie.title, movie_id: movie.movie_id, date: params[:date], start_time: params[:time],
+                            duration: params[:duration], movie_image: movie.image)
       PartyUser.create!(party_id: party.id, user_id: params[:user_id], host: true)
       
       params[:invites].each do |invite|

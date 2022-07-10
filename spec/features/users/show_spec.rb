@@ -19,26 +19,44 @@ RSpec.describe 'user dashboard page' do
     expect(current_path).to eq("/user/#{user.id}/discover")
   end
 
-  it 'has a section that lists viewing parties' do
-    user = User.create!(name: 'Tommy Tanktop', email: 'tanktoptitan@aol.com')
-
+  it 'has a movie image, title link, who is hosting the event, and a list of invitees' do
+    user1 = User.create!(name: 'Tommy Tanktop', email: 'tanktoptitan@aol.com')
+    user2 = User.create!(name: 'Jerry Jasmond', email: 'jjasmond@aol.com')
+    user3 = User.create!(name: 'Ken Kappersmith', email: 'kkappersmith@aol.com')
     party1 = Party.create!(movie_name: 'Fight Club', movie_id: 1, date: Time.now.strftime('%d/%m/%Y'),
                            start_time: Time.now.strftime('%H:%M'), duration: 120)
-    party2 = Party.create!(movie_name: 'Fight Club 2', movie_id: 4,
+    party2 = Party.create!(movie_name: 'Armageddon', movie_id: 4,
                            date: Time.now.strftime('%d/%m/%Y'), start_time: Time.now.strftime('%H:%M'), duration: 120)
-    party3 = Party.create!(movie_name: 'Fight Club 3', movie_id: 3, date: Time.now.strftime('%d/%m/%Y'),
+    party3 = Party.create!(movie_name: 'Superbad', movie_id: 3, date: Time.now.strftime('%d/%m/%Y'),
                            start_time: Time.now.strftime('%H:%M'), duration: 120)
-    PartyUser.create(party_id: party1.id, user_id: user.id, host: true)
+    PartyUser.create(party_id: party1.id, user_id: user1.id, host: true)
+    PartyUser.create(party_id: party1.id, user_id: user2.id, host: false)
 
-    PartyUser.create(party_id: party2.id, user_id: user.id, host: false)
+    PartyUser.create(party_id: party2.id, user_id: user2.id, host: true)
+    PartyUser.create(party_id: party2.id, user_id: user1.id, host: false)
+    PartyUser.create(party_id: party2.id, user_id: user3.id, host: false)
 
-    PartyUser.create(party_id: party3.id, user_id: user.id, host: false)
+    PartyUser.create(party_id: party3.id, user_id: user3.id, host: true)
+    PartyUser.create(party_id: party3.id, user_id: user1.id, host: false)
+    PartyUser.create(party_id: party3.id, user_id: user2.id, host: false)
 
-    visit "/users/#{user.id}"
-    within '#viewingParties' do
+    visit "/users/#{user1.id}"
+
+    within '#viewingPartiesInvited' do
+      expect(page).to have_content('Host: jjasmond@aol.com')
+      expect(page).to have_content('Host: kkappersmith@aol.com')
+      expect(page).to have_content('Armageddon')
+      expect(page).to have_content('Superbad')
+      expect(page).to_not have_content('Fight Club')
+    end
+
+    within '#viewingPartiesCreated' do
+      expect(page).to have_content('Host: tanktoptitan@aol.com')
+      expect(page).to_not have_content('Armageddon')
+      expect(page).to_not have_content('Superbad')
       expect(page).to have_content('Fight Club')
-      expect(page).to have_content('Fight Club 2')
-      expect(page).to have_content('Fight Club 3')
+      expect(page).to have_content('jjasmond@aol.com')
+      expect(page).to_not have_content('kkappersmith@aol.com')
     end
   end
 end

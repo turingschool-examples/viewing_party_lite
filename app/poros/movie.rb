@@ -5,7 +5,8 @@ class Movie
               :genre,
               :summary_description,
               :movie_id,
-              :minutes
+              :minutes,
+              :image
 
   def initialize(data)
     @title = data[:title]
@@ -15,6 +16,7 @@ class Movie
     @genre = data[:genres][0][:name] if data[:genres]
     @summary_description = data[:overview]
     @movie_id = data[:id]
+    @image = data[:poster_path]
   end
 
   def time_conversion(minutes)
