@@ -13,22 +13,24 @@
         </p>
         <p>
           <%= f.label "Duration of Party" %></p>
-          <%= f.text_field :duration, value: @movie.runtime %>
+          <%= f.text_field :duration, value: @movie.runtime, :required => true %>
         </p>
         <p>
           <%= f.label "Day" %></p>
-          <%= f.text_field :date, value: Date.today %>
+          <%= f.text_field :date, value: Date.today, :required => true %>
         </p>
         <p>
           <%= f.label "Start Time" %></p>
-          <%= f.text_field :time %>
+          <%= f.text_field :time, value: Time.now.strftime("%H:%M"), :required => true %>
         </p>
         <p>
           <% @users.each do |user| %>
-            <% if user.id != params[:user_id].to_i%>
-              <%= check_box_tag("#{user.id}") %>
-              <%= label_tag("#{user.id}", "#{user.name} (#{user.email})", params: {user_id: user.id}) %>
-            <% end %>
+            <div id="user-<%= user.id %>">
+              <% if user.id != params[:user_id].to_i%>
+                <%= f.check_box :invited, {multiple: true }, user.id, nil %>
+                <%= label_tag("#{user.id}", "#{user.name} (#{user.email})") %>
+              <% end %>
+            </div>
           <% end %>
         </p>
 

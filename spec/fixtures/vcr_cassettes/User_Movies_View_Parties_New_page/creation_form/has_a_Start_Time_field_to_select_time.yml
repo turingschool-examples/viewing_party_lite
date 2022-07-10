@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.themoviedb.org/3/movie/11868?api_key=9f760f22dada1c838520c8632f7aad9a
+    uri: https://api.themoviedb.org/3/movie/11868?api_key=7fd3e34e3d973aa106520ced8310b3eb
     body:
       encoding: US-ASCII
       string: ''
@@ -18,62 +18,50 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Sat, 09 Jul 2022 08:36:28 GMT
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json;charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Vary:
-      - Accept-Encoding
       Server:
-      - BunnyCDN-TX-881
-      Cdn-Pullzone:
-      - '775334'
-      Cdn-Uid:
-      - 29af4e0e-bcbd-4fcb-8635-74ddc38a1ebf
-      Cdn-Requestcountrycode:
-      - US
-      Access-Control-Allow-Methods:
-      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      - openresty
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
-      Cache-Control:
-      - public, max-age=28800
-      Etag:
-      - W/"428d4d85356d8fec47316401858be939"
       X-Memc:
       - HIT
       X-Memc-Key:
       - 94965285d6c51b6832c193636fa8568d33bd0051
       X-Memc-Age:
-      - '6397'
+      - '9446'
       X-Memc-Expires:
-      - '10160'
-      Cdn-Proxyver:
-      - '1.02'
-      Cdn-Requestpullsuccess:
-      - 'True'
-      Cdn-Requestpullcode:
-      - '200'
-      Cdn-Cachedat:
-      - 07/09/2022 07:44:43
-      Cdn-Edgestorageid:
-      - '881'
-      Cdn-Status:
-      - '200'
-      Cdn-Requestid:
-      - 48ddc343af1038131466e3344feeb3ab
-      Cdn-Cache:
-      - HIT
+      - '6526'
+      Date:
+      - Sat, 09 Jul 2022 23:23:12 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"428d4d85356d8fec47316401858be939"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 0b40a98675b17834ad886e4848be9fac.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - LAX50-C2
+      X-Amz-Cf-Id:
+      - L4-gN7y4_iZ5Ycduohc-vY5br9qdpQ9D4lF1BzgaxBa_lQ5kXBbMag==
+      Age:
+      - '60'
     body:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvaWpiQnpsS1NLd1dOUnBlYkxVR2ZtWGhCcnZnLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6eyJpZCI6MTIzNzI0LCJuYW1lIjoiRHJhY3VsYSAoSGFtbWVyKSBDb2xsZWN0aW9uIiwicG9zdGVyX3BhdGgiOiIvNmFSbzlxTFpYNTBUQkJVS3hFWXdaWk5wRnBXLmpwZyIsImJhY2tkcm9wX3BhdGgiOiIvaHliWVl3QnFhb21mZVBVM3VhaUpmcGc3eWtDLmpwZyJ9LCJidWRnZXQiOjEwNDg4MCwiZ2VucmVzIjpbeyJpZCI6MjcsIm5hbWUiOiJIb3Jyb3IifV0sImhvbWVwYWdlIjoiIiwiaWQiOjExODY4LCJpbWRiX2lkIjoidHQwMDUxNTU0Iiwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiRHJhY3VsYSIsIm92ZXJ2aWV3IjoiQWZ0ZXIgSm9uYXRoYW4gSGFya2VyIGF0dGFja3MgRHJhY3VsYSBhdCBoaXMgY2FzdGxlLCB0aGUgdmFtcGlyZSB0cmF2ZWxzIHRvIGEgbmVhcmJ5IGNpdHksIHdoZXJlIGhlIHByZXlzIG9uIHRoZSBmYW1pbHkgb2YgSGFya2VyJ3MgZmlhbmPDqWUuIFRoZSBvbmx5IG9uZSB3aG8gbWF5IGJlIGFibGUgdG8gcHJvdGVjdCB0aGVtIGlzIERyLiB2YW4gSGVsc2luZywgSGFya2VyJ3MgZnJpZW5kIGFuZCBmZWxsb3ctc3R1ZGVudCBvZiB2YW1waXJlcywgd2hvIGlzIGRldGVybWluZWQgdG8gZGVzdHJveSBEcmFjdWxhLCB3aGF0ZXZlciB0aGUgY29zdC4iLCJwb3B1bGFyaXR5IjoxMi45NjYsInBvc3Rlcl9wYXRoIjoiLzFMNDVod1V1MVA0TlJoYlJSckU1ZDlvSGFtbS5qcGciLCJwcm9kdWN0aW9uX2NvbXBhbmllcyI6W3siaWQiOjEzMTQsImxvZ29fcGF0aCI6Ii9nUUJsdURxZTZkYzJaZHpmSmJhYkVIb1NHb0cucG5nIiwibmFtZSI6IkhhbW1lciBGaWxtIFByb2R1Y3Rpb25zIiwib3JpZ2luX2NvdW50cnkiOiJHQiJ9XSwicHJvZHVjdGlvbl9jb3VudHJpZXMiOlt7Imlzb18zMTY2XzEiOiJHQiIsIm5hbWUiOiJVbml0ZWQgS2luZ2RvbSJ9XSwicmVsZWFzZV9kYXRlIjoiMTk1OC0wNS0yMiIsInJldmVudWUiOjM1MDAwMDAsInJ1bnRpbWUiOjgyLCJzcG9rZW5fbGFuZ3VhZ2VzIjpbeyJlbmdsaXNoX25hbWUiOiJFbmdsaXNoIiwiaXNvXzYzOV8xIjoiZW4iLCJuYW1lIjoiRW5nbGlzaCJ9XSwic3RhdHVzIjoiUmVsZWFzZWQiLCJ0YWdsaW5lIjoiV2hvIHdpbGwgaGlzIGJyaWRlIGJlIHRvbmlnaHQ/IiwidGl0bGUiOiJEcmFjdWxhIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjcuMywidm90ZV9jb3VudCI6NDM2fQ==
-  recorded_at: Sat, 09 Jul 2022 08:36:28 GMT
+  recorded_at: Sat, 09 Jul 2022 23:24:12 GMT
 recorded_with: VCR 6.1.0

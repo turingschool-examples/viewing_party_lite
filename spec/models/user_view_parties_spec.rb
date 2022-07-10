@@ -7,6 +7,8 @@ RSpec.describe UserViewParty, type: :model do
   end
 
   describe "attributes" do
-    it { should validate_presence_of(:host) }
+    it { should allow_value(true).for(:host) }
+    it { should allow_value(false).for(:host) }
+    it { should_not allow_value(nil).for(:host) }
   end
 end
