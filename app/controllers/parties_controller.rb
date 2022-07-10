@@ -7,13 +7,14 @@ class PartiesController < ApplicationController
   end
 
   def create
+    @user = User.find(params[:user_id])
     @movie = MovieFacade.movie_data(params[:movie_id])
     if @movie.runtime < params[:duration].to_i
       party = Party.create!(party_params)
       params[:users].each do |user|
         PartyUser.create(user_id: user, party: party)
       end
-      redirect_to "/users/#{params[:user_id]}"
+      redirect_to "/users/#{@user.id}" 
     end
   end
 
