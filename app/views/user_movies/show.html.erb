@@ -1,3 +1,6 @@
+<style>
+div.solid {border-style: solid;}>
+</style>
 <center>
 <h2><%= @movie.title %></h2>
 <%= render partial: 'partials/buttons/discover_button' %>
@@ -5,8 +8,10 @@
 <%= render partial: 'partials/buttons/viewing_party_button' %>
 </center>
 <h3>Vote Average: <%= @movie.vote_average %> | Runtime: <%= @movie.runtime %> | Genre(s): <%= @movie.genres.map{ |genre| genre[:name]}.join(", ") %></h3>
+<hr>
 <h3>Summary</h3>
 <p><%= @movie.overview %><p>
+<hr>
 <div id="cast">
   <h3>Cast</h3>
   <% @cast.each do |actor| %>
@@ -14,10 +19,13 @@
     <br>
   <% end %>
 </div>
+<hr>
 <h3><%= @movie.reviews.length %> Reviews</h3>
 <% @movie.reviews.each do |review| %>
-  <h4>Author: <%= review[:author] %></h4>
-  <%= review[:content] %>
+  <div class="solid">
+    <h4>Author: <%= review[:author] %></h4>
+    <%= review[:content] %>
+  </div>
   <br>
 <% end %>
 
