@@ -11,7 +11,8 @@ class ViewPartiesController < ApplicationController
       date: params[:date],
       time: params[:time],
       movie_image_path: params[:movie_image_path],
-      movie_title: params[:movie_title]
+      movie_title: params[:movie_title],
+      host_id: params[:user_id]
     )
     if party.save
       UserViewParty.create!(

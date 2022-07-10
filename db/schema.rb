@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_10_020834) do
+ActiveRecord::Schema.define(version: 2022_07_10_040928) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2022_07_10_020834) do
     t.datetime "updated_at", null: false
     t.string "movie_image_path"
     t.string "movie_title"
+    t.integer "host_id"
   end
 
   add_foreign_key "user_view_parties", "users"
