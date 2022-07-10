@@ -8,4 +8,14 @@ class Party < ApplicationRecord
   validates_presence_of :host 
   validates_presence_of :movie_id
   validates_presence_of :movie_title
+
+  def host_name 
+    User.all.where('id = ?', host).pluck('name').join(', ') 
+  end
+
+  def get_poster 
+    movie = MovieFacade.search_by_id(movie_id)
+    movie.poster_path
+  end
+
 end

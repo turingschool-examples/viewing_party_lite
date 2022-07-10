@@ -6,8 +6,7 @@ class Movie
               :genres,
               :overview,
               :poster_path
-              # :cast,
-              # :reviews
+
   def initialize(attributes)
     @id           = attributes[:id]
     @title        = attributes[:title]
@@ -16,8 +15,6 @@ class Movie
     @poster_path  = attributes[:poster_path]
     @genres       = attributes[:genres]
     @runtime      = attributes[:runtime]
-    # @cast
-    # @reviews
   end
 
   def min_to_hours

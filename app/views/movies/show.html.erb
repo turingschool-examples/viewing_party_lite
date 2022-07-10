@@ -3,6 +3,7 @@
 <%= button_to "Create Viewing Party", new_user_movie_party_path(@user.id, @movie.id), method: :get %>
 
 <h1>Movie Details</h1>
+<%= image_tag("https://image.tmdb.org/t/p/original#{@movie.poster_path}", data: { title: "#{@movie.title} Poster" }) %>
 <p><%= @movie.title %></p>
 <p>Vote Average: <%= @movie.vote_average %></p>
 <p>Runtime: <%= @movie.min_to_hours  %></p>
