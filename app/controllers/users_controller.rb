@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
     else
       flash[:alert] = 'Must Include Unique Email'
-      render :new
+      redirect_to register_path
     end
   end
 
