@@ -9,7 +9,6 @@ class UsersController < ApplicationController
       { movie: MovieFacade.create_movie_details(party.viewing_party.movie_id), party: party.viewing_party,
         host: party.host }
     end
-    # binding.pry
   end
 
   def create
