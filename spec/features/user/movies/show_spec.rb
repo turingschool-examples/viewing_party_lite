@@ -59,11 +59,11 @@ RSpec.describe "Movie details/show page", type: :feature do
   end
 
   it 'displays review author and content', :vcr do
-    godfather_reviews = MovieFacade.create_reviews(238)
+    godfather_reviews = MovieFacade.create_reviews(129)
 
-    visit "/users/#{@user2.id}/movies/238"
+    visit "/users/#{@user2.id}/movies/129"
 
-    within "#futuretvReview" do
+    within "#ZeBlahReview" do
       expect(page).to have_content(godfather_reviews.paired_reviews[0][:author])
       expect(page).to have_content(godfather_reviews.paired_reviews[0][:content])
     end
