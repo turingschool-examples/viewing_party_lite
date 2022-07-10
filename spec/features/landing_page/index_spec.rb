@@ -28,6 +28,6 @@ RSpec.describe LandingPage: :Index do
 
     click_link "Jim's Dashboard"
 
-    expect(current_path).to eq("/users/#{user1.id}/dashboard")
+    expect(current_path).to eq(user_path(user1.id))
   end
 end

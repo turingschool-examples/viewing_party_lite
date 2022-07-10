@@ -9,6 +9,5 @@ Rails.application.routes.draw do
   end
 
 
-  get '/users/:user_id/dashboard', to: 'users#show'
   get '/users/:id/discover', to: 'users#discover'
 end
