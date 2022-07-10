@@ -63,8 +63,8 @@ RSpec.describe 'user dashboard page' do
     PartyUser.create(party_id: party3.id, user_id: user1.id, host: false)
     PartyUser.create(party_id: party3.id, user_id: user2.id, host: false)
 
-    visit "/users/#{user.id}"
-
+    visit "/users/#{user1.id}"
+    save_and_open_page
     within '#viewingPartiesInvited' do
       expect(page).to have_content('Host: jjasmond@aol.com')
       expect(page).to have_content('Host: kkappersmith@aol.com')
