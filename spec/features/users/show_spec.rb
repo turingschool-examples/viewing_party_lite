@@ -15,7 +15,7 @@ RSpec.describe "User Dashboard" do
   let!(:user_party_4) { UserParty.create(party_id: vp_2.id, user_id: user_3.id)}
 
   let!(:user_party_5) { UserParty.create(party_id: vp_3.id, user_id: user_2.id)}
-  let!(:user_party_6) { UserParty.create(party_id: vp_3.id, user_id: user_3.id)}
+  let!(:user_party_6) { UserParty.create(party_id: vp_3.id, user_id: user_1.id)}
 
   let!(:movie) { MovieFacade.search_by_id(453395) }
 
@@ -48,12 +48,12 @@ RSpec.describe "User Dashboard" do
       expect(page).to_not have_content(user_3.name)
     end 
 
-    within("#invitations-#{vp_2.id}") do 
-      expect(page).to have_content(vp_2.movie_title)
-      expect(page).to have_content(vp_2.date.strftime("%d/%m/%Y") )
-      expect(page).to have_content(vp_2.start_time.strftime("%I:%M %p"))
-      expect(page).to have_content(vp_2.duration)
-      expect(page).to have_content("Party Host: #{user_2.name}")
+    within("#invitations-#{vp_3.id}") do 
+      expect(page).to have_content(vp_3.movie_title)
+      expect(page).to have_content(vp_3.date.strftime("%d/%m/%Y") )
+      expect(page).to have_content(vp_3.start_time.strftime("%I:%M %p"))
+      expect(page).to have_content(vp_3.duration)
+      expect(page).to have_content("Party Host: #{user_3.name}")
       expect(page).to have_content("Users Invited: #{user_1.name} #{user_2.name} #{user_3.name}")
     end 
   end
@@ -68,7 +68,9 @@ RSpec.describe "User Dashboard" do
     expect(page).to have_content(vp_1.movie_title)
     expect(page).to have_content(vp_1.date.strftime("%d/%m/%Y") )
     expect(page).to have_content(vp_1.start_time.strftime("%I:%M %p"))
-    expect(page).to have_content("Users Invited: #{user_1.name} #{user_2.name}")    
+    expect(page).to have_content("Party Host: #{user_1.name}")
+    expect(page).to have_content("Users Invited: #{user_2.name}")    
+    expect(page).to_not have_content(user_3.name)    
     end 
   end
 end
