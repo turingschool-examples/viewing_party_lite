@@ -16,4 +16,8 @@ class ViewingParty < ApplicationRecord
     movie = MovieFacade.create_movie_details(movie_id)
     movie.title
   end
+
+  def self.invited(user) #Would prefer active record, but functioning
+    all.collect { |viewing_party| viewing_party if viewing_party.users.include?(user)}.compact
+  end
 end
