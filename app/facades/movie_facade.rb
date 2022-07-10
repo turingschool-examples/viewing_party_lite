@@ -1,7 +1,7 @@
 class MovieFacade 
 
   def self.top_rated_movies
-     MovieService.top_rated_movies.map { |data| Movie.new(data) }
+    MovieService.top_rated_movies.map { |data| Movie.new(data) }
   end 
   
   def self.search_movie(keyword)
@@ -9,7 +9,6 @@ class MovieFacade
   end
 
   def self.movie_info(id)
-    # binding.pry
     Movie.new(MovieService.movie_details(id))
   end
 end 
