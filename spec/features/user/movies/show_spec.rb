@@ -12,4 +12,16 @@ RSpec.describe "Movie details/show page", type: :feature do
     expect(page).to have_button("Create Viewing Party")
     expect(page).to have_button("Discover Page")
   end
+
+  it 'displays movie details', :vcr do
+    godfather = MovieFacade.create_movie_details(238)
+
+    visit "/users/#{@user1.id}/movies/238"
+
+    expect(page).to have_content(godfather.title)
+    expect(page).to have_content(godfather.vote_average)
+    expect(page).to have_content(godfather.runtime)
+    expect(page).to have_content("Drama, Crime")
+    expect(page).to have_content(godfather.overview)
+  end
 end

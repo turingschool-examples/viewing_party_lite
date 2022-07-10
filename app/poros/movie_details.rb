@@ -11,7 +11,7 @@ class MovieDetails
     @vote_average = data[:vote_average]
     @id = data[:id]
     @runtime = data[:runtime]
-    @genre = data[:genre]
+    @genre = data[:genres].collect { |genre| genre[:name] }
     @overview = data[:overview]
   end
 end
