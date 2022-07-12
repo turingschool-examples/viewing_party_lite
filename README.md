@@ -75,8 +75,7 @@ api_key: your unique TMDB API key
 
 ----------
 
-### Data returned from API:
-- 
+### 
 
 ----------
 
