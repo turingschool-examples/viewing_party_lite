@@ -20,7 +20,9 @@ class UsersController < ApplicationController
     @my_invitations = @user.parties
   end
 
-  def login; end
+  def login_user
+    authenticate_user
+  end
 
   def logout
     session[:user_id] = nil
@@ -31,7 +33,7 @@ class UsersController < ApplicationController
     user = User.find_by(email: params[:email])
     if !user.nil? && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to dashboard_path
+      redirect_to user_path(user.id)
     else
       redirect_to '/login', alert: 'Invalid email/password'
     end

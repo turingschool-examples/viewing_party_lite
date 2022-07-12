@@ -11,9 +11,8 @@ RSpec.describe 'the welcome page' do
 
     fill_in 'Email', with: lama.email
     fill_in 'Password', with: 'happy1'
-    click_button 'Log In'
-
-    expect(current_path).to eq(user_dashboard)
-    expect(page).to have_content("Welcome, #{lama.name}")
+    click_on 'Log In'
+    expect(current_path).to eq(user_path(lama.id))
+    expect(page).to have_content("#{lama.name}'s Dashboard")
   end
 end
