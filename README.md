@@ -122,8 +122,9 @@ Simplecov shows 83.62% code testing coverage.
 
 ----------
 
-## Contributor
+## Contributors
 💻 Tamara Dowis |  [Github](https://github.com/wanderlust-create)  |  [LinkedIn](https://www.linkedin.com/in/tamara-dowis/)
+💻 Sully Birashk |  [Github](https://github.com/SullyBirashk?tab=repositories)  |  [LinkedIn](https://www.linkedin.com/in/sully-birashk-a33a15228/)
 
 
 
