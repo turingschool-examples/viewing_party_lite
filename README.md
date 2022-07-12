@@ -77,28 +77,28 @@ api_key: your unique TMDB API key
 
 ### Screenshots of application pages
 
-#### Create user account  🙇🏽‍♀️
+####   🙇🏽‍♀️ Create user account
 #### /register
 <img width="344" alt="Screenshot 2022-07-11 at 8 48 03 PM" src="https://user-images.githubusercontent.com/67713820/178391571-8eae79f1-dd68-4577-bdd3-1b29fda33f17.png"><br>
 
-#### User log in 👩🏾‍💻
+####  👩🏾‍💻 User log in
 #### /login
 <img width="521" alt="Screenshot 2022-07-11 at 8 48 50 PM" src="https://user-images.githubusercontent.com/67713820/178393004-88736d55-b633-4bc1-b43d-201c463da6f7.png">
 
-### Discover movies 🎥
+###  🎥 Discover movies
 #### /users/{user.id}/discover?
 <img width="392" alt="Screenshot 2022-07-11 at 8 52 26 PM" src="https://user-images.githubusercontent.com/67713820/178393402-c7a098fd-09a9-425d-89da-8de8afbbda27.png">
 
-### Top Movies 📼
+###  📼 Top Movies
 #### /users/{user.id}/movies?
 <img width="322" alt="Screenshot 2022-07-11 at 8 52 42 PM" src="https://user-images.githubusercontent.com/67713820/178393572-047cd880-6e6f-4937-84bf-9ebd7ca6d499.png">
 
 
-### Movie Details 🎬
+###  🎬  Movie Details
 #### /users/{user.id}/movies/{user.id}
 <img width="1566" alt="Screenshot 2022-07-11 at 9 12 42 PM" src="https://user-images.githubusercontent.com/67713820/178393835-ec99b348-c8f6-44dd-ad1a-805c02b03c1d.png">
 
-### View my viewing parties 🍿
+###  🍿 View my viewing parties
 #### /user/{user.id}
 <img width="420" alt="Screenshot 2022-07-11 at 8 51 36 PM" src="https://user-images.githubusercontent.com/67713820/178392530-3112a88a-b276-4172-9a38-5e1da5135127.png">
 
