@@ -1,9 +1,9 @@
 require 'rails_helper'
 RSpec.describe 'The movie show page' do
-
   it 'will show the movie attributes' do
-    @lama = User.create!(name: 'Happy Lama', email: 'Happy_Lama@example.com')
-    movie_id =  278
+    @lama = User.create!(name: 'Happy Lama', email: 'Happy_Lama@example.com', password: 'password123',
+                         password_confirmation: 'password123')
+    movie_id = 278
     @movie_details = MovieFacade.movie_details(278)
     @movie_cast = MovieFacade.movie_credit(278)[0..9]
     @movie_reviews = MovieFacade.movie_reviews(278)

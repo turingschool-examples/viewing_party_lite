@@ -1,5 +1,4 @@
 class PartiesController < ApplicationController
-
   def new
     @users = User.all
     @user = User.find(params[:user_id])
@@ -17,5 +16,4 @@ class PartiesController < ApplicationController
   def party_params
     params.permit(:movie_id, :duration_time, :start_date, :start_time, :user_id, :movie_name)
   end
-
 end

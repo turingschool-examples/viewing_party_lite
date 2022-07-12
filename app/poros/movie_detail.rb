@@ -1,5 +1,4 @@
 class MovieDetail
-
   attr_reader :title, :runtime, :vote, :summary, :id
 
   def initialize(attributes)

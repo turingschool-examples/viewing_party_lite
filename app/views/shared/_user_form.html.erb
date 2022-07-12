@@ -1,16 +1,16 @@
 <%= form_with model: @user, local: true do |f| %>
 <section id='form'>
     <%= f.label :name %>
-    <%= f.text_field :name %><br>
+    <%= f.text_field :name, required: true %><br>
 
     <%= f.label :email %>
-    <%= f.text_field :email %><br>
+    <%= f.text_field :email, required: true  %><br>
 
     <%= f.label :password %>
-    <%= f.text_field :password %><br>
+    <%= f.text_field :password, required: true  %><br>
 
     <%= f.label :password_confirmation%>
-    <%= f.text_field :password_confirmation %><br>
+    <%= f.text_field :password_confirmation, required: true  %><br>
 
     <%= f.submit %>
 </section>

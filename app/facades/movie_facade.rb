@@ -1,5 +1,4 @@
 class MovieFacade
-
   def self.top_rated_movies
     top_movies_data = MovieService.get_top_rated_movies
     top_movies_data[:results].map do |top_movie|

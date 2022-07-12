@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Discover Page' do
   before :each do
-    @user = User.create!(name: 'Obama', email: 'obamacare@gmail.com')
+    @user = User.create!(name: 'Obama', email: 'obamacare@gmail.com', password: 'password123',
+                         password_confirmation: 'password123')
   end
 
   it 'button routes to top rated movies' do
@@ -13,21 +14,21 @@ RSpec.describe 'Discover Page' do
     expect(current_path).to eq("/users/#{@user.id}/movies")
   end
 
-  it "search field routes to movies" do
+  it 'search field routes to movies' do
     visit "/users/#{@user.id}/discover"
 
-    fill_in :search, with: "The Godfather"
+    fill_in :search, with: 'The Godfather'
     click_button('Find Movies')
 
     expect(current_path).to eq("/users/#{@user.id}/movies")
   end
 
-  it "can search certain movies" do
+  it 'can search certain movies' do
     visit "/users/#{@user.id}/discover"
 
-    fill_in :search, with: "Marvel"
+    fill_in :search, with: 'Marvel'
     click_button('Find Movies')
 
-    expect(page).to have_content("Captain Marvel")
+    expect(page).to have_content('Captain Marvel')
   end
 end
