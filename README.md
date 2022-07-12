@@ -23,13 +23,16 @@ Implicit
 - Prioritizing goals/user stories
 - Time management
 
-Reference: [Project Specs and Overview](https://backend.turing.io/module3/projects/viewing_party_lite)
+Reference: [Project Specs and Overview](https://backend.turing.edu/module3/projects/viewing_party_lite)
 
 ### About this Project
 
 Viewing Part Lite is an application in which users can search for movies, view top rated movies,  and create a viewing party event for themselves and other users of the application.
 
-Example wireframes to follow are found [here](https://backend.turing.io/module3/projects/viewing_party_lite/wireframes)
+[Given wireframes](https://backend.turing.edu/module3/projects/viewing_party_lite/wireframes)
+
+## Schema Details
+<img width="746" alt="Screenshot 2022-07-12 at 11 34 35 AM" src="https://user-images.githubusercontent.com/67713820/178546142-a7e3c6d9-ef17-422c-b857-bb0ce5e3d23d.png"><br>
 
 ----------
 ### Getting Started
@@ -118,21 +121,12 @@ Run test suite using `bundle exec rspec`. All tests are currently passing passin
 
 Simplecov shows 83.62% code testing coverage.
 <img width="1509" alt="Screenshot 2022-07-11 at 9 52 45 PM" src="https://user-images.githubusercontent.com/67713820/178398334-455cad07-284e-4764-9f45-dadced613224.png"><br><br>
-<img width="1387" alt="Screenshot 2022-07-11 at 9 54 26 PM" src="https://user-images.githubusercontent.com/67713820/178398712-a5c5ab00-2e3a-40f6-b9da-5e7412d6fee3.png">
-
-
-----------
-
-## Schema Details
-![Screenshot 2022-07-11 at 9 55 58 PM](https://user-images.githubusercontent.com/67713820/178398915-8c8dc409-8021-45d7-a141-7281e66e8f3b.png)
 
 ----------
 
 ## Contributors
-💻 Tamara Dowis |  [Github](https://github.com/wanderlust-create)  |  [LinkedIn](https://www.linkedin.com/in/tamara-dowis/)<br>
+💻 Tamara Dowis |  [Github](https://github.com/wanderlust-create)  |  [LinkedIn](https://www.linkedin.com/in/tamara-dowis/)<br><br>
 💻 Sully Birashk |  [Github](https://github.com/SullyBirashk?tab=repositories)  |  [LinkedIn](https://www.linkedin.com/in/sully-birashk-a33a15228/)
-
-
 
 ----------
 ## Practies & Process:
