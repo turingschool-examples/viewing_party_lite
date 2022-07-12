@@ -11,7 +11,6 @@ class CreateParties < ActiveRecord::Migration[5.2]
       t.string :movie_name
       t.references :user, foreign_key: true
 
-
       t.timestamps
     end
   end

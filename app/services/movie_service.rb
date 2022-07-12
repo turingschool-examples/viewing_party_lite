@@ -1,5 +1,4 @@
 class MovieService
-
   def self.get_top_rated_movies
     get_url("/3/movie/top_rated?api_key=#{ENV['api_key']}")
   end
@@ -20,14 +19,12 @@ class MovieService
     get_url("/3/search/movie?api_key=#{ENV['api_key']}&query=#{keyword}")
   end
 
-private 
   def self.get_url(url)
     response = conn.get(url)
     JSON.parse(response.body, symbolize_names: true)
   end
 
   def self.conn
-    Faraday.new(url: "https://api.themoviedb.org")
+    Faraday.new(url: 'https://api.themoviedb.org')
   end
-
 end

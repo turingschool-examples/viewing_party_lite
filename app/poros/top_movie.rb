@@ -1,4 +1,3 @@
-
 class TopMovie
   attr_reader :title, :vote, :id
 
@@ -7,5 +6,4 @@ class TopMovie
     @vote = attributes[:vote_average]
     @id = attributes[:id]
   end
-
 end
