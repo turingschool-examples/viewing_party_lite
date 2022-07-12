@@ -1,5 +1,5 @@
 class Party < ApplicationRecord
-  belongs_to :user, depend
+  belongs_to :user
   has_many :user_parties
   has_many :users, through: :user_parties
 
