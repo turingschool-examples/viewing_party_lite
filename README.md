@@ -98,4 +98,41 @@ api_key: your unique TMDB API key
 
 
 ----------
+## Testing
+
+Viweing Party was created using Test Driven Development methodology.
+
+
+#### RSpec testing
+Run test suite using `bundle exec rspec`. All tests are currently passing passing.
+<img width="1271" alt="Screenshot 2022-07-11 at 9 49 07 PM" src="https://user-images.githubusercontent.com/67713820/178397982-156eeaca-4745-4bed-be00-8e3d8951d5aa.png"><br><br>
+
+
+#### Simplecov testing
+
+Simplecov shows 83.62% code testing coverage.
+<img width="1509" alt="Screenshot 2022-07-11 at 9 52 45 PM" src="https://user-images.githubusercontent.com/67713820/178398334-455cad07-284e-4764-9f45-dadced613224.png"><br><br>
+<img width="1387" alt="Screenshot 2022-07-11 at 9 54 26 PM" src="https://user-images.githubusercontent.com/67713820/178398712-a5c5ab00-2e3a-40f6-b9da-5e7412d6fee3.png">
+
+
+----------
+
+## Schema Details
+![Screenshot 2022-07-11 at 9 55 58 PM](https://user-images.githubusercontent.com/67713820/178398915-8c8dc409-8021-45d7-a141-7281e66e8f3b.png)
+
+----------
+
+## Contributor
+💻 Tamara Dowis |  [Github](https://github.com/wanderlust-create)  |  [LinkedIn](https://www.linkedin.com/in/tamara-dowis/)
+
+
+
+----------
+## Practies & Process:
+![OOP](https://user-images.githubusercontent.com/64919819/113648808-77684300-964a-11eb-8575-05aeaa946a6f.png)
+![TDD](https://user-images.githubusercontent.com/64919819/113648827-7f27e780-964a-11eb-8f9e-dfdc2ed077c5.png)
+![MVC](https://user-images.githubusercontent.com/64919819/113648848-8949e600-964a-11eb-833f-91872b6f3fe0.png)
+![REST](https://user-images.githubusercontent.com/64919819/113648856-8ea73080-964a-11eb-8e85-6f580a54eaca.png)<br>
+[![forthebadge](http://forthebadge.com/images/badges/made-with-ruby.svg)](http://forthebadge.com)
+[![forthebadge](http://forthebadge.com/images/badges/built-with-love.svg)](http://forthebadge.com)
 
