@@ -1,27 +1,32 @@
-# Viewing Party
+# Viewing Party 
+<img width="644" alt="Banner" src="https://user-images.githubusercontent.com/99059063/179083646-10627b4e-384b-4a49-8841-f814ad1fd945.png">
 
-This is the base repo for the [Viewing Party Lite project](https://backend.turing.io/module3/projects/viewing_party_lite) used for Turing's Backend Module 3.
+Viewing Party is a lightweight application that allows users to search for movies and invite their friends to a movie watching party. Consumes The Movie Database API. 
 
-### About this Project
+<img width="232" alt="Movie Detail" src="https://user-images.githubusercontent.com/99059063/179084072-99f6f78a-3b46-48a1-bb4a-bf91ad812e30.png">
 
-Viewing Part Lite is an application in which users can explore movie options and create a viewing party event for themselves and other users of the application.
+## Built With 
+   ![RoR](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
+   ![pgsql](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+   ![heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)  
 
-## Setup for the use of the project
+## Gems 
+   ![rspec](https://img.shields.io/gem/v/rspec-rails?label=rspec&style=flat-square)
+   ![shoulda](https://img.shields.io/gem/v/shoulda-matchers?label=shoulda-matchers&style=flat-square)
+   ![capybara](https://img.shields.io/gem/v/capybara?label=capybara&style=flat-square)
+   ![simplecov](https://img.shields.io/gem/v/simplecov?label=simplecov&style=flat-square)
+   ![orderly](https://img.shields.io/gem/v/orderly?label=orderly&style=flat-square)
+   ![VCR](https://img.shields.io/gem/v/vcr?label=VCR&style=flat-square)
+   ![webmock](https://img.shields.io/gem/v/webmock?label=webmock&style=flat-square)
+   ![simplecov](https://img.shields.io/gem/v/simplecov?color=blue&label=simplecov) 
 
-1. A conveyor belt link will be sent out at project kickoff so that you can both fork and copy the project board on this base repo.
 
-## Local Setup for any other use
+## Authors
 
-1. Fork and Clone the repo
-2. Install gem packages: `bundle install`
-3. Setup the database: `rails db:create`
+  [Clay Ash](https://github.com/ClayAsh)</br>
+  [Matt Deming](https://github.com/Deming-Matt)</br>
 
 
-## Versions
+## Link 
 
-- Ruby 2.7.2
-
-- Rails 5.2.6
-
-Example wireframes to follow are found [here](https://backend.turing.io/module3/projects/viewing_party_lite/wireframes)
-
+  <a href="https://enigmatic-crag-52979.herokuapp.com/users/6/discover?">Viewing Party on Heroku</a>
