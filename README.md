@@ -1,5 +1,4 @@
 # Viewing Party 
-<img width="644" alt="Banner" src="https://user-images.githubusercontent.com/99059063/179083646-10627b4e-384b-4a49-8841-f814ad1fd945.png">
 
 Viewing Party is a lightweight application that allows users to search for movies and invite their friends to a movie watching party. Consumes The Movie Database API. 
 
