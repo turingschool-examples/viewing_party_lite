@@ -26,10 +26,11 @@ class ViewingParty < ApplicationRecord
   end
 
   def host
-    users.where(user_viewing_parties: {host: true}).distinct.pluck(:name).join
+    users.where(user_viewing_parties: {host: true}).pluck(:name).join
   end
 
-  def guests
-    users.where(user_viewing_parties: {host: false})
-  end
+  # def attendees
+  #   binding.pry
+  #   users.where.not(user_viewing_parties: {host: true})
+  # end
 end

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Welcome Index', type: :feature do
+RSpec.describe 'Welcome Index' do
   describe 'landing page' do
     it 'has the title of the application' do
       visit root_path

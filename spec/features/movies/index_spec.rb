@@ -34,7 +34,6 @@ RSpec.describe 'Movie Index Page', type: :feature do
       user1 = User.create!(name: 'Andrew', email: 'concertenthusiast@musac.org')
 
       visit user_discover_path(user1.id)
-      
       fill_in :search, with: 'spirit'
       click_on 'Find Movies'
       expect(current_path).to eq(user_movies_path(user1.id))
