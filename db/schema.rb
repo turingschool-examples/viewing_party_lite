@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 2022_07_10_191330) do
     t.integer "duration"
     t.date "date"
     t.time "time"
-    t.string "host"
     t.bigint "user_id"
     t.integer "movie_id"
     t.string "user_name"
