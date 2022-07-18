@@ -49,7 +49,7 @@ RSpec.describe 'New page', type: :feature do
     expect(current_path).to eq(register_path)
   end
 
-  it 'user_name must be filled in' do
+  it 'Passwords must match' do
     visit '/register'
     fill_in :User, with: 'SWilks'    
     fill_in :Email, with: 'stephenwilkens@gmail.com'

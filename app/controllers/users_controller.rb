@@ -36,10 +36,13 @@ class UsersController < ApplicationController
     @user = User.find(params[:user_id])
   end
 
-  def login
-    user = user.find_by(email: params[:email])
-    if user&.authenticate(params[:password])
-      redirect_to root_path
+  def login_form
+  end
+
+  def login_user
+    user = User.find_by(email: params[:email])
+    if user && user.authenticate(params[:password])
+      redirect_to user_path(user.id)
       flash[:success] = "Welcome back, #{user.user_name}!"
     else
       redirect_to '/login'

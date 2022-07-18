@@ -19,6 +19,14 @@ RSpec.describe "Landing Page", type: :feature do
     expect(current_path).to eq('/register')
   end
 
+  it "has a button to log in" do
+    visit '/'
+
+    expect(page).to have_button("Log In")
+    click_button "Log In"
+    expect(current_path).to eq('/login')
+  end
+
   it "has a link that goes back to the landing page" do
     visit "/"
 
