@@ -88,6 +88,6 @@ RSpec.describe '#new' do
     click_button 'Sign Up'
 
     expect(current_path).to eq(register_path)
-    expect(page).to have_content("Password confirmation doesn't match Password,Password confirmation can't be blank")
+    expect(page).to have_content("Password confirmation doesn't match Password")
   end
 end
