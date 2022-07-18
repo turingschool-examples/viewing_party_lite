@@ -32,13 +32,35 @@ RSpec.describe 'the landing page', type: :feature do
       end
     end
 
-    it 'each existing user links to user dashboard' do
-      user1 = User.create!(name: 'Sai', email: 'SaiLent@overlord.com', password: "haisall123")
-      user2 = User.create!(name: 'Deannah', email: 'DMB@donuts.com', password: "db123")
+  it 'each existing user links to user dashboard' do
+    user1 = User.create!(name: 'Sai', email: 'SaiLent@overlord.com', password: "haisall123")
+    user2 = User.create!(name: 'Deannah', email: 'DMB@donuts.com', password: "db123")
 
-      visit '/'
-      click_link("Sai's Dashboard")
-      expect(current_path).to eq("/users/#{user1.id}")
-      expect(current_path).to_not eq("/users/#{user2.id}")
-    end
+    visit '/'
+    click_link("Sai's Dashboard")
+    expect(current_path).to eq("/users/#{user1.id}")
+    expect(current_path).to_not eq("/users/#{user2.id}")
+  end
+
+  it 'has a link for existing user to login' do
+
+    visit '/'
+
+    click_link("Log In")
+
+    expect(current_path).to eq('/login')
+  end
+
+  it 'user can login with proper credentials' do
+    user1 = User.create!(name: 'Sai', email: 'SaiLent@overlord.com', password: "haisall123")
+
+    visit '/login'
+
+    fill_in :email, with: 'SaiLent@overlord.com'
+    fill_in :password, with: 'haisall123'
+    click_button("Log In")
+
+    expect(current_path).to eq("/users/#{user1.id}")
+    expect(page).to have_content("Welcome, Sai!")
+  end
 end
