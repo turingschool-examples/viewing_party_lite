@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
-      flash[:alert] = 'Must Include Unique Email'
+      flash[:alert] = @user.errors.full_messages.join(',')
       redirect_to register_path
     end
   end

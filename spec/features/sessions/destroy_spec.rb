@@ -5,7 +5,7 @@ RSpec.describe '#destroy' do
     jose = User.create!(name: 'Jose Andres', email: 'jose.andres@gmail.com', password: '111',
                         password_confirmation: '111')
 
-    visit sign_in_path
+    visit login_path
 
     within '#form' do
       fill_in :email, with: jose.email
