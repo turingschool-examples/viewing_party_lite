@@ -17,8 +17,8 @@ RSpec.describe MovieFacade do
 
       expect(x).to be_a(Array)
       expect(x.first.name).to eq('Titanic 666')
-      expect(x.last.name).to eq('Titanic: The Shocking Truth')
-      expect(x.first.avg).to eq(5.6)
+      expect(x.last.name).to eq("Asia's Titanic")
+      expect(x.first.avg).to eq(5.5)
       expect(x.first.id).to eq(945_657)
     end
 
@@ -26,7 +26,7 @@ RSpec.describe MovieFacade do
       x = MovieFacade.movie_data(945_657)
 
       expect(x.name).to eq('Titanic 666')
-      expect(x.avg).to eq(5.6)
+      expect(x.avg).to eq(5.5)
       expect(x.runtime).to eq(91)
       expect(x.genres).to be_a(Array)
       expect(x.summary).to be_a(String)

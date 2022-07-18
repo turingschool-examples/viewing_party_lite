@@ -9,7 +9,12 @@ class UsersController < ApplicationController
 
   def create
     user = User.create(user_params)
-    redirect_to "/users/#{user.id}"
+    if user.save
+      redirect_to "/users/#{user.id}"
+    else
+      redirect_to '/register'
+      flash[:error] = user.errors.full_messages
+    end
   end
 
   def discover
@@ -19,6 +24,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:name, :email)
+    params.permit(:name, :email, :password)
   end
 end

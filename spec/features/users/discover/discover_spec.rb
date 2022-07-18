@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'User Discover' do
   it 'has link to top rated movies, and section to search by name' do
-    user_1 = User.create!(name: 'Jimbo', email: 'Jimbo@gmail.com')
+    user_1 = User.create!(name: 'Jimbo', email: 'Jimbo@gmail.com', password: "dog")
 
     visit "/users/#{user_1.id}/discover"
 
@@ -14,7 +14,7 @@ RSpec.describe 'User Discover' do
   end
 
   it 'links to top rated movies' do
-    user_1 = User.create!(name: 'Jimbo', email: 'Jimbo@gmail.com')
+    user_1 = User.create!(name: 'Jimbo', email: 'Jimbo@gmail.com', password: "dog")
 
     visit "/users/#{user_1.id}/discover"
 
@@ -29,7 +29,7 @@ RSpec.describe 'User Discover' do
   end
 
   it 'Can search movies by name' do
-    user_1 = User.create!(name: 'Jimbo', email: 'Jimbo@gmail.com')
+    user_1 = User.create!(name: 'Jimbo', email: 'Jimbo@gmail.com', password: "dog")
 
     visit "/users/#{user_1.id}/discover"
 
@@ -45,7 +45,7 @@ RSpec.describe 'User Discover' do
   end
 
   it 'has link back to disvover page' do
-    user_1 = User.create!(name: 'Jimbo', email: 'Jimbo@gmail.com')
+    user_1 = User.create!(name: 'Jimbo', email: 'Jimbo@gmail.com', password: "dog")
 
     visit "/users/#{user_1.id}/discover"
     click_link 'Top Rated Movies'

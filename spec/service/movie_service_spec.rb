@@ -18,9 +18,9 @@ RSpec.describe MovieService do
     result = MovieService.find_movies('Titanic', 1)
 
     expect(result[:results].first[:title]).to eq('Titanic 666')
-    expect(result[:results].last[:title]).to eq('Saving the Titanic')
-    expect(result[:results].last[:vote_average]).to eq(7.3)
-    expect(result[:results].last[:id]).to eq(102_370)
+    expect(result[:results].last[:title]).to eq('Reflections on Titanic')
+    expect(result[:results].last[:vote_average]).to eq(7.1)
+    expect(result[:results].last[:id]).to eq(213362)
   end
 
   it 'can find the top rated movies' do
@@ -28,8 +28,8 @@ RSpec.describe MovieService do
 
     expect(result).to be_a(Hash)
     expect(result[:results].first[:title]).to eq('The Shawshank Redemption')
-    expect(result[:results].last[:title]).to eq('The Good, the Bad and the Ugly')
+    expect(result[:results].last[:title]).to eq('The Lord of the Rings: The Return of the King')
     expect(result[:results].last[:vote_average]).to eq(8.5)
-    expect(result[:results].last[:id]).to eq(429)
+    expect(result[:results].last[:id]).to eq(122)
   end
 end

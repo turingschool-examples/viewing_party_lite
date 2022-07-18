@@ -16,7 +16,7 @@ RSpec.describe 'Home page', type: :feature do
   end
 
   it 'Has a list of existing users' do
-    user1 = User.create!(name: 'Jimbo', email: 'Jimbo@gmail.com')
+    user1 = User.create!(name: 'Jimbo', email: 'Jimbo@gmail.com', password: "dog")
     visit '/'
 
     expect(page).to have_link('Jimbo')
