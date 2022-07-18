@@ -7,8 +7,13 @@ class UsersController < ApplicationController
 
   def create
     user = User.create(user_params)
-    redirect_to "/users/#{user.id}"
-    flash[:success] = "Welcome, #{user.username}!"
+    if user.save
+      redirect_to "/users/#{user.id}"
+      flash[:success] = "Welcome, #{user.username}!"
+    else User.all == []
+      redirect_to '/register'
+      flash[:failure] = user.errors.full_messages.first
+    end
   end
 
   def show
@@ -17,6 +22,6 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.permit(:name, :email, :username, :password)
+      params.permit(:name, :email, :username, :password, :password_confirmation)
     end
 end
