@@ -2,11 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'user dashboard' do
   it 'has discover movies button' do
-<<<<<<< HEAD
     user1 = User.create!(email: "user1@example.com", name: "Jeff Casimir", password: 'test123', password_confirmation: 'test123')
-=======
-    user1 = User.create!(email: 'user1@example.com', name: 'Jeff Casimir')
->>>>>>> 27fa4b75a770f2e7873d3344fdd4702b23a3e042
 
     visit user_path(user1.id)
     click_button 'Discover Movies'
