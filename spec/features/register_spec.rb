@@ -34,9 +34,9 @@ RSpec.describe "User Registration Page", type: :feature do
     fill_in :name, with: 'Sai Again'
     fill_in :email, with: 'SaiLent@overlord.com'
     click_button("Register")
-
+    
     expect(page).to have_current_path('/register')
-    expect(page).to have_content('Please enter a valid name and email address to register.')
+    expect(page).to have_content("Email has already been taken")
   end
 
   it 'will not register a user if matching passwords are not entered' do
@@ -46,8 +46,9 @@ RSpec.describe "User Registration Page", type: :feature do
     fill_in :email, with: 'iheartbeards@aol.com'
     fill_in :password, with: 'parkersbeard'
     fill_in :password_confirmation, with: 'barkerspeard'
-  
+    click_button("Register")
+
     expect(page).to have_current_path('/register')
-    expect(page).to have_content('Please enter a valid name and email address to register.')
+    expect(page).to have_content("Password confirmation doesn't match Password")
   end
 end
