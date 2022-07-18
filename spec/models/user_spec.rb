@@ -4,7 +4,9 @@ RSpec.describe User do
   describe 'validations' do
     it { should validate_presence_of(:email) }
     it { should validate_presence_of(:name) }
-    it { should validate_uniqueness_of :email }
+    it { should validate_uniqueness_of(:email) }
+    it { should validate_presence_of(:password_digest) }
+    it { should have_secure_password }
   end
 
   describe 'relationships' do
@@ -15,8 +17,8 @@ RSpec.describe User do
   describe 'instance methods' do
     describe '#parties_hosted' do
       it 'shows all parties that the user is invited to' do
-        user1 = User.create!(name: 'Jeff', email: 'dajeffe@gmail.com')
-        user2 = User.create!(name: 'Geoff', email: 'dajeff2e@gmail.com')
+        user1 = User.create!(name: 'Jeff', email: 'dajeffe@gmail.com', password: 'test123', password_confirmation: 'test123')
+        user2 = User.create!(name: 'Geoff', email: 'dajeff2e@gmail.com', password: 'test123', password_confirmation: 'test123')
         party1 = ViewingParty.create!(movie_title: 'Hot Rod',
                                       duration: 90,
                                       attendees: ['Mark', 'Julie', 'Steve', user1],
@@ -47,6 +49,15 @@ RSpec.describe User do
 
         expect(user2.parties_hosted).to eq([party1, party2])
       end
+    end
+  end
+
+  describe 'creating a user' do
+    it 'should be able to create a user with a password' do
+      user = User.create(name: 'Meg', email: 'meg@test.com', password: 'password123', password_confirmation: 'password123')
+
+      expect(user).to_not have_attribute :password
+      expect(user.password_digest).to_not eq 'password123'
     end
   end
 end

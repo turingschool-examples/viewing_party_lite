@@ -23,5 +23,4 @@ class MoviesFacade
   def self.info(movie_id)
     parsed_json = MovieService.get_movie_info(movie_id)
   end
-
 end

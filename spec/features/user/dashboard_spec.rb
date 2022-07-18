@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'user dashboard' do
   it 'has discover movies button' do
-    user1 = User.create!(email: 'user1@example.com', name: 'Jeff Casimir')
+    user1 = User.create!(email: "user1@example.com", name: "Jeff Casimir", password: 'test123', password_confirmation: 'test123')
 
     visit user_path(user1.id)
     click_button 'Discover Movies'
@@ -11,7 +11,7 @@ RSpec.describe 'user dashboard' do
   end
 
   it ' has a title at the top of the page that includes the users name' do
-    user1 = User.create!(email: 'user1@example.com', name: 'Jeff Casimir')
+    user1 = User.create!(email: 'user1@example.com', name: 'Jeff Casimir', password: 'test123', password_confirmation: 'test123')
 
     visit user_path(user1.id)
 
@@ -21,15 +21,15 @@ RSpec.describe 'user dashboard' do
   end
 
   it 'shows a list of viewing parties the user is invited to' do
-    user1 = User.create!(name: 'Jeff', email: 'dajeffe@gmail.com')
-    user2 = User.create!(name: 'Mark', email: 'markymark@gmail.com')
-    user3 = User.create!(name: 'Julie', email: 'rtj@gmail.com')
-    user4 = User.create!(name: 'Steve', email: 'thebeeve@gmail.com')
-    user5 = User.create!(name: 'Dave', email: 'daveyjones@gmail.com')
-    user6 = User.create!(name: 'Kim', email: 'kimbo@gmail.com')
-    user7 = User.create!(name: 'James', email: 'jimmy@gmail.com')
-    user8 = User.create!(name: 'Ryan', email: 'rainman@gmail.com')
-    user9 = User.create!(name: 'Stirling', email: 'stirbydirbydoo@gmail.com')
+    user1 = User.create!(name: 'Jeff', email: 'dajeffe@gmail.com', password: 'test123', password_confirmation: 'test123')
+    user2 = User.create!(name: 'Mark', email: 'markymark@gmail.com', password: 'test123', password_confirmation: 'test123')
+    user3 = User.create!(name: 'Julie', email: 'rtj@gmail.com', password: 'test123', password_confirmation: 'test123')
+    user4 = User.create!(name: 'Steve', email: 'thebeeve@gmail.com', password: 'test123', password_confirmation: 'test123')
+    user5 = User.create!(name: 'Dave', email: 'daveyjones@gmail.com', password: 'test123', password_confirmation: 'test123')
+    user6 = User.create!(name: 'Kim', email: 'kimbo@gmail.com', password: 'test123', password_confirmation: 'test123')
+    user7 = User.create!(name: 'James', email: 'jimmy@gmail.com', password: 'test123', password_confirmation: 'test123')
+    user8 = User.create!(name: 'Ryan', email: 'rainman@gmail.com', password: 'test123', password_confirmation: 'test123')
+    user9 = User.create!(name: 'Stirling', email: 'stirbydirbydoo@gmail.com', password: 'test123', password_confirmation: 'test123')
     party1 = ViewingParty.create!(movie_title: 'Hot Rod',
                                   duration: 90,
                                   # attendees: [user2, user3, user4, user1],
@@ -79,15 +79,15 @@ RSpec.describe 'user dashboard' do
   end
 
   it 'show a list of viewing parties the user has created' do
-    user1 = User.create!(name: 'Jeff', email: 'dajeffe@gmail.com')
-    user2 = User.create!(name: 'Mark', email: 'markymark@gmail.com')
-    user3 = User.create!(name: 'Julie', email: 'rtj@gmail.com')
-    user4 = User.create!(name: 'Steve', email: 'thebeeve@gmail.com')
-    user5 = User.create!(name: 'Dave', email: 'daveyjones@gmail.com')
-    user6 = User.create!(name: 'Kim', email: 'kimbo@gmail.com')
-    user7 = User.create!(name: 'James', email: 'jimmy@gmail.com')
-    user8 = User.create!(name: 'Ryan', email: 'rainman@gmail.com')
-    user9 = User.create!(name: 'Stirling', email: 'stirbydirbydoo@gmail.com')
+    user1 = User.create!(name: 'Jeff', email: 'dajeffe@gmail.com', password: 'test123', password_confirmation: 'test123')
+    user2 = User.create!(name: 'Mark', email: 'markymark@gmail.com', password: 'test123', password_confirmation: 'test123')
+    user3 = User.create!(name: 'Julie', email: 'rtj@gmail.com', password: 'test123', password_confirmation: 'test123')
+    user4 = User.create!(name: 'Steve', email: 'thebeeve@gmail.com', password: 'test123', password_confirmation: 'test123')
+    user5 = User.create!(name: 'Dave', email: 'daveyjones@gmail.com', password: 'test123', password_confirmation: 'test123')
+    user6 = User.create!(name: 'Kim', email: 'kimbo@gmail.com', password: 'test123', password_confirmation: 'test123')
+    user7 = User.create!(name: 'James', email: 'jimmy@gmail.com', password: 'test123', password_confirmation: 'test123')
+    user8 = User.create!(name: 'Ryan', email: 'rainman@gmail.com', password: 'test123', password_confirmation: 'test123')
+    user9 = User.create!(name: 'Stirling', email: 'stirbydirbydoo@gmail.com', password: 'test123', password_confirmation: 'test123')
     party1 = ViewingParty.create!(movie_title: 'Hot Rod',
                                   duration: 90,
                                   # attendees: [user2, user3, user4, user1],

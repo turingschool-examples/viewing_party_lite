@@ -1,0 +1,1414 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=<api_key>&query=shrek
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - "<api_key>"
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 18 Jul 2022 20:01:05 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=600
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 600860a2fda807ac628822c14b5de860.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-C3
+      X-Amz-Cf-Id:
+      - V1WQxFEg5ZXLNUlOis2XayT6sPUTYIE8C7AV9Jq7_cjZvID8QALq4A==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJwYWdlIjoxLCJyZXN1bHRzIjpbeyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvc1J2WE5ESXRHbFdDcXRPM2o2d2tzNTJGbWJELmpwZyIsImdlbnJlX2lkcyI6WzE2LDM1LDE0LDEyLDEwNzUxXSwiaWQiOjgwOCwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiU2hyZWsiLCJvdmVydmlldyI6Ikl0IGFpbid0IGVhc3kgYmVpbicgZ3JlZW4gLS0gZXNwZWNpYWxseSBpZiB5b3UncmUgYSBsaWthYmxlIChhbGJlaXQgc21lbGx5KSBvZ3JlIG5hbWVkIFNocmVrLiBPbiBhIG1pc3Npb24gdG8gcmV0cmlldmUgYSBnb3JnZW91cyBwcmluY2VzcyBmcm9tIHRoZSBjbHV0Y2hlcyBvZiBhIGZpcmUtYnJlYXRoaW5nIGRyYWdvbiwgU2hyZWsgdGVhbXMgdXAgd2l0aCBhbiB1bmxpa2VseSBjb21wYXRyaW90IC0tIGEgd2lzZWNyYWNraW5nIGRvbmtleS4iLCJwb3B1bGFyaXR5IjoxOTIuODgyLCJwb3N0ZXJfcGF0aCI6Ii9keWhhQjE5QUlDRjdUTzdDSzJhRDZLZnltblEuanBnIiwicmVsZWFzZV9kYXRlIjoiMjAwMS0wNS0xOCIsInRpdGxlIjoiU2hyZWsiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6Ny43LCJ2b3RlX2NvdW50IjoxNDA1OH0seyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvZzFFc1lncDhHYmR6dHBvZENDYTJuN3h4YzVTLmpwZyIsImdlbnJlX2lkcyI6WzE2LDEwNzUxLDM1LDE0LDEyXSwiaWQiOjgwOSwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiU2hyZWsgMiIsIm92ZXJ2aWV3IjoiU2hyZWssIEZpb25hIGFuZCBEb25rZXkgc2V0IG9mZiB0byBGYXIsIEZhciBBd2F5IHRvIG1lZXQgRmlvbmEncyBtb3RoZXIgYW5kIGZhdGhlci4gQnV0IG5vdCBldmVyeW9uZSBpcyBoYXBweS4gU2hyZWsgYW5kIHRoZSBLaW5nIGZpbmQgaXQgaGFyZCB0byBnZXQgYWxvbmcsIGFuZCB0aGVyZSdzIHRlbnNpb24gaW4gdGhlIG1hcnJpYWdlLiBUaGUgZmFpcnkgZ29kbW90aGVyIGRpc2NvdmVycyB0aGF0IFNocmVrIGhhcyBtYXJyaWVkIEZpb25hIGluc3RlYWQgb2YgaGVyIFNvbiBQcmluY2UgQ2hhcm1pbmcgYW5kIHNldHMgYWJvdXQgZGVzdHJveWluZyB0aGVpciBtYXJyaWFnZS4iLCJwb3B1bGFyaXR5IjoxODUuNDQ5LCJwb3N0ZXJfcGF0aCI6Ii8yeVlQMFBRakc4elZxdHVyaDFCQXF1MlRpeGwuanBnIiwicmVsZWFzZV9kYXRlIjoiMjAwNC0wNS0xOSIsInRpdGxlIjoiU2hyZWsgMiIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo3LjIsInZvdGVfY291bnQiOjEwMDkxfSx7ImFkdWx0IjpmYWxzZSwiYmFja2Ryb3BfcGF0aCI6Ii93eGtYQ1ZHdzYxa2JKQWZQOVNreG9FVEQwdXouanBnIiwiZ2VucmVfaWRzIjpbMTQsMTIsMTYsMzUsMTA3NTFdLCJpZCI6ODEwLCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiJTaHJlayB0aGUgVGhpcmQiLCJvdmVydmlldyI6IlRoZSBLaW5nIG9mIEZhciBGYXIgQXdheSBoYXMgZGllZCBhbmQgU2hyZWsgYW5kIEZpb25hIGFyZSB0byBiZWNvbWUgS2luZyAmIFF1ZWVuLiBIb3dldmVyLCBTaHJlayB3YW50cyB0byByZXR1cm4gdG8gaGlzIGNvenkgc3dhbXAgYW5kIGxpdmUgaW4gcGVhY2UgYW5kIHF1aWV0LCBzbyB3aGVuIGhlIGZpbmRzIG91dCB0aGVyZSBpcyBhbm90aGVyIGhlaXIgdG8gdGhlIHRocm9uZSwgdGhleSBzZXQgb2ZmIHRvIGJyaW5nIGhpbSBiYWNrIHRvIHJ1bGUgdGhlIGtpbmdkb20uIiwicG9wdWxhcml0eSI6MTEyLjQzNywicG9zdGVyX3BhdGgiOiIvamFOZTE2Z0U5emRBWXlWd1JxbWxtUktzaEhtLmpwZyIsInJlbGVhc2VfZGF0ZSI6IjIwMDctMDUtMTciLCJ0aXRsZSI6IlNocmVrIHRoZSBUaGlyZCIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo2LjMsInZvdGVfY291bnQiOjc0Nzd9LHsiYWR1bHQiOmZhbHNlLCJiYWNrZHJvcF9wYXRoIjoiL3haMndlNGdkaXdRbWc2RDF3OXFIbEFtNXlJZi5qcGciLCJnZW5yZV9pZHMiOlszNSwxMiwxNCwxNiwxMDc1MV0sImlkIjoxMDE5Miwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiU2hyZWsgRm9yZXZlciBBZnRlciIsIm92ZXJ2aWV3IjoiQSBib3JlZCBhbmQgZG9tZXN0aWNhdGVkIFNocmVrIHBhY3RzIHdpdGggZGVhbC1tYWtlciBSdW1wZWxzdGlsdHNraW4gdG8gZ2V0IGJhY2sgdG8gZmVlbGluZyBsaWtlIGEgcmVhbCBvZ3JlIGFnYWluLCBidXQgd2hlbiBoZSdzIGR1cGVkIGFuZCBzZW50IHRvIGEgdHdpc3RlZCB2ZXJzaW9uIG9mIEZhciBGYXIgQXdheeKAlHdoZXJlIFJ1bXBlbHN0aWx0c2tpbiBpcyBraW5nLCBvZ3JlcyBhcmUgaHVudGVkLCBhbmQgaGUgYW5kIEZpb25hIGhhdmUgbmV2ZXIgbWV04oCUaGUgc2V0cyBvdXQgdG8gcmVzdG9yZSBoaXMgd29ybGQgYW5kIHJlY2xhaW0gaGlzIHRydWUgbG92ZS4iLCJwb3B1bGFyaXR5Ijo5Ny43NDksInBvc3Rlcl9wYXRoIjoiL2ZhUnp1VXhrWll6U2M4VWxBWkdRNHRxRTFQaS5qcGciLCJyZWxlYXNlX2RhdGUiOiIyMDEwLTA1LTE2IiwidGl0bGUiOiJTaHJlayBGb3JldmVyIEFmdGVyIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjYuMywidm90ZV9jb3VudCI6NjAzOX0seyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvYzdrV1hacTFIem94bWFzcEw0V0tQMEdyeW5OLmpwZyIsImdlbnJlX2lkcyI6WzE2LDEwNzUxLDM1LDE0XSwiaWQiOjQyMTg5Miwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiU2hyZWsgNSIsIm92ZXJ2aWV3IjoiUGxvdCB1bmtub3duLiBBIHNvZnQtcmVib290IG9mIHRoZSBhbmltYXRlZCBcIlNocmVrXCIgZnJhbmNoaXNlLiIsInBvcHVsYXJpdHkiOjQ1LjY1MSwicG9zdGVyX3BhdGgiOiIvdk9CaENwUDJSYXBXYlA2c2EzUU51aUMyb054LmpwZyIsInRpdGxlIjoiU2hyZWsgNSIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjowLCJ2b3RlX2NvdW50IjowfSx7ImFkdWx0IjpmYWxzZSwiYmFja2Ryb3BfcGF0aCI6Ii92TzFWSmV2SklLSVhHZnZlWUhzTFBuOGlIVW4uanBnIiwiZ2VucmVfaWRzIjpbMTIsMTYsMzUsMTQsMTA3NTFdLCJpZCI6MTMzOTQsIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6IlNocmVrIHRoZSBIYWxscyIsIm92ZXJ2aWV3IjoiVGhlIENocmlzdG1hcyB0cmVlIGlzbid0IHRoZSBvbmx5IHRoaW5nIGdyZWVuIGluIHRoaXMgbmV3IGhvbGlkYXkgY2xhc3NpYy4gU2hyZWsgaXMgYmFjayBhbmQgdHJ5aW5nIHRvIGdldCBpbnRvIHRoZSBzcGlyaXQgb2YgdGhlIHNlYXNvbi4gQWZ0ZXIgcHJvbWlzaW5nIEZpb25hIGFuZCB0aGUga2lkcyBhIENocmlzdG1hcyB0aGV5J2xsIHJlbWVtYmVyLCBoZSBpcyBmb3JjZWQgdG8gdGFrZSBhIGNyYXNoIGNvdXJzZSBpbiB0aGUgaG9saWRheS4gQnV0IGp1c3Qgd2hlbiBoZSB0aGlua3MgaGUgaGFzIGV2ZXJ5dGhpbmcgZm9yIHRoZWlyIHF1aWV0IGZhbWlseSBDaHJpc3RtYXMganVzdCByaWdodCwgdGhlcmUgaXMgYSBrbm9jayBhdCB0aGUgZG9vci4iLCJwb3B1bGFyaXR5IjoyMi44NSwicG9zdGVyX3BhdGgiOiIva3lDenBLcHVGMzJuUmwxUVFnWHFjUW5uTEFqLmpwZyIsInJlbGVhc2VfZGF0ZSI6IjIwMDctMTEtMjgiLCJ0aXRsZSI6IlNocmVrIHRoZSBIYWxscyIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo2LjMsInZvdGVfY291bnQiOjY1NX0seyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIveldEWmNrUXpvSEVFNG9pcGdWTldYSUZwWENILmpwZyIsImdlbnJlX2lkcyI6WzEwNDAyLDM1LDE0XSwiaWQiOjM4MTY5Niwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiU2hyZWsgdGhlIE11c2ljYWwiLCJvdmVydmlldyI6IlNocmVrIFRoZSBNdXNpY2FsIGlzIGEgbXVzaWNhbCB3aXRoIG11c2ljIGJ5IEplYW5pbmUgVGVzb3JpIGFuZCBib29rIGFuZCBseXJpY3MgYnkgRGF2aWQgTGluZHNheS1BYmFpcmUuIEl0IGlzIGJhc2VkIG9uIHRoZSAyMDAxIERyZWFtV29ya3MgQW5pbWF0aW9uJ3MgZmlsbSBTaHJlayBhbmQgV2lsbGlhbSBTdGVpZydzIDE5OTAgYm9vayBTaHJlayEgSXQgd2FzIG5vbWluYXRlZCBmb3IgOCBUb255IEF3YXJkcyBpbmNsdWRpbmcgQmVzdCBNdXNpY2FsLiIsInBvcHVsYXJpdHkiOjE3LjE3NiwicG9zdGVyX3BhdGgiOiIvazN1SWdFOW9idGRRbnNodWZoelFsTEtaVzFaLmpwZyIsInJlbGVhc2VfZGF0ZSI6IjIwMTMtMDktMTciLCJ0aXRsZSI6IlNocmVrIHRoZSBNdXNpY2FsIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjcuMiwidm90ZV9jb3VudCI6OTJ9LHsiYWR1bHQiOmZhbHNlLCJiYWNrZHJvcF9wYXRoIjpudWxsLCJnZW5yZV9pZHMiOlsxNl0sImlkIjoxMTgyNDksIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6IlNocmVrOiBUaHJpbGxlciBOaWdodCIsIm92ZXJ2aWV3IjoiQSBTaHJlayBwYXJvZHkgb2YgTWljaGFlbCBKYWNrc29uJ3MgVGhyaWxsZXIgc29uZyBhbmQgbXVzaWMgdmlkZW8sIHdpdGggRG9ua2V5IHNpbmdpbmcuIiwicG9wdWxhcml0eSI6OC44MjEsInBvc3Rlcl9wYXRoIjoiL21QUWVpMllVSVkwTGpkM081V3k3TER1dkM4Uy5qcGciLCJyZWxlYXNlX2RhdGUiOiIyMDExLTA5LTEzIiwidGl0bGUiOiJTaHJlazogVGhyaWxsZXIgTmlnaHQiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6Ni43LCJ2b3RlX2NvdW50Ijo0MH0seyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvcnpSdGhaYTM0dUpVbW5tdm5lcHh4QlNhUncwLmpwZyIsImdlbnJlX2lkcyI6WzEwNzUxXSwiaWQiOjI1MjYzNCwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiU2hyZWsgU3RvcmllcyIsIm92ZXJ2aWV3IjoiSm9pbiBTaHJlayBhbmQgaGlzIGZyaWVuZHMgZnJvbSBGYXIgRmFyIEF3YXkgYXMgdGhleSBzaGFyZSB0YWxlcyBvZiBob2xpZGF5IGNoZWVyLCBzcG9va3kgc3RvcmllcywgYSBzaW5naW5nIHNob3dkb3duIGFuZCBhIG5pZ2h0IG9mIGJhYnlzaXR0aW5nIG5vYm9keSB3aWxsIHNvb24gZm9yZ2V0LiIsInBvcHVsYXJpdHkiOjYuMzQ0LCJwb3N0ZXJfcGF0aCI6Ii9qMUV3MTROV213VFlxR1lOTlM3WVRXSUpYYWUuanBnIiwicmVsZWFzZV9kYXRlIjoiMjAxMy0xMC0wMSIsInRpdGxlIjoiU2hyZWsgU3RvcmllcyIsInZpZGVvIjp0cnVlLCJ2b3RlX2F2ZXJhZ2UiOjguNSwidm90ZV9jb3VudCI6MjB9LHsiYWR1bHQiOmZhbHNlLCJiYWNrZHJvcF9wYXRoIjpudWxsLCJnZW5yZV9pZHMiOlszNSwxMDc1MSwxNl0sImlkIjoxMjg5MTQsIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6IlNocmVrJ3MgVGhyaWxsaW5nIFRhbGVzIiwib3ZlcnZpZXciOiJTSFJFSydTIFRIUklMTElORyBUQUxFUyBpcyB0aGUgdWx0aW1hdGUgSGFsbG93ZWVuIERWRCBjb21waWxhdGlvbiBmb3IgeW91ciBmYW1pbHkuIFNocmVrJ3MgVGhyaWxsaW5nIFRhbGVzIHJldmlldyBGZWF0dXJpbmcgdGhlIHNjYXJpZXN0LCB1Z2xpZXN0LCBhbmQgZnVubmllc3QgY2hhcmFjdGVycyBmcm9tIERyZWFtV29ya3MgQW5pbWF0aW9uJ3Mgc3VjY2Vzc2Z1bCBTSFJFSyBhbmQgTU9OU1RFUlMgVlMuIEFMSUVOUyBmcmFuY2hpc2VzLiBEVkQgaW5jbHVkZXMgJ1RoZSBQaWcgd2hvIENyaWVkIChXZXJlKVdvbGYnIGFuZCAnVGhlIEdob3N0IG9mIExvcmQgRmFycXVhYWQnIGZyb20gdGhlIFNocmVrIG1vdmllcywgYW5kICdOaWdodCBvZiB0aGUgTGl2aW5nIENhcnJvdHMnIGZyb20gTW9uc3RlcnMgdnMuIEFsaWVucywgZmVhdHVyaW5nIEIuTy5CLiIsInBvcHVsYXJpdHkiOjE2LjYyOSwicG9zdGVyX3BhdGgiOiIvd0g0ekNiZ05KeGpuUUF6Smo0OHppdHpzdTNBLmpwZyIsInJlbGVhc2VfZGF0ZSI6IjIwMTItMDgtMjgiLCJ0aXRsZSI6IlNocmVrJ3MgVGhyaWxsaW5nIFRhbGVzIiwidmlkZW8iOnRydWUsInZvdGVfYXZlcmFnZSI6Ni43LCJ2b3RlX2NvdW50Ijo5M30seyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvdGNIZG9neVdCWmt0azJKdE8zb0lxZEoyNGJXLmpwZyIsImdlbnJlX2lkcyI6WzE2LDM1LDEwNDAyLDEwNzUxLDE0XSwiaWQiOjI2ODQwLCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiJTaHJlayBpbiB0aGUgU3dhbXAgS2FyYW9rZSBEYW5jZSBQYXJ0eSIsIm92ZXJ2aWV3IjoiU2hyZWsgYW5kIGhpcyBmcmllbmRzIGVuam95IHRoZW1zZWx2ZXMgd2l0aCBzb21lIEthcmFva2UgcGFydHlpbmcuIiwicG9wdWxhcml0eSI6OC45NzcsInBvc3Rlcl9wYXRoIjoiL2xKZzRhbHJZZnA3Q0ROVklENGlHZWZUOUNJbi5qcGciLCJyZWxlYXNlX2RhdGUiOiIyMDAxLTExLTAyIiwidGl0bGUiOiJTaHJlayBpbiB0aGUgU3dhbXAgS2FyYW9rZSBEYW5jZSBQYXJ0eSIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo2LjIsInZvdGVfY291bnQiOjg5fSx7ImFkdWx0IjpmYWxzZSwiYmFja2Ryb3BfcGF0aCI6Ii91ekFnRElWZnRrYmR0SXNlRlZiUFJFVmdRV0IuanBnIiwiZ2VucmVfaWRzIjpbMTYsMTA3NTEsMTQsMzVdLCJpZCI6MTUxMzE2LCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiJTaHJla+KAmXMgWXVsZSBMb2ciLCJvdmVydmlldyI6IuKAnFNocmVr4oCZcyBZdWxlIExvZyzigJ0gZmVhdHVyaW5nIG92ZXIgMjUgdXByb2FyaW91cyBjaGFyYWN0ZXIgYXBwZWFyYW5jZXMgaW4gZnJvbnQgb2YgYSBjcmFja2xpbmcgdmlydHVhbCBmaXJlcGxhY2UuICBUaGlzIHdhcyBidW5kbGVkIHdpdGggXCJEb25rZXkncyBDaHJpc3RtYXMgU2hyZWt0YWN1bGFyXCIiLCJwb3B1bGFyaXR5Ijo4LjQ0OCwicG9zdGVyX3BhdGgiOiIvbm5kTkM5eGk3YjBpMlpLV09EcHJhT2ZGZjVjLmpwZyIsInJlbGVhc2VfZGF0ZSI6IjIwMTAtMTItMDciLCJ0aXRsZSI6IlNocmVr4oCZcyBZdWxlIExvZyIsInZpZGVvIjp0cnVlLCJ2b3RlX2F2ZXJhZ2UiOjYuMywidm90ZV9jb3VudCI6MjN9LHsiYWR1bHQiOmZhbHNlLCJiYWNrZHJvcF9wYXRoIjpudWxsLCJnZW5yZV9pZHMiOlsxNiwxMDc1MSwzNSwyOF0sImlkIjo3OTIwOTgsIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6IkRyZWFtV29ya3MgSG9saWRheSBDbGFzc2ljcyAoTWVycnkgTWFkYWdhc2NhciAvIFNocmVrIHRoZSBIYWxscyAvIEdpZnQgb2YgdGhlIE5pZ2h0IEZ1cnkgLyBLdW5nIEZ1IFBhbmRhIEhvbGlkYXkpIiwib3ZlcnZpZXciOiJKb2luIHlvdXIgZmF2b3JpdGUgRHJlYW1Xb3JrcyBmcmllbmRzIGZvciB0aGVzZSBmb3VyIGhvbGlkYXkgc3BlY2lhbHMuIFdhdGNoIGFzIHRob3NlIHphbnkgem9vc3RlcnMgZnJvbSBNYWRhZ2FzY2FyIHNhdmUgQ2hyaXN0bWFzLCBEb25rZXkgcHV0cyBvbiBhIGNhcm9saW5nIENocmlzdG1hcyBTaHJlay10YWN1bGFyLCBhbmQgUG8gcHJlcGFyZXMgZm9yIGhpcyBmYXZvcml0ZSBob2xpZGF5LCB0aGUgV2ludGVyIEZlYXN0LiIsInBvcHVsYXJpdHkiOjE3LjY3NSwicG9zdGVyX3BhdGgiOiIvbGlhVk1YdExMdU9QRjlUd01FSDVrSllMSUZjLmpwZyIsInJlbGVhc2VfZGF0ZSI6IjIwMTItMTItMjUiLCJ0aXRsZSI6IkRyZWFtV29ya3MgSG9saWRheSBDbGFzc2ljcyAoTWVycnkgTWFkYWdhc2NhciAvIFNocmVrIHRoZSBIYWxscyAvIEdpZnQgb2YgdGhlIE5pZ2h0IEZ1cnkgLyBLdW5nIEZ1IFBhbmRhIEhvbGlkYXkpIiwidmlkZW8iOnRydWUsInZvdGVfYXZlcmFnZSI6OC43LCJ2b3RlX2NvdW50Ijo3fSx7ImFkdWx0IjpmYWxzZSwiYmFja2Ryb3BfcGF0aCI6bnVsbCwiZ2VucmVfaWRzIjpbXSwiaWQiOjk1MTQ5NSwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiXCJWZWdldGFcIiAoU2hyZWspIiwib3ZlcnZpZXciOiJCeSBKYWRlbiBQaWN0dXJlcyAvIFlvdVR1YmUgIFRoaXMgYW5pbWF0ZWQgbW92aWUgc3Bvb2Ygc2hvd3MgYSBzdG9yeSBhYm91dCBhIFNhaXlhbiBuYW1lZCBWZWdldGEsIHdobyBsaXZlcyBhbG9uZSBoaXMgaG9tZSwgYW5kIGVuam95cyBoaXMgaXNvbGF0aW9uLCB3aGVuIDEgZGF5LCBoZSBtZWV0cyBhbm90aGVyIFNhaXlhbiBuYW1lZCBHb2t1ICh3aG8gaGUgcmVmZXJzIHRvIGFzIEtha2Fyb3QpLCBhbmQgdGhlbiBvbiB0aGUgbmlnaHQgaGUgbWV0IEdva3UsIGEgYnVuY2ggb2YgTm9uLURyYWdvbiBCYWxsIGNoYXJhY3RlcnMgY29tZSB0byBoaXMgcHJvcGVydHksIGJlY2F1c2UgdGhleSB3ZXJlIG9yZGVyZWQgYnkgU2ltb24gUGV0cmlrb3YgdG8gZ28gdGhlcmUsIHNvIFZlZ2V0YSBnb2VzIG9uIGEgbG9uZyBhZHZlbnR1cmUgd2l0aCBHb2t1IHRvIHNlZSBTaW1vbiwgYW5kIGdldCBoaXMgaG9tZSBhbmQgaXNvbGF0aW9uIGJhY2suXHIgTGF0ZXIgb24sIHRoZSBhZHZlbnR1cmUgYWxzbyBiZWNvbWVzIGFuIGFkdmVudHVyZSB0byByZXNjdWUgUHJpbmNlc3MgQnViYmxlZ3VtIGZyb20gYSBjYXN0bGUgZ3VhcmRlZCBieSBGbGFtZSBQcmluY2VzcywgYW5kIGJyaW5nIGhlciB0byBTaW1vbiwgc28gdGhhdCBoZSBjYW4gbWFycnkgaGVyLCBhbmQgYmVjb21lIGtpbmcuXHIgTm90IHRvIG1lbnRpb24sIFByaW5jZXNzIEJ1YmJsZWd1bSBldmVuIGhhcyBhIHNlY3JldCB0aGF0IGlzIHRvIGJlIHJldmVhbGVkIGF0IHNvbWUgcG9pbnQgaW4gdGhpcyBhbmltYXRlZCBtb3ZpZSBzcG9vZi4iLCJwb3B1bGFyaXR5IjowLjYsInBvc3Rlcl9wYXRoIjpudWxsLCJyZWxlYXNlX2RhdGUiOiIiLCJ0aXRsZSI6IlwiVmVnZXRhXCIgKFNocmVrKSIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjowLCJ2b3RlX2NvdW50IjowfSx7ImFkdWx0IjpmYWxzZSwiYmFja2Ryb3BfcGF0aCI6bnVsbCwiZ2VucmVfaWRzIjpbOTldLCJpZCI6NzI2MzkxLCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiJTaHJlazogT25jZSBVcG9uIGEgVGltZSIsIm92ZXJ2aWV3IjoiQSBtYWtpbmctb2YgZm9yIHRoZSBTaHJlayBzZXJpZXMuIiwicG9wdWxhcml0eSI6MS4zNTEsInBvc3Rlcl9wYXRoIjpudWxsLCJyZWxlYXNlX2RhdGUiOiIyMDExLTEyLTMwIiwidGl0bGUiOiJTaHJlazogT25jZSBVcG9uIGEgVGltZSIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo3LjQsInZvdGVfY291bnQiOjd9LHsiYWR1bHQiOmZhbHNlLCJiYWNrZHJvcF9wYXRoIjpudWxsLCJnZW5yZV9pZHMiOltdLCJpZCI6ODMxMTAxLCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiJTaHJlayA1OiAoVGhlIFJldmVuZ2UpIiwib3ZlcnZpZXciOiJTaHJlayBpcyBsb3ZlICBTaHJlayBpcy4uLi4gQSBtYWQgaWRpb3Qgd2hvIGNhbid0IGFpbSBhbmQgZG9lc24ndCBrbm93IGhvdyB0byBvcGVuIGEgZ2F0ZS4uLiAgb2gsIEkgbWVhbiBTaHJlayBpcyBsaWZlLi4uIiwicG9wdWxhcml0eSI6MC43ODUsInBvc3Rlcl9wYXRoIjoiL2VMTmhHb0NNaHpOdGU3WFBUbHB5bWVHRmVWSy5qcGciLCJyZWxlYXNlX2RhdGUiOiIyMDE1LTA1LTAzIiwidGl0bGUiOiJTaHJlayA1OiAoVGhlIFJldmVuZ2UpIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjguNywidm90ZV9jb3VudCI6M30seyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOm51bGwsImdlbnJlX2lkcyI6Wzk5LDEwNzcwXSwiaWQiOjU3NTUwNiwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiQ3JlYXRpbmcgYSBGYWlyeSBUYWxlIFdvcmxkOiBUaGUgTWFraW5nIG9mIFNocmVrIiwib3ZlcnZpZXciOiJCZWhpbmQtdGhlLXNjZW5lcyBsb29rIGF0IHRoZSBtYWtpbmcgb2YgdGhlIERyZWFtV29ya3MgUGljdHVyZXMgYW5pbWF0ZWQgZmVhdHVyZSwgXCJTaHJlay5cIiIsInBvcHVsYXJpdHkiOjEuNTUzLCJwb3N0ZXJfcGF0aCI6Ii82NW5ZSFQ2d2JmYnJrVWNBcjVseGNQT2RVQ3QuanBnIiwicmVsZWFzZV9kYXRlIjoiMjAwMS0wNC0yMiIsInRpdGxlIjoiQ3JlYXRpbmcgYSBGYWlyeSBUYWxlIFdvcmxkOiBUaGUgTWFraW5nIG9mIFNocmVrIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjkuNywidm90ZV9jb3VudCI6NX0seyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvOVFYeDR0UzY1czNvVUJvUTI3Yk1Jd21CRDl4LmpwZyIsImdlbnJlX2lkcyI6WzE2LDM1XSwiaWQiOjQ4NDY2LCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiJTY2FyZWQgU2hyZWtsZXNzIiwib3ZlcnZpZXciOiJTaHJlayBjaGFsbGVuZ2VzIERvbmtleSwgUHVzcyBpbiBCb290cyBhbmQgaGlzIG90aGVyIGZhaXJ5IHRhbGUgY2hhcmFjdGVyIGZyaWVuZHMgdG8gc3BlbmQgdGhlIG5pZ2h0IGluIExvcmQgRmFycXVhYWQncyBoYXVudGVkIGNhc3RsZSwgdGVsbGluZyBzY2FyeSBzdG9yaWVzIHRvIHNlZSB3aG8gY2FuIHJlc2lzdCBiZWNvbWluZyBzY2FyZWQgYW5kIHN0YXkgdGhlIGxvbmdlc3QuIiwicG9wdWxhcml0eSI6MTQuNiwicG9zdGVyX3BhdGgiOiIvYUFRUUpoWDhOcUtaN1pORFVQUVFLaTF3SzhoLmpwZyIsInJlbGVhc2VfZGF0ZSI6IjIwMTAtMTAtMjgiLCJ0aXRsZSI6IlNjYXJlZCBTaHJla2xlc3MiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6Ni40LCJ2b3RlX2NvdW50IjozMTR9LHsiYWR1bHQiOmZhbHNlLCJiYWNrZHJvcF9wYXRoIjoiL2Q5UEdBNlo3eEF6QVlFdDhnR0Y0Q05rUFZxUy5qcGciLCJnZW5yZV9pZHMiOlszNSwxOF0sImlkIjo3MzUyNTEsIm9yaWdpbmFsX2xhbmd1YWdlIjoiaXQiLCJvcmlnaW5hbF90aXRsZSI6IkwnYW1vcmUgYWkgdGVtcGkgZGkgU2guUmVrIiwib3ZlcnZpZXciOiIiLCJwb3B1bGFyaXR5IjoxLjQsInBvc3Rlcl9wYXRoIjoiL25QcjVPQWtKNzVrOTEwbUtYWWdqa3hDYTE2Ni5qcGciLCJyZWxlYXNlX2RhdGUiOiIyMDE5LTA1LTEyIiwidGl0bGUiOiJMJ2Ftb3JlIGFpIHRlbXBpIGRpIFNoLlJlayIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo3LjIsInZvdGVfY291bnQiOjN9LHsiYWR1bHQiOmZhbHNlLCJiYWNrZHJvcF9wYXRoIjoiLzNHYU5OZmxiaWROdWpuVEI5YUNadzk2dlppYi5qcGciLCJnZW5yZV9pZHMiOlsxNCwxNiwxOCwzNSw4NzgsMTA3NTFdLCJpZCI6NTEyNTYsIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6IkRvbmtleSdzIENocmlzdG1hcyBTaHJla3RhY3VsYXIiLCJvdmVydmlldyI6IkRlY2sgdGhlIGhhbGxzIHdpdGggRG9ua2V54oCZcyBsYXVnaHRlciBpbiB0aGlzIGFsbC1uZXcgaG9saWRheSBjb2xsZWN0aW9uLiBEb25rZXkgcHJlc2VudHMgaGlzIHZlcnkgb3duIGNhcm9sbGluZyBzdGFnZSBzaG93IGZlYXR1cmluZyBoaXMgRmFyIEZhciBBd2F5IHBhbHMgaW4gdGhpcyBtZXJyeSwgbXVzaWNhbCB0cmVhdCB3aXRoIGFsbCB0aGUgdHJpbW1pbmdzISBKb2luIGluIHRoZSBmdW4gYXMgdGhleSBicmluZyB0aGVpciBvd24gU2hyZWt0YWN1bGFyIHNwaXJpdCB0byBmZXN0aXZlIGhvbGlkYXkgc29uZ3MsIGEgZnVuIERvbmtleSBEZWNvcmF0aW9uIHNjcmFtYmxlLCBhbmQgYSBoaWxhcmlvdXMgdmlydHVhbCBZdWxlIExvZyB0aGF04oCZcyBzbyBmdW5ueeKApiBpdOKAmXMgb24gZmlyZS4iLCJwb3B1bGFyaXR5IjoxMC4yNTgsInBvc3Rlcl9wYXRoIjoiL2lrbG5EdURhSndkNjFlOFZVazRCcXVFR0p3by5qcGciLCJyZWxlYXNlX2RhdGUiOiIyMDEwLTEyLTA3IiwidGl0bGUiOiJEb25rZXkncyBDaHJpc3RtYXMgU2hyZWt0YWN1bGFyIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjUuOCwidm90ZV9jb3VudCI6MTMzfV0sInRvdGFsX3BhZ2VzIjoyLCJ0b3RhbF9yZXN1bHRzIjoyNn0=
+  recorded_at: Mon, 18 Jul 2022 20:01:05 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/808?api_key=<api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - "<api_key>"
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 18 Jul 2022 20:01:05 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - c71a71261f9bc32fbbe1e7e97f7c3757eb5aa3f2
+      X-Memc-Age:
+      - '1555'
+      X-Memc-Expires:
+      - '12989'
+      Etag:
+      - W/"0b1e6a0f735052ab2d6517669090d813"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 a4cae74c829bc214e4183c38164a2c0a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-C3
+      X-Amz-Cf-Id:
+      - TOVq6os6E1XUDVJhDuwx5qbIsU56PvEc2HAyZjZAk0kUbIG14JhWHQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/sRvXNDItGlWCqtO3j6wks52FmbD.jpg","belongs_to_collection":{"id":2150,"name":"Shrek
+        Collection","poster_path":"/qNHZMe92A7Pyl46qUH29hVOtbSK.jpg","backdrop_path":"/gMWrKQjoTIpYjhc8SxZF20EDIES.jpg"},"budget":60000000,"genres":[{"id":16,"name":"Animation"},{"id":35,"name":"Comedy"},{"id":14,"name":"Fantasy"},{"id":12,"name":"Adventure"},{"id":10751,"name":"Family"}],"homepage":"http://www.dreamworksanimation.com/shrek/","id":808,"imdb_id":"tt0126029","original_language":"en","original_title":"Shrek","overview":"It
+        ain''t easy bein'' green -- especially if you''re a likable (albeit smelly)
+        ogre named Shrek. On a mission to retrieve a gorgeous princess from the clutches
+        of a fire-breathing dragon, Shrek teams up with an unlikely compatriot --
+        a wisecracking donkey.","popularity":192.882,"poster_path":"/dyhaB19AICF7TO7CK2aD6KfymnQ.jpg","production_companies":[{"id":7,"logo_path":"/vru2SssLX3FPhnKZGtYw00pVIS9.png","name":"DreamWorks
+        Pictures","origin_country":"US"},{"id":520,"logo_path":"/pU7YTI9FfrICurXpl5V9TfCO0oJ.png","name":"Pacific
+        Data Images","origin_country":"US"},{"id":521,"logo_path":"/kP7t6RwGz2AvvTkvnI1uteEwHet.png","name":"DreamWorks
+        Animation","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2001-05-18","revenue":487853320,"runtime":90,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"The
+        greatest fairy tale never told.","title":"Shrek","video":false,"vote_average":7.7,"vote_count":14063}'
+  recorded_at: Mon, 18 Jul 2022 20:01:05 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/809?api_key=<api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - "<api_key>"
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 18 Jul 2022 20:01:05 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 991b4c6713e73a7547942937bebcfd41fada3b8e
+      X-Memc-Age:
+      - '14559'
+      X-Memc-Expires:
+      - '2548'
+      Etag:
+      - W/"f8299e37bc32efe269e808a94ec9ffe1"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 d9057c384f4ac5ba2672d2ff44de7e08.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-C3
+      X-Amz-Cf-Id:
+      - p21jU36m3qdB94EJQ_DveA36ubqfD9QI4ORTLThmiF93byvtypuduQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/g1EsYgp8GbdztpodCCa2n7xxc5S.jpg","belongs_to_collection":{"id":2150,"name":"Shrek
+        Collection","poster_path":"/qNHZMe92A7Pyl46qUH29hVOtbSK.jpg","backdrop_path":"/gMWrKQjoTIpYjhc8SxZF20EDIES.jpg"},"budget":150000000,"genres":[{"id":16,"name":"Animation"},{"id":10751,"name":"Family"},{"id":35,"name":"Comedy"},{"id":14,"name":"Fantasy"},{"id":12,"name":"Adventure"}],"homepage":"http://www.shrek2.com/","id":809,"imdb_id":"tt0298148","original_language":"en","original_title":"Shrek
+        2","overview":"Shrek, Fiona and Donkey set off to Far, Far Away to meet Fiona''s
+        mother and father. But not everyone is happy. Shrek and the King find it hard
+        to get along, and there''s tension in the marriage. The fairy godmother discovers
+        that Shrek has married Fiona instead of her Son Prince Charming and sets about
+        destroying their marriage.","popularity":185.449,"poster_path":"/2yYP0PQjG8zVqturh1BAqu2Tixl.jpg","production_companies":[{"id":7,"logo_path":"/vru2SssLX3FPhnKZGtYw00pVIS9.png","name":"DreamWorks
+        Pictures","origin_country":"US"},{"id":520,"logo_path":"/pU7YTI9FfrICurXpl5V9TfCO0oJ.png","name":"Pacific
+        Data Images","origin_country":"US"},{"id":521,"logo_path":"/kP7t6RwGz2AvvTkvnI1uteEwHet.png","name":"DreamWorks
+        Animation","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2004-05-19","revenue":928760770,"runtime":93,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Once
+        upon another time...","title":"Shrek 2","video":false,"vote_average":7.2,"vote_count":10093}'
+  recorded_at: Mon, 18 Jul 2022 20:01:05 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/810?api_key=<api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - "<api_key>"
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 18 Jul 2022 20:01:06 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 6f2b8bc2123cffc39a556c10da96a77b7617185b
+      X-Memc-Age:
+      - '7711'
+      X-Memc-Expires:
+      - '9010'
+      Etag:
+      - W/"888acebae7ed06727141c5bae8dcc357"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 47c0295005ec7d8570406951491004c2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-C3
+      X-Amz-Cf-Id:
+      - 1FO_GO_idz5HgYNQATk2sXfxPvhuebepT6Tecw2ivtyMFCjvrtRCKA==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvd3hrWENWR3c2MWtiSkFmUDlTa3hvRVREMHV6LmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6eyJpZCI6MjE1MCwibmFtZSI6IlNocmVrIENvbGxlY3Rpb24iLCJwb3N0ZXJfcGF0aCI6Ii9xTkhaTWU5MkE3UHlsNDZxVUgyOWhWT3RiU0suanBnIiwiYmFja2Ryb3BfcGF0aCI6Ii9nTVdyS1Fqb1RJcFlqaGM4U3haRjIwRURJRVMuanBnIn0sImJ1ZGdldCI6MTYwMDAwMDAwLCJnZW5yZXMiOlt7ImlkIjoxNCwibmFtZSI6IkZhbnRhc3kifSx7ImlkIjoxMiwibmFtZSI6IkFkdmVudHVyZSJ9LHsiaWQiOjE2LCJuYW1lIjoiQW5pbWF0aW9uIn0seyJpZCI6MzUsIm5hbWUiOiJDb21lZHkifSx7ImlkIjoxMDc1MSwibmFtZSI6IkZhbWlseSJ9XSwiaG9tZXBhZ2UiOiJodHRwOi8vd3d3LnNocmVrdGhldGhpcmQuY29tL2ZsYXNoL2luZGV4Lmh0bWwiLCJpZCI6ODEwLCJpbWRiX2lkIjoidHQwNDEzMjY3Iiwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiU2hyZWsgdGhlIFRoaXJkIiwib3ZlcnZpZXciOiJUaGUgS2luZyBvZiBGYXIgRmFyIEF3YXkgaGFzIGRpZWQgYW5kIFNocmVrIGFuZCBGaW9uYSBhcmUgdG8gYmVjb21lIEtpbmcgJiBRdWVlbi4gSG93ZXZlciwgU2hyZWsgd2FudHMgdG8gcmV0dXJuIHRvIGhpcyBjb3p5IHN3YW1wIGFuZCBsaXZlIGluIHBlYWNlIGFuZCBxdWlldCwgc28gd2hlbiBoZSBmaW5kcyBvdXQgdGhlcmUgaXMgYW5vdGhlciBoZWlyIHRvIHRoZSB0aHJvbmUsIHRoZXkgc2V0IG9mZiB0byBicmluZyBoaW0gYmFjayB0byBydWxlIHRoZSBraW5nZG9tLiIsInBvcHVsYXJpdHkiOjExMi40MzcsInBvc3Rlcl9wYXRoIjoiL2phTmUxNmdFOXpkQVl5VndScW1sbVJLc2hIbS5qcGciLCJwcm9kdWN0aW9uX2NvbXBhbmllcyI6W3siaWQiOjUyMCwibG9nb19wYXRoIjoiL3BVN1lUSTlGZnJJQ3VyWHBsNVY5VGZDTzBvSi5wbmciLCJuYW1lIjoiUGFjaWZpYyBEYXRhIEltYWdlcyIsIm9yaWdpbl9jb3VudHJ5IjoiVVMifSx7ImlkIjo1MjEsImxvZ29fcGF0aCI6Ii9rUDd0NlJ3R3oyQXZ2VGt2bkkxdXRlRXdIZXQucG5nIiwibmFtZSI6IkRyZWFtV29ya3MgQW5pbWF0aW9uIiwib3JpZ2luX2NvdW50cnkiOiJVUyJ9XSwicHJvZHVjdGlvbl9jb3VudHJpZXMiOlt7Imlzb18zMTY2XzEiOiJVUyIsIm5hbWUiOiJVbml0ZWQgU3RhdGVzIG9mIEFtZXJpY2EifV0sInJlbGVhc2VfZGF0ZSI6IjIwMDctMDUtMTciLCJyZXZlbnVlIjo4MTMzNjczODAsInJ1bnRpbWUiOjkzLCJzcG9rZW5fbGFuZ3VhZ2VzIjpbeyJlbmdsaXNoX25hbWUiOiJFbmdsaXNoIiwiaXNvXzYzOV8xIjoiZW4iLCJuYW1lIjoiRW5nbGlzaCJ9XSwic3RhdHVzIjoiUmVsZWFzZWQiLCJ0YWdsaW5lIjoiSGXigJlzIGluIGZvciB0aGUgUm95YWwgVHJlYXRtZW50LiIsInRpdGxlIjoiU2hyZWsgdGhlIFRoaXJkIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjYuMywidm90ZV9jb3VudCI6NzQ4MH0=
+  recorded_at: Mon, 18 Jul 2022 20:01:06 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/10192?api_key=<api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - "<api_key>"
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 18 Jul 2022 20:01:06 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 4db75e4ae74556d7d96de97cd43b82803013a85c
+      X-Memc-Age:
+      - '17706'
+      X-Memc-Expires:
+      - '275'
+      Etag:
+      - W/"c64c1a5b7aabe581f2669152484dee51"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 51391527dd8c879c45b44b119905c872.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-C3
+      X-Amz-Cf-Id:
+      - He07A1v_C9xFIovX1SLKWZHB0YTdGEQlEGKyblfBs9xPTv3j7BJyEw==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIveFoyd2U0Z2Rpd1FtZzZEMXc5cUhsQW01eUlmLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6eyJpZCI6MjE1MCwibmFtZSI6IlNocmVrIENvbGxlY3Rpb24iLCJwb3N0ZXJfcGF0aCI6Ii9xTkhaTWU5MkE3UHlsNDZxVUgyOWhWT3RiU0suanBnIiwiYmFja2Ryb3BfcGF0aCI6Ii9nTVdyS1Fqb1RJcFlqaGM4U3haRjIwRURJRVMuanBnIn0sImJ1ZGdldCI6MTY1MDAwMDAwLCJnZW5yZXMiOlt7ImlkIjozNSwibmFtZSI6IkNvbWVkeSJ9LHsiaWQiOjEyLCJuYW1lIjoiQWR2ZW50dXJlIn0seyJpZCI6MTQsIm5hbWUiOiJGYW50YXN5In0seyJpZCI6MTYsIm5hbWUiOiJBbmltYXRpb24ifSx7ImlkIjoxMDc1MSwibmFtZSI6IkZhbWlseSJ9XSwiaG9tZXBhZ2UiOiJodHRwOi8vd3d3LnNocmVrZm9yZXZlcmFmdGVyLmNvbS8iLCJpZCI6MTAxOTIsImltZGJfaWQiOiJ0dDA4OTI3OTEiLCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiJTaHJlayBGb3JldmVyIEFmdGVyIiwib3ZlcnZpZXciOiJBIGJvcmVkIGFuZCBkb21lc3RpY2F0ZWQgU2hyZWsgcGFjdHMgd2l0aCBkZWFsLW1ha2VyIFJ1bXBlbHN0aWx0c2tpbiB0byBnZXQgYmFjayB0byBmZWVsaW5nIGxpa2UgYSByZWFsIG9ncmUgYWdhaW4sIGJ1dCB3aGVuIGhlJ3MgZHVwZWQgYW5kIHNlbnQgdG8gYSB0d2lzdGVkIHZlcnNpb24gb2YgRmFyIEZhciBBd2F54oCUd2hlcmUgUnVtcGVsc3RpbHRza2luIGlzIGtpbmcsIG9ncmVzIGFyZSBodW50ZWQsIGFuZCBoZSBhbmQgRmlvbmEgaGF2ZSBuZXZlciBtZXTigJRoZSBzZXRzIG91dCB0byByZXN0b3JlIGhpcyB3b3JsZCBhbmQgcmVjbGFpbSBoaXMgdHJ1ZSBsb3ZlLiIsInBvcHVsYXJpdHkiOjk3Ljc0OSwicG9zdGVyX3BhdGgiOiIvZmFSenVVeGtaWXpTYzhVbEFaR1E0dHFFMVBpLmpwZyIsInByb2R1Y3Rpb25fY29tcGFuaWVzIjpbeyJpZCI6NTIxLCJsb2dvX3BhdGgiOiIva1A3dDZSd0d6MkF2dlRrdm5JMXV0ZUV3SGV0LnBuZyIsIm5hbWUiOiJEcmVhbVdvcmtzIEFuaW1hdGlvbiIsIm9yaWdpbl9jb3VudHJ5IjoiVVMifV0sInByb2R1Y3Rpb25fY291bnRyaWVzIjpbeyJpc29fMzE2Nl8xIjoiVVMiLCJuYW1lIjoiVW5pdGVkIFN0YXRlcyBvZiBBbWVyaWNhIn1dLCJyZWxlYXNlX2RhdGUiOiIyMDEwLTA1LTE2IiwicmV2ZW51ZSI6NzUyNjAwODY3LCJydW50aW1lIjo5Mywic3Bva2VuX2xhbmd1YWdlcyI6W3siZW5nbGlzaF9uYW1lIjoiRW5nbGlzaCIsImlzb182MzlfMSI6ImVuIiwibmFtZSI6IkVuZ2xpc2gifSx7ImVuZ2xpc2hfbmFtZSI6IlBvcnR1Z3Vlc2UiLCJpc29fNjM5XzEiOiJwdCIsIm5hbWUiOiJQb3J0dWd1w6pzIn1dLCJzdGF0dXMiOiJSZWxlYXNlZCIsInRhZ2xpbmUiOiJJdCBhaW4ndCBPZ3JlLi4uIFRpbCBpdCdzIE9ncmUiLCJ0aXRsZSI6IlNocmVrIEZvcmV2ZXIgQWZ0ZXIiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6Ni4zLCJ2b3RlX2NvdW50Ijo2MDQwfQ==
+  recorded_at: Mon, 18 Jul 2022 20:01:06 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/421892?api_key=<api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - "<api_key>"
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 18 Jul 2022 20:01:06 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 82443636db5c56c9a0d873981ebe99b454129d34
+      X-Memc-Age:
+      - '8884'
+      X-Memc-Expires:
+      - '9004'
+      Etag:
+      - W/"ba966f75eda4b1f207eaa7cb12e6e195"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 08f45c153a856ff7955174d0e6f60744.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-C3
+      X-Amz-Cf-Id:
+      - HD7KyaYiYuBZkp08e7wovmxkkR-oIfhMDzS7taPl9kgsfEdoK5Inng==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/qTQBFEc3GnPJNVs9uoaBSMwiVbq.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":16,"name":"Animation"},{"id":10751,"name":"Family"},{"id":35,"name":"Comedy"},{"id":14,"name":"Fantasy"}],"homepage":"","id":421892,"imdb_id":"tt6113186","original_language":"en","original_title":"Shrek
+        5","overview":"Plot unknown. A soft-reboot of the animated \"Shrek\" franchise.","popularity":45.651,"poster_path":"/vOBhCpP2RapWbP6sa3QNuiC2oNx.jpg","production_companies":[{"id":521,"logo_path":"/kP7t6RwGz2AvvTkvnI1uteEwHet.png","name":"DreamWorks
+        Animation","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"","revenue":0,"runtime":0,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Planned","tagline":"","title":"Shrek
+        5","video":false,"vote_average":0.0,"vote_count":0}'
+  recorded_at: Mon, 18 Jul 2022 20:01:06 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/13394?api_key=<api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - "<api_key>"
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 18 Jul 2022 20:01:06 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 33caede908162676e9b1074cc0849057fc299339
+      X-Memc-Age:
+      - '9373'
+      X-Memc-Expires:
+      - '6777'
+      Etag:
+      - W/"fd696cfc0244ecd3745bafeae739461b"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 c889e9448c63bb4bf9dd41fcb2250e08.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-C3
+      X-Amz-Cf-Id:
+      - ZPMJwgRjvN_O2-i1--hoV23EBHC0sJmL4ChmYBHBpgqDVwYhmACAcQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/vO1VJevJIKIXGfveYHsLPn8iHUn.jpg","belongs_to_collection":null,"budget":60000000,"genres":[{"id":12,"name":"Adventure"},{"id":16,"name":"Animation"},{"id":35,"name":"Comedy"},{"id":14,"name":"Fantasy"},{"id":10751,"name":"Family"}],"homepage":"","id":13394,"imdb_id":"tt0897387","original_language":"en","original_title":"Shrek
+        the Halls","overview":"The Christmas tree isn''t the only thing green in this
+        new holiday classic. Shrek is back and trying to get into the spirit of the
+        season. After promising Fiona and the kids a Christmas they''ll remember,
+        he is forced to take a crash course in the holiday. But just when he thinks
+        he has everything for their quiet family Christmas just right, there is a
+        knock at the door.","popularity":22.85,"poster_path":"/kyCzpKpuF32nRl1QQgXqcQnnLAj.jpg","production_companies":[{"id":520,"logo_path":"/pU7YTI9FfrICurXpl5V9TfCO0oJ.png","name":"Pacific
+        Data Images","origin_country":"US"},{"id":521,"logo_path":"/kP7t6RwGz2AvvTkvnI1uteEwHet.png","name":"DreamWorks
+        Animation","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2007-11-28","revenue":0,"runtime":28,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"","title":"Shrek
+        the Halls","video":false,"vote_average":6.3,"vote_count":655}'
+  recorded_at: Mon, 18 Jul 2022 20:01:06 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/381696?api_key=<api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - "<api_key>"
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 18 Jul 2022 20:01:06 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9626f35f7bddc6a1ad72b766022a746ec7db26a2
+      X-Memc-Age:
+      - '7914'
+      X-Memc-Expires:
+      - '9626'
+      Etag:
+      - W/"92f0d99d14dc121ea25c4a39d83e4ec4"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 1fa3f854976309f3d11907ad7125291a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-C3
+      X-Amz-Cf-Id:
+      - IiG6XnQYKNs0eP6r7n_KLTX52WCL_owdaypgQMuziLlgj7jxIm_-5g==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/zWDZckQzoHEE4oipgVNWXIFpXCH.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":10402,"name":"Music"},{"id":35,"name":"Comedy"},{"id":14,"name":"Fantasy"}],"homepage":"","id":381696,"imdb_id":"tt3070936","original_language":"en","original_title":"Shrek
+        the Musical","overview":"Shrek The Musical is a musical with music by Jeanine
+        Tesori and book and lyrics by David Lindsay-Abaire. It is based on the 2001
+        DreamWorks Animation''s film Shrek and William Steig''s 1990 book Shrek! It
+        was nominated for 8 Tony Awards including Best Musical.","popularity":17.176,"poster_path":"/k3uIgE9obtdQnshufhzQlLKZW1Z.jpg","production_companies":[{"id":73933,"logo_path":null,"name":"DreamWorks
+        Theatricals","origin_country":""},{"id":89394,"logo_path":"/m1Hku3PhgdsQiPO8uVe7szyrxAb.png","name":"RadicalMedia","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2013-09-17","revenue":0,"runtime":130,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"","title":"Shrek
+        the Musical","video":false,"vote_average":7.2,"vote_count":92}'
+  recorded_at: Mon, 18 Jul 2022 20:01:06 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/118249?api_key=<api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - "<api_key>"
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 18 Jul 2022 20:01:06 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Key:
+      - 712b7ae7e2fe1d46ff700a1dfb1bf2c75f8c5be4
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '14509'
+      Last-Modified:
+      - Sun, 09 Jan 2022 10:57:59 GMT
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 4db130e87be66fce9731567ae0669c56.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-C3
+      X-Amz-Cf-Id:
+      - b6OMsDg2EXYePpTKtSpd0g6KnO9Ugr0T9T3KQMjAYz49j0nJOEgZgQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":null,"belongs_to_collection":null,"budget":0,"genres":[{"id":16,"name":"Animation"}],"homepage":"","id":118249,"imdb_id":"tt2051999","original_language":"en","original_title":"Shrek:
+        Thriller Night","overview":"A Shrek parody of Michael Jackson''s Thriller
+        song and music video, with Donkey singing.","popularity":8.821,"poster_path":"/mPQei2YUIY0Ljd3O5Wy7LDuvC8S.jpg","production_companies":[{"id":521,"logo_path":"/kP7t6RwGz2AvvTkvnI1uteEwHet.png","name":"DreamWorks
+        Animation","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2011-09-13","revenue":0,"runtime":6,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"}],"status":"Released","tagline":"","title":"Shrek:
+        Thriller Night","video":false,"vote_average":6.7,"vote_count":40}'
+  recorded_at: Mon, 18 Jul 2022 20:01:06 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/252634?api_key=<api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - "<api_key>"
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 18 Jul 2022 20:01:07 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - e9b977cb559cd3ef6227b490536aecc05108774f
+      X-Memc-Age:
+      - '14897'
+      X-Memc-Expires:
+      - '884'
+      Etag:
+      - W/"a2f04931628bb3850b89d5189b6c2fc2"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 08f45c153a856ff7955174d0e6f60744.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-C3
+      X-Amz-Cf-Id:
+      - QkDYN9E0-GjLLzJN0dSNm_aszsjZOGfYY4QWmIviC-UuX67pXf3tAA==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/rzRthZa34uJUmnmvnepxxBSaRw0.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":10751,"name":"Family"}],"homepage":"","id":252634,"imdb_id":"tt3285224","original_language":"en","original_title":"Shrek
+        Stories","overview":"Join Shrek and his friends from Far Far Away as they
+        share tales of holiday cheer, spooky stories, a singing showdown and a night
+        of babysitting nobody will soon forget.","popularity":6.344,"poster_path":"/j1Ew14NWmwTYqGYNNS7YTWIJXae.jpg","production_companies":[],"production_countries":[],"release_date":"2013-10-01","revenue":0,"runtime":72,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"","title":"Shrek
+        Stories","video":true,"vote_average":8.5,"vote_count":20}'
+  recorded_at: Mon, 18 Jul 2022 20:01:07 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/128914?api_key=<api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - "<api_key>"
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 18 Jul 2022 20:01:07 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 1e9bc0f817a9c785d387a2012a497fa8f1abe8fd
+      X-Memc-Age:
+      - '16323'
+      X-Memc-Expires:
+      - '1113'
+      Etag:
+      - W/"353db9ad0774a2f26f7e5666ffa7ae06"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 1fa3f854976309f3d11907ad7125291a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-C3
+      X-Amz-Cf-Id:
+      - _xse0vgFdFuWuOx8cSh4ufP5iVWJ6zvK2JiAJ0VszqpGkepCdWeibg==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOm51bGwsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjowLCJnZW5yZXMiOlt7ImlkIjozNSwibmFtZSI6IkNvbWVkeSJ9LHsiaWQiOjEwNzUxLCJuYW1lIjoiRmFtaWx5In0seyJpZCI6MTYsIm5hbWUiOiJBbmltYXRpb24ifV0sImhvbWVwYWdlIjoiaHR0cDovL3d3dy5zaHJlay5jb20vIiwiaWQiOjEyODkxNCwiaW1kYl9pZCI6InR0MjQ4NjcyNCIsIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6IlNocmVrJ3MgVGhyaWxsaW5nIFRhbGVzIiwib3ZlcnZpZXciOiJTSFJFSydTIFRIUklMTElORyBUQUxFUyBpcyB0aGUgdWx0aW1hdGUgSGFsbG93ZWVuIERWRCBjb21waWxhdGlvbiBmb3IgeW91ciBmYW1pbHkuIFNocmVrJ3MgVGhyaWxsaW5nIFRhbGVzIHJldmlldyBGZWF0dXJpbmcgdGhlIHNjYXJpZXN0LCB1Z2xpZXN0LCBhbmQgZnVubmllc3QgY2hhcmFjdGVycyBmcm9tIERyZWFtV29ya3MgQW5pbWF0aW9uJ3Mgc3VjY2Vzc2Z1bCBTSFJFSyBhbmQgTU9OU1RFUlMgVlMuIEFMSUVOUyBmcmFuY2hpc2VzLiBEVkQgaW5jbHVkZXMgJ1RoZSBQaWcgd2hvIENyaWVkIChXZXJlKVdvbGYnIGFuZCAnVGhlIEdob3N0IG9mIExvcmQgRmFycXVhYWQnIGZyb20gdGhlIFNocmVrIG1vdmllcywgYW5kICdOaWdodCBvZiB0aGUgTGl2aW5nIENhcnJvdHMnIGZyb20gTW9uc3RlcnMgdnMuIEFsaWVucywgZmVhdHVyaW5nIEIuTy5CLiIsInBvcHVsYXJpdHkiOjE2LjYyOSwicG9zdGVyX3BhdGgiOiIvd0g0ekNiZ05KeGpuUUF6Smo0OHppdHpzdTNBLmpwZyIsInByb2R1Y3Rpb25fY29tcGFuaWVzIjpbeyJpZCI6NTIxLCJsb2dvX3BhdGgiOiIva1A3dDZSd0d6MkF2dlRrdm5JMXV0ZUV3SGV0LnBuZyIsIm5hbWUiOiJEcmVhbVdvcmtzIEFuaW1hdGlvbiIsIm9yaWdpbl9jb3VudHJ5IjoiVVMifV0sInByb2R1Y3Rpb25fY291bnRyaWVzIjpbeyJpc29fMzE2Nl8xIjoiVVMiLCJuYW1lIjoiVW5pdGVkIFN0YXRlcyBvZiBBbWVyaWNhIn1dLCJyZWxlYXNlX2RhdGUiOiIyMDEyLTA4LTI4IiwicmV2ZW51ZSI6MCwicnVudGltZSI6MzEsInNwb2tlbl9sYW5ndWFnZXMiOlt7ImVuZ2xpc2hfbmFtZSI6IlNwYW5pc2giLCJpc29fNjM5XzEiOiJlcyIsIm5hbWUiOiJFc3Bhw7FvbCJ9LHsiZW5nbGlzaF9uYW1lIjoiRW5nbGlzaCIsImlzb182MzlfMSI6ImVuIiwibmFtZSI6IkVuZ2xpc2gifV0sInN0YXR1cyI6IlJlbGVhc2VkIiwidGFnbGluZSI6IiIsInRpdGxlIjoiU2hyZWsncyBUaHJpbGxpbmcgVGFsZXMiLCJ2aWRlbyI6dHJ1ZSwidm90ZV9hdmVyYWdlIjo2LjcsInZvdGVfY291bnQiOjkzfQ==
+  recorded_at: Mon, 18 Jul 2022 20:01:07 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/26840?api_key=<api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - "<api_key>"
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 18 Jul 2022 20:01:07 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 42f3e47ad7f91235853abbfb555034b469c932ff
+      X-Memc-Age:
+      - '7413'
+      X-Memc-Expires:
+      - '8140'
+      Etag:
+      - W/"57ab09a7a5afdd71fe92315690f68f62"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 b471d3775e81a9be536b52b99f39452a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-C3
+      X-Amz-Cf-Id:
+      - uNPkapT4SJuUAjX5MvUdM316wJk6QaX-7nK4b-yrqQHvSBpa3jpSqg==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tcHdogyWBZktk2JtO3oIqdJ24bW.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":16,"name":"Animation"},{"id":35,"name":"Comedy"},{"id":10402,"name":"Music"},{"id":10751,"name":"Family"},{"id":14,"name":"Fantasy"}],"homepage":"","id":26840,"imdb_id":"tt0307461","original_language":"en","original_title":"Shrek
+        in the Swamp Karaoke Dance Party","overview":"Shrek and his friends enjoy
+        themselves with some Karaoke partying.","popularity":8.977,"poster_path":"/lJg4alrYfp7CDNVID4iGefT9CIn.jpg","production_companies":[{"id":520,"logo_path":"/pU7YTI9FfrICurXpl5V9TfCO0oJ.png","name":"Pacific
+        Data Images","origin_country":"US"},{"id":521,"logo_path":"/kP7t6RwGz2AvvTkvnI1uteEwHet.png","name":"DreamWorks
+        Animation","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2001-11-02","revenue":0,"runtime":3,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"","title":"Shrek
+        in the Swamp Karaoke Dance Party","video":false,"vote_average":6.2,"vote_count":89}'
+  recorded_at: Mon, 18 Jul 2022 20:01:07 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/151316?api_key=<api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - "<api_key>"
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 18 Jul 2022 20:01:07 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 1c894555bea141cf02fa5fe03ec29fda25d79be4
+      X-Memc-Age:
+      - '5050'
+      X-Memc-Expires:
+      - '12131'
+      Etag:
+      - W/"6ee0afa4cd3bd9d998f642bf90db5422"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 08f45c153a856ff7955174d0e6f60744.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-C3
+      X-Amz-Cf-Id:
+      - MOkt6SFg4G8_0bhgwGUIuhoLBBPrrXeB5xxLSgiQjCpQ_7aiini3tA==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvdXpBZ0RJVmZ0a2JkdElzZUZWYlBSRVZnUVdCLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjowLCJnZW5yZXMiOlt7ImlkIjoxNiwibmFtZSI6IkFuaW1hdGlvbiJ9LHsiaWQiOjEwNzUxLCJuYW1lIjoiRmFtaWx5In0seyJpZCI6MTQsIm5hbWUiOiJGYW50YXN5In0seyJpZCI6MzUsIm5hbWUiOiJDb21lZHkifV0sImhvbWVwYWdlIjoiIiwiaWQiOjE1MTMxNiwiaW1kYl9pZCI6InR0OTU4MzY2NiIsIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6IlNocmVr4oCZcyBZdWxlIExvZyIsIm92ZXJ2aWV3Ijoi4oCcU2hyZWvigJlzIFl1bGUgTG9nLOKAnSBmZWF0dXJpbmcgb3ZlciAyNSB1cHJvYXJpb3VzIGNoYXJhY3RlciBhcHBlYXJhbmNlcyBpbiBmcm9udCBvZiBhIGNyYWNrbGluZyB2aXJ0dWFsIGZpcmVwbGFjZS4gIFRoaXMgd2FzIGJ1bmRsZWQgd2l0aCBcIkRvbmtleSdzIENocmlzdG1hcyBTaHJla3RhY3VsYXJcIiIsInBvcHVsYXJpdHkiOjguNDQ4LCJwb3N0ZXJfcGF0aCI6Ii9ubmROQzl4aTdiMGkyWktXT0RwcmFPZkZmNWMuanBnIiwicHJvZHVjdGlvbl9jb21wYW5pZXMiOlt7ImlkIjo1MjEsImxvZ29fcGF0aCI6Ii9rUDd0NlJ3R3oyQXZ2VGt2bkkxdXRlRXdIZXQucG5nIiwibmFtZSI6IkRyZWFtV29ya3MgQW5pbWF0aW9uIiwib3JpZ2luX2NvdW50cnkiOiJVUyJ9XSwicHJvZHVjdGlvbl9jb3VudHJpZXMiOlt7Imlzb18zMTY2XzEiOiJVUyIsIm5hbWUiOiJVbml0ZWQgU3RhdGVzIG9mIEFtZXJpY2EifV0sInJlbGVhc2VfZGF0ZSI6IjIwMTAtMTItMDciLCJyZXZlbnVlIjowLCJydW50aW1lIjozMCwic3Bva2VuX2xhbmd1YWdlcyI6W3siZW5nbGlzaF9uYW1lIjoiRW5nbGlzaCIsImlzb182MzlfMSI6ImVuIiwibmFtZSI6IkVuZ2xpc2gifV0sInN0YXR1cyI6IlJlbGVhc2VkIiwidGFnbGluZSI6IiIsInRpdGxlIjoiU2hyZWvigJlzIFl1bGUgTG9nIiwidmlkZW8iOnRydWUsInZvdGVfYXZlcmFnZSI6Ni4zLCJ2b3RlX2NvdW50IjoyM30=
+  recorded_at: Mon, 18 Jul 2022 20:01:07 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/792098?api_key=<api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - "<api_key>"
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 18 Jul 2022 20:01:07 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - e91eb2c7df34190faa73ad553969960797497518
+      X-Memc-Age:
+      - '10749'
+      X-Memc-Expires:
+      - '5215'
+      Etag:
+      - W/"00f34c3498f6c1ab0fc9ea78d95c4c9f"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 47c0295005ec7d8570406951491004c2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-C3
+      X-Amz-Cf-Id:
+      - lwNDxMTJynJdFR-r-6UXRhWlZtWfQ7DXG-GGfFlRmHml-xU2DYau2Q==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":null,"belongs_to_collection":null,"budget":0,"genres":[{"id":16,"name":"Animation"},{"id":10751,"name":"Family"},{"id":35,"name":"Comedy"},{"id":28,"name":"Action"}],"homepage":"","id":792098,"imdb_id":null,"original_language":"en","original_title":"DreamWorks
+        Holiday Classics (Merry Madagascar / Shrek the Halls / Gift of the Night Fury
+        / Kung Fu Panda Holiday)","overview":"Join your favorite DreamWorks friends
+        for these four holiday specials. Watch as those zany zoosters from Madagascar
+        save Christmas, Donkey puts on a caroling Christmas Shrek-tacular, and Po
+        prepares for his favorite holiday, the Winter Feast.","popularity":17.675,"poster_path":"/liaVMXtLLuOPF9TwMEH5kJYLIFc.jpg","production_companies":[{"id":521,"logo_path":"/kP7t6RwGz2AvvTkvnI1uteEwHet.png","name":"DreamWorks
+        Animation","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2012-12-25","revenue":0,"runtime":72,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"","title":"DreamWorks
+        Holiday Classics (Merry Madagascar / Shrek the Halls / Gift of the Night Fury
+        / Kung Fu Panda Holiday)","video":true,"vote_average":8.7,"vote_count":7}'
+  recorded_at: Mon, 18 Jul 2022 20:01:07 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/951495?api_key=<api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - "<api_key>"
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 18 Jul 2022 20:01:07 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9d322b32295a2179366ce10b5b5f95a1d6fc97ce
+      X-Memc-Age:
+      - '11679'
+      X-Memc-Expires:
+      - '4752'
+      Etag:
+      - W/"c7829170e1d2c5b563df5d7970ec892b"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 7eefe38d76087dfad8e2f0b7702246ee.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-C3
+      X-Amz-Cf-Id:
+      - qXcfncYDrnbL-u9BBopzMTnAEJ6QCu7V2_a18_p2e0f6wOtmCBEw-w==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":null,"belongs_to_collection":null,"budget":0,"genres":[],"homepage":"https://www.youtube.com/playlist?list=PLUD42sR19u3O40f_WjO_fe2zn4NHyL0wq","id":951495,"imdb_id":null,"original_language":"en","original_title":"\"Vegeta\"
+        (Shrek)","overview":"By Jaden Pictures / YouTube  This animated movie spoof
+        shows a story about a Saiyan named Vegeta, who lives alone his home, and enjoys
+        his isolation, when 1 day, he meets another Saiyan named Goku (who he refers
+        to as Kakarot), and then on the night he met Goku, a bunch of Non-Dragon Ball
+        characters come to his property, because they were ordered by Simon Petrikov
+        to go there, so Vegeta goes on a long adventure with Goku to see Simon, and
+        get his home and isolation back.\r Later on, the adventure also becomes an
+        adventure to rescue Princess Bubblegum from a castle guarded by Flame Princess,
+        and bring her to Simon, so that he can marry her, and become king.\r Not to
+        mention, Princess Bubblegum even has a secret that is to be revealed at some
+        point in this animated movie spoof.","popularity":0.6,"poster_path":null,"production_companies":[],"production_countries":[],"release_date":"","revenue":0,"runtime":99,"spoken_languages":[],"status":"Released","tagline":"","title":"\"Vegeta\"
+        (Shrek)","video":false,"vote_average":0.0,"vote_count":0}'
+  recorded_at: Mon, 18 Jul 2022 20:01:07 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/726391?api_key=<api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - "<api_key>"
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 18 Jul 2022 20:01:07 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - cc331711a73dcdddf8b6f0eedcb9c0459dce32af
+      X-Memc-Age:
+      - '6926'
+      X-Memc-Expires:
+      - '9133'
+      Etag:
+      - W/"b099694e68df09c8a440d62d140e29ad"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 d4b41c13595dcfd327649d8cdea72ce8.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-C3
+      X-Amz-Cf-Id:
+      - KuBKaY0q9snhfsF_nxdF4zA8ztMGExrFWEjTYBl6uu9_dsHquXIU0A==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":null,"belongs_to_collection":null,"budget":0,"genres":[{"id":99,"name":"Documentary"}],"homepage":"","id":726391,"imdb_id":"tt2196047","original_language":"en","original_title":"Shrek:
+        Once Upon a Time","overview":"A making-of for the Shrek series.","popularity":1.351,"poster_path":null,"production_companies":[{"id":3324,"logo_path":"/16fY7pucCzn7WSOYxOGRHlAayL3.png","name":"BBC","origin_country":"GB"}],"production_countries":[],"release_date":"2011-12-30","revenue":0,"runtime":59,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"","title":"Shrek:
+        Once Upon a Time","video":false,"vote_average":7.4,"vote_count":7}'
+  recorded_at: Mon, 18 Jul 2022 20:01:07 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/831101?api_key=<api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - "<api_key>"
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 18 Jul 2022 20:01:07 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 5d909e67e6f929a5a09dd5cc1e745d9d9e1978d8
+      X-Memc-Age:
+      - '5189'
+      X-Memc-Expires:
+      - '11101'
+      Etag:
+      - W/"2deaeebcae80046f2f1fed23622186ba"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 f37f104903bda438e8b0547be6e0c192.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-C3
+      X-Amz-Cf-Id:
+      - TpgOWFNQbjpcJoHQgVk7va14oA8x4r7t7bovF3k-ZIOz2CrQnRLL1g==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":null,"belongs_to_collection":null,"budget":0,"genres":[],"homepage":"https://youtu.be/KMynwpxuV4k","id":831101,"imdb_id":null,"original_language":"en","original_title":"Shrek
+        5: (The Revenge)","overview":"Shrek is love  Shrek is.... A mad idiot who
+        can''t aim and doesn''t know how to open a gate...  oh, I mean Shrek is life...","popularity":0.785,"poster_path":"/eLNhGoCMhzNte7XPTlpymeGFeVK.jpg","production_companies":[],"production_countries":[],"release_date":"2015-05-03","revenue":0,"runtime":4,"spoken_languages":[],"status":"Released","tagline":"The
+        Revenge","title":"Shrek 5: (The Revenge)","video":false,"vote_average":8.7,"vote_count":3}'
+  recorded_at: Mon, 18 Jul 2022 20:01:08 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/575506?api_key=<api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - "<api_key>"
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 18 Jul 2022 20:01:08 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9a6c83b1cfef499723da48e641c2ef41e99ff643
+      X-Memc-Age:
+      - '12764'
+      X-Memc-Expires:
+      - '4615'
+      Etag:
+      - W/"aa5a04ac9c5291c94ed1fb7874a6d4b6"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 98e30e5953336545df428a8f5923a288.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-C3
+      X-Amz-Cf-Id:
+      - F38qaG1uyCWvbN4yLoFCkgEERp5d4WHfzrdo9Z0B_ZRRqBczTOBEMQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":null,"belongs_to_collection":null,"budget":0,"genres":[{"id":99,"name":"Documentary"},{"id":10770,"name":"TV
+        Movie"}],"homepage":"","id":575506,"imdb_id":"tt0290741","original_language":"en","original_title":"Creating
+        a Fairy Tale World: The Making of Shrek","overview":"Behind-the-scenes look
+        at the making of the DreamWorks Pictures animated feature, \"Shrek.\"","popularity":1.553,"poster_path":"/65nYHT6wbfbrkUcAr5lxcPOdUCt.jpg","production_companies":[],"production_countries":[],"release_date":"2001-04-22","revenue":0,"runtime":25,"spoken_languages":[],"status":"Released","tagline":"","title":"Creating
+        a Fairy Tale World: The Making of Shrek","video":false,"vote_average":9.7,"vote_count":5}'
+  recorded_at: Mon, 18 Jul 2022 20:01:08 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/48466?api_key=<api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - "<api_key>"
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 18 Jul 2022 20:01:08 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 7d7f4c7b4098efa6124d8c61128e0bec040962bf
+      X-Memc-Age:
+      - '14075'
+      X-Memc-Expires:
+      - '3585'
+      Etag:
+      - W/"99532ae99df884ae1533e1c3520d7c9d"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 c34bd35d24f6df50307d1ac92d0f6110.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-C3
+      X-Amz-Cf-Id:
+      - 10jSzJ3S7ZuPhT3oIKKGlfuZbuk5WwE8PmF2ha6dSA9n-J9bQ1WSVw==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvOVFYeDR0UzY1czNvVUJvUTI3Yk1Jd21CRDl4LmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjowLCJnZW5yZXMiOlt7ImlkIjoxNiwibmFtZSI6IkFuaW1hdGlvbiJ9LHsiaWQiOjM1LCJuYW1lIjoiQ29tZWR5In1dLCJob21lcGFnZSI6IiIsImlkIjo0ODQ2NiwiaW1kYl9pZCI6InR0MTcyNTE1NiIsIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6IlNjYXJlZCBTaHJla2xlc3MiLCJvdmVydmlldyI6IlNocmVrIGNoYWxsZW5nZXMgRG9ua2V5LCBQdXNzIGluIEJvb3RzIGFuZCBoaXMgb3RoZXIgZmFpcnkgdGFsZSBjaGFyYWN0ZXIgZnJpZW5kcyB0byBzcGVuZCB0aGUgbmlnaHQgaW4gTG9yZCBGYXJxdWFhZCdzIGhhdW50ZWQgY2FzdGxlLCB0ZWxsaW5nIHNjYXJ5IHN0b3JpZXMgdG8gc2VlIHdobyBjYW4gcmVzaXN0IGJlY29taW5nIHNjYXJlZCBhbmQgc3RheSB0aGUgbG9uZ2VzdC4iLCJwb3B1bGFyaXR5IjoxNC42LCJwb3N0ZXJfcGF0aCI6Ii9hQVFRSmhYOE5xS1o3Wk5EVVBRUUtpMXdLOGguanBnIiwicHJvZHVjdGlvbl9jb21wYW5pZXMiOlt7ImlkIjo1MjAsImxvZ29fcGF0aCI6Ii9wVTdZVEk5RmZySUN1clhwbDVWOVRmQ08wb0oucG5nIiwibmFtZSI6IlBhY2lmaWMgRGF0YSBJbWFnZXMiLCJvcmlnaW5fY291bnRyeSI6IlVTIn0seyJpZCI6NTIxLCJsb2dvX3BhdGgiOiIva1A3dDZSd0d6MkF2dlRrdm5JMXV0ZUV3SGV0LnBuZyIsIm5hbWUiOiJEcmVhbVdvcmtzIEFuaW1hdGlvbiIsIm9yaWdpbl9jb3VudHJ5IjoiVVMifV0sInByb2R1Y3Rpb25fY291bnRyaWVzIjpbeyJpc29fMzE2Nl8xIjoiVVMiLCJuYW1lIjoiVW5pdGVkIFN0YXRlcyBvZiBBbWVyaWNhIn1dLCJyZWxlYXNlX2RhdGUiOiIyMDEwLTEwLTI4IiwicmV2ZW51ZSI6MCwicnVudGltZSI6MjEsInNwb2tlbl9sYW5ndWFnZXMiOlt7ImVuZ2xpc2hfbmFtZSI6IkZyZW5jaCIsImlzb182MzlfMSI6ImZyIiwibmFtZSI6IkZyYW7Dp2FpcyJ9LHsiZW5nbGlzaF9uYW1lIjoiRW5nbGlzaCIsImlzb182MzlfMSI6ImVuIiwibmFtZSI6IkVuZ2xpc2gifSx7ImVuZ2xpc2hfbmFtZSI6IlBvbGlzaCIsImlzb182MzlfMSI6InBsIiwibmFtZSI6IlBvbHNraSJ9XSwic3RhdHVzIjoiUmVsZWFzZWQiLCJ0YWdsaW5lIjoiIiwidGl0bGUiOiJTY2FyZWQgU2hyZWtsZXNzIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjYuNCwidm90ZV9jb3VudCI6MzE0fQ==
+  recorded_at: Mon, 18 Jul 2022 20:01:08 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/735251?api_key=<api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - "<api_key>"
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 18 Jul 2022 20:01:08 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 1601fbb5678fbf73d859b18dc580a10eecfd1fa9
+      X-Memc-Age:
+      - '10094'
+      X-Memc-Expires:
+      - '6125'
+      Etag:
+      - W/"cacea1f8cc3392a31b8d86e5d5c5d617"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 7eefe38d76087dfad8e2f0b7702246ee.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-C3
+      X-Amz-Cf-Id:
+      - GgtgoP5fjYPqtPkuLruyVGzmWhyHPzRlaIQ4nixzoHxNLKHan1JDYw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/d9PGA6Z7xAzAYEt8gGF4CNkPVqS.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"}],"homepage":"","id":735251,"imdb_id":"tt11355544","original_language":"it","original_title":"L''amore
+        ai tempi di Sh.Rek","overview":"","popularity":1.4,"poster_path":"/nPr5OAkJ75k910mKXYgjkxCa166.jpg","production_companies":[{"id":162560,"logo_path":null,"name":"Moscacieca
+        produzioni","origin_country":""},{"id":162561,"logo_path":null,"name":"Soldelsur
+        Pictures","origin_country":""}],"production_countries":[{"iso_3166_1":"IT","name":"Italy"}],"release_date":"2019-05-12","revenue":0,"runtime":0,"spoken_languages":[{"english_name":"Italian","iso_639_1":"it","name":"Italiano"}],"status":"Released","tagline":"","title":"L''amore
+        ai tempi di Sh.Rek","video":false,"vote_average":7.2,"vote_count":3}'
+  recorded_at: Mon, 18 Jul 2022 20:01:08 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/51256?api_key=<api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - "<api_key>"
+      User-Agent:
+      - Faraday v2.3.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Mon, 18 Jul 2022 20:01:08 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 5c88c63556f6950486c181c335126717af017328
+      X-Memc-Age:
+      - '4660'
+      X-Memc-Expires:
+      - '13188'
+      Etag:
+      - W/"c0412a92957507e709c6cfe1a9e558e6"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 d9057c384f4ac5ba2672d2ff44de7e08.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD89-C3
+      X-Amz-Cf-Id:
+      - BAhhj1R2CwFAMVjpgRCPkwWj_TncU_VjLoK8GH8xWdiIwG9xc1IUcA==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvM0dhTk5mbGJpZE51am5UQjlhQ1p3OTZ2WmliLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjowLCJnZW5yZXMiOlt7ImlkIjoxNCwibmFtZSI6IkZhbnRhc3kifSx7ImlkIjoxNiwibmFtZSI6IkFuaW1hdGlvbiJ9LHsiaWQiOjE4LCJuYW1lIjoiRHJhbWEifSx7ImlkIjozNSwibmFtZSI6IkNvbWVkeSJ9LHsiaWQiOjg3OCwibmFtZSI6IlNjaWVuY2UgRmljdGlvbiJ9LHsiaWQiOjEwNzUxLCJuYW1lIjoiRmFtaWx5In1dLCJob21lcGFnZSI6IiIsImlkIjo1MTI1NiwiaW1kYl9pZCI6InR0MTgzMDU3NyIsIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6IkRvbmtleSdzIENocmlzdG1hcyBTaHJla3RhY3VsYXIiLCJvdmVydmlldyI6IkRlY2sgdGhlIGhhbGxzIHdpdGggRG9ua2V54oCZcyBsYXVnaHRlciBpbiB0aGlzIGFsbC1uZXcgaG9saWRheSBjb2xsZWN0aW9uLiBEb25rZXkgcHJlc2VudHMgaGlzIHZlcnkgb3duIGNhcm9sbGluZyBzdGFnZSBzaG93IGZlYXR1cmluZyBoaXMgRmFyIEZhciBBd2F5IHBhbHMgaW4gdGhpcyBtZXJyeSwgbXVzaWNhbCB0cmVhdCB3aXRoIGFsbCB0aGUgdHJpbW1pbmdzISBKb2luIGluIHRoZSBmdW4gYXMgdGhleSBicmluZyB0aGVpciBvd24gU2hyZWt0YWN1bGFyIHNwaXJpdCB0byBmZXN0aXZlIGhvbGlkYXkgc29uZ3MsIGEgZnVuIERvbmtleSBEZWNvcmF0aW9uIHNjcmFtYmxlLCBhbmQgYSBoaWxhcmlvdXMgdmlydHVhbCBZdWxlIExvZyB0aGF04oCZcyBzbyBmdW5ueeKApiBpdOKAmXMgb24gZmlyZS4iLCJwb3B1bGFyaXR5IjoxMC4yNTgsInBvc3Rlcl9wYXRoIjoiL2lrbG5EdURhSndkNjFlOFZVazRCcXVFR0p3by5qcGciLCJwcm9kdWN0aW9uX2NvbXBhbmllcyI6W3siaWQiOjUyMSwibG9nb19wYXRoIjoiL2tQN3Q2UndHejJBdnZUa3ZuSTF1dGVFd0hldC5wbmciLCJuYW1lIjoiRHJlYW1Xb3JrcyBBbmltYXRpb24iLCJvcmlnaW5fY291bnRyeSI6IlVTIn1dLCJwcm9kdWN0aW9uX2NvdW50cmllcyI6W3siaXNvXzMxNjZfMSI6IlVTIiwibmFtZSI6IlVuaXRlZCBTdGF0ZXMgb2YgQW1lcmljYSJ9XSwicmVsZWFzZV9kYXRlIjoiMjAxMC0xMi0wNyIsInJldmVudWUiOjAsInJ1bnRpbWUiOjgsInNwb2tlbl9sYW5ndWFnZXMiOlt7ImVuZ2xpc2hfbmFtZSI6IkVuZ2xpc2giLCJpc29fNjM5XzEiOiJlbiIsIm5hbWUiOiJFbmdsaXNoIn1dLCJzdGF0dXMiOiJSZWxlYXNlZCIsInRhZ2xpbmUiOiIiLCJ0aXRsZSI6IkRvbmtleSdzIENocmlzdG1hcyBTaHJla3RhY3VsYXIiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6NS44LCJ2b3RlX2NvdW50IjoxMzN9
+  recorded_at: Mon, 18 Jul 2022 20:01:08 GMT
+recorded_with: VCR 6.1.0

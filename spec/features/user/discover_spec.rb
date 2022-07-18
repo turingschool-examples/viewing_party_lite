@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'user discover page', :vcr do
 
   it 'shows top movies button' do
-    user1 = User.create!(email: "user1@example.com", name: "Jeff Casimir")
+    user1 = User.create!(email: "user1@example.com", name: "Jeff Casimir", password: 'test123', password_confirmation: 'test123')
 
     visit "/users/#{user1.id}/discover"
 
@@ -17,7 +17,7 @@ RSpec.describe 'user discover page', :vcr do
   end
 
   it 'has search button' do
-    user1 = User.create!(email: "user1@example.com", name: "Jeff Casimir")
+    user1 = User.create!(email: "user1@example.com", name: "Jeff Casimir", password: 'test123', password_confirmation: 'test123')
     visit "/users/#{user1.id}/discover"
     fill_in('Search', with: 'shrek')
     click_button 'Search'
