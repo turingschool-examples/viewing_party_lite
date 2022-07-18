@@ -1,22 +1,24 @@
 require 'rails_helper'
 
 RSpec.describe 'Movie Show Page', type: :feature do
-    before :each do
-        @user = User.create!(name: 'Badger', email: 'honey@gmail.com')
-        visit user_movie_path(@user.id, 278)
-    end
     
     it "has a button to create a viewing party" do
+        user = User.create!(name: 'Badger', email: 'honey3@gmail.com', password: 'password')
+        visit user_movie_path(user.id, 278)
         click_button "Create Viewing Party"
-        expect(current_path).to eq(new_user_movie_viewing_party_path(@user.id,278)) 
+        expect(current_path).to eq(new_user_movie_viewing_party_path(user.id,278)) 
     end
     
     it "has a button to return to discover page" do
+        user = User.create!(name: 'Badger', email: 'honey4@gmail.com', password: 'password')
+        visit user_movie_path(user.id, 278)
         click_button "Discover Movies"
-        expect(current_path).to eq(user_discover_index_path(@user.id)) 
+        expect(current_path).to eq(user_discover_index_path(user.id)) 
     end
-
+    
     it "displays all of movie details and reviews" do
+        user = User.create!(name: 'Badger', email: 'honey5@gmail.com', password: 'password')
+        visit user_movie_path(user.id, 278)
         expect(page).to have_content("Title: The Shawshank Redemption") 
         expect(page).to have_content("Average Vote: 8.7") 
         expect(page).to have_content("Runtime: 2 h 22 min") 

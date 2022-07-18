@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Landing/Home Page', type: :feature do
   before :each do
-    @user_1 = User.create!(name: 'Oscar', email: 'example@gmail.com')
-    @user_2 = User.create!(name: 'James', email: 'morning@gmail.com')
+    @user_1 = User.create!(name: 'Oscar', email: 'example@gmail.com', password: 'password')
+    @user_2 = User.create!(name: 'James', email: 'morning@gmail.com', password: 'password')
     visit '/'
   end
 

@@ -13,9 +13,9 @@ require 'rails_helper'
 RSpec.describe 'Viewing New Party Form' do
   it 'has a form to create a new viewing party' do
 
-    user_1 = User.create!(name: 'Zac Morris', email: 'zac@gmail.com')
-    user_2 = User.create!(name: 'Dee Torres', email: 'dee@gmail.com')
-    user_3 = User.create!(name: 'Rae Sull', email: 'rae@gmail.com')
+    user_1 = User.create!(name: 'Zac Morris', email: 'zac@gmail.com', password: 'password')
+    user_2 = User.create!(name: 'Dee Torres', email: 'dee@gmail.com', password: 'password')
+    user_3 = User.create!(name: 'Rae Sull', email: 'rae@gmail.com', password: 'password')
     visit new_user_movie_viewing_party_path(user_1.id, 278)
 
     expect(page).to have_content('The Shawshank Redemption')
@@ -32,9 +32,9 @@ RSpec.describe 'Viewing New Party Form' do
   end
 
   it "lists parties on all invited guests" do
-    user_1 = User.create!(name: 'Zac Morris', email: 'zac@gmail.com')
-    user_2 = User.create!(name: 'Dee Torres', email: 'dee@gmail.com')
-    user_3 = User.create!(name: 'Rae Sull', email: 'rae@gmail.com')
+    user_1 = User.create!(name: 'Zac Morris', email: 'zac@gmail.com', password: 'password')
+    user_2 = User.create!(name: 'Dee Torres', email: 'dee@gmail.com', password: 'password')
+    user_3 = User.create!(name: 'Rae Sull', email: 'rae@gmail.com', password: 'password')
     visit new_user_movie_viewing_party_path(user_1.id, 278)
 
     expect(page).to have_content('The Shawshank Redemption')
@@ -51,9 +51,9 @@ RSpec.describe 'Viewing New Party Form' do
   end
   
   it "does not create a party with duration is less than movie runtime" do
-    user_1 = User.create!(name: 'Zac Morris', email: 'zac@gmail.com')
-    user_2 = User.create!(name: 'Dee Torres', email: 'dee@gmail.com')
-    user_3 = User.create!(name: 'Rae Sull', email: 'rae@gmail.com')
+    user_1 = User.create!(name: 'Zac Morris', email: 'zac@gmail.com', password: 'password')
+    user_2 = User.create!(name: 'Dee Torres', email: 'dee@gmail.com', password: 'password')
+    user_3 = User.create!(name: 'Rae Sull', email: 'rae@gmail.com', password: 'password')
     visit new_user_movie_viewing_party_path(user_1.id, 278)
 
     expect(page).to have_content('The Shawshank Redemption')

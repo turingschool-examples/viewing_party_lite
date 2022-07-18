@@ -11,7 +11,7 @@
   <% if party.host == @user.email %>
     <p>Title: <%= party.movie_name %></p>
     <p><img src="https://image.tmdb.org/t/p/original<%= @movies.find {|movie| movie.movie_id == party.movie_id}.poster %>" alt="Movie Poster" style="width:400px;height:480px;"></p>
-    <p>Date: <%= party.date %></p>
+    <p>Date: <%= party.date.strftime("%T") %></p>
     <p>Start Time: <%= party.start_time %></p>
     <p>Duration: <%= party.duration / 60 %> h <%= party.duration % 60 %> min</p>
     <p>Guests </p>
@@ -28,7 +28,7 @@
       <% @movies.find %>
       <p><img src="https://image.tmdb.org/t/p/original<%= @movies.find { |movie| movie.movie_id == party.movie_id }.poster%>" alt="Movie Poster" style="width:400px;height:480px;"></p>
       <p>Host Email: <%= party.host %></p>
-      <p>Date: <%= party.date %></p>
+      <p>Date: <%= party.date.strftime("%T") %></p>
       <p>Start Time: <%= party.start_time %></p>
       <p>Duration: <%= party.duration / 60 %> h <%= party.duration % 60 %> min</p>
       <p>Guests </p>

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'User Dashboard/Show Page', type: :feature do
 
   it "user dashboard displays name and a has button to discover movies" do
-    user = User.create!(name: 'Badger', email: 'honey.new@gmail.com')
+    user = User.create!(name: 'Badger', email: 'honey.new@gmail.com', password: 'password')
     visit user_path(user.id)
     expect(page).to have_content("Badger's Dashboard")
     click_button 'Discover Movies'
@@ -12,16 +12,16 @@ RSpec.describe 'User Dashboard/Show Page', type: :feature do
   end
 
   it "has a section that listing viewing parties" do
-    user = User.create!(name: 'Badger', email: 'honey.new@gmail.com')
+    user = User.create!(name: 'Badger', email: 'honey.new@gmail.com', password: 'password')
     visit user_path(user.id)
     expect(page).to have_content("Viewing Parties")
   end
 
   it 'displays movie image, title, date and time, my name in bold, and all users for invited events' do
-    user_1 = User.create!(name: 'Chealsea', email: 'chealsea@comcast.net')
-    user_2 = User.create!(name: 'Leo', email: 'leo@comcast.net')
-    user_3 = User.create!(name: 'Pedro', email: 'pedro@comcast.net')
-    user_4 = User.create!(name: 'Noel', email: 'noel@comcast.net')
+    user_1 = User.create!(name: 'Chealsea', email: 'chealsea@comcast.net', password: 'password')
+    user_2 = User.create!(name: 'Leo', email: 'leo@comcast.net', password: 'password')
+    user_3 = User.create!(name: 'Pedro', email: 'pedro@comcast.net', password: 'password')
+    user_4 = User.create!(name: 'Noel', email: 'noel@comcast.net', password: 'password')
 
     party_1 = Party.create!(host: 'chealsea@comcast.net',
                             movie_name: 'The Shawshank Redemption',
@@ -59,10 +59,10 @@ RSpec.describe 'User Dashboard/Show Page', type: :feature do
   end
 
   it 'displays movie image, title, date and time, i am host, and all users' do
-    user_1 = User.create!(name: 'Chealsea', email: 'chealsea@comcast.net')
-    user_2 = User.create!(name: 'Leo', email: 'leo@comcast.net')
-    user_3 = User.create!(name: 'Pedro', email: 'pedro@comcast.net')
-    user_4 = User.create!(name: 'Noel', email: 'noel@comcast.net')
+    user_1 = User.create!(name: 'Chealsea', email: 'chealsea@comcast.net', password: 'password')
+    user_2 = User.create!(name: 'Leo', email: 'leo@comcast.net', password: 'password')
+    user_3 = User.create!(name: 'Pedro', email: 'pedro@comcast.net', password: 'password')
+    user_4 = User.create!(name: 'Noel', email: 'noel@comcast.net', password: 'password')
 
     party_1 = Party.create!(host: 'chealsea@comcast.net',
                             movie_name: 'The Shawshank Redemption',

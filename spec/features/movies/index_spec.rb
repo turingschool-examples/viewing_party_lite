@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Movies Page', type: :feature do
   it 'displays top 20 movies as links and their vote average' do
-    user = User.create!(name: 'Badger', email: 'honey.new@gmail.com')
+    user = User.create!(name: 'Badger', email: 'honey.new@gmail.com', password: 'password')
     visit user_discover_index_path(user.id)
 
     click_button 'Top Rated Movies'
@@ -13,7 +13,7 @@ RSpec.describe 'Movies Page', type: :feature do
   end
 
   it 'displays keyword result with link to discover page' do
-    user = User.create!(name: 'Badger', email: 'honey.new@gmail.com')
+    user = User.create!(name: 'Badger', email: 'honey.new@gmail.com', password: 'password')
     visit user_discover_index_path(user.id)
 
     fill_in :q, with: "Rings"
