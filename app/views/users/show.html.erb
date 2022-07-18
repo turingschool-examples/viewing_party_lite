@@ -1,1 +1,40 @@
+<div id='header'>
+<h1><%= @user.name %>'s Dashboard</h1>
+</div>
+
 <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %>
+
+
+<div id='invited_to'>
+    <h2>Parties invited to</h2>
+    <% @user.viewing_parties.each do | party | %>
+        <h2> <%= party.movie_title %></h2>
+        <p>Movie image: <%= "party.image" %>  </p>
+        <p>Date: <%= party.start_date %>  </p>
+        <p>Start time: <%= party.start_time %>  </p>
+        <p>Host: <%= party.host_id %>  </p>
+        <h3> Attendees </h3>
+        <% party.users.each do |attendee| %>
+            <p><%= attendee.name %>  </p>
+        <% end %>
+    <% end %>
+</div>
+
+<div id='hosting'>
+    <h2>Parties hosting<h2>
+        <% @user.parties_hosted.each do |party| %>
+        <h2> <%= party.movie_title %></h2>
+        <p>Movie image: <%= "party.image" %>  </p>
+        <p>Date: <%= party.start_date %>  </p>
+        <p>Start time: <%= party.start_time %>  </p>
+        <p>Host: <%= party.host_id %>  </p>
+        <h3> Attendees </h3>
+        <% party.users.each do |attendee| %>
+            <p><%= attendee.name %>  </p>
+        <% end %>
+    <% end %>
+
+
+</div>
+
+        <%#% link_to party.movie_title, <movie_path>  %>
