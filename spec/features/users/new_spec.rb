@@ -67,4 +67,25 @@ RSpec.describe 'register new user' do
     end
   end
 
+    describe 'saddest path' do
+    it "can create a new user" do
+     
+      visit '/register'
+
+      expect(page).to have_button("Register New User")
+
+      expect(current_path).to eq('/register')
+
+      fill_in "Name", with: ""
+      fill_in "Email", with: "lee@gmail.com"
+      fill_in :username, with: "Leemister420"
+      fill_in "Password", with: "Sandsofscarab"
+      fill_in "Password Confirmation", with: "Sandsofscarab"
+
+      click_button "Register New User"
+
+      expect(page).to have_content("Name can't be blank")
+    end
+  end
+
 end

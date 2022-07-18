@@ -6,13 +6,16 @@ class UsersController < ApplicationController
   
 
   def create
-    user = User.create(user_params)
-    if user.save
+    user = User.new(user_params)
+    # checks to see if user can be saved, and will save it if possible
+    if user.save 
       redirect_to "/users/#{user.id}"
       flash[:success] = "Welcome, #{user.username}!"
-    else User.all == []
+    else 
       redirect_to '/register'
-      flash[:failure] = user.errors.full_messages.first
+      user.errors.full_messages.each do |message|
+        flash[:failure] = message
+      end
     end
   end
 
