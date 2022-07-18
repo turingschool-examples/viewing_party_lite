@@ -16,14 +16,14 @@ RSpec.describe ViewingParty, type: :model do
 
   describe 'instance methods' do
     it 'can display a title', :vcr do
-      user1 = User.create!(name: 'Casey', email: 'EternalSquiggles@Geemail.com')
+      user1 = User.create!(name: 'Casey', email: 'EternalSquiggles@Geemail.com', password: 'sparkles')
       spirit = user1.viewing_parties.create!(duration: 180, date: Date.today, time: Time.now, movie_id: 129)
 
       expect(spirit.display_title).to eq("Spirited Away")
     end
 
     it 'will return an image path', :vcr do
-      user1 = User.create!(name: 'Casey', email: 'EternalSquiggles@Geemail.com')
+      user1 = User.create!(name: 'Casey', email: 'EternalSquiggles@Geemail.com', password: 'sparkles')
       godfather = user1.viewing_parties.create!(duration: 200, date: Date.today, time: Time.now, movie_id: 238)
 
       expect(godfather.display_image).to eq("http://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg")
@@ -32,10 +32,10 @@ RSpec.describe ViewingParty, type: :model do
 
   describe 'class methods' do
     before(:each) do
-      @user1 = User.create!(name: 'Sai', email: 'SaiLent@overlord.com')
-      @user2 = User.create!(name: 'Parker', email: 'GriffithDidNothing@Wrong.com')
-      @user3 = User.create!(name: 'Deannah', email: 'FrogStomper9000@Muahaha.com')
-      @user4 = User.create!(name: 'Casey', email: 'EternalPancakes@Geemail.com')
+      @user1 = User.create!(name: 'Sai', email: 'SaiLent@overlord.com', password: 'haisall123')
+      @user2 = User.create!(name: 'Parker', email: 'GriffithDidNothing@Wrong.com', password: 'parkersbeard')
+      @user3 = User.create!(name: 'Deannah', email: 'FrogStomper9000@Muahaha.com', password: 'sparkles')
+      @user4 = User.create!(name: 'Casey', email: 'EternalPancakes@Geemail.com', password: 'taikawaititi')
 
       @spirit = @user1.viewing_parties.create!(duration: 180, date: Date.today, time: Time.now, movie_id: 129)
       PartyUser.create!(user_id: @user2.id, viewing_party_id: @spirit.id)

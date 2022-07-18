@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "User Movie Results Page", type: :feature do
   before :each do
-    @user1 = User.create!(name: 'Sai', email: 'SaiLent@overlord.com')
-    @user2 = User.create!(name: 'Parker', email: 'GriffithDidNothing@Wrong.com')
+    @user1 = User.create!(name: 'Sai', email: 'SaiLent@overlord.com', password: 'haisall123')
+    @user2 = User.create!(name: 'Parker', email: 'GriffithDidNothing@Wrong.com', password: 'parkersbeard')
   end
   describe 'discover movie button' do
     it 'shows movie title and vote average when query is top 20', :vcr do

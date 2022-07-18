@@ -21,7 +21,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def user_params
-    params.permit(:name, :email)
-  end
+  private
+    def user_params
+      params.permit(:name, :email, :password)
+    end
 end
