@@ -12,7 +12,7 @@ RSpec.describe 'New User' do
     fill_in 'Name', with: 'Jimbo'
     fill_in 'Email', with: 'Jimbo@gmail.com'
     fill_in 'Password', with: 'Jimbo@gmail.com'
-    fill_in 'Password Confrimation', with: 'Jimbo@gmail.com'
+    fill_in :password_confirmation, with: 'Jimbo@gmail.com'
     click_button 'Register'
 
     expect(current_path).to eq("/users/#{User.last.id}")
@@ -26,7 +26,7 @@ RSpec.describe 'New User' do
     fill_in 'Name', with: 'Jimbo'
     fill_in 'Email', with: 'Jimbo@gmail.com'
     fill_in 'Password', with: "password123"
-    fill_in 'Password Confirmation', with: "password123"
+    fill_in :password_confirmation, with: "password123"
     click_button 'Register'
 
     expect(page).to have_content("Jimbo")
