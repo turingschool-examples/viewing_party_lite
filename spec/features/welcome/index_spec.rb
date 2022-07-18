@@ -4,8 +4,8 @@ require 'rails_helper'
 
 RSpec.describe 'landing page', type: :feature do
   it 'displays the title of the application, a button to create new users, and existing users' do
-    user1 = User.create!(name: 'Jane Powell', email: 'jpowell38@gmail.com')
-    user2 = User.create!(name: 'Ann Miller', email: 'amiller@gmail.com')
+    user1 = User.create!(name: 'Jane Powell', email: 'jpowell38@gmail.com', password: 'test123')
+    user2 = User.create!(name: 'Ann Miller', email: 'amiller@gmail.com', password: 'test123')
     visit '/'
 
     expect(page).to have_content('Viewing Party Light')

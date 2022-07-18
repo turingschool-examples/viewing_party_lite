@@ -7,15 +7,9 @@ class UsersController < ApplicationController
     user = User.create(user_params)
     if user.save
       redirect_to user_path(user)
-    elsif user.errors.full_messages == ['Email has already been taken']
-      flash[:alert] = 'Oops, that email is already in use! Please try again with a unique email.'
-      redirect_to '/register'
-    elsif user.errors.full_messages == ["Name can't be blank"]
-      flash[:alert] = 'Please enter a valid name.'
-      redirect_to '/register'
     else
-      flash[:alert] = 'Please enter a valid name and unique e-mail address.'
       redirect_to '/register'
+      flash[:error] = user.errors.full_messages
     end
   end
 
@@ -30,6 +24,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end

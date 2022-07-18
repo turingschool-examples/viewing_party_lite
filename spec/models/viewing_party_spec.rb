@@ -40,8 +40,8 @@ RSpec.describe ViewingParty, type: :model do
 
     describe '.host' do
       it 'returns the host of the viewing party', :vcr do
-        jane = User.create!(name: 'Jane', email: 'eleven@upsidedown.com')
-        dustin = User.create!(name: 'Dustin', email: 'hellfire@hawkins.edu')
+        jane = User.create!(name: 'Jane', email: 'eleven@upsidedown.com', password: 'test123')
+        dustin = User.create!(name: 'Dustin', email: 'hellfire@hawkins.edu', password: 'test123')
         user_party1 = UserViewingParty.create!(user: dustin, viewing_party: @party1, hosting: true)
         user_party2 = UserViewingParty.create!(user: jane, viewing_party: @party1, hosting: false)
 

@@ -4,9 +4,9 @@ require 'rails_helper'
 
 RSpec.describe 'new viewing party page' do
   before :each do
-    @user1 = User.create!(name: 'Jane Powell', email: 'jpowell38@gmail.com')
-    @user2 = User.create!(name: 'Judy Garland', email: 'jgarland@gmail.com')
-    @user3 = User.create!(name: 'Fred Astaire', email: 'tapshoes@gmail.com')
+    @user1 = User.create!(name: 'Jane Powell', email: 'jpowell38@gmail.com', password: 'test123')
+    @user2 = User.create!(name: 'Judy Garland', email: 'jgarland@gmail.com', password: 'test123')
+    @user3 = User.create!(name: 'Fred Astaire', email: 'tapshoes@gmail.com', password: 'test123')
     attributes = JSON.parse(File.read('./spec/fixtures/movie_details.json'), symbolize_names: true)
     attributes2 = JSON.parse(File.read('./spec/fixtures/lock_stock_movie_details.json'), symbolize_names: true)
 

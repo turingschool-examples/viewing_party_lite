@@ -4,8 +4,9 @@ require 'rails_helper'
 
 describe 'user show page (dashboard)' do
   before do
-    @user1 = User.create!(name: 'Jane', email: 'eleven@upsidedown.com')
-    @user2 = User.create!(name: 'Dustin', email: 'hellfire@hawkins.edu')
+    @user1 = User.create!(name: 'Jane', email: 'eleven@upsidedown.com', password: 
+      'test123')
+    @user2 = User.create!(name: 'Dustin', email: 'hellfire@hawkins.edu', password: 'test123')
   end
   it 'displays the users name' do
     visit user_path(@user1)

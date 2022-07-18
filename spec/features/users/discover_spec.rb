@@ -4,7 +4,8 @@ require 'rails_helper'
 
 describe 'user discover page' do
   before do
-    @user1 = User.create!(name: 'Jane', email: 'eleven@upsidedown.com')
+    @user1 = User.create!(name: 'Jane', email: 'eleven@upsidedown.com', password: 
+      'test123')
     visit "users/#{@user1.id}/discover"
   end
 

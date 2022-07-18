@@ -3,7 +3,8 @@ require 'rails_helper'
 
 describe 'movie results/index page' do
   before do
-    @user1 = User.create!(name: 'Jane', email: 'eleven@upsidedown.com')
+    @user1 = User.create!(name: 'Jane', email: 'eleven@upsidedown.com', password: 
+      'test123')
     visit "users/#{@user1.id}/discover"
   end
   it 'links to each movie results details/show page', :vcr do

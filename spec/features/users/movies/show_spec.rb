@@ -4,7 +4,8 @@ require 'rails_helper'
 
 RSpec.describe 'movie details page' do
   before :each do
-    @user1 = User.create!(name: 'Jane Powell', email: 'jpowell38@gmail.com')
+    @user1 = User.create!(name: 'Jane', email: 'eleven@upsidedown.com', password: 
+      'test123')
     attributes = JSON.parse(File.read('./spec/fixtures/movie_details.json'), symbolize_names: true)
 
     @movie = Movie.new(attributes)
