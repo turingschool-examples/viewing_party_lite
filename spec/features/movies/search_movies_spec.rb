@@ -1,14 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe 'Search Movies', :vcr do
-  it 'shows movies based on search', :vcr do
+  xit 'shows movies based on search', :vcr do
     user = User.create!(name: "Bernie", email: "bernie@gmail.com")
     visit user_movies_discover_path(user)
 
     fill_in 'query', with: 'Harry'
 
     click_button 'Search'
-    save_and_open_page
 
     expect(current_path).to eq("/users/#{user.id}/movies_search")
     expect(page.status_code).to eq 200

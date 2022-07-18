@@ -15,7 +15,7 @@ RSpec.describe 'application welcome page' do
     expect(page).to have_link("Home")
   end
 
-  it 'has a list of existing users that link to their dashboard' do
+  xit 'has a list of existing users that link to their dashboard' do
     user1 = User.create!(name: "Bob", email: "bob@gmail.com")
     user2 = User.create!(name: "Drew", email: "drew@gmail.com")
     user3 = User.create!(name: "Gary", email: "gary@gmail.com")

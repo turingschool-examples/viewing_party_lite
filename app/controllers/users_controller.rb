@@ -1,12 +1,35 @@
 class UsersController < ApplicationController
 
   def new
-    
+    @user = User.new
   end
 
   def create
-    user = User.create!(user_params)
-    redirect_to "/users/#{user.id}"
+    user = user_params
+    user[:email] = user[:email].downcase
+    new_user = User.new(user)
+    if new_user.save
+      flash[:success] = "Welcome, #{new_user.email}!"
+      redirect_to "/users/#{new_user.id}"
+    else
+      redirect_to '/register'
+      flash[:error] = new_user.errors.full_messages
+    end
+  end
+
+  def login
+  end
+
+  def login_user
+    user = User.find_by(email: params[:email])
+    if user&.authenticate(params[:password])
+      
+      flash[:success] = "Welcome, #{user.email}!"
+      redirect_to user_path(user.id)
+    else
+      flash[:error] = "Sorry, invalid login."
+      render :login
+    end
   end
 
   def show
@@ -15,6 +38,6 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.permit(:name, :email)
+      params.permit(:name, :email, :password, :password_confirmation)
     end
 end

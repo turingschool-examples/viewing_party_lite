@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
- get '/', to: 'welcome#index'
+ root 'welcome#index'
  get '/register', to: 'users#new'
- get '/users/:id', to: 'users#show'
+#  get '/users/:id', to: 'users#show'
+ get '/login', to: 'users#login'
+ post '/login', to: 'users#login_user'
 #  post '/users/:id/movies/:id/parties/new', to: 'parties#create'
  
  resources :users, only: %i[create show new] do 
