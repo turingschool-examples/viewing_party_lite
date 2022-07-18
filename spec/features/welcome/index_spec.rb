@@ -12,8 +12,8 @@ RSpec.describe 'landing page', type: :feature do
     expect(page).to have_link('Home')
     click_link('Home')
     expect(current_path).to eq('/')
-    expect(page).to have_button('Create a New User')
-    click_button('Create a New User')
+    expect(page).to have_button('Register')
+    click_button('Register')
     expect(current_path).to eq('/register')
     visit '/'
     expect(page).to have_content('Existing Users:')
