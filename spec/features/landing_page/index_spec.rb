@@ -1,13 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe LandingPage: :Index do
-<<<<<<< HEAD
-  it 'has a landing page' do
-     visit '/'
-=======
   it 'has a landing page with a title' do
     visit root_path
->>>>>>> 27fa4b75a770f2e7873d3344fdd4702b23a3e042
 
     expect(page).to have_content('Viewing Party!!(lite)')
   end
