@@ -11,18 +11,18 @@ RSpec.describe 'register new user' do
 
     fill_in "Name", with: "Lee"
     fill_in "Email", with: "lee@gmail.com"
-    fill_in "Username", with: "Leemister420"
+    fill_in :username, with: "Leemister420"
     fill_in "Password", with: "Sandsofscarab"
 
     click_button "Register New User"
-
+    
+    expect(page).to have_content("Welcome, Leemister420")
     
     user = User.first 
     expect(current_path).to eq("/users/#{user.id}")
     
     expect(user).to be_a(User)
-    expect(user.username).to be_a(string)
-    expect(page).to have_content("Welcome Leemister420")
+    expect(user.username).to be_a(String)
   end
 
 end

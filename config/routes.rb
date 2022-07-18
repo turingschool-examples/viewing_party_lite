@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
  get '/', to: 'welcome#index'
  get '/register', to: 'users#new'
+ post '/register', to: 'users#create'
  get '/users/:id', to: 'users#show'
 #  post '/users/:id/movies/:id/parties/new', to: 'parties#create'
  

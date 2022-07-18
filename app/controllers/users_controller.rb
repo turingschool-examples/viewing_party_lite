@@ -3,10 +3,12 @@ class UsersController < ApplicationController
   def new
     
   end
+  
 
   def create
-    user = User.create!(user_params)
+    user = User.create(user_params)
     redirect_to "/users/#{user.id}"
+    flash[:success] = "Welcome, #{user.username}!"
   end
 
   def show
