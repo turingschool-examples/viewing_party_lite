@@ -4,13 +4,9 @@ RSpec.describe User do
   describe 'validations' do
     it { should validate_presence_of(:email) }
     it { should validate_presence_of(:name) }
-<<<<<<< HEAD
     it { should validate_uniqueness_of(:email) }
     it { should validate_presence_of(:password_digest) }
     it { should have_secure_password }
-=======
-    it { should validate_uniqueness_of :email }
->>>>>>> 27fa4b75a770f2e7873d3344fdd4702b23a3e042
   end
 
   describe 'relationships' do
