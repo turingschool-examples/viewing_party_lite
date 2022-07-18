@@ -4,8 +4,8 @@ require 'rails_helper'
 
 RSpec.describe 'New Viewing Party' do
   it 'has a form to create new party' do
-    user1 = User.create!(name: 'Michael', email: 'Mike@mail.com')
-    user2 = User.create!(name: 'Jackson', email: 'Jacko@mail.com')
+    user1 = User.create!(name: 'Michael', email: 'Mike@mail.com', password: "dog")
+    user2 = User.create!(name: 'Jackson', email: 'Jacko@mail.com', password: "dog")
 
     visit "/users/#{user1.id}/movies/45649/viewing_party/new"
 
@@ -16,10 +16,10 @@ RSpec.describe 'New Viewing Party' do
 
   it 'completed form creates new viewing party' do
     all_parties = Party.all.count
-    user1 = User.create!(name: 'Cletus', email: 'Cletus@mail.com')
-    user2 = User.create!(name: 'Rusty', email: 'Rusty@yahoo.com')
-    user3 = User.create!(name: 'Bubba', email: 'Bubba@live.com')
-    user3 = User.create!(name: 'Willie', email: 'Willie@hotmail.com')
+    user1 = User.create!(name: 'Cletus', email: 'Cletus@mail.com', password: "dog")
+    user2 = User.create!(name: 'Rusty', email: 'Rusty@yahoo.com', password: "dog")
+    user3 = User.create!(name: 'Bubba', email: 'Bubba@live.com', password: "dog")
+    user3 = User.create!(name: 'Willie', email: 'Willie@hotmail.com', password: "dog")
 
     visit "/users/#{user1.id}/movies/45649/viewing_party/new"
 
