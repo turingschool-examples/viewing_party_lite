@@ -5,7 +5,7 @@ RSpec.describe '#create' do
     jose = User.create!(name: 'Jose Andres', email: 'jose.andres@gmail.com', password: '111',
                         password_confirmation: '111')
 
-    visit sign_in_path
+    visit login_path
 
     expect(page).to_not have_content('Logout')
 
@@ -22,7 +22,7 @@ RSpec.describe '#create' do
     jose = User.create!(name: 'Jose Andres', email: 'jose.andres@gmail.com', password: '111',
                         password_confirmation: '111')
 
-    visit sign_in_path
+    visit login_path
 
     within '#form' do
       fill_in :email, with: jose.email
@@ -30,6 +30,6 @@ RSpec.describe '#create' do
       click_on 'Sign In'
     end
 
-    expect(current_path).to eq(sign_in_path)
+    expect(current_path).to eq(login_path)
   end
 end
