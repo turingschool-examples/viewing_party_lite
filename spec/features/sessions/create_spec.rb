@@ -31,5 +31,6 @@ RSpec.describe '#create' do
     end
 
     expect(current_path).to eq(login_path)
+    expect(page).to have_content('Invalid Email or Password')
   end
 end
