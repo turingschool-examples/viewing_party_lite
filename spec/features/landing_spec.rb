@@ -63,4 +63,30 @@ RSpec.describe 'the landing page', type: :feature do
     expect(current_path).to eq("/users/#{user1.id}")
     expect(page).to have_content("Welcome, Sai!")
   end
+
+  it 'will flash error if user credentials are bad(password)' do
+    user1 = User.create!(name: 'Sai', email: 'SaiLent@overlord.com', password: "haisall123")
+
+    visit '/login'
+
+    fill_in :email, with: 'SaiLent@overlord.com'
+    fill_in :password, with: 'shaisall12r'
+    click_button("Log In")
+
+    expect(current_path).to eq("/login")
+    expect(page).to have_content("Sorry, your credentials are bad")
+  end
+
+  it 'will flash error if user credentials are bad(email)' do
+    user1 = User.create!(name: 'Sai', email: 'SaiLent@overlord.com', password: "haisall123")
+
+    visit '/login'
+
+    fill_in :email, with: 'SiLent@overlord.com'
+    fill_in :password, with: 'haisall123'
+    click_button("Log In")
+
+    expect(current_path).to eq("/login")
+    expect(page).to have_content("Sorry, your credentials are bad")
+  end
 end
