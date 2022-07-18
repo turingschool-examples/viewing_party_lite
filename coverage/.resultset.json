@@ -7,46 +7,14 @@
           null
         ]
       },
-      "/Users/cadenjarrett/mod_3_work/challenges/viewing_party_lite/app/controllers/users_controller.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/cadenjarrett/mod_3_work/challenges/viewing_party_lite/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          0,
-          null,
-          null
-        ]
-      },
       "/Users/cadenjarrett/mod_3_work/challenges/viewing_party_lite/app/models/user.rb": {
         "lines": [
           1,
           1,
           1,
           null,
+          1,
+          1,
           1,
           1,
           null
@@ -146,6 +114,18 @@
         "branches": {
         }
       },
+      "/Users/cadenjarrett/mod_3_work/challenges/viewing_party_lite/app/controllers/application_controller.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/cadenjarrett/mod_3_work/challenges/viewing_party_lite/app/controllers/movies_controller.rb": {
         "lines": [
           0,
@@ -176,6 +156,32 @@
           0,
           0,
           null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/cadenjarrett/mod_3_work/challenges/viewing_party_lite/app/controllers/users_controller.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
           0
         ],
         "branches": {
@@ -307,6 +313,6 @@
         }
       }
     },
-    "timestamp": 1658173957
+    "timestamp": 1658174340
   }
 }
