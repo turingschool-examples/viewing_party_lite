@@ -31,4 +31,22 @@ RSpec.describe 'New User' do
 
     expect(page).to have_content("Jimbo")
   end
+
+  it "registration sad path" do
+    visit '/register'
+
+    click_button 'Register'
+    expect(current_path).to eq('/register')
+    expect(page).to have_content("Password can't be blank")
+    expect(page).to have_content("Name can't be blank")
+    expect(page).to have_content("Email can't be blank")
+
+    fill_in 'Name', with: 'Jimbo'
+    fill_in 'Email', with: 'Jimbo@gmail.com'
+    fill_in 'Password', with: "password123"
+    fill_in :password_confirmation, with: "password12"
+    click_button 'Register'
+    expect(current_path).to eq('/register')
+    expect(page).to have_content("Password confirmation doesn't match Password")
+  end
 end
