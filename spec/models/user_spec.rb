@@ -17,8 +17,8 @@ RSpec.describe User do
   describe 'instance methods' do
     describe '#parties_hosted' do
       it 'shows all parties that the user is invited to' do
-        user1 = User.create!(name: 'Jeff', email: 'dajeffe@gmail.com')
-        user2 = User.create!(name: 'Geoff', email: 'dajeff2e@gmail.com')
+        user1 = User.create!(name: 'Jeff', email: 'dajeffe@gmail.com', password: 'test123', password_confirmation: 'test123')
+        user2 = User.create!(name: 'Geoff', email: 'dajeff2e@gmail.com', password: 'test123', password_confirmation: 'test123')
         party1 = ViewingParty.create!(movie_title: 'Hot Rod',
                                       duration: 90,
                                       attendees: ['Mark', 'Julie', 'Steve', user1],
