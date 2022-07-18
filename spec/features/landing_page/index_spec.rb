@@ -18,8 +18,8 @@ RSpec.describe LandingPage: :Index do
   end
 
   it 'contains a list of all users that link to the users show page' do
-    user1 = User.create!(name: 'Jim', email: 'Jimmyb@gmail.com')
-    user2 = User.create!(name: 'John', email: 'johnnybgud@gmail.com')
+    user1 = User.create!(name: 'Jim', email: 'Jimmyb@gmail.com', password: 'test123', password_confirmation: 'test123')
+    user2 = User.create!(name: 'John', email: 'johnnybgud@gmail.com', password: 'test123', password_confirmation: 'test123')
 
     visit root_path
 
