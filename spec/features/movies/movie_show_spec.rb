@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'Movie show page' do
   it 'shows the movie title, average rating, runtime, genres, summary, cast, number of reviews, review authors, and those authors details' do
-    user = User.create!(name: 'Bob', email: 'bob@email.com', password: "dog")
+    user = User.create!(name: 'Bob', email: 'bob@email.com', password: "dog", password_confirmation: "dog")
     visit "users/#{user.id}/movies/296/show"
 
     expect(page).to have_content('Terminator 3: Rise of the Machines')

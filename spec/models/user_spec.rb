@@ -13,14 +13,14 @@ RSpec.describe User, type: :model do
     it { should validate_presence_of(:name)}
     it { should validate_presence_of(:email)}
     it { should validate_presence_of(:password)}
-    it { should validate_uniqueness_of(:email)}
+    it { should validate_presence_of(:password_confirmation)}
     it { should have_secure_password }
 
   describe 'methods' do
     it 'methods return array of invited and hosted parties' do
-      user1 = User.create(name: "Jim", email: 'Jim@mail.com', password: "dog")
-      user2 = User.create(name: "Tommy", email: 'Tommy@mail.com', password: "dog")
-      user3 = User.create(name: "Hoju", email: 'Hoju@mail.com', password: "dog")
+      user1 = User.create(name: "Jim", email: 'Jim@mail.com', password: "dog", password_confirmation: "dog")
+      user2 = User.create(name: "Tommy", email: 'Tommy@mail.com', password: "dog", password_confirmation: "dog")
+      user3 = User.create(name: "Hoju", email: 'Hoju@mail.com', password: "dog", password_confirmation: "dog")
       party1 = Party.create!(duration: 300, date: Date.today, start_time: Time.now, user_id: user1.id, movie_id: 298, movie_name: "Shawshank Redemption")
       partyuser1 = PartyUser.create!(party: party1, user: user1)
       partyuser2 = PartyUser.create!(party: party1, user: user2)
