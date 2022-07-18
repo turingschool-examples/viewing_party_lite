@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_secure_password
 
   validates :email, uniqueness: true
-  validates_presence_of :name, :email, :password, :password_confirmation
+  validates_presence_of :name, :email, :password_digest
 
   def invited_parties
     parties.where.not(user_id: id)
