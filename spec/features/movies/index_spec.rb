@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'Movie Results Page' do
   it 'Shows top 20 movies', :vcr do
-    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com')
+    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com', password: 'Isuck', password_confirmation: 'Isuck')
 
     visit "/users/#{@user1.id}/discover"
 
@@ -22,7 +22,7 @@ RSpec.describe 'Movie Results Page' do
   end
 
   it 'can search for a movie', :vcr do
-    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com')
+    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com', password: 'Isuck', password_confirmation: 'Isuck')
 
     visit "/users/#{@user1.id}/discover"
 
@@ -36,7 +36,7 @@ RSpec.describe 'Movie Results Page' do
   end
 
   it 'has a button to return to discover page', :vcr do
-    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com')
+    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com', password: 'Isuck', password_confirmation: 'Isuck')
 
     visit "/users/#{@user1.id}/movies"
 

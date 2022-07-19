@@ -4,8 +4,8 @@ require 'rails_helper'
 
 RSpec.describe 'User Discover Page' do
   it 'discover button' do
-    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com')
-    @user2 = User.create!(name: 'NickT', email: 'NickT@jimar.com')
+    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com', password: 'Isuck', password_confirmation: 'Isuck')
+    @user2 = User.create!(name: 'NickT', email: 'NickT@jimar.com', password: 'Isuck', password_confirmation: 'Isuck')
 
     visit user_path(@user1.id)
 
@@ -14,7 +14,7 @@ RSpec.describe 'User Discover Page' do
   end
 
   it 'has a button to see top 20 movies' do
-    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com')
+    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com', password: 'Isuck', password_confirmation: 'Isuck')
 
     visit "/users/#{@user1.id}/discover"
     expect(page).to have_button('Top Rated Movies')

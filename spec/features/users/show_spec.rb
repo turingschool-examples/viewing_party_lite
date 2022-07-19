@@ -4,8 +4,8 @@ require 'rails_helper'
 
 RSpec.describe 'User Show Page' do
   it 'show me a users dashboard ' do
-    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com')
-    @user2 = User.create!(name: 'NickT', email: 'NickT@jimar.com')
+    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com', password: 'Isuck', password_confirmation: 'Isuck')
+    @user2 = User.create!(name: 'NickT', email: 'NickT@jimar.com', password: 'Isuck', password_confirmation: 'Isuck')
 
     visit user_path(@user1.id)
 
