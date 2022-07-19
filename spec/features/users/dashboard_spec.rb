@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'user dashboard' do
     before :each do
-        @user1 = User.create!(email: 'jake.taffer@gmail.com', name: 'Jake')
+        @user1 = User.create!(email: 'jake.taffer@gmail.com', name: 'Jake', username: 'jakeypoo', password:'54321')
     end
 
     xit 'lists the users name at the top of the page' do

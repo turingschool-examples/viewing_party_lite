@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Movie details page', :vcr do
     before :each do
-        @user1 = User.create!(email: 'jake.taffer@gmail.com', name: 'Jake')
+        @user1 = User.create!(email: 'jake.taffer@gmail.com', name: 'Jake', username: 'jakeypoo', password:'54321')
     end
 
     xit 'has a button to create a viewing party' do
