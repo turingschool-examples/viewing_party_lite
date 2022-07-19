@@ -61,7 +61,7 @@ describe 'user show page (dashboard)' do
 
     within "#viewing-party#{party1.id}" do
       click_link(party1.movie.title)
-      expect(current_path).to eq(user_movie_path(@user1.id, party1.movie.id))
+      expect(current_path).to eq("/movies/#{party1.movie.id}")
     end
   end
 

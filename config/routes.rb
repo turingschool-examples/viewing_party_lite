@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get '/movies', to: 'user_movies#index'
   get '/movies/:movie_id', to: 'user_movies#show'
   resources :users, only: %i[create show] do
-    resources :movies, only: %i[index show], controller: :user_movies, param: :movie_id
+    # resources :movies, only: %i[index show], controller: :user_movies, param: :movie_id
   end
 
   resources :viewing_parties, only: %i[create]
