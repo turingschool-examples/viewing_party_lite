@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     if current_user
       @user = find_user
     else
-      flash[:error] = "Please log in to access your dashboard!"
+      flash[:error] = 'Please log in to access your dashboard!'
       redirect_to '/'
     end
   end

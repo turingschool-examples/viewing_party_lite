@@ -7,7 +7,7 @@ class ViewingPartiesController < ApplicationController
       @users = User.other_users(session[:user_id])
       @movie = MovieFacade.movie_details(params[:movie_id])
     else
-      flash[:error] = "You must be logged in to create a new party!"
+      flash[:error] = 'You must be logged in to create a new party!'
       redirect_to "/movies/#{params[:movie_id]}"
     end
   end

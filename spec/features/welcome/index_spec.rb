@@ -22,13 +22,11 @@ RSpec.describe 'landing page', type: :feature do
       expect(current_path).to eq('/login')
     end
 
-    it "does not allow the visitor to access a dashboard without being logged in" do
-
-      click_button ('Dashboard')
+    it 'does not allow the visitor to access a dashboard without being logged in' do
+      click_button('Dashboard')
       expect(current_path).to eq('/')
       expect(page).to have_content('Please log in to access your dashboard!')
     end
-    
   end
 
   context 'current session/user logged in' do
@@ -69,9 +67,9 @@ RSpec.describe 'landing page', type: :feature do
       expect(current_path).to eq('/')
     end
 
-    it "allows a user to access their dashboard" do
-      click_button ('Dashboard')
-      
+    it 'allows a user to access their dashboard' do
+      click_button('Dashboard')
+
       expect(current_path).to eq('/dashboard')
       expect(page).to have_content("Jane Powell's Dashboard")
     end
