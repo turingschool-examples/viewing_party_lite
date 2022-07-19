@@ -1,8 +1,14 @@
 <h1>Welcome to Viewing Party Lite</h1>
-<p><%= button_to "Login", login_path, method: :get %> </p>
-<p><%= button_to "Create New User", register_path, method: :get %></p>
+<% if current_user %>
+  <p><%= button_to "Logout", '/logout', method: :delete %> </p>
+<% else %>
+  <p><%= button_to "Login", login_path, method: :get %> </p>
+  <p><%= button_to "Create New User", register_path, method: :get %></p>
+<% end %>
 
+<% if current_user %>
 <h3>Users:</h3>
 <% @users.each do |user| %>
-  <p><%= link_to "#{user.name}", '/users/dashboard' %></p>
+  <p><%= "#{user.email}" %></p>
+<% end %>
 <% end %>
