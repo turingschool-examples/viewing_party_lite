@@ -10,7 +10,7 @@ RSpec.describe "Login page " do
     fill_in 'email', with: 'jim@jim.com'
     fill_in 'password', with: 'Isuck'
     click_button "Login"
-    expect(current_path).to eq(user_path(@jim))
+    expect(current_path).to eq('/users/dashboard')
   end
 
   it "takes you back to the login page if no match found" do

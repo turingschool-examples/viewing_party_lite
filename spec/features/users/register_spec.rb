@@ -10,7 +10,7 @@ RSpec.describe 'User Registration Page' do
     fill_in 'password', with: 'test123'
     fill_in 'password_confirmation', with: 'test123'
     click_on 'Create User'
-    expect(current_path).to eq(user_path(User.last.id))
+    expect(current_path).to eq('/users/dashboard')
   end
 
   it 'gives an error when not all fields are filled out ' do

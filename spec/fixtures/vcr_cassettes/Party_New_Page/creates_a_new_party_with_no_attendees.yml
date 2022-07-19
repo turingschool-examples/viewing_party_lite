@@ -18,59 +18,47 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Sun, 10 Jul 2022 20:40:42 GMT
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json;charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Vary:
-      - Accept-Encoding
+      Date:
+      - Tue, 19 Jul 2022 20:17:23 GMT
       Server:
-      - BunnyCDN-IL-807
-      Cdn-Pullzone:
-      - '775334'
-      Cdn-Uid:
-      - 29af4e0e-bcbd-4fcb-8635-74ddc38a1ebf
-      Cdn-Requestcountrycode:
-      - US
-      Access-Control-Allow-Methods:
-      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      - openresty
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
       Cache-Control:
       - public, max-age=28800
-      Etag:
-      - W/"29d8d6c49198d0580a21d7b53efe806e"
       X-Memc:
       - HIT
       X-Memc-Key:
       - 8f3dc9fbf00ec8ef64b14b7080f4013a23d639da
       X-Memc-Age:
-      - '5681'
+      - '4768'
       X-Memc-Expires:
-      - '10699'
-      Cdn-Proxyver:
-      - '1.02'
-      Cdn-Requestpullsuccess:
-      - 'True'
-      Cdn-Requestpullcode:
-      - '200'
-      Cdn-Cachedat:
-      - 07/10/2022 16:36:33
-      Cdn-Edgestorageid:
-      - '807'
-      Cdn-Status:
-      - '200'
-      Cdn-Requestid:
-      - 24e11209b55600d6cf3b3d2bd7a2dc04
-      Cdn-Cache:
-      - HIT
+      - '13083'
+      Etag:
+      - W/"dc7fe0703d43640f41a7a9d18ad74a66"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 430a5c7d468e3c5a94e3cb6e4a5ab50e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DFW56-P5
+      X-Amz-Cf-Id:
+      - MoinvQUl_ZCKjBdZRF3mtjMWtRpA-auhRMz5Za8qVnYaOKyNZvfHxA==
+      Age:
+      - '1148'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
@@ -78,15 +66,15 @@ http_interactions:
         channel primal male aggression into a shocking new form of therapy. Their
         concept catches on, with underground \"fight clubs\" forming in every town,
         until an eccentric gets in the way and ignites an out-of-control spiral toward
-        oblivion.","popularity":67.778,"poster_path":"/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg","production_companies":[{"id":508,"logo_path":"/7PzJdsLGlR7oW4J0J5Xcd0pHGRg.png","name":"Regency
+        oblivion.","popularity":58.68,"poster_path":"/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg","production_companies":[{"id":508,"logo_path":"/7PzJdsLGlR7oW4J0J5Xcd0pHGRg.png","name":"Regency
         Enterprises","origin_country":"US"},{"id":711,"logo_path":"/tEiIH5QesdheJmDAqQwvtN60727.png","name":"Fox
         2000 Pictures","origin_country":"US"},{"id":4700,"logo_path":"/A32wmjrs9Psf4zw0uaixF0GXfxq.png","name":"The
         Linson Company","origin_country":"US"},{"id":20555,"logo_path":"/hD8yEGUBlHOcfHYbujp71vD8gZp.png","name":"Taurus
         Film","origin_country":"DE"},{"id":54051,"logo_path":null,"name":"Atman Entertainment","origin_country":""},{"id":54052,"logo_path":null,"name":"Knickerbocker
         Films","origin_country":"US"}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
-        Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.4,"vote_count":24354}'
-  recorded_at: Sun, 10 Jul 2022 20:40:42 GMT
+        Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.4,"vote_count":24405}'
+  recorded_at: Tue, 19 Jul 2022 20:36:31 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/550?api_key=fake_api_key
@@ -105,59 +93,47 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Sun, 10 Jul 2022 20:40:42 GMT
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json;charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Vary:
-      - Accept-Encoding
+      Date:
+      - Tue, 19 Jul 2022 20:17:23 GMT
       Server:
-      - BunnyCDN-IL-807
-      Cdn-Pullzone:
-      - '775334'
-      Cdn-Uid:
-      - 29af4e0e-bcbd-4fcb-8635-74ddc38a1ebf
-      Cdn-Requestcountrycode:
-      - US
-      Access-Control-Allow-Methods:
-      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      - openresty
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
       Cache-Control:
       - public, max-age=28800
-      Etag:
-      - W/"29d8d6c49198d0580a21d7b53efe806e"
       X-Memc:
       - HIT
       X-Memc-Key:
       - 8f3dc9fbf00ec8ef64b14b7080f4013a23d639da
       X-Memc-Age:
-      - '5681'
+      - '4768'
       X-Memc-Expires:
-      - '10699'
-      Cdn-Proxyver:
-      - '1.02'
-      Cdn-Requestpullsuccess:
-      - 'True'
-      Cdn-Requestpullcode:
-      - '200'
-      Cdn-Cachedat:
-      - 07/10/2022 16:36:33
-      Cdn-Edgestorageid:
-      - '807'
-      Cdn-Status:
-      - '200'
-      Cdn-Requestid:
-      - a2706ae129dcf2a117babed3bf860760
-      Cdn-Cache:
-      - HIT
+      - '13083'
+      Etag:
+      - W/"dc7fe0703d43640f41a7a9d18ad74a66"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 ac72c6dfa21a23a34396bec16bd466a6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DFW56-P5
+      X-Amz-Cf-Id:
+      - o-RHf5ro5BbdAVefByJEHYmkh9-t0uSR3gGdplEB95cRKtedcNTalw==
+      Age:
+      - '1148'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
@@ -165,15 +141,15 @@ http_interactions:
         channel primal male aggression into a shocking new form of therapy. Their
         concept catches on, with underground \"fight clubs\" forming in every town,
         until an eccentric gets in the way and ignites an out-of-control spiral toward
-        oblivion.","popularity":67.778,"poster_path":"/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg","production_companies":[{"id":508,"logo_path":"/7PzJdsLGlR7oW4J0J5Xcd0pHGRg.png","name":"Regency
+        oblivion.","popularity":58.68,"poster_path":"/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg","production_companies":[{"id":508,"logo_path":"/7PzJdsLGlR7oW4J0J5Xcd0pHGRg.png","name":"Regency
         Enterprises","origin_country":"US"},{"id":711,"logo_path":"/tEiIH5QesdheJmDAqQwvtN60727.png","name":"Fox
         2000 Pictures","origin_country":"US"},{"id":4700,"logo_path":"/A32wmjrs9Psf4zw0uaixF0GXfxq.png","name":"The
         Linson Company","origin_country":"US"},{"id":20555,"logo_path":"/hD8yEGUBlHOcfHYbujp71vD8gZp.png","name":"Taurus
         Film","origin_country":"DE"},{"id":54051,"logo_path":null,"name":"Atman Entertainment","origin_country":""},{"id":54052,"logo_path":null,"name":"Knickerbocker
         Films","origin_country":"US"}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
-        Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.4,"vote_count":24354}'
-  recorded_at: Sun, 10 Jul 2022 20:40:42 GMT
+        Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.4,"vote_count":24405}'
+  recorded_at: Tue, 19 Jul 2022 20:36:31 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/550?api_key=fake_api_key
@@ -192,59 +168,47 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Date:
-      - Sun, 10 Jul 2022 20:40:42 GMT
       Content-Type:
-      - application/json; charset=utf-8
+      - application/json;charset=utf-8
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
-      Vary:
-      - Accept-Encoding
+      Date:
+      - Tue, 19 Jul 2022 20:17:23 GMT
       Server:
-      - BunnyCDN-IL-807
-      Cdn-Pullzone:
-      - '775334'
-      Cdn-Uid:
-      - 29af4e0e-bcbd-4fcb-8635-74ddc38a1ebf
-      Cdn-Requestcountrycode:
-      - US
-      Access-Control-Allow-Methods:
-      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      - openresty
       Access-Control-Allow-Origin:
       - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
       Cache-Control:
       - public, max-age=28800
-      Etag:
-      - W/"29d8d6c49198d0580a21d7b53efe806e"
       X-Memc:
       - HIT
       X-Memc-Key:
       - 8f3dc9fbf00ec8ef64b14b7080f4013a23d639da
       X-Memc-Age:
-      - '5681'
+      - '4768'
       X-Memc-Expires:
-      - '10699'
-      Cdn-Proxyver:
-      - '1.02'
-      Cdn-Requestpullsuccess:
-      - 'True'
-      Cdn-Requestpullcode:
-      - '200'
-      Cdn-Cachedat:
-      - 07/10/2022 16:36:33
-      Cdn-Edgestorageid:
-      - '807'
-      Cdn-Status:
-      - '200'
-      Cdn-Requestid:
-      - 6fd4e7576772e5c61010dc0d2981e8b3
-      Cdn-Cache:
-      - HIT
+      - '13083'
+      Etag:
+      - W/"dc7fe0703d43640f41a7a9d18ad74a66"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 ee1081c43ae751e8b5da74ead3c2cb90.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DFW56-P5
+      X-Amz-Cf-Id:
+      - ZIVR3zy5PCJPsWhWrO-VZIV5LhfP1gMA2kGzbyvgonSlzjbmOnjvOA==
+      Age:
+      - '1148'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
@@ -252,13 +216,13 @@ http_interactions:
         channel primal male aggression into a shocking new form of therapy. Their
         concept catches on, with underground \"fight clubs\" forming in every town,
         until an eccentric gets in the way and ignites an out-of-control spiral toward
-        oblivion.","popularity":67.778,"poster_path":"/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg","production_companies":[{"id":508,"logo_path":"/7PzJdsLGlR7oW4J0J5Xcd0pHGRg.png","name":"Regency
+        oblivion.","popularity":58.68,"poster_path":"/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg","production_companies":[{"id":508,"logo_path":"/7PzJdsLGlR7oW4J0J5Xcd0pHGRg.png","name":"Regency
         Enterprises","origin_country":"US"},{"id":711,"logo_path":"/tEiIH5QesdheJmDAqQwvtN60727.png","name":"Fox
         2000 Pictures","origin_country":"US"},{"id":4700,"logo_path":"/A32wmjrs9Psf4zw0uaixF0GXfxq.png","name":"The
         Linson Company","origin_country":"US"},{"id":20555,"logo_path":"/hD8yEGUBlHOcfHYbujp71vD8gZp.png","name":"Taurus
         Film","origin_country":"DE"},{"id":54051,"logo_path":null,"name":"Atman Entertainment","origin_country":""},{"id":54052,"logo_path":null,"name":"Knickerbocker
         Films","origin_country":"US"}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
-        Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.4,"vote_count":24354}'
-  recorded_at: Sun, 10 Jul 2022 20:40:42 GMT
+        Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.4,"vote_count":24405}'
+  recorded_at: Tue, 19 Jul 2022 20:36:31 GMT
 recorded_with: VCR 6.1.0
