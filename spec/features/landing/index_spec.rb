@@ -25,10 +25,27 @@ RSpec.describe 'Landing Page' do
       expect(page).to have_content('Viewing Party Lite')
     end
 
+    it 'displays logout/dashboard functionality instead of login/create' do
+      expect(page).to have_link 'Logout'
+      expect(page).to_not have_link 'Log In'
+      expect(page).to_not have_link 'Create an Account'
+    end
+
     it 'displays all current users' do
       expect(page).to have_content('jose.andres@gmail.com')
       expect(page).to have_content('amy.adams@gmail.com')
       expect(page).to have_content('quincy.jones@gmail.com')
+    end
+
+    it 'has a working logout button' do
+      click_on 'Logout'
+      expect(page).to_not have_link 'Logout'
+      expect(page).to have_link 'Log In'
+      expect(page).to have_link 'Create an Account'
+
+      expect(page).to_not have_content('jose.andres@gmail.com')
+      expect(page).to_not have_content('amy.adams@gmail.com')
+      expect(page).to_not have_content('quincy.jones@gmail.com')
     end
   end
 end
