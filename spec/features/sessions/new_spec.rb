@@ -10,7 +10,6 @@ describe 'user login page' do
     User.create!(name: 'Jane', email: 'eleven@upsidedown.com', password: 
         'test123')
 
-    fill_in 'name', with: 'Jane'
     fill_in 'email', with: 'eleven@upsidedown.com'
     fill_in 'password', with: 'test123'
     click_button('Log In')
@@ -24,7 +23,6 @@ describe 'user login page' do
     User.create!(name: 'Jane', email: 'eleven@upsidedown.com', password: 
         'test123')
 
-    fill_in 'name', with: 'Jane'
     fill_in 'email', with: 'eleven@upsidedown.com'
     fill_in 'password', with: 'testing123'
     click_button('Log In')

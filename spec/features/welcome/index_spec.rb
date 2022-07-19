@@ -5,6 +5,14 @@ require 'rails_helper'
 RSpec.describe 'landing page', type: :feature do
   it 'displays the title of the application, a button to create new users, and existing users' do
     user1 = User.create!(name: 'Jane Powell', email: 'jpowell38@gmail.com', password: 'test123')
+    
+    visit '/login'
+  
+    fill_in :email, with: 'jpowell38@gmail.com'
+    fill_in :password, with: 'test123'
+
+    click_button 'Log In'
+    
     user2 = User.create!(name: 'Ann Miller', email: 'amiller@gmail.com', password: 'test123')
     visit '/'
 

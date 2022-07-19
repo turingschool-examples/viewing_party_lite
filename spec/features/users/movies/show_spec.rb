@@ -6,6 +6,13 @@ RSpec.describe 'movie details page' do
   before :each do
     @user1 = User.create!(name: 'Jane', email: 'eleven@upsidedown.com', password: 
       'test123')
+    visit '/login'
+
+    fill_in :email, with: 'eleven@upsidedown.com'
+    fill_in :password, with: 'test123'
+
+    click_button 'Log In'
+
     attributes = JSON.parse(File.read('./spec/fixtures/movie_details.json'), symbolize_names: true)
 
     @movie = Movie.new(attributes)
@@ -21,7 +28,7 @@ RSpec.describe 'movie details page' do
     visit "/users/#{@user1.id}/movies/#{@movie.id}"
     expect(page).to have_button('Discover Page')
     click_button('Discover Page')
-    expect(current_path).to eq("/users/#{@user1.id}/discover")
+    expect(current_path).to eq("/users/discover")
   end
 
   it 'displays the title, vote average, runtime, and genres', :vcr do

@@ -5,12 +5,13 @@ Rails.application.routes.draw do
 
   get '/', to: 'welcome#index'
   get '/register', to: 'users#new'
-  
+
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
 
-  get '/users/:id/discover', to: 'users#discover'
-
+  get '/users/discover', to: 'users#discover'
+  get '/users/movies', to: 'user_movies#index'
+  get '/users/movies/:movie_id', to: 'user_movies#show'
   resources :users, only: %i[create show] do
     resources :movies, only: %i[index show], controller: :user_movies, param: :movie_id
   end

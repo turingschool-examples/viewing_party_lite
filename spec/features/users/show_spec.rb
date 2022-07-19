@@ -6,6 +6,12 @@ describe 'user show page (dashboard)' do
   before do
     @user1 = User.create!(name: 'Jane', email: 'eleven@upsidedown.com', password: 
       'test123')
+      visit '/login'
+  
+      fill_in :email, with: 'eleven@upsidedown.com'
+      fill_in :password, with: 'test123'
+ 
+      click_button 'Log In'
     @user2 = User.create!(name: 'Dustin', email: 'hellfire@hawkins.edu', password: 'test123')
   end
   it 'displays the users name' do
@@ -19,7 +25,7 @@ describe 'user show page (dashboard)' do
     visit user_path(@user1)
     click_button('Discover Movies')
 
-    expect(current_path).to eq("/users/#{@user1.id}/discover")
+    expect(current_path).to eq("/users/discover")
   end
 
   it 'has a section to display the users viewing parties', :vcr do
