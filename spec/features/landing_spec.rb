@@ -6,10 +6,6 @@ RSpec.describe 'Landing Page' do
   before :each do
     @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com', password: 'test123', password_confirmation: 'test123')
     @user2 = User.create!(name: 'NickT', email: 'NickT@jimar.com', password: 'test123', password_confirmation: 'test123')
-    visit '/login'
-    fill_in 'email', with: 'jimar@jimar.com'
-    fill_in 'password', with: 'test123'
-    click_on 'Login'
   end
 
   it 'shows the title of the application' do
@@ -23,25 +19,6 @@ RSpec.describe 'Landing Page' do
     expect(page).to have_button('Create New User')
     click_button 'Create New User'
     expect(current_path).to eq(register_path)
-  end
-
-  it 'list existing users which links to an existing dashboards' do
-    visit root_path
-    expect(page).to have_link('Jimar')
-    expect(page).to have_link('NickT')
-    click_link 'Jimar'
-    expect(current_path).to eq('/users/dashboard')
-  end
-
-  it 'have a link to go back to the home page on all pages' do
-    visit root_path
-    expect(page).to have_link('Home')
-    click_link 'Home'
-    expect(current_path).to eq(root_path)
-    click_link 'Jimar'
-    expect(current_path).to eq('/users/dashboard')
-    click_link 'Home'
-    expect(current_path).to eq(root_path)
   end
 
   it "has a link to the login page" do
