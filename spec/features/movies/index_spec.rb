@@ -5,11 +5,11 @@ RSpec.describe '#index' do
     @jose = User.create!(name: 'Jose Andres', email: 'jose.andres@gmail.com', password: '111',
                          password_confirmation: '111')
 
-    visit user_movies_discover_path(@jose)
+    visit discover_path
 
     click_on 'Find Top Rated Movies'
 
-    expect(current_path).to eq(user_movies_path(@jose))
+    expect(current_path).to eq(movies_path)
 
     expect(page).to have_link('Discover Page')
 

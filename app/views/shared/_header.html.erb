@@ -14,13 +14,20 @@
           <li class="nav-item">
             <a class="nav-link" href=<%= logout_path %> method="delete">Logout</a>
           </li>
-
+          <li class="nav-item">
+            <a class="nav-link" href=<%= dashboard_path %>>My Dashboard</a>
+          </li>
+          <% if Current.user.admin? %>
+            <li class="nav-item">
+              <a class="nav-link" href=<%= admin_dashboard_path %>>Admin Dashboard</a>
+            </li>
+          <%end %>
         <%else %>
           <li class="nav-item">
-            <a class="nav-link" href=<%= login_path %>>Sign In</a>
+            <a class="nav-link" href=<%= login_path %>>Log In</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href=<%= register_path %>>Create New User</a>
+            <a class="nav-link" href=<%= register_path %>>Create an Account</a>
           </li>
         <% end %>
       </ul>

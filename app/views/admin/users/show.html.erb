@@ -1,5 +1,5 @@
 <h3>
-  <%= Current.user.name %>'s Dashboard
+  <%= @user.name %>'s Dashboard
 </h3>
 <hr>
 
@@ -26,7 +26,7 @@
         <% end %>
         <hr>
         <% party[:party].users.each do |user| %>
-          <% if user.id == Current.user.id %>
+          <% if user.id == @user.id %>
             <p>
               <strong><%= user.name %></strong>
             </p>

@@ -1,10 +1,10 @@
-<p type="button" class="btn btn-outline-primary"><%= link_to "Discover Page", user_movies_discover_path(@user) %></p>
+<p type="button" class="btn btn-outline-primary"><%= link_to "Discover Page", discover_path%></p>
 <hr>
 
 <% @movies.each do |movie| %>
   <div id=<%= movie.id %>>
 
-    <%= link_to movie.title, user_movie_path(@user, movie.id)%>
+    <%= link_to movie.title, movie_path(movie.id)%>
     <p>
       Vote Average:
       <%= movie.vote_average %></p>
