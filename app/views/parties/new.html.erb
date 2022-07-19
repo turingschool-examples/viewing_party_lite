@@ -2,7 +2,7 @@
 
 <hr>
 
-<%= form_with url: "/users/#{@host.id}/viewing-party/dashboard", local: true do |f| %>
+<%= form_with url: "/users/viewing-party/dashboard", local: true do |f| %>
 
   <%= f.label :duration %>
   <%= f.number_field :duration, value: @movie.runtime %>

@@ -8,7 +8,8 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
-      redirect_to user_path(user.id)
+      session[:user_id] = user.id
+      redirect_to '/users/dashboard'
       flash[:success] = "Welcome, #{user.name}"
     else
       flash[:error] = user.errors.full_messages
@@ -17,15 +18,15 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
   end
 
   def discover
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
   end
 
   def movies
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
 
     @movies = if params[:search].present?
                 MovieFacade.movie_by_keyword(params[:search])
@@ -35,7 +36,7 @@ class UsersController < ApplicationController
   end
 
   def movie_details
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
     @movie = MovieFacade.movie_details(params[:movie_id])
     @cast = MovieFacade.movie_cast(params[:movie_id])
     @reviews = MovieFacade.movie_reviews(params[:movie_id])
@@ -47,7 +48,8 @@ class UsersController < ApplicationController
   def login_user
     user = User.find_by(email: params[:email])
     if user&.authenticate(params[:password])
-      redirect_to user_path(user.id)
+      session[:user_id] = user.id
+      redirect_to '/users/dashboard'
       flash[:success] = "Welcome back, #{user.email}!"
     else
       redirect_to '/login'
