@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'Movies Detail/Show Page' do
   it 'should have a button for creating a viewing party', :vcr do
-    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com')
+    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com', password: 'Isuck', password_confirmation: 'Isuck')
     visit "/users/#{@user1.id}/movies/550"
 
     click_button('Create Viewing Party')
@@ -13,7 +13,7 @@ RSpec.describe 'Movies Detail/Show Page' do
   end
 
   it 'has a return to movie discovery page button', :vcr do
-    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com')
+    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com', password: 'Isuck', password_confirmation: 'Isuck')
     visit "/users/#{@user1.id}/movies/550"
 
     click_button('Discover Page')
@@ -22,7 +22,7 @@ RSpec.describe 'Movies Detail/Show Page' do
   end
 
   it 'Shows Movie Details', :vcr do
-    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com')
+    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com', password: 'Isuck', password_confirmation: 'Isuck')
 
     visit "/users/#{@user1.id}/movies/550"
     # save_and_open_page

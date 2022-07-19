@@ -4,10 +4,10 @@ require 'rails_helper'
 
 RSpec.describe 'Party Dashboard Page', :vcr do
   it 'creates a new party' do
-    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com')
-    @user2 = User.create!(name: 'NickT', email: 'NickT@jimar.com')
-    @user3 = User.create!(name: 'Frank', email: 'Franks@jimar.com')
-    @user4 = User.create!(name: 'Timmay', email: 'Tim@jimar.com')
+    @user1 = User.create!(name: 'Jimar', email: 'jimar@jimar.com', password: 'Isuck', password_confirmation: 'Isuck')
+    @user2 = User.create!(name: 'NickT', email: 'NickT@jimar.com', password: 'Isuck', password_confirmation: 'Isuck')
+    @user3 = User.create!(name: 'Frank', email: 'Franks@jimar.com', password: 'Isuck', password_confirmation: 'Isuck')
+    @user4 = User.create!(name: 'Timmay', email: 'Tim@jimar.com', password: 'Isuck', password_confirmation: 'Isuck')
 
     visit "/users/#{@user1.id}/movies/550/viewing-party/new"
 
