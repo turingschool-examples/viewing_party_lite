@@ -19,4 +19,9 @@ Rails.application.routes.draw do
 
   post '/viewing_parties', to: 'viewing_parties#create'
   get '/movies/:movie_id/viewing_party/new', to: 'viewing_parties#new'
+
+  namespace :admin do
+    get '/dashboard', to: 'dashboard#index'
+    resources :users, only: %i[show]
+  end
 end

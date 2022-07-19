@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_220_718_174_202) do
+ActiveRecord::Schema.define(version: 20_220_719_222_548) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20_220_718_174_202) do
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
     t.string 'password_digest'
+    t.integer 'role', default: 0
   end
 
   create_table 'viewing_parties', force: :cascade do |t|

@@ -9,7 +9,13 @@ class User < ApplicationRecord
 
   has_secure_password
 
+  enum role: %w[default admin]
+
   def self.other_users(id)
     User.where.not(id: id)
+  end
+
+  def self.default_users
+    where(role: 'default')
   end
 end
