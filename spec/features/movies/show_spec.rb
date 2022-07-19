@@ -34,7 +34,6 @@ RSpec.describe '#show' do
       visit movie_path(@movie_id)
 
       expect(page).to have_content('Reservoir Dogs')
-
       expect(page).to have_content('Runtime: 1h 39mins')
       expect(page).to have_content('Genre(s):')
       expect(page).to have_content('Crime')
