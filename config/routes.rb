@@ -4,8 +4,8 @@ Rails.application.routes.draw do
  root 'welcome#index'
  get '/register', to: 'users#new'
 #  get '/users/:id', to: 'users#show'
- get '/login', to: 'users#login'
- post '/login', to: 'users#login_user'
+ get '/login', to: 'sessions#new'
+ post '/login', to: 'sessions#create'
 #  post '/users/:id/movies/:id/parties/new', to: 'parties#create'
  
  resources :users, only: %i[create show new] do 
