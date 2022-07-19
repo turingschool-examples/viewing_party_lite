@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/users/dashboard', to: 'users#show'
   get '/users/discover', to: 'users#discover'
 
+  delete '/logout', to: 'sessions#destroy'
   resources :users, except: [:new, :show]
   resources :parties
 
