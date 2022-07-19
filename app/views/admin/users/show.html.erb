@@ -1,0 +1,39 @@
+<center> 
+<h3> <%= @user.name %>'s Dashboard </h3>
+<p> <%= button_to "Discover Movies", "/discover", method: :get %>
+ <br><br><hr>
+<h3> Viewing Parties </h3> <br>
+    <%@user.viewing_parties.each do |party|%>
+        <div id="viewing-party<%= party.id%>">
+            <%= image_tag("https://image.tmdb.org/t/p/w185#{party.movie.image_uri}")%>
+            <p><b><%= link_to "#{party.movie.title}", "/movies/#{party.movie.id}" %> </b></p>
+            <i> <p><%= party.formatted_date %></p> </i>
+            <i> <p><%= party.formatted_time %></p> </i> 
+            <% if @user == party.host %>
+                <p> <b>You are hosting!</b> </p>
+                <p> Friends Invited: </p>
+                <div class="attendees">
+                <% party.users.each do |user| %>
+                    <% if user != @user %>
+                        <%=user.name%> (<%=user.email %>) <br>
+                    <%end%> 
+                <%end%>
+                </div>
+            <% else %>
+                <p> <b><%= party.host.name %> is hosting a party!</b> </p>
+                <p> Friends Invited: </p>
+                <div class="attendees">
+                <% party.users.each do |user| %>
+                    <% if user != party.host %>
+                        <% if user == @user%>
+                            <b> <%=user.name%> (<%=user.email %>) </b><br>
+                        <% else %>
+                            <%=user.name%> (<%=user.email %>) <br>
+                        <% end %>
+                    <% end %>
+                <%end%> 
+                </div>
+            <%end%>
+        </div>
+    <%end%>
+</center>

@@ -1,0 +1,8 @@
+<center>
+<h1> Admin Dashboard </h1>
+<hr>
+<h3> Users: </h3>
+<ol><% @users.each do |user| %>
+   <li> <%= link_to "#{user.email}", admin_user_path(user.id) %> </li>
+<%end%></ol>
+</center>
