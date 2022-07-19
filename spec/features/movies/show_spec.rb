@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'Movie details page', :vcr do
     before :each do
-        @user1 = User.create!(email: 'jake.taffer@gmail.com', name: 'Jake', username: 'jakeypoo', password:'54321')
+        @user1 = User.create!(email: 'jake.taffer@gmail.com', name: 'Jake', password:'54321')
     end
 
-    xit 'has a button to create a viewing party' do
+    it 'has a button to create a viewing party' do
         visit user_movies_discover_path(@user1.id)
         click_on 'Top Rated'
         

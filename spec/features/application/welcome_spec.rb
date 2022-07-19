@@ -15,12 +15,12 @@ RSpec.describe 'application welcome page' do
     expect(page).to have_link("Home")
   end
 
-  xit 'has a list of existing users that link to their dashboard' do
-    user1 = User.create!(name: "Bob", email: "bob@gmail.com")
-    user2 = User.create!(name: "Drew", email: "drew@gmail.com")
-    user3 = User.create!(name: "Gary", email: "gary@gmail.com")
-    user4 = User.create!(name: "Sue", email: "sue@gmail.com")
-    user5 = User.create!(name: "Lou", email: "lou@gmail.com")
+  it 'has a list of existing users that link to their dashboard' do
+    user1 = User.create!(name: "Bob", email: "bob@gmail.com", password: 'test')
+    user2 = User.create!(name: "Drew", email: "drew@gmail.com", password: 'test')
+    user3 = User.create!(name: "Gary", email: "gary@gmail.com", password: 'test')
+    user4 = User.create!(name: "Sue", email: "sue@gmail.com", password: 'test')
+    user5 = User.create!(name: "Lou", email: "lou@gmail.com", password: 'test')
     visit '/'
     within "#user-#{user1.id}" do
       expect(page).to have_content("Bob")
