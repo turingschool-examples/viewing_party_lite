@@ -1,6 +1,7 @@
 <h1>Viewing Party</h1>
 
-<%= link_to "Create user", "/register" %>
+<%= link_to "Create user", "/register" %><br>
+<%= link_to "Log In", '/login' %>
 <% @users.each do |user| %>
-<%= link_to user.name, "/users/#{user.id}" %>
+<%= link_to user.name, "/users/#{user.id}" %><br>
 <%end%>
