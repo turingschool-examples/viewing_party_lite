@@ -29,14 +29,14 @@ RSpec.describe 'landing page', type: :feature do
       expect(page).to have_link("jpowell38@gmail.com's Dashboard")
       expect(page).to_not have_link("amiller@gmail.com's Dashboard")
       click_link("jpowell38@gmail.com's Dashboard")
-      expect(current_path).to eq("/users/#{user1.id}")
+      expect(current_path).to eq("/dashboard")
       visit '/'
     end
     within '#user-1' do
       expect(page).to have_link("amiller@gmail.com's Dashboard")
       expect(page).to_not have_link("jpowell38@gmail.com's Dashboard")
       click_link("amiller@gmail.com's Dashboard")
-      expect(current_path).to eq("/users/#{user2.id}")
+      expect(current_path).to eq("/dashboard")
     end
   end
 end

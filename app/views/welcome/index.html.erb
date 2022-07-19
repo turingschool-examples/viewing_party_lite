@@ -4,7 +4,7 @@
 <h3>Existing Users: </h3>
 <% @users.each_with_index do |user, index| %>
   <div id="user-<%= index %>">
-    <%= link_to "#{user.email}'s Dashboard", "/users/#{user.id}" %>
+    <%= link_to "#{user.email}'s Dashboard", "/dashboard" %>
   </div>  
 <% end %>
 </center>

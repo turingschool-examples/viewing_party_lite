@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     user = User.create(user_params)
     if user.save
       session[:user_id] = user.id
-      redirect_to user_path(user)
+      redirect_to '/dashboard'
     else
       redirect_to '/register'
       flash[:error] = user.errors.full_messages

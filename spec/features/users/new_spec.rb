@@ -18,7 +18,7 @@ describe 'user new/registration page' do
     user = User.find_by(email: "eleven@upsidedown.com")
     expect(user).to_not have_attribute(:password)
     expect(user.password_digest).to_not eq('password123')
-    expect(current_path).to eq(user_path(user))
+    expect(current_path).to eq('/dashboard')
     expect(page).to have_content("Jane's Dashboard")
   end
 

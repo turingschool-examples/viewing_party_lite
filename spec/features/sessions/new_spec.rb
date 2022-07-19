@@ -15,7 +15,7 @@ describe 'user login page' do
     click_button('Log In')
     user = User.find_by(email: "eleven@upsidedown.com")
 
-    expect(current_path).to eq(user_path(user))
+    expect(current_path).to eq('/dashboard')
     expect(page).to have_content("Jane's Dashboard")
   end
 

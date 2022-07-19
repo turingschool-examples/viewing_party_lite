@@ -15,14 +15,14 @@ describe 'user show page (dashboard)' do
     @user2 = User.create!(name: 'Dustin', email: 'hellfire@hawkins.edu', password: 'test123')
   end
   it 'displays the users name' do
-    visit user_path(@user1)
+    visit '/dashboard'
 
     expect(page).to have_content("Jane's Dashboard")
     expect(page).to_not have_content("Dustin's Dashboard")
   end
 
   it 'has a button to link to the users movie discover page', :vcr do
-    visit user_path(@user1)
+    visit '/dashboard'
     click_button('Discover Movies')
 
     expect(current_path).to eq("/discover")
@@ -39,7 +39,7 @@ describe 'user show page (dashboard)' do
     user_party3 = UserViewingParty.create!(user: @user1, viewing_party: party2, hosting: false)
     user_party4 = UserViewingParty.create!(user: @user2, viewing_party: party2, hosting: true)
 
-    visit user_path(@user1)
+    visit '/dashboard'
 
     within "#viewing-party#{party1.id}" do
       find("img[src='https://image.tmdb.org/t/p/w185/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg']")
@@ -57,7 +57,7 @@ describe 'user show page (dashboard)' do
     party1 = ViewingParty.create!(date: Date.today, start_time: Time.now, duration: 180, movie_id: 120)
     user_party1 = UserViewingParty.create!(user: @user1, viewing_party: party1, hosting: true)
 
-    visit user_path(@user1)
+    visit '/dashboard'
 
     within "#viewing-party#{party1.id}" do
       click_link(party1.movie.title)
@@ -75,7 +75,7 @@ describe 'user show page (dashboard)' do
     user_party3 = UserViewingParty.create!(user: @user1, viewing_party: party2, hosting: false)
     user_party4 = UserViewingParty.create!(user: @user2, viewing_party: party2, hosting: true)
 
-    visit user_path(@user1)
+    visit '/dashboard'
 
     within "#viewing-party#{party1.id}" do
       expect(page).to have_content('You are hosting!')
