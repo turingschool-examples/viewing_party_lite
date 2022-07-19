@@ -1,11 +1,14 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+  before_action :find_user, only: [:show, :discover]
+
   def new; end
 
   def create
     user = User.create(user_params)
     if user.save
+      session[:user_id] = user.id
       redirect_to user_path(user)
     else
       redirect_to '/register'
@@ -14,30 +17,20 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    # @user = User.find(params[:id])
   end
 
   def discover
-    @user = User.find(params[:id])
+    # @user = User.find(params[:id])
   end
 
-  def login_form
-
-  end
-
-  def login_user
-    user = User.find_by(email: params[:email]) 
-    if user&.authenticate(params[:password])
-      redirect_to user_path(user)
-    else 
-      redirect_to '/login'
-      flash[:error] = "Invalid Credentials, try again."
-    end
-
-  end
   private
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def find_user
+    @user = User.find(params[:id])
   end
 end
