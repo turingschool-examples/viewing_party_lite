@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'Search Movies', :vcr do
-  xit 'shows movies based on search', :vcr do
-    user = User.create!(name: "Bernie", email: "bernie@gmail.com")
+  it 'shows movies based on search', :vcr do
+    user = User.create!(name: "Bernie", email: "bernie@gmail.com", password: 'test')
     visit user_movies_discover_path(user)
 
     fill_in 'query', with: 'Harry'

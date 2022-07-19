@@ -1,13 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe 'Top Rated Movies' do
-  xit 'shows top 40 movies based on rating', :vcr do
-    user = User.create!(name: "Bernie", email: "bernie@gmail.com")
+  it 'shows top 40 movies based on rating', :vcr do
+    user = User.create!(name: "Bernie", email: "bernie@gmail.com", password: 'test')
     visit user_movies_discover_path(user)
 
     click_button 'Top Rated Movies'
-
-
 
     expect(page.status_code).to eq 200
     within "#movie-0" do
