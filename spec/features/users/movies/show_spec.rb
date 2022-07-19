@@ -28,7 +28,7 @@ RSpec.describe 'movie details page' do
     visit "/users/#{@user1.id}/movies/#{@movie.id}"
     expect(page).to have_button('Discover Page')
     click_button('Discover Page')
-    expect(current_path).to eq("/users/discover")
+    expect(current_path).to eq("/discover")
   end
 
   it 'displays the title, vote average, runtime, and genres', :vcr do

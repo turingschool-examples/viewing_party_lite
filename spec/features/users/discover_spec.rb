@@ -12,7 +12,7 @@ describe 'user discover page' do
       fill_in :password, with: 'test123'
  
       click_button 'Log In'
-    visit "users/discover"
+    visit "/discover"
   end
 
   it 'has a button to discover top rated movies', :vcr do
@@ -38,7 +38,7 @@ describe 'user discover page' do
     fill_in 'search', with: '   '
     click_button('Find Movies')
 
-    expect(current_path).to eq("/users/discover")
+    expect(current_path).to eq("/discover")
     expect(page).to have_content('Uh oh, something went wrong. Please try again.')
   end
 end

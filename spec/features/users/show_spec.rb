@@ -25,7 +25,7 @@ describe 'user show page (dashboard)' do
     visit user_path(@user1)
     click_button('Discover Movies')
 
-    expect(current_path).to eq("/users/discover")
+    expect(current_path).to eq("/discover")
   end
 
   it 'has a section to display the users viewing parties', :vcr do

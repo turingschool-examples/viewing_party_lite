@@ -11,7 +11,7 @@ describe 'movie results/index page' do
       fill_in :password, with: 'test123'
  
       click_button 'Log In'
-    visit "users/discover"
+    visit "/discover"
   end
   it 'links to each movie results details/show page', :vcr do
     click_button "Find Top Rated Movies"
@@ -26,6 +26,6 @@ describe 'movie results/index page' do
 
     click_button('Discover Page')
 
-    expect(current_path).to eq("/users/discover")
+    expect(current_path).to eq("/discover")
   end
 end

@@ -28,7 +28,7 @@ RSpec.describe 'new viewing party page' do
     expect(page).to_not have_content("Create a Viewing Party for #{@movie2.title}")
     expect(page).to have_button('Discover Page')
     click_button('Discover Page')
-    expect(current_path).to eq("/users/discover")
+    expect(current_path).to eq("/discover")
   end
   it 'has form with default values for duration, day, start time, and a section to invite others', :vcr do
     visit "/users/#{@user1.id}/movies/#{@movie.id}/viewing_party/new"

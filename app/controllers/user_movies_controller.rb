@@ -5,7 +5,7 @@ class UserMoviesController < ApplicationController
     if params[:q] == 'top rated'
       @top_movies = MovieFacade.top_rated_movies
     elsif params[:search].strip == ''
-      redirect_to "/users/discover"
+      redirect_to "/discover"
       flash[:alert] = 'Uh oh, something went wrong. Please try again.'
     elsif params[:search]
       @movie_search_results = MovieFacade.search(params[:search])
