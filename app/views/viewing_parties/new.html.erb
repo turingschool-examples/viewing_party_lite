@@ -6,7 +6,7 @@
 <h4>Viewing Party Details</h4>
 <div id="form">
 
-  <%= form_with url: user_movie_viewing_parties_path(@user, @movie), model: @viewing_party, local: true do |form| %>
+  <%= form_with url: movie_viewing_parties_path( @movie), model: @viewing_party, local: true do |form| %>
   <div class="mb-3">
     <%= form.label "Movie Title" %>
     <%= form.text_field :title , class: "form-control", value: @movie.title ,disabled: true%>
@@ -28,7 +28,7 @@
   Invite Other Users
   <div class="mb-3">
     <% @all_users.each do |user| %>
-      <% unless user.id == @user.id %>
+      <% unless user.id == Current.user.id %>
         <%= form.label user.name %>
         <%=form.check_box("invites", {:multiple => true}, user.id, nil) %>
       <% end %>

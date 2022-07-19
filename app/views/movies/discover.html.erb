@@ -1,11 +1,11 @@
 <h3>Discover Movies</h3>
 <hr>
 
-<p type="button" class="btn btn-outline-primary"><%= link_to "Find Top Rated Movies", user_movies_path(@user, :q => 'top20rated') %></p>
+<p type="button" class="btn btn-outline-primary"><%= link_to "Find Top Rated Movies", movies_path(:q => 'top20rated') %></p>
 
 <h4>OR</h4>
 
-<%= form_with url: user_movies_path(@user), method: :get, local: true do |form|%>
+<%= form_with url: movies_path, method: :get, local: true do |form|%>
 <div class="mb-3">
 
   <%= form.text_field :q , class: "form-control", placeholder: "Search by movie title"%>
