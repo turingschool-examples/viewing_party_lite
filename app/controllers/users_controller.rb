@@ -18,7 +18,12 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(session[:user_id])
+    if current_user
+      @user = User.find(session[:user_id])
+    else
+      flash[:error] = "You must be logged in to access your dashboard"
+      redirect_to root_path
+    end
   end
 
   def discover
@@ -36,7 +41,7 @@ class UsersController < ApplicationController
   end
 
   def movie_details
-    @user = User.find(session[:user_id])
+    # @user = User.find(session[:user_id])
     @movie = MovieFacade.movie_details(params[:movie_id])
     @cast = MovieFacade.movie_cast(params[:movie_id])
     @reviews = MovieFacade.movie_reviews(params[:movie_id])
