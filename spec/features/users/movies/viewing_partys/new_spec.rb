@@ -11,7 +11,6 @@ RSpec.describe 'Viewing Partys new page' do
   end
 
   it 'has a form I can fill in with fields for duration(with default value of movie runtime), when(field to select date), start time(field to select start time), checkboxes next to each existing user in the system, and button to create party', :vcr do
-#save_and_open_page
     expect(page).to have_field("Duration", with: 142)
     fill_in "Duration", with: "150"
     select('2022', from: '_date_1i')
@@ -34,7 +33,6 @@ RSpec.describe 'Viewing Partys new page' do
   end
 
     it 'can test duration', :vcr do
-#save_and_open_page
     expect(page).to have_field("Duration", with: 142)
     fill_in "Duration", with: "140"
     select('2022', from: '_date_1i')
