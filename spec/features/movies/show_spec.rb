@@ -18,7 +18,7 @@ RSpec.describe '#show' do
     visit user_movie_path(@jose, @movie_id)
 
     click_link 'Discover Page'
-    expect(current_path).to eq user_movies_discover_path(@jose)
+    expect(current_path).to eq discover_path
   end
 
   it 'displays movie details', :vcr do

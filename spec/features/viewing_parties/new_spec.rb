@@ -18,6 +18,6 @@ RSpec.describe '#new', :vcr do
       click_on 'Create Viewing party'
     end
 
-    expect(current_path).to eq(user_path(jose))
+    expect(current_path).to eq(dashboard_path)
   end
 end

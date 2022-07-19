@@ -5,7 +5,7 @@ RSpec.describe '#show', :vcr do
     jose = User.create!(name: 'Jose Andres', email: 'jose.andres@gmail.com', password: '111',
                         password_confirmation: '111')
 
-    visit user_path(jose)
+    visit dashboard_path
 
     click_on 'Discover Movies'
 
@@ -16,7 +16,7 @@ RSpec.describe '#show', :vcr do
     jose = User.create!(name: 'Jose Andres', email: 'jose.andres@gmail.com', password: '111',
                         password_confirmation: '111')
 
-    visit user_path(jose)
+    visit dashboard_path
 
     expect(page).to have_content("#{jose.name}'s Dashboard")
   end
@@ -34,7 +34,7 @@ RSpec.describe '#show', :vcr do
     PartyUser.create!({ user_id: frank.id, viewing_party_id: party.id,
                         host: false })
 
-    visit user_path(jose)
+    visit dashboard_path
 
     within '#movie-278' do
       expect(page).to have_css("img[src*='https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg']")

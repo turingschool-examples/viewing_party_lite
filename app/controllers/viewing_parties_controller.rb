@@ -12,7 +12,7 @@ class ViewingPartiesController < ApplicationController
       PartyUser.create({ user_id: params[:user_id], viewing_party_id: viewing_party.id,
                          host: true })
       PartyUser.invite_guests(params[:viewing_party][:invites], viewing_party.id)
-      redirect_to user_path(params[:user_id])
+      redirect_to dashboard_path
     end
   end
 

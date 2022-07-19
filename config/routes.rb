@@ -9,10 +9,13 @@ Rails.application.routes.draw do
 
   get 'logout', to: 'sessions#destroy'
 
-  resources :users, only: %i[create show] do
-    get '/discover', to: 'movies#discover', as: 'movies_discover'
+  resources :users, only: %i[create] do
+    # get '/discover', to: 'movies#discover', as: 'movies_discover'
     resources :movies, only: %i[index show] do
       resources :viewing_parties, only: %i[new create]
     end
   end
+
+  get '/dashboard', to: 'users#show'
+  get '/discover', to: 'movies#discover'
 end

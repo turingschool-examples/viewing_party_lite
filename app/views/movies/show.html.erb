@@ -1,4 +1,4 @@
-<p type="button" class="btn btn-outline-primary"><%= link_to "Discover Page", user_movies_discover_path(@user) %></p>
+<p type="button" class="btn btn-outline-primary"><%= link_to "Discover Page", discover_path %></p>
 <hr>
 
 <p type="button" class="btn btn-outline-success"><%= link_to "Create Viewing Party for #{@movie.title}", new_user_movie_viewing_party_path(@user, @movie.id) %></p>

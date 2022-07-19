@@ -13,7 +13,7 @@ RSpec.describe '#new' do
 
     user = User.find_by name: 'Bryce Wein'
 
-    expect(current_path).to eq(user_path(user))
+    expect(current_path).to eq(dashboard_path)
   end
   it 'will only accept unique emails' do
     User.create!({ name: 'Frank', email: 'bryce.wein@gmail.com', password: '111', password_confirmation: '111' })
