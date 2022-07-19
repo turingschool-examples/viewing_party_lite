@@ -16,13 +16,13 @@ describe 'movie results/index page' do
   it 'links to each movie results details/show page', :vcr do
     click_button "Find Top Rated Movies"
     click_link "The Shawshank Redemption"
-    expect(current_path).to eq("/users/movies/278")
+    expect(current_path).to eq("/movies/278")
   end
 
   it 'links to the discover movies page', :vcr do
     click_button('Find Top Rated Movies')
 
-    expect(current_path).to eq("/users/movies")
+    expect(current_path).to eq("/movies")
 
     click_button('Discover Page')
 

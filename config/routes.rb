@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
 
   get '/discover', to: 'users#discover'
-  get '/users/movies', to: 'user_movies#index'
-  get '/users/movies/:movie_id', to: 'user_movies#show'
+  get '/movies', to: 'user_movies#index'
+  get '/movies/:movie_id', to: 'user_movies#show'
   resources :users, only: %i[create show] do
     resources :movies, only: %i[index show], controller: :user_movies, param: :movie_id
   end

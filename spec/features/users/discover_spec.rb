@@ -18,7 +18,7 @@ describe 'user discover page' do
   it 'has a button to discover top rated movies', :vcr do
     click_button('Find Top Rated Movies')
 
-    expect(current_path).to eq("/users/movies")
+    expect(current_path).to eq("/movies")
     expect(page).to have_content('Top Rated Movies')
     expect(page).to have_content('The Shawshank Redemption')
 
@@ -29,7 +29,7 @@ describe 'user discover page' do
     fill_in 'search', with: 'titanic'
     click_button('Find Movies')
 
-    expect(current_path).to eq("/users/movies")
+    expect(current_path).to eq("/movies")
     expect(page).to have_content('Movie results for: titanic')
     expect(page).to have_content('Titanic 666')
   end

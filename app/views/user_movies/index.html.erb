@@ -4,7 +4,7 @@
     <%= render partial: 'partials/buttons/discover_button' %>
     <% @top_movies.each do |movie|%>
         <div id="top-movie-<%= movie.id %>">
-            <p><%= link_to "#{movie.title}", "/users/movies/#{movie.id}" %> <b>Vote Average:</b> <%=movie.vote_average %></p>
+            <p><%= link_to "#{movie.title}", "/movies/#{movie.id}" %> <b>Vote Average:</b> <%=movie.vote_average %></p>
         </div>
     <% end %>
 <%else %>
@@ -12,7 +12,7 @@
     <%= render partial: 'partials/buttons/discover_button' %>
     <% @movie_search_results.each do |movie|%>
         <div id="searched-movie-<%= movie.id %>">
-            <p> <%= link_to "#{movie.title}", "/users/movies/#{movie.id}" %> <b>Vote Average:</b> <%=movie.vote_average %> </p>
+            <p> <%= link_to "#{movie.title}", "/movies/#{movie.id}" %> <b>Vote Average:</b> <%=movie.vote_average %> </p>
         </div>
     <% end %>
 <% end %>
