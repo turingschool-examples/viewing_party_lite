@@ -14,7 +14,7 @@ RSpec.describe 'Login Form', type: :feature do
       fill_in :Email, with: 'BlobJohnson@msn.com'
       fill_in :Password, with: 'bloop'
       click_button 'Log In'
-      expect(current_path).to eq("/users/#{user.id}")
+      expect(current_path).to eq(users_dashboard_path)
     end
   end
   describe 'sad path' do

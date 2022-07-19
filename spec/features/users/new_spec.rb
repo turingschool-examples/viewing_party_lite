@@ -18,7 +18,7 @@ RSpec.describe 'New page', type: :feature do
     fill_in :user_password_confirmation, with: 'test123'    
     click_button 'Create User'
     new_user = User.last
-    expect(current_path).to eq("/users/#{new_user.id}")
+    expect(current_path).to eq(users_dashboard_path)
   end
 
   it 'can only use unique emails' do
@@ -29,7 +29,7 @@ RSpec.describe 'New page', type: :feature do
     fill_in :user_password_confirmation, with: 'test123'
     click_button 'Create User'
     new_user = User.last
-    expect(current_path).to eq("/users/#{new_user.id}")
+    expect(current_path).to eq(users_dashboard_path)
 
     visit '/register'
     fill_in :User, with: 'Bob'    

@@ -23,7 +23,7 @@ class ViewingPartysController < ApplicationController
           Attendee.create(viewing_party_id: @new_party.id, user_id: id)
         end
       end
-      redirect_to user_path(@new_party.host_id)
+      redirect_to users_dashboard_path
     end
   end
 
