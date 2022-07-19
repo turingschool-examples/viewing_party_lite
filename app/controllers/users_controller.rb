@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     if user.save
       redirect_to "/users/#{user.id}"
     else
-      flash[:notice] = "Please enter a valid name and email address to register."
+      flash[:error] = user.errors.full_messages.first
       redirect_to "/register"
     end
   end
@@ -21,7 +21,22 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def user_params
-    params.permit(:name, :email)
+  def login_form
   end
+
+  def login_user
+    user = User.find_by(email: params[:email])
+    if user && user.authenticate(params[:password])
+      redirect_to "/users/#{user.id}"
+      flash[:success] = "Welcome, #{user.name}!"
+    else
+      flash[:error] = "Sorry, your credentials are bad"
+      render :login_form
+    end
+  end
+
+  private
+    def user_params
+      params.permit(:name, :email, :password, :password_confirmation)
+    end
 end

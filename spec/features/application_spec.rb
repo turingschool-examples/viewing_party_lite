@@ -20,12 +20,12 @@ RSpec.describe 'the application layout page', type: :feature do
   end
 
   it 'has a link to home from user discover spec' do
-    user1 = User.create!(name: 'Sai', email: 'SaiLent@overlord.com')
+    user1 = User.create!(name: 'Sai', email: 'SaiLent@overlord.com', password: "haisall123")
 
     visit "/users/#{user1.id}/discover"
 
     click_link("Home")
 
     expect(current_path).to eq("/")
-  end 
+  end
 end

@@ -3,10 +3,10 @@ require 'rails_helper'
 
 RSpec.describe "User Dash/Show page", type: :feature do
   before :each do
-    @user1 = User.create!(name: 'Sai', email: 'SaiLent@overlord.com')
-    @user2 = User.create!(name: 'Parker', email: 'GriffithDidNothing@Wrong.com')
-    @user3 = User.create!(name: 'Deannah', email: 'FrogStomper9000@Muahaha.com')
-    @user4 = User.create!(name: 'Casey', email: 'EternalPancakes@Geemail.com')
+    @user1 = User.create!(name: 'Sai', email: 'SaiLent@overlord.com', password: 'haisall123')
+    @user2 = User.create!(name: 'Parker', email: 'GriffithDidNothing@Wrong.com', password: 'parkersbeard')
+    @user3 = User.create!(name: 'Deannah', email: 'FrogStomper9000@Muahaha.com', password: 'sparkles')
+    @user4 = User.create!(name: 'Casey', email: 'EternalPancakes@Geemail.com', password: 'taikiawaititi')
   end
 
   it 'displays the users name at the top of the page' do
