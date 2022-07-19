@@ -21,6 +21,19 @@ RSpec.describe 'new viewing party page' do
     @movie = Movie.new(attributes)
     @movie2 = Movie.new(attributes2)
   end
+
+  it "does not allow allow you to create a viewing party without being logged in", :vcr do
+    visit '/'
+    click_button 'Logout'
+    visit "/movies/#{@movie.id}"
+
+    expect(page).to have_button('Create a Viewing Party')
+    click_button('Create a Viewing Party')
+    expect(current_path).to eq("/movies/#{@movie.id}")
+    expect(page).to have_content("You must be logged in to create a new party!")
+    
+  end
+  
   it 'has movie title and link to discover page', :vcr do
     visit "movies/#{@movie.id}/viewing_party/new"
 

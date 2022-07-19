@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
   def show
     if current_user
-      @user = User.find(session[:user_id])
+      @user = find_user
     else
       flash[:error] = "Please log in to access your dashboard!"
       redirect_to '/'
