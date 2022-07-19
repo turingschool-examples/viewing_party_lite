@@ -4,14 +4,14 @@ require 'rails_helper'
 
 describe 'user show page (dashboard)' do
   before do
-    @user1 = User.create!(name: 'Jane', email: 'eleven@upsidedown.com', password: 
+    @user1 = User.create!(name: 'Jane', email: 'eleven@upsidedown.com', password:
       'test123')
-      visit '/login'
-  
-      fill_in :email, with: 'eleven@upsidedown.com'
-      fill_in :password, with: 'test123'
- 
-      click_button 'Log In'
+    visit '/login'
+
+    fill_in :email, with: 'eleven@upsidedown.com'
+    fill_in :password, with: 'test123'
+
+    click_button 'Log In'
     @user2 = User.create!(name: 'Dustin', email: 'hellfire@hawkins.edu', password: 'test123')
   end
   it 'displays the users name' do
@@ -25,7 +25,7 @@ describe 'user show page (dashboard)' do
     visit '/dashboard'
     click_button('Discover Movies')
 
-    expect(current_path).to eq("/discover")
+    expect(current_path).to eq('/discover')
   end
 
   it 'has a section to display the users viewing parties', :vcr do
@@ -79,7 +79,7 @@ describe 'user show page (dashboard)' do
 
     within "#viewing-party#{party1.id}" do
       expect(page).to have_content('You are hosting!')
-      within ".attendees" do
+      within '.attendees' do
         expect(page).to have_content('Dustin (hellfire@hawkins.edu)')
         expect(page).to_not have_content('Jane (eleven@upsidedown.com)')
       end
@@ -87,7 +87,7 @@ describe 'user show page (dashboard)' do
 
     within "#viewing-party#{party2.id}" do
       expect(page).to have_content('Dustin is hosting a party!')
-      within ".attendees" do
+      within '.attendees' do
         expect(page).to have_content('Jane (eleven@upsidedown.com)')
       end
     end

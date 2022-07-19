@@ -1,14 +1,15 @@
 <center>
+<%= button_to "Dashboard", "/dashboard", method: :get %>
 <% if current_user %>
   <h3> <%= render partial: 'partials/buttons/logout_button' %> </h3>
+  <h3>Existing Users: </h3>
+<% @users.each_with_index do |user, index| %>
+  <div id="user-<%= index %>">
+    <%= user.email %>
+  </div>  
+<% end %>
 <% else %>
   <h3> <%= render partial: 'partials/buttons/create_user_button' %> </h3>
   <h3> <%= render partial: 'partials/buttons/login_button' %> </h3>
-<% end %>
-<h3>Existing Users: </h3>
-<% @users.each_with_index do |user, index| %>
-  <div id="user-<%= index %>">
-    <%= link_to "#{user.email}'s Dashboard", "/dashboard" %>
-  </div>  
-<% end %>
 </center>
+<% end %>

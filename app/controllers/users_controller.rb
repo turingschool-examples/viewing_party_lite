@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  before_action :find_user, only: [:show, :discover]
+  before_action :find_user, only: %i[discover]
 
   def new; end
 
@@ -17,10 +17,15 @@ class UsersController < ApplicationController
   end
 
   def show
+    if current_user
+      @user = User.find(session[:user_id])
+    else
+      flash[:error] = "Please log in to access your dashboard!"
+      redirect_to '/'
+    end
   end
 
-  def discover
-  end
+  def discover; end
 
   private
 

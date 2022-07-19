@@ -15,7 +15,7 @@ describe 'user new/registration page' do
     fill_in 'user_password_confirmation', with: 'test123'
     click_button('Create New User')
 
-    user = User.find_by(email: "eleven@upsidedown.com")
+    user = User.find_by(email: 'eleven@upsidedown.com')
     expect(user).to_not have_attribute(:password)
     expect(user.password_digest).to_not eq('password123')
     expect(current_path).to eq('/dashboard')
@@ -23,7 +23,7 @@ describe 'user new/registration page' do
   end
 
   it 'displays an error message if the email entered is not unique' do
-    User.create!(name: 'Jane', email: 'eleven@upsidedown.com', password: 
+    User.create!(name: 'Jane', email: 'eleven@upsidedown.com', password:
     'test123')
 
     fill_in 'user_name', with: 'Max'
@@ -55,7 +55,7 @@ describe 'user new/registration page' do
     fill_in 'user_password', with: 'test123'
     fill_in 'user_password_confirmation', with: 'test123'
     click_button('Create New User')
-    
+
     expect(current_path).to eq('/register')
     expect(page).to have_content('Email has already been taken')
     expect(page).to have_content("Name can't be blank")
@@ -69,11 +69,11 @@ describe 'user new/registration page' do
     fill_in 'user_password', with: 'test123'
     fill_in 'user_password_confirmation', with: ''
     click_button('Create New User')
-    
+
     expect(current_path).to eq('/register')
     expect(page).to have_content("Password confirmation doesn't match Password")
   end
-  
+
   it 'displays an error message if a password is not given' do
     User.create!(name: 'Jane', email: 'eleven@upsidedown.com', password: 'test123')
     fill_in 'user_name', with: 'Jane'

@@ -9,12 +9,12 @@ RSpec.describe 'new viewing party page' do
     @user3 = User.create!(name: 'Fred Astaire', email: 'tapshoes@gmail.com', password: 'test123')
 
     visit '/login'
-  
+
     fill_in :email, with: 'jpowell38@gmail.com'
     fill_in :password, with: 'test123'
 
     click_button 'Log In'
-    
+
     attributes = JSON.parse(File.read('./spec/fixtures/movie_details.json'), symbolize_names: true)
     attributes2 = JSON.parse(File.read('./spec/fixtures/lock_stock_movie_details.json'), symbolize_names: true)
 
@@ -28,11 +28,11 @@ RSpec.describe 'new viewing party page' do
     expect(page).to_not have_content("Create a Viewing Party for #{@movie2.title}")
     expect(page).to have_button('Discover Page')
     click_button('Discover Page')
-    expect(current_path).to eq("/discover")
+    expect(current_path).to eq('/discover')
   end
   it 'has form with default values for duration, day, start time, and a section to invite others', :vcr do
     visit "movies/#{@movie.id}/viewing_party/new"
-  
+
     expect(page).to have_content('Movie Title')
     expect(find_field('Duration').value).to eq(@movie.runtime_mins.to_s)
     expect(page).to have_content('Date')
@@ -51,7 +51,7 @@ RSpec.describe 'new viewing party page' do
     check("viewing_party_#{@user2.id}")
 
     click_button 'Create Party'
-    expect(current_path).to eq("/dashboard")
+    expect(current_path).to eq('/dashboard')
     expect(page).to have_content(@movie.title)
     expect(page).to have_content('You are hosting!')
   end

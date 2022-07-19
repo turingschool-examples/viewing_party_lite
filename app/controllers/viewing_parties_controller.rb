@@ -2,9 +2,14 @@
 
 class ViewingPartiesController < ApplicationController
   def new
-    @user = User.find(session[:user_id])
-    @users = User.other_users(session[:user_id])
-    @movie = MovieFacade.movie_details(params[:movie_id])
+    if current_user
+      @user = User.find(session[:user_id])
+      @users = User.other_users(session[:user_id])
+      @movie = MovieFacade.movie_details(params[:movie_id])
+    else
+      flash[:error] = "You must be logged in to create a new party!"
+      redirect_to "/movies/#{params[:movie_id]}"
+    end
   end
 
   def create
@@ -25,7 +30,7 @@ class ViewingPartiesController < ApplicationController
       invite_ids.each do |invite_id|
         UserViewingParty.create!(user_id: invite_id, viewing_party_id: viewing_party.id, hosting: false)
       end
-      redirect_to "/dashboard"
+      redirect_to '/dashboard'
     end
   end
 

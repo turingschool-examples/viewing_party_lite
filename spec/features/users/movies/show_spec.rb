@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'movie details page' do
   before :each do
-    @user1 = User.create!(name: 'Jane', email: 'eleven@upsidedown.com', password: 
+    @user1 = User.create!(name: 'Jane', email: 'eleven@upsidedown.com', password:
       'test123')
     visit '/login'
 
@@ -28,7 +28,7 @@ RSpec.describe 'movie details page' do
     visit "/movies/#{@movie.id}"
     expect(page).to have_button('Discover Page')
     click_button('Discover Page')
-    expect(current_path).to eq("/discover")
+    expect(current_path).to eq('/discover')
   end
 
   it 'displays the title, vote average, runtime, and genres', :vcr do
