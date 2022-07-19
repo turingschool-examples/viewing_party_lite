@@ -10,6 +10,11 @@
   </head>
 
   <body>
+    <% flash.each do |type, msg| %>
+      <div id="message" class="alert alert-primary">
+        <%= msg %>
+      </div>
+    <% end %>
     <%= link_to "Home", '/' %>
     <%= yield %>
   </body>

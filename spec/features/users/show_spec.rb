@@ -60,4 +60,33 @@ RSpec.describe 'User Dashboard/Show Page', type: :feature do
 
     expect(current_path).to eq("/users/#{user1.id}/discover")
   end
+
+  it "user can log in" do
+    user = User.create!(name: "Colin Reinhart", email: "colin@email.com", password: "easypw")
+
+    visit '/'
+    click_link "Log In"
+    expect(current_path).to eq('/login')
+
+    fill_in :email, with: "colin@email.com"
+    fill_in :password, with: "easypw"
+    click_button "Log In"
+
+    expect(current_path).to eq("/users/#{user.id}")
+    expect(page).to have_content("Welcome, Colin Reinhart!")
+  end
+
+  it "cannot login with bad credentials" do
+    user = User.create!(name: "Colin Reinhart", email: "colin@email.com", password: "easypw")
+    visit '/'
+    click_link "Log In"
+    expect(current_path).to eq('/login')
+
+    fill_in :email, with: "colin@email.com"
+    fill_in :password, with: "easyp"
+    click_button "Log In"
+
+    expect(current_path).to eq("/login")
+    expect(page).to have_content("Incorrect Credentials")
+  end
 end
