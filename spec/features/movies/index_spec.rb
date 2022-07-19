@@ -9,7 +9,7 @@ RSpec.describe '#index' do
 
     click_on 'Find Top Rated Movies'
 
-    expect(current_path).to eq(user_movies_path(@jose))
+    expect(current_path).to eq(movies_path)
 
     expect(page).to have_link('Discover Page')
 

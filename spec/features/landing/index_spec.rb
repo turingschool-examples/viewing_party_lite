@@ -10,6 +10,14 @@ RSpec.describe 'Landing Page' do
       @quincy = User.create!(name: 'Quincy Jones', email: 'quincy.jones@gmail.com', password: '111',
                              password_confirmation: '111')
 
+      visit login_path
+
+      within '#form' do
+        fill_in :email, with: @jose.email
+        fill_in :password, with: '111'
+        click_on 'Sign In'
+      end
+
       visit root_path
     end
 
@@ -18,25 +26,9 @@ RSpec.describe 'Landing Page' do
     end
 
     it 'displays all current users' do
-      expect(page).to have_content('Jose Andres')
-      expect(page).to have_content('Amy Adams')
-      expect(page).to have_content('Quincy Jones')
-    end
-
-    it 'has links to user dashboards' do
-      click_link('Jose Andres')
-      expect(current_path).to eq(dashboard_path)
-    end
-
-    it 'has a button to create a new user' do
-      click_link 'Create New User'
-      expect(current_path).to eq(register_path)
-    end
-
-    it 'has link to return to landing page' do
-      expect(page).to have_link('Landing')
-      click_link 'Landing'
-      expect(current_path).to eq(root_path)
+      expect(page).to have_content('jose.andres@gmail.com')
+      expect(page).to have_content('amy.adams@gmail.com')
+      expect(page).to have_content('quincy.jones@gmail.com')
     end
   end
 end

@@ -9,13 +9,13 @@ RSpec.describe '#discover' do
 
     click_on 'Find Top Rated Movies'
 
-    expect(current_path).to eq(user_movies_path(@jose))
+    expect(current_path).to eq(movies_path)
 
     visit discover_path
 
     fill_in :q, with: 'Pirates'
     click_on 'Find Movie'
 
-    expect(current_path).to eq(user_movies_path(@jose))
+    expect(current_path).to eq(movies_path)
   end
 end

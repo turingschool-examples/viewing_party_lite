@@ -5,16 +5,32 @@ RSpec.describe '#show', :vcr do
     jose = User.create!(name: 'Jose Andres', email: 'jose.andres@gmail.com', password: '111',
                         password_confirmation: '111')
 
+    visit login_path
+
+    within '#form' do
+      fill_in :email, with: jose.email
+      fill_in :password, with: '111'
+      click_on 'Sign In'
+    end
+
     visit dashboard_path
 
     click_on 'Discover Movies'
 
-    expect(current_path).to eq(user_movies_discover_path(jose))
+    expect(current_path).to eq(discover_path)
   end
 
   it 'has the users name' do
     jose = User.create!(name: 'Jose Andres', email: 'jose.andres@gmail.com', password: '111',
                         password_confirmation: '111')
+
+    visit login_path
+
+    within '#form' do
+      fill_in :email, with: jose.email
+      fill_in :password, with: '111'
+      click_on 'Sign In'
+    end
 
     visit dashboard_path
 
@@ -33,6 +49,14 @@ RSpec.describe '#show', :vcr do
                         host: true })
     PartyUser.create!({ user_id: frank.id, viewing_party_id: party.id,
                         host: false })
+
+    visit login_path
+
+    within '#form' do
+      fill_in :email, with: jose.email
+      fill_in :password, with: '111'
+      click_on 'Sign In'
+    end
 
     visit dashboard_path
 

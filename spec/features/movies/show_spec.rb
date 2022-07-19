@@ -5,24 +5,32 @@ RSpec.describe '#show' do
     @jose = User.create!(name: 'Jose Andres', email: 'jose.andres@gmail.com', password: '111',
                          password_confirmation: '111')
     @movie_id = 500
+
+    visit login_path
+
+    within '#form' do
+      fill_in :email, with: @jose.email
+      fill_in :password, with: '111'
+      click_on 'Sign In'
+    end
   end
 
   it 'has button to create viewing party', :vcr do
-    visit user_movie_path(@jose, @movie_id)
+    visit movie_path(@movie_id)
 
     click_link 'Create Viewing Party'
-    expect(current_path).to eq new_user_movie_viewing_party_path(@jose, @movie_id)
+    expect(current_path).to eq new_movie_viewing_party_path(@movie_id)
   end
 
   it 'has button to return to discover page', :vcr do
-    visit user_movie_path(@jose, @movie_id)
+    visit movie_path(@movie_id)
 
     click_link 'Discover Page'
     expect(current_path).to eq discover_path
   end
 
   it 'displays movie details', :vcr do
-    visit user_movie_path(@jose, @movie_id)
+    visit movie_path(@movie_id)
 
     expect(page).to have_content('Reservoir Dogs')
     expect(page).to have_content('Vote Average: 8.1')
@@ -34,7 +42,7 @@ RSpec.describe '#show' do
   end
 
   it 'displays movie characters and actors', :vcr do
-    visit user_movie_path(@jose, @movie_id)
+    visit movie_path(@movie_id)
 
     expect(page).to have_content('Harvey Keitel plays Mr. White / Larry Dimmick')
     expect(page).to have_content('Tim Roth plays Mr. Orange / Freddy Newandyke')
@@ -42,7 +50,7 @@ RSpec.describe '#show' do
   end
 
   it 'displays reviewers and reviews', :vcr do
-    visit user_movie_path(@jose, @movie_id)
+    visit movie_path(@movie_id)
 
     expect(page).to have_content('Total Reviews: 2')
     expect(page).to have_content('talisencrw')

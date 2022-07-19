@@ -7,7 +7,15 @@ RSpec.describe '#new', :vcr do
     dawn = User.create!(name: 'Dawn', email: 'Dawn.andres@gmail.com', password: '111',
                         password_confirmation: '111')
 
-    visit new_user_movie_viewing_party_path(jose, 278)
+    visit login_path
+
+    within '#form' do
+      fill_in :email, with: jose.email
+      fill_in :password, with: '111'
+      click_on 'Sign In'
+    end
+
+    visit new_movie_viewing_party_path(278)
 
     within '#form' do
       fill_in 'viewing_party[duration]', with: '200'
