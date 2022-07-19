@@ -9,7 +9,12 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <%= link_to "Home", "/" %>
+  <% if current_user %>
+    <%= link_to "#{current_user.name}'s Homepage", "/" %>
+  <% else %>
+    <%= link_to "Homepage", "/" %>
+  <% end %>
+  
   <h1 align='center'>Viewing Party Light</h1>
   
   <body>

@@ -2,19 +2,24 @@
 
 class ViewingPartiesController < ApplicationController
   def new
-    @user = User.find(params[:user_id])
-    @users = User.other_users(params[:user_id])
-    @movie = MovieFacade.movie_details(params[:movie_id])
+    if current_user
+      @user = User.find(session[:user_id])
+      @users = User.other_users(session[:user_id])
+      @movie = MovieFacade.movie_details(params[:movie_id])
+    else
+      flash[:error] = 'You must be logged in to create a new party!'
+      redirect_to "/movies/#{params[:movie_id]}"
+    end
   end
 
   def create
     movie = MovieFacade.movie_details(params[:movie_id])
     if params[:viewing_party][:duration].to_i < movie.runtime_mins
       flash[:alert] = "Duration of party must be longer than the runtime of the movie. #{movie.runtime_mins} mins"
-      redirect_to "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/viewing_party/new"
+      redirect_to "/movies/#{params[:movie_id]}/viewing_party/new"
     elsif params[:viewing_party][:date].to_date < Date.today
       flash[:alert] = 'Date of party must be in the future.'
-      redirect_to "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/viewing_party/new"
+      redirect_to "/movies/#{params[:movie_id]}/viewing_party/new"
     else
       viewing_party = ViewingParty.create!(viewing_party_params)
       invite_ids = []
@@ -25,7 +30,7 @@ class ViewingPartiesController < ApplicationController
       invite_ids.each do |invite_id|
         UserViewingParty.create!(user_id: invite_id, viewing_party_id: viewing_party.id, hosting: false)
       end
-      redirect_to "/users/#{params[:user_id]}"
+      redirect_to '/dashboard'
     end
   end
 

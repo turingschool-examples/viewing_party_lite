@@ -4,17 +4,19 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   get '/', to: 'welcome#index'
+
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
+
   get '/register', to: 'users#new'
-  get '/login', to: 'users#login_form'
-  post '/login', to: 'users#login_user'
+  get '/discover', to: 'users#discover'
+  get '/dashboard', to: 'users#show'
+  post '/users', to: 'users#create'
 
-  get '/users/:id/discover', to: 'users#discover'
+  get '/movies', to: 'movies#index'
+  get '/movies/:movie_id', to: 'movies#show'
 
-  resources :users, only: %i[create show] do
-    resources :movies, only: %i[index show], controller: :user_movies, param: :movie_id
-  end
-
-  resources :viewing_parties, only: %i[create]
-
-  get '/users/:user_id/movies/:movie_id/viewing_party/new', to: 'viewing_parties#new'
+  post '/viewing_parties', to: 'viewing_parties#create'
+  get '/movies/:movie_id/viewing_party/new', to: 'viewing_parties#new'
 end

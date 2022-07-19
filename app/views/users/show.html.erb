@@ -1,12 +1,12 @@
 <center> 
 <h3> <%= @user.name %>'s Dashboard </h3>
-<p> <%= button_to "Discover Movies", "/users/#{params[:id]}/discover", method: :get %>
+<p> <%= button_to "Discover Movies", "/discover", method: :get %>
  <br><br><hr>
 <h3> Viewing Parties </h3> <br>
     <%@user.viewing_parties.each do |party|%>
         <div id="viewing-party<%= party.id%>">
             <%= image_tag("https://image.tmdb.org/t/p/w185#{party.movie.image_uri}")%>
-            <p><b><%= link_to "#{party.movie.title}", user_movie_path(@user.id, party.movie.id) %> </b></p>
+            <p><b><%= link_to "#{party.movie.title}", "/movies/#{party.movie.id}" %> </b></p>
             <i> <p><%= party.formatted_date %></p> </i>
             <i> <p><%= party.formatted_time %></p> </i> 
             <% if @user == party.host %>
