@@ -1,7 +1,7 @@
 <h1><%= @movie_details.title %>'s Details</h1>
 
 <%= button_to "Discover Page", discover_path, method: :get %>
-<%= button_to "Create Viewing Party", "/users/#{@user.id}/movies/#{@movie_details.id}/viewing_partys/new", method: :get %>
+<%= button_to "Create Viewing Party", new_movie_viewing_party_path("#{@movie_details.id}"), method: :get %>
 
 <div id="movie-overview">
   <p><b>Vote Average: <%= @movie_details.vote_average %>&emsp;Runtime: <%= @movie_details.time_conversion(@movie_details.runtime) %></b>&emsp;

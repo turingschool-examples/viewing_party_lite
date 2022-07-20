@@ -10,12 +10,10 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
 
   get '/users/dashboard', to: 'users#show'
-  resources :users, only: [:create, :edit, :update, :index] do
-     resources :movies, only: %i[index show] do
-       resources :viewing_partys, only: %i[new create]
-     end
+  resources :users, only: [:create, :edit, :update, :index]
 
-
+  resources :movies, only: %i[index show] do
+    resources :viewing_partys, only: %i[new create]
   end
 
   # namespace :admin do

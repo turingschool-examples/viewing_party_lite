@@ -2,7 +2,7 @@
 <%= button_to "Discover Page", discover_path, method: :get %>
 
 <% @movies.each do |movie| %>
-  <p><b><%= link_to movie.title, user_movie_path(@user.id, movie.id) %></b>, Movie vote average: <%= movie.vote_average %></p>
+  <p><b><%= link_to movie.title, movie_path(movie.id) %></b>, Movie vote average: <%= movie.vote_average %></p>
 <% end %>
 
 <% if flash.key? :error %>

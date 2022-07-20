@@ -13,7 +13,7 @@ RSpec.describe 'Movies Results Page', type: :feature do
   end
 
   it 'has a button to return to discover page', :vcr do
-    visit user_movies_path(users[0].id)
+    visit movies_path
     expect(page).to have_button("Discover Page")
     click_button "Discover Page"
     expect(current_path).to eq(discover_path)
@@ -22,7 +22,7 @@ RSpec.describe 'Movies Results Page', type: :feature do
   it "allows to display top 40 movies", :vcr do
     visit discover_path
     click_button "Top Rated Movies"
-    expect(current_path).to eq(user_movies_path(bob.id))
+    expect(current_path).to eq(movies_path)
     expect(page).to have_content("The Shawshank Redemption")
     expect(page).to have_content("The Godfather")
     expect(page).to have_content(8.7)
@@ -31,10 +31,10 @@ RSpec.describe 'Movies Results Page', type: :feature do
   it "has a movie title that is a link that goes to the movies detail page", :vcr do
     visit discover_path
     click_button "Top Rated Movies"
-    expect(current_path).to eq(user_movies_path(bob.id))
+    expect(current_path).to eq(movies_path)
     expect(page).to have_link("The Shawshank Redemption")
     click_link "The Shawshank Redemption"
 
-    expect(current_path).to have_content(user_movie_path(bob.id, 278))
+    expect(current_path).to have_content(movie_path(278))
   end
 end

@@ -13,20 +13,20 @@ RSpec.describe 'Movies Show page', type: :feature do
   end
 
   it 'has a button to create a viewing party', :vcr do
-    visit user_movie_path(users[0].id, 278)
+    visit movie_path(278)
     click_button 'Create Viewing Party'
-    expect(current_path).to eq("/users/#{users[0].id}/movies/278/viewing_partys/new")
+    expect(current_path).to eq(new_movie_viewing_party_path(278))
   end
 
   it 'has a button to return to the discover page', :vcr do
-    visit user_movie_path(users[0].id, 278 )
+    visit movie_path(278)
 
     click_button 'Discover Page'
     expect(current_path).to eq(discover_path)
   end
 
   it "can display movie attributes", :vcr do
-    visit user_movie_path(users[0].id, 278 )
+    visit movie_path(278)
 
     within "#movie-overview" do
       expect(page).to have_content("Vote Average: 8.7")

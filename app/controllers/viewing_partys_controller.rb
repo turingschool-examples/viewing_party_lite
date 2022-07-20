@@ -1,6 +1,10 @@
 class ViewingPartysController < ApplicationController
   def new
-    @user = User.find(params[:user_id])
+    if current_user
+      @user = current_user
+    else
+      redirect_to login_path
+    end
     @movie = MovieFacade.new.movie_details(params[:movie_id])
     @users = User.all
   end
@@ -13,7 +17,7 @@ class ViewingPartysController < ApplicationController
       @new_party = ViewingParty.create(party_params)
     else
       flash[:error] = 'Duration can not be shorter than movie runtime'
-      redirect_to new_user_movie_viewing_party_path(host_id, movie.id)
+      redirect_to new_movie_viewing_party_path(movie.id)
     end
     attendees = params[:usernames]
 

@@ -2,8 +2,15 @@ require 'rails_helper'
 
 RSpec.describe 'Viewing Partys new page' do
   let!(:users) { create_list(:user, 3)}
+  let!(:bob) { User.create(user_name: 'Bob', email: 'Bob@gmail.com', password: 'blob', password_confirmation: 'blob') }
+
   before :each do
-    visit new_user_movie_viewing_party_path("#{users[0].id}", 278)
+    visit login_path
+    fill_in :email, with: 'Bob@gmail.com'
+    fill_in :password, with: 'blob'
+    click_on 'Log In'
+  
+    visit new_movie_viewing_party_path(278)
   end
 
   it 'displays the movies title', :vcr do
@@ -51,7 +58,7 @@ RSpec.describe 'Viewing Partys new page' do
 
     click_button('Create Party')
 
-    expect(current_path).to eq(new_user_movie_viewing_party_path(users[0].id, 278))
+    expect(current_path).to eq(new_movie_viewing_party_path(278))
   end
 
 end
