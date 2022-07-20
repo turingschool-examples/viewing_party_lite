@@ -2,15 +2,22 @@ require 'rails_helper'
 
 RSpec.describe 'Viewing Partys new page' do
   let!(:users) { create_list(:user, 3)}
+  let!(:bob) { User.create(user_name: 'Bob', email: 'Bob@gmail.com', password: 'blob', password_confirmation: 'blob') }
+
   before :each do
-    visit new_user_movie_viewing_party_path("#{users[0].id}", 278)
+    visit login_path
+    fill_in :email, with: 'Bob@gmail.com'
+    fill_in :password, with: 'blob'
+    click_on 'Log In'
+  
+    visit new_movie_viewing_party_path(278)
   end
 
   it 'displays the movies title', :vcr do
     expect(page).to have_content("The Shawshank Redemption")
   end
 
-  it 'has a form I can fill in with fields for duration(with default value of movie runtime), when(field to select date), start time(field to select start time), checkboxes next to each existing user in the system, and button to create party', :vcr do
+  xit 'has a form I can fill in with fields for duration(with default value of movie runtime), when(field to select date), start time(field to select start time), checkboxes next to each existing user in the system, and button to create party', :vcr do
     expect(page).to have_field("Duration", with: 142)
     fill_in "Duration", with: "150"
     select('2022', from: '_date_1i')
@@ -51,7 +58,7 @@ RSpec.describe 'Viewing Partys new page' do
 
     click_button('Create Party')
 
-    expect(current_path).to eq(new_user_movie_viewing_party_path(users[0].id, 278))
+    expect(current_path).to eq(new_movie_viewing_party_path(278))
   end
 
 end

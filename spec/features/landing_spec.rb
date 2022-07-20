@@ -44,7 +44,7 @@ RSpec.describe "Landing Page", type: :feature do
 
   end
 
-  it "has a list of existing users and links to that users dashboard" do
+  xit "has a list of existing users and links to that users dashboard" do
     visit "/"
 
     expect(page).to have_content("Existing Users")

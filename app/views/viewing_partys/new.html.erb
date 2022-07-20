@@ -3,7 +3,7 @@
 <% if flash.key? :error %>
   <p><%= flash[:error] %></p>
 <% end %>
-<%= form_with url: user_movie_viewing_partys_path(@user.id, @movie.id), method: :post, local: true do |f| %>
+<%= form_with url: movie_viewing_partys_path(@movie.id), method: :post, local: true do |f| %>
   <p><%= f.label :duration %>
   <%= f.number_field :duration, :value => @movie.runtime %></p>
 

@@ -3,22 +3,30 @@ require 'rails_helper'
 RSpec.describe 'Movies Show page', type: :feature do
   let!(:users) { create_list(:user, 3)}
   let!(:viewing_party) { create(:viewing_party)}
+  let!(:bob) { User.create(user_name: 'Bob', email: 'Bob@gmail.com', password: 'blob', password_confirmation: 'blob') }
+
+  before :each do
+    visit login_path
+    fill_in :email, with: 'Bob@gmail.com'
+    fill_in :password, with: 'blob'
+    click_on 'Log In'
+  end
 
   it 'has a button to create a viewing party', :vcr do
-    visit user_movie_path(users[0].id, 278)
+    visit movie_path(278)
     click_button 'Create Viewing Party'
-    expect(current_path).to eq("/users/#{users[0].id}/movies/278/viewing_partys/new")
+    expect(current_path).to eq(new_movie_viewing_party_path(278))
   end
 
   it 'has a button to return to the discover page', :vcr do
-    visit user_movie_path(users[0].id, 278 )
+    visit movie_path(278)
 
     click_button 'Discover Page'
-    expect(current_path).to eq(user_discover_path(users[0].id))
+    expect(current_path).to eq(discover_path)
   end
 
   it "can display movie attributes", :vcr do
-    visit user_movie_path(users[0].id, 278 )
+    visit movie_path(278)
 
     within "#movie-overview" do
       expect(page).to have_content("Vote Average: 8.7")
