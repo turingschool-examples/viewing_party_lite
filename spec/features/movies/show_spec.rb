@@ -8,7 +8,7 @@ RSpec.describe 'Movies Detail/Show Page' do
     visit '/login'
     fill_in 'email', with: 'jimar@jimar.com'
     fill_in 'password', with: 'Isuck'
-    click_on 'Login'
+    click_button 'Login'
 
     visit "/users/movies/550"
 
@@ -22,7 +22,7 @@ RSpec.describe 'Movies Detail/Show Page' do
     visit '/login'
     fill_in 'email', with: 'jimar@jimar.com'
     fill_in 'password', with: 'Isuck'
-    click_on 'Login'
+    click_button 'Login'
 
     visit "/users/movies/550"
 
@@ -36,7 +36,7 @@ RSpec.describe 'Movies Detail/Show Page' do
     visit '/login'
     fill_in 'email', with: 'jimar@jimar.com'
     fill_in 'password', with: 'Isuck'
-    click_on 'Login'
+    click_button 'Login'
 
     visit "/users/movies/550"
     # save_and_open_page

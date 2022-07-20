@@ -1,17 +1,38 @@
-<h2>New User</h2>
-<%= form_with url: users_path, local: true do |f| %>
+<div id="Register">
+  <body>
+    <div class="container">
+      <%= form_with url: users_path, local: true do |form| %>
+        <div class="row">
+          <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card border-0 shadow rounded-3 my-5">
+              <div class="card-body p-4 p-sm-5">
+                <h5 class="card-title text-center mb-5 fw-light fs-5">Register</h5>
+                <div class="form-floating mb-3">
+                  <%= form.text_field :name, id: "Enter your name", class: "form-control" %>
+                  <%= form.label :name, "Enter your name" %>
+                </div>
+                <div class="form-floating mb-3">
+                  <%= form.text_field :email, id: "Enter your Email", class: "form-control" %>
+                  <%= form.label :email, "Enter your Email" %>
+                </div>
+                <div class="form-floating mb-3">
+                  <%= form.password_field :password, id: "Enter Password", class: "form-control" %>
+                  <%= form.label :password, "Enter Password" %>
+                </div>
+                <div class="form-floating mb-3">
+                  <%= form.password_field :password_confirmation, id: "Enter Password", class: "form-control" %>
+                  <%= form.label :password_confirmation, "Enter Password" %>
+                </div>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-
-  <%= f.label :password %>
-  <%= f.text_field :password %>
-
-  <%= f.label :password_confirmation %>
-  <%= f.text_field :password_confirmation %>
-
-  <%= f.submit 'Create User'%>
-<% end %>
+                <div class="d-grid">
+                  <%= form.submit "Create User", class: "btn btn-primary btn-login text-uppercase fw-bold"%>
+                </div>
+                <hr class="my-4">
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </body>
+</div>

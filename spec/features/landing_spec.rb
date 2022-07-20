@@ -16,14 +16,14 @@ RSpec.describe 'Landing Page' do
 
   it 'has a button to create a new user' do
     visit root_path
-    expect(page).to have_button('Create New User')
-    click_button 'Create New User'
+    expect(page).to have_link('Register')
+    click_link 'Register'
     expect(current_path).to eq(register_path)
   end
 
   it "has a link to the login page" do
     visit root_path
-    click_button "Login"
+    click_link "Login"
     expect(current_path).to eq(login_path)
   end
 
