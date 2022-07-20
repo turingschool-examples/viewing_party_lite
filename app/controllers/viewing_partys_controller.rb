@@ -3,6 +3,7 @@ class ViewingPartysController < ApplicationController
     if current_user
       @user = current_user
     else
+      flash[:error] = 'You must be logged in or registered to acceses that page'
       redirect_to login_path
     end
     @movie = MovieFacade.new.movie_details(params[:movie_id])

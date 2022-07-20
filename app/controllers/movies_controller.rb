@@ -5,7 +5,7 @@ class MoviesController < ApplicationController
     else
       redirect_to login_path
     end
-    
+
     if params[:search] && params[:search].blank?
       @movies = []
       flash[:error] = "0 Search Results"
@@ -17,11 +17,7 @@ class MoviesController < ApplicationController
   end
 
   def show
-    if current_user
-      @user = current_user
-    else
-      redirect_to login_path
-    end
+    @user = current_user
     @movie_details = MovieFacade.new.movie_details(params[:id])
 
   end

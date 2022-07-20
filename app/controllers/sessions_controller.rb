@@ -10,12 +10,12 @@ class SessionsController < ApplicationController
       redirect_to users_dashboard_path
     else
       flash[:error] = 'Invalid Credentials'
-      redirect_to '/login'
+      redirect_to login_path
     end
   end
 
   def destroy
     session.destroy
-    redirect_to '/login'
+    redirect_to login_path
   end
 end

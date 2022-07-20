@@ -8,6 +8,7 @@ class UsersController < ApplicationController
       @user = current_user
       @viewing_partys = @user.viewing_partys
     else
+      flash[:error] = 'You must be logged in or registered to acceses that page'
       redirect_to login_path
     end
   end
