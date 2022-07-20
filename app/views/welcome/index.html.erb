@@ -1,12 +1,13 @@
 <h1>Viewing Party Lite</h1>
-<% if session[:user_id] %>
+<% if current_user %>
   <p> You are logged in. </p>
+  <%= link_to "Log Out", '/logout', method: :delete %>
+  <% @users.each do |user| %>
+    <div id=user-<%="#{user.id}"%>>
+      <%= user.email %>
+    </div>
+  <% end %>
 <% else %>
-  <%= link_to "I already have an account", login_path %>
+  <%= button_to "I already have an account", login_path, method: :get %>
   <%= button_to "Create New User", "/register", method: :get %>
-<% end %>
-<% @users.each do |user| %>
-  <div id=user-<%="#{user.id}"%>>
-    <%= link_to user.name, "/users/#{user.id}" %>
-  </div>
 <% end %>

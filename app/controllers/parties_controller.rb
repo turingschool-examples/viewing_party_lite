@@ -1,5 +1,5 @@
 class PartiesController < ApplicationController
-
+before_action :require_user
     def new
         @user = User.find(params[:user_id])
         @movie = MovieFacade.movie_info(params[:movie_id])
@@ -24,7 +24,11 @@ class PartiesController < ApplicationController
 
 
 
-    # def viewing_params
-    #     params.permit(:duration, :date, :time, :user_id, :movie_id, :user_name)
-    # end
+    private
+    def require_user
+        if !current_user
+        redirect_to root_path
+        flash[:error] = "You must sign in or create an account."
+        end
+    end 
 end
