@@ -13,7 +13,7 @@ RSpec.describe 'sessions' do
     expect(page).to_not have_button("Login")
     expect(page).to_not have_button("Create New User")
 
-    expect(page).to have_button("Logout")
+    expect(page).to have_link("Logout")
   end
 
   it "can logout a user" do
@@ -24,10 +24,10 @@ RSpec.describe 'sessions' do
     click_button "Login"
 
     visit root_path
-    click_button "Logout"
+    click_link "Logout"
     expect(current_path).to eq(root_path)
-    expect(page).to have_button("Login")
-    expect(page).to have_button("Create New User")
+    expect(page).to have_link("Login")
+    expect(page).to have_link("Register")
   end
 
   it "shows no users emails when not logged in on homepage" do
@@ -64,7 +64,7 @@ RSpec.describe 'sessions' do
 
     visit '/users/movies/550'
     click_button("Create Viewing Party")
-    
+
     expect(current_path).to eq('/users/movies/550')
     expect(page).to have_content("You must be logged in to create a viewing party")
   end

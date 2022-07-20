@@ -29,7 +29,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'faraday'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-
+gem 'bootstrap', '~> 5.1.3'
+gem 'jquery-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

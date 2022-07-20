@@ -1,14 +1,11 @@
-<h1>Welcome to Viewing Party Lite</h1>
-<% if current_user %>
-  <p><%= button_to "Logout", '/logout', method: :delete %> </p>
-<% else %>
-  <p><%= button_to "Login", login_path, method: :get %> </p>
-  <p><%= button_to "Create New User", register_path, method: :get %></p>
-<% end %>
+<center><h2>Welcome to Viewing Party Lite!</h2>
 
 <% if current_user %>
-<h3>Users:</h3>
+<h3>Current Registered Users:</h3>
 <% @users.each do |user| %>
-  <p><%= "#{user.email}" %></p>
+  <%= "#{user.email}" %> &nbsp;
 <% end %>
 <% end %>
+<br><br>
+<img src="https://wallpaperaccess.com/full/1512223.jpg" alt="Movie Pics">
+</center>

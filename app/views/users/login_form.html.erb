@@ -1,11 +1,30 @@
-<h2>Login:</h2>
-<%= form_with url: login_path, method: :post, local: true do |f| %>
+  <div id="sign_in">
+  	<body>
+  		<div class="container">
+  			<%= form_with url: login_path, method: :post, local: true do |form| %>
+  				<div class="row">
+  					<div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+  						<div class="card border-0 shadow rounded-3 my-5">
+  							<div class="card-body p-4 p-sm-5">
+  								<h5 class="card-title text-center mb-5 fw-light fs-5">Sign In</h5>
+  								<div class="form-floating mb-3">
+  									<%= form.text_field :email, id: "Enter your Email", class: "form-control" %>
+  									<%= form.label :email, "Enter your Email" %>
+  								</div>
+  								<div class="form-floating mb-3">
+  									<%= form.password_field :password, id: "Enter Password", class: "form-control" %>
+  									<%= form.label :password, "Enter Password" %>
+  								</div>
 
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-
-  <%= f.label :password %>
-  <%= f.text_field :password %>
-
-  <%= f.submit 'Login' %>
-  <% end %>
+  								<div class="d-grid">
+  									<%= form.submit "Login", class: "btn btn-primary btn-login text-uppercase fw-bold"%>
+  								</div>
+  								<hr class="my-4">
+  							</div>
+  						</div>
+  					</div>
+  				</div>
+  			<% end %>
+  		</div>
+  	</body>
+  </div>

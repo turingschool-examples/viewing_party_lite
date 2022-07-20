@@ -9,7 +9,7 @@ RSpec.describe 'User Discover Page' do
     visit '/login'
     fill_in 'email', with: 'jimar@jimar.com'
     fill_in 'password', with: 'Isuck'
-    click_on 'Login'
+    click_button 'Login'
 
     visit '/users/dashboard'
     click_button 'Discover Movies'
@@ -22,8 +22,8 @@ RSpec.describe 'User Discover Page' do
     visit '/login'
     fill_in 'email', with: 'jimar@jimar.com'
     fill_in 'password', with: 'Isuck'
-    click_on 'Login'
-    
+    click_button 'Login'
+
     visit "/users/discover"
     expect(page).to have_button('Top Rated Movies')
   end

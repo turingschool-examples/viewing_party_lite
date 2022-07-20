@@ -11,7 +11,7 @@ RSpec.describe 'Party New Page', :vcr do
     visit '/login'
     fill_in 'email', with: 'jimar@jimar.com'
     fill_in 'password', with: 'Isuck'
-    click_on 'Login'
+    click_button 'Login'
 
     visit "/users/movies/550/viewing-party/new"
 
@@ -39,7 +39,7 @@ RSpec.describe 'Party New Page', :vcr do
     visit '/login'
     fill_in 'email', with: 'jimar@jimar.com'
     fill_in 'password', with: 'Isuck'
-    click_on 'Login'
+    click_button 'Login'
 
     visit "/users/movies/550/viewing-party/new"
 
@@ -61,7 +61,7 @@ RSpec.describe 'Party New Page', :vcr do
     visit '/login'
     fill_in 'email', with: 'jimar@jimar.com'
     fill_in 'password', with: 'Isuck'
-    click_on 'Login'
+    click_button 'Login'
 
     visit "/users/movies/550/viewing-party/new"
 
