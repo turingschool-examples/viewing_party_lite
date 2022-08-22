@@ -1,0 +1,2 @@
+class ViewParty < ApplicationRecord
+end
