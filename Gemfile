@@ -53,7 +53,7 @@ group :test do
   gem 'capybara'
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'launchy'
+  gem 'launchy' #save_and_open_page
   gem 'orderly'
   gem 'rspec-rails'
   gem 'simplecov'
