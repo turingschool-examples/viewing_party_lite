@@ -4,4 +4,12 @@ class User < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
+
+  def self.all_emails
+    emails = []
+    User.all.each do |user|
+      emails << user.email
+    end
+    emails
+  end
 end

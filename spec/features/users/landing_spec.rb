@@ -24,7 +24,7 @@ RSpec.describe 'landing page' do
       click_link('Cory')
       expect(current_path).to eq("/users/#{@user1.id}")
     end
-    
+
     visit "/"
     within("div#user#{@user2.id}") do
       expect(page).to have_content("John")
