@@ -1,9 +1,22 @@
+<% flash.each do |type, msg| %>
+  <div class='flash_red'>
+    <%= msg %>
+  </div>
+  <br>
+<% end %>
+
 <%= form_with model: @user, method: :post, local: true do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name, placeholder: 'First and Last Name', required: true %><br/>
-  <%= f.label :email %>
-  <%= f.text_field :email, required: true %><br/>
-  <%= f.label :password %>
-  <%= f.password_field :password, required: true %><br/>
+  <%= f.label :name, "Name: " %>
+  <%= f.text_field :name, placeholder: 'First and Last Name', required: true %>
+  <br>
+  <br>
+  <%= f.label :email, "Email Address: " %>
+  <%= f.text_field :email, required: true %>
+  <br>
+  <br>
+  <%= f.label :password, "Password: " %>
+  <%= f.password_field :password, required: true %>
+  <br>
+  <br>
   <%= f.submit 'Create Account' %>
 <% end %>
