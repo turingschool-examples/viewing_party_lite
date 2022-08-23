@@ -9,10 +9,12 @@ RSpec.describe "Welcome Index Page" do
   it 'displays a button to create a new user' do
     click_button 'Create a New User'    
     
-    expect(current_path).to eq("/register")
+    expect(current_path).to eq('/register')
   end
-
+  
   it 'displays a link to return to the home page at the top' do
-    expect(page).to have_link('Home')
+    click_link 'Home'    
+    
+    expect(current_path).to eq('/')
   end
 end
