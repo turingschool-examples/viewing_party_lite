@@ -9,5 +9,8 @@ Rails.application.routes.draw do
   get '/users/:id/discover', to: 'discover#show'
 
   post '/search', to: 'users#search'
-  post 'users/:id/movies?=top%20rated', to: 'users#top_rated'
+  post '/top_movies', to: 'users#top_movies'
+  get '/users/:id/movies', to: "users#movies"
+
+  # post 'users/:id/movies?=top%20rated', to: 'users#top_rated'
 end

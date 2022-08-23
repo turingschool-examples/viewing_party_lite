@@ -22,13 +22,14 @@ class UsersController < ApplicationController
     end
 
     def search 
-        # binding.pry 
-        render "users/movies"
+        redirect_to "/users/#{params[:user_id]}/movies/?=#{params[:search]}"
     end 
 
-    def top_rated
-        # binding.pry 
-        render "users/movies"
+    def top_movies
+        redirect_to "/users/#{params[:user_id]}/movies/?=top%20rated"
+    end 
+
+    def movies 
     end 
 
     private
