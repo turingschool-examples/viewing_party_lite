@@ -6,6 +6,6 @@
 <center><p>Exisiting Users:</p><center>
   <% @users.each_with_index do |user, index| %>
     <div id="users<%= index %>">
-      <center><p> <%= user.email %>'s Dashboard</p><center>
+      <center><p> <%= link_to "#{user.email}'s Dashboard", user_path(user.id) %></p><center>
     </div>
   <% end %>

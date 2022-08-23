@@ -33,18 +33,33 @@ RSpec.describe 'landing page' do
       visit '/'
       
       within "#users0" do
-        expect(page).to have_content("cidlou@gmail.com's Dashboard")
-        expect(page).to_not have_content("daves@gmail.com's Dashboard")
+        expect(page).to have_link("cidlou@gmail.com's Dashboard")
+        expect(page).to_not have_link("daves@gmail.com's Dashboard")
       end
 
       within "#users1" do
-        expect(page).to have_content("daves@gmail.com's Dashboard")
-        expect(page).to_not have_content("maryjonesu@gmail.com's Dashboard")
+        expect(page).to have_link("daves@gmail.com's Dashboard")
+        expect(page).to_not have_link("maryjonesu@gmail.com's Dashboard")
       end
 
       within "#users2" do
-        expect(page).to have_content("maryjonesu@gmail.com's Dashboard")
-        expect(page).to_not have_content("cidlou@gmail.com's Dashboard")
+        expect(page).to have_link("maryjonesu@gmail.com's Dashboard")
+        expect(page).to_not have_link("cidlou@gmail.com's Dashboard")
+      end
+    end
+
+    it 'each users email is a link to their specific dashboard' do
+      user_1 = User.create!(name: 'Cindy Lou', email: 'cidlou@gmail.com')
+      user_2 = User.create!(name: 'David Smith', email: 'daves@gmail.com')
+      user_3 = User.create!(name: 'Mary Jones', email: 'maryjonesu@gmail.com')
+
+      visit '/'
+      
+      within "#users0" do
+
+        click_link("cidlou@gmail.com's Dashboard")
+
+        expect(current_path).to eq(user_path(user_1.id))
       end
     end
   end
