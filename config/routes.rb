@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'landing#index'
+
+  get '/', to: 'landing#index'
+  
+  resources :users, only: [:show, :new, :create]
+  
 end
