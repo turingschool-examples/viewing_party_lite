@@ -35,6 +35,7 @@
         "lines": [
           1,
           1,
+          4,
           null,
           null
         ]
@@ -44,6 +45,18 @@
           null,
           null,
           1,
+          null
+        ]
+      },
+      "/Users/justinramirez/turing/3mod/projects/viewing_party_lite/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
           null
         ]
       },
@@ -94,6 +107,6 @@
         }
       }
     },
-    "timestamp": 1661219925
+    "timestamp": 1661261447
   }
 }

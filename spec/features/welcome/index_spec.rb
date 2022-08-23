@@ -26,8 +26,12 @@ RSpec.describe 'Welcome Index' do
       expect(current_path).to eq(user_path(user1.id))
     end
 
-    xit 'links back to the landing page (this link will be present at the top of all pages' do
+    it 'links back to the landing page (this link will be present at the top of all pages' do
+      expect(page).to have_link('Home')
       
+      click_link 'Home'
+
+      expect(current_path).to eq(root_path)
     end
   end
 end

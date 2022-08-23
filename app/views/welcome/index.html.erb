@@ -1,3 +1,7 @@
 <h1>Viewing Party Lite</h1>
 
 <p><%= button_to 'Create a New User', new_user_path %></p>
+
+<% @users.each do |user| %>
+  <p><%= link_to "#{user.name}", user_path(user) %></p>
+<% end %>
