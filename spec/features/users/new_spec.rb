@@ -16,6 +16,6 @@ RSpec.describe 'creating a new user' do
     fill_in 'Password', with: 'guiltypleasure99'
     click_on 'Create Account'
 
-    expect(page).to eq(user_path)
+    expect(page).to have_content("Jerry Springer's Dashboard")
   end
 end
