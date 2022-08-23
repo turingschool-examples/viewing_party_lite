@@ -18,7 +18,7 @@ RSpec.describe 'landing page' do
   end
 
   it "has a list of existing users and links to their dashboards" do
-    binding.pry
+    # binding.pry
     within("user#{@user1.id}") do
       expect(page).to have_content("Cory")
       expect(page).to have_content("1@gmail.com")
@@ -34,7 +34,7 @@ RSpec.describe 'landing page' do
   end
 
   it "has a link to return to the landing page" do
-    click_button('Landing Page')
+    click_link('Landing Page')
     expect(current_path).to eq('/')
   end
 end
