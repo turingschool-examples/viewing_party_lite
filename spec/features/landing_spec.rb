@@ -10,7 +10,7 @@ RSpec.describe 'landing page' do
   end
 
   it "has a button to create a new user" do
-    click_button('New User')
+    click_link('Create New User')
     expect(current_path).to eq('/users/new')
   end
 
