@@ -5,3 +5,5 @@
   <p><%= link_to "#{user.name}", user_path(user) %></p>
 </div>
 <% end %>
+
+<%= button_to 'New User', register_path, method: :get %>

@@ -23,4 +23,14 @@ RSpec.describe 'the landing page' do
     click_link('Geraldo Rivera')
     expect(current_path).to eq("/users/#{user1.id}")
   end
+
+  it 'has a button to create a new user' do
+    user1 = User.create!(name: 'Geraldo Rivera', email: 'geraldo@trashtv.com')
+    user2 = User.create!(name: 'Maury Povich', email: 'maury@trashtv.com')
+    user3 = User.create!(name: 'Jenny Jones', email: 'jenny@trashtv.com')
+
+    visit root_path
+
+    expect(page).to have_button('New User')
+  end
 end
