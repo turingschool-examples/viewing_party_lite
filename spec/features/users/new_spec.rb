@@ -11,11 +11,14 @@ RSpec.describe 'creating a new user' do
     click_button('New User')
     expect(current_path).to eq(register_path)
 
-    fill_in 'Name', with: 'Jerry Springer'
-    fill_in 'Email', with: 'jerry@trashtv.com'
-    fill_in 'Password', with: 'guiltypleasure99'
-    click_on 'Create Account'
+    within '#create-user' do
+      fill_in 'Name', with: 'Jerry Springer'
+      fill_in 'Email', with: 'jerry@trashtv.com'
+      fill_in 'Password', with: 'guiltypleasure99'
+      click_on 'Create Account'
+    end
 
+    expect(current_path).to eq user_path(User.last)
     expect(page).to have_content("Jerry Springer's Dashboard")
   end
 
@@ -27,12 +30,14 @@ RSpec.describe 'creating a new user' do
     click_button('New User')
     expect(current_path).to eq(register_path)
 
-    fill_in 'Name', with: 'Rivera Geraldo'
-    # Test that capitalization will still result in account not being createable
-    fill_in 'Email', with: 'Geraldo@trashtv.com'
-    fill_in 'Password', with: 'password1234'
-    click_on 'Create Account'
-
+    within '#create-user' do
+      fill_in 'Name', with: 'Rivera Geraldo'
+      # Test that capitalization will still result in account not being createable
+      fill_in 'Email', with: 'Geraldo@trashtv.com'
+      fill_in 'Password', with: 'password1234'
+      click_on 'Create Account'
+    end
+    
     expect(current_path).to eq(register_path)
     expect(page).to have_content("Error: That email is already associated with an account.")
   end
