@@ -5,7 +5,25 @@ class UsersController < ApplicationController
     end
 
     def new
-        
+
+    end
+
+    def create
+        if user_params[:first_name] == "" || user_params[:last_name] == ""
+            redirect_to "/register", notice: "Error: Please complete all fields"
+        elsif user_params[:email].include?("@") == false
+            redirect_to "/register", notice: "Error: Invalid email address"
+        elsif User.exists?(email: user_params[:email].downcase)
+            redirect_to "/register", notice: "Error: Email address is taken"
+        else
+            user = User.create(user_params)
+            redirect_to "/users/#{user.id}", notice: "User #{user.email} successfully created!"
+        end
+    end
+
+    private
+    def user_params
+        params.permit(:first_name,:last_name,:email)
     end
 
 end 

@@ -10,6 +10,12 @@
   </head>
 
   <body>
+    <% flash.each do |type, msg| %>
+      <div class="flash-notice">
+        <%= msg %>
+      </div>
+    <% end %>
+    
     <div id="page-header">
       <%=link_to "Home", "/", class: "home-link"%>
     </div>
