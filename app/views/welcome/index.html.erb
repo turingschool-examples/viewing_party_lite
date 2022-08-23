@@ -4,6 +4,8 @@
 
   <%= button_to 'Create a New User', "/register", method: :get  %>
 
-
+  <% @users.each do |user| %>
+    <%= user.name %>
+  <% end %>
 
 </center>
