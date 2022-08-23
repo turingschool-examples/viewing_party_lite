@@ -3,7 +3,7 @@
 <br>
 
 <div id='button'>
-  <%= button_to "Find Top Rated Movies", "/users/#{@user.id}/movies?q=top%40rated", method: :get %>
+  <%= button_to "Find Top Rated Movies", user_movies_path(@user), method: :get, params: { top_rated: true } %>
 </div>
 
 <br>

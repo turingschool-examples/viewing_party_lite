@@ -6,8 +6,6 @@ RSpec.describe 'discover page' do
     
     visit "users/#{user1.id}/discover"
 
-    save_and_open_page
-
     expect(page).to have_button "Find Top Rated Movies"
     click_button "Find Top Rated Movies"
     expect(current_path).to eq "/users/#{user1.id}/movies?q=top%40rated"
