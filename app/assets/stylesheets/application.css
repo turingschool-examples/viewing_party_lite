@@ -20,3 +20,31 @@ header {
   font-size: 36px;
   width: 30%;
 }
+
+h2 {
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+  width: 30%;
+}
+
+#create-user {
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+  width: 30%;
+}
+
+#new-user-button {
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+  width: 30%;
+}
+
+#user-info {
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+  width: 30%;
+}

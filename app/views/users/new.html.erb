@@ -5,18 +5,20 @@
   <br>
 <% end %>
 
-<%= form_with model: @user, method: :post, local: true do |f| %>
-  <%= f.label :name, "Name: " %>
-  <%= f.text_field :name, placeholder: 'First and Last Name', required: true %>
-  <br>
-  <br>
-  <%= f.label :email, "Email Address: " %>
-  <%= f.text_field :email, required: true %>
-  <br>
-  <br>
-  <%= f.label :password, "Password: " %>
-  <%= f.password_field :password, required: true %>
-  <br>
-  <br>
-  <%= f.submit 'Create Account' %>
-<% end %>
+<div id='create-user'>
+  <%= form_with model: @user, method: :post, local: true do |f| %>
+    <%= f.label :name, "Name: " %>
+    <%= f.text_field :name, placeholder: 'First and Last Name', required: true %>
+    <br>
+    <br>
+    <%= f.label :email, "Email Address: " %>
+    <%= f.text_field :email, required: true %>
+    <br>
+    <br>
+    <%= f.label :password, "Password: " %>
+    <%= f.password_field :password, required: true %>
+    <br>
+    <br>
+    <%= f.submit 'Create Account' %>
+  <% end %>
+</div>

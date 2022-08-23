@@ -1,9 +1,19 @@
+<div id='new-user-button'>
+  <%= button_to 'New User', register_path, method: :get %>
+</div>
+
+<br>
+
 <h2>Users</h2>
 
-<% @users.each do |user| %>
-<div id="user-<%= user.id %>">
-  <p><%= link_to "#{user.name}", user_path(user) %></p>
-</div>
-<% end %>
+<br>
 
-<%= button_to 'New User', register_path, method: :get %>
+<div id='user-info'>
+  <% @users.each do |user| %>
+    <div id="user-<%= user.id %>">
+      <p>
+        <%= link_to "#{user.name}", user_path(user) %>
+      </p>
+    </div>
+  <% end %>
+</div>
