@@ -21,5 +21,17 @@ RSpec.describe 'landing page' do
 
       expect(page).to have_button('Create New User')
     end
+    
+    it 'click button to redirect to new user registration form' do
+      user_1 = User.create!(name: 'Cindy Lou', email: 'cidlou@gmail.com')
+      user_2 = User.create!(name: 'David Smith', email: 'daves@gmail.com')
+      user_3 = User.create!(name: 'Mary Jones', email: 'maryjonesu@gmail.com')
+
+      visit '/'
+
+      click_button('Create New User')
+
+      expect(current_path).to eq('/register')
+    end
   end
 end
