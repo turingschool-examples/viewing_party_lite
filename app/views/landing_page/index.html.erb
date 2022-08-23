@@ -1,6 +1,4 @@
-<h1> Viewing Party Lite <h1>
 
-<%= link_to "Add User", users_new_path %>
 
 <% @users.each do |user| %>
     <h3> <%= link_to "#{user.name}", "/users/#{user.id}" %> </h3>
