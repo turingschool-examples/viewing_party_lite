@@ -4,8 +4,13 @@ class UsersController < ApplicationController
   end
 
   def new
-    new = User.create(name: params[:name], email: params[:email])
-    redirect_to "/users/#{new.id}"
+    if User.all_emails.include?(params[:email])
+      # flash.now[:notice] = "This e-mail is already in use. Please use another."
+      redirect_to "/register", notice: "This e-mail is already in use. Please use another."
+    else
+      new = User.create(name: params[:name], email: params[:email])
+      redirect_to "/users/#{new.id}"
+    end
   end
 
   def register
