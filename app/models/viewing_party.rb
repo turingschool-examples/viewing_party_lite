@@ -1,5 +1,5 @@
 class ViewingParty < ApplicationRecord
-  validates :duration, presence: true, numericality: :true
+  validates :duration, presence: true, numericality: true
   validates :eventdate, presence: true
   # validate_date :eventdate
   validates :starttime, presence: true

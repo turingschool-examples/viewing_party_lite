@@ -15,7 +15,7 @@ RSpec.describe UserViewingParty, type: :model do
   end
 
   describe 'class methods' do
-    
+
   end
 
   describe 'instance methods' do
