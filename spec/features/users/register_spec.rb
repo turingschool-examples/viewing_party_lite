@@ -11,4 +11,13 @@ RSpec.describe 'register page' do
     click_button('Register')
     expect(page).to have_content("TestUser")
   end
+
+  it "won't let you register with an e-mail that is already connected to a registered account" do
+    @user1 = User.create!(name: 'Cory', email: 'Cory@gmail.com')
+
+    fill_in 'Name' , with: 'Cory'
+    fill_in 'E-mail', with: 'Cory@gmail.com'
+    click_button('Register')
+    expect(page).to have_content("This e-mail is already in use. Please use another.")
+  end
 end
