@@ -31,11 +31,31 @@ RSpec.describe 'landing page', type: :feature do
       expect(page).to have_content("greta-fake@test.com's Dashboard")
     end
 
-    save_and_open_page
-
     click_on "david-fake@test.com's Dashboard"
 
     expect(current_path).to eq("/users/#{user1.id}")
+  end
+
+  it 'has link to return to landing page, which is present on all pages' do
+    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com")
+    
+    visit '/'
+
+    within "#page-header" do
+      expect(page).to have_content("Home")
+      click_on("Home")
+    end
+
+    expect(current_path).to eq("/")
+
+    click_on "david-fake@test.com's Dashboard"
+
+    within "#page-header" do
+      expect(page).to have_content("Home")
+      click_on("Home")
+    end
+
+    expect(current_path).to eq("/")
   end
 
 end
