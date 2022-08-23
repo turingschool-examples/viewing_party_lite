@@ -10,4 +10,15 @@ RSpec.describe 'the User show page' do
 
     expect(page).to have_content("Geraldo Rivera's Dashboard")
   end
+
+  it 'should have a button to discover movies' do
+    user1 = User.create!(name: 'Geraldo Rivera', email: 'geraldo@trashtv.com')
+
+    visit user_path(user1)
+
+    expect(page).to have_button("Discover Movies")
+    click_button("Discover Movies")
+    
+    expect(current_path).to eq "/users/#{user1.id}/discover"
+  end
 end
