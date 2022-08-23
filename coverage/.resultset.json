@@ -25,6 +25,21 @@
           null
         ]
       },
+      "/Users/johnsantosuosso/viewing_party_lite/viewing_party_lite/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/johnsantosuosso/viewing_party_lite/viewing_party_lite/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/Users/johnsantosuosso/viewing_party_lite/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
           0,
@@ -64,14 +79,6 @@
         "branches": {
         }
       },
-      "/Users/johnsantosuosso/viewing_party_lite/viewing_party_lite/app/controllers/application_controller.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/Users/johnsantosuosso/viewing_party_lite/viewing_party_lite/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
@@ -93,6 +100,6 @@
         }
       }
     },
-    "timestamp": 1661222507
+    "timestamp": 1661223369
   }
 }
