@@ -1,10 +1,20 @@
-class UsersController < ApplicationController
-    def show
-    end
 
-    def new
-    end
+class UsersController < ApplicationController 
+  def new 
+  end
 
-    def create
-    end
+  def show 
+    @user = User.find(params[:id])
+  end
+
+  def create 
+    @user = User.create(user_params)
+    # require 'pry'; binding.pry 
+    redirect_to "/users/#{@user.id}"
+  end
+
+private 
+  def user_params 
+    params.permit(:name, :email)
+  end
 end
