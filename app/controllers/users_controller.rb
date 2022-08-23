@@ -5,7 +5,6 @@ class UsersController < ApplicationController
 
   def new
     if User.all_emails.include?(params[:email])
-      # flash.now[:notice] = "This e-mail is already in use. Please use another."
       redirect_to "/register", notice: "This e-mail is already in use. Please use another."
     else
       new = User.create(name: params[:name], email: params[:email])
