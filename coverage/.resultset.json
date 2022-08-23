@@ -14,6 +14,23 @@
           null
         ]
       },
+      "/Users/mayutakeda/turing/3mod/projects/viewing_party_lite/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/mayutakeda/turing/3mod/projects/viewing_party_lite/app/models/application_record.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/mayutakeda/turing/3mod/projects/viewing_party_lite/app/controllers/users_controller.rb": {
         "lines": [
           1,
@@ -53,20 +70,12 @@
           null
         ]
       },
-      "/Users/mayutakeda/turing/3mod/projects/viewing_party_lite/app/models/user.rb": {
+      "/Users/mayutakeda/turing/3mod/projects/viewing_party_lite/app/controllers/welcome_controller.rb": {
         "lines": [
           1,
           1,
-          1,
-          null
-        ]
-      },
-      "/Users/mayutakeda/turing/3mod/projects/viewing_party_lite/app/models/application_record.rb": {
-        "lines": [
+          4,
           null,
-          null,
-          1,
-          1,
           null
         ]
       },
@@ -86,17 +95,6 @@
         "lines": [
           null,
           null,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/mayutakeda/turing/3mod/projects/viewing_party_lite/app/controllers/welcome_controller.rb": {
-        "lines": [
-          0,
-          0,
-          0,
           0,
           0
         ],
@@ -128,6 +126,6 @@
         }
       }
     },
-    "timestamp": 1661266157
+    "timestamp": 1661283872
   }
 }
