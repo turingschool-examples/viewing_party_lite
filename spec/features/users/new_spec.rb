@@ -6,5 +6,4 @@ RSpec.describe "New User Registration Page" do
     visit '/register'  
   end
 
-  
 end

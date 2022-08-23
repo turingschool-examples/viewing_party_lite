@@ -6,6 +6,10 @@ RSpec.describe "Welcome Index Page" do
     visit '/'  
   end
 
+  it 'has a header' do
+    expect(page).to have_content('Welcome to Viewing Party!')
+  end
+
   it 'displays a button to create a new user' do
     click_button 'Create a New User'    
     
