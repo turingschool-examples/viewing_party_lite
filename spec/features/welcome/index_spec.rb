@@ -9,6 +9,17 @@ RSpec.describe 'landing page' do
       expect(page).to have_content('Viewing Party Lite')
     end
 
+    it 'has a link back to the landing page' do
+
+      visit '/'
+
+      expect(page).to have_link('Home')
+
+      click_link('Home')
+    
+      expect(current_path).to eq('/')
+    end
+
     it 'has button to create a new user' do
 
       visit '/'
