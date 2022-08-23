@@ -1,0 +1,11 @@
+<%= link_to "Home" %>
+<br>
+<h3> Viewing Party Lite </h3>
+
+<%= button_to "Create a New User" %>
+
+<br><br>
+
+<% @users.each do |user| %>
+  <%= link_to "#{user.name}" %>
+<% end %>
