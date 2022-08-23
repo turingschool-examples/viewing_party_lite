@@ -1,0 +1,11 @@
+<h1> Register a New User </h1>
+
+<%= form_with url: users_path, local: :true do |form| %>
+  <%=form.text_field :first_name%>
+  <%=form.label :first_name, "First Name"%>
+  <%=form.text_field :last_name%>
+  <%=form.label :last_name, "Last Name"%>
+  <%=form.text_field :email%>
+  <%=form.label :email, "Email"%>
+  <%=form.submit "Create New User"%>
+<% end %>

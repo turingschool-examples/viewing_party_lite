@@ -1,0 +1,11 @@
+<h1> Viewing Party Lite </h1>
+
+<%= link_to "Create a New User", "/register", class: "create-user-link"%>
+
+<div id="existing-users">
+  <% @users.each do |user|%>
+    <div id="user-<%=user.id%>">
+      <%= link_to "#{user.email}'s Dashboard", user_path(user.id), class: "user-dashboard-link"%>
+    </div>
+  <% end %>
+</div>
