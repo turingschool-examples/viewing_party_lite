@@ -1,6 +1,13 @@
-<% @movies.each do |m| %>
-    <div class="movies">
-    <p>Title: <%= m[:title] %></p>
-    <p>Vote Average: <%= m[:vote_average] %></p>
-    </div>
-<% end %>
+<h1> Movies </h1>
+
+<p><%= button_to "Discover Page", "/users/#{params[:user_id]}/discover", method: :get %> </p>
+
+<% if @movies %>
+<div id="movies">
+    <% @movies.each do |m| %>
+        <div class="movie">
+        <p>Title: <%= m[:title] %></p>
+        <p>Vote Average: <%= m[:vote_average] %></p>
+        </div>
+    <% end %>
+\<% end %>

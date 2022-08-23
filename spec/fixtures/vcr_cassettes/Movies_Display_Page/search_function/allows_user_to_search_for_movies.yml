@@ -1,0 +1,139 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=TMDB_KEY&include_adult=false&language=en-US&page=1&query=Pulp%20Fiction
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - TMDB_KEY
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 23 Aug 2022 22:24:14 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=600
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 b0a0e0d22a21f33ff74219a7ecf1d55e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - JFK51-C1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 6aBqnhW-6_tmk3Q0sFgRG2WIw865RVwGdHKCPGi6Y81GQdITsk3q6Q==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/suaEOtk1N1sgg2MTM7oZd2cfVp3.jpg","genre_ids":[53,80],"id":680,"original_language":"en","original_title":"Pulp
+        Fiction","overview":"A burger-loving hit man, his philosophical partner, a
+        drug-addled gangster''s moll and a washed-up boxer converge in this sprawling,
+        comedic crime caper. Their adventures unfurl in three stories that ingeniously
+        trip back and forth in time.","popularity":67.536,"poster_path":"/fIE3lAGcZDV1G6XM5KmuWnNsPp1.jpg","release_date":"1994-09-10","title":"Pulp
+        Fiction","video":false,"vote_average":8.5,"vote_count":23640},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":109005,"original_language":"en","original_title":"Pulp
+        Fiction Art","overview":"A guilty pleasure of the mid-20th century, pulp fiction
+        magazines were often defined less by their contents than by their provocative
+        covers. This documentary explores the shocking art that brought life to these
+        lurid publications. Filmmaker Jamie McDonald delves into the collection of
+        art historian Robert Lesser, shedding light on this nearly forgotten art form
+        and the ways it impacted popular culture.","popularity":1.283,"poster_path":"/pVpCuDyyvt3HRjVEYUUBOqrio7F.jpg","release_date":"2005-01-01","title":"Pulp
+        Fiction Art","video":false,"vote_average":5.5,"vote_count":4},{"adult":false,"backdrop_path":null,"genre_ids":[35],"id":738735,"original_language":"en","original_title":"Stealing
+        Pulp Fiction","overview":"A diehard Quentin Tarantino fan recruits his friend
+        Elizabeth to steal a 35mm film reel of Pulp Fiction.","popularity":0.6,"poster_path":"/5OHH3y2v8uwluOZLC2Kt8ENcjxn.jpg","release_date":"2020-09-01","title":"Stealing
+        Pulp Fiction","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":982376,"original_language":"en","original_title":"Pulp
+        Fiction: the Facts","overview":"Behind the scenes of the legendary classic
+        film by Quentin Tarantino.","popularity":0.6,"poster_path":null,"release_date":"","title":"Pulp
+        Fiction: the Facts","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":295641,"original_language":"en","original_title":"Pulp
+        Fiction: the Golden Age of Storytelling","overview":"This program profiles
+        writers of the 20s, 30s, and 40s, known as the Pulp Fiction-era. These writers
+        created the iconic characters who live on today in our collective hearts and
+        imaginations. It has even been estimated that 90-95% of the top blockbusters
+        in Hollywood movies, were based on the stories from the Pulp Fiction-era.","popularity":0.6,"poster_path":null,"release_date":"2009-01-01","title":"Pulp
+        Fiction: the Golden Age of Storytelling","video":false,"vote_average":4,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":890682,"original_language":"fr","original_title":"Pulpe
+        Fiction","overview":"Which luscious candidate will pass the casting?","popularity":0.618,"poster_path":"/uCsJrzjQ47krDxUibUJITKZlvHN.jpg","release_date":"2020-11-06","title":"Pulpe
+        Fiction","video":false,"vote_average":0,"vote_count":0}],"total_pages":1,"total_results":6}'
+  recorded_at: Tue, 23 Aug 2022 22:24:14 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=TMDB_KEY&include_adult=false&language=en-US&page=2&query=Pulp%20Fiction
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - TMDB_KEY
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 23 Aug 2022 22:24:14 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=600
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 8844c3dbe820eac69f8ca9f1c7fb7402.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - JFK51-C1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - La4nLvSV-sfOzU90mXIj2_YsoA0BVlGMlMeNlLnkFtAFyhKQhVxkzw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":2,"results":[],"total_pages":1,"total_results":6}'
+  recorded_at: Tue, 23 Aug 2022 22:24:14 GMT
+recorded_with: VCR 6.1.0
