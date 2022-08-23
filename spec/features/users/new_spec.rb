@@ -25,7 +25,6 @@ RSpec.describe 'New User Registration' do
     fill_in 'Name:', with: "Drew"
     fill_in 'Email:', with: "drew@email.com"
     click_button("Create New User")
-    expect(current_path).to eq("/register")
     user = User.last
 
     expect(current_path).to eq("/users/#{user.id}")
@@ -42,7 +41,6 @@ RSpec.describe 'New User Registration' do
     fill_in 'Name:', with: "Drew"
     fill_in 'Email:', with: "drew@email.com"
     click_button("Create New User")
-    expect(current_path).to eq("/register")
     user = User.last
 
     expect(current_path).to eq("/users/#{user.id}")
