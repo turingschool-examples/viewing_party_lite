@@ -3,6 +3,7 @@
 <br>
 
 <div id='button'>
+  <%= button_to "Find Top Rated Movies", "/users/#{@user.id}/movies?q=top%40rated", method: :get %>
 </div>
 
 <br>
