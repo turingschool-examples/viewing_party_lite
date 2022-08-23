@@ -20,6 +20,9 @@ RSpec.describe 'user dashboard page' do
 
       visit user_path(user.id)
       expect(page).to have_content("Discover Movies")
+
+      click_link "Discover Movies"
+      expect(current_path).to eq(user_discover_index_path(user.id))
    end
 
    it 'has a section for Viewing Parties' do
