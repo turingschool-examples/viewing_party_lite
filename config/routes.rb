@@ -7,4 +7,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :new, :create]
   get '/users/:id/discover', to: 'discover#show'
+
+  post '/search', to: 'users#search'
+  post 'users/:id/movies?=top%20rated', to: 'users#top_rated'
 end

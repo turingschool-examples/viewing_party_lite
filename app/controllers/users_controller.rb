@@ -21,6 +21,16 @@ class UsersController < ApplicationController
         end
     end
 
+    def search 
+        # binding.pry 
+        render "users/movies"
+    end 
+
+    def top_rated
+        # binding.pry 
+        render "users/movies"
+    end 
+
     private
     def user_params
         params.permit(:first_name,:last_name,:email)
