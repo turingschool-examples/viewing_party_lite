@@ -13,14 +13,15 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
       if @user.save
-        redirect_to "/users/#{@user.id}"
+        redirect_to user_path(@user.id)
       else
-        render new
+        redirect_to register_path
+        flash[:alert] = "Error: That email is already associated with an account."
       end
   end
 
   private
-   def user_params
-     params.permit(:name, :email, :password)
-   end
+    def user_params
+      params.permit(:name, :email, :password)
+    end
 end
