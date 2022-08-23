@@ -1,5 +1,6 @@
-class UsersController < ApplicationController
+# frozen_string_literal: true
 
+class UsersController < ApplicationController
   def index
     @users = User.all
   end
@@ -17,13 +18,13 @@ class UsersController < ApplicationController
     if user.save
       redirect_to user_path(user)
     else
-      redirect_to "/register"
+      redirect_to '/register'
     end
   end
 
   private
+
   def user_params
     params.require(:user).permit(:name, :email)
   end
-
 end
