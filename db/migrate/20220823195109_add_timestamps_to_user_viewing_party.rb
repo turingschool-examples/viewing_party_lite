@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddTimestampsToUserViewingParty < ActiveRecord::Migration[5.2]
   def change
     add_column :user_viewing_parties, :created_at, :datetime
