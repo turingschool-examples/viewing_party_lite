@@ -18,14 +18,15 @@ RSpec.describe 'landing page' do
   end
 
   it "has a list of existing users and links to their dashboards" do
-    # binding.pry
-    within("user#{@user1.id}") do
+    within("div#user#{@user1.id}") do
       expect(page).to have_content("Cory")
       expect(page).to have_content("1@gmail.com")
       click_link('Cory')
       expect(current_path).to eq("/users/#{@user1.id}")
     end
-    within("#user_#{@user2.id}") do
+    
+    visit "/"
+    within("div#user#{@user2.id}") do
       expect(page).to have_content("John")
       expect(page).to have_content("2@gmail.com")
       click_link('John')

@@ -11,4 +11,7 @@ class UsersController < ApplicationController
   def register
 
   end
+  def show
+
+  end
 end
