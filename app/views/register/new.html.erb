@@ -1,3 +1,8 @@
+<% flash.each do |type, msg| %>
+    <div class='flash_red'><%= msg %></div>
+    <br>
+<% end %>
+
 <h1>Register A New User</h1>
 
 <%= form_with url:  "/register", method: :post, local: true  do |form| %>

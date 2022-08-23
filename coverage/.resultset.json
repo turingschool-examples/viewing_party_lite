@@ -7,30 +7,6 @@
           null
         ]
       },
-      "/Users/wesleymiranda/github/viewing_party_lite/app/controllers/register_controller.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/wesleymiranda/github/viewing_party_lite/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
       "/Users/wesleymiranda/github/viewing_party_lite/app/models/user.rb": {
         "lines": [
           1,
@@ -41,6 +17,9 @@
           1,
           1,
           null,
+          null,
+          1,
+          1,
           null,
           null,
           null
@@ -99,6 +78,14 @@
         "branches": {
         }
       },
+      "/Users/wesleymiranda/github/viewing_party_lite/app/controllers/application_controller.rb": {
+        "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/wesleymiranda/github/viewing_party_lite/app/controllers/viewing_parties_controller.rb": {
         "lines": [
           0,
@@ -110,6 +97,33 @@
       },
       "/Users/wesleymiranda/github/viewing_party_lite/app/controllers/viewing_party_users.rb": {
         "lines": [
+          0,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/wesleymiranda/github/viewing_party_lite/app/controllers/register_controller.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
           0,
           null,
           0
@@ -147,6 +161,6 @@
         }
       }
     },
-    "timestamp": 1661289400
+    "timestamp": 1661294737
   }
 }
