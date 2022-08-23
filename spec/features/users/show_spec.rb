@@ -7,8 +7,6 @@ RSpec.describe "users show page", type: :feature do
        
         visit "/users/#{user.id}"
 
-        save_and_open_page
-
         expect(page).to have_content("Homer Simpson's Dashboard")
         expect(page).to have_button("Discover Movies")
         expect(page).to have_content("Viewing Parties")

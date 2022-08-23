@@ -7,11 +7,10 @@ RSpec.describe "users discover page", type: :feature do
        
         visit "/users/#{user.id}"
 
-        click_on("Update Discount")
+        click_button("Discover Movies")
 
         expect(current_path).to eq("/users/#{user.id}/discover")
 
-        expect(page).to have_content("Percent Discount: 30%")
-        expect(page).to have_content("Quantity Threshold: 5")
+        expect(page).to have_button("Discover Top Rated Movies")
     end
 end
