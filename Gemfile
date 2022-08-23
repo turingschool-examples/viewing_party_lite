@@ -44,7 +44,6 @@ group :development, :test do
   gem 'orderly'
   gem 'pry'
   gem 'shoulda-matchers'
-  # gem 'vcr'
 end
 
 group :development do
@@ -61,6 +60,7 @@ group :test do
   gem 'simplecov'
   gem 'webmock'
   gem 'vcr'
+
 end
 
 
