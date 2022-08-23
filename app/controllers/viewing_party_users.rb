@@ -1,0 +1,3 @@
+class ViewingPartyUsers< ApplicationController
+
+end
