@@ -6,5 +6,5 @@ class Party < ApplicationRecord
   validates_presence_of :start_time
 
   has_many :user_parties
-  has_many :user, through: :user_parties
+  has_many :users, through: :user_parties
 end

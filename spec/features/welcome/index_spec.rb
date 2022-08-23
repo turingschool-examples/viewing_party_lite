@@ -42,7 +42,7 @@ RSpec.describe 'landing page' do
       user_3 = User.create!(name: 'Mary Jones', email: 'maryjonesu@gmail.com')
 
       visit '/'
-      
+
       within "#users0" do
         expect(page).to have_link("cidlou@gmail.com's Dashboard")
         expect(page).to_not have_link("daves@gmail.com's Dashboard")
