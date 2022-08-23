@@ -2,6 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'landing page' do
   before(:each) do
+    @user1 = User.create!(name: "Cory", email: '1@gmail.com')
+    @user2 = User.create!(name: "John", email: '2@gmail.com')
+
     visit '/'
   end
 
@@ -11,14 +14,12 @@ RSpec.describe 'landing page' do
 
   it "has a button to create a new user" do
     click_link('Create New User')
-    expect(current_path).to eq('/users/new')
+    expect(current_path).to eq('/register')
   end
 
   it "has a list of existing users and links to their dashboards" do
-    @user1 = User.create(name: "Cory", email: '1@gmail.com' )
-    @user2 = User.create(name: "John", email: '2@gmail.com' )
-
-    within("#user_#{@user1.id}") do
+    binding.pry
+    within("user#{@user1.id}") do
       expect(page).to have_content("Cory")
       expect(page).to have_content("1@gmail.com")
       click_link('Cory')

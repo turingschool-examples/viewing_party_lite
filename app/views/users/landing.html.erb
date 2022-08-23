@@ -1,3 +1,11 @@
 <h1>Viewing Party Lite</h1>
 
-<%= link_to "Create New User", "/users/new" %>
+<%= link_to "Create New User", "/register" %>
+
+<h3>Existing Users</h3>
+
+<% @users.each do |user| %>
+  <section id = "user#{user.id}">
+    <p><%= link_to "#{user.name}", "/users/#{user.id}" %></p>
+  </section>
+<% end %>
