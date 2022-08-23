@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+#new user register
 RSpec.describe "user registration page" do 
   it "has a form to register" do 
 
