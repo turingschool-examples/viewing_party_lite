@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   get '/', to: 'users#index'
   get '/register', to: 'users#new'
 
-  resources :users, only: [:show, :create] do
-    resources :movies, only: [:index, :show] do
-      resources :parties, only: [:new, :create]
+  resources :users, only: %i[show create] do
+    resources :movies, only: %i[index show] do
+      resources :parties, only: %i[new create]
     end
   end
 
