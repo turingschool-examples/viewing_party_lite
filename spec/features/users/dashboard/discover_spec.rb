@@ -10,7 +10,6 @@ RSpec.describe "users discover page", type: :feature do
         click_button("Discover Movies")
 
         expect(current_path).to eq("/users/#{user.id}/discover")
-
         expect(page).to have_button("Discover Top Rated Movies")
     end
 end
