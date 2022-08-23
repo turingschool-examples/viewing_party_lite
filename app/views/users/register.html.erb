@@ -1,0 +1,9 @@
+<h1>Create a new user</h1>
+
+<%= form_with url: "/users/new", method: :get do |f| %>
+  <%= f.label :name, "Name:" %>
+  <%= f.text_field :name %>
+  <%= f.label :email, "E-mail:" %>
+  <%= f.text_field :email %>
+  <%= f.submit "Register" %>
+<% end %>
