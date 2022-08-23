@@ -10,33 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_22_224028) do
+ActiveRecord::Schema.define(version: 2022_08_23_044927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "movies", force: :cascade do |t|
-    t.string "details"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "parties", force: :cascade do |t|
-    t.bigint "movie_id"
+    t.string "movie"
+    t.date "date"
+    t.time "start_time"
+    t.integer "duration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.index ["movie_id"], name: "index_parties_on_movie_id"
-    t.index ["user_id"], name: "index_parties_on_user_id"
   end
 
-  create_table "user_parties", force: :cascade do |t|
+  create_table "party_users", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "party_id"
+    t.boolean "host"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["party_id"], name: "index_user_parties_on_party_id"
-    t.index ["user_id"], name: "index_user_parties_on_user_id"
+    t.index ["party_id"], name: "index_party_users_on_party_id"
+    t.index ["user_id"], name: "index_party_users_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -46,8 +41,6 @@ ActiveRecord::Schema.define(version: 2022_08_22_224028) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "parties", "movies"
-  add_foreign_key "parties", "users"
-  add_foreign_key "user_parties", "parties"
-  add_foreign_key "user_parties", "users"
+  add_foreign_key "party_users", "parties"
+  add_foreign_key "party_users", "users"
 end
