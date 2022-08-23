@@ -2,4 +2,10 @@
 <br>
 <br>
 <br>
-<center><h3> <%= button_to 'Create New User', '/register', method: :get  %><h3><center>
+<center><h3> <%= button_to 'Create New User', '/register', method: :get  %><h3><center><br>
+<center><p>Exisiting Users:</p><center>
+  <% @users.each_with_index do |user, index| %>
+    <div id="users<%= index %>">
+      <center><p> <%= user.email %>'s Dashboard</p><center>
+    </div>
+  <% end %>
