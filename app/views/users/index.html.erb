@@ -1,0 +1,6 @@
+<p><%= button_to "Create New User", register_path, method: :get %></p>
+
+<h3>All Users</h3>
+<% @users.each do |user| %>
+  <p><div id="user-<%= user.id %>"><%= link_to "#{user.name}", user_path(user) %></div></p>
+<% end %>
