@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'application welcome page' do 
+RSpec.describe 'landing page' do 
     it 'has title of application' do
         visit '/'
         expect(page).to have_content("Viewing Party Lite")

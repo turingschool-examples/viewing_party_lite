@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
-  
-  get "/register", to: "users#new"
+  root 'landing#index'
+
+  get '/', to: 'landing#index'
+  # get '/register', to: 'users#new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
