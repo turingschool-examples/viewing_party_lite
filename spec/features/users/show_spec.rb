@@ -18,7 +18,7 @@ RSpec.describe "User's Dashboard Show Page" do
     expect(current_path).to eq("/users/#{@user.id}/discover")
   end
 
-  it "displays all viewing parties the user is hosting or attending" do
+  it "lists all viewing parties the user is hosting or attending" do
     expect(page).to have_content("Viewing Parties")
     # expect(page).to have_content("<insert pic of movie and view party info>")
   end
