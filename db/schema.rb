@@ -41,4 +41,5 @@ ActiveRecord::Schema.define(version: 2022_08_23_183408) do
 
   add_foreign_key "user_events", "events"
   add_foreign_key "user_events", "users"
+  
 end
