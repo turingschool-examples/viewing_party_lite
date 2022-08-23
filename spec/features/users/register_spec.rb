@@ -18,7 +18,6 @@ RSpec.describe 'register page' do
     fill_in 'Name' , with: 'Cory'
     fill_in 'E-mail', with: 'Cory@gmail.com'
     click_button('Register')
-    save_and_open_page
     expect(page).to have_content("This e-mail is already in use. Please use another.")
   end
 end
