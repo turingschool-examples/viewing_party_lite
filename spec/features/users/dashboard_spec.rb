@@ -22,6 +22,8 @@ RSpec.describe 'User Dashboard' do
 
       click_on "Discover Movies"
 
+      save_and_open_page
+
       expect(page).to have_content("Discover Movies Search")
       expect(page).to have_current_path(curr_path)
     end
