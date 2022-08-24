@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class MoviesController < ApplicationController
-
   def discover
     @user = User.find(params[:user_id])
   end
@@ -23,7 +22,7 @@ class MoviesController < ApplicationController
       json_2 = JSON.parse(response_2.body, symbolize_names: true)
 
       top_40 = json_1[:results] + json_2[:results]
-      
+
       @movies = top_40.map do |movie_data|
         Movie.new(movie_data)
       end
