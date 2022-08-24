@@ -31,12 +31,12 @@ RSpec.describe 'Show', type: :feature do
 
     click_button 'Discover Movies'
 
-    fill_in 'movie', with: 'Shawshank'
+    fill_in 'movie', with: 'Mission Impossible'
 
     click_button 'Search'
     expect(current_path).to eq("/users/#{user_1.id}/movies")
 
-    expect(page).to have_content('Shawshank Redemption')
+    expect(page).to have_content('Mission Impossible')
   end
 
   it "clicks the 'Discover Movies' and then 'Top Movies' button and is taken to a page with top 40 movie results", :vcr do
