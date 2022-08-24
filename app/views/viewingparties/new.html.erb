@@ -1,3 +1,9 @@
 <h1> New Viewing Party </h1>
 
 <h3><%= "#{params[:movie_title]}" %></h3>
+
+<%= form_with url:"/users/#{params[:user_id]}/movies/#{params[:movie_id]}/viewing-party/new", method: :post, local: true do |f| %>
+    <%= f.number_field :runtime, value: "#{params[:movie_runtime]}" %>
+    <%= f.label :runtime, "Runtime" %>
+    <%= f.submit 'Create Viewing Party' %>
+<% end %>
