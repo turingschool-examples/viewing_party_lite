@@ -7,6 +7,13 @@ RSpec.describe 'landing page' do
         expect(page).to have_button("Create a New User")
     end
 
+    it 'the button links to page to create a new user' do
+        visit "/"
+        click_on("Create a New User")
+
+        expect(current_path).to eq("/users/new")
+    end
+
     it 'has a list of existing users' do
         user_1 = User.create!(name: "Mike", email: "email@email.com")
 
