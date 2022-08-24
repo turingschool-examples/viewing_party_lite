@@ -1,1 +1,7 @@
 <h2>Test</h2>
+
+<% @top_rated.each_with_index do |movie, index| %>
+  <div id="<%=movie%>-info">
+    <p><%= (index + 1).to_s + ". " + movie %></p>
+  </div>
+<% end %>
