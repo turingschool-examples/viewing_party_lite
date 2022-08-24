@@ -8,8 +8,11 @@ class UsersController < ApplicationController
   end
 
   def create 
-    if User.exists?(params[:email])
-      flash.alert = "That email address is already registered."
+    user = User.find_by_email(params[:email])
+    if user 
+    # if User.exists?(params[:email])
+      flash[:alert] = "That email address is already registered."
+      redirect_to "/register"
     else
       @user = User.create!(user_params)
       # require 'pry'; binding.pry 
