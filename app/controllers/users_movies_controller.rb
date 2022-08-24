@@ -5,7 +5,7 @@ class UsersMoviesController < ApplicationController
       movie = params[:movie]
       @movies = MovieFacade.get_a_movie(movie)
     else
-      @movies = MovieFacade.find_top_movies
+      @movies = MovieFacade.find_top_40_movies
     end
   end
 

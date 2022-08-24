@@ -39,7 +39,7 @@ RSpec.describe 'Show', type: :feature do
     expect(page).to have_content('Shawshank Redemption')
   end
 
-  it "goes to a page with top movie results", :vcr do
+  it "clicks the 'Discover Movies' and then 'Top Movies' button and is taken to a page with top 40 movie results", :vcr do
     user_1 = User.create(name: 'John Doe', email: 'John@gmail.com')
 
     visit "/users/#{user_1.id}"
