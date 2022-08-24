@@ -7,8 +7,10 @@ RSpec.describe MovieFacade do
       expect(results.count).to eq(20)
     end
 
-    it '#movies_by_keyword' do
-      keywords = MovieFacade.movies_keyword_query
+    xit '#movies_by_keyword' do
+      results = MovieFacade.movies_keyword_query
+      keyword = "Fight"
+      expect()
     end
   end
 end

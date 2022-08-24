@@ -12,8 +12,9 @@ class MovieService
     json = JSON.parse(response.body, symbolize_names: true)
   end
 
-  def self.movies_by_keyword
-    response = conn.get('/3/search/movie')
+  def self.movies_by_keyword(keyword)
+    response = conn.get("search/movie?['api_key']query=#{keyword}")
     json = JSON.parse(response.body, symbolize_names: true)
+    # require 'pry'; binding.pry 
   end
 end
