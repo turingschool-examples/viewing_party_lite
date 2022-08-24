@@ -7,4 +7,8 @@
 </section>
 
 <h3> Viewing Parties </h3> 
-
+    <section id = "hosted-parties"> 
+    <% @hosts_parties.each do |party| %>
+        <p>When: <%= party.when.strftime('%Y-%m-%d') %> Time: <%= party.start_time.strftime('%H:%M') %>
+     <% end %>
+     </section>
