@@ -3,7 +3,11 @@
 <h3><%= "#{params[:movie_title]}" %></h3>
 
 <%= form_with url:"/users/#{params[:user_id]}/movies/#{params[:movie_id]}/viewing-party/new", method: :post, local: true do |f| %>
-    <%= f.number_field :runtime, value: "#{params[:movie_runtime]}" %>
-    <%= f.label :runtime, "Runtime" %>
+    <p><%= f.label :runtime, "Runtime" %></p>
+    <p><%= f.number_field :runtime, value: "#{@movie.runtime}", min: "#{@movie.runtime}" %></p>
+    <p><%= f.label :runtime, "Select a date" %></p>
+    <p><%= f.date_field :date %></p>
+    <p><%= f.label :runtime, "Select a date" %></p>
+    <p><%= f.date_field :date %></p>
     <%= f.submit 'Create Viewing Party' %>
 <% end %>

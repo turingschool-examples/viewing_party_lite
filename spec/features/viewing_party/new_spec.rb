@@ -13,11 +13,33 @@ RSpec.describe "viewing party new page", type: :feature do
         expect(page).to have_content("The Shawshank Redemption")
     end
 
-    it 'has a viewing party new page with a default runtime that can be adjusted - happy path', :vcr do
+    it 'has a viewing party new page with a default runtime that can be adjusted', :vcr do
         user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now)
        
         visit "/users/#{user.id}/movies/278/viewing-party/new"
-        # save_and_open_page
-        expect(page).to have_field(:runtime, :with => 142)
+       
+        expect(page).to have_field("runtime", with: "142")
+    end
+
+    xit 'has a viewing party new page with a default runtime that can be adjusted', :vcr do
+        user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now)
+       
+        visit "/users/#{user.id}/movies/278/viewing-party/new"
+
+        fill_in("runtime", with: "120")
+        #finish fields 
+        click_on("Create Viewing Party")
+       
+        expect(current_path).to eq("/users/#{user.id}/movies/278/viewing-party/new")
+    end
+
+    it 'has a viewing party new page with a default runtime that can be adjusted', :vcr do
+        user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now)
+       
+        visit "/users/#{user.id}/movies/278/viewing-party/new"
+        save_and_open_page
+        fill_in("date", with: "2022/10/03")
+       
+        expect(current_path).to eq("/users/#{user.id}/movies/278/viewing-party/new")
     end
 end 
