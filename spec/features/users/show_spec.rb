@@ -42,7 +42,6 @@ RSpec.describe 'user dashboard(show)' do
 
 
         visit "/users/#{user_1.id}"
-            save_and_open_page
             within("#viewing_parties_#{view_party_1.id}") do
             expect(page).to have_content("Fellowship of the Ring")
             expect(page).to have_content("Hosting")
@@ -55,5 +54,13 @@ RSpec.describe 'user dashboard(show)' do
             expect(page).to have_no_content("Fellowship of the Ring")
             expect(page).to have_no_content("Hosting")
         end
+    end
+
+    it "has a link to Discover Movies" do
+        user_1 = User.create!(name: "Bob", email: "testemail1@mail.com")
+        visit "/users/#{user_1.id}"
+        expect(page).to have_content("Discover Movies")
+        click_on("Discover Movies")
+        expect(current_path).to eq("/users/#{user_1.id}/discover")
     end
 end
