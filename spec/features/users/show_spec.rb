@@ -42,19 +42,18 @@ RSpec.describe 'user dashboard(show)' do
 
 
         visit "/users/#{user_1.id}"
-
-            page.within first("#viewing_parties") do
+            save_and_open_page
+            within("#viewing_parties_#{view_party_1.id}") do
             expect(page).to have_content("Fellowship of the Ring")
             expect(page).to have_content("Hosting")
             expect(page).to have_no_content("Star Wars")
             expect(page).to have_no_content("Invited")
         end
-        #     Can't figure below out; played with all kinds of Capybara CSS syntax for the second div id
-        #     page.within second("#viewing_parties") do
-        #     expect(page).to have_content("Star Wars")
-        #     expect(page).to have_content("Invited")
-        #     expect(page).to have_no_content("Fellowship of the Ring")
-        #     expect(page).to have_no_content("Hosting")
-        # end
+            within("#viewing_parties_#{view_party_2.id}")do
+            expect(page).to have_content("Star Wars")
+            expect(page).to have_content("Invited")
+            expect(page).to have_no_content("Fellowship of the Ring")
+            expect(page).to have_no_content("Hosting")
+        end
     end
 end
