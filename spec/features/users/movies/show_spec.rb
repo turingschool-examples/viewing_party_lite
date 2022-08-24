@@ -98,8 +98,6 @@ RSpec.describe "movie detail page", type: :feature do
 
     visit "/users/#{user1.id}/movies/278"
 
-    save_and_open_page
-
     within "#review-1" do
       expect(page).to have_content("Author: elshaarawy")
       expect(page).to have_content("very good movie 9.5/10")
