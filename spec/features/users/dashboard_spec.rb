@@ -9,7 +9,7 @@ RSpec.describe "User Dashboard Page", type: :feature do
         click_on "Micheal Jordan"
 
         expect(page).to have_current_path("/users/#{user1.id}")
-        expect(page).to have_content("Micheal Jordan Dashboard")
+        expect(page).to have_content("Micheal Jordan's Dashboard")
         expect(page).to have_content("Viewing Parties:")
         expect(page).to have_button("Discover Movies")
         expect(page).to_not have_content("Kobe Bryant")
