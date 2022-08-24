@@ -11,6 +11,7 @@ RSpec.describe "User Disover Movie", type: :feature do
 
         visit "/users/#{user1.id}"
         click_on "Discover Movies"
+        # save_and_open_page
 
         expect(page).to have_current_path("/users/#{user1.id}/discover")
         expect(page).to have_content("Micheal Jordan Discover Movies")
