@@ -63,10 +63,6 @@ class UsersController < ApplicationController
         @review_data = JSON.parse(review_response.body, symbolize_names: true)
     end
 
-    # def top_movies
-    #     redirect_to "/users/#{params[:user_id]}/movies/?=top%20rated"
-    # end 
-
     private
     def user_params
         params.permit(:first_name,:last_name,:email)

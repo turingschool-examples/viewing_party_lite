@@ -47,3 +47,16 @@
     <%=@review_data[:total_results]%> Reviews
   </p>
 </div>
+
+<div id="reviews">
+  <% @review_data[:results].each_with_index do |review,index|%>
+    <div id="review-<%=index+1%>">
+      <p>
+        Author: <%=review[:author]%>
+      </p>
+      <p>
+        Review: <%=review[:content]%>
+      </p>
+    </div>
+  <% end %>
+</div>

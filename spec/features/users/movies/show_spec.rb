@@ -92,4 +92,22 @@ RSpec.describe "movie detail page", type: :feature do
       expect(page).to have_content("7 Reviews")
     end
   end
+
+  it 'displays all reviews for the movie with authors', :vcr do
+    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com")
+
+    visit "/users/#{user1.id}/movies/278"
+
+    save_and_open_page
+
+    within "#review-1" do
+      expect(page).to have_content("Author: elshaarawy")
+      expect(page).to have_content("very good movie 9.5/10")
+    end
+
+    within "#review-2" do
+      expect(page).to have_content("Author: John Chard")
+      expect(page).to have_content("Some birds aren't meant to be caged")
+    end
+  end
 end
