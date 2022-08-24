@@ -34,7 +34,6 @@ RSpec.describe 'landing page' do
       user2 = User.create!(name: 'Sryce Bimmons', email: 'valhiemhero@hotmail.com')
 
       visit '/'
-save_and_open_page
       click_link("shoe_eater@payless.com's Dashboard")
       expect(current_path).to eq("/users/#{user1.id}")
 
