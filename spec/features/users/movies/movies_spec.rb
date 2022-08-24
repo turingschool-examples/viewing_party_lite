@@ -15,6 +15,18 @@ RSpec.describe 'Movies Display Page' do
         expect(page).to have_content("Vote Average: 8.5")
         expect(page).to have_selector(".movie", count: 6)
     end
+
+     it 'limits searches to 40 movies', :vcr do
+        user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now)
+
+        visit "/users/#{user.id}/discover"
+
+        fill_in :search, with: 'Long'
+        click_button 'Search'
+
+        expect(page.status_code).to eq 200
+        expect(page).to have_selector(".movie", count: 40)
+    end
   end
 
   describe 'top movies function' do
@@ -38,17 +50,17 @@ RSpec.describe 'Movies Display Page' do
     end
   end
 
-    describe 'movies link to movie page funciton' do
+  describe 'movies link to movie page funciton' do
     it 'allows user to see a movie overview page', :vcr do
         user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now)
 
         visit "/users/#{user.id}/discover"
 
         click_button("Discover Top Rated Movies")
-  
+      
         click_link("The Shawshank Redemption")
 
-        expect(current_path).to eq("/users/#{user.id}/278/viewing-party/new")
+        expect(current_path).to eq("/users/#{user.id}/movies/278/viewing-party/new")
     end
   end
 end

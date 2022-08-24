@@ -27,7 +27,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Wed, 24 Aug 2022 17:11:52 GMT
+      - Wed, 24 Aug 2022 17:23:35 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -44,13 +44,13 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 2c6b5dd77f1abe60653ce0454f344b64.cloudfront.net (CloudFront)
+      - 1.1 2750b94b402c92287d764b5fa115a042.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - SEA19-C3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - CvWiPz-swP9XUJlOIZC5HQjCOhLVQ5oSBOl8SV6npcYfopCDPhjlSw==
+      - zCEuJILHt5LzBTSJ8tDmdLRSzFauX9Up9T9wlm47jT7-Yo0F9hAAhQ==
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/suaEOtk1N1sgg2MTM7oZd2cfVp3.jpg","genre_ids":[53,80],"id":680,"original_language":"en","original_title":"Pulp
@@ -80,7 +80,7 @@ http_interactions:
         Fiction: the Golden Age of Storytelling","video":false,"vote_average":4,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":890682,"original_language":"fr","original_title":"Pulpe
         Fiction","overview":"Which luscious candidate will pass the casting?","popularity":0.6,"poster_path":"/uCsJrzjQ47krDxUibUJITKZlvHN.jpg","release_date":"2020-11-06","title":"Pulpe
         Fiction","video":false,"vote_average":0,"vote_count":0}],"total_pages":1,"total_results":6}'
-  recorded_at: Wed, 24 Aug 2022 17:11:52 GMT
+  recorded_at: Wed, 24 Aug 2022 17:23:35 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/search/movie?api_key=TMDB_KEY&include_adult=false&language=en-US&page=2&query=Pulp%20Fiction
@@ -108,7 +108,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Wed, 24 Aug 2022 17:11:52 GMT
+      - Wed, 24 Aug 2022 17:23:35 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -125,15 +125,15 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 7545e37b10b5fcf5e3df98185c85194a.cloudfront.net (CloudFront)
+      - 1.1 ef8f66c83aecd87910ce2e1153544a20.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - SEA19-C3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - bqThpm97yWCAWmbi2ipVNWHdAVv3iJA0ecXcYUyb4E2C7Ss11_0DYw==
+      - 2vlAU1dQjb3LZ7KCRFr7TYNwXbRqH_PgLyW1New0R1hYgBtoYEJOGw==
     body:
       encoding: ASCII-8BIT
       string: '{"page":2,"results":[],"total_pages":1,"total_results":6}'
-  recorded_at: Wed, 24 Aug 2022 17:11:52 GMT
+  recorded_at: Wed, 24 Aug 2022 17:23:35 GMT
 recorded_with: VCR 6.1.0

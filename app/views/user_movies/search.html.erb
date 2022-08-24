@@ -1,12 +1,12 @@
 <h1> Movies </h1>
 
-<p><%= button_to "Discover Page", "/users/#{params[:user_id]}/discover", method: :get %> </p>
+<p><%= button_to "Discover Page", "/users/#{params[:id]}/discover", method: :get %> </p>
 
 <% if @movies %>
 <div id="movies">
     <% @movies.each do |m| %>
         <div class="movie">
-        <p>Title: <%= link_to "#{m[:title]}", "/users/#{params[:user_id]}/movies/#{m[:id]}/viewing-party/new" %></p>
+        <p>Title: <%= link_to "#{m[:title]}", "/users/#{params[:id]}/movies/#{m[:id]}/viewing-party/new" %></p>
         <p>Vote Average: <%= m[:vote_average] %></p>
         </div>
     <% end %>
