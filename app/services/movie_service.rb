@@ -10,6 +10,7 @@ class MovieService
     response = conn.get('/3/movie/top_rated')
     json = JSON.parse(response.body, symbolize_names: true)
   end
+<<<<<<< HEAD
 
 <<<<<<< HEAD
   def self.movies_by_keyword(keyword)
@@ -23,4 +24,6 @@ class MovieService
   #   json = JSON.parse(response.body, symbolize_names: true)
   # end
 >>>>>>> 37f039b (test/Click button to go to discover top rated results page)
+=======
+>>>>>>> 502fb0d (feat/Displays top rated films on the movies results page)
 end

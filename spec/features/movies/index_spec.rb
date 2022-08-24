@@ -9,7 +9,6 @@ RSpec.describe 'Movies Page', type: :feature do
       click_button('Discover Top Rated Movies')
 
       expect(page).to have_content("The Shawshank Redemption")
+      expect(page).to have_content("Average Review Score: 8.7")
    end
-   # click_link 'Search'
-   # expect(current_path).to eq("/users/:user_id/movies?q=keyword")
 end
