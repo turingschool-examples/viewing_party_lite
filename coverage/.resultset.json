@@ -1,44 +1,36 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/gaurijoshi/turing/3Module/projects/viewing_party/viewing_party_lite/app/helpers/application_helper.rb": {
+      "/Users/nikkyrojas/turing/3mod/projects/pair_project/viewing_party_lite/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/gaurijoshi/turing/3Module/projects/viewing_party/viewing_party_lite/app/helpers/welcome_helper.rb": {
+      "/Users/nikkyrojas/turing/3mod/projects/pair_project/viewing_party_lite/app/helpers/welcome_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/gaurijoshi/turing/3Module/projects/viewing_party/viewing_party_lite/app/models/user.rb": {
+      "/Users/nikkyrojas/turing/3mod/projects/pair_project/viewing_party_lite/app/models/user.rb": {
         "lines": [
           1,
           1,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/gaurijoshi/turing/3Module/projects/viewing_party/viewing_party_lite/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/gaurijoshi/turing/3Module/projects/viewing_party/viewing_party_lite/app/models/user_viewing_party.rb": {
-        "lines": [
           1,
           1,
           1,
           null
         ]
       },
-      "/Users/gaurijoshi/turing/3Module/projects/viewing_party/viewing_party_lite/app/models/viewing_party.rb": {
+      "/Users/nikkyrojas/turing/3mod/projects/pair_project/viewing_party_lite/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/nikkyrojas/turing/3mod/projects/pair_project/viewing_party_lite/app/models/viewing_party.rb": {
         "lines": [
           1,
           1,
@@ -51,21 +43,15 @@
           null
         ]
       },
-      "/Users/gaurijoshi/turing/3Module/projects/viewing_party/viewing_party_lite/app/controllers/landing_controller.rb": {
+      "/Users/nikkyrojas/turing/3mod/projects/pair_project/viewing_party_lite/app/models/user_viewing_party.rb": {
         "lines": [
           1,
           1,
-          null,
-          null
-        ]
-      },
-      "/Users/gaurijoshi/turing/3Module/projects/viewing_party/viewing_party_lite/app/controllers/application_controller.rb": {
-        "lines": [
           1,
           null
         ]
       },
-      "/Users/gaurijoshi/turing/3Module/projects/viewing_party/viewing_party_lite/app/controllers/users_controller.rb": {
+      "/Users/nikkyrojas/turing/3mod/projects/pair_project/viewing_party_lite/app/controllers/users_controller.rb": {
         "lines": [
           null,
           1,
@@ -77,26 +63,43 @@
           null,
           null,
           1,
-          2,
-          2,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
           null,
           1,
           1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
+          0,
           null,
           null
         ]
       },
-      "/Users/gaurijoshi/turing/3Module/projects/viewing_party/viewing_party_lite/app/controllers/welcome_controller.rb": {
+      "/Users/nikkyrojas/turing/3mod/projects/pair_project/viewing_party_lite/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/nikkyrojas/turing/3mod/projects/pair_project/viewing_party_lite/app/controllers/landing_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/nikkyrojas/turing/3mod/projects/pair_project/viewing_party_lite/app/controllers/welcome_controller.rb": {
         "lines": [
           null,
           null
@@ -105,6 +108,6 @@
         }
       }
     },
-    "timestamp": 1661313169
+    "timestamp": 1661354487
   }
 }
