@@ -1,11 +1,10 @@
-<%= link_to "Home" %>
-<br>
-<h3> Viewing Party Lite </h3>
 
-<%= button_to "Create a New User" %>
+<%= button_to "Create a New User", "/register", method: :get %>
 
 <br><br>
 
 <% @users.each do |user| %>
-  <%= link_to "#{user.name}" %>
+  <div id="user-<%="#{user.id}"%>">
+  <%= link_to "#{user.name}", user_path(user.id) %>
+  </div>
 <% end %>
