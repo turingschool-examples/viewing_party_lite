@@ -1,5 +1,11 @@
 <h1> Movie Details </h1>
 
+<div id="movie-title">
+  <p>
+    Movie Title: <%=@movie_data[:title]%>
+  </p>
+</div>
+
 <%= button_to "Create Viewing Party for #{@movie_data[:title]}", "/users/#{@user.id}/movies/#{@movie_data[:id]}/viewing-party/new", method: :get, params: {:user_id => @user.id, :movie_id => @movie_data[:id]} %>
 
 <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get%>
