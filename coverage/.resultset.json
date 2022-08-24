@@ -7,32 +7,13 @@
           null
         ]
       },
-      "/Users/johnsantosuosso/viewing_party_lite/viewing_party_lite/app/services/movie_service.rb": {
+      "/Users/johnsantosuosso/viewing_party_lite/viewing_party_lite/app/poros/movie.rb": {
         "lines": [
           1,
           1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
           null,
           1,
           1,
-          1,
-          1,
-          null,
-          null,
-          null,
           1,
           1,
           null,
@@ -138,22 +119,6 @@
         "branches": {
         }
       },
-      "/Users/johnsantosuosso/viewing_party_lite/viewing_party_lite/app/poros/movie.rb": {
-        "lines": [
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/Users/johnsantosuosso/viewing_party_lite/viewing_party_lite/app/jobs/application_job.rb": {
         "lines": [
           0,
@@ -226,6 +191,41 @@
         "branches": {
         }
       },
+      "/Users/johnsantosuosso/viewing_party_lite/viewing_party_lite/app/services/movie_service.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/johnsantosuosso/viewing_party_lite/viewing_party_lite/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
@@ -247,6 +247,6 @@
         }
       }
     },
-    "timestamp": 1661370925
+    "timestamp": 1661371122
   }
 }
