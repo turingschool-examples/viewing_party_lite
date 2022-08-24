@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def create
     User.create!(user_params)
-    redirect_to '/'
+    redirect_to "/users/#{User.last.id}"
   end
 
   private

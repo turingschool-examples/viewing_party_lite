@@ -20,10 +20,6 @@ RSpec.describe 'home page' do
   it 'can direct to create a new user' do
     click_button("Create a New User")
     expect(current_path).to eq("/register")
-    fill_in "Name", with: "Tyler"
-    fill_in "Email", with: "tyler@user.com"
-    click_on('Submit')
-    expect(current_path).to eq(root_path)
   end
 
   it 'has an index of existing users' do
