@@ -13,7 +13,7 @@ RSpec.describe User, type: :model do
     it { should have_many(:parties).through(:party_users) }
   end
 
-    describe 'class methods' do
+  describe 'class methods' do
     before :each do
       @eli = User.create!(name: 'Eli', email: 'es@g')
       @sunny = User.create!(name: 'Sunny', email: 'sm@g')
