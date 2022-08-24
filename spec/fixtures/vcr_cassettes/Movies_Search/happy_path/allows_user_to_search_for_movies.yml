@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=TMDB_KEY&include_adult=false&language=en-US&page=1&query=Pulp%20Fictionn
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - TMDB_KEY
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Tue, 23 Aug 2022 20:54:51 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=600
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 fb7a91e6436d6c6ab7f46f75c256840c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - JFK51-C1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 7nGyL0Os_DsaKaX8VklcwZjnk-1TaOyHHmp6j6sTJBniFuL7oKw3BA==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":1,"results":[],"total_pages":0,"total_results":0}'
+  recorded_at: Tue, 23 Aug 2022 20:54:50 GMT
+recorded_with: VCR 6.1.0
