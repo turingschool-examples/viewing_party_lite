@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <% flash.each do |type, message| %>
+      <div id="flash-message">
+      <%= message %>
+      </div>
+    <% end %>
+
     <title>ViewingPartyLite</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <h1> Viewing Party Lite <h1>
     <%= link_to "Landing Page", '/' %>
-    <%= link_to "Add User", users_new_path %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
@@ -15,3 +19,4 @@
     <%= yield %>
   </body>
 </html>
+
