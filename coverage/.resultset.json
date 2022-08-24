@@ -30,29 +30,9 @@
           null
         ]
       },
-      "/Users/nikkyrojas/turing/3mod/projects/pair_project/viewing_party_lite/app/models/user_viewing_party.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/nikkyrojas/turing/3mod/projects/pair_project/viewing_party_lite/app/models/viewing_party.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
       "/Users/nikkyrojas/turing/3mod/projects/pair_project/viewing_party_lite/app/controllers/landing_controller.rb": {
         "lines": [
+          1,
           1,
           1,
           null,
@@ -65,39 +45,7 @@
           null
         ]
       },
-      "/Users/nikkyrojas/turing/3mod/projects/pair_project/viewing_party_lite/app/controllers/users_controller.rb": {
-        "lines": [
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          2,
-          2,
-          null,
-          1,
-          1,
-          null,
-          1,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-<<<<<<< HEAD
-      "/Users/nikkyrojas/turing/3mod/projects/pair_project/viewing_party_lite/app/mailers/application_mailer.rb": {
+      "/Users/nikkyrojas/turing/3mod/projects/pair_project/viewing_party_lite/app/models/user_viewing_party.rb": {
         "lines": [
           0,
           0,
@@ -107,8 +55,48 @@
         "branches": {
         }
       },
-      "/Users/nikkyrojas/turing/3mod/projects/pair_project/viewing_party_lite/app/jobs/application_job.rb": {
+      "/Users/nikkyrojas/turing/3mod/projects/pair_project/viewing_party_lite/app/models/viewing_party.rb": {
         "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/nikkyrojas/turing/3mod/projects/pair_project/viewing_party_lite/app/controllers/users_controller.rb": {
+        "lines": [
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
           0,
           0
         ],
@@ -117,32 +105,13 @@
       },
       "/Users/nikkyrojas/turing/3mod/projects/pair_project/viewing_party_lite/app/controllers/welcome_controller.rb": {
         "lines": [
-          0,
-          0
+          null,
+          null
         ],
         "branches": {
         }
-      },
-      "/Users/nikkyrojas/turing/3mod/projects/pair_project/viewing_party_lite/app/channels/application_cable/connection.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/nikkyrojas/turing/3mod/projects/pair_project/viewing_party_lite/app/channels/application_cable/channel.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-=======
-
-
-    "timestamp": 1661313169
->>>>>>> b060e06c6788e86f96830f60d580991973535637
+      }
+    },
+    "timestamp": 1661349944
   }
 }
