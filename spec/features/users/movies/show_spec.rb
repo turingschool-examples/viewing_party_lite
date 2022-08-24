@@ -32,4 +32,13 @@ RSpec.describe "movie detail page", type: :feature do
     end
   end
 
+  it 'displays the vote average of the movie', :vcr do
+    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com")
+
+    visit "/users/#{user1.id}/movies/278"
+
+    within "#vote-average" do
+      expect(page).to have_content("Vote Average: 8.7")
+    end
+  end
 end
