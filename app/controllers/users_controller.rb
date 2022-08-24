@@ -49,10 +49,16 @@ class UsersController < ApplicationController
         end
 
         response1 = conn.get("https://api.themoviedb.org/3/movie/#{params[:movie_id]}?api_key=#{ENV['tmdb_key']}&language=en-US&page=1")
+
+        cast_response = conn.get("https://api.themoviedb.org/3/movie/#{params[:movie_id]}/credits?api_key=#{ENV['tmdb_key']}&language=en-US")
         
         @user = User.find(params[:user_id])
 
         @movie_data = JSON.parse(response1.body, symbolize_names: true)
+
+        @cast = JSON.parse(cast_response.body, symbolize_names: true)
+
+        # require 'pry'; binding.pry 
     end
 
     # def top_movies

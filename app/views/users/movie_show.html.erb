@@ -33,3 +33,11 @@
 <div id="summary">
   <%=@movie_data[:overview]%>
 </div>
+
+<div id="cast">
+  <%@cast[:cast].first(10).each do |cast|%>
+    <p>
+      <%=cast[:name]%> as <%=cast[:character]%>
+    </p>
+  <% end %>
+</div>
