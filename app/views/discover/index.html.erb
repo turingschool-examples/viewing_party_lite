@@ -1,1 +1,10 @@
-<h1>Discover Movies</h1>
+<center><h2>Discover Movies</h2><center>
+<br>
+<center><%= button_to 'Discover Top Rated Movies', "/users/#{@user.id}/discover", params: {query: 'top_rated'}, method: :get %><center>
+<br>
+<br>
+<center><%= form_with url: "/users/#{@user.id}/discover", local: true do |form| %>
+  <%= form.label :search, 'Search Movies' %>
+  <%= form.text_field :search %>
+  <%= form.submit 'Search' %>
+<% end %><center>
