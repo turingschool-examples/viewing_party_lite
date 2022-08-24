@@ -10,5 +10,9 @@ class UsersMoviesController < ApplicationController
     end
   end
 
+  def show
+    @movie = MovieFacade.find_movie_details(params[:movie_id])
+  end
+
 
 end
