@@ -16,7 +16,6 @@ class UsersController < ApplicationController
     redirect_to "/users/#{User.last.id}"
   end
 
-
   private
 
   def user_params
