@@ -19,11 +19,21 @@ RSpec.describe MovieFacade do
       movies = MovieFacade.find_top_40_movies
       expect(movies.first.title).to eq('The Shawshank Redemption')
       expect(movies).to be_an(Array)
+      expect(movies.first).to be_a(Movie)
     end
 
     it 'returns only the top 40 movies', :vcr do
       movies = MovieFacade.find_top_40_movies
       expect(movies.count).to eq(40)
+      expect(movies.first).to be_a(Movie)
+    end
+  end
+
+  describe '#find_movie_details', :vcr do
+    it 'returns movie details' do
+      movie = MovieFacade.find_movie_details(293660)
+      expect(movie.title).to eq('Deadpool')
+      expect(movie).to be_an(Movie)
     end
   end
 end

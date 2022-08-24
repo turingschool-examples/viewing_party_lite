@@ -1,0 +1,79 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/293660?api_key=bda1fb6c7825c58492e8e95b2e6d2629
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 24 Aug 2022 18:05:56 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 9c3f50cffc33a8b004ec206b646201d7de30d837
+      X-Memc-Age:
+      - '8942'
+      X-Memc-Expires:
+      - '7477'
+      Etag:
+      - W/"373545c2e97887a143de0677f7fcd9c3"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 3c481f6886feb1a9e478f16ce7504792.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MIA3-C5
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - teptGTYnvdhtlWbJDYsSa0Ck3Qx-OC5rOvTgLbM3Uh63owpg4CHELA==
+      Age:
+      - '1296'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/en971MEXui9diirXlogOrPKmsEn.jpg","belongs_to_collection":{"id":448150,"name":"Deadpool
+        Collection","poster_path":"/u9vctxUKeGRZ4x2Yiaqj2y3AeYv.jpg","backdrop_path":"/hBQOWY8qWXJVFAc8yLTh1teIu43.jpg"},"budget":58000000,"genres":[{"id":28,"name":"Action"},{"id":12,"name":"Adventure"},{"id":35,"name":"Comedy"}],"homepage":"https://www.20thcenturystudios.com/movies/deadpool","id":293660,"imdb_id":"tt1431045","original_language":"en","original_title":"Deadpool","overview":"The
+        origin story of former Special Forces operative turned mercenary Wade Wilson,
+        who, after being subjected to a rogue experiment that leaves him with accelerated
+        healing powers, adopts the alter ego Deadpool. Armed with his new abilities
+        and a dark, twisted sense of humor, Deadpool hunts down the man who nearly
+        destroyed his life.","popularity":204.71,"poster_path":"/zq8Cl3PNIDGU3iWNRoc5nEZ6pCe.jpg","production_companies":[{"id":25,"logo_path":"/qZCc1lty5FzX30aOCVRBLzaVmcp.png","name":"20th
+        Century Fox","origin_country":"US"},{"id":431,"logo_path":null,"name":"The
+        Donners'' Company","origin_country":"US"},{"id":28788,"logo_path":null,"name":"Genre
+        Films","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2016-02-09","revenue":783100000,"runtime":108,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Witness
+        the beginning of a happy ending.","title":"Deadpool","video":false,"vote_average":7.601,"vote_count":27187}'
+  recorded_at: Wed, 24 Aug 2022 18:27:32 GMT
+recorded_with: VCR 6.1.0
