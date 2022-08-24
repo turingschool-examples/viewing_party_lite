@@ -8,6 +8,13 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
     end 
 
+    def discover
+        @user = User.find(params[:id])
+        if params[:q].present?
+            @q = params[:q]
+        end
+    end
+
     def new
     end
 
