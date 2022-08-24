@@ -23,6 +23,16 @@ class MovieService
         data_2 = JSON.parse(credits.body, symbolize_names: true)
 
         response = data_1 + data_2
+    end
 
+    def self.search_movies
+        conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
+            faraday.headers["api_key"] = ENV['movie_api_key']
+        end
+        if response.status == 200
+            JSON.parse(response.body, symbolize_names: true)
+        else
+            nil
+        end
     end
 end

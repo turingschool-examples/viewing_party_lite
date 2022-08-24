@@ -15,4 +15,16 @@ class MovieFacade
     def service 
         MovieService.new
     end
+
+    def self.search_movies(search_term)
+        movies = MovieService.search_movies
+        if data != nil
+            movies = data[:results][0][:title]
+    
+            found_movies = movies.find_all.include?(search_term)
+            Movie.new(found_movies)
+        else
+            nil
+        end
+    end
 end

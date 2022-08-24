@@ -10,5 +10,8 @@ class UsersController < ApplicationController
 
     def discover
         @user = User.find(params[:id])
+        if params[:q].present?
+            @q = params[:q]
+        end
     end
 end
