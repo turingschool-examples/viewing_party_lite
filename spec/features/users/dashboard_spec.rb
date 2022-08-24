@@ -22,10 +22,10 @@ RSpec.describe 'User Dashboard' do
 
       click_on "Discover Movies"
 
-      save_and_open_page
-
-      expect(page).to have_content("Discover Movies Search")
       expect(page).to have_current_path(curr_path)
+      expect(page).to have_content("Discover Movies")
+      expect(page).to have_field(:search, with: 'Search by movie title')
+      expect(page).to have_selector(:link_or_button, 'Find Movies')
     end
   end
 end
