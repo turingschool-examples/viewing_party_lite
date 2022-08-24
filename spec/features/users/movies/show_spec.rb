@@ -51,4 +51,15 @@ RSpec.describe "movie detail page", type: :feature do
       expect(page).to have_content("Runtime: 2hr 22 min")
     end
   end
+
+  it 'displays the genre(s) associated with the movie', :vcr do
+    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com")
+
+    visit "/users/#{user1.id}/movies/278"
+
+    within "#genres" do
+      expect(page).to have_content("Drama")
+      expect(page).to have_content("Crime")
+    end
+  end
 end

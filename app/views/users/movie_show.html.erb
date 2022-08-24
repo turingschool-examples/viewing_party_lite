@@ -21,3 +21,11 @@
     Runtime: <%=@movie_data[:runtime] / 60%>hr  <%=@movie_data[:runtime] % 60%> min
   </p>
 </div>
+
+<div id="genres">
+  <% @movie_data[:genres].each do |genre| %>
+    <p>
+      <%=genre[:name]%>
+    </p>
+  <% end %>
+<div>
