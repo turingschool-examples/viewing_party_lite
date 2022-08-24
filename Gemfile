@@ -45,6 +45,8 @@ group :development, :test do
   gem 'pry'
   gem 'shoulda-matchers'
   gem 'orderly'
+  gem 'webmock'
+  gem 'vcr'
 end
 
 group :development do

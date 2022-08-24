@@ -1,4 +1,4 @@
-class MoviesController < ApplicationController
+class UsersMoviesController < ApplicationController
 
   # def search
   #   conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
@@ -13,9 +13,12 @@ class MoviesController < ApplicationController
   #   require 'pry'; binding.pry 
   # end
 
-  def search
-    movie = params[:movie]
-    @movie = MovieFacade.get_a_movie(movie)
+
+  def index
+    if params[:movie].present?
+      movie = params[:movie]
+      @movies = MovieFacade.get_a_movie(movie)
+    end
   end
 
 
