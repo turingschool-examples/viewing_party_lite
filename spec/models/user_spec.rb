@@ -12,4 +12,33 @@ RSpec.describe User, type: :model do
     it { should have_many :party_users }
     it { should have_many(:parties).through(:party_users) }
   end
+
+    describe 'class methods' do
+    before :each do
+      @eli = User.create!(name: 'Eli', email: 'es@g')
+      @sunny = User.create!(name: 'Sunny', email: 'sm@g')
+      @john = User.create!(name: 'John', email: 'jc@g')
+
+      @frozen = Party.create!(movie_id: 1, start_time: '2022-12-25 06:30:00 UTC', duration: 90)
+      @moana = Party.create!(movie_id: 2, start_time: '2022-12-31 12:00:00 UTC', duration: 120)
+
+      @ef = PartyUser.create!(party: @frozen, user: @eli, host: true)
+      @sf = PartyUser.create!(party: @frozen, user: @sunny, host: false)
+      @jf = PartyUser.create!(party: @frozen, user: @john, host: false)
+      @sm = PartyUser.create!(party: @moana, user: @sunny, host: true)
+      @em = PartyUser.create!(party: @moana, user: @eli, host: false)
+    end
+
+    it 'can find hosted party users' do
+      expect(@eli.hosting).to eq([@ef])
+      expect(@sunny.hosting).to eq([@sm])
+      expect(@john.hosting).to eq([])
+    end
+
+    it 'can find invited party users' do
+      expect(@eli.invited).to eq([@em])
+      expect(@sunny.invited).to eq([@sf])
+      expect(@john.invited).to eq([@jf])
+    end
+  end
 end

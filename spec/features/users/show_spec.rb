@@ -30,27 +30,37 @@ RSpec.describe 'User Dashboard' do
     expect(page).to have_content('Discover Movies')
   end
 
-  xit 'has invited viewing parties' do
-    within '#invited' do
-      expect(page).to have_content('MOVIE IMAGE')
-      expect(page).to have_content('MOVIE NAME')
-      expect(page).to have_content('2022-12-31 12:00:00 UTC')
-      expect(page).to have_content('Host: Sunny')
-      expect(page).to have_content('Invited: Eli')
-      expect(page).to_not have_content('Host: Eli')
-      expect(page).to_not have_content('Invited: Sunny')
+  it 'has created viewing parties' do
+    within '#created' do
+      # expect(page).to have_content('MOVIE IMAGE')
+      # expect(page).to have_content('MOVIE NAME')
+      # expect(page).to have_content('2022-12-25 06:30:00 UTC')
+      within '#created-host' do
+        expect(page).to have_content('Host: Eli')
+        expect(page).to_not have_content('Host: Sunny')
+      end
+      within '#created-invited' do
+        expect(page).to have_content('Invited:')
+        expect(page).to have_content('Sunny')
+        expect(page).to_not have_content('Eli')
+      end
     end
   end
 
-  xit 'has created viewing parties' do
-    within '#created' do
-      expect(page).to have_content('MOVIE IMAGE')
-      expect(page).to have_content('MOVIE NAME')
-      expect(page).to have_content('2022-12-25 06:30:00 UTC')
-      expect(page).to have_content('Host: Eli')
-      expect(page).to have_content('Invited: Sunny')
-      expect(page).to_not have_content('Host: Sunny')
-      expect(page).to_not have_content('Invited: Eli')
+  it 'has invited viewing parties' do
+    within '#invited' do
+      # expect(page).to have_content('MOVIE IMAGE')
+      # expect(page).to have_content('MOVIE NAME')
+      # expect(page).to have_content('2022-12-31 12:00:00 UTC')
+      within '#invited-host' do
+        expect(page).to have_content('Host: Sunny')
+        expect(page).to_not have_content('Eli')
+      end
+      within '#invited-invited' do
+        expect(page).to have_content('Invited:')
+        expect(page).to have_content('Eli')
+        expect(page).to_not have_content('Sunny')
+      end
     end
   end
 end
