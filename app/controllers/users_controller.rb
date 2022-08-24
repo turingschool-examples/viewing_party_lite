@@ -7,10 +7,15 @@ class UsersController < ApplicationController
   def new
   end
 
+  def discover
+    @user = User.find(params[:user_id])
+  end
+
   def create
     User.create!(user_params)
     redirect_to "/users/#{User.last.id}"
   end
+
 
   private
 

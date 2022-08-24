@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   post '/register', to: 'users#create'
 
   resources :users, only: [:show] do
-
+    get '/discover', to: 'users#discover'
   end
 end
