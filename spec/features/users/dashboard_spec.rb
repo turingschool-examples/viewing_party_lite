@@ -13,7 +13,7 @@ RSpec.describe 'User Dashboard' do
       expect(page).to have_selector(:link_or_button, "Discover Movies")
     end
 
-    it 'can take you to the discover movie page' do
+    it 'can take you to the discover movie page from a users dashboard' do
       @user1 = User.create!(name: "Jim Bob", email: "jimb@viewingparty.com")
 
       visit user_path(@user1.id)
