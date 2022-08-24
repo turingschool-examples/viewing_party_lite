@@ -23,4 +23,14 @@ RSpec.describe 'landing page' do
             expect(page).to have_content("email@email.com's Dashboard")
         end
     end
+
+    xit 'users emails link to user show page' do
+        user_1 = User.create!(name: "Mike", email: "email@email.com")
+
+        visit "/"
+
+        click_on("email@email.com's Dashboard")
+
+        expect(current_path).to eq("/users/#{user_1.id}")
+    end
 end
