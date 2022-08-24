@@ -1,1 +1,13 @@
-<h1>users show page</h1>
+<h1> <%= @user.name %> Dashboard </h1>
+
+<h2> <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %> </h2>
+
+
+<h2> Viewing Parties: </h2>
+<% @user.viewing_parties.each do |party| %>
+<div id="parties-<%=party.id%>">
+   <p> <h4>Party ID: <%=link_to party.id, "users/#{party.id}" %></h4>
+    </p>
+    <% end %>
+    <br>
+</div>
