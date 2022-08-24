@@ -1,2 +1,2 @@
 <%= "#{@user.name}'s Dashboard" %>
-<%= button_to "Discover Movies",  "/users/#{@user.id}/discover" %>
+<%= button_to "Discover Movies",  "/users/#{@user.id}/discover", method: :get, local: true %>
