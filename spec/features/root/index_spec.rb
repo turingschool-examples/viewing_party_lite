@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'landing page' type: :feature do
+RSpec.describe 'landing page', type: :feature do
   before :each do
     @user1 = User.create!(name: "Bob", email: "bob@turing.edu")
     @user2 = User.create!(name: "Sally", email: "sally@turing.edu")
@@ -22,7 +22,7 @@ RSpec.describe 'landing page' type: :feature do
     expect(page).to have_link("Sally")
     expect(page).to have_link("Mike")
     click_link "Bob"
-    expect(current_path).to eq(user_path(bob))
+    expect(current_path).to eq(user_path(@user1))
   end
 
   it 'has a link to landing page' do
