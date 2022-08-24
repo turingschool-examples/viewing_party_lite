@@ -4,7 +4,7 @@
 
 
     <% @user.view_parties.each do |view_party| %>
-    <div id= "viewing parties">
+    <div id= "viewing_parties">
         <p><%= view_party.movie_details %> </p>
         <p> <%=view_party.event_date.strftime("%A, %d %b %Y %l:%M %p")%> (listed times are US MST) </p>
         <% if view_party.host_id == @user.id %>
@@ -12,5 +12,5 @@
             <% else %>
         <p> Invited </p>
             <% end %>
-        <% end %>
         </div>
+        <% end %>
