@@ -16,8 +16,18 @@ RSpec.describe 'discover movies page', type: :feature do
          user_1 = User.create!(name: 'Cindy Lou', email: 'cidlou@gmail.com')
 
          visit "/users/#{user_1.id}/discover"
-      save_and_open_page
+
          expect(page).to have_button('Discover Top Rated Movies')
+      end
+
+      it 'click discover top rated movies button to see results' do
+         user_1 = User.create!(name: 'Cindy Lou', email: 'cidlou@gmail.com')
+
+         visit "/users/#{user_1.id}/discover"
+
+         click_button('Discover Top Rated Movies')
+
+         expect(current_path).to eq("/users/#{user_1.id}/movies")
       end
 
       it 'has form to search for a movie' do
