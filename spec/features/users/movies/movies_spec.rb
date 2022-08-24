@@ -50,7 +50,7 @@ RSpec.describe 'Movies Display Page' do
     end
   end
 
-  describe 'movies link to movie page funciton' do
+  describe 'movies link to movie page function' do
     it 'allows user to see a movie overview page', :vcr do
         user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now)
 
@@ -61,6 +61,20 @@ RSpec.describe 'Movies Display Page' do
         click_link("The Shawshank Redemption")
 
         expect(current_path).to eq("/users/#{user.id}/movies/278/viewing-party/new")
+    end
+  end
+
+  describe 'movies link to movie page function' do
+    it 'allows user to go back to their discover page', :vcr do
+        user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now)
+
+        visit "/users/#{user.id}/discover"
+
+        click_button("Discover Top Rated Movies")
+      
+        click_button("Discover Page")
+
+        expect(current_path).to eq("/users/#{user.id}/discover")
     end
   end
 end

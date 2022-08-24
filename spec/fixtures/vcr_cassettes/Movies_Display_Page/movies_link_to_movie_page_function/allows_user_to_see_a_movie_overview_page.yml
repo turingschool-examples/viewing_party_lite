@@ -44,13 +44,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 1f41b5f27f3ec2e93db2155dbc56900c.cloudfront.net (CloudFront)
+      - 1.1 618052a0d9c86c1a3bf663f82d041d1c.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - SEA19-C3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - z7pOro0wf1Epku-YNJtt5jbWyxuSu1crQBQhsQ-KU5ODJRs56ujgfg==
+      - QVaGpEDwBry0bQ7DZtLx21ya094sba_xzsbiqhYLgP25_WHgrjYRlg==
       Age:
       - '7628'
     body:
@@ -102,13 +102,13 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 c5c7edc18be1805f007e0576da02e554.cloudfront.net (CloudFront)
+      - 1.1 82893cc36087a50f9a150a621d10e740.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - SEA19-C3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - GtJKeGioyLzc-4hrCs8Ej4Whh8Ij_8-w6RjzDirn2hUqpo0sL3njig==
+      - txkmPiyajOux35j-kp8zJiXZRjmMMNvkTw_bhKEvZkI8AxMvlKlAkA==
       Age:
       - '7628'
     body:

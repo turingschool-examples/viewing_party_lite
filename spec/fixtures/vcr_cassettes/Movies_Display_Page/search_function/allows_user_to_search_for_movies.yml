@@ -42,15 +42,17 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 2750b94b402c92287d764b5fa115a042.cloudfront.net (CloudFront)
+      - 1.1 618052a0d9c86c1a3bf663f82d041d1c.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - SEA19-C3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - zCEuJILHt5LzBTSJ8tDmdLRSzFauX9Up9T9wlm47jT7-Yo0F9hAAhQ==
+      - tkxcmV-6p7bO64NIbhqZ9A0XBxFSd-5UqeozND9ff8xKFoFpjjhREw==
+      Age:
+      - '144'
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/suaEOtk1N1sgg2MTM7oZd2cfVp3.jpg","genre_ids":[53,80],"id":680,"original_language":"en","original_title":"Pulp
@@ -80,7 +82,7 @@ http_interactions:
         Fiction: the Golden Age of Storytelling","video":false,"vote_average":4,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":890682,"original_language":"fr","original_title":"Pulpe
         Fiction","overview":"Which luscious candidate will pass the casting?","popularity":0.6,"poster_path":"/uCsJrzjQ47krDxUibUJITKZlvHN.jpg","release_date":"2020-11-06","title":"Pulpe
         Fiction","video":false,"vote_average":0,"vote_count":0}],"total_pages":1,"total_results":6}'
-  recorded_at: Wed, 24 Aug 2022 17:23:35 GMT
+  recorded_at: Wed, 24 Aug 2022 17:25:59 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/search/movie?api_key=TMDB_KEY&include_adult=false&language=en-US&page=2&query=Pulp%20Fiction
@@ -123,17 +125,19 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 ef8f66c83aecd87910ce2e1153544a20.cloudfront.net (CloudFront)
+      - 1.1 d15b6a95f7c8298444f59a99d8027cec.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - SEA19-C3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 2vlAU1dQjb3LZ7KCRFr7TYNwXbRqH_PgLyW1New0R1hYgBtoYEJOGw==
+      - KTjrSBOUPuLQL60QutsxB4dBwp19fNg6wyYFzglDCyY5FvUG4gueHw==
+      Age:
+      - '144'
     body:
       encoding: ASCII-8BIT
       string: '{"page":2,"results":[],"total_pages":1,"total_results":6}'
-  recorded_at: Wed, 24 Aug 2022 17:23:35 GMT
+  recorded_at: Wed, 24 Aug 2022 17:25:59 GMT
 recorded_with: VCR 6.1.0
