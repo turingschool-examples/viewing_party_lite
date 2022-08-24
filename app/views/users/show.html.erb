@@ -3,5 +3,8 @@
 </section>
 
 <section id = "discover_movies_button">
-   <p> <%= button_to 'Discover Movies', "users/#{@user.id}/discover", method: :get %></p>
+   <p> <%= button_to 'Discover Movies', "/users/#{@user.id}/discover", method: :get %></p>
 </section>
+
+<h3> Viewing Parties </h3> 
+
