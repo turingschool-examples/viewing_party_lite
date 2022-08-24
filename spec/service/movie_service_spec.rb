@@ -9,11 +9,4 @@ RSpec.describe MovieService do
       expect(ms).to be_a(Hash)
       expect(ms[:results]).to be_a(Array)
     end
-
-  # it ‘movies_by_keyword’ do
-
-  #   results = MovieService.movies_by_keyword("Fight")
-
-  #   expect(results).to be_a(Hash)
-  # end
 end
