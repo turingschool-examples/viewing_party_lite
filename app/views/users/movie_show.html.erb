@@ -6,7 +6,7 @@
   </p>
 </div>
 
-<%= button_to "Create Viewing Party for #{@movie_data[:title]}", "/users/#{@user.id}/movies/#{@movie_data[:id]}/viewing-party/new", method: :get, params: {:user_id => @user.id, :movie_id => @movie_data[:id]} %>
+<%= button_to "Create Viewing Party for #{@movie_data[:title]}", "/users/#{@user.id}/movies/#{@movie_data[:id]}/viewing-party/new", method: :get, params: {:user_id => @user.id, :movie_id => @movie_data[:id], :movie_title => @movie_data[:title], :movie_runtime => @movie_data[:runtime]} %>
 
 <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get%>
 
