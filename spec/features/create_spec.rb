@@ -21,8 +21,8 @@ RSpec.describe 'user creation' do
       fill_in 'Email', with: random_email
 
       click_button 'Create New User'
-      expect(page).to have_current_path("/users/:id")
-      expect(page).to have_content(random_name)
+
+      expect(page).to have_current_path("/users/#{User.first.id}")
     end
   end
 end 
