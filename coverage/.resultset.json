@@ -77,9 +77,16 @@
           null,
           null,
           1,
+          2,
+          2,
+          null,
+          1,
           1,
           null,
           1,
+          null,
+          1,
+          null,
           null,
           null,
           1,
@@ -89,6 +96,7 @@
           null
         ]
       },
+<<<<<<< HEAD
       "/Users/nikkyrojas/turing/3mod/projects/pair_project/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
           0,
@@ -131,11 +139,10 @@
           0,
           0,
           0
-        ],
-        "branches": {
-        }
-      }
-    },
-    "timestamp": 1661299183
+=======
+
+
+    "timestamp": 1661313169
+>>>>>>> b060e06c6788e86f96830f60d580991973535637
   }
 }

@@ -23,4 +23,15 @@ RSpec.describe "user registration page" do
     expect(current_path).to eq("/users/#{test.id}")
     expect(test.email).to eq("sam@smith.com")
   end
+
+  it "should not register the user if the email address is already in use" do 
+    visit "/register"
+
+    new_user = User.create(name: "Jane Doe", email: "sam@smith.com")
+    fill_in :name, with: "Jane Doe"
+    fill_in :email, with: "sam@smith.com"
+    click_on "Register"
+    # save_and_open_page
+    expect(current_path).to eq("/register")
+  end
 end
