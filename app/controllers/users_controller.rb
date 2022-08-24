@@ -41,11 +41,27 @@ class UsersController < ApplicationController
 
         render 'users/movies'
         # redirect_to "/users/#{params[:user_id]}/movies/?=#{params[:search]}"
-    end 
+    end
+    
+    def movie_show
+        conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
+            faraday.headers["api_key"] = ENV['tmdb_key']
+        end
 
-    # def top_movies
-    #     redirect_to "/users/#{params[:user_id]}/movies/?=top%20rated"
-    # end 
+        response1 = conn.get("https://api.themoviedb.org/3/movie/#{params[:movie_id]}?api_key=#{ENV['tmdb_key']}&language=en-US&page=1")
+
+        cast_response = conn.get("https://api.themoviedb.org/3/movie/#{params[:movie_id]}/credits?api_key=#{ENV['tmdb_key']}&language=en-US")
+
+        review_response = conn.get("https://api.themoviedb.org/3/movie/#{params[:movie_id]}/reviews?api_key=#{ENV['tmdb_key']}&language=en-US")
+        
+        @user = User.find(params[:user_id])
+
+        @movie_data = JSON.parse(response1.body, symbolize_names: true)
+
+        @cast = JSON.parse(cast_response.body, symbolize_names: true)
+
+        @review_data = JSON.parse(review_response.body, symbolize_names: true)
+    end
 
     private
     def user_params

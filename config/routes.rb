@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   post '/search', to: 'users#search'
   post '/top_movies', to: 'users#top_movies'
   get '/users/:id/movies', to: "users#movies"
+  get '/users/:user_id/movies/:movie_id', to: "users#movie_show"
+
+  get '/users/:user_id/movies/:movie_id/viewing-party/new', to: 'viewingparties#new'
 
   # post 'users/:id/movies?=top%20rated', to: 'users#top_rated'
 end

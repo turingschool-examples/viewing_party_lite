@@ -1,0 +1,62 @@
+<h1> Movie Details </h1>
+
+<div id="movie-title">
+  <p>
+    Movie Title: <%=@movie_data[:title]%>
+  </p>
+</div>
+
+<%= button_to "Create Viewing Party for #{@movie_data[:title]}", "/users/#{@user.id}/movies/#{@movie_data[:id]}/viewing-party/new", method: :get, params: {:user_id => @user.id, :movie_id => @movie_data[:id]} %>
+
+<%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get%>
+
+<div id="vote-average">
+  <p>
+    Vote Average: <%=@movie_data[:vote_average]%>
+  </p>
+</div>
+
+<div id="runtime">
+  <p>
+    Runtime: <%=@movie_data[:runtime] / 60%>hr  <%=@movie_data[:runtime] % 60%> min
+  </p>
+</div>
+
+<div id="genres">
+  <% @movie_data[:genres].each do |genre| %>
+    <p>
+      <%=genre[:name]%>
+    </p>
+  <% end %>
+<div>
+
+<div id="summary">
+  <%=@movie_data[:overview]%>
+</div>
+
+<div id="cast">
+  <%@cast[:cast].first(10).each do |cast|%>
+    <p>
+      <%=cast[:name]%> as <%=cast[:character]%>
+    </p>
+  <% end %>
+</div>
+
+<div id="review-count">
+  <p>
+    <%=@review_data[:total_results]%> Reviews
+  </p>
+</div>
+
+<div id="reviews">
+  <% @review_data[:results].each_with_index do |review,index|%>
+    <div id="review-<%=index+1%>">
+      <p>
+        Author: <%=review[:author]%>
+      </p>
+      <p>
+        Review: <%=review[:content]%>
+      </p>
+    </div>
+  <% end %>
+</div>
