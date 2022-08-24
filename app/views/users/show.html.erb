@@ -4,3 +4,20 @@
 
 <h3>Viewing Parties</h3>
 
+<div id="created"><h3>Hosting:</h3>
+<% @user.hosting.each do |party_user| %>
+  <p>Movie ID: <%= party_user.party.movie_id %></p>
+  <p><div id="created-host">Host: <%= party_user.party.hosting.first.user.name %></div></p>
+  <p><div id="created-invited">Invited: <% party_user.party.invited.each do |party_user| %></p>
+    <p><%= party_user.user.name %></p>
+  <% end %></div>
+<% end %></div>
+
+<div id="invited"><h3>Invited:</h3>
+<% @user.invited.each do |party_user| %>
+  <p>Movie ID: <%= party_user.party.movie_id %></p>
+  <p><div id="invited-host">Host: <%= party_user.party.hosting.first.user.name %></div></p>
+  <p><div id="invited-invited">Invited: <% party_user.party.invited.each do |party_user| %></p>
+    <p><%= party_user.user.name %></p>
+  <% end %></div>
+<% end %></div>
