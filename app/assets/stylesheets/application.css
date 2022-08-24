@@ -48,3 +48,10 @@ h2 {
   font-weight: bold;
   width: 30%;
 }
+
+#top-rated-movies {
+  margin: auto;
+  text-align: center;
+  width: 30%;
+  display: inline;
+}
