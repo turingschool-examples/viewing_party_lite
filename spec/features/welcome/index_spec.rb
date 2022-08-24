@@ -11,9 +11,9 @@ RSpec.describe 'landing page' do
         user_1 = User.create!(name: "Mike", email: "email@email.com")
 
         visit "/"
-
-        within "#existing-users" do
-            expect(page).to have_link("email@emails.com's Dashboard")
+        
+        within("#existing-users") do
+            expect(page).to have_content("email@email.com's Dashboard")
         end
     end
 end
