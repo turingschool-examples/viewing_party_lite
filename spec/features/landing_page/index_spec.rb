@@ -26,16 +26,9 @@ RSpec.describe 'landing page', type: :feature do
   end
 
   it 'has a link to landing page' do
-    expect(page).to have_link("Home Page")
-    click_link "Home Page"
+    expect(page).to have_link("Home")
+    click_link "Home"
     expect(current_path).to eq(root_path)
   end
 
 end
-
-# When a user visits the root path they should be on the landing page ('/') which includes:
-
-#  Title of Application
-#  Button to Create a New User
-#  List of Existing Users which links to the users dashboard
-#  Link to go back to the landing page (this link will be present at the top of all pages)
