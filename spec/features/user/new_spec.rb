@@ -11,7 +11,7 @@ describe 'Create a New User' do
     expect(page).to have_content("Register A New User")
 
     fill_in :name, with: 'Dave'
-    fill_in :email, with: 'daveisnotdave@gmail.com'
+    fill_in :email, with: 'daveisnotdave32@gmail.com'
 
     click_button 'Create New User'
 
@@ -26,7 +26,7 @@ describe 'Create a New User' do
     expect(page).to have_content("Register A New User")
 
     fill_in :name, with: 'Dave'
-    fill_in :email, with: 'tom@gmail.com'
+    fill_in :email, with: 'tom@gmail232.com'
 
     click_button 'Create New User'
 
