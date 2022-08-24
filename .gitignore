@@ -30,5 +30,5 @@
 /config/application.yml
 
 # Ignore test-related files
-/coverage.data
-/coverage/
+/coverage/.resultset.json
+/coverage/index.html
