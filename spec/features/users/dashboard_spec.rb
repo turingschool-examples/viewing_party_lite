@@ -18,9 +18,12 @@ RSpec.describe 'User Dashboard' do
 
       visit user_path(@user1.id)
 
+      curr_path = user_discover_path(@user1.id)
+
       click_on "Discover Movies"
 
       expect(page).to have_content("Discover Movies Search")
+      expect(page).to have_current_path(curr_path)
     end
   end
 end
