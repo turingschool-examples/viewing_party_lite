@@ -15,11 +15,15 @@ class MoviesController < ApplicationController
         faraday.params['api_key'] = ENV.fetch('tmdb_api_key', nil)
       end
 
-      response = conn.get("/3/search/movie?query=#{search}")
+      response_1 = conn.get("/3/search/movie?query=#{search}")
+      response_2 = conn.get("/3/search/movie?page=2&query=#{search}")
 
-      json = JSON.parse(response.body, symbolize_names: true)
+      json_1 = JSON.parse(response_1.body, symbolize_names: true)
+      json_2 = JSON.parse(response_2.body, symbolize_names: true)
 
-      @movies = json[:results].map do |movie_data|
+      search_results = json_1[:results] + json_2[:results]
+
+      @movies = search_results.map do |movie_data|
         Movie.new(movie_data)
       end
     else
