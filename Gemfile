@@ -55,6 +55,7 @@ group :test do
   gem 'launchy'
   gem 'orderly'
   gem 'rspec-rails'
+  gem 'rubocop-rspec'
   gem 'simplecov'
   gem 'webmock'
   gem 'vcr'
