@@ -9,6 +9,6 @@ RSpec.describe 'User Registration Page' do
 
     click_on 'Register'
 
-    expect(current_path).to eq("/users/#{User.all.first.id}")
+    expect(current_path).to eq("/users/#{User.all.last.id}")
   end
 end
