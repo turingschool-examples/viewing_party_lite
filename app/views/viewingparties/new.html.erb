@@ -7,7 +7,7 @@
     <p><%= f.number_field :runtime, value: "#{@movie.runtime}", min: "#{@movie.runtime}" %></p>
     <p><%= f.label :runtime, "Select a date" %></p>
     <p><%= f.date_field :date %></p>
-    <p><%= f.label :runtime, "Select a date" %></p>
-    <p><%= f.date_field :date %></p>
+    <p><%= f.label :runtime, "Select a time" %></p>
+    <p><%= f.time_field :time %></p>
     <%= f.submit 'Create Viewing Party' %>
 <% end %>
