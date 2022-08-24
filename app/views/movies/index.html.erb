@@ -1,7 +1,41 @@
-<h2>Test</h2>
+<% if @top_movies %>
+  <h2>Top Rated Movies</h2>
+  <br>
+  <table id="top-movies">
+    <tr>
+      <th>Number</th>
+      <th>Title</th>
+      <th>Average Rating</th>
+    </tr>
 
-<% @top_rated.each_with_index do |movie, index| %>
-  <div id="<%=movie%>-info">
-    <p><%= (index + 1).to_s + ". " + movie %></p>
+    <% @top_movies.each_with_index do |movie, index| %>
+      <tr id="<%=movie.movie_id%>-info">
+        <th><%= index + 1 %></th>
+        <th><%= movie.title %></th>
+        <th><%= movie.rating %></th>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+
+<% if @searched_movies %>
+  <div id='searched-movies'>
+    <h2>Movie Results for: <%= params[:q] %></h2>
+    <br>
+    <table id="searched-movies-table">
+      <tr>
+        <th>Number</th>
+        <th>Title</th>
+        <th>Average Rating</th>
+      </tr>
+
+      <% @searched_movies.each_with_index do |movie, index| %>
+        <tr id="<%=movie.movie_id%>-info">
+          <th><%= index + 1 %></th>
+          <th><%= movie.title %></th>
+          <th><%= movie.rating %></th>
+        </tr>
+      <% end %>
+    </table>
   </div>
 <% end %>
