@@ -1,3 +1,3 @@
-class ViewingParties < ApplicationController
+class ViewingPartiesController < ApplicationController
 
 end
