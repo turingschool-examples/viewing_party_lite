@@ -3,7 +3,7 @@
 <p><%# movie.title %> <%# movie.vote_average %> </p>
 <%# end %> 
 
-<%= button_to("Create a New User", "/users/new")  %>
+<%= button_to("Create a New User", "/users/new", method: :get)  %>
 
 <div id='existing-users'>
     <p> Existing Users </p>

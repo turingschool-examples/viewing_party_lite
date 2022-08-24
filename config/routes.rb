@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
   get '/', to: "welcome#index"
-  
 
-  resources :users, only: [:show]
-
+  resources :users, only: [:show, :new]
 end
