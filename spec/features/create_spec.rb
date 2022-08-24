@@ -22,13 +22,39 @@ RSpec.describe 'user creation' do
 
       expect(page).to have_current_path("/users/#{User.first.id}")
     end
+
+    it 'gives warning for invalid data' do
+      visit "/register"
+
+      fill_in 'Name', with: ""
+      fill_in 'Email', with: Faker::Internet.email
+
+      click_button 'Create New User'
+
+      expect(page).to have_current_path("/register")
+      expect(page).to have_content("Error: Name can't be blank")
+
+      fill_in 'Name', with: Faker::Name.name
+      fill_in 'Email', with: ""
+
+      click_button 'Create New User'
+
+      expect(page).to have_current_path("/register")
+      expect(page).to have_content("Error: Email can't be blank")
+
+      fill_in 'Name', with: Faker::Name.name
+      fill_in 'Email', with: "abc@yahoo.com"
+
+      click_button 'Create New User'
+
+      visit "/register"
+
+      fill_in 'Name', with: Faker::Name.name
+      fill_in 'Email', with: "abc@yahoo.com"
+
+      click_button 'Create New User'
+
+      expect(page).to have_content("Error: Email has already been taken")
+    end
   end
 end 
-# When a user visits the '/register' path they should see a form to register.
-
-# The form should include:
-
-#  Name
-#  Email (must be unique)
-#  Register Button
-# Once the user registers they should be taken to a dashboard page '/users/:id', where :id is the id for the user that was just created.
