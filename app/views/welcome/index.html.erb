@@ -1,0 +1,9 @@
+<h1>Viewing Party Lite</h1>
+
+<%= link_to "Return to Main Page", root_path %>
+
+<% @users.each do |user| %>
+  <%= link_to "#{user.email}'s Dashboard", "/users/#{user.id}"  %>
+<% end %>
+
+<%= button_to "Create New User", "/register", method: :get %>
