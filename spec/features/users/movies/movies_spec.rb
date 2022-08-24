@@ -37,4 +37,18 @@ RSpec.describe 'Movies Display Page' do
         expect(page).to have_selector(".movie", count: 40)
     end
   end
+
+    describe 'movies link to movie page funciton' do
+    it 'allows user to see a movie overview page', :vcr do
+        user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now)
+
+        visit "/users/#{user.id}/discover"
+
+        click_button("Discover Top Rated Movies")
+  
+        click_link("The Shawshank Redemption")
+
+        expect(current_path).to eq("/users/#{user.id}/278/viewing-party/new")
+    end
+  end
 end

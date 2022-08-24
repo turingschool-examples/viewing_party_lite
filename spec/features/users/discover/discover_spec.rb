@@ -13,7 +13,7 @@ RSpec.describe "users discover page", type: :feature do
         expect(page).to have_button("Discover Top Rated Movies")
     end
 
-    xit 'has a text field with a search function' do
+    it 'has a text field with a search function', :vcr do
        user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now)
        
         visit "/users/#{user.id}/discover"
@@ -21,16 +21,20 @@ RSpec.describe "users discover page", type: :feature do
         fill_in "search", with: "Toy Story"
         click_button("Search")
 
-        expect(current_path).to eq("/users/#{user.id}/movies?=toy_story")
+        expect(page).to have_content("Toy Story")
+        
+        # expect(current_path).to eq("/users/#{user.id}/movies?utf8=✓&search=Toy+Story&commit=Search&user_id=1")
     end
 
-     it 'has a text field with a top movies function' do
+     it 'has a text field with a top movies function', :vcr do
         user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now)
        
         visit "/users/#{user.id}/discover"
 
         click_button("Discover Top Rated Movies")
 
-        expect(current_path).to eq("/users/#{user.id}/movies?=top%20rated")
+        expect(page).to have_content("The Shawshank Redemption")
+
+        # expect(current_path).to eq("/users/#{user.id}/movies?movies=top_movies")
     end
 end

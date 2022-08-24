@@ -7,10 +7,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :new, :create]
   get '/users/:id/discover', to: 'discover#show'
-
-  post '/search', to: 'users#search'
-  post '/top_movies', to: 'users#top_movies'
-  get '/users/:id/movies', to: "users#movies"
+  get '/users/:id/movies', to: 'user_movies#search'
   get '/users/:user_id/movies/:movie_id', to: "users#movie_show"
 
   get '/users/:user_id/movies/:movie_id/viewing-party/new', to: 'viewingparties#new'
