@@ -82,4 +82,14 @@ RSpec.describe "movie detail page", type: :feature do
       expect(page).to have_content("Tim Robbins as Andy Dufresne")
     end
   end
+
+  it 'displays total number of reviews', :vcr do
+    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com")
+
+    visit "/users/#{user1.id}/movies/278"
+
+    within "#review-count" do
+      expect(page).to have_content("7 Reviews")
+    end
+  end
 end
