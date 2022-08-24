@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 class MoviesController < ApplicationController
-  def discover
-
-  end 
+  def discover; end
 
   # def index
   #   conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
