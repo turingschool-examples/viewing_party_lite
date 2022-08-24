@@ -12,6 +12,7 @@ RSpec.describe 'User Dashboard' do
       visit user_path(user1)
       
       expect(page).to have_content("#{user1.name}'s Dashboard")
+      expect(page).to_not have_content("#{user2.name}'s Dashboard")
       expect(page).to have_button("Discover Movies")
       expect(page).to have_content("Viewing Parties")
     end
