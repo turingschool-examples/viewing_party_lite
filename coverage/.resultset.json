@@ -26,6 +26,75 @@
           null
         ]
       },
+      "/Users/bryce.simonds/Desktop/turing/3Module/projects/viewing_party_lite/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/bryce.simonds/Desktop/turing/3Module/projects/viewing_party_lite/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/bryce.simonds/Desktop/turing/3Module/projects/viewing_party_lite/app/facades/movie_db_facade.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          0,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/bryce.simonds/Desktop/turing/3Module/projects/viewing_party_lite/app/services/movie_db_service.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          0,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/bryce.simonds/Desktop/turing/3Module/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
           0,
@@ -60,22 +129,23 @@
         "branches": {
         }
       },
-      "/Users/bryce.simonds/Desktop/turing/3Module/projects/viewing_party_lite/app/jobs/application_job.rb": {
+      "/Users/bryce.simonds/Desktop/turing/3Module/projects/viewing_party_lite/app/poros/top_movie.rb": {
         "lines": [
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
           0,
           0
         ],
         "branches": {
         }
       },
-      "/Users/bryce.simonds/Desktop/turing/3Module/projects/viewing_party_lite/app/controllers/application_controller.rb": {
+      "/Users/bryce.simonds/Desktop/turing/3Module/projects/viewing_party_lite/app/jobs/application_job.rb": {
         "lines": [
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
           0,
           0
         ],
@@ -86,30 +156,6 @@
         "lines": [
           0,
           null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/bryce.simonds/Desktop/turing/3Module/projects/viewing_party_lite/app/controllers/users_controller.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
           0,
           0,
           0,
@@ -139,6 +185,6 @@
         }
       }
     },
-    "timestamp": 1661359956
+    "timestamp": 1661364137
   }
 }
