@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class MoviesController < ApplicationController
-
   def discover
     @user = User.find(params[:user_id])
   end
@@ -13,7 +12,7 @@ class MoviesController < ApplicationController
       search = params[:q]
 
       conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
-        faraday.params['api_key'] = ENV['tmdb_api_key']
+        faraday.params['api_key'] = ENV.fetch('tmdb_api_key', nil)
       end
 
       response = conn.get("/3/search/movie?query=#{search}")
@@ -25,7 +24,7 @@ class MoviesController < ApplicationController
       end
     else
       conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
-        faraday.params['api_key'] = ENV['tmdb_api_key']
+        faraday.params['api_key'] = ENV.fetch('tmdb_api_key', nil)
       end
 
       response_1 = conn.get('/3/movie/top_rated')
