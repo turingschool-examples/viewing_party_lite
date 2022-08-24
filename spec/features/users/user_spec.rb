@@ -21,5 +21,6 @@ RSpec.describe "user registration page" do
     test = User.first 
 
     expect(current_path).to eq("/users/#{test.id}")
+    expect(test.email).to eq("sam@smith.com")
   end
 end
