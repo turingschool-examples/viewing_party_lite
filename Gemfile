@@ -43,6 +43,8 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 4.0'
   gem 'faker'
   gem 'validates_timeliness', '~> 5.0.0.beta1'
+  gem 'faraday'
+  gem 'figaro'
 end
 
 group :development do
@@ -57,6 +59,8 @@ group :test do
   gem 'launchy'
   gem 'rspec-rails'
   gem 'simplecov'
+  gem 'webmock'
+  gem 'vcr'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

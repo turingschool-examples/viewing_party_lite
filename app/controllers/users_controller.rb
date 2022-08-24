@@ -14,8 +14,9 @@ class UsersController < ApplicationController
   end
   
   def show
-    @facade = MovieFacade.new 
     @user = User.find(params[:id])
+    @viewing_parties = ViewingParty.all
+    @facade = MovieFacade.jj(movie ids)
   end
 
   private 
