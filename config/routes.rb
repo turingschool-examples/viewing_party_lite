@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show] do
     get '/discover', to: 'users#discover'
-    post '/search', to: 'movies#search'
+    post '/discover', to: 'movies#search'
+    get '/movies', to: 'movies#top_rated'
+    resources :movies, only: [:show]
   end
 end
