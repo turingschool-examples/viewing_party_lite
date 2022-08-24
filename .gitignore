@@ -30,6 +30,5 @@
 /config/application.yml
 
 #Ignore Coverage
-/coverage
-coverage/.resultset.json
-coverage/index.html
+coverage/
+
