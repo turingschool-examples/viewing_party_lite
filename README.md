@@ -27,8 +27,8 @@ Example wireframes to follow are found [here](https://backend.turing.io/module3/
 
 ## Heroku
 
-# heroku restart
-# heroku pg:reset DATABASE
-# heroku run rails db:migrate
-# heroku ps:scale web=1
-# git push heroku main
+- heroku restart
+- heroku pg:reset DATABASE
+- heroku run rails db:migrate
+- heroku ps:scale web=1
+- git push heroku main
