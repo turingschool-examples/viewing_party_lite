@@ -1,7 +1,17 @@
 <h2>Test</h2>
 
-<% @top_rated.each_with_index do |movie, index| %>
-  <div id="<%=movie%>-info">
-    <p><%= (index + 1).to_s + ". " + movie %></p>
-  </div>
-<% end %>
+<table id="top-rated-movies">
+  <tr>
+    <th>Number</th>
+    <th>Title</th>
+    <th>Average Rating</th>
+  </tr>
+
+  <% @top_movies.each_with_index do |movie, index| %>
+    <tr id="<%=movie.movie_id%>-info">
+      <th><%= index + 1 %></th>
+      <th><%= movie.title %></th>
+      <th><%= movie.rating %></th>
+    </tr>
+  <% end %>
+</table>
