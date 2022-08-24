@@ -1,60 +1,85 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/phillipmstewart/turing/2205/3-mod/collabs/MOD3_viewing_party_lite/app/helpers/application_helper.rb": {
+      "/Users/turingtjc/Turing/3Module/TuringLessonPlans/projects/MOD3_viewing_party_lite/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/phillipmstewart/turing/2205/3-mod/collabs/MOD3_viewing_party_lite/app/models/event.rb": {
+      "/Users/turingtjc/Turing/3Module/TuringLessonPlans/projects/MOD3_viewing_party_lite/app/models/event.rb": {
         "lines": [
           1,
           1,
           null,
           null,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/phillipmstewart/turing/2205/3-mod/collabs/MOD3_viewing_party_lite/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/phillipmstewart/turing/2205/3-mod/collabs/MOD3_viewing_party_lite/app/models/user_event.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/phillipmstewart/turing/2205/3-mod/collabs/MOD3_viewing_party_lite/app/models/user.rb": {
-        "lines": [
-          1,
-          1,
           null,
           1,
           1,
           null
         ]
       },
-      "/Users/phillipmstewart/turing/2205/3-mod/collabs/MOD3_viewing_party_lite/app/controllers/application_controller.rb": {
+      "/Users/turingtjc/Turing/3Module/TuringLessonPlans/projects/MOD3_viewing_party_lite/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/turingtjc/Turing/3Module/TuringLessonPlans/projects/MOD3_viewing_party_lite/app/models/user_event.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/turingtjc/Turing/3Module/TuringLessonPlans/projects/MOD3_viewing_party_lite/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/turingtjc/Turing/3Module/TuringLessonPlans/projects/MOD3_viewing_party_lite/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          4,
+          null,
+          null
+        ]
+      },
+      "/Users/turingtjc/Turing/3Module/TuringLessonPlans/projects/MOD3_viewing_party_lite/app/controllers/users_controller.rb": {
         "lines": [
           1,
           null,
           1,
           1,
           null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
           null
         ]
       },
-      "/Users/phillipmstewart/turing/2205/3-mod/collabs/MOD3_viewing_party_lite/app/mailers/application_mailer.rb": {
+      "/Users/turingtjc/Turing/3Module/TuringLessonPlans/projects/MOD3_viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
           0,
           0,
@@ -64,7 +89,7 @@
         "branches": {
         }
       },
-      "/Users/phillipmstewart/turing/2205/3-mod/collabs/MOD3_viewing_party_lite/app/jobs/application_job.rb": {
+      "/Users/turingtjc/Turing/3Module/TuringLessonPlans/projects/MOD3_viewing_party_lite/app/jobs/application_job.rb": {
         "lines": [
           0,
           0
@@ -72,7 +97,7 @@
         "branches": {
         }
       },
-      "/Users/phillipmstewart/turing/2205/3-mod/collabs/MOD3_viewing_party_lite/app/channels/application_cable/connection.rb": {
+      "/Users/turingtjc/Turing/3Module/TuringLessonPlans/projects/MOD3_viewing_party_lite/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
           0,
@@ -82,7 +107,7 @@
         "branches": {
         }
       },
-      "/Users/phillipmstewart/turing/2205/3-mod/collabs/MOD3_viewing_party_lite/app/channels/application_cable/channel.rb": {
+      "/Users/turingtjc/Turing/3Module/TuringLessonPlans/projects/MOD3_viewing_party_lite/app/channels/application_cable/channel.rb": {
         "lines": [
           0,
           0,
@@ -93,6 +118,6 @@
         }
       }
     },
-    "timestamp": 1661284152
+    "timestamp": 1661300247
   }
 }
