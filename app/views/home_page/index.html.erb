@@ -1,0 +1,9 @@
+<h1>Viewing Party Lite</h1>
+
+
+<%= button_to 'Create New User', new_user_path, method: :post %>
+
+<h2>Existing Users</h2>
+<% @users.map do |u| %>
+  <%= link_to "#{u.name}'s dashboard", user_path(u) %>
+<% end %>
