@@ -1,8 +1,17 @@
 class MovieService
   class << self
+    def call_for_a_movie(movie, page)
+      response = connection.get("/3/search/movie?query=#{movie}&page=#{page}")
+      parse_data(response)
+    end
 
-    def call_for_a_movie(movie)
-      response = connection.get("/3/search/movie?query=#{movie}")
+    def call_top_movies(page)
+      response = connection.get("/3/movie/top_rated?page=#{page}")
+      parse_data(response)
+    end
+
+    def call_movie_details(movie)
+      response = connection.get("/3/movie/#{movie}")
       parse_data(response)
     end
 
@@ -17,7 +26,4 @@ class MovieService
       JSON.parse(response.body, symbolize_names: true)
     end
   end
-
-
-
 end
