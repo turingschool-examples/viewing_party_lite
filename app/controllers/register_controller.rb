@@ -5,8 +5,7 @@ class RegisterController < ApplicationController
   end
 
   def create
-    if User.all_emails.include?(params[:email]) == false
-      User.create!(name: params[:name],
+    if User.create!(name: params[:name],
                      email: params[:email])
                      flash.notice = 'User Has Been Created!'
                      redirect_to "/register"
