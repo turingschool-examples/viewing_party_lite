@@ -7,10 +7,10 @@ class MovieFacade
     end
   end
   
-  def self.movies_keyword_query
-    parsed = MovieService.movies_by_keyword
-    parsed[:results].map do |data|
-      Movie.new(data)
-    end
-  end
+  # def self.movies_keyword_query
+  #   parsed = MovieService.movies_by_keyword(keyword)
+  #   parsed[:results].map do |data|
+  #     Movie.new(data)
+  #   end
+  # end
 end
