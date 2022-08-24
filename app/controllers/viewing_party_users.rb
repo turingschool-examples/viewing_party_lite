@@ -1,3 +1,3 @@
-class ViewingPartyUsers< ApplicationController
+class ViewingPartyUsersController < ApplicationController
 
 end
