@@ -1,7 +1,17 @@
 <h3>Discover Movies</h3>
 
-<%= form_with url: "/users/#{@user.id}/search", method: :post, local: true do |f| %>
+<%= button_to "Find Top Rated Movies", "/users/#{@user.id}/movies", method: :get, local: true %>
+
+<%= form_with url: "/users/#{@user.id}/discover", method: :post, local: true do |f| %>
   <%= f.label :search, 'Search' %>
   <%= f.text_field :search %>
   <%= f.submit "Find Movies" %>
+<% end %>
+
+<% if @movies %>
+  <% @movies.each_with_index do |m, idx| %>
+    <div id="movie-<%= idx %>">
+      <p><%= link_to m[:title], "/users/#{@user.id}/movies/#{m[:id]}" %> - Rated <%= m[:vote_average] %></p>
+    </div>
+  <% end %>
 <% end %>
