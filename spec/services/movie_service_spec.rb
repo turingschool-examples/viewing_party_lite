@@ -9,6 +9,12 @@ RSpec.describe MovieService do
       expect(data_1[:results].first).to have_key(:title)
       expect(data_1[:results].first[:title]).to eq('The Shawshank Redemption')
 
+      data_2 = MovieService.call_top_movies(2)
+      expect(data_2[:results].count).to eql(20)
+      expect(data_2[:results].first).to be_a(Hash)
+      expect(data_2[:results].first).to have_key(:title)
+      expect(data_2[:results].first[:title]).to eq("Gabriel's Inferno: Part III")
+
     end
   end
 end
