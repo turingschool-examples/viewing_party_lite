@@ -1,9 +1,11 @@
-<h1> Register New User </h1>
+<h1>Viewing Party Light<h1>
+<h2> Register New User </h2>
+<%= link_to "Home", root_path, method: :get %><br><br>
 
 <%= form_with url: '/users', method: :post, local: true do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name %><br><br>
   <%= f.label :email %>
-  <%= f.text_field :email %>
+  <%= f.text_field :email %><br><br>
   <%= f.submit 'Register New User' %>
 <% end %>
