@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get '/', to: 'users#index'
+  root to: 'users#index'
   get '/register', to: 'users#new'
 
   resources :users, only: %i[show create] do
@@ -10,6 +10,6 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/users/:id/discover', to: 'movies#discover'
-  # get '/users/:id/movies/:id/viewing-party/new', to: 'parties#new'
+  get '/users/:user_id/discover', to: 'movies#discover'
+  # get '/users/:user_id/movies/:movie_id/viewing-party/new', to: 'parties#new'
 end

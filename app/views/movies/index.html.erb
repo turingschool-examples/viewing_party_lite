@@ -1,0 +1,5 @@
+<% if params[:q].present? %>
+  <%= render 'search' %>
+<% else %>
+  <%= render 'top_rated' %>
+<% end %>
