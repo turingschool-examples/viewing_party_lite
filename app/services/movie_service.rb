@@ -1,16 +1,20 @@
 class MovieService
 
-  def self.get_conn
+  def self.conn
     Faraday.new("https://api.themoviedb.org")
   end
 
   def self.get_top_movies
-    data = get_conn.get("/movie/top_rated")
-    JSON.parse(response.body, symbolize_names: true)
+    response1 = conn.get("/3/movie/top_rated?api_key=#{ENV['movie_api_key']}&page=1")
+    response2 = conn.get("/3/movie/top_rated?api_key=#{ENV['movie_api_key']}&page=2")
+
+    page1 = JSON.parse(response1.body, symbolize_names: true)
+    page2 = JSON.parse(response2.body, symbolize_names: true)
+
+    parsed_json = page1[:results] + page2[:results]
   end
 
-  def self.search_movie
+  # def self.search_movie
     
-  end
-  
+  # end
 end
