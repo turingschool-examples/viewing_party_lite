@@ -41,6 +41,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
   gem 'database_cleaner'
+  gem 'figaro'
 end
 
 group :development do
@@ -57,6 +58,8 @@ group :test do
   gem 'launchy'
   gem 'simplecov'
   gem 'shoulda-matchers', '~> 5.0'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 

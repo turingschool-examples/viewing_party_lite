@@ -1,6 +1,6 @@
 <h3>Discover Movies</h3>
 
-<%= form_with url: "/users/#{@user.id}/discover", method: :post, local: true do |f| %>
+<%= form_with url: "/users/#{@user.id}/search", method: :post, local: true do |f| %>
   <%= f.text_field :search, value: "Search by movie title" %>
   <%= f.submit "Find Movies" %>
 <% end %>

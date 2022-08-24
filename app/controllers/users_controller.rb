@@ -16,6 +16,13 @@ class UsersController < ApplicationController
     redirect_to "/users/#{User.last.id}"
   end
 
+  def search
+    conn = Faraday.new(url: "https://api.themoviedb.org/3/movie/120") do |f|
+      f.headers[]
+      binding.pry
+    end
+  end
+
 
   private
 
