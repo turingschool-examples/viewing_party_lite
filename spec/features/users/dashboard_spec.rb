@@ -14,6 +14,7 @@ RSpec.describe "User Dashboard Page", type: :feature do
         expect(page).to have_button("Discover Movies")
         expect(page).to_not have_content("Kobe Bryant")
     end
+
     it 'a users dashboard shows all viewing parties' do
         user1 = User.create!(name: "Micheal Jordan", email: "user1@gmail.com")
         user2 = User.create!(name: "Kobe Bryant", email: "user2@gmail.com")
@@ -28,10 +29,24 @@ RSpec.describe "User Dashboard Page", type: :feature do
         expect(page).to have_content("Viewing Parties:")
         expect(page).to have_content(party1.id)
         expect(page).to have_content(party2.id)
-
     end
 
+    it 'displays a button to Discover Movies' do 
+        user1 = User.create!(name: "Micheal Jordan", email: "user1@gmail.com")
+        user2 = User.create!(name: "Kobe Bryant", email: "user2@gmail.com")
+        # party1 = ViewingParty.create!(duration: 90, date: "Mon, 29 Aug 2022 14:00:00 UTC +00:00", host_id: user2.id, movie_id: 244)
+        # party2 = ViewingParty.create!(duration: 120, date: "Mon, 30 Aug 2022 17:00:00 UTC +00:00", host_id: user2.id, movie_id: 545)
+        # userparty1= UserViewingParty.create!(user_id: user1.id, viewing_party_id: party1.id)
+        # userparty2= UserViewingParty.create!(user_id: user1.id, viewing_party_id: party2.id)
+
+        visit "/users/#{user1.id}"
+        click_on "Discover Movies"
+        # save_and_open_page
+        expect(page).to have_current_path("/users/#{user1.id}/discover")
+    end
 end
+
+
 
 
 # When I visit '/users/:id' where :id is a valid user id,
