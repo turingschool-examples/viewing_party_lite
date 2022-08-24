@@ -34,7 +34,6 @@ RSpec.describe 'Show', type: :feature do
     fill_in 'movie', with: 'Shawshank'
 
     click_button 'Search'
-    save_and_open_page
     expect(current_path).to eq("/users/#{user_1.id}/movies")
 
     expect(page).to have_content('Shawshank Redemption')
