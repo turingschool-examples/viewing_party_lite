@@ -15,3 +15,9 @@
     Vote Average: <%=@movie_data[:vote_average]%>
   </p>
 </div>
+
+<div id="runtime">
+  <p>
+    Runtime: <%=@movie_data[:runtime] / 60%>hr  <%=@movie_data[:runtime] % 60%> min
+  </p>
+</div>

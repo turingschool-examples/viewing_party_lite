@@ -41,4 +41,14 @@ RSpec.describe "movie detail page", type: :feature do
       expect(page).to have_content("Vote Average: 8.7")
     end
   end
+
+  it 'displays the runtime of the movie in hours and minutes', :vcr do
+    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com")
+
+    visit "/users/#{user1.id}/movies/278"
+
+    within "#runtime" do
+      expect(page).to have_content("Runtime: 2hr 22 min")
+    end
+  end
 end
