@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 
-RSpec.describe 'user discover movies page' do 
+RSpec.describe 'user discover movies page', :vcr do 
     it "has a button to find top rated movies" do 
         user_1 = User.create!(name: "ODB", email: "testemail3@mail.com")
         visit "/users/#{user_1.id}/discover"
