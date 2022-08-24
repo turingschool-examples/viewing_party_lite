@@ -23,4 +23,19 @@ RSpec.describe 'Show', type: :feature do
 
     expect(current_path).to eq("/users/#{user_1.id}/discover")
   end
+
+  it "searchs for a movie and takes you to a results page with that movie's title and vote average", :vcr do
+    user_1 = User.create(name: 'John Doe', email: 'John@gmail.com')
+
+    visit "/users/#{user_1.id}"
+
+    click_button 'Discover Movies'
+
+    fill_in 'movie', with: 'Shawshank'
+
+    click_button 'Search'
+    expect(current_path).to eq("/users/#{user_1.id}/movies")
+
+    expect(page).to have_content('Shawshank Redemption')
+  end
 end

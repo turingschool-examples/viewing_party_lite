@@ -31,6 +31,12 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Call an api
+gem 'faraday'
+
+# Keep information secret
+gem 'figaro'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
@@ -39,6 +45,8 @@ group :development, :test do
   gem 'pry'
   gem 'shoulda-matchers'
   gem 'orderly'
+  gem 'webmock'
+  gem 'vcr'
 end
 
 group :development do
