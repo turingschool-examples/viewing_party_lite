@@ -14,11 +14,9 @@ RSpec.describe 'user creation' do
 
     it 'creates the user and redirects to the user show page' do
       visit "/register"
-      random_name = Faker::Name.name
-      random_email = Faker::Internet.email
 
-      fill_in 'Name', with: random_name
-      fill_in 'Email', with: random_email
+      fill_in 'Name', with: Faker::Name.name
+      fill_in 'Email', with: Faker::Internet.email
 
       click_button 'Create New User'
 
