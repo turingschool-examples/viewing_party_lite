@@ -30,27 +30,6 @@
           null
         ]
       },
-      "/Users/nikkyrojas/turing/3mod/projects/pair_project/viewing_party_lite/app/models/viewing_party.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/nikkyrojas/turing/3mod/projects/pair_project/viewing_party_lite/app/models/user_viewing_party.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
       "/Users/nikkyrojas/turing/3mod/projects/pair_project/viewing_party_lite/app/controllers/users_controller.rb": {
         "lines": [
           null,
@@ -77,6 +56,10 @@
           null,
           1,
           1,
+          null,
+          null,
+          1,
+          1,
           0,
           null,
           null
@@ -84,6 +67,27 @@
       },
       "/Users/nikkyrojas/turing/3mod/projects/pair_project/viewing_party_lite/app/controllers/application_controller.rb": {
         "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/nikkyrojas/turing/3mod/projects/pair_project/viewing_party_lite/app/models/user_viewing_party.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/nikkyrojas/turing/3mod/projects/pair_project/viewing_party_lite/app/models/viewing_party.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
           1,
           null
         ]
@@ -108,6 +112,6 @@
         }
       }
     },
-    "timestamp": 1661354487
+    "timestamp": 1661360222
   }
 }
