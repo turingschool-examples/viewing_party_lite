@@ -7,6 +7,7 @@ RSpec.describe ViewingParty, type: :model do
     it { should allow_value('08/24/2022').for(:date) }
     it { should_not allow_value('August 24, 2022').for(:date) } 
     it { should_not allow_value('1722').for(:start_time) }
+    it { should allow_value('7:00pm').for(:start_time) }
 
   end
   
