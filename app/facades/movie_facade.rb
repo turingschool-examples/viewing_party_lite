@@ -16,14 +16,14 @@ class MovieFacade
     end
 
     def self.search_movies(search_term)
-        movies = MovieService.search_movies
-        if data != nil
-            movies = data[:results][0][:title]
-    
-            found_movies = movies.find_all.include?(search_term)
-            Movie.new(found_movies)
+        movies = MovieService.search_movies(search_term)
+        if movies != nil
+            movies.map do |data|
+                TopMovie.new(data)
+            end
         else
             nil
+            flash[:alert] = "No results found!"
         end
     end
 end

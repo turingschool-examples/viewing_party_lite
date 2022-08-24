@@ -58,6 +58,7 @@ RSpec.describe 'user dashboard(show)' do
 
     it "has a link to Discover Movies" do
         user_1 = User.create!(name: "Bob", email: "testemail1@mail.com")
+
         visit "/users/#{user_1.id}"
         expect(page).to have_content("Discover Movies")
         click_on("Discover Movies")

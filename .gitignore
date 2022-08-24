@@ -31,3 +31,5 @@
 
 #Ignore Coverage
 coverage/
+
+.DS_Store/

@@ -22,15 +22,17 @@ class MovieService
         data_1 = JSON.parse(movie_details.body, symbolize_names: true)
         data_2 = JSON.parse(credits.body, symbolize_names: true)
 
-        response = data_1 + data_2
+        response = data_1.merge!(data_2)
     end
 
-    def self.search_movies
+    def self.search_movies(search)
         conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
             faraday.headers["api_key"] = ENV['movie_api_key']
         end
+        response = conn.get("https://api.themoviedb.org/3/search/movie?api_key=#{ENV['movie_api_key']}&language=en-US&page=1&include_adult=false&query=#{search}")
         if response.status == 200
-            JSON.parse(response.body, symbolize_names: true)
+            results = JSON.parse(response.body, symbolize_names: true)
+            results[:results]
         else
             nil
         end
