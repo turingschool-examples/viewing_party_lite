@@ -1,0 +1,15 @@
+<% flash.each do |type, msg| %>
+    <div class='flash_red'><%= msg %></div>
+    <br>
+<% end %>
+
+<h1>Register A New User</h1>
+
+<%= form_with url:  "/register", method: :post, local: true  do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :email %>
+  <%= form.text_field :email %>
+
+  <%= form.submit "Create New User" %>
+<% end %>
