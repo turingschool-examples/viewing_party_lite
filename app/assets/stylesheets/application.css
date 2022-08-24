@@ -28,6 +28,12 @@ h2 {
   width: 30%;
 }
 
+table {
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+}
+
 #create-user {
   margin: auto;
   text-align: center;
@@ -36,6 +42,13 @@ h2 {
 }
 
 #button {
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+  width: 30%;
+}
+
+#movie-search {
   margin: auto;
   text-align: center;
   font-weight: bold;
