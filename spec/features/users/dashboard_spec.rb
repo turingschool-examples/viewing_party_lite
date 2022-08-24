@@ -24,7 +24,7 @@ RSpec.describe 'User Dashboard' do
 
       expect(page).to have_current_path(curr_path)
       expect(page).to have_content("Discover Movies")
-      expect(page).to have_field(:search, with: 'Search by movie title')
+      expect(page).to have_field(:search)
       expect(page).to have_selector(:link_or_button, 'Find Movies')
     end
   end
