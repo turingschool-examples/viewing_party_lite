@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe MovieService do
+RSpec.describe MovieFacade do
   it 'returns movie poros', :vcr do
     movies = MovieFacade.create_top_movies
 
