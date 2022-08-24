@@ -11,6 +11,4 @@ Rails.application.routes.draw do
   get '/users/:user_id/movies/:movie_id', to: "users#movie_show"
 
   get '/users/:user_id/movies/:movie_id/viewing-party/new', to: 'viewingparties#new'
-
-  # post 'users/:id/movies?=top%20rated', to: 'users#top_rated'
 end
