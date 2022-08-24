@@ -41,5 +41,13 @@ RSpec.describe 'landing page' do
       click_link("valhiemhero@hotmail.com's Dashboard")
       expect(current_path).to eq("/users/#{user2.id}")
     end
+
+    it "has a link to the home page" do
+      visit '/'
+
+      expect(page).to have_link('Home')
+      click_link('Home')
+      expect(current_path).to eq('/')
+    end
   end
 end
