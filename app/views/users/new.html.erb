@@ -5,6 +5,10 @@
   <br>
 <% end %>
 
+<h2>Register a New User</h2>
+
+<br>
+
 <div id='create-user'>
   <%= form_with model: @user, method: :post, local: true do |f| %>
     <%= f.label :name, "Name: " %>
