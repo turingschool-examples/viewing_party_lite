@@ -1,7 +1,13 @@
-<h3>Top Rated Movies</h3>
+<h3>Discover Movies</h3>
 
-<% @movies.each_with_index do |m, idx| %>
-  <div id=" <%= idx %>">
-    <p><%= link_to m[:title], "/users/#{@user.id}/movies/#{m[:id]}" %> - Rated <%= m[:vote_average] %></p>
+<% @movies1.each do |m| %>
+  <div id=" <%= m.id %>">
+    <p><%= link_to m.title, "/users/#{@user.id}/movies/#{m.id}" %> - Rated <%= m.vote_average %></p>
+  </div>
+<% end %>
+
+<% @movies2.each do |m2| %>
+  <div id=" <%= m2.id %>">
+    <p><%= link_to m2.title, "/users/#{@user.id}/movies/#{m2.id}" %> - Rated <%= m2.vote_average %></p>
   </div>
 <% end %>
