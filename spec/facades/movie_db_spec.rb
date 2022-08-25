@@ -12,6 +12,6 @@ RSpec.describe MovieDBFacade do
     array_of_movies_matching_searched_keyword = MovieDBFacade.searched_movies("Shawshank")
     
     expect(array_of_movies_matching_searched_keyword).to be_a Array 
-    expect(array_of_movies_matching_searched_keyword).to be_all XXX 
+    expect(array_of_movies_matching_searched_keyword).to be_all SearchedMovie 
   end
 end
