@@ -1,18 +1,18 @@
 class Movie
-  attr_reader :title, :vote_average, :id, :summary, :genre, :runtime, :cast, :review_count, :reviews
+  attr_reader :id, :title, :vote_average, :summary, :genre, :runtime, :cast, :review_count, :reviews
 
-  def initialize(data, cast, reviews)
+  def initialize(data)
     @id = data[:id]
     @title = data[:title]
-    @vote_average = data[:vote_average]
-    @summary = data[:overview]
-    @genre = genre_parse(data[:genres])
-    @runtime = format_time(data[:runtime])
-
-    @cast = cast_parse(cast[:cast][0..9])
-
-    @review_count = reviews[:total_results]
-    @reviews = review_parse(reviews[:results])
+    # @vote_average = data[:vote_average]
+    # @summary = data[:overview]
+    # @genre = genre_parse(data[:genres])
+    # @runtime = format_time(data[:runtime])
+    #
+    # @cast = cast_parse(cast[:cast][0..9])
+    #
+    # @review_count = reviews[:total_results]
+    # @reviews = review_parse(reviews[:results])
   end
 
   def genre_parse(data)
