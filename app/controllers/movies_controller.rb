@@ -10,7 +10,8 @@ class MoviesController < ApplicationController
     end 
 
     def show 
-
+        @movie = MovieFacade.movie(params[:id])
+        binding.pry
     end 
 
     def search
