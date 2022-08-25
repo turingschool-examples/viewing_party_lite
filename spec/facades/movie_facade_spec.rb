@@ -33,7 +33,7 @@ RSpec.describe MovieFacade do
     it 'returns movie details' do
       movie = MovieFacade.find_movie_details(293660)
       expect(movie.title).to eq('Deadpool')
-      expect(movie).to be_an(Movie)
+      expect(movie).to be_an(MovieDetails)
     end
   end
 end
