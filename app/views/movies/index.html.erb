@@ -2,7 +2,7 @@
 
   <% if params[:q] == "top_rated" %>
     <h2>Top Rated Movies</h2>
-      <% @movies.each do |m| %>
+      <% @top_20.each do |m| %>
         <p><%= link_to m.title %> - Rating <%= m.vote_average %></p>
       <% end %>
 
