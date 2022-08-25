@@ -8,7 +8,7 @@ class MoviesController < ApplicationController
 
   def results
     if params[:q] == 'top rated' 
-      # @facade = MovieFacade.top_rated
+      @facade = MovieFacade.top_rated
     else
       # @facade = MovieFacade.search
     end
