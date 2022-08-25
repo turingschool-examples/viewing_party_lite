@@ -21,4 +21,20 @@ class MovieService
         json = JSON.parse(review_response.body, symbolize_names: true)
     end 
 
+    def self.movie_search(search_string)
+        search1 = conn.get("https://api.themoviedb.org/3/search/movie?api_key=#{ENV['tmdb_key']}&language=en-US&page=1&include_adult=false&query=#{search_string}&page=1")
+        search2 = conn.get("https://api.themoviedb.org/3/search/movie?api_key=#{ENV['tmdb_key']}&language=en-US&page=1&include_adult=false&query=#{search_string}&page=2")
+        data1 = JSON.parse(search1.body, symbolize_names: true)
+        data2 = JSON.parse(search2.body, symbolize_names: true)
+        json = data1[:results].concat(data2[:results])
+    end 
+
+    def self.top_movies
+        top1 = conn.get("https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['tmdb_key']}&language=en-US&page=1")
+        top2 = conn.get("https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['tmdb_key']}&language=en-US&page=2")
+        data1 = JSON.parse(top1.body, symbolize_names: true)
+        data2 = JSON.parse(top2.body, symbolize_names: true)
+        json = data1[:results].concat(data2[:results])
+    end 
+
 end 
