@@ -1,7 +1,7 @@
 <h2>Top Rated Movies</h2>
 <%= button_to 'Discover Page', "/users/#{@user.id}/discover" %>
 <% if @top_movies.present? %>
-  <ol>
+  <ol id="top_movies">
     <% @top_movies.each do |movie| %>
       <li><%= link_to "#{movie.title}", "users/#{@user.id}/movies/#{movie.movie_id}" %> Vote Average: <%= movie.vote_average %></li>
     <% end %>
