@@ -11,4 +11,8 @@ class MovieFacade
     end
     @searched_movies.sort_by(&:rating).reverse
   end
+
+  def self.movie_details(movie_id)
+    MovieDetails.new(MovieService.movie_details(movie_id))
+  end
 end
