@@ -10,7 +10,7 @@ RSpec.describe MovieFacade do
     it '#movies_by_keyword' do
       results = MovieFacade.movies_keyword_query("Fight Club")
     
-      expect(results.title).to eq("Fight Club")
+      expect(results[0].title).to eq("Fight Club")
     end
 
     xit '#get_movie_details' do
