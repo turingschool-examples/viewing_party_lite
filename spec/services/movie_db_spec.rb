@@ -29,5 +29,11 @@ RSpec.describe MovieDBService do
     parsed_json = MovieDBService.find_movie("Shawshank")
 
     expect(parsed_json).to be_a Hash
+
+    first_searched_movie_data = parsed_json[:results][0]
+    expect(first_searched_movie_data).to include(:original_title, :id, :vote_average)
+    expect(first_searched_movie_data[:original_title]).to be_a String
+    expect(first_searched_movie_data[:id]).to be_a Integer
+    expect(first_searched_movie_data[:vote_average]).to be_a Float
   end
 end

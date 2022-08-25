@@ -9,6 +9,11 @@ class MovieDBService
     json = JSON.parse(response.body, symbolize_names: true)
   end 
 
+  def self.find_movie(search)
+    response = conn.get("/3/search/movie?api_key=#{ENV["movie_api_key"]}&language=en-US&query=#{search}")
+    json = JSON.parse(response.body, symbolize_names: true)
+  end
+
   private
 
   def self.conn 
