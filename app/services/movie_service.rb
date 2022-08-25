@@ -15,6 +15,16 @@ class MovieService
       parse_data(response)
     end
 
+    def call_movie_cast(movie)
+      response = connection.get("/3/movie/#{movie}/credits")
+      parse_data(response)
+    end
+
+    def call_movie_reviews(movie)
+      response = connection.get("/3/movie/#{movie}/reviews")
+      parse_data(response)
+    end
+
   private
     def connection
       Faraday.new(url: "https://api.themoviedb.org") do |faraday|
