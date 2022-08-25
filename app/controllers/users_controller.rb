@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     if params[:q] == "top rated"
       @top_movies = MovieDBFacade.top_movies
     elsif params[:q] != "top rated" && params[:q].present?
-       @movies_matching_keyword = MovieDBFacade.searched_movies(params[:q])
+       @movies_matching_keyword = MovieDBFacade.searched_movies(params[:q])[0..39]
     end
   end
 end

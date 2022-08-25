@@ -7,3 +7,11 @@
     <% end %>
   </ol>
 <% end %>
+
+<% if @movies_matching_keyword.present? %>
+  <ol id="macthing_movies">
+    <% @movies_matching_keyword.each do |movie| %>
+      <li><%= link_to "#{movie.title}", "users/#{@user.id}/movies/#{movie.movie_id}" %> Vote Average: <%= movie.vote_average %></li>
+    <% end %>
+  </ol>
+<% end %>
