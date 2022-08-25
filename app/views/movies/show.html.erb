@@ -1,1 +1,47 @@
-<h2>Test</h2>
+<h2><%= @movie.title %></h2>
+
+<br>
+
+<div id='button'>
+  <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %>
+</div>
+
+<br>
+
+<div id='button'>
+  <%= button_to "Create Viewing Party for #{@movie.title}" %>
+</div>
+
+<div id='rating-runtime-genres'>
+  <p><strong>Vote Average: </strong><%= @movie.rating %></p>
+  <p><strong>Runtime: </strong><%= @movie.runtime/60 %> h <%= @movie.runtime%60 %> min</p>
+  <p><strong>Genre(s): </strong><%= @movie.genres.join(", ") %></p>
+</div>
+
+<div id='summary-section'>
+  <p id='summary-header'><strong>Summary</strong></p>
+  <p id='summary'><%= @movie.summary %></p>
+</div>
+
+<div id='cast-section'>
+  <p id='cast-header'><strong>Cast</strong></p>
+  <div id='cast-list'>
+      <% @movie.cast.each_with_index do |person, index| %>
+        <div id="character-<%=index+1%>">
+          <%= person[0] %> as <%= person[1] %>
+        </div>
+      <% end %>
+  </div>
+</div>
+
+<div id='reviews-section'>
+  <p id='count-of-reviews'><strong><%= @movie.reviews.count %> Review(s)</strong></p>
+  <div id='review-list'>
+    <% @movie.reviews.each_with_index do |review, index| %>
+      <div id="review-<%=index+1%>">
+        <p><strong>Author: </strong><%= review[0] %></p>
+        <p><%= review[1] %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

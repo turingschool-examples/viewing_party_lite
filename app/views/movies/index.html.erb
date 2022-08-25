@@ -1,3 +1,9 @@
+<div id='button'>
+  <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %>
+</div>
+
+<br>
+
 <% if @top_movies %>
   <h2>Top Rated Movies</h2>
   <br>
