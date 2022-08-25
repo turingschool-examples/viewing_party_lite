@@ -64,6 +64,19 @@ RSpec.describe "viewing party new page", type: :feature do
         fill_in("time", with: "05:25AM")
     end
 
+     it 'time cannot be blank', :vcr do
+        user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now)
+       
+        visit "/users/#{user.id}/movies/278/viewing-party/new"
+
+        fill_in("runtime", with: "160")
+        fill_in("date", with: "2022/10/03")
+        click_button('Create Viewing Party')
+       
+        expect(page).to have_content("Error: Time cannot be blank")
+        expect(current_path).to eq("/users/#{user.id}/movies/278/viewing-party/new")
+    end
+
     it 'has a viewing party new page with the ability to select users', :vcr do
         user1 = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now)
         user2 = User.create!(first_name: "James", last_name: "Rock", email:"james@test.com", created_at: Time.now, updated_at: Time.now)
