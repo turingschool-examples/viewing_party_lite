@@ -7,12 +7,6 @@ RSpec.describe MovieService do
     expect(ms).to be_a(Hash)
   end
 
-  xit '#movies_by_keyword' do
-    results = MovieService.movies_by_keyword("Fight")
-
-    expect(results).to be_a(Hash)
-  end
-
   describe '#class methods'
     it 'top_rated' do
       ms = MovieService.top_rated

@@ -46,12 +46,12 @@ RSpec.describe 'discover movies page', type: :feature do
          expect(page).to have_button('Search')
       end
 
-      xit "can  search by keywords" do
+      it 'keyword results' do
          user = User.create!(name: "Nancy", email: "nancydrew@email.com")
       
          visit "/users/#{user.id}/discover"
 
-         fill_in :query, with: 'Fight Club'
+         fill_in :search, with: 'Fight Club'
          click_button 'Search'
 
          expect(current_path).to eq(user_movies_path(user.id))
