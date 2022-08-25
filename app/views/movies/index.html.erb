@@ -11,7 +11,7 @@
     <% @top_movies.each_with_index do |movie, index| %>
       <tr id="<%=movie.movie_id%>-info">
         <th><%= index + 1 %></th>
-        <th><%= movie.title %></th>
+        <th><%= link_to movie.title, user_movie_path(@user, movie.movie_id) %></th>
         <th><%= movie.rating %></th>
       </tr>
     <% end %>
@@ -32,7 +32,7 @@
       <% @searched_movies.each_with_index do |movie, index| %>
         <tr id="<%=movie.movie_id%>-info">
           <th><%= index + 1 %></th>
-          <th><%= movie.title %></th>
+          <th><%= link_to movie.title, user_movie_path(@user, movie.movie_id) %></th>
           <th><%= movie.rating %></th>
         </tr>
       <% end %>
