@@ -5,3 +5,9 @@
 <% else %>
   <%= render 'top_rated' %>
 <% end %>
+
+<% @movies.each_with_index do |movie, index| %>
+  <p><%= index + 1 %>.</p>
+  <p>Title: <%= movie.title %></p>
+  <p>Vote Average: <%= movie.vote_average %></p>
+<% end %>
