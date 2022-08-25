@@ -10,4 +10,14 @@ class MovieService
     response = conn.get('/3/movie/top_rated')
     json = JSON.parse(response.body, symbolize_names: true)
   end
+
+  def self.movies_by_keyword(keyword)
+    response = conn.get('/3/search/movie')
+    json = JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.movie_details(id)
+    response = conn.get("/3/movie/#{id}") 
+    json = JSON.parse(response.body, symbolize_names: true)
+  end
 end
