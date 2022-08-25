@@ -14,7 +14,6 @@ class MovieService
   def self.movies_by_keyword(keyword)
     response = conn.get('/3/search/movie')
     json = JSON.parse(response.body, symbolize_names: true)
-    # require 'pry'; binding.pry 
   end
 
   def self.movie_details(id)
