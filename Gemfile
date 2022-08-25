@@ -41,6 +41,7 @@ group :development, :test do
   gem 'pry'
   gem 'shoulda-matchers'
   gem 'figaro'
+  gem 'vcr'
 end
 
 group :development do
