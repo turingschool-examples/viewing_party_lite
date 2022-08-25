@@ -7,12 +7,12 @@ class MovieService
 
   def self.search(query)
     response = MovieService.conn.get("/3/search/movie?&query=#{query}")
-    JSON.parse(response.body, symbolize_names: true)
+    JSON.parse(response.body, symbolize_names: true)[:results]
   end
 
   def self.top_rated
-    response = MovieService.conn.get('/3/movie/top_rated?')
-    JSON.parse(response.body, symbolize_names: true)
+    response = MovieService.conn.get('/3/movie/top_rated')
+    JSON.parse(response.body, symbolize_names: true)[:results]
   end
 
   def self.details(id)
