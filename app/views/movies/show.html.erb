@@ -6,3 +6,6 @@
 <h3>Movie Details</h3>
 <p>Title: <%= @movie_details.title %></p>
 <p>Average Vote: <%= @movie_details.vote_average %></p>
+<p>Runtime: <%= "#{@movie_details.runtime / 60} h #{@movie_details.runtime % 60} min" %></p>
+<p>Genre: <%= @movie_details.genres %></p>
+<p>Summary: <%= @movie_details.overview %></p>
