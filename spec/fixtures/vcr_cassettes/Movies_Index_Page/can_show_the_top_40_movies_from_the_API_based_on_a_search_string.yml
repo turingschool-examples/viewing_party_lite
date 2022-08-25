@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 25 Aug 2022 16:42:59 GMT
+      - Thu, 25 Aug 2022 17:22:15 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,13 +42,13 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 f9a5caa2a18f480171fad57618db559e.cloudfront.net (CloudFront)
+      - 1.1 befcfd7ee847a3c890471f27612dbcde.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 8VH0o7xWS5uOxbdwcx1dhcVQMdIHF7PzY7aVkmnwCGLGbiZn6zMAlA==
+      - q9bBCkK9CpsHxQ__nKH_15rC_mrGE-YBXuzf5QJfgaaKsJdND52RPg==
     body:
       encoding: UTF-8
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/i2fZIltljrhFPsUK9PN6O6ZE7M4.jpg","genre_ids":[10751,16,35,14],"id":11836,"original_language":"en","original_title":"The
@@ -98,12 +98,7 @@ http_interactions:
         as he looks when they face their rivals, the Pods? Soak up the action and
         7 more tales of nautical nonsense, including prophetic fortune cookies, Sandy''s
         newest food craze, countless SpongeBob clones and more!","popularity":7.307,"poster_path":"/kA0Dsum46Rp9RQXaBMrMvqEMNo.jpg","release_date":"2017-03-01","title":"SpongeBob
-        SquarePants: Sea Side Story","video":true,"vote_average":7.2,"vote_count":19},{"adult":false,"backdrop_path":null,"genre_ids":[16],"id":303110,"original_language":"en","original_title":"Spongebob
-        Squarepants: It Came from Goo Lagoon","overview":"It''s a special episode
-        featuring a threatening giant purple ball of goo. Then, Plankton sabotages
-        SpongeBob''s spatula, SpongeBob''s deepest secrets are revealed, Patrick wreaks
-        havoc, and SpongeBob goes back to milkshake-making school.","popularity":8.921,"poster_path":"/dCNXcscr8dGBEN781chdOs20E3P.jpg","release_date":"2014-11-07","title":"Spongebob
-        Squarepants: It Came from Goo Lagoon","video":true,"vote_average":5.4,"vote_count":8},{"adult":false,"backdrop_path":null,"genre_ids":[16],"id":299712,"original_language":"pt","original_title":"Spongebob
+        SquarePants: Sea Side Story","video":true,"vote_average":7.2,"vote_count":19},{"adult":false,"backdrop_path":null,"genre_ids":[16],"id":299712,"original_language":"pt","original_title":"Spongebob
         Heroes of Bikini Bottom","overview":"Evildoers, and everyone else, beware!
         Mermaidman and Barnacleboy have opened their locker of memories for SpongeBob
         and Patrick (MISTAKE!), the Dirty Bubble, Man Ray, The Atomic Flounder and
@@ -113,7 +108,12 @@ http_interactions:
         up Bikini Bottom with \"help\" from SpongeBob, SpongeBob and Patrick try to
         share a toy, SpongeBob nearly ruins Mr. Krabs'' tightwad reputation at the
         Cheapest Crab Convention, and oceans more!","popularity":4.501,"poster_path":"/Od5JI8qicmBS0lCuowEsjP2P2b.jpg","release_date":"2011-10-29","title":"SpongeBob
-        SquarePants: Heroes of Bikini Bottom","video":true,"vote_average":6.2,"vote_count":6},{"adult":false,"backdrop_path":null,"genre_ids":[35,16],"id":440353,"original_language":"en","original_title":"SpongeBob
+        SquarePants: Heroes of Bikini Bottom","video":true,"vote_average":6.2,"vote_count":6},{"adult":false,"backdrop_path":null,"genre_ids":[16],"id":303110,"original_language":"en","original_title":"Spongebob
+        Squarepants: It Came from Goo Lagoon","overview":"It''s a special episode
+        featuring a threatening giant purple ball of goo. Then, Plankton sabotages
+        SpongeBob''s spatula, SpongeBob''s deepest secrets are revealed, Patrick wreaks
+        havoc, and SpongeBob goes back to milkshake-making school.","popularity":8.921,"poster_path":"/dCNXcscr8dGBEN781chdOs20E3P.jpg","release_date":"2014-11-07","title":"Spongebob
+        Squarepants: It Came from Goo Lagoon","video":true,"vote_average":5.4,"vote_count":8},{"adult":false,"backdrop_path":null,"genre_ids":[35,16],"id":440353,"original_language":"en","original_title":"SpongeBob
         SquarePants: Glove World Forever","overview":"Dive down to Bikini Bottom’s
         fun-tastic Glove World and soak up 10 seafaring episodes of SpongeBob SquarePants!
         Grab a glove balloon and join SpongeBob and Patrick as they face the Fiery
@@ -153,7 +153,7 @@ http_interactions:
         SquarePants: Truth or Square","overview":"The cast look back on major events
         in their lives; Patchy hosts a star-studded anniversary special.","popularity":4.277,"poster_path":"/9dn0dTojTW5iMrzMl0UWEX5P29z.jpg","release_date":"2009-11-06","title":"SpongeBob
         SquarePants: Truth or Square","video":false,"vote_average":5.6,"vote_count":4}],"total_pages":4,"total_results":66}'
-  recorded_at: Thu, 25 Aug 2022 16:42:59 GMT
+  recorded_at: Thu, 25 Aug 2022 17:22:15 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/search/movie?api_key=<API Key>&page=2&query=spongebob
@@ -179,7 +179,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 25 Aug 2022 16:42:59 GMT
+      - Thu, 25 Aug 2022 17:22:16 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -196,13 +196,13 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 f9a5caa2a18f480171fad57618db559e.cloudfront.net (CloudFront)
+      - 1.1 6b1026dc8b63f06fce4b4aec8b9a03d6.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 7_iTGmYNo7Glik1Zg14hLp-i_SI4jXXEz5KU7brvQsn0Kq7W6H0ncQ==
+      - wkSu65YaoMWqg5bAGCV6z7P75asDu3zQ7QEiiv1ULsbNheNapY1NNQ==
     body:
       encoding: UTF-8
       string: '{"page":2,"results":[{"adult":false,"backdrop_path":"/bD2PYUSh3xcwGzya5UD8KkM7uv8.jpg","genre_ids":[28,12,16,35],"id":444743,"original_language":"en","original_title":"SpongeBob
@@ -275,8 +275,20 @@ http_interactions:
         SquarePants: Bikini Bottom Adventures","overview":"","popularity":0.6,"poster_path":"/hdr8wkDOUtELgoVMTRo1yfLddgZ.jpg","release_date":"2008-11-06","title":"SpongeBob
         SquarePants: Bikini Bottom Adventures","video":true,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[16],"id":488884,"original_language":"en","original_title":"SpongeBob
         Squarepants - Absorbing Favorites","overview":"9 underwater Favorites!","popularity":0.701,"poster_path":"/gA0h1uVRotv9cvpIiCwVy9BIKXh.jpg","release_date":"2005-09-20","title":"SpongeBob
-        Squarepants - Absorbing Favorites","video":true,"vote_average":5.7,"vote_count":3},{"adult":false,"backdrop_path":"/jVuNNBERV7UjHwJmdftQxjpZUJO.jpg","genre_ids":[],"id":397698,"original_language":"en","original_title":"SpongeBob
-        SquarePants: Pest of the West","overview":"","popularity":0.6,"poster_path":"/hvuHRUhExmwqzs44FvzwVqmMe9y.jpg","release_date":"2008-04-10","title":"SpongeBob
-        SquarePants: Pest of the West","video":true,"vote_average":0,"vote_count":0}],"total_pages":4,"total_results":66}'
-  recorded_at: Thu, 25 Aug 2022 16:42:59 GMT
+        Squarepants - Absorbing Favorites","video":true,"vote_average":5.7,"vote_count":3},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":941590,"original_language":"en","original_title":"EDMT''s
+        The Spongebob Musical","overview":"The stakes are higher than ever in this
+        dynamic stage musical, as SpongeBob and all of Bikini Bottom face the total
+        annihilation of their undersea world. Chaos erupts. Lives hang in the balance.
+        And just when all hope seems lost, a most unexpected hero rises up and takes
+        center stage. The power of optimism really can save the world!  The SpongeBob
+        Musical is based on the beloved animated series created by Stephen Hillenburg
+        and features a book by Kyle Jarrow, with original songs by Yolanda Adams,
+        Steven Tyler and Joe Perry of Aerosmith, Sara Bareilles, Jonathan Coulton,
+        Alexander Ebert of Edward Sharpe & The Magnetic Zeros, The Flaming Lips, Lady
+        Antebellum, Cyndi Lauper, John Legend, Panic! At the Disco, Plain White T’s,
+        They Might Be Giants and T.I., and songs by David Bowie, Tom Kenny and Andy
+        Paley. Additional lyrics are by Jonathan Coulton, with additional music by
+        Tom Kitt. The musical production was conceived by Tina Lanau.","popularity":0.6,"poster_path":"/ukzsa2Z7w7AQB30H0ZRISUnUYYB.jpg","release_date":"","title":"EDMT''s
+        The Spongebob Musical","video":false,"vote_average":0,"vote_count":0}],"total_pages":4,"total_results":66}'
+  recorded_at: Thu, 25 Aug 2022 17:22:15 GMT
 recorded_with: VCR 6.1.0

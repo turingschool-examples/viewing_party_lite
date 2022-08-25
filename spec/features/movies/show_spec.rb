@@ -1,14 +1,43 @@
 require 'rails_helper'
 
 RSpec.describe 'Movies Show Page' do
-  it 'can show the top 40 movies from the API', :vcr do
+  it 'has a button to go back to the discover page' do
     user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com')
-    visit "users/#{user1.id}/discover"
+    visit user_movies_path(user1)
+    
+    expect(page).to have_button "Discover Page"
+    click_button "Discover Page"
+    expect(current_path).to eq "/users/#{user1.id}/discover"
+  end
 
-    click_button "Find Top Rated Movies"
+  it 'shows all of the details for a specific movie', :vcr do
+    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com')
+    visit "users/#{user1.id}/movies/278"
+    expect(page).to have_content('The Shawshank Redemption')
+    
+    within '#rating-runtime-genres' do
+      expect(page).to have_content('8.724')
+      expect(page).to have_content('2 h 22 min')
+      expect(page).to have_content('Drama, Crime')
+    end
+    
+    within '#summary-section' do
+      expect(page).to have_content('Framed in the 1940s for the double murder')
+    end
+    
+    within '#cast-section' do
+      expect(page).to have_css('#character-1')
+      expect(page).to have_css('#character-10')
+      expect(page).to_not have_css('#character-11')
+    end
 
-    expect(current_path).to eq "/users/#{user1.id}/movies"
-    expect(page).to have_css('table#top-movies tr', :count=>41)
-    expect(page).to have_content('Shawshank Redemption')
+    within '#reviews-section' do
+      expect(page).to have_content("7 Review(s)")
+      expect(page).to have_content("Author: elshaarawy")
+      expect(page).to have_content("very good movie 9.5/10")
+    end
+  end
+
+  xit 'has a button to create a viewing party for the movie' do
   end
 end

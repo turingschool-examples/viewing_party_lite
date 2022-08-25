@@ -43,4 +43,13 @@ RSpec.describe 'Movies Index Page' do
     expect(current_path).to eq "/users/#{user1.id}/movies/278"
 
   end
+
+  it 'has a button to go back to the discover page' do
+    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com')
+    visit user_movies_path(user1)
+    
+    expect(page).to have_button "Discover Page"
+    click_button "Discover Page"
+    expect(current_path).to eq "/users/#{user1.id}/discover"
+  end
 end

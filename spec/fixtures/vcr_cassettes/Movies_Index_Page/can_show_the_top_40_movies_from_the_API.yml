@@ -40,15 +40,17 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 3fddcbe99f78632bf14e5e80e6c14058.cloudfront.net (CloudFront)
+      - 1.1 5d351175d5947d478733fbecdab866f6.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - wUB0kKcaxkMju7trGqIk5OQN3tpeikIJBz0IqpfQ15adyRmzIzAV6A==
+      - qFnPd2-nFEnrcx5rcj28jFSl5UH1YXUlVJTEgOF-CZpubdW4CWNdvg==
+      Age:
+      - '2356'
     body:
       encoding: UTF-8
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg","genre_ids":[18,80],"id":278,"original_language":"en","original_title":"The
@@ -159,7 +161,7 @@ http_interactions:
         exceeding what anyone imagined he could do. But despite all he has achieved,
         his one true love eludes him.","popularity":66.063,"poster_path":"/saHP97rTPS5eLmrLQEcANmKrsFl.jpg","release_date":"1994-06-23","title":"Forrest
         Gump","video":false,"vote_average":8.5,"vote_count":23172}],"total_pages":512,"total_results":10235}'
-  recorded_at: Thu, 25 Aug 2022 16:42:59 GMT
+  recorded_at: Thu, 25 Aug 2022 17:22:15 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/top_rated?api_key=<API Key>&page=2
@@ -200,15 +202,17 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 9eceed849af3c369b60088e6ae5ad92c.cloudfront.net (CloudFront)
+      - 1.1 025e84e972a461c1dd140ac5fbbbd0aa.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - nfiWW-TwLUEwoxKNgozOgsWTpACh5k7v1xpeeGRf4MDYP4LFWNvqSQ==
+      - AcvjxSEpGbDUeF60cMmAyLK9taOv2WeHv9GLlUVwIpkgHULQfRMfuw==
+      Age:
+      - '2356'
     body:
       encoding: UTF-8
       string: '{"page":2,"results":[{"adult":false,"backdrop_path":"/fQq1FWp1rC89xDrRMuyFJdFUdMd.jpg","genre_ids":[10749,35],"id":761053,"original_language":"en","original_title":"Gabriel''s
@@ -310,5 +314,5 @@ http_interactions:
         features a caveman and a dinosaur on the brink of extinction. Bonded by tragedy,
         this unlikely friendship becomes the only hope of survival.","popularity":34.439,"poster_path":"/9NBBkdxH0TjQEBSN2AzeE1sgsF9.jpg","release_date":"2019-11-21","title":"Primal:
         Tales of Savagery","video":false,"vote_average":8.4,"vote_count":234}],"total_pages":512,"total_results":10235}'
-  recorded_at: Thu, 25 Aug 2022 16:42:59 GMT
+  recorded_at: Thu, 25 Aug 2022 17:22:15 GMT
 recorded_with: VCR 6.1.0
