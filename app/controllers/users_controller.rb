@@ -15,8 +15,9 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    @viewing_parties = ViewingParty.all
-    @facade = MovieFacade.jj(movie ids)
+    @viewing_parties = @user.viewing_parties
+    movie_ids = @viewing_parties.map {|vp| vp.movie_id}
+    @facade = MovieFacade.movies(movie_ids)
   end
 
   private 

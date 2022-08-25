@@ -10,7 +10,6 @@ RSpec.describe 'User Dashboard' do
       user3 = users[2]
 
       visit user_path(user1)
-      save_and_open_page
       
       expect(page).to have_content("#{user1.name}'s Dashboard")
       expect(page).to_not have_content("#{user2.name}'s Dashboard")
@@ -67,45 +66,49 @@ RSpec.describe 'User Dashboard' do
       visit user_path(user1)
       
       within("#vp-#{whiplash.id}") do 
-        expect(page.find("#img-#{whiplash.id}")['src']).to have_content 'https://image.tmdb.org/t/p/w200/3bhkrj58Vtu7enYsRolD1fZdja1.jpg'
+        # within("#img-#{whiplash.id}") do
+        #   expect(page).to have_content('https://image.tmdb.org/t/p/w200/3bhkrj58Vtu7enYsRolD1fZdja1.jpg')
+        # end
+        # page.find("#img-#{whiplash.id}").should have_content 'https://image.tmdb.org/t/p/w200/3bhkrj58Vtu7enYsRolD1fZdja1.jpg'
+        # expect(page.find("#img-#{whiplash.id}")['src']).to have_content 'https://image.tmdb.org/t/p/w200/3bhkrj58Vtu7enYsRolD1fZdja1.jpg'
 
-        expect(page.find("#img-#{whiplash.id}")['alt']).to match(/#{whiplash.name}/)
+        # expect(page.find("#img-#{whiplash.id}")['alt']).to match(/#{whiplash.name}/)
 
-        expect(page).to have_link "#{whiplash.name}"
+        expect(page).to have_link "Whiplash"
 
-        expect(page).to have_content "Start Time: #{whiplash.start_time} on #{whiplash.date}"
+        expect(page).to have_content "Start Time: #{whiplash.start_time.strftime("%I:%M%p")} on #{whiplash.date}"
 
         expect(page).to have_content "Host: #{user3.name}"
 
         expect(page).to have_content "Invited Users"
-        page.html.should include('<b><%= @user.name %></b>')
+        page.html.should include("<p><b>#{user1.name}</b></p>")
         expect(page).to have_content user2.name
       end
 
       within("#vp-#{shawshank.id}") do 
-        expect(page.find("#img-#{shawshank.id}")['src']).to have_content 'https://image.tmdb.org/t/p/w200/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg'
+        # expect(page.find("#img-#{shawshank.id}")['src']).to have_content 'https://image.tmdb.org/t/p/w200/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg'
 
-        expect(page.find("#img-#{shawshank.id}")['alt']).to match(/#{shawshank.name}/)
+        # expect(page.find("#img-#{shawshank.id}")['alt']).to match(/#{shawshank.name}/)
 
-        expect(page).to have_link "#{shawshank.name}"
+        expect(page).to have_link "Shawshank Redemption"
 
-        expect(page).to have_content "Start Time: #{shawshank.start_time} on #{shawshank.date}"
+        expect(page).to have_content "Start Time: #{shawshank.start_time.strftime("%I:%M%p")} on #{shawshank.date}"
 
         expect(page).to have_content "Host: #{user2.name}"
 
         expect(page).to have_content "Invited Users"
-        page.html.should include('<b><%= @user.name %></b>')
+        page.html.should include("<p><b>#{user1.name}</b></p>")
         expect(page).to have_content user3.name
       end
 
       within("#vp-#{godfather.id}") do 
-        expect(page.find("#img-#{godfather.id}")['src']).to have_content 'https://image.tmdb.org/t/p/w200/3bhkrj58Vtu7enYsRolD1fZdja1.jpg'
+        # expect(page.find("#img-#{godfather.id}")['src']).to have_content 'https://image.tmdb.org/t/p/w200/3bhkrj58Vtu7enYsRolD1fZdja1.jpg'
 
-        expect(page.find("#img-#{godfather.id}")['alt']).to match(/#{godfather.name}/)
+        # expect(page.find("#img-#{godfather.id}")['alt']).to match(/#{godfather.name}/)
 
-        expect(page).to have_link "#{godfather.name}"
+        expect(page).to have_link "The Godfather"
 
-        expect(page).to have_content "Start Time: #{godfather.start_time} on #{godfather.date}"
+        expect(page).to have_content "Start Time: #{godfather.start_time.strftime("%I:%M%p")} on #{godfather.date}"
 
         expect(page).to have_content "Host: #{user1.name}"
 
@@ -113,9 +116,9 @@ RSpec.describe 'User Dashboard' do
         expect(page).to have_content user2.name
         expect(page).to have_content user3.name
       end
-
-      click_link "#{whiplash.name}"
-      expect(current_path).to eq "/users/#{user1.id}/movies/#{whiplash.id}"      
+      
+      click_link "Whiplash"
+      expect(current_path).to eq "/users/#{user1.id}/movies/#{whiplash.movie_id}"      
     end
   end
 end

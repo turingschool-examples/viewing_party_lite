@@ -3,5 +3,24 @@
 <%= button_to 'Discover Movies', "/users/#{@user.id}/discover", method: :get %>
 
 <h2>Viewing Parties</h2>
+<% @viewing_parties.each_with_index do |vp, i| %>
+  <div id="vp-<%= vp.id %>">
+  <p><%= link_to "#{@facade[i].title}", "/users/#{@user.id}/movies/#{vp.movie_id}" %></p>
+    <div id ="img-<%= vp.id %>">
+    <img alt = <%= @facade[i].title %> src="https://image.tmdb.org/t/p/w200/<%= @facade[i].poster %>">
+    </div>
+  <p>Start Time: <%= vp.start_time.strftime("%I:%M%p") %> on <%= vp.date %></p>
+  <p>Host: <%= vp.find_host %></p>
+
+  <u>Invited Users</u>
+  <% vp.users.each do |user| %>
+    <% if @user.id == user.id %>
+      <p><b><%= user.name %></b></p>
+    <% else %>
+      <p><%= user.name %></p>
+    <% end %>
+  <% end %>
+  </div>
+<% end %>
 
 
