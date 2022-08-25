@@ -11,8 +11,4 @@ class MovieFacade
     end
     @searched_movies.sort_by(&:rating).reverse
   end
-
-  def self.service
-    MovieService.new
-  end
 end
