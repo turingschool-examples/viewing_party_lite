@@ -25,4 +25,10 @@ RSpec.describe 'Movie Facade' do
     expect(cast_members[0]).to be_an_instance_of(CastMember)
     expect(cast_members.count).to eq(10)
   end
+
+  it 'creates reviews', :vcr do
+    reviews = MovieFacade.create_reviews(550)
+
+    expect(reviews).to be_an_instance_of(Reviews)
+  end
 end
