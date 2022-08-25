@@ -20,6 +20,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if params[:q] == "top rated"
       @top_movies = MovieDBFacade.top_movies
+    elsif params[:q] != "top rated" && params[:q].present?
+       @movies_matching_keyword = MovieDBFacade.searched_movies(params[:q])
     end
   end
 end
