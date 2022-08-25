@@ -9,9 +9,9 @@ RSpec.describe 'movie detail page' do
     visit "/users/#{@user1.id}/movies/278"
 
     click_button("Create Viewing Party")
-    expect(current_path).to eq("/users/#{@user1.id}/movies/1/viewing-party/new")
+    expect(current_path).to eq("/users/#{@user1.id}/movies/278/viewing-party/new")
 
-    visit "/users/#{@user1.id}/movies/1"
+    visit "/users/#{@user1.id}/movies/278"
 
     click_button("Discover Page")
     expect(current_path).to eq("/users/#{@user1.id}/discover")
