@@ -134,6 +134,26 @@ RSpec.describe "users show page", type: :feature do
             expect(page).to have_content("James Rock")
             expect(page).to_not have_content("Heidi Hello")
         end
+    end
 
+    it 'displays an image of the movie for the viewing party', :vcr do
+        user1 = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com")
+        user2 = User.create!(first_name: "James", last_name: "Rock", email:"james@test.com")
+        user3 = User.create!(first_name: "Heidi", last_name: "Hello", email:"heidi@test.com")
+
+        viewingparty1 = ViewingParty.create!(start_time: DateTime.parse('3rd Feb 2001 04:00:00'), party_duration_minutes: 200, movie_title: "The Shawshank Redemption", movie_duration_minutes: 142)
+            vp1_u1 = ViewingPartyUser.create!(user_id: user1.id, viewing_party_id: viewingparty1.id, status: :hosting)
+            vp1_u2 = ViewingPartyUser.create!(user_id: user2.id, viewing_party_id: viewingparty1.id, status: :invited)
+            vp1_u3 = ViewingPartyUser.create!(user_id: user3.id, viewing_party_id: viewingparty1.id, status: :invited)
+
+        viewingparty2 = ViewingParty.create!(start_time: DateTime.parse('10th Feb 2020 12:05:00'), party_duration_minutes: 300, movie_title: "The Godfather", movie_duration_minutes: 175)
+            vp2_u1 = ViewingPartyUser.create!(user_id: user1.id, viewing_party_id: viewingparty2.id, status: :invited)
+            vp2_u2 = ViewingPartyUser.create!(user_id: user2.id, viewing_party_id: viewingparty2.id, status: :hosting)
+            vp2_u3 = ViewingPartyUser.create!(user_id: user3.id, viewing_party_id: viewingparty2.id, status: :invited)
+
+        visit "/users/#{user1.id}"
+        
+        expect(page.html).to include("https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg")
+        expect(page.html).to include("https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg")
     end
 end

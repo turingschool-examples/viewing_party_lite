@@ -6,7 +6,8 @@
 
 <% @user.viewing_party_users.each do |vpu|%>
   <div id="viewing-party-<%=vpu.id%>">
-    <%= image_tag "https://image.tmdb.org/t/p/w500/#{vpu.viewing_party.movie_api_id[1]}" %> 
+    <%= image_tag "https://image.tmdb.org/t/p/w500#{vpu.viewing_party.movie_api_id[1]}", class: "poster-image" %>
+    <%# <img src="https://image.tmdb.org/t/p/w500/<%="#{vpu.viewing_party.movie_api_id[1]}"%>">  %>
 
     <p>
       <%= link_to "#{vpu.viewing_party.movie_title}", "/users/#{@user.id}/movies/#{vpu.viewing_party.movie_api_id[0]}"%>
