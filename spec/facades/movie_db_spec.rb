@@ -9,7 +9,7 @@ RSpec.describe MovieDBFacade do
   end
 
   it 'returns an array of objects containing the searched word(s)', :vcr do
-    array_of_movies_matching_searched_keyword = MovieDBFacade.searched_movies
+    array_of_movies_matching_searched_keyword = MovieDBFacade.searched_movies("Shawshank")
     
     expect(array_of_movies_matching_searched_keyword).to be_a Array 
     expect(array_of_movies_matching_searched_keyword).to be_all XXX 

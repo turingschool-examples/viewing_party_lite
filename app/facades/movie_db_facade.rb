@@ -7,4 +7,8 @@ class MovieDBFacade
     parsed2[:results].each {|movie_data| @top_rated_movies << TopMovie.new(movie_data)}
     return @top_rated_movies
   end
+
+  def self.searched_movies(search)
+    json = MovieDBService.find_movie(search)
+  end
 end
