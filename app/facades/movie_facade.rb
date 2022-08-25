@@ -8,7 +8,10 @@ class MovieFacade
     Movie.new(MovieService.details(movie_id))
   end
 
-  def self.top_rated 
-    Movie.new(MovieService.details)
+  def self.get_top_rated 
+    json = MovieService.top_rated
+    json[:results].map do |movie_data| 
+      TopMovie.new(movie_data)
+    end
   end
 end

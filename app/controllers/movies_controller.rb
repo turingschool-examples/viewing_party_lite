@@ -8,10 +8,8 @@ class MoviesController < ApplicationController
 
   def results
     if params[:q] == 'top rated' 
-      json = MovieService.top_rated
-      @movies = json[:results].map do 
-        TopMovie.new(movie_data)
-      end
+      @movies = MovieFacade.get_top_rated
+      @user = User.find(params[:id])
     else
       # @facade = MovieFacade.search
     end

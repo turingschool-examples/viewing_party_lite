@@ -25,6 +25,7 @@ RSpec.describe 'TopMovie' do
     movie = TopMovie.new(data)
 
     expect(movie).to be_a TopMovie 
+    expect(movie.id).to eq data[:id]
     expect(movie.title).to eq data[:title]
     expect(movie.vote_average).to eq data[:vote_average]
   end
