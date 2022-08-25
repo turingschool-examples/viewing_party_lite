@@ -24,4 +24,7 @@ class UsersController < ApplicationController
        @movies_matching_keyword = MovieDBFacade.searched_movies(params[:q])[0..39]
     end
   end
+
+  def discover    
+  end
 end
