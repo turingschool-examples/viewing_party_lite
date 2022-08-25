@@ -116,7 +116,7 @@ RSpec.describe "users show page", type: :feature do
             vp3_u2 = ViewingPartyUser.create!(user_id: user2.id, viewing_party_id: viewingparty3.id, status: :hosting)
 
         visit "/users/#{user1.id}"
-
+        
         within "#viewing-party-#{vp1_u1.id}-attendees" do
             expect(page).to have_content("Homer Simpson")
             expect(page).to have_content("James Rock")

@@ -22,7 +22,8 @@ class ViewingParty < ApplicationRecord
 
         json = JSON.parse(response.body, symbolize_names: true)
 
-        json[:results][0][:id]
+        result = []
+        result << json[:results][0][:id] && result << json[:results][0][:poster_path]
     end
 
 end 
