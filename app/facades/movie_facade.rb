@@ -14,4 +14,8 @@ class MovieFacade
       TopMovie.new(movie_data)
     end
   end
+
+  def self.search(search_term)
+    
+  end
 end

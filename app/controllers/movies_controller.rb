@@ -11,7 +11,8 @@ class MoviesController < ApplicationController
       @movies = MovieFacade.get_top_rated
       @user = User.find(params[:id])
     else
-      # @facade = MovieFacade.search
+      @movies = MovieFacade.search(params[:q])
+      @user = User.find(params[:id])
     end
   end
 end

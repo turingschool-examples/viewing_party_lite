@@ -1,4 +1,4 @@
-<h2>Top Rated Movies</h2>
+<%= button_to 'Discover Movies', "/users/#{@user.id}/discover", method: :get %>
 
 <% @movies.each do |movie| %>
   <%= link_to "#{movie.title}", "/users/#{@user.id}/movies/#{movie.id}" %>

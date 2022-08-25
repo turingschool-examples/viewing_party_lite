@@ -38,18 +38,20 @@
         "lines": [
           1,
           1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          0,
           0,
           null,
-          null,
           1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
+          0,
+          0,
           null,
           null,
           null
@@ -62,58 +64,6 @@
           1,
           1,
           0,
-          null,
-          null
-        ]
-      },
-      "/Users/mayutakeda/turing/3mod/projects/viewing_party_lite/app/facades/movie_facade.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          0,
-          null,
-          null,
-          1,
-          1,
-          1,
-          20,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/mayutakeda/turing/3mod/projects/viewing_party_lite/app/services/movie_service.rb": {
-        "lines": [
-          1,
-          1,
-          0,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/mayutakeda/turing/3mod/projects/viewing_party_lite/app/poros/top_movie.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          20,
-          20,
-          20,
           null,
           null
         ]
@@ -163,9 +113,51 @@
         "branches": {
         }
       },
+      "/Users/mayutakeda/turing/3mod/projects/viewing_party_lite/app/facades/movie_facade.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/mayutakeda/turing/3mod/projects/viewing_party_lite/app/poros/movie.rb": {
         "lines": [
           0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/mayutakeda/turing/3mod/projects/viewing_party_lite/app/poros/top_movie.rb": {
+        "lines": [
+          0,
+          0,
+          null,
           0,
           0,
           0,
@@ -231,6 +223,26 @@
         "branches": {
         }
       },
+      "/Users/mayutakeda/turing/3mod/projects/viewing_party_lite/app/services/movie_service.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/mayutakeda/turing/3mod/projects/viewing_party_lite/app/channels/application_cable/connection.rb": {
         "lines": [
           null,
@@ -256,6 +268,6 @@
         }
       }
     },
-    "timestamp": 1661466239
+    "timestamp": 1661471509
   }
 }
