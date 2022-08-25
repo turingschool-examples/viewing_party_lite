@@ -1,28 +1,20 @@
-# require 'rails_helper'
-# #The discover movie spec should be testing the api end points (user story 8)
+require 'rails_helper'
 
-# RSpec.describe "Discover Movie", type: :feature do
-#     # it 'button to top rated movies' do
+RSpec.describe "Movie Index Page", :vcr do
+    it 'has a button to discover top rated movies' do
 
-#     #     user1 = User.create!(name: "Micheal Jordan", email: "user1@gmail.com")
+        @user1 = User.create!(name: "Micheal Jordan", email: "user1@gmail.com")
 
-#     #     visit "/users/#{user1.id}/discover"
+        # visit "/users/#{@user1.id}/discover"
+        visit "/users/#{@user1.id}/movies"
 
-#     #     click_button "Top Rated Movies"
+        # click_button "Discover Top Rated Movies"
         
-#     #     expect(current_path).to eq("/users/#{user1.id}/movies")
-#     # end
-# end
+        expect(current_path).to eq("/users/#{@user1.id}/movies")
+    end
+end
 
-    # xit 'has text field to search key words then redirects to matching list' do
-    #     user1 = User.create!(name: "Micheal Jordan", email: "user1@gmail.com")
-
-    #     visit "/users/#{user1.id}/discover"
-    #     fill_in :search, with: "something"
-    #     click_on "Search"
-
-    # end
-# end
+   
 
 # As a user,
 # When I go to a user dashbaord,

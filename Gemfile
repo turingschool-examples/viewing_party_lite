@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'faraday'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -33,12 +33,12 @@ gem 'jbuilder', '~> 2.5'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'orderly'
   gem 'pry'
-
 end
 
 group :development do
@@ -54,6 +54,8 @@ group :test do
   gem 'launchy'
   gem 'simplecov'
   gem 'shoulda-matchers', '~> 5.0'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 
