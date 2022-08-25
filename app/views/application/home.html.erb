@@ -2,7 +2,7 @@
 <%= button_to "Create a New User", "/register", method: :get %>
 
 <br><br>
-
+<h2>Existing Users: </h2>
 <% @users.each do |user| %>
   <div id="user-<%="#{user.id}"%>">
   <%= link_to "#{user.name}", user_path(user.id) %>
