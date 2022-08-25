@@ -22,7 +22,7 @@ class MovieFacade
       data = MovieService.call_movie_details(movie_id)
       cast = MovieService.call_movie_cast(movie_id)
       reviews = MovieService.call_movie_reviews(movie_id)
-        Movie.new(data, cast, reviews)
+        MovieDetails.new(data, cast, reviews)
     end
 
   end

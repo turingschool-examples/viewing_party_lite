@@ -1,117 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe Movie do
-
-  before(:each) do
+  it 'initializes with a hash of data' do
     data = {
       id: 1,
       title: 'The Shawshank Redemption',
-      vote_average: 9.3,
-      overview: "Overview here",
-      runtime: 120,
-      genres: [
-        {
-          name: "drama"
-        },
-        {
-          name: "thriller"
-        }
-      ]
+      vote_average: 9.3
     }
-    cast = {
-      cast: [
-        {
-          name: "a",
-          character: "a"
-        },
-        {
-          name: "b",
-          character: "b"
-        },
-        {
-          name: "c",
-          character: "c"
-        },
-        {
-          name: "d",
-          character: "d"
-        },
-        {
-          name: "e",
-          character: "e"
-        },
-        {
-          name: "f",
-          character: "f"
-        },
-        {
-          name: "g",
-          character: "g"
-        },
-        {
-          name: "h",
-          character: "h"
-        },
-        {
-          name: "i",
-          character: "i"
-        },
-        {
-          name: "j",
-          character: "j"
-        }
-      ]
-    }
-    review = {
-      total_results: 3,
-      results: [
-        {
-          author_details: {
-            username: "user1"
-          },
-          content: "review 1"
-        },
-        {
-          author_details: {
-            username: "user2"
-          },
-          content: "review 2"
-        },
-        {
-          author_details: {
-            username: "user3"
-          },
-          content: "review 3"
-        }
-      ]
-    }
-    @movie = Movie.new(data, cast, review)
-  end
 
-  it 'initializes with 3 hashes of data' do
-    expect(@movie).to be_a(Movie)
-    expect(@movie.id).to eq(1)
-    expect(@movie.title).to eq('The Shawshank Redemption')
-    expect(@movie.vote_average).to eq(9.3)
-    expect(@movie.summary).to eq("Overview here")
-  end
+    movie = Movie.new(data)
 
-  it "parses out the genre information and formats it for the view" do
-    expect(@movie.genre).to eq(["drama,", "thriller"])
-  end
-
-  it "parses out runtime data and formats it for the view" do
-    expect(@movie.runtime).to eq("2h 0min")
-  end
-
-  it "parses out cast data and formats it for the view" do
-    expect(@movie.cast).to include("a as a")
-    expect(@movie.cast).to include("b as b")
-  end
-
-  it "parses out review data and formats it for the view" do
-    expect(@movie.review_count).to eq(3)
-    expect(@movie.reviews[0][:author]).to eq("user1")
-    expect(@movie.reviews[0][:review]).to eq("review 1")
+    expect(movie.id).to eq(1)
+    expect(movie.title).to eq('The Shawshank Redemption')
+    expect(movie.vote_average).to eq(9.3)
   end
 end
