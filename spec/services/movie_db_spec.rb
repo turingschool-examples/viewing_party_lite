@@ -24,4 +24,10 @@ RSpec.describe MovieDBService do
     expect(top_movie_data[:id]).to be_a Integer
     expect(top_movie_data[:vote_average]).to be_a Float
   end
+
+  it 'retrieves the movies that match the searched keyword', :vcr do
+    parsed_json = MovieDBService.find_movie("Shawshank")
+
+    expect(parsed_json).to be_a Hash
+  end
 end
