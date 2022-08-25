@@ -27,4 +27,20 @@ RSpec.describe 'Movies Index Page' do
     expect(page).to have_content("Movie Results for: spongebob")
     expect(page).to have_css('table#searched-movies-table tr', :count=>41)
   end
+
+  it 'has a link to the show page for movies', :vcr do
+    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com')
+    visit "users/#{user1.id}/discover"
+
+    click_button "Find Top Rated Movies"
+
+    expect(current_path).to eq "/users/#{user1.id}/movies"
+
+    expect(page).to have_link "The Shawshank Redemption"
+
+    click_link "The Shawshank Redemption"
+
+    expect(current_path).to eq "/users/#{user1.id}/movies/278"
+
+  end
 end
