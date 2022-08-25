@@ -12,4 +12,10 @@ RSpec.describe 'Movie Facade' do
 
     expect(movies[0]).to be_an_instance_of(Movie)
   end
+
+  it 'creates movie', :vcr do
+    movie = MovieFacade.create_movie(550)
+
+    expect(movie).to be_an_instance_of(Movie)
+  end
 end

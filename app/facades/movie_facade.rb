@@ -8,4 +8,9 @@ class MovieFacade
     json = MovieService.search(query)
     json.map { |data| Movie.new(data) }
   end
+
+  def self.create_movie(id)
+    json = MovieService.details(id)
+    Movie.new(json)
+  end
 end
