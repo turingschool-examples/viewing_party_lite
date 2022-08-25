@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "User Discover", type: :feature do
-    xit 'has a button to discover top rated movies', :vcr do
+    it 'has a button to discover top rated movies', :vcr do
 
         @user1 = User.create!(name: "Micheal Jordan", email: "user1@gmail.com")
 
