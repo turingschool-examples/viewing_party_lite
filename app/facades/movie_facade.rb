@@ -1,11 +1,11 @@
 class MovieFacade 
-  def movie_ids 
-
+  @viewing_parties = ViewingParty.all
+  
+  def self.movies(movie_ids)
+   movie_ids.map {|id| helper(id)}
   end
 
-  def movies 
-    MovieService.details.map do |data| 
-      Movie.new(data)
-    end
+  def self.helper(movie_id)
+    Movie.new(MovieService.details(movie_id))
   end
 end

@@ -10,7 +10,6 @@ RSpec.describe 'User Dashboard' do
       user3 = users[2]
 
       visit user_path(user1)
-      save_and_open_page
       
       expect(page).to have_content("#{user1.name}'s Dashboard")
       expect(page).to_not have_content("#{user2.name}'s Dashboard")

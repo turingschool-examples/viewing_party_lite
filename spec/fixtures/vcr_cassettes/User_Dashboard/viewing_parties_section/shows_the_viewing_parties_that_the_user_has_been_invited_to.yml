@@ -1,0 +1,219 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/244786?api_key=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 24 Aug 2022 23:53:12 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 822ce1ff5c1865cd89b7017fc71176db432786ae
+      X-Memc-Age:
+      - '6662'
+      X-Memc-Expires:
+      - '9988'
+      Etag:
+      - W/"420bc8735ffbc7cf421e8e7d95686e97"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 8e923e72a50f75048382f193bf6c8c4e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - JFK50-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - ewQ-nyoXV-oDQaMg32IerLxKY1p8IqU5MojWtFq2BGK02sDZO2EBEw==
+      Age:
+      - '1106'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/5h8VtV4oh2qkO8Iqz7gypIYJPAr.jpg","belongs_to_collection":null,"budget":3300000,"genres":[{"id":18,"name":"Drama"},{"id":10402,"name":"Music"}],"homepage":"http://sonyclassics.com/whiplash/","id":244786,"imdb_id":"tt2582802","original_language":"en","original_title":"Whiplash","overview":"Under
+        the direction of a ruthless instructor, a talented young drummer begins to
+        pursue perfection at any cost, even his humanity.","popularity":68.711,"poster_path":"/oPxnRhyAIzJKGUEdSiwTJQBa3NM.jpg","production_companies":[{"id":2266,"logo_path":"/owzVs2mguyyJ3vIn7EbgowpUPnk.png","name":"Bold
+        Films","origin_country":"US"},{"id":3172,"logo_path":"/kDedjRZwO8uyFhuHamomOhN6fzG.png","name":"Blumhouse
+        Productions","origin_country":"US"},{"id":32157,"logo_path":"/4hOCk25Ce8s242NItnwtV7aKRWY.png","name":"Right
+        of Way Films","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2014-10-10","revenue":13092000,"runtime":107,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"The
+        road to greatness can take you to the edge.","title":"Whiplash","video":false,"vote_average":8.37,"vote_count":12476}'
+  recorded_at: Thu, 25 Aug 2022 00:11:38 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/278?api_key=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 25 Aug 2022 00:11:38 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - c7d0f1a47010fc55c00fcec4d5c4a5ef91fba03f
+      X-Memc-Age:
+      - '6574'
+      X-Memc-Expires:
+      - '8846'
+      Etag:
+      - W/"2aecb46a0a906665569f18b2a1aeb4b5"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 f391dfb0806f29cccc5f1df3e1ae836e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - JFK50-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - E8mPcKwjbUCyRuOX76aIPVdlHZXGwMGlx0AyTX7ElIsuhUPJt6Jx7g==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg","belongs_to_collection":null,"budget":25000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"","id":278,"imdb_id":"tt0111161","original_language":"en","original_title":"The
+        Shawshank Redemption","overview":"Framed in the 1940s for the double murder
+        of his wife and her lover, upstanding banker Andy Dufresne begins a new life
+        at the Shawshank prison, where he puts his accounting skills to work for an
+        amoral warden. During his long stretch in prison, Dufresne comes to be admired
+        by the other inmates -- including an older prisoner named Red -- for his integrity
+        and unquenchable sense of hope.","popularity":106.201,"poster_path":"/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg","production_companies":[{"id":97,"logo_path":"/7znWcbDd4PcJzJUlJxYqAlPPykp.png","name":"Castle
+        Rock Entertainment","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1994-09-23","revenue":28341469,"runtime":142,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Fear
+        can hold you prisoner. Hope can set you free.","title":"The Shawshank Redemption","video":false,"vote_average":8.724,"vote_count":22052}'
+  recorded_at: Thu, 25 Aug 2022 00:11:38 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/238?api_key=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 25 Aug 2022 00:11:38 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 647ad0139961d413fe867b26138edd06a9b4ce4d
+      X-Memc-Age:
+      - '1351'
+      X-Memc-Expires:
+      - '14913'
+      Etag:
+      - W/"cdb11270e6fbcab4b2edb159a8e505b6"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 d3041c3025b9205db460853b5b9626bc.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - JFK50-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - YWuKQhYM-svDEaNOhF1ftfs2xiTSLTcWEEuIFyxUaJCIEQXwkNA4IQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/htuuuEwAvDVECMpb0ltLLyZyDDt.jpg","belongs_to_collection":{"id":230,"name":"The
+        Godfather Collection","poster_path":"/9Baumh5J9N1nJUYzNkm0xsgjpwY.jpg","backdrop_path":"/3WZTxpgscsmoUk81TuECXdFOD0R.jpg"},"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":80,"name":"Crime"}],"homepage":"http://www.thegodfather.com/","id":238,"imdb_id":"tt0068646","original_language":"en","original_title":"The
+        Godfather","overview":"Spanning the years 1945 to 1955, a chronicle of the
+        fictional Italian-American Corleone crime family. When organized crime family
+        patriarch, Vito Corleone barely survives an attempt on his life, his youngest
+        son, Michael steps in to take care of the would-be killers, launching a campaign
+        of bloody revenge.","popularity":101.72,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.708,"vote_count":16415}'
+  recorded_at: Thu, 25 Aug 2022 00:11:38 GMT
+recorded_with: VCR 6.1.0
