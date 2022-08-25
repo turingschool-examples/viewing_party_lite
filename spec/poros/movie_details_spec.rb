@@ -23,13 +23,12 @@ RSpec.describe MovieDetails do
       "vote_count": 199
       }
 
-      movie = Movie.new(data)
+      movie_details = MovieDetails.new(data)
 
-      expect(movie).to be_a(Movie)
-      expect(movie.id).to eq(505)
-      expect(movie.title).to eq("Johnny Handsome")
-      expect(movie.vote_average).to eq(6.3)
-      # expect(movie.runtime).to eq(94)
-      # expect(movie.vote_count).to eq(199)
+      expect(movie_details).to be_a(MovieDetails)
+      expect(movie_details.id).to eq(505)
+      expect(movie_details.title).to eq("Johnny Handsome")
+      expect(movie_details.vote_average).to eq(6.3)
+      expect(movie_details.runtime).to eq(94)
   end
 end

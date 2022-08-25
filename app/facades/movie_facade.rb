@@ -16,6 +16,6 @@ class MovieFacade
 
   def self.get_movie_details(id)
     parsed = MovieService.movie_details(id)
-      Movie.new(parsed)
+      MovieDetails.new(parsed)
   end
 end
