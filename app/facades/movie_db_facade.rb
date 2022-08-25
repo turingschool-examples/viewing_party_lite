@@ -9,6 +9,9 @@ class MovieDBFacade
   end
 
   def self.searched_movies(search)
-    json = MovieDBService.find_movie(search)
+    parsed_json = MovieDBService.find_movie(search)
+    parsed_json[:results].map do |searched_movies_data|
+      SearchedMovie.new(searched_movies_data)
+    end 
   end
 end
