@@ -8,7 +8,7 @@ class MovieFacade
     Movie.new(MovieService.details(movie_id))
   end
 
-  def self.top_40
-    
+  def self.top_rated 
+    Movie.new(MovieService.details)
   end
 end
