@@ -6,4 +6,10 @@ RSpec.describe 'Movie Facade' do
 
     expect(top_rated_movies[0]).to be_an_instance_of(Movie)
   end
+
+  it 'creates movies from search', :vcr do
+    movies = MovieFacade.create_searched('Avatar')
+
+    expect(movies[0]).to be_an_instance_of(Movie)
+  end
 end
