@@ -8,6 +8,10 @@ class ViewingpartiesController < ApplicationController
   def create 
     if params[:runtime].to_i < params[:movie_runtime].to_i
       redirect_to "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/viewing-party/new", notice: "Error: Runtime must be longer than the movie length"
+    elsif params[:runtime] == ""
+      redirect_to "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/viewing-party/new", notice: "Error: Date cannot be blank"
+    elsif params[:runtime] == ""
+      redirect_to "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/viewing-party/new", notice: "Error: Date cannot be blank"
     else 
       date = DateTime.parse("#{params[:date]} #{params[:time]}")
       vp = ViewingParty.create!(start_time: date, party_duration_minutes: params[:runtime], movie_title: params[:movie_title], movie_duration_minutes: params[:runtime])
