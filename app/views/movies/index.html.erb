@@ -1,4 +1,12 @@
-<h3>Discover Movies</h3>
+  <% if params[:q] == "top_rated" %>
+    <h2>Top Rated Movies</h2>
+      <% @movies.each do |m| %>
+        <p><%= link_to m.title %> - Rating <%= m.vote_average %></p>
+      <% end %>
+
+  <% else %>
+
+  <h2>Movie Results for <%= "#{@query}" %></h2>
 
 <% @movies1.each do |m| %>
   <div id=" <%= m.id %>">
@@ -10,4 +18,5 @@
   <div id=" <%= m2.id %>">
     <p><%= link_to m2.title, "/users/#{@user.id}/movies/#{m2.id}" %> - Rated <%= m2.vote_average %></p>
   </div>
+  <% end %>
 <% end %>

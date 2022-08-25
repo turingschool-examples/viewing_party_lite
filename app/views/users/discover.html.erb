@@ -7,11 +7,3 @@
   <%= f.text_field :search %>
   <%= f.submit "Find Movies" %>
 <% end %>
-
-<% if @movies %>
-  <% @movies.each do |m| %>
-    <div id="movie-<%= m.id %>">
-      <p><%= link_to m.title, "/users/#{@user.id}/movies/#{m.id}" %> - Rated <%= m.vote_average %></p>
-    </div>
-  <% end %>
-<% end %>
