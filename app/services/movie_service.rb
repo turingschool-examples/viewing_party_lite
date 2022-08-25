@@ -12,7 +12,7 @@ class MovieService
   end
 
   def self.movies_by_keyword(keyword)
-    response = conn.get('/3/search/movie')
+    response = conn.get("/3/search/movie?query=#{keyword}")
     json = JSON.parse(response.body, symbolize_names: true)
   end
 
