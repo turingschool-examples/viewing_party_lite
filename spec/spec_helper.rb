@@ -14,6 +14,7 @@
 #
 require 'simplecov'
 require 'shoulda/matchers'
+require 'webmock/rspec'
 SimpleCov.start 'rails'
 SimpleCov.add_filter ['spec', 'config']
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
