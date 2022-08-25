@@ -11,9 +11,9 @@ class MovieFacade
         Movie.new(movie)
     end
 
-    def service 
-        MovieService.new
-    end
+    # def service 
+    #     MovieService.new
+    # end
 
     def self.search_movies(search_term)
         movies = MovieService.search_movies(search_term)

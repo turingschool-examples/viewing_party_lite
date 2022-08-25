@@ -10,7 +10,7 @@ class Movie
         @genres = data[:genres]
         @overview = data[:overview]
         @cast = data[:cast]
-        @release_date = data[:date]
+        @release_date = data[:release_date]
         @reviews = data[:results]
     end 
 end 
