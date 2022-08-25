@@ -6,7 +6,5 @@ class MovieIndexSearchResultFacade
         @movies = data.map do |movie|
             MovieIndexResult.new(movie)
         end 
-        
     end 
-
 end 
