@@ -30,14 +30,4 @@ RSpec.describe 'home page' do
     end
       expect(page).to have_content("Jim Bob's Dashboard")
   end
-
-  it 'has a button to discover top rated movies' do
-    click_link("Jim Bob")
-    expect(current_path).to eq("/users/#{@user1.id}")
-    click_button("Discover Movies")
-    expect(page).to have_selector(:link_or_button, "Find Top Rated Movies")
-    click_on("Find Top Rated Movies")
-
-    expect(current_path).to eq("/users/#{@user1.id}/movies")
-  end
 end

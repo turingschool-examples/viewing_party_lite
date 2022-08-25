@@ -29,7 +29,7 @@ class MoviesController < ApplicationController
       end
 
       @movies2 = data2[:results].map do |movie_data|
-        Movie.new(movie_data)
+        x = Movie.new(movie_data)
       end
     end
     render "movies/index"
