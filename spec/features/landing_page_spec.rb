@@ -14,10 +14,10 @@ RSpec.describe 'landing page' do
     end 
 
     it 'has a button to add new user' do
-        expect(page).to have_link('Add User')
+        expect(page).to have_button("Add User")
         
 
-        click_link 'Add User'
+        click_button "Add User"
     end
 
     it 'has a list of existing users which links to the users dashboard' do 
