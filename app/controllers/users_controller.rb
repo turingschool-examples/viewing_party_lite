@@ -15,4 +15,11 @@ class UsersController < ApplicationController
       flash[:alert] = "Error: #{error_message(user.errors)}"
     end 
   end
+
+  def movie
+    @user = User.find(params[:id])
+    if params[:q] == "top rated"
+      @top_movies = MovieDBFacade.top_movies
+    end
+  end
 end
