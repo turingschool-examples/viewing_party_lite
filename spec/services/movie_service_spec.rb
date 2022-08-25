@@ -36,4 +36,30 @@ RSpec.describe MovieService do
       expect(data[:results].first[:title]).to eq('Deadpool')
     end
   end
+
+  describe '#call_movie_cast' do
+    it "returns a list of credits for a movie", :vcr do
+      data = MovieService.call_movie_cast(278)
+      expect(data).to be_a(Hash)
+      expect(data).to have_key(:cast)
+      expect(data[:cast].first).to be_a(Hash)
+      expect(data[:cast].first).to have_key(:name)
+      expect(data[:cast].first).to have_key(:character)
+    end
+  end
+
+  describe '#call_movie_reviews' do
+    it "returns a list of reviews for a movie", :vcr do
+      data = MovieService.call_movie_reviews(278)
+      expect(data).to be_a(Hash)
+      expect(data).to have_key(:total_results)
+      expect(data).to have_key(:results)
+      expect(data[:results].first).to be_a(Hash)
+      expect(data[:results].first).to have_key(:content)
+      expect(data[:results].first).to have_key(:author_details)
+      expect(data[:results].first[:author_details]).to be_a(Hash)
+      expect(data[:results].first[:author_details]).to have_key(:username)
+
+    end
+  end
 end
