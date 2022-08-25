@@ -20,10 +20,17 @@ RSpec.describe MovieService do
       expect(ms).to be_a(Hash)
       expect(ms[:results]).to be_a(Array)
     end
-  # it ‘movies_by_keyword’ do
 
-  #   results = MovieService.movies_by_keyword("Fight")
+    xit "movies_by_keyword" do
 
-  #   expect(results).to be_a(Hash)
-  # end
+      results = MovieService.movies_by_keyword("Fight")
+
+      expect(results).to be_a(Hash)
+    end
+
+    it 'movie_details' do
+      movie_details = MovieService.movie_details(505)
+
+      expect(movie_details).to be_a(Hash)
+    end
 end

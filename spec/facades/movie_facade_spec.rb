@@ -12,5 +12,11 @@ RSpec.describe MovieFacade do
       keyword = "Fight"
       expect()
     end
+
+    xit '#get_movie_details' do
+      movie_details = MovieFacade.get_movie_details(505)
+
+      expect(movie_details).to be_a(MovieDetails)
+    end
   end
 end

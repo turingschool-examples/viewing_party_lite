@@ -10,20 +10,15 @@ class MovieService
     response = conn.get('/3/movie/top_rated')
     json = JSON.parse(response.body, symbolize_names: true)
   end
-<<<<<<< HEAD
 
-<<<<<<< HEAD
   def self.movies_by_keyword(keyword)
-    response = conn.get("search/movie?['api_key']query=#{keyword}")
+    response = conn.get('/3/search/movie')
     json = JSON.parse(response.body, symbolize_names: true)
     # require 'pry'; binding.pry 
   end
-=======
-  # def self.movies_by_keyword(keyword)
-  #   response = conn.get("search/movie?query=#{keyword}")
-  #   json = JSON.parse(response.body, symbolize_names: true)
-  # end
->>>>>>> 37f039b (test/Click button to go to discover top rated results page)
-=======
->>>>>>> 502fb0d (feat/Displays top rated films on the movies results page)
+
+  def self.movie_details(id)
+    response = conn.get("/3/movie/#{id}") 
+    json = JSON.parse(response.body, symbolize_names: true)
+  end
 end
