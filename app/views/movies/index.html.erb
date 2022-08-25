@@ -1,9 +1,9 @@
 <p><%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %></p>
 
 <% if params[:q].present? %>
-  <%= render 'search' %>
+  <h3>Movie Results for: <%= params[:q] %></h3>
 <% else %>
-  <%= render 'top_rated' %>
+  <h3>Top Rated Movies</h3>
 <% end %>
 
 <% @movies.each_with_index do |movie, index| %>
