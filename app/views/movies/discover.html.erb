@@ -1,9 +1,9 @@
 <h2> Discover Movies </h2>
 
-<%= button_to 'Discover Top Rated Movies', "users/#{@user.id}/movies?q=top%20rated", method: :get %>
+<%= button_to 'Discover Top Rated Movies', "/users/#{@user.id}/movies?q=top%20rated" %>
 
 <h3>Search for Movie by Title</h3>
-<form action = "users/#{@user.id}/movies?q=keyword"  method = "post">
+<form action = <%= "/users/#{@user.id}/movies?q=keyword"%>  method = "post">
   <label for ="movie-search">Title Key Words: </label>
   <input type ='search' id='movie-search' name='q'>
   <button>Search by Movie Title</button>

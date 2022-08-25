@@ -7,7 +7,6 @@ RSpec.describe 'DiscoverMoviesPage', type: :feature do
     user1 = users[0]
     
     visit "/users/#{user1.id}/discover"
-    save_and_open_page
 
     expect(page).to have_button 'Discover Top Rated Movies' 
 
@@ -21,17 +20,20 @@ RSpec.describe 'DiscoverMoviesPage', type: :feature do
     
     visit "/users/#{user1.id}/discover"
 
-    expect(current_path).to eq "users/#{user1.id}/movies?q=top%20rated" 
+    click_button 'Discover Top Rated Movies'
+
+    expect(current_path).to eq "/users/#{user1.id}/movies" 
   end
 
   it 'visits the Movies Results Page when user searches for a movie' do 
     user1 = users[0]
     
-    visit '/users/#{user1.id}/discover'
+    visit "/users/#{user1.id}/discover"
 
     fill_in 'Title Key Words', with: 'god father' 
+    click_button 'Search by Movie Title'
 
-    expect(current_path).to eq "users/#{user1.id}/movies?q=keyword" 
+    expect(current_path).to eq "/users/#{user1.id}/movies" 
   end
 end
 
