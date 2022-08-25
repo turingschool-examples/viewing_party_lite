@@ -18,4 +18,11 @@ RSpec.describe 'Movie Facade' do
 
     expect(movie).to be_an_instance_of(Movie)
   end
+
+  it 'creates cast members', :vcr do
+    cast_members = MovieFacade.create_cast_members(550)
+
+    expect(cast_members[0]).to be_an_instance_of(CastMember)
+    expect(cast_members.count).to eq(10)
+  end
 end

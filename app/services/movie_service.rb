@@ -22,7 +22,7 @@ class MovieService
 
   def self.cast(id)
     response = MovieService.conn.get("/3/movie/#{id}/credits")
-    JSON.parse(response.body, symbolize_names: true)
+    JSON.parse(response.body, symbolize_names: true)[:cast]
   end
 
   def self.reviews(id)

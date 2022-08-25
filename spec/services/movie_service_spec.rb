@@ -26,8 +26,8 @@ RSpec.describe 'Movie Service' do
   it 'retrieves movie cast', :vcr do
     parsed_json = MovieService.cast(261)
 
-    expect(parsed_json[:cast]).to be_a(Array)
-    expect(parsed_json[:cast][0]).to have_key(:name)
+    expect(parsed_json).to be_a(Array)
+    expect(parsed_json[0]).to have_key(:name)
   end
 
   it 'retrieves movie reviews', :vcr do
