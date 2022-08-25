@@ -59,4 +59,95 @@ RSpec.describe Movie do
     expect(movie.reviews).to eq({"CinemaSerf"=>"Ving Rhames!", "Erick Cabral"=>"Insane movie!"})
   end
 
+  it "has a top 10 cast method" do
+        data1 = {
+            id: 12,
+            title: "King Kong",
+            runtime:  180,
+            vote_average: 6.6,
+            genres: [
+            {
+                name: "Comedy"
+            },
+            {
+                name: "Drama"
+            },
+            {
+                name: "Fantasy"
+            }
+        ],
+            overview: "Big dino goes crazy"
+        }
+
+        data2 = {
+        cast: [
+            {
+                name: 'Tim Robbins',
+                character: 'Andy Dufresne'
+            },
+            {
+                name: 'Morgan Freeman',
+                character: 'Ellis Boyd Redding'
+            },
+        {
+                name: 'Morgan Freeman',
+                character: 'Ellis Boyd Redding'
+            },
+        {
+                name: 'Morgan Freeman',
+                character: 'Ellis Boyd Redding'
+            },
+        {
+                name: 'Morgan Freeman',
+                character: 'Ellis Boyd Redding'
+            },
+        {
+                name: 'Morgan Freeman',
+                character: 'Ellis Boyd Redding'
+            },
+        {
+                name: 'Morgan Freeman',
+                character: 'Ellis Boyd Redding'
+            },
+        {
+                name: 'Morgan Freeman',
+                character: 'Ellis Boyd Redding'
+            },
+        {
+                name: 'Morgan Freeman',
+                character: 'Ellis Boyd Redding'
+            },
+        {
+                name: 'Morgan Freeman',
+                character: 'Ellis Boyd Redding'
+            },
+        {
+                name: 'Morgan Freeman',
+                character: 'Ellis Boyd Redding'
+            },
+        {
+                name: 'Morgan Freeman',
+                character: 'Ellis Boyd Redding'
+            }]
+        }
+
+        data3 = {
+        results: [{
+                author: 'Erick Cabral',
+                content: "Insane movie!"
+            },
+            {
+                author: 'CinemaSerf',
+                content: "Ving Rhames!"
+            }],
+        total_results: 2
+    }
+
+    movie = Movie.new(data1, data2, data3)
+
+    expect(movie.first_10_cast.class).to eq(Array)
+    expect(movie.first_10_cast.count).to eq(10)
+    
+  end
+
 end 
