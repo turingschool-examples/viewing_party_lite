@@ -2,6 +2,9 @@ require 'rails_helper'
 
 
 RSpec.describe MovieFacade do 
+  VCR.use_cassette('propublica_members_of_the_senate_for_co') do
+    
+
   it 'can return top rated movies', :vcr do
     movies = MovieFacade.top_rated
     expect(movies).to be_a(Array)
@@ -28,6 +31,7 @@ RSpec.describe MovieFacade do
     expect(movies.first.title).to eq("The Fountain")
     expect(movies.last.title).to eq("Star Trek: First Contact")
   end
+end
 end
 # RSpec.describe "discover movies page" do
 #   it "has a button to discover top rated movies" do
