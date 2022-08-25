@@ -8,13 +8,13 @@ RSpec.describe 'user discover discover' do
   end
 
 
-  it "has a button to see top rated movies" do
+  it "has a button to see top rated movies", :vcr do
     expect(page).to have_button('Top Rated Movies')
     click_button 'Top Rated Movies'
     expect(current_path).to eq("/users/#{@user.id}/movies/top_rated")
   end
 
-  it 'has a movie search bar' do
+  it 'has a movie search bar', :vcr do
     expect(page).to have_button('Search for movie')
     fill_in('name', with: 'mike')
     click_on 'Search for movies'

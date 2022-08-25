@@ -1,0 +1,10 @@
+<h1>Top Rated Movies</h1>
+
+<%=link_to 'Discover more movies', "/users/#{@user.id}/discover"%>
+
+<% @movies.each do |m| %>
+<div id="<%=m[:title]%>">
+  <p>Title: <%= m[:title] %></p>
+  <p>Vote Average: <%= m[:vote_average] %></p>
+</div>
+<% end %>
