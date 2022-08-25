@@ -11,7 +11,17 @@ class MovieService
     end
 
     def call_movie_details(movie)
-      response = connection.get("/3/movie/#{movie}")
+      response = connection.get("/3/movie/#{movie}?&append_to_response=casts,reviews")
+      parse_data(response)
+    end
+
+    def call_movie_cast(movie)
+      response = connection.get("/3/movie/#{movie}/credits")
+      parse_data(response)
+    end
+
+    def call_movie_reviews(movie)
+      response = connection.get("/3/movie/#{movie}/reviews")
       parse_data(response)
     end
 
