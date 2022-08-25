@@ -9,5 +9,14 @@
     <p><%= f.date_field :date %></p>
     <p><%= f.label :runtime, "Select a time" %></p>
     <p><%= f.time_field :time %></p>
+    <p><%= f.label :invite, "Invite your friends" %></p>
+    <ul style="list-style: none;">
+        <% @users.each do |user| %>
+            <li>
+                <%= check_box_tag user.id %>
+                <%= "#{user.first_name} - #{user.email}" %>
+            </li>
+        <% end %>
+    </ul>
     <%= f.submit 'Create Viewing Party' %>
 <% end %>

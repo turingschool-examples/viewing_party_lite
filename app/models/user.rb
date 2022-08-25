@@ -5,4 +5,8 @@ class User < ApplicationRecord
 
     has_many :viewing_party_users
     has_many :viewing_parties, through: :viewing_party_users
+
+    def self.all_without_current_user(user_id)
+        where("id != ?", user_id)
+    end 
 end 
