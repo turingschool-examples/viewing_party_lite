@@ -25,5 +25,24 @@
     <p>
       Host: <%=vpu.viewing_party.host_name%>
     </p>
+
+    <p>
+      Attendees:
+    </p>
+    
+    <div id="viewing-party-<%=vpu.id%>-attendees">
+      <% vpu.viewing_party.users.each do |attendee| %>
+        <% if "#{attendee.first_name} #{attendee.last_name}" == "#{@user.first_name} #{@user.last_name}" %>
+          <p>
+            <b><%= "#{attendee.first_name} #{attendee.last_name}"%></b>
+          </p>
+        <% else %>
+          <p>
+            <%= "#{attendee.first_name} #{attendee.last_name}" %>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+
   </div>
 <% end %>
