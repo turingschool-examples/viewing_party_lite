@@ -3,3 +3,27 @@
 <p><%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %> </p>
 
 <h3>Viewing Parties</h3>
+
+<% @user.viewing_party_users.each do |vpu|%>
+  <div id="viewing-party-<%=vpu.id%>">
+    <p>
+      Title: <%=vpu.viewing_party.movie_title%>
+    </p>
+
+    <p>
+      Date: <%=vpu.viewing_party.start_time.strftime("%B %d, %Y")%>
+    </p>
+
+    <p>
+      Start Time: <%=vpu.viewing_party.start_time.strftime("%l:%M %p")%>
+    </p>
+
+    <p>
+      <%=vpu.status.titleize%>
+    </p>
+
+    <p>
+      Host: <%=vpu.viewing_party.host_name%>
+    </p>
+  </div>
+<% end %>

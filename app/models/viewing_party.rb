@@ -6,4 +6,11 @@ class ViewingParty < ApplicationRecord
 
     has_many :viewing_party_users
     has_many :users, through: :viewing_party_users
+
+    def host_name
+        host = User.find(viewing_party_users.where(status: "hosting").first.user_id)
+
+        "#{host.first_name} #{host.last_name}"
+    end
+
 end 
