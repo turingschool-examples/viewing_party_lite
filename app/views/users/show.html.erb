@@ -7,7 +7,7 @@
 <% @user.viewing_party_users.each do |vpu|%>
   <div id="viewing-party-<%=vpu.id%>">
     <p>
-      Title: <%=vpu.viewing_party.movie_title%>
+      <%= link_to "#{vpu.viewing_party.movie_title}", "/users/#{@user.id}/movies/#{vpu.viewing_party.movie_api_id}"%>
     </p>
 
     <p>

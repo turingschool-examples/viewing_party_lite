@@ -4,7 +4,8 @@ class CreateViewingParties < ActiveRecord::Migration[5.2]
       t.datetime :start_time
       t.integer :party_duration_minutes
       t.string :movie_title
-      t.integer :movie_duration_minutes 
+      t.integer :movie_duration_minutes
+
       t.timestamps
     end
   end

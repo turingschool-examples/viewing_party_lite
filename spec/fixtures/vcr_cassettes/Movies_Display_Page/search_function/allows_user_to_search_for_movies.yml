@@ -27,7 +27,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 25 Aug 2022 01:48:09 GMT
+      - Thu, 25 Aug 2022 03:42:52 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -44,13 +44,13 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 c84ecfd128e1f4c41a53a2b42410f3b8.cloudfront.net (CloudFront)
+      - 1.1 d5710f445906ae917df909d01c495c9e.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - IAD89-C3
+      - IAD50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - R3g2oDdPyplYOUJkQrccaUDoRqt72WRpHhhp93EiZheiNPHj2ah86A==
+      - cikOGFRMrlaZc2O8IkSNnj9KjqUhV1ScKLr0FweWFZdKTXXyEKgvjw==
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/suaEOtk1N1sgg2MTM7oZd2cfVp3.jpg","genre_ids":[53,80],"id":680,"original_language":"en","original_title":"Pulp
@@ -80,7 +80,7 @@ http_interactions:
         Fiction: the Golden Age of Storytelling","video":false,"vote_average":4,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":890682,"original_language":"fr","original_title":"Pulpe
         Fiction","overview":"Which luscious candidate will pass the casting?","popularity":0.868,"poster_path":"/uCsJrzjQ47krDxUibUJITKZlvHN.jpg","release_date":"2020-11-06","title":"Pulpe
         Fiction","video":false,"vote_average":0,"vote_count":0}],"total_pages":1,"total_results":6}'
-  recorded_at: Thu, 25 Aug 2022 01:48:09 GMT
+  recorded_at: Thu, 25 Aug 2022 03:42:52 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/search/movie?api_key=TMDB_KEY&include_adult=false&language=en-US&page=2&query=Pulp%20Fiction
@@ -108,7 +108,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 25 Aug 2022 01:48:09 GMT
+      - Thu, 25 Aug 2022 03:42:52 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -125,15 +125,15 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 7ba3a61255419c2e0d9e131796899e10.cloudfront.net (CloudFront)
+      - 1.1 d01a0cfc47d6e412dd81c986ff5d69da.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - IAD89-C3
+      - IAD50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - CTZRwIhAGlXAy7oJvxsRUWqGNLbHC1dHdAOI8B-5WYgGStkBmwrqkw==
+      - vp_LLg_z4p1sKXodApd5jjTzmSddkrs6XVw0dzh_sQArsxZr3GHJyQ==
     body:
       encoding: ASCII-8BIT
       string: '{"page":2,"results":[],"total_pages":1,"total_results":6}'
-  recorded_at: Thu, 25 Aug 2022 01:48:09 GMT
+  recorded_at: Thu, 25 Aug 2022 03:42:52 GMT
 recorded_with: VCR 6.1.0
