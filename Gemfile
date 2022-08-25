@@ -55,9 +55,10 @@ group :test do
   gem 'launchy'
   gem 'orderly'
   gem 'rspec-rails'
+  gem 'rubocop-rspec'
   gem 'simplecov'
-  gem 'webmock'
   gem 'vcr'
+  gem 'webmock'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

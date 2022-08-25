@@ -7,26 +7,11 @@ class MoviesController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-
-    if params[:q].present?
-      # @movies = Movie.search(params[:q])
-    else
-      conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
-        faraday.params['api_key'] = ENV['tmdb_api_key']
-      end
-
-      response_1 = conn.get('/3/movie/top_rated')
-      response_2 = conn.get('/3/movie/top_rated?page=2')
-
-      json_1 = JSON.parse(response_1.body, symbolize_names: true)
-      json_2 = JSON.parse(response_2.body, symbolize_names: true)
-
-      top_40 = json_1[:results] + json_2[:results]
-
-      @movies = top_40.map do |movie_data|
-        Movie.new(movie_data)
-      end
-    end
+    @movies = if params[:q].present?
+                MovieFacade.movie_search(params[:q])
+              else
+                MovieFacade.top_rated
+              end
   end
 
   # def show
