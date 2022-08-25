@@ -9,14 +9,14 @@ RSpec.describe 'Movies Index' do
     visit "/users/#{@eli.id}/discover"
   end
 
-  it 'has top rated button', vcr: 'top_rated' do
+  it 'has top rated feature', vcr: 'top_rated' do
     click_button('Find Top Rated Movies')
     expect(current_path).to eq("/users/#{@eli.id}/movies")
     expect(page).to have_content('Title: The Shawshank Redemption')
     expect(page).to have_content('Vote Average: 8.7')
   end
 
-  it 'has search field and button', vcr: 'search_phoenix' do
+  it 'has search feature', vcr: 'search_phoenix' do
     fill_in 'q', with: 'phoenix'
     click_button('Find Movies')
     expect(current_path).to eq("/users/#{@eli.id}/movies")
