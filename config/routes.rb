@@ -1,15 +1,13 @@
 Rails.application.routes.draw do
-  # root 'welcome#index'
-
-  get '/register', to: "users#new"
-  
-  post '/users', to: "users#create"
-  get '/users/:id', to: "users#show"
-  # get '/users/:id/discover', to: "users#discover"
-  get '/users/:id/discover', to: "movies#search"
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'landing#index'
 
   get '/', to: 'landing#index'
+  get '/register', to: "users#new"
+  post '/register', to: "users#create"
+
+  get '/users/:id/discover', to: "users#discover"
+  resources :users, only: [:new, :create, :show] do 
+    resources :movies, only: [:index]
+  end
 end
+
+# root 'landing#index'

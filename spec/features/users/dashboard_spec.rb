@@ -31,7 +31,7 @@ RSpec.describe "User Dashboard Page", type: :feature do
         expect(page).to have_content(party2.id)
     end
 
-    it 'displays a button to Discover Movies' do 
+    xit 'displays a button to Discover Movies' do 
         user1 = User.create!(name: "Micheal Jordan", email: "user1@gmail.com")
         user2 = User.create!(name: "Kobe Bryant", email: "user2@gmail.com")
         # party1 = ViewingParty.create!(duration: 90, date: "Mon, 29 Aug 2022 14:00:00 UTC +00:00", host_id: user2.id, movie_id: 244)
