@@ -5,7 +5,8 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    @user = User.find(params[:id])
+    @hosts_parties = @user.hosting
   end
 
   private
@@ -14,3 +15,4 @@ class UsersController < ApplicationController
       params.permit(:name, :email)
     end
 end
+

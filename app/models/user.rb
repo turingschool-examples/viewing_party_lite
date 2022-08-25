@@ -5,4 +5,11 @@ class User < ApplicationRecord
     has_many :user_parties
     has_many :parties 
     has_many :parties, through: :user_parties
+
+    def hosting
+        parties.where(user_id: id)
+    end 
 end 
+
+
+
