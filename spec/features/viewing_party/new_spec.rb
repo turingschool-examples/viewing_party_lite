@@ -27,8 +27,9 @@ RSpec.describe "viewing party new page", type: :feature do
         visit "/users/#{user.id}/movies/278/viewing-party/new"
 
         fill_in("runtime", with: "120")
-        #finish fields 
-        click_on("Create Viewing Party")
+        fill_in("date", with: "2022/10/03")
+        fill_in("time", with: "05:25AM")
+        click_button('Create Viewing Party')
        
         expect(current_path).to eq("/users/#{user.id}/movies/278/viewing-party/new")
     end
@@ -56,8 +57,8 @@ RSpec.describe "viewing party new page", type: :feature do
        
         visit "/users/#{user1.id}/movies/278/viewing-party/new"
 
-        check(user2.id)
-        check(user3.id)
+        check("user_ids_#{user2.id}")
+        check("user_ids_#{user3.id}")
     end
 
      it 'creates a new viewing party', :vcr do
