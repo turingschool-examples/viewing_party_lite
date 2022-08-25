@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe SearchedMovies do
+RSpec.describe SearchedMovie do
   it 'exists and has attributes' do
     data = {
             "adult": false,
@@ -16,8 +16,8 @@ RSpec.describe SearchedMovies do
             "vote_count": 22052
   }
 
-    searched_movie = SearchedMovies.new(data)
-    expect(searched_movie).to be_a SearchedMovies
+    searched_movie = SearchedMovie.new(data)
+    expect(searched_movie).to be_a SearchedMovie
     expect(searched_movie.title).to eq(data[:original_title])
     expect(searched_movie.vote_average).to eq(data[:vote_average])
     expect(searched_movie.movie_id).to eq(data[:id])
