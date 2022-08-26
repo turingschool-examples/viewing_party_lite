@@ -12,6 +12,12 @@ RSpec.describe 'Discover Movies Page' do
             expect(page).to have_button("Discover Top Rated Movies")
         end
 
+        it 'and when the user clicks on the discover top rated movies button
+        they should be taken to the movie results page' do
+            click_button("Discover Top Rated Movies")
+            expect(current_path).to eq("/users/#{@user1.id}/movies")
+        end
+
         it 'I see a text field to enter keyword(s) to search by movie title' do
             expect(page).to have_field("search")
         end
