@@ -7,7 +7,8 @@ class Movie
               :summary,
               :vote_count,
               :genres,
-              :runtime
+              :runtime,
+              :cast
 
   def initialize(data)
     @id = data[:id]
@@ -17,9 +18,14 @@ class Movie
     @vote_count = data[:vote_count]
     @genres = data[:genres]
     @runtime = data[:runtime]
+    @cast = data[:cast]
   end
 
   def genre_name
     genre = @genres.flat_map {|g| g[:name]}
+  end
+
+  def cast_name
+    cast = @cast.map {|c| c[:name]}
   end
 end
