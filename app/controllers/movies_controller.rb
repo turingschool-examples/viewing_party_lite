@@ -3,13 +3,13 @@ class MoviesController < ApplicationController
 
   def index
     if params[:search].present?
-           @results = MovieFacade.create_search_movie(params[:search])
-           if @results.empty?
-               redirect_to "/users/#{@user.id}/discover"
-           end
-       else
-           @results = MovieFacade.create_top_movies
-       end
+      @results = MovieFacade.create_search_movie(params[:search])
+      if @results.empty?
+          redirect_to "/users/#{@user.id}/discover"
+      end
+    else
+        @results = MovieFacade.create_top_movies
+    end
   end
 
   def show

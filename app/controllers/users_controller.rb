@@ -1,14 +1,11 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [:show, :discover]
 
-
   def show
-
     @user = User.find(params[:id])
   end
 
   def new
-
   end
 
 
@@ -25,7 +22,6 @@ class UsersController < ApplicationController
       # flash[:error] = "Error: #{@user.errors.full_messages.join(", ")}"
     end
   end
-
 
   private
 
