@@ -47,9 +47,9 @@
           null,
           null,
           1,
-          1,
-          1,
-          1,
+          0,
+          0,
+          0,
           0,
           0,
           null,
@@ -69,70 +69,6 @@
           null,
           1,
           0,
-          null,
-          null
-        ]
-      },
-      "/Users/bryce.simonds/Desktop/turing/3Module/projects/viewing_party_lite/app/facades/movie_db_facade.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          21,
-          21,
-          1,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/bryce.simonds/Desktop/turing/3Module/projects/viewing_party_lite/app/services/movie_db_service.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          1,
-          null,
-          1,
-          2,
-          2,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/bryce.simonds/Desktop/turing/3Module/projects/viewing_party_lite/app/poros/top_movie.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          40,
-          40,
-          40,
           null,
           null
         ]
@@ -171,7 +107,45 @@
         "branches": {
         }
       },
+      "/Users/bryce.simonds/Desktop/turing/3Module/projects/viewing_party_lite/app/facades/movie_db_facade.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/bryce.simonds/Desktop/turing/3Module/projects/viewing_party_lite/app/poros/searched_movie.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/bryce.simonds/Desktop/turing/3Module/projects/viewing_party_lite/app/poros/top_movie.rb": {
         "lines": [
           0,
           0,
@@ -206,6 +180,38 @@
         "branches": {
         }
       },
+      "/Users/bryce.simonds/Desktop/turing/3Module/projects/viewing_party_lite/app/services/movie_db_service.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null
+        ],
+        "branches": {
+        }
+      },
       "/Users/bryce.simonds/Desktop/turing/3Module/projects/viewing_party_lite/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
@@ -227,6 +233,6 @@
         }
       }
     },
-    "timestamp": 1661473357
+    "timestamp": 1661473591
   }
 }
