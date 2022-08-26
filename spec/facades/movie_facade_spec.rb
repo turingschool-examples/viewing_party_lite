@@ -2,36 +2,44 @@ require 'rails_helper'
 
 
 RSpec.describe MovieFacade do 
-  VCR.use_cassette('propublica_members_of_the_senate_for_co') do
-    
+  
+  
+  it 'can return top rated movies' do
+      json_response = File.read('spec/fixtures/top_rated_movies.json')
+      stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=73c37a0fb30ac13df0c132c1df149b3f").
+         with(
+           headers: {
+       	  'Accept'=>'*/*',
+       	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+       	  'User-Agent'=>'Faraday v2.5.2'
+           }).
+         to_return(status: 200, body: json_response, headers: {})
+      movies = MovieFacade.top_rated
+      expect(movies).to be_a(Array)
+      expect(movies).to be_all Movie
 
-  it 'can return top rated movies', :vcr do
-    movies = MovieFacade.top_rated
-    expect(movies).to be_a(Array)
-    expect(movies).to be_all Movie
   end
 
-  it 'can return movies matching a search keyword', :vcr do
+  it 'can return movies matching a search keyword' do
     movies = MovieFacade.search_for_movies("Star Trek: First Contact")
     expect(movies).to be_a(Array)
     expect(movies).to be_all Movie
     expect(movies.first.title).to eq("Star Trek: First Contact")
   end 
 
-  it 'can return a movie when given an id', :vcr do
+  it 'can return a movie when given an id' do
     movie = MovieFacade.movie_id(1381)
     expect(movie).to be_a Movie 
     expect(movie.title).to eq("The Fountain")
   end 
 
-  it 'can return multiple movies when given multiple ids', :vcr do
+  it 'can return multiple movies when given multiple ids' do
     movies = MovieFacade.multiple_movies([1381, 199])
     expect(movies).to be_a(Array)
     expect(movies).to be_all Movie
     expect(movies.first.title).to eq("The Fountain")
     expect(movies.last.title).to eq("Star Trek: First Contact")
   end
-end
 end
 # RSpec.describe "discover movies page" do
 #   it "has a button to discover top rated movies" do

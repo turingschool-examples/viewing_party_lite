@@ -1,19 +1,17 @@
 class MovieFacade
 
   def self.top_rated
-    movies = []
-    data = MovieService.top_rated_endpoint
+    data = MovieService.top_rated
     data.map do |movie|
-    Movie.new(movie)
+      Movie.new(movie)
     end 
     
   end
 
   def self.search_for_movies(keyword)
-    results = [] 
     data = MovieService.search_for_movies(keyword)
     data.map do |movie|
-    Movie.new(movie)
+      Movie.new(movie)
     end 
 
   end 
@@ -24,10 +22,9 @@ class MovieFacade
   end 
 
   def self.multiple_movies(movie_ids)
-    movies = []
     data = MovieService.find_movies(movie_ids)
     data.map do |movie|
-    Movie.new(movie)
+      Movie.new(movie)
     end 
 
   end 
