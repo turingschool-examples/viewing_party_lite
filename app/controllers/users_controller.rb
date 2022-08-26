@@ -1,12 +1,19 @@
 class UsersController < ApplicationController
+  before_action :find_user, only: [:show, :discover]
+
 
   def show
 
     @user = User.find(params[:id])
   end
-  
+
   def new
 
+  end
+
+
+  def discover
+    @user = User.find(params[:id])
   end
 
   def create
@@ -19,10 +26,10 @@ class UsersController < ApplicationController
     end
   end
 
+
   private
 
   def user_params
     params.permit(:name, :email)
-
   end
 end

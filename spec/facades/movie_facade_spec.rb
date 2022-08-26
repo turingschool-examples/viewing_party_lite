@@ -9,4 +9,14 @@ RSpec.describe MovieFacade do
     expect(movies[0].title).to eq('The Shawshank Redemption')
     expect(movies[0].vote_average).to eq(8.7)
   end
+
+  it 'returns data for the movie search', :vcr do
+    search = "Dune"
+    result = MovieFacade.create_search_movie(search)
+
+    expect(result[0]).to be_a(Movie)
+    expect(result.count).to eq(40)
+    expect(result[0].title).to eq('Dune')
+    expect(result[0].vote_average).to eq(7.9)
+  end
 end
