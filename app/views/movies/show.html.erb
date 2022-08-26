@@ -11,14 +11,12 @@
 
 <h3>Summary: <%= @movie.overview %></h3>
 
-  Cast Members: 
-<% if @movie.cast %>
-  <%@movie.cast.each do |member| %>
-  <p><h3><%= member[:name] %></p></h3>
+  Cast Members: <% @cast.each do |member|%>
+  <%= member %>
   <% end %>
-<% end %>
+
 <br>
-Total Reviews: 
+<h3>Total Reviews:</h3>
 <br>
 Review Authors and Information:
 

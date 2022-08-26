@@ -6,8 +6,8 @@ class ViewingPartyController < ApplicationController
   end
   
   def new 
-     @user = User.find(params[:user_id])
-     @movie_id = (params[:movie_id]).to_i 
+    @user = User.find(params[:user_id])
+    @movie_id = (params[:movie_id])
   end
 
   def create 
