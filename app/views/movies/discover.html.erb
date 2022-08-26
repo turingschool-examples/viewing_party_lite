@@ -1,7 +1,7 @@
 <h1>Viewing Party Lite</h1>
 <p> Discover Movies </p>
 
-<%= button_to "Find Top Rated Movies", "/users/#{@user.id}/movies?q=top%20rated", method: :get%>
+<%= button_to "Find Top Rated Movies", "/users/#{@user.id}/movies?q=top%20rated",params: {q: "top rated"}, method: :get%>
 
 <%= form_with url: "/users/#{@user.id}/movies?q=keyword", method: :get, local: true do |form| %>
   <%= form.label :movie_search, 'Search For Movies By Title' %>
