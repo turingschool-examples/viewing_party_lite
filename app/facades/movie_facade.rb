@@ -19,8 +19,11 @@
     end
 
     def self.create_cast(id)
-      response = MovieService.get_cast(id)
-      Movie.new(response)
-      binding.pry
+      response = MovieService.get_cast(id)[:cast].map do |member|
+        name = member[:name]
+        character = member[:character]
+        "#{name} - #{character}"
+      end
+      # Movie.new(response)
     end
 end
