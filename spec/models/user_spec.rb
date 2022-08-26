@@ -12,4 +12,15 @@ RSpec.describe User, type: :model do
     it { should have_many(:viewing_party_users) }
     it { should have_many(:viewing_parties).through(:viewing_party_users) }
   end
+
+  describe 'class methods' do
+    @users = let!(:users) { create_list(:user, 3) }
+    it '::all_except_self' do
+      user1 = users[0]
+      user2 = users[1]
+      user3 = users[2]
+    
+      expect(User.everyone_except(user1.id).to_a).to eq([user2, user3])
+    end
+  end
 end
