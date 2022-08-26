@@ -24,6 +24,8 @@ RSpec.describe 'landing page' do
             expect(page).to have_content("email@email.com's Dashboard")
             expect(page).to have_content("123@email.com's Dashboard")
         end
+        expect(User.all).to eq([user_1, user_2])
+        expect(User.count).to eq(2)
     end
 
     it 'users emails link to user show page' do

@@ -1,6 +1,6 @@
 class ViewPartiesController < ApplicationController
     
-    def new 
+    def new  
         @movie = MovieFacade.movie(params[:movie_id])
         @users = User.all
     end 

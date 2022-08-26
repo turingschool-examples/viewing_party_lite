@@ -23,4 +23,15 @@ RSpec.describe 'users registration page' do
 
         expect(current_path).to eq("/users/new")
     end
+
+    it 'returns you to the new page if all details arent submitted' do
+        visit "/users/new"
+
+        fill_in('email', with: 'Email@email.com')
+
+        click_on("Create New User")
+
+        expect(page).to have_content("Error: Please fill in all fields. Email must be unique.")
+        expect(current_path).to eq("/users/new")
+    end
 end

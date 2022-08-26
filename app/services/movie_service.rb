@@ -16,7 +16,7 @@ class MovieService
         conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
             faraday.params["api_key"] = ENV['movie_api_key']
         end
-        movie_details = conn.get("/3/movie/#{id}?append_to_response")
+        movie_details = conn.get("/3/movie/#{id}")
         credits = conn.get("/3/movie/#{id}/credits")
         reviews = conn.get("/3/movie/#{id}/reviews")
 
