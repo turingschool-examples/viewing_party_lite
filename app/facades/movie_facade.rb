@@ -18,4 +18,11 @@ class MovieFacade
     parsed = MovieService.movie_details(id)
       MovieDetails.new(parsed)
   end
+
+  def self.get_movie_cast(id)
+    parsed = MovieService.movie_cast(id)
+    parsed[:cast].first(10).map do |actor|
+      Actor.new(actor)
+    end
+  end
 end
