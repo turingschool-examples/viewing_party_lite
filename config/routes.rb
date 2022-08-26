@@ -16,4 +16,5 @@ Rails.application.routes.draw do
   end
 
   get '/users/:user_id/movies/:movie_id/event/new', to: 'events#new'
+  post '/users/:user_id', to: 'events#create'
 end
