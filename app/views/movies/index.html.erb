@@ -1,6 +1,10 @@
-<h1>Top Rated Movies</h1>
-
 <%=link_to 'Discover more movies', "/users/#{@user.id}/discover"%>
+
+<% if params[:top] == "top_rated" %>
+  <h1>Top Rated Movies</h1>
+<% else  %>
+  <h1>Keyword Movies</h1>
+<% end %>
 
 <% @movies.each do |m| %>
 <div id="<%=m[:title]%>">
