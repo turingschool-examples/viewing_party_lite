@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Movies Results Page', type: :feature do
-   it 'shows top rated movies button' do
+   it 'shows top rated movies button', :vcr do
       user = User.create!(name: "Nancy", email: "nancydrew@email.com")
 
       visit user_discover_index_path(user.id)
@@ -13,7 +13,7 @@ RSpec.describe 'Movies Results Page', type: :feature do
       expect(page).to have_content("Average Review Score: 8.7")
    end
 
-   it 'keyword results' do
+   it 'keyword results', :vcr do
       user = User.create!(name: "Nancy", email: "nancydrew@email.com")
       
       visit "/users/#{user.id}/discover"

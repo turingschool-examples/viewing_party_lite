@@ -1,0 +1,417 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/505?api_key=<movie_api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 26 Aug 2022 14:19:09 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 311da871cc80de448d8898ff3a4b02d56e2aec87
+      X-Memc-Age:
+      - '15585'
+      X-Memc-Expires:
+      - '464'
+      Etag:
+      - W/"c0d738b0224ff72af8cb934dbdffe587"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 a44b9db7a2d103360945ab52619e5016.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 7QWMDtgHXrMsamaCFZEKIk8wC5ftd9jAfRuoJi-SHb1RNtaZuhMscA==
+      Age:
+      - '1965'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/v7baGyne7CsLxnM2maMwIxKZdVF.jpg","belongs_to_collection":null,"budget":20000000,"genres":[{"id":80,"name":"Crime"},{"id":18,"name":"Drama"}],"homepage":"","id":505,"imdb_id":"tt0097626","original_language":"en","original_title":"Johnny
+        Handsome","overview":"A career criminal who has been deformed since birth
+        is given a new face by a kindly doctor and paroled from prison. It appears
+        that he has gone straight, but he is really planning his revenge on the man
+        who killed his mentor and sent him to prison.","popularity":10.083,"poster_path":"/hdEIkpL17rvfZH0l34FJ8H9LAa.jpg","production_companies":[{"id":275,"logo_path":"/2MxNWlN5b3UXt1OfmznsWEQzFwq.png","name":"Carolco
+        Pictures","origin_country":"US"},{"id":276,"logo_path":null,"name":"Guber/Peters
+        Company","origin_country":""},{"id":277,"logo_path":null,"name":"Roven Productions","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1989-09-12","revenue":7237794,"runtime":94,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"They
+        changed his looks, his life and his future... but they couldn''t change his
+        past .","title":"Johnny Handsome","video":false,"vote_average":6.284,"vote_count":199}'
+  recorded_at: Fri, 26 Aug 2022 14:51:54 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/505/credits?api_key=<movie_api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 26 Aug 2022 14:19:10 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 5a17f3f289bd1461c53768363d79512f9792e863
+      X-Memc-Age:
+      - '8441'
+      X-Memc-Expires:
+      - '7057'
+      Etag:
+      - W/"2c8e5cf524039d44461e99f5d3c6de2b"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 c4fb40b7909e4dd897bba2e297b284e6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - bIJ6F5LvcmqzrcTfkWoR9-yMD55krOyn5jFhRh4zDEHG-fWnJvc1rQ==
+      Age:
+      - '1964'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":505,"cast":[{"adult":false,"gender":2,"id":2295,"known_for_department":"Acting","name":"Mickey
+        Rourke","original_name":"Mickey Rourke","popularity":36.319,"profile_path":"/i6vXukUwRsJa7S9yhZgoKt9xLDv.jpg","cast_id":4,"character":"Johnny
+        Handsome","credit_id":"52fe424bc3a36847f80130f1","order":0},{"adult":false,"gender":1,"id":6913,"known_for_department":"Acting","name":"Ellen
+        Barkin","original_name":"Ellen Barkin","popularity":23.128,"profile_path":"/lrmzR8IXsJoIuahKfXSgUHajr9j.jpg","cast_id":5,"character":"Sunny
+        Boyd","credit_id":"52fe424bc3a36847f80130f5","order":1},{"adult":false,"gender":2,"id":192,"known_for_department":"Acting","name":"Morgan
+        Freeman","original_name":"Morgan Freeman","popularity":55.703,"profile_path":"/905k0RFzH0Kd6gx8oSxRdnr6FL.jpg","cast_id":6,"character":"Lt.
+        A.Z. Drones","credit_id":"52fe424bc3a36847f80130f9","order":2},{"adult":false,"gender":2,"id":2178,"known_for_department":"Acting","name":"Forest
+        Whitaker","original_name":"Forest Whitaker","popularity":19.952,"profile_path":"/fugyEeN6sisuYi07HSoxdVHm0CZ.jpg","cast_id":7,"character":"Dr.
+        Steven Fisher","credit_id":"52fe424bc3a36847f80130fd","order":3},{"adult":false,"gender":1,"id":4513,"known_for_department":"Acting","name":"Elizabeth
+        McGovern","original_name":"Elizabeth McGovern","popularity":30.724,"profile_path":"/ihYdCKyr3JPz74tPuvkn1WSNh9b.jpg","cast_id":8,"character":"Donna
+        McCarty","credit_id":"52fe424bc3a36847f8013101","order":4},{"adult":false,"gender":2,"id":2714,"known_for_department":"Acting","name":"Lance
+        Henriksen","original_name":"Lance Henriksen","popularity":25.58,"profile_path":"/1PkFmD5HdjmRa2DumtwINnnAjTH.jpg","cast_id":9,"character":"Rafe
+        Garrett","credit_id":"52fe424bc3a36847f8013105","order":5},{"adult":false,"gender":2,"id":6914,"known_for_department":"Acting","name":"Scott
+        Wilson","original_name":"Scott Wilson","popularity":9.092,"profile_path":"/ynH2YOLn0A7iIlmMiiWAGtC76Hx.jpg","cast_id":10,"character":"Mikey
+        Chalmette","credit_id":"52fe424bc3a36847f8013109","order":6},{"adult":false,"gender":2,"id":6915,"known_for_department":"Acting","name":"David
+        Schramm","original_name":"David Schramm","popularity":0.635,"profile_path":"/551GOq7Z8hU5gL60Gw9BebAvirM.jpg","cast_id":11,"character":"Vic
+        Dumask","credit_id":"52fe424bc3a36847f801310d","order":7},{"adult":false,"gender":2,"id":6916,"known_for_department":"Acting","name":"Peter
+        Jason","original_name":"Peter Jason","popularity":3.499,"profile_path":"/xoqIuVvEH6BG6sOg4NnZzUKFnaf.jpg","cast_id":12,"character":"Mr.
+        Bonet","credit_id":"52fe424bc3a36847f8013111","order":8},{"adult":false,"gender":0,"id":6917,"known_for_department":"Acting","name":"Yvonne
+        Bryceland","original_name":"Yvonne Bryceland","popularity":0.6,"profile_path":null,"cast_id":13,"character":"Sister
+        Luke","credit_id":"52fe424bc3a36847f8013115","order":9},{"adult":false,"gender":2,"id":89720,"known_for_department":"Acting","name":"Jeffrey
+        Meek","original_name":"Jeffrey Meek","popularity":5.51,"profile_path":"/s2sRdSnCya7P8ilgeXlrcVaxsje.jpg","cast_id":39,"character":"Earl","credit_id":"6252638c9d6e33365f823683","order":10},{"adult":false,"gender":2,"id":118069,"known_for_department":"Acting","name":"J.W.
+        Smith","original_name":"J.W. Smith","popularity":1.96,"profile_path":null,"cast_id":40,"character":"Larry","credit_id":"625263d4c7a7e0009a546364","order":11},{"adult":false,"gender":2,"id":33017,"known_for_department":"Acting","name":"Allan
+        Graf","original_name":"Allan Graf","popularity":8.897,"profile_path":"/lF8WR4XVnfkE55RfX9LDssZxygC.jpg","cast_id":41,"character":"Bob
+        Lemoyne","credit_id":"625263e98258fc0051bb2eba","order":12},{"adult":false,"gender":0,"id":101747,"known_for_department":"Acting","name":"Edward
+        Walsh","original_name":"Edward Walsh","popularity":3.802,"profile_path":"/q4DhOplRFPy8uuAYKJVfFkRTL9H.jpg","cast_id":42,"character":"Judge","credit_id":"62526408a6c104320b30b4f8","order":13}],"crew":[{"adult":false,"gender":2,"id":282,"known_for_department":"Production","name":"Charles
+        Roven","original_name":"Charles Roven","popularity":0.988,"profile_path":"/4uJLoVstC1CBcArXFOe53N2fDr1.jpg","credit_id":"52fe424bc3a36847f801311b","department":"Production","job":"Producer"},{"adult":false,"gender":2,"id":719,"known_for_department":"Sound","name":"John
+        Morris","original_name":"John Morris","popularity":3.667,"profile_path":"/jz112syH8RYDrZvbdgiYYWDudu8.jpg","credit_id":"625266e5a055ef31fcd266e9","department":"Sound","job":"Sound
+        Editor"},{"adult":false,"gender":1,"id":897,"known_for_department":"Production","name":"Bonnie
+        Timmermann","original_name":"Bonnie Timmermann","popularity":1.41,"profile_path":"/ly847VZmhXHbe4A0GzcyUW6NofS.jpg","credit_id":"5644b1629251410a41005d09","department":"Production","job":"Casting"},{"adult":false,"gender":2,"id":1723,"known_for_department":"Directing","name":"Walter
+        Hill","original_name":"Walter Hill","popularity":9.392,"profile_path":"/3CiICrmhaYnirmOMHEaFXYTbsnT.jpg","credit_id":"52fe424bc3a36847f80130e1","department":"Directing","job":"Director"},{"adult":false,"gender":2,"id":1731,"known_for_department":"Editing","name":"Freeman
+        A. Davies","original_name":"Freeman A. Davies","popularity":1.005,"profile_path":null,"credit_id":"52fe424bc3a36847f8013139","department":"Editing","job":"Editor"},{"adult":false,"gender":2,"id":2507,"known_for_department":"Camera","name":"Matthew
+        F. Leonetti","original_name":"Matthew F. Leonetti","popularity":1.394,"profile_path":null,"credit_id":"52fe424bc3a36847f8013127","department":"Camera","job":"Director
+        of Photography"},{"adult":false,"gender":2,"id":3986,"known_for_department":"Production","name":"Mario
+        Kassar","original_name":"Mario Kassar","popularity":2.48,"profile_path":"/39uC1Ou7mqOUSfrpfKV8rPJhRT8.jpg","credit_id":"5d3c9b320486380013ed84b5","department":"Production","job":"Executive
+        Producer"},{"adult":false,"gender":2,"id":6911,"known_for_department":"Writing","name":"John
+        Godey","original_name":"John Godey","popularity":1.008,"profile_path":null,"credit_id":"52fe424bc3a36847f80130e7","department":"Writing","job":"Author"},{"adult":false,"gender":0,"id":6912,"known_for_department":"Writing","name":"Ken
+        Friedman","original_name":"Ken Friedman","popularity":2.086,"profile_path":null,"credit_id":"52fe424bc3a36847f80130ed","department":"Writing","job":"Screenplay"},{"adult":false,"gender":2,"id":6918,"known_for_department":"Sound","name":"Ry
+        Cooder","original_name":"Ry Cooder","popularity":2.024,"profile_path":"/bHxTP9V9s67uveh651EvWl7He77.jpg","credit_id":"52fe424bc3a36847f8013121","department":"Sound","job":"Original
+        Music Composer"},{"adult":false,"gender":2,"id":6919,"known_for_department":"Editing","name":"Donn
+        Aron","original_name":"Donn Aron","popularity":1.22,"profile_path":null,"credit_id":"52fe424bc3a36847f801312d","department":"Editing","job":"Editor"},{"adult":false,"gender":0,"id":6920,"known_for_department":"Editing","name":"Carmel
+        Davies","original_name":"Carmel Davies","popularity":0.6,"profile_path":null,"credit_id":"52fe424bc3a36847f8013133","department":"Editing","job":"Editor"},{"adult":false,"gender":0,"id":6921,"known_for_department":"Art","name":"Gene
+        Rudolf","original_name":"Gene Rudolf","popularity":0.624,"profile_path":null,"credit_id":"52fe424bc3a36847f801313f","department":"Art","job":"Production
+        Design"},{"adult":false,"gender":1,"id":6922,"known_for_department":"Art","name":"Christa
+        Munro","original_name":"Christa Munro","popularity":1.094,"profile_path":null,"credit_id":"52fe424bc3a36847f8013145","department":"Art","job":"Art
+        Direction"},{"adult":false,"gender":0,"id":6923,"known_for_department":"Art","name":"Troy
+        Sizemore","original_name":"Troy Sizemore","popularity":0.84,"profile_path":null,"credit_id":"52fe424bc3a36847f801314b","department":"Art","job":"Art
+        Direction"},{"adult":false,"gender":2,"id":6924,"known_for_department":"Costume
+        \u0026 Make-Up","name":"Dan Moore","original_name":"Dan Moore","popularity":1.4,"profile_path":null,"credit_id":"52fe424bc3a36847f8013151","department":"Costume
+        \u0026 Make-Up","job":"Costume Design"},{"adult":false,"gender":2,"id":6925,"known_for_department":"Art","name":"Ernie
+        Bishop","original_name":"Ernie Bishop","popularity":0.84,"profile_path":null,"credit_id":"52fe424bc3a36847f8013157","department":"Art","job":"Set
+        Decoration"},{"adult":false,"gender":0,"id":6926,"known_for_department":"Art","name":"Airick
+        Kredell","original_name":"Airick Kredell","popularity":0.6,"profile_path":null,"credit_id":"52fe424bc3a36847f801315d","department":"Art","job":"Set
+        Decoration"},{"adult":false,"gender":2,"id":16519,"known_for_department":"Costume
+        \u0026 Make-Up","name":"Michael Westmore","original_name":"Michael Westmore","popularity":7.701,"profile_path":"/2GjBNS64nYQOiyV3COKqR4Wjlun.jpg","credit_id":"625264f7fd63002e01674955","department":"Costume
+        \u0026 Make-Up","job":"Special Effects Makeup Artist"},{"adult":false,"gender":2,"id":16737,"known_for_department":"Sound","name":"Jim
+        Weidman","original_name":"Jim Weidman","popularity":1.026,"profile_path":null,"credit_id":"6252675e41465c43fe9bacfc","department":"Sound","job":"Music
+        Editor"},{"adult":false,"gender":2,"id":33017,"known_for_department":"Acting","name":"Allan
+        Graf","original_name":"Allan Graf","popularity":8.897,"profile_path":"/lF8WR4XVnfkE55RfX9LDssZxygC.jpg","credit_id":"625264ca68b1ea00a664216c","department":"Crew","job":"Stunt
+        Coordinator"},{"adult":false,"gender":2,"id":33017,"known_for_department":"Acting","name":"Allan
+        Graf","original_name":"Allan Graf","popularity":8.897,"profile_path":"/lF8WR4XVnfkE55RfX9LDssZxygC.jpg","credit_id":"625264b667e0f70068b85a5d","department":"Directing","job":"Second
+        Unit Director"},{"adult":false,"gender":2,"id":32355,"known_for_department":"Costume
+        \u0026 Make-Up","name":"Zoltan Elek","original_name":"Zoltan Elek","popularity":0.919,"profile_path":null,"credit_id":"5644b291c3a36870e30063b8","department":"Costume
+        \u0026 Make-Up","job":"Makeup Artist"},{"adult":false,"gender":0,"id":37419,"known_for_department":"Production","name":"Ted
+        Kurdyla","original_name":"Ted Kurdyla","popularity":0.829,"profile_path":null,"credit_id":"6252645b9d6e331c551bcce8","department":"Production","job":"Unit
+        Production Manager"},{"adult":false,"gender":2,"id":58471,"known_for_department":"Production","name":"James
+        Dyer","original_name":"James Dyer","popularity":1.4,"profile_path":null,"credit_id":"6252648656b9f7009ee327fa","department":"Directing","job":"First
+        Assistant Director"},{"adult":false,"gender":2,"id":1050930,"known_for_department":"Sound","name":"Hugo
+        Weng","original_name":"Hugo Weng","popularity":0.884,"profile_path":null,"credit_id":"625266a08a84d24664c42f01","department":"Sound","job":"Sound
+        Editor"},{"adult":false,"gender":2,"id":1236036,"known_for_department":"Directing","name":"Barry
+        K. Thomas","original_name":"Barry K. Thomas","popularity":1.96,"profile_path":null,"credit_id":"6252649eb6c26423b277481f","department":"Directing","job":"Second
+        Assistant Director"},{"adult":false,"gender":2,"id":1336516,"known_for_department":"Art","name":"Thomas
+        A. Morris Jr.","original_name":"Thomas A. Morris Jr.","popularity":0.6,"profile_path":null,"credit_id":"5644b1b5c3a36870ef005ede","department":"Art","job":"Construction
+        Coordinator"},{"adult":false,"gender":0,"id":1341781,"known_for_department":"Sound","name":"Gregg
+        Landaker","original_name":"Gregg Landaker","popularity":1.286,"profile_path":null,"credit_id":"62526780fd6300489b61b39c","department":"Sound","job":"Sound
+        Re-Recording Mixer"},{"adult":false,"gender":0,"id":1360100,"known_for_department":"Sound","name":"Hamilton
+        Sterling","original_name":"Hamilton Sterling","popularity":0.6,"profile_path":null,"credit_id":"60368f2a2476f200412f6d99","department":"Sound","job":"Sound
+        Effects Editor"},{"adult":false,"gender":0,"id":1390524,"known_for_department":"Sound","name":"Jay
+        Wilkinson","original_name":"Jay Wilkinson","popularity":1.991,"profile_path":null,"credit_id":"625266bc2f1be049be130bfd","department":"Sound","job":"Sound
+        Editor"},{"adult":false,"gender":2,"id":1391387,"known_for_department":"Sound","name":"Jerry
+        Ross","original_name":"Jerry Ross","popularity":0.798,"profile_path":null,"credit_id":"6252667fb6c26423b277503e","department":"Sound","job":"Supervising
+        Sound Editor"},{"adult":false,"gender":2,"id":1399141,"known_for_department":"Sound","name":"Michael
+        Minkler","original_name":"Michael Minkler","popularity":1.4,"profile_path":null,"credit_id":"62526773447f9c46cda74dbd","department":"Sound","job":"Sound
+        Re-Recording Mixer"},{"adult":false,"gender":1,"id":1399146,"known_for_department":"Directing","name":"Carline
+        Davis-Dyer","original_name":"Carline Davis-Dyer","popularity":0.692,"profile_path":null,"credit_id":"5644b248c3a36870ec005a22","department":"Directing","job":"Script
+        Supervisor"},{"adult":false,"gender":2,"id":1404838,"known_for_department":"Sound","name":"Frank
+        Smathers","original_name":"Frank Smathers","popularity":0.98,"profile_path":"/9nSV5GE8rAgkij4WSIFREYGQcGN.jpg","credit_id":"625266ad09191b006578802b","department":"Sound","job":"Sound
+        Editor"},{"adult":false,"gender":2,"id":1411166,"known_for_department":"Costume
+        \u0026 Make-Up","name":"Peter Tothpal","original_name":"Peter Tothpal","popularity":0.732,"profile_path":"/b6p6Ohh3n14BSiHrbdf317NMrc5.jpg","credit_id":"5644b2629251410a53005d36","department":"Costume
+        \u0026 Make-Up","job":"Key Hair Stylist"},{"adult":false,"gender":1,"id":1446545,"known_for_department":"Sound","name":"Karen
+        G. Wilson","original_name":"Karen G. Wilson","popularity":0.6,"profile_path":null,"credit_id":"625266cf894ed600abc523d8","department":"Sound","job":"Sound
+        Editor"},{"adult":false,"gender":2,"id":1511730,"known_for_department":"Crew","name":"Joseph
+        P. Mercurio","original_name":"Joseph P. Mercurio","popularity":0.6,"profile_path":null,"credit_id":"5644b1f992514133ab0055a6","department":"Visual
+        Effects","job":"Special Effects Supervisor"},{"adult":false,"gender":0,"id":1534936,"known_for_department":"Art","name":"Peter
+        Clemens","original_name":"Peter Clemens","popularity":0.6,"profile_path":null,"credit_id":"5644b191c3a36870e0005e28","department":"Art","job":"Assistant
+        Art Director"},{"adult":false,"gender":0,"id":1534937,"known_for_department":"Art","name":"Frank
+        Viviano","original_name":"Frank Viviano","popularity":0.6,"profile_path":null,"credit_id":"5644b1d7c3a36870e30063a1","department":"Art","job":"Construction
+        Coordinator"},{"adult":false,"gender":0,"id":1534938,"known_for_department":"Costume
+        \u0026 Make-Up","name":"Brian Callahan","original_name":"Brian Callahan","popularity":0.6,"profile_path":null,"credit_id":"5644b228c3a36870e8005d2c","department":"Costume
+        \u0026 Make-Up","job":"Costume Supervisor"},{"adult":false,"gender":0,"id":1534939,"known_for_department":"Costume
+        \u0026 Make-Up","name":"Donna Turner Culver","original_name":"Donna Turner
+        Culver","popularity":1.128,"profile_path":null,"credit_id":"5644b27e9251410a3f005c69","department":"Costume
+        \u0026 Make-Up","job":"Hairstylist"},{"adult":false,"gender":2,"id":1550073,"known_for_department":"Sound","name":"Mark
+        Pappas","original_name":"Mark Pappas","popularity":0.84,"profile_path":null,"credit_id":"625266f6ab68490051c2ac93","department":"Sound","job":"Assistant
+        Sound Editor"},{"adult":false,"gender":0,"id":1565156,"known_for_department":"Sound","name":"Ann
+        Ducommun","original_name":"Ann Ducommun","popularity":0.6,"profile_path":null,"credit_id":"6252671e9672ed009fe995d5","department":"Sound","job":"Assistant
+        Sound Editor"},{"adult":false,"gender":0,"id":1890090,"known_for_department":"Art","name":"Eric
+        Fitzgerald","original_name":"Eric Fitzgerald","popularity":0.6,"profile_path":null,"credit_id":"6252679fa055ef31fcd268f0","department":"Art","job":"Title
+        Designer"},{"adult":false,"gender":0,"id":2328192,"known_for_department":"Production","name":"Noori
+        Dehnahi","original_name":"Noori Dehnahi","popularity":0.6,"profile_path":null,"credit_id":"6252663d56b9f7005035e924","department":"Production","job":"Post
+        Production Coordinator"},{"adult":false,"gender":0,"id":2942502,"known_for_department":"Sound","name":"Carolina
+        Beroza","original_name":"Carolina Beroza","popularity":0.6,"profile_path":null,"credit_id":"6252670767e0f700524c7a6a","department":"Sound","job":"Assistant
+        Sound Editor"},{"adult":false,"gender":0,"id":3048570,"known_for_department":"Sound","name":"Richard
+        Goodman","original_name":"Richard Goodman","popularity":0.6,"profile_path":null,"credit_id":"62526519a055ef009ddcda0b","department":"Sound","job":"Sound
+        Mixer"},{"adult":false,"gender":0,"id":3500549,"known_for_department":"Editing","name":"Yoko
+        Seto","original_name":"Yoko Seto","popularity":0.6,"profile_path":null,"credit_id":"6252665a8258fc009d46b133","department":"Editing","job":"First
+        Assistant Editor"},{"adult":false,"gender":0,"id":3500550,"known_for_department":"Sound","name":"Jessica
+        Galavan","original_name":"Jessica Galavan","popularity":0.6,"profile_path":null,"credit_id":"625266948fdda9009feb492c","department":"Sound","job":"Sound
+        Editor"}]}'
+  recorded_at: Fri, 26 Aug 2022 14:51:54 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/505/reviews?api_key=<movie_api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 26 Aug 2022 14:19:10 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Key:
+      - b5df5aef5ffafbdd64597f1bf3adbab6e722e04d
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '16759'
+      Last-Modified:
+      - Thu, 11 Nov 2021 19:29:05 GMT
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 23d87d8c2ce38e34462e6c134d187eea.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - oNq1gnxLdBvL1I397q5OkVfiuW-ImEKGI88gOzmLeaTvxXfjW-rmOA==
+      Age:
+      - '1964'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":505,"page":1,"results":[{"author":"John Chard","author_details":{"name":"","username":"John
+        Chard","avatar_path":"/utEXl2EDiXBK6f41wCLsvprvMg4.jpg","rating":7.0},"content":"Walter
+        Hill''s undervalued neo-noir.\r\n\r\nJohnny Handsome is directed by Walter
+        Hill and adapted to screenplay by Ken Friedman from the novel \"The Three
+        Worlds of Johnny Handsome\" written by John Godey. It stars Mickey Rourke,
+        Ellen Barkin, Elizabeth McGovern, Lance Henriksen, Forest Whitaker, Morgan
+        Freeman and Scott Wilson. Music is by Ry Cooder and cinematography by Matthew
+        F. Leonetti.\r\n\r\nJohn Sedley (Rourke), AKA: Johnny Handsome, has a severely
+        disfigured face, when he and his only real friend are double-crossed by two
+        accomplices during a robbery, Johnny is sent to prison and his life reaches
+        a new low. However, hope springs in the form of Dr. Steven Fisher (Whitaker),
+        a pioneering plastic surgeon who offers to give Johnny surgery that would
+        give him a normal face as he attempts to integrate back into society. With
+        a new face making him unrecognisable, there is scope to enact revenge on the
+        two people who killed his best friend and had him put in prison...\r\n\r\nWalter
+        Hill knows his film noir, anyone who has seen The Driver knows this. Here
+        for Johnny Handsome, Hill takes a lot of the fantastical elements of noir
+        and dresses it up admirably as a violent revenge thriller. A box office flop
+        and something of a kicking post for big hitting critics of the late 1980s,
+        it''s a film that now can be seen as being very much in tune with its influences.\r\n\r\nThe
+        charges of it being too bonkers, too violent and too much of a \"B\" movie
+        homage just don''t add up, because what is on offer is good solid meaty neo-noir
+        cinema. A protagonist with an affliction, medical shenanigans, hyper femme
+        fatale, over the top villain and a stoic and sarcastic gumshoe type copper.
+        All of which operate in a sweaty and luridly coloured New Orleans. Add in
+        Hill''s eye for aggressive action sequences and it''s neo a go-go.\r\n\r\nHill
+        gets strong performances from his cast, ensuring emotional bonds are not over
+        egged and a clamour for sympathy and understanding kept to a bearable level
+        by the actors playing the \"good\" guys \"n\" dolls. While giving Henriksen
+        and Barkin licence to sizzle with sinister glee is astute and perfectly in
+        tune with the material on the page. Leonetti''s photography has the requisite
+        pulpy noirishness to it, and the familiar twangs of Ry Cooder are never a
+        bad thing in a Walter Hill movie.\r\n\r\nIt''s not perfect by any stretch
+        of the imagination, but those complaining about missed opportunities regarding
+        rehabilitation - or that the liberal doctor turns out to be clinically wrong
+        in his reform beliefs - really are missing the point or unaware of the world
+        where something like Johnny Handsome lives. From the kinetic misery at film''s
+        start, to the \"ever so in tune with film noir\" finale, Johnny Handsome is
+        well worth a look by anyone interested in noir''s updated version. 7/10","created_at":"2014-03-31T07:21:33.197Z","id":"5339177d9251417d9e003ee0","updated_at":"2021-06-23T15:57:25.504Z","url":"https://www.themoviedb.org/review/5339177d9251417d9e003ee0"}],"total_pages":1,"total_results":1}'
+  recorded_at: Fri, 26 Aug 2022 14:51:54 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/?api_key=<movie_api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 26 Aug 2022 14:51:54 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Cascade:
+      - pass
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 c55bfc9d9a95cdee8e23989feddaa4b2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - CJiYw5Zvk0bLgfFQsu3Kadagr1d-IlVs1S9vcoXxBjFt42iiKiuyOQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"success":false,"status_code":34,"status_message":"The resource you
+        requested could not be found."}'
+  recorded_at: Fri, 26 Aug 2022 14:51:54 GMT
+recorded_with: VCR 6.1.0
