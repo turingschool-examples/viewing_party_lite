@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   get '/register', to: "users#new"
   post '/users', to: "users#create"
   get 'users/:id', to: 'users#show'
-  get 'users/:id/discover', to: 'movies#index'
+  get 'users/:id/discover', to: 'movies#discover'
+  get "/users/:id/movies", to: 'movies#index'
 end
