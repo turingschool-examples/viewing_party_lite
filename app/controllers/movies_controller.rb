@@ -17,8 +17,4 @@ class MoviesController < ApplicationController
   def show
     @movie = MovieFacade.movie(params[:id])
   end
-
-  def search
-    # @movie = MovieFacade.movie(params[:id])
-  end
 end

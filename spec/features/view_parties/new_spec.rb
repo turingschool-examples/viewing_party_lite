@@ -12,9 +12,6 @@ RSpec.describe 'View Party New Page', :vcr do
 
     fill_in('Duration of Party', with: 180)
     fill_in('Date and Time', with: '10/10/2022, 8:30 PM')
-    # within("#inviteotherusers") do
-    #     click_on("Create New User")
-    # end
     click_button('Create Party')
     expect(current_path).to eq("/users/#{user_2.id}")
   end
