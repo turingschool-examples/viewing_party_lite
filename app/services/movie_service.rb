@@ -6,7 +6,7 @@ class MovieService
   end
 
   def self.search_movies(movie_search)
-      response = connect.get("/3/search/movie?query=#{movie_search}")
+      response = connect.get("/3/search/movie?api_key=#{ENV['moviedb_api_key']}query=#{movie_search}")
       json = JSON.parse(response.body, symbolize_names: true)
   end
 
