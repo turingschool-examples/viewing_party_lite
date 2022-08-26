@@ -13,10 +13,11 @@ RSpec.describe 'Movie details page' do
             expect(current_path).to eq("/users/#{@user1.id}/movies/#{@movie_id}")
             expect(page).to have_button("Create a Viewing Party")
             click_button("Create a Viewing Party")
-            expect(current_path).to eq()
+            expect(current_path).to eq("/users/#{@user1.id}/movies/#{@movie_id}/viewing-party/new")
         end
 
         it 'I should see a button to return to the Discover page' do 
+            expect(page).to have_button('Return to Discover Page')
 
         end
 

@@ -17,11 +17,14 @@ class MovieService
     get_url("/3/search/movie", keyword)[:results]
   end 
 
-  # def self.find_by_id(movie_id)
-  #   conn = Faraday.new(url: "https://api.themoviedb.org")
-  #   response = conn.get("/3/movie/#{movie_id}?api_key=#{ENV['tmdb_api_key']}")
-  #   data = JSON.parse(response.body, symbolize_names: true)
-  # end 
+  def self.find_by_id(movie_id)
+    get_url("/3/movie/#{movie_id}")#[:results]
+  end 
+
+  def self.find_cast(movie_id)
+   # binding.pry
+      get_url("/3/movie/#{movie_id}/credits")[:cast]
+  end 
 
   # def self.find_movies(movie_ids)
   #   movies = []
