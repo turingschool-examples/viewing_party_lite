@@ -16,7 +16,6 @@
 <div id="invited"><h3>Invited:</h3>
 <% @user.invited.each do |party_user| %>
   <p>Movie Title: <%= party_user.party.movie_title %></p>
-  
   <p><div id="invited-host">Host: <%= party_user.party.hosting.first.user.name %></div></p>
   <p><div id="invited-invited">Invited: <% party_user.party.invited.each do |party_user| %></p>
     <p><%= party_user.user.name %></p>
