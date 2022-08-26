@@ -8,9 +8,9 @@ class ViewingParty < ApplicationRecord
   has_many :users, through: :viewing_party_users
 
   def find_host
-    binding.pry 
-    # host_id = viewing_party_users.where(host: true).pluck(:user_id)
-    # host = User.find(host_id.first)
-    # host.name
+    users
+    .joins(:viewing_party_users)
+    .select('users.*, viewing_party_users.host')
+    .where('viewing_party_users.host = true')
   end
 end
