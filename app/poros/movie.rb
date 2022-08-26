@@ -1,8 +1,16 @@
-class Movie 
-    attr_reader :title, :vote_average
+class Movie
+  attr_reader :id, :vote_average, :title, :summary
 
-    def initialize(movie_data)
-        @title = movie_data[:original_title]
-        @vote_average = movie_data[:vote_average]
-    end 
-end 
+  def initialize(data)
+    @id = data[:id]
+    @vote_average = data[:vote_average]
+    @title = data[:title]
+    @summary = data[:overview]
+    # @runtime = data[:runtime]
+    # @review_count = data[:reviews][:total_results] if data[:reviews]
+    #   @cast = data[:credits][:cast] if data[:credits]
+    #   @reviews = data[:reviews][:results] if data[:reviews]
+    #   @genres = data[:genres].map{ |genre_hash| genre_hash[:name]} if data[:genres]
+  end
+end
+
