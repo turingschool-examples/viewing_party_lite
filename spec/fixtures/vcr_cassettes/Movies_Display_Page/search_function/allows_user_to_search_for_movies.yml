@@ -27,7 +27,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 25 Aug 2022 23:30:39 GMT
+      - Fri, 26 Aug 2022 00:05:16 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,17 +42,15 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Hit from cloudfront
+      - Miss from cloudfront
       Via:
-      - 1.1 e11ee4e3208082d534c251b36bbee268.cloudfront.net (CloudFront)
+      - 1.1 1f41b5f27f3ec2e93db2155dbc56900c.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - SEA19-C3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - VDHpmQpABr4NIRuFHg5ZyZ4INmnwzNf7E49EU6q00ylU7fFGmOPihw==
-      Age:
-      - '100'
+      - xg9Ckz-Mekt4xh4RhBo8RoQalF3PYInCxmnjYBR04u0w9bP1GVgUFg==
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/suaEOtk1N1sgg2MTM7oZd2cfVp3.jpg","genre_ids":[53,80],"id":680,"original_language":"en","original_title":"Pulp
@@ -82,7 +80,7 @@ http_interactions:
         Fiction: the Golden Age of Storytelling","video":false,"vote_average":4,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":890682,"original_language":"fr","original_title":"Pulpe
         Fiction","overview":"Which luscious candidate will pass the casting?","popularity":0.868,"poster_path":"/uCsJrzjQ47krDxUibUJITKZlvHN.jpg","release_date":"2020-11-06","title":"Pulpe
         Fiction","video":false,"vote_average":0,"vote_count":0}],"total_pages":1,"total_results":6}'
-  recorded_at: Thu, 25 Aug 2022 23:32:19 GMT
+  recorded_at: Fri, 26 Aug 2022 00:05:16 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/search/movie?api_key=TMDB_KEY&include_adult=false&language=en-US&page=2&query=Pulp%20Fiction
@@ -110,7 +108,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 25 Aug 2022 23:30:39 GMT
+      - Fri, 26 Aug 2022 00:05:17 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -125,19 +123,17 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Hit from cloudfront
+      - Miss from cloudfront
       Via:
-      - 1.1 1f41b5f27f3ec2e93db2155dbc56900c.cloudfront.net (CloudFront)
+      - 1.1 6bdc2963c9ed59b475ec36c35e5932a4.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - SEA19-C3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - p8pkdxHHS7tiu7f7P1-APXxy-J-1a_M7wbE6af5qVd2IKNuGgaUTlQ==
-      Age:
-      - '101'
+      - y8QhEVb_Gnfw3kTqjUph0IOd0yaPKNlGyhD7HUtXLef3KjDQxcEg9w==
     body:
       encoding: ASCII-8BIT
       string: '{"page":2,"results":[],"total_pages":1,"total_results":6}'
-  recorded_at: Thu, 25 Aug 2022 23:32:20 GMT
+  recorded_at: Fri, 26 Aug 2022 00:05:17 GMT
 recorded_with: VCR 6.1.0
