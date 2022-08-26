@@ -28,7 +28,7 @@
     end
 
     def self.create_reviews(id)
-      binding.pry
+      # binding.pry
       response = MovieService.get_reviews(id)[:results].map do |review|
         author= review[:author]
         content = review[:content]
