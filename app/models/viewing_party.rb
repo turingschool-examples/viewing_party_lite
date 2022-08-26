@@ -1,4 +1,6 @@
 class ViewingParty < ApplicationRecord 
+    validate :party_duration_minutes_greater_movie_duration_minutes, on: :create
+
     validates_presence_of :start_time
     validates_presence_of :party_duration_minutes
     validates_presence_of :movie_title
@@ -25,4 +27,10 @@ class ViewingParty < ApplicationRecord
         movie_result.poster_path
     end
 
+    def party_duration_minutes_greater_movie_duration_minutes 
+        if movie_duration_minutes == nil || party_duration_minutes == nil 
+        elsif movie_duration_minutes > party_duration_minutes
+            errors.add(:party_duration_minutes, "Party duration has to be longer than the movie duration")
+        end
+    end
 end 

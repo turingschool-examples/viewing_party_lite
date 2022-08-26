@@ -1,14 +1,14 @@
-# Viewing Party
+# Welcome to The Viewing Partay Application 
 
-This is the base repo for the [Viewing Party Lite project](https://backend.turing.io/module3/projects/viewing_party_lite) used for Turing's Backend Module 3.
+This is the repo for the [Viewing Party Lite project](https://backend.turing.io/module3/projects/viewing_party_lite) completed by Jonathan Pope and Alex Boyd during Turing's Backend Module 3 course. 
 
-### About this Project
+## About this Project
 
 Viewing Part Lite is an application in which users can explore movie options and create a viewing party event for themselves and other users of the application.
 
-## Setup for the use of the project
+## Live App Details 
 
-1. A conveyor belt link will be sent out at project kickoff so that you can both fork and copy the project board on this base repo. 
+This app is [deployed on Heroku and can be accessed by clicking this link.](https://viewing-partay.herokuapp.com/)
 
 ## Local Setup for any other use
 
@@ -16,11 +16,16 @@ Viewing Part Lite is an application in which users can explore movie options and
 2. Install gem packages: `bundle install`
 3. Setup the database: `rails db:create`
 
-
 ## Versions
 
 - Ruby 2.7.2
 
 - Rails 5.2.6
 
-Example wireframes to follow are found [here](https://backend.turing.io/module3/projects/viewing_party_lite/wireframes)
+## API Data Attribution 
+
+* API data comes via [TMDB](https://www.themoviedb.org/)
+
+## Postgres Database Structure 
+
+![](/app/assets/images/database.png)

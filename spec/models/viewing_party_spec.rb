@@ -23,4 +23,9 @@ RSpec.describe ViewingParty, type: :model do
 
     expect(viewingparty1.host_name).to eq("James Rock")
   end
+
+  it 'will not validate the creation of a vp with a party duration less than the movie duration' do
+    vp = ViewingParty.create(start_time: DateTime.parse('3rd Feb 2001 04:00:00'), party_duration_minutes: 120, movie_title: "The Shawshank Redemption", movie_duration_minutes: 142)
+    expect(vp.errors.messages[:party_duration_minutes][0]).to eq("Party duration has to be longer than the movie duration")
+  end
 end 
