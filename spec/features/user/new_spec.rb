@@ -26,9 +26,12 @@ describe 'Create a New User' do
     expect(page).to have_content("Register A New User")
 
     fill_in :name, with: 'Dave'
-    fill_in :email, with: 'tom@gmail232.com'
+    fill_in :email, with: 'tom@gmail.com'
 
     click_button 'Create New User'
+
+    expect(current_path).to eq '/register'
+    expect(page).to have_content("User Has Not Been Created!")
 
   end
 end

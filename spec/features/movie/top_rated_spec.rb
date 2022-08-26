@@ -10,7 +10,7 @@ RSpec.describe 'top rated movies page' do
 
 
   it 'lists top rated mopvies and their vote average', :vcr do
-    # save_and_open_page
+      expect(page.status_code).to eq 200
       expect(page).to have_content("Title: The Shawshank Redemption")
       expect(page).to have_content("Vote Average: 8.7")
   end
