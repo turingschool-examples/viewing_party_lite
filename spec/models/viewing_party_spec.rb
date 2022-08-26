@@ -7,9 +7,7 @@ RSpec.describe ViewingParty, type: :model do
     it { should validate_presence_of :duration }
     it { should validate_numericality_of :duration }
     it { should validate_presence_of :eventdate }
-    # it { should validate_date :eventdate }
     it { should validate_presence_of :starttime }
-    # it { should validate_time :starttime }
   end
 
   describe 'relationships' do
