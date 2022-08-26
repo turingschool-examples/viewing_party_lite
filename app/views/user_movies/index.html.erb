@@ -6,8 +6,8 @@
 <div id="movies">
     <% @movies.each do |m| %>
         <div class="movie">
-        <p>Title: <%= link_to "#{m[:title]}", "/users/#{params[:id]}/movies/#{m[:id]}" %></p>
-        <p>Vote Average: <%= m[:vote_average] %></p>
+        <p>Title: <%= link_to m.title, "/users/#{params[:id]}/movies/#{m.id}" %></p>
+        <p>Vote Average: <%= m.vote_average %></p>
         </div>
     <% end %>
 <% end %>

@@ -19,5 +19,6 @@
         <% end %>
     </ul>
     <%= f.hidden_field :movie_title, :value => @movie.title %>
+    <%= f.hidden_field :movie_runtime, :value => @movie.runtime %>
     <%= f.submit 'Create Viewing Party' %>
 <% end %>
