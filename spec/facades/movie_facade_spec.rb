@@ -23,4 +23,10 @@ RSpec.describe MovieFacade do
 
     expect(movie_reviews.count).to eq(2)
   end
+
+  it '#get_movie_cast', :vcr do
+    movie_cast = MovieFacade.get_movie_cast(505)
+
+    expect(movie_cast).to be_all(Actor)
+  end  
 end
