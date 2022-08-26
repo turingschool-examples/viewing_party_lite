@@ -3,12 +3,11 @@
   <% if params[:q] == "top_rated" %>
     <h2>Top Rated Movies</h2>
       <% @top_20.each do |m| %>
-        <p><%= link_to m.title %> - Rating <%= m.vote_average %></p>
+        <p><%= link_to m.title, "/users/#{@user.id}/movies/#{m.id}", method: :get, local: true %> - Rating <%= m.vote_average %></p>
       <% end %>
-
   <% else %>
-
   <h2>Movie Results for: <%= "#{@query}" %></h2>
+
   <b><%= @search.size %> Total Results</b>
 
   <% @search.each_with_index do |m, idx| %>
