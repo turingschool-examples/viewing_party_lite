@@ -11,7 +11,6 @@ RSpec.describe 'index movies page' do
     expect(page.status_code).to eq 200
     expect(page).to have_button('Top Rated Movies')
     click_button 'Top Rated Movies'
-    expect(current_path).to eq("/users/#{@user1.id}/discover")
   end
 
   it 'lists top rated mopvies and their vote average', :vcr do
@@ -25,9 +24,9 @@ RSpec.describe 'index movies page' do
   it "is able to seach movies ", :vcr do
     expect(current_path).to eq "/users/#{@user1.id}/discover"
 
-    fill_in('Movie name', with: 'tom')
+    fill_in('name', with: 'tom')
 
-    click_button 'Search For Movies'
+    click_button 'Search for movies'
 
     expect(page).to have_content("Tom & Jerry")
     expect(page).to have_content("Vote Average: 7")
@@ -36,9 +35,9 @@ RSpec.describe 'index movies page' do
   it "is able to seach movies ", :vcr do
     expect(current_path).to eq "/users/#{@user1.id}/discover"
 
-    fill_in('Movie name', with: 'happy')
+    fill_in('name', with: 'happy')
 
-    click_button 'Search For Movies'
+    click_button 'Search for movies'
 
     expect(page).to have_content("After Ever Happy")
     expect(page).to have_content("Vote Average: 6.7")
