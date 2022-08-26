@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'the landing page' do
   it 'shows a list of all users as links to their dashboard' do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com')
-    user2 = User.create!(name: 'Maury', email: 'maury@trashtv.com')
-    user3 = User.create!(name: 'Jenny', email: 'jenny@trashtv.com')
+    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: "password")
+    user2 = User.create!(name: 'Maury', email: 'maury@trashtv.com', password: "password")
+    user3 = User.create!(name: 'Jenny', email: 'jenny@trashtv.com', password: "password")
 
     visit root_path
 
@@ -25,9 +25,9 @@ RSpec.describe 'the landing page' do
   end
 
   it 'has a button to create a new user that directs to the register page' do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com')
-    user2 = User.create!(name: 'Maury', email: 'maury@trashtv.com')
-    user3 = User.create!(name: 'Jenny', email: 'jenny@trashtv.com')
+    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: "password")
+    user2 = User.create!(name: 'Maury', email: 'maury@trashtv.com', password: "password")
+    user3 = User.create!(name: 'Jenny', email: 'jenny@trashtv.com', password: "password")
 
     visit root_path
 

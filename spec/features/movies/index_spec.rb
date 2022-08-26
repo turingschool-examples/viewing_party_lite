@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Movies Index Page' do
   it 'can show the top 40 movies from the API', :vcr do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com')
+    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: "password")
     visit "users/#{user1.id}/discover"
 
     click_button "Find Top Rated Movies"
@@ -13,7 +13,7 @@ RSpec.describe 'Movies Index Page' do
   end
 
   it 'can show the top 40 movies from the API based on a search string', :vcr do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com')
+    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: "password")
 
     visit "users/#{user1.id}/discover"
 
@@ -29,7 +29,7 @@ RSpec.describe 'Movies Index Page' do
   end
 
   it 'has a link to the show page for movies', :vcr do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com')
+    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: "password")
     visit "users/#{user1.id}/discover"
 
     click_button "Find Top Rated Movies"
@@ -45,9 +45,9 @@ RSpec.describe 'Movies Index Page' do
   end
 
   it 'has a button to go back to the discover page' do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com')
+    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: "password")
     visit user_movies_path(user1)
-    
+
     expect(page).to have_button "Discover Page"
     click_button "Discover Page"
     expect(current_path).to eq "/users/#{user1.id}/discover"
