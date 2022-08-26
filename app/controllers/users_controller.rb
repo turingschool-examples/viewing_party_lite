@@ -3,7 +3,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    user = User.find(params[:id])
+    @user = User.find(params[:id])
+    @parties = @user.viewing_parties.all
+    binding.pry
   end
 
   def create
@@ -13,7 +15,7 @@ class UsersController < ApplicationController
     else
       redirect_to "/register"
       flash[:alert] = "Error: #{error_message(user.errors)}"
-    end 
+    end
   end
 
   def movie
@@ -25,7 +27,9 @@ class UsersController < ApplicationController
     end
   end
 
+
   def discover
     @user = User.find(params[:id])
   end
 end
+
