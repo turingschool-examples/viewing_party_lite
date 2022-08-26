@@ -16,7 +16,7 @@ RSpec.describe 'Event New Page' do
       click_on "New Viewing Party For #{@movie.title}"
 
       expect(page).to have_content("Create Event For #{@movie.title}")
-      expect(page).to have_content("Something Borrowed")
+      expect(page).to have_content("Movie Title - Something Borrowed")
       expect(page).to have_field('Duration', with: 112 )
       expect(page).to have_button('Create Event')
     end
@@ -25,9 +25,13 @@ RSpec.describe 'Event New Page' do
       visit "/users/#{@user1.id}/movies/#{@movie.id}"
 
       click_on "New Viewing Party For #{@movie.title}"
-      save_and_open_page
-      click_on 'Create Event'
+      fill_in "Duration", with: 112
+      fill_in(:date, with: "2022/3/5")
+      fill_in(:time, with: "7:30PM")
+      check("user_ids_#{@user2.id}")
+      check("user_ids_#{@user3.id}")
 
+      click_on 'Create Event'
 
       expect(page).to have_current_path(user_path(@user1.id))
     end

@@ -6,9 +6,11 @@ class EventsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @movie = MovieFacade.movie_details(params[:movie_id])
+    date = DateTime.parse("#{params[:date]} #{params[:time]}")
+    event = Event.create!(day: date, duration: params[:runtime], start_time: params[:time], movie_title: params[:title])
     
-    event = Event.new()
+    UserEvent.create!(user_id: params[:user_id], event_id: event.id)
+
+    redirect_to "/users/#{params[:user_id]}"
   end
 end
