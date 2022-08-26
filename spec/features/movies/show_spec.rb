@@ -43,8 +43,6 @@ RSpec.describe "Movie Detail Page" do
 #   When I visit a movie's detail page (/users/:user_id/movies/:movie_id where :id is a valid user id,
 # I should see
 
-#  Button to create a viewing party
-#  Button to return to the Discover Page
 #  Details This viewing party button should take the user to the new viewing party page (/users/:user_id/movies/:movie_id/viewing-party/new)
 # And I should see the following information about the movie:
 

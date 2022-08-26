@@ -10,16 +10,16 @@ class ViewingPartyController < ApplicationController
      @movie_id = (params[:movie_id]).to_i 
   end
 
-#   def create 
-#     # party = ViewingParty.find(params[:id])
-#     # if party 
-#     # # if User.exists?(params[:email])
-#     #   flash[:alert] = "That email address is already registered."
-#     #   redirect_to "/register"
-#     # else
-#     #   party = ViewingParty.create!(user_params)
-#     #   # require 'pry'; binding.pry 
-#     #   redirect_to "/users/#{@party.id}"
-#     # end
-#   end
+  def create 
+    user = User.find(params[:user_id])
+    party = ViewingParty.create!(viewing_party_params)
+    user_party = UserViewingParty.create!(user_id: user.id, viewing_party_id: party.id)
+    redirect_to "/users/#{user.id}"
+  end
+
+  private
+
+  def viewing_party_params
+    params.permit(:id, :duration, :date, :host_id, :movie_id)
+  end
 end

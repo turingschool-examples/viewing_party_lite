@@ -6,7 +6,8 @@
 <h2> Viewing Parties: </h2>
 <% @user.viewing_parties.each do |party| %>
 <div id="parties-<%=party.id%>">
-   <p> <h4>Party ID: <%=link_to party.id, "users/#{party.id}" %></h4>
+   <p> <h4>Party ID: <%=link_to party.id, "/users/#{@user.id}/movies/#{@movie_id}/viewing_party/#{party.id}" %></h4>
+   
     </p>
     <% end %>
     <br>
