@@ -2,3 +2,13 @@
 <%= link_to "Home", root_path, method: :get %><br><br>
 
 <h2>Discover Movies</h2>
+
+<%= button_to 'Find Top Rated Movies', user_movies_path(@user.id, :top_rated => 'true'), method: :get, local: true %>
+
+<p>OR</p>
+
+<%= form_with url: "/users/#{@user.id}/movies", method: :get, local: true do |f| %>
+<%= f.label :search, 'Search by Movie Title' %>
+<%= f.text_field :search %>
+<%= f.submit "Find Movies" %>
+<% end %>
