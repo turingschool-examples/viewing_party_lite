@@ -53,24 +53,44 @@ RSpec.describe 'Show', type: :feature do
     expect(page).to have_content('Shawshank Redemption')
   end
 
-  it 'shows the parties the user is hosting', :vcr do
-      user_1 = User.create(name: 'John Doe', email: 'John@gmail.com')
-      user_2 = User.create(name: 'Cory Doe', email: 'Cory@gmail.com')
-      party_1 = Party.create!(date: Date.today, start_time: '20:00:00', movie_id: 278, title: "The Shawshank Redemption", poster: "/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg" )
-      party_2 = Party.create!(date: Date.today, start_time: '20:00:00', movie_id: 278, title: "The Shawshank Redemption", poster: "/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg" )
-      user_viewing_party_1 = UserParty.create!(user_id: user_1.id, party_id: party_1.id, host: true)
-      user_viewing_party_2 = UserParty.create!(user_id: user_2.id, party_id: party_1.id, host: false)
-      user_viewing_party_3 = UserParty.create!(user_id: user_1.id, party_id: party_2.id, host: false)
-      user_viewing_party_4 = UserParty.create!(user_id: user_2.id, party_id: party_2.id, host: true)
+  it 'shows the parties the user is hosting with details', :vcr do
+    user_1 = User.create(name: 'John Doe', email: 'John@gmail.com')
+    user_2 = User.create(name: 'Cory Doe', email: 'Cory@gmail.com')
+    party_1 = Party.create!(date: Date.today, start_time: '20:00:00', movie_id: 278, title: "The Shawshank Redemption", poster: "/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg" )
+    party_2 = Party.create!(date: Date.today, start_time: '20:00:00', movie_id: 278, title: "The Shawshank Redemption", poster: "/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg" )
+    user_viewing_party_1 = UserParty.create!(user_id: user_1.id, party_id: party_1.id, host: true)
+    user_viewing_party_2 = UserParty.create!(user_id: user_2.id, party_id: party_1.id, host: false)
+    user_viewing_party_3 = UserParty.create!(user_id: user_1.id, party_id: party_2.id, host: false)
+    user_viewing_party_4 = UserParty.create!(user_id: user_2.id, party_id: party_2.id, host: true)
 
-      visit "/users/#{user_1.id}"
-      
-      expect(page).to have_content("You are hosting these parties:")
-      expect(page).to have_content(party_1.id)
-      expect(page).to have_content(party_1.date)
-      expect(page).to have_content(party_1.start_time)
-      expect(page).to have_content("The Shawshank Redemption")
-      expect(page.html).to include("https://image.tmdb.org/t/p/w200/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg")
-    end
+    visit "/users/#{user_1.id}"
 
+    expect(page).to have_content("You are hosting these parties:")
+    expect(page).to have_content(party_1.id)
+    expect(page).to have_content(party_1.date)
+    expect(page).to have_content(party_1.start_time)
+    expect(page).to have_content(party_1.title)
+    expect(page.html).to include("https://image.tmdb.org/t/p/w200/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg")
+  end
+
+  it "shows the parties the user is invited to with details" do
+    user_1 = User.create(name: 'John Doe', email: 'John@gmail.com')
+    user_2 = User.create(name: 'Cory Doe', email: 'Cory@gmail.com')
+    party_1 = Party.create!(date: Date.today, start_time: '20:00:00', movie_id: 278, title: "The Shawshank Redemption", poster: "/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg" )
+    party_2 = Party.create!(date: Date.today, start_time: '10:00:00', movie_id: 278, title: "The Shawshank Redemption 2", poster: "/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg" )
+    user_viewing_party_1 = UserParty.create!(user_id: user_1.id, party_id: party_1.id, host: true)
+    user_viewing_party_2 = UserParty.create!(user_id: user_2.id, party_id: party_1.id, host: false)
+    user_viewing_party_3 = UserParty.create!(user_id: user_1.id, party_id: party_2.id, host: false)
+    user_viewing_party_4 = UserParty.create!(user_id: user_2.id, party_id: party_2.id, host: true)
+
+    visit "/users/#{user_1.id}"
+
+    expect(page).to have_content('You have been invited to these parties:')
+    expect(page).to have_content(party_2.id)
+    expect(page).to have_content(party_2.date)
+    expect(page).to have_content(party_2.start_time)
+    expect(page).to have_content(party_2.title)
+    expect(page.html).to include("https://image.tmdb.org/t/p/w200/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg")
+
+  end
 end
