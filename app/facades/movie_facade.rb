@@ -25,4 +25,11 @@ class MovieFacade
       Actor.new(actor)
     end
   end
+
+  def self.movie_reviews(id)
+    parsed = MovieService.get_movie_reviews(id)
+    parsed[:results].map do |data|
+      MovieReview.new(data)
+    end
+  end
 end
