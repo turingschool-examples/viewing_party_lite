@@ -77,5 +77,21 @@ describe MovieService, :vcr do
 
             expect(movie1[:vote_average]).to be_a Float
         end
+
+        it 'returns movie data for top movies', :vcr do
+            movies = MovieService.top_movies
+
+            expect(movies).to be_a Array
+
+            movie1 = movies.first
+
+            expect(movie1).to be_a Hash
+
+            expect(movie1).to include :title, :vote_average
+
+            expect(movie1[:title]).to be_a String
+
+            expect(movie1[:vote_average]).to be_a Float
+        end
     end
 end
