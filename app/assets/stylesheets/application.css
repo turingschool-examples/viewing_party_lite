@@ -68,3 +68,15 @@ table {
   width: 30%;
   display: inline;
 }
+
+#party {
+  margin: auto;
+  display: inline-flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+#vp-column {
+  padding:5px;
+  text-align: center;
+}

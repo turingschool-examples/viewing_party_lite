@@ -13,16 +13,21 @@
 <br>
 
 <h2>Viewing Parties</h2>
-  <div>
+<br>
+  <section id='party'>
     <% @user.hosted_parties.each do |party| %>
-      <%= render partial: "party_info", locals: {party: party} %>
-      <p>Hosting</p>
+      <div id='vp-column'>
+        <%= render partial: "party_info", locals: {party: party} %>
+        <p>Hosting</p>
+      </div>
     <% end %>
-  </div>
+  </section>
 
-  <div>
+  <section id='party'>
     <% @user.invited_parties.each do |party| %>
-      <%= render partial: "party_info", locals: {party: party} %>
-      <p>Invited</p>
+      <div id='vp-column'>
+        <%= render partial: "party_info", locals: {party: party} %>
+        <p>Invited</p>
+      </div>
     <% end %>
-  </div>
+  </section>
