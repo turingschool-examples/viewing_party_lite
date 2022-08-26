@@ -21,9 +21,9 @@ RSpec.describe MovieService do
       expect(results).to be_a(Hash)
       expect(results[:results]).to be_a(Array)
       expect(data).to have_key :title
-      expect(data[:title]).to eq("Fight Club")
+      expect(data[:title]).to eq(String)
       expect(data).to have_key :vote_average
-      expect(data[:vote_average]).to eq(8.4)
+      expect(data[:vote_average]).to eq(Float)
     end
 
     it 'movie_details' do
@@ -44,7 +44,13 @@ RSpec.describe MovieService do
 
     it 'movie_reviews' do
       results = MovieService.get_movie_reviews(500)
+      data = results[:results].first
 
       expect(results).to be_a(Hash)
+      expect(results[:results]).to be_a(Array)
+      expect(data).to have_key :author
+      expect(data[:author]).to be_a(String)
+      expect(data).to have_key :content
+      expect(data[:content]).to be_a(String)
     end
 end
