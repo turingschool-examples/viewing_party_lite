@@ -1,13 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe 'New Viewing Party Page', type: :feature do
-   xit 'has name of the movie title rendered above a new viewing party form' do
+   xit 'has name of the movie title rendered above a new viewing party form', :vcr do
       user1 = User.create!(name: 'Nancy Drew', email: 'nancydrew@gmail.com')
       user2 = User.create!(name: 'Jenny', email: 'jennyfromtheblock@email.com')
       user3 = User.create!(name: 'Sherlock Holmes', email: '221bbaker@email.com')
       user4 = User.create!(name: 'Jelly Bean', email: 'jellybean123@email.com')
 
-      visit new_user_viewing_party_path(user1.id, 505)
+      visit new_user_movie_viewing_party_path(user1.id, 505)
 
       expect(page).to have_content('Johnny Handsome')
 
