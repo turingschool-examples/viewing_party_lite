@@ -14,15 +14,19 @@ class MovieService
 
     def self.get_movie(id)
         conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
-            faraday.headers["api_key"] = ENV['movie_api_key']
+            faraday.params["api_key"] = ENV['movie_api_key']
         end
-        movie_details = conn.get("/3/movie/#{id}")
+        movie_details = conn.get("/3/movie/#{id}?append_to_response")
         credits = conn.get("/3/movie/#{id}/credits")
+        reviews = conn.get("/3/movie/#{id}/reviews")
 
         data_1 = JSON.parse(movie_details.body, symbolize_names: true)
         data_2 = JSON.parse(credits.body, symbolize_names: true)
+        data_3 = JSON.parse(reviews.body, symbolize_names: true)
 
-        response = data_1.merge!(data_2)
+        data_4 = data_1.merge(data_2)
+        response = data_4.merge(data_3)
+
     end
 
     def self.search_movies(search)

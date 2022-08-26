@@ -33,9 +33,9 @@ RSpec.describe 'user dashboard(show)' do
         test_text_2 = "Star Wars"
         test_text_3 = "Nightmare on Elm Street"
 
-        view_party_1 = ViewParty.create!(host_id: user_1.id, movie_details: test_text_1, party_duration: 180, event_date: Time.new(2022, 8, 28, 15, 30, 0), created_at: Time.now, updated_at: Time.now)
-        view_party_2 = ViewParty.create!(host_id: user_2.id, movie_details: test_text_2, party_duration: 240, event_date: Time.new(2022, 9, 15, 12, 0, 0), created_at: Time.now, updated_at: Time.now)
-        view_party_3 = ViewParty.create!(host_id: user_3.id, movie_details: test_text_3, party_duration: 120, event_date: Time.new(2022, 10, 31, 2, 15, 2), created_at: Time.now, updated_at: Time.now)
+        view_party_1 = ViewParty.create!(host_id: user_1.id, movie_title: "Fellowship of the Ring", duration: 200, poster_path: "Test", party_duration: 180, event_date: Time.new(2022, 8, 28, 15, 30, 0), created_at: Time.now, updated_at: Time.now)
+        view_party_2 = ViewParty.create!(host_id: user_2.id, movie_title: "Star Wars", duration: 200, poster_path: "Test", party_duration: 240, event_date: Time.new(2022, 9, 15, 12, 0, 0), created_at: Time.now, updated_at: Time.now)
+        view_party_3 = ViewParty.create!(host_id: user_3.id, movie_title: "Nightmare on Elm Street", duration: 200, poster_path: "Test", party_duration: 120, event_date: Time.new(2022, 10, 31, 2, 15, 2), created_at: Time.now, updated_at: Time.now)
 
         user_1_view_party_1 = UserViewParty.create!(user_id: user_1.id, view_party_id: view_party_1.id)
         user_1_view_party_2 = UserViewParty.create!(user_id: user_1.id, view_party_id: view_party_2.id)
