@@ -13,10 +13,10 @@ class ViewingPartyController < ApplicationController
       # end
    end
 
-   private
+   # private
 
-   def viewing_party_params
-      params.permit(:id, :title, :duration, :date, :start_time)
-   end
+   # def viewing_party_params
+   #    params.permit(:id, :title, :duration, :date, :start_time)
+   # end
 
 end
