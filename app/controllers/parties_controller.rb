@@ -11,10 +11,10 @@ class PartiesController < ApplicationController
     @user = User.find(params[:user_id])
     @movie = MovieFacade.movie_details(party_params[:movie_id])
     @party = Party.create!(party_params)
-    PartyUser.create!(party_id: @party.id, user_id: params[:user_id], host: true)
+    PartyUser.create!(party: @party, user_id: params[:user_id], host: true)
     invited = params[:invited]
     invited.each do |user, invited|
-      PartyUser.create!(party_id: @party.id, user_id: user.id, host: false) if invited == 1
+      PartyUser.create!(party: @party, user_id: user, host: false)
     end
     redirect_to user_path(@user)
   end

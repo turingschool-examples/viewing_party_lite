@@ -30,8 +30,8 @@ RSpec.describe 'New Party', vcr: 'movie_details' do
         expect(page).to_not have_content('Host: Sunny')
       end
       within '#created-invited' do
-        # expect(page).to have_content('Sunny')
-        expect(page).to_not have_content('Eli')
+        expect(page).to have_content('Sunny')
+        # expect(page).to_not have_content('Eli')
       end
     end
   end
