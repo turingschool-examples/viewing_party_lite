@@ -1,4 +1,5 @@
 class ViewingParty < ApplicationRecord
+  validates_presence_of :movie_id, :host_id, :attendee_id
   validates :duration, presence: true, numericality: true
   validates :eventdate, presence: true
   # validate_date :eventdate
