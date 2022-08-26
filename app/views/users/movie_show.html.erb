@@ -1,34 +1,41 @@
-<h1> Movie Details </h1>
-
-<div id="movie-title">
-  <p>
-    Movie Title: <%=@movie.title%>
-  </p>
+<div id="movie-title-container">
+    <%=@movie.title%>
 </div>
 
-<%= button_to "Create Viewing Party for #{@movie.title}", "/users/#{@user.id}/movies/#{@movie.id}/viewing-party/new", method: :get, params: {:user_id => @user.id, :movie_id => @movie.id, :movie_title => @movie.title, :movie_runtime => @movie.runtime} %>
-
-<%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get%>
-
-<div id="vote-average">
-  <p>
-    Vote Average: <%=@movie.vote_average%>
-  </p>
+<div id="discover-button-container">
+  <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get%>
 </div>
 
-<div id="runtime">
-  <p>
-    Runtime: <%=@movie.runtime / 60%>hr  <%=@movie.runtime % 60%> min
-  </p>
+
+<div id="create-vp-button-container">
+  <%= button_to "Create Viewing Party for #{@movie.title}", "/users/#{@user.id}/movies/#{@movie.id}/viewing-party/new", method: :get, params: {:user_id => @user.id, :movie_id => @movie.id, :movie_title => @movie.title, :movie_runtime => @movie.runtime} %>
 </div>
 
-<div id="genres">
-  <% @movie.genres.each do |genre| %>
+<div id="movie-info-bar">
+  <div id="vote-average">
     <p>
-      <%=genre%>
+      <b>Vote Average:</b> <%=@movie.vote_average%>
     </p>
-  <% end %>
-<div>
+  </div>
+
+  <div id="runtime">
+    <p>
+      <b>Runtime:</b> <%=@movie.runtime / 60%>hr  <%=@movie.runtime % 60%> min
+    </p>
+  </div>
+
+  <div id="genres">
+    <b>Genre(s):</b>
+    <% @movie.genres[0...-1].each do |genre| %>
+      <%=genre%>,
+    <% end %>
+    <%= @movie.genres[-1]%>
+  </div>
+</div>
+
+<div id="summary-header">
+  Summary
+</div>
 
 <div id="summary">
   <%=@movie.summary%>

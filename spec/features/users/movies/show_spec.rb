@@ -27,7 +27,7 @@ RSpec.describe "movie detail page", type: :feature do
 
     visit "/users/#{user1.id}/movies/278"
 
-    within "#movie-title" do
+    within "#movie-title-container" do
       expect(page).to have_content("The Shawshank Redemption")
     end
   end

@@ -137,3 +137,55 @@
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
+#summary-header {
+  font-weight: bold;
+  font-size: large;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#summary {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#movie-info-bar {
+  display: flex;
+  width: 100%;
+  border-bottom: 2px solid black;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#vote-average {
+  flex: 1;
+}
+
+#runtime {
+  flex: 1;
+}
+
+#genres {
+  flex: 2;
+}
+
+#movie-title-container {
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  margin: 25px;
+}
+
+#discover-button-container {
+  display: flex;
+  justify-content: center;
+  padding: 3px;
+  margin: 5px;
+}
+#create-vp-button-container {
+  display: flex;
+  justify-content: center;
+  padding: 3px;
+  margin: 5px;
+}
