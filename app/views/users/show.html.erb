@@ -10,13 +10,12 @@
     <img alt = <%= @facade[i].title %> src="https://image.tmdb.org/t/p/w200/<%= @facade[i].poster %>">
     </div>
   <p>Start Time: <%= vp.start_time.strftime("%I:%M%p") %> on <%= vp.date %></p>
-  <% binding.pry %>
   <p>Host: <%= vp.host_name %></p>
 
   <u>Invited Users</u>
   <% vp.users.each do |user| %>
-    <% if @user.id == vp.host_id %>
-      skip 
+    <% if user.id == vp.host_id %>
+      <% next %>
     <% elsif @user.id == user.id %>
       <p><b><%= user.name %></b></p>
     <% else %>

@@ -64,6 +64,7 @@ RSpec.describe 'User Dashboard' do
       ViewingPartyUser.create!(user_id: user3.id, viewing_party_id: godfather.id, host: false) 
 
       visit user_path(user1)
+      save_and_open_page
       
       within("#vp-#{whiplash.id}") do 
         expect(page.html).to include('https://image.tmdb.org/t/p/w200//oPxnRhyAIzJKGUEdSiwTJQBa3NM.jpg')
@@ -75,7 +76,7 @@ RSpec.describe 'User Dashboard' do
         expect(page).to have_content "Host: #{user3.name}"
 
         expect(page).to have_content "Invited Users"
-        page.html.should include("<p><b>#{user1.name}</b></p>")
+        expect(page.html).to include("<p><b>#{user1.name}</b></p>")
         expect(page).to have_content user2.name
       end
 
@@ -89,7 +90,7 @@ RSpec.describe 'User Dashboard' do
         expect(page).to have_content "Host: #{user2.name}"
 
         expect(page).to have_content "Invited Users"
-        page.html.should include("<p><b>#{user1.name}</b></p>")
+        expect(page.html).to include("<p><b>#{user1.name}</b></p>")
         expect(page).to have_content user3.name
       end
 
