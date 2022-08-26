@@ -8,9 +8,17 @@
   <p><%= genre[:name] %><p>
   <% end %>
 
+
 <h3>Summary: <%= @movie.overview %></h3>
 
-Cast Members: 
+  Cast Members: 
+<% if @movie.cast %>
+  <%@movie.cast.each do |member| %>
+  <p><h3><%= member[:name] %></p></h3>
+  <% end %>
+<% end %>
+<br>
 Total Reviews: 
+<br>
 Review Authors and Information:
 

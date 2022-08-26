@@ -21,5 +21,6 @@
     def self.create_cast(id)
       response = MovieService.get_cast(id)
       Movie.new(response)
+      binding.pry
     end
 end
