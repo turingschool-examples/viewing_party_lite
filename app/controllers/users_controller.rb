@@ -5,7 +5,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @parties = @user.viewing_parties.all
-    binding.pry
   end
 
   def create
@@ -32,4 +31,3 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 end
-
