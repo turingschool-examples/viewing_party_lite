@@ -15,10 +15,15 @@ RSpec.describe MovieService do
     end
 
     it "movies_by_keyword" do
-
       results = MovieService.movies_by_keyword("Fight Club")
-
+      data = results[:results].first
+      
       expect(results).to be_a(Hash)
+      expect(results[:results]).to be_a(Array)
+      expect(data).to have_key :title
+      expect(data[:title]).to eq("Fight Club")
+      expect(data).to have_key :vote_average
+      expect(data[:vote_average]).to eq(8.4)
     end
 
     it 'movie_details' do
