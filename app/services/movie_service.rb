@@ -22,6 +22,13 @@ class MovieService
     page2 = JSON.parse(response2.body, symbolize_names: true)
 
     parsed_json = page1[:results] + page2[:results]
+  end
 
+  def self.find_movie(id)
+    response = conn.get("/3/movie/#{id}?api_key=#{ENV['movie_api_key']}&append_to_response=credits,reviews")
+
+    page = JSON.parse(response.body, symbolize_names: true)
+
+    page[:results]
   end
 end
