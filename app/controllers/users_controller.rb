@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @hosts_parties = @user.hosting
   end
 
+
   private
 
     def user_params

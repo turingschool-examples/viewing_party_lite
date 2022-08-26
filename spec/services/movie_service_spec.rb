@@ -6,8 +6,9 @@ describe MovieService do
       it "returns data of a particular movie" do
         json_response = File.open("spec/fixtures/shawshank.json")
         stub_request(:get, "https://www.themoviedb.org/3/search/movie?api_key=#{ENV['moviedb_api_key']}&query=The%20Shawshank%20Redemption").to_return(status: 200, body: json_response)
+        
+        search = MovieService.search_movies_by_title("The Shawshank Redemption")
 
-        search = MovieService.search_movies("The Shawshank Redemption")
         expect(search).to be_a Hash
         expect(search[:results]).to be_an Array
         movie_data = search[:results].first
@@ -18,6 +19,7 @@ describe MovieService do
         expect(movie_data).to have_key :vote_average
         expect(movie_data[:vote_average]).to be_a(Float)
       end
+
 
       it "returns the 20 top rated movies" do
         json_response = File.open("spec/fixtures/top_rated.json")
@@ -41,3 +43,4 @@ describe MovieService do
     end
   end
 end
+
