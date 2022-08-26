@@ -14,4 +14,7 @@ Rails.application.routes.draw do
     get '/movies', to: 'movies#index'
     resources :movies, only: [:show]
   end
+
+  get '/users/:user_id/movies/:movie_id/event/new', to: 'events#new'
+  post '/users/:user_id', to: 'events#create'
 end

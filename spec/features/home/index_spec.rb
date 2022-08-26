@@ -13,8 +13,8 @@ RSpec.describe 'home page' do
   it 'title of application, links to existing user, button to create a new user' do
     expect(page).to have_content('Viewing Party Lite')
     expect(page).to have_button('Create a New User')
-    expect(page).to have_link('Jim Bob')
-    expect(page).to have_link('Cary Berry')
+    expect(page).to have_link('jimb@viewingparty.com')
+    expect(page).to have_link('caryb@viewingparty.com')
     expect(page).to have_link('Home')
     expect(page).to_not have_link('Tyler')
   end
@@ -26,8 +26,8 @@ RSpec.describe 'home page' do
 
   it 'has an index of existing users' do
     within("#user-#{@user1.id}") do
-      expect(page).to have_link('Jim Bob')
-      click_link('Jim Bob')
+      expect(page).to have_link('jimb@viewingparty.com')
+      click_link('jimb@viewingparty.com')
       expect(current_path).to eq("/users/#{@user1.id}")
     end
     expect(page).to have_content("Jim Bob's Dashboard")
