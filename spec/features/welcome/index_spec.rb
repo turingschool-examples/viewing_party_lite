@@ -1,54 +1,56 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'landing page' do
-    it 'has a button to create a new user' do
-        visit "/"
+  it 'has a button to create a new user' do
+    visit '/'
 
-        expect(page).to have_button("Create a New User")
+    expect(page).to have_button('Create a New User')
+  end
+
+  it 'the button links to page to create a new user' do
+    visit '/'
+    click_on('Create a New User')
+
+    expect(current_path).to eq('/users/new')
+  end
+
+  it 'has a list of existing users' do
+    user_1 = User.create!(name: 'Mike', email: 'email@email.com')
+    user_2 = User.create!(name: 'Nick', email: '123@email.com')
+
+    visit '/'
+
+    within('#existing-users') do
+      expect(page).to have_content("email@email.com's Dashboard")
+      expect(page).to have_content("123@email.com's Dashboard")
     end
+    expect(User.all).to eq([user_1, user_2])
+    expect(User.count).to eq(2)
+  end
 
-    it 'the button links to page to create a new user' do
-        visit "/"
-        click_on("Create a New User")
+  it 'users emails link to user show page' do
+    user_1 = User.create!(name: 'Mike', email: 'email@email.com')
 
-        expect(current_path).to eq("/users/new")
-    end
+    visit '/'
 
-    it 'has a list of existing users' do
-        user_1 = User.create!(name: "Mike", email: "email@email.com")
-        user_2 = User.create!(name: "Nick", email: "123@email.com")
+    click_on("email@email.com's Dashboard")
 
-        visit "/"
-        
-        within("#existing-users") do
-            expect(page).to have_content("email@email.com's Dashboard")
-            expect(page).to have_content("123@email.com's Dashboard")
-        end
-        expect(User.all).to eq([user_1, user_2])
-        expect(User.count).to eq(2)
-    end
+    expect(current_path).to eq("/users/#{user_1.id}")
+  end
 
-    it 'users emails link to user show page' do
-        user_1 = User.create!(name: "Mike", email: "email@email.com")
+  it ' has a link to to the landing page' do
+    visit '/'
 
-        visit "/"
+    click_on('Home')
 
-        click_on("email@email.com's Dashboard")
+    expect(current_path).to eq('/')
+  end
 
-        expect(current_path).to eq("/users/#{user_1.id}")
-    end
+  it ' shows the app title' do
+    visit '/'
 
-    it ' has a link to to the landing page' do
-        visit "/"
-
-        click_on("Home")
-
-        expect(current_path).to eq("/")
-    end
-
-    it ' shows the app title' do
-        visit "/"
-
-        expect(page).to have_content("Viewing Party Light")
-    end
+    expect(page).to have_content('Viewing Party Light')
+  end
 end
