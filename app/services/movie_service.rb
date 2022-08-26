@@ -4,6 +4,17 @@ class MovieService
     status_check(response)
   end
 
+  def self.top_rated
+    response = conn.get("/3/movie/top_rated")
+    status_check(response)   
+  end
+
+  def self.search(search_term)
+    #test in editor
+    query = search_term.gsub(' ', '%20')
+    get_url('/search/movie', "&language=en-US&query=#{query}&page=1&include_adult=false")
+  end
+
   def self.reviews(movie_id)
     response = conn.get("/3/movie/#{movie_id}/reviews")
     status_check(response)

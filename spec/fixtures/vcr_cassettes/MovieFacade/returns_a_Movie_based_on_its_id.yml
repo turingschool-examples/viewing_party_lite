@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/244786?api_key=<API_KEY>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 25 Aug 2022 17:59:24 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 822ce1ff5c1865cd89b7017fc71176db432786ae
+      X-Memc-Age:
+      - '9382'
+      X-Memc-Expires:
+      - '7722'
+      Etag:
+      - W/"74353424a9f9fd71c3aa5052c1d7f489"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 e6bae4d10173db66ba5ca34e39baf8fa.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MIA3-C5
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - z1bRqXPOVKNAr0uuhk1oktFWuQK7xpxhZvam5leEe-ZqaxqbK0uArw==
+      Age:
+      - '27206'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/5h8VtV4oh2qkO8Iqz7gypIYJPAr.jpg","belongs_to_collection":null,"budget":3300000,"genres":[{"id":18,"name":"Drama"},{"id":10402,"name":"Music"}],"homepage":"http://sonyclassics.com/whiplash/","id":244786,"imdb_id":"tt2582802","original_language":"en","original_title":"Whiplash","overview":"Under
+        the direction of a ruthless instructor, a talented young drummer begins to
+        pursue perfection at any cost, even his humanity.","popularity":58.816,"poster_path":"/oPxnRhyAIzJKGUEdSiwTJQBa3NM.jpg","production_companies":[{"id":2266,"logo_path":"/owzVs2mguyyJ3vIn7EbgowpUPnk.png","name":"Bold
+        Films","origin_country":"US"},{"id":3172,"logo_path":"/kDedjRZwO8uyFhuHamomOhN6fzG.png","name":"Blumhouse
+        Productions","origin_country":"US"},{"id":32157,"logo_path":"/4hOCk25Ce8s242NItnwtV7aKRWY.png","name":"Right
+        of Way Films","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2014-10-10","revenue":13092000,"runtime":107,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"The
+        road to greatness can take you to the edge.","title":"Whiplash","video":false,"vote_average":8.37,"vote_count":12477}'
+  recorded_at: Fri, 26 Aug 2022 01:32:49 GMT
+recorded_with: VCR 6.1.0

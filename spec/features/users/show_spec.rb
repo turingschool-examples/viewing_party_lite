@@ -66,13 +66,7 @@ RSpec.describe 'User Dashboard' do
       visit user_path(user1)
       
       within("#vp-#{whiplash.id}") do 
-        # within("#img-#{whiplash.id}") do
-        #   expect(page).to have_content('https://image.tmdb.org/t/p/w200/3bhkrj58Vtu7enYsRolD1fZdja1.jpg')
-        # end
-        # page.find("#img-#{whiplash.id}").should have_content 'https://image.tmdb.org/t/p/w200/3bhkrj58Vtu7enYsRolD1fZdja1.jpg'
-        # expect(page.find("#img-#{whiplash.id}")['src']).to have_content 'https://image.tmdb.org/t/p/w200/3bhkrj58Vtu7enYsRolD1fZdja1.jpg'
-
-        # expect(page.find("#img-#{whiplash.id}")['alt']).to match(/#{whiplash.name}/)
+        expect(page.html).to include('https://image.tmdb.org/t/p/w200//oPxnRhyAIzJKGUEdSiwTJQBa3NM.jpg')
 
         expect(page).to have_link "Whiplash"
 
@@ -81,14 +75,12 @@ RSpec.describe 'User Dashboard' do
         expect(page).to have_content "Host: #{user3.name}"
 
         expect(page).to have_content "Invited Users"
-        page.html.should include("<p><b>#{user1.name}</b></p>")
+        expect(page.html).to include("<p><b>#{user1.name}</b></p>")
         expect(page).to have_content user2.name
       end
 
       within("#vp-#{shawshank.id}") do 
-        # expect(page.find("#img-#{shawshank.id}")['src']).to have_content 'https://image.tmdb.org/t/p/w200/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg'
-
-        # expect(page.find("#img-#{shawshank.id}")['alt']).to match(/#{shawshank.name}/)
+        expect(page.html).to include('https://image.tmdb.org/t/p/w200//q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg')
 
         expect(page).to have_link "Shawshank Redemption"
 
@@ -97,14 +89,12 @@ RSpec.describe 'User Dashboard' do
         expect(page).to have_content "Host: #{user2.name}"
 
         expect(page).to have_content "Invited Users"
-        page.html.should include("<p><b>#{user1.name}</b></p>")
+        expect(page.html).to include("<p><b>#{user1.name}</b></p>")
         expect(page).to have_content user3.name
       end
 
       within("#vp-#{godfather.id}") do 
-        # expect(page.find("#img-#{godfather.id}")['src']).to have_content 'https://image.tmdb.org/t/p/w200/3bhkrj58Vtu7enYsRolD1fZdja1.jpg'
-
-        # expect(page.find("#img-#{godfather.id}")['alt']).to match(/#{godfather.name}/)
+        expect(page.html).to include('https://image.tmdb.org/t/p/w200//3bhkrj58Vtu7enYsRolD1fZdja1.jpg')
 
         expect(page).to have_link "The Godfather"
 
