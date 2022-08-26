@@ -9,7 +9,12 @@ class MovieService
 
     parsed_json1 = JSON.parse(response1.body, symbolize_names: true)
     parsed_json2 = JSON.parse(response2.body, symbolize_names: true)
-    # require 'pry'; binding.pry 
     parsed_json1[:results] + parsed_json2[:results] 
+  end
+  
+  def self.get_movie_search(search_param)
+    response = conn.get("/3/search/movie?&api_key=#{ENV['movie_api_key']}&language=en-US&page=1&query=#{search_param}")
+    parsed_json = JSON.parse(response.body, symbolize_names: true)
+    parsed_json[:results]
   end
 end
