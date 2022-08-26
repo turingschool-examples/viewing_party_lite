@@ -1,4 +1,4 @@
-class TopMovie
+class MovieResult
   attr_reader :id, :title, :vote_average
 
   def initialize(movie_data)

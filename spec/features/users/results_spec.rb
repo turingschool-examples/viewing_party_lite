@@ -8,7 +8,6 @@ RSpec.describe 'ResultsPage' do
 
     visit "users/#{user1.id}/movies?q=top%20rated"
 
-    expect(page).to have_content 'Top Rated Movies'
     expect(page).to have_content('Vote Average:', count:20)
 
     expect(page).to have_content 'The Shawshank Redemption'
@@ -39,23 +38,17 @@ RSpec.describe 'ResultsPage' do
     user1 = users[0]
 
     visit "users/#{user1.id}/movies?q=top%20rated"
-    save_and_open_page
 
     click_button 'Discover Movies' 
     expect(current_path).to eq "/users/#{user1.id}/discover"
   end
 
-  it 'shows the Movies matching the search key term' do 
+  it 'shows the Movies matching the search key term', :vcr do 
     user1 = users[0]
 
     visit "/users/#{user1.id}/discover"
     fill_in 'Title Key Words', with: 'days of summer' 
     click_button 'Search by Movie Title'
-
-    expect(page).to have_content 
-
-
-    expect(page).to have_content('Vote Average:', count <= 40)
 
     expect(page).to have_content '(500) Days of Summer'
     expect(page).to have_content 'Vote Average: 7.3'

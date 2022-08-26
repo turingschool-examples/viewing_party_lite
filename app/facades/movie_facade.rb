@@ -11,11 +11,14 @@ class MovieFacade
   def self.get_top_rated 
     json = MovieService.top_rated
     json[:results].map do |movie_data| 
-      TopMovie.new(movie_data)
+      MovieResult.new(movie_data)
     end
   end
 
   def self.search(search_term)
-    
+    json = MovieService.search(search_term)
+    json[:results].map do |movie_data| 
+      MovieResult.new(movie_data)
+    end
   end
 end

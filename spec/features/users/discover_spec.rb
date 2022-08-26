@@ -15,7 +15,7 @@ RSpec.describe 'DiscoverMoviesPage', type: :feature do
     expect(page).to have_button 'Search by Movie Title'
   end
 
-  it 'visits the Movies Results Page when user clicks on Top Rated Movies button' do 
+  it 'visits the Movies Results Page when user clicks on Top Rated Movies button', :vcr do 
     user1 = users[0]
     
     visit "/users/#{user1.id}/discover"
@@ -25,7 +25,7 @@ RSpec.describe 'DiscoverMoviesPage', type: :feature do
     expect(current_path).to eq "/users/#{user1.id}/movies" 
   end
 
-  it 'visits the Movies Results Page when user searches for a movie' do 
+  it 'visits the Movies Results Page when user searches for a movie', :vcr do 
     user1 = users[0]
     
     visit "/users/#{user1.id}/discover"

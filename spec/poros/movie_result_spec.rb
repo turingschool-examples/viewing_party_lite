@@ -1,6 +1,6 @@
 require 'rails_helper' 
 
-RSpec.describe 'TopMovie' do 
+RSpec.describe 'MovieResult' do 
   it 'exists and has a title and vote average' do 
     data = {
             "adult": false,
@@ -22,9 +22,9 @@ RSpec.describe 'TopMovie' do
             "vote_count": 22052
         }
     
-    movie = TopMovie.new(data)
+    movie = MovieResult.new(data)
 
-    expect(movie).to be_a TopMovie 
+    expect(movie).to be_a MovieResult 
     expect(movie.id).to eq data[:id]
     expect(movie.title).to eq data[:title]
     expect(movie.vote_average).to eq data[:vote_average]
