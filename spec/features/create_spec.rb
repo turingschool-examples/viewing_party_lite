@@ -19,8 +19,8 @@ RSpec.describe 'user creation' do
       fill_in 'Email', with: Faker::Internet.email
 
       click_button 'Create New User'
-
-      expect(page).to have_current_path("/users/#{User.first.id}")
+      
+      expect(page).to have_current_path("/users/#{User.last.id}")
     end
 
     it 'gives warning for invalid data' do
