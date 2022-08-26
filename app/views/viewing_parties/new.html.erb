@@ -3,8 +3,8 @@
 <h3><%= @movie.title %></h3>
 
 <%= form_with url: "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/viewing-party/create", method: :post do |f| %>
-  <%= f.label :amount, 'Duration of Party (in minutes)' %>
-  <%= f.number_field :amount, step: :any, value: @movie.duration %>
+  <%= f.label :duration, 'Duration of Party (in minutes)' %>
+  <%= f.number_field :duration, step: :any, value: @movie.duration %>
   <%= f.label :date, 'When:' %>
   <%= f.date_field :date %>
   <%= f.label :start_time, "Start Time:" %>
@@ -12,8 +12,11 @@
 
   <h3>Invite Other Users</p>
     <% @users.each do |user| %>
-      <%= f.label "#{user.id}", user.name %>
-      <%= f.check_box "#{user.id}" %>
+      <% if user.id.to_s != params[:user_id] %>
+      <% binding.pry %>
+        <%= f.label "#{user.id}", user.name %>
+        <%= f.check_box "#{user.id}" %>
+      <% end %>
     <% end %><br>
   <%= f.submit "Create Party" %>
 
