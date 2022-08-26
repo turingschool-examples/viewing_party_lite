@@ -1,11 +1,7 @@
 # frozen_string_literal: true
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
-SimpleCov.start do 
-  add_filter '/application_cable/'
-  add_filter '/jobs/'
-  add_filter '/mailers/'
-end 
+SimpleCov.add_filter ['channels', 'jobs', 'mailers']
 
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
