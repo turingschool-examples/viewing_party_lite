@@ -64,7 +64,6 @@ RSpec.describe 'User Dashboard' do
       ViewingPartyUser.create!(user_id: user3.id, viewing_party_id: godfather.id, host: false) 
 
       visit user_path(user1)
-      save_and_open_page
       
       within("#vp-#{whiplash.id}") do 
         expect(page.html).to include('https://image.tmdb.org/t/p/w200//oPxnRhyAIzJKGUEdSiwTJQBa3NM.jpg')
