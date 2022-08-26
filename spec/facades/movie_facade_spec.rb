@@ -7,6 +7,11 @@ RSpec.describe 'MovieFacade' do
     expect(movies).to be_all Movie 
   end
 
+  it 'returns a Movie based on its id', :vcr do 
+    movie = MovieFacade.movie_detail(244786)
+    expect(movie).to be_a Movie 
+  end
+
   it 'returns an array of top Movies', :vcr do 
     movies = MovieFacade.get_top_rated
     expect(movies).to be_a Array 

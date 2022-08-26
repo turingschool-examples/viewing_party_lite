@@ -1,10 +1,10 @@
 class MovieFacade 
 
   def self.movies(movie_ids)
-    movie_ids.map {|id| helper(id)}
+    movie_ids.map {|id| movie_detail(id)}
   end
 
-  def self.helper(movie_id)
+  def self.movie_detail(movie_id)
     Movie.new(MovieService.details(movie_id))
   end
 
