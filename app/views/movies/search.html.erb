@@ -1,18 +1,1 @@
-<center>
 
-<h1>Viewing Party</h1>
-<h3>Movie Results for: <%=@movie.find(params[:search])%></h3>
-
-<%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %>
-
-<% if @movie.nil? || @movie.empty? %>
-<center><p>No results found</p></center>
-<% else %>
-<% @movie.each do |movie| %>
-
-  <p><%= link_to movie.title, "/users/#{@user.id}/movies/#{movie.id}"  %> Vote Average: <%= movie.vote_average %></p>
-
-  <% end %>
-<% end %>
-
-<center>
