@@ -3,7 +3,7 @@
 <h1>Viewing Party</h1>
 <h3>Discover Movies</h3>
 
-<%= button_to "Discover Top Rated Movies", "/users/#{@user.id}/movies", method: :get %>
+<%= button_to "Discover Top Rated Movies", "/users/#{@user.id}/movies", params:{top: "top_rated"}, method: :get %>
 
 <p>OR</p>
 

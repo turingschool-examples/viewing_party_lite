@@ -15,7 +15,7 @@ RSpec.describe "User's Dashboard Show Page" do
   it "can click a button to link to the user's movie discover page" do
     click_button "Discover Movies"
 
-    expect(current_path).to eq("/users/#{user1.id}/discover")
+    expect(current_path).to eq("/users/#{@user.id}/discover")
   end
 
   it "lists all viewing parties the user is hosting or attending" do

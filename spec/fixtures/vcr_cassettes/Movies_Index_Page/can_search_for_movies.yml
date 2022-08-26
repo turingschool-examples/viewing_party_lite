@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 26 Aug 2022 14:53:58 GMT
+      - Fri, 26 Aug 2022 15:27:11 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,13 +42,13 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 7215ed8d33cf8b90bf39beeb866c1404.cloudfront.net (CloudFront)
+      - 1.1 bae6de0befe82416d15a4f0db2e42a20.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - ATL58-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 0vIp7YXRJnmqTM_EKxKfe0ANWCH8MJzmERTal_6SY4b1deDAWBcODA==
+      - qZotFWN5TlY-ylsCpIOA69Ju2dHmABaXbYT2WovAtNxK7M9uwmI2kQ==
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg","genre_ids":[18,80],"id":278,"original_language":"en","original_title":"The
@@ -62,7 +62,7 @@ http_interactions:
         Springs Eternal: A Look Back at The Shawshank Redemption","overview":"Documentary
         about the movie.","popularity":0.675,"poster_path":"/vdVab7yNvgYEMd8shCfy2D6nTMu.jpg","release_date":"2004-06-25","title":"Hope
         Springs Eternal: A Look Back at The Shawshank Redemption","video":false,"vote_average":7,"vote_count":1}],"total_pages":1,"total_results":2}'
-  recorded_at: Fri, 26 Aug 2022 14:53:58 GMT
+  recorded_at: Fri, 26 Aug 2022 15:27:11 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/search/movie?api_key=DONT SHOW MY API KEY&page=2&query=The%20Shawshank%20Redemption
@@ -88,7 +88,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 26 Aug 2022 14:53:58 GMT
+      - Fri, 26 Aug 2022 15:27:11 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -105,15 +105,15 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 e5aa3080cea9dc9a9b76e1a6140c88b6.cloudfront.net (CloudFront)
+      - 1.1 167aa95f2f064fbc0c7566b3d55cc1ca.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - ATL58-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 79_MODwgQ671L41m-dZp-woqwNePNjaV4U9C6-lOLfU_mWNHhzlf9g==
+      - juveVTCz-lfCmrWY95O4wSIFcJLOnb6AIzpfSWdu6L7WIRAKJrpamw==
     body:
       encoding: ASCII-8BIT
       string: '{"page":2,"results":[],"total_pages":1,"total_results":2}'
-  recorded_at: Fri, 26 Aug 2022 14:53:58 GMT
+  recorded_at: Fri, 26 Aug 2022 15:27:11 GMT
 recorded_with: VCR 6.1.0
