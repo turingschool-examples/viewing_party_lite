@@ -20,6 +20,24 @@ RSpec.describe 'creating a new user' do
 
     expect(current_path).to eq user_path(User.last)
     expect(page).to have_content("Jerry's Dashboard")
+    expect(page).to_not have_content("Maury's Dashboard")
+    expect(page).to_not have_content("Jenny's Dashboard")
+
+    visit root_path
+
+    within "#user-#{user1.id}" do
+      expect(page).to have_link("geraldo@trashtv.com's Dashboard", href: user_path(user1))
+    end
+
+    within "#user-#{user2.id}" do
+      expect(page).to have_link("maury@trashtv.com's Dashboard", href: user_path(user2))
+    end
+
+    within "#user-#{user3.id}" do
+      expect(page).to have_link("jenny@trashtv.com's Dashboard", href: user_path(user3))
+    end
+
+    expect(page).to have_link("jerry@trashtv.com's Dashboard")
   end
 
   it 'should check for uniqueness of email address and be case insensitive' do
