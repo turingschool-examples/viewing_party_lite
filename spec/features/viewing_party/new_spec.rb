@@ -35,7 +35,7 @@ RSpec.describe 'viewing party new page' do
     expect(page).to have_content("You are hosting these parties:")
     expect(page).to have_content(hosted.first.party.id)
     expect(page).to have_content("You have been invited to these parties:")
-    expect(page).to have_content(invited.first.id)
+    expect(page).to have_content(invited.first.party.id)
 
   end
 end
