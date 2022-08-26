@@ -4,7 +4,8 @@ RSpec.describe 'top rated movies page' do
   before :each do
     @user1 = User.create!(name: 'tom', email: 'tom.gmail.com')
 
-    visit "/users/#{@user1.id}/movies/top_rated"
+    visit "/users/#{@user1.id}/discover"
+    click_button 'Top Rated Movies'
   end
 
 
