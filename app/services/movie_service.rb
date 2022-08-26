@@ -21,6 +21,11 @@ class MovieService
     top_40 = json_1[:results] + json_2[:results]
   end
 
+  def self.movie_details(movie_id)
+    response = conn.get("/3/movie/#{movie_id}")
+    json = parse_json(response)
+  end
+
   private
   def self.conn
     Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
