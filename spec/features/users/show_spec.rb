@@ -151,6 +151,11 @@ RSpec.describe "users show page", type: :feature do
             vp2_u2 = ViewingPartyUser.create!(user_id: user2.id, viewing_party_id: viewingparty2.id, status: :hosting)
             vp2_u3 = ViewingPartyUser.create!(user_id: user3.id, viewing_party_id: viewingparty2.id, status: :invited)
 
+        viewingparty3 = ViewingParty.create!(start_time: DateTime.parse('12th Jan 2022 20:00:00'), party_duration_minutes: 130, movie_title: "Spirited Away", movie_duration_minutes: 125)
+            vp3_u1 = ViewingPartyUser.create!(user_id: user1.id, viewing_party_id: viewingparty3.id, status: :invited)
+            vp3_u2 = ViewingPartyUser.create!(user_id: user2.id, viewing_party_id: viewingparty3.id, status: :hosting)
+
+
         visit "/users/#{user1.id}"
         
         expect(page.html).to include("https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg")
