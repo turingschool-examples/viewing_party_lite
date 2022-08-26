@@ -22,6 +22,10 @@ class MovieService
     end
   end
 
+  def self.credits(movie_id)
+    json = JSON.parse(conn.get("/3/movie/#{movie_id}/credits").body, symbolize_names: true)
+  end
+
   private
   def self.conn
     Faraday.new(url: 'https://api.themoviedb.org') do |f|
