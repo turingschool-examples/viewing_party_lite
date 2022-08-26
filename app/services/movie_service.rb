@@ -1,10 +1,34 @@
 class MovieService 
-  def self.details(movie_id) 
-    get_url("/movie/#{movie_id}")
+  def self.details(movie_id)
+    response = conn.get("/3/movie/#{movie_id}")
+    if response.status == 200
+      JSON.parse(response.body, symbolize_names: true)
+    else
+      nil
+    end
   end
 
-  def self.get_url(url)  
-    response = Faraday.get("https://api.themoviedb.org/3#{url}?api_key=#{ENV["TMDB_API_KEY"]}")
-    parse = JSON.parse(response.body, symbolize_names: true)
+  def self.reviews(movie_id)
+    response = conn.get("/3/movie/#{movie_id}/reviews")
+    if response.status == 200
+      JSON.parse(response.body, symbolize_names: true)
+    else
+      nil
+    end
+  end
+
+  def self.credits(movie_id)
+    response = conn.get("/3/movie/#{movie_id}/credits")
+    if response.status == 200
+      JSON.parse(response.body, symbolize_names: true)
+    else
+      nil
+    end
+  end
+
+  private
+
+  def self.conn
+    Faraday.new(url: 'https://api.themoviedb.org', params: {api_key: ENV["TMDB_API_KEY"]})
   end
 end

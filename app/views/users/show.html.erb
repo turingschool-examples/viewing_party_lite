@@ -5,9 +5,9 @@
 <h2>Viewing Parties</h2>
 <% @viewing_parties.each_with_index do |vp, i| %>
   <div id="vp-<%= vp.id %>">
-  <p><%= link_to "#{@facade[i].title}", "/users/#{@user.id}/movies/#{vp.movie_id}" %></p>
+  <p><%= link_to "#{@movies[i].title}", "/users/#{@user.id}/movies/#{vp.movie_id}" %></p>
     <div id ="img-<%= vp.id %>">
-    <img alt = <%= @facade[i].title %> src="https://image.tmdb.org/t/p/w200/<%= @facade[i].poster %>">
+    <img alt = <%= @movies[i].title %> src="https://image.tmdb.org/t/p/w200/<%= @movies[i].poster %>">
     </div>
   <p>Start Time: <%= vp.start_time.strftime("%I:%M%p") %> on <%= vp.date %></p>
   <p>Host: <%= vp.find_host %></p>
