@@ -6,6 +6,6 @@ class User < ApplicationRecord
   has_many :viewing_parties, through: :viewing_party_users
 
   def self.everyone_except(user_id)
-    where("id != ?", user_id)
+    where('id != ?', user_id)
   end
 end

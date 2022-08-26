@@ -9,7 +9,7 @@ class MoviesController < ApplicationController
   end
 
   def results
-    if params[:q] == 'top rated' 
+    if params[:q] == 'top rated'
       @movies = MovieFacade.get_top_rated
       @user = User.find(params[:id])
     else

@@ -9,17 +9,17 @@ class ViewingParty < ApplicationRecord
 
   def find_host
     users
-    .joins(:viewing_party_users)
-    .select('users.*, viewing_party_users.host')
-    .where('viewing_party_users.host = true')
-    .distinct 
+      .joins(:viewing_party_users)
+      .select('users.*, viewing_party_users.host')
+      .where('viewing_party_users.host = true')
+      .distinct
   end
 
-  def host_name 
-    find_host[0].name 
+  def host_name
+    find_host[0].name
   end
 
-  def host_id 
+  def host_id
     find_host[0].id
   end
 end

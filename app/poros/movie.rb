@@ -1,5 +1,5 @@
 class Movie
-  attr_reader :id, 
+  attr_reader :id,
               :poster,
               :title,
               :vote_average,
@@ -16,19 +16,19 @@ class Movie
     @title = details_data[:original_title]
     @vote_average = details_data[:vote_average]
     @runtime = details_data[:runtime]
-    @genres = details_data[:genres].map{|genre| genre[:name]}
+    @genres = details_data[:genres].map { |genre| genre[:name] }
     @summary = details_data[:overview]
-    @cast = credits_data[:cast].map{|cast_member| cast_member[:name]}.first(10)
-    @characters = credits_data[:cast].map{|character| character[:character]}.first(10)
+    @cast = credits_data[:cast].map { |cast_member| cast_member[:name] }.first(10)
+    @characters = credits_data[:cast].map { |character| character[:character] }.first(10)
     @total_reviews = reviews_data[:total_results]
     @reviews = reviews_data[:results]
   end
 
   def actors_and_characters
-    list = Hash.new
+    list = {}
     @cast.each_with_index do |actor, i|
       list[actor] = @characters[i]
     end
-    return list
+    list
   end
 end
