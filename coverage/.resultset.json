@@ -7,7 +7,6 @@
           null
         ]
       },
-<<<<<<< HEAD
       "/Users/coryb/Turing/3_Mod/projects/viewing_party_lite/app/facades/movie_facade.rb": {
         "lines": [
           1,
@@ -31,10 +30,10 @@
           null,
           null,
           1,
-          5,
-          5,
-          5,
-          5,
+          7,
+          7,
+          7,
+          7,
           null,
           null,
           null,
@@ -43,41 +42,15 @@
       },
       "/Users/coryb/Turing/3_Mod/projects/viewing_party_lite/app/models/party.rb": {
         "lines": [
-=======
-      "/Users/johnsantosuosso/viewing_party_lite/viewing_party_lite/app/facades/movie_facade.rb": {
-        "lines": [
           1,
           1,
->>>>>>> 5a82d30017fd197df3260c8a8f493f3710f4404f
           1,
-          3,
-          3,
-          3,
-          3,
-          104,
-          null,
-          null,
-          null,
-          1,
-          4,
-          4,
-          4,
-          4,
-          160,
-          null,
-          null,
-          null,
-          1,
-          2,
-          2,
-          null,
           null,
           1,
           1,
           null
         ]
       },
-<<<<<<< HEAD
       "/Users/coryb/Turing/3_Mod/projects/viewing_party_lite/app/models/application_record.rb": {
         "lines": [
           1,
@@ -86,26 +59,12 @@
         ]
       },
       "/Users/coryb/Turing/3_Mod/projects/viewing_party_lite/app/models/user_party.rb": {
-=======
-      "/Users/johnsantosuosso/viewing_party_lite/viewing_party_lite/app/models/party.rb": {
->>>>>>> 5a82d30017fd197df3260c8a8f493f3710f4404f
         "lines": [
           1,
           1,
           1,
           null,
           1,
-<<<<<<< HEAD
-=======
-          1,
-          null
-        ]
-      },
-      "/Users/johnsantosuosso/viewing_party_lite/viewing_party_lite/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
->>>>>>> 5a82d30017fd197df3260c8a8f493f3710f4404f
           null
         ]
       },
@@ -116,7 +75,6 @@
           1,
           null,
           1,
-<<<<<<< HEAD
           1,
           null,
           1,
@@ -135,99 +93,66 @@
           1,
           null,
           1,
-          10,
-          10,
-          10,
-          10,
-          10,
-          10,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
+          12,
           null,
-          10,
+          12,
           null,
-          10,
-          10,
-          null,
-          null,
-          1,
-          10,
-          10,
-          21,
-          null,
-          10,
+          12,
+          12,
           null,
           null,
           1,
-          10,
+          12,
+          12,
+          25,
+          null,
+          12,
           null,
           null,
           1,
-          10,
-          10,
-          100,
-          null,
-          10,
+          12,
           null,
           null,
           1,
-          10,
-          10,
-          50,
+          12,
+          12,
+          120,
           null,
-          10,
+          12,
           null,
-=======
-          null
-        ]
-      },
-      "/Users/johnsantosuosso/viewing_party_lite/viewing_party_lite/app/models/user.rb": {
-        "lines": [
-          1,
-          1,
-          1,
           null,
           1,
-          1,
+          12,
+          12,
+          64,
           null,
-          1,
-          3,
-          3,
-          3,
+          12,
           null,
-          3,
->>>>>>> 5a82d30017fd197df3260c8a8f493f3710f4404f
           null,
           null
         ]
       },
-<<<<<<< HEAD
       "/Users/coryb/Turing/3_Mod/projects/viewing_party_lite/app/poros/movie.rb": {
-=======
-      "/Users/johnsantosuosso/viewing_party_lite/viewing_party_lite/app/poros/movie.rb": {
->>>>>>> 5a82d30017fd197df3260c8a8f493f3710f4404f
         "lines": [
           1,
           1,
           null,
           1,
-<<<<<<< HEAD
           266,
           266,
           266,
-=======
-          267,
-          267,
-          267,
->>>>>>> 5a82d30017fd197df3260c8a8f493f3710f4404f
           null,
           null,
           null
         ]
       },
-<<<<<<< HEAD
       "/Users/coryb/Turing/3_Mod/projects/viewing_party_lite/app/services/movie_service.rb": {
-=======
-      "/Users/johnsantosuosso/viewing_party_lite/viewing_party_lite/app/services/movie_service.rb": {
->>>>>>> 5a82d30017fd197df3260c8a8f493f3710f4404f
         "lines": [
           1,
           1,
@@ -242,53 +167,35 @@
           null,
           null,
           1,
-<<<<<<< HEAD
-          6,
-          6,
+          8,
+          8,
           null,
           null,
           1,
-          6,
-          6,
+          8,
+          8,
           null,
           null,
           1,
-          6,
-          6,
-=======
-          3,
-          3,
->>>>>>> 5a82d30017fd197df3260c8a8f493f3710f4404f
+          8,
+          8,
           null,
           null,
           1,
           1,
-<<<<<<< HEAD
-          35,
-          35,
-=======
-          20,
-          20,
->>>>>>> 5a82d30017fd197df3260c8a8f493f3710f4404f
+          41,
+          41,
           null,
           null,
           null,
           1,
-<<<<<<< HEAD
-          35,
-=======
-          20,
->>>>>>> 5a82d30017fd197df3260c8a8f493f3710f4404f
+          41,
           null,
           null,
           null
         ]
       },
-<<<<<<< HEAD
       "/Users/coryb/Turing/3_Mod/projects/viewing_party_lite/app/controllers/users_controller.rb": {
-=======
-      "/Users/johnsantosuosso/viewing_party_lite/viewing_party_lite/app/controllers/users_controller.rb": {
->>>>>>> 5a82d30017fd197df3260c8a8f493f3710f4404f
         "lines": [
           1,
           1,
@@ -307,20 +214,12 @@
           1,
           null,
           null,
-<<<<<<< HEAD
-=======
-          null,
->>>>>>> 5a82d30017fd197df3260c8a8f493f3710f4404f
           1,
           7,
           null,
           null,
           1,
-<<<<<<< HEAD
           6,
-=======
-          5,
->>>>>>> 5a82d30017fd197df3260c8a8f493f3710f4404f
           null,
           null
         ]
@@ -334,7 +233,6 @@
       "/Users/coryb/Turing/3_Mod/projects/viewing_party_lite/app/controllers/users_movies_controller.rb": {
         "lines": [
           1,
-<<<<<<< HEAD
           null,
           1,
           3,
@@ -343,19 +241,9 @@
           1,
           null,
           2,
-=======
-          null,
-          1,
-          3,
-          3,
-          1,
-          1,
->>>>>>> 5a82d30017fd197df3260c8a8f493f3710f4404f
-          null,
-          2,
           null,
           null,
-<<<<<<< HEAD
+          null,
           1,
           4,
           null,
@@ -369,22 +257,13 @@
           1,
           null,
           1,
-=======
-          null,
-          1,
-          1,
->>>>>>> 5a82d30017fd197df3260c8a8f493f3710f4404f
-          null,
+          2,
           null,
           null,
           null
         ]
       },
-<<<<<<< HEAD
       "/Users/coryb/Turing/3_Mod/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
-=======
-      "/Users/johnsantosuosso/viewing_party_lite/viewing_party_lite/app/mailers/application_mailer.rb": {
->>>>>>> 5a82d30017fd197df3260c8a8f493f3710f4404f
         "lines": [
           0,
           0,
@@ -394,11 +273,7 @@
         "branches": {
         }
       },
-<<<<<<< HEAD
       "/Users/coryb/Turing/3_Mod/projects/viewing_party_lite/app/jobs/application_job.rb": {
-=======
-      "/Users/johnsantosuosso/viewing_party_lite/viewing_party_lite/app/jobs/application_job.rb": {
->>>>>>> 5a82d30017fd197df3260c8a8f493f3710f4404f
         "lines": [
           0,
           0
@@ -427,10 +302,6 @@
         }
       }
     },
-<<<<<<< HEAD
-    "timestamp": 1661467467
-=======
-    "timestamp": 1661372743
->>>>>>> 5a82d30017fd197df3260c8a8f493f3710f4404f
+    "timestamp": 1661480763
   }
 }

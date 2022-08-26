@@ -1,0 +1,13 @@
+<h1>Create a Viewing Party Here</h1>
+
+<h3><%= @movie.title %></h3>
+
+<%= form_with do |f| %>
+  <%= f.label :amount, 'Duration of Party (in minutes)' %>
+  <%= f.number_field :amount, step: :any, value: @movie.duration %>
+  <%= f.label :date, 'When:' %>
+  <%= f.date_field :date %>
+  <%= f.label :start_time, "Start Time:" %>
+  <%= f.time_field :start_time %>
+
+<% end %>

@@ -1,5 +1,5 @@
 class MovieDetails
-  attr_reader :id, :title, :vote_average, :summary, :genre, :runtime, :cast, :review_count, :reviews
+  attr_reader :id, :title, :vote_average, :summary, :genre, :runtime, :duration, :cast, :review_count, :reviews
 
   def initialize(data, cast, review)
     @id = data[:id]
@@ -8,6 +8,7 @@ class MovieDetails
     @summary = data[:overview]
     @genre = genre_parse(data[:genres])
     @runtime = format_time(data[:runtime])
+    @duration = data[:runtime]
 
     @cast = cast_parse(cast[:cast][0..9])
 
