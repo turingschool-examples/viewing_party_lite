@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe MovieFacade do
@@ -5,6 +7,5 @@ RSpec.describe MovieFacade do
     movies = MovieFacade.get_top_movies
     expect(movies).to be_a(Array)
     expect(movies).to be_all(Movie)
-
   end
 end
