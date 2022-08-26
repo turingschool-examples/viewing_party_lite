@@ -8,7 +8,31 @@ RSpec.describe 'movie show page', :vcr do
 
         visit "/users/#{user_1.id}/movies/238"
         expect(page).to have_content("The Godfather")
-        expect(page).to have_content("Discover Page")
+        expect(page).to have_button("Discover Page")
+
+        within("#details") do
+            expect(page).to have_content("Vote Average: 8.7")
+            expect(page).to have_content("Runtime: 2hr 55min")
+            expect(page).to have_content("Genre(s): Drama Crime")
+        end
+
+        within("#summary") do
+            expect(page).to have_content("Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family.")
+        end
+
+        within("#cast") do
+            expect(page).to have_content("Marlon Brando")
+            expect(page).to have_content("Al Lettieri")
+            expect(page).to_not have_content("Abe Vigoda")
+        end
+
+        within("#reviews") do
+            expect(page).to have_content("2 Reviews")
+            expect(page).to have_content("Author: crastana")
+            expect(page).to have_content("The best movie ever...")
+            expect(page).to have_content("Author: futuretv")
+            expect(page).to have_content("The Godfather Review by Al Carlson")
+        end
     end
     
 end

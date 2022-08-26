@@ -14,8 +14,16 @@ RSpec.describe 'user discover movies page', :vcr do
         visit "/users/#{user_1.id}/discover"
         fill_in :search, with: 'Phoenix'
         click_button 'Search'
-        # expect(page.status_code).to eq 200 < needs content, probably from a cassette fixture
         expect(current_path).to eq("/users/#{user_1.id}/search")
+    end
+
+    it "can show a warning if a movie is unavailable" do
+        user_1 = User.create!(name: "ODB", email: "testemail3@mail.com")
+        visit "/users/#{user_1.id}/discover"
+        fill_in :search, with: 'AJKJSJKSKJSKJ:KJ:KJSDFKJDF!'
+        click_button 'Search'
+        expect(page).to have_content("No results found!")
+        expect(current_path).to eq("/users/#{user_1.id}/discover")
     end
 
 end

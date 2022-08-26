@@ -32,7 +32,7 @@ RSpec.describe 'user movies index page', :vcr do
         fill_in :search, with: 'Phoenix'
         click_button 'Search'
         expect(current_path).to eq("/users/#{user_1.id}/search")
-        click_button "Discover Movies"
+        click_button "Discover Page"
         expect(current_path).to eq("/users/#{user_1.id}/discover")
     end
 

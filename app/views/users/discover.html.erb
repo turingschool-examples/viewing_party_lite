@@ -1,5 +1,7 @@
-<h1> Viewing Party Lite </h1>
-
+<% flash.each do |type, msg| %>
+    <div class='flash_red'><%= msg %></div>
+    <br>
+<% end %>
 <h2> Discover Movies </h2>
 
 <h3><%= button_to "Find Top Rated Movies", "/users/#{@user.id}/movies?q=top%20rated", method: :get %></h3>

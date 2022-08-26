@@ -3,7 +3,7 @@
 <% else %>
 <h2> Top Movies </h2>
 <% end %>
-<h3> <%= button_to "Discover Movies", "/users/#{params[:id]}/discover", method: :get %></h3>
+<h3> <%= button_to "Discover Page", "/users/#{params[:id]}/discover", method: :get %></h3>
 
 <% @results.each do |movie| %>
 <p> <%= movie.title %>                                 Vote Average: <%= movie.vote_average %></p>
