@@ -13,19 +13,14 @@ RSpec.describe 'MovieService' do
     expect(movie[:title]).to be_a String
   end
 
-  it 'searches for movies by user input' do
-    parsed_json1 = MovieService.search1
-    parsed_json2 = MovieService.search2
+  it 'searches for movies by user input and returns array of movies' do
+    query = 'something'
+    search = MovieService.search(query)
+    movie = search.first
 
-    expect(parsed_json1).to be_a Hash
-    expect(parsed_json2).to be_a Hash
-    expect(parsed_json1[:results]).to be_a Array
-    expect(parsed_json2[:results]).to be_a Array
-
-    movie1 = parsed_json1[:results].first
-
-
-    expect(movie1).to include :id, :title, :vote_average
-    expect(movie1[:title]).to be_a String
+    expect(search).to be_a Array
+    expect(movie).to be_a Hash
+    expect(movie).to include :id, :title, :vote_average
+    expect(movie[:title]).to be_a String
   end
 end
