@@ -1,0 +1,16 @@
+<h1>New Viewing Party</h1>
+<%= form_with url: "/users/#{@user.id}/movies/#{@movie_id}", method: :post, local: true do |f| %>
+  <%= f.label :duration %>
+  <%= f.text_field :duration %>
+
+  <%= f.label :date %>
+  <%= f.text_field :date, "data-provide" => 'datepicker' %>
+
+  <%= f.label :host_id %>
+  <%= f.text_field :host_id, :value => @user.id%>
+ 
+  <%= f.label :movie_id %>
+  <%= f.text_field :movie_id, :value => @movie_id%>
+
+  <%= f.submit %>
+<% end %>
