@@ -64,7 +64,7 @@ RSpec.describe 'Show', type: :feature do
       user_viewing_party_4 = UserParty.create!(user_id: user_2.id, party_id: party_2.id, host: true)
 
       visit "/users/#{user_1.id}"
-      save_and_open_page
+      
       expect(page).to have_content("You are hosting these parties:")
       expect(page).to have_content(party_1.id)
       expect(page).to have_content(party_1.date)
