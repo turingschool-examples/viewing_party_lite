@@ -61,5 +61,21 @@ describe MovieService, :vcr do
 
             expect(review[:content]).to be_a String
         end
+
+        it 'returns movie search data for a given search string', :vcr do
+            movies = MovieService.movie_search("The Godfather")
+
+            expect(movies).to be_a Array
+
+            movie1 = movies.first
+
+            expect(movie1).to be_a Hash
+
+            expect(movie1).to include :title, :vote_average
+
+            expect(movie1[:title]).to be_a String
+
+            expect(movie1[:vote_average]).to be_a Float
+        end
     end
 end
