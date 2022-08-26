@@ -9,10 +9,10 @@
   <% @user.viewing_party_users.each do |vpu|%>
     <div class="viewing-party-card">
       <div id="viewing-party-<%=vpu.id%>">
-        <%= image_tag "https://image.tmdb.org/t/p/w500#{vpu.viewing_party.movie_api_id[1]}", class: "poster-image" %>
+        <%= image_tag "https://image.tmdb.org/t/p/w500#{vpu.viewing_party.get_movie_poster}", class: "poster-image" %>
 
         <p>
-          <%= link_to "#{vpu.viewing_party.movie_title}", "/users/#{@user.id}/movies/#{vpu.viewing_party.movie_api_id[0]}"%>
+          <%= link_to "#{vpu.viewing_party.movie_title}", "/users/#{@user.id}/movies/#{vpu.viewing_party.get_movie_id}"%>
         </p>
 
         <p>

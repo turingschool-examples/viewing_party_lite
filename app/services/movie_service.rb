@@ -35,6 +35,17 @@ class MovieService
         data1 = JSON.parse(top1.body, symbolize_names: true)
         data2 = JSON.parse(top2.body, symbolize_names: true)
         json = data1[:results].concat(data2[:results])
-    end 
+    end
+
+    def self.movie_api_id(movie_title)
+        response = conn.get("/3/search/movie?api_key=#{ENV['tmdb_key']}&language=en-US&query=#{movie_title}&page=1&include_adult=false")
+
+        json = JSON.parse(response.body, symbolize_names: true)
+        
+        matched_movie = json[:results].select {|movie| movie_title == movie[:title]}
+        
+        result = []
+        result << matched_movie[0][:id] && result << matched_movie[0][:poster_path]
+    end
 
 end 

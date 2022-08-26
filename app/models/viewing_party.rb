@@ -13,19 +13,16 @@ class ViewingParty < ApplicationRecord
         "#{host.first_name} #{host.last_name}"
     end
 
-    def movie_api_id
-        conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
-            faraday.headers["api_key"] = ENV['tmdb_key']
-        end
+    def get_movie_id
+        movie_result = MovieReverseSearchResultFacade.service(self.movie_title)
 
-        response = conn.get("/3/search/movie?api_key=#{ENV['tmdb_key']}&language=en-US&query=#{self.movie_title}&page=1&include_adult=false")
+        movie_result.id
+    end
 
-        json = JSON.parse(response.body, symbolize_names: true)
-        
-        matched_movie = json[:results].select {|movie| self.movie_title == movie[:title]}
-        
-        result = []
-        result << matched_movie[0][:id] && result << matched_movie[0][:poster_path]
+    def get_movie_poster
+        movie_result = MovieReverseSearchResultFacade.service(self.movie_title)
+
+        movie_result.poster_path
     end
 
 end 
