@@ -13,6 +13,16 @@
 <br>
 
 <h2>Viewing Parties</h2>
+  <div>
+    <% @user.hosted_parties.each do |party| %>
+      <%= render partial: "party_info", locals: {party: party} %>
+      <p>Hosting</p>
+    <% end %>
+  </div>
 
-<% @user.hosted_parties.each do |party| %>
-<% end %>
+  <div>
+    <% @user.invited_parties.each do |party| %>
+      <%= render partial: "party_info", locals: {party: party} %>
+      <p>Invited</p>
+    <% end %>
+  </div>
