@@ -28,20 +28,20 @@ RSpec.describe 'user creation' do
     expect(page).to have_button('Discover Page')
   end
 
-  it 'redirects user to user dashboard and shows viewing party as hosted', :vcr do 
+  xit 'redirects user to user dashboard and shows viewing party as hosted', :vcr do 
     user1 = User.create!(name: Faker::Name.first_name, email: Faker::Internet.email)
     user2 = User.create!(name: Faker::Name.first_name, email: Faker::Internet.email)
 
     #This 320288 represents a movie_id
     visit "/users/#{user1.id}/movies/320288/viewing-party/new"
   
-    fill_in('date', with: '12/30/21')
+    fill_in('date', with: Time.now)
     fill_in('Start time', with: '7:00')
-
-    check("#{user2.name}", allow_label_click: true)
+    
+    page.check(:added_user_to_party, option: "#{user2.id}")
     
     click_on('Create Party')
-
+    
     expect(current_path).to eq("users/#{user1.id}")
   end
 end

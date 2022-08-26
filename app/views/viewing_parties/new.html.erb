@@ -20,7 +20,7 @@
     <p>Invite Other Users</p>
 
     <% @users.each do |user| %>
-      <%= check_box_tag(user.name) %>
+      <%= check_box_tag(:added_user_to_party, checked_value = "#{user.id}") %>
       <%= label_tag(user.name, "#{user.name} #{user.email}") %>
     <% end  %>
   <% end %>
