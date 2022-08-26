@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   get '/', to: 'landing_page#index'
 
   get '/register', to: 'users#new'
-  get '/users/new', to: 'users#new'
-  post '/users', to: 'users#create'
-  get '/users/:id', to: 'users#show'
   get '/users/:id/discover', to: 'users#discover'
-  get '/users/:id/movies', to: 'user_movies#index'
+
+  resources :users, only: [:create, :show] do 
+    post '/movies', to: 'user_movies#index'
+    get '/movies', to: 'user_movies#index'
+  end
 end

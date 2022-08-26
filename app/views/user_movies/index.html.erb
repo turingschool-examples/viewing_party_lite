@@ -1,2 +1,13 @@
 <h1>Movies Results</h1>
 
+<%= button_to 'Return to Discover Page', "/users/#{@user.id}/discover", method: :get %>
+
+<% unless @movies.nil? %>
+    <% @movies.each do |movie| %>
+        <p>
+            <strong>-<%= movie.title %></strong>
+            <br>
+            vote average: <%= movie.vote_average %>
+        </p>
+    <% end %>
+<% end %>
