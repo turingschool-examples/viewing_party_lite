@@ -34,10 +34,31 @@
   <%=@movie.summary%>
 </div>
 
+<div id="cast-header">
+  Cast
+</div>
+
 <div id="cast">
-  <%@movie.first_10_cast.each do |cast| %>
-    <%= cast %>
-  <% end %>
+  <table id="cast-table-left">
+    <%@movie.first_10_cast[0..4].each do |cast| %>
+      <tr>
+        <td class="cast-cell">
+          <%= cast %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <table id="cast-table-right">
+    <%@movie.first_10_cast[5..10].each do |cast| %>
+      <tr>
+        <td class="cast-cell">
+          <%= cast %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+
+
 </div>
 
 <div id="review-count">

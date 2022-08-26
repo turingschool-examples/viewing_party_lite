@@ -98,3 +98,42 @@
   padding: 5px;
   margin: 5px;
 }
+
+#cast {
+  display: flex;
+  border-bottom: 2px solid black;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#cast-table-left {
+  flex: 1;
+  border-collapse: collapse;
+  width: 40%;
+  margin-bottom: 5px;
+}
+#cast-table-right {
+  flex: 1;
+  border-collapse: collapse;
+  width: 40%;
+  margin-bottom: 5px;
+}
+
+#cast-table-left tr:nth-child(odd){
+  background-color: #c4ccca;
+}
+#cast-table-right tr:nth-child(odd){
+  background-color: #c4ccca;
+}
+
+
+.cast-cell {
+  padding: 5px;
+}
+
+#cast-header {
+  font-weight: bold;
+  font-size: large;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
