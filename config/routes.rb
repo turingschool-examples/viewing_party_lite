@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
   get '/users/:id/movies', to: 'users#movie'
   get '/users/:id/discover', to: 'users#discover'
-  get '/users/:id/movies/:movie_id/viewing-party/new', to: 'viewing_party#new'
+  get '/users/:id/movies/:movie_id/viewing-party/new', to: 'viewing_parties#new'
 end
