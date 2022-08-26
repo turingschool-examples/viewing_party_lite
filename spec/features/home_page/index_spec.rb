@@ -25,4 +25,8 @@ RSpec.describe 'home page index' do
     expect(page).to have_link("Home")
   end
 
+  it "is able not to show the emails" do
+    expect(page).to_not have_content("wes'ss dashboard")
+  end
+
 end

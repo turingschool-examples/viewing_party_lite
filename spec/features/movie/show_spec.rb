@@ -13,17 +13,20 @@ RSpec.describe 'movie show page' do
 
   it 'has a button to create a viewing party', :vcr do
     expect(page).to have_button('Create a viewing party')
+    expect(page.status_code).to eq 200
   end
 
   it 'has a button to return to the discover page', :vcr do
     expect(page).to have_button('Discover more movies')
 
     click_button "Discover more movies"
+    expect(page.status_code).to eq 200
 
     expect(current_path).to eq("/users/#{@user1.id}/discover")
   end
 
   it 'shows movie information', :vcr do
+    expect(page.status_code).to eq 200
     expect(page).to have_content("The Shawshank Redemption")
     expect(page).to have_content("Overview: Framed in the 1940s for the double murder of his wife and her lover, upstanding banker Andy Dufresne begins a new life at the Shawshank prison, where he puts his accounting skills to work for an amoral warden. During his long stretch in prison, Dufresne comes to be admired by the other inmates -- including an older prisoner named Red -- for his integrity and unquenchable sense of hope.")
     expect(page).to have_content("Genres: Drama Crime")

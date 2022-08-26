@@ -12,6 +12,6 @@ class MoviesController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @movie = Movie.new(@search.find_movie_basic(params[:id]), @search.find_movie_cast(params[:id]), @search.find_movie_review(params[:id]))
-    end
+  end
 
 end
