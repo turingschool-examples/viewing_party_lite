@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=movie_api_key&page=1&query=Finding%20Nemo
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 26 Aug 2022 19:11:22 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=600
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 f0b290c4e2273a7586bc6f080031d9bc.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - nrrS3KQKtv_KTCfthKihZ_Dy-qYsukknR8JXX1GZnJCmDiqN82TMqA==
+      Age:
+      - '429'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/bvpI11RJbE6lHSWCrhvNC1S1MtO.jpg","genre_ids":[16,10751],"id":12,"original_language":"en","original_title":"Finding
+        Nemo","overview":"Nemo, an adventurous young clownfish, is unexpectedly taken
+        from his Great Barrier Reef home to a dentist''s office aquarium. It''s up
+        to his worrisome father Marlin and a friendly but forgetful fish Dory to bring
+        Nemo home -- meeting vegetarian sharks, surfer dude turtles, hypnotic jellyfish,
+        hungry seagulls, and more along the way.","popularity":120.64,"poster_path":"/eHuGQ10FUzK1mdOY69wF5pGgEf5.jpg","release_date":"2003-05-30","title":"Finding
+        Nemo","video":false,"vote_average":7.8,"vote_count":16723},{"adult":false,"backdrop_path":null,"genre_ids":[99,10751],"id":648081,"original_language":"en","original_title":"Children''s
+        Aquarium: Finding the Real Nemo & Dory","overview":"Looking to find the real
+        Nemo and Dory? Well look no further than this unique program. Children will
+        love watching clownfish play with one another and the the blue tang as it
+        just keeps swimming.","popularity":0.656,"poster_path":"/em724CmoRutJ2QkjAKuW0Y7a5i5.jpg","release_date":"2015-08-27","title":"Children''s
+        Aquarium: Finding the Real Nemo & Dory","video":true,"vote_average":8,"vote_count":2},{"adult":false,"backdrop_path":"/1lqVrt3nEcAJV2GzKZfXvOsZcPQ.jpg","genre_ids":[12,16,35,10751],"id":127380,"original_language":"en","original_title":"Finding
+        Dory","overview":"Dory is reunited with her friends Nemo and Marlin in the
+        search for answers about her past. What can she remember? Who are her parents?
+        And where did she learn to speak Whale?","popularity":51.541,"poster_path":"/3UVe8NL1E2ZdUZ9EDlKGJY5UzE.jpg","release_date":"2016-06-16","title":"Finding
+        Dory","video":false,"vote_average":7,"vote_count":10765}],"total_pages":1,"total_results":3}'
+  recorded_at: Fri, 26 Aug 2022 19:18:31 GMT
+recorded_with: VCR 6.1.0

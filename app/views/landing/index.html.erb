@@ -1,0 +1,19 @@
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>Users</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= link_to user.username, user_path(user) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to "Create User", new_user_path %>
+

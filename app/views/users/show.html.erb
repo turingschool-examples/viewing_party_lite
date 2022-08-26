@@ -1,0 +1,58 @@
+<h1><%= @user.username %>'s Dashboard</h1>
+
+<%= link_to "Discover Movies", discover_path %>
+
+  <div><h2>Invited Events</h2>
+    <table id="invited-parties">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Date</th>
+          <th>Duration</th>
+          <th>Poster</th>
+          <th>Host</th>
+          <th>Attendees</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @invited_events.each do |event| %>
+          <tr id="event-<%= event.movie.id %>-<%= event.movie_id %>">
+            <td id="event-<%= event.movie.id %>-<%= event.movie.title %>"><%= link_to event.movie.title, user_movie_path(@user.id, event.movie.id) %></td>
+            <td id="event-<%= event.movie.id %>-<%= event.movie.event_date %>"><%= event.movie.event_date %></td>
+            <td id="event-<%= event.movie.id %>-<%= event.movie.run_time %>"><%= event.movie.run_time %> min</td>
+            <td><img src="<%= @url+event.movie.image_url %>" width="150px"></td>
+            <td id="event-<%= event.movie.id %>-host"><strong><%= event.movie.host_name %></strong></td>
+            <td id="event-<%= event.movie.id %>-attendees"><%= event.movie.attendees %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div><h2>Created Events</h2>
+    <table id="created-parties">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Date</th>
+          <th>Duration</th>
+          <th>Poster</th>
+          <th>Host</th>
+          <th>Attendees</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @created_events.each do |event| %>
+          <tr id="event-<%= event.movie.id %>-<%= event.movie_id %>">
+            <td id="event-<%= event.movie.id %>-<%= event.movie.title %>"><%= link_to event.movie.title, user_movie_path(@user.id, event.movie.id) %></td>
+            <td id="event-<%= event.movie.id %>-<%= event.movie.event_date %>"><%= event.movie.event_date %></td>
+            <td id="event-<%= event.movie.id %>-<%= event.movie.run_time %>"><%= event.movie.run_time %> min</td>
+            <td><img src="<%= @url+event.movie.image_url %>" width="150px"></td>
+            <td id="event-<%= event.movie.id %>-host"><strong><%= event.movie.host_name %></strong></td>
+            <td id="event-<%= event.movie.id %>-attendees"><%= event.movie.attendees %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
