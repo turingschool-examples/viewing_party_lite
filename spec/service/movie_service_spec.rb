@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe MovieService do
   describe '#class methods'
+  
     it 'top_rated', :vcr do
       ms = MovieService.top_rated
       md = ms[:results].first
