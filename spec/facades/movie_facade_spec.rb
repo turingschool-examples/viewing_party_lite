@@ -10,11 +10,12 @@ RSpec.describe 'MovieFacade' do
     end
   end
 
-  # describe 'search' do
-  #   it 'searches for movies by the keyword from the API' do
-  #     movies = MovieFacade.search
-  #     expect(movies).to be_a Array
-  #     expect(movies).to be_all Movie
-  #   end
-  # end
+  describe 'search' do
+    it 'searches for movies by the keyword from the API' do
+      query = "something"
+      movies = MovieFacade.search(query)
+      expect(movies).to be_a Array
+      expect(movies).to be_all Movie
+    end
+  end
 end

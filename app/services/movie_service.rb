@@ -5,16 +5,21 @@ class MovieService
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  def self.search1
-    response = conn.get("/3/search/movie?page=1&query={#{@query}}")
-    JSON.parse(response.body, symbolize_names: true)
-  end
+  def self.search(query)
+    pages = [1,2]
 
-  def self.search2
-    response2 = conn.get("/3/search/movie?page=2&query={#{@query}}")
-    data2 = JSON.parse(response2.body, symbolize_names: true)
-  end
+    response = pages.map do |page|
+      conn.get("/3/search/movie?page=#{page}&query={#{query}}")
+    end
+    
+    data = response.map do |r|
+      JSON.parse(r.body, symbolize_names: true)
+    end
 
+    data.flat_map do |d|
+      d[:results]
+    end
+  end
 
   private
   def self.conn
