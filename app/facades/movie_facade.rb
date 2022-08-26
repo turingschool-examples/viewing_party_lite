@@ -22,6 +22,5 @@ class MovieFacade
   def self.cast(movie_id)
     data = MovieService.credits(movie_id)
     Movie.new(data)
-    # binding.pry
   end
 end
