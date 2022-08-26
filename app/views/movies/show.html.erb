@@ -1,1 +1,12 @@
-<%= "#{@movie.title}" %>
+<%= button_to "Discover Movies",  "/users/#{@user.id}/discover", method: :get, local: true %>
+
+<%= button_to "Create a Viewing Party" %>
+<p>Title: <%= "#{@movie.title}" %></p>
+<p>Vote Average: <%= "#{@movie.vote_average}" %></p>
+<p>Vote Count: <%= @movie.vote_count %> </p>
+<p>Summary: <%= @movie.summary %> </p>
+<p>Runtime: <%= @movie.runtime %> </p>
+<p>Genres: <% @movie.genre_name.each do |g| %>
+            <%= g %>
+            <% end %></p>
+<p></p>
