@@ -3,3 +3,14 @@
 <p><%=button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %></p>
 
 <h3>Viewing Parties</h3>
+<h2>You are hosting these parties:</h2>
+
+<% @user.is_host.each do |party| %>
+  <%= party.id %><br>
+<% end %>
+
+<h2>You have been invited to these parties:</h2>
+
+<% @user.is_invited.each do |party| %>
+  <%= party.id %><br>
+<% end %>
