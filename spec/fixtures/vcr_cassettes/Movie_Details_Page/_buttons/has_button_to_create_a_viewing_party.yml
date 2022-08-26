@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 26 Aug 2022 14:19:09 GMT
+      - Fri, 26 Aug 2022 14:59:29 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -38,29 +38,29 @@ http_interactions:
       Cache-Control:
       - public, max-age=28800
       X-Memc:
-      - HIT
+      - MISS, STORE
       X-Memc-Key:
       - 311da871cc80de448d8898ff3a4b02d56e2aec87
       X-Memc-Age:
-      - '15585'
+      - '0'
       X-Memc-Expires:
-      - '464'
-      Etag:
-      - W/"c0d738b0224ff72af8cb934dbdffe587"
+      - '17512'
+      Last-Modified:
+      - Thu, 11 Nov 2021 19:29:05 GMT
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 94bd5e4f47540501369a53d4ae35d3b2.cloudfront.net (CloudFront)
+      - 1.1 1d4cefdd4a118c51c89c53d3ce0c0d62.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN50-C2
+      - PHX50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - ZMMqt_p4GO0WuyobgVvgFlXIYJqeRSre0E1Nw5LNEpZF90Uv1ea-9Q==
+      - V7QCbEeVCZ0P5iVyffcLGsc7ky0lZVJZ_IvcjpFG1XGR6VCrQ6wTPg==
       Age:
-      - '1996'
+      - '5344'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/v7baGyne7CsLxnM2maMwIxKZdVF.jpg","belongs_to_collection":null,"budget":20000000,"genres":[{"id":80,"name":"Crime"},{"id":18,"name":"Drama"}],"homepage":"","id":505,"imdb_id":"tt0097626","original_language":"en","original_title":"Johnny
@@ -73,7 +73,7 @@ http_interactions:
         States of America"}],"release_date":"1989-09-12","revenue":7237794,"runtime":94,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"They
         changed his looks, his life and his future... but they couldn''t change his
         past .","title":"Johnny Handsome","video":false,"vote_average":6.284,"vote_count":199}'
-  recorded_at: Fri, 26 Aug 2022 14:52:25 GMT
+  recorded_at: Fri, 26 Aug 2022 16:28:33 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/505/credits?api_key=<movie_api_key>
@@ -99,7 +99,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 26 Aug 2022 14:19:10 GMT
+      - Fri, 26 Aug 2022 14:59:31 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -116,9 +116,9 @@ http_interactions:
       X-Memc-Key:
       - 5a17f3f289bd1461c53768363d79512f9792e863
       X-Memc-Age:
-      - '8441'
+      - '10862'
       X-Memc-Expires:
-      - '7057'
+      - '4636'
       Etag:
       - W/"2c8e5cf524039d44461e99f5d3c6de2b"
       Vary:
@@ -126,15 +126,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 4d0ecb5905192435c3fd204705c9fc24.cloudfront.net (CloudFront)
+      - 1.1 cd5b32a9ae39315ee42c37bf95fc4a1a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN50-C2
+      - PHX50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 28E-3vZehkCfgL_Bah33MDysAhocpiWwwcSv8VgB4YYaQEH9Ks39uw==
+      - ZLRSjHy4iq6n-mwfsu3Lx_G0sso14DAavrdniStIhyyHDGfX8oO9OA==
       Age:
-      - '1995'
+      - '5342'
     body:
       encoding: ASCII-8BIT
       string: '{"id":505,"cast":[{"adult":false,"gender":2,"id":2295,"known_for_department":"Acting","name":"Mickey
@@ -256,7 +256,7 @@ http_interactions:
         Assistant Editor"},{"adult":false,"gender":0,"id":3500550,"known_for_department":"Sound","name":"Jessica
         Galavan","original_name":"Jessica Galavan","popularity":0.6,"profile_path":null,"credit_id":"625266948fdda9009feb492c","department":"Sound","job":"Sound
         Editor"}]}'
-  recorded_at: Fri, 26 Aug 2022 14:52:25 GMT
+  recorded_at: Fri, 26 Aug 2022 16:28:33 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/505/reviews?api_key=<movie_api_key>
@@ -282,7 +282,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 26 Aug 2022 14:19:10 GMT
+      - Fri, 26 Aug 2022 14:59:31 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -295,29 +295,29 @@ http_interactions:
       Cache-Control:
       - public, max-age=28800
       X-Memc:
-      - MISS, STORE
+      - HIT
       X-Memc-Key:
       - b5df5aef5ffafbdd64597f1bf3adbab6e722e04d
       X-Memc-Age:
-      - '0'
+      - '2421'
       X-Memc-Expires:
-      - '16759'
-      Last-Modified:
-      - Thu, 11 Nov 2021 19:29:05 GMT
+      - '14338'
+      Etag:
+      - W/"f6c14dccd71f7b9a8756aca3323d84ae"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 ce4b35590464ed34415a13badd946eba.cloudfront.net (CloudFront)
+      - 1.1 1d4cefdd4a118c51c89c53d3ce0c0d62.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN50-C2
+      - PHX50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - swBa7fZCHM4dks_WLkZtlzYC210pi6AC2nrkkcdID-QUH29TmN0wAQ==
+      - _vtGCcb85AwPU3jN22Rx9n-HRvDGtYge3F5ftysV-Zt1R4mTkHPkAg==
       Age:
-      - '1995'
+      - '5342'
     body:
       encoding: ASCII-8BIT
       string: '{"id":505,"page":1,"results":[{"author":"John Chard","author_details":{"name":"","username":"John
@@ -359,10 +359,10 @@ http_interactions:
         where something like Johnny Handsome lives. From the kinetic misery at film''s
         start, to the \"ever so in tune with film noir\" finale, Johnny Handsome is
         well worth a look by anyone interested in noir''s updated version. 7/10","created_at":"2014-03-31T07:21:33.197Z","id":"5339177d9251417d9e003ee0","updated_at":"2021-06-23T15:57:25.504Z","url":"https://www.themoviedb.org/review/5339177d9251417d9e003ee0"}],"total_pages":1,"total_results":1}'
-  recorded_at: Fri, 26 Aug 2022 14:52:25 GMT
+  recorded_at: Fri, 26 Aug 2022 16:28:33 GMT
 - request:
     method: get
-    uri: https://api.themoviedb.org/3/movie/?api_key=<movie_api_key>
+    uri: https://api.themoviedb.org/3/movie/505?api_key=<movie_api_key>
     body:
       encoding: US-ASCII
       string: ''
@@ -375,8 +375,8 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 404
-      message: Not Found
+      code: 200
+      message: OK
     headers:
       Content-Type:
       - application/json;charset=utf-8
@@ -385,7 +385,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 26 Aug 2022 14:52:25 GMT
+      - Fri, 26 Aug 2022 14:59:29 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -395,23 +395,43 @@ http_interactions:
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
-      X-Cascade:
-      - pass
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Key:
+      - 311da871cc80de448d8898ff3a4b02d56e2aec87
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '17512'
+      Last-Modified:
+      - Thu, 11 Nov 2021 19:29:05 GMT
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Error from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 e158a5cd644f102abc630a9f56b59d78.cloudfront.net (CloudFront)
+      - 1.1 d6476b06449995b050d792d76e5355de.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN50-C2
+      - PHX50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - KaKGQwJ05u7RuZKOT0CbNCsjiNkcJNUzUtnx6ky4ICBIv83XG1nE3g==
+      - pNNXUPaXJWb36JGs5k9ZwHhyS5AvEGrqFTDuOgWOflDU9IX2isglBw==
+      Age:
+      - '5344'
     body:
       encoding: ASCII-8BIT
-      string: '{"success":false,"status_code":34,"status_message":"The resource you
-        requested could not be found."}'
-  recorded_at: Fri, 26 Aug 2022 14:52:25 GMT
+      string: '{"adult":false,"backdrop_path":"/v7baGyne7CsLxnM2maMwIxKZdVF.jpg","belongs_to_collection":null,"budget":20000000,"genres":[{"id":80,"name":"Crime"},{"id":18,"name":"Drama"}],"homepage":"","id":505,"imdb_id":"tt0097626","original_language":"en","original_title":"Johnny
+        Handsome","overview":"A career criminal who has been deformed since birth
+        is given a new face by a kindly doctor and paroled from prison. It appears
+        that he has gone straight, but he is really planning his revenge on the man
+        who killed his mentor and sent him to prison.","popularity":10.083,"poster_path":"/hdEIkpL17rvfZH0l34FJ8H9LAa.jpg","production_companies":[{"id":275,"logo_path":"/2MxNWlN5b3UXt1OfmznsWEQzFwq.png","name":"Carolco
+        Pictures","origin_country":"US"},{"id":276,"logo_path":null,"name":"Guber/Peters
+        Company","origin_country":""},{"id":277,"logo_path":null,"name":"Roven Productions","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1989-09-12","revenue":7237794,"runtime":94,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"They
+        changed his looks, his life and his future... but they couldn''t change his
+        past .","title":"Johnny Handsome","video":false,"vote_average":6.284,"vote_count":199}'
+  recorded_at: Fri, 26 Aug 2022 16:28:33 GMT
 recorded_with: VCR 6.1.0

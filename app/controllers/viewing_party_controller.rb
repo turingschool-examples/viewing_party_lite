@@ -2,6 +2,7 @@ class ViewingPartyController < ApplicationController
    def new
       @user = User.find(params[:user_id])
       @movie_details = MovieFacade.get_movie_details(params[:id])   
+      binding.pry
    end
 
    def create
@@ -13,7 +14,6 @@ class ViewingPartyController < ApplicationController
          redirect_to user_path(@user.id)
       end
    end
-
 
    private
 
