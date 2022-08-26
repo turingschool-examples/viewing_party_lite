@@ -5,4 +5,11 @@
         Movie.new(movie)
       end
     end
+    
+    def self.movie_search(search_param) 
+      movies = MovieService.get_movie_search(search_param)
+      movies.map do |movie_data|
+      Movie.new(movie_data)
+    end
   end
+end

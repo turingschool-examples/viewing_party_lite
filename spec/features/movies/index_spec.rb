@@ -2,32 +2,33 @@ require 'rails_helper'
 
 RSpec.describe "Movie Index Page", :vcr do
     it 'has a button to discover top rated movies' do
+        user1 = User.create!(name: "Micheal Jordan", email: "user1@gmail.com")
 
-        @user1 = User.create!(name: "Micheal Jordan", email: "user1@gmail.com")
-
-        # visit "/users/#{@user1.id}/discover"
-        visit "/users/#{@user1.id}/movies"
-
-        # click_button "Discover Top Rated Movies"
+        visit "/users/#{user1.id}/discover"
+        click_button "Discover Top Rated Movies"
         
-        expect(current_path).to eq("/users/#{@user1.id}/movies")
+        expect(current_path).to eq("/users/#{user1.id}/movies")
+        expect(page).to have_content("The Shawshank Redemption")
+    end
+    it 'has a button to return to discover page' do
+        user1 = User.create!(name: "Micheal Jordan", email: "user1@gmail.com")
+
+        visit "/users/#{user1.id}/movies?"
+        
+        expect(page).to have_button("Discover Movies")
+        click_button "Discover Movies"
+        expect(current_path).to eq("/users/#{user1.id}/discover")
     end
 end
 
-   
 
-# As a user,
-# When I go to a user dashbaord,
-# and click "Discover Movies" button,
+# When I visit the discover movies page,
+# and click on either the Top Movies button or the Search button,
+# I should be taken to the movies results page (users/:user_id/movies?q=top%20rated, 
+#/users/:user_id/movies?q=keyword respectively) where I see:
 
-#  I am redirected to a discover page '/users/:id/discover', where :id is the user id of the user who's dashboard I was just on.
+#  Title (As a Link to the Movie Details page)
+#  Vote Average of the movie
+# Details: There should only be a maximum of 40 results. The above details should be listed for each movie.
 
-# As an user,
-# When I visit the '/users/:id/discover' path, where :id, is the id of a valid user,
-# I should see
-
-#  Button to Discover Top Rated Movies
-#  A text field to enter keyword(s) to search by movie title
-#  A Button to Search by Movie Title
-#  Details When the user clicks on the Top Rated Movies OR the search button, they should be taken to the movies results page (more details of this on the Movies Results Page issue.
-# The movies will be retrieved by consuming The MovieDB API
+#  I should also see a button to return to the Discover Page.
