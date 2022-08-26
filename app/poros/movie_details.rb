@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class MovieDetails
-
   attr_reader :movie_id,
               :title,
               :vote_average,
@@ -13,7 +12,7 @@ class MovieDetails
   def initialize(attributes)
     @movie_id = attributes[:id]
     @title = attributes[:title]
-    @vote_average = attributes[:vote_average].round(2) if attributes[:vote_average]
+    @vote_average = attributes[:vote_average].round(1) if attributes[:vote_average]
     @runtime = attributes[:runtime]
     @genres = attributes[:genres]
     @overview = attributes[:overview]

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PartiesController < ApplicationController
   def new
     # require 'pry'; binding.pry
@@ -18,6 +20,7 @@ class PartiesController < ApplicationController
   end
 
   private
+
   def party_params
     params.permit(:movie_id, :start_time, :duration)
   end
