@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'validates_timeliness', '~> 5.0.0.beta1'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-
+gem 'faraday'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -40,7 +40,6 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'factory_bot_rails', '~> 4.0'
   gem 'faker'
-  gem 'faraday'
   gem 'figaro'
   gem 'pry'
   gem 'shoulda-matchers', '~> 5.0'
