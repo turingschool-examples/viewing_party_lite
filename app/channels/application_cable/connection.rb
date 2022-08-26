@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # :nocov:
 
 module ApplicationCable
@@ -5,4 +7,3 @@ module ApplicationCable
   end
 end
 # :nocov:
-

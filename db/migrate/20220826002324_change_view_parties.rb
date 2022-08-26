@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ChangeViewParties < ActiveRecord::Migration[5.2]
   def change
     remove_column :view_parties, :movie_details, :text
