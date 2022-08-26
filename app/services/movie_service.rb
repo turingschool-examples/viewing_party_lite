@@ -20,4 +20,9 @@ class MovieService
     response = conn.get("/3/movie/#{id}") 
     json = JSON.parse(response.body, symbolize_names: true)
   end
+
+  def self.get_movie_reviews(id)
+    response = conn.get("/3/movie/#{id}/reviews")
+    json = JSON.parse(response.body, symbolize_names: true)
+  end
 end
