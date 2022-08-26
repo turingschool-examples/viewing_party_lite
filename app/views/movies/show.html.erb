@@ -1,6 +1,7 @@
 <h2> <%= @movie.title %> </h2>
-<h3> <%= button_to "Discover Page", "/users/#{params[:id]}/discover", method: :get %></h3>
-<% #Create Viewing Party Button WIP %>
+<h3> <%= button_to "Discover Page", "/users/#{params[:user_id]}/discover", method: :get %></h3>
+<h3> <%= button_to "Create Viewing Party for #{@movie.title}", "/users/#{params[:user_id]}/movies/#{@movie.id}/view_parties/new", method: :get %></h3>
+
 
 <div id = "details" >
     <h3> Vote Average: <%= @movie.vote_average %>   Runtime: <%= @movie.duration / 60 %>hr <%= @movie.duration % 60  %>min     Genre(s): <% @movie.genres.each do |genre| %> <%=genre[:name] %> <% end %> </h3>

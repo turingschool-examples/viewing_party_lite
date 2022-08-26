@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
         if params[:search].present?
             @results = MovieFacade.search_movies(params[:search])
             if @results.empty?
-                redirect_to "/users/#{params[:id]}/discover"
+                redirect_to "/users/#{params[:user_id]}/discover"
                 flash[:alert] = "No results found!"
             end
             @search_term = params[:search]

@@ -14,7 +14,7 @@ RSpec.describe 'user discover movies page', :vcr do
         visit "/users/#{user_1.id}/discover"
         fill_in :search, with: 'Phoenix'
         click_button 'Search'
-        expect(current_path).to eq("/users/#{user_1.id}/search")
+        expect(current_path).to eq("/users/#{user_1.id}/movies")
     end
 
     it "can show a warning if a movie is unavailable" do
