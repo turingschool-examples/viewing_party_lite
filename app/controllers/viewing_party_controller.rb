@@ -5,6 +5,13 @@ class ViewingPartyController < ApplicationController
    end
 
    def create
+      @user = User.find(params[:user_id])
+      @movie_details = MovieFacade.get_movie_details(params[:id])
+      
+      if params[:duration] >= params[:runtime]
+         party = Party.create!(viewing_party_params)
+         redirect_to user_path(@user.id)
+      end
    end
 
 
