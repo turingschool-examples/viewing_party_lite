@@ -31,9 +31,10 @@ ActiveRecord::Schema.define(version: 2022_08_22_231954) do
   end
 
   create_table "viewing_parties", force: :cascade do |t|
+    t.string "poster_path"
+    t.string "movie_name"
     t.integer "movie_id"
     t.integer "host_id"
-    t.integer "attendee_id"
     t.integer "duration"
     t.date "eventdate"
     t.time "starttime"

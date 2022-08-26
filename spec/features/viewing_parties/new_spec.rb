@@ -11,14 +11,17 @@ RSpec.describe 'New Viewing Party' do
     expect(page).to have_content('Create a Movie Party for The Shawshank Redemption')
     expect(page).to have_field('Duration of Party:', with: 142)
     expect(page).to have_field('Date:')
-    # save_and_open_page
+    expect(page).to have_field('Start Time:')
     expect(page).to have_button('Create Party')
+
     fill_in 'Date', with: Date.today + 1
-    select ("02 PM", "00", :from => :starttime)
-    check "#{user2.name} (#{user2.email})"
-    check "#{user3.name} (#{user3.email})"
+    fill_in 'Start Time', with: Time.now + 600
+
+    check("attendees_ids_#{user2.id}")
+    check("attendees_ids_#{user3.id}")
+
     click_button 'Create Party'
 
-    expect(current_path).to eq "/users/#{user1.id}/discover"
+    expect(current_path).to eq "/users/#{user1.id}"
   end
 end
