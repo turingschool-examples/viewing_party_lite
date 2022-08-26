@@ -17,5 +17,10 @@ describe MovieFacade do
       expect(top_rated.length).to eq(40)
       expect(top_rated).to be_all Movie
     end
+    it 'has movie details', vcr: 'movie_details' do
+      # Pass movie id 550 (Fight Club)
+      movie_details = MovieFacade.movie_details(550)
+      expect(movie_details).to be_a MovieDetails
+    end
   end
 end

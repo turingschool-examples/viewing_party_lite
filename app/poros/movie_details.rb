@@ -7,32 +7,24 @@ class MovieDetails
               :vote_average,
               :runtime,
               :genres,
-              :summary,
+              :overview,
               :poster
 
-  def initialize(data)
-    @movie_id = data[:id]
-    @title = data[:title]
-    @vote_average = data[:vote_average].round(1) if data[:vote_average]
-    @runtime = data[:runtime]
-    @genres = data[:genres]
-    @summary = data[:overview]
-    @poster = data[:poster_path]
+  def initialize(attributes)
+    @movie_id = attributes[:id]
+    @title = attributes[:title]
+    @vote_average = attributes[:vote_average].round(2) if attributes[:vote_average]
+    @runtime = attributes[:runtime]
+    @genres = attributes[:genres]
+    @overview = attributes[:overview]
+    @poster = attributes[:poster_path]
   end
 
-  def format_runtime
-    if runtime
-      hour = runtime / 60
-      min = runtime % 60
-      "#{hour} hrs #{min} min"
-    end
+  def genre_list
+    genres.map { |genre| genre[:name] } * ', '
   end
 
-  def format_genres
-    if genres
-      genres.map { |genre| genre[:name] }
-    else
-      []
-    end
+  def formatted_runtime
+    "#{runtime / 60} hr #{runtime % 60} min"
   end
 end

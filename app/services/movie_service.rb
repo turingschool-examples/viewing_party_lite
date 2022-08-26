@@ -23,7 +23,7 @@ class MovieService
 
   def self.movie_details(movie_id)
     response = conn.get("/3/movie/#{movie_id}")
-    json = parse_json(response)
+    parse_json(response)
   end
 
   private
