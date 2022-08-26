@@ -8,4 +8,10 @@ class MoviesController < ApplicationController
       redirect_to "/users/#{@user.id}/discover" 
     end
   end
+
+  def show 
+    @user = User.find(params[:user_id])
+    @movie = MovieFacade.create_spec_movie(params[:id])
+    @cast = MovieFacade.create_cast(params[:id])
+  end
 end
