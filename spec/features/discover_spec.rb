@@ -23,9 +23,9 @@ RSpec.describe 'Discover Dashboard' do
       expect(page).to have_button('Find Movies')
       expect(page).to_not have_link('The Shawshank Redemption')
 
-      fill_in 'Find Movies', with: "Shawshank"
+      fill_in 'q', with: "Shawshank"
       click_on("Find Movies")
-
+      
       expect(page).to have_link('The Shawshank Redemption')
     end
   end
