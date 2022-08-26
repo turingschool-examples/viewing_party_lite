@@ -11,7 +11,7 @@
   <p><%= f.label :start_time %></p>
   <p><%= f.datetime_select :start_time, ampm: true, minute_step: 15 %>
   <% @users.each do |user| %>
-    <p><%= f.label "#{user.name}" %><%= f.check_box "invited[#{user.id}]" %></p>
+    <p><div id="user-<%= user.name %>"><%= f.label "#{user.name}" %><%= f.check_box "invited[#{user.id}]" %></div></p>
   <% end %>
   <% f.hidden_field :host, value: @user.id %>
   <% f.hidden_field :movie, value: @movie.movie_id %>
