@@ -19,7 +19,7 @@ RSpec.describe User, type: :model do
       user1 = users[0]
       user2 = users[1]
       user3 = users[2]
-    
+
       expect(User.everyone_except(user1.id).to_a).to eq([user2, user3])
     end
   end
