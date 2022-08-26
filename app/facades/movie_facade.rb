@@ -12,4 +12,14 @@
       Movie.new(movie_data)
     end
   end
+
+    def self.create_spec_movie(id)
+      response = MovieService.get_spec_movie(id)
+      Movie.new(response)
+    end
+
+    def self.create_cast(id)
+      response = MovieService.get_cast(id)
+      Movie.new(response)
+    end
 end
