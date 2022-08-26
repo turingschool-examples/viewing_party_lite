@@ -17,6 +17,8 @@
         <%= f.check_box "#{user.id}" %>
       <% end %>
     <% end %><br>
-  <%= f.submit "Create Party" %>
+  <%= hidden_field_tag(:title, @movie.title)  %>
+  <%= hidden_field_tag(:poster, @movie.poster)  %>
 
+  <%= f.submit "Create Party" %>
 <% end %>

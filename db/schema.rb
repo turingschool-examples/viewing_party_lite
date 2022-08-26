@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2022_08_23_223040) do
     t.date "date"
     t.string "start_time"
     t.integer "movie_id"
+    t.string "title"
+    t.string "poster"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
