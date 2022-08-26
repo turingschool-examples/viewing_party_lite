@@ -10,9 +10,9 @@ class MovieService
   end
 
   def self.search(search_term)
-    #test in editor
     query = search_term.gsub(' ', '%20')
-    get_url('/search/movie', "&language=en-US&query=#{query}&page=1&include_adult=false")
+    response = Faraday.get("https://api.themoviedb.org/3/search/movie?api_key=#{ENV["TMDB_API_KEY"]}&language=en-US&query=#{query}&page=1&include_adult=false")
+    status_check(response)
   end
 
   def self.reviews(movie_id)
@@ -27,7 +27,7 @@ class MovieService
 
   def self.status_check(response)
     if response.status == 200
-     JSON.parse(response.body, symbolize_names: true)
+      JSON.parse(response.body, symbolize_names: true)
     else
       nil
     end

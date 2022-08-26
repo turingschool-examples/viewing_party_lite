@@ -34,7 +34,7 @@ RSpec.describe 'New Viewing Party' do
       it 'Checkboxes next to each existing user in the system', :vcr do
         movie = MovieFacade.movie_info(244786)
         visit "/users/#{@user1.id}/movies/#{movie.id}/viewing-party/new"
-        save_and_open_page 
+        
         within "#user-#{@user2.id}" do
           check "invited_user_#{@user2.id}"
           uncheck "invited_user_#{@user2.id}"

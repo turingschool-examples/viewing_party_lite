@@ -8,7 +8,7 @@ RSpec.describe 'MovieFacade' do
   end
 
   it 'returns a Movie based on its id', :vcr do 
-    movie = MovieFacade.movie_detail(244786)
+    movie = MovieFacade.movie_info(244786)
     expect(movie).to be_a Movie 
   end
 
