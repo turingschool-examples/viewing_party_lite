@@ -1,6 +1,9 @@
 <h2><%= @movie_details.title %></h1>
- 
- <p>Vote Average: <%= @movie_details.vote_average %></p>
- <p>Runtime: <%= @movie_details.formatted_runtime %></p>
- <p>Genres: <%= @movie_details.genre_list %></p>
- <p>Summary: <%= @movie_details.overview %></p>
+
+  <p>Vote Average: <%= @movie_details.vote_average %></p>
+  <p>Runtime: <%= @movie_details.formatted_runtime %></p>
+  <p>Genres: <%= @movie_details.genre_list %></p>
+
+ <div id='movie_summary'>
+  <p>Summary: <%= @movie_details.overview %></p>
+ </div>
