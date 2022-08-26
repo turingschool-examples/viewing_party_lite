@@ -60,7 +60,6 @@ group :test do
   gem 'simplecov'
   gem 'webmock'
   gem 'vcr'
-
 end
 
 

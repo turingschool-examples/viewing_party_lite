@@ -10,6 +10,7 @@ RSpec.describe MovieService do
     expect(data[0][:vote_average]).to eq(8.7)
   end
 
+
   it 'returns data for the movie search', :vcr do
     search = "Dune"
     result = MovieService.search_movie(search)
@@ -19,4 +20,5 @@ RSpec.describe MovieService do
     expect(result[0][:title]).to eq('Dune')
     expect(result[0][:vote_average]).to eq(7.9)
   end
+
 end

@@ -1,7 +1,8 @@
 class MoviesController < ApplicationController
-
+  before_action :find_user, only: [:index]
+  
   def index
-    @movies = Movie.all
+    @movies = MovieFacade.create_top_movies
   end
 
   def show
@@ -14,5 +15,6 @@ class MoviesController < ApplicationController
     @movie = MovieFacade.create_search_movie(params[:search])
     @user = User.find(params[:id])
     render "movies/search"
+
   end
 end
