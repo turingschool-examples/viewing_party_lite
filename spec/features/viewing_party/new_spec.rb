@@ -11,6 +11,7 @@ RSpec.describe 'viewing party new page' do
     expect(page).to have_field('Duration of Party (in minutes)', with: '142')
     expect(page).to have_field('When:')
     expect(page).to have_field('Start Time:')
+    expect(page).to have_button("Create Party")
 
   end
 end

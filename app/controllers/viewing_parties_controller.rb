@@ -4,4 +4,7 @@ class ViewingPartiesController < ApplicationController
     @movie = MovieFacade.find_movie_details(params[:movie_id])
   end
 
+  def create
+
+  end
 end
