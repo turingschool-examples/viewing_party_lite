@@ -13,7 +13,7 @@ RSpec.describe MovieFacade do
       expect(results[0].title).to eq("Fight Club")
     end
 
-    xit '#get_movie_details' do
+    it '#get_movie_details' do
       movie_details = MovieFacade.get_movie_details(505)
 
       expect(movie_details).to be_a(MovieDetails)
