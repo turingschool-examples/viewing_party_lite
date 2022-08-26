@@ -2,10 +2,10 @@
 
   <h1>Welcome to Viewing Party!</h1>
 
-  <%= button_to 'Create a New User', "/register", method: :get  %>
-
+  <%= button_to 'Create a New User', "/register", method: :get  %><br>
+  
   <% @users.each do |user| %>
-    <%= user.name %><br>
+    <%= link_to "#{user.email}'s Dashboard", "/users/#{user.id}" %><br>
   <% end %>
 
 </center>
