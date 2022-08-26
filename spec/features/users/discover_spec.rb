@@ -30,13 +30,14 @@ RSpec.describe 'DiscoverMoviesPage', type: :feature do
 
     visit "/users/#{user1.id}/discover"
 
+    fill_in 'Title Key Words', with: ''
+    click_button 'Search by Movie Title'
+    expect(current_path).to eq("/users/#{user1.id}/discover")
+    expect(page).to have_content("Error: Please enter a search term.")
+
     fill_in 'Title Key Words', with: 'god father'
     click_button 'Search by Movie Title'
 
     expect(current_path).to eq "/users/#{user1.id}/movies"
   end
 end
-
-# expect(page).to have_button 'Return to Discover Page'
-# click_button 'Return to Discover Page'
-# expect(current_path).to eq "/users/#{user1.id}/discover"

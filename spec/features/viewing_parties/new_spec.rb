@@ -80,6 +80,14 @@ RSpec.describe 'New Viewing Party' do
         fill_in 'Duration (in minutes):', with: '125'
         fill_in 'When:', with: '09/22/2022'
         fill_in 'Start Time:', with: '08:00pm'
+        click_button 'Create Viewing Party'
+
+        expect(current_path).to eq("/users/#{@user1.id}/movies/#{movie.id}/viewing-party/new")
+        expect(page).to have_content("Error: Can't have a party by yourself! Try inviting some of your fellow users.")
+
+        fill_in 'Duration (in minutes):', with: '125'
+        fill_in 'When:', with: '09/22/2022'
+        fill_in 'Start Time:', with: '08:00pm'
         check "invited_user_#{@user2.id}"
         click_button 'Create Viewing Party'
 
