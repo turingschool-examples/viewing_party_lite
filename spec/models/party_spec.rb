@@ -20,8 +20,10 @@ RSpec.describe Party, type: :model do
       @sunny = User.create!(name: 'Sunny', email: 'sm@g')
       @john = User.create!(name: 'John', email: 'jc@g')
 
-      @frozen = Party.create!(movie_id: 109445, movie_title: 'Frozen', start_time: '2022-12-25 06:30:00 UTC', duration: 90)
-      @moana = Party.create!(movie_id: 2277834, movie_title: 'Moana', start_time: '2022-12-31 12:00:00 UTC', duration: 120)
+      @frozen = Party.create!(movie_id: 109_445, movie_title: 'Frozen', start_time: '2022-12-25 06:30:00 UTC',
+                              duration: 90)
+      @moana = Party.create!(movie_id: 2_277_834, movie_title: 'Moana', start_time: '2022-12-31 12:00:00 UTC',
+                             duration: 120)
 
       @ef = PartyUser.create!(party: @frozen, user: @eli, host: true)
       @sf = PartyUser.create!(party: @frozen, user: @sunny, host: false)
