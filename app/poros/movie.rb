@@ -13,4 +13,3 @@ class Movie
     #   @genres = data[:genres].map{ |genre_hash| genre_hash[:name]} if data[:genres]
   end
 end
-
