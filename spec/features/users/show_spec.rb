@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'the User show page' do
   it 'shows the users name at the top of the page' do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com')
-    user2 = User.create!(name: 'Maury', email: 'maury@trashtv.com')
-    user3 = User.create!(name: 'Jenny', email: 'jenny@trashtv.com')
+    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: "password")
+    user2 = User.create!(name: 'Maury', email: 'maury@trashtv.com', password: "password")
+    user3 = User.create!(name: 'Jenny', email: 'jenny@trashtv.com', password: "password")
 
     visit user_path(user1)
 
@@ -12,7 +12,7 @@ RSpec.describe 'the User show page' do
   end
 
   it 'should have a button to discover movies' do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com')
+    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: "password")
 
     visit user_path(user1)
 

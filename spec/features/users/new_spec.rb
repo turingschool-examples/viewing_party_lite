@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'creating a new user' do
   it 'links to a form to create a new user' do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com')
-    user2 = User.create!(name: 'Maury', email: 'maury@trashtv.com')
-    user3 = User.create!(name: 'Jenny', email: 'jenny@trashtv.com')
+    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: "password")
+    user2 = User.create!(name: 'Maury', email: 'maury@trashtv.com', password: "password")
+    user3 = User.create!(name: 'Jenny', email: 'jenny@trashtv.com', password: "password")
 
     visit root_path
 
@@ -23,7 +23,7 @@ RSpec.describe 'creating a new user' do
   end
 
   it 'should check for uniqueness of email address and be case insensitive' do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com')
+    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: "password")
 
     visit root_path
 
