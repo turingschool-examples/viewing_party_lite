@@ -30,7 +30,6 @@ RSpec.describe 'viewing party new page' do
     click_button('Create Party')
     expect(current_path).to eq("/users/#{@user1.id}")
 
-    save_and_open_page
     hosted = @user1.is_host
     invited = @user1.is_invited
     expect(page).to have_content("You are hosting these parties:")
