@@ -12,5 +12,14 @@ class ViewingParty < ApplicationRecord
     .joins(:viewing_party_users)
     .select('users.*, viewing_party_users.host')
     .where('viewing_party_users.host = true')
+    .distinct 
+  end
+
+  def host_name 
+    find_host[0].name 
+  end
+
+  def host_id 
+    find_host[0].id
   end
 end
