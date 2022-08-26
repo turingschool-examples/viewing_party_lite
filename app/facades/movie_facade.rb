@@ -30,11 +30,9 @@ class MovieFacade
 
   end 
 
-  def self.cast(movie_id)
-      conn = Faraday.new(url: "https://api.themoviedb.org")
-      response2 = conn.get("/3/movie/#{movie_id}/credits?api_key=#{ENV['tmdb_api_key']}")
-      data2 = JSON.parse(response2.body, symbolize_names: true)
-      cast = Cast.new(data2)
+  def self.first_10_cast(movie_id)
+    data = MovieService.find_cast(movie_id)
+    data.first(10)
   end 
   
 end 
