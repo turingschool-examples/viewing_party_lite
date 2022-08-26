@@ -6,6 +6,9 @@ RSpec.describe 'viewing party new page' do
     @user2 = User.create!(name: 'John', email: 'john@gmail.com')
     @user3 = User.create!(name: 'Kris', email: 'kris@gmail.com')
 
+    party1 = Party.create!(date: Date.today, start_time: '20:00:00', movie_id: 278)
+
+    @user1.user_parties.create!(party_id: party1.id, host: false)
   end
 
   it "gives details about the viewing party", :vcr do
@@ -26,11 +29,14 @@ RSpec.describe 'viewing party new page' do
 
     click_button('Create Party')
     expect(current_path).to eq("/users/#{@user1.id}")
-    save_and_open_page
+
+
     hosted = @user1.is_host
+    invited = @user1.is_invited
     expect(page).to have_content("You are hosting these parties:")
     expect(page).to have_content(hosted.first.id)
     expect(page).to have_content("You have been invited to these parties:")
+    expect(page).to have_content(invited.first.id)
 
   end
 end
