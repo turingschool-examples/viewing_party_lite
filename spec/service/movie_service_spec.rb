@@ -21,9 +21,9 @@ RSpec.describe MovieService do
       expect(results).to be_a(Hash)
       expect(results[:results]).to be_a(Array)
       expect(data).to have_key :title
-      expect(data[:title]).to eq(String)
+      expect(data[:title]).to be_a(String)
       expect(data).to have_key :vote_average
-      expect(data[:vote_average]).to eq(Float)
+      expect(data[:vote_average]).to be_a(Float)
     end
 
     it 'movie_details' do
