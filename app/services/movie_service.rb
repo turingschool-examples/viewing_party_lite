@@ -22,7 +22,7 @@ class MovieService
   end
 
   def self.movie_details(movie_id)
-    response = conn.get("/3/movie/#{movie_id}")
+    response = conn.get("/3/movie/#{movie_id}?append_to_response=credits,reviews")
     parse_json(response)
   end
 

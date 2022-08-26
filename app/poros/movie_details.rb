@@ -7,7 +7,8 @@ class MovieDetails
               :runtime,
               :genres,
               :overview,
-              :poster
+              :poster,
+              :reviews
 
   def initialize(attributes)
     @movie_id = attributes[:id]
@@ -17,13 +18,19 @@ class MovieDetails
     @genres = attributes[:genres]
     @overview = attributes[:overview]
     @poster = attributes[:poster_path]
+    @credits = attributes[:credits][:cast][0..9] if attributes[:credits]
+    @reviews = attributes[:reviews][:results] if attributes[:reviews]
   end
 
   def genre_list
-    genres.map { |genre| genre[:name] } * ', '
+    @genres.map { |genre| genre[:name] } * ', '
   end
 
   def formatted_runtime
     "#{runtime / 60} hr #{runtime % 60} min"
+  end
+
+  def cast_members
+    @credits.map { |credit| "#{credit[:name]} as #{credit[:character]}" }
   end
 end

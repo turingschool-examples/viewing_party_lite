@@ -5,13 +5,13 @@
 <h3>Viewing Party Details</h3>
 
 <p>Movie Title: <%= @movie.title %></p>
-<%= form_with url: user_movie_parties_path(@user, @movie), method: :post, local: true do |f| %>
+<%= form_with url: user_movie_parties_path(@user, @movie.movie_id), method: :post, local: true, skip_enforcing_utf8: true do |f| %>
   <p><%= f.label :duration %></p>
   <p><%= f.number_field :duration, value: @movie.runtime %></p>
   <p><%= f.label :start_time %></p>
   <p><%= f.datetime_select :start_time, ampm: true, minute_step: 15 %>
   <% @users.each do |user| %>
-    <p><%= f.label "#{user.name}" %><%= f.check_box "#{user.name}" %></p>
+    <p><%= f.label "#{user.name}" %><%= f.check_box "invited[#{user.id}]" %></p>
   <% end %>
   <% f.hidden_field :host, value: @user.id %>
   <% f.hidden_field :movie, value: @movie.movie_id %>
