@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe MovieDetails do
   before :each do
-    @data = { title: 'Mermaid', vote_average: 6, runtime: 105, genres: [{:id=>80, :name=>"Crime"}, {:id=>18, :name=>"Drama"}],
+    @data = { title: 'Mermaid', vote_average: 6, runtime: 105, genres: [{ id: 80, name: 'Crime' }, { id: 18, name: 'Drama' }],
               overview: 'It mostly sucks' }
     @movie = MovieDetails.new(@data)
   end

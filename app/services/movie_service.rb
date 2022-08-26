@@ -26,8 +26,6 @@ class MovieService
     parse_data(response)
   end
 
-  private
-
   def self.conn
     conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
       faraday.params['api_key'] = ENV.fetch('tmdb_api_key', nil)

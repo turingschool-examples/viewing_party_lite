@@ -16,7 +16,7 @@ class MovieDetails
   end
 
   def genre_list
-    @genres.map { |genre| genre[:name] } * (', ')
+    @genres.map { |genre| genre[:name] } * ', '
   end
 
   def formatted_runtime
