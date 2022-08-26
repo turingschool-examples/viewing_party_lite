@@ -13,7 +13,6 @@
   <h3>Invite Other Users</p>
     <% @users.each do |user| %>
       <% if user.id.to_s != params[:user_id] %>
-      <% binding.pry %>
         <%= f.label "#{user.id}", user.name %>
         <%= f.check_box "#{user.id}" %>
       <% end %>

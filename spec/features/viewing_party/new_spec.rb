@@ -19,6 +19,8 @@ RSpec.describe 'viewing party new page' do
 
   it "lets you create a party", :vcr do
     visit "/users/#{@user1.id}/movies/278/viewing-party/new"
+    fill_in 'When:', with: '09/08/2022'
+    fill_in 'Start Time:', with: '20:00:00'
 
     check('John')
 

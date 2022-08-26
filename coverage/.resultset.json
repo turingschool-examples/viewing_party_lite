@@ -44,6 +44,17 @@
           null,
           1,
           1,
+          1,
+          11,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
           null,
           null
         ]
@@ -181,22 +192,21 @@
           null
         ]
       },
+      "/Users/coryb/Turing/3_Mod/projects/viewing_party_lite/app/models/party.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/coryb/Turing/3_Mod/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
           0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/coryb/Turing/3_Mod/projects/viewing_party_lite/app/models/party.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          null,
           0,
           0,
           0
@@ -316,6 +326,6 @@
         }
       }
     },
-    "timestamp": 1661485237
+    "timestamp": 1661488520
   }
 }
