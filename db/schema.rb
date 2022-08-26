@@ -16,7 +16,8 @@ ActiveRecord::Schema.define(version: 2022_08_23_223040) do
   enable_extension "plpgsql"
 
   create_table "parties", force: :cascade do |t|
-    t.datetime "event_start"
+    t.date "date"
+    t.string "start_time"
     t.integer "movie_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

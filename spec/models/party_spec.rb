@@ -7,7 +7,8 @@ RSpec.describe Party, :type => :model do
 
   end
   describe 'validations' do
-    it { should validate_presence_of(:event_start) }
+    it { should validate_presence_of(:date) }
+    it { should validate_presence_of(:start_time) }
     it { should validate_presence_of(:movie_id) }
   end
 end

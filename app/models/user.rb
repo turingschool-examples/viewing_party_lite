@@ -12,4 +12,12 @@ class User < ApplicationRecord
     end
     emails
   end
+
+  def is_host
+    user_parties.where("host = true")
+  end
+
+  def is_invited
+    user_parties.where("host = false")
+  end
 end
