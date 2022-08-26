@@ -10,17 +10,12 @@ class MovieService
   end
 
   def self.top_rated
-    get_url('3/movie/top_rated')[:results]
+    get_url('/3/movie/top_rated')[:results]
   end 
 
-  # def self.search_for_movies(keyword)
-  #   conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
-  #     faraday.params[:query] = keyword
-  #   end 
-  #   response = conn.get("/3/search/movie?api_key=#{ENV['tmdb_api_key']}")
-  #   data = JSON.parse(response.body, symbolize_names: true)
-  #   data[:results]
-  # end 
+  def self.search_for_movies(keyword)
+    get_url("/3/search/movie", keyword)[:results]
+  end 
 
   # def self.find_by_id(movie_id)
   #   conn = Faraday.new(url: "https://api.themoviedb.org")

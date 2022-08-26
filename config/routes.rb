@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/users/:id/discover', to: 'users#discover'
 
   resources :users, only: [:create, :show] do 
-    resources :movies, controller: :user_movies
+    post '/movies', to: 'user_movies#index'
+    get '/movies', to: 'user_movies#index'
   end
 end

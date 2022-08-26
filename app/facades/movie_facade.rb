@@ -8,12 +8,13 @@ class MovieFacade
     
   end
 
-  def self.search_for_movies(keyword)
+  def self.movie_search(keyword)
     data = MovieService.search_for_movies(keyword)
-    data.map do |movie|
-      Movie.new(movie)
+    unless data.nil?
+      data.map do |movie|
+        Movie.new(movie)
+      end
     end 
-
   end 
 
   def self.movie_id(movie_id)

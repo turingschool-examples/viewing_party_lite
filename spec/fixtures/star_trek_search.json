@@ -1,0 +1,28 @@
+{
+    "page": 1,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/wygUDDRNpeKUnkekRGeLCZM93tA.jpg",
+            "genre_ids": [
+                878,
+                28,
+                12,
+                53
+            ],
+            "id": 199,
+            "original_language": "en",
+            "original_title": "Star Trek: First Contact",
+            "overview": "The Borg, a relentless race of cyborgs, are on a direct course for Earth. Violating orders to stay away from the battle, Captain Picard and the crew of the newly-commissioned USS Enterprise E pursue the Borg back in time to prevent the invaders from changing Federation history and assimilating the galaxy.",
+            "popularity": 16.347,
+            "poster_path": "/vrC1lkTktFQ4AqBfqf4PXoDDLcw.jpg",
+            "release_date": "1996-11-22",
+            "title": "Star Trek: First Contact",
+            "video": false,
+            "vote_average": 7.3,
+            "vote_count": 1428
+        }
+    ],
+    "total_pages": 1,
+    "total_results": 1
+}
