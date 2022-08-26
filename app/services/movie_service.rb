@@ -24,7 +24,6 @@ class MovieService
   def self.movie_details(movie_id)
     response = conn.get("/3/movie/#{movie_id}")
     parse_data(response)
-    
   end
 
   private
