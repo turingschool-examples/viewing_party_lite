@@ -6,6 +6,24 @@ class ViewingPartiesController < ApplicationController
   end
 
   def create
-    require "pry"; binding.pry
+    viewing_party = ViewingParty.create!(
+      poster_path: params[:poster_path],
+      movie_name: params[:movie_name],
+      movie_id: params[:movie_id].to_i,
+      host_id: params[:host_id].to_i,
+      duration: params[:duration].to_i,
+      eventdate: Date.parse(params[:eventdate]),
+      starttime: Time.parse(params[:starttime])
+    )
+
+    UserViewingParty.create!( user_id: params[:user_id].to_i, viewing_party_id: viewing_party.id )
+
+    if params[:attendee_ids]
+      params[:attendee_ids].each do |attendee_id|
+        UserViewingParty.create!( user_id: attendee_id.to_i, viewing_party_id: viewing_party.id )
+      end
+    end
+
+    redirect_to user_path(params[:user_id])
   end
 end

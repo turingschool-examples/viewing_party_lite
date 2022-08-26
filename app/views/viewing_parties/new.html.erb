@@ -5,6 +5,8 @@
 <%= form_with url: user_movie_viewing_parties_path(@host_user, @movie.movie_id), method: :post, local: true do |f| %>
   <%= f.hidden_field :host_id, value: @host_user.id %>
   <%= f.hidden_field :movie_id, value: @movie.movie_id %>
+  <%= f.hidden_field :movie_name, value: @movie.title %>
+  <%= f.hidden_field :poster_path, value: @movie.poster_path %>
 
   <br/>
   <br/>
@@ -32,7 +34,7 @@
 <br/>
 
   <% @attendees.each do |attendee| %>
-    <%= check_box_tag 'attendees[]', attendee.id %>
+    <%= check_box_tag "attendees_ids[#{attendee.id}]", attendee.id, false, :name => "attendee_ids[]" %>
     <%= "#{attendee.name} (#{attendee.email})"%>
   <% end %>
 
