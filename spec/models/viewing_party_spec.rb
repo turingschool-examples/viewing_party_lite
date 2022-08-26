@@ -30,7 +30,7 @@ RSpec.describe ViewingParty, type: :model do
       # user 3 hosting 
       ViewingPartyUser.create!(user_id: user3.id, viewing_party_id: viewing_party.id, host: true) 
 
-      expect(viewing_party.find_host).to eq(user3.name)
+      expect(viewing_party.find_host).to eq(user3)
     end
   end
 end
