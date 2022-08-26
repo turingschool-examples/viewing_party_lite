@@ -10,3 +10,12 @@
 <p>Genre: <%= @movie_details.genres %></p>
 <p>Summary: <%= @movie_details.overview %></p>
 <br>
+<div id="review_section">
+<h3><%= @movie_reviews.count %> Reviews</h3>
+<% @movie_reviews.each_with_index do |review, index| %>
+  <div id="reviews-<%= index %>">
+    <p>Author: <%= review.author  %></p>
+    <p><%= review.content %></p><br>
+  </div>
+<% end %>
+</div>
