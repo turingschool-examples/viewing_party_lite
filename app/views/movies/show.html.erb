@@ -1,1 +1,2 @@
 <%= "#{@movie.title}" %>
+<p><%= link_to "New Viewing Party For #{@movie.title}", "/users/#{@user.id}/movies/#{@movie.id}/event/new" %></p>

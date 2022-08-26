@@ -1,4 +1,4 @@
-<%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get, local: true %>
+<%= button_to "Discover Page", user_discover_path(@user.id), method: :get, local: true %>
 
   <% if params[:q] == "top_rated" %>
     <h2>Top Rated Movies</h2>
@@ -9,9 +9,10 @@
   <% else %>
 
   <h2>Movie Results for: <%= "#{@query}" %></h2>
+  <b><%= @search.size %> Total Results</b>
 
-  <% @search.each do |m| %>
-    <div id=" <%= m.id %>">
+  <% @search.each_with_index do |m, idx| %>
+    <div id="result-<%= idx %>">
       <p><%= link_to m.title, "/users/#{@user.id}/movies/#{m.id}" %> - Rated <%= m.vote_average %></p>
     </div>
   <% end %>
