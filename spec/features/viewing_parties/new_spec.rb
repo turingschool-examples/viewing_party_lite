@@ -59,6 +59,15 @@ RSpec.describe 'New Viewing Party' do
         movie = MovieFacade.movie_info(244786)
         visit "/users/#{@user1.id}/movies/#{movie.id}/viewing-party/new"
 
+        fill_in "Duration (in minutes):", with: "107"
+        fill_in "When:", with: " "
+        fill_in "Start Time:", with: " "
+        check "invited_user_#{@user2.id}"
+        click_button "Create Viewing Party"
+         
+        expect(current_path).to eq("/users/#{@user1.id}/movies/#{movie.id}/viewing-party/new")
+        expect(page).to have_content("Error: Date is not a valid date, Start time is not a valid time")
+
         fill_in "Duration (in minutes):", with: "55"
         fill_in "When:", with: "09/22/2022"
         fill_in "Start Time:", with: "08:00pm"

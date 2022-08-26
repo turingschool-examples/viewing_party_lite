@@ -18,7 +18,7 @@ class ViewingPartiesController < ApplicationController
       end
       redirect_to "/users/#{params[:user_id]}"
     else
-      flash[:alert] = "Error: #{error_message(user.errors)}"
+      flash[:alert] = "Error: #{error_message(viewing_party.errors)}"
       redirect_to "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/viewing-party/new"
     end
   end
