@@ -5,12 +5,39 @@
 <h3>Viewing Parties</h3>
 <h2>You are hosting these parties:</h2>
 
-<% @user.is_host.each do |party| %>
-  <%= party.id %><br>
+<% @user.is_host.each do |user_party| %>
+  <p><%= link_to "#{user_party.party.title}", "/users/#{@user.id}/movies/#{user_party.party.movie_id}" %></p>
+  <img src="https://image.tmdb.org/t/p/w200<%= user_party.party.poster %>">
+  <p>Party Id: <%= user_party.party.id %></p>
+  <p>Date: <%= user_party.party.date %></p>
+  <p>Start Time: <%= user_party.party.start_time %></p>
+  <p>Invitees: </p>
+  <% user_party.party.users.each do |user|%>
+    <% if user.name == @user.name %>
+      <p>Host: <b><%= user.name %></b></p>
+    <% else %>
+      <p><%= user.name %></p>
+    <% end %>
+  <% end %>
+  <br>
 <% end %>
 
 <h2>You have been invited to these parties:</h2>
 
-<% @user.is_invited.each do |party| %>
-  <%= party.id %><br>
+<% @user.is_invited.each do |user_party| %>
+  <p><%= link_to "#{user_party.party.title}", "/users/#{@user.id}/movies/#{user_party.party.movie_id}" %></p>
+  <img src="https://image.tmdb.org/t/p/w200<%= user_party.party.poster %>">
+  <p>Party Id: <%= user_party.party.id %></p>
+  <p>Date: <%= user_party.party.date %></p>
+  <p>Start Time: <%= user_party.party.start_time %></p>
+  <p>Host: <%= user_party.the_host %></p>
+  <p>Invitees: </p>
+  <% user_party.party.users.each do |user|%>
+    <% if user.name == @user.name %>
+      <p><b><%= user.name %></b></p>
+    <% else %>
+      <p><%= user.name %></p>
+    <% end %>
+  <% end %>
+  <br>
 <% end %>
