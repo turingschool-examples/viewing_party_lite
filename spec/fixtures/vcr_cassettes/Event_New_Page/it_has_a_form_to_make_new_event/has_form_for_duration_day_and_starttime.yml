@@ -8968,4 +8968,1600 @@ http_interactions:
         States of America"}],"release_date":"2011-05-05","revenue":65090821,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"It''s
         a thin line between love and friendship.","title":"Something Borrowed","video":false,"vote_average":6.3,"vote_count":900}'
   recorded_at: Fri, 26 Aug 2022 16:19:24 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/49022?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - bf96989718684a7676c538b164bdeeb310082ded
+      X-Memc-Age:
+      - '278'
+      X-Memc-Expires:
+      - '15588'
+      Date:
+      - Fri, 26 Aug 2022 13:51:16 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"0d7ba665d6e8dd0ac1a2f42bc0872b45"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 ce4b35590464ed34415a13badd946eba.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - iIRIj0FYM4wnGaYXBS8Zv-fiQAN_dO2qV0YxlCLaCqNUrlYZGhE9jg==
+      Age:
+      - '9936'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/oD9PdTC1AUvsE2j2bUn8tusDVcO.jpg","belongs_to_collection":null,"budget":35000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":10749,"name":"Romance"}],"homepage":"http://somethingborrowedmovie.warnerbros.com/","id":49022,"imdb_id":"tt0491152","original_language":"en","original_title":"Something
+        Borrowed","overview":"Though Rachel is a successful attorney and a loyal,
+        generous friend, she is still single. After one drink too many at her 30th-birthday
+        celebration, Rachel unexpectedly falls into bed with her longtime crush, Dex
+        -- who happens to be engaged to her best friend, Darcy. Ramifications of the
+        liaison threaten to destroy the women''s lifelong friendship, while Ethan,
+        Rachel''s confidant, harbors a potentially explosive secret of his own.","popularity":17.696,"poster_path":"/y5wh6wanlF0mli2wEKtSJq6Q1sw.jpg","production_companies":[{"id":1088,"logo_path":"/9WOE5AQUXbOtLU6GTwfjS8OMF0v.png","name":"Alcon
+        Entertainment","origin_country":"US"},{"id":38010,"logo_path":null,"name":"Wild
+        Ocean Films","origin_country":""},{"id":38011,"logo_path":null,"name":"2S
+        Films","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2011-05-05","revenue":65090821,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"It''s
+        a thin line between love and friendship.","title":"Something Borrowed","video":false,"vote_average":6.3,"vote_count":900}'
+  recorded_at: Fri, 26 Aug 2022 16:36:52 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/49022?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - bf96989718684a7676c538b164bdeeb310082ded
+      X-Memc-Age:
+      - '278'
+      X-Memc-Expires:
+      - '15588'
+      Date:
+      - Fri, 26 Aug 2022 13:51:16 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"0d7ba665d6e8dd0ac1a2f42bc0872b45"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 c29390732f5bc4b2c7832623ae6e492e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - VhkDjItY4QDwC0Y_qPupSeMFKeRQ6u89FEBrJqFXa8fUIE82VqehLg==
+      Age:
+      - '9936'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/oD9PdTC1AUvsE2j2bUn8tusDVcO.jpg","belongs_to_collection":null,"budget":35000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":10749,"name":"Romance"}],"homepage":"http://somethingborrowedmovie.warnerbros.com/","id":49022,"imdb_id":"tt0491152","original_language":"en","original_title":"Something
+        Borrowed","overview":"Though Rachel is a successful attorney and a loyal,
+        generous friend, she is still single. After one drink too many at her 30th-birthday
+        celebration, Rachel unexpectedly falls into bed with her longtime crush, Dex
+        -- who happens to be engaged to her best friend, Darcy. Ramifications of the
+        liaison threaten to destroy the women''s lifelong friendship, while Ethan,
+        Rachel''s confidant, harbors a potentially explosive secret of his own.","popularity":17.696,"poster_path":"/y5wh6wanlF0mli2wEKtSJq6Q1sw.jpg","production_companies":[{"id":1088,"logo_path":"/9WOE5AQUXbOtLU6GTwfjS8OMF0v.png","name":"Alcon
+        Entertainment","origin_country":"US"},{"id":38010,"logo_path":null,"name":"Wild
+        Ocean Films","origin_country":""},{"id":38011,"logo_path":null,"name":"2S
+        Films","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2011-05-05","revenue":65090821,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"It''s
+        a thin line between love and friendship.","title":"Something Borrowed","video":false,"vote_average":6.3,"vote_count":900}'
+  recorded_at: Fri, 26 Aug 2022 16:36:52 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/49022?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - bf96989718684a7676c538b164bdeeb310082ded
+      X-Memc-Age:
+      - '278'
+      X-Memc-Expires:
+      - '15588'
+      Date:
+      - Fri, 26 Aug 2022 13:51:16 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"0d7ba665d6e8dd0ac1a2f42bc0872b45"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 cddde15c11afac53ac9fe7978dcfecd6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - ZCFKZXRsvEtBkKeolDr1DtwZrjlB1reLjJHpm9tfrzPY4-9yq_ESIg==
+      Age:
+      - '9937'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/oD9PdTC1AUvsE2j2bUn8tusDVcO.jpg","belongs_to_collection":null,"budget":35000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":10749,"name":"Romance"}],"homepage":"http://somethingborrowedmovie.warnerbros.com/","id":49022,"imdb_id":"tt0491152","original_language":"en","original_title":"Something
+        Borrowed","overview":"Though Rachel is a successful attorney and a loyal,
+        generous friend, she is still single. After one drink too many at her 30th-birthday
+        celebration, Rachel unexpectedly falls into bed with her longtime crush, Dex
+        -- who happens to be engaged to her best friend, Darcy. Ramifications of the
+        liaison threaten to destroy the women''s lifelong friendship, while Ethan,
+        Rachel''s confidant, harbors a potentially explosive secret of his own.","popularity":17.696,"poster_path":"/y5wh6wanlF0mli2wEKtSJq6Q1sw.jpg","production_companies":[{"id":1088,"logo_path":"/9WOE5AQUXbOtLU6GTwfjS8OMF0v.png","name":"Alcon
+        Entertainment","origin_country":"US"},{"id":38010,"logo_path":null,"name":"Wild
+        Ocean Films","origin_country":""},{"id":38011,"logo_path":null,"name":"2S
+        Films","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2011-05-05","revenue":65090821,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"It''s
+        a thin line between love and friendship.","title":"Something Borrowed","video":false,"vote_average":6.3,"vote_count":900}'
+  recorded_at: Fri, 26 Aug 2022 16:36:53 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/49022?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - bf96989718684a7676c538b164bdeeb310082ded
+      X-Memc-Age:
+      - '278'
+      X-Memc-Expires:
+      - '15588'
+      Date:
+      - Fri, 26 Aug 2022 13:51:16 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"0d7ba665d6e8dd0ac1a2f42bc0872b45"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 48a6ccbb0ddb052ab512a3422295bd38.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - Pm8OaWY2YPSJhR-aUBRrvRDh3_GUT8JL9Q6P20Wz013V9JRFd2zIzg==
+      Age:
+      - '9965'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/oD9PdTC1AUvsE2j2bUn8tusDVcO.jpg","belongs_to_collection":null,"budget":35000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":10749,"name":"Romance"}],"homepage":"http://somethingborrowedmovie.warnerbros.com/","id":49022,"imdb_id":"tt0491152","original_language":"en","original_title":"Something
+        Borrowed","overview":"Though Rachel is a successful attorney and a loyal,
+        generous friend, she is still single. After one drink too many at her 30th-birthday
+        celebration, Rachel unexpectedly falls into bed with her longtime crush, Dex
+        -- who happens to be engaged to her best friend, Darcy. Ramifications of the
+        liaison threaten to destroy the women''s lifelong friendship, while Ethan,
+        Rachel''s confidant, harbors a potentially explosive secret of his own.","popularity":17.696,"poster_path":"/y5wh6wanlF0mli2wEKtSJq6Q1sw.jpg","production_companies":[{"id":1088,"logo_path":"/9WOE5AQUXbOtLU6GTwfjS8OMF0v.png","name":"Alcon
+        Entertainment","origin_country":"US"},{"id":38010,"logo_path":null,"name":"Wild
+        Ocean Films","origin_country":""},{"id":38011,"logo_path":null,"name":"2S
+        Films","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2011-05-05","revenue":65090821,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"It''s
+        a thin line between love and friendship.","title":"Something Borrowed","video":false,"vote_average":6.3,"vote_count":900}'
+  recorded_at: Fri, 26 Aug 2022 16:37:21 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/49022?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - bf96989718684a7676c538b164bdeeb310082ded
+      X-Memc-Age:
+      - '278'
+      X-Memc-Expires:
+      - '15588'
+      Date:
+      - Fri, 26 Aug 2022 13:51:16 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"0d7ba665d6e8dd0ac1a2f42bc0872b45"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 c29390732f5bc4b2c7832623ae6e492e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - unrFxbJbYmVA4aBPWoPDklbrBct-reLBNtKxH81mGfO72xxc0srTnA==
+      Age:
+      - '9965'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/oD9PdTC1AUvsE2j2bUn8tusDVcO.jpg","belongs_to_collection":null,"budget":35000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":10749,"name":"Romance"}],"homepage":"http://somethingborrowedmovie.warnerbros.com/","id":49022,"imdb_id":"tt0491152","original_language":"en","original_title":"Something
+        Borrowed","overview":"Though Rachel is a successful attorney and a loyal,
+        generous friend, she is still single. After one drink too many at her 30th-birthday
+        celebration, Rachel unexpectedly falls into bed with her longtime crush, Dex
+        -- who happens to be engaged to her best friend, Darcy. Ramifications of the
+        liaison threaten to destroy the women''s lifelong friendship, while Ethan,
+        Rachel''s confidant, harbors a potentially explosive secret of his own.","popularity":17.696,"poster_path":"/y5wh6wanlF0mli2wEKtSJq6Q1sw.jpg","production_companies":[{"id":1088,"logo_path":"/9WOE5AQUXbOtLU6GTwfjS8OMF0v.png","name":"Alcon
+        Entertainment","origin_country":"US"},{"id":38010,"logo_path":null,"name":"Wild
+        Ocean Films","origin_country":""},{"id":38011,"logo_path":null,"name":"2S
+        Films","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2011-05-05","revenue":65090821,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"It''s
+        a thin line between love and friendship.","title":"Something Borrowed","video":false,"vote_average":6.3,"vote_count":900}'
+  recorded_at: Fri, 26 Aug 2022 16:37:21 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/49022?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - bf96989718684a7676c538b164bdeeb310082ded
+      X-Memc-Age:
+      - '278'
+      X-Memc-Expires:
+      - '15588'
+      Date:
+      - Fri, 26 Aug 2022 13:51:16 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"0d7ba665d6e8dd0ac1a2f42bc0872b45"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 dc50b0effd72a7b2c19bcb0909cfae82.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - kdYxGHSP6L0uolamzcas-KnI_lmm1lUZcSUM7t03IitwW5HsojX0DA==
+      Age:
+      - '9965'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/oD9PdTC1AUvsE2j2bUn8tusDVcO.jpg","belongs_to_collection":null,"budget":35000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":10749,"name":"Romance"}],"homepage":"http://somethingborrowedmovie.warnerbros.com/","id":49022,"imdb_id":"tt0491152","original_language":"en","original_title":"Something
+        Borrowed","overview":"Though Rachel is a successful attorney and a loyal,
+        generous friend, she is still single. After one drink too many at her 30th-birthday
+        celebration, Rachel unexpectedly falls into bed with her longtime crush, Dex
+        -- who happens to be engaged to her best friend, Darcy. Ramifications of the
+        liaison threaten to destroy the women''s lifelong friendship, while Ethan,
+        Rachel''s confidant, harbors a potentially explosive secret of his own.","popularity":17.696,"poster_path":"/y5wh6wanlF0mli2wEKtSJq6Q1sw.jpg","production_companies":[{"id":1088,"logo_path":"/9WOE5AQUXbOtLU6GTwfjS8OMF0v.png","name":"Alcon
+        Entertainment","origin_country":"US"},{"id":38010,"logo_path":null,"name":"Wild
+        Ocean Films","origin_country":""},{"id":38011,"logo_path":null,"name":"2S
+        Films","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2011-05-05","revenue":65090821,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"It''s
+        a thin line between love and friendship.","title":"Something Borrowed","video":false,"vote_average":6.3,"vote_count":900}'
+  recorded_at: Fri, 26 Aug 2022 16:37:21 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/49022?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - bf96989718684a7676c538b164bdeeb310082ded
+      X-Memc-Age:
+      - '278'
+      X-Memc-Expires:
+      - '15588'
+      Date:
+      - Fri, 26 Aug 2022 13:51:16 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"0d7ba665d6e8dd0ac1a2f42bc0872b45"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 a47d45d25cc354507eae77aba89ca252.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 8VHfYtWJXryHRVWXWCLDDYdshtqbKMORazRfPqo0NLaNvoaBQe2RVA==
+      Age:
+      - '10616'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/oD9PdTC1AUvsE2j2bUn8tusDVcO.jpg","belongs_to_collection":null,"budget":35000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":10749,"name":"Romance"}],"homepage":"http://somethingborrowedmovie.warnerbros.com/","id":49022,"imdb_id":"tt0491152","original_language":"en","original_title":"Something
+        Borrowed","overview":"Though Rachel is a successful attorney and a loyal,
+        generous friend, she is still single. After one drink too many at her 30th-birthday
+        celebration, Rachel unexpectedly falls into bed with her longtime crush, Dex
+        -- who happens to be engaged to her best friend, Darcy. Ramifications of the
+        liaison threaten to destroy the women''s lifelong friendship, while Ethan,
+        Rachel''s confidant, harbors a potentially explosive secret of his own.","popularity":17.696,"poster_path":"/y5wh6wanlF0mli2wEKtSJq6Q1sw.jpg","production_companies":[{"id":1088,"logo_path":"/9WOE5AQUXbOtLU6GTwfjS8OMF0v.png","name":"Alcon
+        Entertainment","origin_country":"US"},{"id":38010,"logo_path":null,"name":"Wild
+        Ocean Films","origin_country":""},{"id":38011,"logo_path":null,"name":"2S
+        Films","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2011-05-05","revenue":65090821,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"It''s
+        a thin line between love and friendship.","title":"Something Borrowed","video":false,"vote_average":6.3,"vote_count":900}'
+  recorded_at: Fri, 26 Aug 2022 16:48:12 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/49022?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - bf96989718684a7676c538b164bdeeb310082ded
+      X-Memc-Age:
+      - '278'
+      X-Memc-Expires:
+      - '15588'
+      Date:
+      - Fri, 26 Aug 2022 13:51:16 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"0d7ba665d6e8dd0ac1a2f42bc0872b45"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 a44b9db7a2d103360945ab52619e5016.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - RgikMagvXceZt-kn09A1N1AqXjGX6pxw7R-4yPylsNoSkyKBYOX-fg==
+      Age:
+      - '10616'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/oD9PdTC1AUvsE2j2bUn8tusDVcO.jpg","belongs_to_collection":null,"budget":35000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":10749,"name":"Romance"}],"homepage":"http://somethingborrowedmovie.warnerbros.com/","id":49022,"imdb_id":"tt0491152","original_language":"en","original_title":"Something
+        Borrowed","overview":"Though Rachel is a successful attorney and a loyal,
+        generous friend, she is still single. After one drink too many at her 30th-birthday
+        celebration, Rachel unexpectedly falls into bed with her longtime crush, Dex
+        -- who happens to be engaged to her best friend, Darcy. Ramifications of the
+        liaison threaten to destroy the women''s lifelong friendship, while Ethan,
+        Rachel''s confidant, harbors a potentially explosive secret of his own.","popularity":17.696,"poster_path":"/y5wh6wanlF0mli2wEKtSJq6Q1sw.jpg","production_companies":[{"id":1088,"logo_path":"/9WOE5AQUXbOtLU6GTwfjS8OMF0v.png","name":"Alcon
+        Entertainment","origin_country":"US"},{"id":38010,"logo_path":null,"name":"Wild
+        Ocean Films","origin_country":""},{"id":38011,"logo_path":null,"name":"2S
+        Films","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2011-05-05","revenue":65090821,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"It''s
+        a thin line between love and friendship.","title":"Something Borrowed","video":false,"vote_average":6.3,"vote_count":900}'
+  recorded_at: Fri, 26 Aug 2022 16:48:12 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/49022?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - bf96989718684a7676c538b164bdeeb310082ded
+      X-Memc-Age:
+      - '278'
+      X-Memc-Expires:
+      - '15588'
+      Date:
+      - Fri, 26 Aug 2022 13:51:16 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"0d7ba665d6e8dd0ac1a2f42bc0872b45"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 b2e880ac67c1fba390623b9fc04bd63a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - yahRanDrINltq0dzRm6enDK_LbJq-FZNCpWwF759Qi4PonQmRfcCmw==
+      Age:
+      - '10616'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/oD9PdTC1AUvsE2j2bUn8tusDVcO.jpg","belongs_to_collection":null,"budget":35000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":10749,"name":"Romance"}],"homepage":"http://somethingborrowedmovie.warnerbros.com/","id":49022,"imdb_id":"tt0491152","original_language":"en","original_title":"Something
+        Borrowed","overview":"Though Rachel is a successful attorney and a loyal,
+        generous friend, she is still single. After one drink too many at her 30th-birthday
+        celebration, Rachel unexpectedly falls into bed with her longtime crush, Dex
+        -- who happens to be engaged to her best friend, Darcy. Ramifications of the
+        liaison threaten to destroy the women''s lifelong friendship, while Ethan,
+        Rachel''s confidant, harbors a potentially explosive secret of his own.","popularity":17.696,"poster_path":"/y5wh6wanlF0mli2wEKtSJq6Q1sw.jpg","production_companies":[{"id":1088,"logo_path":"/9WOE5AQUXbOtLU6GTwfjS8OMF0v.png","name":"Alcon
+        Entertainment","origin_country":"US"},{"id":38010,"logo_path":null,"name":"Wild
+        Ocean Films","origin_country":""},{"id":38011,"logo_path":null,"name":"2S
+        Films","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2011-05-05","revenue":65090821,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"It''s
+        a thin line between love and friendship.","title":"Something Borrowed","video":false,"vote_average":6.3,"vote_count":900}'
+  recorded_at: Fri, 26 Aug 2022 16:48:12 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/49022?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - bf96989718684a7676c538b164bdeeb310082ded
+      X-Memc-Age:
+      - '278'
+      X-Memc-Expires:
+      - '15588'
+      Date:
+      - Fri, 26 Aug 2022 13:51:16 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"0d7ba665d6e8dd0ac1a2f42bc0872b45"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 e1b5abb53c407f0a057625c46693461c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - rc2EOe-fUK34axhT3YCJUTf1K1j47M0se0cd4D804XlqGjhg-9QgGg==
+      Age:
+      - '10677'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/oD9PdTC1AUvsE2j2bUn8tusDVcO.jpg","belongs_to_collection":null,"budget":35000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":10749,"name":"Romance"}],"homepage":"http://somethingborrowedmovie.warnerbros.com/","id":49022,"imdb_id":"tt0491152","original_language":"en","original_title":"Something
+        Borrowed","overview":"Though Rachel is a successful attorney and a loyal,
+        generous friend, she is still single. After one drink too many at her 30th-birthday
+        celebration, Rachel unexpectedly falls into bed with her longtime crush, Dex
+        -- who happens to be engaged to her best friend, Darcy. Ramifications of the
+        liaison threaten to destroy the women''s lifelong friendship, while Ethan,
+        Rachel''s confidant, harbors a potentially explosive secret of his own.","popularity":17.696,"poster_path":"/y5wh6wanlF0mli2wEKtSJq6Q1sw.jpg","production_companies":[{"id":1088,"logo_path":"/9WOE5AQUXbOtLU6GTwfjS8OMF0v.png","name":"Alcon
+        Entertainment","origin_country":"US"},{"id":38010,"logo_path":null,"name":"Wild
+        Ocean Films","origin_country":""},{"id":38011,"logo_path":null,"name":"2S
+        Films","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2011-05-05","revenue":65090821,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"It''s
+        a thin line between love and friendship.","title":"Something Borrowed","video":false,"vote_average":6.3,"vote_count":900}'
+  recorded_at: Fri, 26 Aug 2022 16:49:13 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/49022?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - bf96989718684a7676c538b164bdeeb310082ded
+      X-Memc-Age:
+      - '278'
+      X-Memc-Expires:
+      - '15588'
+      Date:
+      - Fri, 26 Aug 2022 13:51:16 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"0d7ba665d6e8dd0ac1a2f42bc0872b45"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 7d885ba806a1846198f8b666005bec92.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - w5YjsuLeWhs0paoIqVslxGOiNI_qmXyy_Zo73w4-BJ8B5YQ9dSsSSw==
+      Age:
+      - '10677'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/oD9PdTC1AUvsE2j2bUn8tusDVcO.jpg","belongs_to_collection":null,"budget":35000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":10749,"name":"Romance"}],"homepage":"http://somethingborrowedmovie.warnerbros.com/","id":49022,"imdb_id":"tt0491152","original_language":"en","original_title":"Something
+        Borrowed","overview":"Though Rachel is a successful attorney and a loyal,
+        generous friend, she is still single. After one drink too many at her 30th-birthday
+        celebration, Rachel unexpectedly falls into bed with her longtime crush, Dex
+        -- who happens to be engaged to her best friend, Darcy. Ramifications of the
+        liaison threaten to destroy the women''s lifelong friendship, while Ethan,
+        Rachel''s confidant, harbors a potentially explosive secret of his own.","popularity":17.696,"poster_path":"/y5wh6wanlF0mli2wEKtSJq6Q1sw.jpg","production_companies":[{"id":1088,"logo_path":"/9WOE5AQUXbOtLU6GTwfjS8OMF0v.png","name":"Alcon
+        Entertainment","origin_country":"US"},{"id":38010,"logo_path":null,"name":"Wild
+        Ocean Films","origin_country":""},{"id":38011,"logo_path":null,"name":"2S
+        Films","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2011-05-05","revenue":65090821,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"It''s
+        a thin line between love and friendship.","title":"Something Borrowed","video":false,"vote_average":6.3,"vote_count":900}'
+  recorded_at: Fri, 26 Aug 2022 16:49:13 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/49022?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - bf96989718684a7676c538b164bdeeb310082ded
+      X-Memc-Age:
+      - '278'
+      X-Memc-Expires:
+      - '15588'
+      Date:
+      - Fri, 26 Aug 2022 13:51:16 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"0d7ba665d6e8dd0ac1a2f42bc0872b45"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 ec4d04f2befcd6652834fd368a8b671e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - Y-gvEDst_yu1Nz0b8hMcPlIP9sklHZsJoIIUDcmPtkuZwhxwvO84OQ==
+      Age:
+      - '10677'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/oD9PdTC1AUvsE2j2bUn8tusDVcO.jpg","belongs_to_collection":null,"budget":35000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":10749,"name":"Romance"}],"homepage":"http://somethingborrowedmovie.warnerbros.com/","id":49022,"imdb_id":"tt0491152","original_language":"en","original_title":"Something
+        Borrowed","overview":"Though Rachel is a successful attorney and a loyal,
+        generous friend, she is still single. After one drink too many at her 30th-birthday
+        celebration, Rachel unexpectedly falls into bed with her longtime crush, Dex
+        -- who happens to be engaged to her best friend, Darcy. Ramifications of the
+        liaison threaten to destroy the women''s lifelong friendship, while Ethan,
+        Rachel''s confidant, harbors a potentially explosive secret of his own.","popularity":17.696,"poster_path":"/y5wh6wanlF0mli2wEKtSJq6Q1sw.jpg","production_companies":[{"id":1088,"logo_path":"/9WOE5AQUXbOtLU6GTwfjS8OMF0v.png","name":"Alcon
+        Entertainment","origin_country":"US"},{"id":38010,"logo_path":null,"name":"Wild
+        Ocean Films","origin_country":""},{"id":38011,"logo_path":null,"name":"2S
+        Films","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2011-05-05","revenue":65090821,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"It''s
+        a thin line between love and friendship.","title":"Something Borrowed","video":false,"vote_average":6.3,"vote_count":900}'
+  recorded_at: Fri, 26 Aug 2022 16:49:13 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/49022?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - bf96989718684a7676c538b164bdeeb310082ded
+      X-Memc-Age:
+      - '278'
+      X-Memc-Expires:
+      - '15588'
+      Date:
+      - Fri, 26 Aug 2022 13:51:16 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"0d7ba665d6e8dd0ac1a2f42bc0872b45"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 23241b9c368643949e3bb1a1ba4e97c2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - vnIXkyI7r8hlcm-jLWKd2yXtj2K9FGFZ8j-rMxmwd6LtTz8i1Bl83Q==
+      Age:
+      - '10703'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/oD9PdTC1AUvsE2j2bUn8tusDVcO.jpg","belongs_to_collection":null,"budget":35000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":10749,"name":"Romance"}],"homepage":"http://somethingborrowedmovie.warnerbros.com/","id":49022,"imdb_id":"tt0491152","original_language":"en","original_title":"Something
+        Borrowed","overview":"Though Rachel is a successful attorney and a loyal,
+        generous friend, she is still single. After one drink too many at her 30th-birthday
+        celebration, Rachel unexpectedly falls into bed with her longtime crush, Dex
+        -- who happens to be engaged to her best friend, Darcy. Ramifications of the
+        liaison threaten to destroy the women''s lifelong friendship, while Ethan,
+        Rachel''s confidant, harbors a potentially explosive secret of his own.","popularity":17.696,"poster_path":"/y5wh6wanlF0mli2wEKtSJq6Q1sw.jpg","production_companies":[{"id":1088,"logo_path":"/9WOE5AQUXbOtLU6GTwfjS8OMF0v.png","name":"Alcon
+        Entertainment","origin_country":"US"},{"id":38010,"logo_path":null,"name":"Wild
+        Ocean Films","origin_country":""},{"id":38011,"logo_path":null,"name":"2S
+        Films","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2011-05-05","revenue":65090821,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"It''s
+        a thin line between love and friendship.","title":"Something Borrowed","video":false,"vote_average":6.3,"vote_count":900}'
+  recorded_at: Fri, 26 Aug 2022 16:49:39 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/49022?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - bf96989718684a7676c538b164bdeeb310082ded
+      X-Memc-Age:
+      - '278'
+      X-Memc-Expires:
+      - '15588'
+      Date:
+      - Fri, 26 Aug 2022 13:51:16 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"0d7ba665d6e8dd0ac1a2f42bc0872b45"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 d29afc70fc2fdadee440493854714224.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - TJJpA7iU8B6PLzMLdhOgvv8Iddemy6pnmCcpnHtZkWwyKL13jqQDNA==
+      Age:
+      - '10703'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/oD9PdTC1AUvsE2j2bUn8tusDVcO.jpg","belongs_to_collection":null,"budget":35000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":10749,"name":"Romance"}],"homepage":"http://somethingborrowedmovie.warnerbros.com/","id":49022,"imdb_id":"tt0491152","original_language":"en","original_title":"Something
+        Borrowed","overview":"Though Rachel is a successful attorney and a loyal,
+        generous friend, she is still single. After one drink too many at her 30th-birthday
+        celebration, Rachel unexpectedly falls into bed with her longtime crush, Dex
+        -- who happens to be engaged to her best friend, Darcy. Ramifications of the
+        liaison threaten to destroy the women''s lifelong friendship, while Ethan,
+        Rachel''s confidant, harbors a potentially explosive secret of his own.","popularity":17.696,"poster_path":"/y5wh6wanlF0mli2wEKtSJq6Q1sw.jpg","production_companies":[{"id":1088,"logo_path":"/9WOE5AQUXbOtLU6GTwfjS8OMF0v.png","name":"Alcon
+        Entertainment","origin_country":"US"},{"id":38010,"logo_path":null,"name":"Wild
+        Ocean Films","origin_country":""},{"id":38011,"logo_path":null,"name":"2S
+        Films","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2011-05-05","revenue":65090821,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"It''s
+        a thin line between love and friendship.","title":"Something Borrowed","video":false,"vote_average":6.3,"vote_count":900}'
+  recorded_at: Fri, 26 Aug 2022 16:49:39 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/49022?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - bf96989718684a7676c538b164bdeeb310082ded
+      X-Memc-Age:
+      - '278'
+      X-Memc-Expires:
+      - '15588'
+      Date:
+      - Fri, 26 Aug 2022 13:51:16 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"0d7ba665d6e8dd0ac1a2f42bc0872b45"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 e4ca364cc5959e3bf697ae231c5b56b0.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 4okIS8eEFqNxlI1NEKwauZ77CENV1xacX9RR9yZvPe6U0GlP0trR9w==
+      Age:
+      - '10703'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/oD9PdTC1AUvsE2j2bUn8tusDVcO.jpg","belongs_to_collection":null,"budget":35000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":10749,"name":"Romance"}],"homepage":"http://somethingborrowedmovie.warnerbros.com/","id":49022,"imdb_id":"tt0491152","original_language":"en","original_title":"Something
+        Borrowed","overview":"Though Rachel is a successful attorney and a loyal,
+        generous friend, she is still single. After one drink too many at her 30th-birthday
+        celebration, Rachel unexpectedly falls into bed with her longtime crush, Dex
+        -- who happens to be engaged to her best friend, Darcy. Ramifications of the
+        liaison threaten to destroy the women''s lifelong friendship, while Ethan,
+        Rachel''s confidant, harbors a potentially explosive secret of his own.","popularity":17.696,"poster_path":"/y5wh6wanlF0mli2wEKtSJq6Q1sw.jpg","production_companies":[{"id":1088,"logo_path":"/9WOE5AQUXbOtLU6GTwfjS8OMF0v.png","name":"Alcon
+        Entertainment","origin_country":"US"},{"id":38010,"logo_path":null,"name":"Wild
+        Ocean Films","origin_country":""},{"id":38011,"logo_path":null,"name":"2S
+        Films","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2011-05-05","revenue":65090821,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"It''s
+        a thin line between love and friendship.","title":"Something Borrowed","video":false,"vote_average":6.3,"vote_count":900}'
+  recorded_at: Fri, 26 Aug 2022 16:49:39 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/49022?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - bf96989718684a7676c538b164bdeeb310082ded
+      X-Memc-Age:
+      - '278'
+      X-Memc-Expires:
+      - '15588'
+      Date:
+      - Fri, 26 Aug 2022 13:51:16 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"0d7ba665d6e8dd0ac1a2f42bc0872b45"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 e1b5abb53c407f0a057625c46693461c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - gLv_zPlYnfSQd3pPT3uD6xfQs411KWRk3Al3_Ko019hr92yKA4tN6w==
+      Age:
+      - '10737'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/oD9PdTC1AUvsE2j2bUn8tusDVcO.jpg","belongs_to_collection":null,"budget":35000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":10749,"name":"Romance"}],"homepage":"http://somethingborrowedmovie.warnerbros.com/","id":49022,"imdb_id":"tt0491152","original_language":"en","original_title":"Something
+        Borrowed","overview":"Though Rachel is a successful attorney and a loyal,
+        generous friend, she is still single. After one drink too many at her 30th-birthday
+        celebration, Rachel unexpectedly falls into bed with her longtime crush, Dex
+        -- who happens to be engaged to her best friend, Darcy. Ramifications of the
+        liaison threaten to destroy the women''s lifelong friendship, while Ethan,
+        Rachel''s confidant, harbors a potentially explosive secret of his own.","popularity":17.696,"poster_path":"/y5wh6wanlF0mli2wEKtSJq6Q1sw.jpg","production_companies":[{"id":1088,"logo_path":"/9WOE5AQUXbOtLU6GTwfjS8OMF0v.png","name":"Alcon
+        Entertainment","origin_country":"US"},{"id":38010,"logo_path":null,"name":"Wild
+        Ocean Films","origin_country":""},{"id":38011,"logo_path":null,"name":"2S
+        Films","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2011-05-05","revenue":65090821,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"It''s
+        a thin line between love and friendship.","title":"Something Borrowed","video":false,"vote_average":6.3,"vote_count":900}'
+  recorded_at: Fri, 26 Aug 2022 16:50:13 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/49022?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - bf96989718684a7676c538b164bdeeb310082ded
+      X-Memc-Age:
+      - '278'
+      X-Memc-Expires:
+      - '15588'
+      Date:
+      - Fri, 26 Aug 2022 13:51:16 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"0d7ba665d6e8dd0ac1a2f42bc0872b45"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 ed8294655bb258e13bfb027c25483dda.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - _p5zkm5KC63Ba-qRU3iUOhEA-EFC1CydpcLj1PXLDERJE1h6ZMCT_w==
+      Age:
+      - '10737'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/oD9PdTC1AUvsE2j2bUn8tusDVcO.jpg","belongs_to_collection":null,"budget":35000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":10749,"name":"Romance"}],"homepage":"http://somethingborrowedmovie.warnerbros.com/","id":49022,"imdb_id":"tt0491152","original_language":"en","original_title":"Something
+        Borrowed","overview":"Though Rachel is a successful attorney and a loyal,
+        generous friend, she is still single. After one drink too many at her 30th-birthday
+        celebration, Rachel unexpectedly falls into bed with her longtime crush, Dex
+        -- who happens to be engaged to her best friend, Darcy. Ramifications of the
+        liaison threaten to destroy the women''s lifelong friendship, while Ethan,
+        Rachel''s confidant, harbors a potentially explosive secret of his own.","popularity":17.696,"poster_path":"/y5wh6wanlF0mli2wEKtSJq6Q1sw.jpg","production_companies":[{"id":1088,"logo_path":"/9WOE5AQUXbOtLU6GTwfjS8OMF0v.png","name":"Alcon
+        Entertainment","origin_country":"US"},{"id":38010,"logo_path":null,"name":"Wild
+        Ocean Films","origin_country":""},{"id":38011,"logo_path":null,"name":"2S
+        Films","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2011-05-05","revenue":65090821,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"It''s
+        a thin line between love and friendship.","title":"Something Borrowed","video":false,"vote_average":6.3,"vote_count":900}'
+  recorded_at: Fri, 26 Aug 2022 16:50:13 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/49022?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - bf96989718684a7676c538b164bdeeb310082ded
+      X-Memc-Age:
+      - '278'
+      X-Memc-Expires:
+      - '15588'
+      Date:
+      - Fri, 26 Aug 2022 13:51:16 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"0d7ba665d6e8dd0ac1a2f42bc0872b45"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 48a6ccbb0ddb052ab512a3422295bd38.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - MigqG6OeyVlcqPWI04OD2m60XFjX-lG06-karptgbpFiIJrQ4oJkKw==
+      Age:
+      - '10737'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/oD9PdTC1AUvsE2j2bUn8tusDVcO.jpg","belongs_to_collection":null,"budget":35000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":10749,"name":"Romance"}],"homepage":"http://somethingborrowedmovie.warnerbros.com/","id":49022,"imdb_id":"tt0491152","original_language":"en","original_title":"Something
+        Borrowed","overview":"Though Rachel is a successful attorney and a loyal,
+        generous friend, she is still single. After one drink too many at her 30th-birthday
+        celebration, Rachel unexpectedly falls into bed with her longtime crush, Dex
+        -- who happens to be engaged to her best friend, Darcy. Ramifications of the
+        liaison threaten to destroy the women''s lifelong friendship, while Ethan,
+        Rachel''s confidant, harbors a potentially explosive secret of his own.","popularity":17.696,"poster_path":"/y5wh6wanlF0mli2wEKtSJq6Q1sw.jpg","production_companies":[{"id":1088,"logo_path":"/9WOE5AQUXbOtLU6GTwfjS8OMF0v.png","name":"Alcon
+        Entertainment","origin_country":"US"},{"id":38010,"logo_path":null,"name":"Wild
+        Ocean Films","origin_country":""},{"id":38011,"logo_path":null,"name":"2S
+        Films","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2011-05-05","revenue":65090821,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"It''s
+        a thin line between love and friendship.","title":"Something Borrowed","video":false,"vote_average":6.3,"vote_count":900}'
+  recorded_at: Fri, 26 Aug 2022 16:50:13 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/49022?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - bf96989718684a7676c538b164bdeeb310082ded
+      X-Memc-Age:
+      - '278'
+      X-Memc-Expires:
+      - '15588'
+      Date:
+      - Fri, 26 Aug 2022 13:51:16 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"0d7ba665d6e8dd0ac1a2f42bc0872b45"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 48a6ccbb0ddb052ab512a3422295bd38.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - g6_qRdpfB81RW2I9mO7-pgXUWMtojLbo3bDgGwyhr3IuQDitltPXwA==
+      Age:
+      - '12122'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/oD9PdTC1AUvsE2j2bUn8tusDVcO.jpg","belongs_to_collection":null,"budget":35000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":10749,"name":"Romance"}],"homepage":"http://somethingborrowedmovie.warnerbros.com/","id":49022,"imdb_id":"tt0491152","original_language":"en","original_title":"Something
+        Borrowed","overview":"Though Rachel is a successful attorney and a loyal,
+        generous friend, she is still single. After one drink too many at her 30th-birthday
+        celebration, Rachel unexpectedly falls into bed with her longtime crush, Dex
+        -- who happens to be engaged to her best friend, Darcy. Ramifications of the
+        liaison threaten to destroy the women''s lifelong friendship, while Ethan,
+        Rachel''s confidant, harbors a potentially explosive secret of his own.","popularity":17.696,"poster_path":"/y5wh6wanlF0mli2wEKtSJq6Q1sw.jpg","production_companies":[{"id":1088,"logo_path":"/9WOE5AQUXbOtLU6GTwfjS8OMF0v.png","name":"Alcon
+        Entertainment","origin_country":"US"},{"id":38010,"logo_path":null,"name":"Wild
+        Ocean Films","origin_country":""},{"id":38011,"logo_path":null,"name":"2S
+        Films","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2011-05-05","revenue":65090821,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"It''s
+        a thin line between love and friendship.","title":"Something Borrowed","video":false,"vote_average":6.3,"vote_count":900}'
+  recorded_at: Fri, 26 Aug 2022 17:13:18 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/49022?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - bf96989718684a7676c538b164bdeeb310082ded
+      X-Memc-Age:
+      - '278'
+      X-Memc-Expires:
+      - '15588'
+      Date:
+      - Fri, 26 Aug 2022 13:51:16 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"0d7ba665d6e8dd0ac1a2f42bc0872b45"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 e158a5cd644f102abc630a9f56b59d78.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - ITzb5KcRMKft6SL4kc_z507QKNnnnixwr7TWQglxIRYAhii9aL2tiA==
+      Age:
+      - '12122'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/oD9PdTC1AUvsE2j2bUn8tusDVcO.jpg","belongs_to_collection":null,"budget":35000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":10749,"name":"Romance"}],"homepage":"http://somethingborrowedmovie.warnerbros.com/","id":49022,"imdb_id":"tt0491152","original_language":"en","original_title":"Something
+        Borrowed","overview":"Though Rachel is a successful attorney and a loyal,
+        generous friend, she is still single. After one drink too many at her 30th-birthday
+        celebration, Rachel unexpectedly falls into bed with her longtime crush, Dex
+        -- who happens to be engaged to her best friend, Darcy. Ramifications of the
+        liaison threaten to destroy the women''s lifelong friendship, while Ethan,
+        Rachel''s confidant, harbors a potentially explosive secret of his own.","popularity":17.696,"poster_path":"/y5wh6wanlF0mli2wEKtSJq6Q1sw.jpg","production_companies":[{"id":1088,"logo_path":"/9WOE5AQUXbOtLU6GTwfjS8OMF0v.png","name":"Alcon
+        Entertainment","origin_country":"US"},{"id":38010,"logo_path":null,"name":"Wild
+        Ocean Films","origin_country":""},{"id":38011,"logo_path":null,"name":"2S
+        Films","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2011-05-05","revenue":65090821,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"It''s
+        a thin line between love and friendship.","title":"Something Borrowed","video":false,"vote_average":6.3,"vote_count":900}'
+  recorded_at: Fri, 26 Aug 2022 17:13:18 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/49022?api_key=api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - bf96989718684a7676c538b164bdeeb310082ded
+      X-Memc-Age:
+      - '278'
+      X-Memc-Expires:
+      - '15588'
+      Date:
+      - Fri, 26 Aug 2022 13:51:16 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"0d7ba665d6e8dd0ac1a2f42bc0872b45"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 c55bfc9d9a95cdee8e23989feddaa4b2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - DIyTqOaHmvnwNG2xeU3wJxSv2WqWpBln9a3C_zw7p3WKOj9VbP_h0g==
+      Age:
+      - '12123'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/oD9PdTC1AUvsE2j2bUn8tusDVcO.jpg","belongs_to_collection":null,"budget":35000000,"genres":[{"id":35,"name":"Comedy"},{"id":18,"name":"Drama"},{"id":10749,"name":"Romance"}],"homepage":"http://somethingborrowedmovie.warnerbros.com/","id":49022,"imdb_id":"tt0491152","original_language":"en","original_title":"Something
+        Borrowed","overview":"Though Rachel is a successful attorney and a loyal,
+        generous friend, she is still single. After one drink too many at her 30th-birthday
+        celebration, Rachel unexpectedly falls into bed with her longtime crush, Dex
+        -- who happens to be engaged to her best friend, Darcy. Ramifications of the
+        liaison threaten to destroy the women''s lifelong friendship, while Ethan,
+        Rachel''s confidant, harbors a potentially explosive secret of his own.","popularity":17.696,"poster_path":"/y5wh6wanlF0mli2wEKtSJq6Q1sw.jpg","production_companies":[{"id":1088,"logo_path":"/9WOE5AQUXbOtLU6GTwfjS8OMF0v.png","name":"Alcon
+        Entertainment","origin_country":"US"},{"id":38010,"logo_path":null,"name":"Wild
+        Ocean Films","origin_country":""},{"id":38011,"logo_path":null,"name":"2S
+        Films","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2011-05-05","revenue":65090821,"runtime":112,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"It''s
+        a thin line between love and friendship.","title":"Something Borrowed","video":false,"vote_average":6.3,"vote_count":900}'
+  recorded_at: Fri, 26 Aug 2022 17:13:19 GMT
 recorded_with: VCR 6.1.0

@@ -20,11 +20,13 @@ RSpec.describe 'Event New Page' do
       expect(page).to have_button('Create Event')
     end
 
-    it 'can make a new event' do
+    it 'can make a new event', :vcr do
       visit "/users/#{@user1.id}/movies/#{@movie.id}"
 
       click_on "New Viewing Party For #{@movie.title}"
 
+      save_and_open_page
+      
       click_on 'Create Event'
 
       expect(page).to have_current_path(user_path(@user1.id))
