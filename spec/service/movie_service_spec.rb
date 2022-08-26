@@ -26,4 +26,10 @@ RSpec.describe MovieService do
 
       expect(movie_details).to be_a(Hash)
     end
+
+    it 'movie_reviews' do
+      results = MovieService.get_movie_reviews(500)
+
+      expect(results).to be_a(Hash)
+    end
 end
