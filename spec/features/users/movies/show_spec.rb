@@ -99,12 +99,12 @@ RSpec.describe "movie detail page", type: :feature do
     visit "/users/#{user1.id}/movies/278"
 
     within "#reviews" do
-      expect(page.all(".review")[0]).to have_content("Author: elshaarawy")
+      expect(page.all(".review")[0]).to have_content("elshaarawy")
       expect(page.all(".review")[0]).to have_content("very good movie 9.5/10")
     end
 
     within "#reviews" do
-      expect(page.all(".review")[1]).to have_content("Author: John Chard")
+      expect(page.all(".review")[1]).to have_content("John Chard")
       expect(page.all(".review")[1]).to have_content("Some birds aren't meant to be caged")
     end
   end

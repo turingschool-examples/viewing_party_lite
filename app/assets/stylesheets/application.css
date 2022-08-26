@@ -67,3 +67,34 @@
 #attendees-table tr:nth-child(even){
   background-color: #dbe4e1;
 }
+
+#reviews-table {
+  border-collapse: collapse;
+  border: 1px solid black;
+  width: 100%;
+}
+
+#reviews-table th{
+  text-align: center;
+  background-color: rgb(221, 217, 217);
+  padding: 5px;
+  border: 1px solid black;
+}
+
+#reviews-table tr:nth-child(even){
+  background-color: #dbe4e1;
+}
+
+.author-cell {
+  font-weight: bold;
+  padding: 5px;
+  text-align: center;
+  border-right: 1px solid black;
+}
+
+.review-cell {
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  margin: 5px;
+}

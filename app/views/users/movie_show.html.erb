@@ -47,14 +47,24 @@
 </div>
 
 <div id="reviews">
-  <% @movie.reviews.map do |author, review|%>
-    <div class="review">
-      <p>
-        Author: <%=author%>
-      </p>
-      <p>
-        Review: <%=review%>
-      </p>
-    </div>
-  <% end %>
+  <table id="reviews-table">
+    <tr>
+      <th> Author </th>
+      <th> Review </th>
+    </tr>
+
+    <% @movie.reviews.map do |author, review|%>
+      <div class="review">
+        <tr>
+          <td class="author-cell">
+            <%=author%>
+          </td>
+          <td class="review-cell">
+            <%=review%>
+          </td>
+        </tr>
+      </div>
+    <% end %>
+
+  </table>
 </div>
