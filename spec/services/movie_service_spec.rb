@@ -13,4 +13,17 @@ RSpec.describe 'MovieService' do
     expect(top_movie[:title]).to be_a String
     expect(top_movie[:vote_average]).to be_a Float
   end
+
+  it 'retrieves movies matching the search', :vcr do 
+    parsed_json = MovieService.search('days of summer')
+
+    expect(parsed_json).to be_a Hash 
+    expect(parsed_json[:results]).to be_a Array
+
+    first_result = parsed_json[:results][0]
+    expect(first_result).to include(:id, :title, :vote_average)
+    expect(first_result[:id]).to be_a Integer 
+    expect(first_result[:title]).to be_a String
+    expect(first_result[:vote_average]).to be_a Float
+  end
 end
