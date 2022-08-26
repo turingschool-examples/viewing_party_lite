@@ -4,47 +4,57 @@
 
 <h3>Viewing Parties</h3>
 
-<% @user.viewing_party_users.each do |vpu|%>
-  <div id="viewing-party-<%=vpu.id%>">
-    <%= image_tag "https://image.tmdb.org/t/p/w500#{vpu.viewing_party.movie_api_id[1]}", class: "poster-image" %>
+<div id="viewing-party-container">
 
-    <p>
-      <%= link_to "#{vpu.viewing_party.movie_title}", "/users/#{@user.id}/movies/#{vpu.viewing_party.movie_api_id[0]}"%>
-    </p>
+  <% @user.viewing_party_users.each do |vpu|%>
+    <div class="viewing-party-card">
+      <div id="viewing-party-<%=vpu.id%>">
+        <%= image_tag "https://image.tmdb.org/t/p/w500#{vpu.viewing_party.movie_api_id[1]}", class: "poster-image" %>
 
-    <p>
-      Date: <%=vpu.viewing_party.start_time.strftime("%B %d, %Y")%>
-    </p>
+        <p>
+          <%= link_to "#{vpu.viewing_party.movie_title}", "/users/#{@user.id}/movies/#{vpu.viewing_party.movie_api_id[0]}"%>
+        </p>
 
-    <p>
-      Start Time: <%=vpu.viewing_party.start_time.strftime("%l:%M %p")%>
-    </p>
+        <p>
+          Date: <%=vpu.viewing_party.start_time.strftime("%B %d, %Y")%>
+        </p>
 
-    <p>
-      <%=vpu.status.titleize%>
-    </p>
+        <p>
+          Start Time: <%=vpu.viewing_party.start_time.strftime("%l:%M %p")%>
+        </p>
 
-    <p>
-      Host: <%=vpu.viewing_party.host_name%>
-    </p>
+        <p>
+          <%=vpu.status.titleize%>
+        </p>
 
-    <p>
-      Attendees:
-    </p>
-    
-    <div id="viewing-party-<%=vpu.id%>-attendees">
-      <% vpu.viewing_party.users.each do |attendee| %>
-        <% if "#{attendee.first_name} #{attendee.last_name}" == "#{@user.first_name} #{@user.last_name}" %>
-          <p>
-            <b><%= "#{attendee.first_name} #{attendee.last_name}"%></b>
-          </p>
-        <% else %>
-          <p>
-            <%= "#{attendee.first_name} #{attendee.last_name}" %>
-          </p>
-        <% end %>
-      <% end %>
+        <p>
+          Host: <%=vpu.viewing_party.host_name%>
+        </p>
+        
+        <div id="viewing-party-<%=vpu.id%>-attendees">
+          <table id="attendees-table">
+            <tr>
+              <th>Attendees</th>
+            </tr>
+            <% vpu.viewing_party.users.each do |attendee| %>
+              <% if "#{attendee.first_name} #{attendee.last_name}" == "#{@user.first_name} #{@user.last_name}" %>
+                <tr>
+                  <td>
+                  <b><%= "#{attendee.first_name} #{attendee.last_name}"%></b>
+                  </td>
+                </tr>
+              <% else %>
+                <tr>
+                  <td>
+                  <%= "#{attendee.first_name} #{attendee.last_name}" %>
+                  </td>
+                </tr>
+              <% end %>
+            <% end %>
+          </table>
+        </div>
+      </div>
     </div>
+  <% end %>
 
-  </div>
-<% end %>
+</div>

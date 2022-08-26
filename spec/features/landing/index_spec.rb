@@ -41,7 +41,7 @@ RSpec.describe 'landing page', type: :feature do
     
     visit '/'
 
-    within "#page-header" do
+    within "#home-link-container" do
       expect(page).to have_content("Home")
       click_on("Home")
     end
@@ -50,7 +50,7 @@ RSpec.describe 'landing page', type: :feature do
 
     click_on "david-fake@test.com's Dashboard"
 
-    within "#page-header" do
+    within "#home-link-container" do
       expect(page).to have_content("Home")
       click_on("Home")
     end
