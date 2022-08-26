@@ -18,7 +18,6 @@ RSpec.describe 'User Dashboard' do
     PartyUser.create!(party: @moana, user: @eli, host: false)
 
     visit "/users/#{@eli.id}"
-    save_and_open_page
   end
 
   it 'has heading' do
