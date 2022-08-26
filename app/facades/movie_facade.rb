@@ -12,4 +12,9 @@ class MovieFacade
       Movie.new(movie_data)
     end
   end
+
+  def self.movie_details(movie_id)
+    data = MovieService.movie_details(movie_id)
+    MovieDetails.new(data)
+  end
 end

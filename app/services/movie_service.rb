@@ -21,7 +21,11 @@ class MovieService
     top_40 = json_1[:results] + json_2[:results]
   end
 
-  private
+  def self.movie_details(movie_id)
+    response = conn.get("/3/movie/#{movie_id}")
+    parse_data(response)
+  end
+
   def self.conn
     conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
       faraday.params['api_key'] = ENV.fetch('tmdb_api_key', nil)

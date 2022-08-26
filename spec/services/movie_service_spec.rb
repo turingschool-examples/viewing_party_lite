@@ -25,5 +25,12 @@ describe MovieService do
       expect(movie[:id]).to be_a(Integer).or be_a(Float)
       expect(movie[:title]).to be_a(String)
     end
+    it 'movie details service', vcr: 'movie_details' do
+      # pass in a movie id. 550 is Fight Club
+      movie_details = MovieService.movie_details(550)
+      expect(movie_details).to be_a Hash
+      expect(movie_details).to include :title, :vote_average, :runtime, :genres, :overview
+      expect(movie_details[:title]).to eq('Fight Club')
+    end
   end
 end
