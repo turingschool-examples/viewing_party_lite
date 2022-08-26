@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'New Viewing Party Page', type: :feature do
-   it 'has name of the movie title rendered above a new viewing party form' do
+   xit 'has name of the movie title rendered above a new viewing party form' do
       user1 = User.create!(name: 'Nancy Drew', email: 'nancydrew@gmail.com')
       user2 = User.create!(name: 'Jenny', email: 'jennyfromtheblock@email.com')
       user3 = User.create!(name: 'Sherlock Holmes', email: '221bbaker@email.com')

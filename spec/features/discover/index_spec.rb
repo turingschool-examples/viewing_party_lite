@@ -20,7 +20,7 @@ RSpec.describe 'discover movies page', type: :feature do
          expect(page).to have_button('Discover Top Rated Movies')
       end
 
-      it 'click discover top rated movies button to see results' do
+      it 'click discover top rated movies button to see results', :vcr do
          user_1 = User.create!(name: 'Cindy Lou', email: 'cidlou@gmail.com')
 
          visit "/users/#{user_1.id}/discover"
@@ -46,7 +46,7 @@ RSpec.describe 'discover movies page', type: :feature do
          expect(page).to have_button('Search')
       end
 
-      it 'keyword results' do
+      it 'keyword results', :vcr do
          user = User.create!(name: "Nancy", email: "nancydrew@email.com")
       
          visit "/users/#{user.id}/discover"

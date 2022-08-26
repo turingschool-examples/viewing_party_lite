@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe MovieService do
   describe '#class methods'
-    it 'top_rated' do
+    it 'top_rated', :vcr do
       ms = MovieService.top_rated
       md = ms[:results].first
 
@@ -14,7 +14,7 @@ RSpec.describe MovieService do
       expect(md[:vote_average]).to be_a(Float)
     end
 
-    it "movies_by_keyword" do
+    it "movies_by_keyword", :vcr do
       results = MovieService.movies_by_keyword("Fight Club")
       data = results[:results].first
 
@@ -26,7 +26,7 @@ RSpec.describe MovieService do
       expect(data[:vote_average]).to be_a(Float)
     end
 
-    it 'movie_details' do
+    it 'movie_details', :vcr do
       movie_details = MovieService.movie_details(505)
 
       expect(movie_details).to be_a(Hash)
@@ -42,7 +42,7 @@ RSpec.describe MovieService do
       expect(movie_details[:overview]).to be_a(String)
     end
 
-    it 'movie_reviews' do
+    it 'movie_reviews', :vcr do
       results = MovieService.get_movie_reviews(500)
       data = results[:results].first
 
