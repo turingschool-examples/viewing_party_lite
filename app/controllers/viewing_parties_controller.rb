@@ -12,11 +12,15 @@ class ViewingPartiesController < ApplicationController
         invited << k
       end
     end
-    a = Party.create!(date: params[:date], start_time: params[:start_time], movie_id: params[:movie_id])
-    binding.pry
-    invited.each do |id|
 
+    party = Party.create!(date: params[:date], start_time: params[:start_time], movie_id: params[:movie_id])
+    test = UserParty.create!(user_id: params[:user_id], party_id: party.id, host: true)
+
+    invited.each do |id|
+      UserParty.create!(user_id: id.to_i, party_id: party.id, host: false)
     end
 
+    redirect_to "/users/#{params[:user_id]}"
   end
+
 end

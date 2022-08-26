@@ -49,11 +49,15 @@
           1,
           null,
           null,
+          null,
           1,
+          1,
+          null,
           1,
           1,
           null,
           null,
+          1,
           null,
           null,
           null
@@ -204,22 +208,47 @@
           null
         ]
       },
+      "/Users/coryb/Turing/3_Mod/projects/viewing_party_lite/app/models/user_party.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/coryb/Turing/3_Mod/projects/viewing_party_lite/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
       "/Users/coryb/Turing/3_Mod/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
           0,
           0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/coryb/Turing/3_Mod/projects/viewing_party_lite/app/models/user_party.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          null,
           0,
           0
         ],
@@ -274,37 +303,6 @@
         "branches": {
         }
       },
-      "/Users/coryb/Turing/3_Mod/projects/viewing_party_lite/app/controllers/users_controller.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/Users/coryb/Turing/3_Mod/projects/viewing_party_lite/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
@@ -326,6 +324,6 @@
         }
       }
     },
-    "timestamp": 1661488520
+    "timestamp": 1661489625
   }
 }
