@@ -12,6 +12,9 @@ class ViewingPartiesController < ApplicationController
     if viewing_party.duration < movie.runtime
       flash[:alert] = "Error: Duration of the viewing party must be longer than the movie's runtime."
       redirect_to "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/viewing-party/new"
+    elsif params[:invited_user] == nil
+      flash[:alert] = "Error: Can't have a party by yourself! Try inviting some of your fellow users."
+      redirect_to "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/viewing-party/new"
     elsif viewing_party.save
       ViewingPartyUser.create!(user_id: params[:user_id], viewing_party_id: viewing_party.id, host: true)
       params[:invited_user].each do |user|
