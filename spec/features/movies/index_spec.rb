@@ -10,6 +10,16 @@ RSpec.describe "Movie Index Page", :vcr do
         expect(current_path).to eq("/users/#{user1.id}/movies")
         expect(page).to have_content("The Shawshank Redemption")
     end
+    it 'has a search function that displays matching movies' do
+        @user1 = User.create!(name: "Micheal Jordan", email: "user1@gmail.com")
+
+        visit "/users/#{@user1.id}/discover"
+        expect(page).to have_button("Search")
+
+        fill_in :search, with: "Impossible Things"
+        click_on "Search"
+        expect(page).to have_content("Impossible Things")
+    end
     it 'has a button to return to discover page' do
         user1 = User.create!(name: "Micheal Jordan", email: "user1@gmail.com")
 
@@ -19,16 +29,16 @@ RSpec.describe "Movie Index Page", :vcr do
         click_button "Discover Movies"
         expect(current_path).to eq("/users/#{user1.id}/discover")
     end
+
+    it 'has text field to search key words then redirects to matching list', :vcr do
+        @user1 = User.create!(name: "Micheal Jordan", email: "user1@gmail.com")
+
+        visit "/users/#{@user1.id}/discover"
+        expect(page).to have_button("Search")
+
+        fill_in :search, with: 'Shawshank Redemption'
+        click_on "Search"
+        expect(page).to have_content("Shawshank Redemption")
+        expect(current_path).to eq("/users/#{@user1.id}/movies")
+    end
 end
-
-
-# When I visit the discover movies page,
-# and click on either the Top Movies button or the Search button,
-# I should be taken to the movies results page (users/:user_id/movies?q=top%20rated, 
-#/users/:user_id/movies?q=keyword respectively) where I see:
-
-#  Title (As a Link to the Movie Details page)
-#  Vote Average of the movie
-# Details: There should only be a maximum of 40 results. The above details should be listed for each movie.
-
-#  I should also see a button to return to the Discover Page.
