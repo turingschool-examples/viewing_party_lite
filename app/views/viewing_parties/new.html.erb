@@ -19,8 +19,8 @@
 <h3><u>Invite Users</u></h3>
   <% @users.each do |user| %>
   <div id="user-<%= user.id %>">
-    <%= f.check_box :user, id: user.id %>
-    <%= f.label :user, "#{user.name}" %>
+    <%= f.check_box(:invited_user, {:multiple => true}, user.id, nil) %>
+    <%= f.label :invited_user, "#{user.name}" %>
   </div>
   <% end %>
 

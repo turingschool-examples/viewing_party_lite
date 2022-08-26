@@ -1,26 +1,22 @@
 class MovieService 
   def self.details(movie_id)
     response = conn.get("/3/movie/#{movie_id}")
-    if response.status == 200
-      JSON.parse(response.body, symbolize_names: true)
-    else
-      nil
-    end
+    status_check(response)
   end
 
   def self.reviews(movie_id)
     response = conn.get("/3/movie/#{movie_id}/reviews")
-    if response.status == 200
-      JSON.parse(response.body, symbolize_names: true)
-    else
-      nil
-    end
+    status_check(response)
   end
 
   def self.credits(movie_id)
     response = conn.get("/3/movie/#{movie_id}/credits")
+    status_check(response)
+  end
+
+  def self.status_check(response)
     if response.status == 200
-      JSON.parse(response.body, symbolize_names: true)
+     JSON.parse(response.body, symbolize_names: true)
     else
       nil
     end
