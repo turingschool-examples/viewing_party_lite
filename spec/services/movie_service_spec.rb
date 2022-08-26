@@ -21,4 +21,6 @@ RSpec.describe MovieService do
     expect(result[0][:vote_average]).to eq(7.9)
   end
 
+
+
 end
