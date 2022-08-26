@@ -1,6 +1,14 @@
 require 'rails_helper' 
 
 RSpec.describe 'MovieService' do 
+  it 'retrieves movies by id', :vcr do 
+    parsed_json = MovieService.details(244786)
+    expect(parsed_json).to be_a Hash 
+    expect(parsed_json).to include(:poster_path, :original_title)
+    expect(parsed_json[:poster_path]).to be_a String
+    expect(parsed_json[:original_title]).to be_a String
+  end
+  
   it 'retrieves top rated movies', :vcr do 
     parsed_json = MovieService.top_rated
 
