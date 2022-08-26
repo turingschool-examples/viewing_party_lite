@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Movie Details Page', type: :feature do  
+RSpec.describe 'Movie Details Page', type: :feature do
   describe '#buttons' do
     it "has button to create a viewing party", :vcr do
       user = User.create!(name: "Nancy", email: "nancydrew@email.com")
