@@ -1,0 +1,22 @@
+<h3>Create Event For <%= @movie.title %></h3>
+
+<%= form_with url: user_path(@user.id) , method: :post, local: true do |f| %>
+    <p><%= f.label :title, "Movie Title" %> - <%= "#{@movie.title}" %></p>
+    <p><%= f.label :runtime, "Duration" %></p>
+    <p><%= f.number_field :runtime, value: "#{@movie.runtime}", min: "#{@movie.runtime}" %></p>
+    <p><%= f.label :date, "Day" %></p>
+    <p><%= f.date_field :date %></p>
+    <p><%= f.label :time, "Time" %></p>
+    <p><%= f.time_field :time %></p>
+        <p>Invite Other Users</p>
+    <% @users.each do |user| %>
+      <% if user.id != @user.id %>
+        <li>
+          <%= check_box_tag "user_ids[#{user.id}]", user.id, false, :name => "user_ids[]" %>
+          <%= "#{user.name} - #{user.email}" %>
+        </li>
+      <% end %>
+    <% end %>
+    <%= f.hidden_field :title, :value => @movie.title %>
+    <%= f.submit "Create Event" %>
+<% end %>
