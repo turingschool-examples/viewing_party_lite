@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+<<<<<<< HEAD
 20.times do
   FactoryBot.create(:user)
 end
@@ -16,3 +17,5 @@ end
 70.times do
   FactoryBot.create(:event_user)
 end
+=======
+>>>>>>> fd04e93827d61bff06c7826b49064ca9102eb36a

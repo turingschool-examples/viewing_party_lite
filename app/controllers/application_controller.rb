@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+
   helper_method :current_user 
   helper_method :movie_poro
 
@@ -9,4 +10,5 @@ class ApplicationController < ActionController::Base
   def movie_poro(movie)
     MoviePoros.new(movie)
   end
+
 end

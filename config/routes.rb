@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   root 'landing#index'
 
   get '/register', to: 'users#new'
@@ -11,4 +12,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :movies, only: [:index, :show]
   end
+=======
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+>>>>>>> fd04e93827d61bff06c7826b49064ca9102eb36a
 end

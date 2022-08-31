@@ -16,12 +16,6 @@ Viewing Part Lite is an application in which users can explore movie options and
 2. Install gem packages: `bundle install`
 3. Setup the database: `rails db:create`
 
-## Versions
-
-- Ruby 2.7.2
-- Rails 5.2.6
-
-Example wireframes to follow are found [here](https://backend.turing.io/module3/projects/viewing_party_lite/wireframes)
 
 ## Wins
 - We were able to implement the necessary API calls and get the data we needed to display on the page
@@ -32,3 +26,10 @@ Example wireframes to follow are found [here](https://backend.turing.io/module3/
 - We had trouble getting VCR to work initially, but we were eventually able to get it working
 - There was some confusion about what routes were necessary to implement
 - The user stories were a little vague, so we had to make some assumptions about what was needed which took time away from other goals
+
+## Versions
+
+- Ruby 2.7.2
+- Rails 5.2.6
+
+Example wireframes to follow are found [here](https://backend.turing.io/module3/projects/viewing_party_lite/wireframes)
