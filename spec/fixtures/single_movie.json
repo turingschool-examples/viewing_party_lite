@@ -1,0 +1,26 @@
+{
+    "page": 1,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/bvpI11RJbE6lHSWCrhvNC1S1MtO.jpg",
+            "genre_ids": [
+                16,
+                10751
+            ],
+            "id": 12,
+            "original_language": "en",
+            "original_title": "Finding Nemo",
+            "overview": "Nemo, an adventurous young clownfish, is unexpectedly taken from his Great Barrier Reef home to a dentist's office aquarium. It's up to his worrisome father Marlin and a friendly but forgetful fish Dory to bring Nemo home -- meeting vegetarian sharks, surfer dude turtles, hypnotic jellyfish, hungry seagulls, and more along the way.",
+            "popularity": 127.407,
+            "poster_path": "/5lc6nQc0VhWFYFbNv016xze8Jvy.jpg",
+            "release_date": "2003-05-30",
+            "title": "Finding Nemo",
+            "video": false,
+            "vote_average": 7.8,
+            "vote_count": 16718
+        }    
+    ],
+    "total_pages": 1,
+    "total_results": 3
+}
