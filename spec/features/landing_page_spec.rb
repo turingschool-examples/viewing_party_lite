@@ -15,9 +15,9 @@ RSpec.describe 'Landing Page' do
   end
 
   it "has a list of existing users" do
-    ben = User.create!(name: "Ben", email: "benjsdev@gmail.com")
-    brian = User.create!(name: "Brian", email: "bshearsdev@gmail.com")
-    drew = User.create!(name: "Drew", email: "dmacdev@gmail.com")
+    ben = User.create!(name: "Ben", email: "benjsdev@gmail.com", password: '123456', password_confirmation: '123456')
+    brian = User.create!(name: "Brian", email: "bshearsdev@gmail.com", password: '123456', password_confirmation: '123456')
+    drew = User.create!(name: "Drew", email: "dmacdev@gmail.com", password: '123456', password_confirmation: '123456')
 
     visit root_path
 
@@ -27,9 +27,9 @@ RSpec.describe 'Landing Page' do
   end
 
   it "existing users have a link to their dashboard" do
-    ben = User.create!(name: "Ben", email: "benjsdev@gmail.com")
-    brian = User.create!(name: "Brian", email: "bshearsdev@gmail.com")
-    drew = User.create!(name: "Drew", email: "dmacdev@gmail.com")
+    ben = User.create!(name: "Ben", email: "benjsdev@gmail.com", password: '123456', password_confirmation: '123456')
+    brian = User.create!(name: "Brian", email: "bshearsdev@gmail.com", password: '123456', password_confirmation: '123456')
+    drew = User.create!(name: "Drew", email: "dmacdev@gmail.com", password: '123456', password_confirmation: '123456')
 
     visit root_path
 

@@ -12,7 +12,7 @@ RSpec.describe 'Discover Movies View Page' do
                          'User-Agent'=>'Faraday v2.5.2'
                       }).
                     to_return(status: 200, body: "", headers: {})
-            user_1 = User.create!(name: "Bryan", email: "bryan@bryan.com")
+            user_1 = User.create!(name: "Bryan", email: "bryan@bryan.com", password: '123456', password_confirmation: '123456')
 
             visit "/users/#{user_1.id}/discover"
 
@@ -26,7 +26,7 @@ RSpec.describe 'Discover Movies View Page' do
       json_response = File.open("spec/fixtures/top_rated.json")
       stub_request(:get, "https://www.themoviedb.org/3/movie/top_rated?api_key=#{ENV['moviedb_api_key']}").to_return(status: 200, body: json_response)
 
-      user_1 = User.create!(name: "Bryan", email: "bryan@bryan.com")
+      user_1 = User.create!(name: "Bryan", email: "bryan@bryan.com", password: '123456', password_confirmation: '123456')
 
       visit "/users/#{user_1.id}/discover"
 
