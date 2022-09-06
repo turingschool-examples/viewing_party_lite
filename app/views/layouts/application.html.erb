@@ -16,6 +16,12 @@
     <br>
     <header>Movie Viewing Party</header>
     <br/>
+    <% flash.each do |type, msg| %>
+      <div class='flash_red'>
+        <%= msg %>
+      </div>
+      <br>
+    <% end %>
     <%= yield %>
   </body>
 </html>
