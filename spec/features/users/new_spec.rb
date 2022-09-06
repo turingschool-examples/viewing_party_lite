@@ -59,10 +59,10 @@ RSpec.describe 'creating a new user' do
     end
 
     expect(current_path).to eq(register_path)
-    expect(page).to have_content('Error: That email is already associated with an account.')
+    expect(page).to have_content('Email has already been taken')
   end
 
-  xit 'should check that password and confirmation match' do
+  it 'should check that password and confirmation match' do
     user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
 
     visit root_path
@@ -79,6 +79,25 @@ RSpec.describe 'creating a new user' do
     end
 
     expect(current_path).to eq(register_path)
-    expect(page).to have_content('Error: Passwords must match.')
+    expect(page).to have_content("Password confirmation doesn't match Password")
+  end
+
+  it 'should not create user if name is not filled in' do
+    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
+
+    visit root_path
+
+    click_button('Create a New User')
+    expect(current_path).to eq(register_path)
+
+    within '#create-user' do
+      fill_in 'Email', with: 'jerry@trashtv.com'
+      fill_in :password, with: 'guiltypleasure99'
+      fill_in :password_confirmation, with: 'guiltypleasure99'
+      click_on 'Create New User'
+    end
+
+    expect(current_path).to eq(register_path)
+    expect(page).to have_content("Name can't be blank")
   end
 end
