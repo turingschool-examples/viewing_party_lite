@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "users show page", type: :feature do
 
     it 'has a users show  page', :vcr do
-       user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now)
+       user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now, password: "iluvmovies123", password_confirmation: "iluvmovies123")
        
         visit "/users/#{user.id}"
 
@@ -13,9 +13,9 @@ RSpec.describe "users show page", type: :feature do
     end
 
     it 'displays the viewing parties that the user has been invited to or is hosting', :vcr do
-        user1 = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com")
-        user2 = User.create!(first_name: "James", last_name: "Rock", email:"james@test.com")
-        user3 = User.create!(first_name: "Heidi", last_name: "Hello", email:"heidi@test.com")
+        user1 = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
+        user2 = User.create!(first_name: "James", last_name: "Rock", email:"james@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
+        user3 = User.create!(first_name: "Heidi", last_name: "Hello", email:"heidi@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
 
         viewingparty1 = ViewingParty.create!(start_time: DateTime.parse('3rd Feb 2001 04:00:00'), party_duration_minutes: 200, movie_title: "The Shawshank Redemption", movie_duration_minutes: 142)
             vp1_u1 = ViewingPartyUser.create!(user_id: user1.id, viewing_party_id: viewingparty1.id, status: :hosting)
@@ -47,9 +47,9 @@ RSpec.describe "users show page", type: :feature do
     end
 
     it 'displays who is hosting the viewing party', :vcr do
-        user1 = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com")
-        user2 = User.create!(first_name: "James", last_name: "Rock", email:"james@test.com")
-        user3 = User.create!(first_name: "Heidi", last_name: "Hello", email:"heidi@test.com")
+        user1 = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
+        user2 = User.create!(first_name: "James", last_name: "Rock", email:"james@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
+        user3 = User.create!(first_name: "Heidi", last_name: "Hello", email:"heidi@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
 
         viewingparty1 = ViewingParty.create!(start_time: DateTime.parse('3rd Feb 2001 04:00:00'), party_duration_minutes: 200, movie_title: "The Shawshank Redemption", movie_duration_minutes: 142)
             vp1_u1 = ViewingPartyUser.create!(user_id: user1.id, viewing_party_id: viewingparty1.id, status: :hosting)
@@ -82,9 +82,9 @@ RSpec.describe "users show page", type: :feature do
     end
 
     it 'has movie titles link to their respective movie show pages', :vcr do
-        user1 = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com")
-        user2 = User.create!(first_name: "James", last_name: "Rock", email:"james@test.com")
-        user3 = User.create!(first_name: "Heidi", last_name: "Hello", email:"heidi@test.com")
+        user1 = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
+        user2 = User.create!(first_name: "James", last_name: "Rock", email:"james@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
+        user3 = User.create!(first_name: "Heidi", last_name: "Hello", email:"heidi@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
 
         viewingparty1 = ViewingParty.create!(start_time: DateTime.parse('3rd Feb 2001 04:00:00'), party_duration_minutes: 200, movie_title: "The Shawshank Redemption", movie_duration_minutes: 142)
             vp1_u1 = ViewingPartyUser.create!(user_id: user1.id, viewing_party_id: viewingparty1.id, status: :hosting)
@@ -97,9 +97,9 @@ RSpec.describe "users show page", type: :feature do
     end
 
     it 'displays all invited users for each viewing party', :vcr do
-        user1 = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com")
-        user2 = User.create!(first_name: "James", last_name: "Rock", email:"james@test.com")
-        user3 = User.create!(first_name: "Heidi", last_name: "Hello", email:"heidi@test.com")
+        user1 = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
+        user2 = User.create!(first_name: "James", last_name: "Rock", email:"james@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
+        user3 = User.create!(first_name: "Heidi", last_name: "Hello", email:"heidi@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
 
         viewingparty1 = ViewingParty.create!(start_time: DateTime.parse('3rd Feb 2001 04:00:00'), party_duration_minutes: 200, movie_title: "The Shawshank Redemption", movie_duration_minutes: 142)
             vp1_u1 = ViewingPartyUser.create!(user_id: user1.id, viewing_party_id: viewingparty1.id, status: :hosting)
@@ -137,9 +137,9 @@ RSpec.describe "users show page", type: :feature do
     end
 
     it 'displays an image of the movie for the viewing party', :vcr do
-        user1 = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com")
-        user2 = User.create!(first_name: "James", last_name: "Rock", email:"james@test.com")
-        user3 = User.create!(first_name: "Heidi", last_name: "Hello", email:"heidi@test.com")
+        user1 = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
+        user2 = User.create!(first_name: "James", last_name: "Rock", email:"james@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
+        user3 = User.create!(first_name: "Heidi", last_name: "Hello", email:"heidi@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
 
         viewingparty1 = ViewingParty.create!(start_time: DateTime.parse('3rd Feb 2001 04:00:00'), party_duration_minutes: 200, movie_title: "The Shawshank Redemption", movie_duration_minutes: 142)
             vp1_u1 = ViewingPartyUser.create!(user_id: user1.id, viewing_party_id: viewingparty1.id, status: :hosting)

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Movies Display Page' do
   describe 'search function' do
     it 'allows user to search for movies', :vcr do
-        user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now)
+        user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now, password: "iluvmovies123", password_confirmation: "iluvmovies123")
 
         visit "/users/#{user.id}/discover"
 
@@ -17,7 +17,7 @@ RSpec.describe 'Movies Display Page' do
     end
 
      it 'limits searches to 40 movies', :vcr do
-        user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now)
+        user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now, password: "iluvmovies123", password_confirmation: "iluvmovies123")
 
         visit "/users/#{user.id}/discover"
 
@@ -31,7 +31,7 @@ RSpec.describe 'Movies Display Page' do
 
   describe 'top movies function' do
     it 'allows user to view top rated movies', :vcr do
-        user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now)
+        user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now, password: "iluvmovies123", password_confirmation: "iluvmovies123")
 
         visit "/users/#{user.id}/discover"
 
@@ -42,8 +42,6 @@ RSpec.describe 'Movies Display Page' do
          within ("#movies") do 
             expect(page.all('.movie')[0]).to have_content("The Shawshank Redemption")
             expect(page.all('.movie')[0]).to have_content("Vote Average: 8.7")
-            expect(page.all('.movie')[1]).to have_content("Dilwale Dulhania Le Jayenge")
-            expect(page.all('.movie')[1]).to have_content("Vote Average: 8.7")
         end 
 
         expect(page).to have_selector(".movie", count: 40)
@@ -52,7 +50,7 @@ RSpec.describe 'Movies Display Page' do
 
   describe 'movies link to movie page function' do
     it 'allows user to see a movie overview page', :vcr do
-        user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now)
+        user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now, password: "iluvmovies123", password_confirmation: "iluvmovies123")
 
         visit "/users/#{user.id}/discover"
 
@@ -66,7 +64,7 @@ RSpec.describe 'Movies Display Page' do
 
   describe 'movies link to movie page function' do
     it 'allows user to go back to their discover page', :vcr do
-        user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now)
+        user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now, password: "iluvmovies123", password_confirmation: "iluvmovies123")
 
         visit "/users/#{user.id}/discover"
 

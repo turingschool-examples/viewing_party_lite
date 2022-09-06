@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "movie detail page", type: :feature do
   
   it 'has a button to create a viewing party', :vcr do
-    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com")
+    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
 
     visit "/users/#{user1.id}/movies/278"
 
@@ -13,7 +13,7 @@ RSpec.describe "movie detail page", type: :feature do
   end
 
   it 'has a button to return to the discover page', :vcr do
-    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com")
+    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
 
     visit "/users/#{user1.id}/movies/278"
 
@@ -23,7 +23,7 @@ RSpec.describe "movie detail page", type: :feature do
   end
 
   it 'displays the movie title', :vcr do
-    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com")
+    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
 
     visit "/users/#{user1.id}/movies/278"
 
@@ -33,7 +33,7 @@ RSpec.describe "movie detail page", type: :feature do
   end
 
   it 'displays the vote average of the movie', :vcr do
-    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com")
+    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
 
     visit "/users/#{user1.id}/movies/278"
 
@@ -43,7 +43,7 @@ RSpec.describe "movie detail page", type: :feature do
   end
 
   it 'displays the runtime of the movie in hours and minutes', :vcr do
-    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com")
+    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
 
     visit "/users/#{user1.id}/movies/278"
 
@@ -53,7 +53,7 @@ RSpec.describe "movie detail page", type: :feature do
   end
 
   it 'displays the genre(s) associated with the movie', :vcr do
-    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com")
+    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
 
     visit "/users/#{user1.id}/movies/278"
 
@@ -64,7 +64,7 @@ RSpec.describe "movie detail page", type: :feature do
   end
 
   it 'displays the summary for the movie', :vcr do
-    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com")
+    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
 
     visit "/users/#{user1.id}/movies/278"
 
@@ -74,7 +74,7 @@ RSpec.describe "movie detail page", type: :feature do
   end
 
   it 'displays the first 10 cast members and their character names', :vcr do
-    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com")
+    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
 
     visit "/users/#{user1.id}/movies/278"
 
@@ -84,7 +84,7 @@ RSpec.describe "movie detail page", type: :feature do
   end
 
   it 'displays total number of reviews', :vcr do
-    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com")
+    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
 
     visit "/users/#{user1.id}/movies/278"
 
@@ -94,7 +94,7 @@ RSpec.describe "movie detail page", type: :feature do
   end
 
   it 'displays all reviews for the movie with authors', :vcr do
-    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com")
+    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
 
     visit "/users/#{user1.id}/movies/278"
 

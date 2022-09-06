@@ -14,8 +14,8 @@ RSpec.describe ViewingParty, type: :model do
   end
 
   it 'returns the host of the viewing party' do
-    user1 = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com")
-    user2 = User.create!(first_name: "James", last_name: "Rock", email:"james@test.com")
+    user1 = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
+    user2 = User.create!(first_name: "James", last_name: "Rock", email:"james@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
 
     viewingparty1 = ViewingParty.create!(start_time: DateTime.parse('3rd Feb 2001 04:00:00'), party_duration_minutes: 200, movie_title: "The Shawshank Redemption", movie_duration_minutes: 142)
       vp1_u1 = ViewingPartyUser.create!(user_id: user1.id, viewing_party_id: viewingparty1.id, status: :invited)

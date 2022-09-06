@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "users discover page", type: :feature do
 
     it 'has a users discover page' do
-       user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now)
+       user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now, password: "iluvmovies123", password_confirmation: "iluvmovies123")
        
         visit "/users/#{user.id}"
 
@@ -14,7 +14,7 @@ RSpec.describe "users discover page", type: :feature do
     end
 
     it 'has a text field with a search function', :vcr do
-       user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now)
+       user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now, password: "iluvmovies123", password_confirmation: "iluvmovies123")
        
         visit "/users/#{user.id}/discover"
 
@@ -27,7 +27,7 @@ RSpec.describe "users discover page", type: :feature do
     end
 
     it 'text search field cannot be blank', :vcr do
-       user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now)
+       user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now, password: "iluvmovies123", password_confirmation: "iluvmovies123")
        
         visit "/users/#{user.id}/discover"
 
@@ -39,7 +39,7 @@ RSpec.describe "users discover page", type: :feature do
     end
 
      it 'has a text field with a top movies function', :vcr do
-        user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now)
+        user = User.create!(first_name: "Homer", last_name: "Simpson", email:"name@test.com", created_at: Time.now, updated_at: Time.now, password: "iluvmovies123", password_confirmation: "iluvmovies123")
        
         visit "/users/#{user.id}/discover"
 
