@@ -9,6 +9,8 @@ RSpec.describe "new user page", type: :feature do
     fill_in "First Name", with: "Jordan"
     fill_in "Last Name", with: "Peele"
     fill_in "Email", with: "jordan-fake@test.com"
+    fill_in "Password", with: "testpass"
+    fill_in "Confirm Password", with: "testpass"
 
     click_on "Create New User"
 
@@ -23,7 +25,8 @@ RSpec.describe "new user page", type: :feature do
 
     fill_in "Last Name", with: "Peele"
     fill_in "Email", with: "jordan-fake@test.com"
-
+    fill_in "Password", with: "testpass"
+    fill_in "Confirm Password", with: "testpass"
     click_on "Create New User"
 
     expect(current_path).to eq("/register")
@@ -36,7 +39,8 @@ RSpec.describe "new user page", type: :feature do
 
     fill_in "First Name", with: "Jordan"
     fill_in "Email", with: "jordan-fake@test.com"
-
+    fill_in "Password", with: "testpass"
+    fill_in "Confirm Password", with: "testpass"
     click_on "Create New User"
 
     expect(current_path).to eq("/register")
@@ -45,14 +49,15 @@ RSpec.describe "new user page", type: :feature do
   end
 
   it 'prompts user to try again if email already exists' do
-    user1 = User.create!(first_name: "Jordan", last_name: "Peele", email: "jordan-fake@test.com")
+    user1 = User.create!(first_name: "Jordan", last_name: "Peele", email: "jordan-fake@test.com", password: "test123", password_confirmation: "test123")
 
     visit "/register"
 
     fill_in "First Name", with: "Jordan"
     fill_in "Last Name", with: "Peele"
     fill_in "Email", with: "jordan-fake@test.com"
-
+    fill_in "Password", with: "testpass"
+    fill_in "Confirm Password", with: "testpass"
     click_on "Create New User"
 
     expect(current_path).to eq("/register")
@@ -61,14 +66,15 @@ RSpec.describe "new user page", type: :feature do
   end
 
   it 'is case insensitive in checking email existence' do
-    user1 = User.create!(first_name: "Jordan", last_name: "Peele", email: "jordan-fake@test.com")
+    user1 = User.create!(first_name: "Jordan", last_name: "Peele", email: "jordan-fake@test.com", password: "test123", password_confirmation: "test123")
 
     visit "/register"
 
     fill_in "First Name", with: "Jordan"
     fill_in "Last Name", with: "Peele"
     fill_in "Email", with: "jOrDAn-FaKe@tEST.com"
-
+    fill_in "Password", with: "testpass"
+    fill_in "Confirm Password", with: "testpass"
     click_on "Create New User"
 
     expect(current_path).to eq("/register")
@@ -82,7 +88,8 @@ RSpec.describe "new user page", type: :feature do
     fill_in "First Name", with: "Jordan"
     fill_in "Last Name", with: "Peele"
     fill_in "Email", with: "jOrDAn-FaKetEST.com"
-
+    fill_in "Password", with: "testpass"
+    fill_in "Confirm Password", with: "testpass"
     click_on "Create New User"
 
     expect(current_path).to eq("/register")
@@ -109,6 +116,25 @@ RSpec.describe "new user page", type: :feature do
     user_id = User.find_by(email: email).id
 
     expect(current_path).to eq("/users/#{user_id}")
+  end
+
+  it 'prompts user to try again if password and password_confirmation fields do not match' do
+    visit '/register'
+
+    email = "jOrDAn-FaKetEST@test.com"
+
+    fill_in "First Name", with: "Jordan"
+    fill_in "Last Name", with: "Peele"
+    fill_in "Email", with: email
+
+    fill_in "Password", with: "testpass"
+    fill_in "Confirm Password", with: "testpassWRONG"
+
+    click_on "Create New User"
+
+    expect(current_path).to eq('/register')
+
+    expect(page).to have_content("Password and confirmation did not match")
   end
 end
 
