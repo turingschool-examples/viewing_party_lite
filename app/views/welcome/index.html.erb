@@ -8,4 +8,6 @@
   <%= link_to "#{user.email}'s Dashboard", "/users/#{user.id}"%><br>
 <% end %>
 <br>
-<%= button_to "Create New User", "/register", method: :get %>
+<%= button_to "Create New User", "/register", method: :get %><br>
+
+<%= button_to "Log In", "/login", method: :get %>
