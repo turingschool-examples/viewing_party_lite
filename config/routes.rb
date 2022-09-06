@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'landing#index'
 
   get '/register', to: 'users#new'
+  get '/login', to: 'users#login_form'
 
   resources :users, only: [:show, :new, :create] 
   get '/users/:id/discover', to: 'discover#show'
