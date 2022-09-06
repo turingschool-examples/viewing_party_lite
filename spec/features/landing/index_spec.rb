@@ -63,7 +63,7 @@ RSpec.describe 'landing page', type: :feature do
 
     click_on "Log In"
 
-    expect(current_path).to eq("/login")
+    expect(current_path).to eq(login_path)
   end
 
 end

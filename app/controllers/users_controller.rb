@@ -31,7 +31,23 @@ class UsersController < ApplicationController
     end
 
     def login_form
-        
+
+    end
+
+    def login_user
+        if !params[:email].present? || !params[:password].present?
+            redirect_to login_path, notice: "Error: please fill in all fields"
+        elsif User.exists?(email: params[:email])
+            @user = User.find_by(email: params[:email])
+            if @user.authenticate(params[:password])
+                session[:user_id] = @user.id
+                redirect_to "/users/#{@user.id}/discover"
+            else
+                redirect_to login_path, notice: "Error: login failed"
+            end
+        else
+            redirect_to login_path, notice: "Error: login failed"
+        end
     end
 
     private
