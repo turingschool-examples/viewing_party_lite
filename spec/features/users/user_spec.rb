@@ -70,14 +70,26 @@ RSpec.describe "user registration page" do
   end
 
   it "can log in with credentials" do 
-    user = User.create(name: "Ron", email: "ron@ron.com", password: "testing")
+    user = User.create(name: "Joe Biden", email: "joe@biden.com", password: "testing")
 
     visit "/"
 
     click_on "I already have an account"
 
     expect(current_path).to eq("/login")
+
+    visit "/login"
+    fill_in :name, with: "Joe Biden"
+    fill_in :email, with: "joe@biden.com"
+    fill_in :password, with: "testing"
+    fill_in :password_conf, with: "testing"
+
+    click_on "Log In"
+
+    expect(current_path).to eq("/users/#{user.id}")
+    expect(page).to have_content("Welcome, #{user.email}!")
   end
+end
 
   # it "cannot log in with bad credentials" do 
   #   user = User.create(name: "Ron", email: "ron@ron.com", password: "test")
@@ -93,6 +105,5 @@ RSpec.describe "user registration page" do
   #   expect(current_path).to eq("/login")
   #   expect(page).to have_content("Sorry, your credentials are bad")
   # end
-end
 
 
