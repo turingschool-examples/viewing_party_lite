@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "User's Dashboard Show Page" do
   before do
-    @user = User.create!(name: "#{Faker::TvShows::HowIMetYourMother.character}", email: "#{Faker::TvShows::HowIMetYourMother.character}@centuryfoxtv.com")
+    @user = User.create!(name: "#{Faker::TvShows::HowIMetYourMother.character}", email: "#{Faker::TvShows::HowIMetYourMother.character}@centuryfoxtv.com", password_digest: "#{Faker::Internet.password}")
 
     visit "/users/#{@user.id}"
   end
