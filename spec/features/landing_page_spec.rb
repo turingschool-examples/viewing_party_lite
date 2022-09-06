@@ -69,4 +69,21 @@ RSpec.describe 'Landing Page' do
 
   end   
 
+  it 'can log in with bad credentials' do 
+    bryan = User.create!(name: "Bryan", email: "bshearsdev@gmail.com", password: 'password123', password_confirmation: 'password123')
+
+    visit root_path 
+
+    click_on "Login"
+
+    expect(current_path).to eq('/login')
+
+    fill_in :email, with: "bshearsdev@gmail.com"
+    fill_in :password, with: "wrongpassword"
+    
+    click_on "Login"
+
+    expect(current_path).to eq('/login')
+    expect(page).to have_content("Sorry, your credentials are bad.")
+  end 
 end
