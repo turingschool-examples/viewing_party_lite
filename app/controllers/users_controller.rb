@@ -20,6 +20,15 @@ class UsersController < ApplicationController
     @hosts_parties = @user.hosting
   end
 
+  def login_form 
+  end 
+  
+  def login_user
+    user = User.find_by(email: params[:email])
+    flash[:success] = "Welcome, #{user.name}!"
+    redirect_to "/users/#{user.id}"
+  end 
+
 
   private
 

@@ -1,7 +1,7 @@
 <h1>Viewing Party Lite</h1>
 
 <%= link_to "Return to Main Page", root_path %>
-
+<%= link_to "Login", "/login", method: :get %>
 <% @users.each do |user| %>
   <%= link_to "#{user.email}'s Dashboard", "/users/#{user.id}"  %>
 <% end %>
