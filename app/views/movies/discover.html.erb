@@ -6,6 +6,10 @@
 <%= form_with url: "/users/#{@user.id}/movies?q=keyword", method: :get, local: true do |form| %>
   <%= form.label :movie_search, 'Search For Movies By Title' %>
   <%= form.text_field :movie_search %>
+  <%= form.label :password, 'Password:' %>
+  <%= form.password_field :password %>
+  <%= form.label :password, 'Password Confirmation:' %>
+  <%= form.label :password, 'Password:' %>
   <%= form.submit 'Search' %>
 <% end %>
 <% if @movie %>
