@@ -26,8 +26,9 @@ RSpec.describe "user registration page" do
     expect(current_path).to eq("/users/#{test.id}")
     expect(test.email).to eq("sam@smith.com")
   end
-
-  it "should require name, email, and password to register AND user email must be unique" do #auth_challenge
+  
+  #auth_challenge starts here:
+  it "should require name, email, and password to register AND user email must be unique" do 
     visit "/register"
 
     fill_in :name, with: "Sam Smith"
@@ -100,7 +101,7 @@ RSpec.describe "user registration page" do
 
     expect(current_path).to eq("/login")
     visit "/login"
-    
+
     fill_in :name, with: user.name 
     fill_in :email, with: user.email 
     fill_in :password, with: "wrongpassword"
