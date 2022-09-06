@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'top rated movies page' do
   before :each do
-    @user1 = User.create!(name: 'tom', email: 'tom.gmail.com')
+    @user1 = User.create!(name: 'tom', email: 'tom.gmail.com', password: "password123")
 
     visit "/users/#{@user1.id}/discover"
     click_button 'Top Rated Movies'

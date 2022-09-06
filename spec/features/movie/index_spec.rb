@@ -11,10 +11,9 @@ RSpec.describe 'index movies page' do
     expect(page.status_code).to eq 200
     expect(page).to have_button('Top Rated Movies')
     click_button 'Top Rated Movies'
-<<<<<<< Updated upstream
-=======
+
     expect(current_path).to eq("/users/#{@user1.id}/movies/index")
->>>>>>> Stashed changes
+
   end
 
   it 'lists top rated mopvies and their vote average', :vcr do

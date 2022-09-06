@@ -12,7 +12,6 @@ class RegisterController < ApplicationController
       redirect_to user_path(User.last.id)
     else
       flash.notice = user.errors.full_messages
-      flash.notice = 'User Has Not Been Created!'
       redirect_to "/register"
     end
 
