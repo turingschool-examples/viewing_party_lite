@@ -1,1 +1,8 @@
 <h1> Log In Form </h1>
+
+<%= form_with url: users_path, local: :true do |form|%>
+  <%=form.text_field :email%>
+  <%=form.label :email, "Email"%>
+  <%=form.password_field :password%>
+  <%=form.label :password, "Password"%>
+<% end %>
