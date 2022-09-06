@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Movie Index Page", :vcr do
     it 'has a button to discover top rated movies' do
-        user1 = User.create!(name: "Micheal Jordan", email: "user1@gmail.com")
+        user1 = User.create!(name: "Micheal Jordan", email: "user1@gmail.com", password: "123test")
 
         visit "/users/#{user1.id}/discover"
         click_button "Discover Top Rated Movies"
@@ -11,7 +11,7 @@ RSpec.describe "Movie Index Page", :vcr do
         expect(page).to have_content("The Shawshank Redemption")
     end
     it 'has a search function that displays matching movies' do
-        @user1 = User.create!(name: "Micheal Jordan", email: "user1@gmail.com")
+        @user1 = User.create!(name: "Micheal Jordan", email: "user1@gmail.com", password: "123test")
 
         visit "/users/#{@user1.id}/discover"
         expect(page).to have_button("Search")
@@ -21,7 +21,7 @@ RSpec.describe "Movie Index Page", :vcr do
         expect(page).to have_content("Impossible Things")
     end
     it 'has a button to return to discover page' do
-        user1 = User.create!(name: "Micheal Jordan", email: "user1@gmail.com")
+        user1 = User.create!(name: "Micheal Jordan", email: "user1@gmail.com", password: "123test")
 
         visit "/users/#{user1.id}/movies?"
         
@@ -31,7 +31,7 @@ RSpec.describe "Movie Index Page", :vcr do
     end
 
     it 'has text field to search key words then redirects to matching list', :vcr do
-        @user1 = User.create!(name: "Micheal Jordan", email: "user1@gmail.com")
+        @user1 = User.create!(name: "Micheal Jordan", email: "user1@gmail.com", password: "123test")
 
         visit "/users/#{@user1.id}/discover"
         expect(page).to have_button("Search")
