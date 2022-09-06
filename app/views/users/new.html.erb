@@ -8,6 +8,10 @@
   <%= f.text_field :name %><br>
   <%= f.label :email, "Email:" %><br>
   <%= f.text_field :email %><br>
+  <%= f.label :password, "Password:" %><br>
+  <%= f.password_field :password %><br>
+  <%= f.label :password_confirmation, "Confirm Your Password:" %><br>
+  <%= f.password_field :password_confirmation %><br>
   <%= f.submit "Create New User" %>
 <% end %>
 
