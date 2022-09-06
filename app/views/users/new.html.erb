@@ -12,5 +12,11 @@
     <%= f.label :email, "email: " %>
     <%= f.text_field :email %>
 
-    <%= f.submit 'Create New User' %>
+    <%= f.label :password, 'Password:' %>
+    <%= f.password_field :password %>
+
+    <%= f.label :password_confirmation, 'Password Confirmation:' %>
+    <%= f.password_field :password_confirmation %>
+
+    <%= f.submit 'Register New User' %>
 <% end %>
