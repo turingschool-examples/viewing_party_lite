@@ -10,6 +10,8 @@ RSpec.describe 'Register Page' do
 
     fill_in "Name", with: "Brad"
     fill_in "Email", with: "bhopkodev@gmail.com"
+    fill_in "Password", with: "password123"
+    fill_in "Password Confirmation", with: "password123"
 
     click_on "Submit"
 
