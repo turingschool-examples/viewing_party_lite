@@ -28,9 +28,9 @@ RSpec.describe 'landing page' do
     end
    
     it 'lists all users' do
-        user1 = User.create!(name: "Micheal Jordan", email: "user1@gmail.com")
-        user2 = User.create!(name: "Kobe Bryant", email: "user2@gmail.com")
-        user3 = User.create!(name: "Steph Curry", email: "user3@gmail.com")
+        user1 = User.create!(name: "Micheal Jordan", email: "user1@gmail.com", password: "123test")
+        user2 = User.create!(name: "Kobe Bryant", email: "user2@gmail.com", password: "123test")
+        user3 = User.create!(name: "Steph Curry", email: "user3@gmail.com", password: "123test")
 
         visit '/'
 
