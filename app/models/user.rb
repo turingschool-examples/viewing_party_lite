@@ -1,10 +1,13 @@
 class User < ApplicationRecord
-  validates :name, presence: true
-  validates :email, presence: true
+  validates_presence_of :name
+  validates_presence_of :email
   validates_uniqueness_of :email, case_sensitive: false
+  validates_presence_of :password_digest
+  has_secure_password
+
   has_many :user_viewing_parties
   has_many :viewing_parties, through: :user_viewing_parties
-  has_secure_password
+
   before_save :downcase_email
 
   def hosted_parties

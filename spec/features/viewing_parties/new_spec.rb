@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'New Viewing Party' do
   it 'displays a form to create a new viewing party', :vcr do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: "password")
-    user2 = User.create!(name: 'Maury', email: 'maury@trashtv.com', password: "password")
-    user3 = User.create!(name: 'Jenny', email: 'jenny@trashtv.com', password: "password")
+    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
+    user2 = User.create!(name: 'Maury', email: 'maury@trashtv.com', password: 'password', password_confirmation: 'password')
+    user3 = User.create!(name: 'Jenny', email: 'jenny@trashtv.com', password: 'password', password_confirmation: 'password')
 
     visit new_user_movie_viewing_party_path(user1, 278)
 
