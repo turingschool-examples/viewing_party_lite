@@ -23,6 +23,10 @@
     <%= f.password_field :password, required: true %>
     <br>
     <br>
+    <%= f.label :password_confirmation, "Password Confirmation: " %>
+    <%= f.password_field :password_confirmation, required: true %>
+    <br>
+    <br>
     <%= f.submit 'Create New User' %>
   <% end %>
 </div>

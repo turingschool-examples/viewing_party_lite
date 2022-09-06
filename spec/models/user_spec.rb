@@ -5,6 +5,7 @@ RSpec.describe User, type: :model do
     it { should validate_presence_of :name }
     it { should validate_presence_of :email }
     it { should validate_uniqueness_of(:email).ignoring_case_sensitivity }
+    it { should validate_presence_of :password_digest }
     it { should have_secure_password }
   end
 
@@ -15,15 +16,17 @@ RSpec.describe User, type: :model do
 
   before :each do
     @user1 = User.create!(
-        name: "Blake Saylor",
-        email: "blAkESAyLoR@gmail.COM",
-        password_digest: "test"
+      name: 'Saylor',
+      email: 'SAyLoR@fakemail.COM',
+      password: 'test',
+      password_confirmation: 'test'
       )
 
     @user2 = User.create!(
-      name: "Anna Marie Sterling",
-      email: "annamarie@gmail.com",
-      password_digest: "test2"
+      name: 'Sterling',
+      email: 'sterling@fakemail.com',
+      password: 'test2',
+      password_confirmation: 'test2'
     )
 
     @party1 = ViewingParty.create!(
@@ -84,22 +87,33 @@ RSpec.describe User, type: :model do
     )
   end
 
+  describe 'User attributes' do
+    it 'ensures encryption of passwords' do
+
+      expect(@user1).to_not have_attribute(:password)
+      expect(@user1.password_digest).to_not eq('test')
+    end
+  end
+
   describe 'class methods' do
   end
 
   describe 'instance methods' do
     it 'can return all hosted parties for a User' do
+
       expect(@user1.hosted_parties.count).to eq 2
       expect(@user1.hosted_parties).to eq [@party1, @party2]
     end
 
     it 'can return all parties a user is invited to' do
+
       expect(@user1.invited_parties.count).to eq 1
       expect(@user1.invited_parties).to eq [@party3]
     end
 
     it 'can downcase an email when input' do
-      expect(@user1.email).to eq "blakesaylor@gmail.com"
+
+      expect(@user1.email).to eq 'saylor@fakemail.com'
     end
   end
 end

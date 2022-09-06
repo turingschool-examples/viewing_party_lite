@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'creating a new user' do
   it 'links to a form to create a new user' do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: "password")
-    user2 = User.create!(name: 'Maury', email: 'maury@trashtv.com', password: "password")
-    user3 = User.create!(name: 'Jenny', email: 'jenny@trashtv.com', password: "password")
+    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
+    user2 = User.create!(name: 'Maury', email: 'maury@trashtv.com', password: 'password', password_confirmation: 'password')
+    user3 = User.create!(name: 'Jenny', email: 'jenny@trashtv.com', password: 'password', password_confirmation: 'password')
 
     visit root_path
 
@@ -14,7 +14,8 @@ RSpec.describe 'creating a new user' do
     within '#create-user' do
       fill_in 'Name', with: 'Jerry'
       fill_in 'Email', with: 'jerry@trashtv.com'
-      fill_in 'Password', with: 'guiltypleasure99'
+      fill_in :password, with: 'guiltypleasure99'
+      fill_in :password_confirmation, with: 'guiltypleasure99'
       click_on 'Create New User'
     end
 
@@ -41,7 +42,7 @@ RSpec.describe 'creating a new user' do
   end
 
   it 'should check for uniqueness of email address and be case insensitive' do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: "password")
+    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
 
     visit root_path
 
@@ -52,11 +53,32 @@ RSpec.describe 'creating a new user' do
       fill_in 'Name', with: 'Rivera Geraldo'
       # Test that capitalization will still result in account not being createable
       fill_in 'Email', with: 'Geraldo@trashtv.com'
-      fill_in 'Password', with: 'password1234'
+      fill_in :password, with: 'password1234'
+      fill_in :password_confirmation, with: 'password1234'
       click_on 'Create New User'
     end
 
     expect(current_path).to eq(register_path)
-    expect(page).to have_content("Error: That email is already associated with an account.")
+    expect(page).to have_content('Error: That email is already associated with an account.')
+  end
+
+  xit 'should check that password and confirmation match' do
+    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
+
+    visit root_path
+
+    click_button('Create a New User')
+    expect(current_path).to eq(register_path)
+
+    within '#create-user' do
+      fill_in 'Name', with: 'Jerry'
+      fill_in 'Email', with: 'jerry@trashtv.com'
+      fill_in :password, with: 'guiltypleasure99'
+      fill_in :password_confirmation, with: 'guiltypleasure98'
+      click_on 'Create New User'
+    end
+
+    expect(current_path).to eq(register_path)
+    expect(page).to have_content('Error: Passwords must match.')
   end
 end

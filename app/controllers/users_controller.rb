@@ -16,7 +16,7 @@ class UsersController < ApplicationController
         redirect_to user_path(@user.id)
       else
         redirect_to register_path
-        flash[:alert] = "Error: That email is already associated with an account."
+        flash[:alert] = 'Error: That email is already associated with an account.'
       end
   end
 
@@ -26,6 +26,6 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.permit(:name, :email, :password)
+      params.permit(:name, :email, :password, :password_confirmation)
     end
 end

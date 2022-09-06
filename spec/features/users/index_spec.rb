@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'the landing page' do
   it 'shows a list of all users as links to their dashboard' do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: "password")
-    user2 = User.create!(name: 'Maury', email: 'maury@trashtv.com', password: "password")
-    user3 = User.create!(name: 'Jenny', email: 'jenny@trashtv.com', password: "password")
+    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
+    user2 = User.create!(name: 'Maury', email: 'maury@trashtv.com', password: 'password', password_confirmation: 'password')
+    user3 = User.create!(name: 'Jenny', email: 'jenny@trashtv.com', password: 'password', password_confirmation: 'password')
 
     visit root_path
 
@@ -25,14 +25,20 @@ RSpec.describe 'the landing page' do
   end
 
   it 'has a button to create a new user that directs to the register page' do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: "password")
-    user2 = User.create!(name: 'Maury', email: 'maury@trashtv.com', password: "password")
-    user3 = User.create!(name: 'Jenny', email: 'jenny@trashtv.com', password: "password")
+    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
+    user2 = User.create!(name: 'Maury', email: 'maury@trashtv.com', password: 'password', password_confirmation: 'password')
+    user3 = User.create!(name: 'Jenny', email: 'jenny@trashtv.com', password: 'password', password_confirmation: 'password')
 
     visit root_path
 
     expect(page).to have_button('Create a New User')
+
     click_button('Create a New User')
+
     expect(current_path).to eq register_path
+    expect(page).to have_field(:name)
+    expect(page).to have_field(:email)
+    expect(page).to have_field(:password)
+    expect(page).to have_field(:password_confirmation)
   end
 end
