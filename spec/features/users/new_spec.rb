@@ -89,4 +89,31 @@ RSpec.describe "new user page", type: :feature do
 
     expect(page).to have_content("Error: Invalid email address")
   end
+
+  it 'has fillable password and password confirmation fields' do
+    visit '/register'
+
+    email = "jOrDAn-FaKetEST@test.com"
+
+    fill_in "First Name", with: "Jordan"
+    fill_in "Last Name", with: "Peele"
+    fill_in "Email", with: email
+
+    fill_in "Password", with: "testpass"
+    fill_in "Confirm Password", with: "testpass"
+
+    click_on "Create New User"
+
+    expect(page).to have_content("User #{email} successfully created!")
+
+    user_id = User.find_by(email: email).id
+
+    expect(current_path).to eq("/users/#{user_id}")
+  end
 end
+
+# As a visitor 
+# When I visit `/register`
+# I see a form to fill in my name, email, password, and password confirmation.
+# When I fill in that form with my name, email, and matching passwords,
+# I'm taken to my dashboard page `/users/:id`
