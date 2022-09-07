@@ -3,7 +3,7 @@ require 'faker'
 
 RSpec.describe 'Top Rated Movies' do
   it 'allows user to see the top 40 rated movies', :vcr do
-    user1 = User.create!(name: Faker::Name.first_name, email: Faker::Internet.email)
+    user1 = User.create!(name: Faker::Name.first_name, email: Faker::Internet.email, password: 'test', password_confirmation: 'test')
 
     visit "/users/#{user1.id}/movies?q=top%20rated"
 

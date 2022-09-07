@@ -18,8 +18,8 @@ RSpec.describe 'landing page' do
     end
 
     it "displays existing user emails only" do
-      user1 = User.create!(name: 'Hai Sall', email: 'shoe_eater@payless.com')
-      user2 = User.create!(name: 'Sryce Bimmons', email: 'valhiemhero@hotmail.com')
+      user1 = User.create!(name: 'Hai Sall', email: 'shoe_eater@payless.com', password: 'test', password_confirmation: 'test')
+      user2 = User.create!(name: 'Sryce Bimmons', email: 'valhiemhero@hotmail.com', password: 'test', password_confirmation: 'test')
 
       visit '/'
 
@@ -30,8 +30,8 @@ RSpec.describe 'landing page' do
     end
 
     it "links existing users to the user dashboard" do
-      user1 = User.create!(name: 'Hai Sall', email: 'shoe_eater@payless.com')
-      user2 = User.create!(name: 'Sryce Bimmons', email: 'valhiemhero@hotmail.com')
+      user1 = User.create!(name: 'Hai Sall', email: 'shoe_eater@payless.com', password: 'test', password_confirmation: 'test')
+      user2 = User.create!(name: 'Sryce Bimmons', email: 'valhiemhero@hotmail.com', password: 'test', password_confirmation: 'test')
 
       visit '/'
       click_link("shoe_eater@payless.com's Dashboard")

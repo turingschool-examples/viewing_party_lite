@@ -3,7 +3,7 @@ require 'faker'
 
 RSpec.describe 'Keyword Results' do
   it 'allows user to see the movies containing the word(s) searched for', :vcr do
-    user1 = User.create!(name: Faker::Name.first_name, email: Faker::Internet.email)
+    user1 = User.create!(name: Faker::Name.first_name, email: Faker::Internet.email, password: 'thing', password_confirmation: 'thing')
 
     visit "/users/#{user1.id}/movies?q=Shawshank"
 

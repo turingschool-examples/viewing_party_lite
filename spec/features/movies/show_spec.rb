@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Movie show page with movie details' do
 
   it "can show movie details on the show page", :vcr do
-    user = User.create!(name: 'Pachary Zrince', email: 'short_king@aol.com')
+    user = User.create!(name: 'Pachary Zrince', email: 'short_king@aol.com', password: 'test', password_confirmation: 'test')
     movie = MovieDBFacade.movie(550)
 
     visit "/users/#{user.id}/movies/#{movie.id}"
@@ -16,7 +16,7 @@ RSpec.describe 'Movie show page with movie details' do
   end
 
   it "displays the first 10 cast members", :vcr do
-    user = User.create!(name: 'Pachary Zrince', email: 'short_king@aol.com')
+    user = User.create!(name: 'Pachary Zrince', email: 'short_king@aol.com', password: 'test', password_confirmation: 'test')
     movie = MovieDBFacade.movie(550)
 
     visit "/users/#{user.id}/movies/#{movie.id}"
@@ -37,7 +37,7 @@ RSpec.describe 'Movie show page with movie details' do
   end
 
   it "displays the review count", :vcr do
-    user = User.create!(name: 'Pachary Zrince', email: 'short_king@aol.com')
+    user = User.create!(name: 'Pachary Zrince', email: 'short_king@aol.com', password: 'test', password_confirmation: 'test')
     movie = MovieDBFacade.movie(550)
 
     visit "/users/#{user.id}/movies/#{movie.id}"
@@ -46,7 +46,7 @@ RSpec.describe 'Movie show page with movie details' do
   end
 
   it "displays the author of the review", :vcr do
-    user = User.create!(name: 'Pachary Zrince', email: 'short_king@aol.com')
+    user = User.create!(name: 'Pachary Zrince', email: 'short_king@aol.com', password: 'test', password_confirmation: 'test')
     movie = MovieDBFacade.movie(550)
 
     visit "/users/#{user.id}/movies/#{movie.id}"
