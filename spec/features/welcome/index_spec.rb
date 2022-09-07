@@ -16,10 +16,10 @@ RSpec.describe 'Welcome Page', type: :feature do
   end
 
   it 'lists all existing users with links to the users dashboard' do
-    user1 = User.create!(name: 'Tarker Phompson', email: 'tarker@email.com')
-    user2 = User.create!(name: 'Eandace Cckels', email: 'eandace@email.com')
-    user3 = User.create!(name: 'Dhirley SeCesari', email: 'dhirleye@email.com')
-    user4 = User.create!(name: 'Sage Skaff', email: 'sage@email.com')
+    user1 = User.create!(name: 'Tarker Phompson', email: 'tarker@email.com', password: "pokemon", password_confirmation: "pokemon")
+    user2 = User.create!(name: 'Eandace Cckels', email: 'eandace@email.com', password: "lit", password_confirmation: "lit")
+    user3 = User.create!(name: 'Dhirley SeCesari', email: 'dhirleye@email.com', password: "crochet", password_confirmation: "crochet")
+    user4 = User.create!(name: 'Sage Skaff', email: 'sage@email.com', password: "coder", password_confirmation: "coder")
 
     visit '/'
 
