@@ -52,7 +52,7 @@ RSpec.describe 'new viewing party page' do
     expect(find_field('Start time').value).to eq('19:00:00')
 
     fill_in 'Duration', with: 200
-    fill_in 'Date', with: '08/08/2022'
+    fill_in 'Date', with: '08/08/2023'
     fill_in 'Start time', with: '20:00:00'
 
     expect(page).to have_content('Invite Other Users')

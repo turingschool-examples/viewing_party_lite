@@ -6,12 +6,8 @@ describe 'movie results/index page' do
   before do
     @user1 = User.create!(name: 'Jane', email: 'eleven@upsidedown.com', password:
       'test123')
-    visit '/login'
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
 
-    fill_in :email, with: 'eleven@upsidedown.com'
-    fill_in :password, with: 'test123'
-
-    click_button 'Log In'
     visit '/discover'
   end
   it 'links to each movie results details/show page', :vcr do

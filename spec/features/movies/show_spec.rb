@@ -6,12 +6,7 @@ RSpec.describe 'movie details page' do
   before :each do
     @user1 = User.create!(name: 'Jane', email: 'eleven@upsidedown.com', password:
       'test123')
-    visit '/login'
-
-    fill_in :email, with: 'eleven@upsidedown.com'
-    fill_in :password, with: 'test123'
-
-    click_button 'Log In'
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
 
     attributes = JSON.parse(File.read('./spec/fixtures/movie_details.json'), symbolize_names: true)
 

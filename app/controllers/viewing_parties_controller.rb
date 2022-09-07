@@ -3,7 +3,7 @@
 class ViewingPartiesController < ApplicationController
   def new
     if current_user
-      @user = User.find(session[:user_id])
+      @user = current_user
       @users = User.other_users(session[:user_id])
       @movie = MovieFacade.movie_details(params[:movie_id])
     else
