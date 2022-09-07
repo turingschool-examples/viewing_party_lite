@@ -160,7 +160,7 @@
         "lines": [
           1,
           1,
-          9,
+          6,
           null,
           null
         ]
@@ -169,11 +169,12 @@
         "lines": [
           1,
           null,
+          1,
           null,
           null,
+          1,
           null,
-          null,
-          null,
+          6,
           null,
           null,
           null,
@@ -187,34 +188,24 @@
           null,
           1,
           1,
-          10,
+          0,
           null,
           null,
           1,
-          6,
-          null,
-          null,
-          1,
-          null,
           5,
-          5,
-          2,
-          2,
-          null,
-          3,
-          3,
-          null,
           null,
           null,
           1,
-          2,
-          2,
-          1,
-          1,
-          1,
           null,
-          1,
-          1,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
           null,
           null,
           null,
@@ -224,7 +215,7 @@
           null,
           1,
           1,
-          5,
+          0,
           null,
           null
         ]
@@ -279,15 +270,43 @@
           null
         ]
       },
-      "/Users/gaurijoshi/turing/3Module/projects/viewing_party/viewing_party_lite/app/controllers/welcome_controller.rb": {
+      "/Users/gaurijoshi/turing/3Module/projects/viewing_party/viewing_party_lite/app/controllers/sessions_controller.rb": {
         "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
           null,
           null
+        ]
+      },
+      "/Users/gaurijoshi/turing/3Module/projects/viewing_party/viewing_party_lite/app/controllers/welcome_controller.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          0,
+          0
         ],
         "branches": {
         }
       }
     },
-    "timestamp": 1662496947
+    "timestamp": 1662590490
   }
 }
