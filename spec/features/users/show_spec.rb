@@ -4,8 +4,8 @@ require 'rails_helper'
 
 RSpec.describe 'user dashboard(show)' do
   it "can render a particular user's show page" do
-    user_1 = User.create!(name: 'Nick', email: 'testemail1@mail.com')
-    user_2 = User.create!(name: 'Mike', email: 'testemail2@mail.com')
+    user_1 = User.create!(name: 'Nick', email: 'testemail1@mail.com', password: 'test123')
+    user_2 = User.create!(name: 'Mike', email: 'testemail2@mail.com', password: 'test123')
 
     visit "/users/#{user_1.id}"
 
@@ -15,18 +15,18 @@ RSpec.describe 'user dashboard(show)' do
   end
 
   it "shows a 'discover movies' button" do
-    user_1 = User.create!(name: 'Nick', email: 'testemail1@mail.com')
-    user_2 = User.create!(name: 'Mike', email: 'testemail2@mail.com')
+    user_1 = User.create!(name: 'Nick', email: 'testemail1@mail.com', password: 'test123')
+    user_2 = User.create!(name: 'Mike', email: 'testemail2@mail.com', password: 'test123')
 
     visit "/users/#{user_1.id}"
     expect(page).to have_content('Discover Movies')
   end
 
   it "shows a user's view parties along with a status" do
-    user_1 = User.create!(name: 'Nick', email: 'testemail1@mail.com')
-    user_2 = User.create!(name: 'Mike', email: 'testemail2@mail.com')
-    user_3 = User.create!(name: 'Bob', email: 'testemail3@mail.com')
-    null = User.create!(name: 'Null', email: 'Null')
+    user_1 = User.create!(name: 'Nick', email: 'testemail1@mail.com', password: 'test123')
+    user_2 = User.create!(name: 'Mike', email: 'testemail2@mail.com', password: 'test123')
+    user_3 = User.create!(name: 'Bob', email: 'testemail3@mail.com', password: 'test123')
+    null = User.create!(name: 'Null', email: 'Null', password: 'Null')
 
     test_text_1 = 'Fellowship of the Ring'
     test_text_2 = 'Star Wars'
@@ -58,7 +58,7 @@ RSpec.describe 'user dashboard(show)' do
   end
 
   it 'has a link to Discover Movies' do
-    user_1 = User.create!(name: 'Bob', email: 'testemail1@mail.com')
+    user_1 = User.create!(name: 'Bob', email: 'testemail1@mail.com', password: 'test123')
 
     visit "/users/#{user_1.id}"
     expect(page).to have_content('Discover Movies')

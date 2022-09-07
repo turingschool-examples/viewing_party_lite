@@ -4,9 +4,9 @@ require 'rails_helper'
 
 RSpec.describe 'View Party New Page', :vcr do
   it 'should have a form to enter name and email' do
-    user_1 = User.create!(name: 'Nick', email: 'testemail1@mail.com')
-    user_2 = User.create!(name: 'Mike', email: 'testemail2@mail.com')
-    user_3 = User.create!(name: 'Bob', email: 'testemail3@mail.com')
+    user_1 = User.create!(name: 'Nick', email: 'testemail1@mail.com', password: 'test123')
+    user_2 = User.create!(name: 'Mike', email: 'testemail2@mail.com', password: 'test123')
+    user_3 = User.create!(name: 'Bob', email: 'testemail3@mail.com', password: 'test123')
 
     visit "/users/#{user_2.id}/movies/238/view_parties/new"
 
@@ -17,7 +17,7 @@ RSpec.describe 'View Party New Page', :vcr do
   end
 
   it 'returns you to the new page if all details arent submitted' do
-    user_2 = User.create!(name: 'Mike', email: 'testemail2@mail.com')
+    user_2 = User.create!(name: 'Mike', email: 'testemail2@mail.com', password: 'test123')
     visit "/users/#{user_2.id}/movies/238/view_parties/new"
 
     fill_in('Duration of Party', with: 180)
