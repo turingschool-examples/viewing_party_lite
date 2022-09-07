@@ -5,7 +5,7 @@ RSpec.describe 'Discover Movies Page' do
     context "When I visit the 'users/:id/discover path,
     where the :id is the id of a valid user" do 
         before :each do
-            @user1 = User.create!(name: 'Jared', email: 'jared@example.com')
+            @user1 = User.create!(name: 'Jared', email: 'jared@example.com', password: "password")
             visit "users/#{@user1.id}/discover"
         end
 

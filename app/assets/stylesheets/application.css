@@ -13,3 +13,95 @@
  *= require_tree .
  *= require_self
  */
+ header {
+     margin: auto;
+     text-align: center;
+     font-weight: bold;
+     font-size: 36px;
+     width: 30%;
+ }
+
+ h2 {
+     margin: auto;
+     text-align: center;
+     font-weight: bold;
+     width: 30%;
+ }
+
+ table {
+     margin: auto;
+     text-align: center;
+     font-weight: bold;
+ }
+
+ #create-user {
+     margin: auto;
+     text-align: center;
+     font-weight: bold;
+     width: 30%;
+ }
+
+ #button {
+     margin: auto;
+     text-align: center;
+     font-weight: bold;
+     width: 30%;
+ }
+
+ #movie-search {
+     margin: auto;
+     text-align: center;
+     font-weight: bold;
+     width: 30%;
+ }
+
+ #user-info {
+     margin: auto;
+     text-align: center;
+     font-weight: bold;
+     width: 30%;
+ }
+
+ #top-rated-movies {
+     margin: auto;
+     text-align: center;
+     width: 30%;
+     display: inline;
+ }
+
+ #party {
+     margin: auto;
+     display: inline-flex;
+     justify-content: space-between;
+     padding: 5px;
+ }
+
+ #vp-column {
+     padding: 5px;
+     text-align: center;
+ }
+
+ .flash_green {
+     color: green;
+     text-align: center;
+     font-size: 36px;
+     font-weight: bold;
+ }
+
+ .flash_red {
+     color: red;
+     text-align: center;
+     font-size: 36px;
+     font-weight: bold;
+ }
+
+ #links {
+     margin: auto;
+     text-align: center;
+ }
+
+ .welcome-page-link {
+     font-size: 36px;
+     text-align: center;
+     font-weight: bold;
+ }
