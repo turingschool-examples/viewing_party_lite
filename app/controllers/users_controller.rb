@@ -13,12 +13,14 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
-    user.save
-    redirect_to "/users/#{user.id}"
-    flash[:success] = "Welcome, #{user.name}!"
-    # else
-    #   redirect_to '/register'
-    # end
+    if user.save
+      redirect_to "/users/#{user.id}"
+      flash[:success] = "Welcome, #{user.name}!"
+    else
+      redirect_to '/register'
+    # require 'pry'; binding.pry
+      flash[:error] = user.errors.full_messages.to_sentence
+    end
   end
 
   private
