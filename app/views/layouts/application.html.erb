@@ -7,6 +7,12 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
+    <% flash.each do |type, msg| %>
+    <div id="flash-message">
+      <%= msg %>
+    </div>
+    <% end %>
   </head>
 
   <body>
