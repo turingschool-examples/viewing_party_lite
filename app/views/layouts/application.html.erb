@@ -10,11 +10,7 @@
   </head>
 
   <body>
-  <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, class: name %>
-  <% end %>
     <p><%= link_to "Home", "/" %></p>
-    <p><%= link_to "Log In", "/login" %></p>
 
     <h1>Viewing Party Lite</h1>
     <%= yield %>
