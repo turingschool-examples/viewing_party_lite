@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'viewing party new page' do
   before(:each) do
-    @user1 = User.create!(name: 'Cory', email: 'cory@gmail.com')
-    @user2 = User.create!(name: 'John', email: 'john@gmail.com')
-    @user3 = User.create!(name: 'Kris', email: 'kris@gmail.com')
+    @user1 = User.create!(name: 'Cory', email: 'cory@gmail.com', password_digest: '123')
+    @user2 = User.create!(name: 'John', email: 'john@gmail.com', password_digest: '456')
+    @user3 = User.create!(name: 'Kris', email: 'kris@gmail.com', password_digest: '789')
 
     party1 = Party.create!(date: Date.today, start_time: '20:00:00', movie_id: 278)
 

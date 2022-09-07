@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Discover', type: :feature do
   it 'Displays Top Movies' do
-    user_1 = User.create(name: 'John Doe', email: 'JohnDoe@gmail.com')
-    user_2 = User.create(name: 'Homer Simpson', email: 'HomerSimpson@gmail.com')
+    user_1 = User.create(name: 'John Doe', email: 'JohnDoe@gmail.com', password_digest: '123')
+    user_2 = User.create(name: 'Homer Simpson', email: 'HomerSimpson@gmail.com', password_digest: 'abc')
 
     visit "/users/#{user_1.id}/discover"
 
