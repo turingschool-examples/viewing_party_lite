@@ -7,7 +7,7 @@ RSpec.describe 'MovieService', :vcr do
     parse_json = MovieService.get_top_movies
 
     expect(parse_json).to be_a(Array)
-    expect(parse_json.first[:title]).to eq('The Shawshank Redemption')
+    expect(parse_json.first[:title]).to eq("The Godfather")
     expect(parse_json.count).to eq(40)
     expect(parse_json.first).to include(:id, :title, :vote_average)
   end

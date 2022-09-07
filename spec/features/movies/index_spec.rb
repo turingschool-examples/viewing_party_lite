@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'user movies index page', :vcr do
   it 'has a button to find top rated movies' do
-    user_1 = User.create!(name: 'ODB', email: 'testemail3@mail.com')
+    user_1 = User.create!(name: 'ODB', email: 'testemail3@mail.com', password: 'test123')
     visit "/users/#{user_1.id}/discover"
     click_on('Find Top Rated Movies')
     expect(current_path).to eq("/users/#{user_1.id}/movies")
@@ -15,7 +15,7 @@ RSpec.describe 'user movies index page', :vcr do
   end
 
   it 'can show the results for a specific search' do
-    user_1 = User.create!(name: 'ODB', email: 'testemail3@mail.com')
+    user_1 = User.create!(name: 'ODB', email: 'testemail3@mail.com', password: 'test123')
     visit "/users/#{user_1.id}/discover"
     fill_in :search, with: 'Phoenix'
     click_button 'Search'
@@ -27,7 +27,7 @@ RSpec.describe 'user movies index page', :vcr do
   end
 
   it 'has a link to return to discover movies' do
-    user_1 = User.create!(name: 'ODB', email: 'testemail3@mail.com')
+    user_1 = User.create!(name: 'ODB', email: 'testemail3@mail.com', password: 'test123')
     visit "/users/#{user_1.id}/discover"
     fill_in :search, with: 'Phoenix'
     click_button 'Search'
@@ -37,7 +37,7 @@ RSpec.describe 'user movies index page', :vcr do
   end
 
   it 'has shows a link to each movie show page with each movie title' do
-    user_1 = User.create!(name: 'ODB', email: 'testemail3@mail.com')
+    user_1 = User.create!(name: 'ODB', email: 'testemail3@mail.com', password: 'test123')
     visit "/users/#{user_1.id}/discover"
     fill_in :search, with: 'Phoenix'
     click_button 'Search'

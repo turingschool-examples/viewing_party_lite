@@ -27,7 +27,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 26 Aug 2022 15:45:22 GMT
+      - Wed, 07 Sep 2022 19:25:30 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -44,15 +44,15 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 badefad2d1fb92bb4620df1ce11d8c92.cloudfront.net (CloudFront)
+      - 1.1 5257b3c7acd3727a389946b312557ff2.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - uIyEfai13aI9eDjse_JyBQCUdG01YUQjqEMDuiCMJrSkyBiUn3repA==
+      - kSw2vatJbN6BmZlBVjdVfiQhetrG4Ei5uiBLklK7q8LDcHnPBxCwfw==
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[],"total_pages":0,"total_results":0}'
-  recorded_at: Fri, 26 Aug 2022 15:45:22 GMT
+  recorded_at: Wed, 07 Sep 2022 19:25:30 GMT
 recorded_with: VCR 6.1.0

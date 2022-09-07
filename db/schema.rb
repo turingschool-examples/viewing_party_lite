@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,37 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_220_826_002_324) do
+ActiveRecord::Schema.define(version: 2022_09_06_213435) do
+
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'user_view_parties', force: :cascade do |t|
-    t.bigint 'user_id'
-    t.bigint 'view_party_id'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['user_id'], name: 'index_user_view_parties_on_user_id'
-    t.index ['view_party_id'], name: 'index_user_view_parties_on_view_party_id'
+  create_table "user_view_parties", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "view_party_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_view_parties_on_user_id"
+    t.index ["view_party_id"], name: "index_user_view_parties_on_view_party_id"
   end
 
-  create_table 'users', force: :cascade do |t|
-    t.string 'name'
-    t.string 'email'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
-  create_table 'view_parties', force: :cascade do |t|
-    t.integer 'host_id'
-    t.datetime 'event_date'
-    t.integer 'party_duration'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.string 'movie_title'
-    t.integer 'duration'
-    t.string 'poster_path'
+  create_table "view_parties", force: :cascade do |t|
+    t.integer "host_id"
+    t.datetime "event_date"
+    t.integer "party_duration"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "movie_title"
+    t.integer "duration"
+    t.string "poster_path"
   end
 
-  add_foreign_key 'user_view_parties', 'users'
-  add_foreign_key 'user_view_parties', 'view_parties'
+  add_foreign_key "user_view_parties", "users"
+  add_foreign_key "user_view_parties", "view_parties"
 end
