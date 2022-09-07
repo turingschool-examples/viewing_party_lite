@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   
   get '/', to: 'landing_page#index'
 
+  get '/users', to: 'users#new'
+
   get '/register', to: 'users#new'
   get '/users/:id/discover', to: 'users#discover'
 
