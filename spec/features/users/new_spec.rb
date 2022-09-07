@@ -41,7 +41,7 @@ RSpec.describe 'users registration page' do
     visit '/register'
     fill_in('email', with: 'testemail4@email.com')
     fill_in('name', with: 'Test4')
-    save_and_open_page
+    
     fill_in :password, with: ("password1")
     fill_in('Password Confirmation', with: 'password1')
     click_on('Register New User')

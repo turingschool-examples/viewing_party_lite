@@ -56,7 +56,6 @@ RSpec.describe 'landing page' do
 
   it 'shows a log in button on the landing page' do
     visit '/'
-    save_and_open_page
     expect(page).to have_button("Log In")
     click_on('Log In')
     expect(current_path).to eq('/login')
