@@ -21,6 +21,17 @@ RSpec.describe 'Users Dashboard Page' do
     end
   end
 
+  it 'discover movies button redirects to discover page' do
+    user = User.create!(name: 'Gandalf', email: 'gandalfthegrey@wizard')
+
+    visit "/users/#{user.id}"
+
+    within '#discover-movies' do
+      click_on 'Discover Movies'
+    end
+    expect(current_path).to eq("/users/#{user.id}/discover")
+  end
+
   it 'has a section that lists viewing parties' do
     user = User.create!(name: 'Gandalf', email: 'gandalfthegrey@wizard', password: "wizard", password_confirmation: "wizard")
 
