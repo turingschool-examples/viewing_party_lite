@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
       if @user.save
+        flash[:success] = "Welcome #{@user.name}"
         redirect_to user_path(@user.id)
       else
         redirect_to register_path
@@ -22,6 +23,20 @@ class UsersController < ApplicationController
 
   def discover
     @user = User.find(params[:id])
+  end
+
+  def login_form
+  end
+
+  def login_user
+    @user = User.find_by(email: params[:email])
+      if @user&.authenticate(params[:password])
+        flash[:success] = "Welcome #{@user.name}"
+        redirect_to user_path(@user.id)
+      else
+        redirect_to root_path
+        flash[:error] = 'Invalid credentials'
+      end
   end
 
   private

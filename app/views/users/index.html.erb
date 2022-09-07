@@ -8,6 +8,10 @@
 
 <br>
 
+<div id='existing_user'>
+  <%= link_to 'Existing Users Log In Here', login_path, method: :get %>
+</div>
+
 <div id='user-info'>
   <% @users.each do |user| %>
     <div id="user-<%= user.id %>">

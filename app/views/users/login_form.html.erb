@@ -1,0 +1,11 @@
+<%= form_with model: @user, method: :post, local: true do |f| %>
+  <%= f.label :email, "Email Address: " %>
+  <%= f.text_field :email, required: true %>
+  <br>
+  <br>
+  <%= f.label :password, "Password: " %>
+  <%= f.password_field :password, required: true %>
+  <br>
+  <br>
+  <%= f.submit 'Log In' %>
+<% end %>
