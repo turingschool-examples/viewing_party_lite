@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root 'users#index'
   get '/register', to: 'users#new'
   post '/register', to: 'users#create'
+  get '/login', to: 'users#login_form'
+  post  '/login', to: 'users#login_user'
 
   resources :users, only: [:show, :new, :create] do
     resources :movies, only: [:index, :show] do
