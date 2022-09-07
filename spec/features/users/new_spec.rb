@@ -7,6 +7,8 @@ RSpec.describe 'new user registration page', type: :feature do
     visit register_path
     fill_in :name, with: 'Sally'
     fill_in :email, with: 'sally@turing.com'
+    fill_in :password, with: 'test123'
+    fill_in :password_confirmation, with: 'test123'
 
     click_button 'Register New User'
 

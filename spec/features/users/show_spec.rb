@@ -4,9 +4,9 @@ require 'rails_helper'
 
 RSpec.describe 'user dashboard show page', type: :feature do
   it 'has user information on show page' do
-    user1 = User.create!(name: 'Bob', email: 'bob@turing.edu')
-    user2 = User.create!(name: 'Sally', email: 'sally@turing.edu')
-    user3 = User.create!(name: 'Mike', email: 'mike@turing.edu')
+    user1 = User.create!(name: 'Bob', email: 'bob@turing.edu', password: 'test123')
+    user2 = User.create!(name: 'Sally', email: 'sally@turing.edu', password: 'test123')
+    user3 = User.create!(name: 'Mike', email: 'mike@turing.edu', password: 'test123')
 
     visit user_path(user1)
 
@@ -16,7 +16,7 @@ RSpec.describe 'user dashboard show page', type: :feature do
   end
 
   it 'can take user to users discover movies page' do
-    user1 = User.create!(name: 'Bob', email: 'bob@turing.edu')
+    user1 = User.create!(name: 'Bob', email: 'bob@turing.edu', password: 'test123')
 
     visit user_path(user1)
 
