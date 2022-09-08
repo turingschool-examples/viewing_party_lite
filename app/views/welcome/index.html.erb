@@ -6,8 +6,22 @@
 <% end %>
 
 <div id='links'>
-  <%= button_to "Create a New User", new_user_path, class: 'welcome-page-link' %>
-  <br>
-  <br>
-  <%= link_to "Log In", login_path, class: 'welcome-page-link' %>
+  <% if current_user %>
+    <p>You are logged in!</p>
+    <%= link_to "My Dashboard", user_path(current_user) %>
+    <p>Current Users:</p>
+    <% User.all.each do |user| %>
+      <p>
+        <%= user.email %>
+      </p>
+    <% end %>
+    <br>
+    <br>
+    <%= link_to "Log Out", logout_path, method: :delete %>
+  <% else %>
+      <%= link_to "Create a New User", new_user_path, class: 'welcome-page-link' %>
+      <br>
+      <br>
+      <%= link_to "Log In", login_path, class: 'welcome-page-link' %>
+  <% end %>
 </div>

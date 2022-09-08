@@ -6,8 +6,11 @@ class User < ApplicationRecord
     has_secure_password
     validates_presence_of :name
     validates :email, uniqueness: true, presence: true
+    validates :role, presence: true
 
     before_save :downcase_email
+
+    enum role: ['default', 'manager', 'admin']
 
     
   private

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
     def index
     end
-    
+
     def new 
     end
 
@@ -9,16 +9,20 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
     end
 
-    def create 
-        user = User.create!(user_params)
-        if user.save
-            redirect_to "/users/#{user.id}"
-            flash[:alert] = 'user successfully created'
-        else
-            redirect_to "/register"
-            flash[:error] = 'unable to create user'
-        end
+    def create
+    user = User.create(user_params)
+    if user.save
+      session[:user_id] = user.id
+      redirect_to user_path(user)
+      flash[:success] = "#{user.name} has been created!"
+    elsif user.errors.messages[:email].present?
+      redirect_to register_path
+      flash[:alert] = "Error: That email is already associated with an account."
+    elsif user.errors.messages[:password_confirmation].present?
+      redirect_to register_path
+      flash[:alert] = "Error: Both passwords must match."
     end
+  end
 
     def login_form
 
