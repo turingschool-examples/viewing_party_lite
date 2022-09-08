@@ -1,0 +1,98 @@
+<div id="movie-title-container">
+    <%=@movie.title%>
+</div>
+
+<div id="discover-button-container">
+  <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get%>
+</div>
+
+
+<div id="create-vp-button-container">
+  <%= button_to "Create Viewing Party for #{@movie.title}", "/users/#{@user.id}/movies/#{@movie.id}/viewing-party/new", method: :get, params: {:user_id => @user.id, :movie_id => @movie.id, :movie_title => @movie.title, :movie_runtime => @movie.runtime} %>
+</div>
+
+<div id="movie-info-bar">
+  <div id="vote-average">
+    <p>
+      <b>Vote Average:</b> <%=@movie.vote_average%>
+    </p>
+  </div>
+
+  <div id="runtime">
+    <p>
+      <b>Runtime:</b> <%=@movie.runtime / 60%>hr  <%=@movie.runtime % 60%> min
+    </p>
+  </div>
+
+  <div id="genres">
+    <b>Genre(s):</b>
+    <% @movie.genres[0...-1].each do |genre| %>
+      <%=genre%>,
+    <% end %>
+    <%= @movie.genres[-1]%>
+  </div>
+</div>
+
+<div id="summary-header">
+  Summary
+</div>
+
+<div id="summary">
+  <%=@movie.summary%>
+</div>
+
+<div id="cast-header">
+  Cast
+</div>
+
+<div id="cast">
+  <table id="cast-table-left">
+    <%@movie.first_10_cast[0..4].each do |cast| %>
+      <tr>
+        <td class="cast-cell">
+          <%= cast %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <table id="cast-table-right">
+    <%@movie.first_10_cast[5..10].each do |cast| %>
+      <tr>
+        <td class="cast-cell">
+          <%= cast %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+
+
+</div>
+
+<div id="review-count">
+  <p>
+    <%=@movie.review_count%> Reviews
+  </p>
+</div>
+
+<div id="reviews">
+  <table id="reviews-table">
+    <tr>
+      <th> Author </th>
+      <th> Review </th>
+    </tr>
+
+    <% @movie.reviews.map do |author, review|%>
+      <div class="review">
+        <tr>
+          <td class="author-cell">
+            <%=author%>
+          </td>
+          <td class="review-cell">
+            <%=review%>
+          </td>
+        </tr>
+      </div>
+    <% end %>
+
+  </table>
+</div>

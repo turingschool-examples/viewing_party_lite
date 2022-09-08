@@ -13,3 +13,179 @@
  *= require_tree .
  *= require_self
  */
+
+#page-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#app-title {
+  font-size: xx-large;
+}
+
+#home-link-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: auto;
+}
+
+#viewing-party-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: solid black 2px;
+  padding: 10px;
+}
+
+.viewing-party-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+}
+
+.poster-image {
+  width: 40%;
+}
+
+#attendees-table {
+  border-collapse: collapse;
+  border: 1px solid black;
+  width: 40%;
+}
+
+#attendees-table th{
+  text-align: center;
+  background-color: rgb(221, 217, 217);
+  padding: 5px;
+}
+
+#attendees-table tr:nth-child(even){
+  background-color: #dbe4e1;
+}
+
+#reviews-table {
+  border-collapse: collapse;
+  border: 1px solid black;
+  width: 100%;
+}
+
+#reviews-table th{
+  text-align: center;
+  background-color: rgb(221, 217, 217);
+  padding: 5px;
+  border: 1px solid black;
+}
+
+#reviews-table tr:nth-child(even){
+  background-color: #dbe4e1;
+}
+
+.author-cell {
+  font-weight: bold;
+  padding: 5px;
+  text-align: center;
+  border-right: 1px solid black;
+}
+
+.review-cell {
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  margin: 5px;
+}
+
+#cast {
+  display: flex;
+  border-bottom: 2px solid black;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#cast-table-left {
+  flex: 1;
+  border-collapse: collapse;
+  width: 40%;
+  margin-bottom: 5px;
+}
+#cast-table-right {
+  flex: 1;
+  border-collapse: collapse;
+  width: 40%;
+  margin-bottom: 5px;
+}
+
+#cast-table-left tr:nth-child(odd){
+  background-color: #c4ccca;
+}
+#cast-table-right tr:nth-child(odd){
+  background-color: #c4ccca;
+}
+
+
+.cast-cell {
+  padding: 5px;
+}
+
+#cast-header {
+  font-weight: bold;
+  font-size: large;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#summary-header {
+  font-weight: bold;
+  font-size: large;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#summary {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#movie-info-bar {
+  display: flex;
+  width: 100%;
+  border-bottom: 2px solid black;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#vote-average {
+  flex: 1;
+}
+
+#runtime {
+  flex: 1;
+}
+
+#genres {
+  flex: 2;
+}
+
+#movie-title-container {
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  margin: 25px;
+}
+
+#discover-button-container {
+  display: flex;
+  justify-content: center;
+  padding: 3px;
+  margin: 5px;
+}
+#create-vp-button-container {
+  display: flex;
+  justify-content: center;
+  padding: 3px;
+  margin: 5px;
+}

@@ -10,6 +10,22 @@
   </head>
 
   <body>
+    <% flash.each do |type, msg| %>
+      <div class="flash-notice">
+        <%= msg %>
+      </div>
+    <% end %>
+
+    <div id="home-link-container">
+      <%=link_to "Home", "/", class: "home-link"%>
+    </div>
+    
+    <div id="page-header">
+      <span id="app-title">
+        ViewingPartyLite
+      </span>
+    </div>
+
     <%= yield %>
   </body>
 </html>

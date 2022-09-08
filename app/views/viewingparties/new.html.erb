@@ -1,0 +1,24 @@
+<h1> New Viewing Party </h1>
+
+<h3><%= @movie.title %></h3>
+
+<%= form_with url:"/users/#{params[:user_id]}/movies/#{params[:movie_id]}/viewing-party/new", method: :post, local: true do |f| %>
+    <p><%= f.label :runtime, "Runtime" %></p>
+    <p><%= f.number_field :runtime, value: "#{@movie.runtime}", min: "#{@movie.runtime}" %></p>
+    <p><%= f.label :runtime, "Select a date" %></p>
+    <p><%= f.date_field :date %></p>
+    <p><%= f.label :runtime, "Select a time" %></p>
+    <p><%= f.time_field :time %></p>
+    <p><%= f.label :invite, "Invite your friends" %></p>
+    <ul style="list-style: none;">
+        <% @users.each do |user| %>
+            <li>
+                <%= check_box_tag "user_ids[#{user.id}]", user.id, false, :name => "user_ids[]" %>
+                <%= "#{user.first_name} - #{user.email}" %>
+            </li>
+        <% end %>
+    </ul>
+    <%= f.hidden_field :movie_title, :value => @movie.title %>
+    <%= f.hidden_field :movie_runtime, :value => @movie.runtime %>
+    <%= f.submit 'Create Viewing Party' %>
+<% end %>
