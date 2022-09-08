@@ -6,7 +6,7 @@ RSpec.describe MovieService do
 
     expect(data).to be_an(Array)
     expect(data.count).to eq(40)
-    expect(data[0][:title]).to eq('The Shawshank Redemption')
+    expect(data[0][:title]).to eq('The Godfather')
     expect(data[0][:vote_average]).to eq(8.7)
   end
 
