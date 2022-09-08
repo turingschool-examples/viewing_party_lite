@@ -6,7 +6,7 @@ RSpec.describe MovieFacade do
 
     expect(movies[0]).to be_a(Movie)
     expect(movies.count).to eq(40)
-    expect(movies[0].title).to eq('The Shawshank Redemption')
+    expect(movies[0].title).to eq('The Godfather')
     expect(movies[0].vote_average).to eq(8.7)
   end
 

@@ -1,13 +1,18 @@
 <center>
-
   <h1>Welcome to Viewing Party!</h1>
 
-  <%= button_to 'Log In', "/login", method: :get  %><br>
+  <% if current_user %>
+  <%= button_to "Log Out", '/logout', method: :delete %>
+<%  else %>
+  <%= button_to "Log In", "/login", method: :get %>
+<% end %><br>
 
   <%= button_to 'Create a New User', "/register", method: :get  %><br>
 
+  <% if current_user %>
   <% @users.each do |user| %>
-    <%= link_to "#{user.email}'s Dashboard", "/users/#{user.id}" %><br>
+    <%= user.email %><br>
   <% end %>
+<% end %>
 
 </center>

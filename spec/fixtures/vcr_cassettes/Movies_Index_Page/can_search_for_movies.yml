@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Tue, 06 Sep 2022 19:27:45 GMT
+      - Wed, 07 Sep 2022 19:28:10 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,13 +42,13 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 4b03860b1b9cb623000b474ffbb510b2.cloudfront.net (CloudFront)
+      - 1.1 da53febaa1af8b24d592f546f0d18dd6.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - ATL58-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - AHpPzC1pteELAk7avrgsHq5SFPti-o_thCMBQ5Vl-I5-mDA1Lt5E5w==
+      - h3ub6Ob20nfFZI_cZuQxCgRe0ESKRt2pS6vMudGw8dUbgbjLT7x9YQ==
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg","genre_ids":[18,80],"id":278,"original_language":"en","original_title":"The
@@ -57,12 +57,12 @@ http_interactions:
         at the Shawshank prison, where he puts his accounting skills to work for an
         amoral warden. During his long stretch in prison, Dufresne comes to be admired
         by the other inmates -- including an older prisoner named Red -- for his integrity
-        and unquenchable sense of hope.","popularity":117.258,"poster_path":"/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg","release_date":"1994-09-23","title":"The
-        Shawshank Redemption","video":false,"vote_average":8.7,"vote_count":22176},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":897459,"original_language":"en","original_title":"Hope
+        and unquenchable sense of hope.","popularity":107.139,"poster_path":"/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg","release_date":"1994-09-23","title":"The
+        Shawshank Redemption","video":false,"vote_average":8.7,"vote_count":22189},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":897459,"original_language":"en","original_title":"Hope
         Springs Eternal: A Look Back at The Shawshank Redemption","overview":"Documentary
-        about the movie.","popularity":2.899,"poster_path":"/vdVab7yNvgYEMd8shCfy2D6nTMu.jpg","release_date":"2004-06-25","title":"Hope
+        about the movie.","popularity":1.966,"poster_path":"/vdVab7yNvgYEMd8shCfy2D6nTMu.jpg","release_date":"2004-06-25","title":"Hope
         Springs Eternal: A Look Back at The Shawshank Redemption","video":false,"vote_average":7,"vote_count":1}],"total_pages":1,"total_results":2}'
-  recorded_at: Tue, 06 Sep 2022 19:27:45 GMT
+  recorded_at: Wed, 07 Sep 2022 19:28:10 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/search/movie?api_key=DONT SHOW MY API KEY&page=2&query=The%20Shawshank%20Redemption
@@ -88,7 +88,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Tue, 06 Sep 2022 19:27:45 GMT
+      - Wed, 07 Sep 2022 19:28:10 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -105,15 +105,15 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 e5aa3080cea9dc9a9b76e1a6140c88b6.cloudfront.net (CloudFront)
+      - 1.1 717259fee28262d19eb04e26675df7a8.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - ATL58-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - bMJAN-LP-tzf4zm-zcwqveNJ_AKRTWMihZ1lq3NNnb6GhJ0Jjfubsg==
+      - jXR-T-n1il4xegn2opyKmPbeue-0XOfQueUKYNz-qQIcT6Al3nOZXQ==
     body:
       encoding: ASCII-8BIT
       string: '{"page":2,"results":[],"total_pages":1,"total_results":2}'
-  recorded_at: Tue, 06 Sep 2022 19:27:45 GMT
+  recorded_at: Wed, 07 Sep 2022 19:28:10 GMT
 recorded_with: VCR 6.1.0
