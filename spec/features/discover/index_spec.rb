@@ -5,8 +5,9 @@ RSpec.describe 'discover page' do
     user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
     user2 = User.create!(name: 'Maury', email: 'maury@trashtv.com', password: 'password', password_confirmation: 'password')
     user3 = User.create!(name: 'Jenny', email: 'jenny@trashtv.com', password: 'password', password_confirmation: 'password')
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
-    visit "users/#{user1.id}/discover"
+    visit discover_path
 
     expect(page).to have_button 'Find Top Rated Movies'
   end
@@ -15,8 +16,9 @@ RSpec.describe 'discover page' do
     user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
     user2 = User.create!(name: 'Maury', email: 'maury@trashtv.com', password: 'password', password_confirmation: 'password')
     user3 = User.create!(name: 'Jenny', email: 'jenny@trashtv.com', password: 'password', password_confirmation: 'password')
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
-    visit "users/#{user1.id}/discover"
+    visit discover_path
 
     expect(page).to have_button 'Find Top Rated Movies'
   end

@@ -3,27 +3,29 @@ require 'rails_helper'
 RSpec.describe 'Movies Show Page' do
   it 'has a button to go back to the discover page' do
     user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
-    visit user_movies_path(user1)
+    visit movies_path
 
     expect(page).to have_button 'Discover Page'
 
     click_button 'Discover Page'
 
-    expect(current_path).to eq "/users/#{user1.id}/discover"
+    expect(current_path).to eq(discover_path)
   end
 
   it 'shows all of the details for a specific movie', :vcr do
     user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
-    visit "users/#{user1.id}/movies/278"
+    visit movie_path(278)
 
     expect(page).to have_content('The Shawshank Redemption')
 
     within '#rating-runtime-genres' do
-      expect(page).to have_content('8.724')
-      expect(page).to have_content('2 h 22 min')
-      expect(page).to have_content('Drama, Crime')
+      expect(page).to have_content('Vote Average: 8.704')
+      expect(page).to have_content('Runtime: 2 h 22 min')
+      expect(page).to have_content('Genre(s): Drama, Crime')
     end
 
     within '#summary-section' do
@@ -45,13 +47,14 @@ RSpec.describe 'Movies Show Page' do
 
   it 'has a button to create a viewing party for the movie', :vcr do
     user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
-    visit "users/#{user1.id}/movies/278"
+    visit movie_path(278)
 
     expect(page).to have_button('Create Viewing Party for The Shawshank Redemption')
 
     click_button('Create Viewing Party for The Shawshank Redemption')
 
-    expect(current_path).to eq new_user_movie_viewing_party_path(user1, 278)
+    expect(current_path).to eq new_movie_viewing_party_path(278)
   end
 end

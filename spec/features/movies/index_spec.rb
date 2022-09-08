@@ -3,20 +3,22 @@ require 'rails_helper'
 RSpec.describe 'Movies Index Page' do
   it 'can show the top 40 movies from the API', :vcr do
     user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
-    visit "users/#{user1.id}/discover"
+    visit discover_path
 
     click_button 'Find Top Rated Movies'
 
-    expect(current_path).to eq "/users/#{user1.id}/movies"
+    expect(current_path).to eq(movies_path)
     expect(page).to have_css('table#top-movies tr', :count=>41)
     expect(page).to have_content('Shawshank Redemption')
   end
 
   it 'can show the top 40 movies from the API based on a search string', :vcr do
     user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
-    visit "users/#{user1.id}/discover"
+    visit discover_path
 
     fill_in :q, with: 'spongebob'
     click_button 'Find Movies'
@@ -24,32 +26,35 @@ RSpec.describe 'Movies Index Page' do
     expect(page.status_code).to eq 200
 
     # 1 Header row, 40 result rows
-    expect(current_path).to eq "/users/#{user1.id}/movies"
+    expect(current_path).to eq(movies_path)
     expect(page).to have_content('Movie Results for: spongebob')
     expect(page).to have_css('table#searched-movies-table tr', :count=>41)
   end
 
   it 'has a link to the show page for movies', :vcr do
     user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
-    visit "users/#{user1.id}/discover"
+    visit discover_path
 
     click_button 'Find Top Rated Movies'
 
-    expect(current_path).to eq "/users/#{user1.id}/movies"
+    expect(current_path).to eq(movies_path)
     expect(page).to have_link 'The Shawshank Redemption'
 
     click_link 'The Shawshank Redemption'
 
-    expect(current_path).to eq "/users/#{user1.id}/movies/278"
+    expect(current_path).to eq("/movies/278")
   end
 
   it 'has a button to go back to the discover page' do
     user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
-    visit user_movies_path(user1)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
+
+    visit movies_path
 
     expect(page).to have_button 'Discover Page'
     click_button 'Discover Page'
-    expect(current_path).to eq "/users/#{user1.id}/discover"
+    expect(current_path).to eq(discover_path)
   end
 end

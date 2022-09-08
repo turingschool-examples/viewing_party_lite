@@ -21,6 +21,12 @@ header {
   width: 30%;
 }
 
+ul li {
+  list-style: none;
+  display: inline-block;
+  font-size: 18px;
+}
+
 h2 {
   margin: auto;
   text-align: center;
@@ -38,7 +44,20 @@ table {
   margin: auto;
   text-align: center;
   font-weight: bold;
-  width: 30%;
+  width: 100%;
+}
+
+#login {
+  text-align: right;
+  font-weight: bold;
+  width: 98%;
+}
+
+#login-form {
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+  width: 100%;
 }
 
 #button {
