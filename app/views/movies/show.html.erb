@@ -1,0 +1,24 @@
+<h3><%= @movie_details.title %></h3>
+
+<div><img src= <%= @movie_details.poster %>></div>
+
+<p><%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %></p>
+
+<p><%= button_to "Create Viewing Party for #{@movie_details.title}", new_user_movie_party_path(@user, @movie_details.movie_id), method: :get %></p>
+
+<p>Vote Average: <%= @movie_details.vote_average %></p>
+<p>Runtime: <%= @movie_details.formatted_runtime %></p>
+<p>Genres: <%= @movie_details.genre_list %></p>
+
+<div id='movie_summary'><p>Summary: <%= @movie_details.overview %></p></div>
+
+<p>Cast:</p>
+<% @movie_details.cast_members.each do |cast| %>
+  <p><%= cast %></p>
+<% end %></br>
+
+<p><%= @movie_details.reviews.length %> Reviews:</p></br>
+<% @movie_details.reviews.each do |review| %>
+  <p>Author: <%= review[:author] %></p>
+  <p><%= review[:content] %></p></br>
+<% end %>
