@@ -2,6 +2,12 @@
 
 <%= link_to "Create a New User", "/register", class: "create-user-link"%>
 
+<br><br>
+
+<%= link_to "Log In", login_path, class: "login-link"%>
+
+<br><br>
+
 <div id="existing-users">
   <% @users.each do |user|%>
     <div id="user-<%=user.id%>">

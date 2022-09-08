@@ -17,11 +17,11 @@ RSpec.describe 'landing page', type: :feature do
   end
 
   it 'displays list of existing users, with links to each user\'s dashboard' do
-    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com")
+    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
 
-    user2 = User.create!(first_name: "Steven", last_name: "Spielberg", email: "steven-fake@test.com")
+    user2 = User.create!(first_name: "Steven", last_name: "Spielberg", email: "steven-fake@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
 
-    user3 = User.create!(first_name: "Greta", last_name: "Gerwig", email: "greta-fake@test.com")
+    user3 = User.create!(first_name: "Greta", last_name: "Gerwig", email: "greta-fake@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
 
     visit '/'
 
@@ -37,7 +37,7 @@ RSpec.describe 'landing page', type: :feature do
   end
 
   it 'has link to return to landing page, which is present on all pages' do
-    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com")
+    user1 = User.create!(first_name: "David", last_name: "Lynch", email: "david-fake@test.com", password: "iluvmovies123", password_confirmation: "iluvmovies123")
     
     visit '/'
 
@@ -56,6 +56,14 @@ RSpec.describe 'landing page', type: :feature do
     end
 
     expect(current_path).to eq("/")
+  end
+
+  it 'has a link for "Log In"' do
+    visit "/"
+
+    click_on "Log In"
+
+    expect(current_path).to eq(login_path)
   end
 
 end
