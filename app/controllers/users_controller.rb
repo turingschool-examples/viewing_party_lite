@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
+      session[:user_id] = user.id
       redirect_to "/users/#{user.id}"
       flash[:success] = "Welcome, #{user.name}!"
     else
@@ -28,9 +29,10 @@ class UsersController < ApplicationController
 
   def login_user
     user = User.find_by(email: params[:email]) 
-    if user && user&.authenticate(params[:password])
-      redirect_to "/users/#{user.id}"
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
       flash[:success] = "Welcome, #{user.name}"
+      redirect_to "/users/#{user.id}"
       else
       flash[:error] = "Your login information is incorrect. Please try to login again."
       render :login_form
@@ -40,6 +42,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:name, :email, :password, :password_confirmation)
+    params.permit(:name.downcase, :email, :password, :password_confirmation)
   end
 end

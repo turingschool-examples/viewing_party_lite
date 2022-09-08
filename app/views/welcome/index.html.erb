@@ -1,9 +1,15 @@
 <h1>Viewing Party</h1>
 
-<%= link_to "Log In", '/login' %>
+<% if !session[:user_id] %>
+  <%= button_to 'Create New User', "/register", method: :get %><br>
+  <%= link_to "Log In", '/login' %>
+ <% else %>
+  <%= link_to "Log Out", '/logout' %>
+<% end %>
 
-<%= button_to 'Create New User', "/register", method: :get %>
-
-<% @users.each do |user| %>
-  <p><%= link_to user.name, "/users/#{user.id}" %></p>
- <% end %>
+<% if session[:user_id] %>
+  <% @users.each do |user| %>
+    <p><%= user.email %></p> 
+  <% end %>
+<% end %>
+ 
