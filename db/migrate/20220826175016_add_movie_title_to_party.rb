@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddMovieTitleToParty < ActiveRecord::Migration[5.2]
   def change
     add_column :parties, :movie_title, :string
