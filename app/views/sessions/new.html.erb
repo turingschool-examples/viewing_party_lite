@@ -1,0 +1,12 @@
+<% flash.each do |type, msg| %>
+    <div class='flash_red'><%= msg %></div>
+    <br>
+<% end %>
+
+<%= form_with url: login_path, method: :post, local: true do |form| %>
+  <%= form.label :email, 'Email:' %>
+  <%= form.text_field :email %>
+  <%= form.label :password, 'Password:' %>
+  <%= form.text_field :password %>
+  <%= form.submit 'Log In' %>
+<% end %>

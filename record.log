@@ -1,0 +1,96 @@
+[Cassette: 'movie show page/has a button to create a viewing party'] Initialized with options: {:record=>:once, :record_on_error=>true, :match_requests_on=>[:method, :uri], :allow_unused_http_interactions=>true, :serialize_with=>:yaml, :persist_with=>:file_system, :persister_options=>{}}
+[webmock] Handling request: [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=1] (disabled: false)
+  [Cassette: 'movie show page/has a button to create a viewing party'] Initialized HTTPInteractionList with request matchers [:method, :uri] and 0 interaction(s): {  }
+[webmock] Identified request type (recordable) for [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=1]
+[Cassette: 'movie show page/has a button to create a viewing party'] Recorded HTTP interaction [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=1] => [200 "{\"page\":1,\"results\":[{\"adult\":false,\"backdrop_path\":\"/kXfqcdQKsToO0OUXHcrrNCHDBz"]
+[webmock] Handling request: [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=2] (disabled: false)
+[webmock] Identified request type (recordable) for [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=2]
+[Cassette: 'movie show page/has a button to create a viewing party'] Recorded HTTP interaction [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=2] => [200 "{\"page\":2,\"results\":[{\"adult\":false,\"backdrop_path\":\"/fQq1FWp1rC89xDrRMuyFJdFUdM"]
+[webmock] Handling request: [get https://api.themoviedb.org/3/movie/278?api_key=5488f4d59a9b18a1444ffdcbc47a8705] (disabled: false)
+[webmock] Identified request type (recordable) for [get https://api.themoviedb.org/3/movie/278?api_key=5488f4d59a9b18a1444ffdcbc47a8705]
+[Cassette: 'movie show page/has a button to create a viewing party'] Recorded HTTP interaction [get https://api.themoviedb.org/3/movie/278?api_key=5488f4d59a9b18a1444ffdcbc47a8705] => [200 "{\"adult\":false,\"backdrop_path\":\"/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg\",\"belongs_to_co"]
+[webmock] Handling request: [get https://api.themoviedb.org/3/movie/278/credits?api_key=5488f4d59a9b18a1444ffdcbc47a8705] (disabled: false)
+[webmock] Identified request type (recordable) for [get https://api.themoviedb.org/3/movie/278/credits?api_key=5488f4d59a9b18a1444ffdcbc47a8705]
+[Cassette: 'movie show page/has a button to create a viewing party'] Recorded HTTP interaction [get https://api.themoviedb.org/3/movie/278/credits?api_key=5488f4d59a9b18a1444ffdcbc47a8705] => [200 "{\"id\":278,\"cast\":[{\"adult\":false,\"gender\":2,\"id\":504,\"known_for_department\":\"Act"]
+[webmock] Handling request: [get https://api.themoviedb.org/3/movie/278/reviews?api_key=5488f4d59a9b18a1444ffdcbc47a8705] (disabled: false)
+[webmock] Identified request type (recordable) for [get https://api.themoviedb.org/3/movie/278/reviews?api_key=5488f4d59a9b18a1444ffdcbc47a8705]
+[Cassette: 'movie show page/has a button to create a viewing party'] Recorded HTTP interaction [get https://api.themoviedb.org/3/movie/278/reviews?api_key=5488f4d59a9b18a1444ffdcbc47a8705] => [200 "{\"id\":278,\"page\":1,\"results\":[{\"author\":\"elshaarawy\",\"author_details\":{\"name\":\"\""]
+[VCR::Configuration] before_record: replacing "5488f4d59a9b18a1444ffdcbc47a8705" with "api_key"
+[VCR::Configuration] before_record: replacing "5488f4d59a9b18a1444ffdcbc47a8705" with "api_key"
+[VCR::Configuration] before_record: replacing "5488f4d59a9b18a1444ffdcbc47a8705" with "api_key"
+[VCR::Configuration] before_record: replacing "5488f4d59a9b18a1444ffdcbc47a8705" with "api_key"
+[VCR::Configuration] before_record: replacing "5488f4d59a9b18a1444ffdcbc47a8705" with "api_key"
+[Cassette: 'movie show page/has a button to return to the discover page'] Initialized with options: {:record=>:once, :record_on_error=>true, :match_requests_on=>[:method, :uri], :allow_unused_http_interactions=>true, :serialize_with=>:yaml, :persist_with=>:file_system, :persister_options=>{}}
+[webmock] Handling request: [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=1] (disabled: false)
+  [Cassette: 'movie show page/has a button to return to the discover page'] Initialized HTTPInteractionList with request matchers [:method, :uri] and 0 interaction(s): {  }
+[webmock] Identified request type (recordable) for [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=1]
+[Cassette: 'movie show page/has a button to return to the discover page'] Recorded HTTP interaction [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=1] => [200 "{\"page\":1,\"results\":[{\"adult\":false,\"backdrop_path\":\"/kXfqcdQKsToO0OUXHcrrNCHDBz"]
+[webmock] Handling request: [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=2] (disabled: false)
+[webmock] Identified request type (recordable) for [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=2]
+[Cassette: 'movie show page/has a button to return to the discover page'] Recorded HTTP interaction [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=2] => [200 "{\"page\":2,\"results\":[{\"adult\":false,\"backdrop_path\":\"/fQq1FWp1rC89xDrRMuyFJdFUdM"]
+[webmock] Handling request: [get https://api.themoviedb.org/3/movie/278?api_key=5488f4d59a9b18a1444ffdcbc47a8705] (disabled: false)
+[webmock] Identified request type (recordable) for [get https://api.themoviedb.org/3/movie/278?api_key=5488f4d59a9b18a1444ffdcbc47a8705]
+[Cassette: 'movie show page/has a button to return to the discover page'] Recorded HTTP interaction [get https://api.themoviedb.org/3/movie/278?api_key=5488f4d59a9b18a1444ffdcbc47a8705] => [200 "{\"adult\":false,\"backdrop_path\":\"/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg\",\"belongs_to_co"]
+[webmock] Handling request: [get https://api.themoviedb.org/3/movie/278/credits?api_key=5488f4d59a9b18a1444ffdcbc47a8705] (disabled: false)
+[webmock] Identified request type (recordable) for [get https://api.themoviedb.org/3/movie/278/credits?api_key=5488f4d59a9b18a1444ffdcbc47a8705]
+[Cassette: 'movie show page/has a button to return to the discover page'] Recorded HTTP interaction [get https://api.themoviedb.org/3/movie/278/credits?api_key=5488f4d59a9b18a1444ffdcbc47a8705] => [200 "{\"id\":278,\"cast\":[{\"adult\":false,\"gender\":2,\"id\":504,\"known_for_department\":\"Act"]
+[webmock] Handling request: [get https://api.themoviedb.org/3/movie/278/reviews?api_key=5488f4d59a9b18a1444ffdcbc47a8705] (disabled: false)
+[webmock] Identified request type (recordable) for [get https://api.themoviedb.org/3/movie/278/reviews?api_key=5488f4d59a9b18a1444ffdcbc47a8705]
+[Cassette: 'movie show page/has a button to return to the discover page'] Recorded HTTP interaction [get https://api.themoviedb.org/3/movie/278/reviews?api_key=5488f4d59a9b18a1444ffdcbc47a8705] => [200 "{\"id\":278,\"page\":1,\"results\":[{\"author\":\"elshaarawy\",\"author_details\":{\"name\":\"\""]
+[VCR::Configuration] before_record: replacing "5488f4d59a9b18a1444ffdcbc47a8705" with "api_key"
+[VCR::Configuration] before_record: replacing "5488f4d59a9b18a1444ffdcbc47a8705" with "api_key"
+[VCR::Configuration] before_record: replacing "5488f4d59a9b18a1444ffdcbc47a8705" with "api_key"
+[VCR::Configuration] before_record: replacing "5488f4d59a9b18a1444ffdcbc47a8705" with "api_key"
+[VCR::Configuration] before_record: replacing "5488f4d59a9b18a1444ffdcbc47a8705" with "api_key"
+[Cassette: 'movie show page/shows movie information'] Initialized with options: {:record=>:once, :record_on_error=>true, :match_requests_on=>[:method, :uri], :allow_unused_http_interactions=>true, :serialize_with=>:yaml, :persist_with=>:file_system, :persister_options=>{}}
+[webmock] Handling request: [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=1] (disabled: false)
+  [Cassette: 'movie show page/shows movie information'] Initialized HTTPInteractionList with request matchers [:method, :uri] and 0 interaction(s): {  }
+[webmock] Identified request type (recordable) for [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=1]
+[Cassette: 'movie show page/shows movie information'] Recorded HTTP interaction [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=1] => [200 "{\"page\":1,\"results\":[{\"adult\":false,\"backdrop_path\":\"/kXfqcdQKsToO0OUXHcrrNCHDBz"]
+[webmock] Handling request: [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=2] (disabled: false)
+[webmock] Identified request type (recordable) for [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=2]
+[Cassette: 'movie show page/shows movie information'] Recorded HTTP interaction [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=2] => [200 "{\"page\":2,\"results\":[{\"adult\":false,\"backdrop_path\":\"/fQq1FWp1rC89xDrRMuyFJdFUdM"]
+[webmock] Handling request: [get https://api.themoviedb.org/3/movie/278?api_key=5488f4d59a9b18a1444ffdcbc47a8705] (disabled: false)
+[webmock] Identified request type (recordable) for [get https://api.themoviedb.org/3/movie/278?api_key=5488f4d59a9b18a1444ffdcbc47a8705]
+[Cassette: 'movie show page/shows movie information'] Recorded HTTP interaction [get https://api.themoviedb.org/3/movie/278?api_key=5488f4d59a9b18a1444ffdcbc47a8705] => [200 "{\"adult\":false,\"backdrop_path\":\"/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg\",\"belongs_to_co"]
+[webmock] Handling request: [get https://api.themoviedb.org/3/movie/278/credits?api_key=5488f4d59a9b18a1444ffdcbc47a8705] (disabled: false)
+[webmock] Identified request type (recordable) for [get https://api.themoviedb.org/3/movie/278/credits?api_key=5488f4d59a9b18a1444ffdcbc47a8705]
+[Cassette: 'movie show page/shows movie information'] Recorded HTTP interaction [get https://api.themoviedb.org/3/movie/278/credits?api_key=5488f4d59a9b18a1444ffdcbc47a8705] => [200 "{\"id\":278,\"cast\":[{\"adult\":false,\"gender\":2,\"id\":504,\"known_for_department\":\"Act"]
+[webmock] Handling request: [get https://api.themoviedb.org/3/movie/278/reviews?api_key=5488f4d59a9b18a1444ffdcbc47a8705] (disabled: false)
+[webmock] Identified request type (recordable) for [get https://api.themoviedb.org/3/movie/278/reviews?api_key=5488f4d59a9b18a1444ffdcbc47a8705]
+[Cassette: 'movie show page/shows movie information'] Recorded HTTP interaction [get https://api.themoviedb.org/3/movie/278/reviews?api_key=5488f4d59a9b18a1444ffdcbc47a8705] => [200 "{\"id\":278,\"page\":1,\"results\":[{\"author\":\"elshaarawy\",\"author_details\":{\"name\":\"\""]
+[VCR::Configuration] before_record: replacing "5488f4d59a9b18a1444ffdcbc47a8705" with "api_key"
+[VCR::Configuration] before_record: replacing "5488f4d59a9b18a1444ffdcbc47a8705" with "api_key"
+[VCR::Configuration] before_record: replacing "5488f4d59a9b18a1444ffdcbc47a8705" with "api_key"
+[VCR::Configuration] before_record: replacing "5488f4d59a9b18a1444ffdcbc47a8705" with "api_key"
+[VCR::Configuration] before_record: replacing "5488f4d59a9b18a1444ffdcbc47a8705" with "api_key"
+[Cassette: 'top rated movies page/lists top rated mopvies and their vote average'] Initialized with options: {:record=>:once, :record_on_error=>true, :match_requests_on=>[:method, :uri], :allow_unused_http_interactions=>true, :serialize_with=>:yaml, :persist_with=>:file_system, :persister_options=>{}}
+[webmock] Handling request: [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=1] (disabled: false)
+  [Cassette: 'top rated movies page/lists top rated mopvies and their vote average'] Initialized HTTPInteractionList with request matchers [:method, :uri] and 0 interaction(s): {  }
+[webmock] Identified request type (recordable) for [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=1]
+[Cassette: 'top rated movies page/lists top rated mopvies and their vote average'] Recorded HTTP interaction [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=1] => [200 "{\"page\":1,\"results\":[{\"adult\":false,\"backdrop_path\":\"/kXfqcdQKsToO0OUXHcrrNCHDBz"]
+[webmock] Handling request: [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=2] (disabled: false)
+[webmock] Identified request type (recordable) for [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=2]
+[Cassette: 'top rated movies page/lists top rated mopvies and their vote average'] Recorded HTTP interaction [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=2] => [200 "{\"page\":2,\"results\":[{\"adult\":false,\"backdrop_path\":\"/fQq1FWp1rC89xDrRMuyFJdFUdM"]
+[VCR::Configuration] before_record: replacing "5488f4d59a9b18a1444ffdcbc47a8705" with "api_key"
+[VCR::Configuration] before_record: replacing "5488f4d59a9b18a1444ffdcbc47a8705" with "api_key"
+[Cassette: 'user discover page/has a button to see top rated movies'] Initialized with options: {:record=>:once, :record_on_error=>true, :match_requests_on=>[:method, :uri], :allow_unused_http_interactions=>true, :serialize_with=>:yaml, :persist_with=>:file_system, :persister_options=>{}}
+[webmock] Handling request: [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=1] (disabled: false)
+  [Cassette: 'user discover page/has a button to see top rated movies'] Initialized HTTPInteractionList with request matchers [:method, :uri] and 0 interaction(s): {  }
+[webmock] Identified request type (recordable) for [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=1]
+[Cassette: 'user discover page/has a button to see top rated movies'] Recorded HTTP interaction [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=1] => [200 "{\"page\":1,\"results\":[{\"adult\":false,\"backdrop_path\":\"/kXfqcdQKsToO0OUXHcrrNCHDBz"]
+[webmock] Handling request: [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=2] (disabled: false)
+[webmock] Identified request type (recordable) for [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=2]
+[Cassette: 'user discover page/has a button to see top rated movies'] Recorded HTTP interaction [get https://api.themoviedb.org/3/movie/top_rated?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=2] => [200 "{\"page\":2,\"results\":[{\"adult\":false,\"backdrop_path\":\"/fQq1FWp1rC89xDrRMuyFJdFUdM"]
+[VCR::Configuration] before_record: replacing "5488f4d59a9b18a1444ffdcbc47a8705" with "api_key"
+[VCR::Configuration] before_record: replacing "5488f4d59a9b18a1444ffdcbc47a8705" with "api_key"
+[Cassette: 'user discover page/has a movie search bar'] Initialized with options: {:record=>:once, :record_on_error=>true, :match_requests_on=>[:method, :uri], :allow_unused_http_interactions=>true, :serialize_with=>:yaml, :persist_with=>:file_system, :persister_options=>{}}
+[webmock] Handling request: [get https://api.themoviedb.org/3/search/movie?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=1&query=mike] (disabled: false)
+  [Cassette: 'user discover page/has a movie search bar'] Initialized HTTPInteractionList with request matchers [:method, :uri] and 0 interaction(s): {  }
+[webmock] Identified request type (recordable) for [get https://api.themoviedb.org/3/search/movie?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=1&query=mike]
+[Cassette: 'user discover page/has a movie search bar'] Recorded HTTP interaction [get https://api.themoviedb.org/3/search/movie?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=1&query=mike] => [200 "{\"page\":1,\"results\":[{\"adult\":false,\"backdrop_path\":\"/pwaETwSrgWeDutTeianu99LqUK"]
+[webmock] Handling request: [get https://api.themoviedb.org/3/search/movie?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=2&query=mike] (disabled: false)
+[webmock] Identified request type (recordable) for [get https://api.themoviedb.org/3/search/movie?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=2&query=mike]
+[Cassette: 'user discover page/has a movie search bar'] Recorded HTTP interaction [get https://api.themoviedb.org/3/search/movie?api_key=5488f4d59a9b18a1444ffdcbc47a8705&page=2&query=mike] => [200 "{\"page\":2,\"results\":[{\"adult\":false,\"backdrop_path\":\"/w37B5bPZjvPZx0VtY224zfXN8E"]
+[VCR::Configuration] before_record: replacing "5488f4d59a9b18a1444ffdcbc47a8705" with "api_key"
+[VCR::Configuration] before_record: replacing "5488f4d59a9b18a1444ffdcbc47a8705" with "api_key"
