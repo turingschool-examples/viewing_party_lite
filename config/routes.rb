@@ -11,5 +11,4 @@ Rails.application.routes.draw do
   end
 
   get '/users/:user_id/discover', to: 'movies#discover'
-  # get '/users/:user_id/movies/:movie_id/viewing-party/new', to: 'parties#new'
 end

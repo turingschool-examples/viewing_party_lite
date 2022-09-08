@@ -1,5 +1,7 @@
 <h3><%= @movie_details.title %></h3>
 
+<div><img src= <%= @movie_details.poster %>></div>
+
 <p><%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %></p>
 
 <p><%= button_to "Create Viewing Party for #{@movie_details.title}", new_user_movie_party_path(@user, @movie_details.movie_id), method: :get %></p>

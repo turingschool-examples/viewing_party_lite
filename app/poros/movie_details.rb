@@ -17,7 +17,7 @@ class MovieDetails
     @runtime = attributes[:runtime]
     @genres = attributes[:genres]
     @overview = attributes[:overview]
-    @poster = attributes[:poster_path]
+    @poster = "https://image.tmdb.org/t/p/w200#{attributes[:poster_path]}"
     @credits = attributes[:credits][:cast][0..9] if attributes[:credits]
     @reviews = attributes[:reviews][:results] if attributes[:reviews]
   end
