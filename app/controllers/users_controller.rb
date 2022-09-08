@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
   end
 
   def new
@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
-      redirect_to "/users/#{user.id}"
+      redirect_to '/dashboard'
       flash[:success] = "Welcome, #{user.name}!"
     else
       redirect_to '/register'
@@ -24,7 +24,8 @@ class UsersController < ApplicationController
   end
 
   def discover
-    @user = User.find(params[:id])
+    # @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
   end
 
   def login_user
@@ -32,9 +33,9 @@ class UsersController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:success] = "Welcome, #{user.name}"
-      redirect_to "/users/#{user.id}"
+      redirect_to '/dashboard'
       else
-      flash[:error] = "Your login information is incorrect. Please try to login again."
+      flash[:error] = "Invalid Credentials. Please try to login again."
       render :login_form
     end
   end

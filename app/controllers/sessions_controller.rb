@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       flash[:success] = "Welcome, #{user.name}"
-      redirect_to "/users/#{user.id}"
+      redirect_to '/dashboard'
       else
       flash[:error] = "Your login information is incorrect. Please try to login again."
       render :new
@@ -17,6 +17,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session.destroy
-    redirect_to '/'
+    redirect_to root_path
   end
 end

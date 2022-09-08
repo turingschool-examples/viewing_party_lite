@@ -16,7 +16,7 @@ RSpec.describe 'User Registration Page' do
 
     click_on 'Register'
 
-    expect(current_path).to eq("/users/#{User.all.last.id}")
+    expect(current_path).to eq('/dashboard')
   end
 
   it "registers a new user" do
@@ -34,7 +34,7 @@ RSpec.describe 'User Registration Page' do
 
     click_on "Register"
 
-    expect(current_path).to eq(("/users/#{User.all.last.id}"))
+    expect(current_path).to eq('/dashboard')
   end
 
   it "has to have all fields filled to register a user" do
@@ -58,7 +58,7 @@ RSpec.describe 'User Registration Page' do
   it "can let a registered user login" do 
     user = User.create!(name: 'Smudger', email: 'imadog@email.com', password: "steak", password_confirmation: "steak")
     
-    visit '/'
+    visit root_path
 
     expect(page).to have_link("Log In") 
     click_on ("Log In")
@@ -68,13 +68,13 @@ RSpec.describe 'User Registration Page' do
     fill_in 'Password', with: 'steak'
     click_on ('Submit')
 
-    expect(current_path).to eq("/users/#{user.id}")
+    expect(current_path).to eq('/dashboard')
   end
 
   it "can tell a user if they're entering the wrong credentials" do 
     user = User.create!(name: 'Smudger', email: 'imadog@email.com', password: "steak", password_confirmation: "steak")
     
-    visit '/'
+    visit root_path
 
     expect(page).to have_link("Log In") 
     click_on ("Log In")
@@ -96,7 +96,7 @@ RSpec.describe 'User Registration Page' do
     fill_in 'Password', with: 'steak'
     click_on ('Submit')
 
-    visit '/'
+    visit root_path
 
     expect(page).to_not have_link("Log In")
     expect(page).to_not have_link("Create New User")
