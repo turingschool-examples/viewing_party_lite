@@ -26,16 +26,57 @@ RSpec.describe 'Register' do
 
   it 'sad path testing 1' do # no name
     fill_in 'Email', with: 'sm@g'
+    fill_in :user_password, with: 'test'
+    fill_in :user_password_confirmation, with: 'test'
     click_on 'Create User'
-    expect(current_path).to eq('/register')
+    expect(current_path).to eq(register_path)
     expect(page).to_not have_content("Sunny's Dashboard")
   end
 
-  it 'sad path testing 2' do # duplicate email
+  it 'sad path testing 2' do # no email
+    fill_in 'Name', with: 'Sunny'
+    fill_in :user_password, with: 'test'
+    fill_in :user_password_confirmation, with: 'test'
+    click_on 'Create User'
+    expect(current_path).to eq(register_path)
+    expect(page).to_not have_content("Sunny's Dashboard")
+  end
+
+  it 'sad path testing 3' do # duplicate email
     fill_in 'Name', with: 'Sunny'
     fill_in 'Email', with: 'es@g'
+    fill_in :user_password, with: 'test'
+    fill_in :user_password_confirmation, with: 'test'
     click_on 'Create User'
-    expect(current_path).to eq('/register')
+    expect(current_path).to eq(register_path)
+    expect(page).to_not have_content("Sunny's Dashboard")
+  end
+
+  it 'sad path testing 4' do # no password
+    fill_in 'Name', with: 'Sunny'
+    fill_in 'Email', with: 'es@g'
+    fill_in :user_password_confirmation, with: 'test'
+    click_on 'Create User'
+    expect(current_path).to eq(register_path)
+    expect(page).to_not have_content("Sunny's Dashboard")
+  end
+
+  it 'sad path testing 5' do # no confirmation
+    fill_in 'Name', with: 'Sunny'
+    fill_in 'Email', with: 'es@g'
+    fill_in :user_password, with: 'test'
+    click_on 'Create User'
+    expect(current_path).to eq(register_path)
+    expect(page).to_not have_content("Sunny's Dashboard")
+  end
+
+  it 'sad path testing 6' do # different password/confirmation
+    fill_in 'Name', with: 'Sunny'
+    fill_in 'Email', with: 'es@g'
+    fill_in :user_password, with: 'test1'
+    fill_in :user_password_confirmation, with: 'test2'
+    click_on 'Create User'
+    expect(current_path).to eq(register_path)
     expect(page).to_not have_content("Sunny's Dashboard")
   end
 

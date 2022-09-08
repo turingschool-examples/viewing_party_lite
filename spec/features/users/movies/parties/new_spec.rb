@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'New Party', vcr: 'movie_details' do
+RSpec.describe 'New Party' do
   before :each do
     @eli = User.create!(name: 'Eli', email: 'es@g', password: 'test', password_confirmation: 'test')
     @sunny = User.create!(name: 'Sunny', email: 'sm@g', password: 'test', password_confirmation: 'test')
@@ -11,7 +11,7 @@ RSpec.describe 'New Party', vcr: 'movie_details' do
     visit new_user_movie_party_path(@eli, 550)
   end
 
-  it 'has form to create party and invite users', vcr: 'new_party' do
+  it 'has form to create party and invite users', vcr: 'movie_details2' do
     expect(page).to have_content('Movie Title: Fight Club')
     fill_in 'Duration', with: '150'
     select('2022', from: '_start_time_1i')
@@ -31,7 +31,7 @@ RSpec.describe 'New Party', vcr: 'movie_details' do
       end
       within '#created-invited' do
         expect(page).to have_content('Sunny')
-        # expect(page).to_not have_content('Eli')
+        expect(page).to_not have_content('Eli')
       end
     end
   end

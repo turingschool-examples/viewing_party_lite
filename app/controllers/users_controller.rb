@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       flash[:success] = "Welcome, #{user.name}!"
       redirect_to user_path(user)
     else
-      flash[:error] = ''
+      flash[:error] = 'Invalid. Please try again.'
       redirect_to register_path
     end
   end
