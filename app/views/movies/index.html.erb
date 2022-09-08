@@ -1,5 +1,5 @@
 <div id='button'>
-  <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %>
+  <%= button_to "Discover Page", discover_path, method: :get %>
 </div>
 
 <br>
@@ -17,7 +17,7 @@
     <% @top_movies.each_with_index do |movie, index| %>
       <tr id="<%=movie.movie_id%>-info">
         <th><%= index + 1 %></th>
-        <th><%= link_to movie.title, user_movie_path(@user, movie.movie_id) %></th>
+        <th><%= link_to movie.title, movie_path(movie.movie_id) %></th>
         <th><%= movie.rating %></th>
       </tr>
     <% end %>
@@ -38,7 +38,7 @@
       <% @searched_movies.each_with_index do |movie, index| %>
         <tr id="<%=movie.movie_id%>-info">
           <th><%= index + 1 %></th>
-          <th><%= link_to movie.title, user_movie_path(@user, movie.movie_id) %></th>
+          <th><%= link_to movie.title, movie_path(movie.movie_id) %></th>
           <th><%= movie.rating %></th>
         </tr>
       <% end %>

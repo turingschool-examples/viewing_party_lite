@@ -1,16 +1,20 @@
+<% if !current_user %>
+<div id='login'>
+  <%= render partial: 'login_form', locals: {path: login_path} %>
+</div>
+
+<br>
+
 <div id='button'>
   <%= button_to 'Create a New User', register_path, method: :get %>
 </div>
+<% end %>
 
 <br>
 
 <h2>Existing Users:</h2>
 
 <br>
-
-<div id='existing_user'>
-  <%= link_to 'Existing Users Log In Here', login_path, method: :get %>
-</div>
 
 <div id='user-info'>
   <% @users.each do |user| %>

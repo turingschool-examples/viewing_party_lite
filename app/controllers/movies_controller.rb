@@ -5,11 +5,10 @@ class MoviesController < ApplicationController
     elsif params[:q]
       @searched_movies = MovieFacade.search(params[:q])
     end
-    @user = User.find(params[:user_id])
   end
 
   def show
-    @user = User.find(params[:user_id])
+    # @user = User.find(params[:user_id])
     @movie = MovieFacade.movie_details(params[:id])
   end
 end

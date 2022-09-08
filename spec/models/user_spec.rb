@@ -18,15 +18,15 @@ RSpec.describe User, type: :model do
     @user1 = User.create!(
       name: 'Saylor',
       email: 'SAyLoR@fakemail.COM',
-      password: 'test',
-      password_confirmation: 'test'
+      password: 'password',
+      password_confirmation: 'password'
       )
 
     @user2 = User.create!(
       name: 'Sterling',
       email: 'sterling@fakemail.com',
-      password: 'test2',
-      password_confirmation: 'test2'
+      password: 'password',
+      password_confirmation: 'password'
     )
 
     @party1 = ViewingParty.create!(

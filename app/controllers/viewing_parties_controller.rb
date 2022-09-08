@@ -1,7 +1,7 @@
 class ViewingPartiesController < ApplicationController
+
   def new
     @attendees = User.where.not(id: params[:user_id])
-    @host_user = User.find(params[:user_id])
     @movie = MovieFacade.movie_details(params[:movie_id])
   end
 
@@ -16,7 +16,7 @@ class ViewingPartiesController < ApplicationController
       starttime: Time.parse(params[:starttime])
     )
 
-    UserViewingParty.create!( user_id: params[:user_id].to_i, viewing_party_id: viewing_party.id )
+    UserViewingParty.create!( current_user.id, viewing_party_id: viewing_party.id )
 
     if params[:attendee_ids]
       params[:attendee_ids].each do |attendee_id|
