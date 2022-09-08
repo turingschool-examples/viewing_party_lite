@@ -3,7 +3,7 @@ require 'rails_helper'
 describe MovieService do
   context "class methods" do
     context "#movie's data" do
-      it "returns data of a particular movie" do
+      xit "returns data of a particular movie" do
         json_response = File.open("spec/fixtures/shawshank.json")
         stub_request(:get, "https://www.themoviedb.org/3/search/movie?api_key=35493517a3da99ce44fdd268008a69d1query=The%20Shawshank%20Redemption").
                 with(
@@ -27,7 +27,7 @@ describe MovieService do
       end
 
 
-      it "returns the 20 top rated movies" do
+      xit "returns the 20 top rated movies" do
         json_response = File.open("spec/fixtures/top_rated.json")
         stub_request(:get, "https://www.themoviedb.org/3/movie/top_rated?api_key=#{ENV['moviedb_api_key']}").to_return(status: 200, body: json_response)
 

@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe 'User Dashbboard', type: :feature do 
 
     it 'should show the attribtutes of a user' do 
-        user_1 = User.create!(name: "Bryan", email: "bryan@bryan.com")
-        user_2 = User.create!(name: "Ben", email: "ben@ben.com")
+        user_1 = User.create!(name: "Bryan", email: "bryan@bryan.com", password: 'password123', password_confirmation: 'password123')
+        user_2 = User.create!(name: "Ben", email: "ben@ben.com", password: 'password123', password_confirmation: 'password123')
 
         visit "users/#{user_1.id}"
 
@@ -17,8 +17,8 @@ RSpec.describe 'User Dashbboard', type: :feature do
     end 
    
     it 'should have a section that lists viewing parties' do 
-      user_1 = User.create!(name: "Bryan", email: "bryan@bryan.com")
-      user_2 = User.create!(name: "Ben", email: "ben@ben.com") 
+      user_1 = User.create!(name: "Bryan", email: "bryan@bryan.com", password: 'password123', password_confirmation: 'password123')
+      user_2 = User.create!(name: "Ben", email: "ben@ben.com", password: 'password123', password_confirmation: 'password123')
       party_1 = Party.create!(user_id: user_1.id, duration: 20, when: '2022-08-22', start_time: '12:00', movie_id: 520)
       party_2 = Party.create!(user_id: user_2.id, duration: 30, when: '2022-08-20', start_time: '13:00', movie_id: 300)
       party_3 = Party.create!(user_id: user_1.id, duration: 40, when: '2022-08-24', start_time: '14:00', movie_id: 300)
@@ -40,7 +40,7 @@ RSpec.describe 'User Dashbboard', type: :feature do
     end 
 
     it 'should redirect to the user discover page after the Discover Movies button has been clicekd' do 
-        user_1 = User.create!(name: "Bryan", email: "bryan@bryan.com")
+        user_1 = User.create!(name: "Bryan", email: "bryan@bryan.com", password: 'password123', password_confirmation: 'password123')
         
         visit "users/#{user_1.id}"
 
