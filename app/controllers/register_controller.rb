@@ -6,7 +6,7 @@ class RegisterController < ApplicationController
 
   def create
     # binding.pry
-    user = User.new(name: params[:name], email: params[:email])
+    user = User.new(name: params[:name], email: params[:email], password: params[:password], password_confirmation: params[:password_confirmation])
     if user.save
       flash.notice = 'User Has Been Created!'
       redirect_to user_path(User.last.id)

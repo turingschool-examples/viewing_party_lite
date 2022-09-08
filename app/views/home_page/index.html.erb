@@ -1,7 +1,20 @@
 <h1>Viewing Party Lite</h1>
 
+<% flash.each do |type, msg| %>
+    <div class='flash_red'><%= msg %></div>
+    <br>
+<% end %>
+
+<% if current_user %>
+  <%= link_to "Logout", '/logout', method: :delete %>
+<% else %>
+  <%= link_to "Register as a User", new_user_path %>
+  <%= link_to "Login", login_path %>
+<% end %>
+
 
 <%= button_to 'Create New User', new_register_path, method: :get %>
+  <%= link_to "Login", login_path %>
 
 <h2>Existing Users</h2>
 <% @users.map do |u| %>
