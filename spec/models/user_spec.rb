@@ -5,8 +5,17 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe 'validations' do
     it { should validate_presence_of :name }
+    it { should validate_uniqueness_of :name }
     it { should validate_presence_of :email }
     it { should validate_uniqueness_of :email }
+    it { should have_secure_password }
+
+    it 'has encrypted password digest' do
+      user = User.create(name: 'Meg', email: 'meg@test.com', password: 'password123',
+                         password_confirmation: 'password123')
+      expect(user).to_not have_attribute(:password)
+      expect(user.password_digest).to_not eq('password123')
+    end
   end
   describe 'relationships' do
     it { should have_many :party_users }
@@ -15,9 +24,9 @@ RSpec.describe User, type: :model do
 
   describe 'class methods' do
     before :each do
-      @eli = User.create!(name: 'Eli', email: 'es@g')
-      @sunny = User.create!(name: 'Sunny', email: 'sm@g')
-      @john = User.create!(name: 'John', email: 'jc@g')
+      @eli = User.create!(name: 'Eli', email: 'es@g', password: 'test', password_confirmation: 'test')
+      @sunny = User.create!(name: 'Sunny', email: 'sm@g', password: 'test', password_confirmation: 'test')
+      @john = User.create!(name: 'John', email: 'jc@g', password: 'test', password_confirmation: 'test')
 
       @frozen = Party.create!(movie_id: 109_445, movie_title: 'Frozen', start_time: '2022-12-25 06:30:00 UTC',
                               duration: 90)
