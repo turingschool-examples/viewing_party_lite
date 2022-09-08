@@ -15,7 +15,14 @@ RSpec.describe 'Welcome Page', type: :feature do
     expect(page).to have_button('Create New User')
   end
 
-  it 'lists all existing users with links to the users dashboard' do
+  it 'has a link to return back to the landing/welcome page' do
+    visit '/'
+
+    click_link 'Home'
+    expect(current_path).to eq('/')
+  end
+
+  it 'as a visitor the section of the page that lists existing users is not visible unless logged in' do
     user1 = User.create!(name: 'Tarker Phompson', email: 'tarker@email.com', password: "pokemon", password_confirmation: "pokemon")
     user2 = User.create!(name: 'Eandace Cckels', email: 'eandace@email.com', password: "lit", password_confirmation: "lit")
     user3 = User.create!(name: 'Dhirley SeCesari', email: 'dhirleye@email.com', password: "crochet", password_confirmation: "crochet")
@@ -24,20 +31,31 @@ RSpec.describe 'Welcome Page', type: :feature do
     visit '/'
 
     expect(page).to have_link('Home')
-    expect(page).to have_content('Tarker Phompson')
-    expect(page).to have_link(user1.name.to_s)
-    expect(page).to have_content('Eandace Cckels')
-    expect(page).to have_link(user2.name.to_s)
-    expect(page).to have_content('Dhirley SeCesari')
-    expect(page).to have_link(user3.name.to_s)
-    expect(page).to have_content('Sage Skaff')
-    expect(page).to have_link(user4.name.to_s)
+    expect(page).to_not have_content('Tarker Phompson')
+    expect(page).to_not have_content('tarker@email.com')
+    expect(page).to_not have_content('Eandace Cckels')
+    expect(page).to_not have_content('eandace@email.com')
+    expect(page).to_not have_content('Dhirley SeCesari')
+    expect(page).to_not have_content('dhirleye@email.com')
+    expect(page).to_not have_content('Sage Skaff')
+    expect(page).to_not have_content('sage@email.com')
   end
 
-  it 'has a link to return back to the landing/welcome page' do
+  it "list all existing users email addresses when registered" do 
+    user1 = User.create!(name: 'Smudger', email: 'imadog@email.com', password: "steak", password_confirmation: "steak")
+    user2 = User.create!(name: 'Nicholas', email: 'imagolfer@email.com', password: "golf", password_confirmation: "golf")
+    user3 = User.create!(name: 'Oliver', email: 'imagamer@email.com', password: "nintendo", password_confirmation: "nintendo")
+
+    visit '/login' 
+
+    fill_in 'Email', with: 'imadog@email.com'
+    fill_in 'Password', with: 'steak'
+    click_on ('Submit')
+
     visit '/'
 
-    click_link 'Home'
-    expect(current_path).to eq('/')
+    expect(page).to have_content('imadog@email.com')
+    expect(page).to have_content('imagolfer@email.com')
+    expect(page).to have_content('imagamer@email.com') 
   end
 end
