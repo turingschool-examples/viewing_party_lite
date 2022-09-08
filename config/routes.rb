@@ -13,4 +13,7 @@ Rails.application.routes.draw do
   get '/users/:id/discover', to: 'movies#results'
   get 'users/:id/discover', to: 'users#discover'
 
+  get '/login', to: 'users#login_form'
+  post '/login', to: 'users#login_user'
+
 end

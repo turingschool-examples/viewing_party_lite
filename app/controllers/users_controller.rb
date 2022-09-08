@@ -18,13 +18,23 @@ class UsersController < ApplicationController
       flash[:success] = "Welcome, #{user.name}!"
     else
       redirect_to '/register'
-    # require 'pry'; binding.pry
       flash[:error] = user.errors.full_messages.to_sentence
     end
   end
 
   def discover
     @user = User.find(params[:id])
+  end
+
+  def login_user
+    user = User.find_by(email: params[:email]) 
+    if user && user&.authenticate(params[:password])
+      redirect_to "/users/#{user.id}"
+      flash[:success] = "Welcome, #{user.name}"
+      else
+      flash[:error] = "Your login information is incorrect. Please try to login again."
+      render :login_form
+    end
   end
 
   private
