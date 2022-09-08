@@ -19,8 +19,22 @@ class UsersController < ApplicationController
       flash[:success] = "Welcome, #{user.name}!"
       redirect_to user_path(user)
     else
-      flash[:error] = 'Invalid. Please try again.'
+      flash[:error] = user.errors.full_messages.uniq * ', '
       redirect_to register_path
+    end
+  end
+
+  def login_form; end
+
+  def login_user
+    user = User.find_by(email: params[:email])
+    if user&.authenticate(params[:password])
+      # session[:user_id] = user.id
+      flash[:success] = "Welcome, #{user.name}!"
+      redirect_to user_path(user)
+    else
+      flash[:error] = 'Invalid credentials. Please try again.'
+      redirect_to login_path
     end
   end
 

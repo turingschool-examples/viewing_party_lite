@@ -24,25 +24,27 @@ RSpec.describe 'Register' do
     expect(User.last.password_digest).to_not eq('test2')
   end
 
-  it 'sad path testing 1' do # no name
+  it 'sad path testing with error messages 1' do # no name
     fill_in 'Email', with: 'sm@g'
     fill_in :user_password, with: 'test'
     fill_in :user_password_confirmation, with: 'test'
     click_on 'Create User'
     expect(current_path).to eq(register_path)
     expect(page).to_not have_content("Sunny's Dashboard")
+    expect(page).to have_content("Name can't be blank")
   end
 
-  it 'sad path testing 2' do # no email
+  it 'sad path testing with error messages 2' do # no email
     fill_in 'Name', with: 'Sunny'
     fill_in :user_password, with: 'test'
     fill_in :user_password_confirmation, with: 'test'
     click_on 'Create User'
     expect(current_path).to eq(register_path)
     expect(page).to_not have_content("Sunny's Dashboard")
+    expect(page).to have_content("Email can't be blank")
   end
 
-  it 'sad path testing 3' do # duplicate email
+  it 'sad path testing with error messages 3' do # duplicate email
     fill_in 'Name', with: 'Sunny'
     fill_in 'Email', with: 'es@g'
     fill_in :user_password, with: 'test'
@@ -50,27 +52,30 @@ RSpec.describe 'Register' do
     click_on 'Create User'
     expect(current_path).to eq(register_path)
     expect(page).to_not have_content("Sunny's Dashboard")
+    expect(page).to have_content('Email has already been taken')
   end
 
-  it 'sad path testing 4' do # no password
+  it 'sad path testing with error messages 4' do # no password
     fill_in 'Name', with: 'Sunny'
     fill_in 'Email', with: 'es@g'
     fill_in :user_password_confirmation, with: 'test'
     click_on 'Create User'
     expect(current_path).to eq(register_path)
     expect(page).to_not have_content("Sunny's Dashboard")
+    expect(page).to have_content("Password can't be blank")
   end
 
-  it 'sad path testing 5' do # no confirmation
+  it 'sad path testing with error messages 5' do # no confirmation
     fill_in 'Name', with: 'Sunny'
     fill_in 'Email', with: 'es@g'
     fill_in :user_password, with: 'test'
     click_on 'Create User'
     expect(current_path).to eq(register_path)
     expect(page).to_not have_content("Sunny's Dashboard")
+    expect(page).to have_content("Password confirmation can't be blank")
   end
 
-  it 'sad path testing 6' do # different password/confirmation
+  it 'sad path testing with error messages 6' do # different password/confirmation
     fill_in 'Name', with: 'Sunny'
     fill_in 'Email', with: 'es@g'
     fill_in :user_password, with: 'test1'
@@ -78,6 +83,7 @@ RSpec.describe 'Register' do
     click_on 'Create User'
     expect(current_path).to eq(register_path)
     expect(page).to_not have_content("Sunny's Dashboard")
+    expect(page).to have_content("Password confirmation doesn't match Password")
   end
 
   it 'has link to landing page' do

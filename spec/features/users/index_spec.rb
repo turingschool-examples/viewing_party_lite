@@ -7,17 +7,11 @@ RSpec.describe 'Landing Page' do
     @eli = User.create!(name: 'Eli', email: 'es@g', password: 'test', password_confirmation: 'test')
     @sunny = User.create!(name: 'Sunny', email: 'sm@g', password: 'test', password_confirmation: 'test')
 
-    visit '/'
+    visit users_path
   end
 
   it 'contains app title' do
     expect(page).to have_content('Viewing Party Lite')
-  end
-
-  it 'has button to create user' do
-    expect(page).to have_button('Register User')
-    click_button 'Register User'
-    expect(current_path).to eq(register_path)
   end
 
   it 'lists existing users with links to dashboard' do
