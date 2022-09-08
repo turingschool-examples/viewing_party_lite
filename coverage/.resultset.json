@@ -198,7 +198,6 @@
           1,
           null,
           0,
-          null,
           0,
           0,
           0,
@@ -305,8 +304,22 @@
         ],
         "branches": {
         }
+      },
+      "/Users/gaurijoshi/turing/3Module/projects/viewing_party/viewing_party_lite/app/controllers/dashboard_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1662592097
+    "timestamp": 1662597357
   }
 }

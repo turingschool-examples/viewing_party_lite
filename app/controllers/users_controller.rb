@@ -11,7 +11,6 @@ class UsersController < ApplicationController
   def create 
     # user = User.find_by_email(params[:email])
     user = User.new(user_params)
-    # require 'pry'; binding.pry 
     if user.save 
       session[:user_id] = user.id
       redirect_to "/users/#{user.id}"
