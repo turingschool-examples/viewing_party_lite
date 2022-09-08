@@ -16,9 +16,9 @@ RSpec.describe Party, type: :model do
 
   describe 'class methods' do
     before :each do
-      @eli = User.create!(name: 'Eli', email: 'es@g')
-      @sunny = User.create!(name: 'Sunny', email: 'sm@g')
-      @john = User.create!(name: 'John', email: 'jc@g')
+      @eli = User.create!(name: 'Eli', email: 'es@g', password: 'test', password_confirmation: 'test')
+      @sunny = User.create!(name: 'Sunny', email: 'sm@g', password: 'test', password_confirmation: 'test')
+      @john = User.create!(name: 'John', email: 'jc@g', password: 'test', password_confirmation: 'test')
 
       @frozen = Party.create!(movie_id: 109_445, movie_title: 'Frozen', start_time: '2022-12-25 06:30:00 UTC',
                               duration: 90)

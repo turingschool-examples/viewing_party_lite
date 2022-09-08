@@ -4,8 +4,8 @@ require 'rails_helper'
 
 RSpec.describe 'Landing Page' do
   before :each do
-    @eli = User.create!(name: 'Eli', email: 'es@g')
-    @sunny = User.create!(name: 'Sunny', email: 'sm@g')
+    @eli = User.create!(name: 'Eli', email: 'es@g', password: 'test', password_confirmation: 'test')
+    @sunny = User.create!(name: 'Sunny', email: 'sm@g', password: 'test', password_confirmation: 'test')
 
     visit '/'
   end
@@ -15,9 +15,9 @@ RSpec.describe 'Landing Page' do
   end
 
   it 'has button to create user' do
-    expect(page).to have_button('Create New User')
-    click_button 'Create New User'
-    expect(current_path).to eq('/register')
+    expect(page).to have_button('Register User')
+    click_button 'Register User'
+    expect(current_path).to eq(register_path)
   end
 
   it 'lists existing users with links to dashboard' do
