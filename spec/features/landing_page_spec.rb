@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.describe 'landing page' do 
     before :each do 
         
-        @user1 = User.create!(name: 'Jared', email: 'jared@example.com')
-        @user2 = User.create!(name: 'John', email: 'john@example.com')
-        @user3 = User.create!(name: 'James', email: 'james@example.com')
+        @user1 = User.create!(name: 'Jared', email: 'jared@example.com', password: "password")
+        @user2 = User.create!(name: 'John', email: 'john@example.com', password: "password2")
+        @user3 = User.create!(name: 'James', email: 'james@example.com', password: "password3")
         visit '/'
     end
 

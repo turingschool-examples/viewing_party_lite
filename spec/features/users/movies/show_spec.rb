@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Movie details page' do 
     context 'When I visit a movies detail page, where :id is a valid user id' do
         before :each do 
-            @user1 = User.create!(name: 'Jared', email: 'jared@example.com')
+            @user1 = User.create!(name: 'Jared', email: 'jared@example.com', password: "password",)
             @movie_id = 199
             visit "/users/#{@user1.id}/movies/#{@movie_id}"
         end

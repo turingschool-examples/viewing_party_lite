@@ -1,0 +1,19 @@
+<div id='button'>
+  <%= button_to 'Create a New User', register_path, method: :get %>
+</div>
+
+<br>
+
+<h2>Existing Users:</h2>
+
+<br>
+
+<div id='user-info'>
+  <% @users.each do |user| %>
+    <div id="user-<%= user.id %>">
+      <p>
+        <%= link_to "#{user.email}'s Dashboard", user_path(user) %>
+      </p>
+    </div>
+  <% end %>
+</div>
