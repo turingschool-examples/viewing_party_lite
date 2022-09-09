@@ -1,5 +1,6 @@
 <h1>Viewing Party Light </h1>
 <h2><%= "#{@user.name}'s Dashboard" %></h2>
+
 <%= link_to "Home", root_path, method: :get %><br><br>
 
 <%= button_to "Discover Movies", user_discover_index_path(@user.id), method: :get %>
