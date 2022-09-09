@@ -55,4 +55,17 @@ RSpec.describe 'Users Dashboard Page' do
     expect(current_path).to eq("/dashboard")
     expect(page).to have_content('Viewing Parties')
   end
+
+# User Story #3
+# As a visitor
+# When I visit the landing page
+# And then try to visit '/dashboard'
+# I remain on the landing page
+# And I see a message telling me that I must be logged in or registered to access my dashboard
+
+  it 'does not allow visitors to go to the dashboard' do
+    visit '/dashboard'
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content("You must login or register to visit your dashboard.")
+  end
 end
