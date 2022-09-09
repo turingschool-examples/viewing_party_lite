@@ -1,0 +1,13 @@
+<h1>Viewing Party Light </h1>
+<%= link_to "Home", root_path, method: :get %><br><br>
+
+<h2>Top Rated Movies</h2>
+
+<%= button_to 'Discover Page', user_discover_index_path(@user.id), method: :get, local: true %>
+
+<% @movies.each do |movie| %>
+  <p><%= movie.title %></p> 
+<% end %>
+
+## movie.title is possible due to the Movie class poro
+## used to be movie[:title] before poro,facade,servcs
