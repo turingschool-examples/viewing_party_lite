@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-RSpec.describe 'the User show page' do
+RSpec.describe 'the User Dashboard' do
   it 'shows the users name at the top of the page' do
-    user = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
-    # user2 = User.create!(name: 'Maury', email: 'maury@trashtv.com', password: 'password', password_confirmation: 'password')
-    # user3 = User.create!(name: 'Jenny', email: 'jenny@trashtv.com', password: 'password', password_confirmation: 'password')
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
+    user2 = User.create!(name: 'Maury', email: 'maury@trashtv.com', password: 'password', password_confirmation: 'password')
+    user3 = User.create!(name: 'Jenny', email: 'jenny@trashtv.com', password: 'password', password_confirmation: 'password')
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
-    visit user_path(user)
+    visit dashboard_path
 
     expect(page).to have_content("Geraldo's Dashboard")
   end
@@ -16,7 +16,7 @@ RSpec.describe 'the User show page' do
     user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: "password")
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
-    visit user_path(user1)
+    visit dashboard_path
 
     expect(page).to have_button('Discover Movies')
     click_button('Discover Movies')
@@ -40,9 +40,9 @@ RSpec.describe 'the User show page' do
 
     click_button 'Create Party'
 
-    within '#vp-column-0' do
+    within "#vparty-0" do
       expect(page).to have_content('The Shawshank Redemption')
-      expect(page).to have_content(Date.tomorrow.strftime('%B%e, %Y'))
+      expect(page).to have_content(Date.tomorrow.strftime('%B %e, %Y'))
       # expect(page).to have_content(Time.strftime('%I:%M %p'))
       expect(page).to have_content('Hosting')
     end
@@ -54,7 +54,7 @@ RSpec.describe 'the User show page' do
     user3 = User.create!(name: 'Jenny', email: 'jenny@trashtv.com', password: 'password', password_confirmation: 'password')
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user2)
 
-    visit new_user_movie_viewing_party_path(user2, 238)
+    visit new_movie_viewing_party_path(238)
 
     fill_in 'Duration of Party:', with: 180
     fill_in 'Date', with: Date.tomorrow
@@ -65,11 +65,11 @@ RSpec.describe 'the User show page' do
     click_button 'Create Party'
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
-    visit user_path(user1)
+    visit dashboard_path
 
-    within '#vp-column-0' do
+    within "#vparty-0" do
       expect(page).to have_content('The Godfather')
-      expect(page).to have_content(Date.tomorrow.strftime('%B%e, %Y'))
+      expect(page).to have_content(Date.tomorrow.strftime('%B %e, %Y'))
       # expect(page).to have_content(Time.strftime('%I:%M %p'))
       expect(page).to have_content('Invited')
     end

@@ -18,20 +18,21 @@ header {
   text-align: center;
   font-weight: bold;
   font-size: 36px;
-  width: 30%;
+  width: 50%;
 }
 
 ul li {
   list-style: none;
   display: inline-block;
   font-size: 18px;
+  padding: 5px;
 }
 
 h2 {
   margin: auto;
   text-align: center;
   font-weight: bold;
-  width: 30%;
+  width: 50%;
 }
 
 table {
@@ -64,7 +65,7 @@ table {
   margin: auto;
   text-align: center;
   font-weight: bold;
-  width: 30%;
+  width: 98%;
 }
 
 #movie-search {
@@ -92,10 +93,10 @@ table {
   margin: auto;
   display: inline-flex;
   justify-content: space-between;
-  padding: 5px;
 }
 
 #vp-column {
   padding:5px;
   text-align: center;
+  align: center;
 }

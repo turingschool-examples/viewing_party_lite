@@ -23,7 +23,7 @@ RSpec.describe 'Movies Show Page' do
     expect(page).to have_content('The Shawshank Redemption')
 
     within '#rating-runtime-genres' do
-      expect(page).to have_content('Vote Average: 8.704')
+      expect(page).to have_content('Vote Average: 8.7')
       expect(page).to have_content('Runtime: 2 h 22 min')
       expect(page).to have_content('Genre(s): Drama, Crime')
     end

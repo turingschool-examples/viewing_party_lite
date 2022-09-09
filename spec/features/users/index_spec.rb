@@ -9,30 +9,36 @@ RSpec.describe 'the landing page' do
     visit root_path
 
     within "#user-#{user1.id}" do
-      expect(page).to have_link("geraldo@trashtv.com's Dashboard", href: user_path(user1))
+      expect(page).to have_content("geraldo@trashtv.com")
     end
 
     within "#user-#{user2.id}" do
-      expect(page).to have_link("maury@trashtv.com's Dashboard", href: user_path(user2))
+      expect(page).to have_content("maury@trashtv.com")
     end
 
     within "#user-#{user3.id}" do
-      expect(page).to have_link("jenny@trashtv.com's Dashboard", href: user_path(user3))
+      expect(page).to have_content("jenny@trashtv.com")
     end
-
-    click_link("geraldo@trashtv.com's Dashboard")
-    expect(current_path).to eq(root_path)
-    expect(page).to have_content('You must be logged in')
 
     fill_in :email, with: 'geraldo@trashtv.com'
     fill_in :password, with: 'password'
     click_on 'Log In'
     click_link 'Home'
 
-    expect(current_path).to eq(root_path)
+    within "#user-#{user1.id}" do
+      expect(page).to have_link("geraldo@trashtv.com's Dashboard", href: dashboard_path)
+    end
+
+    within "#user-#{user2.id}" do
+      expect(page).to have_content("maury@trashtv.com")
+    end
+
+    within "#user-#{user3.id}" do
+      expect(page).to have_content("jenny@trashtv.com")
+    end
 
     click_link("geraldo@trashtv.com's Dashboard")
-    expect(current_path).to eq user_path(user1)
+    expect(current_path).to eq(dashboard_path)
   end
 
   it 'has a button to create a new user that directs to the register page' do

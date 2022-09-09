@@ -1,4 +1,6 @@
 class MoviesController < ApplicationController
+  before_action :require_user
+  
   def index
     if params[:q] == "top-rated"
       @top_movies = MovieFacade.top_rated

@@ -1,0 +1,37 @@
+<h2><%= current_user.name %>'s Dashboard</h2>
+
+<br>
+
+<div id='button'>
+  <%= button_to 'Discover Movies', discover_path, method: :get %>
+</div>
+
+<br>
+
+<hr>
+
+<br>
+
+<h2>Viewing Parties</h2>
+<br>
+  <section id='party'>
+    <% current_user.hosted_parties.each_with_index do |party, index| %>
+      <div id='vp-column'>
+        <div id="vparty-<%= index %>">
+        <%= render partial: "shared/party_info", locals: {party: party} %>
+        <h4>Hosting</h4>
+      </div>
+      </div>
+    <% end %>
+  </section>
+
+  <section id='party'>
+    <% current_user.invited_parties.each_with_index do |party, index| %>
+    <div id='vp-column'>
+      <div id="vparty-<%= index %>">
+        <%= render partial: "shared/party_info", locals: {party: party} %>
+        <h4>Invited</h4>
+      </div>
+      </div>
+    <% end %>
+  </section>

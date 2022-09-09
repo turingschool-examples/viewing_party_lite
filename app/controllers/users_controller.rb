@@ -1,12 +1,6 @@
 class UsersController < ApplicationController
-  before_action :require_user, only: [:show]
-
   def index
     @users = User.all
-  end
-
-  def show
-    @user = User.find(params[:id])
   end
 
   def new
@@ -17,7 +11,7 @@ class UsersController < ApplicationController
       if @user.save
         session[:user_id] = @user.id
         flash[:success] = "Welcome #{@user.name}!"
-        redirect_to user_path(@user.id)
+        redirect_to dashboard_path
       else
         redirect_to register_path
         flash[:alert] = @user.errors.full_messages.to_sentence
