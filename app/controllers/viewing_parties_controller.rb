@@ -1,4 +1,5 @@
 class ViewingPartiesController < ApplicationController
+  before_action :require_user
 
   def new
     @attendees = User.where.not(id: params[:user_id])
@@ -16,7 +17,7 @@ class ViewingPartiesController < ApplicationController
       starttime: Time.parse(params[:starttime])
     )
 
-    UserViewingParty.create!( current_user.id, viewing_party_id: viewing_party.id )
+    UserViewingParty.create!( user_id: current_user.id, viewing_party_id: viewing_party.id )
 
     if params[:attendee_ids]
       params[:attendee_ids].each do |attendee_id|
@@ -24,6 +25,6 @@ class ViewingPartiesController < ApplicationController
       end
     end
 
-    redirect_to user_path(params[:user_id])
+    redirect_to dashboard_path
   end
 end

@@ -19,7 +19,7 @@ RSpec.describe 'creating a new user' do
       click_on 'Create New User'
     end
 
-    expect(current_path).to eq user_path(User.last)
+    expect(current_path).to eq(dashboard_path)
     expect(page).to have_content("Jerry's Dashboard")
     expect(page).to_not have_content("Maury's Dashboard")
     expect(page).to_not have_content("Jenny's Dashboard")
@@ -27,15 +27,15 @@ RSpec.describe 'creating a new user' do
     visit root_path
 
     within "#user-#{user1.id}" do
-      expect(page).to have_link("geraldo@trashtv.com's Dashboard", href: user_path(user1))
+      expect(page).to have_content("geraldo@trashtv.com")
     end
 
     within "#user-#{user2.id}" do
-      expect(page).to have_link("maury@trashtv.com's Dashboard", href: user_path(user2))
+      expect(page).to have_content("maury@trashtv.com")
     end
 
     within "#user-#{user3.id}" do
-      expect(page).to have_link("jenny@trashtv.com's Dashboard", href: user_path(user3))
+      expect(page).to have_content("jenny@trashtv.com")
     end
 
     expect(page).to have_link("jerry@trashtv.com's Dashboard")

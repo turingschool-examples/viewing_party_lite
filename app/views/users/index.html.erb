@@ -16,12 +16,4 @@
 
 <br>
 
-<div id='user-info'>
-  <% @users.each do |user| %>
-    <div id="user-<%= user.id %>">
-      <p>
-        <%= link_to "#{user.email}'s Dashboard", user_path(user) %>
-      </p>
-    </div>
-  <% end %>
-</div>
+<%= render partial: "shared/existing_users", locals: {users: @users} %>
