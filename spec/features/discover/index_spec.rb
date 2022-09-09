@@ -13,7 +13,7 @@ RSpec.describe 'discover index page', type: :feature do
   end
 
   it 'has text field and button to search a movie', :vcr do
-    user1 = User.create!(name: 'nicole', email: 'nicole@turing.com')
+    user1 = User.create!(name: 'nicole', email: 'nicole@turing.com', password: 'test123')
     visit user_discover_index_path(user1)
     fill_in :search, with: 'Gump'
     click_button 'Find Movies'

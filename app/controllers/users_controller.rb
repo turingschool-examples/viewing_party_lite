@@ -9,7 +9,13 @@ class UsersController < ApplicationController
 
   def create
     user = User.create!(user_params)
-    redirect_to user_path(user.id)
+    if user.save
+      redirect_to user_path(user.id)
+      flash[:success] = "Welcome, #{user.name}"
+    else
+      redirect_to register_path
+      flash[:error] = "Email or password are invalid"
+    end
   end
 
   def user_params

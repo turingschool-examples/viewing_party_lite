@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 26 Aug 2022 18:05:46 GMT
+      - Thu, 08 Sep 2022 21:32:33 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -40,18 +40,18 @@ http_interactions:
       X-Cache:
       - Error from cloudfront
       Via:
-      - 1.1 b550b766973955a6da991a99c1400ae2.cloudfront.net (CloudFront)
+      - 1.1 3837196532c9fdc156c237bc89b37930.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - SFO5-P1
+      - SFO5-C3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - wD5DPy3xvgZj08oC_8YFbrDEWFkXGm5aTZdwGibLSOhb830788IwGw==
+      - INGwL7aaKNgA11Y4jO-UvuT1gqlWnOSNn8GPJDd0JNxau4SvNG_DmQ==
     body:
       encoding: UTF-8
       string: '{"status_code":7,"status_message":"Invalid API key: You must be granted
         a valid key.","success":false}
 
 '
-  recorded_at: Fri, 26 Aug 2022 18:05:45 GMT
+  recorded_at: Thu, 08 Sep 2022 21:32:33 GMT
 recorded_with: VCR 6.1.0
