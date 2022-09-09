@@ -4,7 +4,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(session[:user_id])
+    # @user = User.find(session[:user_id])
+    if current_user.nil?
+      redirect_to root_path
+      flash[:notice] = "You must login or register to visit your dashboard."
+    end
   end
 
   def new
@@ -19,7 +23,7 @@ class UsersController < ApplicationController
       flash[:success] = "Welcome, #{user.name}!"
     else
       redirect_to '/register'
-      flash[:error] = user.errors.full_messages.to_sentence
+      flash[:error] = user.errors
     end
   end
 
