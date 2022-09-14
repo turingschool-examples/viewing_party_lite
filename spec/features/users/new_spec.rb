@@ -19,7 +19,7 @@ RSpec.describe 'User Registration Page' do
     expect(current_path).to eq('/dashboard')
   end
 
-  it "registers a new user" do
+  xit "registers a new user" do
     visit '/register'
 
     name = "Smudger"
@@ -37,7 +37,7 @@ RSpec.describe 'User Registration Page' do
     expect(current_path).to eq('/dashboard')
   end
 
-  it "has to have all fields filled to register a user" do
+  xit "has to have all fields filled to register a user" do
     visit '/register'
 
     name = ""
@@ -55,7 +55,7 @@ RSpec.describe 'User Registration Page' do
     expect(page).to have_content("Name can't be blank and Password confirmation doesn't match Password")
   end
 
-  it "can let a registered user login" do 
+  xit "can let a registered user login" do 
     user = User.create!(name: 'Smudger', email: 'imadog@email.com', password: "steak", password_confirmation: "steak")
     
     visit root_path
@@ -71,7 +71,7 @@ RSpec.describe 'User Registration Page' do
     expect(current_path).to eq('/dashboard')
   end
 
-  it "can tell a user if they're entering the wrong credentials" do 
+  xit "can tell a user if they're entering the wrong credentials" do 
     user = User.create!(name: 'Smudger', email: 'imadog@email.com', password: "steak", password_confirmation: "steak")
     
     visit root_path
@@ -87,7 +87,7 @@ RSpec.describe 'User Registration Page' do
     expect(page).to have_content("Your login information is incorrect. Please try to login again.")
   end
 
-  it "can log out a user" do 
+  xit "can log out a user" do 
     user = User.create!(name: 'Smudger', email: 'imadog@email.com', password: "steak", password_confirmation: "steak")
 
     visit '/login' 
