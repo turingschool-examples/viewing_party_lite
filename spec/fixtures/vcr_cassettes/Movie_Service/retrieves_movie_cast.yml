@@ -50,15 +50,17 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 e7ed7eb75a85fa319ecec449d025f172.cloudfront.net (CloudFront)
+      - 1.1 aec08f96e3f8203b96119fd8dcddcda6.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - PHX50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 9TvG9FddjqVeoLmp7sUJCtfs3fvWoxd6UErh1nu4odpnENM-L_3j3w==
+      - hJjABdz6FPEqnMc1RT-KGn8U63LwSLi0X2cPu__hVm9jznOUPocpKA==
+      Age:
+      - '525'
     body:
       encoding: ASCII-8BIT
       string: '{"id":261,"cast":[{"adult":false,"gender":1,"id":3635,"known_for_department":"Acting","name":"Elizabeth
@@ -116,5 +118,5 @@ http_interactions:
         K. Hagedon","original_name":"Charles K. Hagedon","popularity":0.6,"profile_path":null,"credit_id":"5b37dbbc9251413cab030376","department":"Camera","job":"Other"},{"adult":false,"gender":0,"id":1657655,"known_for_department":"Directing","name":"William
         Shanks","original_name":"William Shanks","popularity":1.052,"profile_path":null,"credit_id":"5b37dbe70e0a26401403f297","department":"Directing","job":"Assistant
         Director"}]}'
-  recorded_at: Wed, 14 Sep 2022 22:39:17 GMT
+  recorded_at: Wed, 14 Sep 2022 22:48:03 GMT
 recorded_with: VCR 6.1.0

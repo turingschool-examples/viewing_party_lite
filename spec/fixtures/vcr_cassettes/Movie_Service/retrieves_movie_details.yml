@@ -50,18 +50,20 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 731f87fb6b20f5081d003fc098e7e068.cloudfront.net (CloudFront)
+      - 1.1 283c0e6ab6e8ebe15b60f3f0124174d4.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - PHX50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - MLdTINJojxhQG72sE44xnIH7Ch_pDFVdlLL1ARLssuG15d-8nekfzg==
+      - WUTjLtB6A76Q-lhJDF-99NmiDPQOg3ue82MsOmNA9cBNTYonjsUJTg==
+      Age:
+      - '525'
     body:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvbzUzWVpPeHJ1ODRaOXdnWndid3FGMjViZE9sLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjozMDAwMDAwLCJnZW5yZXMiOlt7ImlkIjoxOCwibmFtZSI6IkRyYW1hIn0seyJpZCI6MTA3NDksIm5hbWUiOiJSb21hbmNlIn1dLCJob21lcGFnZSI6IiIsImlkIjoyNjEsImltZGJfaWQiOiJ0dDAwNTE0NTkiLCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiJDYXQgb24gYSBIb3QgVGluIFJvb2YiLCJvdmVydmlldyI6IkFuIGFsY29ob2xpYyBleC1mb290YmFsbCBwbGF5ZXIgZHJpbmtzIGhpcyBkYXlzIGF3YXksIGhhdmluZyBmYWlsZWQgdG8gY29tZSB0byB0ZXJtcyB3aXRoIGhpcyBzZXh1YWxpdHkgYW5kIGhpcyByZWFsIGZlZWxpbmdzIGZvciBoaXMgZm9vdGJhbGwgYnVkZHkgd2hvIGRpZWQgYWZ0ZXIgYW4gYW1iaWd1b3VzIGFjY2lkZW50LiBIaXMgd2lmZSBpcyBjcnVjaWZpZWQgYnkgaGVyIGRlc3BlcmF0aW9uIHRvIG1ha2UgaGltIGRlc2lyZSBoZXI6IGJ1dCBoZSByZXNpc3RzIHRoZSBhZmZlY3Rpb25zIG9mIGhpcyB3aWZlLiBIaXMgcmV1bmlvbiB3aXRoIGhpcyBmYXRoZXLigJR3aG8gaXMgZHlpbmcgb2YgY2FuY2Vy4oCUam9ncyBhIGhvc3Qgb2YgbWVtb3JpZXMgYW5kIHJldmVsYXRpb25zIGZvciBib3RoIGZhdGhlciBhbmQgc29uLiIsInBvcHVsYXJpdHkiOjExLjM2NywicG9zdGVyX3BhdGgiOiIvcmVPMk5YSVlQZUJxZWhUc21pYTBQOXJTTUR2LmpwZyIsInByb2R1Y3Rpb25fY29tcGFuaWVzIjpbeyJpZCI6MjEsImxvZ29fcGF0aCI6Ii9hT1dLaDRna05yZkZaM0VwN24wY2tQaG9HYjUucG5nIiwibmFtZSI6Ik1ldHJvLUdvbGR3eW4tTWF5ZXIiLCJvcmlnaW5fY291bnRyeSI6IlVTIn0seyJpZCI6MTAwLCJsb2dvX3BhdGgiOm51bGwsIm5hbWUiOiJBdm9uIFByb2R1Y3Rpb25zIiwib3JpZ2luX2NvdW50cnkiOiJVUyJ9XSwicHJvZHVjdGlvbl9jb3VudHJpZXMiOlt7Imlzb18zMTY2XzEiOiJVUyIsIm5hbWUiOiJVbml0ZWQgU3RhdGVzIG9mIEFtZXJpY2EifV0sInJlbGVhc2VfZGF0ZSI6IjE5NTgtMDgtMjkiLCJyZXZlbnVlIjoxNzU3MDMyNCwicnVudGltZSI6MTA4LCJzcG9rZW5fbGFuZ3VhZ2VzIjpbeyJlbmdsaXNoX25hbWUiOiJFbmdsaXNoIiwiaXNvXzYzOV8xIjoiZW4iLCJuYW1lIjoiRW5nbGlzaCJ9XSwic3RhdHVzIjoiUmVsZWFzZWQiLCJ0YWdsaW5lIjoiSnVzdCBvbmUgcGlsbG93IG9uIGhlciBiZWQuLi4gYW5kIGp1c3Qgb25lIGRlc2lyZSBpbiBoZXIgaGVhcnQuIiwidGl0bGUiOiJDYXQgb24gYSBIb3QgVGluIFJvb2YiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6Ny43MTgsInZvdGVfY291bnQiOjYwMn0=
-  recorded_at: Wed, 14 Sep 2022 22:39:17 GMT
+  recorded_at: Wed, 14 Sep 2022 22:48:02 GMT
 recorded_with: VCR 6.1.0

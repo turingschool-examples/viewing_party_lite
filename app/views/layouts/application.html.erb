@@ -7,16 +7,19 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-
-    <% flash.each do |type, msg| %>
-    <div id="flash-message">
-      <%= msg %>
-    </div>
-    <% end %>
   </head>
+
+    <div class="flash_message">
+    <% flash.each do |type, message| %>
+        <p><%= message %></p>
+    <% end %>
+  </div>
 
   <body>
     <%= link_to 'Home', '/' %>
     <%= yield %>
   </body>
 </html>
+
+
+
