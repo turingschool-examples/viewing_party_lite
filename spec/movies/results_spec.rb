@@ -5,11 +5,18 @@ RSpec.describe 'Discover Movies Page' do
   xit 'can return a list of the top 20 rated movies', :vcr do 
     user = User.create!(name: "Smudger", email: "imadog@mail.com", password: "steak", password_confirmation: "steak")
 
-    visit "/users/#{user.id}"
+    visit '/login'
+    fill_in 'Email', with: 'imadog@mail.com'
+    fill_in 'Password', with: 'steak'
+    click_on ('Submit')
 
-     within '#top-movies' do
-      expect(page).to have_button('Top Movies')
-    end
+    visit "/users"
+    # visit "/users/#{user.id}"
+    
+    
+    within '#top-movies' do
+    expect(page).to have_button('Top Movies')
+  end
     
     click_on 'Top Movies'
     expect(current_path).to eq("users/#{user.id}/movies?q=top%20rated")
