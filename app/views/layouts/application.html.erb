@@ -9,7 +9,17 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
+    <div class="flash_message">
+    <% flash.each do |type, message| %>
+        <p><%= message %></p>
+    <% end %>
+  </div>
+
   <body>
+    <%= link_to 'Home', '/' %>
     <%= yield %>
   </body>
 </html>
+
+
+

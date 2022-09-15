@@ -23,5 +23,14 @@
 /public/assets
 .byebug_history
 
+# Ignore simeplecov
+coverage
+
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# ignores simplecov
+coverage
+
+# Ignore application configuration
+/config/application.yml

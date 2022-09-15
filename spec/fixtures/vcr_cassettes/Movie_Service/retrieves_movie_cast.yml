@@ -1,0 +1,122 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/261/credits?api_key=fake_api_key
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 14 Sep 2022 22:39:17 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 1f4242c1cb5c5003e3fd9c1629d5c58ab494f06b
+      X-Memc-Age:
+      - '11476'
+      X-Memc-Expires:
+      - '5949'
+      Etag:
+      - W/"f1f5d8c29be3603930253741f6db1a3c"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 aec08f96e3f8203b96119fd8dcddcda6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - PHX50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - hJjABdz6FPEqnMc1RT-KGn8U63LwSLi0X2cPu__hVm9jznOUPocpKA==
+      Age:
+      - '525'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":261,"cast":[{"adult":false,"gender":1,"id":3635,"known_for_department":"Acting","name":"Elizabeth
+        Taylor","original_name":"Elizabeth Taylor","popularity":11.628,"profile_path":"/yorDFUiE5VYa8xnT6cD0KsugUd3.jpg","cast_id":4,"character":"Maggie","credit_id":"52fe422fc3a36847f800a6ab","order":0},{"adult":false,"gender":2,"id":3636,"known_for_department":"Acting","name":"Paul
+        Newman","original_name":"Paul Newman","popularity":18.52,"profile_path":"/bP2fByqNR7BorsUNuD6nSm0u2vJ.jpg","cast_id":5,"character":"Brick","credit_id":"52fe422fc3a36847f800a6af","order":1},{"adult":false,"gender":2,"id":2753,"known_for_department":"Acting","name":"Burl
+        Ives","original_name":"Burl Ives","popularity":7.667,"profile_path":"/eyx3PKEsmThQmrtTCpheiUeynCz.jpg","cast_id":6,"character":"Harvey
+        ''Big Daddy'' Pollitt","credit_id":"52fe422fc3a36847f800a6b3","order":2},{"adult":false,"gender":1,"id":3362,"known_for_department":"Acting","name":"Judith
+        Anderson","original_name":"Judith Anderson","popularity":2.992,"profile_path":"/1ObiPNEpP1ohD8opYkCInERp2w4.jpg","cast_id":12,"character":"Big
+        Momma","credit_id":"52fe422fc3a36847f800a6d1","order":3},{"adult":false,"gender":2,"id":2672,"known_for_department":"Acting","name":"Jack
+        Carson","original_name":"Jack Carson","popularity":4.274,"profile_path":"/r1HIeyZoJ67iD0uGKQGRgWqfnc6.jpg","cast_id":10,"character":"Gooper","credit_id":"52fe422fc3a36847f800a6c9","order":4},{"adult":false,"gender":1,"id":3639,"known_for_department":"Acting","name":"Madeleine
+        Sherwood","original_name":"Madeleine Sherwood","popularity":3.735,"profile_path":"/bDwZn45GRRb4eS99bFrYLcdofAA.jpg","cast_id":11,"character":"Mae","credit_id":"52fe422fc3a36847f800a6cd","order":5},{"adult":false,"gender":2,"id":3641,"known_for_department":"Acting","name":"Vaughn
+        Taylor","original_name":"Vaughn Taylor","popularity":3.728,"profile_path":"/1bPah7Ll54Rb7RnNr1JNLYlPbJQ.jpg","cast_id":14,"character":"Deacon
+        Davis","credit_id":"52fe422fc3a36847f800a6d9","order":6},{"adult":false,"gender":2,"id":3640,"known_for_department":"Acting","name":"Larry
+        Gates","original_name":"Larry Gates","popularity":2.889,"profile_path":"/tFBaEROTM4BuW1I8YVdz9rhaMtW.jpg","cast_id":13,"character":"Dr.
+        Baugh","credit_id":"52fe422fc3a36847f800a6d5","order":7},{"adult":false,"gender":2,"id":195830,"known_for_department":"Acting","name":"Brian
+        Corcoran","original_name":"Brian Corcoran","popularity":4.332,"profile_path":"/7BgaSOzYPDvBwz8TyxRT05XvukN.jpg","cast_id":25,"character":"Boy","credit_id":"52fe422fc3a36847f800a717","order":8},{"adult":false,"gender":1,"id":3752,"known_for_department":"Acting","name":"Zelda
+        Cleaver","original_name":"Zelda Cleaver","popularity":1.856,"profile_path":null,"cast_id":24,"character":"Servant","credit_id":"52fe422fc3a36847f800a713","order":9},{"adult":false,"gender":2,"id":274868,"known_for_department":"Acting","name":"Robert
+        ''Rusty'' Stevens","original_name":"Robert ''Rusty'' Stevens","popularity":3.099,"profile_path":null,"cast_id":26,"character":"Sonny
+        Pollitt","credit_id":"52fe422fc3a36847f800a71b","order":10},{"adult":false,"gender":0,"id":193032,"known_for_department":"Acting","name":"Hugh
+        Corcoran","original_name":"Hugh Corcoran","popularity":2.049,"profile_path":null,"cast_id":27,"character":"Buster
+        Pollitt","credit_id":"549733159251416e2b006c49","order":11}],"crew":[{"adult":false,"gender":2,"id":2658,"known_for_department":"Sound","name":"Van
+        Allen James","original_name":"Van Allen James","popularity":0.766,"profile_path":null,"credit_id":"52fe422fc3a36847f800a6f7","department":"Sound","job":"Sound
+        Designer"},{"adult":false,"gender":2,"id":3632,"known_for_department":"Writing","name":"Richard
+        Brooks","original_name":"Richard Brooks","popularity":4.323,"profile_path":"/r3zFUrYDn5tDDpIONAFLPhEkfBt.jpg","credit_id":"52fe422fc3a36847f800a6bf","department":"Writing","job":"Screenplay"},{"adult":false,"gender":2,"id":3632,"known_for_department":"Writing","name":"Richard
+        Brooks","original_name":"Richard Brooks","popularity":4.323,"profile_path":"/r3zFUrYDn5tDDpIONAFLPhEkfBt.jpg","credit_id":"52fe422fc3a36847f800a69b","department":"Directing","job":"Director"},{"adult":false,"gender":2,"id":3633,"known_for_department":"Production","name":"Lawrence
+        Weingarten","original_name":"Lawrence Weingarten","popularity":0.652,"profile_path":null,"credit_id":"52fe422fc3a36847f800a6a1","department":"Production","job":"Producer"},{"adult":false,"gender":2,"id":3634,"known_for_department":"Writing","name":"Tennessee
+        Williams","original_name":"Tennessee Williams","popularity":2.776,"profile_path":"/xeuYw4Mu4YRWEzWwFvHUI7C6LIM.jpg","credit_id":"52fe422fc3a36847f800a6a7","department":"Writing","job":"Theatre
+        Play"},{"adult":false,"gender":2,"id":3634,"known_for_department":"Writing","name":"Tennessee
+        Williams","original_name":"Tennessee Williams","popularity":2.776,"profile_path":"/xeuYw4Mu4YRWEzWwFvHUI7C6LIM.jpg","credit_id":"5ced87260e0a262bd0cb4297","department":"Writing","job":"Writer"},{"adult":false,"gender":2,"id":3637,"known_for_department":"Camera","name":"William
+        H. Daniels","original_name":"William H. Daniels","popularity":0.732,"profile_path":null,"credit_id":"52fe422fc3a36847f800a6b9","department":"Camera","job":"Director
+        of Photography"},{"adult":false,"gender":2,"id":3638,"known_for_department":"Writing","name":"James
+        Poe","original_name":"James Poe","popularity":2.337,"profile_path":"/l6itixo79HgzBE88Qjjk03eodrR.jpg","credit_id":"52fe422fc3a36847f800a6c5","department":"Writing","job":"Screenplay"},{"adult":false,"gender":2,"id":3642,"known_for_department":"Sound","name":"Charles
+        Wolcott","original_name":"Charles Wolcott","popularity":1.62,"profile_path":null,"credit_id":"52fe422fc3a36847f800a6df","department":"Sound","job":"Original
+        Music Composer"},{"adult":false,"gender":2,"id":3643,"known_for_department":"Editing","name":"Ferris
+        Webster","original_name":"Ferris Webster","popularity":2.626,"profile_path":null,"credit_id":"52fe422fc3a36847f800a6e5","department":"Editing","job":"Editor"},{"adult":false,"gender":2,"id":3644,"known_for_department":"Acting","name":"Dean
+        Smith","original_name":"Dean Smith","popularity":1.952,"profile_path":"/rGKyvasZZMeZqxrab99xFAYLMbe.jpg","credit_id":"52fe422fc3a36847f800a6eb","department":"Crew","job":"Stunts"},{"adult":false,"gender":0,"id":3645,"known_for_department":"Crew","name":"Lee
+        LeBlanc","original_name":"Lee LeBlanc","popularity":0.98,"profile_path":null,"credit_id":"52fe422fc3a36847f800a6f1","department":"Crew","job":"Special
+        Effects"},{"adult":false,"gender":2,"id":3646,"known_for_department":"Sound","name":"Wesley
+        C. Miller","original_name":"Wesley C. Miller","popularity":0.994,"profile_path":null,"credit_id":"5b37f880c3a36853220407e1","department":"Sound","job":"Recording
+        Supervision"},{"adult":false,"gender":1,"id":3647,"known_for_department":"Costume
+        \u0026 Make-Up","name":"Helen Rose","original_name":"Helen Rose","popularity":0.98,"profile_path":null,"credit_id":"52fe422fc3a36847f800a703","department":"Costume
+        \u0026 Make-Up","job":"Costume Design"},{"adult":false,"gender":2,"id":3648,"known_for_department":"Art","name":"Henry
+        Grace","original_name":"Henry Grace","popularity":1.96,"profile_path":null,"credit_id":"52fe422fc3a36847f800a709","department":"Art","job":"Set
+        Decoration"},{"adult":false,"gender":2,"id":3649,"known_for_department":"Art","name":"Robert
+        Priestley","original_name":"Robert Priestley","popularity":2.841,"profile_path":null,"credit_id":"52fe422fc3a36847f800a70f","department":"Art","job":"Set
+        Decoration"},{"adult":false,"gender":2,"id":14681,"known_for_department":"Costume
+        \u0026 Make-Up","name":"Sydney Guilaroff","original_name":"Sydney Guilaroff","popularity":1.689,"profile_path":"/dG7l0ZrYmHN6QLtSikPudw846Zi.jpg","credit_id":"5b37dc6ac3a3685311038322","department":"Costume
+        \u0026 Make-Up","job":"Hairstylist"},{"adult":false,"gender":2,"id":9060,"known_for_department":"Art","name":"William
+        A. Horning","original_name":"William A. Horning","popularity":0.699,"profile_path":null,"credit_id":"5b37da48c3a368532c040f65","department":"Art","job":"Art
+        Direction"},{"adult":false,"gender":2,"id":29801,"known_for_department":"Costume
+        \u0026 Make-Up","name":"William Tuttle","original_name":"William Tuttle","popularity":1.705,"profile_path":"/rZqVArbsjXxtddh2lm2u21SgBPN.jpg","credit_id":"5b37dc7d9251413ca602b6e4","department":"Costume
+        \u0026 Make-Up","job":"Makeup Artist"},{"adult":false,"gender":2,"id":35154,"known_for_department":"Art","name":"Urie
+        McCleary","original_name":"Urie McCleary","popularity":1.62,"profile_path":null,"credit_id":"5b37da560e0a26400d03b097","department":"Art","job":"Art
+        Direction"},{"adult":false,"gender":0,"id":545527,"known_for_department":"Editing","name":"Charles
+        K. Hagedon","original_name":"Charles K. Hagedon","popularity":0.6,"profile_path":null,"credit_id":"5b37dbbc9251413cab030376","department":"Camera","job":"Other"},{"adult":false,"gender":0,"id":1657655,"known_for_department":"Directing","name":"William
+        Shanks","original_name":"William Shanks","popularity":1.052,"profile_path":null,"credit_id":"5b37dbe70e0a26401403f297","department":"Directing","job":"Assistant
+        Director"}]}'
+  recorded_at: Wed, 14 Sep 2022 22:48:03 GMT
+recorded_with: VCR 6.1.0
