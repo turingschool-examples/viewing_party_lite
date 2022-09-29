@@ -23,7 +23,7 @@ gem 'faraday'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'figaro'
+gem 'figaro' # bundle exec figaro install
 gem 'bootstrap'
 gem 'jquery-rails'
 
@@ -45,7 +45,7 @@ group :test do
   gem 'orderly'
   gem 'rspec-rails'
   gem 'shoulda-matchers'
-  gem 'simplecov'
+  gem 'simplecov' # open coverage/index.html
   gem 'vcr'
   gem 'webmock'
 end
