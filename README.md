@@ -31,5 +31,6 @@ Example wireframes to follow are found [here](https://backend.turing.io/module3/
 - heroku pg:reset DATABASE
 - heroku run rails db:migrate
 - git push heroku main
+- heroku buildpacks:set heroku/ruby
 - heroku stack:set heroku-20
 - heroku ps:scale web=1
