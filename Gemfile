@@ -24,7 +24,7 @@ gem 'faraday'
 # gem 'capistrano-rails', group: :development
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'figaro' # bundle exec figaro install
-gem 'bootstrap'
+# gem 'bootstrap'
 gem 'jquery-rails'
 
 group :development, :test do
