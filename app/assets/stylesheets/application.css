@@ -18,85 +18,85 @@ header {
   text-align: center;
   font-weight: bold;
   font-size: 36px;
-  width: 50%;
+  width: 50%
 }
 
 ul li {
   list-style: none;
   display: inline-block;
   font-size: 18px;
-  padding: 5px;
+  padding: 5px
 }
 
 h2 {
   margin: auto;
   text-align: center;
   font-weight: bold;
-  width: 50%;
+  width: 50%
 }
 
 table {
   margin: auto;
   text-align: center;
-  font-weight: bold;
+  font-weight: bold
 }
 
 #create-user {
   margin: auto;
   text-align: center;
   font-weight: bold;
-  width: 100%;
+  width: 100%
 }
 
 #login {
   text-align: right;
   font-weight: bold;
-  width: 98%;
+  width: 98%
 }
 
 #login-form {
   margin: auto;
   text-align: center;
   font-weight: bold;
-  width: 100%;
+  width: 100%
 }
 
 #button {
   margin: auto;
   text-align: center;
   font-weight: bold;
-  width: 98%;
+  width: 98%
 }
 
 #movie-search {
   margin: auto;
   text-align: center;
   font-weight: bold;
-  width: 30%;
+  width: 30%
 }
 
 #user-info {
   margin: auto;
   text-align: center;
   font-weight: bold;
-  width: 30%;
+  width: 30%
 }
 
 #top-rated-movies {
   margin: auto;
   text-align: center;
   width: 30%;
-  display: inline;
+  display: inline
 }
 
 #party {
   margin: auto;
   display: inline-flex;
-  justify-content: space-between;
+  justify-content: space-between
 }
 
 #vp-column {
   padding:5px;
   text-align: center;
-  align: center;
+  align: center
 }
