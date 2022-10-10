@@ -12,7 +12,7 @@ class MovieDetails
   def initialize(data)
     @movie_id = data[:id]
     @title = data[:title]
-    @rating = data[:vote_average]
+    @rating = data[:vote_average].round(1)
     @runtime = data[:runtime]
     @genres = data[:genres].map { |genre| genre[:name] }
     @summary = data[:overview]
