@@ -68,3 +68,4 @@ This project is running the following languages and tools:
 
 ## DB Design
 
+https://dbdiagram.io/d/63449cbef0018a1c5fd44fd2
