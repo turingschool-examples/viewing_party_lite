@@ -16,7 +16,7 @@ RSpec.describe 'landing page' do
 
       click_on "Create a New User"
       
-      expect(page).to have_current_path new_user_path
+      expect(page).to have_current_path register_path
     end
 
     xit 'displays a list of all current users' do
