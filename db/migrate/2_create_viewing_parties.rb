@@ -4,7 +4,6 @@ class CreateViewingParties < ActiveRecord::Migration[5.2]
       t.integer :duration
       t.datetime :date
       t.integer :movie_id
-      t.has_many :user_viewing_parties
 
       t.timestamps
     end
