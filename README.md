@@ -17,10 +17,13 @@ Viewing Part Lite is an application in which users can explore movie options and
 3. Setup the database: `rails db:create`
 
 
+## Using Rubocop
+- Run `bundle exec rubocop` to check for violations
+
 ## Versions
 
-- Ruby 2.7.2
+- Ruby 2.7.4
 
-- Rails 5.2.6
+- Rails 5.2.8
 
 Example wireframes to follow are found [here](https://backend.turing.io/module3/projects/viewing_party_lite/wireframes)
