@@ -7,18 +7,40 @@
           null
         ]
       },
-      "/Users/jake/Turing/3mod/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
+      "/Users/jake/Turing/3mod/projects/viewing_party_lite/app/models/user.rb": {
         "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
+          1,
+          1,
+          1,
+          null
+        ]
       },
       "/Users/jake/Turing/3mod/projects/viewing_party_lite/app/models/application_record.rb": {
         "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/jake/Turing/3mod/projects/viewing_party_lite/app/models/viewing_party.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/jake/Turing/3mod/projects/viewing_party_lite/app/models/viewing_party_user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/jake/Turing/3mod/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
+        "lines": [
+          0,
           0,
           0,
           0
@@ -63,6 +85,6 @@
         }
       }
     },
-    "timestamp": 1665443608
+    "timestamp": 1665443828
   }
 }
