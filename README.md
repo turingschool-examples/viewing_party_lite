@@ -1,26 +1,70 @@
 # Viewing Party
 
-This is the base repo for the [Viewing Party Lite project](https://backend.turing.io/module3/projects/viewing_party_lite) used for Turing's Backend Module 3.
-
-### About this Project
-
-Viewing Part Lite is an application in which users can explore movie options and create a viewing party event for themselves and other users of the application.
-
-## Setup for the use of the project
-
-1. A conveyor belt link will be sent out at project kickoff so that you can both fork and copy the project board on this base repo. 
-
-## Local Setup for any other use
-
-1. Fork and Clone the repo
-2. Install gem packages: `bundle install`
-3. Setup the database: `rails db:create`
 
 
-## Versions
+## Ruby/Rails version
 
-- Ruby 2.7.2
+**ruby '2.7.2'**
+**rails '5.2.6'**
 
-- Rails 5.2.6
+## Collaborators
 
-Example wireframes to follow are found [here](https://backend.turing.io/module3/projects/viewing_party_lite/wireframes)
+* [nikkyrojas](https://github.com/nikkyrojas)
+* [Dominicod](https://github.com/Dominicod)
+
+## System dependencies
+
+**ruby '2.7.2'**
+**rails '5.2.6'**
+
+#### Testing:
+* pry
+* rspec-rails
+* simplecov
+* capybara
+* launchy
+* shoulda-matchers
+* orderly
+* webmock
+* vcr
+* figaro
+
+#### Production:
+* Faraday
+
+## Configuration
+
+To setup the project you will first install the system dependencies by running;
+```
+bundle install
+```
+
+## Database creation and initialization
+
+To setup the database first run this command;
+```
+rails db:{drop,create,migrate,seed}
+```
+
+## How to run test suite
+
+If you installed the testing dependencies you will be able to run;
+```
+bundle exec rspec -fd
+```
+
+This will run all of the tests located in the spec folder.
+
+## Project technology
+
+This project is running the following languages and tools:
+
+* Ruby
+* RSpec
+* Ruby on Rails
+* SimpleCov
+* MovieDB API
+* VCR/Webmock
+
+## DB Design
+
