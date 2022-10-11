@@ -7,8 +7,13 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.create!(user_params)
-        redirect_to user_path(@user.id)
+        @user = User.new(user_params)
+        if @user.save
+            redirect_to user_path(@user.id)
+        else
+            flash[:alerts] = @user.errors.full_messages
+            render :new
+        end
     end
 
     private

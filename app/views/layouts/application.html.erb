@@ -12,6 +12,11 @@
   <body>
     <h1>Viewing Party Lite</h1>
     <%= link_to "Home", root_path %>
+    <% if flash[:alerts] %>
+      <% flash[:alerts].each do |message| %>
+        <h3><b><%= message %></b></h3>
+      <% end %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
