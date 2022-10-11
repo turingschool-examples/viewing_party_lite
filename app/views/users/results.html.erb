@@ -1,4 +1,7 @@
 <h1> Results </h1>
 <% @movies.each do |movie| %>
-  <p><%= movie[:title]%></p>
+  <p><%= link_to movie[:title], url: "users/#{@user.id}/movies/#{movie[:id]}" %></p>
+  <p> Average Votes:</p>
 <% end %>
+
+<%= button_to 'Return to Disover Page', url: root_path, method: :get %>

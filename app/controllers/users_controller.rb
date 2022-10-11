@@ -27,6 +27,7 @@ class UsersController < ApplicationController
   end
 
   def results
+    @user = User.find(params[:id])
     title = params["Search by Movie Title"]
     conn = Faraday.new(url: "https://api.themoviedb.org")    
 

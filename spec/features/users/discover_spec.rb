@@ -18,9 +18,17 @@ RSpec.describe 'Discover movies page' do
     it 'When I search for a movie I am taken to the Movie Results Page' do
       user = create(:user)
       visit "/users/#{user.id}/discover"
+      # Details: There should only be a maximum of 40 results. The above details should be listed for each movie.
       fill_in('Search by Movie Title', with: 'Fight Club')
       click_button('Search by Movie Title')
       expect(current_path).to eq("/users/#{user.id}/movies")
+
+      expect(page).to have_content('Average Votes:')
+      expect(page).to have_link('Fight Club')
+      expect(page).to have_button('Return to Disover Page')
     end
+
+
   end
 end
+
