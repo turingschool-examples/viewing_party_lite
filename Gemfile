@@ -55,6 +55,9 @@ group :test do
   gem 'faker'
   gem 'factory_bot_rails'
   gem 'database_cleaner'
+  gem 'figaro'
+  gem 'webmock'
+  gem 'vcr'
 end
 
 
