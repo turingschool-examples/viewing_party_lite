@@ -12,7 +12,14 @@ RSpec.describe 'the User Registration Page' do
       expect(find('form')).to have_content('Email')
       expect(find('form')).to have_button('Register')
     end
+  end
 
+  describe 'creating a new user' do
+    it 'can create a new user' do
+      fill_in "Name", with: "Ricky"
+      fill_in "Email", with: "ricky@sunnyvale.ca"
+      expect { click_on 'Register' }.to change { User.count }.by(1)
+    end
   end
 
 end
