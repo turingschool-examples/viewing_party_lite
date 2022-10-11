@@ -10,10 +10,12 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
+      flash[:success] = "Welcome, #{user.name}!"
       redirect_to "/users/#{user.id}"
     else
       redirect_to '/register'
       flash[:alert] = "Error: #{error_message(user.errors)}"
+      binding.pry
     end
   end
 

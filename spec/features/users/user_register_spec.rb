@@ -31,9 +31,9 @@ RSpec.describe 'user registration page' do
     fill_in :name, with: 'micheal impersonator'
     fill_in :email, with: 'michaeljackson@email.com'
     click_on 'Register'
+    
     expect(current_path).to eq('/register')
-
-    expect(page).to have_content('Error: Email has already been taken')
+    expect(page).to have_content('Error: Email has already been taken.')
   end
 
   it 'notifies invalid data' do
@@ -45,6 +45,6 @@ RSpec.describe 'user registration page' do
     click_button 'Register'
 
     expect(page).to have_current_path('/register')
-    expect(page).to have_content('Error: Email has already been taken')
+    expect(page).to have_content("Error: Name can't be blank")
   end
 end
