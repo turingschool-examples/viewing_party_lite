@@ -1,6 +1,8 @@
 ## Pull request type
+
 Please check the type of change your PR introduces:
 
+- [ ] Testing
 - [ ] Refactoring (no functional changes, no api changes)
 - [ ] Bugfix
 - [ ] Feature
@@ -20,6 +22,7 @@ How did you solve the problem?
 ## Other changes (e.g. bug fixes, UI tweaks, small refactors)
 
 ## Checklist
+
 - [ ] Code compiles correctly
 - [ ] Tests for the changes have been added (for bug fixes/features)
 - [ ] All tests passing
