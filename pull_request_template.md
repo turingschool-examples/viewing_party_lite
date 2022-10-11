@@ -9,6 +9,7 @@ Please check the type of change your PR introduces:
 - [ ] Other (please describe):
 
 ## Problem/feature
+Fixes # (issue)
 
 _What problem are you trying to solve?_
 
