@@ -10,11 +10,11 @@ RSpec.describe 'user registration page', type: :feature do
         expect(page).to have_content('Name')
         expect(page).to have_content('Email')
         expect(page).to have_content('Password')
-        expect(page).to have_content('Create User')
+        expect(page).to have_button('Create User')
       end
 
       describe 'happy path' do
-        it "Once the user registers they should be taken to a dashboard page '/users/:id', where :id is the id for the user that was just created." do
+        xit "Once the user registers they should be taken to a dashboard page '/users/:id', where :id is the id for the user that was just created." do
           visit new_user_path
           fill_in(:name, with: "Peter Piper")
           fill_in(:email, with: "Peter.Piper@peppers.com")
@@ -23,7 +23,7 @@ RSpec.describe 'user registration page', type: :feature do
           expect(current_path).to eq(user_path(@user))
         end
 
-        it "You can see a link to the home page" do
+        xit "You can see a link to the home page" do
           visit new_user_path
           expect(page).to have_link('Home Page')
 
@@ -34,7 +34,7 @@ RSpec.describe 'user registration page', type: :feature do
 
 
       describe 'sad path' do
-        it "If the user fails to fill in valid information they see an error message & are redirected to the current page to fill in the form again" do
+        xit "If the user fails to fill in valid information they see an error message & are redirected to the current page to fill in the form again" do
           visit new_user_path
 
           #missing name fill in
