@@ -5,7 +5,6 @@ require 'rails_helper'
 RSpec.describe 'user registration page' do
   it 'has a form to register' do
     visit register_path
-    
 
     expect(page).to have_field(:user_name)
     expect(page).to have_field(:user_email)
@@ -25,7 +24,7 @@ RSpec.describe 'user registration page' do
     expect(test.email).to eq('katyperry@email.com')
   end
 
-  context "sad path" do
+  context 'sad path' do
     it 'should not register the user if the email address is already in use' do
       visit register_path
 
@@ -33,9 +32,9 @@ RSpec.describe 'user registration page' do
       fill_in :user_name, with: 'micheal impersonator'
       fill_in :user_email, with: 'michaeljackson@email.com'
       click_on 'Register'
-      
+
       expect(current_path).to eq('/register')
-      expect(page).to have_content("Error: Email has already been taken")
+      expect(page).to have_content('Error: Email has already been taken')
     end
 
     it 'give alert for invalid data' do
