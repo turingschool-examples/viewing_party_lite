@@ -25,7 +25,7 @@ RSpec.describe 'Discover movies page' do
 
       expect(page).to have_content('Average Votes:')
       expect(page).to have_link('Fight Club')
-      expect(page).to have_button('Return to Disover Page')
+      expect(page).to have_button('Return to Discover Page')
     end
 
 
