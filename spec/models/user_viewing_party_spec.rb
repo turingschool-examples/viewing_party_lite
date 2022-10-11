@@ -10,5 +10,6 @@ RSpec.describe UserViewingParty, type: :model do
   describe 'Validations' do
     it { should validate_presence_of :user_id }
     it { should validate_presence_of :viewing_party_id }
+    # it { should validate_presence_of :role } #plan to add this enum later. (host or viewer)
   end
 end
