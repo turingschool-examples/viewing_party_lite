@@ -35,6 +35,10 @@ class UsersController < ApplicationController
 
     json = JSON.parse(response.body, symbolize_names: true)
     @movies = json[:results]
+    
+    # .map do |movie_data|
+    #   Movie.new(movie_data)
+    # end
   end
 
   private 
