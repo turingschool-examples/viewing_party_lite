@@ -1,6 +1,6 @@
 # Viewing Party
 
-## DB Scheme
+## DB Schema
 
 ![image](https://user-images.githubusercontent.com/102636892/194979992-415607ce-7009-418d-9043-58de0a75ea3b.png)
 
