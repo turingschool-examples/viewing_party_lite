@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   # resources :landing, only: [:index]
 
   get '/', to: 'landing#index'
+
+  resources :users
 end
