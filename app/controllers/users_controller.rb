@@ -15,7 +15,9 @@ class UsersController < ApplicationController
     else
       redirect_to '/register'
       flash[:alert] = "Error: #{error_message(user.errors)}"
+      
     end
+    # binding.pry
   end
 
   private
