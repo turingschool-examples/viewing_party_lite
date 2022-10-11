@@ -14,13 +14,15 @@ RSpec.describe 'user registration page', type: :feature do
       end
 
       describe 'happy path' do
-        xit "Once the user registers they should be taken to a dashboard page '/users/:id', where :id is the id for the user that was just created." do
-          visit new_user_path
+        it "Once the user registers they should be taken to a dashboard page '/users/:id', where :id is the id for the user that was just created." do
+          visit new_user_path #here is where I left off - first thing tomorrow 
           fill_in(:name, with: "Peter Piper")
           fill_in(:email, with: "Peter.Piper@peppers.com")
           fill_in(:password, with: "IlovePeppers")
           click_on('Create User')
-          expect(current_path).to eq(user_path(@user))
+          user4 = create(:user, password_digest:BCrypt::Password.create('IlovecOde2!'))
+
+          expect(current_path).to eq("/users/#{(user4.id) - 1}")
         end
 
         it "You can see a link to the home page" do
