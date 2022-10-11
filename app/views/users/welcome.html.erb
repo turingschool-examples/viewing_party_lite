@@ -1,0 +1,10 @@
+<h1>Viewing Party Lite</h1>
+  <%= link_to "Home Page",  root_path %>
+  <%= button_to "New User",  '/register', method: :get %>
+
+<h3> All Users</h3>
+  <div id='all_users'>
+  <% @users.each do |user| %>
+    <%= user.email%>
+<% end %>
+  </div>
