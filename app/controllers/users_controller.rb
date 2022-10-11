@@ -10,8 +10,10 @@ class UsersController < ApplicationController
 
   def create
     user = User.create(user_params)
+    #redirect will be added later
   end
 
+  private 
   def user_params
     params.permit(:name, :email)
   end
