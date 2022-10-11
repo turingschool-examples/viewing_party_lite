@@ -3,6 +3,11 @@ require 'rails_helper'
 RSpec.describe 'landing page' do
 
   describe 'when I visit the landing page' do
+    let!(:users) { create_list(:user, 10) }
+    let!(:user_1) { users.first }
+    let!(:user_2) { users.last }
+    let!(:random_user) { users.sample }
+
     before(:each) do
       visit '/'
     end
@@ -19,9 +24,19 @@ RSpec.describe 'landing page' do
       expect(page).to have_current_path register_path
     end
 
-    xit 'displays a list of all current users' do
-      #implement faker / factory_bot to create a users
-      expect(page).to have_content
+    it 'displays a list of all current users' do
+      expect(page).to have_content(user_1.name)
+      expect(page).to have_content(user_1.email)
+      expect(page).to have_content(user_2.name) 
+      expect(page).to have_content(user_2.email) 
+    end
+
+    it 'links to each users profile page' do
+      within "#user-#{random_user.id}" do
+        click_on "User Page"
+      end
+
+      expect(page).to have_current_path user_path(random_user)
     end
 
     it 'links back to landing page' do
