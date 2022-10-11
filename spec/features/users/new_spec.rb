@@ -23,7 +23,7 @@ RSpec.describe 'user registration page', type: :feature do
           expect(current_path).to eq(user_path(@user))
         end
 
-        xit "You can see a link to the home page" do
+        it "You can see a link to the home page" do
           visit new_user_path
           expect(page).to have_link('Home Page')
 

@@ -9,6 +9,12 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
+  <header>
+    <nav id='navbar'>
+      <%= link_to "Home Page",  root_path %>
+    </nav>
+  </header>
+
   <body>
     <%= yield %>
   </body>
