@@ -5,6 +5,10 @@ class UsersController < ApplicationController
     # require "pry"; binding.pry
   end
 
+  def discover
+    
+  end
+
   def create
     user = User.new(user_params)
     if User.find_by(email: user.email)
