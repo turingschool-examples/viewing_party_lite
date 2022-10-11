@@ -5,7 +5,7 @@
 <section id="existing_users"><p>Existing Users</p>
   <% @users.each do |user| %>
     <div id="user-<%= user.id %>">
-      <%= link_to "#{user.email}'s Dashboard" %>
+      <%= link_to "#{user.email}'s Dashboard", user_dashboard_path(user) %>
     </div>
   <% end %>
 </section>
