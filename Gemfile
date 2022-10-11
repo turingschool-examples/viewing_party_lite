@@ -36,7 +36,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'capybara'
+  gem 'launchy'
   gem 'pry'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -47,12 +50,9 @@ group :development do
 end
 
 group :test do
-  gem 'capybara'
-  gem 'launchy'
-  gem 'rspec-rails'
+  gem 'shoulda-matchers'
   gem 'simplecov'
   gem 'shoulda-matchers'
 end
-
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
