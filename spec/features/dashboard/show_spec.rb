@@ -8,7 +8,6 @@ RSpec.describe "User Show Page" do
             visit user_path(@alex)
 
             expect(page).to have_content("Alex")
-            require 'pry'; binding.pry
         end
     end
 end
