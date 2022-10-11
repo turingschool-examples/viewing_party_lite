@@ -22,6 +22,20 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def discover
+    @user = User.find(params[:id])
+  end
+
+  def results
+    title = params["Search by Movie Title"]
+    conn = Faraday.new(url: "https://api.themoviedb.org")    
+
+    response = conn.get("/3/search/movie?api_key=#{ENV["movies_api_key"]}&query=#{title}")
+
+    json = JSON.parse(response.body, symbolize_names: true)
+    @movies = json[:results]
+  end
+
   private 
   def user_params
     params.permit(:email, :name, :password)
