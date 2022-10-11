@@ -35,7 +35,7 @@ RSpec.describe 'user registration page' do
     expect(current_path).to eq('/register')
     expect(page).to have_content("Error: Email has already been taken")
   end
-27
+  
   it 'give alert for invalid data' do
     visit '/register'
 
