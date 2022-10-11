@@ -8,7 +8,7 @@ RSpec.describe 'The new viewing party page' do
     let!(:user_2) { users[1] }
     let!(:user_3) { users[2] }
 
-    it 'I see name of movie/form with duration of party/date and time/checkboxes next to each user/button to create' do
+    xit 'I see name of movie/form with duration of party/date and time/checkboxes next to each user/button to create' do
       visit new_user_movie_viewing_party(user_1, movie)
 
       expect(page).to have_content(movie.title)
@@ -25,7 +25,7 @@ RSpec.describe 'The new viewing party page' do
       expect(page).to have_content("Hosting")
     end
 
-    it 'Displays the event on any users that were invited to the party' do
+    xit 'Displays the event on any users that were invited to the party' do
       visit new_user_movie_viewing_party(user_1, movie)
 
       select '2022/10/31', :from => 'Day'
@@ -41,7 +41,7 @@ RSpec.describe 'The new viewing party page' do
       expect(page).to_not have_content("#{movie.title}")
     end
 
-    it 'will not create a viewing party if the duration is less than the movie runtime' do
+    xit 'will not create a viewing party if the duration is less than the movie runtime' do
       visit new_user_movie_viewing_party(user_1, movie)
 
       fill_in 'Duration', with: '10'
