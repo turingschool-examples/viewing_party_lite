@@ -20,7 +20,8 @@ RSpec.describe 'Discover movies page' do
       visit "/users/#{user.id}/discover"
       fill_in('Search by Movie Title', with: 'Fight Club')
       click_button('Search by Movie Title')
-      expect(current_path).to eq("users/#{user.id}/movies")
+      save_and_open_page 
+      expect(current_path).to eq("/users/#{user.id}/movies")
     end
   end
 end
