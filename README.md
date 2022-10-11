@@ -1,5 +1,10 @@
 # Viewing Party
 
+## DB Scheme
+
+![image](https://user-images.githubusercontent.com/102636892/194979992-415607ce-7009-418d-9043-58de0a75ea3b.png)
+
+
 This is the base repo for the [Viewing Party Lite project](https://backend.turing.io/module3/projects/viewing_party_lite) used for Turing's Backend Module 3.
 
 ### About this Project
