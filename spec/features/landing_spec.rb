@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Landing Page' do
   describe 'When a user visits the root path' do
-    let!(:user1) {User.create!(name: 'Ben', email: 'ben@fakemail.com', password: 'password')}
+    let!(:users) { create_list(:user, 3) }
+    let!(:user1) { users.first }
 
     before :each do
       visit '/'
@@ -25,7 +26,15 @@ RSpec.describe 'Landing Page' do
       expect(page).to have_content('Existing Users')
 
       within("#existing_users") do
-        expect(page).to have_link(user1.email)
+        within("#user-#{user1.id}") do
+          expect(page).to have_link("#{user1.email}'s Dashboard")
+        end
+        within("#user-#{users.second.id}") do
+          expect(page).to have_link("#{users.second.email}'s Dashboard")
+        end
+        within("#user-#{users.third.id}") do
+          expect(page).to have_link("#{users.third.email}'s Dashboard")
+        end
       end
     end
 
