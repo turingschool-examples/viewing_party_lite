@@ -36,18 +36,17 @@ RSpec.describe 'user registration page', type: :feature do
 
 
       describe 'sad path' do
-        xit "If the user fails to fill in valid information they see an error message & are redirected to the current page to fill in the form again" do
+        it "If the user fails to fill in valid information they see an error message & are redirected to the current page to fill in the form again" do
           visit new_user_path
 
           #missing name fill in
           fill_in(:email, with: "Peter.Piper@peppers.com")
           fill_in(:password, with: "IlovePeppers")
           click_on('Create User')
-          expect(current_path).to eq(new_user_path)
-          expect(page).to have_content('You must fill in a name to be a valid user.')
+          expect(current_path).to eq('/register')
+          expect(page).to have_content("Error: Name can't be blank")
         end
       end
-
 
     end
   end

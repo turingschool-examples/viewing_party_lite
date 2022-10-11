@@ -14,6 +14,7 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
     else
       redirect_to '/register'
+      flash[:alert] = "Error: #{@user.errors.full_messages.first}"
     end
   end
 
