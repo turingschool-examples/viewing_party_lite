@@ -12,7 +12,7 @@ RSpec.describe 'Landing Page' do
       expect(page).to have_content('Viewing Party')
     end
 
-    it 'should have button to create a new user' do
+    xit 'should have button to create a new user' do
       expect(page).to have_button('Create New User')
 
       click_button 'Create New User'
@@ -20,7 +20,7 @@ RSpec.describe 'Landing Page' do
       expect(current_path).to eq('/user/new')
     end
 
-    it 'has section for existing users' do
+    xit 'has section for existing users' do
       expect(page).to have_content('Existing Users')
 
       within("#existing_users") do
@@ -28,7 +28,7 @@ RSpec.describe 'Landing Page' do
       end
     end
 
-    it 'has a home link at top of page' do
+    xit 'has a home link at top of page' do
       expect(page).to have_link('Home')
 
       click_link 'Home'
