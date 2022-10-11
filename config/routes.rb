@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get '/register', to: 'welcome#register'
 
-
+  get '/users/:id/discover', to: 'users#discover'
+  get '/users/:id', to: 'users#dashboard' #maybe we use show pages as dashboards
+  resources :users
 
 end
