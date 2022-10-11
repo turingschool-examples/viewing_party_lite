@@ -13,7 +13,15 @@ RSpec.describe 'User Dashboard Page' do
     it 'shows users name at the top of the page' do
       visit user_path(@users_1[0])
       expect(page).to have_content("#{@users_1[0].name}'s Dashboard")
-      
+
+      visit user_path(@users_1[2])
+      expect(page).to have_content("#{@users_1[2].name}'s Dashboard")
     end
+
+    it 'has a button to discover movies' do
+      visit user_path(@users_1[0])
+      click_button "Discover Movies"
+      expect(current_path).to eq(user_discover_path(@users_1[0]))
+    end 
   end
 end
