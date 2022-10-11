@@ -14,4 +14,7 @@ RSpec.describe 'User show page' do
   it 'has a button to discover movies' do
     expect(page).to have_button('Discover Movies')
   end
+  it 'has a section for Viewing Parties' do
+    expect(page).to have_content("Sunny's Viewing Parties")
+  end
 end
