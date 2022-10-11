@@ -21,7 +21,7 @@ RSpec.describe 'Landing Page' do
       end
 
       click_link "#{@users_1[0].name}"
-      expect(current_path).to eq(user_path(@user_1[0])
+      expect(current_path).to eq(user_path(@users_1[0]))
     end
   end
 end
