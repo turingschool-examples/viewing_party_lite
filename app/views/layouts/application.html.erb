@@ -10,6 +10,9 @@
   </head>
 
   <body>
+    <div id='navlinks'>
+      <%= link_to "Home", root_path %>
+    </div>
     <% if alert %>
       <% flash.each do |type, msg| %>
         <%= msg %>
