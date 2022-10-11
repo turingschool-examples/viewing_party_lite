@@ -8,23 +8,29 @@ RSpec.describe "user dashboard" do
     before :each do
       viewing_parties.each do |party|
         user.viewing_parties << party
-        visit user_path(user)
       end
+
+      visit user_path(user)
     end
+
     it 'displays a title' do
       expect(page).to have_content("#{user.name}'s Dashboard")
     end
 
-    it 'displays a button to discover movies' do
-      expect(page).to have_button('Discover Movies')
-    end
-
-    it 'lists viewing parties for the user' do
+    xit 'lists viewing parties for the user' do
       within "#viewing-parties" do
         viewing_parties.each do |party|
           expect(page).to have_link "Viewing Party ##{party.id}"
         end
       end
+    end
+
+    xit 'displays a discover movies button that links to a discover page for this specific user' do
+      expect(page).to have_button('Discover Movies')
+
+      click_button 'Discover Movies'
+      
+      expect(current_path).to eq(user_discover_index(user))
     end
   end
 end

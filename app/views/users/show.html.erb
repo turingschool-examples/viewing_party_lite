@@ -6,7 +6,7 @@
 <ul id="viewing-parties">
   <% @user.viewing_parties.each do |party| %>
     <li>
-      <%= link_to "Viewing Party ##{party.id}", viewing_party_path(party) %>
+      <%# <%= link_to "Viewing Party ##{party.id}", user_movie_viewing_party(@user, movie, party) %> 
     </li>
   <% end %>
 </ul>
