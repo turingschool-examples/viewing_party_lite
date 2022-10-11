@@ -5,6 +5,6 @@
 <h3> Existing Users: </h3>
 
 <% @users.each do |user| %>
-  <p> <%=user.email%>'s Dashboard </p>
 
+  <p><%= link_to "#{user.email}'s Dashboard", "/users/#{user.id}", method: :get %></p>
 <% end %>

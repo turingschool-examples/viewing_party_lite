@@ -1,28 +1,13 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/jake/Turing/3mod/projects/viewing_party_lite/app/helpers/application_helper.rb": {
+      "/Users/rileyblue/turing/3module/projects/viewing_party_lite/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/jake/Turing/3mod/projects/viewing_party_lite/app/models/user.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/jake/Turing/3mod/projects/viewing_party_lite/app/models/application_record.rb": {
-        "lines": [
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/jake/Turing/3mod/projects/viewing_party_lite/app/models/viewing_party.rb": {
+      "/Users/rileyblue/turing/3module/projects/viewing_party_lite/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -30,7 +15,14 @@
           null
         ]
       },
-      "/Users/jake/Turing/3mod/projects/viewing_party_lite/app/models/viewing_party_user.rb": {
+      "/Users/rileyblue/turing/3module/projects/viewing_party_lite/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/rileyblue/turing/3module/projects/viewing_party_lite/app/models/viewing_party.rb": {
         "lines": [
           1,
           1,
@@ -38,7 +30,67 @@
           null
         ]
       },
-      "/Users/jake/Turing/3mod/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
+      "/Users/rileyblue/turing/3module/projects/viewing_party_lite/app/models/viewing_party_user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/rileyblue/turing/3module/projects/viewing_party_lite/app/controllers/welcome_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          6,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/rileyblue/turing/3module/projects/viewing_party_lite/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/rileyblue/turing/3module/projects/viewing_party_lite/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null,
+          1,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/rileyblue/turing/3module/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
           0,
           0,
@@ -48,7 +100,7 @@
         "branches": {
         }
       },
-      "/Users/jake/Turing/3mod/projects/viewing_party_lite/app/jobs/application_job.rb": {
+      "/Users/rileyblue/turing/3module/projects/viewing_party_lite/app/jobs/application_job.rb": {
         "lines": [
           0,
           0
@@ -56,15 +108,7 @@
         "branches": {
         }
       },
-      "/Users/jake/Turing/3mod/projects/viewing_party_lite/app/controllers/application_controller.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/jake/Turing/3mod/projects/viewing_party_lite/app/channels/application_cable/connection.rb": {
+      "/Users/rileyblue/turing/3module/projects/viewing_party_lite/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
           0,
@@ -74,7 +118,7 @@
         "branches": {
         }
       },
-      "/Users/jake/Turing/3mod/projects/viewing_party_lite/app/channels/application_cable/channel.rb": {
+      "/Users/rileyblue/turing/3module/projects/viewing_party_lite/app/channels/application_cable/channel.rb": {
         "lines": [
           0,
           0,
@@ -85,6 +129,6 @@
         }
       }
     },
-    "timestamp": 1665443828
+    "timestamp": 1665515743
   }
 }
