@@ -1,0 +1,7 @@
+
+[user]
+  email = 60406424+noahvanekdom@users.noreply.github.com
+  name = Noah van Ekdom
+
+[commit]
+  template = ~/.gitmessage
