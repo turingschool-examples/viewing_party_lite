@@ -15,13 +15,18 @@ RSpec.describe 'application welcome page', type: :feature do
         expect(current_path).to eq(root_path)
       end
 
-      xit 'I can also see a list of existing users which links to the user dashboard & ' do
+      it 'I can also see a list of existing users which links to the user dashboard & ' do
+        user1 = User.create!(name: Faker::Name.name , email: Faker::Internet.email, password_digest: BCrypt::Password.create('bananaBro'))
+        user2 = User.create!(name: Faker::Name.name , email: Faker::Internet.email, password_digest: BCrypt::Password.create('bananaBro'))
+        user3 = User.create!(name: Faker::Name.name , email: Faker::Internet.email, password_digest: BCrypt::Password.create('bananaBro'))
+        
         visit root_path
-        #make users
-        expect(page).to have_content('alaina.movies@gmail.com')
-        expect(page).to have_content('gavin.movies@gmail.com')
-        expect(page).to have_content('alyssa.movies@gmail.com')
-        expect(page).to have_content('alyssa.movies@gmail.com')
+        within('#all_users') do
+          expect(page).to have_content("#{user1.email}")
+          expect(page).to have_content("#{user2.email}")
+          expect(page).to have_content("#{user3.email}")
+        end
+
       end
 
       xit 'The register a new user button should lead to the registration page' do
