@@ -1,12 +1,11 @@
-<h1> @user.name </h1>
+<h1> <%= @user.name %>'s Dashboard </h1>
 <%= button_to 'Discover Movies', "/users/#{@user.id}/discover", method: :get %>
 
 <% @user.viewing_parties.each do |party| %>
   <p><%= party.movie_title%></p>
-  <p><%= party.date%></p>
-  <p><%= party.start_time %></p>
+  <p>Date: <%= party.start_time.strftime("%Y-%m-%d") %></p>
+  <p>Starting Time: <%= party.start_time.strftime("%H:%M:%S") %></p>
+  <p>Status: <%= ViewingPartyUser.find_by(user_id: @user.id, viewing_party_id: party.id).status%></p>
   <br>
   <br>
-  <p><%= @user.viewing_party  ViewingPartyUser.find_by(user_id: @user.id, viewing_party_id: party.id).status%></p>
-
 <% end %>
