@@ -1,6 +1,6 @@
 <h2>Viewing Party<h2>
 
-<%= button_to 'Create New User', new_user_path %>
+<%= button_to 'Create New User', new_user_path, method: :get %>
 
 <section id="existing_users"><h2>Existing Users</h2>
   <% @users.each do |user| %>

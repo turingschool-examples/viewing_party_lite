@@ -16,9 +16,9 @@ RSpec.describe 'Landing Page' do
     it 'should have button to create a new user' do
       expect(page).to have_button('Create New User')
 
-      # click_button 'Create New User'
+      click_button 'Create New User'
 
-      # expect(current_path).to eq(new_user_path)
+      expect(current_path).to eq(new_user_path)
     end
 
     it 'has section for existing users' do
