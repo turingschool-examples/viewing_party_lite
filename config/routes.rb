@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   get 'register', to: 'users#new'
 
-  resources :users
+  resources :users do
+    resources :movies
+    get 'discover', to: 'movies#search'
+  end
 
 end
