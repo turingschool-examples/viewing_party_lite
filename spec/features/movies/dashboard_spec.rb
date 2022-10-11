@@ -8,12 +8,12 @@ RSpec.describe 'Movie Dashboard', type: :feature do
         @user_1 = User.create!(name:'Morgan', email:'morgan_m@juno.com')
       end
 
-      it 'When I go to a user dashbaord, and click "Discover Movies" button, I am redirected to a discover page' do
+      it 'When I go to a user dashboard, and click "Discover Movies" button, I am redirected to a discover page' do
         visit user_path(@user_1)
 
         click_button "Discover Movies"
 
-        expect(current_path).to eq("/users/#{@user_1.id}/discover")
+        expect(current_path).to eq(user_discover_path(@user_1))
       end
     end
   end
