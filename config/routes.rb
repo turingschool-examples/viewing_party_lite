@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   get '/', to: 'welcome#index'
   get '/register', to: 'users#new'
 
-  resources :users, only: [:show, :new, :create]
+  resources :users, only: [:show, :new, :create] do
+    get '/discover', to: 'movies#dashboard'
+  end
 end
