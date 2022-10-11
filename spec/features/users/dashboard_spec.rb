@@ -15,6 +15,7 @@ RSpec.describe 'Users dashboard' do
       expect(page).to have_button('Discover Movies')
       # _ A section that lists viewing parties**
       expect(page).to have_content('Viewing Parties:')
+
       # *more instructions on this in the Dashboard:Discover Movies issue.
       # **more instructions on this in the Dashboard:Viewing Parties issue.
     end
