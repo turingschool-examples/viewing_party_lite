@@ -3,5 +3,18 @@ class UsersController < ApplicationController
     end
 
     def new
+        @user = User.new
     end
+
+    def create
+        @user = User.create!(user_params)
+        redirect_to user_path(@user.id)
+    end
+
+    private
+
+    def user_params
+        params.require(:user).permit(:name, :email)
+    end
+
 end

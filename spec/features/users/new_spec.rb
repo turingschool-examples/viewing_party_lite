@@ -6,12 +6,14 @@ RSpec.describe "New User Page", type: :feature do
   end
 
   it 'has a form to create a new user' do
-    fill_in :name, with: "Benji"
-    fill_in :email, with: "benji_the_dog@aol.com"
+    fill_in :user_name, with: "Benji"
+    fill_in :user_email, with: "benji_the_dog@aol.com"
     click_button "Register"
     benji = User.last
-    
+
     expect(benji.name).to eq("Benji")
     expect(current_path).to eq(user_path(benji.id))
   end
+
+  
 end
