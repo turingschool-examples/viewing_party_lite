@@ -6,7 +6,7 @@ RSpec.describe 'Landing Page' do
     let!(:user1) { users.first }
 
     before :each do
-      visit '/'
+      visit root_path
     end
 
 
@@ -43,7 +43,7 @@ RSpec.describe 'Landing Page' do
 
       click_link 'Home'
 
-      expect(current_path).to eq('/')
+      expect(current_path).to eq(root_path)
     end
   end
 end
