@@ -15,7 +15,7 @@ RSpec.describe "Welcome Index", type: :feature do
 
     it 'has a button to create a new user' do
         click_button 'New User'
-        expect(current_path).to eq(new_user_path)
+        expect(current_path).to eq(register_path)
     end
 
     it 'has a list of existing users and links to the dashboard of each user' do

@@ -21,4 +21,10 @@ RSpec.describe User, type: :model do
             expect(user_1.viewing_parties).to eq([viewing_party_2])
         end
     end
+
+    describe 'validations' do
+        it { should validate_presence_of(:name) }
+        it { should validate_presence_of(:email) }
+        it { should validate_uniqueness_of(:email) }
+    end
 end
