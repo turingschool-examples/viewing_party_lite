@@ -7,7 +7,7 @@
 /.bundle
 
 # Ignore coverage files
-coverage
+/coverage/*
 
 # Ignore all logfiles and tempfiles.
 /log/*
