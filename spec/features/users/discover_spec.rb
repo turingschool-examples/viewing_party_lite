@@ -26,7 +26,7 @@ RSpec.describe 'Discover movies page' do
       click_button('Search by Movie Title')
       
       expect(current_path).to eq("/users/#{user.id}/movies")
-
+save_and_open_page
       expect(page).to have_content('Average Votes:')
       expect(page).to have_link('Fight Club')
       expect(page).to have_button('Return to Discover Page')

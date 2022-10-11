@@ -34,11 +34,10 @@ class UsersController < ApplicationController
     response = conn.get("/3/search/movie?api_key=#{ENV["movies_api_key"]}&query=#{title}")
 
     json = JSON.parse(response.body, symbolize_names: true)
-    @movies = json[:results]
-    
-    # .map do |movie_data|
-    #   Movie.new(movie_data)
-    # end
+    @movies = json[:results].map do |movie_data|
+      Movie.new(movie_data)
+    end    
+
   end
 
   private 
