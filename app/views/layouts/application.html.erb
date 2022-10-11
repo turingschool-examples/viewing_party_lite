@@ -14,6 +14,9 @@
   </nav>
   
   <body>
+    <% flash.each do |type, message| %>
+      <p id="flash_message"> <%= message %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
