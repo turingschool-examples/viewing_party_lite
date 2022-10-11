@@ -48,4 +48,4 @@ _How did you solve the problem?_
 - [ ] Code compiles correctly
 - [ ] Tests for the changes have been added (for bug fixes/features)
 - [ ] All tests passing
-- [ ] Extended the README / documentation, if necessary
+- [ ] Extended the README / documentation, if necessary 
