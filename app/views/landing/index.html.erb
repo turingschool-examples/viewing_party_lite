@@ -4,6 +4,6 @@
 
 <section id="existing_users"><h2>Existing Users</h2>
   <% @users.each do |user| %>
-    <%= user.email %>
+    <%= link_to user.email %>
   <% end %>
 </section>
