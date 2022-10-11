@@ -1,12 +1,12 @@
 <h1 id="application_title">Viewing Party</h1>
 <section id="user_creation">
-  <%= button_to "Create User", id: "create_user" %> <!-- TODO: Add create user path -->
+  <%= button_to "Create User", new_user_path, id: "create_user" %>
 </section>
 <section id="current_users">
   <p>Current Users:</p>
   <ul>
     <% @users.each do |u| %>
-      <li><%= link_to "#{u.email}'s dashboard'" %></li> <!-- TODO: Add show user path -->
+      <li><%= link_to "#{u.email}'s dashboard'", user_path(u.id) %></li>
     <% end %>
   </ul>
 </section>
