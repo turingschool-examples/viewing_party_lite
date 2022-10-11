@@ -1,7 +1,7 @@
 FactoryBot.define do 
   factory :user, class: User do
     name {Faker::Name.name}
-    email {Faker::Email.safe_email}
+    email {Faker::Internet.safe_email}
   end
 
   factory :viewing_party, class: ViewingParty do
