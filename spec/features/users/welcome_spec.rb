@@ -4,7 +4,7 @@ RSpec.describe 'application welcome page', type: :feature do
   describe 'As a user' do
     describe 'When I visit the root path/welcome page' do
 
-      it 'I can see the application titlem  a button to create a new user, & a link to go back to the landing page' do
+      it 'I can see the application title, a button to create a new user, & a link to go back to the landing page' do
 
         visit root_path
         expect(page).to have_content('Viewing Party Lite')
@@ -15,7 +15,7 @@ RSpec.describe 'application welcome page', type: :feature do
         expect(current_path).to eq(root_path)
       end
 
-      it 'I can also see a list of existing users which links to the user dashboard & ' do
+      it 'I can see a list of existing users' do
         user1 = User.create!(name: Faker::Name.name , email: Faker::Internet.email, password_digest: BCrypt::Password.create('bananaBro'))
         user2 = User.create!(name: Faker::Name.name , email: Faker::Internet.email, password_digest: BCrypt::Password.create('Ilovecode'))
         user3 = User.create!(name: Faker::Name.name , email: Faker::Internet.email, password_digest: BCrypt::Password.create('IlovecOde2!'))
@@ -30,13 +30,12 @@ RSpec.describe 'application welcome page', type: :feature do
         end
       end
 
-      it 'The register a new user button should lead to the registration page' do
+      it 'The New User button should lead to the registration page' do
         visit root_path
 
         click_on('New User')
         expect(current_path).to eq('/register')
       end
-
     end
   end
 end
