@@ -19,7 +19,7 @@ RSpec.describe 'Landing Page' do
 
       click_button 'Create New User'
 
-      expect(current_path).to eq(new_user_path)
+      expect(current_path).to eq(register_path)
     end
 
     it 'has section for existing users' do
