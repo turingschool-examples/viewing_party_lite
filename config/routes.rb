@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'welcome#landing'
   get '/register', to:'users#new'
   resources :users, only: [:index, :show, :create]
+  resources :viewing_parties, only: [:show]
 end
