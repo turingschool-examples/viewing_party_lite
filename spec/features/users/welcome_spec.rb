@@ -17,22 +17,24 @@ RSpec.describe 'application welcome page', type: :feature do
 
       it 'I can also see a list of existing users which links to the user dashboard & ' do
         user1 = User.create!(name: Faker::Name.name , email: Faker::Internet.email, password_digest: BCrypt::Password.create('bananaBro'))
-        user2 = User.create!(name: Faker::Name.name , email: Faker::Internet.email, password_digest: BCrypt::Password.create('bananaBro'))
-        user3 = User.create!(name: Faker::Name.name , email: Faker::Internet.email, password_digest: BCrypt::Password.create('bananaBro'))
+        user2 = User.create!(name: Faker::Name.name , email: Faker::Internet.email, password_digest: BCrypt::Password.create('Ilovecode'))
+        user3 = User.create!(name: Faker::Name.name , email: Faker::Internet.email, password_digest: BCrypt::Password.create('IlovecOde2!'))
+        user4 = create(:user, password_digest:BCrypt::Password.create('IlovecOde2!'))
         
         visit root_path
         within('#all_users') do
           expect(page).to have_content("#{user1.email}")
           expect(page).to have_content("#{user2.email}")
           expect(page).to have_content("#{user3.email}")
+          expect(page).to have_content("#{user4.email}")
         end
-
       end
 
-      xit 'The register a new user button should lead to the registration page' do
+      it 'The register a new user button should lead to the registration page' do
         visit root_path
+
         click_on('New User')
-        expect(current_path).to eq('/registration')
+        expect(current_path).to eq('/register')
       end
 
     end
