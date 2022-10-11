@@ -1,9 +1,11 @@
-<h2>Viewing Party<h2>
+<h1>Viewing Party<h1>
 
 <%= button_to 'Create New User', new_user_path, method: :get %>
 
-<section id="existing_users"><h2>Existing Users</h2>
+<section id="existing_users"><p>Existing Users</p>
   <% @users.each do |user| %>
-    <%= link_to user.email %>
+    <div id="user-<%= user.id %>">
+      <%= link_to "#{user.email}'s Dashboard" %>
+    </div>
   <% end %>
 </section>
