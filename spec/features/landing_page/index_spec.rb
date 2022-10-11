@@ -12,26 +12,26 @@ RSpec.describe 'Landing Page | Index', type: :feature do
     end
     it 'I see a button to create a new user' do
       within('#user_creation') do
-        expect(page).to have_button '#create_user'
+        expect(page).to have_button '#create_user' # , href:=>"creation_path")
         # TODO: Create expectation clause to ensure create user button links to creation path
       end
     end
     it 'I see a list of existing users which links to each users dashboard' do
       within('#current_users') do
         within('#user-1') do
-          expect(page).to have_link("jojo_binks@gmail.com's dashboard")
-          expect(page).to_not have_link("bobby@yahoo.com's dashboard")
-          expect(page).to_not have_link("marissa.nicole99@gmail.com's dashboard")
+          expect(page).to have_link("jojo_binks@gmail.com's dashboard") # , href:=>"user_dashboard_path")
+          expect(page).to_not have_link("bobby@yahoo.com's dashboard") # , href:=>"user_dashboard_path")
+          expect(page).to_not have_link("marissa.nicole99@gmail.com's dashboard") # , href:=>"user_dashboard_path")
         end
         within('#user-2') do
-          expect(page).to have_link("bobby@yahoo.com's dashboard")
-          expect(page).to_not have_link("jojo_binks@gmail.com's dashboard")
-          expect(page).to_not have_link("marissa.nicole99@gmail.com's dashboard")
+          expect(page).to have_link("bobby@yahoo.com's dashboard") # , href:=>"user_dashboard_path")
+          expect(page).to_not have_link("jojo_binks@gmail.com's dashboard") # , href:=>"user_dashboard_path")
+          expect(page).to_not have_link("marissa.nicole99@gmail.com's dashboard") # , href:=>"user_dashboard_path")
         end
         within('#user-3') do
-          expect(page).to have_link("marissa.nicole99@gmail.com's dashboard")
-          expect(page).to_not have_link("jojo_binks@gmail.com's dashboard")
-          expect(page).to_not have_link("bobby@yahoo.com's dashboard")
+          expect(page).to have_link("marissa.nicole99@gmail.com's dashboard") # , href:=>"user_dashboard_path")
+          expect(page).to_not have_link("jojo_binks@gmail.com's dashboard") # , href:=>"user_dashboard_path")
+          expect(page).to_not have_link("bobby@yahoo.com's dashboard") # , href:=>"user_dashboard_path")
         end
       end
       # TODO: Create expectation clause to ensure user dashboard links to the correct user dashboard path
