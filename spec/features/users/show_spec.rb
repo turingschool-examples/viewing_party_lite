@@ -10,6 +10,7 @@ RSpec.describe 'User | Show', type: :feature do
       @user3 = User.create!(name: 'marissa nicole', email: 'marissa.nicole99@gmail.com')
       @vp1 = @user1.viewing_parties.create!(duration: 180, date: '2022-10-11 22:19:58', movie_id: 1)
       @vp2 = @user1.viewing_parties.create!(duration: 180, date: '2022-10-12 22:18:58', movie_id: 128)
+      visit user_path(@user1.id)
     end
     it 'I see the users name at the top of the page' do
       within('#user_name') do
