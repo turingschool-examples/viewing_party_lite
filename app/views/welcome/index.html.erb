@@ -1,0 +1,6 @@
+<%= button_to "New User", new_user_path, method: :get %>
+<% @users.each do |user| %>
+    <div id="user_#{user.id}">
+        <%= link_to "#{user.name}'s Dashboard", user_path(user.id) %>
+    </div>
+<% end %>
