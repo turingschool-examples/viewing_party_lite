@@ -1,1 +1,10 @@
-<h2>User <%= "#{@user.name}" %>'s' Dashboard</h2>
+<h2>User <%= "#{@user.name}" %>'s Dashboard</h2>
+
+<%= button_to "Discover Movies", user_discover_path(@user.id), local: true, method: :get %>
+
+<div id= "header-<%=@user %>">
+<h2> Viewing Parties <h2>
+  <% @user.viewing_parties.each do |viewing_party| %>
+
+ <% end %>
+</div>
