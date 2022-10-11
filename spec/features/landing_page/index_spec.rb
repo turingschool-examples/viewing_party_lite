@@ -20,13 +20,18 @@ RSpec.describe 'Landing Page | Index', type: :feature do
       within('#current_users') do
         within('#user-1') do
           expect(page).to have_link("jojo_binks@gmail.com's dashboard")
-          expect(page).to_not have_link("dominicodonnell99@gmail.com's dashboard")
+          expect(page).to_not have_link("bobby@yahoo.com's dashboard")
+          expect(page).to_not have_link("marissa.nicole99@gmail.com's dashboard")
         end
         within('#user-2') do
-
+          expect(page).to have_link("bobby@yahoo.com's dashboard")
+          expect(page).to_not have_link("jojo_binks@gmail.com's dashboard")
+          expect(page).to_not have_link("marissa.nicole99@gmail.com's dashboard")
         end
         within('#user-3') do
-
+          expect(page).to have_link("marissa.nicole99@gmail.com's dashboard")
+          expect(page).to_not have_link("jojo_binks@gmail.com's dashboard")
+          expect(page).to_not have_link("bobby@yahoo.com's dashboard")
         end
       end
       # TODO: Create expectation clause to ensure user dashboard links to the correct user dashboard path
