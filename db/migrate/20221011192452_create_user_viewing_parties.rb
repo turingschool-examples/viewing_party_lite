@@ -1,0 +1,11 @@
+class CreateUserViewingParties < ActiveRecord::Migration[5.2]
+  def change
+    create_table :user_viewing_parties do |t|
+      t.references :user_id, foreign_key: true
+      t.references :viewing_party_id, foreign_key: true
+      t.integer :role
+
+      t.timestamps
+    end
+  end
+end
