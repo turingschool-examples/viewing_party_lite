@@ -26,6 +26,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def search
+    require 'pry';binding.pry
+  end
+
   private 
   def user_params
     params.permit(:email, :name, :password)
