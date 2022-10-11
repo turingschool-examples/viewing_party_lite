@@ -1,0 +1,12 @@
+<h1 id="application_title">Viewing Party</h1>
+<h2 id="user_name"><%= @user.name %>'s dashboard</h2>
+<%= button_to 'Discover Movies', user_discover_path(@user.id) %>
+<section id="viewing_parties">
+  <ul>
+    <%= @user.viewing_parties.each do |vp| %>
+      <li id="party-<%= vp.id %>">
+        <%= vp.date.strftime('%B%d%Y%I%p') %>
+      </li>
+    <% end %>
+  </ul>
+</section>
