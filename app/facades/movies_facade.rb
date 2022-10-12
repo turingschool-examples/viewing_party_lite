@@ -24,6 +24,6 @@ class MoviesFacade
       end
     end
 
-    found_movies.first(40)
+    found_movies.uniq.first(40)
   end
 end
