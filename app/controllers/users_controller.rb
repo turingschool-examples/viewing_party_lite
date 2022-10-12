@@ -2,9 +2,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    # How Dani recomended to call the Facade for the movie info
-    # @parties = @user.parties
-    # @movies = @parties.map {|party| MovieFacade.movie_data(party.movie_id)}
   end
 
   def new

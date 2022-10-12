@@ -131,6 +131,45 @@ RSpec.describe 'User Dashboard', type: :feature do
             expect(page).to_not have_content("Hosting")
           end
         end
+
+        it 'list of users invited' do
+
+          visit user_path(@user_1)
+
+          within("#view-parties-#{@user_1.id}") do
+            within("#party-#{@party_1.id}") do
+              expect(page).to have_content(@user_1.name)
+              expect(page).to have_content(@user_2.name)
+              expect(page).to have_content(@user_3.name)
+              expect(page).to_not have_content(@user_4.name)
+            end
+            
+            within("#party-#{@party_2.id}") do
+              expect(page).to have_content(@user_1.name)
+              expect(page).to have_content(@user_2.name)
+              expect(page).to have_content(@user_3.name)
+              expect(page).to have_content(@user_4.name)
+            end
+
+            within("#party-#{@party_3.id}") do
+              expect(page).to have_content(@user_1.name)
+              expect(page).to have_content(@user_2.name)
+              expect(page).to_not have_content(@user_3.name)
+              expect(page).to_not have_content(@user_4.name)
+            end
+          end
+
+          visit user_path(@user_4)
+
+          within("#view-parties-#{@user_4.id}") do
+            within("#party-#{@party_2.id}") do
+              expect(page).to have_content(@user_1.name)
+              expect(page).to have_content(@user_2.name)
+              expect(page).to have_content(@user_3.name)
+              expect(page).to have_content(@user_4.name)
+            end
+          end
+        end
       
       end
     end

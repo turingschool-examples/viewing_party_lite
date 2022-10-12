@@ -7,9 +7,6 @@
     
     <% @user.parties.each do |party| %>
       <span id="party-<%= party.id %>">
-     
-       <%# <%= link_to "#{@movies.find{|movie| movie.title if movie.id == party.movie_id}}, movie_path(party.movie_id)", movie_path(party.movie_id) %> %>
-
         <p><%= link_to party.find_title, movie_path(party.movie_id) %></p>
         <p><%= image_tag(party.find_image_url, size: "200x300") %></p>
         <p><%= party.start_date %> <%= party.time %></p>
@@ -20,7 +17,12 @@
             <%= 'Invited - "#{party.find_host} is Host' %>
           <% end %>
         </p>
-
+        <h3>Guest List:</h3>
+          <ul>
+            <% party.users.each do |user| %>
+            <li><%= user.name %></li>
+            <% end %>
+          </ul>
       </span>
     <% end %>
     
