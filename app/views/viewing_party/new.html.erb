@@ -1,0 +1,7 @@
+<h2 id="movie_title"><%= @movie.title %></h2>
+<section id="view_party_form">
+  <%= form_with url: new_user_movie_viewing_party_path(@user, @movie), method: :post, local: :true do |form| %>
+    <%= form.label "Viewing Party Duration" %>
+    <%= form.text_field :duration %>
+  <% end %>
+</section>
