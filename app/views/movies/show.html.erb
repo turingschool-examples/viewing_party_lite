@@ -7,14 +7,15 @@
 
 <h3>Genre: <%= @movie.genres.join(', ') %>
 
-<h3>Summary: <%= @movie.overview %></h3>
+<h3>Summary:</h3> <%= @movie.overview %>
 
-  Cast Members: <% @cast.each do |member|%>
+  <h3>Cast Members:</h3> <% @cast.each do |member|%>
   <%= member %>
   <% end %>
-
+ 
 <br>
 <h3>Total Reviews: <%=@reviews.count  %></h3>
 <br>
-Review Authors and Information:
+<h4>Review Authors and Information: </h4>
+<%=@reviews.join(', ') %>
 

@@ -13,7 +13,7 @@ RSpec.describe "Movie Detail Page" do
       expect(page).to have_content("Drama")
       expect(page).to have_content("Romance")
       expect(page).to have_content("Runtime: 3 hours and 10 minutes")
-      expect(page).to have_content("Summary: Raj is a rich, carefree,")
+      expect(page).to have_content("Raj is a rich, carefree,")
       # expect(page).to have_content("Cast: ")
       # expect(page).to have_content("Total Reviews: ")
       end

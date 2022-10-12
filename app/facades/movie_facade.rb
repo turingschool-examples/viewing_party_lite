@@ -21,7 +21,7 @@ class MovieFacade
   end
 
   def self.create_cast(id)
-    response = MovieService.get_cast(id)[:cast].map do |member|
+    response = MovieService.get_cast(id)[:cast][0..9].map do |member|
       name = member[:name]
       character = member[:character]
       "#{name} - #{character}"
