@@ -17,10 +17,12 @@ class Movie
     @overview = data[:overview]
   end
 
+  private
+
   def extract_genres(data)
     if data[:genres].nil?
-      return nil
-    else 
+      nil
+    else
       data[:genres].map { |genre| genre[:name] }
     end
   end
