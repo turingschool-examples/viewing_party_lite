@@ -8,7 +8,6 @@ RSpec.describe 'When I visit the landing page', type: :feature do
 
   describe ' the header content' do
     it 'has a link "Home" to landing page' do
-      save_and_open_page
       within '#nav' do
         expect(page).to have_link('Home', href: '/')
       end
