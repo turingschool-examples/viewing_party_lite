@@ -1,9 +1,13 @@
 <center>
 <h1>Movies</h1>
+<%= button_to "Discover Page", user_discover_path(@user), method: :get %>
+
   <% if @top_movies != nil %>
     <% @top_movies.each do |movie| %>
-      <strong><%= movie.title %></strong>
-      <%= movie.rating %>
+      <div id="#movie_"<%= movie.movie_id %>>
+        <strong><%= movie.title %></strong>
+        <%= movie.rating %>
+      </div>
       <br>
     <% end %>
   <% else %>

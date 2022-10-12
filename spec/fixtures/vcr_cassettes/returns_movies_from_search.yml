@@ -1,0 +1,324 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=<API Key>&page=1&query=wayne
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 12 Oct 2022 14:45:01 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=600
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 96725c0e4ced177a38df871e7cc48a4a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - qc2ETBXSgDjof86JbGeqHMsIUpu_rmZPbW3lDXdZF1-lfc-fGObeHg==
+      Age:
+      - '446'
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":616174,"original_language":"en","original_title":"John
+        Wayne Gacy: Defending a Monster","overview":"\"Sam, could you do me a favor?\"  A
+        seemingly simple request sparks the story that has now become part of America’s
+        true crime hall of fame - the journey of a young lawyer, fresh from the Public
+        Defender’s Office, whose first client in private practice turns out to be
+        the most evil serial killer in our nation''s history.","popularity":24.208,"poster_path":"/zti56ETt1Jy8YccD2KbVq86XiCe.jpg","release_date":"2019-07-25","title":"John
+        Wayne Gacy: Defending a Monster","video":false,"vote_average":7,"vote_count":2},{"adult":false,"backdrop_path":"/cxaapBWXYqyKsLOdV4pzW3McPWv.jpg","genre_ids":[35,10402],"id":8872,"original_language":"en","original_title":"Wayne''s
+        World","overview":"The adventures of two amiably aimless metal-head friends,
+        Wayne and Garth. From Wayne''s basement, the pair broadcast a talk-show called
+        \"Wayne''s World\" on local public access television. The show comes to the
+        attention of a sleazy network executive who wants to produce a big-budget
+        version of \"Wayne''s World\"—and he also wants Wayne''s girlfriend, a rock
+        singer named Cassandra. Wayne and Garth have to battle the executive not only
+        to save their show, but also Cassandra.","popularity":12.584,"poster_path":"/rsgklbt5KxeuUuchehnLACxzisP.jpg","release_date":"1992-02-14","title":"Wayne''s
+        World","video":false,"vote_average":6.7,"vote_count":1848},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":281891,"original_language":"en","original_title":"Unlicensed
+        Cemetery: The John Wayne Gacy Murders","overview":"John Wayne Gacy was accused
+        and convicted of the brutal homosexual torture slayings of 33 young men and
+        boys...but many believe his total could be much higher. This video will explore
+        the many sides of John Wayne Gacy with case facts, profile interviews and
+        re-enactments that aren''t available anywhere.","popularity":14.268,"poster_path":"/mIOAf9dkbh1vZwTM6E35QtcPZLJ.jpg","release_date":"2002-01-01","title":"Unlicensed
+        Cemetery: The John Wayne Gacy Murders","video":false,"vote_average":10,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[99,27],"id":780766,"original_language":"en","original_title":"The
+        John Wayne Gacy Murders: life and death in Chicago","overview":"Summaries  \"The
+        John Wayne Gacy Murders: Life and Death in Chicago\", Focuses on serial killer
+        John Wayne Gacy''s time in Chicago and includes information about Gacy''s
+        childhood, his career of crime in Waterloo, Iowa, and Gacy''s becoming a celebrity
+        in prison. Containing interviews with Chicago attorneys, news reporters, law
+        enforcement officers, and history experts, the film illustrates what the atmosphere
+        was like in Chicago when Gacy was murdering and ultimately apprehended. Gacy''s
+        time in prison as a celebrity serial killer is also explored in this groundbreaking
+        film by Chicago native filmmaker John Borowski.  —John Borowski","popularity":20.269,"poster_path":"/9Ph0W8fEb3ZGO9F8MgCVM6czTtj.jpg","release_date":"2020-08-01","title":"The
+        John Wayne Gacy Murders: life and death in Chicago","video":false,"vote_average":8,"vote_count":1},{"adult":false,"backdrop_path":"/1P0vQoZYoMG1LvtHKgLl6pV2XQL.jpg","genre_ids":[99],"id":653831,"original_language":"fr","original_title":"John
+        Wayne - L''Amérique à tout prix","overview":"This is the story of a man who
+        climbed the Hollywood ladder, one rung at a time, until he reached the top
+        and became the most popular American actor of his era.","popularity":3.712,"poster_path":"/oTwOCKk8sXaJQDNy0uqS1klkBfT.jpg","release_date":"2019-12-08","title":"John
+        Wayne - America at All Costs","video":false,"vote_average":7,"vote_count":5},{"adult":false,"backdrop_path":"/9ZDwUvhY5gTRc1xDw0RxGdi3zbQ.jpg","genre_ids":[35,10402],"id":8873,"original_language":"en","original_title":"Wayne''s
+        World 2","overview":"A message from Jim Morrison in a dream prompts cable
+        access TV stars Wayne and Garth to put on a rock concert, \"Waynestock,\"
+        with Aerosmith as headliners. But amid the preparations, Wayne frets that
+        a record producer is putting the moves on his girlfriend, Cassandra, while
+        Garth handles the advances of mega-babe Honey Hornee.","popularity":10.046,"poster_path":"/4b7skjfBrQTJ8VVMZ2B4guY0Fhg.jpg","release_date":"1993-12-10","title":"Wayne''s
+        World 2","video":false,"vote_average":6.1,"vote_count":833},{"adult":false,"backdrop_path":"/aNv2y7O9CiVysW2fVAFANuchYsg.jpg","genre_ids":[99],"id":535222,"original_language":"en","original_title":"Wayne","overview":"Wayne
+        tells the exhilarating story of 1987 World Motorcycle Grand Prix Champion
+        Wayne Gardner''s triumphant, improbable journey from a 5-dollar dirt bike
+        to the international summit of his sport.","popularity":1.444,"poster_path":"/asq5fP7bKhfuTynhsmUdgs0PvJy.jpg","release_date":"2018-09-06","title":"Wayne","video":false,"vote_average":6,"vote_count":4},{"adult":false,"backdrop_path":"/1WCCbeiPEgzT6c04GrbPPLtOMk5.jpg","genre_ids":[28,18,10770],"id":142912,"original_language":"en","original_title":"Assault
+        on the Wayne","overview":"The U.S. submarine Anthony Wayne is underway for
+        a top-secret mission. Onboard is a highly classified device that will give
+        the Americans a decided nuclear advantage. The entire mission and the secret
+        technology are threatened when the sub commander discovers his crew has been
+        infiltrated by enemy agents. The commander is charged with trying to protect
+        the device while ferreting out the enemy agents. Compounding matters is the
+        state of the commander''s physical and mental condition, which is being questioned
+        by his crew.","popularity":2.042,"poster_path":"/spaH90zWiGPA4eVfLo1Z3HZXYmY.jpg","release_date":"1971-01-12","title":"Assault
+        on the Wayne","video":false,"vote_average":3,"vote_count":2},{"adult":false,"backdrop_path":null,"genre_ids":[35],"id":49301,"original_language":"fr","original_title":"Je
+        T''Aime John Wayne","overview":"Belmonde lives in 1990s London as an iconic
+        , cool Frenchman modelled on the new wave cinema of the 1960s. Really he is
+        English and middle class – a fact that his family won''t let him forget!","popularity":1.984,"poster_path":"/t1pTaZ0PIYg0UUu3nAbeY5fs870.jpg","release_date":"2000-01-01","title":"Je
+        T''Aime John Wayne","video":false,"vote_average":5.8,"vote_count":17},{"adult":false,"backdrop_path":null,"genre_ids":[80],"id":392468,"original_language":"en","original_title":"Wayne","overview":"Shadowed
+        by a lifetime of brutal mistreatment, Wayne has a tendency to violently lash
+        out when provoked. Recently released from prison, he has taken up residence
+        in the bowels of a dilapidated theatre where he works the night shift as a
+        janitor. With the help of his do-gooder social worker, Wayne is committed
+        to controlling his temper, but when a gang of criminals push him too far,
+        he chooses instead to utilize it.","popularity":0.622,"poster_path":null,"release_date":"2009-06-03","title":"Wayne","video":false,"vote_average":7,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":649175,"original_language":"en","original_title":"Wayne","overview":"After
+        50 years of marriage, Wayne, an octogenarian with Alzheimer''s, seeks a forbidden
+        love from his youth.","popularity":0.6,"poster_path":"/zX3blURaIze8gtAkp3Uvgr9xwry.jpg","release_date":"2015-06-21","title":"Wayne","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":648234,"original_language":"en","original_title":"John
+        Wayne Gacy Jr: Serial Killer","overview":"The life and crimes of serial killerJohn
+        Wayne Gacy.","popularity":2.134,"poster_path":null,"release_date":"","title":"John
+        Wayne Gacy Jr: Serial Killer","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[10402],"id":185948,"original_language":"en","original_title":"Lil
+        Wayne: Unplugged","overview":"Welcomes hip-hop''s hottest MC to the legendary
+        Unplugged stage. As the world awaits his highly-anticipated ninth studio album,
+        Tha Carter IV, the show will feature stripped down versions of Lil Wayne''s
+        classics and more.","popularity":0.6,"poster_path":"/kiiEouqKPqaHvsDsemZ3CQ7Bb6p.jpg","release_date":"2011-06-12","title":"Lil
+        Wayne: Unplugged","video":true,"vote_average":5.5,"vote_count":2},{"adult":false,"backdrop_path":"/1OAB8uZE0Bo9L7dzqvkQXUb4Jgc.jpg","genre_ids":[],"id":733747,"original_language":"en","original_title":"Tron
+        Wayne Gacy","overview":"A conversation about sex and death winds its way between
+        six college kids.","popularity":1.136,"poster_path":"/9hQ7197VLN4UR7Gg4TWAqIN5HYP.jpg","release_date":"2011-01-01","title":"Tron
+        Wayne Gacy","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":57888,"original_language":"en","original_title":"Wayne
+        Brady Live - Making Shit Up","overview":"Emmy award winning Wayne bardy is
+        one of the most versatile performers in show business today. He has been entertaining
+        audiences with his acting, inprov, singing and dancing on television, film
+        and stage. In television, Brady recently provided a voice for the upcoming
+        animated feature, Food Fight! For Lions Gate. He starred in the screen Gem
+        feature, Crossover, and the independant feature The List, a romantic comedy
+        with Sydney Tamia Poiter and Illeana Douglas.","popularity":1.4,"poster_path":null,"release_date":"2010-03-11","title":"Wayne
+        Brady Live - Making Shit Up","video":false,"vote_average":8,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":284400,"original_language":"en","original_title":"JOHN
+        WAYNE - AMERICAN LEGEND","overview":"This installment in A&amp;E''s Biography
+        series follows the life of John Wayne from his troubled childhood to his peak
+        as America''s biggest box-office draw to his later years as a controversial
+        conservative icon. Examined closely, Wayne''s life is a startling series of
+        contradictions. He was a member of his high school''s Shakespeare club who
+        began his career by acting in scores of B-grade Westerns, and though he avoided
+        military service, he was considered an American hero. Filled with well-chosen
+        archival stills, as well as seldom-seen early clips, this video also features
+        interviews with fellow actors Charlton Heston and Ron Howard, as well as writer
+        and scholar Garry Wills (author of a brilliant intellectual study of Wayne''s
+        work and life, John Wayne''s America).","popularity":0.693,"poster_path":null,"release_date":"1998-03-14","title":"JOHN
+        WAYNE - AMERICAN LEGEND","video":true,"vote_average":4,"vote_count":3},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":436531,"original_language":"en","original_title":"Guru
+        Wayne","overview":"Guru Wayne follows the fortunes of Dave, a frustrated Uni
+        student, and Gary his dead-beat, drug dealing mate. In a moment of madness,
+        they dream up a brand new cult. To their utter amazement - it catches on!","popularity":0.6,"poster_path":"/wySEIfPyazxlLdUgLyBZ4vmRU9X.jpg","release_date":"2002-09-23","title":"Guru
+        Wayne","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":898826,"original_language":"en","original_title":"Wayne
+        Train","overview":"A short documentary on the making of THE TRAIN ROBBERS","popularity":0.6,"poster_path":null,"release_date":"1973-02-07","title":"Wayne
+        Train","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":625523,"original_language":"en","original_title":"Lil
+        Wayne: Bling","overview":"Releasing his first solo studio album at just the
+        age of 15, Lil Wayne has shot through the ranks of the hip-hop scene. Follow
+        the story of the man who deems himself as the heart and soul of music. This
+        is Lil Wayne.","popularity":0.6,"poster_path":"/oidEYEsnQobK7VJHTR4MEhVa5yh.jpg","release_date":"2018-11-24","title":"Lil
+        Wayne: Bling","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[18],"id":760878,"original_language":"en","original_title":"Wayne
+        and Albert","overview":"When Wayne has to go and live with his grandfather
+        Albert, they both initially resent the arrangement. Hostilities soften when
+        they discover some common interests.","popularity":0.84,"poster_path":"/8vUHWvfJCoUiu7xpEbl5KoSkzv4.jpg","release_date":"1983-03-15","title":"Wayne
+        and Albert","video":false,"vote_average":0,"vote_count":0}],"total_pages":5,"total_results":92}'
+  recorded_at: Wed, 12 Oct 2022 14:52:27 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=<API Key>&page=2&query=wayne
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 12 Oct 2022 14:45:01 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=600
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 f9a5caa2a18f480171fad57618db559e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 2X851rsfjwFZAQ15o1qvOOb9dLefeoqT7WGVuYiCYDLJW6EmF2aNQg==
+      Age:
+      - '446'
+    body:
+      encoding: UTF-8
+      string: '{"page":2,"results":[{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":393056,"original_language":"en","original_title":"Wayne
+        Dyer: Excuses Begone!","overview":"People are forever using excuses and defending
+        those excuses as if they were actually true. Such statements as ''It would
+        be very difficult for me to change'', or ''I''m too old/young to change''
+        are all excuses used regularly without challenging the truth of these thinking
+        habits. When you eliminate excuses that explain your shortcomings or failures,
+        you''ll awaken to your infinite possibilities.","popularity":0.872,"poster_path":null,"release_date":"2009-06-01","title":"Wayne
+        Dyer: Excuses Begone!","video":false,"vote_average":10,"vote_count":1},{"adult":false,"backdrop_path":"/yc1ThVMFS2WY7knh1811ZSkz37E.jpg","genre_ids":[10402],"id":263001,"original_language":"fr","original_title":"Wayne
+        Shorter Quartet - Jazz in Marciac","overview":"Wayne Shorter Quartet - Jazz
+        in Marciac, 30 July 2013  Wayne Shorter - sax / John Patitucci - bass / Brian
+        Blade - drums /  Danilo Perez - piano  Tracks: 1. Medley : a). Zero Gravity
+        b). Water Babies c). Orbits d). She Moved Through The Fair e). Lotus f). Plaza
+        Real  2. Adventures Abroad The Golden Mean / I Go My Way By Myself  3. Joy
+        Rider","popularity":1.017,"poster_path":"/wXFLBA6yutIYD01UYNOpO2DaUpg.jpg","release_date":"","title":"Wayne
+        Shorter Quartet - Jazz in Marciac","video":false,"vote_average":7.5,"vote_count":3},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":90959,"original_language":"en","original_title":"John
+        Wayne Standing Tall","overview":"Profile of one of the world''s most popular
+        motion picture stars, told through interviews with some of the artists who
+        worked with him, family, friends, and excerpts from many of his films and
+        television appearances.","popularity":0.99,"poster_path":null,"release_date":"1989-03-01","title":"John
+        Wayne Standing Tall","video":false,"vote_average":6,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[99,10770],"id":483873,"original_language":"de","original_title":"John
+        Wayne - Eine amerikanische Legende","overview":"","popularity":0.941,"poster_path":"/v3qSQx5FmmWqLvGKsrisiQ1gSjC.jpg","release_date":"1991-01-31","title":"John
+        Wayne - Eine amerikanische Legende","video":false,"vote_average":6,"vote_count":1},{"adult":false,"backdrop_path":"/xYKCIErL7csu7GgEjmBLDYQNPAV.jpg","genre_ids":[],"id":651314,"original_language":"en","original_title":"Lil
+        Wayne: Rap Sheet","overview":"American rapper, songwriter Dwayne Michael Carter
+        Jr., also known as Lil Wayne began his music career at the tender age of nine.
+        He joined Cash Money Records as the youngest member of the label. In 1997
+        he joined the group Hot Boys and got his first taste of success and fame after
+        the release of the groups major selling album Guerrilla Warfare. In 1999 Lil
+        Wayne released his debut album The Block is Hot, which hit the top of the
+        Hip Hop charts, selling over one million copies in the U.S and went on to
+        become double platinum. The sale of his next two albums sold modestly, however
+        the release of the Carter series helped cement the rappers reputation as one
+        of the leading hip-hop performers. Lil Wayne’s sixth studio album, The Carter
+        III, was released in June 2008 and featured appearances by T-Pain, Jay-Z and
+        Busta Rhymes.","popularity":0.6,"poster_path":"/qINEvLrIRLiQhogg5Qtv8MlJ1Jf.jpg","release_date":"2013-12-03","title":"Lil
+        Wayne: Rap Sheet","video":true,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[36],"id":98572,"original_language":"en","original_title":"John
+        Wayne: An American Icon","overview":"","popularity":0.844,"poster_path":null,"release_date":"2012-04-03","title":"John
+        Wayne: An American Icon","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":78300,"original_language":"en","original_title":"Wayne
+        Gretzky: Above and Beyond","overview":"Once in a generation comes an athlete
+        so gifted that he completely dominates his sport. In our generation that man
+        is Wayne Gretzky. Gretzky is more than a hockey star, he is an inter-national
+        sports hero. ABOVE AND BEYOND takes you behind the headlines to that frozen
+        river where his career began.","popularity":0.84,"poster_path":"/4clN3VSsdn0kuXDbTLnCHm0NJT5.jpg","release_date":"1990-08-31","title":"Wayne
+        Gretzky: Above and Beyond","video":false,"vote_average":2.8,"vote_count":2},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":607067,"original_language":"en","original_title":"Bruce
+        and Pepper Wayne Gacy''s Home Movies","overview":"Experimental short film
+        depicting the home movies of Bruce Wayne Gacy and Pepper Wayne Gacy, the children
+        of the notorious serial killer John Wayne Gacy.","popularity":1.191,"poster_path":"/97YTZngmY9VPn5JeX3K83kEM5Vp.jpg","release_date":"1988-01-01","title":"Bruce
+        and Pepper Wayne Gacy''s Home Movies","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":173887,"original_language":"it","original_title":"Wayne
+        Shorter 4tet - Jazz à Vienne","overview":"","popularity":0.911,"poster_path":null,"release_date":"2010-06-29","title":"Wayne
+        Shorter 4tet - Jazz à Vienne","video":false,"vote_average":8.5,"vote_count":2},{"adult":false,"backdrop_path":null,"genre_ids":[10402],"id":397945,"original_language":"en","original_title":"Wayne
+        Shorter: Live at Montreux 1996","overview":"Wayne Shorter is one of the most
+        significant jazz performers of modern times. He performed as part of Art Blakey''s
+        Jazz Messengers and then Miles Davis'' band in the sixties before co-founding
+        Weather Report with Joe Zawinul in the early seventies. This Montreux concert
+        from 1996 features the Wayne Shorter Quintet and followed on from the release
+        of his Grammy Award winning album \"High Life\".","popularity":0.912,"poster_path":"/akvfJpbAgCZmKaXp645G7sce6Hh.jpg","release_date":"1996-07-08","title":"Wayne
+        Shorter: Live at Montreux 1996","video":false,"vote_average":10,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":416218,"original_language":"en","original_title":"John
+        Wayne on Film","overview":"A retrospective of the career of actor John Wayne,
+        showing clips from many of his most famous films.","popularity":0.627,"poster_path":null,"release_date":"2016-09-16","title":"John
+        Wayne on Film","video":false,"vote_average":10,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[18],"id":531236,"original_language":"en","original_title":"I
+        Am John Wayne","overview":"An young urban cowboy copes with the death of his
+        best friend.","popularity":0.6,"poster_path":"/tpdFWsjpmGyaLFFOy2dFNQ19xoq.jpg","release_date":"2012-03-01","title":"I
+        Am John Wayne","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":327017,"original_language":"en","original_title":"John
+        Wayne and Chisum","overview":"Documentary included in the DVD version of \"Chisum\"","popularity":0.6,"poster_path":null,"release_date":"1970-01-01","title":"John
+        Wayne and Chisum","video":false,"vote_average":6.5,"vote_count":2},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":383204,"original_language":"en","original_title":"John
+        Wayne Hated Horses","overview":"A father and his young son share a house,
+        a yard and very different ideas about masculinity and appropriate uses of
+        army toys. The father and son both assert themselves with action rather than
+        words.","popularity":0.6,"poster_path":null,"release_date":"2009-03-14","title":"John
+        Wayne Hated Horses","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":732255,"original_language":"en","original_title":"Wayne
+        & Shuster: 50 Years of Comedy","overview":"Johnny Wayne & Frank Shuster celebrate
+        50 years of sketch comedy","popularity":0.84,"poster_path":null,"release_date":"","title":"Wayne
+        & Shuster: 50 Years of Comedy","video":true,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":284330,"original_language":"en","original_title":"The
+        John Wayne Story - The Later Years","overview":"See the legendary John Wayne
+        at his greatest in two-fisted action, interviews, rare photos, and more, in
+        this documentary covering his screen career from Big Jim McLain to his final
+        film, The Shootist. Back in the saddle with Westerns like Hondo, The Searchers,
+        Rio Bravo, McLintock!, and Chisum, he also varied his output in The High and
+        the Mighty, Blood Alley, Wings of Eagles, McQ, and Brannigan. The Duke even
+        directed himself in The Alamo and The Green Berets, and finally won a long-awaited
+        Academy Award as the one-eyed lawman in True Grit, a role he repeated in Rooster
+        Cogburn. See Wayne promoting his protégé, James Arness, in Gunsmoke; making
+        public service appearances for the Red Cross, Christmas Seals, and the American
+        Cancer Society; and receiving his Oscar.","popularity":1.09,"poster_path":"/fxtTdkhgSeF1QwdmvMiZEyy43Qg.jpg","release_date":"1993-05-15","title":"The
+        John Wayne Story - The Later Years","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":140048,"original_language":"en","original_title":"John
+        Wayne: Bigger Than Life","overview":"“The Duke” (John Wayne) really was bigger
+        than life. I loved this guy from the moment I went to one of my very first
+        theatre films. The movie in question was The Cowboys in 1972. I apologize
+        if this is a spoiler, 39 years later, but the climactic scene of Wayne being
+        killed by Bruce Dern still gets to me.","popularity":0.6,"poster_path":null,"release_date":"1990-01-01","title":"John
+        Wayne: Bigger Than Life","video":false,"vote_average":4,"vote_count":1},{"adult":false,"backdrop_path":"/fHfx5XYa1G83IyNy8IzZtdjtypO.jpg","genre_ids":[10402],"id":445956,"original_language":"en","original_title":"Kenny
+        Wayne Shepherd: Summerfest 2015","overview":"Kenny Wayne Shepherd performed
+        a set during Summerfest 2015, The World''s Largest Music Festival. Summerfest
+        is a yearly music festival held at the Henry Maier Festival Park along the
+        lakefront in Milwaukee, Wisconsin, in the United States. The festival lasts
+        for 11 days, is made up of 11 stages with performances from few hundreds bands!
+        Kenny Wayne Shepherd''s concert was in July 2, 2015. He performed 17 songs,
+        and ended with  Voodoo Child (Slight Return).","popularity":0.6,"poster_path":"/piNF1YotVGdu0xkSjfD3fg4M4fx.jpg","release_date":"2015-07-02","title":"Kenny
+        Wayne Shepherd: Summerfest 2015","video":true,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":21899,"original_language":"en","original_title":"SportsCentury
+        Greatest Athletes: Wayne Gretzky","overview":"No overview found.","popularity":0.6,"poster_path":"/82iOHtxU1mZMQYaTR6hg74zNNfH.jpg","release_date":"2000-11-10","title":"SportsCentury
+        Greatest Athletes: Wayne Gretzky","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":436201,"original_language":"pt","original_title":"O
+        Homem que Matou John Wayne","overview":"","popularity":0.632,"poster_path":"/nvFrqfbc9kEzb4poxoHYCbSdR5Y.jpg","release_date":"2017-01-20","title":"O
+        Homem que Matou John Wayne","video":false,"vote_average":5,"vote_count":1}],"total_pages":5,"total_results":92}'
+  recorded_at: Wed, 12 Oct 2022 14:52:27 GMT
+recorded_with: VCR 6.1.0
