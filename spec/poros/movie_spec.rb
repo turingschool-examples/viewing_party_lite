@@ -2,9 +2,15 @@ require 'rails_helper'
 
 RSpec.describe Movie do
   it 'has attributes' do
-    data = { movie_id: 278, title: 'Movie', rating: 8.9}
+    data = {
+          id: 238,
+          title: 'The Godfather',
+          vote_average: 8.7
+        }
     movie = Movie.new(data)
 
-    expect(movie.id).to eq 278
+    expect(movie.movie_id).to eq 238
+    expect(movie.title).to eq('The Godfather')
+    expect(movie.rating).to eq(8.7)
   end
 end
