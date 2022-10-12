@@ -11,4 +11,11 @@ class MoviesController < ApplicationController
       redirect_to user_discover_index_path(@user)
     end
   end
+
+  def show
+    @user = User.find(params[:user_id])
+    @movie = MovieFacade.create_individual_movie(params[:id])
+    @cast = MovieFacade.create_cast(params[:id])
+    @reviews = MovieFacade.create_reviews(params[:id])
+  end
 end
