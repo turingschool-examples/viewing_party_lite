@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.themoviedb.org/3/movie/top_rated?api_key=4eb1a330b5e76ae10c85dc261b2ebd7f
+    uri: https://api.themoviedb.org/3/movie/top_rated
     body:
       encoding: US-ASCII
       string: ''
