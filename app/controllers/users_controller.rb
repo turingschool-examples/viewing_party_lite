@@ -6,7 +6,17 @@ class UsersController < ApplicationController
   end
 
   def discover
-    
+    @user = User.find(params[:id])
+  end
+
+  def movies
+    @user = User.find(params[:id])
+
+    if params[:q] == "top rated"
+      @movies = @user.top_20_movies
+    else
+      @movies = @user.search_movies(params[:search])
+    end
   end
 
   def create
@@ -27,5 +37,4 @@ class UsersController < ApplicationController
   def user_params
     params.permit(:name, :email)
   end
-
 end
