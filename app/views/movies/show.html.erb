@@ -6,5 +6,5 @@
 <%= @movie_information[:genres][0]%> #pull out names 
 <%= @movie_information[:overview]%>
 
-<%= button_to 'Create a Viewing Party', url: "/users/#{@user.id}/movies/#{@movie_id}/viewing-party/new", method: :get %>
-<%= button_to 'Return to Discover Page', url: "/users/#{@user.id}/discover", method: :get %>
+<%= button_to 'Create a Viewing Party', "/users/#{@user.id}/movies/#{@movie_id}/viewing-party/new", method: :get %>
+<%= button_to 'Return to Discover Page', "/users/#{@user.id}/discover", method: :get %>
