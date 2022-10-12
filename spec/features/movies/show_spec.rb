@@ -6,6 +6,8 @@ RSpec.describe "Movie Detail Page" do
       @user1 = User.create!(name: "Micheal Jordan", email: "user7@gmail.com")
 
       visit "/users/#{@user1.id}/movies/19404"
+      save_and_open_page
+
       
       expect(page).to have_content("Dilwale Dulhania Le Jayenge")
       expect(page).to have_content("Vote Average: 8.565")
@@ -14,8 +16,8 @@ RSpec.describe "Movie Detail Page" do
       expect(page).to have_content("Romance")
       expect(page).to have_content("Runtime: 3 hours and 10 minutes")
       expect(page).to have_content("Raj is a rich, carefree,")
-      # expect(page).to have_content("Cast: ")
-      # expect(page).to have_content("Total Reviews: ")
+      expect(page).to have_content("Cast Members:")
+      expect(page).to have_content("Total Reviews:")
       end
     xit 'has button to create viewing party/redirects to new form' do 
       @user1 = User.create!(name: "Micheal Jordan", email: "user7@gmail.com")
