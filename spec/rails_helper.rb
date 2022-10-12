@@ -74,3 +74,11 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+  c.hook_into :webmock
+  c.filter_sensitive_data('<API_KEY>') { ENV.fetch('tmdb_api_key', nil) }
+  c.configure_rspec_metadata!
+  c.default_cassette_options = {re_record_interval: 1.days}
+end
