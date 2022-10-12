@@ -1,18 +1,16 @@
 # frozen_string_literal: true
-class Movie
+class Movies
   attr_reader :id,
               :title,
               :vote_average,
-              :overview,
-              :runtime,
-              :genres
+              :genre,
+              :overview
 
   def initialize(data)
     @id = data[:id]
     @title = data[:title]
     @vote_average = data[:vote_average]
+    @genre = data[:genre_ids] # double check this
     @overview = data[:overview]
-    @runtime = data[:runtime]
-    @genres = data[:genres].map { |genre| genre[:name] }# double check this
   end
 end
