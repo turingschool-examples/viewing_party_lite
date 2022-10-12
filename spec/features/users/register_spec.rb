@@ -33,6 +33,8 @@ RSpec.describe 'the User Registration Page' do
         fill_in "Name", with: ''
         fill_in "Email", with: ''
         expect { click_on 'Register' }.to change { User.count }.by(0)
+        expect(page).to have_content("Email can't be blank")
+        expect(page).to have_content("Name can't be blank")
         expect(current_path).to eq("/register")
       end
     end
@@ -49,6 +51,7 @@ RSpec.describe 'the User Registration Page' do
         fill_in "Email", with: "ricky@sunnyvale.ca"
 
         expect { click_on 'Register' }.to change { User.count }.by(0)
+        expect(page).to have_content("Email has already been taken")
         expect(current_path).to eq("/register")
       end
     end
