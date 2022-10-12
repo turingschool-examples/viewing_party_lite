@@ -1,1 +1,12 @@
-<%= @user.name %>
+<h1><%= @user.name %>'s Dashboard </h1>
+
+<p><%= button_to "Discover Movies", user_discover_path(@user) %></p>
+
+<section>
+  <% @user.parties.each do |party| %>
+    <div id="party-<%= party.id %>">
+      <%= party.id %>
+
+    </div>
+  <% end %>
+</section>

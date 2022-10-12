@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   # get '/', to: 'landings#index' is the same?
   root 'landings#index'
 
-  resources :users, only: [:show, :create], path: 'dashboard'
+  resources :users, only: [:show, :create], path: 'dashboard' do
+    post '/discover', to: 'users#search'
+  end
   resources :users, only: :new, path: 'register'
+
+
+
 end
