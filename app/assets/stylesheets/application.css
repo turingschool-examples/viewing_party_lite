@@ -17,3 +17,24 @@ h1 {
   margin: auto;
   text-align: center;
 }
+
+ul {
+  list-style: none;
+  text-align: center;
+  display: inline-flex;
+  gap: 50px
+}
+
+#cast {
+  display: inline-flex;
+}
+
+.cast_columns {
+  align-self: flex-start;
+  min-width: 55%;
+  justify-content: space-evenly;
+}
+
+#container {
+  border: solid
+}

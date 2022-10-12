@@ -58,6 +58,6 @@ RSpec.describe 'Movie Index Page' do
 
     expect(current_path).to eq(user_movie_path(user1, 238))
     expect(page).to have_content('The Godfather')
-    expect(page).to have_link('Discover Page')
+    expect(page).to have_button('Discover Page')
   end
 end
