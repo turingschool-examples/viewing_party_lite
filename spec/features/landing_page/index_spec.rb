@@ -9,7 +9,7 @@ RSpec.describe 'Landing Page | Index', type: :feature do
       @user2 = User.create!(name: 'bobby', email: 'bobby@yahoo.com')
       @user3 = User.create!(name: 'marissa nicole', email: 'marissa.nicole99@gmail.com')
       visit root_path
-      save_and_open_page
+
     end
     it 'I see the title of the Applications' do
       within('#application_title') do
