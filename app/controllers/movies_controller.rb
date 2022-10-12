@@ -1,6 +1,6 @@
-class UserPartiesController < ApplicationController
+class MoviesController < ApplicationController
 
-  def new
+  def show
     @user = User.find(params[:id])
     @movie_id = params[:movie_id]
     conn = Faraday.new(url: "https://api.themoviedb.org") 
@@ -8,6 +8,4 @@ class UserPartiesController < ApplicationController
     @movie_information  = JSON.parse(response.body, symbolize_names: true)
   end
 
-  def create
-  end
 end
