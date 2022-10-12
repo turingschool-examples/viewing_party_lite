@@ -26,4 +26,10 @@ class MoviesFacade
 
     found_movies.uniq.first(40)
   end
+
+  def self.details(movie_id)
+    response = MoviesService.details(movie_id)
+
+    MovieDetailed.new(response)
+  end
 end

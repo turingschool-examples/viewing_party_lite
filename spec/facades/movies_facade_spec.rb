@@ -37,4 +37,12 @@ RSpec.describe MoviesFacade do
       end
     end
   end
+
+  it 'can return a movies details given its id' do
+    VCR.use_cassette('movie-detailed') do
+      @movie = MoviesFacade.details(438148)
+
+      expect(@movie).to be_a(MovieDetailed)
+    end
+  end
 end

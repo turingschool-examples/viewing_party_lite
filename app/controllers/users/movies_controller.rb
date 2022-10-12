@@ -1,6 +1,7 @@
 class Users::MoviesController < ApplicationController
+  before_action :set_user, only: [:index, :show]
+  
   def index
-    @user = User.find(params[:user_id])
     if params[:top_rated]
       @movies = MoviesFacade.top_rated
     elsif params[:search]
@@ -9,6 +10,12 @@ class Users::MoviesController < ApplicationController
   end
 
   def show
-    
+    @movie = MoviesFacade.details(params[:id])
+  end
+
+  private
+
+  def set_user
+    @user = User.find(params[:user_id])
   end
 end
