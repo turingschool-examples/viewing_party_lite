@@ -12,4 +12,15 @@ RSpec.describe MoviesService do
       end
     end
   end
+
+  describe 'search' do
+    it 'returns the http response of a keyword search' do
+      keyword = "Minions"
+
+      VCR.use_cassette("search_#{keyword}") do
+        response = MoviesService.search(keyword)
+        expect(response.class).to eq(Hash)
+      end
+    end
+  end
 end

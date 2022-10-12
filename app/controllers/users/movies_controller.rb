@@ -3,13 +3,7 @@ class Users::MoviesController < ApplicationController
     if params[:top_rated]
       @movies = MoviesFacade.top_rated
     elsif params[:search]
-
-    else
-
+      @movies = MoviesFacade.search(params[:search])
     end
-  end
-
-  def top_rated
-
   end
 end

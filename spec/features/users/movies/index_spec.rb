@@ -20,5 +20,19 @@ RSpec.describe 'Movie results page' do
     end
   end
 
-  describe 'When a movie title is searched'
+  describe 'When a movie title is searched' do
+    it 'displays up to 40 results from the search' do
+      user = create(:user)
+
+      visit user_discover_index_path(user)
+
+      VCR.use_cassette('search_top_gun') do
+        fill_in "Search", with: "Top Gun"
+        click_on "Search by Movie Title"
+        save_and_open_page
+        expect(current_path).to eq(user_movies_path(user))
+        expect(page).to have_content("Top Gun")
+      end
+    end
+  end
 end
