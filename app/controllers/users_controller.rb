@@ -14,10 +14,11 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       redirect_to(user_path(user))
+      flash[:notice] = "Welcome #{user.name}"
     else
       redirect_to('/register')
+      flash[:failure] = user.errors.full_messages.first
     end
-    #add flash messages here
   end
 
   private

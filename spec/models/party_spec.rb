@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Party, type: :model do
-
   xit 'exists' do
     expect(party_1).to be_instance_of(Party)
   end
@@ -15,7 +14,7 @@ RSpec.describe Party, type: :model do
   end
 
   describe 'relationships' do
-    it {should have_many(:user_parties)}
+    it { should have_many(:user_parties) }
     it { should have_many(:users).through(:user_parties) }
   end
 end

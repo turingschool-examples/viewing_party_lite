@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-
   xit 'exists' do
     expect(user_1).to be_instance_of(User)
   end
@@ -13,14 +12,10 @@ RSpec.describe User, type: :model do
   end
 
   describe 'relationships' do
-    it { should have_many(:user_parties)}
-    it { should have_many(:parties).through(:user_parties)}
+    it { should have_many(:user_parties) }
+    it { should have_many(:parties).through(:user_parties) }
   end
 
   describe 'class methods' do
-
   end
 end
-
-
-

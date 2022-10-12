@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <% flash.each do |type, msg| %>
+      <div>
+        <%= msg %>
+      </div>
+    <% end %>
     <title>ViewingPartyLite</title>
     <%= link_to "Home", root_path %>
     <%= csrf_meta_tags %>

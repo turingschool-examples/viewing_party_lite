@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Users dashboard' do 
+RSpec.describe 'Users dashboard' do
   describe 'when a user visits their dashboard' do
     it "displays user's name, button to discover movies, and a section to list viewing parties" do
       user = User.create!(name: 'John', email: 'john@user.com')
