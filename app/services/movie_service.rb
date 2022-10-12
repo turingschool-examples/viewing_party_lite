@@ -28,6 +28,11 @@ class MovieService
     parse(response)
   end
 
+  def self.movie_search(keyword)
+    response = conn.get('/3/search/movie', { query: keyword })
+    parse(response)
+  end
+
   def self.parse(api_data)
     JSON.parse(api_data.body, symbolize_names: true)
   end

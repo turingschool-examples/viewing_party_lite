@@ -11,12 +11,12 @@ class MoviesController < ApplicationController
 
   def search
     @user = User.find(params[:user_id])
-    conn = Faraday.new(
-      url: 'https://api.themoviedb.org/3/movie/',
-      params: {api_key: ENV['moviebd_api_key']}
-      )
+    # conn = Faraday.new(
+    #   url: 'https://api.themoviedb.org/3/movie/',
+    #   params: {api_key: ENV['moviebd_api_key']}
+    #   )
 
-    top_rated = conn.get('/top_rated')
+    # top_rated = conn.get('/top_rated')
   end
 
 end
