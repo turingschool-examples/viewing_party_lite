@@ -36,12 +36,37 @@ RSpec.describe MoviesService do
         expect(search[:genres]).to be_an Array
     end
 
-    it 'can return details of movie' do
+    it 'can return credits of movie' do
         search = MoviesService.movie_credits(238)
         expect(search[:cast]).to be_an Array
         actor_data = search[:cast].first
 
         expect(actor_data).to have_key :name
         expect(actor_data[:name]).to be_a(String)
+    end
+
+    it 'can return images from the movie' do
+        search = MoviesService.movie_images(238)
+        
+        expect(search).to be_a(Hash)
+        expect(search).to have_key :posters
+        expect(search[:posters]).to be_an Array
+
+        poster = search[:posters].first
+        expect(poster).to have_key :file_path
+        expect(poster[:file_path]).to be_a String
+    end
+
+    it 'can return search results' do
+        search = MoviesService.search_results("The Evil Dead")
+
+        expect(search).to be_a Hash
+        expect(search[:results]).to be_an Array
+
+        result = search[:results].first
+        expect(result).to have_key :id
+        expect(result[:id]).to be_an Integer
+        expect(result).to have_key :title
+        expect(result[:title]).to be_a String
     end
 end
