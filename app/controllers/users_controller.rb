@@ -27,13 +27,8 @@ class UsersController < ApplicationController
   end
 
   def results
-    title = params["Search by Movie Title"]
-    conn = Faraday.new(url: "https://api.themoviedb.org")    
-
-    response = conn.get("/3/search/movie?api_key=#{ENV["movies_api_key"]}&query=#{title}")
-
-    json = JSON.parse(response.body, symbolize_names: true)
-    @movies = json[:results]
+    @user = User.find(params[:id])
+    @movies = MovieFacade.get_movies(params["Search by Movie Title"])
   end
 
   private 
