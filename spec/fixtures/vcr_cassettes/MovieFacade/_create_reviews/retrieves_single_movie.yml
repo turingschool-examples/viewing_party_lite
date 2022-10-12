@@ -1,0 +1,83 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/12/reviews?api_key=DONT SHOW MY API KEY
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 12 Oct 2022 17:51:58 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 65f7c79d5b96bbeff7a5bf8ef19b35f45ffe2939
+      X-Memc-Age:
+      - '16623'
+      X-Memc-Expires:
+      - '1357'
+      Etag:
+      - W/"fa4687e26d383fc53e696759a53f9c75"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 1c13683c7de319f25e08f83861fc6dc2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - U8CW29SdcEJM-nrRRaV4V-q5feexLuPKT2uVl8vUP3x9pcN1x9G0OA==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":12,"page":1,"results":[{"author":"Dave09","author_details":{"name":"","username":"Dave09","avatar_path":null,"rating":null},"content":"One
+        of the best animated films I have ever seen. Great characters, amusing animation,
+        and laugh-out-loud humor. Also, watch for the little skit shown after the
+        credits. It''s all great stuff that simply must be seen.","created_at":"2014-01-14T02:56:02.937Z","id":"52d4a742760ee30e2d0dac9d","updated_at":"2021-06-23T15:57:23.763Z","url":"https://www.themoviedb.org/review/52d4a742760ee30e2d0dac9d"},{"author":"r96sk","author_details":{"name":"","username":"r96sk","avatar_path":"/https://www.gravatar.com/avatar/96c2e0e4ac98450f9e8e3c0a0a40aad8.jpg","rating":9.0},"content":"Utterly
+        stunning.\r\n\r\nThere isn''t anything to dislike about <em>''Finding Nemo''</em>,
+        it sets the tone perfectly and expertly tells the tale of Nemo, Marlin and
+        Dory. Considering how the story goes, the film does an outstanding job at
+        seamlessly switching between Nemo''s adventure and his father''s - it''s truly
+        terrifically done.\r\n\r\nThis also includes a whole bunch of memorable characters
+        and voices. Alexander Gould, Albert Brooks and Ellen DeGeneres are the obvious
+        stars as the early mentioned trio. There''s a load of others though, with
+        Willem Dafoe (Gill), Geoffrey Rush (Nigel) and Barry Humphries (Bruce) all
+        giving excellent performances.\r\n\r\nThe animation is superb, a few moments
+        haven''t aged as greatly but the absolute vast majority still looks unbelievable.
+        The premise is funny, cute and heartwarming - as it keeps one''s attention
+        from start-to-finish. The score is fantastic, too.\r\n\r\nHighly recommended.","created_at":"2020-07-22T20:11:01.826Z","id":"5f189d55db952d0034957e59","updated_at":"2021-06-23T15:58:41.124Z","url":"https://www.themoviedb.org/review/5f189d55db952d0034957e59"},{"author":"John","author_details":{"name":"John","username":"johnmills","avatar_path":null,"rating":10.0},"content":"Awesome
+        ocean visuals and fun story do a good job glossing over dark themes of loss,
+        addiction, hopelessness and despair.","created_at":"2021-04-07T00:55:05.232Z","id":"606d02e998f1f10057286d7b","updated_at":"2021-06-23T15:58:54.112Z","url":"https://www.themoviedb.org/review/606d02e998f1f10057286d7b"}],"total_pages":1,"total_results":3}'
+  recorded_at: Wed, 12 Oct 2022 17:51:58 GMT
+recorded_with: VCR 6.1.0

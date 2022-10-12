@@ -16,4 +16,19 @@ class MovieService
     parsed_json = JSON.parse(response.body, symbolize_names: true)
     parsed_json[:results]
   end
+
+  def self.get_indvidual_movie(movie_id)
+    response = conn.get("/3/movie/#{movie_id}?api_key=#{ENV['movie_api_key']}&language=en-US")
+    parsed_json = JSON.parse(response.body, symbolize_names: true)
+  end
+
+  def self.get_cast(movie_id)
+    response = conn.get("/3/movie/#{movie_id}/credits?api_key=#{ENV['movie_api_key']}&language=en-US&cast=1")
+    parsed_json = JSON.parse(response.body, symbolize_names: true)
+  end
+ 
+  def self.get_reviews(movie_id)
+    response = conn.get("/3/movie/#{movie_id}/reviews?api_key=#{ENV['movie_api_key']}")
+    parsed_json = JSON.parse(response.body, symbolize_names: true)
+  end
 end
