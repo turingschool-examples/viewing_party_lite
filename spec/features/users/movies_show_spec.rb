@@ -12,6 +12,7 @@ RSpec.describe 'a users movies show page', type: :feature do
 
         click_link('Fight Club') 
         expect(current_path).to eq("/users/#{user.id}/movies/550")
+        save_and_open_page
       end
 
       it 'I can see a button to create a viewing party &  a button to return to the discover page which takes you back to the discover page', :vcr do
