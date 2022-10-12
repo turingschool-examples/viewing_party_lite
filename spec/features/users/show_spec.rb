@@ -8,8 +8,8 @@ RSpec.describe 'User | Show', type: :feature do
       @user1 = User.create!(name: 'jojo binks', email: 'jojo_binks@gmail.com')
       @user2 = User.create!(name: 'bobby', email: 'bobby@yahoo.com')
       @user3 = User.create!(name: 'marissa nicole', email: 'marissa.nicole99@gmail.com')
-      @vp1 = @user1.viewing_parties.create!(duration: 180, date: '2022-10-11 17:19:58', movie_id: 1)
-      @vp2 = @user1.viewing_parties.create!(duration: 180, date: '2022-10-12 16:18:58', movie_id: 128)
+      @vp1 = @user1.viewing_parties.create!(duration: 180, date: '2022-10-11 17:19:58', time: '17:08', movie_id: 1)
+      @vp2 = @user1.viewing_parties.create!(duration: 180, date: '2022-10-12 16:18:58', time: '19:08', movie_id: 128)
       visit user_path(@user1.id)
     end
     it 'I see the users name at the top of the page' do
