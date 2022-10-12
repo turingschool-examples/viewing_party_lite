@@ -1,6 +1,6 @@
-<h1><%= @user.name %>'s' discover movies page</h1>
+<h1>Movies index, heres all the movies!!!</h1>
 <br>
-<strong><%= button_to "Discover Top Rated Movies", user_movies_path(@user), method: :get %></strong>
+<strong><%= button_to "Discover Top Rated Movies" %></strong>
 <br>
 <strong><%= form_with url: user_movies_path(@user), method: :get, local: true do |f| %>
           <%= f.label :search %>
