@@ -1,13 +1,14 @@
 <h1> New User Party Form </h1>
 
-<%= form_with url: users_path, method: :post, local: true do |f| %>
-  <%= f.label :name, "Name" %>
-  <%= f.text_field :name %>
-  <%= f.label :email, "Email" %>
-  <%= f.text_field :email %>
-  <%= f.label :password, "Password" %>
-  <%= f.text_field :password %>
-  <%= f.label :password_confirmation, "Re-Enter Password" %>
-  <%= f.text_field :password_confirmation %>
-  <%= f.submit "Create User" %>
+<%= form_with url: "/users/#{@user.id}/movies/#{@movie_id}/create", method: :post, local: true do |f| %>
+  <%= f.label :duration, "Duration:" %>
+  <%= f.text_field :duration, value:@movie.runtime %>
+  <%= f.label :date, "Date:" %>
+  <%= f.date_field :date %>
+  <%= f.label :start_time, "Start Time:'" %>
+  <%= f.text_field :start_time %>
+  <h3>Invite Others</h3>
+  <%= f.label :invitees, "Invite:" %>
+  <%= f.text_field :invitees %>
+  <%= f.submit "Create Party" %>
 <% end %>

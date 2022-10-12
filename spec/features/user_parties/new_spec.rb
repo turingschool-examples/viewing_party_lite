@@ -23,6 +23,7 @@ RSpec.describe 'new user party page', type: :feature do
         expect(page).to have_content('Duration:')
         expect(page).to have_content('Date:')
         expect(page).to have_content('Start Time:')
+        save_and_open_page
         within('#potential_invitees') do
           expect(page).to have_content("#{user5.name}")
           expect(page).to have_content("#{user4.name}")
@@ -34,7 +35,7 @@ RSpec.describe 'new user party page', type: :feature do
         #end the div before the iteration ends
       end
 
-      it 'a viewing party should NOT be created if set to a value less than the duration of the movie', :vcr do
+      xit 'a viewing party should NOT be created if set to a value less than the duration of the movie', :vcr do
 
         user1 = create(:user)
         user2 = create(:user)
@@ -57,7 +58,7 @@ RSpec.describe 'new user party page', type: :feature do
       end
 
 
-      it "When the party is created, the user should be redirected back to the dashboard where the new event is shown. The event should also be listed on any other user's dashbaords that were also invited to the party.", :vcr do
+      xit "When the party is created, the user should be redirected back to the dashboard where the new event is shown. The event should also be listed on any other user's dashbaords that were also invited to the party.", :vcr do
         user1 = create(:user)
         user2 = create(:user)
         user3 = create(:user)

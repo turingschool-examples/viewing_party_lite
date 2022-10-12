@@ -10,22 +10,18 @@ RSpec.describe User, type: :model do
     it { should validate_presence_of(:email) }
   end
 
-  before(:each) do
-    # @instance_var = Something.create!(input)
-  end
-
-  describe 'class methods' do
-    describe '#search' do
-      it 'returns partial matches' do
-       #method goes here
-      end
-    end
-  end
 
   describe 'instance methods' do
-    describe '#method_name' do
-     it 'description of method' do
-      #expect statement here
+    describe '#friends' do
+     it 'can list all other users but themselves' do
+      user1 = create(:user)
+      user2 = create(:user)
+      user3 = create(:user)
+      user4 = create(:user)
+      user5 = create(:user)
+
+      expect(user1.friends.size).to eq(4)
+      expect(user1.friends).to eq([user2, user3, user4, user5])
      end
     end
   end
