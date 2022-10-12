@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Landing Page' do 
+RSpec.describe 'Landing Page' do
   describe 'when a user visits the root path' do
     it 'displays the title of the app, existing users, with links to users dashboard' do
       users = create_list(:random_user, 3)

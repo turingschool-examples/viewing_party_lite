@@ -3,17 +3,17 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def new
-  end
+  def new; end
 
   def create
     user = User.new(user_params)
     if user.save
       redirect_to(user_path(user))
+      flash[:notice] = "Welcome #{user.name}"
     else
       redirect_to('/register')
+      flash[:failure] = user.errors.full_messages.first
     end
-    #add flash messages here
   end
 
   private
