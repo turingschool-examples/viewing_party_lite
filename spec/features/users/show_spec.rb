@@ -17,4 +17,9 @@ RSpec.describe 'User show page' do
   it 'has a section for Viewing Parties' do
     expect(page).to have_content("Sunny's Viewing Parties")
   end
+  it 'clicking discover movies takes me to the discover page' do
+    click_on 'Discover Movies'
+
+    expect(current_path).to eq("/users/#{@user.id}/discover")
+  end
 end
