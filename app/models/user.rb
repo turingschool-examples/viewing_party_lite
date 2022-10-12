@@ -4,4 +4,12 @@ class User < ApplicationRecord
 
   has_many :viewing_party_users
   has_many :viewing_parties, through: :viewing_party_users
+
+  def find_invited_parties
+    viewing_parties.where.not("host = ?", self.user_name)
+  end
+
+  def find_hosted_parties
+    viewing_parties.where("host = ?", self.user_name)
+  end
 end

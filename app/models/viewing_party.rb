@@ -5,4 +5,9 @@ class ViewingParty < ApplicationRecord
 
   has_many :viewing_party_users
   has_many :users, through: :viewing_party_users
+
+  def invited_users
+    users.where.not("user_name = ?", self.host)
+  end
 end
+
