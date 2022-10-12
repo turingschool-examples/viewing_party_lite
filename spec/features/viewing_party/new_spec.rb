@@ -17,15 +17,15 @@ RSpec.describe 'Viewing Party | New', type: :feature do
     describe 'I can see a form with;' do
       it 'a populated duration that is the minimum time for the movie' do
         within('#view_party_form') do
-          expect(page).to have_field('duration')
+          expect(page).to have_field('form_info[duration]')
           expect(find('#duration')['placeholder']).to eq @movie.runtime.to_s
         end
       end
       it 'When: field to select date' do
-        within('#view_party_form') { expect(page).to have_field('date') }
+        within('#view_party_form') { expect(page).to have_field('form_info[date]') }
       end
       it 'Start Time: field to select time' do
-        within('#view_party_form') { expect(page).to have_field('time') }
+        within('#view_party_form') { expect(page).to have_field('form_info[time]') }
       end
       it 'Checkboxes next to each existing user in the system' do
         within('#view_party_form') do
