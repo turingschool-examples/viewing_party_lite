@@ -20,5 +20,10 @@ RSpec.describe ViewingParty, type: :model do
             expect(viewing_party.host).to eq(host)
             expect(viewing_party.users).to eq([invitee_1, invitee_2, invitee_3, invitee_4])
         end
+
+        it 'has a factory that works' do
+            vp_1 = create(:viewing_party)
+            expect(vp_1.host).to be_instance_of(User)
+        end
     end
 end
