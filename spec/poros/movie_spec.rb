@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "Movie" do
-  describe "exists" do
+RSpec.describe 'Movie' do
+  describe 'exists' do
     it 'exists and has attributes' do
       # movie_data = MovieService.get
-      fight_club = File.read("spec/fixtures/fight_club.json")
+      fight_club = File.read('spec/fixtures/fight_club.json')
       fc = JSON.parse(fight_club, symbolize_names: true)
 
       # fc[:title]

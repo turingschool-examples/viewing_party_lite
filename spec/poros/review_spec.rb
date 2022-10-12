@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "Review" do
-  describe "exists" do
+RSpec.describe 'Review' do
+  describe 'exists' do
     it 'exists and has attributes' do
-      fight_club = File.read("spec/fixtures/fight_club.json")
+      fight_club = File.read('spec/fixtures/fight_club.json')
       fc = JSON.parse(fight_club, symbolize_names: true)
 
       first_review = Review.new(fc[:reviews][:results].first)

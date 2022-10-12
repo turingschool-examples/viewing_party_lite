@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'faker'
 
 FactoryBot.define do
@@ -5,4 +7,4 @@ FactoryBot.define do
     user
     viewing_party
   end
-end 
+end
