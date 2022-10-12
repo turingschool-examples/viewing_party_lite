@@ -53,50 +53,85 @@ RSpec.describe 'User Dashboard', type: :feature do
         it 'Each viewing party has a Movie Image' do
           visit user_path(@user_1)
 
-          expect(page).to have_css("img[src = #{MovieFacade.movie_data(@party_1.movie_id).image}]")
-          expect(page).to have_css("img[src = #{MovieFacade.movie_data(@party_2.movie_id).image}]")
-          expect(page).to have_css("img[src = #{MovieFacade.movie_data(@party_3.movie_id).image}]")
+          within("#view-parties-#{@user_1.id}") do
+            expect(page).to have_css("img[src='#{MovieFacade.movie_data(@party_1.movie_id).image}']")
+            expect(page).to have_css("img[src='#{MovieFacade.movie_data(@party_2.movie_id).image}]")
+            expect(page).to have_css("img[src='#{MovieFacade.movie_data(@party_3.movie_id).image}]")
+          end
 
           visit user_path(@user_4)
 
-          expect(page).to have_css("img[src = #{MovieFacade.movie_data(@party_2.movie_id).image}]")
+          within("#view-parties-#{@user_1.id}") do
+            expect(page).to have_css("img[src='#{MovieFacade.movie_data(@party_2.movie_id).image}']")
 
-          expect(page).to_not have_css("img[src = #{MovieFacade.movie_data(@party_1.movie_id).image}]")
-          expect(page).to_not have_css("img[src = #{MovieFacade.movie_data(@party_3.movie_id).image}]")
+            expect(page).to_not have_css("img[src='#{MovieFacade.movie_data(@party_1.movie_id).image}']")
+            expect(page).to_not have_css("img[src='#{MovieFacade.movie_data(@party_3.movie_id).image}']")
+          end
         end
 
         it 'Each viewing party has a Movie Title, which links to the movie show page' do
           visit user_path(@user_1)
 
-          expect(page).to have_link("#{MovieFacade.movie_data(@party_1.movie_id).title}")
-          expect(page).to have_link("#{MovieFacade.movie_data(@party_2.movie_id).title}")
-          expect(page).to have_link("#{MovieFacade.movie_data(@party_3.movie_id).title}")
+          within("#view-parties-#{@user_1.id}") do
+            expect(page).to have_link("#{MovieFacade.movie_data(@party_1.movie_id).title}")
+            expect(page).to have_link("#{MovieFacade.movie_data(@party_2.movie_id).title}")
+            expect(page).to have_link("#{MovieFacade.movie_data(@party_3.movie_id).title}")
+          end
 
           visit user_path(@user_4)
 
-          expect(page).to have_link("#{MovieFacade.movie_data(@party_2.movie_id).title}")
+          within("#view-parties-#{@user_1.id}") do
+            expect(page).to have_link("#{MovieFacade.movie_data(@party_2.movie_id).title}")
 
-          expect(page).to_not have_link("#{MovieFacade.movie_data(@party_1.movie_id).title}")
-          expect(page).to_not have_link("#{MovieFacade.movie_data(@party_3.movie_id).title}")
+            expect(page).to_not have_link("#{MovieFacade.movie_data(@party_1.movie_id).title}")
+            expect(page).to_not have_link("#{MovieFacade.movie_data(@party_3.movie_id).title}")
+          end
         end
           
         it 'Each viewing party has a Date and Time of the Event' do
           visit user_path(@user_1)
 
-          expect(page).to have_content(@party_1.date.strftime('%B %e, %Y'))
-          expect(page).to have_content(@party_2.date.strftime('%B %e, %Y'))
-          expect(page).to have_content(@party_3.date.strftime('%B %e, %Y'))
+          within("#view-parties-#{@user_1.id}") do
+            expect(page).to have_content(@party_1.date.strftime('%B %e, %Y'))
+            expect(page).to have_content(@party_2.date.strftime('%B %e, %Y'))
+            expect(page).to have_content(@party_3.date.strftime('%B %e, %Y'))
+
+            expect(page).to have_content(@party_1.time.strftime('%I:%M %p'))
+            expect(page).to have_content(@party_2.time.strftime('%I:%M %p'))
+            expect(page).to have_content(@party_3.time.strftime('%I:%M %p'))
+          end
 
           visit user_path(@user_4)
 
-          expect(page).to have_content(@party_2.date.strftime('%B %e, %Y'))
+          within("#view-parties-#{@user_4.id}") do
+            expect(page).to have_content(@party_2.date.strftime('%B %e, %Y'))
+            expect(page).to have_content(@party_2.time.strftime('%I:%M %p'))
 
-          expect(page).to_not have_content(@party_1.date.strftime('%B %e, %Y'))
-          expect(page).to_not have_content(@party_3.date.strftime('%B %e, %Y'))
+            expect(page).to_not have_content(@party_1.date.strftime('%B %e, %Y'))
+            expect(page).to_not have_content(@party_3.date.strftime('%B %e, %Y'))
+
+            expect(page).to_not have_content(@party_1.time.strftime('%I:%M %p'))
+            expect(page).to_not have_content(@party_3.time.strftime('%I:%M %p'))
+          end
         end
 
         it 'Each viewing party has a who is hosting, list of users invited' do
+          visit user_path(@user_1)
 
+          within("#view-parties-#{@user_1.id}") do
+            expect(page).to have_content("#{@user_1.name}")
+            expect(page).to have_content("#{@user_2.name}")
+            expect(page).to have_content("#{@user_3.name}")
+          end
+
+          visit user_path(@user_4)
+
+          within("#view-parties-#{@user_4.id}") do
+            expect(page).to have_content("#{@user_1.name}")
+
+            expect(page).to_not have_content("#{@user_1.name}")
+            expect(page).to_not have_content("#{@user_1.name}")
+          end
         end
       
       end

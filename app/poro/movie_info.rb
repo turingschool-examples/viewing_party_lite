@@ -4,7 +4,7 @@ class MovieInfo
 
   def initialize(movie_api_data)
     @title = movie_api_data[:title]
-    @image = movie_api_data[:poster_path]
+    @image = 'https://image.tmdb.org/t/p/w500' + movie_api_data[:poster_path]
     @rating = movie_api_data[:vote_average]
     @runtime = movie_api_data[:runtime]
     @genre = movie_api_data[:genres][0][:name]
