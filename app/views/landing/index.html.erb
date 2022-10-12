@@ -1,6 +1,6 @@
 <h1>Viewing Party Lite</h1>
 <br>
-<strong><%= button_to "Create New User", users_path %></strong>
+<strong><%= button_to "Create New User", register_path, method: :get %></strong>
 <br>
 <h3>Current users</h3>
 <% @users.each do |user| %>

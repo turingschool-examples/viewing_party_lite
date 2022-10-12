@@ -1,9 +1,7 @@
 <h1>Movies index, heres all the movies!!!</h1>
-<br>
-<strong><%= button_to "Discover Top Rated Movies" %></strong>
-<br>
-<strong><%= form_with url: user_movies_path(@user), method: :get, local: true do |f| %>
-          <%= f.label :search %>
-          <%= f.text_field :search %>
-          <%= f.submit 'Search by movie title' %>
-          <% end %></strong>
+
+<ol><% @movies.each do |movie| %>
+  <li><%= movie.title %> -- <%= "Average Rating #{movie.vote_average}"%></li>
+<% end %></ol>
+
+
