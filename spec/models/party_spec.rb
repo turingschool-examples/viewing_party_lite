@@ -17,7 +17,7 @@ RSpec.describe Party, type: :model do
 
   describe 'class methods' do
     describe '#movie' do
-      it 'returns a movie object' do
+      it 'returns a movie object', :vcr do
         party = create(:party, movie_id: 550)
         expect(party.movie).to be_a Movie
         require 'pry';binding.pry

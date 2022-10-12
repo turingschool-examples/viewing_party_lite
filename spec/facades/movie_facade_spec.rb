@@ -12,4 +12,13 @@ RSpec.describe MovieFacade do
       # Are we supposed to be getting 40 results here? Or did we decide on 20?
     end
   end
+
+  describe '#movie_by_id' do
+    it 'returns a single movie', :vcr do
+      movie = MovieFacade.movie_by_id(550)
+      expect(movie).to be_a Movie
+      expect(movie.title).to eq("Fight Club")
+      expect(movie.id).to eq(550)
+    end
+  end
 end

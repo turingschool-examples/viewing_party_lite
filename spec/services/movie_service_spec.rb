@@ -19,5 +19,19 @@ describe MovieService do
         expect(movie[:vote_average]).to be_a(Float)
       end
     end
+
+    context '#movie_by_id', :vcr do
+      movie = MovieService.movie_by_id(550)
+      expect(movie).to be_a Hash
+
+      expect(movie).to have_key :genres
+      expect(movie[:genres]).to be_an Array
+
+      expect(movie).to have_key :poster_path
+      expect(movie[:poster_path]).to be_a String
+
+      expect(movie).to have_key :vote_count
+      expect(movie[:vote_count]).to be_a Integer
+    end
   end
 end

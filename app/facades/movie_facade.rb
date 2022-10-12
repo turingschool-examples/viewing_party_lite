@@ -8,8 +8,6 @@ class MovieFacade
   
   def self.movie_by_id(id)
     json = MovieService.movie_by_id(id)
-    json[:results].map do |movie_data|
-      Movie.new(movie_data)
-    end
+    Movie.new(json)
   end
 end
