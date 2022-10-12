@@ -10,11 +10,15 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      # session[:user_id] = @user.id
+      session[:user_id] = @user.id
       redirect_to user_path(@user)
+      flash[:notice] = "Welcome #{@user.name}"
+    elsif params[:password] != params[:password_confirmation]
+      flash[:failture] = "Error: Password doesn't match."
+      render :new
     else
-      redirect_to '/register'
-      flash[:alert] = "Error: #{@user.errors.full_messages.first}"
+      flash[:failure] = @user.errors.full_messages.first
+      render :new
     end
   end
 
@@ -33,7 +37,7 @@ class UsersController < ApplicationController
 
   private 
   def user_params
-    params.permit(:email, :name, :password)
+    params.permit(:email, :name, :password, :password_confirmation)
   end
 
   def set_user

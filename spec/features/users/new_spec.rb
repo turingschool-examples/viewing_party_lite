@@ -15,10 +15,12 @@ RSpec.describe 'user registration page', type: :feature do
 
       describe 'happy path' do
         it "Once the user registers they should be taken to a dashboard page '/users/:id', where :id is the id for the user that was just created." do
-          visit new_user_path #here is where I left off - first thing tomorrow 
+          visit new_user_path 
           fill_in(:name, with: "Peter Piper")
           fill_in(:email, with: "Peter.Piper@peppers.com")
           fill_in(:password, with: "IlovePeppers")
+          fill_in(:password_confirmation, with: "IlovePeppers")
+
           click_on('Create User')
           user4 = create(:user, password_digest:BCrypt::Password.create('IlovecOde2!'))
 
@@ -42,9 +44,11 @@ RSpec.describe 'user registration page', type: :feature do
           #missing name fill in
           fill_in(:email, with: "Peter.Piper@peppers.com")
           fill_in(:password, with: "IlovePeppers")
+          fill_in(:password_confirmation, with: "IlovePeppers")
+
           click_on('Create User')
-          expect(current_path).to eq('/register')
-          expect(page).to have_content("Error: Name can't be blank")
+          expect(current_path).to eq('/users')
+          expect(page).to have_content("Name can't be blank")
         end
       end
 
