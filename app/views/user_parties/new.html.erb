@@ -2,13 +2,14 @@
 
 <%= form_with url: "/users/#{@user.id}/movies/#{@movie_id}/create", method: :post, local: true do |f| %>
   <%= f.label :duration, "Duration:" %>
-  <%= f.text_field :duration, value:@movie.runtime %>
+  <%= f.text_field :duration, value: @movie_information[:runtime]%> 
   <%= f.label :date, "Date:" %>
   <%= f.date_field :date %>
-  <%= f.label :start_time, "Start Time:'" %>
-  <%= f.text_field :start_time %>
+  <%= f.label :start_time, "Start Time:" %>
+  <%= f.time_select :start_time %>
   <h3>Invite Others</h3>
-  <%= f.label :invitees, "Invite:" %>
-  <%= f.text_field :invitees %>
-  <%= f.submit "Create Party" %>
+  <div id="potential_invitees">
+    <%= f.collection_check_boxes :invitees, @user.friends,:id, :name %>
+    <%= f.submit "Create Party" %>
+  </div>
 <% end %>

@@ -23,7 +23,7 @@ RSpec.describe 'new user party page', type: :feature do
         expect(page).to have_content('Duration:')
         expect(page).to have_content('Date:')
         expect(page).to have_content('Start Time:')
-        save_and_open_page
+
         within('#potential_invitees') do
           expect(page).to have_content("#{user5.name}")
           expect(page).to have_content("#{user4.name}")
@@ -31,8 +31,6 @@ RSpec.describe 'new user party page', type: :feature do
           expect(page).to have_content("#{user2.name}")
           expect(page).to_not have_content("#{user1.name}")
         end
-        #<div id='order_<%=order.id %>'> #change to doublequotes
-        #end the div before the iteration ends
       end
 
       xit 'a viewing party should NOT be created if set to a value less than the duration of the movie', :vcr do
