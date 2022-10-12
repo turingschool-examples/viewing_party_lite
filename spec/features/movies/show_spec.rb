@@ -59,13 +59,13 @@ RSpec.describe 'Movie Show Page' do
     end
   end
 
-  it 'has button to create a viewing party' do
+  it 'has button to create a viewing party', :vcr do
     visit user_movie_path(user1, 238)
 
     expect(page).to have_button('Create Viewing Party for The Godfather')
   end
 
-  it 'viewing party button routes to new viewing party page' do
+  it 'viewing party button routes to new viewing party page', :vcr do
     visit user_movie_path(user1, 238)
 
     click_on ('Create Viewing Party for The Godfather')
