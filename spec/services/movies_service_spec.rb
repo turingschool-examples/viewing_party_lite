@@ -69,4 +69,18 @@ RSpec.describe MoviesService do
         expect(result).to have_key :title
         expect(result[:title]).to be_a String
     end
+
+    it 'can return reviews' do 
+        search = MoviesService.movie_reviews(238)
+        expect(search).to be_a Hash
+        expect(search[:results]).to be_an Array
+
+        review = search[:results].first
+        expect(review).to have_key :author
+        expect(review[:author]).to be_a String
+        expect(review[:author_details]).to have_key :rating
+        expect(review[:author_details][:rating]).to be_a Float
+        expect(review).to have_key :content
+        expect(review[:content]).to be_a String
+    end
 end
