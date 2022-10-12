@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe MoviesService do
-    it 'can return top 20 movie results' do
+    it 'can return top 20 movie results', :vcr do
         search = MoviesService.top_20
         expect(search).to be_a Hash
         expect(search[:results]).to be_an Array
@@ -15,7 +15,7 @@ RSpec.describe MoviesService do
         expect(movie_data[:title]).to be_a(String)
     end
 
-    it 'can return details of movie' do
+    it 'can return details of movie', :vcr do
         search = MoviesService.movie_details(238)
         expect(search).to be_a Hash
         expect(search[:id]).to eq 238
@@ -36,7 +36,7 @@ RSpec.describe MoviesService do
         expect(search[:genres]).to be_an Array
     end
 
-    it 'can return credits of movie' do
+    it 'can return credits of movie', :vcr  do
         search = MoviesService.movie_credits(238)
         expect(search[:cast]).to be_an Array
         actor_data = search[:cast].first
@@ -45,7 +45,7 @@ RSpec.describe MoviesService do
         expect(actor_data[:name]).to be_a(String)
     end
 
-    it 'can return images from the movie' do
+    it 'can return images from the movie', :vcr do
         search = MoviesService.movie_images(238)
         
         expect(search).to be_a(Hash)
@@ -57,7 +57,7 @@ RSpec.describe MoviesService do
         expect(poster[:file_path]).to be_a String
     end
 
-    it 'can return search results' do
+    it 'can return search results', :vcr do
         search = MoviesService.search_results("The Evil Dead")
 
         expect(search).to be_a Hash
@@ -70,7 +70,7 @@ RSpec.describe MoviesService do
         expect(result[:title]).to be_a String
     end
 
-    it 'can return reviews' do 
+    it 'can return reviews', :vcr do 
         search = MoviesService.movie_reviews(238)
         expect(search).to be_a Hash
         expect(search[:results]).to be_an Array
