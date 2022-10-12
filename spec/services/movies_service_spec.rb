@@ -23,4 +23,13 @@ RSpec.describe MoviesService do
       end
     end
   end
+
+  describe 'details' do
+    it 'returns details of a movie given its id' do
+      VCR.use_cassette('movie-detailed') do
+        response = MoviesService.details(438148)
+        expect(response.class).to eq(Hash)
+      end
+    end
+  end
 end
