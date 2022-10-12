@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :parties
   resources :users
   get '/users/:id/discover', to: 'users#discover'
+  get '/users/:id/movies/:movie_id', to: 'movies#show'
   get '/users/:id/movies', to: 'users#results'
 end
