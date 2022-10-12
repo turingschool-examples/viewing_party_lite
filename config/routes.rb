@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  
-  root to: 'landing#index'
 
-  resources :users, only: [:show]
+  root to: 'landing#index'
+ 
+  get '/register', to: 'users#register'
+
+  resources :users, only: [:create, :show]
+
 
 end
