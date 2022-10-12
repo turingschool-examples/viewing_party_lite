@@ -44,6 +44,7 @@ group :development, :test do
   gem 'pry'
   gem 'vcr'
   gem 'webmock'
+  gem 'faraday'
 end
 
 group :development do
