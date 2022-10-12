@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   # resources only: %i[index new]
 
   root to: 'welcome#index'
-
   get '/register', to: 'welcome#register'
 
   get '/users/:id/discover', to: 'users#discover'
   get '/users/:id', to: 'users#dashboard' #maybe we use show pages as dashboards
+  post '/users/:id/movies', to: 'users#movies'
+  
   resources :users
 
 end
