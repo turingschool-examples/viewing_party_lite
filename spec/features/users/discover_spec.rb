@@ -33,6 +33,8 @@ RSpec.describe 'Discover Movies page' do
 
     expect(page).to have_button('Find Movies')
 
+    fill_in :q, with: 'Wayne'
+
     click_on 'Find Movies'
 
     expect(current_path).to eq(user_movies_path(user1))
