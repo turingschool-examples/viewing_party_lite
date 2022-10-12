@@ -18,13 +18,6 @@ class UsersController < ApplicationController
   end
 
   def search
-    conn = Faraday.new(url: "https://api.themoviedb.org/3/movie") do |faraday|
-      faraday.headers["X-API-KEY"] = ENV['movie_key']
-    end
-
-    movie_response = conn.get("movie/10")
-
-    data = JSON.parse(response.body, symbolize_names: true)
 
   end 
 
