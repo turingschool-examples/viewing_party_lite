@@ -10,11 +10,11 @@ class UsersController < ApplicationController
 
   def movies
     @user = User.find(params[:id])
-    # require 'pry', binding.pry
     if params[:search]
-      @movies = @user.search_movies(params[:search])
+      @movies = MovieDbFacade.search_movies(params[:search])
     else
-      @movies = @user.top_20_movies
+      @movies = MovieDbFacade.top_20_movies
+      # require 'pry', binding.pry
     end
   end
 

@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe Movie do
-  it "exists" do
+  it "can create instance of movie" do
     attrs = {
         title: "The Godfather",
         vote_average: 8.9,
