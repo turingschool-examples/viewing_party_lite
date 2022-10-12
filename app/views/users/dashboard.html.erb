@@ -1,5 +1,7 @@
-<h1> <%= @user.name %>'s Dashboard </h1>
+<h2> <%= @user.name %>'s Dashboard </h2>
 <%= button_to 'Discover Movies', "/users/#{@user.id}/discover", method: :get %>
+<hr>
+  <h3>Viewing Parties:</h3>
 
 <% @user.viewing_parties.each do |party| %>
   <p><%= party.movie_title%></p>

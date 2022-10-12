@@ -12,18 +12,32 @@ RSpec.describe 'User Discover Page' do
     @user_party2 = ViewingPartyUser.create(viewing_party_id: @party2.id, user_id: @user1.id, status: 1)
   end
 
-  it 'can search movies' do
+  it 'can search movies', :vcr do
     visit "/users/#{@user1.id}/discover"
+    # require 'pry', binding.pry
+    # save_and_open_page
+
     fill_in "search", with: "Phoenix"
     click_on "Find Movies"
-    expect(current_path).to eq("/users/#{@user1.id}/movies?q=Phoenix")
+    expect(current_path).to eq("/users/#{@user1.id}/movies")
   end
 
-  it 'can search movies' do
+  it 'can search top rated movies', :vcr do
     visit "/users/#{@user1.id}/discover"
     click_on "Discover Top Rated Movies"
-    save_and_open_page
     expect(current_path).to eq("/users/#{@user1.id}/movies")
+  end
+
+  it 'can return discover details' do
+    visit "/users/#{@user1.id}/discover"
+
+      expect(page).to have_content('Viewing Party Lite')
+      expect(page).to have_content('Discover Movies')
+
+      expect(page).to have_button('Discover Top Rated Movies')
+
+      expect(page).to have_field('Search By Movie Title:')
+      expect(page).to have_button('Find Movies')
   end
 
 end

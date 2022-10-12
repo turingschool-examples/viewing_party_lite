@@ -31,6 +31,7 @@ RSpec.describe 'Register Page' do
     fill_in 'Email', with: 'imjakekim@gmail.com'
     click_on 'Create New User'
 
+    expect(User.find_by(name: 'Jimmy', email: 'imjakekim@gmail.com')).to eq(nil)
     expect(current_path).to eq(register_path)
   end
 
