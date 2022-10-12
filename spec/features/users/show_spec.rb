@@ -73,7 +73,6 @@ RSpec.describe 'User Dashboard Page' do
 
   it 'shows the viewing parties the user has been invited to with details' do
     visit user_path(@user_1)
-    require 'pry'; binding.pry
     # expect(page).to have_content(PICTUREHERE) #update with API
     expect(page).to have_content(@party_1.movie_id) #change to name with API
     expect(page).to have_content(@party_1.duration)
@@ -94,7 +93,7 @@ RSpec.describe 'User Dashboard Page' do
 # That I am the host of the party
 # List of friends invited to the viewing party
     it 'shows the viewing parties the user has created with details' do
-          visit user_path(@user_2)
+        visit user_path(@user_2)
         # expect(page).to have_content(PICTUREHERE) #update with API
         expect(page).to have_content(@party_4.movie_id) #change to name with API
         expect(page).to have_content(@party_4.duration)

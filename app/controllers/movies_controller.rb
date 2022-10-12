@@ -2,8 +2,8 @@ class MoviesController < ApplicationController
   def show
 #     And I should see the following information about the movie:
 
-#  Movie Title
-#  Vote Average of the movie
+#  Movie Title # details
+#  Vote Average of the movie 
 #  Runtime in hours & minutes
 #  Genre(s) associated to movie
 #  Summary description
