@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
   resources :users, only: :new, path: 'register'
 
+  resources :movies, only: :show
 
 
 end
