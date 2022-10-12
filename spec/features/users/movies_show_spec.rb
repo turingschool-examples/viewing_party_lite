@@ -4,7 +4,7 @@ RSpec.describe 'a users movies show page', type: :feature do
   describe 'As a user once I am logged in' do
     describe 'When I have already searched for a movie & see the list of results' do
 
-      it 'I can click on one movie result link and be taken to that movies details page' do
+      it 'I can click on one movie result link and be taken to that movies details page', :vcr do
         user = create(:user)
         visit "/users/#{user.id}/discover"
         fill_in('Search by Movie Title', with: 'fight')
@@ -13,7 +13,7 @@ RSpec.describe 'a users movies show page', type: :feature do
         expect(current_path).to eq("/users/#{user.id}/movies/#{movie.id}")
       end
 
-      it 'I can see a button to create a viewing party &  a button to return to the discover page which takes you back to the discover page' do
+      it 'I can see a button to create a viewing party &  a button to return to the discover page which takes you back to the discover page', :vcr do
         user = create(:user)
         visit "/users/#{user.id}/discover"
         fill_in('Search by Movie Title', with: 'fight')
@@ -25,7 +25,7 @@ RSpec.describe 'a users movies show page', type: :feature do
         expect(current_path).to eq("/users/#{user.id}/discover")
       end
 
-      it 'The viewing party button should take the user to a new viewing party page' do
+      it 'The viewing party button should take the user to a new viewing party page', :vcr do
 
         user = create(:user)
         visit "/users/#{user.id}/discover"
