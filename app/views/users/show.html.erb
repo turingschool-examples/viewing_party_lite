@@ -7,5 +7,7 @@
 
 <% @user.parties.each do |party| %>
   <img src="<%= party.poster_path %>">
-  
+  <p>Date: <%= party.date %></p>
+  <p>Start time: <%= party.start_time %></p>
+
 <% end %>
