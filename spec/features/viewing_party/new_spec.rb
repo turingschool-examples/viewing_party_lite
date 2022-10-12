@@ -9,7 +9,7 @@ RSpec.describe 'Viewing Party | New', type: :feature do
       @user2 = User.create!(name: 'bobby', email: 'bobby@yahoo.com')
       @user3 = User.create!(name: 'marissa nicole', email: 'marissa.nicole99@gmail.com')
       @movie = MovieFacade.movie_search_by_id(361_743)
-      visit new_user_movie_viewing_party_path(@user1, @movie)
+      visit new_user_movie_viewing_party_path(@user1, @movie.id)
     end
     it 'I should see the name of the movie title rendered' do
       within('#movie_title') { expect(page).to have_content('Top Gun') }
