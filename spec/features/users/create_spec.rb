@@ -22,22 +22,34 @@ RSpec.describe 'User Registration' do
       end
       it 'I am taken to the dashboard page for that user' do
         click_button "Submit"
-        #expect(current_path).to eq(user_path(JOND))
+        #expect(current_path).to eq(user_path(userwhat?))
       end
     end
 
     describe 'when I do not fill out every field and click submit' do
+      before(:each) do
+        fill_in "Email", with: "jduttko149@gmail.com"
+      end
       it 'returns me to the new user form' do
+        click_button "Submit"
+        expect(current_path).to eq('/register')
       end
       it 'flashes a message saying all fields must contain information' do
+        click_button "Submit"
+        expect(page).to have_content("Error Message")
       end
     end
 
     describe 'when I add a non-unique email and click submit' do
       it 'returns me to the new user form' do
+        click_button "Submit"
+        expect(current_path).to eq('/register')
       end
 
       it 'flashes a message that an email cannot be used twice' do
+        click_button "Submit"
+        expect(current_path).to eq('/register')
+        expect(page).to have_content("Error Message")
       end
     end
   end
