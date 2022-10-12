@@ -9,4 +9,7 @@ class User < ApplicationRecord
     viewing_parties.where.not("host = ?", self.user_name)
   end
 
+  def find_hosted_parties
+    viewing_parties.where("host = ?", self.user_name)
+  end
 end

@@ -16,6 +16,7 @@ RSpec.describe "User Show Page" do
 
           click_button("Discover Movies")
           expect(current_path).to eq(user_discover_path(@user))
+          require 'pry'; binding.pry
         end
 
         describe 'viewing parties invited to list' do
@@ -70,7 +71,7 @@ RSpec.describe "User Show Page" do
             it 'has a movie title that is a link to movie show page' do
               within "#invited_parties" do
                 @viewing_party_invites.each do |party|
-                  within "party_#{party.id}" do
+                  within "#party_#{party.id}" do
                     expect(page).to have_content(party.movie_title)
                   end
                 end
@@ -80,7 +81,7 @@ RSpec.describe "User Show Page" do
             it 'has date and time of event' do
               within "#invited_parties" do
                 @viewing_party_invites.each do |party|
-                  within "party_#{party.id}" do
+                  within "#party_#{party.id}" do
                     expect(page).to have_content(party.start_time.to_date)
                     expect(page).to have_content(party.start_time.strftime("%I:%M %p"))
                   end
@@ -91,8 +92,8 @@ RSpec.describe "User Show Page" do
             it 'has the host username' do
               within "#invited_parties" do
                 @viewing_party_invites.each do |party|
-                  within "party_#{party.id}" do
-                    within "host" do
+                  within "#party_#{party.id}" do
+                    within "#host_#{party.id}" do
                       expect(page).to have_content(party.host)
                     end
                   end
@@ -103,9 +104,11 @@ RSpec.describe "User Show Page" do
             it 'has a list of invited users' do
               within "#invited_parties" do
                 @viewing_party_invites.each do |party|
-                  within "party_#{party.id}" do
-                    within "invited_users" do
-                      expect(page).to have_content(party.invited_users)
+                  within "#party_#{party.id}" do
+                    within "#invited_users_#{party.id}" do
+                      party.invited_users.each do |invited_user|
+                        expect(page).to have_content(invited_user.user_name)
+                      end
                     end
                   end
                 end
@@ -113,43 +116,71 @@ RSpec.describe "User Show Page" do
             end
 
             it 'within list of invited users, user name is in bold' do
-
+              within "#invited_parties" do
+                @viewing_party_invites.each do |party|
+                  within "#party_#{party.id}" do
+                    within "#invited_users_#{party.id}" do
+                      party.invited_users.each do |invited_user|
+                        expect(page).to have_content("<b>#{@user.user_name}</b>")
+                      end
+                    end
+                  end
+                end
+              end
             end
 
             it 'says Invited' do
-
+              within "#invited_parties" do
+                @viewing_party_invites.each do |party|
+                  within "#party_#{party.id}" do
+                    within "#invited_users_#{party.id}" do
+                      party.invited_users.each do |invited_user|
+                        expect(page).to have_content("Invited")
+                      end
+                    end
+                  end
+                end
+              end
             end
 
             it 'has a movie image' do
-
+              within "#invited_parties" do
+                @viewing_party_invites.each do |party|
+                  within "#party_#{party.id}" do
+                    within "#image_#{party.id}" do
+                      expect(page).to have_xpath("//#{party.image_path}")
+                    end
+                  end
+                end
+              end
             end
           end
 
         end
 
         describe 'viewing parties hosting list' do
-          it 'shows viewing parties user is hosting' do
+          xit 'shows viewing parties user is hosting' do
 
           end
 
           describe 'each viewing party contains' do
-            it 'has a movie title that is a link to movie show page' do
+            xit 'has a movie title that is a link to movie show page' do
 
             end
 
-            it 'has date and time of event' do
+            xit 'has date and time of event' do
               
             end
 
-            it 'says that the user is the host' do
+            xit 'says that the user is the host' do
 
             end
 
-            it 'says Invited' do
+            xit 'says Invited' do
 
             end
 
-            it 'has a list of invited users' do
+            xit 'has a list of invited users' do
 
             end
 
@@ -157,7 +188,7 @@ RSpec.describe "User Show Page" do
 
             end
 
-            it 'has a movie image' do
+            xit 'has a movie image' do
 
             end
           end

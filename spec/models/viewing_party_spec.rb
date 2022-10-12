@@ -35,7 +35,7 @@ RSpec.describe ViewingParty, type: :model do
 
       end
 
-      it 'lists users have been invited to the party except the host' do
+      it 'lists users that have been invited to the party except the host' do
         expect(@fun_viewing_party.invited_users).to eq([@user, @other_user])
         expect(@fun_viewing_party.invited_users).to_not include(@awesome_host)
       end
