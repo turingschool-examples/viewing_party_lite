@@ -2,7 +2,7 @@
 
 <section id= "registration_form">
 
-<%= form_with url: "/users/#{@user.id}", method: :post, local: true do |f| %>
+<%= form_with url: "/users", method: :post, local: true do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <br>
