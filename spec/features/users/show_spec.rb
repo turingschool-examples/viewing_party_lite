@@ -42,12 +42,46 @@ RSpec.describe 'User show page' do
       expect(page).to have_content(party.date)
     end
     
-    xit 'There is a list of invited users with my name in bold' do
+    it 'There is a list of invited users with my name in bold' do
+      users = create_list(:user, 5)
+      parties = create_list(:party, 3)
 
+      create(:userParty, user_id: users[1].id, party_id: parties[1].id, is_host: true)
+      create(:userParty, user_id: users[0].id, party_id: parties[1].id, is_host: false)
+      create(:userParty, user_id: users[2].id, party_id: parties[1].id, is_host: false)
+    end
+
+    it 'I should not see parties I am not invited to' do
+
+      users = create_list(:user, 5)
+      party = create(:party)
+
+      create(:userParty, user_id: users[1].id, party_id: party.id, is_host: true)
+      create(:userParty, user_id: users[2].id, party_id: party.id, is_host: false)
+      create(:userParty, user_id: users[3].id, party_id: party.id, is_host: false)
+
+      visit user_path(users[0])
+
+      expect(page).not_to have_content('Start time:')
+      expect(page).not_to have_content('Date:')
     end
 
     xit 'I should also see viewing parties where I am the host' do
+      users = create_list(:user, 5)
+      party = create(:party)
+      party2 = create(:party)
 
+      create(:userParty, user_id: users.first.id, party_id: party.id, is_host: true)
+      create(:userParty, user_id: users[1].id, party_id: party.id, is_host: false)
+      create(:userParty, user_id: users[2].id, party_id: party.id, is_host: false)
+      create(:userParty, user_id: users[3].id, party_id: party.id, is_host: false)
+      
+      create(:userParty, user_id: users[2].id, party_id: party.id, is_host: false)
+      create(:userParty, user_id: users[3].id, party_id: party.id, is_host: false)
+
+      within "#party-#{party.id}"
+        expect(page).to have_content('You are the host')
+      end
     end
   end
 end
