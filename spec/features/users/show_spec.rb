@@ -35,26 +35,32 @@ RSpec.describe 'User show page' do
 
     it 'There is a date and time of the event', :vcr do
       user = create(:user)
-      party = create(:party, movie_id: 550)
+      party = create(:party, movie_id: 550, start_time: Time.now)
       viewing_party = create(:userParty, user_id: user.id, party_id: party.id, is_host: true)
       visit user_path(user)
       expect(page).to have_content(party.start_time)
       expect(page).to have_content(party.date)
     end
-    
-    it 'There is a list of invited users with my name in bold' do
-      users = create_list(:user, 5)
-      parties = create_list(:party, 3)
 
-      create(:userParty, user_id: users[1].id, party_id: parties[1].id, is_host: true)
-      create(:userParty, user_id: users[0].id, party_id: parties[1].id, is_host: false)
-      create(:userParty, user_id: users[2].id, party_id: parties[1].id, is_host: false)
+    it 'There is a list of invited users with my name in bold', :vcr do
+      users = create_list(:user, 5)
+      parties = create(:party, movie_id: 550)
+
+      create(:userParty, user_id: users[1].id, party_id: parties.id, is_host: true)
+      create(:userParty, user_id: users[0].id, party_id: parties.id, is_host: false)
+      create(:userParty, user_id: users[2].id, party_id: parties.id, is_host: false)
+      visit user_path(users[1])
+      expect(page).to have_content(users[0].name)
+      expect(page).to have_content(users[1].name)
+      expect(page).to have_content(users[2].name)
+      within("#user-#{users[1].id}") do
+        expect(page).to have_css('strong', text: users[1].name)
+      end
     end
 
-    it 'I should not see parties I am not invited to' do
-
+    it 'I should not see parties I am not invited to', :vcr do
       users = create_list(:user, 5)
-      party = create(:party)
+      party = create(:party, movie_id: 420)
 
       create(:userParty, user_id: users[1].id, party_id: party.id, is_host: true)
       create(:userParty, user_id: users[2].id, party_id: party.id, is_host: false)
@@ -66,22 +72,20 @@ RSpec.describe 'User show page' do
       expect(page).not_to have_content('Date:')
     end
 
-    xit 'I should also see viewing parties where I am the host' do
+    it 'I should also see viewing parties where I am the host', :vcr do
       users = create_list(:user, 5)
-      party = create(:party)
-      party2 = create(:party)
+      party = create(:party, movie_id: 420)
 
       create(:userParty, user_id: users.first.id, party_id: party.id, is_host: true)
       create(:userParty, user_id: users[1].id, party_id: party.id, is_host: false)
       create(:userParty, user_id: users[2].id, party_id: party.id, is_host: false)
       create(:userParty, user_id: users[3].id, party_id: party.id, is_host: false)
-      
-      create(:userParty, user_id: users[2].id, party_id: party.id, is_host: false)
-      create(:userParty, user_id: users[3].id, party_id: party.id, is_host: false)
 
-      within "#party-#{party.id}"
-        expect(page).to have_content('You are the host')
-      end
+      visit user_path(users[0])
+      expect(page).to have_content('You are the host')
+
+      visit user_path(users[1])
+      expect(page).not_to have_content('You are the host')
     end
   end
 end

@@ -7,7 +7,18 @@
 
 <% @user.parties.each do |party| %>
   <img src="<%= party.poster_path %>">
+  <% if party.host?(@user) %>
+    <p> You are the host </p>
+  <% end %>
   <p>Date: <%= party.date %></p>
   <p>Start time: <%= party.start_time %></p>
-
+  <p>Attendees: <% party.users.each do |attendee| %>
+                    <div id="user-<%= attendee.id %>">
+                    <% if attendee.id == @user.id %>
+                      <strong><%= attendee.name %></strong>
+                    <% else %>
+                      <%= attendee.name %>
+                    <% end %>
+                    </div>
+                  <% end %>
 <% end %>
