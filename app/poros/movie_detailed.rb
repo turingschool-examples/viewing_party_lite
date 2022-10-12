@@ -32,4 +32,10 @@ class MovieDetailed
       {author: review[:author], content: review[:content]}
     end
   end
+
+  def hours_and_minutes
+    hours = @runtime / 60
+    minutes = @runtime % 60
+    "#{hours}hr #{minutes}min"
+  end
 end
