@@ -21,7 +21,7 @@ RSpec.describe 'Landing Page' do
 
   it 'displays all current users' do
     visit '/'
-# save_and_open_page
+
     expect(page).to have_content(@user1.email)
     expect(page).to have_content(@user2.email)
   end

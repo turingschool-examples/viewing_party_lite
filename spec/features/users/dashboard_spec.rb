@@ -12,15 +12,28 @@ RSpec.describe 'User Dashboard Page' do
     @user_party2 = ViewingPartyUser.create(viewing_party_id: @party2.id, user_id: @user1.id, status: 1)
   end
 
+  it 'has propper page attributes from only user 1' do
+    visit "/users/#{@user1.id}"
+
+    expect(page).to have_content("Viewing Party Lite")
+    expect(page).to have_content("Jake's Dashboard")
+    expect(page).to have_button("Return to the Homepage")
+
+    expect(page).to have_content("Viewing Parties")
+
+    expect(page).to_not have_content("#{@user2.name}")
+    expect(page).to_not have_content("#{@user2.email}")
+  end
+
   it "shows user's viewing_parties" do
     visit "/users/#{@user1.id}"
-    # require 'pry', binding.pry
-    # save_and_open_page
 
     expect(page).to have_content("#{@user1.name}'s Dashboard")
     expect(page).to have_content("Date: #{@party1.start_time.strftime("%Y-%m-%d")}")
     expect(page).to have_content("Starting Time: #{@party1.start_time.strftime("%H:%M:%S")}")
     expect(page).to have_content("Status: #{@user_party1.status}")
+
+    expect(page).to_not have_content("#{@user2.name}")
   end
 
   it 'has a discover movie button' do
