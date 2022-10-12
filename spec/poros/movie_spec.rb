@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Movie do
   before :each do
-    attributes = {title: 'The Godfather', vote_average: '8.7'}
+    attributes = {title: 'The Godfather', vote_average: '8.7', id: 1939}
     @movie = Movie.new(attributes)
   end
 
@@ -16,5 +16,9 @@ RSpec.describe Movie do
 
   it 'has a vote average' do
     expect(@movie.vote_average).to eq('8.7')
+  end
+
+  it 'has an id' do
+    expect(@movie.id).to eq(1939)
   end
 end
