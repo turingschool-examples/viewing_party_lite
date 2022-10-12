@@ -8,9 +8,13 @@ RSpec.describe 'Discover page' do
 
     visit "/users/#{@user.id}/discover"
   end
-  it 'has a button for top rated movies' do
+
+  it 'has a button for top rated movies', :vcr do
     expect(page).to have_button('Top Rated Movies')
+    click_button 'Top Rated Movies'
+    expect(current_path).to eq("/users/#{@user.id}/movies")
   end
+
   it 'has a search field an button for searching for a movie by title' do
     expect(page).to have_content('Movie Title:')
     expect(page).to have_button('Search')
