@@ -45,4 +45,10 @@ RSpec.describe MovieDetailed do
     expect(@movie.reviews.first[:author]).to eq('CinemaSerf')
     expect(@movie.reviews.first[:content]).to include("Eleven year old 'Gru\" is asked by his school teacher")
   end
+
+  describe 'hours_and_minutes' do
+    it 'displays runtime in x hr x min format' do
+      expect(@movie.hours_and_minutes).to eq("1hr 27min")
+    end
+  end
 end
