@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root "landing#index" 
   get "/register", to: "users#new"
 
-  resources :users, only: [:show] do
+  resources :users, only: [:show, :create] do
     resources :movies, only: [:show]
     get "/discover", to: "discover#search"
   end
