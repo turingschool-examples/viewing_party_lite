@@ -6,5 +6,8 @@
 <h3> Viewing Parties </h3>
 
 <% @user.parties.each do |party| %>
-  <p><%= party.movie.title %> </p>
+  <img src="<%= party.poster_path %>">
+  <p>Date: <%= party.date %></p>
+  <p>Start time: <%= party.start_time %></p>
+
 <% end %>

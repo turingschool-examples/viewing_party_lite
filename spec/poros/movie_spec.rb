@@ -5,7 +5,8 @@ RSpec.describe Movie do
     attrs = {
       title: 'The Lion King',
       vote_average: 89,
-      id: 450
+      id: 450,
+      poster_path: '/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg'
     }
 
     movie = Movie.new(attrs)
@@ -14,5 +15,7 @@ RSpec.describe Movie do
     expect(movie.title).to eq('The Lion King')
     expect(movie.average_votes).to eq(89)
     expect(movie.id).to eq(450)
+    expect(movie.poster_path).to eq('https://image.tmdb.org/t/p/w200/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg')
   end
 end
+
