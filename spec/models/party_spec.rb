@@ -35,6 +35,19 @@ RSpec.describe Party, type: :model do
         expect(party.poster_path).to eq(movie.poster_path)
       end
     end
+
+    describe '#host?' do
+      it 'can tell is if a user passed as an argument is host' do
+        party = create(:party, movie_id: 550)
+        user = create(:user)
+        user2 = create(:user)
+        create(:userParty, user_id: user.id, party_id: party.id, is_host: true)
+        create(:userParty, user_id: user2.id, party_id: party.id, is_host: false)
+
+        expect(party.host?(user)).to be(true)
+        expect(party.host?(user2)).to be(false)
+      end
+    end
   end
 
 end

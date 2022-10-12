@@ -6,7 +6,6 @@ RSpec.describe UserParty, type: :model do
   end
 
   describe 'validations' do
-    it { should validate_presence_of(:is_host) }
   end
 
   before(:each) do
