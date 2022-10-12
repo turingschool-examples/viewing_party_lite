@@ -17,7 +17,7 @@ RSpec.describe 'Discover Movies Page', type: :feature do
 
       click_button('Find Top Rated Movies')
 
-      expect(current_path).to eq("/users/#{user1.id}/movies?q=top%20rated")
+      expect(current_path).to eq(user_movies_path(user1))
     end
 
     it 'has a text field to enter keyword(s) to search by movie title' do
@@ -44,10 +44,10 @@ RSpec.describe 'Discover Movies Page', type: :feature do
       fill_in('search', with: 'Avatar')
       click_button('Find Movies')
 
-      expect(current_path).to eq("users/#{user1.id}/movies?q=avatar")
+      expect(current_path).to eq(user_movies_path(user1))
     end
 
-    it 'when the search field is not filled in and the search button is clicked, the user is redirected back to the discover page' do
+    it 'when the search field is not filled in and the search button is clicked, the user is redirected back to the discover page and a message is displayed' do
       user1 = User.create!(name: 'Erin', email: 'epintozzi@turing.edu')
 
       visit user_discover_index_path(user1)
@@ -56,6 +56,7 @@ RSpec.describe 'Discover Movies Page', type: :feature do
       click_button('Find Movies')
 
       expect(current_path).to eq(user_discover_index_path(user1))
+      expect(page).to have_content('Search field cannot be blank')
     end
   end
 end
