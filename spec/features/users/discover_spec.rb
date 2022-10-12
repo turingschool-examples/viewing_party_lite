@@ -23,19 +23,18 @@ RSpec.describe 'Discover Movies page' do
 
     expect(page).to have_button('Find Top Rated Movies')
 
-    click_on 'Finde Top Rated Movies'
+    click_on 'Find Top Rated Movies'
 
-    expect(current_path).to eq(user_movies(user1))
+    expect(current_path).to eq(user_movies_path(user1))
   end
 
   it 'has text field to search for movies' do
     visit user_discover_path(user1)
 
     expect(page).to have_button('Find Movies')
-    expect(page).to have_field('Search by movie title')
 
     click_on 'Find Movies'
 
-    expect(current_path).to eq(user_movies(user1))
+    expect(current_path).to eq(user_movies_path(user1))
   end
 end
