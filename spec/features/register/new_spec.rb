@@ -29,7 +29,7 @@ RSpec.describe 'The register new user page' do
         fill_in "Email:", with: "kit.kat@guhmail.com"
         click_button "Register"
 
-        expect(current_path).to eq()
+        expect(current_path).to eq(user_path(@kat))
     end
   end
 end
