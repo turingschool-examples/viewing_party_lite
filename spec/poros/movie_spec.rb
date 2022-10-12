@@ -15,7 +15,7 @@ RSpec.describe Movie do
     expect(movie.title).to eq('The Lion King')
     expect(movie.average_votes).to eq(89)
     expect(movie.id).to eq(450)
-    expect(movie.poster_path).to eq('/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg')
+    expect(movie.poster_path).to eq('https://image.tmdb.org/t/p/w200/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg')
   end
 end
 

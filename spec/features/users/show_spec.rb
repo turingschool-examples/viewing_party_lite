@@ -24,13 +24,13 @@ RSpec.describe 'User show page' do
   end
 
   describe 'In the user viewing party section of the page' do
-    xit 'There is a movie image' do
+    it 'There is a movie image', :vcr do
       user = create(:user)
-      party = create(:party)
-      viewing_party = create(:userParty, user_id: user.id, party_id: party.id, movie_id: 550)
+      party = create(:party, movie_id: 550)
+      viewing_party = create(:userParty, user_id: user.id, party_id: party.id, is_host: true)
       visit user_path(user)
 
-      expect(page).to have_content('https://image.tmdb.org/t/p/w200/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg')
+      expect(page).to have_css("img[src*='https://image.tmdb.org/t/p/w200/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg']")
     end
 
     xit 'There is a date and time of the event' do

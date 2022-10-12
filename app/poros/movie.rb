@@ -8,6 +8,6 @@ class Movie
     @title = data[:title]
     @average_votes = data[:vote_average]
     @id = data[:id]
-    @poster_path = data[:poster_path]
+    @poster_path = "https://image.tmdb.org/t/p/w200#{data[:poster_path]}"
   end
 end
