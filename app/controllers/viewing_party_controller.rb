@@ -13,7 +13,7 @@ class ViewingPartyController < ApplicationController
     party = ViewingParty.new(view_params)
     if party.save && view_params[:duration].to_i >= current_movie.runtime
       user_view_params.each do |user_arr|
-        UserViewingParty.create!(user_id: user_arr[0], viewing_party_id: party.id, role: 0) if user_arr[1] == 1
+        UserViewingParty.create!(user_id: user_arr[0], viewing_party_id: party.id, role: 0) if user_arr[1].to_i == 1
       end
       UserViewingParty.create!(user_id: params[:user_id], viewing_party_id: party.id, role: 1)
       redirect_to user_path(current_user), notice: 'View Party created successfully'

@@ -72,6 +72,23 @@ RSpec.describe 'Viewing Party | New', type: :feature do
           expect(page).to_not have_content 'Guest'
         end
       end
+      it 'Other users are correctly invited to my viewing party' do
+        within('#view_party_form') do
+          fill_in 'form_info[duration]', with: 140
+          fill_in 'form_info[date]', with: '1999-07-20'
+          fill_in 'form_info[time]', with: '19:30'
+          check "users[#{@user2.id}]"
+          click_on 'Create Viewing Party'
+          expect(page.current_path).to eq user_path(@user1)
+        end
+        visit user_path(@user2)
+        within('#viewing_parties') do
+          expect(page).to have_content('Top Gun: Maverick')
+          expect(page).to_not have_content('Host')
+          expect(page).to have_content('Invited')
+          expect(page).to have_content('July 20, 1999 12:00 AM')
+        end
+      end
     end
     context 'Sad Path' do
       it 'When I fill in the information in the form incorrectly, I see a flash message stating an error' do
