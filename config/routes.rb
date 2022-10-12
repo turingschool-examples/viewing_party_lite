@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     post '/movies_search', to: 'movies#search'
     resources :discover, only: [:index], module: 'users'
     resources :movies, only: [:index, :show], module: 'users' do
-      resources :viewing_parties, only: [:new, :index, :show], module: 'movies'
+      resources :viewing_parties, only: [:new, :index, :show]
     end
   end
 end
