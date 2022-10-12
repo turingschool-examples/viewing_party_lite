@@ -8,8 +8,9 @@ Rails.application.routes.draw do
 
   get '/users/:id/discover', to: 'users#discover'
   get '/users/:id', to: 'users#dashboard' #maybe we use show pages as dashboards
-  post '/users/:id/movies', to: 'users#movies'
-  
+  get '/users/:id/movies', to: 'users#movies'
+  get '/users/:id/movies/:movie_id', to: 'movies#show'
+
   resources :users
 
 end
