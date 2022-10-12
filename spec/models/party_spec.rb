@@ -16,9 +16,11 @@ RSpec.describe Party, type: :model do
   end
 
   describe 'class methods' do
-    describe '#search' do
-      it 'returns partial matches' do
-       #method goes here
+    describe '#movie' do
+      it 'returns a movie object' do
+        party = create(:party, movie_id: 550)
+        expect(party.movie).to be_a Movie
+        require 'pry';binding.pry
       end
     end
   end
