@@ -15,7 +15,7 @@ RSpec.describe 'Movie Results Page', type: :feature do
 
         click_button('Find Top Rated Movies')
 
-        expect(page).to have_content("Top Rated Movies")
+        expect(page).to have_content('Top Rated Movies')
       end
 
       it 'I see the titles of the top 20 rated movies as links' do
@@ -28,15 +28,15 @@ RSpec.describe 'Movie Results Page', type: :feature do
           with(query: {'api_key' => ENV['movie_api_key']}).
           to_return(status: 200, body: json_response)
 
-        click_button("Find Top Rated Movies")
+        click_button('Find Top Rated Movies')
 
-        expect(page).to have_css("div", count: 20)
+        expect(page).to have_css('div', count: 20)
 
-        within(first(".movie")) do
-          expect(page).to have_link()
+        within(first('.movie')) do
+          expect(page).to have_link('The Godfather')
         end
       end
-      
+
       it 'and I see the vote average of each movie' do
         user1 = User.create!(name: 'Becka', email: 'rebecka@gmail.com')
 
@@ -49,8 +49,8 @@ RSpec.describe 'Movie Results Page', type: :feature do
 
         click_button('Find Top Rated Movies')
 
-        within(first(".movie")) do
-          expect(page).to have_content("Vote Average:")
+        within(first('.movie')) do
+          expect(page).to have_content('Vote Average: 8.7')
         end
       end
 
@@ -64,9 +64,9 @@ RSpec.describe 'Movie Results Page', type: :feature do
           with(query: {'api_key' => ENV['movie_api_key']}).
           to_return(status: 200, body: json_response)
 
-        click_button("Find Top Rated Movies")
+        click_button('Find Top Rated Movies')
 
-        expect(page).to have_button("Discover Page")
+        expect(page).to have_button('Discover Page')
         click_button("Discover Page")
 
         expect(current_path).to eq(user_discover_index_path(user1))
@@ -84,10 +84,10 @@ RSpec.describe 'Movie Results Page', type: :feature do
         with(query: {'api_key' => ENV['movie_api_key'], 'query' => 'Avatar'}).
         to_return(status: 200, body: json_response)
 
-      fill_in(:search, with: "Avatar")
-      click_button("Find Movies")
+      fill_in(:search, with: 'Avatar')
+      click_button('Find Movies')
 
-      expect(page).to have_content("Movie Results for: Avatar")
+      expect(page).to have_content('Movie Results for: Avatar')
     end
 
     it 'I see the titles of a maximum of 20 movies that match the search criteria' do
@@ -100,8 +100,8 @@ RSpec.describe 'Movie Results Page', type: :feature do
         with(query: {'api_key' => ENV['movie_api_key'], 'query' => 'Avatar'}).
         to_return(status: 200, body: json_response)
 
-      fill_in(:search, with: "Avatar")
-      click_button("Find Movies")
+      fill_in(:search, with: 'Avatar')
+      click_button('Find Movies')
 
       expect(page).to have_css("div", maximum: 20)
     end
@@ -116,11 +116,11 @@ RSpec.describe 'Movie Results Page', type: :feature do
         with(query: {'api_key' => ENV['movie_api_key'], 'query' => 'Avatar'}).
         to_return(status: 200, body: json_response)
 
-      fill_in(:search, with: "Avatar")
-      click_button("Find Movies")
+      fill_in(:search, with: 'Avatar')
+      click_button('Find Movies')
 
-      within(first(".movie")) do
-        expect(page).to have_content("Vote Average:")
+      within(first('.movie')) do
+        expect(page).to have_content('Vote Average: 7.5')
       end
     end
 
@@ -134,11 +134,11 @@ RSpec.describe 'Movie Results Page', type: :feature do
         with(query: {'api_key' => ENV['movie_api_key'], 'query' => 'Avatar'}).
         to_return(status: 200, body: json_response)
 
-      fill_in(:search, with: "Avatar")
-      click_button("Find Movies")
+      fill_in(:search, with: 'Avatar')
+      click_button('Find Movies')
 
-      expect(page).to have_button("Discover Page")
-      click_button("Discover Page")
+      expect(page).to have_button('Discover Page')
+      click_button('Discover Page')
 
       expect(current_path).to eq(user_discover_index_path(user1))
     end
