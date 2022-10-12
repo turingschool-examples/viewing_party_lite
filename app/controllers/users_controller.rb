@@ -14,7 +14,7 @@ class UsersController < ApplicationController
             redirect_to user_path(@user)
         else
             redirect_to register_path(@user)
-            flash[:alert] = "You must fill out all fields to register"
+            flash[:alert] = @user.errors.full_messages.to_sentence
         end
     end
 

@@ -17,20 +17,24 @@ RSpec.describe 'The register new user page' do
         expect(page).to have_content("Email:")
     end
 
-    it 'after I fill out the registration I then click the register button' do
+    it 'when I click the register button I am redirected to the dashboard page' do
+
         fill_in "Name:", with: "Kat"
         fill_in "Email:", with: "kit.kat@guhmail.com"
         click_button "Create User"
+  
+        expect(current_path).to eq(user_path(User.find_by(user_name: "Kat")))
     end
 
-    it 'when I click the register button I am redirected to the dashboard page' do
+    it 'when I click the register button I am redirected register page if that email has been taken' do
         @kat = User.create!(user_name: "Kat", email: "kit.kat@guhmail.com")
 
-        fill_in "Name:", with: "Kat"
+        fill_in "Name:", with: "Kit"
         fill_in "Email:", with: "kit.kat@guhmail.com"
         click_button "Create User"
 
-        expect(current_path).to eq(user_path(@kat))
+        expect(current_path).to eq(register_path)
+        expect(page).to have_content("Email has already been taken")
     end
   end
 end
