@@ -74,4 +74,11 @@ RSpec.describe 'the User Dashboard' do
       expect(page).to have_content('Invited')
     end
   end
+
+  it 'cannot visit a dashboard without being logged in' do
+    visit dashboard_path
+
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content('You must be logged in')
+  end
 end
