@@ -1,10 +1,17 @@
 <h1><%= @user.name %>'s Dashboard </h1>
 <p><%= button_to "Discover Movies", user_discover_path(@user) %></p>
-<section>
+<section id="attending">
   <% @user.parties.each do |party| %>
-    <div id="party-<%= party.id %>">
-      <%= party.id %>
-
-    </div>
+    <% if party.host_id != @user.id %>
+      <img src=<%= search_movie.image %> >
+      <% search_movie = @movies.find_all( |movie| movie.id == party.id) %>
+      <%= link_to "#{search_movie.title}", movie_path(search_movie) %>
+      <%= party.start_time %>
+      <%= party.date %>
+      <p>Host: <%=  %></p>
+      
+    <% end %>
   <% end %>
+</section>
+<section id="hosting">
 </section>
