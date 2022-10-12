@@ -5,14 +5,14 @@
   <% if @top_movies != nil %>
     <% @top_movies.each do |movie| %>
       <div id="#movie_"<%= movie.movie_id %>>
-        <strong><%= movie.title %></strong>
+        <strong><%=link_to movie.title, user_movie_path(@user, movie.movie_id)%></strong>
         <%= movie.rating %>
       </div>
       <br>
     <% end %>
   <% else %>
     <% @searched_movies.each do |movie| %>
-      <strong><%= movie.title %></strong>
+      <strong><%= link_to movie.title, user_movie_path(@user, movie.movie_id)%></strong>
       <%= movie.rating %>
       <br>
     <% end %>
