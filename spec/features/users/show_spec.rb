@@ -34,7 +34,7 @@ RSpec.describe 'User Dashboard', type: :feature do
           @user_4 = User.create!(name: 'Mike', email: 'mike@mail.com')
 
           @party_1 = Party.create!(movie_id: 8, duration: 80, date:'2023/8/10', start_time:'21:00', host_id: @user_1.id)
-          @party_2 = Party.create!(movie_id: 2, duration: 73, date: '8/12/2022', start_time:'18:00', host_id:@user_3.id)
+          @party_2 = Party.create!(movie_id: 2, duration: 73, date: '10/12/2022', start_time:'18:00', host_id:@user_3.id)
           @party_3 = Party.create!(movie_id: 3, duration: 74, date:'12/11/2022', start_time:'16:30', host_id: @user_2.id)
 
           @party_1.users << @user_1
@@ -55,13 +55,13 @@ RSpec.describe 'User Dashboard', type: :feature do
 
           within("#view-parties-#{@user_1.id}") do
             expect(page).to have_css("img[src='#{MovieFacade.movie_data(@party_1.movie_id).image}']")
-            expect(page).to have_css("img[src='#{MovieFacade.movie_data(@party_2.movie_id).image}]")
-            expect(page).to have_css("img[src='#{MovieFacade.movie_data(@party_3.movie_id).image}]")
+            expect(page).to have_css("img[src='#{MovieFacade.movie_data(@party_2.movie_id).image}']")
+            expect(page).to have_css("img[src='#{MovieFacade.movie_data(@party_3.movie_id).image}']")
           end
 
           visit user_path(@user_4)
 
-          within("#view-parties-#{@user_1.id}") do
+          within("#view-parties-#{@user_4.id}") do
             expect(page).to have_css("img[src='#{MovieFacade.movie_data(@party_2.movie_id).image}']")
 
             expect(page).to_not have_css("img[src='#{MovieFacade.movie_data(@party_1.movie_id).image}']")
@@ -80,7 +80,7 @@ RSpec.describe 'User Dashboard', type: :feature do
 
           visit user_path(@user_4)
 
-          within("#view-parties-#{@user_1.id}") do
+          within("#view-parties-#{@user_4.id}") do
             expect(page).to have_link("#{MovieFacade.movie_data(@party_2.movie_id).title}")
 
             expect(page).to_not have_link("#{MovieFacade.movie_data(@party_1.movie_id).title}")
@@ -92,26 +92,26 @@ RSpec.describe 'User Dashboard', type: :feature do
           visit user_path(@user_1)
 
           within("#view-parties-#{@user_1.id}") do
-            expect(page).to have_content(@party_1.date.strftime('%B %e, %Y'))
-            expect(page).to have_content(@party_2.date.strftime('%B %e, %Y'))
-            expect(page).to have_content(@party_3.date.strftime('%B %e, %Y'))
+            expect(page).to have_content(@party_1.start_date)
+            expect(page).to have_content(@party_2.start_date)
+            expect(page).to have_content(@party_3.start_date)
 
-            expect(page).to have_content(@party_1.time.strftime('%I:%M %p'))
-            expect(page).to have_content(@party_2.time.strftime('%I:%M %p'))
-            expect(page).to have_content(@party_3.time.strftime('%I:%M %p'))
+            expect(page).to have_content(@party_1.time)
+            expect(page).to have_content(@party_2.time)
+            expect(page).to have_content(@party_3.time)
           end
 
           visit user_path(@user_4)
 
           within("#view-parties-#{@user_4.id}") do
-            expect(page).to have_content(@party_2.date.strftime('%B %e, %Y'))
-            expect(page).to have_content(@party_2.time.strftime('%I:%M %p'))
+            expect(page).to have_content(@party_2.start_date)
+            expect(page).to have_content(@party_2.time)
 
-            expect(page).to_not have_content(@party_1.date.strftime('%B %e, %Y'))
-            expect(page).to_not have_content(@party_3.date.strftime('%B %e, %Y'))
+            expect(page).to_not have_content(@party_1.start_date)
+            expect(page).to_not have_content(@party_3.start_date)
 
-            expect(page).to_not have_content(@party_1.time.strftime('%I:%M %p'))
-            expect(page).to_not have_content(@party_3.time.strftime('%I:%M %p'))
+            expect(page).to_not have_content(@party_1.time)
+            expect(page).to_not have_content(@party_3.time)
           end
         end
 
@@ -119,18 +119,16 @@ RSpec.describe 'User Dashboard', type: :feature do
           visit user_path(@user_1)
 
           within("#view-parties-#{@user_1.id}") do
-            expect(page).to have_content("#{@user_1.name}")
-            expect(page).to have_content("#{@user_2.name}")
-            expect(page).to have_content("#{@user_3.name}")
+            expect(page).to have_content("Hosting")
+            expect(page).to have_content("Invited")
           end
 
           visit user_path(@user_4)
 
           within("#view-parties-#{@user_4.id}") do
-            expect(page).to have_content("#{@user_1.name}")
+            expect(page).to have_content("Invited")
 
-            expect(page).to_not have_content("#{@user_1.name}")
-            expect(page).to_not have_content("#{@user_1.name}")
+            expect(page).to_not have_content("Hosting")
           end
         end
       
