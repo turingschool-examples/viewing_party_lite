@@ -12,5 +12,13 @@ RSpec.describe 'Discover Movies Page' do
 
       expect(page).to have_content('Discover Movies')
     end
+
+    it 'should have a button for top rated movies' do
+      user = create(:user)
+
+      visit user_discover_path(user)
+
+      expect(page).to have_button("Top Rated Movies")
+    end
   end
 end
