@@ -8,7 +8,7 @@ RSpec.describe 'Viewing Party | New', type: :feature do
       @user1 = User.create!(name: 'jojo binks', email: 'jojo_binks@gmail.com')
       @user2 = User.create!(name: 'bobby', email: 'bobby@yahoo.com')
       @user3 = User.create!(name: 'marissa nicole', email: 'marissa.nicole99@gmail.com')
-      @movie = MovieFacade.movie_search_by_id(361_743)
+      @movie = MovieFacade.create_individual_movie(361_743)
       visit new_user_movie_viewing_party_path(@user1, @movie.id)
     end
     it 'I should see the name of the movie title rendered' do
@@ -17,19 +17,18 @@ RSpec.describe 'Viewing Party | New', type: :feature do
     describe 'I can see a form with;' do
       it 'a populated duration that is the minimum time for the movie' do
         within('#view_party_form') do
-          expect(page).to have_content('#viewing_party_duraction')
-          duration_form = find('viewing_party_duration')
-          expect(duration_form.text).to eq @movie.duration
+          expect(page).to have_field('duration')
+          expect(find('#duration')['placeholder']).to eq @movie.runtime.to_s
         end
       end
       it 'When: field to select date' do
-        within('#view_party_form') { expect(page).to have_content('#viewing_party_date') }
+        within('#view_party_form') { expect(page).to have_field('date') }
       end
       it 'Start Time: field to select time' do
-        within('#viewing_party_form') { expect(page).to have_content('#viewing_party_time') }
+        within('#view_party_form') { expect(page).to have_field('time') }
       end
       it 'Checkboxes next to each existing user in the system' do
-        within('#viewing_party_form') do
+        within('#view_party_form') do
           check_boxes = find_all('checkbox')
           expect(check_boxes.count).to eq 2
           # TODO: Buff up this test a bit to check to make sure users are correct

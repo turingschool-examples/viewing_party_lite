@@ -2,6 +2,10 @@
 <section id="view_party_form">
   <%= form_with url: new_user_movie_viewing_party_path(@user, @movie), method: :post, local: :true do |form| %>
     <%= form.label "Viewing Party Duration" %>
-    <%= form.text_field :duration %>
+    <%= form.text_field :duration, placeholder: "#{@movie.runtime}" %>
+    <%= form.label "Day" %>
+    <%= form.date_field :date %>
+    <%= form.label "Start Time" %>
+    <%= form.time_field :time %>
   <% end %>
 </section>
