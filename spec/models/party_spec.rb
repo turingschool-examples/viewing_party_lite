@@ -16,19 +16,24 @@ RSpec.describe Party, type: :model do
   end
 
   describe 'class methods' do
+
+  end
+
+  describe 'instance methods' do
     describe '#movie' do
       it 'returns a movie object', :vcr do
         party = create(:party, movie_id: 550)
         expect(party.movie).to be_a Movie
       end
     end
-  end
 
-  describe 'instance methods' do
-    describe '#method_name' do
-     it 'description of method' do
-      #expect statement here
-     end
+    describe '#poster_path' do
+      it 'returns the poster path of the movie the party is for', :vcr do
+        party = create(:party, movie_id: 550)
+        expect(party.poster_path).to be_a String
+        movie = MovieFacade.movie_by_id(550)
+        expect(party.poster_path).to eq(movie.poster_path)
+      end
     end
   end
 

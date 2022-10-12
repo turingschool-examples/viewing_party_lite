@@ -6,4 +6,8 @@ class Party < ApplicationRecord
   def movie
     MovieFacade.movie_by_id(movie_id)
   end
+
+  def poster_path
+    movie.poster_path
+  end
 end
