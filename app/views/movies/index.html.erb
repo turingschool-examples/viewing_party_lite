@@ -1,0 +1,11 @@
+<% if !params[:search].nil? %>
+  <h2> Movie Results for: <%= params[:search] %></h2>
+<% else %>
+  <h2> Top Rated Movies </h2>
+<% end %>
+
+<%= button_to "Discover Page", user_discover_index_path(@user), method: :get %><br>
+
+<% @movies.each do |movie| %>
+  <div class="movie"><%= link_to "#{movie[:title]}", id: "title" %> Vote Average: <%= "#{movie[:vote_average]}" %></div>
+<% end %>
