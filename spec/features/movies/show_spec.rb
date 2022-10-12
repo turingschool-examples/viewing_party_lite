@@ -6,8 +6,6 @@ RSpec.describe "Movie Detail Page" do
       @user1 = User.create!(name: "Micheal Jordan", email: "user7@gmail.com")
 
       visit "/users/#{@user1.id}/movies/19404"
-      save_and_open_page
-
       
       expect(page).to have_content("Dilwale Dulhania Le Jayenge")
       expect(page).to have_content("Vote Average: 8.565")
@@ -28,7 +26,6 @@ RSpec.describe "Movie Detail Page" do
       # click_on "Create Viewing Party"
       # expect(current_path).to eq("/users/#{@user1.id}/movies/19404/viewing_party/new")
       end
-    
     it 'has button to return to discover page'do 
     @user1 = User.create!(name: "Micheal Jordan", email: "user7@gmail.com")
 
