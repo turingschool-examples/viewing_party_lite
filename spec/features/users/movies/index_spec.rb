@@ -5,9 +5,15 @@ RSpec.describe 'Movie Results Page', type: :feature do
     describe 'and click on the top movies button, it takes me to the movies results page' do
       it 'I see the title "top rated movies"' do
         user1 = User.create!(name: 'Becka', email: 'rebecka@gmail.com')
-        
+
         visit user_discover_index_path(user1)
-        click_button("Find Top Rated Movies")
+
+        json_response = File.open('./fixtures/top_20.json')
+        stub_request(:get, 'https://api.themoviedb.org/3/movie/top_rated').
+          with(query: {'api_key' => ENV['movie_api_key']}).
+          to_return(status: 200, body: json_response)
+
+        click_button('Find Top Rated Movies')
 
         expect(page).to have_content("Top Rated Movies")
       end
@@ -16,10 +22,16 @@ RSpec.describe 'Movie Results Page', type: :feature do
         user1 = User.create!(name: 'Becka', email: 'rebecka@gmail.com')
 
         visit user_discover_index_path(user1)
+
+        json_response = File.open('./fixtures/top_20.json')
+        stub_request(:get, 'https://api.themoviedb.org/3/movie/top_rated').
+          with(query: {'api_key' => ENV['movie_api_key']}).
+          to_return(status: 200, body: json_response)
+
         click_button("Find Top Rated Movies")
-        
+
         expect(page).to have_css("div", count: 20)
-        
+
         within(first(".movie")) do
           expect(page).to have_link()
         end
@@ -27,9 +39,15 @@ RSpec.describe 'Movie Results Page', type: :feature do
       
       it 'and I see the vote average of each movie' do
         user1 = User.create!(name: 'Becka', email: 'rebecka@gmail.com')
-        
+
         visit user_discover_index_path(user1)
-        click_button("Find Top Rated Movies")
+
+        json_response = File.open('./fixtures/top_20.json')
+        stub_request(:get, 'https://api.themoviedb.org/3/movie/top_rated').
+          with(query: {'api_key' => ENV['movie_api_key']}).
+          to_return(status: 200, body: json_response)
+
+        click_button('Find Top Rated Movies')
 
         within(first(".movie")) do
           expect(page).to have_content("Vote Average:")
@@ -40,6 +58,12 @@ RSpec.describe 'Movie Results Page', type: :feature do
         user1 = User.create!(name: 'Becka', email: 'rebecka@gmail.com')
 
         visit user_discover_index_path(user1)
+
+        json_response = File.open('./fixtures/top_20.json')
+        stub_request(:get, 'https://api.themoviedb.org/3/movie/top_rated').
+          with(query: {'api_key' => ENV['movie_api_key']}).
+          to_return(status: 200, body: json_response)
+
         click_button("Find Top Rated Movies")
 
         expect(page).to have_button("Discover Page")
@@ -54,6 +78,12 @@ RSpec.describe 'Movie Results Page', type: :feature do
       user1 = User.create!(name: 'Becka', email: 'rebecka@gmail.com')
 
       visit user_discover_index_path(user1)
+
+      json_response = File.open('./fixtures/avatar.json')
+      stub_request(:get, 'https://api.themoviedb.org/3/search/movie').
+        with(query: {'api_key' => ENV['movie_api_key'], 'query' => 'Avatar'}).
+        to_return(status: 200, body: json_response)
+
       fill_in(:search, with: "Avatar")
       click_button("Find Movies")
 
@@ -64,6 +94,12 @@ RSpec.describe 'Movie Results Page', type: :feature do
       user1 = User.create!(name: 'Becka', email: 'rebecka@gmail.com')
 
       visit user_discover_index_path(user1)
+
+      json_response = File.open('./fixtures/avatar.json')
+      stub_request(:get, 'https://api.themoviedb.org/3/search/movie').
+        with(query: {'api_key' => ENV['movie_api_key'], 'query' => 'Avatar'}).
+        to_return(status: 200, body: json_response)
+
       fill_in(:search, with: "Avatar")
       click_button("Find Movies")
 
@@ -74,6 +110,12 @@ RSpec.describe 'Movie Results Page', type: :feature do
       user1 = User.create!(name: 'Becka', email: 'rebecka@gmail.com')
 
       visit user_discover_index_path(user1)
+
+      json_response = File.open('./fixtures/avatar.json')
+      stub_request(:get, 'https://api.themoviedb.org/3/search/movie').
+        with(query: {'api_key' => ENV['movie_api_key'], 'query' => 'Avatar'}).
+        to_return(status: 200, body: json_response)
+
       fill_in(:search, with: "Avatar")
       click_button("Find Movies")
 
@@ -86,6 +128,12 @@ RSpec.describe 'Movie Results Page', type: :feature do
       user1 = User.create!(name: 'Becka', email: 'rebecka@gmail.com')
 
       visit user_discover_index_path(user1)
+
+      json_response = File.open('./fixtures/avatar.json')
+      stub_request(:get, 'https://api.themoviedb.org/3/search/movie').
+        with(query: {'api_key' => ENV['movie_api_key'], 'query' => 'Avatar'}).
+        to_return(status: 200, body: json_response)
+
       fill_in(:search, with: "Avatar")
       click_button("Find Movies")
 
