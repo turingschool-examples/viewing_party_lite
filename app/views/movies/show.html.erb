@@ -35,13 +35,15 @@
 
 <hr>
 
-<strong><%= @movie.reviews.count %> Reviews</strong>
-<br>
-<% @movie.reviews.each do |review| %>
+<div id='reviews'>
+  <strong><%= @movie.reviews.count %> Reviews</strong>
   <br>
-  <div id='container'>Author: <%= review.first %>
-  <br>
-  <br>
-    <%= review.last %>
-  </div>
-<% end %>
+  <% @movie.reviews.each do |review| %>
+    <br>
+    <div id='container'>Author: <%= review.first %>
+    <br>
+    <br>
+      <%= review.last %>
+    </div>
+  <% end %>
+</div>

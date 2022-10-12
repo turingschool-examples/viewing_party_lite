@@ -15,7 +15,7 @@ RSpec.describe 'Movie Show Page' do
     expect(page).to have_button('Discover Page')
   end
 
-  it 'links to discover page' do
+  it 'links to discover page', :vcr do
     visit user_movie_path(user1, 238)
 
     click_on 'Discover Page'
@@ -23,7 +23,7 @@ RSpec.describe 'Movie Show Page' do
     expect(current_path).to eq(user_discover_path(user1))
   end
 
-  it 'displays header info' do
+  it 'displays header info', :vcr do
     visit user_movie_path(user1, 238)
 
     within("#header_info") do
@@ -33,8 +33,29 @@ RSpec.describe 'Movie Show Page' do
     end
   end
 
-  it 'displays a summary' do
+  it 'displays a summary', :vcr do
     visit user_movie_path(user1, 238)
 
+    within("#summary") do
+      expect(page).to have_content('When organized crime family patriarch')
+    end
+  end
+
+  it 'displays the cast', :vcr do
+    visit user_movie_path(user1, 238)
+
+    within("#cast") do
+      expect(page).to have_content('Marlon Brando as Don Vito Corleone')
+      expect(page).to have_content("Al Lettieri as Virgil 'The Turk' Sollozzo")
+    end
+  end
+
+  it 'displays reviews', :vcr do
+    visit user_movie_path(user1, 238)
+
+    within("#reviews") do
+      expect(page).to have_content('2 Reviews')
+      expect(page).to have_content('Author:')
+    end
   end
 end
