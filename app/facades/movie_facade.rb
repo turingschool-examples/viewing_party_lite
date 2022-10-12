@@ -30,7 +30,7 @@ class MovieFacade
 
   def self.create_reviews(id)
     response = MovieService.get_reviews(id)[:results].map do |review|
-      author= review[:author]
+      author = review[:author]
       content = review[:content]
       "#{author} - #{content}"
     end
