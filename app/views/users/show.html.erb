@@ -2,7 +2,53 @@
 <%=button_to "Discover Movies", user_discover_path(@user), method: :get%>
 <hr>
 <h2>My Hosted Viewing Parties</h2>
-
-
+  <ul id='hosted_parties'>
+    <% @user.find_hosted_parties.each do |party|%>
+      <li id= "party_<%=party.id%>">
+        <img id ="image_<%=party.id%>" src="http://image.tmdb.org/t/p/w92/<%=party.image_path%>" alt="<%=party.movie_title%>'s Image">
+        <p><%=link_to party.movie_title, user_movie_path(@user, party.movie_id) %></p>
+        <p id ="host_<%=party.id%>">
+          Hosted by: <%= party.host %>
+        </p>
+        <p>My Role: Hosting</p>
+        <!-- <p>Duration: <%=party.duration%> min </p> -->
+        <p>Starting on <%= party.start_time.to_date %> at <%= party.start_time.strftime("%I:%M %p")%></p>
+        <p>User's Invited to Viewing Party</p>
+        <ul id ="invited_users_<%=party.id%>">
+          <% party.invited_users.each do |invited_user| %>
+            <li>
+              <%=invited_user.user_name%>
+            </li>
+          <% end%>
+        </ul>
+      </li>
+    <% end%>
+  </ul>
 <hr>
 <h2>My Invited Viewing Parties</h2>
+  <ul id='invited_parties'>
+    <% @user.find_invited_parties.each do |party|%>
+      <li id= "party_<%=party.id%>">
+        <img id ="image_<%=party.id%>" src="http://image.tmdb.org/t/p/w92/<%=party.image_path%>" alt="<%=party.movie_title%>'s Image">
+        <p><%=link_to party.movie_title, user_movie_path(@user, party.movie_id) %></p>
+        <p id ="host_<%=party.id%>">
+          Hosted by: <%= party.host %>
+        </p>
+        <p>My Role: Invited</p>
+        <!-- <p>Duration: <%=party.duration%> min </p> -->
+        <p>Starting on <%= party.start_time.to_date %> at <%= party.start_time.strftime("%I:%M %p")%></p>
+        <p>User's Invited to Viewing Party</p>
+        <ul id ="invited_users_<%=party.id%>">
+          <% party.invited_users.each do |invited_user| %>
+            <li>
+              <% if invited_user == @user %>
+                <b><%=invited_user.user_name%></b>
+              <% else %>
+                <%=invited_user.user_name%>
+              <%end%>
+            </li>
+          <% end%>
+        </ul>
+      </li>
+    <% end%>
+  </ul>
