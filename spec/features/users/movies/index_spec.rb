@@ -17,7 +17,7 @@ RSpec.describe 'Movie results page' do
         expect(page).to have_content(movies.last.vote_average)
         expect(page).to have_link("#{movies.first.title}")
         click_link "#{movies.first.title}"
-        expect(page).to have_current_path user_movie_path(user, movies.first)
+        expect(page).to have_current_path user_movie_path(user, movies.first.id)
       end
     end
   end
@@ -36,7 +36,7 @@ RSpec.describe 'Movie results page' do
         expect(page).to have_content("Top Gun")
         expect(page).to have_link movies.first.title
         click_on movies.first.title
-        expect(current_path).to eq(user_movie_path(user, movies.first))
+        expect(current_path).to eq(user_movie_path(user, movies.first.id))
       end
     end
   end
