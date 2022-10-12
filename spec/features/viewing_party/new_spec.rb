@@ -74,7 +74,31 @@ RSpec.describe 'Viewing Party | New', type: :feature do
       end
     end
     context 'Sad Path' do
-      it 'When I fill in the information in the form incorrectly, I see a flash message stating an error'
+      it 'When I fill in the information in the form incorrectly, I see a flash message stating an error' do
+        within('#view_party_form') do
+          fill_in 'form_info[duration]', with: 140
+          fill_in 'form_info[date]', with: '1999-07-20'
+          check "users[#{@user2.id}]"
+          click_on 'Create Viewing Party'
+          expect(page.current_path).to eq new_user_movie_viewing_party_path(@user1, @movie.id)
+        end
+        within('.container') do
+          expect(page).to have_content('Error: Incorrect information entered')
+        end
+      end
+      it 'When I fill in a duration that is less than the movie duration, I see a flash message stating an error' do
+        within('#view_party_form') do
+          fill_in 'form_info[duration]', with: 20
+          fill_in 'form_info[date]', with: '1999-07-20'
+          fill_in 'form_info[time]', with: '19:30'
+          check "users[#{@user2.id}]"
+          click_on 'Create Viewing Party'
+          expect(page.current_path).to eq new_user_movie_viewing_party_path(@user1, @movie.id)
+        end
+        within('.container') do
+          expect(page).to have_content('Error: Incorrect information entered')
+        end
+      end
     end
   end
 end
