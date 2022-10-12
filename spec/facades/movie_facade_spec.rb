@@ -28,7 +28,7 @@ RSpec.describe MovieFacade do
   describe '#details', :vcr do
     it 'returns movie details' do
       movie = MovieFacade.details(278)
-      expect(movie).to be_a(Movie)
+      expect(movie).to be_a(MovieDetails)
     end
   end
 end
