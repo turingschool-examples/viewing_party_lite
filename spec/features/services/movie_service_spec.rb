@@ -9,8 +9,15 @@ RSpec.describe MovieService do
       expect(movies[0][:title]).to be_a(String)
       expect(movies[0][:vote_average]).to be_a(Float)
     end
+    
+    it "get api response for movie search" do
+    movies = MovieService.get_movie_search("Impossible Things")
+    expect(movies[0]).to be_a(Hash)
+    expect(movies.count).to eq(2)
+    expect(movies[0][:title]).to be_a(String)
+    expect(movies[0][:vote_average]).to be_a(Float)
+    end
   end
 end
-
 
 

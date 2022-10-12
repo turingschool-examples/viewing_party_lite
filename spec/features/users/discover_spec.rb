@@ -12,14 +12,16 @@ RSpec.describe "User Discover Movie", type: :feature do
         expect(current_path).to eq("/users/#{@user1.id}/movies")
     end
 
-    xit 'has text field to search key words then redirects to matching list', :vcr do
+    it 'has text field to search key words then redirects to matching list', :vcr do
         @user1 = User.create!(name: "Micheal Jordan", email: "user1@gmail.com")
 
-        visit "/users/#{@user1.id}/discover"
+        visit user_discover_index_path(@user1)
+        
         expect(page).to have_button("Search")
-
-        fill_in :search, with: 'Shawshank Redemption'
+        
+        fill_in "user_search", with: 'Shawshank Redemption'
         click_on "Search"
+        save_and_open_page
         expect(page).to have_content("Shawshank Redemption")
         expect(current_path).to eq("/users/#{@user1.id}/movies")
     end
