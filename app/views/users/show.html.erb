@@ -2,3 +2,9 @@
 <%= @user.name %>
 
 <%= button_to 'Discover Movies', "/users/#{@user.id}/discover", method: :get %>
+
+<h3> Viewing Parties </h3>
+
+<% @user.parties.each do |party| %>
+  <p><%= party.movie.title %> </p>
+<% end %>

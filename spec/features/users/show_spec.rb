@@ -16,7 +16,7 @@ RSpec.describe 'User show page' do
       expect(current_path).to eq("/users/#{user.id}/discover")
     end
 
-    xit 'There is a section that lists viewing parties' do
+    it 'There is a section that lists viewing parties' do
       user = create(:user)
       visit user_path(user)
       expect(page).to have_content('Viewing Parties')
