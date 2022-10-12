@@ -29,13 +29,16 @@ RSpec.describe 'Viewing Party | New', type: :feature do
       end
       it 'Checkboxes next to each existing user in the system' do
         within('#view_party_form') do
-          check_boxes = find_all('checkbox')
+          check_boxes = find_all('.checkbox')
           expect(check_boxes.count).to eq 2
-          # TODO: Buff up this test a bit to check to make sure users are correct
+
+          expect(page).to_not have_content @user1.email.capitalize
+          expect(page).to have_content @user2.email.capitalize
+          expect(page).to have_content @user3.email.capitalize
         end
       end
       it 'Button to create a party' do
-        within('#viewing_party_form') { expect(page).to have_button('Create Viewing Party') }
+        within('#view_party_form') { expect(page).to have_button('Create Viewing Party') }
       end
     end
     context 'Happy path' do

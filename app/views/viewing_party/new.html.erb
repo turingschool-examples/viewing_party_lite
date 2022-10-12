@@ -7,5 +7,11 @@
     <%= form.date_field :date %>
     <%= form.label "Start Time" %>
     <%= form.time_field :time %>
+    <h5>Invite Other Users:</h5>
+    <% @users.each do |u| %>
+      <%= form.check_box "user-#{u.id}", class: 'checkbox' %>
+      <%= form.label "#{u.email}" %>
+    <% end %>
+    <%= form.submit "Create Viewing Party" %>
   <% end %>
 </section>
