@@ -12,4 +12,41 @@ RSpec.describe User, type: :model do
     it { should have_many :viewing_party_users}
     it { should have_many(:viewing_parties).through(:viewing_party_users)}
   end
+
+  describe 'instance methods' do
+    describe '#find_invited_parties' do
+      before :each do
+        Faker::UniqueGenerator.clear
+        @user = create(:user)
+        @awesome_host = create(:user)
+        @other_user = create(:user)
+        #create 4 viewing parties each hosted by awesome_host
+        @viewing_party_invites = create_list(:viewing_party, 4, host: @awesome_host.user_name)
+        #creates 5 viewing_party_users, three rando invites, one for the user and one for the host for each viewing party
+        @viewing_party_invites.each do |viewing_party|
+          create_list(:viewing_party_user, 3, viewing_party: viewing_party)
+          create(:viewing_party_user, viewing_party: viewing_party, user: @user)
+          create(:viewing_party_user, viewing_party: viewing_party, user: @awesome_host)
+        end
+        #create 4 viewing parties each hosted by user
+        @viewing_party_hosting = create_list(:viewing_party, 4, host: @user.user_name)
+        #creates 4 viewing_party_users, three rando invites, one for the user for each viewing party
+        @viewing_party_hosting.each do |viewing_party|
+          create_list(:viewing_party_user, 3, viewing_party: viewing_party)
+          create(:viewing_party_user, viewing_party: viewing_party, user: @user)
+        end
+        #creates viewing party not associated with the user with three rando invites
+        @other_viewing_party = create(:viewing_party, host: @other_user.user_name)
+        create_list(:viewing_party_user, 3, viewing_party: @other_viewing_party)
+        #creates viewing party where only the user is invited
+        @lonely_viewing_party = create(:viewing_party, host: @user.user_name)
+        create(:viewing_party_user, viewing_party: @lonely_viewing_party, user: @user)
+
+      end
+
+      it 'lists viewing parties that user has been invited to' do
+        expect(@user.find_invited_parties).to eq(@viewing_party_invites)
+      end
+    end
+  end
 end
