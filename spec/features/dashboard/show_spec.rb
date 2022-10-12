@@ -59,7 +59,7 @@ RSpec.describe "User Show Page" do
       context 'when not invited to a viewing party' do
         it 'doesnt show that viewing party on the page' do
           within "#invited_parties" do
-            expect(page).to_not have_css("party_#{@other_viewing_party.id}")
+            expect(page).to_not have_css("#party_#{@other_viewing_party.id}")
           end
         end
       end
@@ -191,27 +191,27 @@ RSpec.describe "User Show Page" do
         visit user_path(@user)
       end
       context 'when hosting a viewing party' do
-        xit 'shows that viewing party on page' do
+        it 'shows that viewing party on page' do
           within "#hosted_parties" do
             @viewing_party_hosting.each do |party|
-              expect(page).to have_css("party_#{party.id}")
+              expect(page).to have_css("#party_#{party.id}")
             end
           end
         end
       end
       context 'when not hosting a viewing party' do
-        xit 'doesnt show that viewing party on the page' do
+        it 'doesnt show that viewing party on the page' do
           within "#hosted_parties" do
-            expect(page).to_not have_css("party_#{@viewing_party_invites.first.id}")
-            expect(page).to_not have_css("party_#{@other_viewing_party.id}")
+            expect(page).to_not have_css("#party_#{@viewing_party_invites.first.id}")
+            expect(page).to_not have_css("#party_#{@other_viewing_party.id}")
           end
         end
       end
 
       describe 'each viewing party contains' do
-        xit 'has a movie title that is a link to movie show page' do
+        it 'has a movie title that is a link to movie show page' do
           within "#hosted_parties" do
-            @viewing_party_invites.each do |party|
+            @viewing_party_hosting.each do |party|
               within "#party_#{party.id}" do
                 expect(page).to have_link(party.movie_title)
                 # click_link("#{party.movie_title}")
@@ -221,9 +221,9 @@ RSpec.describe "User Show Page" do
           end
         end
 
-        xit 'has date and time of event' do
+        it 'has date and time of event' do
           within "#hosted_parties" do
-            @viewing_party_invites.each do |party|
+            @viewing_party_hosting.each do |party|
               within "#party_#{party.id}" do
                 expect(page).to have_content(party.start_time.to_date)
                 expect(page).to have_content(party.start_time.strftime("%I:%M %p"))
@@ -232,9 +232,9 @@ RSpec.describe "User Show Page" do
           end
         end
 
-        xit 'says that the user is the host' do
+        it 'says that the user is the host' do
           within "#hosted_parties" do
-            @viewing_party_invites.each do |party|
+            @viewing_party_hosting.each do |party|
               within "#party_#{party.id}" do
                 within "#host_#{party.id}" do
                   expect(page).to have_content(@user.user_name)
@@ -244,9 +244,9 @@ RSpec.describe "User Show Page" do
           end
         end
 
-        xit 'says Hosting' do
+        it 'says Hosting' do
           within "#hosted_parties" do
-            @viewing_party_invites.each do |party|
+            @viewing_party_hosting.each do |party|
               within "#party_#{party.id}" do
                 expect(page).to have_content("Hosting")
               end
@@ -254,7 +254,7 @@ RSpec.describe "User Show Page" do
           end
         end
 
-        xit 'has a list of invited users' do
+        it 'has a list of invited users' do
           within "#hosted_parties" do
             @viewing_party_hosting.each do |party|
               within "#party_#{party.id}" do
@@ -272,9 +272,9 @@ RSpec.describe "User Show Page" do
 
         # end
 
-        xit 'has a movie image' do
+        it 'has a movie image' do
           within "#hosted_parties" do
-            @viewing_party_invites.each do |party|
+            @viewing_party_hosting.each do |party|
               within "#party_#{party.id}" do
                 expect(page.find("#image_#{party.id}")['src']).to have_content("#{party.image_path}")
               end
