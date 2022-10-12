@@ -24,7 +24,7 @@ RSpec.describe 'Movie Index Page' do
 
       click_on 'Find Top Rated Movies'
 
-      expect(page).to have_content("The Godfather")
+      expect(page).to have_link("The Godfather")
     end
   end
 
@@ -48,5 +48,16 @@ RSpec.describe 'Movie Index Page' do
     click_on 'Discover Page'
 
     expect(current_path).to eq(user_discover_path(user1))
+  end
+
+  it 'has a links to movie details', :vcr do
+    visit user_discover_path(user1)
+
+    click_on 'Find Top Rated Movies'
+    click_on 'The Godfather'
+
+    expect(current_path).to eq(user_movie_path(user1, 238))
+    expect(page).to have_content('The Godfather')
+    expect(page).to have_link('Discover Page')
   end
 end
