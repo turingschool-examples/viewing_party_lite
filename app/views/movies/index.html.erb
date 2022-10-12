@@ -1,3 +1,16 @@
 <center>
 <h1>Movies</h1>
+  <% if @top_movies != nil %>
+    <% @top_movies.each do |movie| %>
+      <strong><%= movie.title %></strong>
+      <%= movie.rating %>
+      <br>
+    <% end %>
+  <% else %>
+    <% @searched_movies.each do |movie| %>
+      <strong><%= movie.title %></strong>
+      <%= movie.rating %>
+      <br>
+    <% end %>
+  <% end %>
 </center>
