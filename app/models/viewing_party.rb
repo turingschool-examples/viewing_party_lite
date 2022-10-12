@@ -7,4 +7,11 @@ class ViewingParty < ApplicationRecord
                         :date,
                         :movie_id,
                         :time
+  def current_party(user_id)
+    user_viewing_parties.where(user_id: user_id)[0]
+  end
+
+  def current_movie
+    MovieFacade.create_individual_movie(movie_id)
+  end
 end

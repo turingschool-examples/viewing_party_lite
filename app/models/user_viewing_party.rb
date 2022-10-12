@@ -6,5 +6,5 @@ class UserViewingParty < ApplicationRecord
   validates_presence_of :user_id,
                         :viewing_party_id,
                         :role
-  enum role: %i[invited host]
+  enum role: %i[Invited Host]
 end

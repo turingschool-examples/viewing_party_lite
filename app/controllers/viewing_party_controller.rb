@@ -14,7 +14,7 @@ class ViewingPartyController < ApplicationController
     user_view_params.each do |user_arr|
       UserViewingParty.create!(user_id: user_arr[0], viewing_party_id: party.id, role: 0) if user_arr[1] == 1
     end
-    UserViewingParty.create!(user_id: current_user, viewing_arty_id: party.id, role: 1)
+    UserViewingParty.create!(user_id: params[:user_id], viewing_party_id: party.id, role: 1)
     redirect_to user_path(current_user), notice: 'View Party created successfully'
   end
 

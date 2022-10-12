@@ -16,7 +16,7 @@ class MovieFacade
   end
 
   def self.create_individual_movie(id)
-    response = MovieService.get_indvidual_movie(id)
+    response = MovieService.get_individual_movie(id)
     Movie.new(response)
   end
 
