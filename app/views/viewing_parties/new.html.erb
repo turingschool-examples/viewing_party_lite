@@ -39,10 +39,8 @@
 <br/>
 
   <% @attendees.each do |attendee| %>
-    <% if attendee != current_user %>
-      <%= check_box_tag "attendees_ids[#{attendee.id}]", attendee.id, false, :name => "attendee_ids[]" %>
-      <%= "#{attendee.name} (#{attendee.email})"%>
-    <% end %>
+    <%= check_box_tag "attendees_ids[#{attendee.id}]", attendee.id, false, :name => "attendee_ids[]" %>
+    <%= "#{attendee.name} (#{attendee.email})"%>
   <% end %>
 
 <br/>

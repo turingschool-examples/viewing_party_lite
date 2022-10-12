@@ -2,7 +2,7 @@ class ViewingPartiesController < ApplicationController
   before_action :require_user
 
   def new
-    @attendees = User.where.not(id: params[:user_id])
+    @attendees = User.where.not(id: current_user.id)
     @movie = MovieFacade.movie_details(params[:movie_id])
   end
 

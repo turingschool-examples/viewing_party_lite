@@ -28,6 +28,13 @@ RSpec.describe User, type: :model do
       password: 'password',
       password_confirmation: 'password'
     )
+    
+    @user3 = User.create!(
+      name: 'Coleman',
+      email: 'dani@fakemail.com',
+      password: 'password',
+      password_confirmation: 'password'
+    )
 
     @party1 = ViewingParty.create!(
       poster_path: 'test path',
