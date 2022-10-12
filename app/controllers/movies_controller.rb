@@ -2,7 +2,9 @@ class MoviesController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    
+    @movie = MovieDbFacade.find_by_movie_id(params[:movie_id])
+    @reviews_list = MovieDbFacade.reviews_by_movie(@movie.id)
+    require "pry"; binding.pry
   end
 
 end

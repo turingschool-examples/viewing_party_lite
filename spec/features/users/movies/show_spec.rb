@@ -1,6 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe 'User Movies Page', :vcr do
+RSpec.describe 'User Movies Show Page From Results' do
+
   before :each do
     @user1 = User.create(name: "Jake", email: "imjakekim@gmail.com")
     @user2 = User.create(name: "Riley", email: "rileybmccullough@gmail.com")
@@ -12,22 +13,10 @@ RSpec.describe 'User Movies Page', :vcr do
     @user_party2 = ViewingPartyUser.create(viewing_party_id: @party2.id, user_id: @user1.id, status: 1)
   end
 
-  it 'buttons back to discover page' do
-    visit "/users/#{@user1.id}/movies?q=top%20rated"
-    click_button "Discover Page"
-    expect(current_path).to eq("/users/#{@user1.id}/discover")
-  end
+  it '' do
 
-  it 'links to specific movie show pages' do
-    visit "/users/#{@user1.id}/movies?q=top%20rated"
-    click_on "The Godfather"
-    expect(current_path).to eq("/users/#{@user1.id}/movies/238")
 
   end
 
-  # it '' do
-  #   visit "/users/#{@user1.id}/movies?search=phoenix"
-  #   click_on "Discover Page"
-  # end
 
 end
