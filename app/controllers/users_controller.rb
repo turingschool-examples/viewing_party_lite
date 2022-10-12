@@ -2,7 +2,6 @@ class UsersController < ApplicationController
 
   def dashboard
     @user = User.find(params[:id])
-    # require "pry"; binding.pry
   end
 
   def discover
@@ -11,11 +10,11 @@ class UsersController < ApplicationController
 
   def movies
     @user = User.find(params[:id])
-
-    if params[:q] == "top rated"
-      @movies = @user.top_20_movies
-    else
+    # require 'pry', binding.pry
+    if params[:search]
       @movies = @user.search_movies(params[:search])
+    else
+      @movies = @user.top_20_movies
     end
   end
 

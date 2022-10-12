@@ -10,7 +10,8 @@ class User < ApplicationRecord
       
           data = JSON.parse(response.body, symbolize_names: true)
       
-          movies = data[:results]
+          movies = data[:results] #facade calls to service
+          #make poros. any management/filter of data
     end
 
     def search_movies(keyword)
