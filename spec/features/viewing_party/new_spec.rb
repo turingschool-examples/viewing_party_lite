@@ -18,7 +18,7 @@ RSpec.describe 'Viewing Party | New', type: :feature do
       it 'a populated duration that is the minimum time for the movie' do
         within('#view_party_form') do
           expect(page).to have_field('form_info[duration]')
-          expect(find('#duration')['placeholder']).to eq @movie.runtime.to_s
+          expect(find_field('form_info[duration]')['placeholder']).to eq @movie.runtime.to_s
         end
       end
       it 'When: field to select date' do

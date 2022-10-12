@@ -5,6 +5,7 @@ class CreateViewingParties < ActiveRecord::Migration[5.2]
     create_table :viewing_parties do |t|
       t.integer :duration
       t.datetime :date
+      t.time :time
       t.integer :movie_id
 
       t.timestamps

@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 3) do
   create_table "user_viewing_parties", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "viewing_party_id"
+    t.integer "role", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_user_viewing_parties_on_user_id"
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(version: 3) do
   create_table "viewing_parties", force: :cascade do |t|
     t.integer "duration"
     t.datetime "date"
+    t.time "time"
     t.integer "movie_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
