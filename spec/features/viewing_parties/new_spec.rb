@@ -10,9 +10,9 @@ RSpec.describe 'The new viewing party page' do
     let!(:user_2) { users[1] }
     let!(:user_3) { users[2] }
 
-    xit 'I see name of movie/form with duration of party/date and time/checkboxes next to each user/button to create' do
-      visit new_user_movie_viewing_party(user_1, movie)
-
+    it 'I see name of movie/form with duration of party/date and time/checkboxes next to each user/button to create' do
+      visit new_user_movie_viewing_party_path(user_1, movie)
+      
       expect(page).to have_content(movie.title)
       expect(page).to have_field('Duration', with: "#{movie.runtime}") #runtime should be in minutes
       select '2022/10/31', :from => 'Day'
