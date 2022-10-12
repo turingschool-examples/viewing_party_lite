@@ -23,22 +23,24 @@ RSpec.describe "User Dashboard Page", type: :feature do
     @vp_2.users << @user_1
     @vp_3.users << @user_1
 
+    visit user_path(@user_1.id)
+
     within("#vp_#{@vp_1.id}") do
         expect(page).to have_content("Hosting")
         expect(page).to have_content(@vp_1.date.strftime("%B %e, %Y"))
-        expect(page).to have_content(@vp_1.time.strftime("%l:%M %P"))
+        expect(page).to have_content(@vp_1.start_time.strftime("%l:%M %P"))
     end
 
     within("#vp_#{@vp_2.id}") do
         expect(page).to have_content("Invited")
-        expect(page).to have_content(@vp_1.date.strftime("%B %e, %Y"))
-        expect(page).to have_content(@vp_1.time.strftime("%l:%M %P"))
+        expect(page).to have_content(@vp_2.date.strftime("%B %e, %Y"))
+        expect(page).to have_content(@vp_2.start_time.strftime("%l:%M %P"))
     end
 
     within("#vp_#{@vp_3.id}") do
         expect(page).to have_content("Invited")
-        expect(page).to have_content(@vp_1.date.strftime("%B %e, %Y"))
-        expect(page).to have_content(@vp_1.time.strftime("%l:%M %P"))
+        expect(page).to have_content(@vp_3.date.strftime("%B %e, %Y"))
+        expect(page).to have_content(@vp_3.start_time.strftime("%l:%M %P"))
     end
   end
 end
