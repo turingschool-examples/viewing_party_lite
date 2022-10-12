@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   root 'welcome#landing'
   get '/register', to:'users#new'
   resources :users, only: [:index, :show, :create] do
-    resources 'discover', only: [:index]
-    resources :movies, only: [:show] do
+    post '/movies_top_rated', to: 'movies#top_rated'
+    post '/movies_search', to: 'movies#search'
+    resources :discover, only: [:index], module: 'users'
+    resources :movies, only: [:index, :show], module: 'users' do
       resources :viewing_parties, only: [:new, :show]
     end
   end
