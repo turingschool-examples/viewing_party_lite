@@ -1,2 +1,52 @@
 <h1><%= @movie.title %></h1>
-<%= link_to 'Discover Page', user_discover_path(@user, @movie) %>
+<center>
+  <p><%= button_to 'Discover Page', user_discover_path(@user), method: :get %></p>
+  <p><%= button_to "Create Viewing Party for #{@movie.title}", user_movie_viewing_party_path(@user, @movie.movie_id), method: :get %></p>
+</center>
+<br>
+
+<ul id='header_info'>
+  <li><strong> Vote Average:</strong> <%= @movie.rating %></li>
+  <li><strong>Runtime:</strong> <%= @movie.runtime / 60 %> hr <%= @movie.runtime % 60 %> min</li>
+  <li><strong>Genre(s):</strong> <%= @movie.genres.to_sentence %></li>
+</ul>
+
+<hr>
+
+<section id='summary'>
+<strong>Summary</strong>
+  <p><%= @movie.summary %></p>
+</section>
+
+<div id='cast'>
+  <strong>Cast</strong>
+  <br>
+  <div class='cast_columns'>
+    <p><% @movie.cast[0..4].each do |person| %> 
+      <%=  person[0] %> as <%= person[1] %>
+      <br>
+    <% end %></p>
+  </div>
+
+  <div class='cast_columns'>
+    <p><% @movie.cast[5..9].each do |person| %> 
+      <%=  person[0] %> as <%= person[1] %>
+      <br>
+    <% end %></p>
+  </div>
+</div>
+
+<hr>
+
+<div id='reviews'>
+  <strong><%= @movie.reviews.count %> Reviews</strong>
+  <br>
+  <% @movie.reviews.each do |review| %>
+    <br>
+    <div id='container'>Author: <%= review.first %>
+    <br>
+    <br>
+      <%= review.last %>
+    </div>
+  <% end %>
+</div>
