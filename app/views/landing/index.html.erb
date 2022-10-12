@@ -1,0 +1,21 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<%= button_to "Create New User", '/register', method: :get %>
+<br>
+<br>
+<br>
+<br>
+<div id='existing-users'>
+
+  <h1> Existing Users </h1>
+  
+  <% @users.each do |user| %>
+    <%= link_to user.email, user_path(user) %> <br>
+  <% end %>
+
+</div>

@@ -1,7 +1,8 @@
 class LandingController < ApplicationController
     def index
+      @users = User.all
     end
     
-    def show
+    def about
     end
 end
