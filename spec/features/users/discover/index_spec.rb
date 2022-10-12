@@ -21,18 +21,20 @@ RSpec.describe 'the users discover index' do
 
     describe 'When I click on the top rated movies' do
       it 'redirects to the movies results page' do
-        click_button 'Discover Top Rated Movies'
-
-        expect(current_path).to eq(user_movies_path(user))
+        VCR.use_cassette('top_rated_movies') do
+          click_button 'Discover Top Rated Movies'
+          expect(current_path).to eq(user_movies_path(user))
+        end
       end
     end
     
     describe 'When I click on the search button' do
       it 'redirects to the movies results page' do
-        fill_in 'Search', with: 'Minions'
-        click_button 'Search by Movie Title'
-
-        expect(current_path).to eq(user_movies_path(user))
+        VCR.use_cassette("search_Minions") do
+          fill_in 'Search', with: 'Minions'
+          click_button 'Search by Movie Title'
+          expect(current_path).to eq(user_movies_path(user))
+        end
       end
     end
   end

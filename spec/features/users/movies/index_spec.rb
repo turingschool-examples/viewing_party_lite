@@ -7,10 +7,9 @@ RSpec.describe 'Movie results page' do
 
       visit user_discover_index_path(user)
 
-      VCR.use_cassette('top_rated_movies') do
+      VCR.use_cassette('top_rated_movies_index') do
         click_button "Discover Top Rated Movies"
         movies = MoviesFacade.top_rated
-      
         expect(current_path).to eq(user_movies_path(user))
         expect(page).to have_content(movies.first.title)
         expect(page).to have_content(movies.first.vote_average)
@@ -32,8 +31,6 @@ RSpec.describe 'Movie results page' do
         expect(current_path).to eq(user_movies_path(user))
         expect(page).to have_content("Top Gun")
       end
-
-      save_and_open_page
     end
   end
 end

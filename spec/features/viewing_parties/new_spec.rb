@@ -2,8 +2,10 @@ require 'rails_helper'
 
 RSpec.describe 'The new viewing party page' do
   describe 'When I visit the new viewing party page' do
-    let!(:movie) {create(:random_movie)}
+    let!(:movie) { Movie.new({title: "Minions", vote_average: "8.7"}) }
+
     let!(:users) { create_list(:user, 4) }
+
     let!(:user_1) { users[0] }
     let!(:user_2) { users[1] }
     let!(:user_3) { users[2] }
