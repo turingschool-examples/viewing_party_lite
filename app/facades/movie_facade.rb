@@ -15,7 +15,7 @@ class MovieFacade
 
     parsed = JSON.parse(response.body)
 
-    { title: parsed['origninal_title'], vote_avg: parsed['vote_average'] }
+    { title: parsed['original_title'], vote_avg: parsed['vote_average'] }
   end
 
   def self.show(movie_id)
