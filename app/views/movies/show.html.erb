@@ -1,10 +1,10 @@
 <h1>Movie Details Page</h1>
 
-<%= @movie_information[:title] %>
-<%= @movie_information[:vote_average]%>
-<%= @movie_information[:runtime]%> #convert to hrs & min
-<%= @movie_information[:genres][0]%> #pull out names 
-<%= @movie_information[:overview]%>
+<%= @movie.title %>
+<p> Average votes: <%= @movie.average_votes%></p>
+<p> Duration: <%= @movie.runtime / 60 %>:<%= @movie.runtime % 60 %></p>
+<p> Genres: <%= @movie.genres.join(', ')%>
+<p> Description: <%= @movie.overview%>
 
-<%= button_to 'Create a Viewing Party', "/users/#{@user.id}/movies/#{@movie_id}/viewing-party/new", method: :get %>
+<%= button_to 'Create a Viewing Party', "/users/#{@user.id}/movies/#{@movie.id}/viewing-party/new", method: :get %>
 <%= button_to 'Return to Discover Page', "/users/#{@user.id}/discover", method: :get %>
