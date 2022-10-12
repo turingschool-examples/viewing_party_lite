@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
     conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
       faraday.params['api_key'] = ENV['movie_api_key']
     end
-    
+
     if params[:search] == ''
       redirect_to user_discover_index_path(@user), notice: 'Search field cannot be blank'
     elsif !params[:search].nil?
