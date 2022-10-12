@@ -24,4 +24,9 @@ class MovieService
 
     json1 + json2
   end
+
+  def self.movie_details(movie_id)
+    response = conn.get("movie/#{movie_id}?&append_to_response=credits,reviews")
+    json = JSON.parse(response.body, symbolize_names: true)
+  end
 end

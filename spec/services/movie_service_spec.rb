@@ -34,4 +34,18 @@ RSpec.describe MovieService do
       end
     end
   end
+
+  describe '#movie_details' do
+    it 'returns movies details', :vcr do
+      movie = MovieService.movie_details(278)
+
+      expect(movie[:title]).to eq('The Shawshank Redemption')
+      expect(movie[:vote_average]).to be_a Float
+      expect(movie[:runtime]).to be_an Integer
+      expect(movie[:genres]).to be_an Array
+      expect(movie[:overview]).to be_an String
+      expect(movie[:credits][:cast]).to be_an Array
+      expect(movie[:reviews]).to be_an Hash
+    end
+  end
 end
