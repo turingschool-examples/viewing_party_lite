@@ -1,5 +1,8 @@
 <h1><%= @movie.title %></h1>
-<center><%= button_to 'Discover Page', user_discover_path(@user), method: :get %></center>
+<center>
+  <p><%= button_to 'Discover Page', user_discover_path(@user), method: :get %></p>
+  <p><%= button_to "Create Viewing Party for #{@movie.title}", user_movie_viewing_party_path(@user, @movie.movie_id), method: :get %></p>
+</center>
 <br>
 
 <ul id='header_info'>

@@ -58,4 +58,18 @@ RSpec.describe 'Movie Show Page' do
       expect(page).to have_content('Author:')
     end
   end
+
+  it 'has button to create a viewing party' do
+    visit user_movie_path(user1, 238)
+
+    expect(page).to have_button('Create Viewing Party for The Godfather')
+  end
+
+  it 'viewing party button routes to new viewing party page' do
+    visit user_movie_path(user1, 238)
+
+    click_on ('Create Viewing Party for The Godfather')
+
+    expect(current_path).to eq(user_movie_viewing_party_path(user1, 238))
+  end
 end
