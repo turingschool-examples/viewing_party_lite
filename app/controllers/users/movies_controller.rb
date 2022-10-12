@@ -5,5 +5,9 @@ class Users::MoviesController < ApplicationController
     elsif params[:search]
       @movies = MoviesFacade.search(params[:search])
     end
+
+    def show
+      
+    end
   end
 end
