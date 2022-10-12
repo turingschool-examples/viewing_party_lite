@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Party, type: :model do
-  xit 'exists' do
+  it 'exists' do
+    party_1 = Party.create!(duration: 95, date: '12-31-22', start_time: '7:35p', movie_id: 1)
     expect(party_1).to be_instance_of(Party)
   end
 
