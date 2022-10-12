@@ -1,5 +1,11 @@
 # frozen_string_literal: true
 
 class LandingController < ApplicationController
-  def index; end
+
+    def index
+      @users = User.all
+    end
+    
+    def about
+    end
 end
