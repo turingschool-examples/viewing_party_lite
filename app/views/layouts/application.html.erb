@@ -78,6 +78,12 @@
 
     </div>
     
+      <% flash.each do |type, message| %>
+        <div>
+          <p><%= message %></p>
+        </div>
+      <% end %>
+
     <%= yield %>
 
   </body>

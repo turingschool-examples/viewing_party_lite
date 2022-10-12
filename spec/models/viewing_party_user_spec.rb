@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe ViewingPartyUser, type: :model do
@@ -7,7 +9,7 @@ RSpec.describe ViewingPartyUser, type: :model do
   end
 
   describe 'relationships' do
-    it { should belong_to :user}
-    it { should belong_to :viewing_party}
+    it { should belong_to :user }
+    it { should belong_to :viewing_party }
   end
 end
