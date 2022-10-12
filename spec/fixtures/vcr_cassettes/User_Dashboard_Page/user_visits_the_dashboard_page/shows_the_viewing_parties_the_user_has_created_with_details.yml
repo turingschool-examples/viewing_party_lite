@@ -1,0 +1,140 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/344?api_key=<movie_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 12 Oct 2022 20:55:24 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 0b0dc15ab12171d753b5b31180d4f3c054bf07e4
+      X-Memc-Age:
+      - '611'
+      X-Memc-Expires:
+      - '16214'
+      Etag:
+      - W/"aa0ebd2272b35d2e9f497266ee469658"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 d4fb3448d1a8d3229dcf0a89f4bbe7e8.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - bIsBCbuHQjhVKC0bnR9NNROnUmua-Rn1bxBuvG8bTAQFiCAm7sJ5pg==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvaE5NQzVnb1Y0TDVyV2FEMzNicWxkS2NteFJBLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6eyJpZCI6NzAzMjc3LCJuYW1lIjoiVW5uYSBUcmlsb2d5IiwicG9zdGVyX3BhdGgiOiIvdTh3M1R1amNiSWFKbGZJUFUyNVNoWVR1U0lkLmpwZyIsImJhY2tkcm9wX3BhdGgiOiIvYXVla1NJd255a09XRlBOY1d2QnVleXJaN1ExLmpwZyJ9LCJidWRnZXQiOjI4ODgwMzAsImdlbnJlcyI6W3siaWQiOjgwLCJuYW1lIjoiQ3JpbWUifSx7ImlkIjoyOCwibmFtZSI6IkFjdGlvbiJ9LHsiaWQiOjM1LCJuYW1lIjoiQ29tZWR5In1dLCJob21lcGFnZSI6Imh0dHA6Ly93d3cuYmFuZ2Jvb21iYW5nLmRlLyIsImlkIjozNDQsImltZGJfaWQiOiJ0dDAxMzU3OTAiLCJvcmlnaW5hbF9sYW5ndWFnZSI6ImRlIiwib3JpZ2luYWxfdGl0bGUiOiJCYW5nIEJvb20gQmFuZyAtIEVpbiB0b2RzaWNoZXJlcyBEaW5nIiwib3ZlcnZpZXciOiJCYW5rIHJvYmJlciBLYWxsZSBHcmFib3dza2kgZXNjYXBlcyBmcm9tIHByaXNvbiB3aGlsZSBoaXMgdW5lbXBsb3llZCBzbWFsbHRpbWUgY3Jvb2sgYnVkZHkgaXMgc2l0dGluZyBhcm91bmQgZG9pbmcgbm90aGluZyBhZnRlciBoZSBqdXN0IGxvc3QgYWxsIHRoZWlyIG1vbmV5LiBBIGZhc3QgcGFjZWQgY29tZWR5IGZyb20gR2VybWFuIGRpcmVjdG9yIFBldGVyIFRob3J3YXJ0aC4iLCJwb3B1bGFyaXR5Ijo3LjIzNCwicG9zdGVyX3BhdGgiOiIvd2Zmdk5RWU9yeTUwb0hoZTdheXR5VDRzMm1VLmpwZyIsInByb2R1Y3Rpb25fY29tcGFuaWVzIjpbeyJpZCI6MTkxLCJsb2dvX3BhdGgiOiIvZDV0UEpkOGpHTHRKQzVjcDlORzBIZW9UeW9lLnBuZyIsIm5hbWUiOiJTZW5hdG9yIEZpbG0iLCJvcmlnaW5fY291bnRyeSI6IkRFIn0seyJpZCI6MTI1MSwibG9nb19wYXRoIjoiL2ZjME8wbXZqbDhQYkhnWlhYWTJWZ1BZb3MxWi5wbmciLCJuYW1lIjoiQVJEIiwib3JpZ2luX2NvdW50cnkiOiJERSJ9LHsiaWQiOjUwMTEsImxvZ29fcGF0aCI6bnVsbCwibmFtZSI6IkJlY2tlciAmIEjDpGJlcmxlIEZpbG1wcm9kdWt0aW9uIEdtYkgiLCJvcmlnaW5fY291bnRyeSI6IkRFIn0seyJpZCI6ODQ2NSwibG9nb19wYXRoIjpudWxsLCJuYW1lIjoiVHJhdW13ZXJrIEZpbG1wcm9kdWt0aW9uIEdtYkgiLCJvcmlnaW5fY291bnRyeSI6IiJ9XSwicHJvZHVjdGlvbl9jb3VudHJpZXMiOlt7Imlzb18zMTY2XzEiOiJERSIsIm5hbWUiOiJHZXJtYW55In1dLCJyZWxlYXNlX2RhdGUiOiIxOTk5LTA4LTI2IiwicmV2ZW51ZSI6MCwicnVudGltZSI6MTEwLCJzcG9rZW5fbGFuZ3VhZ2VzIjpbeyJlbmdsaXNoX25hbWUiOiJHZXJtYW4iLCJpc29fNjM5XzEiOiJkZSIsIm5hbWUiOiJEZXV0c2NoIn1dLCJzdGF0dXMiOiJSZWxlYXNlZCIsInRhZ2xpbmUiOiIiLCJ0aXRsZSI6IkJhbmcsIEJvb20sIEJhbmciLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6Ny41MjgsInZvdGVfY291bnQiOjE1OX0=
+  recorded_at: Wed, 12 Oct 2022 20:55:24 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/812?api_key=<movie_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 12 Oct 2022 20:55:24 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - c761423a5efdef082fc99452cea3e737e140d2aa
+      X-Memc-Age:
+      - '1983'
+      X-Memc-Expires:
+      - '14730'
+      Etag:
+      - W/"583ec81e7b7e5d98debf9add557c60af"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 61ff1927788a811372346b5470412a78.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - rRosd74FxKXUJeQG12xIYICFvU69XSrWedLd5GHBqVAWpOduNayNuw==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/5OeY4U2rzePxWq2rkqMajUx2gz7.jpg","belongs_to_collection":{"id":86027,"name":"Aladdin
+        Collection","poster_path":"/9jAbtLbAbebtuF5q1gZIPUCuegd.jpg","backdrop_path":"/naeLgo2bt4WKfHF4BTrG6mkmjiY.jpg"},"budget":28000000,"genres":[{"id":16,"name":"Animation"},{"id":10751,"name":"Family"},{"id":12,"name":"Adventure"},{"id":14,"name":"Fantasy"},{"id":10749,"name":"Romance"}],"homepage":"http://movies.disney.com/aladdin","id":812,"imdb_id":"tt0103639","original_language":"en","original_title":"Aladdin","overview":"Princess
+        Jasmine grows tired of being forced to remain in the palace, so she sneaks
+        out into the marketplace, in disguise, where she meets street-urchin Aladdin.  The
+        couple falls in love, although Jasmine may only marry a prince.  After being
+        thrown in jail, Aladdin becomes embroiled in a plot to find a mysterious lamp,
+        with which the evil Jafar hopes to rule the land.","popularity":80.175,"poster_path":"/oakAd8syy7jNQ4ZoaAGCQkTqcOV.jpg","production_companies":[{"id":2,"logo_path":"/wdrCwmRnLFJhEoH8GSfymY85KHT.png","name":"Walt
+        Disney Pictures","origin_country":"US"},{"id":171656,"logo_path":null,"name":"Walt
+        Disney Feature Animation","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1992-11-25","revenue":504050219,"runtime":90,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Wish
+        granted!","title":"Aladdin","video":false,"vote_average":7.643,"vote_count":9901}'
+  recorded_at: Wed, 12 Oct 2022 20:55:24 GMT
+recorded_with: VCR 6.1.0

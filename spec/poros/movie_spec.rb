@@ -9,8 +9,8 @@ RSpec.describe Movie do
       runtime: 120,
       vote_count: 1337,
       vote_average: 3.75,
-      overview: "Movie I made up on the spot YAY"
-      image: "hereismyimagelink.jpeg"
+      overview: "Movie I made up on the spot YAY",
+      poster_path: "/hereismyimagelink.jpeg"
     }
     movie = Movie.new(fake_data)
 
@@ -20,6 +20,6 @@ RSpec.describe Movie do
     expect(movie.vote_average).to eq(3.75)
     expect(movie.vote_count).to eq(1337)
     expect(movie.overview).to be_a(String)
-    expect(movie.image).to be_a(String)
+    expect(movie.image).to include(".jpeg")
   end
 end

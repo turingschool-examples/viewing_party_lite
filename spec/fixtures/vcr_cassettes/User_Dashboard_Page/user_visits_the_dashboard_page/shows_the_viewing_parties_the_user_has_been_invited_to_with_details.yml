@@ -1,0 +1,200 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/948?api_key=<movie_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 12 Oct 2022 20:55:24 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 5e85ba19657bc58ed08f8d7ab724d05b6f10debd
+      X-Memc-Age:
+      - '12071'
+      X-Memc-Expires:
+      - '3277'
+      Etag:
+      - W/"8aae9c5e6d0e915ad4e9dfcca729b5d3"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 a42ce842e0f60814700ead82353e9f08.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - r1lxwwpbcfLNnRyvyo19lIVyeEEGzksXfYtTC_Mvj5U6ypke5yV2MA==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/aRka9neADW1M0Zf9lF8kW2jEgXe.jpg","belongs_to_collection":{"id":91361,"name":"Halloween
+        Collection","poster_path":"/cq1lf9sUi10faSvqegx8dLDEeZV.jpg","backdrop_path":"/d6uWYZe7h7M3F7h4IBjO1jgIkMh.jpg"},"budget":325000,"genres":[{"id":27,"name":"Horror"},{"id":53,"name":"Thriller"}],"homepage":"http://www.theofficialjohncarpenter.com/halloween/","id":948,"imdb_id":"tt0077651","original_language":"en","original_title":"Halloween","overview":"Fifteen
+        years after murdering his sister on Halloween Night 1963, Michael Myers escapes
+        from a mental hospital and returns to the small town of Haddonfield, Illinois
+        to kill again.","popularity":128.384,"poster_path":"/qVpCaBcnjRzGL3nOPHi6Suy0sB6.jpg","production_companies":[{"id":14323,"logo_path":null,"name":"Compass
+        International Pictures","origin_country":""},{"id":22814,"logo_path":null,"name":"Falcon
+        International Productions","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1978-10-24","revenue":70274000,"runtime":91,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"The
+        Night He Came Home!","title":"Halloween","video":false,"vote_average":7.576,"vote_count":4428}'
+  recorded_at: Wed, 12 Oct 2022 20:55:24 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/267?api_key=<movie_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 12 Oct 2022 20:55:24 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 3bb5c8857ce6d9c3db078bc48d52f7804df8bd5b
+      X-Memc-Age:
+      - '5288'
+      X-Memc-Expires:
+      - '11608'
+      Etag:
+      - W/"2d0119c621a041b637cc9311c4713602"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 9eceed849af3c369b60088e6ae5ad92c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - IogNgnDIq0zgnQb09p3kcz_cDvkjTkfw9rgLfC_dopNardZA53p1-A==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvZ0Rla0IwT25JWWJLaHF6emRBcmZTUXBjQXZILmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjowLCJnZW5yZXMiOlt7ImlkIjoxOCwibmFtZSI6IkRyYW1hIn0seyJpZCI6NTMsIm5hbWUiOiJUaHJpbGxlciJ9LHsiaWQiOjEwNzQ5LCJuYW1lIjoiUm9tYW5jZSJ9XSwiaG9tZXBhZ2UiOiIiLCJpZCI6MjY3LCJpbWRiX2lkIjoidHQwMTE4ODE5Iiwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlcyIsIm9yaWdpbmFsX3RpdGxlIjoiQ2FybmUgdHLDqW11bGEiLCJvdmVydmlldyI6IkEgc2Nvcm5lZCBleC1jb252aWN0IGZvcmNlcyBoaW1zZWxmIGludG8gdGhlIGxpdmVzIG9mIHRoZSBjb3VwbGUgd2hvIHB1dCBoaW0gYmVoaW5kIGJhcnMuIiwicG9wdWxhcml0eSI6MTQuOTMyLCJwb3N0ZXJfcGF0aCI6Ii83WVBHWWVhbUY2QXV5eGhLcWJkNW9OS0tDQ3kuanBnIiwicHJvZHVjdGlvbl9jb21wYW5pZXMiOlt7ImlkIjo0OSwibG9nb19wYXRoIjoiL3hwZjVpSGR2dkJ0c0g4akJNbGdJSkhBRVQwYy5wbmciLCJuYW1lIjoiRWwgRGVzZW8iLCJvcmlnaW5fY291bnRyeSI6IkVTIn0seyJpZCI6MTA1LCJsb2dvX3BhdGgiOiIvcHlpTnZQSllHejRXMlNJbWdVTG9HMnNuNHk0LnBuZyIsIm5hbWUiOiJDaUJ5IDIwMDAiLCJvcmlnaW5fY291bnRyeSI6IkZSIn0seyJpZCI6NTkxLCJsb2dvX3BhdGgiOiIvcTVJNVJEd01FaXFvTm1mYUpnZDJMcmFFT0pZLnBuZyIsIm5hbWUiOiJGcmFuY2UgMyBDaW7DqW1hIiwib3JpZ2luX2NvdW50cnkiOiJGUiJ9XSwicHJvZHVjdGlvbl9jb3VudHJpZXMiOlt7Imlzb18zMTY2XzEiOiJFUyIsIm5hbWUiOiJTcGFpbiJ9LHsiaXNvXzMxNjZfMSI6IkZSIiwibmFtZSI6IkZyYW5jZSJ9XSwicmVsZWFzZV9kYXRlIjoiMTk5Ny0xMC0xMCIsInJldmVudWUiOjE1MzU1NTgsInJ1bnRpbWUiOjEwMywic3Bva2VuX2xhbmd1YWdlcyI6W3siZW5nbGlzaF9uYW1lIjoiQnVsZ2FyaWFuIiwiaXNvXzYzOV8xIjoiYmciLCJuYW1lIjoi0LHRitC70LPQsNGA0YHQutC4INC10LfQuNC6In0seyJlbmdsaXNoX25hbWUiOiJTcGFuaXNoIiwiaXNvXzYzOV8xIjoiZXMiLCJuYW1lIjoiRXNwYcOxb2wifSx7ImVuZ2xpc2hfbmFtZSI6Ikl0YWxpYW4iLCJpc29fNjM5XzEiOiJpdCIsIm5hbWUiOiJJdGFsaWFubyJ9XSwic3RhdHVzIjoiUmVsZWFzZWQiLCJ0YWdsaW5lIjoiTGlmZSwgbG92ZSwgZGVzaXJlLi4uIGFuZCBldmVyeXRoaW5nIGluIGJldHdlZW4uIiwidGl0bGUiOiJMaXZlIEZsZXNoIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjcuMDgxLCJ2b3RlX2NvdW50Ijo1Mzd9
+  recorded_at: Wed, 12 Oct 2022 20:55:24 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/723?api_key=<movie_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 12 Oct 2022 20:55:24 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - MISS
+      X-Memc-Key:
+      - 4cac98c9c726e01fe8f5e4b03f2b81faf6fe35cd
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '17382'
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 16d72e0791ff01fc4470d27fc024527a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - Sz2rXqXXWttMY0skBQtOD54OeVAloP08HFevrYsSsGoujQNHeFG3hg==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"success":false,"status_code":34,"status_message":"The resource you
+        requested could not be found."}'
+  recorded_at: Wed, 12 Oct 2022 20:55:24 GMT
+recorded_with: VCR 6.1.0

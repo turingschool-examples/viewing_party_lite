@@ -14,7 +14,7 @@ class Movie
       @vote_count = data[:vote_count]
       @vote_average = data[:vote_average]
       @overview = data[:overview]
-      @image = data[:poster_path]
+      @image = "https://image.tmdb.org/t/p/w185/#{data[:poster_path]}"
     end
   
 end

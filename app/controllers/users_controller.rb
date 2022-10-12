@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+
+    @movies = @user.parties.map do |party|
+      MovieFacade.movie_details(party.movie_id)
+    end
+
   end
 
   def new
