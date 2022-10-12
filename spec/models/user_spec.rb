@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  xit 'exists' do
+  it 'exists' do
+    user_1 = User.create!(name: 'John', email: 'x@user.com')
     expect(user_1).to be_instance_of(User)
   end
 
