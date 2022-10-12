@@ -6,5 +6,5 @@
 <h3> Viewing Parties </h3>
 
 <% @user.parties.each do |party| %>
-  <img src="#{<%= party.movie.image %>}" alt="#{<%= party.movie.title%>}>
+  <p><%= party.movie.title %> </p>
 <% end %>

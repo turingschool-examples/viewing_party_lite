@@ -20,7 +20,6 @@ RSpec.describe Party, type: :model do
       it 'returns a movie object', :vcr do
         party = create(:party, movie_id: 550)
         expect(party.movie).to be_a Movie
-        require 'pry';binding.pry
       end
     end
   end
