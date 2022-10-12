@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 
   get '/register', to: 'users#register'
 
-  resources :users, only: [:new, :create]
+  resources :users, only: [:create]
 
 end
