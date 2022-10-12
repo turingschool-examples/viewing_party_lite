@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   get '/register', to: 'users#new'
   post '/register', to: 'users#create'
 
-  resources :users, only: [:create] do
+  resources :users, only: [] do
     get '/dashboard', to: 'dashboard#show', as: :dashboard
     get '/discover', to: 'discover#index', as: :discover
+    resources :movies, only: [:index]
   end
 end
