@@ -8,6 +8,12 @@ class MovieFacade
     end
   end
 
+  # TODO: write tests for service, poro, facade for movie_search_by_id
+  def self.movie_search_by_id(search_params)
+    movie = MovieService.get_movie_by_id(search_params)
+    Movie.new(movie)
+  end
+
   def self.movie_search(search_param)
     movies = MovieService.get_movie_search(search_param)
     movies.map do |movie_data|

@@ -9,7 +9,6 @@ RSpec.describe 'Landing Page | Index', type: :feature do
       @user2 = User.create!(name: 'bobby', email: 'bobby@yahoo.com')
       @user3 = User.create!(name: 'marissa nicole', email: 'marissa.nicole99@gmail.com')
       visit root_path
-      save_and_open_page
     end
     it 'I see the title of the Applications' do
       within('#application_title') do
@@ -18,7 +17,7 @@ RSpec.describe 'Landing Page | Index', type: :feature do
     end
     it 'I see a button to create a new user' do
       within('#user_creation') do
-        expect(page).to have_button("Register Here")
+        expect(page).to have_button('Register Here')
       end
     end
     it 'I see a list of existing users which links to each users dashboard' do
