@@ -1,0 +1,12 @@
+<% if params[:commit] == "Find Movies" %>
+<h1>Movie Results for: <%= params[:search] %></h1>
+<% else %>
+<h1>Top Rated Movies</h1>
+<% end %>
+
+<p><%= button_to "Discover Movies", user_discover_index_path(@user), method: :get %></p>
+
+
+<% @movies.each do |movie|  %>
+  <p><%= link_to "#{movie.original_title}", user_movie_path(@user, movie) %> Vote Average:<%= movie.vote_average %></p>
+<% end %>
