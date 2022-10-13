@@ -16,7 +16,7 @@ RSpec.describe MovieDetailed do
   end
 
   it 'has a vote average' do
-    expect(@movie.vote_average).to eq(7.566)
+    expect(@movie.vote_average).to be_a(Float)
   end
 
   it 'has a runtime' do
@@ -49,6 +49,14 @@ RSpec.describe MovieDetailed do
   describe 'hours_and_minutes' do
     it 'displays runtime in x hr x min format' do
       expect(@movie.hours_and_minutes).to eq("1hr 27min")
+    end
+  end
+
+  describe 'poster_path' do
+    it 'returns a useable URL for the movie poster' do
+      full_poster_path = "https://image.tmdb.org/t/p/w500/wKiOkZTN9lUUUNZLmtnwubZYONg.jpg"
+
+      expect(@movie.poster_path).to eq(full_poster_path)
     end
   end
 end

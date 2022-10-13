@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+    @hosted_parties = @user.hosted_parties
+    @invited_parties = @user.invited_parties
+    @image_url_hash = MoviesFacade.images(@user.movie_ids)
   end
 
   def new
