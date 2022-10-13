@@ -1,6 +1,6 @@
 # Viewing Party
 
-Let watch movies! Viewing Party Application coordinates movie viewing parties! Want to watch a movie with others? This application enables it's users to be be added into existing viewing parties or hosting some themselves! All you have to do is register! This application utilizes the consumption of a public movie API to make a working application. For this application to work you will need to register for a [movie_api_key](https://developers.themoviedb.org/3/getting-started/introduction).
+Lets watch movies! The Viewing Party Lite application enables its users to explore movie options, create a viewing party events for themselves, and inviting other users of the application. This application utilizes the consumption of a public movie API to make a working application. For this application to work you will need to register for a [movie_api_key](https://developers.themoviedb.org/3/getting-started/introduction) and follow the steps [here](#Register).
 
 ## Ruby/Rails version
 
@@ -75,7 +75,9 @@ This project is running the following languages and tools:
 
 https://dbdiagram.io/d/63449cbef0018a1c5fd44fd2
 
-## Register for Movie API Key
+## Register
 
 [movie_api_key](https://developers.themoviedb.org/3/getting-started/introduction)
-disco
+
+run command: bundle exec figaro install
+(this command automatically generates a yml file where you will place you movie api key that you registered for above. Put the following in the yml file: movie_api_key: your_api_key_goes_here )

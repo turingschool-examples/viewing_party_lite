@@ -5,7 +5,8 @@ class Movie
               :vote_average,
               :overview,
               :runtime,
-              :genres
+              :genres,
+              :image
 
   def initialize(data)
     @id = data[:id]
@@ -14,5 +15,6 @@ class Movie
     @overview = data[:overview]
     @runtime = data[:runtime]
     @genres = data[:genres].map { |genre| genre[:name] }# double check this
+    @image = data[:poster_path] #image jpg path
   end
 end

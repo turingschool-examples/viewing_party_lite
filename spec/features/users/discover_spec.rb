@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'User Discover Movie', type: :feature do
   it 'has a button to discover top rated movies', :vcr do
-    @user1 = User.create!(name: 'Micheal Jordan', email: 'user1@gmail.com')
+    @user1 = User.create!(name: 'Micheal Jordan', email: 'user235@gmail.com')
 
     visit "/users/#{@user1.id}/discover"
     expect(page).to have_button('Discover Top Rated Movies')
@@ -14,7 +14,7 @@ RSpec.describe 'User Discover Movie', type: :feature do
   end
 
   it 'has text field to search key words then redirects to matching list', :vcr do
-    @user1 = User.create!(name: 'Micheal Jordan', email: 'user1@gmail.com')
+    @user1 = User.create!(name: 'Micheal Jordan', email: 'user264@gmail.com')
 
     visit user_discover_index_path(@user1)
 

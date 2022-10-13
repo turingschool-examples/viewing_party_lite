@@ -32,19 +32,40 @@ RSpec.describe 'User | Show', type: :feature do
       within('#viewing_parties') do
         within("#party-#{@vp1.id}") do
           expect(page).to have_content('The Flesh and Blood Show')
-          expect(page).to have_content('Host')
-          expect(page).to_not have_content('Invited')
           expect(page).to have_content('October 11, 2022 05:19 PM')
           expect(page).to_not have_content('October 12, 2022 04:18 PM')
         end
+        within("#role") do 
+          expect(page).to_not have_content('Invited')
+          expect(page).to have_content('Host')
+        end
         within("#party-#{@vp2.id}") do
           expect(page).to have_content('Three Way')
-          expect(page).to have_content('Invited')
-          expect(page).to_not have_content('Host')
           expect(page).to have_content('October 12, 2022 04:18 PM')
           expect(page).to_not have_content('October 11, 2022 05:19 PM')
+        end
+        within("#role") do 
+          expect(page).to have_content('Invited')
+          expect(page).to_not have_content('Host')
         end
       end
     end
   end
 end
+
+# As a user,
+# When I visit a user dashboard,
+
+#  I should see the viewing parties that the user has been invited to with the following details:
+#  Movie Image
+#  Movie Title, which links to the movie show page
+#  Date and Time of Event
+#  who is hosting the event
+#  list of users invited, with my name in bold
+# I should also see the viewing parties that the user has created with the following details:
+
+#  Movie Image
+#  Movie Title, which links to the movie show page
+#  Date and Time of Event
+#  That I am the host of the party
+#  List of friends invited to the viewing party
