@@ -9,7 +9,6 @@ RSpec.describe MovieFacade do
       expect(array_of_movies).to be_a Array
       expect(array_of_movies.first.class).to be(Movie)
       expect(array_of_movies).to all( be_a(Movie) )
-      # Are we supposed to be getting 40 results here? Or did we decide on 20?
     end
   end
 
@@ -28,6 +27,15 @@ RSpec.describe MovieFacade do
       expect(cast_members).to be_an Array
       expect(cast_members).to all(be_a String)
       expect(cast_members.length).to eq(10)
+    end
+  end
+
+  describe '#get_top20_movies' do
+    it 'returns the top 20 movies at the current time', :vcr do 
+      movies = MovieFacade.get_top20_movies
+      expect(movies).to be_an Array
+      expect(movies).to all(be_a Movie)
+      expect(movies.length).to eq(20)
     end
   end
 end
