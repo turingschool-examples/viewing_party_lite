@@ -21,7 +21,7 @@ class Movie
     # @cast = data[:credits][:cast].take(10).map { |cast_mem| [cast_mem.name, cast_mem.character]}
     @reviews = data[:reviews][:results].map { |review| Review.new(review) }
     # @reviews = data[:reviews][:results].map { |review| [review[:author], review[:content]] }
-    @image_link = data[:images][:posters].first[:file_path]
-    @id = data[:id]
+    # @image_link = data[:images][:posters].first[:file_path]
+    @image_link = data[:poster_path]
   end
 end
