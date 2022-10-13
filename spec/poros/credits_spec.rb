@@ -19,7 +19,6 @@ RSpec.describe Credits do
     it 'returns all names of cast members' do
       expect(@credits.cast_names).to be_a(Array)
       expect(@credits.cast_names[0]).to be_a(String)
-      require 'pry'; binding.pry
     end
   end
 

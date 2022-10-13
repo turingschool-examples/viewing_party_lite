@@ -1,0 +1,9 @@
+<h2>Landing Page</h2>
+
+<%= button_to "Create New User", register_path, local: true, method: :get%>
+
+<h3>Current Users</h3>
+
+<% @users.each do |user| %>
+  <p><%= link_to "#{user.name}", user_path(user), local: true, method: :get %></p>
+<% end %>
