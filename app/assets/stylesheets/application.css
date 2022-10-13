@@ -77,3 +77,15 @@ table {
   padding: 20px;
   width: 50%
 }
+
+#party {
+  margin: auto;
+  display: inline-flex;
+  justify-content: space-between
+}
+
+#vp-column {
+  padding:5px;
+  text-align: center;
+  align: center
+}

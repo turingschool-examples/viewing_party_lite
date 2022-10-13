@@ -10,6 +10,28 @@
 
 <hr>
 
-<center>
-  <h3>Viewing Parties</h3>
-</center>
+
+<center><h3>Viewing Parties</h3></center>
+
+  <section id='party'>
+    <% @user.hosting.each_with_index do |party, index| %>
+      <div id='vp-column'>
+        <div id="vparty-<%= index %>">
+        <%= render partial: "party_info", locals: {party: party} %>
+        <h4>Hosting</h4>
+        
+      </div>
+      </div>
+    <% end %>
+  </section>
+
+  <section id='party'>
+    <% @user.attending.each_with_index do |party, index| %>
+    <div id='vp-column'>
+      <div id="vparty-<%= index %>">
+        <%= render partial: "party_info", locals: {party: party} %>
+        <h4>Invited</h4>
+      </div>
+      </div>
+    <% end %>
+  </section>

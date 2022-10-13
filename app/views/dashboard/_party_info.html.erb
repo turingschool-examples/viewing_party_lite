@@ -1,0 +1,26 @@
+<img src="https://image.tmdb.org/t/p/w200<%= party.poster_path %>">
+<br/>
+<%= link_to party.movie_title, user_movie_path(@user, party.movie_id ) %>
+<br/>
+<%= party.date.strftime('%B %e, %Y') %>
+<br/>
+<%= party.start_time.strftime('%I:%M %p') %>
+<br>
+
+<p>Hosted By: 
+  <% if party.host.id == @user.id%>
+    <strong><%= party.host.name %></strong>
+  <% else %>
+    <%= party.host.name %>
+  <% end %>
+</p>
+
+<p>Attendees:
+  <% party.attendees.each do |attendee| %>
+    <% if attendee == @user.name%>
+      <strong><%= attendee %></strong>
+    <% else %>
+      <%= attendee %>
+    <% end %>
+  <% end %>
+</p>
