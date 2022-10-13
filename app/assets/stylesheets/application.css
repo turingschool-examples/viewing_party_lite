@@ -13,7 +13,17 @@
  *= require_tree .
  *= require_self
  */
-h1 {
+nav {
+ padding: 8px;
+ font-size: 18px
+}
+
+header {
+  margin: auto;
+  padding: 20px
+}
+
+h1, h2 {
   margin: auto;
   text-align: center;
 }
@@ -23,6 +33,23 @@ ul {
   text-align: center;
   display: inline-flex;
   gap: 50px
+}
+
+table {
+  margin: auto;
+  text-align: center;
+  font-weight: bold
+}
+
+#button {
+  width: 100%;
+  text-align: center
+}
+
+#existing_users {
+  margin: auto;
+  text-align: center;
+  font-weight: bold
 }
 
 #cast {

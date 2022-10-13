@@ -54,8 +54,8 @@ RSpec.describe 'Movie Show Page' do
     visit user_movie_path(user1, 238)
 
     within("#reviews") do
-      expect(page).to have_content('2 Reviews')
-      expect(page).to have_content('Author:')
+      expect(page).to have_content('2 Review(s)')
+      expect(page).to have_content('Author: ')
     end
   end
 

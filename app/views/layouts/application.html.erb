@@ -11,14 +11,21 @@
 
   <body>
 
-  <header> <%= link_to 'Home', root_path %>
+  <nav id='navbar'>
+   <%= link_to 'Home', root_path %>
+  </nav>
 
+  <header>
+    <h1>Viewing Party</h1>
+  </header>
+
+  <div id='messages'>
     <% flash.each do |type, msg| %>
       <center>
         <%= msg %>
       </center>
     <% end %>
-
+  </div>
     <%= yield %>
   </body>
 </html>
