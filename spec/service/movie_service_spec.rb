@@ -9,4 +9,9 @@ RSpec.describe 'movie service' do
     expect(top_rated[:results]).to be_a Array
     expect(top_rated[:results][0]).to include(:title, :vote_average)
   end
+
+  it 'can connect to the movie db and return search results', vcr: 'search.json' do
+    search = MovieService.search('Spirited Away')
+    expect(search).to be_a Hash
+  end
 end
