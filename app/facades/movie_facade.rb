@@ -3,19 +3,17 @@ require './app/services/movie_service'
 
 class MovieFacade
   def self.info_card(movie_id)
-    response = MovieService.request(movie_id)
-
-    parsed = JSON.parse(response.body)
-
-    { title: parsed['original_title'], img_path: parsed['poster_path'] }
+    parsed_data = MovieService.request(movie_id)
+  
+    { title: parsed_data['original_title'], img_path: parsed_data['poster_path'] }
   end
 
   def self.popular
-    response = MovieService.request('', 'popular')
-
-    parsed = JSON.parse(response.body)
-
-    { title: parsed['original_title'], vote_avg: parsed['vote_average'] }
+    parsed_data = MovieService.request('', 'popular')
+    
+    parsed_data["results"].map do |movie|
+      { title: movie['original_title'], vote_avg: movie['vote_average'] }
+    end
   end
 
   def self.show(movie_id)
