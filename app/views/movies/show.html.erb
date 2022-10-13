@@ -6,12 +6,20 @@
 <p> Genres: <%= @movie.genres.join(', ')%></p>
 <p> Description: <%= @movie.overview%></p>
 
+<div id="cast">
+<p> Cast: <% @top_10_cast.each do |cast| %></p>
+  <p><%= cast%></p>
+<% end %>
+</div>
+
 <p> Review Count: <%= @reviews.size %></p>
 
+<div id="reviews">
 <% @reviews.each do |review| %>
 <p> Author Name: <%= review.author_name %></p>
 <p>Review: <%= review.author_review %></p>
 <% end %>
+</div>
 
 
 
