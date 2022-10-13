@@ -38,10 +38,14 @@
 <br/>
 <br/>
 
-  <% @attendees.each do |attendee| %>
-    <%= check_box_tag "attendees_ids[#{attendee.id}]", attendee.id, false, :name => "attendee_ids[]" %>
-    <%= "#{attendee.name} (#{attendee.email})"%>
+<section id="invite_others">
+  <%= f.collection_check_boxes(:attendees, @attendees, :id, :name_and_email, include_hidden: false) do |attendee| %>
+    <div id='check_boxes'>
+      <%= attendee.check_box %>
+      <%= attendee.label %>
+    </div>
   <% end %>
+</section>
 
 <br/>
 <br/>

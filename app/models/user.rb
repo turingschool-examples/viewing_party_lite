@@ -18,6 +18,10 @@ class User < ApplicationRecord
     viewing_parties.where.not(host_id: id)
   end
 
+  def name_and_email
+    "#{name} (#{email})"
+  end
+
   private
 
   def downcase_email

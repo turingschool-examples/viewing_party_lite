@@ -36,7 +36,7 @@ RSpec.describe 'the User Dashboard' do
     fill_in 'Date', with: Date.tomorrow
     fill_in 'Start Time', with: Time.now + 600
 
-    check("attendees_ids_#{user2.id}")
+    check("attendees_#{user2.id}")
 
     click_button 'Create Party'
 
@@ -60,7 +60,7 @@ RSpec.describe 'the User Dashboard' do
     fill_in 'Date', with: Date.tomorrow
     fill_in 'Start Time', with: Time.now + 600
 
-    check("attendees_ids_#{user1.id}")
+    check("attendees_#{user1.id}")
 
     click_button 'Create Party'
 

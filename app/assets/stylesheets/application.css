@@ -68,6 +68,11 @@ table {
   width: 98%
 }
 
+#check_boxes {
+  display: inline-flex;
+  padding: 10px
+}
+
 #movie-search {
   margin: auto;
   text-align: center;

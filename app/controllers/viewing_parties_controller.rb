@@ -19,9 +19,9 @@ class ViewingPartiesController < ApplicationController
 
     UserViewingParty.create!( user_id: current_user.id, viewing_party_id: viewing_party.id )
 
-    if params[:attendee_ids]
-      params[:attendee_ids].each do |attendee_id|
-        UserViewingParty.create!( user_id: attendee_id.to_i, viewing_party_id: viewing_party.id )
+    if params[:attendees]
+      params[:attendees].each do |attendee|
+        UserViewingParty.create!( user_id: attendee.to_i, viewing_party_id: viewing_party.id )
       end
     end
 
