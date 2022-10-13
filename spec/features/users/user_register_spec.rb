@@ -28,7 +28,7 @@ RSpec.describe 'user registration page' do
     it 'should not register the user if the email address is already in use' do
       visit register_path
 
-      new_user = User.create(name: 'Michael Jackson', email: 'michaeljackson@email.com')
+      User.create(name: 'Michael Jackson', email: 'michaeljackson@email.com')
       fill_in :user_name, with: 'micheal impersonator'
       fill_in :user_email, with: 'michaeljackson@email.com'
       click_on 'Register'

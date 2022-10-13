@@ -34,7 +34,7 @@ RSpec.describe 'User | Show', type: :feature do
           expect(page).to have_content('The Flesh and Blood Show')
           expect(page).to have_content('October 11, 2022 05:19 PM')
           expect(page).to_not have_content('October 12, 2022 04:18 PM')
-          within("#role") do
+          within('#role') do
             expect(page).to_not have_content('Invited')
             expect(page).to have_content('Host')
           end
@@ -43,7 +43,7 @@ RSpec.describe 'User | Show', type: :feature do
           expect(page).to have_content('Three Way')
           expect(page).to have_content('October 12, 2022 04:18 PM')
           expect(page).to_not have_content('October 11, 2022 05:19 PM')
-          within("#role") do
+          within('#role') do
             expect(page).to have_content('Invited')
             expect(page).to_not have_content('Host')
           end

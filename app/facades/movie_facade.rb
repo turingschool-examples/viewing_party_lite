@@ -2,7 +2,7 @@
 
 class MovieFacade
   def self.create_movies(movie_ids)
-    movie_ids.map do |id| 
+    movie_ids.map do |id|
       create_individual_movie(id)
     end
   end
@@ -35,7 +35,7 @@ class MovieFacade
   end
 
   def self.create_reviews(id)
-    response = MovieService.get_reviews(id)[:results].map do |review|
+    MovieService.get_reviews(id)[:results].map do |review|
       author = review[:author]
       content = review[:content]
       "#{author} - #{content}"
