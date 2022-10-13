@@ -28,6 +28,19 @@ RSpec.describe MovieService do
           expect(results.first["original_title"]).to be_a(String)
         end
       end
+
+      it 'returns data on movies with both a path and a movie id as arguments' do
+        VCR.use_cassette("request_id_and_path_arguments", :allow_playback_repeats => true) do
+          fc_credits_data = MovieService.request(550, "/credits")
+          hbc = fc_credits_data["cast"][2]
+          
+          expect(fc_credits_data).to be_a(Hash)
+          expect(fc_credits_data["cast"]).to be_a(Array)
+          expect(fc_credits_data["cast"].last).to be_a(Hash)
+          expect(hbc["cast_id"]).to be_a(Integer)
+          expect(hbc["name"]).to be_a(String)          
+        end
+      end
     end
   end
 end
