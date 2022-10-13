@@ -3,15 +3,31 @@
 <section id="attending">
   <% @user.parties.each do |party| %>
     <% if party.host_id != @user.id %>
-      <img src=<%= search_movie.image %> >
-      <% search_movie = @movies.find_all( |movie| movie.id == party.id) %>
-      <%= link_to "#{search_movie.title}", movie_path(search_movie) %>
-      <%= party.start_time %>
-      <%= party.date %>
-      <p>Host: <%=  %></p>
-      
+      <% search_movie = @movies.find{ |movie| movie.id == party.movie_id} %>
+
+      <%= link_to "#{search_movie.original_title}", movie_path(search_movie) %>
+      <br>
+      <img src=<%= search_movie.image %>>
+      <br>
+      <p> Start Time: <%= party.start_time %></p>
+      <p> Date: <%= party.date %></p>
+      <ul>
+
+      <% party.users.each do |user| %>
+        <% if user.id == party.host_id %>
+          <p>Host: <%= user.name %></p>
+        <% end %>
+        <p>Attendees</p>
+        <% if user.id == @user.id %>
+          <li><b> <%= @user.name %> </b></li>
+            <%else%>
+          <li><%= user.name %></li>
+        <% end %>
+      <% end %>
+    </ul>
     <% end %>
   <% end %>
 </section>
+
 <section id="hosting">
 </section>
