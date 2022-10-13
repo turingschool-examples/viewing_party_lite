@@ -20,7 +20,7 @@ class MoviesService
 
     def self.search_results(search_query)
         response = conn.get("/3/search/movie", {query: search_query})
-        JSON.parse(response.body, symbolize_names: true) 
+        JSON.parse(response.body, symbolize_names: true)
     end
 
     def self.movie_credits(movie_id)

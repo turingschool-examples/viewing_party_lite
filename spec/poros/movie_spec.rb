@@ -30,6 +30,7 @@ RSpec.describe Movie do
     expect(the_room.reviews).to be_an Array
     expect(the_room.reviews.first).to eq({ author: "Gimly", content: "Everybody knows _The Room_ is bad. That's like, the whole thing. But anybody who says its badness is self-aware is a liar. It's regular bad. It's regular fucking awful. Genuinely, the movies my peers in film class were making when I was **fifteen** are better than _The Room_. Before you say it, yes I did watch The Room in a group, and no I didn't enjoy it.\r\n\r\n_Final rating:½ - So bad it’s offensive. I may never fully recover._" })
     expect(the_room.image_path).to eq("/r0pmDAWu2SvMAyPPIm4jzoYGwvB.jpg")
+    expect(the_room.runtime).to eq(99)
   end
-  
+
 end

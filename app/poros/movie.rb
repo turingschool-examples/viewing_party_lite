@@ -6,12 +6,14 @@ class Movie
               :summary,
               :cast, 
               :reviews,
-              :image_path
+              :image_path,
+              :runtime
 
   def initialize(movie_details, movie_images, movie_credits, movie_reviews)
     @id = movie_details[:id]
     @title = movie_details[:title]
     @vote_average = movie_details[:vote_average]
+    @runtime = movie_details[:runtime]
     @genres = movie_details[:genres].map{ |genre| genre[:name] }
     @summary = movie_details[:overview]
     @cast = movie_credits[:cast][0..9].map do |cast_member|
