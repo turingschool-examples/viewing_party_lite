@@ -3,7 +3,7 @@
 <br>
 
 <div id='button'>
-  <%= button_to "Discover Page", user_discover_path(@user), method: :get %>
+  <%= button_to "Discover Page", user_discover_path(@host), method: :get %>
 </div>
 
 <br>
@@ -16,8 +16,8 @@
   <br>
 
   Movie Title <strong><%= @movie.title %></strong>
-    <%= form_with url: user_movie_viewing_party_path(@user, @movie.movie_id), method: :post, local: true do |f|%>
-      <%= f.hidden_field :host_id, value: @user.id%>
+    <%= form_with url: user_movie_viewing_party_path(@host, @movie.movie_id), method: :post, local: true do |f|%>
+      <%= f.hidden_field :host_id, value: @host.id%>
       <%= f.hidden_field :movie_id, value: @movie.movie_id %>
       <%= f.hidden_field :movie_title, value: @movie.title %>
       <%= f.hidden_field :poster_path, value: @movie.poster_path %>
