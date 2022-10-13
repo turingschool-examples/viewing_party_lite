@@ -68,8 +68,10 @@ RSpec.describe 'Viewing Party | New', type: :feature do
         within("#party-#{party.id}") do
           expect(page).to have_content 'Top Gun: Maverick'
           expect(page).to have_content 'July 20, 1999 12:00 AM'
-          expect(page).to have_content 'Host'
-          expect(page).to_not have_content 'Guest'
+          within('#role') do
+            expect(page).to have_content('Host')
+            expect(page).to_not have_content('Invited')
+          end
         end
       end
       it 'Other users are correctly invited to my viewing party' do
@@ -84,9 +86,11 @@ RSpec.describe 'Viewing Party | New', type: :feature do
         visit user_path(@user2)
         within('#viewing_parties') do
           expect(page).to have_content('Top Gun: Maverick')
-          expect(page).to_not have_content('Host')
-          expect(page).to have_content('Invited')
           expect(page).to have_content('July 20, 1999 12:00 AM')
+          within('#role') do
+            expect(page).to_not have_content('Host')
+            expect(page).to have_content('Invited')
+          end
         end
       end
     end
