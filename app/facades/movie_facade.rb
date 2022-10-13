@@ -15,4 +15,11 @@ class MovieFacade
     json = MovieService.cast(id)
     json[:cast][0..9].map { |actor| actor[:name] }
   end
+
+  def self.get_top20_movies
+    json = MovieService.get_top20_movies
+    json[:results][0..19].map do |movie|
+      movie[:title]
+    end
+  end
 end

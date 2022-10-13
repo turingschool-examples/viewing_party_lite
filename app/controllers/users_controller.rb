@@ -32,7 +32,9 @@ class UsersController < ApplicationController
 
   def results
     @user = User.find(params[:id])
-    if params["Search by Movie Title"] != ""
+    if params["q"] == "top rated"
+      @movies = MovieFacade.get_top20_movies
+    elsif params["Search by Movie Title"] != ""
       @movies = MovieFacade.get_movies(params["Search by Movie Title"])
     else
       flash[:alert] = "You must fill in a title."
