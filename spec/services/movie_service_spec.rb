@@ -38,9 +38,9 @@ RSpec.describe MovieService do
     it '#movie_search' do
 
       VCR.use_cassette('search_movies') do
+        movie_term = "Jack"
         search_movies = MovieService.movie_search(movie_term)
 
-        # expect(top_rated_movies.status_code).to eq(200)
         expect(search_movies).to be_a(Hash)
         expect(search_movies).to have_key(:results)
         expect(search_movies).to have_key(:page)

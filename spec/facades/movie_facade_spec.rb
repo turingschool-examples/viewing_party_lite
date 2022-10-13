@@ -14,6 +14,15 @@ describe 'Movie Facade' do
       top_rated_movies = MovieFacade.top_20_movies
       expect(top_rated_movies).to be_a(Array)
       expect(top_rated_movies.count).to eq(20)
-    end 
+    end
+  end
+
+  it 'can display movies by search results' do
+    VCR.use_cassette('search_movies') do
+      movie_term = "Jack"
+      search_movies = MovieFacade.search_results(movie_term)
+      expect(search_movies).to be_a(Array)
+      # expect(top_rated_movies.count).to eq(20)
+    end
   end
 end

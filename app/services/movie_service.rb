@@ -1,4 +1,5 @@
 class MovieService
+  
   def self.movie_by_id(search_id)
     response = conn.get("movie/#{search_id}")
     parse(response)
@@ -10,7 +11,7 @@ class MovieService
   end
 
   def self.movie_search(movie_term)
-    response = conn.get("/search/movie?")
+    response = conn.get("search/movie?query=#{movie_term}")
     parse(response)
   end
 

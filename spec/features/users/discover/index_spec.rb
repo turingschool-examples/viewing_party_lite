@@ -16,16 +16,16 @@ RSpec.describe 'Discover Page' do
 # Details When the user clicks on the Top Rated Movies OR the search button, they should be taken to the movies results page (more details of this on the Movies Results Page issue.
     it 'shows a button to Discover Top Rated movies' do
       visit user_discover_index_path(@user_1)
-
+    
       click_button 'Top Rated Movies'
-      expect(current_path).to eq(user_movies_path) #may need to recheck route
+      expect(current_path).to eq(user_movies_path(@user_1)) #may need to recheck route
     end
 
     it 'shows a search field to enter movie keywords plus a button to search by movie title' do
       visit user_discover_index_path(@user_1)
       fill_in "Search by movie title", with: "Shawshank Redemption"
       click_button 'Find Movies'
-      expect(current_path).to eq(user_movies_path)
+      expect(current_path).to eq(user_movies_path(@user_1))
     end
   end
 end
