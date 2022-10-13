@@ -1,0 +1,348 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/17473?api_key=<movie_db_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 13 Oct 2022 15:30:54 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - f0fb892e133b3cb588e8b5c36fb0ea8147da65da
+      X-Memc-Age:
+      - '3053'
+      X-Memc-Expires:
+      - '12786'
+      Etag:
+      - W/"e2b3bec7b2531c5c06cad6b945736861"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 85ee490c179dc0af42b771f11421073e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA19-C3
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - l-7DX7RB8vMxKgLjMhltfnn4pQtX_Zu6bDUJn43xiOkO9JY9msWYag==
+      Age:
+      - '14175'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/fsyLxF8eIfZ2Z7DXmjD6n9vHmb8.jpg","belongs_to_collection":null,"budget":6000000,"genres":[{"id":18,"name":"Drama"},{"id":10749,"name":"Romance"}],"homepage":"http://www.theroommovie.com/","id":17473,"imdb_id":"tt0368226","original_language":"en","original_title":"The
+        Room","overview":"Johnny is a successful banker with great respect for and
+        dedication to the people in his life, especially his future wife Lisa. The
+        happy-go-lucky guy sees his world being torn apart when his friends begin
+        to betray him one-by-one.","popularity":13.958,"poster_path":"/9QscHN4pXj6Ja1k7e1ZT4vWDGnr.jpg","production_companies":[{"id":3330,"logo_path":null,"name":"Chloe
+        Productions","origin_country":"US"},{"id":3331,"logo_path":null,"name":"TPW
+        Films","origin_country":"US"},{"id":3332,"logo_path":null,"name":"Wiseau-Films","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2003-06-27","revenue":1752988,"runtime":99,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Can
+        you ever really trust anyone?","title":"The Room","video":false,"vote_average":4.08,"vote_count":1171}'
+  recorded_at: Thu, 13 Oct 2022 19:27:09 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/17473/images?api_key=<movie_db_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 13 Oct 2022 16:03:26 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 1a0f55bfdf03687971145418c073364a1abb9949
+      X-Memc-Age:
+      - '8816'
+      X-Memc-Expires:
+      - '5994'
+      Etag:
+      - W/"875f388d5418dc07d8215dd05393cf02"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 e11ee4e3208082d534c251b36bbee268.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA19-C3
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 5xdv6BFebDChHa7aaI6lolzRfThFs1_lvGTlGBBLx7T6WZlz2VbNtw==
+      Age:
+      - '12223'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"backdrops":[{"aspect_ratio":1.778,"height":2160,"iso_639_1":null,"file_path":"/fsyLxF8eIfZ2Z7DXmjD6n9vHmb8.jpg","vote_average":5.384,"vote_count":2,"width":3840},{"aspect_ratio":1.778,"height":1080,"iso_639_1":null,"file_path":"/mz4lKE1bPRGOeoC14bf09SJw1tu.jpg","vote_average":5.318,"vote_count":3,"width":1920},{"aspect_ratio":1.778,"height":1080,"iso_639_1":null,"file_path":"/mX7mlE1kaGohnSVDMSTlrvisYf7.jpg","vote_average":5.118,"vote_count":4,"width":1920},{"aspect_ratio":1.778,"height":1080,"iso_639_1":null,"file_path":"/6OnOH5FIp0ZJQgPlu0ehDfXzVyp.jpg","vote_average":0.0,"vote_count":0,"width":1920},{"aspect_ratio":1.778,"height":1080,"iso_639_1":null,"file_path":"/aweURUQTtTBnoJH7cocw8eGaGRG.jpg","vote_average":0.0,"vote_count":0,"width":1920},{"aspect_ratio":1.778,"height":1080,"iso_639_1":null,"file_path":"/kwp19neT6lFSbVqkXpFtxX4OzpR.jpg","vote_average":0.0,"vote_count":0,"width":1920},{"aspect_ratio":1.778,"height":720,"iso_639_1":"en","file_path":"/3T5iQsVQMvuL2pmu9EmIPtubnLB.jpg","vote_average":0.0,"vote_count":0,"width":1280}],"id":17473,"logos":[{"aspect_ratio":5.854,"height":205,"iso_639_1":"en","file_path":"/1QozF0gQNqk4IsZC0YmpVE6lYMA.png","vote_average":5.172,"vote_count":1,"width":1200}],"posters":[{"aspect_ratio":0.667,"height":1200,"iso_639_1":"de","file_path":"/r0pmDAWu2SvMAyPPIm4jzoYGwvB.jpg","vote_average":5.384,"vote_count":2,"width":800},{"aspect_ratio":0.667,"height":1200,"iso_639_1":"en","file_path":"/9QscHN4pXj6Ja1k7e1ZT4vWDGnr.jpg","vote_average":5.318,"vote_count":3,"width":800},{"aspect_ratio":0.667,"height":1500,"iso_639_1":"en","file_path":"/Do5KLdXownTUlGoO5bL3JEuU2r.jpg","vote_average":5.18,"vote_count":3,"width":1000},{"aspect_ratio":0.675,"height":1481,"iso_639_1":"en","file_path":"/nsYZ3GcanPZxxi2jUq13MQI9LZ.jpg","vote_average":0.0,"vote_count":0,"width":1000},{"aspect_ratio":0.673,"height":750,"iso_639_1":"en","file_path":"/hbplOey2Jlk1M3BHsfIfiiYmvda.jpg","vote_average":0.0,"vote_count":0,"width":505}]}'
+  recorded_at: Thu, 13 Oct 2022 19:27:09 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/17473/credits?api_key=<movie_db_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 13 Oct 2022 16:06:50 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 678b6c16078117ca9b10b879f3fe6e5a84687a7c
+      X-Memc-Age:
+      - '3834'
+      X-Memc-Expires:
+      - '12592'
+      Etag:
+      - W/"c572967c567d6cb4a578831ea331291e"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 abbf2df97f9d83839470842dc2e68cb6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA19-C3
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 4PYhxk9ACCv-RSwiLGo1ADclOtWxaXu6zn_xhA1ucgPmUUOADo3EUA==
+      Age:
+      - '12020'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":17473,"cast":[{"adult":false,"gender":2,"id":81916,"known_for_department":"Acting","name":"Tommy
+        Wiseau","original_name":"Tommy Wiseau","popularity":3.509,"profile_path":"/mDiPtAoCFOM2NoHI0Jx1Zh2t5rV.jpg","cast_id":1,"character":"Johnny","credit_id":"52fe47299251416c7508fb21","order":0},{"adult":false,"gender":1,"id":81917,"known_for_department":"Acting","name":"Juliette
+        Danielle","original_name":"Juliette Danielle","popularity":2.98,"profile_path":"/4dU5buOHyl02zERuJfrVFherRTr.jpg","cast_id":2,"character":"Lisa","credit_id":"52fe47299251416c7508fb25","order":1},{"adult":false,"gender":2,"id":81918,"known_for_department":"Acting","name":"Greg
+        Sestero","original_name":"Greg Sestero","popularity":1.841,"profile_path":"/ySLUoDUVQB1IjgsaX9ktPaz58Rh.jpg","cast_id":3,"character":"Mark","credit_id":"52fe47299251416c7508fb29","order":2},{"adult":false,"gender":2,"id":81919,"known_for_department":"Acting","name":"Philip
+        Haldiman","original_name":"Philip Haldiman","popularity":3.091,"profile_path":"/sNJdUfzX8cryH1rnkez2MVacP10.jpg","cast_id":4,"character":"Denny","credit_id":"52fe47299251416c7508fb2d","order":3},{"adult":false,"gender":0,"id":81920,"known_for_department":"Acting","name":"Carolyn
+        Minnott","original_name":"Carolyn Minnott","popularity":1.711,"profile_path":"/dXUkYx7lgClH1sO5Sr6o7lYfo3z.jpg","cast_id":5,"character":"Claudette","credit_id":"52fe47299251416c7508fb31","order":4},{"adult":false,"gender":0,"id":81921,"known_for_department":"Acting","name":"Robyn
+        Paris","original_name":"Robyn Paris","popularity":1.424,"profile_path":null,"cast_id":6,"character":"Michelle","credit_id":"52fe47299251416c7508fb35","order":5},{"adult":false,"gender":2,"id":81925,"known_for_department":"Acting","name":"Dan
+        Janjigian","original_name":"Dan Janjigian","popularity":1.79,"profile_path":"/wSPOQIx1MF3Cabk6v8CgZAuB9XJ.jpg","cast_id":10,"character":"Chris
+        R","credit_id":"52fe47299251416c7508fb45","order":6},{"adult":false,"gender":0,"id":81923,"known_for_department":"Acting","name":"Kyle
+        Vogt","original_name":"Kyle Vogt","popularity":1.214,"profile_path":null,"cast_id":8,"character":"Peter","credit_id":"52fe47299251416c7508fb3d","order":7},{"adult":false,"gender":0,"id":81924,"known_for_department":"Acting","name":"Greg
+        Ellery","original_name":"Greg Ellery","popularity":0.69,"profile_path":null,"cast_id":9,"character":"Steven","credit_id":"52fe47299251416c7508fb41","order":8},{"adult":false,"gender":0,"id":81922,"known_for_department":"Acting","name":"Mike
+        Holmes","original_name":"Mike Holmes","popularity":1.052,"profile_path":null,"cast_id":23,"character":"Mike","credit_id":"5acd3f77c3a36834de08c956","order":9}],"crew":[{"adult":false,"gender":2,"id":81916,"known_for_department":"Acting","name":"Tommy
+        Wiseau","original_name":"Tommy Wiseau","popularity":3.509,"profile_path":"/mDiPtAoCFOM2NoHI0Jx1Zh2t5rV.jpg","credit_id":"52fe47299251416c7508fb4b","department":"Directing","job":"Director"},{"adult":false,"gender":2,"id":81916,"known_for_department":"Acting","name":"Tommy
+        Wiseau","original_name":"Tommy Wiseau","popularity":3.509,"profile_path":"/mDiPtAoCFOM2NoHI0Jx1Zh2t5rV.jpg","credit_id":"539a507ac3a3684b5e0005f8","department":"Production","job":"Producer"},{"adult":false,"gender":2,"id":81916,"known_for_department":"Acting","name":"Tommy
+        Wiseau","original_name":"Tommy Wiseau","popularity":3.509,"profile_path":"/mDiPtAoCFOM2NoHI0Jx1Zh2t5rV.jpg","credit_id":"539a5081c3a3684b86000586","department":"Production","job":"Executive
+        Producer"},{"adult":false,"gender":2,"id":81916,"known_for_department":"Acting","name":"Tommy
+        Wiseau","original_name":"Tommy Wiseau","popularity":3.509,"profile_path":"/mDiPtAoCFOM2NoHI0Jx1Zh2t5rV.jpg","credit_id":"539a506dc3a3684b86000582","department":"Writing","job":"Writer"},{"adult":false,"gender":2,"id":81918,"known_for_department":"Acting","name":"Greg
+        Sestero","original_name":"Greg Sestero","popularity":1.841,"profile_path":"/ySLUoDUVQB1IjgsaX9ktPaz58Rh.jpg","credit_id":"62aa79d222af3e5212f60733","department":"Production","job":"Line
+        Producer"},{"adult":false,"gender":2,"id":91087,"known_for_department":"Sound","name":"Stanley
+        Kastner","original_name":"Stanley Kastner","popularity":1.4,"profile_path":null,"credit_id":"60db3e1217c443005e847057","department":"Sound","job":"Sound
+        Re-Recording Mixer"},{"adult":false,"gender":0,"id":164890,"known_for_department":"Editing","name":"Eric
+        Chase","original_name":"Eric Chase","popularity":1.4,"profile_path":null,"credit_id":"539a51260e0a260fba0007ba","department":"Editing","job":"Editor"},{"adult":false,"gender":0,"id":164890,"known_for_department":"Editing","name":"Eric
+        Chase","original_name":"Eric Chase","popularity":1.4,"profile_path":null,"credit_id":"60db3dcadbf14400468a652d","department":"Sound","job":"Sound
+        Designer"},{"adult":false,"gender":0,"id":979055,"known_for_department":"Camera","name":"Rudy
+        Harbon","original_name":"Rudy Harbon","popularity":1.96,"profile_path":null,"credit_id":"62aa7ac335d1bc4f96013b09","department":"Camera","job":"Camera
+        Operator"},{"adult":false,"gender":2,"id":1085780,"known_for_department":"Camera","name":"Todd
+        Barron","original_name":"Todd Barron","popularity":1.96,"profile_path":null,"credit_id":"539a510b0e0a260fb0000810","department":"Camera","job":"Director
+        of Photography"},{"adult":false,"gender":0,"id":1330242,"known_for_department":"Production","name":"Drew
+        Caffrey","original_name":"Drew Caffrey","popularity":0.98,"profile_path":null,"credit_id":"539a5094c3a3684b950005d0","department":"Production","job":"Executive
+        Producer"},{"adult":false,"gender":0,"id":1330243,"known_for_department":"Production","name":"Chloe
+        Lietzke","original_name":"Chloe Lietzke","popularity":1.052,"profile_path":null,"credit_id":"539a50ed0e0a260fa80007ed","department":"Production","job":"Executive
+        Producer"},{"adult":false,"gender":0,"id":1330243,"known_for_department":"Production","name":"Chloe
+        Lietzke","original_name":"Chloe Lietzke","popularity":1.052,"profile_path":null,"credit_id":"539a51330e0a260fb000081c","department":"Production","job":"Casting"},{"adult":false,"gender":0,"id":1330244,"known_for_department":"Sound","name":"Mladen
+        Milicevic","original_name":"Mladen Milicevic","popularity":0.6,"profile_path":null,"credit_id":"539a50fd0e0a260fab0007f5","department":"Sound","job":"Original
+        Music Composer"},{"adult":false,"gender":0,"id":1392971,"known_for_department":"Crew","name":"Matt
+        von Brock","original_name":"Matt von Brock","popularity":1.4,"profile_path":null,"credit_id":"60db3e5325b955005d045da8","department":"Visual
+        Effects","job":"Visual Effects Supervisor"},{"adult":false,"gender":0,"id":1401289,"known_for_department":"Sound","name":"Donald
+        Lyles","original_name":"Donald Lyles","popularity":0.6,"profile_path":null,"credit_id":"60db3e232716710021a6207c","department":"Sound","job":"Sound
+        Recordist"},{"adult":false,"gender":2,"id":1416895,"known_for_department":"Editing","name":"Troy
+        Allen","original_name":"Troy Allen","popularity":1.008,"profile_path":null,"credit_id":"60db3dad880551002d1e1d4c","department":"Sound","job":"Foley
+        Artist"},{"adult":false,"gender":0,"id":1420158,"known_for_department":"Camera","name":"Stefan
+        Tarzan","original_name":"Stefan Tarzan","popularity":1.4,"profile_path":null,"credit_id":"62aa7b01b09bde0067baaa46","department":"Camera","job":"Camera
+        Operator"},{"adult":false,"gender":0,"id":1423771,"known_for_department":"Directing","name":"Sandy
+        Schklair","original_name":"Sandy Schklair","popularity":1.22,"profile_path":null,"credit_id":"62abd27177d23b00508768f5","department":"Directing","job":"Script
+        Supervisor"},{"adult":false,"gender":0,"id":1423771,"known_for_department":"Directing","name":"Sandy
+        Schklair","original_name":"Sandy Schklair","popularity":1.22,"profile_path":null,"credit_id":"62aa7a0622af3e52142114b9","department":"Directing","job":"First
+        Assistant Director"},{"adult":false,"gender":0,"id":1539765,"known_for_department":"Camera","name":"Wade
+        Whitley","original_name":"Wade Whitley","popularity":1.38,"profile_path":null,"credit_id":"62aa7b1622af3e5212f60f04","department":"Camera","job":"Camera
+        Operator"},{"adult":false,"gender":0,"id":1587110,"known_for_department":"Sound","name":"Zsolt
+        Magyar","original_name":"Zsolt Magyar","popularity":0.6,"profile_path":null,"credit_id":"60db3dd725b9550073b1233b","department":"Sound","job":"Sound"},{"adult":false,"gender":0,"id":1620723,"known_for_department":"Costume
+        \u0026 Make-Up","name":"Safowa Bright-Asare","original_name":"Safowa Bright-Asare","popularity":1.4,"profile_path":null,"credit_id":"60db3d6c3fe1600045a2e09a","department":"Costume
+        \u0026 Make-Up","job":"Costume Design"},{"adult":false,"gender":2,"id":1665894,"known_for_department":"Lighting","name":"Cicero
+        De Moraes","original_name":"Cicero De Moraes","popularity":0.6,"profile_path":null,"credit_id":"62aa7a5fb09bde009e9b20b1","department":"Lighting","job":"Gaffer"},{"adult":false,"gender":2,"id":1894620,"known_for_department":"Camera","name":"David
+        Ortkiese","original_name":"David Ortkiese","popularity":0.694,"profile_path":null,"credit_id":"62aa7a4635d1bc4f94ec7a20","department":"Lighting","job":"Electrician"},{"adult":false,"gender":2,"id":2003292,"known_for_department":"Camera","name":"Joseph
+        M. Setele","original_name":"Joseph M. Setele","popularity":0.6,"profile_path":null,"credit_id":"5ab13c4192514111c700ed08","department":"Camera","job":"Camera
+        Operator"},{"adult":false,"gender":1,"id":2360302,"known_for_department":"Camera","name":"Gayle
+        Hilary","original_name":"Gayle Hilary","popularity":0.98,"profile_path":null,"credit_id":"62aa7ad6151c5c004f7fd992","department":"Camera","job":"Clapper
+        Loader"},{"adult":false,"gender":0,"id":2457196,"known_for_department":"Camera","name":"Don
+        Presley","original_name":"Don Presley","popularity":0.98,"profile_path":null,"credit_id":"62aa7af2af3da6009a25510a","department":"Camera","job":"Camera
+        Operator"},{"adult":false,"gender":0,"id":2593008,"known_for_department":"Editing","name":"Andrew
+        Harwood","original_name":"Andrew Harwood","popularity":0.6,"profile_path":null,"credit_id":"62aa7aa25a5ed03269f73df9","department":"Crew","job":"Post
+        Production Assistant"},{"adult":false,"gender":0,"id":3140737,"known_for_department":"Art","name":"Mercedes
+        Younger","original_name":"Mercedes Younger","popularity":0.6,"profile_path":null,"credit_id":"60db3d4c3fe160007d053881","department":"Art","job":"Production
+        Design"},{"adult":false,"gender":0,"id":3140738,"known_for_department":"Art","name":"Kendra
+        Hollaway","original_name":"Kendra Hollaway","popularity":0.6,"profile_path":null,"credit_id":"60db3d5c2716710076499004","department":"Art","job":"Art
+        Direction"},{"adult":false,"gender":0,"id":3140739,"known_for_department":"Costume
+        \u0026 Make-Up","name":"Persia Matine","original_name":"Persia Matine","popularity":0.6,"profile_path":null,"credit_id":"62aa79f3875d1a52774ecf17","department":"Costume
+        \u0026 Make-Up","job":"Key Hair Stylist"},{"adult":false,"gender":0,"id":3140739,"known_for_department":"Costume
+        \u0026 Make-Up","name":"Persia Matine","original_name":"Persia Matine","popularity":0.6,"profile_path":null,"credit_id":"62aa79faaf3da6005045ea4d","department":"Costume
+        \u0026 Make-Up","job":"Key Makeup Artist"},{"adult":false,"gender":0,"id":3140740,"known_for_department":"Costume
+        \u0026 Make-Up","name":"Amy Von Brock","original_name":"Amy Von Brock","popularity":0.6,"profile_path":null,"credit_id":"60db3d930b7316007d1edd77","department":"Costume
+        \u0026 Make-Up","job":"Key Makeup Artist"},{"adult":false,"gender":0,"id":3140741,"known_for_department":"Sound","name":"Charles
+        D. Ballard","original_name":"Charles D. Ballard","popularity":0.6,"profile_path":null,"credit_id":"60db3dbb3fe160007d05399a","department":"Sound","job":"Sound
+        Effects"},{"adult":false,"gender":0,"id":3140742,"known_for_department":"Sound","name":"Richard
+        Zimmerman","original_name":"Richard Zimmerman","popularity":0.6,"profile_path":null,"credit_id":"60db3e010e5aba00297079af","department":"Sound","job":"Dialogue
+        Editor"},{"adult":false,"gender":0,"id":3589987,"known_for_department":"Lighting","name":"Sheri
+        Ortkiese","original_name":"Sheri Ortkiese","popularity":0.6,"profile_path":null,"credit_id":"62aa7a4d7e12f00e260f253a","department":"Lighting","job":"Electrician"}]}'
+  recorded_at: Thu, 13 Oct 2022 19:27:10 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/17473/reviews?api_key=<movie_db_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 13 Oct 2022 16:03:51 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 7c84fd890987d4c512df5240ce0fb2cbaff8d075
+      X-Memc-Age:
+      - '13265'
+      X-Memc-Expires:
+      - '2577'
+      Etag:
+      - W/"73b13b572c42af2ead88d778868382af"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 219e8f088c8c2a564bdacafe44be620a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA19-C3
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - YTMWLk3jkTCgzC19ya-9NZG9ZtUozZxka_5F7_1mIS7PGqRZ3oqJbQ==
+      Age:
+      - '12199'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpZCI6MTc0NzMsInBhZ2UiOjEsInJlc3VsdHMiOlt7ImF1dGhvciI6IkdpbWx5IiwiYXV0aG9yX2RldGFpbHMiOnsibmFtZSI6IkdpbWx5IiwidXNlcm5hbWUiOiJSdXV6IiwiYXZhdGFyX3BhdGgiOiIveFVPYm5KU3ZIckZQc0lwb0RtYjFqaVFaTHE3LmpwZyIsInJhdGluZyI6MS4wfSwiY29udGVudCI6IkV2ZXJ5Ym9keSBrbm93cyBfVGhlIFJvb21fIGlzIGJhZC4gVGhhdCdzIGxpa2UsIHRoZSB3aG9sZSB0aGluZy4gQnV0IGFueWJvZHkgd2hvIHNheXMgaXRzIGJhZG5lc3MgaXMgc2VsZi1hd2FyZSBpcyBhIGxpYXIuIEl0J3MgcmVndWxhciBiYWQuIEl0J3MgcmVndWxhciBmdWNraW5nIGF3ZnVsLiBHZW51aW5lbHksIHRoZSBtb3ZpZXMgbXkgcGVlcnMgaW4gZmlsbSBjbGFzcyB3ZXJlIG1ha2luZyB3aGVuIEkgd2FzICoqZmlmdGVlbioqIGFyZSBiZXR0ZXIgdGhhbiBfVGhlIFJvb21fLiBCZWZvcmUgeW91IHNheSBpdCwgeWVzIEkgZGlkIHdhdGNoIFRoZSBSb29tIGluIGEgZ3JvdXAsIGFuZCBubyBJIGRpZG4ndCBlbmpveSBpdC5cclxuXHJcbl9GaW5hbCByYXRpbmc6wr0gLSBTbyBiYWQgaXTigJlzIG9mZmVuc2l2ZS4gSSBtYXkgbmV2ZXIgZnVsbHkgcmVjb3Zlci5fIiwiY3JlYXRlZF9hdCI6IjIwMTctMTItMjlUMDI6MTQ6NDcuNDkyWiIsImlkIjoiNWE0NWE1MTdjM2EzNjg1OGU0MDY1YjhiIiwidXBkYXRlZF9hdCI6IjIwMjEtMDYtMjNUMTU6NTg6MDMuNjI0WiIsInVybCI6Imh0dHBzOi8vd3d3LnRoZW1vdmllZGIub3JnL3Jldmlldy81YTQ1YTUxN2MzYTM2ODU4ZTQwNjViOGIifSx7ImF1dGhvciI6Ik1yLiBKLiIsImF1dGhvcl9kZXRhaWxzIjp7Im5hbWUiOiJNci4gSi4iLCJ1c2VybmFtZSI6ImpidXllbnNlIiwiYXZhdGFyX3BhdGgiOiIvaHR0cHM6Ly93d3cuZ3JhdmF0YXIuY29tL2F2YXRhci8zNmFkYTg4MmQxNmE2ZjlmNTk5ZWM2OWU1OTU2ZmFmYS5qcGciLCJyYXRpbmciOm51bGx9LCJjb250ZW50IjoiQWZ0ZXIgc2VlaW5nIHRoZSBEaXNhc3RlciBBcnRpc3QsIEkgaGFkIHRvIHNlZSB0aGlzIG1vdmllISBIT1JSSUJMRSEgTGF1Z2hpbmcgbXkgYXNzIG9mZiBidXQgSE9SUklCTEUhIEdvb2QgZm9yIHlvdSBUb21teSEgTGl2ZSB0aGVuZHJlYW0hISEgU3RpbGwgbGF1Z2hpbmcgdGhhdCBJJ20gcmVhbGx5IHdhdGNoaW5nIHRoaXMhIEtpbmQgb2YgbGlrZSBhIHBvcm4gbW92aWUgd2l0aG91dCB0aGUgcG9ybiEhISIsImNyZWF0ZWRfYXQiOiIyMDE4LTA5LTAzVDIwOjA0OjI0LjI4OVoiLCJpZCI6IjViOGQ5M2M4MGUwYTI2MWQ3MDA1MzUwOCIsInVwZGF0ZWRfYXQiOiIyMDIxLTA2LTIzVDE1OjU4OjEyLjA2MVoiLCJ1cmwiOiJodHRwczovL3d3dy50aGVtb3ZpZWRiLm9yZy9yZXZpZXcvNWI4ZDkzYzgwZTBhMjYxZDcwMDUzNTA4In0seyJhdXRob3IiOiJpbnNpZGVtb3ZpZXM4NCIsImF1dGhvcl9kZXRhaWxzIjp7Im5hbWUiOiIiLCJ1c2VybmFtZSI6Imluc2lkZW1vdmllczg0IiwiYXZhdGFyX3BhdGgiOiIvaHR0cHM6Ly93d3cuZ3JhdmF0YXIuY29tL2F2YXRhci80MTBlM2YyYmY1NzZlZWIzM2I4ODIzZTI0NzBiMTI1OS5qcGciLCJyYXRpbmciOjIuMH0sImNvbnRlbnQiOiJCcm91Z2h0IHRvIHVzIGJ5IFdpc2VhdS1GaWxtcyB3b3JraW5nIHdpdGggQ2hsb2UgUHJvZHVjdGlvbnMgYW5kIFRQVyBGaWxtcyBpcyBwcm9iYWJseSBvbmUgb2YgdGhlIHdvcnN0IGZpbG1zIEkgaGF2ZSBzZWVuIHJlY2VudGx5IGFzIEkgaGF2ZSBkaXNjdXNzZWQgdGhlIGZpbG0gd2l0aCBvdGhlcnMgaW4gbXkgb3duIHBvZGNhc3Qgb24gSW5zaWRlIE1vdmllcyBHYWxvcmUgYW5kIEnigJltIHN0aWxsIG9uIHRoZSBmZW5jZSB3aGV0aGVyIEkgYWN0dWFsbHkgbGlrZSB0aGUgZmlsbS4gSSB3YXRjaGVkIHRoaXMgZmlsbSB0d2ljZSBvbmNlIGZvciBteSBwb2RjYXN0IGFuZCBvbmNlIGZvciBhbm90aGVyIHRoYXQgaXMgZW5vdWdoIGFuZCBJIHdpbGwgcHJvYmFibHkgbmV2ZXIgd2F0Y2ggdGhpcyBmaWxtIGFnYWluIGluIG15IGxpZmUgaWYgSSBkb27igJl0IGhhdmUgdG8uXHJcblxyXG5UaGlzIGlzIFRvbW15IFdpc2VhdeKAmXMgZGVidXQgZmlsbSBmcm9tIDIwMDMgd2hlcmUgaGUgcGxheXMgYSBtYW4gbmFtZWQgSm9obm55IHdobyBoYXMgYSBiZWF1dGlmdWwgYmxvbmRlIGhhaXIgZ2lybGZyaWVuZCBuYW1lZCBMaXNhIHBsYXllZCBieSBKdWxpZXR0ZSBEYW5pZWxsZSB3aG9tIGlzIGFjdHVhbGx5IGtpbmQgb2YgYSBiaXRjaC4gSm9obm55IGhhcyBhIHdvcmtpbmcgY2xhc3Mgam9iIGFzIGEgYmFua2VyLCB0YWtlcyBjYXJlIG9mIGEgdGVlbmFnZXIgbmFtZWQgRGVubnksIHdobyBpbnNpc3RzIGFsbW9zdCBvbiBiZWluZyBhIHBlZXBpbmcgVG9tIG9uIHRoZWlyIHNleCBsaWZlLCBjb21lcyBob21lIHRvIGhpcyB3b21hbiBMaXNhIGFuZCBvdmVyIHRpbWUgZmluZHMgb3V0IHNoZSBpcyBjaGVhdGluZyBvbiBoaW0gd2l0aCBoaXMgYmVzdCBmcmllbmQgTWFyayBwbGF5ZWQgYnkgR3JlZyBTZXN0ZXJvIHRoZW4gb2ZmcyBoaW1zZWxm4oCmIG9uIGEgYnVkZ2V0IG9mIHNpeCBtaWxsaW9uIGhvdyBjYW4geW91IGZpbG0gc29tZXRoaW5nIGxpa2UgdGhpcz9cclxuXHJcbkRlbm55IGEgeW91bmcgdGVlbmFnZXIgaXMgbm90IGVudGlyZWx5IGxpdmluZyB3aXRoIEpvaG5ueSBidXQgaXMgbW9yZSBsaWtlIGEgc29uIHRvIGhpbSBpcyBjYXVnaHQgdXAgaW4gdGhlIG1peCBhbmQgZ2V0cyBpbnRvIHRyb3VibGUgd2l0aCBhIGRydWcgZGVhbGVyIGJ1dCB5b3UgYWxzbyBzZWUgc29tZSBraW5kIG9mIHR1cm1vaWwgdGhhdCBNYXJrIEdvZXMgdGhyb3VnaCBhcyBoZSBkb2VzIGZlZWwgZ3VpbHR5IHNsZWVwaW5nIHdpdGggTGlzYSBidXQgaGUgZW5qb3lzIGl0IGJ1dCBpcyBwcm9iYWJseSB0aGUgbW9zdCBhbm5veWluZyBhY3RvciBvbiB0aGUgc2V0IHdpdGggaGlzIGhpZ2ggcGl0Y2hlZCBzcXVlYWxzLiBBbHNvIHRoZSBmYWN0IG9mIExpc2HigJlzIGZyaWVuZHMgd2hvbSBqdXN0IGNhbuKAmXQga2VlcCBmcm9tIGZ1Y2tpbmcsIHN0YXJ0ZWQgc3RvcnkgcGxvdHMgdGhhdCB3ZXJlbuKAmXQgZW50aXJlbHkgbmVlZGVkIGFuZCBmZWx0IHRoZXkgd2VyZSBhbiBhZnRlciB0aG91Z2h0LlxyXG5cclxuVGhlIE11c2ljIGJlaGluZCB0aGUgZmlsbSBmZWVscyBsaWtlIGl0IHNob3VsZCBiZSBpbiBvbmUgb2YgdGhvc2Ugb2xkZXIgODDigJlzIENhbm9uIGZhaXJ5IHRhbGVzIG9yIHNvbWV0aGluZyBsaWtlIE1hc3RlcnBpZWNlIFRoZWF0ZXIsIGJ1dCBhbHNvIGVsaWNpdOKAmXMgdGhlIGZlZWwgb2Ygc29mdCBjb3JlIGxvdmUgc2NlbmVzIGxpa2UgdGhhdCB3aGF0IHlvdSB3b3VsZCBzZWUgb24gSEJPIGFmdGVyIGRhcmsgd2hlbiBpdCBjb21lcyB0byB0aGUgcGFzc2lvbmF0ZSBzY2VuZXMgYmV0d2VlbiBNYXJrIGFuZCBKb2hubnkuIEkgYWxzbyBmZWVsIHRoYXQgd2hlbiBKb2hubnkgdGFwZWQgdGhlIHBob25lIGNhbGxzIExpc2EgbWFkZSBvbiBvbmUgb2YgdGhvc2Ugb2xkIHRhcGUgbWFjaGluZeKAmXMgZmVlbHMgc2xpZ2h0bHkgZGF0ZWQgYXMgdGhpcyB3YXMgYSBmaWxtIGRvbmUgaW4gMjAwMy4gSSBmZWVsIGxpa2UgdGhlIGJhbGNvbnkgc2NlbmUgd2FzIHRoZSB3b3JzdCBzY2VuZSBhcyB3aGVuIHRoZXkgd2VyZSB1cCB0aGVyZSB5b3UgY291bGQgdGVsbCB0aGF0IHRoZXJlIHdhcyBhIHN0YWdlIHdhbGwgYmVoaW5kIHRoZW0gYXMgdGhlIGNhc3Qgd2FzIHRhbGtpbmcgYXMgSSB1bmRlcnN0YW5kIHRoaXMgd2FzIGNhbGxlZCBhIGdyZWVuIHJvb20uXHJcblxyXG5UaG91Z2ggSSBsb3ZlIGR1YmJlZCBmaWxtcyBpbiBNYXJ0aWFsIGFydHMgdHlwZSBmaWxtcyBhbmQgVG9obyBwcm9kdWN0aW9ucyBJIHRoaW5rIHRoYXQgaGF2aW5nIHRoZSBhY3RvcnMgYW5kIGFjdHJlc3PigJlzIGluY2x1ZGluZyBUb21teSBEdWIgdGhlaXIgdm9pY2VzIGluIHdhcyBhYnNvbHV0ZWx5IGF3ZnVsLCBtaXhlZCB3aXRoIGhpcyBnZXJpYXRyaWNzIG9mIGdldHRpbmcgYW5ncnkgYXQgTGlzYSwgVG9tbXkgd2FzIGFubm95aW5nbHkgZWNjZW50cmljLCB0aGVyZSB3YXNu4oCZdCBhIGxpbmUgaW4gdGhlIGZpbG0gdGhhdCB3YXMgZXZlbiByZW1vdGVseSBvcmlnaW5hbC4gSXTigJlzIGFsbCBiZWVuIHNhaWQgYmVmb3JlIGJ1dCBJIGRvIGhhdmUgdG8gc2F5IGFyZSBxdW90YWJsZS4gSSBmZWVsIGxpa2UgSSBzaG91bGQgbG92ZSB0aGlzIG1vdmllIGJ1dCBJ4oCZdmUgZGVjaWRlZCB0aGF0IEkgZG8gbm90IGFuZCBvbmx5IG1pbGRseSBlbmpveSB0aGUgZmlsbSBhcyBpdCBpcyBqdXN0IHRoYXQgYmFkIGFuZCBldmVuIHRoZW4gSeKAmW0gbm90IHN1cmUgdGhhdCBlbmpveW1lbnQgY2FuIGJlIHRoZSB3b3JkIGRlY3JpYmluZyBob3cgSSBmZWVsIGFib3V0IHRoZSBmaWxtLiBJIGRvbuKAmXQgdW5kZXJzdGFuZCB0aGUgcmVhc29uIGJlaGluZCB3aHkgcGVvcGxlIGVuam95IHRoZSBmaWxtIGJ1dCBwb2ludCBibGFuayBpdOKAmXMgdGVycmlibGUuIFRlcnJpYmx5IGVkaXRlZCwgYmFzaWNhbGx5IGEgZmlsbSB5b3UgY2FuIHByb2JhYmx5IHRha2UgdG8gYSBmaWxtIGNsYXNzIGFuZCBzYXkgaGVyZeKAmXMgd2hhdCBub3QgdG8gZG8uXHJcblxyXG5JIGRpZG7igJl0IGVuam95IHdhdGNoaW5nIHRoaXMgZmlsbS4gSSB3YXRjaGVkIGl0IGZvciB0aGUgcHVycG9zZSBvZiBkaXNjdXNzaW5nIGl0IG9uIHBvZGNhc3RzLiBJ4oCZbGwgZGVmaW5pdGVseSBub3QgcmVjb21tZW5kIGl0IHRvIG90aGVycyBlaXRoZXIgYnV0IEkgd2lsbCBzYXkgaXQgcGF2ZWQgdGhlIHdheSB0byDigJx0aGUgRGlzYXN0ZXIgQXJ0aXN04oCdIHdoaWNoIGxvb2tzIGxpa2UgaXQgY291bGQgYmUgYW4gZXZlbiBiZXR0ZXIgZmlsbSB0aGFuIHRoaXMgcGllY2Ugb2YgdHJhc2guIEnigJltIHNvcnJ5IHRvIHNoaXQgb24gZmlsbSBncm93aW5nIGEgY3VsdCBzdGFuZGluZyBidXQgdGhpcyB3YXMgbm90IGEgZ29vZCBmaWxtIGF0IGFsbC4gU29ycnkgbGFkaWVzIGFuZCBnZW50bGVtZW4uIFRob3VnaCBJIG93biBpdCB5b3UgZ28gYWhlYWQgYW5kIGVuam95IGl0IG5vdCBtZS5cclxuXHJcbkFzIEkgdW5kZXJzdGFuZCBpdCBUb21teSBXaXNlYXUgYXQgbGVhc3QgaW4gR3JlZyBTZXN0ZXJv4oCZcyBib29rIGhhZCBhY3R1YWxseSBub3QgYmVlbiBhIG5pY2UgcGVyc29uIHRvIGhpcyBjYXN0IGluIGZhY3QgaGXigJlkIGFjdHVhbGx5IGJlZW4gcXVpdGUgYWJ1c2l2ZSBzbyB0aG9zZSB3aG9tIGFyZSBhY3R1YWxseSBvbiBoaXMgc2lkZSB5b3UgaGF2ZSB0byB3b25kZXIgYXQgdGhlaXIgc2Vuc2Ugb2YgbW9yYWxpdHkgaW4gYmVsaWV2aW5nIHRoaXMgZmlsbSB3YXMgcmVtb3RlbHkgZ29vZC4gSSBndWVzcyBJ4oCZZCBzYXkgdGhpcyB3YXMgb25lIG9mIHRob3NlIGZpbG1zIHdoZXJlIFRvbW15IGhhZCB0aGUgbW9uZXkgdG8gYnV5IGhpcyBmaWxtIGhhdGVycyB0aGUgb25lcyB0aGF0IGZpbmQgaXQganVzdCB0aGF0IGVuam95YWJsZSB0byBoYXRlIG1vdmllIGdvZXJzLlxyXG5cclxuSSB1bmRlcnN0YW5kIHRoYXQgaGUsIFRvbW15IFdpc2VhdSwgcHJvYmFibHkgdG9vayB0aGUgZmlsbXMgaGUga25ldyBncm93aW5nIHVwIHdoaWNoIHByb2JhYmx5IGhhZCBtb3JlIHRvIGRvIHdpdGggdGhvc2Ugc29mdCBjb3JlIHJvdWdoaWVzIHlvdSBzYXcgYXQgdGhlIHBlZXBzaG93cyBhZnRlciBtaWRuaWdodCBidXQgbGFkaWVzIGFuZCBnZW50bGVtZW4gSeKAmW0gbm90IGludG8gYmVsbHkgcG9ybuKApiBFbmpveSB0aGUgZmlsbSBpZiB5b3UgbXVzdCBqdXN0IGRvbuKAmXQgbGllIGFuZCBzYXkgaXQgd2FzIGEgZ3JlYXQgZmlsbeKAplxyXG5cclxuVGhyZWUgcG9zaXRpdmVzIHRoYXQgSSBjYW4gc2F5IGFib3V0IHRoZSBmaWxtIGlzIEkgbG92ZWQgdGhhdCBiZWdpbm5pbmcgc2hvdCBvZiB0aGF0IGNvb2wgbG9va2luZyBBcmNoaXRlY3R1cmUsIFRoZSBwYXJ0IHdoZXJlIHRoZSBmcmllbmRzIGhhdmUgZnVja2VkIGFuZCBkdWRlIGNvbWVzIGJhY2sgZm9yIGhpcyB1bmRlcndlYXIgYW5kIEkgZ3Vlc3MgdGhlIGZhY3QgdGhhdCBhbGwgdGhlIGxpbmVzIGFyZSBxdW90YWJsZSBpbiB0aGUgc2FtZSBhY2NlbnQgdGhhdCBUb21teSBoYXMuXHJcblxyXG5TdGFycmluZyBUb21teSBXaXNlYXUgYXMgSm9obm55LCBHcmVnIFNlc3Rlcm8gYXMgTWFyaywgSnVsaWV0dGUgRGFuaWVsbGUgYXMgTGlzYSwgUGhpbGlwIEhhbGRpbWFuIGFzIERlbm55IChhcyBQaGlsbGlwIEhhbGRpbWFuKSwgQ2FyaWx5biBNaW5ub3R0IGFzIENsYXVkZXR0ZSAoYXMgQ2Fyb2x5biBNaW5ub3QpIFJvYnluIFBhcmlzIGFzIE1pY2hlbGxlLCBNaWtlIEhvbG1lcyBhcyBNaWtlIChhcyBNaWtlIFNjb3R0KSwgRGFuIEphbmppZ2lhbiBhcyBDaHJpcy1SLCBLeWxlIFZvZ3QgYXMgUGV0ZXIsIEdyZWcgRWxsZXJ5IGFzIFN0ZXZlbiwgS2FyaSBNY0Rlcm1vdHQgYXMgUGFydHkgTWVtYmVyICMyIChhcyBLYXJpIE1jZGVybW9udCksIEplbm5pZmVyIFZhbmRlcmJsaWVrIGFzIFBhcnR5IG1lbWJlciAjMyAoYXMgSmVuIFZhbmRlcmJsaWVrKSwgRGFyb24gSmVubmluZ3MgYXMgQmFyaXN0YSAjMiwgRnJhbmsgV2lsbGV5IGFzIENvZmZlc2hvcCAjNCwgQmVubmV0dCBEdW5uIGFzIFBhcnR5Z29lciAoYXMgQmVubmV0IER1bm4pLiIsImNyZWF0ZWRfYXQiOiIyMDIxLTAyLTE2VDAxOjQ2OjU4LjU5MFoiLCJpZCI6IjYwMmIyNDEyYTMzNjEyMDA0MTA4NmEwOSIsInVwZGF0ZWRfYXQiOiIyMDIxLTA2LTIzVDE1OjU4OjUxLjgwNFoiLCJ1cmwiOiJodHRwczovL3d3dy50aGVtb3ZpZWRiLm9yZy9yZXZpZXcvNjAyYjI0MTJhMzM2MTIwMDQxMDg2YTA5In1dLCJ0b3RhbF9wYWdlcyI6MSwidG90YWxfcmVzdWx0cyI6M30=
+  recorded_at: Thu, 13 Oct 2022 19:27:10 GMT
+recorded_with: VCR 6.1.0

@@ -5,7 +5,7 @@
   <% @user.hosted_viewing_parties.each do |vp| %>
     <div id="vp_<%= vp.id %>">
       Movie Info Goes Here<br><br>
-      <%= vp.date.strftime("%B %e, %Y") %><br>
+      <%= vp.date.strftime("%B %-d, %Y") %><br>
       <%= vp.start_time.strftime("%l:%M %P") %><br><br>
       Hosting
     </div>
@@ -13,7 +13,7 @@
   <% @user.viewing_parties.each do |vp| %>
     <div id="vp_<%= vp.id %>">
       Movie Info Goes Here<br><br>
-      <%= vp.date.strftime("%B %e, %Y") %><br>
+      <%= vp.date.strftime("%B %-d, %Y") %><br>
       <%= vp.start_time.strftime("%l:%M %P") %><br><br>
       Invited
     </div>
