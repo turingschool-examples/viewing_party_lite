@@ -1,7 +1,9 @@
 class Reviews
-  attr_reader :results
+  attr_reader :author,
+              :content
 
   def initialize(api)
-    @results = api[:results]
+    @author = api[:author]
+    @content = api[:content]
   end
 end

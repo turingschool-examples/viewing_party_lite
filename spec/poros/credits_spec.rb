@@ -3,22 +3,25 @@ require 'rails_helper'
 RSpec.describe Credits do
   describe 'Credits Poro', :vcr do
     before :each do
-      @credits = MovieFacade.credits_poro(550)
+      @credits_array = MovieFacade.credits_poro(550)
     end
 
     it 'instantiates' do
-      expect(@credits).to be_a(Credits)
+      @credits_array.each do |cast_member|
+        expect(cast_member).to be_a(Credits)
+      end
     end
 
-    it '@credits returns an array of hashes' do
-      expect(@credits.cast_info).to be_a(Array)
-      expect(@credits.cast_info[0]).to be_a(Hash)
-      expect(@credits.cast_info[0][:name]).to be_a(String)
+    it 'returns an array of Credits objects with name as a string' do
+      expect( @credits_array).to be_a(Array)
+
+      @credits_array.each do |cast_member|
+        expect(cast_member.name).to be_a(String)
+      end
     end
 
-    it 'returns all names of cast members' do
-      expect(@credits.cast_names).to be_a(Array)
-      expect(@credits.cast_names[0]).to be_a(String)
+    it 'returns top 10 cast members ' do
+      expect(@credits_array.count).to eq(10)
     end
   end
 end

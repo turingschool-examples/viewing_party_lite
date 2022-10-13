@@ -26,9 +26,11 @@ RSpec.describe Details do
       expect(@details.runtime).to be_a(Integer)
     end
 
-    it 'returns genres as an array of hashes' do
-      expect(@details.genres).to be_a(Array)
-      expect(@details.genres[0]).to be_a(Hash)
+    it 'genres_names_array returns array of genre names as strings' do
+      expect(@details.genres_names_array).to be_a(Array)
+      @details.genres_names_array.each do |name|
+        expect(name).to be_a(String)
+      end
     end
   end
 end
