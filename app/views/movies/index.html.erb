@@ -1,7 +1,7 @@
-<h1>Movies index, heres all the movies!!!</h1>
+<h1>Movies index, here are your movies!!!</h1>
 
 <ol><% @movies.each do |movie| %>
-  <li><%= movie.title %> -- <%= "Average Rating #{movie.vote_average}"%></li>
+  <li><%= link_to movie.title, user_movie_path(@user, id: movie.id) %> -- <%= "Average Rating #{movie.vote_average}"%></li>
 <% end %></ol>
 
 
