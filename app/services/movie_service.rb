@@ -11,7 +11,7 @@ class MovieService
 
   def self.get_review_data(movie_id)
     page_count = 1
-    responses = []
+    responses = 0
     loop do 
       response = conn.get("/3/movie/#{movie_id}/reviews?page=#{page_count}")
       json = JSON.parse(response.body, symbolize_names: true)

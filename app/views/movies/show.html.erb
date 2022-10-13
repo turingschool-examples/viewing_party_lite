@@ -1,2 +1,34 @@
-<div id="movie-reviews">
+<div id="movie-<%= @movie.id %>-details">
+  <h2><%= @movie.title %></h2>
+    <div id="action_options">
+      <p>
+        <%= button_to "Discover Page", user_discover_path(@user), method: :get %>
+      </p>
+      <p>
+        <%= button_to "Create Viewing Party for #{@movie.title}", new_user_movie_viewing_party_path(@user, @movie.id), method: :get %>
+      </p>
+    </div>
+      <p>
+        Vote Average: <%= @movie.rating %>
+      </p>
+      <p>
+        Run Time: <%= @movie.runtime_in_hours %>
+      </p>
+      <p>
+        Genre(s): <%= @movie.genre %>
+      </p>
+</div>
+
+
+<div id="movie-<%= @movie.id %>-reviews">
+  <ul>
+  <% @reviews.each do |review| %>
+    <li>
+      <div id="#review-<%= review.author %>">
+        <p>Author: <%= review.author %></p>
+        <p><%= review.content %></p>
+      </div>
+    </li>
+  <% end %>
+  </ul>
 </div>

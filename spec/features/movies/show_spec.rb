@@ -5,42 +5,51 @@ RSpec.describe 'Movie Detail Page', type: :feature do
     before :each do
       @user_1 = User.create!(name: 'Jane', email: 'jane@mail.com')
 
-      @movie_1 = MovieFacade.movie_data(8)
+      @movie_1 = MovieFacade.movie_data(271110)
       @movie_2 = MovieFacade.movie_data(2)
       # require "pry"; binding.pry
     end
 
     describe 'When I visit a movies detail page' do
+
       it 'I see a button to create a viewing party' do
+
         visit user_movie_path(@user_1, @movie_1.id)
-        within('#create-viewing-party') do
-          click_button 'Create Viewing Party'
+        
+        within('#action_options') do
+          click_button "Create Viewing Party for #{@movie_1.title}"
         end
-        expect(current_path).to eq(new_user_movie_viewing_party(@user_1, @movie_id_1.id))
+        expect(current_path).to eq(new_user_movie_viewing_party_path(@user_1, @movie_1.id))
 
         visit user_movie_path(@user_1, @movie_2.id)
-        within('#create-viewing-party') do
-          click_button 'Create Viewing Party'
+
+        within('#action_options') do
+          click_button "Create Viewing Party for #{@movie_2.title}"
         end
-        expect(current_path).to eq(new_user_movie_viewing_party(@user_1, @movie_2.id))
+        expect(current_path).to eq(new_user_movie_viewing_party_path(@user_1, @movie_2.id))
       end
 
       it 'I see a Button to return to the Discover Page' do
+
         visit user_movie_path(@user_1, @movie_1.id)
-        within('#create-viewing-party') do
+
+        within('#action_options') do
           click_button 'Discover Page'
         end
-        expect(current_path).to eq(user_discover(@user_1))
+        expect(current_path).to eq(user_discover_path(@user_1))
 
         visit user_movie_path(@user_1, @movie_2.id)
-        within('#create-viewing-party') do
+
+        within('#action_options') do
           click_button 'Discover Page'
         end
-        expect(current_path).to eq(user_discover(@user_1))
+        expect(current_path).to eq(user_discover_path(@user_1))
       end
 
       describe 'I should see the following information:' do
+
         it 'Movie Title' do
+
           visit user_movie_path(@user_1, @movie_1.id)
 
           within("#movie-#{@movie_1.id}-details") do
@@ -57,6 +66,7 @@ RSpec.describe 'Movie Detail Page', type: :feature do
         end
 
         it 'Vote Average of the movie' do
+
           visit user_movie_path(@user_1, @movie_1.id)
 
           within("#movie-#{@movie_1.id}-details") do
@@ -73,6 +83,7 @@ RSpec.describe 'Movie Detail Page', type: :feature do
         end
 
         it 'Runtime in hours & minutes' do
+
           visit user_movie_path(@user_1, @movie_1.id)
 
           within("#movie-#{@movie_1.id}-details") do
@@ -89,6 +100,9 @@ RSpec.describe 'Movie Detail Page', type: :feature do
         end
 
         it 'Genre(s) associated to movie' do
+
+          visit user_movie_path(@user_1, @movie_1.id)
+
           within("#movie-#{@movie_1.id}-details") do
             expect(page).to have_content("Genre(s): #{@movie_1.genre}")
           end
@@ -103,6 +117,7 @@ RSpec.describe 'Movie Detail Page', type: :feature do
         end
 
         it 'Summary description' do
+
           visit user_movie_path(@user_1, @movie_1.id)
 
           within("#movie-#{@movie_1.id}-description") do
@@ -119,6 +134,7 @@ RSpec.describe 'Movie Detail Page', type: :feature do
         end
 
         it 'List the first 10 cast members (characters&actress/actors)' do
+
           visit user_movie_path(@user_1, @movie_1.id)
 
           within("#movie-#{@movie_1.id}-description") do
@@ -137,13 +153,16 @@ RSpec.describe 'Movie Detail Page', type: :feature do
         end
 
         it 'Count of total reviews' do
+
           visit user_movie_path(@user_1, @movie_1.id)
+
           within("#movie-#{@movie_1.id}-reviews") do
             expect(page).to have_content("#{MovieFacade.review_data(@movie_1.id).count}")
           end
           expect(page).to have_content("#{MovieFacade.review_data(@movie_2.id).count}")
 
           visit user_movie_path(@user_1, @movie_2.id)
+
           within("#movie-#{@movie_2.id}-reviews") do
             expect(page).to have_content("#{MovieFacade.review_data(@movie_2.id).count}")
           end
@@ -151,28 +170,36 @@ RSpec.describe 'Movie Detail Page', type: :feature do
         end
 
         it "Each review's author and information" do
-          visit user_movie_path(@user_1, @movie_1.id)
 
-          within("#movie-reviews") do
+          visit user_movie_path(@user_1, @movie_1.id)
+          
+          save_and_open_page
+          within("#movie-#{@movie_1.id}-reviews") do
             MovieFacade.review_data(@movie_1.id).each do |review|
-              within("review-#{review.author}") do
+              # within("#review-#{review.author}") do
                 expect(page).to have_content(review.author)
-                expect(page).to have_content(review.content)
-              end
+                # require "pry"; binding.pry
+                expect(page).to have_content(review.content[0..10])
+              # end
             end
-            expect(page).to_not have_content(MovieFacade.review_data(@movie_2.id)[0].content)
           end
+          
+          unwanted_movie_reviews = MovieFacade.review_data(@movie_2.id)
+          expect(page).to_not have_content(unwanted_movie_reviews[0].content)
+          
 
           visit user_movie_path(@user_1, @movie_2.id)
 
-          within("#movie-reviews") do
+          within("#movie-#{@movie_2.id}-reviews") do
             MovieFacade.review_data(@movie_2.id).each do |review|
-              within("review-#{review.author}") do
+              # within("#review-#{review.author}") do
                 expect(page).to have_content(review.author)
-                expect(page).to have_content(review.content)
-              end
+                expect(page).to have_content(review.content[0..10])
+              # end
             end
-            expect(page).to_not have_content(MovieFacade.review_data(@movie_1.id)[0].content)
+            
+            unwanted_movie_reviews = MovieFacade.review_data(@movie_1.id)
+            expect(page).to_not have_content(unwanted_movie_reviews[0].content)
           end
         end
       end

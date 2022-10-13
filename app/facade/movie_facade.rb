@@ -12,9 +12,9 @@ class MovieFacade
   end
 
   def self.review_data(movie_id)
-    review_data = MovieService.get_review_data(271110)
+    review_data = MovieService.get_review_data(movie_id)
     review_data[:results].map do |review|
-      Review.new(review)
+      Reviews.new(review)
     end
   end
 end
