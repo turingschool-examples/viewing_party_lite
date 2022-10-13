@@ -19,7 +19,7 @@ RSpec.describe MovieFacade do
         expect(MovieFacade.popular.first).to be_a(Hash)
         expect(MovieFacade.popular.first[:title]).to be_a(String)
         expect(MovieFacade.popular.last).to have_key(:vote_avg)
-        expect(MovieFacade.popular.count).to eq(20)
+        expect(MovieFacade.popular.count).to eq(40)
       end
     end
 
@@ -28,11 +28,23 @@ RSpec.describe MovieFacade do
       VCR.use_cassette("show", :allow_playback_repeats => true) do
         expect(MovieFacade.show(550)).to be_a(Hash)
         movie = MovieFacade.show(550)
-        
+
         expect(movie[:details][:title]).to be_a(String)
         expect(movie[:credits]).to be_a(Array)
         expect(movie[:reviews].first).to be_a(Hash)
         expect(movie[:credits]).to be_a(Array)
+      end
+    end
+  end
+
+  describe '#search' do
+    it 'returns the correct data type' do
+      VCR.use_cassette("search", :allow_playback_repeats => true) do
+        expect(MovieFacade.search('Hotel')).to be_a(Array)
+        expect(MovieFacade.search('Hotel').first).to be_a(Hash)
+        expect(MovieFacade.search('Hotel').first[:title]).to be_a(String)
+        expect(MovieFacade.search('Hotel').last).to have_key(:vote_avg)
+        expect(MovieFacade.search('Hotel').count).to eq(40)
       end
     end
   end
@@ -48,17 +60,4 @@ RSpec.describe MovieFacade do
       end
     end
   end
-
-
-  context 'private class methods' do #I guess we don't need to test these?
-    context '#show_details' do
-      xit 'returns movie details' do
-        VCR.use_cassette("show_details", :allow_playback_repeats => true) do
-          
-          expect(MovieFacade.show_details(550)).to be_a("")
-        end
-      end
-    end
-  end
-  
 end
