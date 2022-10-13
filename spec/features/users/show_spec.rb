@@ -121,7 +121,7 @@ RSpec.describe 'User show page' do
       create(:userParty, user_id: users[0].id, party_id: party1.id, is_host: false)
       create(:userParty, user_id: users[1].id, party_id: party1.id, is_host: true)
       visit user_path(users[0])
-      save_and_open_page
+
       expect(page).to have_content(party.title)
       expect(page).to have_content(party1.title)
     end

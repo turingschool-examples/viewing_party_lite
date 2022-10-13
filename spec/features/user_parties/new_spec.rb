@@ -54,7 +54,9 @@ RSpec.describe 'new user party page', type: :feature do
         expect(current_path).to eq(user_path(user1))
         expect(page).to have_content("Date: 2022-10-31")
       end
+    end
 
+    context 'Sad path testing' do
       it 'a viewing party should NOT be created if set to a value less than the duration of the movie', :vcr do
         user1 = create(:user)
         user2 = create(:user)
@@ -75,6 +77,26 @@ RSpec.describe 'new user party page', type: :feature do
 
         expect(current_path).to eq("/users/#{user1.id}/movies/550/viewing-party/new")
         expect(page).to have_content("The duration can not be shorter than the run time of the movie, silly.")
+      end
+
+      it "I can't create a viewing party without a date", :vcr do
+        user1 = create(:user)
+        user2 = create(:user)
+        user3 = create(:user)
+        user4 = create(:user)
+        user5 = create(:user)
+
+        visit "/users/#{user1.id}/movies/550/viewing-party/new"
+        fill_in(:duration, with: 180)
+
+        select "18", from: "[start_time(4i)]" #got this by inspecting the page
+        within('#potential_invitees') do
+          find(:css, "#invitees_#{user2.id}").set(true)
+          find(:css, "#invitees_#{user3.id}").set(true)
+          end
+        click_button('Create Party')
+        expect(page).to have_content('Please use a valid time and date')
+        expect(current_path).to eq("/users/#{user1.id}/movies/550/create")
       end
     end
   end
