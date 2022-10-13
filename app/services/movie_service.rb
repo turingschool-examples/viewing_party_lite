@@ -1,5 +1,4 @@
 class MovieService 
-
   def self.get_movie_data(movie_id)
     response = conn.get("/3/movie/#{movie_id}")
     JSON.parse(response.body, symbolize_names: true)
