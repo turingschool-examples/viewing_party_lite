@@ -3,12 +3,24 @@
 <%= button_to 'Discover Movies', user_discover_index_path(@user.id), method: :get %>
 </div>
 <section id="viewing_parties">
-  <% @user.viewing_parties.each do |vp| %>
+  <% @user.viewing_parties.each_with_index do |vp, image| %>
   <div id="party-<%= vp.id %>">
     <ul>
       <li><%= vp.current_movie.title %></li>
+      <img alt = <%= @movies[image].title %> src="https://image.tmdb.org/t/p/w200/<%= @movies[image].image %>">
       <li><%= vp.date.strftime('%B %d, %Y %I:%M %p') %></li>
-      <li><%= vp.current_party(@user.id).role %></li>
+      <li id="role">Your Role:<%= vp.current_party(@user.id).role %></li>
+      <li>Host By: <%=vp.host%></li>
+
+      <li>Viewers: <%vp.users.each do |user|%>
+          <% unless vp.host == user.name%>
+            <%if user.name == @user.name%>
+              <strong> <%=user.name%> </strong>
+            <%else%>
+            <%=user.name %>
+            <%end%>
+          <%end%>
+        <%end%></li>
     </ul>
   </div>
   <% end %>

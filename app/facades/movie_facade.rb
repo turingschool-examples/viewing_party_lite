@@ -1,6 +1,12 @@
 # frozen_string_literal: true
 
 class MovieFacade
+  def self.create_movies(movie_ids)
+    movie_ids.map do |id| 
+      create_individual_movie(id)
+    end
+  end
+
   def self.create_top_20_movies
     movies = MovieService.get_top_rated
     movies.map do |movie_data|

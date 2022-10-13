@@ -14,4 +14,8 @@ class ViewingParty < ApplicationRecord
   def current_movie
     MovieFacade.create_individual_movie(movie_id)
   end
+
+  def host
+    user_viewing_parties.joins(:user).where(role:1).pluck('users.name')[0]
+  end
 end

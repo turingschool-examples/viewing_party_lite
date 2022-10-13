@@ -8,7 +8,7 @@ RSpec.describe "Movie Detail Page" do
       visit "/users/#{@user1.id}/movies/19404"
       
       expect(page).to have_content("Dilwale Dulhania Le Jayenge")
-      expect(page).to have_content("Vote Average: 8.565")
+      expect(page).to have_content("Vote Average: 8.5")
       expect(page).to have_content("Comedy")
       expect(page).to have_content("Drama")
       expect(page).to have_content("Romance")
