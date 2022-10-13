@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe MoviesTopRated do
   describe 'movies top rated poros', :vcr do
     before :each do
-      @movies_top_rated = MovieFacade.movies_top_rated
+      @movies_top_rated = MovieFacade.top_rated_poro
     end
 
     it 'instantiates' do

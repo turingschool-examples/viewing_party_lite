@@ -13,22 +13,22 @@ class MovieService
     parse(response)
   end
 
-  def self.movie_details(movie_id)
+  def self.details(movie_id)
     response = conn.get("/3/movie/#{movie_id}")
     parse(response)
   end
 
-  def self.movie_credits(movie_id)
+  def self.credits(movie_id)
     response = conn.get("3/movie/#{movie_id}/credits")
     parse(response)
   end
 
-  def self.movie_reviews(movie_id)
+  def self.reviews(movie_id)
     response = conn.get("/3/movie/#{movie_id}/reviews")
     parse(response)
   end
 
-  def self.movie_search(keyword)
+  def self.search(keyword)
     response = conn.get('/3/search/movie', { query: keyword })
     parse(response)
   end

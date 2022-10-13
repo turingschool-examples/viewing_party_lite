@@ -10,7 +10,7 @@ RSpec.describe 'Movie API Services' do
     end
 
     it 'movie details', :vcr do
-      response = MovieService.movie_details(550)
+      response = MovieService.details(550)
 
       expect(response).to be_a(Hash)
       expect(response[:overview]).to be_a(String)
@@ -18,7 +18,7 @@ RSpec.describe 'Movie API Services' do
     end
 
     it 'movie credits', :vcr do
-      response = MovieService.movie_credits(550)
+      response = MovieService.credits(550)
 
       expect(response).to be_a(Hash)
       expect(response[:cast]).to be_a(Array)
@@ -28,7 +28,7 @@ RSpec.describe 'Movie API Services' do
     end
 
     it 'movie reviews', :vcr do
-      response = MovieService.movie_reviews(550)
+      response = MovieService.reviews(550)
       
       expect(response).to be_a(Hash)
       expect(response[:results]).to be_a(Array)
@@ -37,7 +37,7 @@ RSpec.describe 'Movie API Services' do
     end
 
     it 'movie search', :vcr do
-      response = MovieService.movie_search("Dark")
+      response = MovieService.search("Dark")
 
       expect(response).to be_a(Hash)
       expect(response[:results]).to be_a(Array)
