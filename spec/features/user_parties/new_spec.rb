@@ -76,7 +76,6 @@ RSpec.describe 'new user party page', type: :feature do
         expect(current_path).to eq("/users/#{user1.id}/movies/550/viewing-party/new")
         expect(page).to have_content("The duration can not be shorter than the run time of the movie, silly.")
       end
-
     end
   end
 end
