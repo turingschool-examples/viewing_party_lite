@@ -23,7 +23,7 @@ RSpec.describe MovieFacade do
       end
     end
 
-  context "#show" do
+  describe "#show" do
     it 'returns details, credits, and reviews for one movie' do
       VCR.use_cassette("show", :allow_playback_repeats => true) do
         expect(MovieFacade.show(550)).to be_a(Hash)
@@ -33,6 +33,18 @@ RSpec.describe MovieFacade do
         expect(movie[:credits]).to be_a(Array)
         expect(movie[:reviews].first).to be_a(Hash)
         expect(movie[:credits]).to be_a(Array)
+      end
+    end
+  end
+
+  describe "#new_party" do
+    it 'returns the data required for a new party' do
+      VCR.use_cassette("new_party", :allow_playback_repeats => true) do
+        expect(MovieFacade.new_party(550)).to be_a(Hash)
+        movie = MovieFacade.new_party(550)
+
+        expect(movie[:title]).to be_a(String)
+        expect(movie).to have_key(:runtime)
       end
     end
   end

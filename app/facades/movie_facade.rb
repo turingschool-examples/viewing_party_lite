@@ -27,11 +27,9 @@ class MovieFacade
   end
 
   def self.new_party(movie_id)
-    response = MovieService.request(movie_id)
+    parsed_data = MovieService.request(movie_id)
 
-    parsed = JSON.parse(response.body)
-
-    { title: parsed['original_title'], runtime: parsed['runtime'] }
+    { title: parsed_data['original_title'], runtime: parsed_data['runtime'] }
   end
 
   # _Private Class Methods_____________________________________________________________________________________
