@@ -3,3 +3,16 @@
 <strong><%= button_to "Create Viewing Party", new_user_movie_viewing_party_path(@user, @movie.id), method: :get %></strong>
 <br>
 <h3><%= button_to "Return to Discover Page", user_discover_path(@user), method: :get %></h3>
+<br>
+<p>Title: <%= @movie.title %></p>
+<p>Vote Average: <%= @movie.vote_average %></p>
+<p>Run time: <%= @movie.hours_and_minutes %></p>
+<p>Genre(s): <%= @movie.genres %></p>
+<p>Summary: <%= @movie.summary %></p>
+<p>Cast: <%= @movie.cast %></p>
+<p>Review count: <%= @movie.reviews.count %></p>
+Reviews:
+<% @movie.reviews.each do |review| %>
+<p>Author: <%= review[:author] %></p>
+<p>Review: <%= review[:content] %></p>
+<% end %>

@@ -29,15 +29,26 @@ RSpec.describe 'Movies show page' do
   end
 
   describe 'page content' do
-    # And I should see the following information about the movie:
+    it 'can display all details of the movie', :vcr do
+      visit user_movie_path(@user, @movie.id)
+      # And I should see the following information about the movie:
 
-    # _Movie Title
-    # _ Vote Average of the movie
-    # _ Runtime in hours & minutes
-    # _ Genre(s) associated to movie
-    # _ Summary description
-    # _ List the first 10 cast members (characters&actress/actors)
-    # _ Count of total reviews
-    # _ Each review's author and information
+      # _Movie Title
+      expect(page).to have_content(@movie.title)
+      # _ Vote Average of the movie
+      expect(page).to have_content(@movie.vote_average)
+      # _ Runtime in hours & minutes
+      expect(page).to have_content(@movie.hours_and_minutes)
+      # _ Genre(s) associated to movie
+      expect(page).to have_content(@movie.genres)
+      # _ Summary description
+      expect(page).to have_content(@movie.summary)
+      # _ List the first 10 cast members (characters&actress/actors)
+      expect(page).to have_content(@movie.cast)
+      # _ Count of total reviews
+      expect(page).to have_content(@movie.reviews.count)
+      # _ Each review's author and information
+      expect(page).to have_content(@movie.reviews.first[:author])
+    end
   end
 end
