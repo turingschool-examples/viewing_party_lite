@@ -275,7 +275,7 @@ DEPENDENCIES
   simplecov
   tzinfo-data
   uglifier (>= 1.3.0)
-  vcr
+  vcr (~> 6.1)
   web-console (>= 3.3.0)
   webmock
 
