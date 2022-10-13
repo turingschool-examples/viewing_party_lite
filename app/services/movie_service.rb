@@ -20,7 +20,7 @@ class MovieService
       else
         json[:results].each {|result| responses[:results] << result}
       end
-      break if page_count == json[:total_pages]
+      break if page_count >= json[:total_pages]
       page_count += 1
     end
     responses

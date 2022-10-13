@@ -1,6 +1,6 @@
 class Cast
 
-  attr_reader :id, :cast, :character
+  attr_reader :id, :name, :character
 
   def initialize(cast_api_data)
     @id = cast_api_data[:cast_id]

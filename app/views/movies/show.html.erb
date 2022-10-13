@@ -19,16 +19,32 @@
       </p>
 </div>
 
+<div id="movie-<%= @movie.id %>-description">
+  <h3>Summary:</h3>
+    <p><%= @movie.summary %></p>
+  <h3>Cast:</h3>
+    <ul>  
+    <% @cast.each do |cast_member| %>
+      <li>
+        <%= cast_member.name %> as <%= cast_member.character %>
+      </li>
+    <% end %>
+    </ul>  
+</div>
+
 
 <div id="movie-<%= @movie.id %>-reviews">
+<h4><%= @reviews.count %> Reviews</h4>
   <ul>
-  <% @reviews.each do |review| %>
-    <li>
-      <div id="#review-<%= review.author %>">
-        <p>Author: <%= review.author %></p>
-        <p><%= review.content %></p>
-      </div>
-    </li>
+  <% if !@reviews.empty? %>
+    <% @reviews.each_with_index do |review, index| %>
+      <li>
+        <div id="review-<%= index %>">
+          <p>Author: <%= review.author %></p>
+          <p><%= review.content %></p>
+        </div>
+      </li>
+    <% end %>
   <% end %>
   </ul>
 </div>
