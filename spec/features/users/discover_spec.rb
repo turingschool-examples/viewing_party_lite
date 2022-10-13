@@ -7,7 +7,7 @@ RSpec.describe 'Users discover page' do
       visit user_discover_path(@user)
     end
 
-    it 'can search by top rated movies' do
+    it 'can search by top rated movies', :vcr do
       #   As an user,
       # When I visit the '/users/:id/discover' path, where :id, is the id of a valid user,
       # I should see
@@ -18,7 +18,7 @@ RSpec.describe 'Users discover page' do
       expect(current_path).to eq(user_movies_path(@user))
     end
 
-    it 'can search by movie title' do
+    it 'can search by movie title', :vcr do
       # expect(page).to have_field('search')
       fill_in "search", with: 'y'
       # _ A Button to Search by Movie Title
