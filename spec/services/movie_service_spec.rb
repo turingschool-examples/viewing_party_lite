@@ -46,5 +46,17 @@ describe MovieService do
         expect(cast_members[:cast].first[:name]).to be_a String
       end
     end 
+
+    context '#reviews' do
+      it "returns a movie's reviews information", :vcr do
+        reviews = MovieService.reviews(550)
+        expect(reviews).to be_a Hash
+        expect(reviews[:results]).to be_an Array
+        expect(reviews[:results].first).to have_key :author
+        expect(reviews[:results].first[:author]).to be_a String
+        expect(reviews[:results].first).to have_key :author
+        expect(reviews[:results].first[:author]).to be_a String
+      end
+    end
   end
 end
