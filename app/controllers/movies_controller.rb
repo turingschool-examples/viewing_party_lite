@@ -19,6 +19,7 @@ class MoviesController < ApplicationController
               else
                 MovieFacade.top_20_movies
               end 
+    @user = User.find(params[:user_id])
   end
 
 
