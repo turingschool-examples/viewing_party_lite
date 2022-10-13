@@ -19,7 +19,7 @@ RSpec.describe MovieInfo do
 
     expect(movie_data).to be_a(MovieInfo)
     expect(movie_data.title).to eq('Life in Loops (A Megacities RMX)')
-    expect(movie_data.image).to eq('/x7Sz339F2oC8mBf0DHCQpKizXaL.jpg')
+    expect(movie_data.image).to eq('https://image.tmdb.org/t/p/w500/x7Sz339F2oC8mBf0DHCQpKizXaL.jpg')
     expect(movie_data.rating).to eq(7.7)
     expect(movie_data.runtime).to eq(80)
     expect(movie_data.genre).to eq('Documentary')
