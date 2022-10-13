@@ -22,11 +22,18 @@ RSpec.describe 'Discover Movies Page' do
     end
 
     it 'current_path should be ' do
-      user = create(:user)
+      VCR.use_cassette('top_40_movies') do
+        user = create(:user)
 
-      visit user_discover_path(user)
+        visit user_discover_path(user)
 
-      click_button "Top Rated Movies"
+        click_button "Top Rated Movies"
+        
+        within("#top_40_movies") do
+          expect(page).to have_content()
+        end
+      end
     end
+
   end
 end
