@@ -2,22 +2,20 @@ require 'rails_helper'
 
 RSpec.describe "user dashboard" do
   
-  describe 'when I visit a user dashboard' do
+  describe 'when I visit a user dashboard', :vcr do
     let!(:user) { create :user }
     let!(:friend) { create :user }
   
     before :each do
-      VCR.use_cassette('user_dashboard') do
         @movies = MoviesFacade.top_rated
         @movie_1 = @movies[0]
         @movie_2 = @movies[1]
-        @viewing_party_1 = ViewingParty.create!(duration: 300, start_time: Faker::Time.forward(days: 7, period: :evening), movie_id: @movie_1.id)
-        @viewing_party_2 = ViewingParty.create!(duration: 300, start_time: Faker::Time.forward(days: 7, period: :evening), movie_id: @movie_2.id)
+        @viewing_party_1 = ViewingParty.create!(duration: 300, start_time: Faker::Time.forward(days: 7, period: :evening), movie_id: @movie_1.id, movie_title: @movie_1.title)
+        @viewing_party_2 = ViewingParty.create!(duration: 300, start_time: Faker::Time.forward(days: 7, period: :evening), movie_id: @movie_2.id, movie_title: @movie_2.title)
         @vpu_1 = ViewingPartyUser.create!(user_id: user.id, viewing_party_id:@viewing_party_1.id, hosting: true)
         @vpu_2 = ViewingPartyUser.create!(user_id: user.id, viewing_party_id:@viewing_party_2.id, hosting: false)
         @vpu_3 = ViewingPartyUser.create!(user_id: friend.id, viewing_party_id: @viewing_party_2.id, hosting: true)
         visit user_path(user)
-      end
     end
 
     it 'displays a title' do
@@ -26,7 +24,7 @@ RSpec.describe "user dashboard" do
 
     it 'lists viewing parties for the user' do
       user.viewing_parties.each do |party|
-        expect(page).to have_link "Viewing Party ##{party.id}"
+        expect(page).to have_link party
       end
     end
 
