@@ -7,8 +7,10 @@
 
 <div id='party_details'>
   <h2>Viewing Party Details</h2>
+
   <br>
-    Movie Title <strong><%= @movie.title %></strong>
+
+  Movie Title <strong><%= @movie.title %></strong>
     <%= form_with url: user_movie_viewing_party_path(@user, @movie.movie_id), method: :post, local: true do |f|%>
       <%= f.hidden_field :host_id, value: @user.id%>
       <%= f.hidden_field :movie_id, value: @movie.movie_id %>
@@ -42,14 +44,14 @@
       <br>
       <br>
 
-      <section id="invite_others">
+    <section id="invite_others">
       <%= f.collection_check_boxes(:attendees, @invitees, :id, :name_and_email, include_hidden: false) do |attendee| %>
         <div id='check_boxes'>
           <%= attendee.check_box %>
           <%= attendee.label %>
         </div>
       <% end %>
-      </section>
+    </section>
 
       <br>
 

@@ -31,13 +31,13 @@ RSpec.describe User, type: :model do
       expect(user.name_and_email).to eq('Mike (mikedao@fakemail.com)')
     end
 
-    it 'is either hosts or attends' do
+    it 'is either hosting or attending' do
       party1 = ViewingParty.create!(
                   poster_path: 'movie poster path',
                   movie_title: 'The Shawshank Redemption',
                   movie_id: 123,
                   host_id: user1.id,
-                  duration: 456,
+                  duration: 173,
                   date: Date.today,
                   start_time: Time.now,
                 )
@@ -46,8 +46,18 @@ RSpec.describe User, type: :model do
                   poster_path: 'movie poster path',
                   movie_title: 'The Godfather',
                   movie_id: 141,
-                  host_id: user2.id,
+                  host_id: user1.id,
                   duration: 175,
+                  date: Date.tomorrow,
+                  start_time: Time.now,
+                )
+
+      party3 = ViewingParty.create!(
+                  poster_path: 'movie poster path',
+                  movie_title: 'Happy Gilmore',
+                  movie_id: 9614,
+                  host_id: user2.id,
+                  duration: 96,
                   date: Date.tomorrow,
                   start_time: Time.now,
                 )
@@ -57,10 +67,14 @@ RSpec.describe User, type: :model do
                         viewing_party_id: party1.id
                       )
       up2 = UserViewingParty.create!(
-                        user_id: user2.id,
+                        user_id: user1.id,
                         viewing_party_id: party2.id
                       )
-      expect(user1.hosting).to eq([party1])
+      up3 = UserViewingParty.create!(
+                        user_id: user2.id,
+                        viewing_party_id: party3.id
+                      )
+      expect(user1.hosting).to eq([party1, party2])
       # expect(user1.attending).to eq([party2])
     end
   end

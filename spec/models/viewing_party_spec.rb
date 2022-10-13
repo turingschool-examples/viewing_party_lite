@@ -30,7 +30,7 @@ RSpec.describe ViewingParty, type: :model do
                   movie_title: 'The Shawshank Redemption',
                   movie_id: 123,
                   host_id: user1.id,
-                  duration: 456,
+                  duration: 173,
                   date: Date.today,
                   start_time: Time.now
                 )

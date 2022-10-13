@@ -12,7 +12,6 @@ RSpec.describe 'Create Viewing Party' do
 
     click_on ('Create Viewing Party for The Godfather')
 
-    # expect(current_path).to eq("/users/#{user1.id}/movies/238/viewing-party/new")
     expect(current_path).to eq(user_movie_viewing_party_new_path(user1, 238))
   end
 
