@@ -9,7 +9,7 @@ RSpec.describe MovieService do
       it 'get the movie data for a specific movie' do
         VCR.use_cassette('fight_club_movie_data_v1') do
           movie_id = 550 #fight club
-          response = MovieService.get_movie_data(movie_id)
+          response = MovieService.get_movie_details(movie_id)
 
           expect(response).to be_a(Hash)
           expect(response[:title]).to be_a(String)

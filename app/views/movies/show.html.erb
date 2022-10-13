@@ -1,5 +1,35 @@
-<h1>Inglorious Bastards</h1>
+<h1><%= @movie.title %></h1>
 
-<%= button_to "Create Viewing Party for Inglorious Bastards", user_movie_path(@alex, @inglorious_bastards)%>
+<%= button_to "Create Viewing Party for #{@movie.title}", user_movie_path(@user, @movie)%>
 
-<%= button_to "Discover Page", user_discover_path(@alex)%>
+<%= button_to "Discover Page", user_discover_path(@user)%>
+
+<p>Vote Average: <%= @movie.vote_average %></p>
+
+<p>Runtime: <%= @movie.runtime %></p>
+
+<div id="cast">
+ <p>Genre(s):</p>
+  <ul>
+   <% @movie.genre.map do |genre|%>
+     <li><%= genre %></li>
+   <% end %>
+  </ul>
+</div>
+
+<p>Summary: <%= @movie.summary %></p>
+
+<div id="cast">
+ <p> Cast <% @movie.cast.each do |cast_mem| %></p>
+   <p><%= cast_mem.name %> / <%= cast_mem.character %></p>
+ <% end %>
+</div>
+
+<p><%= @movie.reviews.count %> Reviews</p>
+
+<div id="reviews">
+ <% @movie.reviews.each do |review| %>
+  <p> Author: <%= review.author %></p>
+  <p><%= review.content %></p>
+ <% end %>
+</div>
