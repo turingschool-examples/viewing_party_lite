@@ -8,14 +8,18 @@ class Movie
               :reviews,
               :image_path
 
-  def initialize(attributes)
-    @id = attributes[:id]
-    @title = attributes[:title]
-    @vote_average = attributes[:vote_average]
-    @genres = attributes[:genres]
-    @summary = attributes[:summary]
-    @cast = attributes[:cast]
-    @reviews = attributes[:reviews]
-    @image_path = attributes[:image_path]
+  def initialize(movie_details, movie_images, movie_credits, movie_reviews)
+    @id = movie_details[:id]
+    @title = movie_details[:title]
+    @vote_average = movie_details[:vote_average]
+    @genres = movie_details[:genres].map{ |genre| genre[:name] }
+    @summary = movie_details[:overview]
+    @cast = movie_credits[:cast][0..9].map do |cast_member|
+      {name: cast_member[:name], character: cast_member[:character]}
+    end
+    @reviews = movie_reviews[:results].map do |review|
+      {author: review[:author], content: review[:content]}
+    end
+    @image_path = movie_images[:posters].first[:file_path]
   end
 end
