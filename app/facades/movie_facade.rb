@@ -4,16 +4,24 @@ require './app/services/movie_service'
 class MovieFacade
   def self.info_card(movie_id)
     parsed_data = MovieService.request(movie_id)
-  
+
     { title: parsed_data['original_title'], img_path: parsed_data['poster_path'] }
   end
 
   def self.popular
-    parsed_data = MovieService.request('', 'popular')
-    
-    parsed_data["results"].map do |movie|
+    parsed_data_p1 = MovieService.request('', 'popular', '&page=1')
+
+    page1 = parsed_data_p1['results'].map do |movie|
       { title: movie['original_title'], vote_avg: movie['vote_average'] }
     end
+
+    parsed_data_p2 = MovieService.request('', 'popular', '&page=2')
+
+    page2 = parsed_data_p2['results'].map do |movie|
+      { title: movie['original_title'], vote_avg: movie['vote_average'] }
+    end
+
+    (page1 + page2).sort_by { |movie| - movie[:vote_avg].to_f }
   end
 
   def self.show(movie_id)
@@ -24,6 +32,22 @@ class MovieFacade
     reviews = show_reviews(movie_id)
 
     { details: details, credits: credits, reviews: reviews }
+  end
+
+  def self.search(query)
+    parsed_data_p1 = MovieService.search(query, '1')
+
+    page1 = parsed_data_p1['results'].map do |movie|
+      { title: movie['original_title'], vote_avg: movie['vote_average'] }
+    end
+
+    parsed_data_p2 = MovieService.search(query, '2')
+
+    page2 = parsed_data_p2['results'].map do |movie|
+      { title: movie['original_title'], vote_avg: movie['vote_average'] }
+    end
+
+    (page1 + page2).sort_by { |movie| - movie[:vote_avg].to_f }
   end
 
   def self.new_party(movie_id)
