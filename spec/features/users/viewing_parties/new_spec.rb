@@ -4,6 +4,9 @@ RSpec.describe 'User Viewing Party New Page', :vcr do
   before :each do
     @user1 = User.create(name: "Jake", email: "imjakekim@gmail.com")
     @user2 = User.create(name: "Riley", email: "rileybmccullough@gmail.com")
+    @user3 = User.create(name: "123", email: "123@gmail.com")
+    @user4 = User.create(name: "abc", email: "abc@gmail.com")
+
 
     @party1 = ViewingParty.create(movie_title: 'Fellowship of the Ring', length: 200, start_time: "2022-11-18 03:45")
     @party2 = ViewingParty.create(movie_title: 'Psych the Movie', length: 150, start_time: "2022-12-30 18:45")
@@ -12,9 +15,9 @@ RSpec.describe 'User Viewing Party New Page', :vcr do
     @user_party2 = ViewingPartyUser.create(viewing_party_id: @party2.id, user_id: @user1.id, status: 1)
   end
 
-  xit 'has required fixed content on new page' do
+  it 'has required fixed content on new page' do
     visit "/users/#{@user1.id}/movies/238/viewing_party/new"
-
+    save_and_open_page
     expect(page).to have_content("Discover Page")
     expect(page).to have_button("Create Party")
     expect(page).to have_content("Movie Title")

@@ -36,7 +36,7 @@ RSpec.describe 'User Movies Show Page From Results', :vcr do
     expect(current_path).to eq("/users/#{@user1.id}/discover")
   end
 
-  xit 'can use button to reach new viewing party' do
+  it 'can use button to reach new viewing party' do
     visit "/users/#{@user1.id}/movies/238"
     click_button 'Create Viewing Party for The Godfather'
 

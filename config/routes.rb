@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/users/:id', to: 'users#dashboard' #maybe we use show pages as dashboards
   get '/users/:id/movies', to: 'users#movies'
   get '/users/:id/movies/:movie_id', to: 'movies#show'
+  get '/users/:id/movies/:movie_id/viewing_party/new', to: 'viewing_parties#new'
 
   resources :users
 
