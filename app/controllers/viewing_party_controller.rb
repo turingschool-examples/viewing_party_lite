@@ -22,6 +22,7 @@ class ViewingPartyController < ApplicationController
             UserViewingParty.create!( user_id: attendee.to_i, viewing_party_id: viewing_party.id )
           end
         end
+
         redirect_to user_dashboard_path(User.find(params[:user_id]))
     end
 end
