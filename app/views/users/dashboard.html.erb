@@ -5,8 +5,9 @@
 
 <% @user.viewing_parties.each do |party| %>
   <p><%= party.movie_title%></p>
-  <p>Date: <%= party.start_time.strftime("%Y-%m-%d") %></p>
-  <p>Starting Time: <%= party.start_time.strftime("%H:%M:%S") %></p>
+   <%# <%binding.pry  %>
+  <p>Date: <%= party.date %></p>
+  <p>Starting Time: <%= party.start_time.strftime("%H:%M") %></p>
   <p>Status: <%= ViewingPartyUser.find_by(user_id: @user.id, viewing_party_id: party.id).status%></p>
   <br>
   <br>
