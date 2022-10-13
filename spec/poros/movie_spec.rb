@@ -42,6 +42,7 @@ RSpec.describe 'Movie' do
       expect(movie.reviews).to be_a Array
       expect(movie.reviews.first).to be_a Review
       expect(movie.image_link).to be_a String
+      expect(movie.id).to be_a Integer
     end
   end
 end

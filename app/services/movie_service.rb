@@ -17,4 +17,4 @@ class MovieService
     response = conn.get("/3/movie/#{movie_id}?append_to_response=images,credits,reviews")
     parse(response.body)
   end
-end
+end 

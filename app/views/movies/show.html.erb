@@ -1,6 +1,7 @@
 <h1><%= @movie.title %></h1>
 
-<%= button_to "Create Viewing Party for #{@movie.title}", user_movie_path(@user, @movie)%>
+
+<%= button_to "Create Viewing Party for #{@movie.title}", new_user_movie_viewing_party_path(@user, @movie.id), method: :get%>
 
 <%= button_to "Discover Page", user_discover_path(@user)%>
 
@@ -33,3 +34,4 @@
   <p><%= review.content %></p>
  <% end %>
 </div>
+
