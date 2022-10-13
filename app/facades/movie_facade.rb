@@ -3,4 +3,11 @@ class MovieFacade
     data = MovieService.movie_by_id(search_id)
     Movie.new(data)
   end
+
+  def self.top_20_movies
+    data = MovieService.top_rated_movies
+    data[:results].map do |movie_info|
+      Movie.new(movie_info)
+    end
+  end
 end

@@ -4,7 +4,18 @@ class MovieService
     parse(response)
   end
 
+  def self.top_rated_movies
+    response = conn.get("movie/top_rated")
+    parse(response)
+  end
+
+  def self.movie_search(movie_term)
+    response = conn.get("/search/movie?")
+    parse(response)
+  end
+
   private
+
   def self.conn
     Faraday.new('https://api.themoviedb.org/3/') do |faraday|
       faraday.params["api_key"] = ENV['movie_key']
