@@ -38,4 +38,8 @@ class MovieDetailed
     minutes = @runtime % 60
     "#{hours}hr #{minutes}min"
   end
+
+  def poster_path
+    "https://image.tmdb.org/t/p/w500" + attributes[:poster_path]
+  end
 end

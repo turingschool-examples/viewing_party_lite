@@ -51,4 +51,12 @@ RSpec.describe MovieDetailed do
       expect(@movie.hours_and_minutes).to eq("1hr 27min")
     end
   end
+
+  describe 'poster_path' do
+    it 'returns a useable URL for the movie poster' do
+      full_poster_path = "https://image.tmdb.org/t/p/w500/wKiOkZTN9lUUUNZLmtnwubZYONg.jpg"
+
+      expect(@movie.poster_path).to eq(full_poster_path)
+    end
+  end
 end
