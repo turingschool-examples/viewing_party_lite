@@ -37,30 +37,24 @@ class MovieFacade
   # _Private Class Methods_____________________________________________________________________________________
 
   def self.show_details(movie_id)
-    response = MovieService.request(movie_id)
-
-    parsed = JSON.parse(response.body)
+    parsed_data = MovieService.request(movie_id)
 
     {
-      title: parsed['original_title'], vote_avg: parsed['vote_average'], runtime: parsed['runtime'],
-      genres: parsed['genres'].map { |genre| genre['name'] }, summary: parsed['overview']
+      title: parsed_data['original_title'], vote_avg: parsed_data['vote_average'], runtime: parsed_data['runtime'],
+      genres: parsed_data['genres'].map { |genre| genre['name'] }, summary: parsed_data['overview']
     }
   end
 
   def self.show_credits(movie_id)
-    response = MovieService.request(movie_id, '/credits')
+    parsed_data = MovieService.request(movie_id, '/credits')
 
-    parsed = JSON.parse(response.body)
-
-    parsed['cast'][0..9].map { |member| { actor: member['name'], role: member['character'] } }
+    parsed_data['cast'][0..9].map { |member| { actor: member['name'], role: member['character'] } }
   end
 
   def self.show_reviews(movie_id)
-    response = MovieService.request(movie_id, '/reviews')
+    parsed_data = MovieService.request(movie_id, '/reviews')
 
-    parsed = JSON.parse(response.body)
-
-    parsed['results'].map { |review| { author: review['author'], content: review['content'] } }
+    parsed_data['results'].map { |review| { author: review['author'], content: review['content'] } }
   end
 
   private_class_method :show_details, :show_credits, :show_reviews
