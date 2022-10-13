@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Details do 
+RSpec.describe Details do
   describe 'Details Poros', :vcr do
     before :each do
       @details = MovieFacade.details_poro(550)

@@ -1,5 +1,4 @@
 class MovieFacade < MovieService
-  
   def self.top_rated_poro
     MoviesTopRated.new(top_rated)
   end
@@ -19,5 +18,4 @@ class MovieFacade < MovieService
   def self.search_poro(keyword)
     Search.new(search(keyword))
   end
-
 end

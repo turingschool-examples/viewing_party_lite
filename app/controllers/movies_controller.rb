@@ -1,9 +1,8 @@
 class MoviesController < ApplicationController
-
   def index
     # if params[:q] == "top%20rated"
     #   @movies = @top_rated
-    # else 
+    # else
     #   params[:q] # value of 'q' is used to filter API search
     #   # @movies = @filter_search_results(params[:q]) <-- value of 'q' passed as variable
     # end
@@ -18,5 +17,4 @@ class MoviesController < ApplicationController
 
     # top_rated = conn.get('/top_rated')
   end
-
 end
