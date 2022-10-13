@@ -62,6 +62,16 @@ RSpec.describe User, type: :model do
                   start_time: Time.now,
                 )
 
+      party4 = ViewingParty.create!(
+                  poster_path: 'movie poster path',
+                  movie_title: 'Maverick',
+                  movie_id: 9622,
+                  host_id: user3.id,
+                  duration: 96,
+                  date: Date.tomorrow,
+                  start_time: Time.now,
+                )
+
       up1 = UserViewingParty.create!(
                         user_id: user1.id,
                         viewing_party_id: party1.id
@@ -74,8 +84,24 @@ RSpec.describe User, type: :model do
                         user_id: user2.id,
                         viewing_party_id: party3.id
                       )
+
+      up4 = UserViewingParty.create!(
+                        user_id: user1.id,
+                        viewing_party_id: party3.id
+                      )
+
+      up5 = UserViewingParty.create!(
+                        user_id: user3.id,
+                        viewing_party_id: party4.id
+                      )
+
+      up5 = UserViewingParty.create!(
+                        user_id: user2.id,
+                        viewing_party_id: party4.id
+                      )
+
       expect(user1.hosting).to eq([party1, party2])
-      # expect(user1.attending).to eq([party2])
+      expect(user1.attending).to eq([party3])
     end
   end
 end
