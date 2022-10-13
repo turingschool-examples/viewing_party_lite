@@ -4,7 +4,8 @@ require './app/services/movie_service'
 class MovieFacade
   def self.info_card(movie_id)
     parsed_data = MovieService.request(movie_id)
-
+    x = Movie.new(parsed_data)
+  
     { title: parsed_data['original_title'], img_path: parsed_data['poster_path'] }
   end
 
