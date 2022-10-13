@@ -53,47 +53,28 @@
           null
         ]
       },
-      "/Users/kenl/Turing/3mod/projects/viewing_party_lite/app/poros/details.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          6,
-          6,
-          6,
-          6,
-          6,
-          null,
-          null
-        ]
-      },
       "/Users/kenl/Turing/3mod/projects/viewing_party_lite/app/facades/movie_facade.rb": {
         "lines": [
           1,
           null,
           1,
-          0,
+          1,
           null,
           null,
           1,
-          0,
+          1,
           null,
           null,
           1,
-          0,
+          1,
           null,
           null,
           1,
-          6,
+          1,
           null,
           null,
           1,
-          0,
+          1,
           null,
           null,
           null
@@ -105,10 +86,68 @@
           null,
           1,
           1,
-          6,
+          5,
           null,
           null,
           null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          5,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/kenl/Turing/3mod/projects/viewing_party_lite/app/poros/movies_top_rated.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/kenl/Turing/3mod/projects/viewing_party_lite/app/poros/credits.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
           null,
           null,
           1,
@@ -116,30 +155,46 @@
           0,
           null,
           null,
+          null
+        ]
+      },
+      "/Users/kenl/Turing/3mod/projects/viewing_party_lite/app/poros/reviews.rb": {
+        "lines": [
           1,
-          6,
-          6,
-          null,
-          null,
           1,
-          0,
-          0,
-          null,
           null,
           1,
-          0,
-          0,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/kenl/Turing/3mod/projects/viewing_party_lite/app/poros/details.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
           null,
           null,
           1,
-          0,
-          0,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
+          null
+        ]
+      },
+      "/Users/kenl/Turing/3mod/projects/viewing_party_lite/app/poros/search.rb": {
+        "lines": [
+          1,
+          1,
           null,
           1,
-          6,
-          null,
-          null,
+          1,
           null,
           null
         ]
@@ -147,69 +202,6 @@
       "/Users/kenl/Turing/3mod/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
           null,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/kenl/Turing/3mod/projects/viewing_party_lite/app/poros/credits.rb": {
-        "lines": [
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/kenl/Turing/3mod/projects/viewing_party_lite/app/poros/movies_top_rated.rb": {
-        "lines": [
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/kenl/Turing/3mod/projects/viewing_party_lite/app/poros/search.rb": {
-        "lines": [
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/kenl/Turing/3mod/projects/viewing_party_lite/app/poros/reviews.rb": {
-        "lines": [
-          0,
-          0,
           null,
           0,
           0,
@@ -335,6 +327,6 @@
         }
       }
     },
-    "timestamp": 1665631118
+    "timestamp": 1665631789
   }
 }
