@@ -1,17 +1,14 @@
 require 'rails_helper'
 
-RSpec.describe 'The new viewing party page' do
+RSpec.describe 'The new viewing party page', :vcr do
   before :each do
-    VCR.use_cassette('minions-details') do
-      @movie = MoviesFacade.details(438148)
-      users = create_list(:user, 4)
-      
-      @host = users[0]
-      @user_2 = users[1]
-      @user_3 = users[2]
-      visit new_user_movie_viewing_party_path(@host, @movie.id)
-
-    end
+    @movie = MoviesFacade.details(438148)
+    users = create_list(:user, 4)
+    
+    @host = users[0]
+    @user_2 = users[1]
+    @user_3 = users[2]
+    visit new_user_movie_viewing_party_path(@host, @movie.id)
   end
 
   describe 'When I visit the new viewing party page' do
@@ -68,7 +65,7 @@ RSpec.describe 'The new viewing party page' do
       end
     end
 
-    it 'will not create a viewing party if any fields are left blank', :vcr do
+    it 'will not create a viewing party if any fields are left blank' do
       click_button "Create Party Viewing Party for #{@movie.title}"
       
       expect(current_path).to eq(new_user_movie_viewing_party_path(@host, @movie.id))

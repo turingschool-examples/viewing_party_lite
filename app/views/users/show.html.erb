@@ -13,6 +13,7 @@
   <ul>
     <% @user.hosted_parties.each do |party| %>
       <li>
+        <p><%= image_tag @image_url_hash[party.movie_id] %></p>
         <p><%= link_to party.movie_title, user_movie_path(@user, party.movie_id) %></p>
         <h4>Host: <%= @user.name %></h4>
         <% party.users.each do |user| %>

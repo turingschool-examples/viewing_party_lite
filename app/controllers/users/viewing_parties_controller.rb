@@ -11,7 +11,6 @@ class Users::ViewingPartiesController < ApplicationController
     viewing_party = ViewingParty.new(viewing_party_params)
     if params[:duration] >= params[:movie_duration] 
       if viewing_party.save
-        viewing_party.invite_host(viewing_party_params)
         ViewingPartyUser.create!(
           user_id: host.id,
           viewing_party_id: viewing_party.id,
