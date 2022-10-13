@@ -26,7 +26,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 13 Oct 2022 22:07:30 GMT
+      - Thu, 13 Oct 2022 22:28:37 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -43,9 +43,9 @@ http_interactions:
       X-Memc-Key:
       - 89d500eb649699b4f9da44efd06c367bfcb058ac
       X-Memc-Age:
-      - '12026'
+      - '13293'
       X-Memc-Expires:
-      - '5829'
+      - '4562'
       Etag:
       - W/"dcb8c271377403ae5c9aca5285bc13e3"
       Vary:
@@ -53,15 +53,15 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 43af4a9c83f07a13ed51631899f2758c.cloudfront.net (CloudFront)
+      - 1.1 c4d0e5d1ee47bc930d83748a9de3156a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - IAH50-P1
+      - DFW56-P8
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 6OSawFtuqcfRWHd86a7pIG8efxU2TwLUlcsDE8Xa_8sFpTfyqeaTKQ==
+      - 1EtJS4Z3Ls7dM0BiEGjBGx2ndycdtxoPbKYQTOijUk0hBesi5iPA5w==
     body:
       encoding: ASCII-8BIT
       string: '{"id":667257,"page":1,"results":[],"total_pages":0,"total_results":0}'
-  recorded_at: Thu, 13 Oct 2022 22:07:30 GMT
+  recorded_at: Thu, 13 Oct 2022 22:28:37 GMT
 recorded_with: VCR 6.1.0

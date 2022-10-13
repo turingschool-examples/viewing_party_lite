@@ -50,15 +50,17 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 54963428d4c2676f98e0ada205d50c32.cloudfront.net (CloudFront)
+      - 1.1 c4d0e5d1ee47bc930d83748a9de3156a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DFW56-P8
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - H8cOsWgU38X8lA24cPop9OlCntdKz1VdWmJD9i6aytHzK2HhQEZB4g==
+      - L4L-EdaP0JN8-z6eodXawcyfFR_PWNsHaPj9f2nhnP8GYjZ6n6f67w==
+      Age:
+      - '890'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/e9n0sDkXTPz8CLXBEK1uo6janh3.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":27,"name":"Horror"},{"id":53,"name":"Thriller"}],"homepage":"","id":36600,"imdb_id":"tt0068596","original_language":"en","original_title":"The
@@ -68,7 +70,7 @@ http_interactions:
         Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"1972-10-01","revenue":0,"runtime":93,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"An
         appalling amalgam of carnage and carnality...","title":"The Flesh and Blood
         Show","video":false,"vote_average":5.667,"vote_count":24}'
-  recorded_at: Thu, 13 Oct 2022 22:13:44 GMT
+  recorded_at: Thu, 13 Oct 2022 22:28:34 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/34601?api_key=DONT SHOW MY API KEY&language=en-US
@@ -119,15 +121,17 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 4ca0e48ba9ab96e636a6139f463cddb4.cloudfront.net (CloudFront)
+      - 1.1 29b31d9d23b61350e5823a6ea187600a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DFW56-P8
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 5FCau4TBR711PWAZewaqnvc9IlvFo_T2PukhHRQwjrQ8hUqUdhhsUw==
+      - AH2JTX2FBNlnAnezS3C14Q6G_tNpCKpPUDK0isBkThWH7LK7CbBscg==
+      Age:
+      - '890'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/tQFiCSe4YYCrGYPiAyO1QEUG6X5.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":80,"name":"Crime"},{"id":18,"name":"Drama"},{"id":53,"name":"Thriller"}],"homepage":"","id":34601,"imdb_id":"tt0368343","original_language":"en","original_title":"Three
@@ -139,7 +143,7 @@ http_interactions:
         Media","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"2004-06-29","revenue":0,"runtime":88,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"A
         sinfully tasty brew of sex, extortion and murder.","title":"Three Way","video":false,"vote_average":4.167,"vote_count":18}'
-  recorded_at: Thu, 13 Oct 2022 22:13:44 GMT
+  recorded_at: Thu, 13 Oct 2022 22:28:34 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/36600?api_key=DONT SHOW MY API KEY&language=en-US
@@ -192,15 +196,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 0652f1eec1b7f705b4f43c446ce792b6.cloudfront.net (CloudFront)
+      - 1.1 35561346738876345d1384d47ee43e4e.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DFW56-P8
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - OaaWAA_mLw1SKE4th6AsnL6wF0ue--EAfD0moA_4G81LZxlFZB0hSQ==
+      - Zi3SD5Y96ETnKO1OH0EKKsMMNdD2U1NiebRglJ1EUrUS4x24qFf_mw==
       Age:
-      - '1'
+      - '890'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/e9n0sDkXTPz8CLXBEK1uo6janh3.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":27,"name":"Horror"},{"id":53,"name":"Thriller"}],"homepage":"","id":36600,"imdb_id":"tt0068596","original_language":"en","original_title":"The
@@ -210,7 +214,78 @@ http_interactions:
         Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"1972-10-01","revenue":0,"runtime":93,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"An
         appalling amalgam of carnage and carnality...","title":"The Flesh and Blood
         Show","video":false,"vote_average":5.667,"vote_count":24}'
-  recorded_at: Thu, 13 Oct 2022 22:13:45 GMT
+  recorded_at: Thu, 13 Oct 2022 22:28:34 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/36600?api_key=DONT SHOW MY API KEY&language=en-US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 13 Oct 2022 22:13:44 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 2d4c0e64dbf6164209c97df60fbf699170be3080
+      X-Memc-Age:
+      - '8809'
+      X-Memc-Expires:
+      - '7780'
+      Etag:
+      - W/"131b8b380a58f83b71a36692786bfdaf"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 951fa7b37aa8deb507bd7c21580139de.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DFW56-P8
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - s5g27h5RYUX9JhSudkC2SktxrQeADAl3GaRWfE2rbEOdUSemUXiprg==
+      Age:
+      - '891'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/e9n0sDkXTPz8CLXBEK1uo6janh3.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":27,"name":"Horror"},{"id":53,"name":"Thriller"}],"homepage":"","id":36600,"imdb_id":"tt0068596","original_language":"en","original_title":"The
+        Flesh and Blood Show","overview":"Actors rehearsing a show at a mysterious
+        seaside theater are being killed off by an unknown maniac.","popularity":3.071,"poster_path":"/4KNjXNOxareROutLC8WH9fMz2W1.jpg","production_companies":[{"id":17102,"logo_path":null,"name":"Peter
+        Walker (Heritage) Ltd.","origin_country":""}],"production_countries":[{"iso_3166_1":"GB","name":"United
+        Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"1972-10-01","revenue":0,"runtime":93,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"An
+        appalling amalgam of carnage and carnality...","title":"The Flesh and Blood
+        Show","video":false,"vote_average":5.667,"vote_count":24}'
+  recorded_at: Thu, 13 Oct 2022 22:28:34 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/34601?api_key=DONT SHOW MY API KEY&language=en-US
@@ -263,15 +338,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 d1b3934a5f7b628bf7c5fc67c44c2184.cloudfront.net (CloudFront)
+      - 1.1 57b1e37923c255dd954983b66605bf54.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DFW56-P8
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - IQkNZJ5fFG9kaJOxiFN-A0IltqkUBcuE-Ux2X85xZBCAgRrWvmfNwg==
+      - RmaNvXwuN3DNMAhwI4Yg0rJRKfgkmx3NigONioeNuvRCRx0a3TA1Ug==
       Age:
-      - '1'
+      - '891'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/tQFiCSe4YYCrGYPiAyO1QEUG6X5.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":80,"name":"Crime"},{"id":18,"name":"Drama"},{"id":53,"name":"Thriller"}],"homepage":"","id":34601,"imdb_id":"tt0368343","original_language":"en","original_title":"Three
@@ -283,5 +358,78 @@ http_interactions:
         Media","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"2004-06-29","revenue":0,"runtime":88,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"A
         sinfully tasty brew of sex, extortion and murder.","title":"Three Way","video":false,"vote_average":4.167,"vote_count":18}'
-  recorded_at: Thu, 13 Oct 2022 22:13:45 GMT
+  recorded_at: Thu, 13 Oct 2022 22:28:35 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/34601?api_key=DONT SHOW MY API KEY&language=en-US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 13 Oct 2022 22:13:44 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - '08f39500d8a35943308b700fca62eb437069b9b4'
+      X-Memc-Age:
+      - '10169'
+      X-Memc-Expires:
+      - '4674'
+      Etag:
+      - W/"d6e19ce6eb33f57cd4131889e00ac48c"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 84d06bcf691f46eadf1311b9a33f7d8e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DFW56-P8
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - Kl21QtNxyIjq0Kuf0IlG_yN7iVYS14UXUT50UdrKY7iBdM5EuxUPCQ==
+      Age:
+      - '891'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tQFiCSe4YYCrGYPiAyO1QEUG6X5.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":80,"name":"Crime"},{"id":18,"name":"Drama"},{"id":53,"name":"Thriller"}],"homepage":"","id":34601,"imdb_id":"tt0368343","original_language":"en","original_title":"Three
+        Way","overview":"Lew is a small time loser with a troubled past and a very
+        big secret. Overhearing a couple plan a kidnapping, Lew is tempted to come
+        up with a scheme of his own. He decides to get to the victim first and then
+        blackmail the real criminals. His plan soon spins out of control.","popularity":5.114,"poster_path":"/4sDNvHPwnCy6dQBU4FjSawNhrow.jpg","production_companies":[{"id":7339,"logo_path":null,"name":"Hyperion
+        Pictures","origin_country":""},{"id":11658,"logo_path":"/hDKTXUEj1BR3Istbh2Zu5GOYvej.png","name":"Brainstorm
+        Media","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"2004-06-29","revenue":0,"runtime":88,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"A
+        sinfully tasty brew of sex, extortion and murder.","title":"Three Way","video":false,"vote_average":4.167,"vote_count":18}'
+  recorded_at: Thu, 13 Oct 2022 22:28:35 GMT
 recorded_with: VCR 6.1.0
