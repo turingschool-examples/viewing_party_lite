@@ -12,7 +12,12 @@ class MovieFacade < MovieService
     Reviews.new(reviews(movie_id))
   end
 
+  def self.details_poro(movie_id)
+    Details.new(details(movie_id))
+  end
+
   def self.search_poro(keyword)
     Search.new(search(keyword))
   end
+
 end
