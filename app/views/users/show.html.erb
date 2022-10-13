@@ -1,12 +1,20 @@
-<h1><%= "#{@user.name}'s Dashboard" %></h1>
+<h1><%= @user.name + "'s Dashboard" %></h1>
 
-<div id="#discover-movie-btn"><%= button_to "Discover Movies" %></div>
+<div id="#discover-movie-btn">
+  <%= button_to "Discover Movies", 
+    user_discover_index_path(@user),
+    method: :get %>
+</div>
 
 <h2>Viewing Parties</h2>
 <ul id="viewing-parties">
   <% @user.viewing_parties.each do |party| %>
     <li>
-      <%= link_to "Viewing Party ##{party.id}", user_movie_viewing_party(@user, movie, party) %>
+      <%= link_to "Viewing Party ##{party.id}",
+        user_movie_viewing_party_path(
+          @user, 
+          party.movie_id, 
+          party) %>
     </li>
   <% end %>
 </ul>
