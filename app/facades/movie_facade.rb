@@ -26,12 +26,29 @@ class MovieFacade
     top_40
   end
 
-  def self.search(search_params)
-    json = MovieService.search(search_params.parameterize(separator: '+'))
+  def self.search_1_through_20(search_params)
+    json = MovieService.search(search_params.parameterize(separator: '+'), 1)
     json[:results].map do |movie_data|
       movie_object = MovieService.get_movie_data(movie_data[:id])
       Movie.new(movie_object)
     end
   end
+
+  def self.search_21_through_40(search_params)
+    json = MovieService.search(search_params.parameterize(separator: '+'), 2)
+    json[:results].map do |movie_data|
+      movie_object = MovieService.get_movie_data(movie_data[:id])
+      Movie.new(movie_object)
+    end
+  end
+
+  def self.search_first_40(search_params)
+    results = search_1_through_20(search_params)
+    search_21_through_40(search_params).map do |movie_object|
+      results << movie_object
+    end
+    results
+  end
+
 
 end

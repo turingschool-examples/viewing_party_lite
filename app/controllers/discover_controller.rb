@@ -9,7 +9,7 @@ class DiscoverController < ApplicationController
     if params[:format] == 'top_rated'
       @top_movies = MovieFacade.top_40_movies
     elsif params[:query].present?
-      @movies = MovieFacade.search(params[:query])
+      @movies = MovieFacade.search_first_40(params[:query])
       @search = params[:query]
     end
   end

@@ -47,5 +47,21 @@ RSpec.describe 'Discover Movies Page' do
       end
     end
 
+    it 'has button to navigate back to the discover page' do
+      VCR.use_cassette('search') do
+        user = create(:user)
+
+        visit user_discover_path(user)
+        expect(page).to have_button('Find Movies')
+
+        page.fill_in with: "fight cLub"
+        click_button 'Find Movies'
+
+        within("#search_results") do
+          
+        end
+      end
+    end
+
   end
 end

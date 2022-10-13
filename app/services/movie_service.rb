@@ -12,8 +12,8 @@ class MovieService
     data = JSON.parse(response.body, symbolize_names: true)
   end
 
-  def self.search(search_params)
-    response = conn.get("/3/search/movie?api_key=#{Figaro.env.tmdb_api_key}&query=#{search_params}")
+  def self.search(search_params, page)
+    response = conn.get("/3/search/movie?api_key=#{Figaro.env.tmdb_api_key}&query=#{search_params}&page=#{page}")
     data = JSON.parse(response.body, symbolize_names: true)
   end
 
