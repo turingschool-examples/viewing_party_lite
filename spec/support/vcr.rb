@@ -16,4 +16,7 @@ VCR.configure do |c|
   # to (I believe) check for updates. These requests will just show up as
   # noise in our cassettes unless we tell VCR to ignore these requests.
   c.ignore_hosts "chromedriver.storage.googleapis.com"
+
+  # Rspec automatically generates cassettes with :vcr do in the describe line
+  c.configure_rspec_metadata!
 end
