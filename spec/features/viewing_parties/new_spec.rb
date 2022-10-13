@@ -26,7 +26,7 @@ RSpec.describe 'The new viewing party page', :vcr do
         expect(current_path).to eq(user_path(@host))
         expect(page).to have_content('Viewing Parties')
         expect(page).to have_content(@movie.title)
-        expect(page).to have_content(ViewingParty.last.start_time)
+        expect(page).to have_content(ViewingParty.last.start_time.strftime("The party starts at %I:%M %p on %B %d, %Y"))
         expect(page).to have_content("Hosted Parties")
         expect(page).to have_content("Invited Parties")
       end
