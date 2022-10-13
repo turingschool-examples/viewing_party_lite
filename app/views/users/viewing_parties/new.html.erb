@@ -14,6 +14,7 @@
   <%= f.hidden_field :movie_duration, 
     value: @movie.runtime %>
   <%= f.hidden_field :movie_title, value: @movie.title %>
+  <%= f.hidden_field :host_id, value: @host.id %>
   <%= f.fields_for :users do |user_f| %>
     <div id="user-subform">
     <% @friends.each do |user| %>
