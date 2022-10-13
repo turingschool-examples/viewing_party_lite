@@ -143,7 +143,7 @@ RSpec.describe 'User Dashboard', type: :feature do
               expect(page).to have_content(@user_3.name)
               expect(page).to_not have_content(@user_4.name)
             end
-            
+
             within("#party-#{@party_2.id}") do
               expect(page).to have_content(@user_1.name)
               expect(page).to have_content(@user_2.name)
@@ -170,7 +170,6 @@ RSpec.describe 'User Dashboard', type: :feature do
             end
           end
         end
-      
       end
     end
   end

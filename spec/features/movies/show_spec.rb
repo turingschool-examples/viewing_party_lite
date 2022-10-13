@@ -1,0 +1,181 @@
+require 'rails_helper'
+
+RSpec.describe 'Movie Detail Page', type: :feature do
+  describe 'As a User' do
+    before :each do
+      @user_1 = User.create!(name: 'Jane', email: 'jane@mail.com')
+
+      @movie_1 = MovieFacade.movie_data(8)
+      @movie_2 = MovieFacade.movie_data(2)
+      # require "pry"; binding.pry
+    end
+
+    describe 'When I visit a movies detail page' do
+      it 'I see a button to create a viewing party' do
+        visit user_movie_path(@user_1, @movie_1.id)
+        within('#create-viewing-party') do
+          click_button 'Create Viewing Party'
+        end
+        expect(current_path).to eq(new_user_movie_viewing_party(@user_1, @movie_id_1.id))
+
+        visit user_movie_path(@user_1, @movie_2.id)
+        within('#create-viewing-party') do
+          click_button 'Create Viewing Party'
+        end
+        expect(current_path).to eq(new_user_movie_viewing_party(@user_1, @movie_2.id))
+      end
+
+      it 'I see a Button to return to the Discover Page' do
+        visit user_movie_path(@user_1, @movie_1.id)
+        within('#create-viewing-party') do
+          click_button 'Discover Page'
+        end
+        expect(current_path).to eq(user_discover(@user_1))
+
+        visit user_movie_path(@user_1, @movie_2.id)
+        within('#create-viewing-party') do
+          click_button 'Discover Page'
+        end
+        expect(current_path).to eq(user_discover(@user_1))
+      end
+
+      describe 'I should see the following information:' do
+        it 'Movie Title' do
+          visit user_movie_path(@user_1, @movie_1.id)
+
+          within("#movie-#{@movie_1.id}-details") do
+            expect(page).to have_content(@movie_1.title)
+          end
+          expect(page).to_not have_content(@movie_2.title)
+          
+          visit user_movie_path(@user_1, @movie_2.id)
+
+          within("#movie-#{@movie_2.id}-details") do
+            expect(page).to have_content(@movie_2.title)
+          end
+          expect(page).to_not have_content(@movie_1.title)
+        end
+
+        it 'Vote Average of the movie' do
+          visit user_movie_path(@user_1, @movie_1.id)
+
+          within("#movie-#{@movie_1.id}-details") do
+            expect(page).to have_content("Vote Average: #{@movie_1.rating}")
+          end
+          expect(page).to_not have_content("Vote Average: #{@movie_2.rating}")
+
+          visit user_movie_path(@user_1, @movie_2.id)
+
+          within("#movie-#{@movie_2.id}-details") do
+            expect(page).to have_content("Vote Average: #{@movie_2.rating}")
+          end
+          expect(page).to_not have_content("Vote Average: #{@movie_1.rating}")
+        end
+
+        it 'Runtime in hours & minutes' do
+          visit user_movie_path(@user_1, @movie_1.id)
+
+          within("#movie-#{@movie_1.id}-details") do
+            expect(page).to have_content("Run Time: #{@movie_1.runtime_in_hours}")
+          end
+          expect(page).to_not have_content("Run Time: #{@movie_2.runtime_in_hours}")
+          
+          visit user_movie_path(@user_1, @movie_2.id)
+          
+          within("#movie-#{@movie_2.id}-details") do
+            expect(page).to have_content("Run Time: #{@movie_2.runtime_in_hours}")
+          end
+          expect(page).to_not have_content("Run Time: #{@movie_1.runtime_in_hours}")
+        end
+
+        it 'Genre(s) associated to movie' do
+          within("#movie-#{@movie_1.id}-details") do
+            expect(page).to have_content("Genre(s): #{@movie_1.genre}")
+          end
+          expect(page).to have_content("Genre(s): #{@movie_2.genre}")
+          
+          visit user_movie_path(@user_1, @movie_2.id)
+          
+          within("#movie-#{@movie_2.id}-details") do
+            expect(page).to have_content("Genre(s): #{@movie_2.genre}")
+          end
+          expect(page).to have_content("Genre(s): #{@movie_1.genre}")
+        end
+
+        it 'Summary description' do
+          visit user_movie_path(@user_1, @movie_1.id)
+
+          within("#movie-#{@movie_1.id}-description") do
+            expect(page).to have_content("Genre(s): #{@movie_1.summary}")
+          end
+          expect(page).to_not have_content("Genre(s): #{@movie_2.summary}")
+
+          visit user_movie_path(@user_1, @movie_2.id)
+
+          within("#movie-#{@movie_2.id}-description") do
+            expect(page).to have_content("Genre(s): #{@movie_2.summary}")
+          end
+          expect(page).to_not have_content("Genre(s): #{@movie_1.summary}")
+        end
+
+        it 'List the first 10 cast members (characters&actress/actors)' do
+          visit user_movie_path(@user_1, @movie_1.id)
+
+          within("#movie-#{@movie_1.id}-description") do
+            MovieFacade.cast_data(@movie_1.id).each do |cast|
+              expect(page).to have_content("#{cast.name} / #{cast.character}")
+            end
+          end
+
+          visit user_movie_path(@user_1, @movie_2.id)
+
+          within("#movie-#{@movie_2.id}-description") do
+            MovieFacade.cast_data(@movie_2.id).each do |cast|
+              expect(page).to have_content("#{cast.name} / #{cast.character}")
+            end
+          end
+        end
+
+        it 'Count of total reviews' do
+          visit user_movie_path(@user_1, @movie_1.id)
+          within("#movie-#{@movie_1.id}-reviews") do
+            expect(page).to have_content("#{MovieFacade.review_data(@movie_1.id).count}")
+          end
+          expect(page).to have_content("#{MovieFacade.review_data(@movie_2.id).count}")
+
+          visit user_movie_path(@user_1, @movie_2.id)
+          within("#movie-#{@movie_2.id}-reviews") do
+            expect(page).to have_content("#{MovieFacade.review_data(@movie_2.id).count}")
+          end
+          expect(page).to have_content("#{MovieFacade.review_data(@movie_1.id).count}")
+        end
+
+        it "Each review's author and information" do
+          visit user_movie_path(@user_1, @movie_1.id)
+
+          within("#movie-reviews") do
+            MovieFacade.review_data(@movie_1.id).each do |review|
+              within("review-#{review.author}") do
+                expect(page).to have_content(review.author)
+                expect(page).to have_content(review.content)
+              end
+            end
+            expect(page).to_not have_content(MovieFacade.review_data(@movie_2.id)[0].content)
+          end
+
+          visit user_movie_path(@user_1, @movie_2.id)
+
+          within("#movie-reviews") do
+            MovieFacade.review_data(@movie_2.id).each do |review|
+              within("review-#{review.author}") do
+                expect(page).to have_content(review.author)
+                expect(page).to have_content(review.content)
+              end
+            end
+            expect(page).to_not have_content(MovieFacade.review_data(@movie_1.id)[0].content)
+          end
+        end
+      end
+    end
+  end
+end
