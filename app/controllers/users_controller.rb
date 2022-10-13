@@ -14,7 +14,6 @@ class UsersController < ApplicationController
       @movies = MovieDbFacade.search_movies(params[:search])
     else
       @movies = MovieDbFacade.top_20_movies
-      # require 'pry', binding.pry
     end
   end
 
