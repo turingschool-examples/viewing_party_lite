@@ -30,7 +30,7 @@ class MovieDbService
     end
 
     def self.cast(movie_id)
-        response = self.connection.get("3/movie/#{id}/credits")
+        response = self.connection.get("3/movie/#{movie_id}/credits")
         data = JSON.parse(response.body, symbolize_names: true)
     end
 end

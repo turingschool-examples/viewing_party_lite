@@ -14,6 +14,7 @@ class Movie
         @id = attributes[:id]
         @vote_average = attributes[:vote_average]
         @vote_count = attributes[:vote_count]
+        # require 'pry',binding.pry
         @genres = attributes[:genres].map { |genre| genre[:name] }
         @runtime = attributes[:runtime]
         @overview = attributes[:overview]
