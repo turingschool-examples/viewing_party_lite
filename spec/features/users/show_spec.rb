@@ -33,6 +33,16 @@ RSpec.describe 'User show page' do
       expect(page).to have_css("img[src*='https://image.tmdb.org/t/p/w200/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg']")
     end
 
+    it 'there is a movie title which links to the movie show page', :vcr do
+      user = create(:user)
+      party = create(:party, movie_id: 550)
+      viewing_party = create(:userParty, user_id: user.id, party_id: party.id, is_host: true)
+      visit user_path(user)
+      click_link 'Fight Club'
+      expect(current_path).to eq("/users/#{user.id}/movies/#{party.movie_id}")
+    end
+
+
     it 'There is a date and time of the event', :vcr do
       user = create(:user)
       party = create(:party, movie_id: 550, start_time: Time.now)
@@ -72,7 +82,7 @@ RSpec.describe 'User show page' do
       expect(page).not_to have_content('Date:')
     end
 
-    it 'I should also see viewing parties where I am the host', :vcr do
+    xit 'I should also see viewing parties where I am the host', :vcr do
       users = create_list(:user, 5)
       party = create(:party, movie_id: 420)
 
@@ -85,7 +95,7 @@ RSpec.describe 'User show page' do
       expect(page).to have_content('You are the host')
 
       visit user_path(users[1])
-      expect(page).not_to have_content('You are the host')
+      expect(page).to have_content("#{users[0].name} is the host")
     end
   end
 end

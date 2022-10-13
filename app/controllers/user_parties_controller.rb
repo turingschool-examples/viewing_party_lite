@@ -14,11 +14,8 @@ class UserPartiesController < ApplicationController
     if @movie.runtime > @party.duration
       redirect_to "/users/#{@user.id}/movies/#{@movie.id}/viewing-party/new"
       flash[:alert] = 'The duration can not be shorter than the run time of the movie, silly.'
-    elsif @movie_party.save
+    else @movie_party.save
       redirect_to user_path(@user)
-    else
-      flash[:alert] = 'Something went wrong'
-      render :new
     end
   end
 

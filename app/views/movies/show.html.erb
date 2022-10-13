@@ -3,8 +3,26 @@
 <%= @movie.title %>
 <p> Average votes: <%= @movie.average_votes%></p>
 <p> Duration: <%= @movie.runtime / 60 %>:<%= @movie.runtime % 60 %></p>
-<p> Genres: <%= @movie.genres.join(', ')%>
-<p> Description: <%= @movie.overview%>
+<p> Genres: <%= @movie.genres.join(', ')%></p>
+<p> Description: <%= @movie.overview%></p>
+
+<div id="cast">
+<p> Cast: <% @top_10_cast.each do |cast| %></p>
+  <p><%= cast%></p>
+<% end %>
+</div>
+
+<p> Review Count: <%= @reviews.size %></p>
+
+<div id="reviews">
+<% @reviews.each do |review| %>
+<p> Author Name: <%= review.author_name %></p>
+<p>Review: <%= review.author_review %></p>
+<% end %>
+</div>
+
+
+
 
 <%= button_to 'Create a Viewing Party', "/users/#{@user.id}/movies/#{@movie.id}/viewing-party/new", method: :get %>
 <%= button_to 'Return to Discover Page', "/users/#{@user.id}/discover", method: :get %>
