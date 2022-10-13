@@ -18,6 +18,16 @@ class MovieService
     parse(response)
   end
 
+  def self.get_search_data(search)
+    response = self.conn.get("/3/search/movie?query=#{search}")
+    parse(response)
+  end
+
+  def self.get_top_movie_data
+    response = self.conn.get('3/movie/top_rated')
+    parse(response)
+  end
+
   private
 
   def self.conn
