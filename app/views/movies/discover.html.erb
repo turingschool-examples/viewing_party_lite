@@ -1,6 +1,6 @@
 <h2>Discover Movies</h2>
 
-<%= button_to 'Find Top Rated Movies', user_movies_path(@user.id), method: :get, local: true %>
+<%= button_to 'Find Top Rated Movies', user_movies_path(@user.id, params: {search: "top rated"}), method: :get, local: true %>
 
 <p>OR</p>
 
