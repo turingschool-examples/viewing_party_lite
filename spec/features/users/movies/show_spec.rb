@@ -28,7 +28,7 @@ RSpec.describe 'Movie Details Page', type: :feature do
 
       click_button('Create Viewing Party for The Godfather')
 
-      expect(current_path).to eq(new_user_movie_viewing_party(user1, 238))
+      expect(current_path).to eq(new_user_movie_viewing_party_path(user1, 238))
     end
 
     it 'I see a button to return to the Discover Page' do
@@ -40,7 +40,7 @@ RSpec.describe 'Movie Details Page', type: :feature do
 
       click_button('Discover Page')
 
-      expect(current_path).to eq(user_discover_index(user1))
+      expect(current_path).to eq(user_discover_index_path(user1))
     end
   end
 
