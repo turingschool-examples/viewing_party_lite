@@ -32,4 +32,12 @@ class MoviesFacade
 
     MovieDetailed.new(response)
   end
+
+  def self.images(movie_ids)
+    movie_ids.each_with_object({}) do |movie_id, hash|
+      response = MoviesService.details(movie_id)
+      movie = MovieDetailed.new(response)
+      hash[movie.id] = movie.poster_path 
+    end
+  end
 end

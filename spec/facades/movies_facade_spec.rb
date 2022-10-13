@@ -45,4 +45,11 @@ RSpec.describe MoviesFacade do
       expect(@movie).to be_a(MovieDetailed)
     end
   end
+
+  it 'can return a hash of movie ids with poster URLs' do
+    movie_ids = [238, 372754, 497]
+    VCR.use_cassette('movie-posters') do
+      expect(MoviesFacade.images(movie_ids)).to be_a(Hash)
+    end
+  end
 end
