@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   match 'register', via: :get, to: 'users#new'
   resources :users, only: [:show, :create] do
     resources :discover, only: [:index]
-    resources :movies, only: [:index]
+    resources :movies, only: [:index, :show] do
+      resources :viewing_party, only: [:new]
+    end 
   end
 end
