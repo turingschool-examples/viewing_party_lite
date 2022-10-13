@@ -19,11 +19,12 @@
   <%= form.time_field :start_time  %>
   <br>
   <p>Invite Other Users</p>
+
   <% @other_users.each do |user| %>
-    <%= form.check_box :user, {multiple: true}, user.id, '' %>
-    <%= form.label :user, "#{user.name} (#{user.email})" %>
+      <%= form.check_box :user, {multiple: true}, user.id %>
+      <%= form.label :user, "#{user.name} (#{user.email})" %>
   <% end %>
 
-  <%# <%= form.collection_check_boxes :user_id, @other_users, :name, :email %> %>
-  <%= form.submit %>
+<br>
+  <%= form.submit 'Create Party'%>
 <% end %>
