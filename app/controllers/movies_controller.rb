@@ -5,10 +5,10 @@ class MoviesController < ApplicationController
     @user = User.find(params[:user_id])
     if params[:search].present?
       @movies = MovieFacade.movie_search(params[:search])
-    elsif @movies = MovieFacade.create_top_20_movies
+    elsif params[:search] == ''
+      redirect_to user_discover_index_path(@user), notice: 'Error: Incorrect information entered'
     else
-      params[:search].blank?
-      redirect_to user_discover_index_path(@user)
+      @movies = MovieFacade.create_top_20_movies
     end
   end
 

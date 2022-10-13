@@ -50,15 +50,17 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 aee0e736eaddfa64a25a05d618e0bcc8.cloudfront.net (CloudFront)
+      - 1.1 93a337a885216dd34c773e24f14e735e.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DFW56-P8
+      - DFW53-C1
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - hEzBkqmAO6ZIdN8ZYkRMguAwieM_E_OofO97GIW0E1dzH_vDbjNVzg==
+      - CSstmLq-j_jQl6cb0-9VjJMPdSOLIM1xpL-JrByMoG51K5_xkNvfLg==
+      Age:
+      - '1917'
     body:
       encoding: ASCII-8BIT
       string: '{"id":12,"page":1,"results":[{"author":"Dave09","author_details":{"name":"","username":"Dave09","avatar_path":null,"rating":null},"content":"One
@@ -79,5 +81,5 @@ http_interactions:
         from start-to-finish. The score is fantastic, too.\r\n\r\nHighly recommended.","created_at":"2020-07-22T20:11:01.826Z","id":"5f189d55db952d0034957e59","updated_at":"2021-06-23T15:58:41.124Z","url":"https://www.themoviedb.org/review/5f189d55db952d0034957e59"},{"author":"John","author_details":{"name":"John","username":"johnmills","avatar_path":null,"rating":10.0},"content":"Awesome
         ocean visuals and fun story do a good job glossing over dark themes of loss,
         addiction, hopelessness and despair.","created_at":"2021-04-07T00:55:05.232Z","id":"606d02e998f1f10057286d7b","updated_at":"2021-06-23T15:58:54.112Z","url":"https://www.themoviedb.org/review/606d02e998f1f10057286d7b"}],"total_pages":1,"total_results":3}'
-  recorded_at: Thu, 13 Oct 2022 22:28:32 GMT
+  recorded_at: Thu, 13 Oct 2022 23:00:29 GMT
 recorded_with: VCR 6.1.0

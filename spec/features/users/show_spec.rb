@@ -56,7 +56,6 @@ RSpec.describe 'User | Show', type: :feature do
     it 'I see the invited viewers, host, and my name in bold' do
       within('#viewing_parties') do
         within("#party-#{@vp2.id}") do
-          save_and_open_page
           within('#host') do
             expect(page).to have_content(@user3.name)
           end
