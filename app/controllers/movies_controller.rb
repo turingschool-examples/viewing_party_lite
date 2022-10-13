@@ -3,7 +3,7 @@ class MoviesController < ApplicationController
 #     And I should see the following information about the movie:
 
 #  Movie Title # details
-#  Vote Average of the movie 
+#  Vote Average of the movie
 #  Runtime in hours & minutes
 #  Genre(s) associated to movie
 #  Summary description
@@ -12,4 +12,14 @@ class MoviesController < ApplicationController
 #  Each review's author and information
 
   end
+
+  def index
+    @movies = if params[:search]
+                MovieFacade.search_results(params[:search])
+              else
+                MovieFacade.top_20_movies
+              end 
+  end
+
+
 end

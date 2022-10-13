@@ -1,5 +1,5 @@
 <h1><%= @user.name %>'s Dashboard </h1>
-<p><%= button_to "Discover Movies", user_discover_path(@user) %></p>
+<p><%= button_to "Discover Movies", user_discover_index_path(@user), method: :get %></p>
 <section id="attending">
   <% @user.parties.each do |party| %>
   <div id="party-<%= party.id %>">
@@ -7,7 +7,7 @@
     <% if party.host_id != @user.id %>
       <% search_movie = @movies.find{ |movie| movie.id == party.movie_id} %>
 
-      <%= link_to "#{search_movie.original_title}", movie_path(party.movie_id) %>
+      <%= link_to "#{search_movie.original_title}", user_movie_path(@user, party.movie_id) %>
       <br>
       <img src=<%= search_movie.image %>>
       <br>
@@ -40,7 +40,7 @@
     <% if party.host_id == @user.id %>
       <% search_movie = @movies.find{ |movie| movie.id == party.movie_id} %>
 
-      <%= link_to "#{search_movie.original_title}", movie_path(party.movie_id) %>
+      <%= link_to "#{search_movie.original_title}", user_movie_path(@user, party.movie_id) %>
       <br>
       <img src=<%= search_movie.image %>>
       <br>

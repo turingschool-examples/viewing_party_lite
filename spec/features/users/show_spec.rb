@@ -42,11 +42,11 @@ RSpec.describe 'User Dashboard Page' do
     it 'has a button to discover movies' do
       visit user_path(@user_1)
       click_button "Discover Movies"
-      expect(current_path).to eq(user_discover_path(@user_1))
+      expect(current_path).to eq(user_discover_index_path(@user_1))
 
       visit user_path(@user_2)
       click_button "Discover Movies"
-      expect(current_path).to eq(user_discover_path(@user_2))
+      expect(current_path).to eq(user_discover_index_path(@user_2))
     end
 
     # it 'has a section for users current viewing parties' do
@@ -92,12 +92,12 @@ RSpec.describe 'User Dashboard Page' do
         end
       end
 
-      expect(current_path).to eq(movie_path(@party_1.movie_id)) #fix routing
+      expect(current_path).to eq(user_movie_path(@user_3, @party_7.movie_id)) #fix routing
     end
 
     it 'shows the viewing parties the user has created with details (host)' do
         visit user_path(@user_1)
-        
+
         within("#hosting") do
           within("#party-#{@party_6.id}") do
 
@@ -113,7 +113,7 @@ RSpec.describe 'User Dashboard Page' do
             click_link "The Flintstones in Viva Rock Vegas"
           end
         end
-        expect(current_path).to eq(movie_path(@party_4.movie_id)) #fix routing
+        expect(current_path).to eq(user_movie_path(@user_1, @party_4.movie_id)) #fix routing
 
     end
   end
