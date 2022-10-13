@@ -21,13 +21,13 @@ class MovieDetailed
   end
 
   def cast
-    @attributes[:credits][:cast].first(10).map do |member|
+    @attributes[:cast].first(10).map do |member|
       member[:name] + ' as ' + member[:character]
     end
   end
 
   def reviews
-    @attributes[:reviews][:results].map do |review|
+    @attributes[:results].map do |review|
       {author: review[:author], content: review[:content]}
     end
   end

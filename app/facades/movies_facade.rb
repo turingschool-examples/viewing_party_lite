@@ -3,7 +3,7 @@ class MoviesFacade
     json = MoviesService.top_rated
 
     @movies = json[:results].map do |movie_data|
-      Movie.new(movie_data)
+      MovieDetailed.new(movie_data)
     end
   end
 
@@ -11,7 +11,7 @@ class MoviesFacade
     json = MoviesService.search_by_title(title)
 
     @movies = json[:results].map do |movie_data|
-      Movie.new(movie_data)
+      MovieDetailed.new(movie_data)
     end
   end
 
