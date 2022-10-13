@@ -7,14 +7,27 @@
 </div>
 
 <h2>Viewing Parties</h2>
-<ul id="viewing-parties">
-  <% @user.viewing_parties.each do |party| %>
-    <li id="party-<%= party.id %>">
-      <%= link_to "Viewing Party ##{party.id}",
-        user_movie_viewing_party_path(
-          @user, 
-          party.movie_id, 
-          party) %>
-    </li>
-  <% end %>
-</ul>
+
+<div id="hosted-parties">
+  <h3>Hosted Parties</h3>
+  <ul>
+    <% @user.hosted_parties.each do |party| %>
+      <li>
+        <p><%= link_to party.movie_title, user_movie_viewing_party_path(@user, party.movie_id, party) %></p>
+        <p><%= party.start_time %></p>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div id="invited-parties">
+  <h3>Invited Parties</h3>
+  <ul>
+    <% @user.invited_parties.each do |party| %>
+      <li>
+        <p><%= link_to party.movie_title, user_movie_viewing_party_path(@user, party.movie_id, party) %></p>
+        <p><%= party.start_time %></p>
+      </li>
+    <% end %>
+  </ul>
+</div>

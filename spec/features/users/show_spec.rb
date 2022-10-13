@@ -11,8 +11,11 @@ RSpec.describe "user dashboard" do
         @movies = MoviesFacade.top_rated
         @movie_1 = @movies[0]
         @movie_2 = @movies[1]
-        @viewing_party_1 = user.viewing_parties.create!(duration: 300, start_time: Faker::Time.forward(days: 7, period: :evening), movie_id: @movie_1.id)
-        @viewing_party_2 = friend.viewing_parties.create!(duration: 300, start_time: Faker::Time.forward(days: 7, period: :evening), movie_id: @movie_2.id)
+        @viewing_party_1 = ViewingParty.create!(duration: 300, start_time: Faker::Time.forward(days: 7, period: :evening), movie_id: @movie_1.id)
+        @viewing_party_2 = ViewingParty.create!(duration: 300, start_time: Faker::Time.forward(days: 7, period: :evening), movie_id: @movie_2.id)
+        @vpu_1 = ViewingPartyUser.create!(user_id: user.id, viewing_party_id:@viewing_party_1.id, hosting: true)
+        @vpu_2 = ViewingPartyUser.create!(user_id: user.id, viewing_party_id:@viewing_party_2.id, hosting: false)
+        @vpu_3 = ViewingPartyUser.create!(user_id: friend.id, viewing_party_id: @viewing_party_2.id, hosting: true)
         visit user_path(user)
       end
     end
