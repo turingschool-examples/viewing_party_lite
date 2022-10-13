@@ -4,16 +4,15 @@ RSpec.describe "user dashboard" do
   
   describe 'when I visit a user dashboard' do
     let!(:user) { create :user }
+    let!(:friend) { create :user }
   
     before :each do
       VCR.use_cassette('user_dashboard') do
         @movies = MoviesFacade.top_rated
         @movie_1 = @movies[0]
         @movie_2 = @movies[1]
-        @movie_3 = @movies[2]
         @viewing_party_1 = user.viewing_parties.create!(duration: 300, start_time: Faker::Time.forward(days: 7, period: :evening), movie_id: @movie_1.id)
-        @viewing_party_2 = user.viewing_parties.create!(duration: 300, start_time: Faker::Time.forward(days: 7, period: :evening), movie_id: @movie_2.id)
-        @viewing_party_3 = user.viewing_parties.create!(duration: 300, start_time: Faker::Time.forward(days: 7, period: :evening), movie_id: @movie_3.id)
+        @viewing_party_2 = friend.viewing_parties.create!(duration: 300, start_time: Faker::Time.forward(days: 7, period: :evening), movie_id: @movie_2.id)
         visit user_path(user)
       end
     end

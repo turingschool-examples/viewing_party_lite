@@ -9,7 +9,7 @@
 <h2>Viewing Parties</h2>
 <ul id="viewing-parties">
   <% @user.viewing_parties.each do |party| %>
-    <li>
+    <li id="party-<%= party.id %>">
       <%= link_to "Viewing Party ##{party.id}",
         user_movie_viewing_party_path(
           @user, 
