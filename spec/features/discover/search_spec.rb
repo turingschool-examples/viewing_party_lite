@@ -44,7 +44,6 @@ RSpec.describe 'Discover Movies Page' do
         click_button 'Find Movies'
         expect(current_path).to eq user_discover_path(user)
         expect(page).to have_content "Fight Club"
-        save_and_open_page
       end
     end
 
