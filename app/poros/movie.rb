@@ -8,7 +8,8 @@ class Movie
               :summary,
               :cast,
               :reviews,
-              :image_link
+              :image_link,
+              :id
 
   def initialize(data)
     @title = data[:title]

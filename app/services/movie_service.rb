@@ -20,4 +20,4 @@ class MovieService
   def self.conn
     conn = Faraday.new(url: 'https://api.themoviedb.org')
   end
-end
+end 

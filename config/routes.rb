@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   match '/register', to: 'users#new', via: :get
   
   resources :users, only: %i[show create] do
-    resources :movies, only: [:show]
+    resources :movies, only: [:show] do
+      resources :viewing_parties, only: %i[new create]
+    end
     get '/discover', to: 'discover#search'
   end
 
