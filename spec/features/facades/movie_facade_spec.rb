@@ -37,7 +37,7 @@ RSpec.describe MovieFacade do
     end
   end
 
-  describe '.search(search_params)' do
+  describe '.search_first_40(search_params)' do
     it 'should search api for partial and complete matches' do
       VCR.use_cassette('.search') do
         array = MovieFacade.search_first_40("fight club")
