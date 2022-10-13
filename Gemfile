@@ -44,6 +44,7 @@ group :development, :test do
   gem 'figaro'
   gem 'pry'
   gem 'shoulda-matchers'
+  gem 'orderly'
 end
 
 group :development do
