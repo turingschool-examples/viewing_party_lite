@@ -2,10 +2,12 @@
 <p><%= button_to "Discover Movies", user_discover_path(@user) %></p>
 <section id="attending">
   <% @user.parties.each do |party| %>
+  <div id="party-<%= party.id %>">
+
     <% if party.host_id != @user.id %>
       <% search_movie = @movies.find{ |movie| movie.id == party.movie_id} %>
 
-      <%= link_to "#{search_movie.original_title}", movie_path(search_movie) %>
+      <%= link_to "#{search_movie.original_title}", movie_path(party.movie_id) %>
       <br>
       <img src=<%= search_movie.image %>>
       <br>
@@ -13,21 +15,50 @@
       <p> Date: <%= party.date %></p>
       <ul>
 
+        <p>Attendees:</p>
       <% party.users.each do |user| %>
         <% if user.id == party.host_id %>
-          <p>Host: <%= user.name %></p>
+          <li><p>Host: <%= user.name %></p></li>
         <% end %>
-        <p>Attendees</p>
-        <% if user.id == @user.id %>
+        <% if user.id == @user.id && user.id != party.host_id%>
+
           <li><b> <%= @user.name %> </b></li>
-            <%else%>
+            <%elsif user.id != party.host_id%>
           <li><%= user.name %></li>
         <% end %>
       <% end %>
     </ul>
     <% end %>
+  </div>
   <% end %>
 </section>
 
 <section id="hosting">
+  <% @user.parties.each do |party| %>
+    <div id="party-<%= party.id %>">
+
+    <% if party.host_id == @user.id %>
+      <% search_movie = @movies.find{ |movie| movie.id == party.movie_id} %>
+
+      <%= link_to "#{search_movie.original_title}", movie_path(party.movie_id) %>
+      <br>
+      <img src=<%= search_movie.image %>>
+      <br>
+      <p> Start Time: <%= party.start_time %></p>
+      <p> Date: <%= party.date %></p>
+      <p> Host: <%= @user.name %></p>
+      <p>Attendees:</p>
+      <ul>
+        <% party.users.each do |user| %>
+          <% if user.id != @user.id %>
+            <li><%= user.name %></li>
+
+          <% end %>
+        <% end %>
+      </ul>
+
+      <% end %>
+      </div>
+    <% end %>
+
 </section>

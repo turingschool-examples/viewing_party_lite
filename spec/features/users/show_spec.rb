@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'User Dashboard Page' do
-  describe 'user visits the dashboard page', :vcr do
+  describe 'user visits the dashboard page' do
     before :each do
       @user_1 = create(:user)
       @user_2 = create(:user)
@@ -24,7 +24,10 @@ RSpec.describe 'User Dashboard Page' do
       create(:user_parties, user_id: @user_2.id, party_id: @party_4.id)
       create(:user_parties, user_id: @user_2.id, party_id: @party_5.id)
       create(:user_parties, user_id: @user_3.id, party_id: @party_6.id)
+      create(:user_parties, user_id: @user_1.id, party_id: @party_6.id)
       create(:user_parties, user_id: @user_3.id, party_id: @party_7.id)
+      create(:user_parties, user_id: @user_2.id, party_id: @party_7.id)
+      create(:user_parties, user_id: @user_1.id, party_id: @party_7.id)
 
     end
 
@@ -71,43 +74,45 @@ RSpec.describe 'User Dashboard Page' do
     # end
 
 ###############
-    it 'shows the viewing parties the user has been invited to with details' do
+    it 'shows the viewing parties the user has been invited to with details', :vcr do
       visit user_path(@user_3)
-      save_and_open_page
+
       within("#attending") do
+        within("#party-#{@party_7.id}") do
         # expect(page).to have_content(PICTUREHERE) #update with API
-        expect(page).to have_content(@party_7.start_time) #change to name with API
-        expect(page).to have_content(@party_7.date)
-        expect(page).to have_content("Host: #{@user_2.name}")
-        expect(page).to have_content("Attendees: #{@user_3.name}")
-        expect(page).to have_content("Shawshank Redemption")
+          expect(page).to have_content(@party_7.start_time) #change to name with API
+          expect(page).to have_content(@party_7.date)
+          expect(page).to have_content("Host: #{@user_2.name}")
+          expect(page).to have_content("#{@user_3.name}")
+          expect(page).to have_content("Shawshank Redemption")
 
-        expect(page).to_not have_content("King Kong")
+          expect(page).to_not have_content("King Kong")
+
+          click_link "Shawshank Redemption"
+        end
       end
-
-        click_link "#{@party_1.movie_id}"
 
       expect(current_path).to eq(movie_path(@party_1.movie_id)) #fix routing
     end
 
-    xit 'shows the viewing parties the user has created with details (host)' do
+    it 'shows the viewing parties the user has created with details (host)' do
         visit user_path(@user_1)
+        
         within("#hosting") do
+          within("#party-#{@party_6.id}") do
 
           # expect(page).to have_content(PICTUREHERE) #update with API
-          expect(page).to have_content(@party_6.start_time)
-          expect(page).to have_content(@party_6.date)
-          expect(page).to have_content("Host: #{@user_1.name}")
-          expect(page).to have_content("Attendees: #{@user_3.name}")
-          expect(page).to have_content("Flinstones")
+            expect(page).to have_content(@party_6.start_time)
+            expect(page).to have_content(@party_6.date)
+            expect(page).to have_content("Host: #{@user_1.name}")
+            expect(page).to have_content("#{@user_3.name}")
+            expect(page).to have_content("The Flintstones in Viva Rock Vegas")
 
-          expect(page).to_not have_content(@user_2.name)
+            expect(page).to_not have_content(@user_2.name)
 
-
+            click_link "The Flintstones in Viva Rock Vegas"
+          end
         end
-
-        click_link "#{@party_4.movie_id}"
-
         expect(current_path).to eq(movie_path(@party_4.movie_id)) #fix routing
 
     end
