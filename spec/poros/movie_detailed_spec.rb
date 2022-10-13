@@ -16,7 +16,7 @@ RSpec.describe MovieDetailed do
   end
 
   it 'has a vote average' do
-    expect(@movie.vote_average).to eq(7.566)
+    expect(@movie.vote_average).to be_a(Float)
   end
 
   it 'has a runtime' do
