@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'landings#index'
 
   resources :users, only: [:show, :create], path: 'dashboard' do
-    post '/discover', to: 'users#search'
+    post '/discover', to: 'movies#index' #discover controller with search, that searches user from there
     resources :movies, only: [:show, :index]
   end
   resources :users, only: :new, path: 'register'

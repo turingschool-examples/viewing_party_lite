@@ -12,4 +12,10 @@ class MoviesController < ApplicationController
 #  Each review's author and information
 
   end
+
+  def index
+    @user = User.find(params[:id])
+  end
+
+
 end
