@@ -1,21 +1,48 @@
 <h2><%= @user.name %>'s Dashboard</h2>
 <%= button_to "Discover Movies", user_discover_path(@user.id), method: :get %>
-<h3>Viewing Parties</h3>
-<div id="vp_container">
-  <% @user.hosted_viewing_parties.each do |vp| %>
-    <div id="vp_<%= vp.id %>">
-      Movie Info Goes Here<br><br>
-      <%= vp.date.strftime("%B %-d, %Y") %><br>
-      <%= vp.start_time.strftime("%l:%M %P") %><br><br>
-      Hosting
-    </div>
-  <% end %>
+<h3>Viewing Party Invitations:</h3>
+
+<div class="vp_container">
   <% @user.viewing_parties.each do |vp| %>
     <div id="vp_<%= vp.id %>">
-      Movie Info Goes Here<br><br>
+      <img id="movie_img_<%= vp.movie_id %>" src="<%= vp.movie.image_path %>"><br>
+      <h4><%= vp.movie.title %></h4>
+      <br>
       <%= vp.date.strftime("%B %-d, %Y") %><br>
       <%= vp.start_time.strftime("%l:%M %P") %><br><br>
-      Invited
+      <strong>Host:</strong> <%= vp.host.name %><br>
+      <strong>Invitees:</strong><br>
+      <ul>
+        <% vp.users.each do |invitee| %>
+          <% if invitee == @user %>
+            <strong><li><%= invitee.name %></li></strong>
+          <% else %>
+            <li><%= invitee.name %></li>
+          <% end %>
+        <% end %>
+      </ul>    
+    </div>
+  <% end %>
+</div>
+
+<h3>Your Hosted Viewing Parties:</h3>
+<div class="vp_container">
+  <% @user.hosted_viewing_parties.each do |vp| %>
+    <div id="vp_<%= vp.id %>">
+      <img id="movie_img_<%= vp.movie_id %>" src="<%= vp.movie.image_path %>"><br>
+      <h4><%= vp.movie.title %></h4>
+      <br>
+      <%= vp.date.strftime("%B %-d, %Y") %><br>
+      <%= vp.start_time.strftime("%l:%M %P") %><br><br>
+      <strong>Host:</strong> You!<br>
+      <strong>Invitees:</strong><br>
+      <% if vp.users %>
+        <ul>
+          <% vp.users.each do |invitee| %>
+            <li><%= invitee.name %></li>
+          <% end %>
+        </ul> 
+      <% end %>   
     </div>
   <% end %>
 </div>
