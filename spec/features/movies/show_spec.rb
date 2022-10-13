@@ -31,7 +31,7 @@ RSpec.describe 'Movie Details Page' do
     end
 
     it 'I see the runtime in hours & minutes of the movie' do
-      expect(page).to have_content("Runtime: 139")
+      expect(page).to have_content("Runtime: 2h 19min")
     end
 
     it 'I see the genre(s) associated to the movie' do
