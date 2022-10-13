@@ -15,6 +15,11 @@ RSpec.describe 'Discover Movies Page', type: :feature do
 
       visit user_discover_index_path(user1)
 
+      json_response = File.open('./fixtures/top_20.json')
+        stub_request(:get, 'https://api.themoviedb.org/3/movie/top_rated').
+          with(query: {'api_key' => ENV['movie_api_key']}).
+          to_return(status: 200, body: json_response)
+
       click_button('Find Top Rated Movies')
 
       expect(current_path).to eq(user_movies_path(user1))
@@ -40,6 +45,11 @@ RSpec.describe 'Discover Movies Page', type: :feature do
       user1 = User.create!(name: 'Erin', email: 'epintozzi@turing.edu')
 
       visit user_discover_index_path(user1)
+
+      json_response = File.open('./fixtures/avatar.json')
+      stub_request(:get, 'https://api.themoviedb.org/3/search/movie').
+        with(query: {'api_key' => ENV['movie_api_key'], 'query' => 'Avatar'}).
+        to_return(status: 200, body: json_response)
 
       fill_in('search', with: 'Avatar')
       click_button('Find Movies')

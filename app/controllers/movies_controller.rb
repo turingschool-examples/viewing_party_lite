@@ -9,11 +9,13 @@ class MoviesController < ApplicationController
       redirect_to user_discover_index_path(@user), notice: 'Search field cannot be blank'
     elsif !params[:search].nil?
       response = conn.get("/3/search/movie?query=#{params[:search]}")
+      data = JSON.parse(response.body, symbolize_names: true)
+      @movies = data[:results]
     else
       response = conn.get('3/movie/top_rated')
+      data = JSON.parse(response.body, symbolize_names: true)
+      @movies = data[:results]
     end
-    data = JSON.parse(response.body, symbolize_names: true)
-    @movies = data[:results]
   end
 
   def show
