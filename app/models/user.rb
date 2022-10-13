@@ -25,6 +25,10 @@ class User < ApplicationRecord
     )
   end
 
+  def movie_ids
+    viewing_parties.map { |party| party.movie_id }
+  end
+
   def self.invited_users(param_hash)
     # is this super sketchY?????
     # another option - https://stackoverflow.com/questions/34949505/rails-5-unable-to-retrieve-hash-values-from-parameter

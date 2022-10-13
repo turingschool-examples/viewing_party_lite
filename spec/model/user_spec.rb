@@ -54,6 +54,18 @@ RSpec.describe User, type: :model do
           expect(user.invited_parties).not_to include(party_5)
         end
       end
+
+      describe '#movie_ids' do
+        it 'returns an array of movie ids for a users viewing parties' do
+          expect(user.movie_ids).to include(
+            party_1.movie_id,
+            party_2.movie_id,
+            party_3.movie_id,
+            party_4.movie_id
+          )
+          expect(user.movie_ids).not_to include(party_5.movie_id)
+        end
+      end
     end
   end
 
