@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
- .field_with_errors {
+.field_with_errors {
   display: inline;
 }
 
@@ -21,3 +21,23 @@
   border: 2px outset red;
   border-radius: 5px;
 }
+
+.vp_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.vp_container div {
+  width: 200px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.vp_container div img {
+  width:180px;
+}
+
+
