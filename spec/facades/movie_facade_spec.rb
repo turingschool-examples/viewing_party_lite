@@ -21,4 +21,13 @@ RSpec.describe MovieFacade do
       expect(movie.id).to eq(550)
     end
   end
+
+  describe '#cast' do
+    it 'returns an array of the first 10 billed cast members', :vcr do 
+      cast_members = MovieFacade.cast(550)
+      expect(cast_members).to be_an Array
+      expect(cast_members).to all(be_a String)
+      expect(cast_members.length).to eq(10)
+    end
+  end
 end

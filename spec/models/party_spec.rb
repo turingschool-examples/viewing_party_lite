@@ -35,17 +35,25 @@ RSpec.describe Party, type: :model do
         expect(party.poster_path).to eq(movie.poster_path)
       end
     end
+    
+    describe '#title' do
+      it 'returns the title of the movie the party is for', :vcr do
+        party = create(:party, movie_id: 550)
+        expect(party.title).to be_a String
+        movie = MovieFacade.movie_by_id(550)
+        expect(party.title).to eq(movie.title)
+      end
+    end
 
-    describe '#host?' do
-      it 'can tell is if a user passed as an argument is host' do
+    describe '#host' do
+      it 'can tell who the party host is' do
         party = create(:party, movie_id: 550)
         user = create(:user)
         user2 = create(:user)
         create(:userParty, user_id: user.id, party_id: party.id, is_host: true)
         create(:userParty, user_id: user2.id, party_id: party.id, is_host: false)
 
-        expect(party.host?(user)).to be(true)
-        expect(party.host?(user2)).to be(false)
+        expect(party.host).to eq({id: user.id, name: user.name})
       end
     end
   end

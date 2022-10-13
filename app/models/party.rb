@@ -11,8 +11,12 @@ class Party < ApplicationRecord
     movie.poster_path
   end
 
-  def host?(user)
-    u_p = user_parties.find_by user_id: user.id
-    u_p.is_host
+  def title
+    movie.title
+  end
+
+  def host
+    u_p = user_parties.find_by is_host: true
+    {id: u_p.user_id, name: u_p.user.name}
   end
 end

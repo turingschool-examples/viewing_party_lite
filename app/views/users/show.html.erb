@@ -7,8 +7,11 @@
 
 <% @user.parties.each do |party| %>
   <img src="<%= party.poster_path %>">
-  <% if party.host?(@user) %>
+  <h2><%= link_to party.title, "/users/#{@user.id}/movies/#{party.movie_id}"%></h2>
+  <% if party.host[:id] = @user.id %>
     <p> You are the host </p>
+  <% else %>
+    <p> <%= party.host[:name]%> is the host </p>
   <% end %>
   <p>Date: <%= party.date %></p>
   <p>Start time: <%= party.start_time %></p>
