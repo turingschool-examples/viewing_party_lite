@@ -58,5 +58,16 @@ describe MovieService do
         expect(reviews[:results].first[:author]).to be_a String
       end
     end
+
+    context '#get_top20_movies' do
+      it "returns the information associated with the top 20 movies", :vcr do
+        movies = MovieService.get_top20_movies
+        expect(movies).to be_a Hash
+        expect(movies[:results]).to be_an Array
+        expect(movies[:results].first).to have_key :title
+        expect(movies[:results].first[:title]).to be_a String
+        expect(movies[:results].size).to eq(20)
+      end
+    end
   end
 end
