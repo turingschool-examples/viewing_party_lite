@@ -6,6 +6,6 @@ class Users::ViewingPartiesController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
+    require 'pry'; binding.pry
   end
 end

@@ -19,12 +19,12 @@ RSpec.describe 'The new viewing party page' do
         
         expect(page).to have_content(@movie.title)
         expect(page).to have_field('Duration of party', with: "#{@movie.runtime}") 
-        
+        save_and_open_page
         fill_in :day, with: '10/20/2022'
 
         fill_in 'Start time', with: '7:00 PM'
 
-        check "user-#{@user_2.id}"
+        check "_users_#{@user_2.id}"
         click_button "Create Party Viewing Party for #{@movie.title}"
 
         expect(current_path).to eq(user_path(@user_1))

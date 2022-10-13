@@ -8,9 +8,11 @@
   <%= f.date_field :day %>
   <%= f.label :start_time %>
   <%= f.time_field :start_time %>
-  <% @users.each do |user| %>
-    <%= f.check_box "user-#{user.id}".to_sym %>
-    <%= f.label "user-#{user.id}".to_sym, "#{user.name}(#{user.email})" %>
+  <%= f.fields_for :users do |user_f| %>
+    <% @users.each do |user| %>
+      <%= user_f.check_box user.id %>
+      <%= user_f.label user.id, "#{user.name}(#{user.email})" %>
+    <% end %>
   <% end %>
   <%= f.submit "Create Party Viewing Party for #{@movie.title}" %>
 <% end %>
