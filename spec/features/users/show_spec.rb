@@ -46,7 +46,7 @@ RSpec.describe "user dashboard" do
       within '#invited-parties' do
         sentence_element = find('p.user-name')
         # expect(page).to have_content(#movie_2 image)
-        expect(page).to have_content(@viewing_party_2.start_time)
+        expect(page).to have_content(@viewing_party_2.start_time.strftime("The party starts at %I:%M %p on %B %d, %Y"))
         expect(page).to have_content("Host: #{friend.name}")
         expect(page).to have_content(user.name)
         expect(sentence_element).to have_css('b', text: "#{user.name}")
@@ -56,7 +56,7 @@ RSpec.describe "user dashboard" do
     it 'lists viewing parties the user is hosting as a link to the movie show page', :vcr do
       within '#hosted-parties' do
         expect(page).to have_link "#{@viewing_party_1.movie_title}"
-        save_and_open_page
+
         click_link @viewing_party_1.movie_title
         expect(current_path).to eq(user_movie_path(user, @movie_1.id))
       end
@@ -64,7 +64,7 @@ RSpec.describe "user dashboard" do
 
     it 'lists parties the user is hosting that include movie image/date and time/specifies user is hosting/friends invited', :vcr do
       within '#hosted-parties' do
-        expect(page).to have_content(@viewing_party_1.start_time)
+        expect(page).to have_content(@viewing_party_1.start_time.strftime("The party starts at %I:%M %p on %B %d, %Y"))
         expect(page).to have_content(friend.name)
         expect(page).to have_content("Host: #{user.name}")
       end
