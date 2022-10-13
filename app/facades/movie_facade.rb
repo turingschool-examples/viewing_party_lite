@@ -5,7 +5,7 @@ class MovieFacade
   def self.info_card(movie_id)
     parsed_data = MovieService.request(movie_id)
     x = Movie.new(parsed_data)
-  
+
     { title: parsed_data['original_title'], img_path: parsed_data['poster_path'] }
   end
 
@@ -70,7 +70,7 @@ class MovieFacade
 
   def self.show_credits(movie_id)
     parsed_data = MovieService.request(movie_id, '/credits')
-
+    
     parsed_data['cast'][0..9].map { |member| { actor: member['name'], role: member['character'] } }
   end
 
@@ -80,5 +80,5 @@ class MovieFacade
     parsed_data['results'].map { |review| { author: review['author'], content: review['content'] } }
   end
 
-  private_class_method :show_details, :show_credits, :show_reviews
+  # private_class_method :show_details, :show_credits, :show_reviews
 end
