@@ -1,0 +1,12 @@
+<h1> Discover <%=@user.name%>'s Movies! </h1>
+
+<%= button_to "Top Rated Movies", url: "users/#{@user.id}/movies", method: :get  %>
+<br>
+<br>
+<section id= "movie_search" >
+<%= form_with url: "/users/#{@user.id}/movies", method: :get, local: true do |f| %>
+  <%= f.label :movie, "Movie Search" %>
+  <%= f.text_field :movie %>
+  <%= f.submit "Search" %>
+<% end %>
+</section>
