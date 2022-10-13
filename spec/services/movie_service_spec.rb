@@ -44,7 +44,7 @@ RSpec.describe MovieService do
     describe '.search(search_params)' do
       it 'returns a api call' do
         VCR.use_cassette('.search(search_params)') do
-          movies = MovieService.search("fight club")
+          movies = MovieService.search("fight club", 1)
 
           expect(movies).to be_a Hash
           expect(movies[:results]).to be_a Array
