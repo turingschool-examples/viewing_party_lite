@@ -16,8 +16,8 @@
         <li><%= link_to 'Home', root_path %></li>
         <li style="float:right" >
           <% if current_user %>
-          <strong><%= current_user.name %></strong>
-          <%= link_to 'Log Out', logout_path, method: :delete %>
+            <strong><%= current_user.name %></strong>
+            <%= link_to 'Log Out', logout_path, method: :delete %>
           <% end %>
         </li>
       </ul>
