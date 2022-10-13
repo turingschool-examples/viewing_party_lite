@@ -20,7 +20,7 @@ RSpec.describe 'the movies detail page' do
       end
 
       describe 'when I click on the button to create a viewing party' do
-        it 'takes me to the new viewing party page' do
+        it 'takes me to the new viewing party page', :vcr do
           click_on "Create a Viewing Party for #{@movie.title}"
 
           expect(current_path).to eq(new_user_movie_viewing_party_path(user, @movie.id))
