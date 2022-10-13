@@ -77,7 +77,7 @@ RSpec.describe 'User Viewing Party New Page', :vcr do
 
     click_button 'Create Party'
 
-    expect(current_path).to eq("/users/#{@user1.id}/movies/238/viewing_party/new")
+    expect(current_path).to eq("/users/#{@user1.id}/movies/238/viewing_party/create")
     newest_view_party = ViewingParty.find_by(length: 170)
     expect(newest_view_party).to eq(nil)
   end
