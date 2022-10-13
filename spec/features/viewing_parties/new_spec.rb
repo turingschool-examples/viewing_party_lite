@@ -1,22 +1,24 @@
 require 'rails_helper'
 
-RSpec.describe 'Create Viewing Part' do
-  let!(:users) { create_list(:user, 3) }
+RSpec.describe 'Create Viewing Party' do
+  let!(:users) { create_list(:user, 4) }
   let!(:user1) { users.first }
-  let!(:user2) { users.second}
-  let!(:user3) { users.last}
+  let!(:user2) { users.second }
+  let!(:user3) { users.third }
+  let!(:user4) { users.last }
 
   it 'links from user movie show page', :vcr do
     visit user_movie_path(user1, 238)
 
     click_on ('Create Viewing Party for The Godfather')
 
-    expect(current_path).to eq(user_movie_viewing_party_path(user1, 238))
+    # expect(current_path).to eq("/users/#{user1.id}/movies/238/viewing-party/new")
+    expect(current_path).to eq(user_movie_viewing_party_new_path(user1, 238))
   end
 
   describe 'page tests', :vcr do
     before :each do
-      visit user_movie_viewing_party_path(user1, 238)
+      visit user_movie_viewing_party_new_path(user1, 238)
     end
 
     it 'has a header' do
@@ -32,24 +34,32 @@ RSpec.describe 'Create Viewing Part' do
     end
 
     it 'has a field for entering party deets' do
-      expect(page).to have_field(:duration)
+      expect(page).to have_field('Duration of Party', with: 175)
       expect(page).to have_field(:date)
       expect(page).to have_field(:start_time)
 
       within("#invite_others") do
-        expect(page).to_not have_checkbox(user1.name)
-        expect(page).to_not have_field(user1, unchecked: true) # checked: false or unchecked: true for not checked
-        expect(page).to have_checkbox(user2.name)
-        expect(page).to have_field(user2, unchecked: true) # checked: false or unchecked: true for not checked
-        expect(page).to have_checkbox(user3.name)
-        expect(page).to have_field(user3, unchecked: true) # checked: false or unchecked: true for not checked
+        expect(page).to have_field("attendees_#{user2.id}", unchecked: true)
+        expect(page).to have_field("attendees_#{user3.id}", unchecked: true)
+        expect(page).to have_field("attendees_#{user4.id}", unchecked: true)
       end
+      expect(page).to have_button('Create Party')
     end
 
-    it 'has button to create the party' do
-      expect(page).to have_button('Create Party')
+    it 'redirects to dashboard if successfully created' do
+      fill_in 'Day', with: Date.tomorrow
+      fill_in 'Start Time', with: Time.now + 600
 
-      click_on 'Create Party'
+      check("attendees_#{user2.id}")
+      check("attendees_#{user3.id}")
+
+      within("#invite_others") do
+        expect(page).to have_field("attendees_#{user2.id}", checked: true)
+        expect(page).to have_field("attendees_#{user3.id}", checked: true)
+        expect(page).to have_field("attendees_#{user4.id}", unchecked: true)
+      end
+
+      click_button 'Create Party'
 
       expect(current_path).to eq(user_dashboard_path(user1))
     end

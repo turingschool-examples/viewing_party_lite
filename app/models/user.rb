@@ -12,4 +12,16 @@ class User < ApplicationRecord
   def downcase_email
     email&.downcase!
   end
+
+  def hosting
+    viewing_parties.where(host_id: id)
+  end
+
+  # def attending
+  #   viewing_parties.where.not(host_id: id)
+  # end
+
+  def name_and_email
+    "#{name} (#{email})"
+  end
 end

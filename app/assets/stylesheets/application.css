@@ -36,5 +36,17 @@ ul {
 }
 
 #container {
-  border: solid
+  border: solid;
+}
+
+#check_boxes {
+  display: inline-flex;
+  padding: 10px
+}
+
+#party_details {
+  align-content: center;
+  border: solid;
+  padding: 20px;
+  width: 50%
 }

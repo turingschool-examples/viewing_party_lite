@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Wed, 12 Oct 2022 21:19:55 GMT
+      - Wed, 12 Oct 2022 21:55:56 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,15 +42,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 a7c0ba01db75946f7df3f7eaf69984b6.cloudfront.net (CloudFront)
+      - 1.1 786e78cb5cbe5eadde8b1e6951bf8a60.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - xe0Wz3Npvbp2nhLz_CZhcn6taNJcnc4l48HGH9HOk2yei5XXCyxk8Q==
+      - 0rDIA3IIoklRpShYiSUOFxuLM33i0vq5qiRt-TNKBhxnn1TmLfapnQ==
       Age:
-      - '4485'
+      - '8387'
     body:
       encoding: UTF-8
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg","genre_ids":[18,80],"id":238,"original_language":"en","original_title":"The
@@ -161,7 +161,7 @@ http_interactions:
         Frodo and Sam take the ring closer to the heart of Mordor, the dark lord''s
         realm.","popularity":155.131,"poster_path":"/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg","release_date":"2003-12-01","title":"The
         Lord of the Rings: The Return of the King","video":false,"vote_average":8.5,"vote_count":20324}],"total_pages":521,"total_results":10408}'
-  recorded_at: Wed, 12 Oct 2022 22:34:40 GMT
+  recorded_at: Thu, 13 Oct 2022 00:15:43 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/top_rated?api_key=<API Key>&page=2
@@ -187,7 +187,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Wed, 12 Oct 2022 21:19:55 GMT
+      - Wed, 12 Oct 2022 21:55:56 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -204,15 +204,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 16d72e0791ff01fc4470d27fc024527a.cloudfront.net (CloudFront)
+      - 1.1 cf7db6af8b8a86ebeb9fc938221e81da.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - M53aBcpXpZUKhBmCTiJM3p7nh08sTLNcm1LrlqDyUyxXiWDsOnwIRg==
+      - aUSzAER0N_vZKsAnuHNq4SrHcd_UCeEKHXLldcx3aHGfiD0RIv9xjQ==
       Age:
-      - '4485'
+      - '8387'
     body:
       encoding: UTF-8
       string: '{"page":2,"results":[{"adult":false,"backdrop_path":"/67HggiWaP9ZLv5sPYmyRV37yAJM.jpg","genre_ids":[35,18,10749],"id":13,"original_language":"en","original_title":"Forrest
@@ -310,5 +310,5 @@ http_interactions:
         an older, wiser Shouya, tormented by his past behaviour, decides he must see
         Shouko once more. He wants to atone for his sins, but is it already too late...?","popularity":105.297,"poster_path":"/tuFaWiqX0TXoWu7DGNcmX3UW7sT.jpg","release_date":"2016-09-17","title":"A
         Silent Voice: The Movie","video":false,"vote_average":8.4,"vote_count":3136}],"total_pages":521,"total_results":10408}'
-  recorded_at: Wed, 12 Oct 2022 22:34:40 GMT
+  recorded_at: Thu, 13 Oct 2022 00:15:43 GMT
 recorded_with: VCR 6.1.0

@@ -70,6 +70,6 @@ RSpec.describe 'Movie Show Page' do
 
     click_on ('Create Viewing Party for The Godfather')
 
-    expect(current_path).to eq(user_movie_viewing_party_path(user1, 238))
+    expect(current_path).to eq(user_movie_viewing_party_new_path(user1, 238))
   end
 end

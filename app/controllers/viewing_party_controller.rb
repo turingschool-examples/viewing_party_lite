@@ -4,4 +4,9 @@ class ViewingPartyController < ApplicationController
     @movie = MovieFacade.details(params[:movie_id])
     @invitees = User.where.not(id: params[:user_id])
   end
+
+  def create
+
+  end
+
 end
