@@ -6,8 +6,5 @@ class MoviesController < ApplicationController
     @cast_members = MovieDbFacade.cast(@movie.id)
   end
 
-  # def new
-  #   @user = User.find(params[:id])
-  #   @movie = Movie.find(params[:movie_id])
-  # end
+
 end

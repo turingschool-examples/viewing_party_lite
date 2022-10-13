@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   get '/users/:id/movies', to: 'users#movies'
   get '/users/:id/movies/:movie_id', to: 'movies#show'
   get '/users/:id/movies/:movie_id/viewing_party/new', to: 'viewing_parties#new'
+  post '/users/:id/movies/:movie_id/viewing_party/create', to: 'viewing_parties#create'
 
-  resources :users
+  resources :users, only: %i[create]
 
 end
