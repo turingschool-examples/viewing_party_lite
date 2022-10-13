@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/667257/reviews?api_key=DONT SHOW MY API
+      KEY
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 13 Oct 2022 22:07:30 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 89d500eb649699b4f9da44efd06c367bfcb058ac
+      X-Memc-Age:
+      - '12026'
+      X-Memc-Expires:
+      - '5829'
+      Etag:
+      - W/"dcb8c271377403ae5c9aca5285bc13e3"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 43af4a9c83f07a13ed51631899f2758c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAH50-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 6OSawFtuqcfRWHd86a7pIG8efxU2TwLUlcsDE8Xa_8sFpTfyqeaTKQ==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":667257,"page":1,"results":[],"total_pages":0,"total_results":0}'
+  recorded_at: Thu, 13 Oct 2022 22:07:30 GMT
+recorded_with: VCR 6.1.0
