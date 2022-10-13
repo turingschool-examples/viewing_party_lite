@@ -1,11 +1,16 @@
-<h1>Viewing Party<h1>
+<div id='button'>
+  <%= button_to 'Create New User', register_path, method: :get %>
+</div>
 
-<%= button_to 'Create New User', register_path, method: :get %>
+<br>
 
-<section id="existing_users"><p>Existing Users</p>
+<section id='existing_users'>
+  <h2>Existing Users</h2>
   <% @users.each do |user| %>
-    <div id="user-<%= user.id %>">
-      <%= link_to "#{user.email}'s Dashboard", user_dashboard_path(user) %>
+    <div id='user-<%= user.id %>'>
+      <p>
+        <%= link_to "#{user.email}'s Dashboard", user_dashboard_path(user) %>
+      </p>
     </div>
   <% end %>
 </section>
