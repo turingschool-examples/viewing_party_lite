@@ -35,10 +35,12 @@ RSpec.describe 'Movie Details Page' do
     end
 
     it 'I see the genre(s) associated to the movie' do
-      expect(page).to have_content("Genre(s):")
-      expect(page).to have_content("Drama")
-      expect(page).to have_content("Thriller")
-      expect(page).to have_content("Comedy")
+      within("#genre") do
+        expect(page).to have_content("Genre(s):")
+        expect(page).to have_content("Drama")
+        expect(page).to have_content("Thriller")
+        expect(page).to have_content("Comedy")
+      end
     end
 
     it 'I see the list the summary for the movie' do
@@ -46,8 +48,18 @@ RSpec.describe 'Movie Details Page' do
     end
 
     it 'I see the list the first 10 cast members (characters&actress/actors) in the movie' do
-      save_and_open_page
-      expect(page).to have_content("Cast")
+      within("#cast") do
+        expect(page).to have_content("Cast")
+        expect(page).to have_content("Edward Norton / The Narrator")
+        expect(page).to have_content("Brad Pitt / Tyler Durden")
+        expect(page).to have_content("Helena Bonham Carter / Marla Singer")
+        expect(page).to have_content("Jared Leto / Angel Face")
+        expect(page).to have_content("Zach Grenier / Richard Chesler")
+        expect(page).to have_content("Holt McCallany / The Mechanic")
+        expect(page).to have_content("Eion Bailey / Ricky")
+        expect(page).to have_content("Richmond Arquette / Intern")
+        expect(page).to have_content("David Andrews / Thomas")
+      end
     end
 
     it 'I see the count of total reviews for the movie' do
@@ -55,7 +67,15 @@ RSpec.describe 'Movie Details Page' do
     end
 
     it 'I see each reviews author and information for the movie' do
-      expect(page).to have_content("Author:")
+      within("#reviews") do
+        expect(page).to have_content("Author: Goddard")
+        expect(page).to have_content("Author: Brett Pascoe")
+        expect(page).to have_content("Author: MSB")
+        expect(page).to have_content("Author: r96sk")
+        expect(page).to have_content("Author: rsanek")
+        expect(page).to have_content("Author: Wuchak")
+        expect(page).to have_content("Author: katch22")
+      end
     end
   end
 end
