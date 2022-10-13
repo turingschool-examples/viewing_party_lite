@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe MovieFacade do 
+RSpec.describe MovieFacade do
   describe 'instantiates top rated poro', :vcr do
     it 'instantiates' do
       top_rated = MovieFacade.top_rated_poro
@@ -31,7 +31,7 @@ RSpec.describe MovieFacade do
 
   describe 'instantiates search poro', :vcr do
     it 'instantiates' do
-      search = MovieFacade.search_poro("Dark")
+      search = MovieFacade.search_poro('Dark')
       expect(search).to be_a(Search)
     end
   end

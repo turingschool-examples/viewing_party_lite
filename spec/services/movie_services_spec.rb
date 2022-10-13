@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe 'Movie API Services' do
-  describe 'api consumption test'  do
+  describe 'api consumption test' do
     it 'top rated movies', :vcr do
       response = MovieService.top_rated
-      
+
       expect(response).to be_a(Hash)
       expect(response[:results]).to be_a(Array)
     end
@@ -29,7 +29,7 @@ RSpec.describe 'Movie API Services' do
 
     it 'movie reviews', :vcr do
       response = MovieService.reviews(550)
-      
+
       expect(response).to be_a(Hash)
       expect(response[:results]).to be_a(Array)
       expect(response[:results][0][:author]).to be_a(String)
@@ -37,7 +37,7 @@ RSpec.describe 'Movie API Services' do
     end
 
     it 'movie search', :vcr do
-      response = MovieService.search("Dark")
+      response = MovieService.search('Dark')
 
       expect(response).to be_a(Hash)
       expect(response[:results]).to be_a(Array)

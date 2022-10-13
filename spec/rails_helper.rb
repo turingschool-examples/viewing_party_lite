@@ -1,7 +1,8 @@
 # frozen_string_literal: true
+
 require 'simplecov'
 SimpleCov.start
-require 'support/factory_bot.rb'
+require 'support/factory_bot'
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
@@ -76,7 +77,7 @@ Shoulda::Matchers.configure do |config|
 end
 
 VCR.configure do |config|
-  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
   config.hook_into :webmock
   config.filter_sensitive_data('<moviebd_api_key>') { ENV['moviebd_api_key'] }
   config.configure_rspec_metadata!

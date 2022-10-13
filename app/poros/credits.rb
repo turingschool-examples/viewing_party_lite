@@ -1,7 +1,6 @@
 class Credits
-
   attr_reader :cast_info
-  
+
   def initialize(api)
     @cast_info = api[:cast]
   end

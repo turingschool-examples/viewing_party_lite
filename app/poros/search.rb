@@ -1,7 +1,9 @@
-class Search 
-  attr_reader :search_results
+class Search
+  attr_reader :name, :id, :vote_average
   
-  def initialize(api)
-    @search_results = api[:results]
+  def initialize(movie_hash)
+    @name = movie_hash[:title]
+    @id = movie_hash[:id]
+    @vote_average = movie_hash[:vote_average]
   end
 end

@@ -1,11 +1,19 @@
 class MoviesTopRated
-  attr_reader :results
+  # **Original code below ***
+  # attr_reader :results 
 
-  def initialize(api)
-    @results = api[:results]
-  end
+  attr_reader :name, :id, :vote_average
 
-  def titles
-    @results.map { |result| result[:title] }
-  end
+  #Stephen note - initialize movie with id and name?
+def initialize(movie_hash)
+  @name = movie_hash[:title]
+  @id = movie_hash[:id]
+  @vote_average = movie_hash[:vote_average]
+end
+
+  #**Original method below**
+  # def initialize(api)
+  #   @results = api[:results]
+  # end
+
 end

@@ -1,4 +1,4 @@
-class Details 
+class Details
   attr_reader :title,
               :summary,
               :vote_average,

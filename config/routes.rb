@@ -11,5 +11,4 @@ Rails.application.routes.draw do
     resources :movies
     get 'discover', to: 'movies#search'
   end
-
 end

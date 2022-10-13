@@ -1,4 +1,4 @@
-class Reviews 
+class Reviews
   attr_reader :results
 
   def initialize(api)

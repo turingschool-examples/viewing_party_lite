@@ -1,7 +1,13 @@
 class MovieFacade < MovieService
-  
+# **Original method below**
+  # def self.top_rated_poro
+  #   MoviesTopRated.new(top_rated)
+  # end
+
   def self.top_rated_poro
-    MoviesTopRated.new(top_rated)
+    top_rated[:results].map do |movie|
+      MoviesTopRated.new(movie)
+    end
   end
 
   def self.credits_poro(movie_id)
@@ -17,7 +23,8 @@ class MovieFacade < MovieService
   end
 
   def self.search_poro(keyword)
-    Search.new(search(keyword))
+    search(keyword)[:results].map do |movie|
+      Search.new(movie)
+    end
   end
-
 end

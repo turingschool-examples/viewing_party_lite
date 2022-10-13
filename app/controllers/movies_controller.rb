@@ -1,13 +1,18 @@
 class MoviesController < ApplicationController
 
-  def index
-    # if params[:q] == "top%20rated"
-    #   @movies = @top_rated
-    # else 
-    #   params[:q] # value of 'q' is used to filter API search
-    #   # @movies = @filter_search_results(params[:q]) <-- value of 'q' passed as variable
-    # end
+  def index #Stephen edit
+    @user = User.find(params[:user_id])
+    if params[:q].present?
+      @movies_array = MovieFacade.top_rated_poro
+    elsif params[:search_movies].present?
+      @movies_array = MovieFacade.search_poro(params[:search_movies])
+    else
+      redirect_to user_discover_path(@user)
+    end
   end
+  #   params[:q] # value of 'q' is used to filter API search
+  #   # @movies = @filter_search_results(params[:q]) <-- value of 'q' passed as variable
+  # end
 
   def search
     @user = User.find(params[:user_id])
@@ -19,4 +24,7 @@ class MoviesController < ApplicationController
     # top_rated = conn.get('/top_rated')
   end
 
+  def show #Stephen edit
+
+  end
 end
