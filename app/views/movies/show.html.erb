@@ -16,14 +16,17 @@
 <br>
 <h3> Cast </h3>
 <br>
-
+<% @cast_members.each do |member| %>
+  <p><%= member.name %> as <%= member.character %></p>
+  <br>
+<% end %>
 <br>
 <hr>
 
 
 <h3> <%= @reviews_list.count %> Reviews </h3>
 <% @reviews_list.each do |review| %>
-<p> Author: <%= review.author %> </p>
-<br>
-<p> <%= review.content %> </p>
+  <p> Author: <%= review.author %> </p>
+  <br>
+  <p> <%= review.content %> </p>
 <% end %>

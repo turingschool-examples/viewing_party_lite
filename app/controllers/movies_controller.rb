@@ -9,6 +9,5 @@ class MoviesController < ApplicationController
   def new
     @user = User.find(params[:id])
     @movie = Movie.find(params[:movie_id])
-
   end
 end

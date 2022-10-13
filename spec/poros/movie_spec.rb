@@ -5,7 +5,9 @@ RSpec.describe Movie do
     attrs = {
         title: "The Godfather",
         vote_average: 8.9,
-        id: 4
+        id: 4,
+        genres: [{name: "Drama"},
+                {name: "Crime"}]
     }
 
     movie = Movie.new(attrs)
