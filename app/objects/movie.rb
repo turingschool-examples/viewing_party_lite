@@ -15,7 +15,7 @@ class Movie
     @vote_average = data[:vote_average]
     @overview = data[:overview]
     @runtime = data[:runtime]
-    @genres = data[:genres].map { |genre| genre[:name] } # double check this
+    @genres = data[:genres].map { |genre| genre[:name] }
     @image = data[:poster_path] # image jpg path
   end
 end

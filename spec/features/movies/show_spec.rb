@@ -4,11 +4,11 @@ require 'rails_helper'
 
 RSpec.describe 'Movie Detail Page' do
   describe 'As a user when I visit the Movies Detail (show) Page', :vcr do
-    it 'has movie details' do
+    before(:each) do
       @user1 = User.create!(name: 'Micheal Jordan', email: 'user7@gmail.com')
-
-      visit "/users/#{@user1.id}/movies/19404"
-
+      visit user_movie_path(@user1, 19404)
+    end
+    it 'has movie details' do
       expect(page).to have_content('Dilwale Dulhania Le Jayenge')
       expect(page).to have_content('Vote Average: 8.5')
       expect(page).to have_content('Comedy')
@@ -20,19 +20,11 @@ RSpec.describe 'Movie Detail Page' do
       expect(page).to have_content('Total Reviews:')
     end
     it 'has button to create viewing party/redirects to new form' do
-      @user1 = User.create!(name: 'Micheal Jordan', email: 'user7@gmail.com')
-
-      visit "/users/#{@user1.id}/movies/19404"
       expect(page).to have_button('Create Viewing Party')
-      # TODO: add the correct path to this button
-      # click_on "Create Viewing Party"
-      # expect(current_path).to eq("/users/#{@user1.id}/movies/19404/viewing_party/new")
+      click_on 'Create Viewing Party'
+      expect(current_path).to eq(new_user_movie_viewing_party_path(@user1, 19404))
     end
     it 'has button to return to discover page' do
-      @user1 = User.create!(name: 'Micheal Jordan', email: 'user7@gmail.com')
-
-      visit "/users/#{@user1.id}/movies/19404"
-
       expect(page).to have_button('Discover Movies')
     end
   end
