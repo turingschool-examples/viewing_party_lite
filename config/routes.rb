@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   get 'register', to: 'users#new'
 
   resources :users do
-    resources :movies
+    resources :movies do
+      resources :viewing_parties
+    end
+
     get 'discover', to: 'movies#search'
   end
 end
