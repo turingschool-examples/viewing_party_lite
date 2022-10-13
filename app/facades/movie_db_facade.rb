@@ -20,7 +20,7 @@ class MovieDbFacade
   def self.find_by_movie_id(id)
     json = MovieDbService.find_movie_by_id(id)
     Movie.new(json)
-  end 
+  end
 
   def self.reviews_by_movie(movie_id)
     json = MovieDbService.find_movie_reviews(movie_id)

@@ -4,19 +4,43 @@ RSpec.describe 'User Movies Show Page From Results' do
 
   before :each do
     @user1 = User.create(name: "Jake", email: "imjakekim@gmail.com")
-    @user2 = User.create(name: "Riley", email: "rileybmccullough@gmail.com")
-
-    @party1 = ViewingParty.create(movie_title: 'Fellowship of the Ring', length: 200, start_time: "2022-11-18 03:45")
-    @party2 = ViewingParty.create(movie_title: 'Psych the Movie', length: 150, start_time: "2022-12-30 18:45")
-
-    @user_party1 = ViewingPartyUser.create(viewing_party_id: @party1.id, user_id: @user1.id, status: 0)
-    @user_party2 = ViewingPartyUser.create(viewing_party_id: @party2.id, user_id: @user1.id, status: 1)
   end
 
-  it '' do
-
-
+  it 'has required fixed content' do
+    visit "/users/#{@user1.id}/movies/238"
+    expect(page).to have_content("Discover Page")
+    expect(page).to have_button("Create Viewing Party")
+    expect(page).to have_content("Vote Average:")
+    expect(page).to have_content("Runtime:")
+    expect(page).to have_content("Genre(s):")
+    expect(page).to have_content("Summary")
+    expect(page).to have_content("Cast")
   end
 
+  it 'has required varying content' do
+    visit "/users/#{@user1.id}/movies/238"
+
+    expect(page).to have_button("Create Viewing Party for The Godfather")
+    expect(page).to have_content("The Godfather")
+    expect(page).to have_content("Vote Average: 8.7")
+    expect(page).to have_content("Author: crastana")
+    expect(page).to have_content("Author: futuretv")
+    expect(page).to have_content("The Godfather Review by Al Carlson")
+    expect(page).to have_content("A masterpiece by the young and talented Francis")
+  end
+
+  it 'can use button to return to discover page' do
+    visit "/users/#{@user1.id}/movies/238"
+    click_button 'Discover Page'
+
+    expect(current_path).to eq("/users/#{@user1.id}/movies")
+  end
+
+  it 'can use button to reach new viewing party' do
+    visit "/users/#{@user1.id}/movies/238"
+    click_button 'Create Viewing Party for The Godfather'
+
+    expect(current_path).to eq("/users/#{@user1.id}/movies/238/viewing_party/new")
+  end
 
 end
