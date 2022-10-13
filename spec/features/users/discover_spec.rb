@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Discover movies page' do
-  describe "When I visit '/users/:id/discover'" do
+  describe "When I visit /users/:id/discover" do
     it 'I should see a button to Discover Top Rated Movies' do
       user = create(:user)
       visit "/users/#{user.id}/discover"
@@ -15,7 +15,7 @@ RSpec.describe 'Discover movies page' do
       expect(page).to have_button('Search by Movie Title')
     end
 
-    describe 'happy path'
+    describe 'happy path' do
       it 'When I search for a movie I am taken to the Movie Results Page', :vcr do
         # json_response = File.read("spec/fixtures/movies_query_data.json")
         # stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['movies_api_key']}&query=fight").to_return(status: 200, body: json_response)
@@ -43,7 +43,7 @@ RSpec.describe 'Discover movies page' do
       end
     end
 
-    describe 'sad path'
+    describe 'sad path' do
       it 'When I fill in nothing and click Search by Movie Title I recieve an error message', :vcr do
         user = create(:user)
         visit "/users/#{user.id}/discover"
@@ -52,7 +52,7 @@ RSpec.describe 'Discover movies page' do
         expect(current_path).to eq("/users/#{user.id}/movies")
         expect(page).to have_content('You must fill in a title.')
       end
-    end
+    end    
   end
 end
 
