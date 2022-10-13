@@ -6,4 +6,7 @@ class User < ApplicationRecord
   validates_presence_of :name,
                         :email
   validates_uniqueness_of :email
+  def self.other_users(user)
+    where('email != ?', user.email)
+  end
 end

@@ -22,7 +22,7 @@ RSpec.describe 'User Discover Movie', type: :feature do
 
     fill_in :search, with: 'Shawshank Redemption'
     click_on 'Search'
- 
+
     expect(page).to have_content('Shawshank Redemption')
     expect(current_path).to eq("/users/#{@user1.id}/movies")
   end

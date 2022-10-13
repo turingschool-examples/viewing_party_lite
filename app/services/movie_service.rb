@@ -11,13 +11,13 @@ class MovieService
     parsed_json[:results]
   end
 
-  def self.get_movie_search(search_param)
-    response = conn.get("/3/search/movie?&api_key=#{ENV['movie_api_key']}&language=en-US&page=1&query=#{search_param}")
+  def self.get_movie_search(search_params)
+    response = conn.get("/3/search/movie?&api_key=#{ENV['movie_api_key']}&language=en-US&page=1&query=#{search_params}")
     parsed_json = JSON.parse(response.body, symbolize_names: true)
     parsed_json[:results]
   end
 
-  def self.get_indvidual_movie(movie_id)
+  def self.get_individual_movie(movie_id)
     response = conn.get("/3/movie/#{movie_id}?api_key=#{ENV['movie_api_key']}&language=en-US")
     parsed_json = JSON.parse(response.body, symbolize_names: true)
   end

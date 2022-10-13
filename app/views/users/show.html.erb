@@ -1,14 +1,15 @@
-<h1 id="application_title">Viewing Party</h1>
 <h2 id="user_name"><%= @user.name %>'s dashboard</h2>
 <div id='discover'>
 <%= button_to 'Discover Movies', user_discover_index_path(@user.id), method: :get %>
 </div>
 <section id="viewing_parties">
-  <ul>
-    <% @user.viewing_parties.each do |vp| %>
-      <li id="party-<%= vp.id %>">
-        <%= vp.date.strftime('%B %d, %Y %I:%M %p') %>
-      </li>
-    <% end %>
-  </ul>
+  <% @user.viewing_parties.each do |vp| %>
+  <div id="party-<%= vp.id %>">
+    <ul>
+      <li><%= vp.current_movie.title %></li>
+      <li><%= vp.date.strftime('%B %d, %Y %I:%M %p') %></li>
+      <li><%= vp.current_party(@user.id).role %></li>
+    </ul>
+  </div>
+  <% end %>
 </section>
