@@ -1,5 +1,5 @@
 class MovieResult
-  attr_reader :title, vote_average
+  attr_reader :title, :vote_average
   
   def initialize(data)
     @title = data[:title]
