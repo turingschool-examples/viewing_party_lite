@@ -13,7 +13,11 @@
   <ul>
     <% @user.hosted_parties.each do |party| %>
       <li>
-        <p><%= link_to party.movie_title, user_movie_viewing_party_path(@user, party.movie_id, party) %></p>
+        <p><%= link_to party.movie_title, user_movie_path(@user, party.movie_id) %></p>
+        <h4>Host: <%= @user.name %></h4>
+        <% party.users.each do |user| %>
+          <p><%= user.name %></p>
+        <% end %>
         <p><%= party.start_time %></p>
       </li>
     <% end %>
@@ -25,7 +29,16 @@
   <ul>
     <% @user.invited_parties.each do |party| %>
       <li>
-        <p><%= link_to party.movie_title, user_movie_viewing_party_path(@user, party.movie_id, party) %></p>
+        <p><%= link_to party.movie_title, user_movie_path(@user, party.movie_id) %></p>
+        <% party.users.each do |user| %>
+          <% if user.id == party.host_id %>
+            <p>Host: <%= user.name %></p>
+          <% elsif user.name == @user.name %>
+            <p class="user-name"><b><%= user.name %></b></p>
+          <% else %>
+           <%= user.name %>
+          <% end %>
+        <% end %>
         <p><%= party.start_time %></p>
       </li>
     <% end %>
