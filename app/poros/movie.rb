@@ -3,17 +3,21 @@ class Movie
                 :vote_average,
                 :vote_count,
                 :id,
-                :generes,
+                :genres,
                 :runtime,
                 :overview
-                # :cast,
+
 
 
     def initialize(attributes)
         @title = attributes[:title]
         @id = attributes[:id]
         @vote_average = attributes[:vote_average]
-        @reviews = []
+        @vote_count = attributes[:vote_count]
+        @genres = attributes[:genres].map { |genre| genre[:name] }
+        @runtime = attributes[:runtime]
+        @overview = attributes[:overview]
+
     end
 end
 
