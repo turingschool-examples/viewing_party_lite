@@ -13,7 +13,7 @@ RSpec.describe 'Movie Search Page' do
   # A text field to enter keyword(s) to search by movie title
   # A Button to Search by Movie Title
   # Details When the user clicks on the Top Rated Movies OR the search button, they should be taken to the movies results page (more details of this on the Movies Results Page issue.
-  describe 'When I visit the /users/:id/discover path' do
+  describe 'When I visit the /users/:id/discover path', :vcr do
     it 'I should see button to Find Top Rated Movies' do
       visit user_discover_path(@user_1)
 

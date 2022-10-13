@@ -1,9 +1,4 @@
 class MovieFacade < MovieService
-# **Original method below**
-  # def self.top_rated_poro
-  #   MoviesTopRated.new(top_rated)
-  # end
-
   def self.top_rated_poro
     top_rated[:results].map do |movie|
       MoviesTopRated.new(movie)
@@ -11,11 +6,15 @@ class MovieFacade < MovieService
   end
 
   def self.credits_poro(movie_id)
-    Credits.new(credits(movie_id))
+    credits(movie_id)[:cast].map do |cast_member|
+      Credits.new(cast_member)
+    end.slice(0, 10)
   end
 
   def self.reviews_poro(movie_id)
-    Reviews.new(reviews(movie_id))
+    reviews(movie_id)[:results].map do |review|
+      Reviews.new(review)
+    end
   end
 
   def self.details_poro(movie_id)
