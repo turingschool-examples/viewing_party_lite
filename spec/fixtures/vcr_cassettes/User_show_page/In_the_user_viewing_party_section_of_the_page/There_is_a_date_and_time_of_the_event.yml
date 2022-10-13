@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 13 Oct 2022 14:04:02 GMT
+      - Thu, 13 Oct 2022 16:16:25 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,9 +42,9 @@ http_interactions:
       X-Memc-Key:
       - 8f3dc9fbf00ec8ef64b14b7080f4013a23d639da
       X-Memc-Age:
-      - '8789'
+      - '16732'
       X-Memc-Expires:
-      - '8587'
+      - '644'
       Etag:
       - W/"c31a446eb95502d3c0501a0b104f3d3b"
       Vary:
@@ -52,15 +52,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 16d72e0791ff01fc4470d27fc024527a.cloudfront.net (CloudFront)
+      - 1.1 e95ec8f1dc02e32f0cb9e113963ceb4e.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN52-P2
+      - SEA73-P1
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - xS0WH2OQL-HTw_0Y933gXexZ4Uidrk9mLcELv9drIgCZnpFF-WTMCg==
+      - lh59ZO_DMw3Sbjptz0k1gx20AP8Sw7RjAsgB_qywq9N7Ppyyv9qifQ==
       Age:
-      - '9865'
+      - '14672'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"},{"id":53,"name":"Thriller"},{"id":35,"name":"Comedy"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
@@ -76,7 +76,7 @@ http_interactions:
         Films","origin_country":"US"}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
         Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.433,"vote_count":24945}'
-  recorded_at: Thu, 13 Oct 2022 16:48:27 GMT
+  recorded_at: Thu, 13 Oct 2022 20:20:57 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/550?api_key=<movies_api_key>
@@ -102,7 +102,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 13 Oct 2022 14:04:02 GMT
+      - Thu, 13 Oct 2022 16:16:25 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -119,9 +119,9 @@ http_interactions:
       X-Memc-Key:
       - 8f3dc9fbf00ec8ef64b14b7080f4013a23d639da
       X-Memc-Age:
-      - '8789'
+      - '16732'
       X-Memc-Expires:
-      - '8587'
+      - '644'
       Etag:
       - W/"c31a446eb95502d3c0501a0b104f3d3b"
       Vary:
@@ -129,15 +129,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 3fddcbe99f78632bf14e5e80e6c14058.cloudfront.net (CloudFront)
+      - 1.1 b8c4a4ca04bb1976e020396d211bc8dc.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN52-P2
+      - SEA73-P1
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - w5bOZMdjQ1qoIMEo4NuryWByhjgB1r2bC7h0fj4hSYLLHF2zlJfWMg==
+      - jiw-LO2NkIRUkdMIEK_Ejzr9_jWMveIty42JmdUViZRz9V59YCimtg==
       Age:
-      - '9865'
+      - '14673'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"},{"id":53,"name":"Thriller"},{"id":35,"name":"Comedy"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
@@ -153,5 +153,5 @@ http_interactions:
         Films","origin_country":"US"}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
         Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.433,"vote_count":24945}'
-  recorded_at: Thu, 13 Oct 2022 16:48:27 GMT
+  recorded_at: Thu, 13 Oct 2022 20:20:58 GMT
 recorded_with: VCR 6.1.0

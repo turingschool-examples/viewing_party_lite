@@ -70,7 +70,7 @@ RSpec.describe 'User show page' do
 
     it 'I should not see parties I am not invited to', :vcr do
       users = create_list(:user, 5)
-      party = create(:party, movie_id: 420)
+      party = create(:party, movie_id: 200)
 
       create(:userParty, user_id: users[1].id, party_id: party.id, is_host: true)
       create(:userParty, user_id: users[2].id, party_id: party.id, is_host: false)
@@ -82,9 +82,22 @@ RSpec.describe 'User show page' do
       expect(page).not_to have_content('Date:')
     end
 
-    xit 'I should also see viewing parties where I am the host', :vcr do
+    it 'there is a section to see who the host is', :vcr do
       users = create_list(:user, 5)
-      party = create(:party, movie_id: 420)
+      party = create(:party, movie_id: 200)
+
+      create(:userParty, user_id: users.first.id, party_id: party.id, is_host: true)
+      create(:userParty, user_id: users[1].id, party_id: party.id, is_host: false)
+      create(:userParty, user_id: users[2].id, party_id: party.id, is_host: false)
+      create(:userParty, user_id: users[3].id, party_id: party.id, is_host: false)
+
+      visit user_path(users[1])
+      expect(page).to have_content("#{users[0].name} is the host")
+    end
+
+    it 'I should also see viewing parties where I am the host', :vcr do
+      users = create_list(:user, 5)
+      party = create(:party, movie_id: 200)
 
       create(:userParty, user_id: users.first.id, party_id: party.id, is_host: true)
       create(:userParty, user_id: users[1].id, party_id: party.id, is_host: false)
@@ -93,9 +106,24 @@ RSpec.describe 'User show page' do
 
       visit user_path(users[0])
       expect(page).to have_content('You are the host')
+    end
 
-      visit user_path(users[1])
-      expect(page).to have_content("#{users[0].name} is the host")
+    it 'I should be able to see multiple parties I am attending', :vcr do
+      users = create_list(:user, 5)
+      party = create(:party, movie_id: 200)
+      party1 = create(:party, movie_id: 550)
+
+      create(:userParty, user_id: users[0].id, party_id: party.id, is_host: true)
+      create(:userParty, user_id: users[1].id, party_id: party.id, is_host: false)
+      create(:userParty, user_id: users[2].id, party_id: party.id, is_host: false)
+      create(:userParty, user_id: users[3].id, party_id: party.id, is_host: false)
+
+      create(:userParty, user_id: users[0].id, party_id: party1.id, is_host: false)
+      create(:userParty, user_id: users[1].id, party_id: party1.id, is_host: true)
+      visit user_path(users[0])
+      save_and_open_page
+      expect(page).to have_content(party.title)
+      expect(page).to have_content(party1.title)
     end
   end
 end
