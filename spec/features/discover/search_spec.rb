@@ -58,8 +58,11 @@ RSpec.describe 'Discover Movies Page' do
         click_button 'Find Movies'
 
         within("#search_results") do
-          
+          expect(page).to have_button "Discover Page"
+          click_button "Discover Page"
         end
+
+        expect(current_path).to eq user_discover_path(user)
       end
     end
 

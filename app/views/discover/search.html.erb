@@ -45,7 +45,7 @@ table {
   </div>
   <% elsif !@movies.empty? %>
   <div id="search_results">
-  <h3> <%= button_to "Discover Page", user_discover_path(@user) %> </h3>
+  <h3> <%= button_to "Discover Page", user_discover_path(@user), method: :get %> </h3>
   <h2> Movie Results for: <%= @search %> </h2>
     <table>
       <% @movies.each do |movie| %>
