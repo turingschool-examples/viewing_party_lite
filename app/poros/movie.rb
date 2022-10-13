@@ -1,16 +1,16 @@
 class Movie
-  attr_reader :title,
-              :id,
+  attr_reader :id,
+              :title,
               :vote_average,
               :genres,
               :summary,
               :cast, 
-              :reviews
+              :reviews,
               :image_path
 
   def initialize(attributes)
-    @title = attributes[:title]
     @id = attributes[:id]
+    @title = attributes[:title]
     @vote_average = attributes[:vote_average]
     @genres = attributes[:genres]
     @summary = attributes[:summary]
