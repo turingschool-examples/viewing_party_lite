@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/erikriggs/turing_work/3mod/projects/viewing_party_lite/app/models/user.rb": {
+      "/Users/sandymarie/turing/3module/projects/viewing_party_lite/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -10,14 +10,14 @@
           null
         ]
       },
-      "/Users/erikriggs/turing_work/3mod/projects/viewing_party_lite/app/models/application_record.rb": {
+      "/Users/sandymarie/turing/3module/projects/viewing_party_lite/app/models/application_record.rb": {
         "lines": [
           1,
           1,
           null
         ]
       },
-      "/Users/erikriggs/turing_work/3mod/projects/viewing_party_lite/app/models/party.rb": {
+      "/Users/sandymarie/turing/3module/projects/viewing_party_lite/app/models/party.rb": {
         "lines": [
           1,
           1,
@@ -27,7 +27,7 @@
           null
         ]
       },
-      "/Users/erikriggs/turing_work/3mod/projects/viewing_party_lite/app/models/user_party.rb": {
+      "/Users/sandymarie/turing/3module/projects/viewing_party_lite/app/models/user_party.rb": {
         "lines": [
           1,
           1,
@@ -35,13 +35,13 @@
           null
         ]
       },
-      "/Users/erikriggs/turing_work/3mod/projects/viewing_party_lite/app/helpers/application_helper.rb": {
+      "/Users/sandymarie/turing/3module/projects/viewing_party_lite/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/erikriggs/turing_work/3mod/projects/viewing_party_lite/app/poros/movie.rb": {
+      "/Users/sandymarie/turing/3module/projects/viewing_party_lite/app/poros/movie.rb": {
         "lines": [
           1,
           1,
@@ -65,7 +65,7 @@
           null
         ]
       },
-      "/Users/erikriggs/turing_work/3mod/projects/viewing_party_lite/app/services/movie_service.rb": {
+      "/Users/sandymarie/turing/3module/projects/viewing_party_lite/app/services/movie_service.rb": {
         "lines": [
           1,
           null,
@@ -98,7 +98,7 @@
           null
         ]
       },
-      "/Users/erikriggs/turing_work/3mod/projects/viewing_party_lite/app/facades/movie_facade.rb": {
+      "/Users/sandymarie/turing/3module/projects/viewing_party_lite/app/facades/movie_facade.rb": {
         "lines": [
           1,
           null,
@@ -123,7 +123,7 @@
           null
         ]
       },
-      "/Users/erikriggs/turing_work/3mod/projects/viewing_party_lite/app/controllers/landings_controller.rb": {
+      "/Users/sandymarie/turing/3module/projects/viewing_party_lite/app/controllers/landings_controller.rb": {
         "lines": [
           1,
           1,
@@ -132,13 +132,13 @@
           null
         ]
       },
-      "/Users/erikriggs/turing_work/3mod/projects/viewing_party_lite/app/controllers/application_controller.rb": {
+      "/Users/sandymarie/turing/3module/projects/viewing_party_lite/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/Users/erikriggs/turing_work/3mod/projects/viewing_party_lite/app/controllers/users_controller.rb": {
+      "/Users/sandymarie/turing/3module/projects/viewing_party_lite/app/controllers/users_controller.rb": {
         "lines": [
           1,
           1,
@@ -173,16 +173,16 @@
           null
         ]
       },
-      "/Users/erikriggs/turing_work/3mod/projects/viewing_party_lite/app/controllers/discover_controller.rb": {
+      "/Users/sandymarie/turing/3module/projects/viewing_party_lite/app/controllers/discover_controller.rb": {
         "lines": [
           1,
           1,
-          4,
+          5,
           null,
           null
         ]
       },
-      "/Users/erikriggs/turing_work/3mod/projects/viewing_party_lite/app/controllers/movies_controller.rb": {
+      "/Users/sandymarie/turing/3module/projects/viewing_party_lite/app/controllers/movies_controller.rb": {
         "lines": [
           1,
           1,
@@ -211,7 +211,7 @@
           null
         ]
       },
-      "/Users/erikriggs/turing_work/3mod/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
+      "/Users/sandymarie/turing/3module/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
           0,
           0,
@@ -221,7 +221,7 @@
         "branches": {
         }
       },
-      "/Users/erikriggs/turing_work/3mod/projects/viewing_party_lite/app/jobs/application_job.rb": {
+      "/Users/sandymarie/turing/3module/projects/viewing_party_lite/app/jobs/application_job.rb": {
         "lines": [
           0,
           0
@@ -229,7 +229,7 @@
         "branches": {
         }
       },
-      "/Users/erikriggs/turing_work/3mod/projects/viewing_party_lite/app/channels/application_cable/connection.rb": {
+      "/Users/sandymarie/turing/3module/projects/viewing_party_lite/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
           0,
@@ -239,7 +239,7 @@
         "branches": {
         }
       },
-      "/Users/erikriggs/turing_work/3mod/projects/viewing_party_lite/app/channels/application_cable/channel.rb": {
+      "/Users/sandymarie/turing/3module/projects/viewing_party_lite/app/channels/application_cable/channel.rb": {
         "lines": [
           0,
           0,
@@ -250,6 +250,6 @@
         }
       }
     },
-    "timestamp": 1665692954
+    "timestamp": 1665694036
   }
 }
