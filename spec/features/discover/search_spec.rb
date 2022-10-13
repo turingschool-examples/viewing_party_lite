@@ -30,6 +30,7 @@ RSpec.describe 'Discover Movies Page' do
 
         click_button "Top Rated Movies"
         expect(page).to have_css("#top_40_movies")
+        expect(page).to have_button("Discover Page")
       end
     end
 
@@ -61,6 +62,20 @@ RSpec.describe 'Discover Movies Page' do
           expect(page).to have_button "Discover Page"
           click_button "Discover Page"
         end
+
+        expect(current_path).to eq user_discover_path(user)
+      end
+    end
+
+    it 'should be able to navigate to the discover page' do
+      VCR.use_cassette('top_40_discover') do
+        user = create(:user)
+
+        visit user_discover_path(user)
+
+        click_button "Top Rated Movies"
+        expect(page).to have_button("Discover Page")
+        click_button "Discover Page"
 
         expect(current_path).to eq user_discover_path(user)
       end

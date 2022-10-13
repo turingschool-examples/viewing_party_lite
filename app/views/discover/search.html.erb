@@ -31,7 +31,7 @@ table {
 
 <% if !@top_movies.empty? %>
   <div id="top_40_movies">
-  <h3> <%= button_to "Discover Page", user_discover_path(@user) %> </h3>
+  <h3> <%= button_to "Discover Page", user_discover_path(@user), method: :get %> </h3>
   <h2>Top 40 Movies</h2>
     <table>
         <% @top_movies.each do |movie| %>
