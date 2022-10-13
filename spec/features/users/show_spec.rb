@@ -50,7 +50,7 @@ RSpec.describe 'User Dashboard', type: :feature do
           @party_3.users << @user_2
         end
 
-        it 'Each viewing party has a Movie Image' do
+        it 'Each viewing party has a Movie Image', :vcr do
           visit user_path(@user_1)
 
           within("#view-parties-#{@user_1.id}") do
@@ -69,7 +69,7 @@ RSpec.describe 'User Dashboard', type: :feature do
           end
         end
 
-        it 'Each viewing party has a Movie Title, which links to the movie show page' do
+        it 'Each viewing party has a Movie Title, which links to the movie show page', :vcr do
           visit user_path(@user_1)
 
           within("#view-parties-#{@user_1.id}") do
@@ -88,7 +88,7 @@ RSpec.describe 'User Dashboard', type: :feature do
           end
         end
           
-        it 'Each viewing party has a Date and Time of the Event' do
+        it 'Each viewing party has a Date and Time of the Event', :vcr do
           visit user_path(@user_1)
 
           within("#view-parties-#{@user_1.id}") do
@@ -115,7 +115,7 @@ RSpec.describe 'User Dashboard', type: :feature do
           end
         end
 
-        it 'Each viewing party has a who is hosting, list of users invited' do
+        it 'Each viewing party has a who is hosting, list of users invited', :vcr do
           visit user_path(@user_1)
 
           within("#view-parties-#{@user_1.id}") do
@@ -132,7 +132,7 @@ RSpec.describe 'User Dashboard', type: :feature do
           end
         end
 
-        it 'list of users invited' do
+        it 'list of users invited', :vcr do
 
           visit user_path(@user_1)
 

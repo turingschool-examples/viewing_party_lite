@@ -1,4 +1,4 @@
-class MovieFacade 
+class MovieFacade
   def self.movie_data(movie_id)
     movie_data = MovieService.get_movie_data(movie_id)
     MovieInfo.new(movie_data)
