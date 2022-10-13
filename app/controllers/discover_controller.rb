@@ -3,10 +3,14 @@
 class DiscoverController < ApplicationController
   def search
     @user = User.find(params[:user_id])
+    @top_movies = []
     @movies = []
-
+    @search = ""
     if params[:format] == 'top_rated'
-      @movies = MovieFacade.top_40_movies
+      @top_movies = MovieFacade.top_40_movies
+    elsif params[:query].present?
+      @movies = MovieFacade.search(params[:query])
+      @search = params[:query]
     end
   end
 

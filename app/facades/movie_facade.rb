@@ -19,11 +19,19 @@ class MovieFacade
   end
 
   def self.top_40_movies
-    array = top_1_through_20_movies
+    top_40 = top_1_through_20_movies
     top_21_through_40_movies.each do |movie_object|
-      array << movie_object
+      top_40 << movie_object
     end
-    array
+    top_40
+  end
+
+  def self.search(search_params)
+    json = MovieService.search(search_params.parameterize(separator: '+'))
+    json[:results].map do |movie_data|
+      movie_object = MovieService.get_movie_data(movie_data[:id])
+      Movie.new(movie_object)
+    end
   end
 
 end

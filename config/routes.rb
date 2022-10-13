@@ -11,4 +11,6 @@ Rails.application.routes.draw do
     resources :movies, only: [:show]
     get '/discover', to: 'discover#search'
   end
+
+  resources :movies, only: [:show]
 end
