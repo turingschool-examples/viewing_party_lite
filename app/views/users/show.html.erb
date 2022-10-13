@@ -10,17 +10,21 @@
       <img alt = <%= @movies[image].title %> src="https://image.tmdb.org/t/p/w200/<%= @movies[image].image %>">
       <li><%= vp.date.strftime('%B %d, %Y %I:%M %p') %></li>
       <li id="role">Your Role:<%= vp.current_party(@user.id).role %></li>
-      <li>Host By: <%=vp.host%></li>
+      <li id="host">Host By: <%=vp.host%></li>
 
-      <li>Viewers: <%vp.users.each do |user|%>
-          <% unless vp.host == user.name%>
-            <%if user.name == @user.name%>
-              <strong> <%=user.name%> </strong>
-            <%else%>
-            <%=user.name %>
+      <li>Viewers:
+        <ul id="viewers">
+          <%vp.users.each do |user|%>
+            <% unless vp.host == user.name%>
+              <%if user.name == @user.name%>
+                <li><strong id="current_user"> <%=user.name%> </strong></li>
+              <%else%>
+                <li><%=user.name %></li>
+              <%end%>
             <%end%>
           <%end%>
-        <%end%></li>
+        </ul>
+      </li>
     </ul>
   </div>
   <% end %>
