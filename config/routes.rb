@@ -6,10 +6,10 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :create], path: 'dashboard' do
     post '/discover', to: 'users#search'
+    resources :movies, only: [:show, :index]
   end
   resources :users, only: :new, path: 'register'
 
-  resources :movies, only: :show
 
 
 end

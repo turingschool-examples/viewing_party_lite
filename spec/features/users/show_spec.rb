@@ -92,7 +92,7 @@ RSpec.describe 'User Dashboard Page' do
         end
       end
 
-      expect(current_path).to eq(movie_path(@party_1.movie_id)) #fix routing
+      expect(current_path).to eq(user_movie_path(@user_3, @party_7.movie_id)) #fix routing
     end
 
     it 'shows the viewing parties the user has created with details (host)' do
@@ -113,7 +113,7 @@ RSpec.describe 'User Dashboard Page' do
             click_link "The Flintstones in Viva Rock Vegas"
           end
         end
-        expect(current_path).to eq(movie_path(@party_4.movie_id)) #fix routing
+        expect(current_path).to eq(user_movie_path(@user_1, @party_4.movie_id)) #fix routing
 
     end
   end
