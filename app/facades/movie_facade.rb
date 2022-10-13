@@ -18,8 +18,8 @@ class MovieFacade
 
   def self.get_top20_movies
     json = MovieService.get_top20_movies
-    json[:results][0..19].map do |movie|
-      movie[:title]
+    json[:results][0..19].map do |movie_data|
+      Movie.new(movie_data)
     end
   end
 end
