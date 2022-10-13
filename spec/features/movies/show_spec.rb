@@ -8,11 +8,12 @@ RSpec.describe 'User Movie Show Page' do
       movie = File.read('./spec/fixtures/fight_club.json')
       movie_data = JSON.parse(movie, symbolize_names: true)
       @fight_club = Movie.new(movie_data)
+
     end
 
-    it 'has a button to create a viewing party' do
+    xit 'has a button to create a viewing party' do
       visit user_movie_path(@user_1, @fight_club)
-
+      save_and_open_page
       click_button "Create Viewing Party"
       expect(current_path).to eq(new_user_movie_viewing_party_path(@user_1, @fight_club))
     end

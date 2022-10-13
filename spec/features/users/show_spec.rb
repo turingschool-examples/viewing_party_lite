@@ -97,7 +97,7 @@ RSpec.describe 'User Dashboard Page' do
 
     it 'shows the viewing parties the user has created with details (host)' do
         visit user_path(@user_1)
-
+        save_and_open_page
         within("#hosting") do
           within("#party-#{@party_6.id}") do
 
