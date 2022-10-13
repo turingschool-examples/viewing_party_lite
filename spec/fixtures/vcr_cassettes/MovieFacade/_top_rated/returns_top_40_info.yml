@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Wed, 12 Oct 2022 02:13:19 GMT
+      - Wed, 12 Oct 2022 21:55:56 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,15 +42,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 3dc4c80cd959e984309833cac8f5a630.cloudfront.net (CloudFront)
+      - 1.1 bd96da9a6020f2a5d5499cedf78d68f2.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - Hm5DYV1vw5SemXeeniYDapKEXOxThkAjzRdMqQMfk_30TFvO4c-mZQ==
+      - cBuVbayO-kY4NAinyEEVdVJxtbeVHOXI0YaYRPMPkwbHiEiy1FBWzQ==
       Age:
-      - '1398'
+      - '8385'
     body:
       encoding: UTF-8
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg","genre_ids":[18,80],"id":238,"original_language":"en","original_title":"The
@@ -160,8 +160,8 @@ http_interactions:
         broken fellowship struggle to save Gondor from Sauron''s forces. Meanwhile,
         Frodo and Sam take the ring closer to the heart of Mordor, the dark lord''s
         realm.","popularity":155.131,"poster_path":"/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg","release_date":"2003-12-01","title":"The
-        Lord of the Rings: The Return of the King","video":false,"vote_average":8.5,"vote_count":20324}],"total_pages":521,"total_results":10402}'
-  recorded_at: Wed, 12 Oct 2022 02:36:37 GMT
+        Lord of the Rings: The Return of the King","video":false,"vote_average":8.5,"vote_count":20324}],"total_pages":521,"total_results":10408}'
+  recorded_at: Thu, 13 Oct 2022 00:15:41 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/top_rated?api_key=<API Key>&page=2
@@ -187,7 +187,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Wed, 12 Oct 2022 02:13:20 GMT
+      - Wed, 12 Oct 2022 21:55:56 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -204,15 +204,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 f0a2a95cb4d25b2414a9c1a7a754943e.cloudfront.net (CloudFront)
+      - 1.1 a7c0ba01db75946f7df3f7eaf69984b6.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 2JxPE_jroBrpN5Nvno-Zeqwg4X26DzLqeZxRNO2YeqSSSokbnsYd_Q==
+      - 6fJL-nKplH-gH28iueBy3Q11nRys1neDBHLTmnfcMdORP8K7RXfEdg==
       Age:
-      - '1398'
+      - '8385'
     body:
       encoding: UTF-8
       string: '{"page":2,"results":[{"adult":false,"backdrop_path":"/67HggiWaP9ZLv5sPYmyRV37yAJM.jpg","genre_ids":[35,18,10749],"id":13,"original_language":"en","original_title":"Forrest
@@ -256,14 +256,14 @@ http_interactions:
         After a falling out with their aunt, they move into an abandoned bomb shelter.
         With no surviving relatives and their emergency rations depleted, Seita and
         Setsuko struggle to survive.","popularity":0.6,"poster_path":"/qG3RYlIVpTYclR9TYIsy8p7m7AT.jpg","release_date":"1988-04-16","title":"Grave
-        of the Fireflies","video":false,"vote_average":8.4,"vote_count":4328},{"adult":false,"backdrop_path":"/uPYa165sraN2c8gZBM9C47g3JoU.jpg","genre_ids":[18,80],"id":311,"original_language":"en","original_title":"Once
+        of the Fireflies","video":false,"vote_average":8.4,"vote_count":4328},{"adult":false,"backdrop_path":"/uif5fUshJrXyyDzfpzp1DLw3N0S.jpg","genre_ids":[27,18,53],"id":539,"original_language":"en","original_title":"Psycho","overview":"When
+        larcenous real estate clerk Marion Crane goes on the lam with a wad of cash
+        and hopes of starting a new life, she ends up at the notorious Bates Motel,
+        where manager Norman Bates cares for his housebound mother.","popularity":45.646,"poster_path":"/yz4QVqPx3h1hD1DfqqQkCq3rmxW.jpg","release_date":"1960-06-22","title":"Psycho","video":false,"vote_average":8.4,"vote_count":8463},{"adult":false,"backdrop_path":"/uPYa165sraN2c8gZBM9C47g3JoU.jpg","genre_ids":[18,80],"id":311,"original_language":"en","original_title":"Once
         Upon a Time in America","overview":"A former Prohibition-era Jewish gangster
         returns to the Lower East Side of Manhattan over thirty years later, where
         he once again must confront the ghosts and regrets of his old life.","popularity":27.134,"poster_path":"/i0enkzsL5dPeneWnjl1fCWm6L7k.jpg","release_date":"1984-05-23","title":"Once
-        Upon a Time in America","video":false,"vote_average":8.4,"vote_count":4366},{"adult":false,"backdrop_path":"/uif5fUshJrXyyDzfpzp1DLw3N0S.jpg","genre_ids":[27,18,53],"id":539,"original_language":"en","original_title":"Psycho","overview":"When
-        larcenous real estate clerk Marion Crane goes on the lam with a wad of cash
-        and hopes of starting a new life, she ends up at the notorious Bates Motel,
-        where manager Norman Bates cares for his housebound mother.","popularity":45.646,"poster_path":"/yz4QVqPx3h1hD1DfqqQkCq3rmxW.jpg","release_date":"1960-06-22","title":"Psycho","video":false,"vote_average":8.4,"vote_count":8463},{"adult":false,"backdrop_path":"/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg","genre_ids":[18,53,35],"id":550,"original_language":"en","original_title":"Fight
+        Upon a Time in America","video":false,"vote_average":8.4,"vote_count":4366},{"adult":false,"backdrop_path":"/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg","genre_ids":[18,53,35],"id":550,"original_language":"en","original_title":"Fight
         Club","overview":"A ticking-time-bomb insomniac and a slippery soap salesman
         channel primal male aggression into a shocking new form of therapy. Their
         concept catches on, with underground \"fight clubs\" forming in every town,
@@ -309,6 +309,6 @@ http_interactions:
         elementary school, Shouko and Shouya do not speak to each other again... until
         an older, wiser Shouya, tormented by his past behaviour, decides he must see
         Shouko once more. He wants to atone for his sins, but is it already too late...?","popularity":105.297,"poster_path":"/tuFaWiqX0TXoWu7DGNcmX3UW7sT.jpg","release_date":"2016-09-17","title":"A
-        Silent Voice: The Movie","video":false,"vote_average":8.4,"vote_count":3136}],"total_pages":521,"total_results":10402}'
-  recorded_at: Wed, 12 Oct 2022 02:36:37 GMT
+        Silent Voice: The Movie","video":false,"vote_average":8.4,"vote_count":3136}],"total_pages":521,"total_results":10408}'
+  recorded_at: Thu, 13 Oct 2022 00:15:41 GMT
 recorded_with: VCR 6.1.0

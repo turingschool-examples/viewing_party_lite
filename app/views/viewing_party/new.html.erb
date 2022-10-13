@@ -1,1 +1,61 @@
-<h1>Create a Viewing Party</h1>
+<h1>Create a Movie Party for <%= @movie.title %></h1>
+<center>
+<p><%= button_to "Discover Page", user_discover_path(@user), method: :get %></p>
+
+  <br>
+  <br>
+
+<div id='party_details'>
+  <h2>Viewing Party Details</h2>
+
+  <br>
+
+  Movie Title <strong><%= @movie.title %></strong>
+    <%= form_with url: user_movie_viewing_party_path(@user, @movie.movie_id), method: :post, local: true do |f|%>
+      <%= f.hidden_field :host_id, value: @user.id%>
+      <%= f.hidden_field :movie_id, value: @movie.movie_id %>
+      <%= f.hidden_field :movie_title, value: @movie.title %>
+      <%= f.hidden_field :poster_path, value: @movie.poster_path %>
+
+      <br>
+      <br>
+
+      <%= f.label :duration, "Duration of Party" %>
+      <%= f.number_field :duration, value: @movie.runtime, min: @movie.runtime, required: true %>
+
+      <br>
+      <br>
+
+      <%= f.label :date, 'Day' %>
+      <%= f.date_field :date, value: Date.today, min: Date.today, required: true %>
+
+      <br>
+      <br>
+
+      <%= f.label :start_time, 'Start Time' %>
+      <%= f.time_field :start_time, ampm: true, required: true %>
+
+      <br>
+      <br>
+      <br>
+
+      <strong>Invite Other Users</strong>
+
+      <br>
+      <br>
+
+    <section id="invite_others">
+      <%= f.collection_check_boxes(:attendees, @invitees, :id, :name_and_email, include_hidden: false) do |attendee| %>
+        <div id='check_boxes'>
+          <%= attendee.check_box %>
+          <%= attendee.label %>
+        </div>
+      <% end %>
+    </section>
+
+      <br>
+
+      <%= f.submit 'Create Party' %>
+  <% end %>
+</div>
+</center>

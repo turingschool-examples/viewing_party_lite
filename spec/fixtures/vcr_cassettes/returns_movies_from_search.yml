@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Wed, 12 Oct 2022 14:45:01 GMT
+      - Thu, 13 Oct 2022 00:15:41 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,15 +42,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 96725c0e4ced177a38df871e7cc48a4a.cloudfront.net (CloudFront)
+      - 1.1 44e92eddc431cc09e1e2c5b24edc90f8.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - qc2ETBXSgDjof86JbGeqHMsIUpu_rmZPbW3lDXdZF1-lfc-fGObeHg==
+      - yBJElnTHHSgn58iG-ChZGRKjsxH1z6nU0Rv27v2iMGv7enegO5DWyA==
       Age:
-      - '446'
+      - '2'
     body:
       encoding: UTF-8
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":616174,"original_language":"en","original_title":"John
@@ -164,7 +164,7 @@ http_interactions:
         Albert, they both initially resent the arrangement. Hostilities soften when
         they discover some common interests.","popularity":0.84,"poster_path":"/8vUHWvfJCoUiu7xpEbl5KoSkzv4.jpg","release_date":"1983-03-15","title":"Wayne
         and Albert","video":false,"vote_average":0,"vote_count":0}],"total_pages":5,"total_results":92}'
-  recorded_at: Wed, 12 Oct 2022 14:52:27 GMT
+  recorded_at: Thu, 13 Oct 2022 00:15:43 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/search/movie?api_key=<API Key>&page=2&query=wayne
@@ -190,7 +190,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Wed, 12 Oct 2022 14:45:01 GMT
+      - Thu, 13 Oct 2022 00:15:42 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -207,15 +207,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 f9a5caa2a18f480171fad57618db559e.cloudfront.net (CloudFront)
+      - 1.1 6b1026dc8b63f06fce4b4aec8b9a03d6.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 2X851rsfjwFZAQ15o1qvOOb9dLefeoqT7WGVuYiCYDLJW6EmF2aNQg==
+      - kSIXa05DcnAaqtZBzPAv3ni2cCBWqshgrXmCuvLc9bhjAW3bOInNdQ==
       Age:
-      - '446'
+      - '1'
     body:
       encoding: UTF-8
       string: '{"page":2,"results":[{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":393056,"original_language":"en","original_title":"Wayne
@@ -320,5 +320,5 @@ http_interactions:
         Greatest Athletes: Wayne Gretzky","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":436201,"original_language":"pt","original_title":"O
         Homem que Matou John Wayne","overview":"","popularity":0.632,"poster_path":"/nvFrqfbc9kEzb4poxoHYCbSdR5Y.jpg","release_date":"2017-01-20","title":"O
         Homem que Matou John Wayne","video":false,"vote_average":5,"vote_count":1}],"total_pages":5,"total_results":92}'
-  recorded_at: Wed, 12 Oct 2022 14:52:27 GMT
+  recorded_at: Thu, 13 Oct 2022 00:15:43 GMT
 recorded_with: VCR 6.1.0

@@ -52,15 +52,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 05fe6f95b77eb54d0691950915c27264.cloudfront.net (CloudFront)
+      - 1.1 44e92eddc431cc09e1e2c5b24edc90f8.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 3toHmNfUtC4xESgk5IgXvLSVRfAjlbNq2yd0bZMGG8GD6Htj_aaROQ==
+      - 1zvgCFEI7vnELvpk_8iiIUR9DjrZG3LaWvDMYKj7btm_SA9xlVYeaw==
       Age:
-      - '8386'
+      - '9741'
     body:
       encoding: UTF-8
       string: '{"adult":false,"backdrop_path":"/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg","belongs_to_collection":{"id":230,"name":"The
@@ -307,5 +307,5 @@ http_interactions:
         Coppola, about a Mob family and their drama, the story telling is perfect,
         the acting good, sometimes a little over the top in the case of Thalia Shire
         (the sister of the director)\r\n\r\nThe 70''s were the best years for Hollywood.","created_at":"2022-07-18T23:18:07.748Z","id":"62d5ea2fe93e95095cbddefe","updated_at":"2022-07-26T14:21:07.910Z","url":"https://www.themoviedb.org/review/62d5ea2fe93e95095cbddefe"}],"total_pages":1,"total_results":2}}'
-  recorded_at: Thu, 13 Oct 2022 00:15:44 GMT
+  recorded_at: Thu, 13 Oct 2022 00:38:19 GMT
 recorded_with: VCR 6.1.0
