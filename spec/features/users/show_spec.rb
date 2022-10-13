@@ -22,8 +22,8 @@ RSpec.describe "user dashboard" do
 
     it 'displays a user name' do
       expect(page).to have_content("#{user.name}'s Dashboard")
-    end
-    
+    endspec/features/users/show_spec.rb
+
     it 'displays a discover movies button that links to a discover page for this specific user' do
       expect(page).to have_button('Discover Movies')
 
