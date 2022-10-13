@@ -11,8 +11,8 @@ class MovieFacade
     Movie.new(json)
   end
 
-  def self.cast(id)
-    json = MovieService.cast(id)
+  def self.top_10_cast(id)
+    json = MovieService.top_10_cast(id)
     json[:cast][0..9].map { |actor| actor[:name] }
   end
 

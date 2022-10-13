@@ -10,7 +10,7 @@ class MovieService
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  def self.cast(movie_id)
+  def self.top_10_cast(movie_id)
     response = conn.get("3/movie/#{movie_id}/credits?api_key=#{ENV['movies_api_key']}&language=en-US?")
     JSON.parse(response.body, symbolize_names: true)
   end

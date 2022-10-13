@@ -36,9 +36,9 @@ describe MovieService do
       end
     end
 
-    context '#cast' do
+    context '#top_10_cast' do
       it 'returns the cast members', :vcr do 
-        cast_members = MovieService.cast(550)
+        cast_members = MovieService.top_10_cast(550)
         expect(cast_members).to be_a Hash
         expect(cast_members[:cast]).to be_an Array
         expect(cast_members[:cast]).to all(be_a(Hash))

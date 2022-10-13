@@ -37,7 +37,16 @@ RSpec.describe 'a users movies show page', type: :feature do
       it 'has the movie attributes on the movie show page', :vcr do
         user = create(:user)
         visit "/users/#{user.id}/movies/550"
+        expect(page).to have_content('Fight Club')
+        expect(page).to have_content('2:19')
+        expect(page).to have_content(8.433)
+        expect(page).to have_content("A ticking-time-bomb insomniac")
+        expect(page).to have_content("Drama")
+      end
 
+      xit 'has the movie total review count, reviewed information, and top 10 cast members for the movie', :vcr do
+        user = create(:user)
+        visit "/users/#{user.id}/movies/550"
         expect(page).to have_content('Fight Club')
         expect(page).to have_content('2:19')
         expect(page).to have_content(8.433)
