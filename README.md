@@ -12,7 +12,7 @@ Our take on it exhibits polymorphism in the service methods, encapsulation throu
 
 Heroku: https://viewing-party-light-ah-cb.herokuapp.com/
 
-Submission Vid: 
+Submission Vid: https://www.youtube.com/watch?v=1eEOPZqGEzs
 
 ## Future refactoring
 
