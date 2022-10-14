@@ -23,6 +23,7 @@
     <div id= "user_checkbox_<%= user.id %>">
     <%= form.check_box(:user, {multiple: true}, user.id) %>
     <%= form.label :user, "#{user.name}, (#{user.email})" %>
+    </div>
   <% end %>
 
   <%= form.submit "Create Party" %>
