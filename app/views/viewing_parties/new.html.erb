@@ -7,6 +7,7 @@
 <p> Movie Title: <%= @movie.title %> </p>
 
 <%= form_with url:  user_movie_viewing_parties_path(@user, params[:movie_id]), method: :post, local: true do |form| %>
+  <%= form.hidden_field :movie_id, value: "#{@movie.id}"  %>
   <%= form.label :duration %>
   <%= form.number_field :duration, :value => @movie.runtime %>
 
@@ -22,9 +23,8 @@
     <div id= "user_checkbox_<%= user.id %>">
     <%= form.check_box(:user, {multiple: true}, user.id) %>
     <%= form.label :user, "#{user.name}, (#{user.email})" %>
-  </div>
   <% end %>
- 
+
   <%= form.submit "Create Party" %>
 
 <% end %>
