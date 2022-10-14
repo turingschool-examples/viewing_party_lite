@@ -18,7 +18,7 @@ RSpec.describe 'Discover Page' do
       visit user_discover_index_path(@user_1)
     
       click_button 'Top Rated Movies'
-      expect(current_path).to eq(user_movies_path(@user_1)) #may need to recheck route
+      expect(current_path).to eq(user_movies_path(@user_1)) 
     end
 
     it 'shows a search field to enter movie keywords plus a button to search by movie title' do

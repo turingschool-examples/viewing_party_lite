@@ -23,5 +23,19 @@ RSpec.describe 'User Movie Show Page' do
       click_button "Discover Page"
       expect(current_path).to eq(user_discover_index_path(@user_1))
     end
+
+    it 'shows all the movie information' do
+      visit user_movie_path(@user_1, @fight_club.id)
+      expect(page).to have_content(@fight_club.original_title)
+      expect(page).to have_content(@fight_club.genre_names)
+      expect(page).to have_content(@fight_club.overview)
+      expect(page).to have_content(@fight_club.standard_runtime)
+      expect(page).to have_content(@fight_club.vote_average)
+      expect(page).to have_content(@fight_club.vote_count)
+
+      #missing 10 cast members
+      #missing each reiews author and information
+
+    end
   end
 end
