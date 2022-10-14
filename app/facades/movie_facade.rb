@@ -4,9 +4,13 @@ require './app/services/movie_service'
 class MovieFacade
   def self.info_card(movie_id)
     parsed_data = MovieService.request(movie_id)
-    x = Movie.new(parsed_data)
 
     { title: parsed_data['original_title'], img_path: parsed_data['poster_path'] }
+  end
+
+  def self.find_movie(movie_id)
+    parsed_data = MovieService.request(movie_id)
+    Movie.new(parsed_data)
   end
 
   def self.popular
@@ -80,5 +84,5 @@ class MovieFacade
     parsed_data['results'].map { |review| { author: review['author'], content: review['content'] } }
   end
 
-  # private_class_method :show_details, :show_credits, :show_reviews
+  private_class_method :show_details, :show_credits, :show_reviews
 end
