@@ -58,7 +58,7 @@ RSpec.describe 'User registration page' do
     expect(page).to have_content("Password confirmation doesn't match Password")
   end
 
-  it 'checks password and confirmation match' do
+  it 'checks name exists' do
     visit register_path
 
     fill_in :email, with: 'name@mail.com'
