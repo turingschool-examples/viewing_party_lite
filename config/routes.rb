@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   get '/register', to: 'users#register'
   get 'users/:id/discover', to: 'users#discover'
   get '/users/:user_id/movies/:movie_id', to: 'user_movies#show' #namespace?
+  get "/users/:user_id/movies/:movie_id/viewing-party/new", to: 'parties#new'
+  
+  resources :users, only: [:create, :show] 
 
-  resources :users, only: [:create, :show]
 
 
 end
