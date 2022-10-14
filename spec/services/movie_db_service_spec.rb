@@ -54,15 +54,5 @@ describe MovieDbService, :vcr do
       expect(cast_member[:name]).to be_a(String)
       expect(cast_member[:character]).to be_a(String)
     end
-
-    it 'returns image data' do
-      image_data = MovieDbService.image_data('238')
-      expect(image_data).to be_a Hash
-      # binding.pry
-      expect(image_data[:backdrops]).to be_an Array
-      poster = image_data[:backdrops].first
-
-      expect(poster[:file_path]).to be_a(String)
-    end
   end
 end

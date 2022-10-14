@@ -52,15 +52,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 88bce767af5e31f726ade38ea5253bd4.cloudfront.net (CloudFront)
+      - 1.1 ef88a3146516c439b6a29b5eb3daa20a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN52-P2
+      - LAX53-P3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - ltnXUchGyjgqL49TPgCMusj59wGkBmR14KGn405jh8OJmcXmFOud9Q==
+      - 9T9zbLy1zfK0B4DWRf8e5v_7KO9wNa75XlZhLrf8kb3Tp0K_pNlpKw==
       Age:
-      - '11093'
+      - '16259'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg","belongs_to_collection":{"id":230,"name":"The
@@ -73,5 +73,5 @@ http_interactions:
         Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
         offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.715,"vote_count":16731}'
-  recorded_at: Thu, 13 Oct 2022 22:36:31 GMT
+  recorded_at: Fri, 14 Oct 2022 00:02:37 GMT
 recorded_with: VCR 6.1.0

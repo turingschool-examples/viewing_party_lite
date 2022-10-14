@@ -52,15 +52,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 a7c0ba01db75946f7df3f7eaf69984b6.cloudfront.net (CloudFront)
+      - 1.1 51bbd70f928c3ab74021926dd2783ad8.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN52-P2
+      - LAX53-P3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - _ZZdMzq9A-dVZTicCpUh-zs3wtE2hqLvOMwRepxdiT4iNNUrsl0CLA==
+      - UIujsKrvHxu4xlIXMoF0eKZL7zubpY9yG4dx0Kt3ZD956gW3D2md-Q==
       Age:
-      - '11094'
+      - '16261'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg","belongs_to_collection":{"id":230,"name":"The
@@ -73,7 +73,7 @@ http_interactions:
         Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
         offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.715,"vote_count":16731}'
-  recorded_at: Thu, 13 Oct 2022 22:36:32 GMT
+  recorded_at: Fri, 14 Oct 2022 00:02:39 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/238?api_key=<api_key>
@@ -126,15 +126,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 44e92eddc431cc09e1e2c5b24edc90f8.cloudfront.net (CloudFront)
+      - 1.1 257e5cfdca942f381fd4c55fde91b232.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN52-P2
+      - LAX53-P3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - qTvtjbfs72pd_DtILkjHvonAP6YEtliz4kFA2T13mRxwpEMl43RDWg==
+      - 6xSK7ueGhzrCq1ChcsWkbf4NyfRNCQTZvHUPtdkJWFD09lq7Y3ZU-A==
       Age:
-      - '11094'
+      - '16261'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg","belongs_to_collection":{"id":230,"name":"The
@@ -147,5 +147,5 @@ http_interactions:
         Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
         offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.715,"vote_count":16731}'
-  recorded_at: Thu, 13 Oct 2022 22:36:32 GMT
+  recorded_at: Fri, 14 Oct 2022 00:02:39 GMT
 recorded_with: VCR 6.1.0
