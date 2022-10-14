@@ -1,21 +1,21 @@
 <h1>Movie Details Page</h1>
 
-<%= @movie.title %>
-<p> Average votes: <%= @movie.average_votes%></p>
-<p> Duration: <%= @movie.runtime / 60 %>:<%= @movie.runtime % 60 %></p>
-<p> Genres: <%= @movie.genres.join(', ')%></p>
-<p> Description: <%= @movie.overview%></p>
+<%= @movie_details.title %>
+<p> Average votes: <%= @movie_details.average_votes%></p>
+<p> Duration: <%= @movie_details.runtime %></p>
+<p> Genres: <%= @movie_details.genres %></p>
+<p> Description: <%= @movie_details.overview %></p>
 
 <div id="cast">
-<p> Cast: <% @top_10_cast.each do |cast| %></p>
-  <p><%= cast%></p>
+<p> Cast: <% @movie_details.top_10_cast.each do |cast| %></p>
+  <p><%= cast %></p>
 <% end %>
 </div>
 
-<p> Review Count: <%= @reviews.size %></p>
+<p> Review Count: <%= @movie_details.review_count %></p>
 
 <div id="reviews">
-<% @reviews.each do |review| %>
+<% @movie_details.reviews.each do |review| %>
 <p> Author Name: <%= review.author_name %></p>
 <p>Review: <%= review.author_review %></p>
 <% end %>
@@ -24,5 +24,5 @@
 
 
 
-<%= button_to 'Create a Viewing Party', "/users/#{@user.id}/movies/#{@movie.id}/viewing-party/new", method: :get %>
-<%= button_to 'Return to Discover Page', "/users/#{@user.id}/discover", method: :get %>
+<%= button_to 'Create a Viewing Party', "/users/#{@movie_details.user.id}/movies/#{@movie_details.movie.id}/viewing-party/new", method: :get %>
+<%= button_to 'Return to Discover Page', "/users/#{@movie_details.user.id}/discover", method: :get %>
