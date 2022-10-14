@@ -13,8 +13,10 @@ class PartiesController < ApplicationController
     @party = Party.new(party_params)
     @users = User.all
     if @party.save
+      UserParty.create!(user_id: @user.id, party_id: @party.id)
+
       @users.each do |user|
-        UserParty.create!(user_id: user.id, party_id: @party.id) if params[user.id.to_s] = 1
+        UserParty.create!(user_id: user.id, party_id: @party.id) if params[user.id.to_s] == "1"
       end
       redirect_to(user_path(@user))
     end
