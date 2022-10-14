@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 13 Oct 2022 23:25:39 GMT
+      - Fri, 14 Oct 2022 14:47:04 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,23 +42,25 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 020e2a0f60b8ede21846567ba9cd50f4.cloudfront.net (CloudFront)
+      - 1.1 1c80fe425edf82026702c486fb324fd0.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DFW53-C1
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 8XGp_5Hd64rjC9sdVwJWywL8_vdXIt8PuajXSiVERewIO4a_dX2lpA==
+      - pRSEaVTGkBqE12H16t-bTnH-iCKiZj1ZIzIJZOEyGqNftQtC8s_1Cg==
+      Age:
+      - '1'
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/zIbaXJwt13J6a3GmujN0nl6Cjcr.jpg","genre_ids":[10749,18],"id":435665,"original_language":"en","original_title":"Ava''s
         Impossible Things","overview":"When her mother makes a shocking request, sheltered
         Ava struggles with reality, escaping into a dream world where she summons
-        up old friends and long forgotten desires.","popularity":3.76,"poster_path":"/3BdKWMbIekyK7Mk8qhuI7coE6JW.jpg","release_date":"2016-07-16","title":"Ava''s
+        up old friends and long forgotten desires.","popularity":4.211,"poster_path":"/3BdKWMbIekyK7Mk8qhuI7coE6JW.jpg","release_date":"2016-07-16","title":"Ava''s
         Impossible Things","video":false,"vote_average":5.3,"vote_count":13},{"adult":false,"backdrop_path":"/bxSBOAD8AuMHYMdW3jso9npAkgt.jpg","genre_ids":[10751,18],"id":667257,"original_language":"es","original_title":"Cosas
         imposibles","overview":"Matilde is a woman who, after the death of her husband
         - a man who constantly abused her - finds her new best friend in Miguel, her
-        young, insecure, disoriented and even dealer neighbor","popularity":11.608,"poster_path":"/t2Ew8NZ8Ci2kqmoecZUNQUFDJnQ.jpg","release_date":"2021-06-17","title":"Impossible
+        young, insecure, disoriented and even dealer neighbor","popularity":14.279,"poster_path":"/t2Ew8NZ8Ci2kqmoecZUNQUFDJnQ.jpg","release_date":"2021-06-17","title":"Impossible
         Things","video":false,"vote_average":8.5,"vote_count":270}],"total_pages":1,"total_results":2}'
-  recorded_at: Thu, 13 Oct 2022 23:25:39 GMT
+  recorded_at: Fri, 14 Oct 2022 14:47:05 GMT
 recorded_with: VCR 6.1.0

@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 13 Oct 2022 22:28:32 GMT
+      - Fri, 14 Oct 2022 14:47:04 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,33 +42,31 @@ http_interactions:
       X-Memc-Key:
       - c33f1ae3ad898e8abd8e3235daac6c22b7770a22
       X-Memc-Age:
-      - '3746'
+      - '11592'
       X-Memc-Expires:
-      - '13579'
+      - '5289'
       Etag:
-      - W/"c0fc1235ff5bc10587bbcdd6ed18e349"
+      - W/"e905220461b818eb2e032cc8983c51ba"
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Hit from cloudfront
+      - Miss from cloudfront
       Via:
-      - 1.1 d43b56891dec96acc9d50d3711407498.cloudfront.net (CloudFront)
+      - 1.1 1152d84b916a23e4b38cef1a20064b3e.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DFW53-C1
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - _ClO1kGVI52UOPfUhW9_qfD4LkjSaxRK6lx4BTJYweQJYDu4m-YRjg==
-      Age:
-      - '3427'
+      - gH2TnUS4Wz1oYtHqE7b_8wJeHHhb1uTjjC0KrLmNFPB1A2p8ECAe7Q==
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/jOuCWdh0BE6XPu2Vpjl08wDAeFz.jpg","belongs_to_collection":null,"budget":4000000,"genres":[{"id":12,"name":"Adventure"},{"id":16,"name":"Animation"},{"id":14,"name":"Fantasy"}],"homepage":"","id":123,"imdb_id":"tt0077869","original_language":"en","original_title":"The
         Lord of the Rings","overview":"The Fellowship of the Ring embark on a journey
-        to destroy the One Ring and end Sauron''s reign over Middle-earth.","popularity":38.929,"poster_path":"/liW0mjvTyLs7UCumaHhx3PpU4VT.jpg","production_companies":[{"id":286,"logo_path":null,"name":"Fantasy
+        to destroy the One Ring and end Sauron''s reign over Middle-earth.","popularity":38.089,"poster_path":"/liW0mjvTyLs7UCumaHhx3PpU4VT.jpg","production_companies":[{"id":286,"logo_path":null,"name":"Fantasy
         Films","origin_country":""},{"id":4921,"logo_path":null,"name":"Bakshi Productions","origin_country":""},{"id":141322,"logo_path":null,"name":"Saul
         Zaentz Film Productions","origin_country":""}],"production_countries":[{"iso_3166_1":"ES","name":"Spain"},{"iso_3166_1":"GB","name":"United
         Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"1978-11-15","revenue":30471420,"runtime":132,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Fantasy...beyond
         your imagination","title":"The Lord of the Rings","video":false,"vote_average":6.57,"vote_count":676}'
-  recorded_at: Thu, 13 Oct 2022 23:25:39 GMT
+  recorded_at: Fri, 14 Oct 2022 14:47:04 GMT
 recorded_with: VCR 6.1.0

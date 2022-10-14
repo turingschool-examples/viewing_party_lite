@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 13 Oct 2022 22:13:44 GMT
+      - Fri, 14 Oct 2022 14:47:07 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,35 +42,33 @@ http_interactions:
       X-Memc-Key:
       - 2d4c0e64dbf6164209c97df60fbf699170be3080
       X-Memc-Age:
-      - '8809'
+      - '16426'
       X-Memc-Expires:
-      - '7780'
+      - '635'
       Etag:
-      - W/"131b8b380a58f83b71a36692786bfdaf"
+      - W/"e9f51b55c1f8b29f37be406cf4e33234"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 5f09c808a81a33267d5cc58d93ce6352.cloudfront.net (CloudFront)
+      - 1.1 f9a5caa2a18f480171fad57618db559e.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DFW53-C1
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 2jRS0Qt3-kpi6zKIoQCOf8UmaBp3MkTv8-XF3k-DFo6s2Xi4fc1F4A==
-      Age:
-      - '4316'
+      - B2fjiXW4wBHZvNWiiHDYdM2qO0A4bvJcSaQcZoIS1Bdq86HD9Y1vSw==
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/e9n0sDkXTPz8CLXBEK1uo6janh3.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":27,"name":"Horror"},{"id":53,"name":"Thriller"}],"homepage":"","id":36600,"imdb_id":"tt0068596","original_language":"en","original_title":"The
         Flesh and Blood Show","overview":"Actors rehearsing a show at a mysterious
-        seaside theater are being killed off by an unknown maniac.","popularity":3.071,"poster_path":"/4KNjXNOxareROutLC8WH9fMz2W1.jpg","production_companies":[{"id":17102,"logo_path":null,"name":"Peter
+        seaside theater are being killed off by an unknown maniac.","popularity":1.931,"poster_path":"/4KNjXNOxareROutLC8WH9fMz2W1.jpg","production_companies":[{"id":17102,"logo_path":null,"name":"Peter
         Walker (Heritage) Ltd.","origin_country":""}],"production_countries":[{"iso_3166_1":"GB","name":"United
         Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"1972-10-01","revenue":0,"runtime":93,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"An
         appalling amalgam of carnage and carnality...","title":"The Flesh and Blood
         Show","video":false,"vote_average":5.667,"vote_count":24}'
-  recorded_at: Thu, 13 Oct 2022 23:25:40 GMT
+  recorded_at: Fri, 14 Oct 2022 14:47:07 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/34601?api_key=DONT SHOW MY API KEY&language=en-US
@@ -96,7 +94,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 13 Oct 2022 22:13:44 GMT
+      - Fri, 14 Oct 2022 14:47:07 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -109,41 +107,39 @@ http_interactions:
       Cache-Control:
       - public, max-age=28800
       X-Memc:
-      - HIT
+      - MISS, STORE
       X-Memc-Key:
       - '08f39500d8a35943308b700fca62eb437069b9b4'
       X-Memc-Age:
-      - '10169'
+      - '0'
       X-Memc-Expires:
-      - '4674'
-      Etag:
-      - W/"d6e19ce6eb33f57cd4131889e00ac48c"
+      - '15801'
+      Last-Modified:
+      - Tue, 07 Sep 2021 15:07:48 GMT
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 f186cba7dd810bedf2eae917a8f565fc.cloudfront.net (CloudFront)
+      - 1.1 44e92eddc431cc09e1e2c5b24edc90f8.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DFW53-C1
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - xYA6eiHt0ol56Cxh7eYJgn9a0RQRwPzdaaPerSQkYNJ78cOaKZ2iGQ==
-      Age:
-      - '4316'
+      - Z9a1OFJvvyTTPQWuXp3-saJWn15pmZvlTxVkQzkSKyrGyTlOuYkgjA==
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/tQFiCSe4YYCrGYPiAyO1QEUG6X5.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":80,"name":"Crime"},{"id":18,"name":"Drama"},{"id":53,"name":"Thriller"}],"homepage":"","id":34601,"imdb_id":"tt0368343","original_language":"en","original_title":"Three
         Way","overview":"Lew is a small time loser with a troubled past and a very
         big secret. Overhearing a couple plan a kidnapping, Lew is tempted to come
         up with a scheme of his own. He decides to get to the victim first and then
-        blackmail the real criminals. His plan soon spins out of control.","popularity":5.114,"poster_path":"/4sDNvHPwnCy6dQBU4FjSawNhrow.jpg","production_companies":[{"id":7339,"logo_path":null,"name":"Hyperion
+        blackmail the real criminals. His plan soon spins out of control.","popularity":3.808,"poster_path":"/4sDNvHPwnCy6dQBU4FjSawNhrow.jpg","production_companies":[{"id":7339,"logo_path":null,"name":"Hyperion
         Pictures","origin_country":""},{"id":11658,"logo_path":"/hDKTXUEj1BR3Istbh2Zu5GOYvej.png","name":"Brainstorm
         Media","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"2004-06-29","revenue":0,"runtime":88,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"A
         sinfully tasty brew of sex, extortion and murder.","title":"Three Way","video":false,"vote_average":4.167,"vote_count":18}'
-  recorded_at: Thu, 13 Oct 2022 23:25:40 GMT
+  recorded_at: Fri, 14 Oct 2022 14:47:07 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/36600?api_key=DONT SHOW MY API KEY&language=en-US
@@ -169,7 +165,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 13 Oct 2022 22:13:44 GMT
+      - Fri, 14 Oct 2022 14:47:07 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -186,35 +182,35 @@ http_interactions:
       X-Memc-Key:
       - 2d4c0e64dbf6164209c97df60fbf699170be3080
       X-Memc-Age:
-      - '8809'
+      - '16426'
       X-Memc-Expires:
-      - '7780'
+      - '635'
       Etag:
-      - W/"131b8b380a58f83b71a36692786bfdaf"
+      - W/"e9f51b55c1f8b29f37be406cf4e33234"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 2715490c3fa71c7680e71cabcd4805c0.cloudfront.net (CloudFront)
+      - 1.1 422414d66021e4e123bcb2b5087f7042.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DFW53-C1
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - RKgS8OEeFpI16BUXwjYLKvOC87qBUkRwLV4262FJ9n69DVFyYJcgmg==
+      - kNEWc0fas-5Uv32OFPUMboKTZfBns8ibiWVkLoGETf3152AnyzmCLQ==
       Age:
-      - '4316'
+      - '1'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/e9n0sDkXTPz8CLXBEK1uo6janh3.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":27,"name":"Horror"},{"id":53,"name":"Thriller"}],"homepage":"","id":36600,"imdb_id":"tt0068596","original_language":"en","original_title":"The
         Flesh and Blood Show","overview":"Actors rehearsing a show at a mysterious
-        seaside theater are being killed off by an unknown maniac.","popularity":3.071,"poster_path":"/4KNjXNOxareROutLC8WH9fMz2W1.jpg","production_companies":[{"id":17102,"logo_path":null,"name":"Peter
+        seaside theater are being killed off by an unknown maniac.","popularity":1.931,"poster_path":"/4KNjXNOxareROutLC8WH9fMz2W1.jpg","production_companies":[{"id":17102,"logo_path":null,"name":"Peter
         Walker (Heritage) Ltd.","origin_country":""}],"production_countries":[{"iso_3166_1":"GB","name":"United
         Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"1972-10-01","revenue":0,"runtime":93,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"An
         appalling amalgam of carnage and carnality...","title":"The Flesh and Blood
         Show","video":false,"vote_average":5.667,"vote_count":24}'
-  recorded_at: Thu, 13 Oct 2022 23:25:40 GMT
+  recorded_at: Fri, 14 Oct 2022 14:47:07 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/34601?api_key=DONT SHOW MY API KEY&language=en-US
@@ -240,7 +236,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 13 Oct 2022 22:13:44 GMT
+      - Fri, 14 Oct 2022 14:47:07 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -253,39 +249,39 @@ http_interactions:
       Cache-Control:
       - public, max-age=28800
       X-Memc:
-      - HIT
+      - MISS, STORE
       X-Memc-Key:
       - '08f39500d8a35943308b700fca62eb437069b9b4'
       X-Memc-Age:
-      - '10169'
+      - '0'
       X-Memc-Expires:
-      - '4674'
-      Etag:
-      - W/"d6e19ce6eb33f57cd4131889e00ac48c"
+      - '15801'
+      Last-Modified:
+      - Tue, 07 Sep 2021 15:07:48 GMT
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 a6ee338f3d3ecb97be8107e29130eb26.cloudfront.net (CloudFront)
+      - 1.1 f6992241dd15e99fe1ce21d807856f16.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DFW53-C1
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - ZqEODRfFi0dtvwQCsCq6ytZHbASGH_dM8fZ-S86fJIrbl3hc5h75xg==
+      - LjYlZWOkwii7UpEyn8MowCRX_QS2cyGReOBpMRxjI2lSvwzozTDAOA==
       Age:
-      - '4316'
+      - '1'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/tQFiCSe4YYCrGYPiAyO1QEUG6X5.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":80,"name":"Crime"},{"id":18,"name":"Drama"},{"id":53,"name":"Thriller"}],"homepage":"","id":34601,"imdb_id":"tt0368343","original_language":"en","original_title":"Three
         Way","overview":"Lew is a small time loser with a troubled past and a very
         big secret. Overhearing a couple plan a kidnapping, Lew is tempted to come
         up with a scheme of his own. He decides to get to the victim first and then
-        blackmail the real criminals. His plan soon spins out of control.","popularity":5.114,"poster_path":"/4sDNvHPwnCy6dQBU4FjSawNhrow.jpg","production_companies":[{"id":7339,"logo_path":null,"name":"Hyperion
+        blackmail the real criminals. His plan soon spins out of control.","popularity":3.808,"poster_path":"/4sDNvHPwnCy6dQBU4FjSawNhrow.jpg","production_companies":[{"id":7339,"logo_path":null,"name":"Hyperion
         Pictures","origin_country":""},{"id":11658,"logo_path":"/hDKTXUEj1BR3Istbh2Zu5GOYvej.png","name":"Brainstorm
         Media","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"2004-06-29","revenue":0,"runtime":88,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"A
         sinfully tasty brew of sex, extortion and murder.","title":"Three Way","video":false,"vote_average":4.167,"vote_count":18}'
-  recorded_at: Thu, 13 Oct 2022 23:25:40 GMT
+  recorded_at: Fri, 14 Oct 2022 14:47:08 GMT
 recorded_with: VCR 6.1.0

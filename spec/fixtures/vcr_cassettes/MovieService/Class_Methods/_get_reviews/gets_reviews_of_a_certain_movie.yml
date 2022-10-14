@@ -25,8 +25,6 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Thu, 13 Oct 2022 22:28:37 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -36,34 +34,34 @@ http_interactions:
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
-      Cache-Control:
-      - public, max-age=28800
       X-Memc:
       - HIT
       X-Memc-Key:
       - 89d500eb649699b4f9da44efd06c367bfcb058ac
       X-Memc-Age:
-      - '13293'
+      - '5911'
       X-Memc-Expires:
-      - '4562'
+      - '11841'
+      Date:
+      - Fri, 14 Oct 2022 14:47:13 GMT
+      Cache-Control:
+      - public, max-age=28800
       Etag:
       - W/"dcb8c271377403ae5c9aca5285bc13e3"
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Hit from cloudfront
+      - RefreshHit from cloudfront
       Via:
-      - 1.1 f3debe815c4aaee72e83dd7c98a4a7a8.cloudfront.net (CloudFront)
+      - 1.1 96725c0e4ced177a38df871e7cc48a4a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DFW53-C1
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - NVylhzfLc5uXrMVwjZq9Ukzp__VMB6Rh5WmO6kENkfZqWa3oBhVlUw==
-      Age:
-      - '3426'
+      - PUGHk1fi6huLpTswTsc6IVP8M1nyIvhd1MIxTYHq6BnwofgwVUnKvg==
     body:
       encoding: ASCII-8BIT
       string: '{"id":667257,"page":1,"results":[],"total_pages":0,"total_results":0}'
-  recorded_at: Thu, 13 Oct 2022 23:25:43 GMT
+  recorded_at: Fri, 14 Oct 2022 14:47:13 GMT
 recorded_with: VCR 6.1.0
