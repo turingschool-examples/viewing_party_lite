@@ -1,6 +1,5 @@
 require 'json'
 require './app/services/movie_service'
-require 'pry'
 
 class MovieFacade
   def self.info_card(movie_id)
