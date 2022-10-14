@@ -5,8 +5,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @movies = @user.viewing_parties.map { |party| MovieFacade.details_poro(party.movie_id) }
     @users = User.sort_invitees(@user.id)
-    require 'pry'; binding.pry
     @invitees = @user.viewing_parties.flat_map { |party| User.sort_invitees(@user.id) }
+    
   end
 
   def new; end
