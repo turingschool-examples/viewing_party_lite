@@ -9,7 +9,7 @@ RSpec.describe UserParty, type: :model do
   end
 
   describe 'validations' do
-   # http://www.chrisrolle.com/en/blog/boolean-attribute-validation
+    # http://www.chrisrolle.com/en/blog/boolean-attribute-validation
   end
 
   describe 'relationships' do

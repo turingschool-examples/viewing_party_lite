@@ -13,9 +13,7 @@ class PartiesController < ApplicationController
       redirect_to user_path(@user)
       if params[:invitees] != [""]
         params[:invitees].each do |user_id|
-          if user_id != ""
-            UserParty.create!(user_id: user_id.to_i, party_id: @party.id, host_status: false)
-          end
+          UserParty.create!(user_id: user_id.to_i, party_id: @party.id, host_status: false) if user_id != ""
         end
       end
     else
