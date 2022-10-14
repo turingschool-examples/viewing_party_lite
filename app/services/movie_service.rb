@@ -10,11 +10,6 @@ class MovieService
     )
   end
 
-
-  def self.poster(poster_path)
-    "https://image.tmdb.org/t/p/w500/#{poster_path}"
-  end
-
   def self.top_rated
     response = conn.get('/3/movie/top_rated')
     parse(response)

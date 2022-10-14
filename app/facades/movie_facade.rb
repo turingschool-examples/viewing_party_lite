@@ -29,9 +29,4 @@ class MovieFacade < MovieService
     end
   end
 
-  def self.poster_render(movie_id)
-    movie_details = details(movie_id)
-    poster_path = movie_details[:poster_path]
-    poster(poster_path)
-  end
 end
