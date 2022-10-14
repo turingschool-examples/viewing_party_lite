@@ -1,6 +1,9 @@
 class Party < ApplicationRecord
   has_many :user_parties
   has_many :users, through: :user_parties
+  validates_presence_of :duration, :movie_runtime, :movie_id, :host_id, :start_time, :date
+  validates_numericality_of :duration, :movie_runtime, :movie_id, :host_id
+  validate :compare_duration_to_movie_time
 
   def start_date
     date.strftime('%B %e, %Y')
@@ -20,5 +23,13 @@ class Party < ApplicationRecord
 
   def find_image_url
     MovieFacade.movie_data(movie_id).image
+  end
+
+  private
+
+  def compare_duration_to_movie_time
+    if duration.to_i <  movie_runtime.to_i
+      errors.add(:duration, "cannot be less then movie length #{movie_runtime}")
+    end
   end
 end
