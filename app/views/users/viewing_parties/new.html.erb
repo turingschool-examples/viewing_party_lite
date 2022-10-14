@@ -10,7 +10,7 @@
     value: @movie.runtime, 
     min: @movie.runtime %>
   <%= f.label :start_time %>
-  <%= f.datetime_field :start_time, min: Time.now %>
+  <%= f.datetime_field :start_time, min: Date.today %>
   <%= f.hidden_field :movie_duration, 
     value: @movie.runtime %>
   <%= f.hidden_field :movie_title, value: @movie.title %>
