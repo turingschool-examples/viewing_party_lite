@@ -1,11 +1,11 @@
 class MovieDetailPresenter
-  attr_reader :user,
+  attr_reader :user_id,
               :movie,
               :top_10_cast,
               :reviews
 
   def initialize(user_id, movie_id)
-    @user = User.find(user_id)
+    @user_id = user_id
     @movie = MovieFacade.movie_by_id(movie_id)
     @top_10_cast = MovieFacade.top_10_cast(movie_id)
     @reviews = ReviewFacade.get_review_info(movie_id)
