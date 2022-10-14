@@ -11,14 +11,14 @@ class MoviesFacade
   def self.get_top_20_movies
     top_20_data = MoviesService.top_20
     top_20_data[:results].map do |result|
-      get_movie(result[:id])
+      MovieSearchResult.new(result)
     end
   end
 
   def self.get_search_results_movies(search_query)
     search_results = MoviesService.search_results(search_query)
     search_results[:results][0..39].map do |result|
-      get_movie(result[:id])
+      MovieSearchResult.new(result)
     end
   end
 end
