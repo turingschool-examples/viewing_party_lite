@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 13 Oct 2022 16:21:10 GMT
+      - Thu, 13 Oct 2022 22:28:32 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,23 +42,25 @@ http_interactions:
       X-Memc-Key:
       - c33f1ae3ad898e8abd8e3235daac6c22b7770a22
       X-Memc-Age:
-      - '14200'
+      - '3746'
       X-Memc-Expires:
-      - '1393'
+      - '13579'
       Etag:
       - W/"c0fc1235ff5bc10587bbcdd6ed18e349"
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 88bce767af5e31f726ade38ea5253bd4.cloudfront.net (CloudFront)
+      - 1.1 d43b56891dec96acc9d50d3711407498.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN52-P2
+      - DFW53-C1
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - JUH7W9v-nWvk8f2fhpgyCg8Qoi_5XiI6UHvbvhRfY4str2bS3O9Mzg==
+      - _ClO1kGVI52UOPfUhW9_qfD4LkjSaxRK6lx4BTJYweQJYDu4m-YRjg==
+      Age:
+      - '3427'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/jOuCWdh0BE6XPu2Vpjl08wDAeFz.jpg","belongs_to_collection":null,"budget":4000000,"genres":[{"id":12,"name":"Adventure"},{"id":16,"name":"Animation"},{"id":14,"name":"Fantasy"}],"homepage":"","id":123,"imdb_id":"tt0077869","original_language":"en","original_title":"The
@@ -68,5 +70,5 @@ http_interactions:
         Zaentz Film Productions","origin_country":""}],"production_countries":[{"iso_3166_1":"ES","name":"Spain"},{"iso_3166_1":"GB","name":"United
         Kingdom"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"1978-11-15","revenue":30471420,"runtime":132,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Fantasy...beyond
         your imagination","title":"The Lord of the Rings","video":false,"vote_average":6.57,"vote_count":676}'
-  recorded_at: Thu, 13 Oct 2022 16:21:10 GMT
+  recorded_at: Thu, 13 Oct 2022 23:25:39 GMT
 recorded_with: VCR 6.1.0

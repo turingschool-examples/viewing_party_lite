@@ -32,8 +32,8 @@ RSpec.describe ViewingParty, type: :model do
         @party1 = ViewingParty.create!(duration: 140, date: '1999-07-20', time: '19:30', movie_id: 361_743)
         @user_party1 = UserViewingParty.create!(user_id: @user1.id, viewing_party_id: @party1.id, role: 1)
         @user_party2 = UserViewingParty.create!(user_id: @user2.id, viewing_party_id: @party1.id, role: 0)
-        expect(@party1.host).to eq("jojo binks")
-        expect(@party1.host).to_not eq("nicki minaj")
+        expect(@party1.host).to eq('jojo binks')
+        expect(@party1.host).to_not eq('nicki minaj')
       end
     end
   end

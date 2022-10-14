@@ -6,7 +6,7 @@
   <p>Current Users:</p>
   <ul>
     <% @users.each do |u| %>
-      <li id="user-<%= u.id %>"><%= link_to "#{u.email}'s dashboard'", user_path(u.id) %></li>
+      <li id="user-<%= u.id %>"><%= link_to "#{u.email}'s dashboard", user_path(u.id) %></li>
     <% end %>
   </ul>
 </section>
