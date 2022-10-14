@@ -9,19 +9,12 @@ class User < ApplicationRecord
     User.where.not(id: self.id)
   end
 
-  def hosted_parties
+  #takes a boolean argument true if hosting, false if invited
+  def parties(is_host)
     ViewingParty.joins(:viewing_party_users).
       where(viewing_party_users: {
          user_id: self.id, 
-         hosting: true }
-    )
-  end
-
-  def invited_parties
-    ViewingParty.joins(:viewing_party_users).
-    where(viewing_party_users: {
-       user_id: self.id, 
-       hosting: false }
+         hosting: is_host }
     )
   end
 
