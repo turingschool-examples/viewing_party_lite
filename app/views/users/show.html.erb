@@ -6,9 +6,14 @@
 
 
 <p><% @parties.each do |party| %></p>
-  <p>Movie: <%= link_to party.movie(party.movie_id).title, user_movie_path(@user, party.movie_id)  %></p>
+
+  <h4>Viewing Party for: <%= link_to party.movie(party.movie_id).title, user_movie_path(@user, party.movie_id)  %></h4>
   <p>Duration: <%= party.duration %></p>
-  <p>Host Status: True</p>
+  <% if @user.host_status(party.id) %>
+    <strong><p>Host Status: <%= @user.host_status(party.id) %></p></strong>
+    <% else %>
+    <p> Host Status: <%= @user.host_status(party.id) %></p>
+    <% end %>
   <p>Date: <%= party.date %></p>
   <p>Start Time: <%= party.start_time %></p>
 
