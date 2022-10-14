@@ -65,6 +65,7 @@ This will run all of the tests located in the spec folder.
 This project is running the following languages and tools:
 
 - Ruby
+- Bootstrap
 - RSpec
 - Ruby on Rails
 - SimpleCov
