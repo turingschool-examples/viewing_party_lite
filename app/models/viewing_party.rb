@@ -5,7 +5,6 @@ class ViewingParty < ApplicationRecord
   validates :starttime, presence: true
 
   belongs_to :host, class_name: 'User'
-  has_many :attendees, class_name: 'User'
 
   has_many :user_viewing_parties
   has_many :users, through: :user_viewing_parties

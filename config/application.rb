@@ -30,5 +30,8 @@ module ViewingPartyLite
     # Don't generate system test files.
     config.generators.system_tests = nil
     # config.assets.initialize_on_precompile = false
+
+    config.time_zone = 'Mountain Time (US & Canada)'
+    config.active_record.default_timezone = :local
   end
 end
