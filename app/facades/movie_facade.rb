@@ -23,7 +23,7 @@ class MovieFacade
   end
 
   def self.top_21_through_40_movies
-    Rails.cache.fetch("my_cache_key/pop_search_1", expires_in: 12.hours) do
+    Rails.cache.fetch("my_cache_key/pop_search_2", expires_in: 12.hours) do
       json = MovieService.get_rated_movies_asc(2)
 
       page_2 = json[:results].map do |movie_data|
