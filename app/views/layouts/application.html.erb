@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
   <head>
     <title>ViewingPartyLite</title>
@@ -11,26 +10,33 @@
   </head>
 
   <body>
-    <navbar>
+
+    <%= stylesheet_link_tag "navbar" %>
+
+    <nav>
       <ul>
         <li><%= link_to 'Home', root_path %></li>
-        <li style="float:right" >
+        <li style="float:right">
           <% if current_user %>
             <strong><%= current_user.name %></strong>
             <%= link_to 'Log Out', logout_path, method: :delete %>
           <% end %>
         </li>
       </ul>
-    </navbar>
+    </nav>
 
     <header>Movie Viewing Party</header>
+
     <br>
-      <% flash.each do |type, msg| %>
-          <center>
-            <h3><%= msg %></h3>
-          </center>
-        <br>
-      <% end %>
+
+    <% flash.each do |type, msg| %>
+      <center>
+        <h3><%= msg %></h3>
+      </center>
+    <% end %>
+
+    <br>
+
     <%= yield %>
   </body>
 </html>

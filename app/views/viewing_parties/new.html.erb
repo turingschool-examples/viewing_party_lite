@@ -3,7 +3,11 @@
 <br/>
 
 <center>
+
   <img src="https://image.tmdb.org/t/p/w200<%= @movie.poster_path %>">
+
+<h3>Viewing Party Details</h3>
+
 
 <%= form_with url: movie_viewing_parties_path(@movie.movie_id), method: :post, local: true do |f| %>
   <%= f.hidden_field :host_id, value: current_user.id %>

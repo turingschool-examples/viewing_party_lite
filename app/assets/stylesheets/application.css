@@ -13,26 +13,18 @@
  *= require_tree .
  *= require_self
  */
-header {
-  margin: auto;
-  text-align: center;
-  font-weight: bold;
-  font-size: 36px;
-  width: 50%
-}
-
-ul li {
+ul {
   list-style: none;
-  display: inline-block;
-  font-size: 18px;
-  padding: 5px
+  text-align: center;
+  display: inline-flex;
+  gap: 50px
 }
 
 h2 {
   margin: auto;
   text-align: center;
   font-weight: bold;
-  width: 50%
+  width: 100%
 }
 
 table {
@@ -62,10 +54,10 @@ table {
 }
 
 #button {
-  margin: auto;
+  /* margin: auto; */
   text-align: center;
   font-weight: bold;
-  width: 98%
+  width: 100%
 }
 
 #check_boxes {
@@ -104,4 +96,9 @@ table {
   padding:5px;
   text-align: center;
   align: center
+}
+
+#container {
+  border: solid;
+  padding: 5px
 }

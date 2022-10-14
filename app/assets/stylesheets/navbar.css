@@ -1,0 +1,24 @@
+/*
+*= require_tree .
+*= require_self
+*/
+header {
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 36px;
+  width: 50%
+}
+
+ul {
+  min-width: 95%;
+  justify-content: space-between
+}
+
+ul li {
+  list-style: none;
+  display: inline-block;
+  justify-content: flex-end;
+  font-size: 18px;
+  padding: 5px;
+}

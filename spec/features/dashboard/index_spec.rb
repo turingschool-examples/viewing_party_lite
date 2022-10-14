@@ -41,7 +41,7 @@ RSpec.describe 'the User Dashboard' do
     click_button 'Create Party'
 
     within "#vparty-0" do
-      expect(page).to have_content('The Shawshank Redemption')
+      expect(page).to have_link('The Shawshank Redemption')
       expect(page).to have_content(Date.tomorrow.strftime('%B %e, %Y'))
       # expect(page).to have_content(Time.strftime('%I:%M %p'))
       expect(page).to have_content('Hosting')
@@ -68,9 +68,8 @@ RSpec.describe 'the User Dashboard' do
     visit dashboard_path
 
     within "#vparty-0" do
-      expect(page).to have_content('The Godfather')
+      expect(page).to have_link('The Godfather')
       expect(page).to have_content(Date.tomorrow.strftime('%B %e, %Y'))
-      # expect(page).to have_content(Time.strftime('%I:%M %p'))
       expect(page).to have_content('Invited')
     end
   end
