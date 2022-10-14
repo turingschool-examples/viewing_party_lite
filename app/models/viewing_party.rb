@@ -7,12 +7,12 @@ class ViewingParty < ApplicationRecord
   end
 
   def find_host
-    host = viewing_party_users.select("user_id").where("status=0")
+    host = viewing_party_users.select('user_id').where('status=0')
     User.find(host[0].user_id)
   end
 
   def invites
-    invites = viewing_party_users.select("user_id").where("status=1")
+    invites = viewing_party_users.select('user_id').where('status=1')
     invites.map do |invite|
       User.find(invite.user_id)
     end
@@ -21,7 +21,7 @@ class ViewingParty < ApplicationRecord
   def valid_date
     if date.present? && date.to_date >= (Date.today)
     else
-      errors.add(:date, "Date is not valid")
+      errors.add(:date, 'Date is not valid')
     end
   end
 

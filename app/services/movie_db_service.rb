@@ -28,8 +28,6 @@ class MovieDbService
     parse(response.body)
   end
 
-private
-
   def self.connection
     Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
       faraday.params['api_key'] = ENV['themoviedb_key']

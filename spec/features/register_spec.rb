@@ -43,6 +43,5 @@ RSpec.describe 'Register Page' do
 
     expect(User.find_by(email: 'imjakekim@gmail35.com')).to eq(nil)
     expect(current_path).to eq(register_path)
-
   end
 end
