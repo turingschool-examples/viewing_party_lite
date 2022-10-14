@@ -26,13 +26,16 @@ RSpec.describe 'User Movie Show Page' do
 
     it 'shows all the movie information' do
       visit user_movie_path(@user_1, @fight_club.id)
+      save_and_open_page
       expect(page).to have_content(@fight_club.original_title)
-      expect(page).to have_content(@fight_club.genre_names)
-      expect(page).to have_content(@fight_club.overview)
-      expect(page).to have_content(@fight_club.standard_runtime)
-      expect(page).to have_content(@fight_club.vote_average)
-      expect(page).to have_content(@fight_club.vote_count)
 
+      within("#movie-details") do
+        expect(page).to have_content(@fight_club.genre_names[0])
+        expect(page).to have_content(@fight_club.overview)
+        expect(page).to have_content(@fight_club.standard_runtime)
+        expect(page).to have_content(@fight_club.vote_average)
+        expect(page).to have_content(@fight_club.vote_count)
+      end
       #missing 10 cast members
       #missing each reiews author and information
 
