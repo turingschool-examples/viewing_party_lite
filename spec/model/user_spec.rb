@@ -27,12 +27,15 @@ RSpec.describe User, type: :model do
     
     describe 'party filtering' do
       let!(:user) { create :user }
+      let!(:user_2) { create :user }
+
 
       let(:party_1) { create :viewing_party }
       let(:party_2) { create :viewing_party }
       let(:party_3) { create :viewing_party }
       let(:party_4) { create :viewing_party }
       let(:party_5) { create :viewing_party }
+      let(:party_6) { create :viewing_party }
 
       let!(:vpu_1) { ViewingPartyUser.create!(user_id: user.id, viewing_party_id: party_1.id, hosting: true) }
       let!(:vpu_2) { ViewingPartyUser.create!(user_id: user.id, viewing_party_id: party_2.id, hosting: true) }
@@ -45,7 +48,10 @@ RSpec.describe User, type: :model do
           expect(user.parties(true)).not_to include(party_3, party_4)
           expect(user.parties(true)).not_to include(party_5)
         end
-      end
+
+        it 'returns an empty array if the user is not hosting any parties' do
+          expect(user_2.parties(true)).to eq([])
+        end
 
         it 'returns an array of party objects where user is invited' do
           expect(user.parties(false)).to include(party_3, party_4)
@@ -53,6 +59,11 @@ RSpec.describe User, type: :model do
           expect(user.parties(false)).not_to include(party_5)
         end
 
+        it 'returns an empty array if a user is not invited to any parties' do
+          expect(user_2.parties(false)).to eq([])
+        end
+      end
+ 
       describe '#movie_ids' do
         it 'returns an array of movie ids for a users viewing parties' do
           expect(user.movie_ids).to include(
@@ -62,6 +73,22 @@ RSpec.describe User, type: :model do
             party_4.movie_id
           )
           expect(user.movie_ids).not_to include(party_5.movie_id)
+        end
+
+        it 'returns an empty array for users that do not have any viewing parties' do
+          expect(user_2.movie_ids).to eq([])
+        end
+      end
+      
+      describe '#set_host(viewing_party)' do
+        it 'Changes the hosting attribute to true for a viewing party user' do
+          vpu_5 = ViewingPartyUser.create!(user_id: user.id, viewing_party_id: party_6.id, hosting: false)
+
+          expect(vpu_5.hosting).to be(false)
+
+          user.set_host(party_6)
+
+          expect(vpu_5.reload.hosting).to be(true)
         end
       end
     end
