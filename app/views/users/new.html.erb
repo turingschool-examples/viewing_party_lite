@@ -2,9 +2,9 @@
 
 <%= form_with model: @user, local: true do |form| %>
   <p><%= form.label :name, "Name:"%></p>
-    <%= form.text_field :name%>
+    <%= form.text_field :name, required: true %>
    <p><%= form.label :email, "Email:"%></p>
-    <%= form.text_field :email%>
+    <%= form.text_field :email, required: true%>
 
     <p><%= form.submit "Register" %></p>
 <% end %>
