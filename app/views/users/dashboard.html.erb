@@ -6,7 +6,7 @@
 <% @user.viewing_parties.each do |party| %>
   <img src=<%= party.poster_path %>>
   <h3><%= link_to party.movie_title, "/users/#{@user.id}/movies/#{party.movie_id}"%></h3>
-  <p>Date: <%= party.date %></p>
+  <p>Date: <%= party.date.strftime("%B %-d, %Y") %></p>
   <p>Starting Time: <%= party.start_time.strftime("%H:%M") %></p>
   <p>Status: <%= ViewingPartyUser.find_by(user_id: @user.id, viewing_party_id: party.id).status%></p>
   <br>

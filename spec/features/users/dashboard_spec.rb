@@ -27,10 +27,10 @@ RSpec.describe 'User Dashboard Page', :vcr do
 
   it "shows user's viewing_parties" do
     visit "/users/#{@user1.id}"
-    save_and_open_page
+    # save_and_open_page
 
     expect(page).to have_content("#{@user1.name}'s Dashboard")
-    expect(page).to have_content("Date: #{@party1.date}")
+    expect(page).to have_content("Date: #{@party1.date.strftime("%B %-d, %Y")}")
     expect(page).to have_content("Starting Time: #{@party1.start_time.strftime('%H:%M')}")
     expect(page).to have_content("Status: #{@user_party1.status}")
 

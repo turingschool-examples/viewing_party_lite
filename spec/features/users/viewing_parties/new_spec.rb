@@ -10,7 +10,7 @@ RSpec.describe 'User Viewing Party New Page', :vcr do
 
   it 'has required fixed content on new page' do
     visit "/users/#{@user1.id}/movies/238/viewing_party/new"
-    # save_and_open_page
+
     expect(page).to have_button("Discover Page")
     expect(page).to have_button("Create Party")
     expect(page).to have_content("Movie Title")
@@ -38,7 +38,7 @@ RSpec.describe 'User Viewing Party New Page', :vcr do
     visit "/users/#{@user1.id}/movies/238/viewing_party/new"
 
     fill_in 'Duration of Party', with: '240'
-    fill_in 'Day', with: '10/10/31'
+    fill_in 'Day', with: "#{Date.tomorrow}"
     fill_in 'Start Time', with: '20:00'
     check "user_#{@user2.id}"
     check "user_#{@user3.id}"
@@ -51,15 +51,17 @@ RSpec.describe 'User Viewing Party New Page', :vcr do
     visit "/users/#{@user1.id}/movies/238/viewing_party/new"
 
     fill_in 'Duration of Party', with: '240'
-    fill_in 'Day', with: '10/10/31'
+    fill_in 'Day', with: "#{Date.tomorrow}"
     fill_in 'Start Time', with: '20:00'
     check "user_#{@user2.id}"
     check "user_#{@user3.id}"
 
     click_button 'Create Party'
 
-    newest_view_party = ViewingParty.find_by(length: 240)
+    newest_view_party = ViewingParty.find_by(movie_id: 238)
 
+    expect(current_path).to eq("/users/#{@user1.id}")
+    expect(page).to have_content("hosting")
     expect(newest_view_party)
     expect(ViewingPartyUser.find_by(viewing_party_id: newest_view_party.id, user_id: @user1.id).status).to eq('hosting')
     expect(ViewingPartyUser.find_by(viewing_party_id: newest_view_party.id, user_id: @user2.id).status).to eq('invited')
@@ -70,7 +72,7 @@ RSpec.describe 'User Viewing Party New Page', :vcr do
     visit "/users/#{@user1.id}/movies/238/viewing_party/new"
 
     fill_in 'Duration of Party', with: '10'
-    fill_in 'Day', with: '10/10/31'
+    fill_in 'Day', with: "#{Date.tomorrow}"
     fill_in 'Start Time', with: '20:00'
     check "user_#{@user2.id}"
     check "user_#{@user3.id}"
@@ -86,7 +88,7 @@ RSpec.describe 'User Viewing Party New Page', :vcr do
     visit "/users/#{@user1.id}/movies/238/viewing_party/new"
 
     fill_in 'Duration of Party', with: '360'
-    fill_in 'Day', with: '10/10/31'
+    fill_in 'Day', with: 'Date.tomorrow'
     check "user_#{@user2.id}"
     check "user_#{@user3.id}"
 
