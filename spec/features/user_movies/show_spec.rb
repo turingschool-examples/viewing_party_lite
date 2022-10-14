@@ -49,5 +49,35 @@ RSpec.describe 'the user movie show page', type: :feature do
     end
   end
 
+  describe 'the buttons section' do
+    it 'has a button to return to the discover page' do
+      VCR.use_cassette("user_movies_show_buttons", :allow_playback_repeats => true) do
+        user = create(:user, id: 50, name: "Bubbles", email: "bubbles@sunnyvale.ca")
+        visit "/users/#{user.id}/movies/550"
+        within("#buttons") do
+          within("#discover_button") do
+            expect(page).to have_button("Discover")
+            click_on("Discover")
+            expect(current_path).to eq("/users/#{user.id}/discover")
+          end
+        end
+      end
+    end
+
+    it 'has a button to go to the create a new viewing party page' do
+      VCR.use_cassette("user_movies_show_buttons", :allow_playback_repeats => true) do
+        user = create(:user, id: 50, name: "Bubbles", email: "bubbles@sunnyvale.ca")
+        visit "/users/#{user.id}/movies/550"
+        within("#buttons") do
+          within("#new_party_button") do
+            expect(page).to have_button("Create A New Viewing Party")
+            # click_on("Create A New Viewing Party")
+            # expect(current_path).to eq("/users/#{user.id}/movies/550/viewing-party/new")
+          end
+        end
+      end
+    end
+  end
+
 
 end

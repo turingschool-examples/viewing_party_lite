@@ -1,3 +1,14 @@
+<section id= "buttons" >
+<div id= "new_party_button">
+<%= button_to "Create A New Viewing Party", "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/viewing-party/new", method: :get %>
+</div>
+
+
+<div id= "discover_button">
+<%= button_to "Discover", "/users/#{params[:user_id]}/discover", method: :get %>
+</div>
+</section>
+
 
 
 <section id= "movie_details" >
