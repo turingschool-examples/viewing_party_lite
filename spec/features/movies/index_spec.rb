@@ -10,6 +10,14 @@ RSpec.describe 'Movie Index' do
       visit user_discover_path(@user)
     end
 
+    it 'should have a link to return to user movie discover page', :vcr do
+      click_button 'Discover Top Rated Movies'
+
+      expect(page).to have_link("Return to Discover")
+      click_link "Return to Discover"
+      expect(current_path).to eq user_discover_path(@user)
+    end
+
     it 'top_rated_movies' do
       VCR.use_cassette("top_rated_movies") do
         click_button 'Discover Top Rated Movies'
