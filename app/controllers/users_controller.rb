@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
   def movies
     @user = User.find(params[:id])
-    if params[:search]
+    if params[:search] && params[:search] != ""
       @movies = MovieDbFacade.search_movies(params[:search])
     else
       @movies = MovieDbFacade.top_20_movies
