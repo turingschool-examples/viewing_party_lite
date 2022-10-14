@@ -44,24 +44,24 @@
                 <% user.id == host_viewing_party.user_id %>
               <% end %>
 
-            <div><b><u>Host:</u></b></div> 
-            <div><%= host.name %> (<%= host.email %>)</div><br>
-              
-            <div><b><u>Invitees:</u></b></div>
-              <% invitees = @user_viewing_parties.find_all do |user_viewing_party| %>
-                <% user_viewing_party.viewing_party_id == party.id && user_viewing_party.role == "Invited" %>
-              <% end %>
-              <% invitee_ids = invitees.map do |invitee| %>
-                <% invitee.user_id %>
-              <% end %>
-              <% invitee_users = invitee_ids.flat_map do |invitee_id| %>
-                <% @users.find_all do |user| %>
-                  <% user.id == invitee_id %>
+              <div><b><u>Host:</u></b></div> 
+              <div><%= host.name %> (<%= host.email %>)</div><br>
+                
+              <div><b><u>Invitees:</u></b></div>
+                <% invitees = @user_viewing_parties.find_all do |user_viewing_party| %>
+                  <% user_viewing_party.viewing_party_id == party.id && user_viewing_party.role == "Invited" %>
                 <% end %>
-              <% end %>
-              <% invitee_users.each do |user| %>
-                <div><%= user.name %> (<%= user.email %>)</div>
-              <% end %>
+                <% invitee_ids = invitees.map do |invitee| %>
+                  <% invitee.user_id %>
+                <% end %>
+                <% invitee_users = invitee_ids.flat_map do |invitee_id| %>
+                  <% @users.find_all do |user| %>
+                    <% user.id == invitee_id %>
+                  <% end %>
+                <% end %>
+                <% invitee_users.each do |user| %>
+                  <div><%= user.name %> (<%= user.email %>)</div>
+                <% end %>
           <% end %>
       </div>
     <% end %>  
