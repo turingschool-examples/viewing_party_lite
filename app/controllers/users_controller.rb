@@ -9,11 +9,14 @@ class UsersController < ApplicationController
 
   def movies
     @user = User.find(params[:id])
-    @movies = if params[:search]
-                MovieDbFacade.search_movies(params[:search])
-              else
-                MovieDbFacade.top_20_movies
-              end
+
+    if params[:search] && params[:search] == ""
+      redirect_to "/users/#{@user.id}/discover"
+    elsif params[:search]
+      @movies = MovieDbFacade.search_movies(params[:search])
+    else
+      @movies = MovieDbFacade.top_20_movies
+    end
   end
 
   def create
