@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 13 Oct 2022 19:38:21 GMT
+      - Fri, 14 Oct 2022 04:12:59 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -38,29 +38,29 @@ http_interactions:
       Cache-Control:
       - public, max-age=28800
       X-Memc:
-      - MISS, STORE
+      - HIT
       X-Memc-Key:
       - ac98224751efa6fa856ca9b8225dbf51ffbf4579
       X-Memc-Age:
-      - '0'
+      - '12374'
       X-Memc-Expires:
-      - '16223'
-      Last-Modified:
-      - Fri, 25 Mar 2022 06:37:48 GMT
+      - '3738'
+      Etag:
+      - W/"f640efa02988af88fc92c8dea313b453"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 f6992241dd15e99fe1ce21d807856f16.cloudfront.net (CloudFront)
+      - 1.1 3dc4c80cd959e984309833cac8f5a630.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - id8IdUmRczl2XYPhI1m6kX2yeq8BY-rsAWLIK9IKuBxr5qeNrn54Rw==
+      - RZLyMJTANLCi9hrQP0EZFYoD6VIdqMLHmkSwslq26DSQQ2UYjKIlPg==
       Age:
-      - '19929'
+      - '87'
     body:
       encoding: UTF-8
       string: '{"id":3,"page":1,"results":[{"author":"CRCulver","author_details":{"name":"","username":"CRCulver","avatar_path":null,"rating":7.0},"content":"Released
@@ -84,5 +84,5 @@ http_interactions:
         extremely charming, and I would recommend the film. Certainly the performances
         of Pellonpää (in a typical Pellonpää role) and Outinen (who seemingly reinvents
         herself in every film) will prove quite memorable.","created_at":"2018-09-06T19:31:51.288Z","id":"5b9180a7c3a3687adc005547","updated_at":"2021-06-23T15:58:12.193Z","url":"https://www.themoviedb.org/review/5b9180a7c3a3687adc005547"}],"total_pages":1,"total_results":1}'
-  recorded_at: Fri, 14 Oct 2022 01:10:30 GMT
+  recorded_at: Fri, 14 Oct 2022 04:14:26 GMT
 recorded_with: VCR 6.1.0

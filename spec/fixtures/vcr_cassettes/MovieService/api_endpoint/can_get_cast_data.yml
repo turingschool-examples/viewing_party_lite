@@ -24,8 +24,6 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Thu, 13 Oct 2022 19:38:21 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -35,8 +33,6 @@ http_interactions:
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
-      Cache-Control:
-      - public, max-age=28800
       X-Memc:
       - HIT
       X-Memc-Key:
@@ -45,6 +41,10 @@ http_interactions:
       - '13758'
       X-Memc-Expires:
       - '3590'
+      Date:
+      - Fri, 14 Oct 2022 04:12:59 GMT
+      Cache-Control:
+      - public, max-age=28800
       Etag:
       - W/"d03f7e9e95fd5dbd62c2729ffd0aac94"
       Vary:
@@ -52,15 +52,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 a42ce842e0f60814700ead82353e9f08.cloudfront.net (CloudFront)
+      - 1.1 f111faa3f37b2169cefb225b0f246234.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - IrOSYb5hCH2djorTpdfGHBRflKr5Gy_QpRPRP6QrBG9GnJrIDptG5A==
+      - bIHTm-LIj46lzFO0c8oiphNdqTjHyjAdKpCGGtcIHjF1QuPxmjWnEw==
       Age:
-      - '19929'
+      - '87'
     body:
       encoding: UTF-8
       string: '{"id":3,"cast":[{"adult":false,"gender":2,"id":4826,"known_for_department":"Acting","name":"Matti
@@ -162,5 +162,5 @@ http_interactions:
         Secretary"},{"adult":false,"gender":1,"id":3479190,"known_for_department":"Editing","name":"Eila
         Karkkunen","original_name":"Eila Karkkunen","popularity":0.6,"profile_path":null,"credit_id":"623d73f1fd6fa1005cc49d49","department":"Editing","job":"Negative
         Cutter"}]}'
-  recorded_at: Fri, 14 Oct 2022 01:10:30 GMT
+  recorded_at: Fri, 14 Oct 2022 04:14:26 GMT
 recorded_with: VCR 6.1.0

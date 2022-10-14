@@ -24,8 +24,6 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Thu, 13 Oct 2022 06:00:34 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -35,8 +33,6 @@ http_interactions:
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
-      Cache-Control:
-      - public, max-age=28800
       X-Memc:
       - HIT
       X-Memc-Key:
@@ -45,6 +41,10 @@ http_interactions:
       - '12831'
       X-Memc-Expires:
       - '4180'
+      Date:
+      - Fri, 14 Oct 2022 01:10:30 GMT
+      Cache-Control:
+      - public, max-age=28800
       Etag:
       - W/"436c73fae9a24dbed4b50a03c29f2c18"
       Vary:
@@ -52,15 +52,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 802fce4cb103358b7965b7d684ac65be.cloudfront.net (CloudFront)
+      - 1.1 96725c0e4ced177a38df871e7cc48a4a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - PHX50-C2
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 8W_JvMwGP18LOtO5I2b-iFYY9FZQ_pb_sxOkqgJkHRPrrRMzMi2l3w==
+      - yWOT2B9AQ4ABSAb2O9nq_moU8eziwDuAEt7QmMlVkjmHI85kHx-5uA==
       Age:
-      - '3392'
+      - '11027'
     body:
       encoding: UTF-8
       string: '{"adult":false,"backdrop_path":null,"belongs_to_collection":null,"budget":42000,"genres":[{"id":99,"name":"Documentary"}],"homepage":"http://lifeinloops.com","id":8,"imdb_id":"tt0825671","original_language":"en","original_title":"Life
@@ -78,7 +78,7 @@ http_interactions:
         continents. The film also makes an original contribution to the discussion
         on new trends in documentary filmmaking. Written by KARLOVY VARY IFF 2006","popularity":2.259,"poster_path":"/x7Sz339F2oC8mBf0DHCQpKizXaL.jpg","production_companies":[{"id":19123,"logo_path":null,"name":"inLoops","origin_country":""}],"production_countries":[{"iso_3166_1":"AT","name":"Austria"}],"release_date":"2006-01-01","revenue":0,"runtime":80,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Hindi","iso_639_1":"hi","name":"हिन्दी"},{"english_name":"Japanese","iso_639_1":"ja","name":"日本語"},{"english_name":"Russian","iso_639_1":"ru","name":"Pусский"},{"english_name":"Spanish","iso_639_1":"es","name":"Español"}],"status":"Released","tagline":"A
         Megacities remix.","title":"Life in Loops (A Megacities RMX)","video":false,"vote_average":7.738,"vote_count":21}'
-  recorded_at: Thu, 13 Oct 2022 06:57:06 GMT
+  recorded_at: Fri, 14 Oct 2022 04:14:17 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/8?api_key=<API Key>&language=en-US
@@ -103,8 +103,6 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Thu, 13 Oct 2022 06:00:34 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -114,8 +112,6 @@ http_interactions:
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
-      Cache-Control:
-      - public, max-age=28800
       X-Memc:
       - HIT
       X-Memc-Key:
@@ -124,6 +120,10 @@ http_interactions:
       - '12831'
       X-Memc-Expires:
       - '4180'
+      Date:
+      - Fri, 14 Oct 2022 01:10:30 GMT
+      Cache-Control:
+      - public, max-age=28800
       Etag:
       - W/"436c73fae9a24dbed4b50a03c29f2c18"
       Vary:
@@ -131,15 +131,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 f4c242df489ca5fcd4ee1c90882e0cea.cloudfront.net (CloudFront)
+      - 1.1 d4fb3448d1a8d3229dcf0a89f4bbe7e8.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - PHX50-C2
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - PCyPv_gB6QC8Erd6_6sOAl1kzTLbKGfJFs2IS2z5LuCrPT5vo8pktQ==
+      - LznIrO3Qzypvo-fqc_5afHJrC4iNxJAlZ8hCnJwenh9Ysmz7l5vhlg==
       Age:
-      - '3392'
+      - '11027'
     body:
       encoding: UTF-8
       string: '{"adult":false,"backdrop_path":null,"belongs_to_collection":null,"budget":42000,"genres":[{"id":99,"name":"Documentary"}],"homepage":"http://lifeinloops.com","id":8,"imdb_id":"tt0825671","original_language":"en","original_title":"Life
@@ -157,7 +157,7 @@ http_interactions:
         continents. The film also makes an original contribution to the discussion
         on new trends in documentary filmmaking. Written by KARLOVY VARY IFF 2006","popularity":2.259,"poster_path":"/x7Sz339F2oC8mBf0DHCQpKizXaL.jpg","production_companies":[{"id":19123,"logo_path":null,"name":"inLoops","origin_country":""}],"production_countries":[{"iso_3166_1":"AT","name":"Austria"}],"release_date":"2006-01-01","revenue":0,"runtime":80,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Hindi","iso_639_1":"hi","name":"हिन्दी"},{"english_name":"Japanese","iso_639_1":"ja","name":"日本語"},{"english_name":"Russian","iso_639_1":"ru","name":"Pусский"},{"english_name":"Spanish","iso_639_1":"es","name":"Español"}],"status":"Released","tagline":"A
         Megacities remix.","title":"Life in Loops (A Megacities RMX)","video":false,"vote_average":7.738,"vote_count":21}'
-  recorded_at: Thu, 13 Oct 2022 06:57:06 GMT
+  recorded_at: Fri, 14 Oct 2022 04:14:17 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/2?api_key=<API Key>&language=en-US
@@ -183,7 +183,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 13 Oct 2022 06:00:34 GMT
+      - Fri, 14 Oct 2022 04:13:11 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -200,34 +200,34 @@ http_interactions:
       X-Memc-Key:
       - 511f57fe9dfe5dddca08773dca06d854df439acd
       X-Memc-Age:
-      - '6006'
+      - '5451'
       X-Memc-Expires:
-      - '9831'
+      - '12440'
       Etag:
-      - W/"487dfa50ac6276919decf146af59c7a3"
+      - W/"ee0070192efe5328d2b5287e03fd1b42"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 eab8dedb4a27b0d57d52c3a473543128.cloudfront.net (CloudFront)
+      - 1.1 1c80fe425edf82026702c486fb324fd0.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - PHX50-C2
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - zWRPgfCyzJ2h-6DwsDS245G4PNBc9B1d0_aYJ4X8pNJ-GYgnIRwp8A==
+      - N1Aof2NU8Qn5c-mJUK_ySRtry39mSSe8o_pG6RVhaH5J272XPRsEqQ==
       Age:
-      - '3392'
+      - '67'
     body:
       encoding: UTF-8
       string: '{"adult":false,"backdrop_path":"/hQ4pYsIbP22TMXOUdSfC2mjWrO0.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"},{"id":35,"name":"Comedy"},{"id":80,"name":"Crime"}],"homepage":"","id":2,"imdb_id":"tt0094675","original_language":"fi","original_title":"Ariel","overview":"Taisto
         Kasurinen is a Finnish coal miner whose father has just committed suicide
         and who is framed for a crime he did not commit. In jail, he starts to dream
         about leaving the country and starting a new life. He escapes from prison
-        but things don''t go as planned...","popularity":28.384,"poster_path":"/ojDg0PGvs6R9xYFodRct2kdI6wC.jpg","production_companies":[{"id":2303,"logo_path":null,"name":"Villealfa
+        but things don''t go as planned...","popularity":23.008,"poster_path":"/ojDg0PGvs6R9xYFodRct2kdI6wC.jpg","production_companies":[{"id":2303,"logo_path":null,"name":"Villealfa
         Filmproductions","origin_country":"FI"}],"production_countries":[{"iso_3166_1":"FI","name":"Finland"}],"release_date":"1988-10-21","revenue":0,"runtime":73,"spoken_languages":[{"english_name":"Finnish","iso_639_1":"fi","name":"suomi"}],"status":"Released","tagline":"","title":"Ariel","video":false,"vote_average":6.958,"vote_count":180}'
-  recorded_at: Thu, 13 Oct 2022 06:57:06 GMT
+  recorded_at: Fri, 14 Oct 2022 04:14:17 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/2?api_key=<API Key>&language=en-US
@@ -253,7 +253,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 13 Oct 2022 06:00:34 GMT
+      - Fri, 14 Oct 2022 04:13:11 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -270,34 +270,34 @@ http_interactions:
       X-Memc-Key:
       - 511f57fe9dfe5dddca08773dca06d854df439acd
       X-Memc-Age:
-      - '6006'
+      - '5451'
       X-Memc-Expires:
-      - '9831'
+      - '12440'
       Etag:
-      - W/"487dfa50ac6276919decf146af59c7a3"
+      - W/"ee0070192efe5328d2b5287e03fd1b42"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 3121d2e54e5ff8e2983790ff921d76ec.cloudfront.net (CloudFront)
+      - 1.1 d09fd0ac0a8733df98f134da74eec098.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - PHX50-C2
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - KEukQOQ1LVu0cNyN_kXkX0uCZW5GURU2_mDIR58PQ6o8VqZ92hEZ-Q==
+      - fBAVzPIwcbC86fuzYHFrvkGJU_sYyLP2pWhvhZSjZBYQLNdRswWZbA==
       Age:
-      - '3393'
+      - '67'
     body:
       encoding: UTF-8
       string: '{"adult":false,"backdrop_path":"/hQ4pYsIbP22TMXOUdSfC2mjWrO0.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"},{"id":35,"name":"Comedy"},{"id":80,"name":"Crime"}],"homepage":"","id":2,"imdb_id":"tt0094675","original_language":"fi","original_title":"Ariel","overview":"Taisto
         Kasurinen is a Finnish coal miner whose father has just committed suicide
         and who is framed for a crime he did not commit. In jail, he starts to dream
         about leaving the country and starting a new life. He escapes from prison
-        but things don''t go as planned...","popularity":28.384,"poster_path":"/ojDg0PGvs6R9xYFodRct2kdI6wC.jpg","production_companies":[{"id":2303,"logo_path":null,"name":"Villealfa
+        but things don''t go as planned...","popularity":23.008,"poster_path":"/ojDg0PGvs6R9xYFodRct2kdI6wC.jpg","production_companies":[{"id":2303,"logo_path":null,"name":"Villealfa
         Filmproductions","origin_country":"FI"}],"production_countries":[{"iso_3166_1":"FI","name":"Finland"}],"release_date":"1988-10-21","revenue":0,"runtime":73,"spoken_languages":[{"english_name":"Finnish","iso_639_1":"fi","name":"suomi"}],"status":"Released","tagline":"","title":"Ariel","video":false,"vote_average":6.958,"vote_count":180}'
-  recorded_at: Thu, 13 Oct 2022 06:57:07 GMT
+  recorded_at: Fri, 14 Oct 2022 04:14:18 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/3?api_key=<API Key>&language=en-US
@@ -322,8 +322,6 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Thu, 13 Oct 2022 06:57:07 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -333,8 +331,6 @@ http_interactions:
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
-      Cache-Control:
-      - public, max-age=28800
       X-Memc:
       - HIT
       X-Memc-Key:
@@ -343,73 +339,10 @@ http_interactions:
       - '1628'
       X-Memc-Expires:
       - '14272'
-      Etag:
-      - W/"2f4d2861c6fca37b9e77285f4192db6c"
-      Vary:
-      - Accept-Encoding
-      X-Cache:
-      - Miss from cloudfront
-      Via:
-      - 1.1 aec08f96e3f8203b96119fd8dcddcda6.cloudfront.net (CloudFront)
-      X-Amz-Cf-Pop:
-      - PHX50-C2
-      Alt-Svc:
-      - h3=":443"; ma=86400
-      X-Amz-Cf-Id:
-      - oFffQVP2XW18DWiPz8OsEKdhGK0jf37cr-5Z0kYpvn-3qfwSKOhZdw==
-    body:
-      encoding: UTF-8
-      string: '{"adult":false,"backdrop_path":"/l94l89eMmFKh7na2a1u5q67VgNx.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"},{"id":35,"name":"Comedy"}],"homepage":"","id":3,"imdb_id":"tt0092149","original_language":"fi","original_title":"Varjoja
-        paratiisissa","overview":"An episode in the life of Nikander, a garbage man,
-        involving the death of a co-worker, an affair and much more.","popularity":25.241,"poster_path":"/nj01hspawPof0mJmlgfjuLyJuRN.jpg","production_companies":[{"id":2303,"logo_path":null,"name":"Villealfa
-        Filmproductions","origin_country":"FI"}],"production_countries":[{"iso_3166_1":"FI","name":"Finland"}],"release_date":"1986-10-17","revenue":0,"runtime":74,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Swedish","iso_639_1":"sv","name":"svenska"},{"english_name":"Finnish","iso_639_1":"fi","name":"suomi"}],"status":"Released","tagline":"","title":"Shadows
-        in Paradise","video":false,"vote_average":7.213,"vote_count":200}'
-  recorded_at: Thu, 13 Oct 2022 06:57:07 GMT
-- request:
-    method: get
-    uri: https://api.themoviedb.org/3/movie/3?api_key=<API Key>&language=en-US
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v2.6.0
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Content-Type:
-      - application/json;charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
       Date:
-      - Thu, 13 Oct 2022 06:57:07 GMT
-      Server:
-      - openresty
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, HEAD, POST, PUT, DELETE, OPTIONS
-      Access-Control-Expose-Headers:
-      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
-        Content-Length, Content-Range
+      - Fri, 14 Oct 2022 04:04:58 GMT
       Cache-Control:
       - public, max-age=28800
-      X-Memc:
-      - HIT
-      X-Memc-Key:
-      - 82c1a0020867427996ad31593b14e1e0a9b8aa3a
-      X-Memc-Age:
-      - '1628'
-      X-Memc-Expires:
-      - '14272'
       Etag:
       - W/"2f4d2861c6fca37b9e77285f4192db6c"
       Vary:
@@ -417,13 +350,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 e7ed7eb75a85fa319ecec449d025f172.cloudfront.net (CloudFront)
+      - 1.1 1152d84b916a23e4b38cef1a20064b3e.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - PHX50-C2
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - x1y8t19J-b814Ie30H4Aa7KepQVWx2X8lf_kOOq7eKRif0Cb__u-Sw==
+      - CJ10YvgJd3sWNzVabz4dlF8zQ97SmHI7Y98hm9Jdy76GaTx78u6LeQ==
+      Age:
+      - '560'
     body:
       encoding: UTF-8
       string: '{"adult":false,"backdrop_path":"/l94l89eMmFKh7na2a1u5q67VgNx.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"},{"id":35,"name":"Comedy"}],"homepage":"","id":3,"imdb_id":"tt0092149","original_language":"fi","original_title":"Varjoja
@@ -431,7 +366,76 @@ http_interactions:
         involving the death of a co-worker, an affair and much more.","popularity":25.241,"poster_path":"/nj01hspawPof0mJmlgfjuLyJuRN.jpg","production_companies":[{"id":2303,"logo_path":null,"name":"Villealfa
         Filmproductions","origin_country":"FI"}],"production_countries":[{"iso_3166_1":"FI","name":"Finland"}],"release_date":"1986-10-17","revenue":0,"runtime":74,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Swedish","iso_639_1":"sv","name":"svenska"},{"english_name":"Finnish","iso_639_1":"fi","name":"suomi"}],"status":"Released","tagline":"","title":"Shadows
         in Paradise","video":false,"vote_average":7.213,"vote_count":200}'
-  recorded_at: Thu, 13 Oct 2022 06:57:07 GMT
+  recorded_at: Fri, 14 Oct 2022 04:14:18 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/3?api_key=<API Key>&language=en-US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 82c1a0020867427996ad31593b14e1e0a9b8aa3a
+      X-Memc-Age:
+      - '1628'
+      X-Memc-Expires:
+      - '14272'
+      Date:
+      - Fri, 14 Oct 2022 04:04:58 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"2f4d2861c6fca37b9e77285f4192db6c"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 badefad2d1fb92bb4620df1ce11d8c92.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - gPAFHOAJ6qeQQXVvisRlCSWxSfIShA6cpXcDLHLLovqOQQyNw0ZDvw==
+      Age:
+      - '560'
+    body:
+      encoding: UTF-8
+      string: '{"adult":false,"backdrop_path":"/l94l89eMmFKh7na2a1u5q67VgNx.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"},{"id":35,"name":"Comedy"}],"homepage":"","id":3,"imdb_id":"tt0092149","original_language":"fi","original_title":"Varjoja
+        paratiisissa","overview":"An episode in the life of Nikander, a garbage man,
+        involving the death of a co-worker, an affair and much more.","popularity":25.241,"poster_path":"/nj01hspawPof0mJmlgfjuLyJuRN.jpg","production_companies":[{"id":2303,"logo_path":null,"name":"Villealfa
+        Filmproductions","origin_country":"FI"}],"production_countries":[{"iso_3166_1":"FI","name":"Finland"}],"release_date":"1986-10-17","revenue":0,"runtime":74,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Swedish","iso_639_1":"sv","name":"svenska"},{"english_name":"Finnish","iso_639_1":"fi","name":"suomi"}],"status":"Released","tagline":"","title":"Shadows
+        in Paradise","video":false,"vote_average":7.213,"vote_count":200}'
+  recorded_at: Fri, 14 Oct 2022 04:14:18 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/8?api_key=<API Key>&language=en-US
@@ -456,8 +460,6 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Thu, 13 Oct 2022 06:00:34 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -467,8 +469,6 @@ http_interactions:
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
-      Cache-Control:
-      - public, max-age=28800
       X-Memc:
       - HIT
       X-Memc-Key:
@@ -477,6 +477,10 @@ http_interactions:
       - '12831'
       X-Memc-Expires:
       - '4180'
+      Date:
+      - Fri, 14 Oct 2022 01:10:30 GMT
+      Cache-Control:
+      - public, max-age=28800
       Etag:
       - W/"436c73fae9a24dbed4b50a03c29f2c18"
       Vary:
@@ -484,15 +488,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 c7b31d608879449a60647da98e3460e4.cloudfront.net (CloudFront)
+      - 1.1 a42ce842e0f60814700ead82353e9f08.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - PHX50-C2
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - Z6g9-F116un2krYbCMVln59yPQAk7Rcib0LcMyd57I8UDBWwS_KkfA==
+      - SsTTwZfPY8YCh0EZBWAPX-4BGHb8WeHJwiQ1SpJl_ow2c9JHX3qt6w==
       Age:
-      - '3393'
+      - '11028'
     body:
       encoding: UTF-8
       string: '{"adult":false,"backdrop_path":null,"belongs_to_collection":null,"budget":42000,"genres":[{"id":99,"name":"Documentary"}],"homepage":"http://lifeinloops.com","id":8,"imdb_id":"tt0825671","original_language":"en","original_title":"Life
@@ -510,7 +514,7 @@ http_interactions:
         continents. The film also makes an original contribution to the discussion
         on new trends in documentary filmmaking. Written by KARLOVY VARY IFF 2006","popularity":2.259,"poster_path":"/x7Sz339F2oC8mBf0DHCQpKizXaL.jpg","production_companies":[{"id":19123,"logo_path":null,"name":"inLoops","origin_country":""}],"production_countries":[{"iso_3166_1":"AT","name":"Austria"}],"release_date":"2006-01-01","revenue":0,"runtime":80,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Hindi","iso_639_1":"hi","name":"हिन्दी"},{"english_name":"Japanese","iso_639_1":"ja","name":"日本語"},{"english_name":"Russian","iso_639_1":"ru","name":"Pусский"},{"english_name":"Spanish","iso_639_1":"es","name":"Español"}],"status":"Released","tagline":"A
         Megacities remix.","title":"Life in Loops (A Megacities RMX)","video":false,"vote_average":7.738,"vote_count":21}'
-  recorded_at: Thu, 13 Oct 2022 06:57:07 GMT
+  recorded_at: Fri, 14 Oct 2022 04:14:18 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/2?api_key=<API Key>&language=en-US
@@ -536,7 +540,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 13 Oct 2022 06:00:34 GMT
+      - Fri, 14 Oct 2022 04:13:11 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -553,34 +557,34 @@ http_interactions:
       X-Memc-Key:
       - 511f57fe9dfe5dddca08773dca06d854df439acd
       X-Memc-Age:
-      - '6006'
+      - '5451'
       X-Memc-Expires:
-      - '9831'
+      - '12440'
       Etag:
-      - W/"487dfa50ac6276919decf146af59c7a3"
+      - W/"ee0070192efe5328d2b5287e03fd1b42"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 cd5b32a9ae39315ee42c37bf95fc4a1a.cloudfront.net (CloudFront)
+      - 1.1 d09fd0ac0a8733df98f134da74eec098.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - PHX50-C2
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 5je5QdMsEciz3a0TeciQhYbieNsLZCRs6A0l6KECS_uN3NL6IBOOzw==
+      - ndCNBsi8neGFhNRmzeUAe3uRk3cv1hVuArSev_u563MqbO39TG7jKQ==
       Age:
-      - '3394'
+      - '67'
     body:
       encoding: UTF-8
       string: '{"adult":false,"backdrop_path":"/hQ4pYsIbP22TMXOUdSfC2mjWrO0.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"},{"id":35,"name":"Comedy"},{"id":80,"name":"Crime"}],"homepage":"","id":2,"imdb_id":"tt0094675","original_language":"fi","original_title":"Ariel","overview":"Taisto
         Kasurinen is a Finnish coal miner whose father has just committed suicide
         and who is framed for a crime he did not commit. In jail, he starts to dream
         about leaving the country and starting a new life. He escapes from prison
-        but things don''t go as planned...","popularity":28.384,"poster_path":"/ojDg0PGvs6R9xYFodRct2kdI6wC.jpg","production_companies":[{"id":2303,"logo_path":null,"name":"Villealfa
+        but things don''t go as planned...","popularity":23.008,"poster_path":"/ojDg0PGvs6R9xYFodRct2kdI6wC.jpg","production_companies":[{"id":2303,"logo_path":null,"name":"Villealfa
         Filmproductions","origin_country":"FI"}],"production_countries":[{"iso_3166_1":"FI","name":"Finland"}],"release_date":"1988-10-21","revenue":0,"runtime":73,"spoken_languages":[{"english_name":"Finnish","iso_639_1":"fi","name":"suomi"}],"status":"Released","tagline":"","title":"Ariel","video":false,"vote_average":6.958,"vote_count":180}'
-  recorded_at: Thu, 13 Oct 2022 06:57:07 GMT
+  recorded_at: Fri, 14 Oct 2022 04:14:18 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/3?api_key=<API Key>&language=en-US
@@ -605,8 +609,6 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Thu, 13 Oct 2022 06:57:07 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -616,8 +618,6 @@ http_interactions:
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
-      Cache-Control:
-      - public, max-age=28800
       X-Memc:
       - HIT
       X-Memc-Key:
@@ -626,6 +626,10 @@ http_interactions:
       - '1628'
       X-Memc-Expires:
       - '14272'
+      Date:
+      - Fri, 14 Oct 2022 04:04:58 GMT
+      Cache-Control:
+      - public, max-age=28800
       Etag:
       - W/"2f4d2861c6fca37b9e77285f4192db6c"
       Vary:
@@ -633,15 +637,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 3121d2e54e5ff8e2983790ff921d76ec.cloudfront.net (CloudFront)
+      - 1.1 1c13683c7de319f25e08f83861fc6dc2.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - PHX50-C2
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - qTAHVbeocuMHszjSiJjOLbZp_KwaTBB2PD4NR682h1sMY58S-m3zRw==
+      - vgN8w--I8teIJo_nWCfwORod75EMQaTNvf0AW0-8tvkw6DQEQiBhow==
       Age:
-      - '1'
+      - '560'
     body:
       encoding: UTF-8
       string: '{"adult":false,"backdrop_path":"/l94l89eMmFKh7na2a1u5q67VgNx.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"},{"id":35,"name":"Comedy"}],"homepage":"","id":3,"imdb_id":"tt0092149","original_language":"fi","original_title":"Varjoja
@@ -649,7 +653,7 @@ http_interactions:
         involving the death of a co-worker, an affair and much more.","popularity":25.241,"poster_path":"/nj01hspawPof0mJmlgfjuLyJuRN.jpg","production_companies":[{"id":2303,"logo_path":null,"name":"Villealfa
         Filmproductions","origin_country":"FI"}],"production_countries":[{"iso_3166_1":"FI","name":"Finland"}],"release_date":"1986-10-17","revenue":0,"runtime":74,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Swedish","iso_639_1":"sv","name":"svenska"},{"english_name":"Finnish","iso_639_1":"fi","name":"suomi"}],"status":"Released","tagline":"","title":"Shadows
         in Paradise","video":false,"vote_average":7.213,"vote_count":200}'
-  recorded_at: Thu, 13 Oct 2022 06:57:08 GMT
+  recorded_at: Fri, 14 Oct 2022 04:14:18 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/2?api_key=<API Key>&language=en-US
@@ -675,7 +679,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 13 Oct 2022 06:00:34 GMT
+      - Fri, 14 Oct 2022 04:13:11 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -692,34 +696,34 @@ http_interactions:
       X-Memc-Key:
       - 511f57fe9dfe5dddca08773dca06d854df439acd
       X-Memc-Age:
-      - '6006'
+      - '5451'
       X-Memc-Expires:
-      - '9831'
+      - '12440'
       Etag:
-      - W/"487dfa50ac6276919decf146af59c7a3"
+      - W/"ee0070192efe5328d2b5287e03fd1b42"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 c7b31d608879449a60647da98e3460e4.cloudfront.net (CloudFront)
+      - 1.1 77cfd797d789c3b8bc1b8f2f8a42a9c6.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - PHX50-C2
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - NPhey8Bo4DstOEtyBefqBwlz6ttJ58jmeViCrGTBlik8KjF6sSlAwA==
+      - PNbhudHCtTnB1c6kioVOikHAhioKcwITcXygDgaMscXU6k4hIKJjqw==
       Age:
-      - '3394'
+      - '67'
     body:
       encoding: UTF-8
       string: '{"adult":false,"backdrop_path":"/hQ4pYsIbP22TMXOUdSfC2mjWrO0.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"},{"id":35,"name":"Comedy"},{"id":80,"name":"Crime"}],"homepage":"","id":2,"imdb_id":"tt0094675","original_language":"fi","original_title":"Ariel","overview":"Taisto
         Kasurinen is a Finnish coal miner whose father has just committed suicide
         and who is framed for a crime he did not commit. In jail, he starts to dream
         about leaving the country and starting a new life. He escapes from prison
-        but things don''t go as planned...","popularity":28.384,"poster_path":"/ojDg0PGvs6R9xYFodRct2kdI6wC.jpg","production_companies":[{"id":2303,"logo_path":null,"name":"Villealfa
+        but things don''t go as planned...","popularity":23.008,"poster_path":"/ojDg0PGvs6R9xYFodRct2kdI6wC.jpg","production_companies":[{"id":2303,"logo_path":null,"name":"Villealfa
         Filmproductions","origin_country":"FI"}],"production_countries":[{"iso_3166_1":"FI","name":"Finland"}],"release_date":"1988-10-21","revenue":0,"runtime":73,"spoken_languages":[{"english_name":"Finnish","iso_639_1":"fi","name":"suomi"}],"status":"Released","tagline":"","title":"Ariel","video":false,"vote_average":6.958,"vote_count":180}'
-  recorded_at: Thu, 13 Oct 2022 06:57:08 GMT
+  recorded_at: Fri, 14 Oct 2022 04:14:18 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/2?api_key=<API Key>&language=en-US
@@ -745,7 +749,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 13 Oct 2022 06:00:34 GMT
+      - Fri, 14 Oct 2022 04:13:11 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -762,34 +766,34 @@ http_interactions:
       X-Memc-Key:
       - 511f57fe9dfe5dddca08773dca06d854df439acd
       X-Memc-Age:
-      - '6006'
+      - '5451'
       X-Memc-Expires:
-      - '9831'
+      - '12440'
       Etag:
-      - W/"487dfa50ac6276919decf146af59c7a3"
+      - W/"ee0070192efe5328d2b5287e03fd1b42"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 0ef338d8c6e53a140e3304c52ff14ae8.cloudfront.net (CloudFront)
+      - 1.1 befcfd7ee847a3c890471f27612dbcde.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - PHX50-C2
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - omMBNYQ_WeKV4VYTclmQx7Yw3a8AsUwarPN-fuSRIzv13ZR155A47A==
+      - tMAqP78S2uNWgOpUIsGXCfQSU_IvhOJ-7qzMfKglaOS28ZdgZnAHaA==
       Age:
-      - '3394'
+      - '67'
     body:
       encoding: UTF-8
       string: '{"adult":false,"backdrop_path":"/hQ4pYsIbP22TMXOUdSfC2mjWrO0.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"},{"id":35,"name":"Comedy"},{"id":80,"name":"Crime"}],"homepage":"","id":2,"imdb_id":"tt0094675","original_language":"fi","original_title":"Ariel","overview":"Taisto
         Kasurinen is a Finnish coal miner whose father has just committed suicide
         and who is framed for a crime he did not commit. In jail, he starts to dream
         about leaving the country and starting a new life. He escapes from prison
-        but things don''t go as planned...","popularity":28.384,"poster_path":"/ojDg0PGvs6R9xYFodRct2kdI6wC.jpg","production_companies":[{"id":2303,"logo_path":null,"name":"Villealfa
+        but things don''t go as planned...","popularity":23.008,"poster_path":"/ojDg0PGvs6R9xYFodRct2kdI6wC.jpg","production_companies":[{"id":2303,"logo_path":null,"name":"Villealfa
         Filmproductions","origin_country":"FI"}],"production_countries":[{"iso_3166_1":"FI","name":"Finland"}],"release_date":"1988-10-21","revenue":0,"runtime":73,"spoken_languages":[{"english_name":"Finnish","iso_639_1":"fi","name":"suomi"}],"status":"Released","tagline":"","title":"Ariel","video":false,"vote_average":6.958,"vote_count":180}'
-  recorded_at: Thu, 13 Oct 2022 06:57:08 GMT
+  recorded_at: Fri, 14 Oct 2022 04:14:18 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/2?api_key=<API Key>&language=en-US
@@ -815,7 +819,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 13 Oct 2022 06:00:34 GMT
+      - Fri, 14 Oct 2022 04:13:11 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -832,34 +836,34 @@ http_interactions:
       X-Memc-Key:
       - 511f57fe9dfe5dddca08773dca06d854df439acd
       X-Memc-Age:
-      - '6006'
+      - '5451'
       X-Memc-Expires:
-      - '9831'
+      - '12440'
       Etag:
-      - W/"487dfa50ac6276919decf146af59c7a3"
+      - W/"ee0070192efe5328d2b5287e03fd1b42"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 6ad7000842fa94fec3037b4599d53ea2.cloudfront.net (CloudFront)
+      - 1.1 d4fb3448d1a8d3229dcf0a89f4bbe7e8.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - PHX50-C2
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - H4ZREpRsNOcnczJMTAFpG7gZjaDMlHJsCogt_nimj9GyZjiDLDqsPg==
+      - JWzRqV3FkZIJdvsf3VtJxLiu5HC6g1ZpzT9En4dhfJcBQO-8CL-FTw==
       Age:
-      - '3394'
+      - '68'
     body:
       encoding: UTF-8
       string: '{"adult":false,"backdrop_path":"/hQ4pYsIbP22TMXOUdSfC2mjWrO0.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"},{"id":35,"name":"Comedy"},{"id":80,"name":"Crime"}],"homepage":"","id":2,"imdb_id":"tt0094675","original_language":"fi","original_title":"Ariel","overview":"Taisto
         Kasurinen is a Finnish coal miner whose father has just committed suicide
         and who is framed for a crime he did not commit. In jail, he starts to dream
         about leaving the country and starting a new life. He escapes from prison
-        but things don''t go as planned...","popularity":28.384,"poster_path":"/ojDg0PGvs6R9xYFodRct2kdI6wC.jpg","production_companies":[{"id":2303,"logo_path":null,"name":"Villealfa
+        but things don''t go as planned...","popularity":23.008,"poster_path":"/ojDg0PGvs6R9xYFodRct2kdI6wC.jpg","production_companies":[{"id":2303,"logo_path":null,"name":"Villealfa
         Filmproductions","origin_country":"FI"}],"production_countries":[{"iso_3166_1":"FI","name":"Finland"}],"release_date":"1988-10-21","revenue":0,"runtime":73,"spoken_languages":[{"english_name":"Finnish","iso_639_1":"fi","name":"suomi"}],"status":"Released","tagline":"","title":"Ariel","video":false,"vote_average":6.958,"vote_count":180}'
-  recorded_at: Thu, 13 Oct 2022 06:57:08 GMT
+  recorded_at: Fri, 14 Oct 2022 04:14:19 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/8?api_key=<API Key>&language=en-US
@@ -884,8 +888,6 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Thu, 13 Oct 2022 06:00:34 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -895,8 +897,6 @@ http_interactions:
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
-      Cache-Control:
-      - public, max-age=28800
       X-Memc:
       - HIT
       X-Memc-Key:
@@ -905,6 +905,10 @@ http_interactions:
       - '12831'
       X-Memc-Expires:
       - '4180'
+      Date:
+      - Fri, 14 Oct 2022 01:10:30 GMT
+      Cache-Control:
+      - public, max-age=28800
       Etag:
       - W/"436c73fae9a24dbed4b50a03c29f2c18"
       Vary:
@@ -912,15 +916,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 aec08f96e3f8203b96119fd8dcddcda6.cloudfront.net (CloudFront)
+      - 1.1 96725c0e4ced177a38df871e7cc48a4a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - PHX50-C2
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - yFZeIXrD12y9THDP6BSPFtET-7AMaJIfzOwHHABuIjVdqzybClMmtA==
+      - b_xy34X1nZG9U913yL2l0SEZLLrLFnJQeIMFdax0cBSwVhz2kmIV9w==
       Age:
-      - '3394'
+      - '11029'
     body:
       encoding: UTF-8
       string: '{"adult":false,"backdrop_path":null,"belongs_to_collection":null,"budget":42000,"genres":[{"id":99,"name":"Documentary"}],"homepage":"http://lifeinloops.com","id":8,"imdb_id":"tt0825671","original_language":"en","original_title":"Life
@@ -938,7 +942,7 @@ http_interactions:
         continents. The film also makes an original contribution to the discussion
         on new trends in documentary filmmaking. Written by KARLOVY VARY IFF 2006","popularity":2.259,"poster_path":"/x7Sz339F2oC8mBf0DHCQpKizXaL.jpg","production_companies":[{"id":19123,"logo_path":null,"name":"inLoops","origin_country":""}],"production_countries":[{"iso_3166_1":"AT","name":"Austria"}],"release_date":"2006-01-01","revenue":0,"runtime":80,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Hindi","iso_639_1":"hi","name":"हिन्दी"},{"english_name":"Japanese","iso_639_1":"ja","name":"日本語"},{"english_name":"Russian","iso_639_1":"ru","name":"Pусский"},{"english_name":"Spanish","iso_639_1":"es","name":"Español"}],"status":"Released","tagline":"A
         Megacities remix.","title":"Life in Loops (A Megacities RMX)","video":false,"vote_average":7.738,"vote_count":21}'
-  recorded_at: Thu, 13 Oct 2022 06:57:08 GMT
+  recorded_at: Fri, 14 Oct 2022 04:14:19 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/3?api_key=<API Key>&language=en-US
@@ -963,8 +967,6 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Thu, 13 Oct 2022 06:57:07 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -974,8 +976,6 @@ http_interactions:
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
-      Cache-Control:
-      - public, max-age=28800
       X-Memc:
       - HIT
       X-Memc-Key:
@@ -984,6 +984,10 @@ http_interactions:
       - '1628'
       X-Memc-Expires:
       - '14272'
+      Date:
+      - Fri, 14 Oct 2022 04:04:58 GMT
+      Cache-Control:
+      - public, max-age=28800
       Etag:
       - W/"2f4d2861c6fca37b9e77285f4192db6c"
       Vary:
@@ -991,15 +995,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 c7b31d608879449a60647da98e3460e4.cloudfront.net (CloudFront)
+      - 1.1 3fddcbe99f78632bf14e5e80e6c14058.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - PHX50-C2
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 9Lyyb5ElyXgRQl-Sp-ekUjBIPvfXw-Xd-qU-wYEC8juIbJypJ079tA==
+      - 9vvA4Y1PZsqUCJLGvki64vExMMH1P-fYHlfkHsM7cqBAtOmmfsuzKw==
       Age:
-      - '1'
+      - '561'
     body:
       encoding: UTF-8
       string: '{"adult":false,"backdrop_path":"/l94l89eMmFKh7na2a1u5q67VgNx.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"},{"id":35,"name":"Comedy"}],"homepage":"","id":3,"imdb_id":"tt0092149","original_language":"fi","original_title":"Varjoja
@@ -1007,5 +1011,5 @@ http_interactions:
         involving the death of a co-worker, an affair and much more.","popularity":25.241,"poster_path":"/nj01hspawPof0mJmlgfjuLyJuRN.jpg","production_companies":[{"id":2303,"logo_path":null,"name":"Villealfa
         Filmproductions","origin_country":"FI"}],"production_countries":[{"iso_3166_1":"FI","name":"Finland"}],"release_date":"1986-10-17","revenue":0,"runtime":74,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Swedish","iso_639_1":"sv","name":"svenska"},{"english_name":"Finnish","iso_639_1":"fi","name":"suomi"}],"status":"Released","tagline":"","title":"Shadows
         in Paradise","video":false,"vote_average":7.213,"vote_count":200}'
-  recorded_at: Thu, 13 Oct 2022 06:57:08 GMT
+  recorded_at: Fri, 14 Oct 2022 04:14:19 GMT
 recorded_with: VCR 6.1.0
