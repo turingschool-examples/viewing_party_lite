@@ -92,7 +92,7 @@ RSpec.describe ViewingParty, type: :model do
                       )
 
       expect(party3.host).to eq(user2)
-      expect(party3.attendees).to eq([user1.name, user3.name])
+      expect(party3.attendees).to eq("#{user1.name} and #{user3.name}")
     end
   end
 end

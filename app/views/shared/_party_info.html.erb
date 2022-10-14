@@ -5,3 +5,7 @@
 <%= party.eventdate.strftime('%B %e, %Y') %>
 <br/>
 <%= party.starttime.strftime('%I:%M %p') %>
+<br>
+Hosted by: <%= highlight("#{party.host.name}", "#{current_user.name}", highlighter: '<strong>\1</strong>') %>
+<br>
+Attendees: <%= highlight("#{party.attendees}", "#{current_user.name}", highlighter: '<strong>\1</strong>') %>

@@ -10,6 +10,6 @@ class ViewingParty < ApplicationRecord
   has_many :users, through: :user_viewing_parties
 
   def attendees
-    self.users.select(:name).where.not(id: host.id).pluck(:name)
+    self.users.select(:name).where.not(id: host.id).pluck(:name).to_sentence
   end
 end

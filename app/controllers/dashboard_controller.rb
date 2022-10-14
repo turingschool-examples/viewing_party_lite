@@ -1,4 +1,5 @@
 class DashboardController < ApplicationController
+  include ActionView::Helpers::TextHelper
   before_action :require_user, only: [:index]
 
   def index
