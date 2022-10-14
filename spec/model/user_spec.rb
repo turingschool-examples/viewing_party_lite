@@ -88,7 +88,7 @@ RSpec.describe User, type: :model do
 
           user.set_host(party_6)
 
-          expect(vpu_5.hosting).to be(true)
+          expect(vpu_5.reload.hosting).to be(true)
         end
       end
     end
