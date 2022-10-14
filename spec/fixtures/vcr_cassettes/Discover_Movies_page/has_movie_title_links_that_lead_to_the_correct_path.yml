@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 14 Oct 2022 07:48:38 GMT
+      - Fri, 14 Oct 2022 16:19:53 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,15 +42,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 2e153f50cab65b730e39dcf802397e06.cloudfront.net (CloudFront)
+      - 1.1 a7c0ba01db75946f7df3f7eaf69984b6.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - LAX53-P3
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - AoIFWBj_eAOqN1Fl-R477V4uHduzpjfgf5iSfh0SNeOXBlneTwrtRA==
+      - "-KXSBn5T4-ru-bF9zsg1G4exyDovoAkCoSxc-fKvyaoXQyHySuZ13A=="
       Age:
-      - '7440'
+      - '2790'
     body:
       encoding: UTF-8
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg","genre_ids":[18,80],"id":238,"original_language":"en","original_title":"The
@@ -160,8 +160,8 @@ http_interactions:
         broken fellowship struggle to save Gondor from Sauron''s forces. Meanwhile,
         Frodo and Sam take the ring closer to the heart of Mordor, the dark lord''s
         realm.","popularity":132.794,"poster_path":"/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg","release_date":"2003-12-01","title":"The
-        Lord of the Rings: The Return of the King","video":false,"vote_average":8.5,"vote_count":20340}],"total_pages":521,"total_results":10409}'
-  recorded_at: Fri, 14 Oct 2022 09:52:38 GMT
+        Lord of the Rings: The Return of the King","video":false,"vote_average":8.5,"vote_count":20340}],"total_pages":521,"total_results":10411}'
+  recorded_at: Fri, 14 Oct 2022 17:06:23 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/238?api_key=<API Key>&language=en-US
@@ -214,15 +214,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 6903d47d9982c15f6a8d18c090cd1bc2.cloudfront.net (CloudFront)
+      - 1.1 f6992241dd15e99fe1ce21d807856f16.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - LAX53-P3
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 8CohI6B1ZSTq46Wq15-Gs341-tj_RR7TywRJOrKQkLKyIIgWS-anCQ==
+      - uDvqXOKzF3Ri2ujKqbACjQScx0TXl1V8JJFodejZ0xmkQk6P2cgDRw==
       Age:
-      - '236'
+      - '26260'
     body:
       encoding: UTF-8
       string: '{"adult":false,"backdrop_path":"/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg","belongs_to_collection":{"id":230,"name":"The
@@ -235,7 +235,7 @@ http_interactions:
         Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
         offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.715,"vote_count":16735}'
-  recorded_at: Fri, 14 Oct 2022 09:52:39 GMT
+  recorded_at: Fri, 14 Oct 2022 17:06:23 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/238/credits?api_key=<API Key>&language=en-US
@@ -288,15 +288,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 858f66c6f409902b22e6f944fc960f7e.cloudfront.net (CloudFront)
+      - 1.1 1c13683c7de319f25e08f83861fc6dc2.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - LAX53-P3
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - CP4aW53erbGavh4SR_9rq7HzDIhwIqvxxSzBxUJduG-7pA2UD8ctZQ==
+      - hvm7BHFvo3WT_6XLd5_6JG3rkKvXmjTdSgaUjXMZgIahHfEFQDhFxg==
       Age:
-      - '235'
+      - '26260'
     body:
       encoding: UTF-8
       string: '{"id":238,"cast":[{"adult":false,"gender":2,"id":3084,"known_for_department":"Acting","name":"Marlon
@@ -491,7 +491,7 @@ http_interactions:
         Coordinator"},{"adult":false,"gender":0,"id":3606474,"known_for_department":"Production","name":"Tony
         Bowers","original_name":"Tony Bowers","popularity":0.6,"profile_path":null,"credit_id":"62bd45e59a9f9a008bf772b9","department":"Production","job":"Location
         Coordinator"}]}'
-  recorded_at: Fri, 14 Oct 2022 09:52:39 GMT
+  recorded_at: Fri, 14 Oct 2022 17:06:24 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/238/reviews?api_key=<API Key>&language=en-US&page=1
@@ -542,15 +542,17 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 826c1e6708fc2793a1970a08d4ea25de.cloudfront.net (CloudFront)
+      - 1.1 16d72e0791ff01fc4470d27fc024527a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - LAX53-P3
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - HXrXrN5i9VbHVDpFQNpNK_03aYtCGuHAbzamVLY4htkS-bYF3guZrw==
+      - YAAuVlr5Yb1QAkPOCWRI7kE1Dc4xvpiaWWrpWta5mf5rg1qB96DRPA==
+      Age:
+      - '26025'
     body:
       encoding: UTF-8
       string: '{"id":238,"page":1,"results":[{"author":"futuretv","author_details":{"name":"","username":"futuretv","avatar_path":"/https://www.gravatar.com/avatar/f44259356bf6110070ed799323d539d6.jpg","rating":10.0},"content":"The
@@ -597,5 +599,5 @@ http_interactions:
         Coppola, about a Mob family and their drama, the story telling is perfect,
         the acting good, sometimes a little over the top in the case of Thalia Shire
         (the sister of the director)\r\n\r\nThe 70''s were the best years for Hollywood.","created_at":"2022-07-18T23:18:07.748Z","id":"62d5ea2fe93e95095cbddefe","updated_at":"2022-07-26T14:21:07.910Z","url":"https://www.themoviedb.org/review/62d5ea2fe93e95095cbddefe"}],"total_pages":1,"total_results":2}'
-  recorded_at: Fri, 14 Oct 2022 09:52:39 GMT
+  recorded_at: Fri, 14 Oct 2022 17:06:24 GMT
 recorded_with: VCR 6.1.0

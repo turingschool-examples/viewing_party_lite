@@ -10,7 +10,7 @@ RSpec.describe 'Movie Detail Page', type: :feature do
     end
 
     describe 'When I visit a movies detail page' do
-      it 'I see a button to create a viewing party', :vcr do
+      it 'I see a button to create a viewing party', :vcr => {:record => :new_episodes } do
         visit user_movie_path(@user_1, @movie_1.id)
 
         within('#action_options') do

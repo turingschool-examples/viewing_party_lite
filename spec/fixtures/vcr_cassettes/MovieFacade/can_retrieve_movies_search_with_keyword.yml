@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 14 Oct 2022 01:02:28 GMT
+      - Fri, 14 Oct 2022 17:06:21 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -40,17 +40,15 @@ http_interactions:
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Hit from cloudfront
+      - Miss from cloudfront
       Via:
-      - 1.1 08523828eac58ab546028ccf39ec743c.cloudfront.net (CloudFront)
+      - 1.1 f0a2a95cb4d25b2414a9c1a7a754943e.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - LAX3-C3
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - wPFs_8ZuLOxLoKkigCRHUcYU9EjWXuyZHe_158hwsoV6Lvyw-mjwoQ==
-      Age:
-      - '155'
+      - YX6A7pn1vd-DxMSN4yp6QDgnqjvVYQalJUROfZoa9O_DWtGiLs7GCA==
     body:
       encoding: UTF-8
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/tBOLfpP25TgqnWvhvsWocEXOoYS.jpg","genre_ids":[35,80,28],"id":1493,"original_language":"en","original_title":"Miss
@@ -65,5 +63,5 @@ http_interactions:
         -- and the new \"face of the FBI\". But it''s time to spring into action again
         when the pageant''s winner, Cheryl, and emcee, Stan, are abducted.","popularity":19.578,"poster_path":"/gcYoIHND3ugn2VH1cNHHNQasEyI.jpg","release_date":"2005-04-14","title":"Miss
         Congeniality 2: Armed and Fabulous","video":false,"vote_average":5.7,"vote_count":1581}],"total_pages":1,"total_results":2}'
-  recorded_at: Fri, 14 Oct 2022 01:05:03 GMT
+  recorded_at: Fri, 14 Oct 2022 17:06:21 GMT
 recorded_with: VCR 6.1.0

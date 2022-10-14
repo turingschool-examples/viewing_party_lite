@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 14 Oct 2022 00:37:20 GMT
+      - Fri, 14 Oct 2022 16:19:53 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,15 +42,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 a0952e77b9957cb83b937bcd1e067e24.cloudfront.net (CloudFront)
+      - 1.1 96725c0e4ced177a38df871e7cc48a4a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - LAX3-C3
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 2JJojmPY15mdJ-awV7oVfiz5W5LTH30H0BgmvLfs24S4zAkpxVZFgA==
+      - Hg7Q4cgQM0KEYzyKZF76LVWNIXeFdTIiewNMWCu4X8ECEXT3o-_T-g==
       Age:
-      - '1678'
+      - '2818'
     body:
       encoding: UTF-8
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg","genre_ids":[18,80],"id":238,"original_language":"en","original_title":"The
@@ -89,13 +89,13 @@ http_interactions:
         Away","video":false,"vote_average":8.5,"vote_count":13428},{"adult":false,"backdrop_path":"/bxSBOAD8AuMHYMdW3jso9npAkgt.jpg","genre_ids":[10751,18],"id":667257,"original_language":"es","original_title":"Cosas
         imposibles","overview":"Matilde is a woman who, after the death of her husband
         - a man who constantly abused her - finds her new best friend in Miguel, her
-        young, insecure, disoriented and even dealer neighbor","popularity":11.608,"poster_path":"/t2Ew8NZ8Ci2kqmoecZUNQUFDJnQ.jpg","release_date":"2021-06-17","title":"Impossible
+        young, insecure, disoriented and even dealer neighbor","popularity":14.279,"poster_path":"/t2Ew8NZ8Ci2kqmoecZUNQUFDJnQ.jpg","release_date":"2021-06-17","title":"Impossible
         Things","video":false,"vote_average":8.5,"vote_count":270},{"adult":false,"backdrop_path":"/mMtUybQ6hL24FXo0F3Z4j2KG7kZ.jpg","genre_ids":[10749,16,18],"id":372058,"original_language":"ja","original_title":"君の名は。","overview":"High
         schoolers Mitsuha and Taki are complete strangers living separate lives. But
         one night, they suddenly switch places. Mitsuha wakes up in Taki’s body, and
         he in hers. This bizarre occurrence continues to happen randomly, and the
-        two must adjust their lives around each other.","popularity":144.85,"poster_path":"/q719jXXEzOoYaps6babgKnONONX.jpg","release_date":"2016-08-26","title":"Your
-        Name.","video":false,"vote_average":8.5,"vote_count":9130},{"adult":false,"backdrop_path":"/qqHQsStV6exghCM7zbObuYBiYxw.jpg","genre_ids":[18],"id":389,"original_language":"en","original_title":"12
+        two must adjust their lives around each other.","popularity":124.985,"poster_path":"/q719jXXEzOoYaps6babgKnONONX.jpg","release_date":"2016-08-26","title":"Your
+        Name.","video":false,"vote_average":8.5,"vote_count":9134},{"adult":false,"backdrop_path":"/qqHQsStV6exghCM7zbObuYBiYxw.jpg","genre_ids":[18],"id":389,"original_language":"en","original_title":"12
         Angry Men","overview":"The defense and the prosecution have rested and the
         jury is filing into the jury room to decide if a young Spanish-American is
         guilty or innocent of murdering his father. What begins as an open and shut
@@ -103,19 +103,19 @@ http_interactions:
         about the trial, the accused, and each other.","popularity":35.571,"poster_path":"/ppd84D2i9W8jXmsyInGyihiSyqz.jpg","release_date":"1957-04-10","title":"12
         Angry Men","video":false,"vote_average":8.5,"vote_count":6723},{"adult":false,"backdrop_path":"/TU9NIjwzjoKPwQHoHshkFcQUCG.jpg","genre_ids":[35,53,18],"id":496243,"original_language":"ko","original_title":"기생충","overview":"All
         unemployed, Ki-taek''s family takes peculiar interest in the wealthy and glamorous
-        Parks for their livelihood until they get entangled in an unexpected incident.","popularity":67.36,"poster_path":"/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg","release_date":"2019-05-30","title":"Parasite","video":false,"vote_average":8.5,"vote_count":14526},{"adult":false,"backdrop_path":"/jtAI6OJIWLWiRItNSZoWjrsUtmi.jpg","genre_ids":[10749],"id":724089,"original_language":"en","original_title":"Gabriel''s
+        Parks for their livelihood until they get entangled in an unexpected incident.","popularity":62.318,"poster_path":"/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg","release_date":"2019-05-30","title":"Parasite","video":false,"vote_average":8.5,"vote_count":14530},{"adult":false,"backdrop_path":"/jtAI6OJIWLWiRItNSZoWjrsUtmi.jpg","genre_ids":[10749],"id":724089,"original_language":"en","original_title":"Gabriel''s
         Inferno: Part II","overview":"Professor Gabriel Emerson finally learns the
         truth about Julia Mitchell''s identity, but his realization comes a moment
         too late. Julia is done waiting for the well-respected Dante specialist to
         remember her and wants nothing more to do with him. Can Gabriel win back her
-        heart before she finds love in another''s arms?","popularity":16.827,"poster_path":"/x5o8cLZfEXMoZczTYWLrUo1P7UJ.jpg","release_date":"2020-07-31","title":"Gabriel''s
+        heart before she finds love in another''s arms?","popularity":13.148,"poster_path":"/x5o8cLZfEXMoZczTYWLrUo1P7UJ.jpg","release_date":"2020-07-31","title":"Gabriel''s
         Inferno: Part II","video":false,"vote_average":8.5,"vote_count":1439},{"adult":false,"backdrop_path":"/3RMLbSEXOn1CzLoNT7xFeLfdxhq.jpg","genre_ids":[10749,16],"id":372754,"original_language":"ja","original_title":"同級生","overview":"Rihito
         Sajo, an honor student with a perfect score on the entrance exam and Hikaru
         Kusakabe, in a band and popular among girls, would have never crossed paths.
         Until one day they started talking at the practice for their school’s upcoming
         chorus festival. After school, the two meet regularly, as Hikaru helps Rihito
         to improve his singing skills. While they listen to each other’s voice and
-        harmonize, their hearts start to beat together.","popularity":15.1,"poster_path":"/cIfRCA5wEvj9tApca4UDUagQEiM.jpg","release_date":"2016-02-20","title":"Dou
+        harmonize, their hearts start to beat together.","popularity":12.021,"poster_path":"/cIfRCA5wEvj9tApca4UDUagQEiM.jpg","release_date":"2016-02-20","title":"Dou
         kyu sei – Classmates","video":false,"vote_average":8.5,"vote_count":257},{"adult":false,"backdrop_path":"/l6hQWH9eDksNJNiXWYRkWqikOdu.jpg","genre_ids":[14,18,80],"id":497,"original_language":"en","original_title":"The
         Green Mile","overview":"A supernatural tale set on death row in a Southern
         prison, where gentle giant John Coffey possesses the mysterious power to heal
@@ -125,18 +125,18 @@ http_interactions:
         Green Mile","video":false,"vote_average":8.5,"vote_count":14489},{"adult":false,"backdrop_path":"/aQ7444JX7gefPhGJTlvilj3zG2S.jpg","genre_ids":[10402],"id":553512,"original_language":"ko","original_title":"번
         더 스테이지: 더 무비","overview":"A documentary following the worldwide famous music
         group BTS, as they tour the world and share their experience along with their
-        beloved band friends and fans.","popularity":20.61,"poster_path":"/pJKy1yvnKh8UjcuYeG3Rt35xHFA.jpg","release_date":"2018-11-15","title":"Burn
+        beloved band friends and fans.","popularity":20.104,"poster_path":"/pJKy1yvnKh8UjcuYeG3Rt35xHFA.jpg","release_date":"2018-11-15","title":"Burn
         the Stage: The Movie","video":false,"vote_average":8.5,"vote_count":367},{"adult":false,"backdrop_path":"/w2uGvCpMtvRqZg6waC1hvLyZoJa.jpg","genre_ids":[10749],"id":696374,"original_language":"en","original_title":"Gabriel''s
         Inferno","overview":"An intriguing and sinful exploration of seduction, forbidden
         love, and redemption, Gabriel''s Inferno is a captivating and wildly passionate
         tale of one man''s escape from his own personal hell as he tries to earn the
-        impossible--forgiveness and love. Watch Here : https://classic-blog.udn.com/mobile/aaef2970/177226755","popularity":14.757,"poster_path":"/oyG9TL7FcRP4EZ9Vid6uKzwdndz.jpg","release_date":"2020-05-29","title":"Gabriel''s
+        impossible--forgiveness and love. Watch Here : https://classic-blog.udn.com/mobile/aaef2970/177226755","popularity":12.367,"poster_path":"/oyG9TL7FcRP4EZ9Vid6uKzwdndz.jpg","release_date":"2020-05-29","title":"Gabriel''s
         Inferno","video":false,"vote_average":8.5,"vote_count":2289},{"adult":false,"backdrop_path":"/v5CEt88iDsuoMaW1Q5Msu9UZdEt.jpg","genre_ids":[10749,18],"id":730154,"original_language":"ja","original_title":"きみの瞳が問いかけている","overview":"A
         tragic accident lead to Kaori''s blindness, but she clings to life and the
         smaller pleasures it can still afford her. She meets Rui and begins to talk
         to him. Rui was once a promising kickboxer, but something happened in his
         past. Kaori''s smile brings out a change in Rui. However, the two are connected
-        in more than one way. Rui attempts to do what is right.","popularity":33.519,"poster_path":"/cVn8E3Fxbi8HzYYtaSfsblYC4gl.jpg","release_date":"2020-10-23","title":"Your
+        in more than one way. Rui attempts to do what is right.","popularity":42.303,"poster_path":"/cVn8E3Fxbi8HzYYtaSfsblYC4gl.jpg","release_date":"2020-10-23","title":"Your
         Eyes Tell","video":false,"vote_average":8.5,"vote_count":355},{"adult":false,"backdrop_path":"/nMKdUUepR0i5zn0y1T4CsSB5chy.jpg","genre_ids":[18,28,80,53],"id":155,"original_language":"en","original_title":"The
         Dark Knight","overview":"Batman raises the stakes in his war on crime. With
         the help of Lt. Jim Gordon and District Attorney Harvey Dent, Batman sets
@@ -160,6 +160,6 @@ http_interactions:
         broken fellowship struggle to save Gondor from Sauron''s forces. Meanwhile,
         Frodo and Sam take the ring closer to the heart of Mordor, the dark lord''s
         realm.","popularity":132.794,"poster_path":"/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg","release_date":"2003-12-01","title":"The
-        Lord of the Rings: The Return of the King","video":false,"vote_average":8.5,"vote_count":20340}],"total_pages":521,"total_results":10409}'
-  recorded_at: Fri, 14 Oct 2022 01:05:18 GMT
+        Lord of the Rings: The Return of the King","video":false,"vote_average":8.5,"vote_count":20340}],"total_pages":521,"total_results":10411}'
+  recorded_at: Fri, 14 Oct 2022 17:06:51 GMT
 recorded_with: VCR 6.1.0

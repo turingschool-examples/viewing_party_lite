@@ -6,6 +6,20 @@ RSpec.describe Party, type: :model do
     it { should have_many(:users).through(:user_parties) }
   end
 
+  describe 'validations' do
+    it { should validate_presence_of(:duration) }
+    it { should validate_presence_of(:movie_id) }
+    it { should validate_presence_of(:date) }
+    it { should validate_presence_of(:start_time) }
+    it { should validate_presence_of(:host_id) }
+    it { should validate_presence_of(:movie_runtime) }
+  
+    it { should validate_numericality_of(:duration) }
+    it { should validate_numericality_of(:movie_id) }
+    it { should validate_numericality_of(:host_id) }
+    it { should validate_numericality_of(:movie_runtime) }
+  end
+
   describe 'model methods' do
     before :each do
       @user_1 = User.create!(name: 'Jane', email: 'jane@mail.com')
@@ -13,12 +27,9 @@ RSpec.describe Party, type: :model do
       @user_3 = User.create!(name: 'Megan', email: 'megan@mail.com')
       @user_4 = User.create!(name: 'Mike', email: 'mike@mail.com')
 
-      @party_1 = Party.create!(movie_id: 8, duration: 80, date: '2023/8/10', start_time: '21:00',
-                               host_id: @user_1.id)
-      @party_2 = Party.create!(movie_id: 2, duration: 73, date: '10/12/2022', start_time: '18:00',
-                               host_id: @user_3.id)
-      @party_3 = Party.create!(movie_id: 3, duration: 74, date: '12/11/2022', start_time: '16:30',
-                               host_id: @user_2.id)
+      @party_1 = Party.create!(movie_id: 8, duration: 80, date: '2023/8/10', start_time: '21:00', host_id: @user_1.id, movie_runtime: 80)
+      @party_2 = Party.create!(movie_id: 2, duration: 73, date: '10/12/2022', start_time: '18:00', host_id: @user_3.id, movie_runtime: 73)
+      @party_3 = Party.create!(movie_id: 3, duration: 74, date: '12/11/2022', start_time: '16:30', host_id: @user_2.id, movie_runtime: 70)
     end
 
     it 'has start_date and time' do

@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 13 Oct 2022 19:36:11 GMT
+      - Fri, 14 Oct 2022 17:06:21 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,25 +42,23 @@ http_interactions:
       X-Memc-Key:
       - aae2e4d0c51d1341d99d674354773c0ef58fa984
       X-Memc-Age:
-      - '15848'
+      - '630'
       X-Memc-Expires:
-      - '21'
+      - '17131'
       Etag:
       - W/"1cc09dbd459da8b7ce401206745767bc"
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Hit from cloudfront
+      - Miss from cloudfront
       Via:
-      - 1.1 d9fe97589e952f97209f7a422c89d876.cloudfront.net (CloudFront)
+      - 1.1 cf7db6af8b8a86ebeb9fc938221e81da.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - i_PEjD_l0CMaKoGaY87sfB4UXbvEhdzk79WuILRudD1MpO7WGaSbTA==
-      Age:
-      - '8438'
+      - 5_TSD3Df7KTKkqDSNPVXr-G1Fb8xbHbhMA-N5_B6LjC1sYi76L3Oeg==
     body:
       encoding: UTF-8
       string: "{\"id\":271110,\"page\":1,\"results\":[{\"author\":\"Frank Ochieng\",\"author_details\":{\"name\":\"Frank
@@ -296,7 +294,7 @@ http_interactions:
         were disbanded.\",\"created_at\":\"2020-01-21T14:45:43.856Z\",\"id\":\"5e270e97168935000f34c58a\",\"updated_at\":\"2021-06-23T15:58:33.159Z\",\"url\":\"https://www.themoviedb.org/review/5e270e97168935000f34c58a\"},{\"author\":\"EricHill\",\"author_details\":{\"name\":\"\",\"username\":\"EricHill\",\"avatar_path\":\"/qRTZgvhgMkzIuHz7OvDYjxctVDj.jpg\",\"rating\":null},\"content\":\"Spiderman
         and Black Panther's introduction to this movie made it a whole lot better.
         And we can expect that that is a foreshadow for their upcoming movies, too.\",\"created_at\":\"2020-01-23T02:41:56.747Z\",\"id\":\"5e2907f498f1f10018f529ea\",\"updated_at\":\"2021-06-23T15:58:33.273Z\",\"url\":\"https://www.themoviedb.org/review/5e2907f498f1f10018f529ea\"}],\"total_pages\":2,\"total_results\":23}"
-  recorded_at: Thu, 13 Oct 2022 21:56:49 GMT
+  recorded_at: Fri, 14 Oct 2022 17:06:21 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/271110/reviews?api_key=<API Key>&language=en-US&page=2
@@ -322,7 +320,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 13 Oct 2022 19:36:11 GMT
+      - Fri, 14 Oct 2022 17:06:21 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -335,29 +333,27 @@ http_interactions:
       Cache-Control:
       - public, max-age=28800
       X-Memc:
-      - MISS, STORE
+      - HIT
       X-Memc-Key:
       - 1b5a7ca59dc769ad61f44c8238e74aea68f22194
       X-Memc-Age:
-      - '0'
+      - '630'
       X-Memc-Expires:
-      - '17536'
-      Last-Modified:
-      - Tue, 04 Oct 2022 19:37:28 GMT
+      - '14248'
+      Etag:
+      - W/"407cd644d7cb31005e028c2d5cc25c09"
       Vary:
       - Accept-Encoding
       X-Cache:
-      - Hit from cloudfront
+      - Miss from cloudfront
       Via:
-      - 1.1 5257b3c7acd3727a389946b312557ff2.cloudfront.net (CloudFront)
+      - 1.1 f6992241dd15e99fe1ce21d807856f16.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - OC3ZYdEwl-on4Wj8Fil95OaY82zwb5ZPPj4oU_zXojQdHRSJM8F41g==
-      Age:
-      - '8439'
+      - By6rcXl-a_Fpm-z1UrG_L57yRcTQTrSpPXbGmzPIdnQeKxMs1AYidg==
     body:
       encoding: UTF-8
       string: '{"id":271110,"page":2,"results":[{"author":"JonathanGreen","author_details":{"name":"","username":"JonathanGreen","avatar_path":"/foos2Ri8RrJyh6zMHtDNKwVgnHo.jpg","rating":null},"content":"This
@@ -392,5 +388,5 @@ http_interactions:
         title, I get it''s the titular character''s arc, but I feel like it does the
         film a slight disservice - it''s impacts much more than Captain America.\r\n\r\nThat''s
         not a big deal, at all, though. No doubt in my mind: this is superb!","created_at":"2021-01-20T01:17:14.174Z","id":"6007849aaf2da8003e90594f","updated_at":"2021-06-23T15:58:50.332Z","url":"https://www.themoviedb.org/review/6007849aaf2da8003e90594f"}],"total_pages":2,"total_results":23}'
-  recorded_at: Thu, 13 Oct 2022 21:56:49 GMT
+  recorded_at: Fri, 14 Oct 2022 17:06:21 GMT
 recorded_with: VCR 6.1.0
