@@ -2,29 +2,29 @@ require 'rails_helper'
 
 RSpec.describe 'User Viewing Party New Page', :vcr do
   before :each do
-    @user1 = User.create(name: "Jake", email: "imjakekim@gmail.com")
-    @user2 = User.create(name: "Riley", email: "rileybmccullough@gmail.com")
-    @user3 = User.create(name: "123", email: "123@gmail.com")
-    @user4 = User.create(name: "abc", email: "abc@gmail.com")
+    @user1 = User.create(name: 'Jake', email: 'imjakekim@gmail.com')
+    @user2 = User.create(name: 'Riley', email: 'rileybmccullough@gmail.com')
+    @user3 = User.create(name: '123', email: '123@gmail.com')
+    @user4 = User.create(name: 'abc', email: 'abc@gmail.com')
   end
 
   it 'has required fixed content on new page' do
     visit "/users/#{@user1.id}/movies/238/viewing_party/new"
 
-    expect(page).to have_button("Discover Page")
-    expect(page).to have_button("Create Party")
-    expect(page).to have_content("Movie Title")
-    expect(page).to have_content("Duration of Party")
-    expect(page).to have_content("Day")
-    expect(page).to have_content("Start Time")
-    expect(page).to have_content("Invite Other Users")
+    expect(page).to have_button('Discover Page')
+    expect(page).to have_button('Create Party')
+    expect(page).to have_content('Movie Title')
+    expect(page).to have_content('Duration of Party')
+    expect(page).to have_content('Day')
+    expect(page).to have_content('Start Time')
+    expect(page).to have_content('Invite Other Users')
   end
 
   it 'has required varying content on new page' do
     visit "/users/#{@user1.id}/movies/238/viewing_party/new"
 
-    expect(page).to have_content("The Godfather")
-    expect(page).to have_content("Riley (rileybmccullough@gmail.com)")
+    expect(page).to have_content('The Godfather')
+    expect(page).to have_content('Riley (rileybmccullough@gmail.com)')
   end
 
   it 'can use the Discover Page button to go back' do
@@ -61,7 +61,7 @@ RSpec.describe 'User Viewing Party New Page', :vcr do
     newest_view_party = ViewingParty.find_by(movie_id: 238)
 
     expect(current_path).to eq("/users/#{@user1.id}")
-    expect(page).to have_content("hosting")
+    expect(page).to have_content('hosting')
     expect(newest_view_party)
     expect(ViewingPartyUser.find_by(viewing_party_id: newest_view_party.id, user_id: @user1.id).status).to eq('hosting')
     expect(ViewingPartyUser.find_by(viewing_party_id: newest_view_party.id, user_id: @user2.id).status).to eq('invited')
@@ -111,5 +111,4 @@ RSpec.describe 'User Viewing Party New Page', :vcr do
     newest_view_party = ViewingParty.find_by(length: 360)
     expect(newest_view_party).to eq(nil)
   end
-
 end
