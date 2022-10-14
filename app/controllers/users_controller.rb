@@ -46,8 +46,4 @@ class UsersController < ApplicationController
   def user_params
     params.permit(:email, :name, :password, :password_confirmation)
   end
-
-  def set_user
-    @user = current_user
-  end
 end
