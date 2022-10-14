@@ -34,7 +34,7 @@ RSpec.describe MoviesService do
   describe 'details' do
     it 'returns details of a movie given its id' do
       VCR.use_cassette('movie-detailed') do
-        movie_details = MoviesService.details(438148)
+        movie_details = MoviesService.details(438_148)
 
         expect(movie_details).to be_a(Hash)
         expect(movie_details).to have_key(:vote_average)
