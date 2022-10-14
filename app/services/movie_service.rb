@@ -1,6 +1,4 @@
 require 'faraday'
-require 'pry'
-
 class MovieService
 
   def self.request(movie_id = '', path = '', page = '')
