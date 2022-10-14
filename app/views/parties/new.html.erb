@@ -2,7 +2,7 @@
 
 <%= form_with url: "/users/#{params[:user_id]}/movies/#{@movie.id}/viewing-party/create", method: :post do |f| %>
   <%= f.label :duration, "Duration of Party" %>
-  <%= f.number_field :duration %>
+  <%= f.number_field :duration, value: @movie.runtime %>
   <br>
   <%= f.label :date, "Day" %>
   <%= f.date_field :date %>

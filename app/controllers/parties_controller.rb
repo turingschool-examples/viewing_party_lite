@@ -13,6 +13,7 @@ class PartiesController < ApplicationController
           UserParty.create(party_id: party.id, user_id: user_id, user_status: 1)
       end
     end
+    redirect_to user_path(params[:user_id])
   end
 
 
