@@ -22,7 +22,7 @@ RSpec.describe ViewingParty, type: :model do
         end
 
         it 'has a factory that works', :vcr do
-            vp_1 = create(:viewing_party)
+            vp_1 = create(:viewing_party, movie_id: 238)
             expect(vp_1.host).to be_instance_of(User)
         end
     end
