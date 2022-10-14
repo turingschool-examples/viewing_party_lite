@@ -4,18 +4,65 @@
 
 <div id="viewing_parties">
   <h3> Viewing Parties </h3>
-  <% @user.viewing_parties.each do |party| %>
-    <% film = @movies.find do |movie| %> 
-      <% movie.movie_id == party.movie_id %>
-    <% end %>
-    <% image_uri = film.image_path %>
-    <%= image_tag("https://image.tmdb.org/t/p/w300/#{image_uri}") %><br>
-    <%= film.title %><br>
-    <%= party.date.strftime('%B %d, %Y') %><br>
-    <%= party.start_time.strftime('%I:%M %p') %><br>
-    <% user_role = @user.user_viewing_parties.find do |user_viewing_party| %>
-      <% user_viewing_party.viewing_party_id == party.id %>
-    <% end %>
-    <%= user_role.role %><br><br>
-  <% end %>  
+    <% @user.viewing_parties.each do |party| %>
+      <div id="viewing_party_<%= "#{party.id}" %>" style="border: 2px solid; width: 300px; padding: 10px; margin: 10px; float: left;">
+          <% film = @movies.find do |movie| %> 
+            <% movie.movie_id == party.movie_id %>
+          <% end %>
+
+          <%= image_tag("https://image.tmdb.org/t/p/w300/#{film.image_path}") %><br>
+          <%= link_to "#{film.title}", user_movie_path(@user, film.movie_id) %><br>
+          <%= party.date.strftime('%B %d, %Y') %><br>
+          <%= party.start_time.strftime('%I:%M %p') %><br>
+          <% user_role = @user.user_viewing_parties.find do |user_viewing_party| %>
+            <% user_viewing_party.viewing_party_id == party.id %>
+          <% end %>
+          <%= user_role.role %><br><br>
+
+          <% if user_role.role == "Hosting" %>
+            <div><b><u>Invitees:</u></b></div>
+              <% invitees = @user_viewing_parties.find_all do |user_viewing_party| %>
+                <% user_viewing_party.viewing_party_id == party.id && user_viewing_party.role == "Invited" %>
+              <% end %>
+              <% invitee_ids = invitees.map do |invitee| %>
+                <% invitee.user_id %>
+              <% end %>
+              <% invitee_users = invitee_ids.flat_map do |invitee_id| %>
+                <% @users.find_all do |user| %>
+                  <% user.id == invitee_id %>
+                <% end %>
+              <% end %>
+                <div><b><%= @user.name %> (<%= @user.email %>)</b></div>
+              <% invitee_users.each do |user| %>
+                <div><%= user.name %> (<%= user.email %>)</div>
+              <% end %>
+          <% else %>
+              <% host_viewing_party = @user_viewing_parties.find do |user_viewing_party| %>
+                <% user_viewing_party.viewing_party_id == party.id && user_viewing_party.role == "Hosting" %>
+              <% end %>
+              <% host = @users.find do |user|%>
+                <% user.id == host_viewing_party.user_id %>
+              <% end %>
+
+            <div><b><u>Host:</u></b></div> 
+            <div><%= host.name %> (<%= host.email %>)</div><br>
+              
+            <div><b><u>Invitees:</u></b></div>
+              <% invitees = @user_viewing_parties.find_all do |user_viewing_party| %>
+                <% user_viewing_party.viewing_party_id == party.id && user_viewing_party.role == "Invited" %>
+              <% end %>
+              <% invitee_ids = invitees.map do |invitee| %>
+                <% invitee.user_id %>
+              <% end %>
+              <% invitee_users = invitee_ids.flat_map do |invitee_id| %>
+                <% @users.find_all do |user| %>
+                  <% user.id == invitee_id %>
+                <% end %>
+              <% end %>
+              <% invitee_users.each do |user| %>
+                <div><%= user.name %> (<%= user.email %>)</div>
+              <% end %>
+          <% end %>
+      </div>
+    <% end %>  
 </div>
