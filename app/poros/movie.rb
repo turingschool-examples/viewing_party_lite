@@ -22,6 +22,9 @@ class Movie
     @reviews = movie_reviews[:results].map do |review|
       {author: review[:author], content: review[:content]}
     end
-    @image_path = "http://image.tmdb.org/t/p/w500" + movie_images[:posters].first[:file_path]
+    @image_path = nil
+    if movie_images[:posters].first
+      @image_path = "http://image.tmdb.org/t/p/w500" + movie_images[:posters].first[:file_path]
+    end
   end
 end
