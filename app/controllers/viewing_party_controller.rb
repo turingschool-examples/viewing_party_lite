@@ -8,14 +8,10 @@ class ViewingPartyController < ApplicationController
     @users = User.other_users(@user)
   end
 
-  # TODO: Need to make this method shorter later on
   def create
     party = ViewingParty.new(view_params)
     if party.save && view_params[:duration].to_i >= current_movie.runtime
-      user_view_params.each do |user_arr|
-        UserViewingParty.create!(user_id: user_arr[0], viewing_party_id: party.id, role: 0) if user_arr[1].to_i == 1
-      end
-      UserViewingParty.create!(user_id: params[:user_id], viewing_party_id: party.id, role: 1)
+      creation_factory(party)
       redirect_to user_path(current_user), notice: 'View Party created successfully'
     else
       redirect_to new_user_movie_viewing_party_path(current_user, params[:movie_id]),
@@ -24,6 +20,13 @@ class ViewingPartyController < ApplicationController
   end
 
   private
+
+  def creation_factory(party)
+    user_view_params.each do |user_arr|
+      UserViewingParty.create!(user_id: user_arr[0], viewing_party_id: party.id, role: 0) if user_arr[1].to_i == 1
+    end
+    UserViewingParty.create!(user_id: params[:user_id], viewing_party_id: party.id, role: 1)
+  end
 
   def view_params
     params.require(:form_info).permit(:duration, :date, :time, :movie_id)

@@ -14,19 +14,15 @@
             <li><%= vp.date.strftime('%B %d, %Y %I:%M %p') %></li>
             <li id="role">Your Role:<%= vp.current_party(@user.id).role %></li>
             <li id="host">Host By: <%=vp.host%> (you) </li>
-            <li>
               Other Viewers:
               <ul id="viewers">
                 <%vp.users.each do |user|%>
-                  <%unless vp.host == @user.name%>
-                    <li><%=user.name %></li>
-                  <%end%>
+                    <li><%=user.name unless vp.host == user.name%></li>
                 <%end%>
               </ul>
             </li>
             <br>
-            <br>
-        <%end%></li>
+        <%end%>
     <%end%>
       </div>
     </ul>
@@ -34,27 +30,28 @@
     <ul>
     <h2>Invited Party/Parties</h2>
     <% @user.viewing_parties.each_with_index do |vp, image| %>
-      <% if vp.host != @user.name%>
-          <li><%= link_to vp.current_movie.title, user_movie_path(@user.id, vp.movie_id)  %></li>
-          <img alt = <%= @movies[image].title %> src="https://image.tmdb.org/t/p/w200/<%= @movies[image].image %>">
-          <li><%= vp.date.strftime('%B %d, %Y %I:%M %p') %></li>
-          <li id="role">Your Role: <%= vp.current_party(@user.id).role %></li>
-          <li id="host">Host By: <%=vp.host%></li>
-          <li>Viewers:
-            <ul id="viewers">
-              <%vp.users.each do |user|%>
-                <% unless vp.host == user.name%>
-                  <%if user.name == @user.name%>
-                    <li><strong id="current_user"> <%=user.name%> </strong></li>
-                  <%else%>
-                    <li><%=user.name %></li>
+      <div id="party_invite-<%= vp.id %>">
+        <% unless vp.host == @user.name%>
+            <li><%= link_to vp.current_movie.title, user_movie_path(@user.id, vp.movie_id)  %></li>
+            <img alt = <%= @movies[image].title %> src="https://image.tmdb.org/t/p/w200/<%= @movies[image].image %>">
+            <li><%= vp.date.strftime('%B %d, %Y %I:%M %p') %></li>
+            <li id="role">Your Role: <%= vp.current_party(@user.id).role %></li>
+            <li id="host">Host By: <%=vp.host%></li>
+            Viewers:
+              <ul id="viewers">
+                <%vp.users.each do |user|%>
+                  <% unless vp.host == user.name%>
+                    <%if user.name == @user.name%>
+                      <li><strong id="current_user"> <%=user.name%> </strong></li>
+                    <%else%>
+                      <li><%=user.name %></li>
+                    <%end%>
                   <%end%>
                 <%end%>
-              <%end%>
-          </li>
-      <%end%>
+              </ul>
+              <br>
+        <%end%>
     <%end%>
-          <br>
-          <br>
-    </ul>
+    </div>
+  </ul>
 </section>
