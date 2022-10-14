@@ -4,7 +4,7 @@ class ViewingPartiesController < ApplicationController
     @user = User.find(params[:user_id])
     @viewing_party = ViewingParty.new
     @movie = Movie.new(MovieService.get_movie_data(params[:movie_id]))
-    @all_other_users = User.all.where.not("id = ?", params[:user_id])
+    @all_users = User.all
   end
 
   def create
@@ -24,11 +24,8 @@ class ViewingPartiesController < ApplicationController
   private
 
   def viewing_party_params
-    params[:viewing_party][:start_time] = Time.new(params[:start]["date(1i)"].to_i,
-                                                    params[:start]["date(2i)"].to_i,
-                                                    params[:start]["date(3i)"].to_i,
-                                                    params[:start]["time(4i)"].to_i,
-                                                    params[:start]["time(5i)"].to_i)
+    params[:viewing_party][:start_time] =
+      "#{params[:viewing_party][:date]} #{params[:viewing_party][:time]}".to_datetime
     params.require(:viewing_party).permit(:host, :image_path, :movie_title, :start_time, :duration, :movie_id)
   end
 end

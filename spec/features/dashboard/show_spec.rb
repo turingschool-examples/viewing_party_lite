@@ -27,7 +27,7 @@ RSpec.describe 'User Show Page' do
         @awesome_host = create(:user)
         @other_user = create(:user)
         # create 4 viewing parties each hosted by awesome_host
-        @viewing_party_invites = create_list(:viewing_party, 4, host: @awesome_host.user_name)
+        @viewing_party_invites = create_list(:viewing_party, 4, host: @awesome_host.user_name, movie_id: 550)
         # creates 5 viewing_party_users, three rando invites, one for the user and one for the host for each viewing party
         @viewing_party_invites.each do |viewing_party|
           create_list(:viewing_party_user, 3, viewing_party: viewing_party)
@@ -35,17 +35,17 @@ RSpec.describe 'User Show Page' do
           create(:viewing_party_user, viewing_party: viewing_party, user: @awesome_host)
         end
         # create 4 viewing parties each hosted by user
-        @viewing_party_hosting = create_list(:viewing_party, 4, host: @user.user_name)
+        @viewing_party_hosting = create_list(:viewing_party, 4, host: @user.user_name, movie_id: 550)
         # creates 4 viewing_party_users, three rando invites, one for the user for each viewing party
         @viewing_party_hosting.each do |viewing_party|
           create_list(:viewing_party_user, 3, viewing_party: viewing_party)
           create(:viewing_party_user, viewing_party: viewing_party, user: @user)
         end
         # creates viewing party not associated with the user with three rando invites
-        @other_viewing_party = create(:viewing_party, host: @other_user.user_name)
+        @other_viewing_party = create(:viewing_party, host: @other_user.user_name, movie_id: 550)
         create_list(:viewing_party_user, 3, viewing_party: @other_viewing_party)
         # creates viewing party where only the user is invited
-        @lonely_viewing_party = create(:viewing_party, host: @user.user_name)
+        @lonely_viewing_party = create(:viewing_party, host: @user.user_name, movie_id: 550)
         create(:viewing_party_user, viewing_party: @lonely_viewing_party, user: @user)
         visit user_path(@user)
       end
@@ -68,12 +68,13 @@ RSpec.describe 'User Show Page' do
 
       describe 'each viewing party contains' do
         it 'has a movie title that is a link to movie show page' do
-          within '#invited_parties' do
-            @viewing_party_invites.each do |party|
+          VCR.use_cassette('fight_club_movie_data_v1') do
+            within '#invited_parties' do
+              party = @viewing_party_invites.first
               within "#party_#{party.id}" do
                 expect(page).to have_link(party.movie_title)
-                # click_link("#{party.movie_title}")
-                # expect(current_path).to eq()
+                click_link("#{party.movie_title}")
+                expect(current_path).to eq(user_movie_path(@user, party.movie_id))
               end
             end
           end

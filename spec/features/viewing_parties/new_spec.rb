@@ -28,14 +28,11 @@ RSpec.describe 'New Viewing Party' do
       end
 
       it 'should have date field' do
-        expect(page).to have_field(:start_date_1i)
-        expect(page).to have_field(:start_date_2i)
-        expect(page).to have_field(:start_date_3i)
+        expect(page).to have_field(:viewing_party_date)
       end
 
       it 'should have time field' do
-        expect(page).to have_field(:start_time_4i)
-        expect(page).to have_field(:start_time_5i)
+        expect(page).to have_field(:viewing_party_time)
       end
 
       it 'has field called invited_users with checkboxes for each user in the system' do
@@ -58,12 +55,8 @@ RSpec.describe 'New Viewing Party' do
         it 'returns the user back to their dashboard with new viewing party present' do
           # save_and_open_page
           fill_in :viewing_party_duration, with: 155
-          select('2022', from: :start_date_1i)
-          select('11', from: :start_date_2i)
-          select('30', from: :start_date_3i)
-
-          select('17', from: :start_time_4i)
-          select('53', from: :start_time_5i)
+          fill_in :viewing_party_date, with: '2022-11-30'
+          fill_in :viewing_party_time, with: '15:21'
 
           @friends.each do |user|
             check "viewing_party_invited_users_#{user.id}"
@@ -80,12 +73,8 @@ RSpec.describe 'New Viewing Party' do
 
         it 'has the viewing party present on each invited users dashboard' do
           fill_in :viewing_party_duration, with: 155
-          select('2022', from: :start_date_1i)
-          select('11', from: :start_date_2i)
-          select('30', from: :start_date_3i)
-
-          select('17', from: :start_time_4i)
-          select('53', from: :start_time_5i)
+          fill_in :viewing_party_date, with: '2022-11-30'
+          fill_in :viewing_party_time, with: '15:21'
 
           @friends.each do |user|
             check "viewing_party_invited_users_#{user.id}"
