@@ -24,8 +24,6 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Date:
-      - Thu, 13 Oct 2022 06:00:34 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -35,16 +33,18 @@ http_interactions:
       Access-Control-Expose-Headers:
       - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
         Content-Length, Content-Range
-      Cache-Control:
-      - public, max-age=28800
       X-Memc:
       - HIT
       X-Memc-Key:
       - ec9bad96442473da61ea8ff140b4dad3a3c640b0
       X-Memc-Age:
-      - '12831'
+      - '2029'
       X-Memc-Expires:
-      - '4180'
+      - '14982'
+      Date:
+      - Fri, 14 Oct 2022 01:05:03 GMT
+      Cache-Control:
+      - public, max-age=28800
       Etag:
       - W/"436c73fae9a24dbed4b50a03c29f2c18"
       Vary:
@@ -52,15 +52,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 115597c7d21606f891539db22623f5b6.cloudfront.net (CloudFront)
+      - 1.1 90a2caaefc6601d7221c81fd5d65a2ca.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - LAX53-P3
+      - LAX3-C3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - iOhJO5fuCPbSHxdesWB-OQFeuyBvoUTI8gRwo02_fm0OaLa1YvE4Bw==
+      - DN6EM5XQ-FV9FZsIZIKNEAC4_bdAQ13eDgzb8vvXpLQeZBkm3B-H6A==
       Age:
-      - '4786'
+      - '14'
     body:
       encoding: UTF-8
       string: '{"adult":false,"backdrop_path":null,"belongs_to_collection":null,"budget":42000,"genres":[{"id":99,"name":"Documentary"}],"homepage":"http://lifeinloops.com","id":8,"imdb_id":"tt0825671","original_language":"en","original_title":"Life
@@ -78,7 +78,7 @@ http_interactions:
         continents. The film also makes an original contribution to the discussion
         on new trends in documentary filmmaking. Written by KARLOVY VARY IFF 2006","popularity":2.259,"poster_path":"/x7Sz339F2oC8mBf0DHCQpKizXaL.jpg","production_companies":[{"id":19123,"logo_path":null,"name":"inLoops","origin_country":""}],"production_countries":[{"iso_3166_1":"AT","name":"Austria"}],"release_date":"2006-01-01","revenue":0,"runtime":80,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Hindi","iso_639_1":"hi","name":"हिन्दी"},{"english_name":"Japanese","iso_639_1":"ja","name":"日本語"},{"english_name":"Russian","iso_639_1":"ru","name":"Pусский"},{"english_name":"Spanish","iso_639_1":"es","name":"Español"}],"status":"Released","tagline":"A
         Megacities remix.","title":"Life in Loops (A Megacities RMX)","video":false,"vote_average":7.738,"vote_count":21}'
-  recorded_at: Thu, 13 Oct 2022 07:20:20 GMT
+  recorded_at: Fri, 14 Oct 2022 01:05:17 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/2?api_key=<API Key>&language=en-US
@@ -104,7 +104,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 13 Oct 2022 06:00:34 GMT
+      - Fri, 14 Oct 2022 01:05:05 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -121,9 +121,9 @@ http_interactions:
       X-Memc-Key:
       - 511f57fe9dfe5dddca08773dca06d854df439acd
       X-Memc-Age:
-      - '6006'
+      - '9764'
       X-Memc-Expires:
-      - '9831'
+      - '5764'
       Etag:
       - W/"487dfa50ac6276919decf146af59c7a3"
       Vary:
@@ -131,15 +131,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 ef88a3146516c439b6a29b5eb3daa20a.cloudfront.net (CloudFront)
+      - 1.1 0fad40f1c8b2873ec54a548e6658b270.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - LAX53-P3
+      - LAX3-C3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - sSrvoHMDkYLk7eiDWmsVGh_qurMDuyFuVAy_tjRm3zSSOkTWILdPRA==
+      - Ts80FHnkaIyZeoRmp7vfrg8h1dzDvpJ9L55n-Og0ryRdmPlA80zjpg==
       Age:
-      - '4786'
+      - '13'
     body:
       encoding: UTF-8
       string: '{"adult":false,"backdrop_path":"/hQ4pYsIbP22TMXOUdSfC2mjWrO0.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"},{"id":35,"name":"Comedy"},{"id":80,"name":"Crime"}],"homepage":"","id":2,"imdb_id":"tt0094675","original_language":"fi","original_title":"Ariel","overview":"Taisto
@@ -148,7 +148,7 @@ http_interactions:
         about leaving the country and starting a new life. He escapes from prison
         but things don''t go as planned...","popularity":28.384,"poster_path":"/ojDg0PGvs6R9xYFodRct2kdI6wC.jpg","production_companies":[{"id":2303,"logo_path":null,"name":"Villealfa
         Filmproductions","origin_country":"FI"}],"production_countries":[{"iso_3166_1":"FI","name":"Finland"}],"release_date":"1988-10-21","revenue":0,"runtime":73,"spoken_languages":[{"english_name":"Finnish","iso_639_1":"fi","name":"suomi"}],"status":"Released","tagline":"","title":"Ariel","video":false,"vote_average":6.958,"vote_count":180}'
-  recorded_at: Thu, 13 Oct 2022 07:20:20 GMT
+  recorded_at: Fri, 14 Oct 2022 01:05:18 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/2?api_key=<API Key>&language=en-US
@@ -174,7 +174,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 13 Oct 2022 06:00:34 GMT
+      - Fri, 14 Oct 2022 01:05:05 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -191,9 +191,9 @@ http_interactions:
       X-Memc-Key:
       - 511f57fe9dfe5dddca08773dca06d854df439acd
       X-Memc-Age:
-      - '6006'
+      - '9764'
       X-Memc-Expires:
-      - '9831'
+      - '5764'
       Etag:
       - W/"487dfa50ac6276919decf146af59c7a3"
       Vary:
@@ -201,15 +201,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 2e153f50cab65b730e39dcf802397e06.cloudfront.net (CloudFront)
+      - 1.1 a881cb8cde2d5f28c5d1e3662b510ada.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - LAX53-P3
+      - LAX3-C3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 21H7qiuzORwIUQZPVeTlZArOWcV5__U2JD9EZV5K1AbynJUecKfM_g==
+      - IxmCJJ0zLc0ZeFvvaHb987m_dhc_ZnnYprXPO2b90Zp4UZYTXYz2-A==
       Age:
-      - '4786'
+      - '13'
     body:
       encoding: UTF-8
       string: '{"adult":false,"backdrop_path":"/hQ4pYsIbP22TMXOUdSfC2mjWrO0.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"},{"id":35,"name":"Comedy"},{"id":80,"name":"Crime"}],"homepage":"","id":2,"imdb_id":"tt0094675","original_language":"fi","original_title":"Ariel","overview":"Taisto
@@ -218,5 +218,5 @@ http_interactions:
         about leaving the country and starting a new life. He escapes from prison
         but things don''t go as planned...","popularity":28.384,"poster_path":"/ojDg0PGvs6R9xYFodRct2kdI6wC.jpg","production_companies":[{"id":2303,"logo_path":null,"name":"Villealfa
         Filmproductions","origin_country":"FI"}],"production_countries":[{"iso_3166_1":"FI","name":"Finland"}],"release_date":"1988-10-21","revenue":0,"runtime":73,"spoken_languages":[{"english_name":"Finnish","iso_639_1":"fi","name":"suomi"}],"status":"Released","tagline":"","title":"Ariel","video":false,"vote_average":6.958,"vote_count":180}'
-  recorded_at: Thu, 13 Oct 2022 07:20:20 GMT
+  recorded_at: Fri, 14 Oct 2022 01:05:18 GMT
 recorded_with: VCR 6.1.0
