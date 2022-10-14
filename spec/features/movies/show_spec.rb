@@ -9,6 +9,18 @@ RSpec.describe 'User Movie Show Page' do
       movie_data = JSON.parse(movie, symbolize_names: true)
       @fight_club = Movie.new(movie_data)
 
+      cast = File.read('./spec/fixtures/fight_club_cast.json')
+      cast_data = JSON.parse(cast, symbolize_names: true)
+      @fight_club_cast = cast_data[:cast].map do |member|
+        Cast.new(member)
+      end[0..9]
+
+      review = File.read('./spec/fixtures/fight_club_review.json')
+      review_data = JSON.parse(review, symbolize_names: true)
+      @fight_club_reviews = review_data[:results].map do |review|
+        Review.new(review)
+      end
+
     end
 
     it 'has a button to create a viewing party' do
@@ -26,7 +38,7 @@ RSpec.describe 'User Movie Show Page' do
 
     it 'shows all the movie information' do
       visit user_movie_path(@user_1, @fight_club.id)
-      save_and_open_page
+    
       expect(page).to have_content(@fight_club.original_title)
 
       within("#movie-details") do
@@ -35,10 +47,18 @@ RSpec.describe 'User Movie Show Page' do
         expect(page).to have_content(@fight_club.standard_runtime)
         expect(page).to have_content(@fight_club.vote_average)
         expect(page).to have_content(@fight_club.vote_count)
-      end
-      #missing 10 cast members
-      #missing each reiews author and information
 
+      end
+
+      within("#cast-details") do
+        expect(page).to have_content(@fight_club_cast.last.name)
+        expect(page).to have_content(@fight_club_cast.last.character)
+      end
+
+      within("#review-details") do
+        expect(page).to have_content(@fight_club_reviews.first.author)
+        # expect(page).to have_content(@fight_club_reviews.last.content)
+      end
     end
   end
 end

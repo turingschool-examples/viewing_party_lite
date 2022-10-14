@@ -12,3 +12,19 @@
   <p>Vote Average: <%= @movie.vote_average %></p>
   <p>Vote Count: <%= @movie.vote_count %></p>
 </div>
+
+<div id="cast-details">
+  <p>Cast:</p>
+  <% @cast.each do |member| %>
+    <p><%= member.name %> as <%= member.character %></p>
+  <% end %>
+</div>
+<div id="review-details">
+  <p>Reviews:</p>
+  <% @reviews.each do |review| %>
+    <p><%= review.author %></p>
+
+    <p><%= review.content %></p>
+  <% end %>
+
+</div>
