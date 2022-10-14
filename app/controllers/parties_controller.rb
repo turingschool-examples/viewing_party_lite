@@ -9,8 +9,10 @@ class PartiesController < ApplicationController
   def create
     party = Party.create(movie_id: params[:movie_id], duration: params[:duration], date: params[:date], start_time: params[:start_time])
     UserParty.create(party_id: party.id, user_id: (params[:user_id]), user_status: 0)
-    params[:added_users].each do |user_id|
-        UserParty.create(party_id: party.id, user_id: user_id, user_status: 1)
+    if params[:added_users].present?
+      params[:added_users].each do |user_id|
+          UserParty.create(party_id: party.id, user_id: user_id, user_status: 1)
+      end
     end
   end
 
