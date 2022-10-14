@@ -35,4 +35,9 @@ class MoviesFacade
       SearchMovie.new(movie)
     end
   end
+
+  def self.find_movie_image(movie_id)
+    data = MovieService.get_movie_image(movie_id)
+    data[:backdrops][0][:file_path]
+  end
 end

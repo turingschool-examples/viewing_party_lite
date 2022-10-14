@@ -16,6 +16,11 @@ RSpec.describe 'Movie Details Page', type: :feature do
     stub_request(:get, 'https://api.themoviedb.org/3/movie/238/reviews').
       with(query: {'api_key' => ENV['movie_api_key']}).
       to_return(status: 200, body: json_response2)
+
+    json_response3 = File.open('./fixtures/godfather_image.json')
+    stub_request(:get, 'https://api.themoviedb.org/3/movie/238/images').
+      with(query: {'api_key' => ENV['movie_api_key']}).
+      to_return(status: 200, body: json_response3) 
   end
 
   describe 'When I visit movies detail page' do

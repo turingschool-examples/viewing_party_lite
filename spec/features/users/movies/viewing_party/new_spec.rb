@@ -6,6 +6,11 @@ RSpec.describe 'New viewing party page', type: :feature do
     stub_request(:get, 'https://api.themoviedb.org/3/movie/238').
       with(query: {'api_key' => ENV['movie_api_key']}).
       to_return(status: 200, body: json_response)
+
+    json_response2 = File.open('./fixtures/godfather_image.json')
+    stub_request(:get, 'https://api.themoviedb.org/3/movie/238/images').
+      with(query: {'api_key' => ENV['movie_api_key']}).
+      to_return(status: 200, body: json_response2) 
   end
   describe 'When I visit the new viewing party page' do
     it 'I should see the name of the movie title rendered above a form' do
@@ -71,7 +76,6 @@ RSpec.describe 'New viewing party page', type: :feature do
       user1 = User.create!(name: 'Becka', email: 'rebecka@gmail.com')
       user2 = User.create!(name: 'Mike', email: 'mike@turing.edu')
       user3 = User.create!(name: 'Meg', email: 'mstang@turing.edu')
-      user4 = User.create!(name: 'Erin', email: 'epintozzi@turing.edu')
 
       visit new_user_movie_viewing_party_path(user1, 238)
 
@@ -80,18 +84,18 @@ RSpec.describe 'New viewing party page', type: :feature do
       fill_in('Start Time', with: '7:00 PM')
 
       within "#invitee_#{user2.name}" do
-        check()
+        check
       end
 
       within "#invitee_#{user3.name}" do
-        check()
+        check
       end
 
       click_button('Create Party')
 
       expect(current_path).to eq(user_path(user1))
-      expect(page).to have_content("The Godfather")
-      expect(page).to have_content("Hosting")
+      expect(page).to have_content('The Godfather')
+      expect(page).to have_content('Hosting')
     end
 
     it 'the new event should be listed on other users dashboards who were invited to the party' do
@@ -107,11 +111,11 @@ RSpec.describe 'New viewing party page', type: :feature do
       fill_in('Start Time', with: '7:00 PM')
 
       within "#invitee_#{user2.name}" do
-        check()
+        check
       end
 
       within "#invitee_#{user3.name}" do
-        check()
+        check
       end
 
       click_button('Create Party')
@@ -137,15 +141,15 @@ RSpec.describe 'New viewing party page', type: :feature do
       visit new_user_movie_viewing_party_path(user1, 238)
 
       fill_in('Duration of Party', with: 177)
-      fill_in('Day', with: "")
+      fill_in('Day', with: '')
       fill_in('Start Time', with: '7:00')
 
       within "#invitee_#{user2.name}" do
-        check()
+        check
       end
 
       within "#invitee_#{user3.name}" do
-        check()
+        check
       end
 
       click_button('Create Party')

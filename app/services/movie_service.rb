@@ -28,6 +28,11 @@ class MovieService
     parse(response)
   end
 
+  def self.get_movie_image(movie_id)
+    response = self.conn.get("3/movie/#{movie_id}/images")
+    parse(response)
+  end
+
   private
 
   def self.conn
