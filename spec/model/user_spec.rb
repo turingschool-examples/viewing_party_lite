@@ -74,7 +74,7 @@ RSpec.describe User, type: :model do
       let!(:friend_2) { create :user }
       let!(:friend_3) { create :user }
 
-      xit 'accepts a hash from params and returns an array of user objects where original hash value = 1' do
+      it 'accepts a hash from params and returns an array of user objects where original hash value = 1' do
         params_hash = {
           friend_1.id.to_s => "1",
           friend_2.id.to_s => "1",

@@ -5,3 +5,4 @@ class ViewingParty < ApplicationRecord
   validates_presence_of :duration, :start_time
   validates_numericality_of :duration
 end
+

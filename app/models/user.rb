@@ -22,14 +22,14 @@ class User < ApplicationRecord
     viewing_parties.map { |party| party.movie_id }
   end
 
+  def set_host(viewing_party)
+    viewing_party_user = viewing_party_users.where(viewing_party_id: viewing_party.id)
+    viewing_party_user.update(hosting: true)
+  end
+
   def self.invited_users(param_hash)
-    # is this super sketchY?????
-    # another option - https://stackoverflow.com/questions/34949505/rails-5-unable-to-retrieve-hash-values-from-parameter
-    param_hash = param_hash.to_unsafe_h
-    param_hash.filter_map do |user_id,status|
-      user = User.find(user_id.to_i)
-      status = status.to_i
-      if status == 1
+    User.all.filter_map do |user|
+      if param_hash[user.id.to_s] == "1"
         user
       end
     end

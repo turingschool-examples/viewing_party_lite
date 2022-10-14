@@ -19,7 +19,7 @@ RSpec.describe 'The new viewing party page', :vcr do
         expect(page).to have_field('Duration', with: "#{@movie.runtime}") 
         
         fill_in :start_time, with: Faker::Time.forward(days: 7, period: :evening)
-
+        
         check "_users_#{@user_2.id}"
         click_button "Create Party Viewing Party for #{@movie.title}"
 
