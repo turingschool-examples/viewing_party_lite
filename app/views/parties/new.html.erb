@@ -1,0 +1,31 @@
+<h1>Create your new Viewing Party for <%= @movie.title %></h1>
+
+<p>Fill out your party deets below</p>
+
+<%= form_with url: user_movie_parties_path(@user, @movie.id), method: :post, local: true do |form| %>
+  <%= form.label :duration_in_minutes %>
+  <%= form.number_field :duration, value: @movie.runtime, min: @movie.runtime %>
+
+  <%= form.date_field :date, min: Date.today %>
+
+  <%= form.time_field :start_time %>
+  <%= form.label :start_time %>
+  <%# <%= form.time_select :start_time, { start_hour: 7, end_hour: 23, ampm: true, :minute_step => 15, :time_separator => "" } %>
+  <%# <%= form.label :start_date %>
+  <%#<%= date_select :party, :start_date %>
+  <h2><%= form.label :invite, "Invite your friends!" %></h2>
+  <p><%= form.collection_check_boxes :invitees, @users, :id, :email  %></p>
+  <%#<% @users.each do |user|%>
+   <%#<p><%= form.check_box "user_#{user.id}" %>
+   <%# <%= form.label user.id, "#{user.name} -- email: #{user.email}" %></p>
+  <%# <% end %>
+   <%# <%= form.fields_for :users do |user_form| %>
+     <%# <% @users.each do |user| %>
+     <%#  <p> <%= user_form.check_box user.id %>
+       <%#  <%= user_form.label user.id, "#{user.name} -- email: #{user.email}"%>
+     <%# <% end %>
+   <%# <% end %>
+  <strong><%= form.label :Create_Party %></strong>
+  <strong><%= form.submit :Submit %></strong>
+<% end %>
+

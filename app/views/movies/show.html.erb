@@ -1,6 +1,6 @@
 <h1><%= @movie.title %>'s show page</h1>
 <br>
-<strong><%= button_to "Create Viewing Party", new_user_movie_viewing_party_path(@user, @movie.id), method: :get %></strong>
+<strong><%= button_to "Create Viewing Party", new_user_movie_party_path(@user, @movie.id), method: :get %></strong>
 <br>
 <h3><%= button_to "Return to Discover Page", user_discover_path(@user), method: :get %></h3>
 <br>
@@ -11,7 +11,7 @@
 <p>Summary: <%= @movie.summary %></p>
 <p>Cast: <%= @movie.cast %></p>
 <p>Review count: <%= @movie.reviews.count %></p>
-Reviews:
+<h3>Reviews:</h3>
 <% @movie.reviews.each do |review| %>
 <p>Author: <%= review[:author] %></p>
 <p>Review: <%= review[:content] %></p>

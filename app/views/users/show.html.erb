@@ -3,3 +3,13 @@
 <strong><%= button_to "Discover Movies", user_discover_path(@user), method: :get %></strong>
 <br>
 <h2>Viewing Parties:</h2>
+
+
+<p><% @parties.each do |party| %></p>
+  <p>Movie: <%= link_to party.movie(party.movie_id).title, user_movie_path(@user, party.movie_id)  %></p>
+  <p>Duration: <%= party.duration %></p>
+  <p>Host Status: True</p>
+  <p>Date: <%= party.date %></p>
+  <p>Start Time: <%= party.start_time %></p>
+
+<% end %>

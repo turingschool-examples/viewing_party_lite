@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+    @parties = @user.parties
+
+    ##@hosted_parties = @user.parties.where(host_status: true)
   end
 
   def discover
@@ -25,6 +28,5 @@ class UsersController < ApplicationController
 
   def user_params
     params.permit(:name, :email)
-    #eif
   end
 end

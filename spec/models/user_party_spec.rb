@@ -9,7 +9,7 @@ RSpec.describe UserParty, type: :model do
   end
 
   describe 'validations' do
-    it { should validate_presence_of(:host_status) }
+   # http://www.chrisrolle.com/en/blog/boolean-attribute-validation
   end
 
   describe 'relationships' do

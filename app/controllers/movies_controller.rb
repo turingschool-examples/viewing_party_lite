@@ -1,10 +1,15 @@
 class MoviesController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    if params[:search]
-      @movies = MoviesFacade.searched_movies(params[:search])
+    unless params[:search] == ""
+      if params[:search]
+        @movies = MoviesFacade.searched_movies(params[:search])
+      else
+        @movies = MoviesFacade.top_rated_movies
+      end
     else
-      @movies = MoviesFacade.top_rated_movies
+      redirect_to user_discover_path(@user)
+      flash[:alert] = "Search Field Can't Be Blank"
     end
   end
 

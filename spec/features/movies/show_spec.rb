@@ -15,7 +15,7 @@ RSpec.describe 'Movies show page' do
       # _ Button to create a viewing party
       expect(page).to have_button("Create Viewing Party")
       click_button("Create Viewing Party")
-      expect(current_path).to eq(new_user_movie_viewing_party_path(@user, @movie.id))
+      expect(current_path).to eq(new_user_movie_party_path(@user, @movie.id))
       # Details: This viewing party button should take the user to the new viewing party page (/users/:user_id/movies/:movie_id/viewing-party/new)
     end
 
