@@ -1,10 +1,10 @@
 class MovieDetailed
   attr_reader :id,
-              :title, 
+              :title,
               :vote_average,
               :runtime,
               :summary,
-              :attributes 
+              :attributes
 
   def initialize(attributes)
     @id = attributes[:id]
@@ -17,7 +17,7 @@ class MovieDetailed
 
   def genres
     @attributes[:genres].map do |genre|
-       genre[:name]
+      genre[:name]
     end
   end
 
@@ -29,7 +29,7 @@ class MovieDetailed
 
   def reviews
     @attributes[:reviews][:results].map do |review|
-      {author: review[:author], content: review[:content]}
+      { author: review[:author], content: review[:content] }
     end
   end
 
@@ -40,6 +40,6 @@ class MovieDetailed
   end
 
   def poster_path
-    "https://image.tmdb.org/t/p/w500" + attributes[:poster_path]
+    'https://image.tmdb.org/t/p/w500' + attributes[:poster_path]
   end
 end

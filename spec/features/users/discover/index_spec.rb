@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'the users discover index' do
   describe 'When I visit the users discover path' do
-    let!(:user) {create :user}
+    let!(:user) { create :user }
     before :each do
       visit user_discover_index_path(user)
     end
@@ -16,7 +16,7 @@ RSpec.describe 'the users discover index' do
     end
 
     it 'has a button to search by movie title' do
-      expect(page).to have_button("Search by Movie Title")
+      expect(page).to have_button('Search by Movie Title')
     end
 
     describe 'When I click on the top rated movies' do
@@ -27,10 +27,10 @@ RSpec.describe 'the users discover index' do
         end
       end
     end
-    
+
     describe 'When I click on the search button' do
       it 'redirects to the movies results page' do
-        VCR.use_cassette("search_Minions") do
+        VCR.use_cassette('search_Minions') do
           fill_in 'Search', with: 'Minions'
           click_button 'Search by Movie Title'
           expect(current_path).to eq(user_movies_path(user))

@@ -1,6 +1,6 @@
 class Users::MoviesController < ApplicationController
-  before_action :set_user, only: [:index, :show]
-  
+  before_action :set_user, only: %i[index show]
+
   def index
     if params[:top_rated]
       @movies = MoviesFacade.top_rated

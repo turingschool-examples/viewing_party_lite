@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Movie do
   before :each do
-    attributes = {title: 'The Godfather', vote_average: '8.7', id: 1939}
+    attributes = { title: 'The Godfather', vote_average: '8.7', id: 1939 }
     @movie = Movie.new(attributes)
   end
 

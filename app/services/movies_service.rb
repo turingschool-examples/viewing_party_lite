@@ -1,9 +1,9 @@
 require 'json'
 require 'faraday'
-#limit in the service via params (length, page number, etc)
+# limit in the service via params (length, page number, etc)
 class MoviesService
   def self.conn
-    Faraday.new(url: "https://api.themoviedb.org")
+    Faraday.new(url: 'https://api.themoviedb.org')
   end
 
   def self.top_rated
@@ -16,7 +16,7 @@ class MoviesService
   def self.search(keyword)
     # conn = Faraday.new(url: "https://api.themoviedb.org")
     response = conn.get("/3/search/movie?query=#{keyword}&api_key=#{ENV['tmdb-api']}")
-    
+
     JSON.parse(response.body, symbolize_names: true)
   end
 

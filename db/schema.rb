@@ -10,39 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_13_163612) do
-
+ActiveRecord::Schema.define(version: 20_221_013_163_612) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'users', force: :cascade do |t|
+    t.string 'name'
+    t.string 'email'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "viewing_parties", force: :cascade do |t|
-    t.integer "duration"
-    t.date "date"
-    t.time "start_time"
-    t.bigint "movie_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "host_id"
-    t.string "movie_title"
+  create_table 'viewing_parties', force: :cascade do |t|
+    t.integer 'duration'
+    t.date 'date'
+    t.time 'start_time'
+    t.bigint 'movie_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.bigint 'host_id'
+    t.string 'movie_title'
   end
 
-  create_table "viewing_party_users", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "viewing_party_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.boolean "hosting", default: false
-    t.index ["user_id"], name: "index_viewing_party_users_on_user_id"
-    t.index ["viewing_party_id"], name: "index_viewing_party_users_on_viewing_party_id"
+  create_table 'viewing_party_users', force: :cascade do |t|
+    t.bigint 'user_id'
+    t.bigint 'viewing_party_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.boolean 'hosting', default: false
+    t.index ['user_id'], name: 'index_viewing_party_users_on_user_id'
+    t.index ['viewing_party_id'], name: 'index_viewing_party_users_on_viewing_party_id'
   end
 
-  add_foreign_key "viewing_party_users", "users"
-  add_foreign_key "viewing_party_users", "viewing_parties"
+  add_foreign_key 'viewing_party_users', 'users'
+  add_foreign_key 'viewing_party_users', 'viewing_parties'
 end

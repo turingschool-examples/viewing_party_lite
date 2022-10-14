@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'the new user page' do
   it 'displays a form to register as a user' do
     visit register_path
-    
+
     fill_in 'Name', with: 'Vivian'
     fill_in 'Email', with: 'viv1234@gmail.com'
     click_button 'Register'
@@ -25,7 +25,7 @@ RSpec.describe 'the new user page' do
     click_button 'Register'
 
     expect(current_path).to eq(register_path)
-    expect(page).to have_content("Error: Email has already been taken")
+    expect(page).to have_content('Error: Email has already been taken')
   end
 
   it 'redirects to the register page if any field is not filled in' do
