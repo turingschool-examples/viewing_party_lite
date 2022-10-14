@@ -8,16 +8,16 @@
 <hr>
 <h2>Viewing Parties</h2>
 <div id='user-parties' style='width:100%; overflow-x: scroll; display: flex'>
-  <% @user.parties.each do |party| %>
+  <% @user.parties.each_with_index do |party,index| %>
     <div class='party-card' id='party-<%=party.id%>'style='float: left; margin: 15px'>
       <div class="poster">
-      <img src="https://image.tmdb.org/t/p/original<%=MovieFacade.info_card(party.movie_id)[:img_path]%>" style='width:150px'>
+      <img src="https://image.tmdb.org/t/p/original<%=@movies[index].img_path%>" style='width:150px'>
       </div>
 
-      <p class='title'><%= MovieFacade.info_card(party.movie_id)[:title]%></p>
+      <p class='title'><%= @movies[index].title%></p>
       <p><%=party.date.strftime('%B %d, %Y')%></p>
       <p><%=party.start_time.strftime('%I:%M %P')%></p>
-      <p><%=UserParty.where(user_id: @user.id, party_id: party.id).first.user_status%></p>
+      <p><%=@user_parties[index].user_status%></p>
     </div>
   <%end%>
 </div>

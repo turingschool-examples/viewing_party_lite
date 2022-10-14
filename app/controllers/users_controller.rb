@@ -16,6 +16,9 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @user_parties = @user.user_parties
+    @parties = @user_parties.reduce([]) { |array, u_party| array << Party.find(u_party[:party_id]) }
+    @movies = @parties.reduce([]) { |array, party| array << MovieFacade.find_movie(party[:movie_id]) }
   end
 
   def discover

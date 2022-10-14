@@ -3,13 +3,13 @@
   <%= button_to 'Create a New User', '/register', method: :get %>
   <br>
   <div id="user-list">
-    Existing Users:
-    <ul>
+    <table class='center'>
+    <tr><th>Existing Users:</th></tr>
     <% @users.each do |user| %>
-      <li class="user-dash-link">
+      <tr><td class="user-dash-link">
         <%= link_to "#{user.email}'s Dashboard", user_path(user) %>
-      </li>
+      </td></tr>
       <%end%>
-    </ul>
+    </table>
   </div>
 </article>
