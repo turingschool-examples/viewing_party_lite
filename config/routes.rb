@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :movies do
       resources :viewing_parties, only: [:new, :create]
     end
-    
+
     get 'discover', to: 'movies#search'
   end
 end
