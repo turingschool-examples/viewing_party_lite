@@ -5,4 +5,5 @@ class MoviesController < ApplicationController
     @cast = MovieFacade.cast_data(params[:id])
     @reviews = MovieFacade.review_data(params[:id])
   end
+  def index; end
 end
