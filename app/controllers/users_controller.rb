@@ -14,7 +14,7 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
       flash[:notice] = "Welcome #{@user.name}"
     elsif params[:password] != params[:password_confirmation]
-      flash[:failture] = "Error: Password doesn't match."
+      flash[:failure] = "Error: Password doesn't match."
       render :new
     else
       flash[:failure] = @user.errors.full_messages.first
