@@ -2,7 +2,10 @@ class Movie
   attr_reader :title,
               :vote_avg,
               :runtime,
-              :img_path
+              :img_path,
+              :id,
+              :summary,
+              :genres
 
   def initialize(movie_data)
     @title = movie_data['original_title']
@@ -11,6 +14,16 @@ class Movie
     @img_path = movie_data['poster_path']
     @id = movie_data['id']
     @summary= movie_data['overview']
-    # @cast = movie_data['cast']
+    @genres = find_genres(movie_data)
+  end
+
+  private
+
+  def find_genres(movie_data)
+    movie_data['genres'].map { |genre| genre['name'] }
+  end
+
+  def find_cast(cast_data)
+
   end
 end
