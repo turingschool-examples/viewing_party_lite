@@ -1,4 +1,5 @@
-![Screen Shot 2022-10-10 at 4 10 39 PM](https://user-images.githubusercontent.com/102133027/194960149-acbcdbc0-d852-4899-898a-b84daeea2895.png)
+![Screen Shot 2022-10-14 at 1 36 10 PM](https://user-images.githubusercontent.com/102133027/195928044-e5b0aca3-3c3b-4a20-b162-6b50af882285.png)
+
 
 # Viewing Party
 
