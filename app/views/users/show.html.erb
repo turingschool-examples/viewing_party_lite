@@ -2,9 +2,23 @@
 
 <%= button_to "Discover Movies", user_discover_path(@user.id), local: true, method: :get %>
 
-<div id= "header-<%=@user %>">
 <h2> Viewing Parties <h2>
+<div id="viewing-parties">
+  <% @movies.each do |movie| %>
+    <p>Movie Title: <%= movie.title  %></p>
+  <% end %>
   <% @user.viewing_parties.each do |viewing_party| %>
-
- <% end %>
+  <% if @user.id == viewing_party.host_id %>
+    <p><%= @user.name %> is hosting this viewing party</p>
+  <% else %>
+    <p><%= @user.name %> is invited to this viewing party</p>
+  <% end %>
+    <p>Duration: <%= viewing_party.duration %></p>
+    <p>Date: <%= viewing_party.date %></p>
+    <p>Start Time: <%= viewing_party.time.strftime("%H:%M") %></p>
+  <% end %>
+  Invitees:
+  <% @invitees.each do |invitee| %>
+  <p><%= invitee.name  %></p>
+  <% end %>
 </div>

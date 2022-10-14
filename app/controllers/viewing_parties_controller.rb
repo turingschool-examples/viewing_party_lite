@@ -33,7 +33,6 @@ class ViewingPartiesController < ApplicationController
       flash.alert = party.errors.full_messages.to_sentence
       render :new
     end
- 
   end
 
   def viewing_party_params
