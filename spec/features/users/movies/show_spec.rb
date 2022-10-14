@@ -52,7 +52,6 @@ RSpec.describe 'the movies detail page' do
 
         @movie.reviews.each do |review|
           expect(page).to have_content(review[:author])
-          # expect(page.has_content?("##{review[:author]}-text")).to eq(true)
         end
       end
     end
