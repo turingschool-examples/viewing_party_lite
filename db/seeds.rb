@@ -10,6 +10,7 @@ require 'factory_bot_rails'
 @party1 = FactoryBot.create(:party)
 @party2 = FactoryBot.create(:party)
 
+
 @user2 = FactoryBot.create(:user)
 @party3 = FactoryBot.create(:party)
 
