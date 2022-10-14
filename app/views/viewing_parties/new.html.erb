@@ -13,13 +13,16 @@
   <%= f.time_field :time %>
 
   <ul id="invited_users_list">
-    <% @all_other_users.each do |user| %>
+    <% @all_users.each do |user| %>
       <li>
-        <%= f.label :invited_users, user.user_name%>
-        <%= f.check_box :invited_users, {multiple: true}, user.id, nil %>
+        <% if user == @user %>
+          <%= f.check_box :invited_users, { checked: true, style: 'visibility: hidden', multiple: true }, @user.id, nil %>
+        <% else%>
+          <%= f.label :invited_users, user.user_name%>
+          <%= f.check_box :invited_users, {multiple: true}, user.id, nil %>
+        <% end%>
       </li>
     <% end %>
-    <%= f.check_box :invited_users, { checked: true, style: 'visibility: hidden', multiple: true }, @user.id, nil %>
   </ul>
 
   <%= f.hidden_field :movie_id, value: @movie.id %>

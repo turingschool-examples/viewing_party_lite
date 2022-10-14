@@ -4,7 +4,7 @@ class ViewingPartiesController < ApplicationController
     @user = User.find(params[:user_id])
     @viewing_party = ViewingParty.new
     @movie = Movie.new(MovieService.get_movie_data(params[:movie_id]))
-    @all_other_users = User.all.where.not("id = ?", params[:user_id])
+    @all_users = User.all
   end
 
   def create
