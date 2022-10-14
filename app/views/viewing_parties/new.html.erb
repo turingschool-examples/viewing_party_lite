@@ -10,13 +10,13 @@
   <%= form.label :title, @movie.title %>
   <br>
   <%= form.label :length, 'Duration of Party' %>
-  <%= form.number_field :length, value: @movie.runtime, min: @movie.runtime %>
+  <%= form.number_field :length, value: @movie.runtime, min: @movie.runtime, required: true %>
   <br>
   <%= form.label :date, 'Day' %>
-  <%= form.date_field :date, min: Date.today %>
+  <%= form.date_field :date, min: Date.today, required: true %>
   <br>
   <%= form.label :start_time, 'Start Time' %>
-  <%= form.time_field :start_time  %>
+  <%= form.time_field :start_time, required: true  %>
   <br>
   <p>Invite Other Users</p>
 

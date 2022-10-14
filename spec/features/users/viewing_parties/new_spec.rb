@@ -66,10 +66,10 @@ RSpec.describe 'User Viewing Party New Page', :vcr do
     expect(ViewingPartyUser.find_by(viewing_party_id: newest_view_party.id, user_id: @user3.id).status).to eq('invited')
   end
 
-  it 'cannot create new viewing party if length is short than runtime' do
+  it 'cannot create new viewing party if length is shorter than runtime' do
     visit "/users/#{@user1.id}/movies/238/viewing_party/new"
 
-    fill_in 'Duration of Party', with: '170'
+    fill_in 'Duration of Party', with: '10'
     fill_in 'Day', with: '10/10/31'
     fill_in 'Start Time', with: '20:00'
     check "user_#{@user2.id}"
@@ -77,10 +77,37 @@ RSpec.describe 'User Viewing Party New Page', :vcr do
 
     click_button 'Create Party'
 
-    expect(current_path).to eq("/users/#{@user1.id}/movies/238/viewing_party/create")
-    newest_view_party = ViewingParty.find_by(length: 170)
+    expect(current_path).to eq("/users/#{@user1.id}/movies/238/viewing_party/new")
+    newest_view_party = ViewingParty.find_by(length: 10)
     expect(newest_view_party).to eq(nil)
   end
 
+  it 'cannot create new viewing party if start time is nil' do
+    visit "/users/#{@user1.id}/movies/238/viewing_party/new"
+
+    fill_in 'Duration of Party', with: '360'
+    fill_in 'Day', with: '10/10/31'
+    check "user_#{@user2.id}"
+    check "user_#{@user3.id}"
+
+    click_button 'Create Party'
+
+    newest_view_party = ViewingParty.find_by(length: 360)
+    expect(newest_view_party).to eq(nil)
+  end
+
+  it 'cannot create new viewing party if date is nil' do
+    visit "/users/#{@user1.id}/movies/238/viewing_party/new"
+
+    fill_in 'Duration of Party', with: '360'
+    fill_in 'Start Time', with: '20:00'
+    check "user_#{@user2.id}"
+    check "user_#{@user3.id}"
+
+    click_button 'Create Party'
+
+    newest_view_party = ViewingParty.find_by(length: 360)
+    expect(newest_view_party).to eq(nil)
+  end
 
 end
