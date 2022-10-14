@@ -7,21 +7,21 @@
   <%= f.number_field :duration, options = { value: @movie.runtime, min: @movie.runtime } %>
 
   <%= f.label :date, 'Date' %>
-  <%= f.date_field :date %>
+  <%= f.date_field :date, min: Date.today %>
 
   <%= f.label :time, 'Start Time' %>
   <%= f.time_field :time %>
 
   <ul id="invited_users_list">
     <% @all_users.each do |user| %>
-      <li>
-        <% if user == @user %>
-          <%= f.check_box :invited_users, { checked: true, style: 'visibility: hidden', multiple: true }, @user.id, nil %>
-        <% else%>
+      <% if user == @user %>
+        <%= f.check_box :invited_users, { checked: true, style: 'visibility: hidden', multiple: true }, @user.id, nil %>
+      <% else%>
+        <li>
           <%= f.label :invited_users, user.user_name%>
           <%= f.check_box :invited_users, {multiple: true}, user.id, nil %>
-        <% end%>
-      </li>
+        </li>
+      <% end%>
     <% end %>
   </ul>
 
