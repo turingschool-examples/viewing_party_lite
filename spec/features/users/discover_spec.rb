@@ -14,8 +14,6 @@ RSpec.describe 'User Discover Page' do
 
   it 'can search movies', :vcr do
     visit "/users/#{@user1.id}/discover"
-    # require 'pry', binding.pry
-    # save_and_open_page
 
     fill_in 'search', with: 'Phoenix'
     click_on 'Find Movies'
@@ -38,5 +36,12 @@ RSpec.describe 'User Discover Page' do
 
     expect(page).to have_field('Search By Movie Title:')
     expect(page).to have_button('Find Movies')
+  end
+
+  it 'can search an empty field and be returned', :vcr do
+    visit "/users/#{@user1.id}/discover"
+
+    click_on 'Find Movies'
+    expect(current_path).to eq("/users/#{@user1.id}/discover")
   end
 end

@@ -9,7 +9,8 @@ class UsersController < ApplicationController
 
   def movies
     @user = User.find(params[:id])
-    if params[:search] && params[:search] = ""
+
+    if params[:search] && params[:search] == ""
       redirect_to "/users/#{@user.id}/discover"
     elsif params[:search]
       @movies = MovieDbFacade.search_movies(params[:search])
