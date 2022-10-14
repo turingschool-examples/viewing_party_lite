@@ -1,0 +1,88 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/3/reviews?api_key=<API Key>&language=en-US&page=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 13 Oct 2022 19:38:21 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Key:
+      - ac98224751efa6fa856ca9b8225dbf51ffbf4579
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '16223'
+      Last-Modified:
+      - Fri, 25 Mar 2022 06:37:48 GMT
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 f6992241dd15e99fe1ce21d807856f16.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - id8IdUmRczl2XYPhI1m6kX2yeq8BY-rsAWLIK9IKuBxr5qeNrn54Rw==
+      Age:
+      - '19929'
+    body:
+      encoding: UTF-8
+      string: '{"id":3,"page":1,"results":[{"author":"CRCulver","author_details":{"name":"","username":"CRCulver","avatar_path":null,"rating":7.0},"content":"Released
+        in 1986, Aki Kaurismaki''s <i>Varjoja paratiisissa</i> (Shadows in Paradise)
+        is one of the Finnish filmmaker''s earliest efforts, and it stands as one
+        of the most idiosyncratic romantic comedies of all time. The painfully shy
+        Nikander (Matti Pellonpää), a garbage man, means the moody Ilona, a supermarket
+        checkout girl. The film tracks their bumbling attempt to establish a lasting
+        relationship: dates that end as soon as they''ve begun, a romantic getaway
+        where they each retreat to separate hotel rooms, and rare conversations which
+        employ the absolute bare minimum of words. Nikander''s best and only friend
+        Melartin (Sakari Kuosmanen), whom the garbage man only recently met through
+        a spell in jail, gives some needed encouragement.\r\n\r\nThe film''s soundtrack
+        is rooted in early rock-and-roll, though unlike later Kaurismaki films where
+        the characters seem to be living in a 1950s bubble, all the action takes place
+        in contemporary Helsinki. I''ve criticized Kaurismaki''s vision of Finland
+        in other films, but <i>Varjoja paratiisissa</i> does, in my opinion, accurately
+        depict the collection of gloomy, taciturn binge drinkers that are the Finns.\r\n\r\n<i>Varjoja
+        paratiisissa</i> is an early work and doesn''t show the confidence of later
+        efforts, but it''s still quite entertaining, its leads and their struggles
+        extremely charming, and I would recommend the film. Certainly the performances
+        of Pellonpää (in a typical Pellonpää role) and Outinen (who seemingly reinvents
+        herself in every film) will prove quite memorable.","created_at":"2018-09-06T19:31:51.288Z","id":"5b9180a7c3a3687adc005547","updated_at":"2021-06-23T15:58:12.193Z","url":"https://www.themoviedb.org/review/5b9180a7c3a3687adc005547"}],"total_pages":1,"total_results":1}'
+  recorded_at: Fri, 14 Oct 2022 01:10:30 GMT
+recorded_with: VCR 6.1.0
