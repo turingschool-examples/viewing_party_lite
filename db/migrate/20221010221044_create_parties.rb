@@ -5,7 +5,6 @@ class CreateParties < ActiveRecord::Migration[5.2]
       t.integer :duration
       t.date :date
       t.time :start_time
-      t.integer :host_id
 
       t.timestamps
     end
