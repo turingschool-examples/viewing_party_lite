@@ -10,7 +10,7 @@ RSpec.describe 'User Viewing Party New Page', :vcr do
 
   it 'has required fixed content on new page' do
     visit "/users/#{@user1.id}/movies/238/viewing_party/new"
-    # save_and_open_page
+
     expect(page).to have_button("Discover Page")
     expect(page).to have_button("Create Party")
     expect(page).to have_content("Movie Title")
