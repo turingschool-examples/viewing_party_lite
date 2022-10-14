@@ -12,4 +12,10 @@ class Party < ApplicationRecord
   def movie(movie_id)
     MoviesFacade.movie_details(movie_id)
   end
+
+  def hours_and_minutes
+    hours = self.duration / 60
+    minutes = self.duration % 60
+    "#{hours}hr #{minutes}min"
+  end
 end
