@@ -1,11 +1,12 @@
 class Movie
-  attr_reader :id, 
-              :original_title, 
+  attr_reader :id,
+              :original_title,
               :runtime,
               :vote_count,
               :vote_average,
               :overview,
-              :image
+              :image,
+              :genres
 
   def initialize(data)
     @id = data[:id]
@@ -17,7 +18,7 @@ class Movie
     @image = "https://image.tmdb.org/t/p/w185/#{data[:poster_path]}"
     @genres = data[:genres]
   end
-  
+
   def standard_runtime
     hrs = @runtime / 60
     mins = @runtime % 60

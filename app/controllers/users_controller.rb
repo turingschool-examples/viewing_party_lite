@@ -1,11 +1,10 @@
 class UsersController < ApplicationController
+
   def show
     @user = User.find(params[:id])
-    # @users = User.all
     @movies = @user.parties.map do |party|
       MovieFacade.movie_details(party.movie_id)
     end
-
   end
 
   def new
@@ -17,7 +16,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to user_path(@user)
     else
-      flash[:alert] = "Did NOT save" #flash.alert too
+      # flash.alert = "Did NOT save"
       redirect_to "/register/new"
     end
   end
