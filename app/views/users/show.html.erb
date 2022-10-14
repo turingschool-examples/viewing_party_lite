@@ -12,8 +12,8 @@
     <%= party.date.strftime('%B %d, %Y') %><br>
     <%= party.start_time.strftime('%I:%M %p') %><br>
     <% user_role = @user.user_viewing_parties.find do |user_viewing_party| %>
-      <% user_viewing_party.user_id == @user.id %>
+      <% user_viewing_party.viewing_party_id == party.id %>
     <% end %>
-    <%= user_role.role %><br>
+    <%= user_role.role %><br><br>
   <% end %>  
 </div>
