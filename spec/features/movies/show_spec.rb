@@ -19,8 +19,7 @@ RSpec.describe 'Movie Show Page' do
     end
     expect(page).to have_content("#{@movie.reviews.length} Reviews")
     @movie.reviews.each do |review|
-      expect(page).to have_content("Aurthor: #{review[:author]}")
-      expect(page).to have_content(review[:content])
+      expect(page).to have_content("Author: #{review[:author]}")
     end
   end
 
