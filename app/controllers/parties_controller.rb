@@ -12,8 +12,10 @@ class PartiesController < ApplicationController
       params[:added_users].each do |user_id|
         UserParty.create(party_id: party.id, user_id: user_id, user_status: 1)
       end
+
     end
     redirect_to "/users/#{params[:user_id]}"
+    flash[:alert] = "Party successfully created"
   end
 
 
