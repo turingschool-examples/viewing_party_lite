@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Reviews
   attr_reader :author,
               :content

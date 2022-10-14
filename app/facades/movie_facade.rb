@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MovieFacade < MovieService
   def self.top_rated_poro
     top_rated[:results].map do |movie|

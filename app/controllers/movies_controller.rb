@@ -1,6 +1,7 @@
-class MoviesController < ApplicationController
+# frozen_string_literal: true
 
-  def index #Stephen edit
+class MoviesController < ApplicationController
+  def index
     @user = User.find(params[:user_id])
     if params[:q].present?
       @movies_array = MovieFacade.top_rated_poro
@@ -8,23 +9,16 @@ class MoviesController < ApplicationController
       @movies_array = MovieFacade.search_poro(params[:search_movies])
     else
       redirect_to user_discover_path(@user)
+      flash.notice = 'Must Select Top Rated Movies or Search for Keyword'
     end
   end
-  #   params[:q] # value of 'q' is used to filter API search
-  #   # @movies = @filter_search_results(params[:q]) <-- value of 'q' passed as variable
-  # end
 
   def search
     @user = User.find(params[:user_id])
-    # conn = Faraday.new(
-    #   url: 'https://api.themoviedb.org/3/movie/',
-    #   params: {api_key: ENV['moviebd_api_key']}
-    #   )
-
-    # top_rated = conn.get('/top_rated')
   end
 
-  def show #Stephen edit
+  # Stephen edit
+  def show
     @user = User.find(params[:user_id])
     @movie = MovieFacade.details_poro(params[:id])
     @movie_cast = MovieFacade.credits_poro(params[:id])

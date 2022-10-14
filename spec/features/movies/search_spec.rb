@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Movie Search Page' do
@@ -34,6 +36,15 @@ RSpec.describe 'Movie Search Page' do
 
       fill_in 'Search movies', with: 'Killer Clowns From Outer Space'
       click_on 'Find Movies'
+    end
+
+    it 'redirects back to discover page if no option select with sad path' do
+      visit user_discover_path(@user_1)
+
+      click_on 'Find Movies'
+
+      expect(current_path).to eq(user_discover_path(@user_1))
+      expect(page).to have_content('Must Select Top Rated Movies or Search for Keyword')
     end
   end
 end

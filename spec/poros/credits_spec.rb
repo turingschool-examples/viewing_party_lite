@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Credits do
@@ -13,7 +15,7 @@ RSpec.describe Credits do
     end
 
     it 'returns an array of Credits objects with name as a string' do
-      expect( @credits_array).to be_a(Array)
+      expect(@credits_array).to be_a(Array)
 
       @credits_array.each do |cast_member|
         expect(cast_member.name).to be_a(String)

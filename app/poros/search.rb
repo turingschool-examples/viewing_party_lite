@@ -1,6 +1,10 @@
+# frozen_string_literal: true
+
 class Search
-  attr_reader :name, :id, :vote_average
-  
+  attr_reader :name,
+              :id,
+              :vote_average
+
   def initialize(movie_hash)
     @name = movie_hash[:title]
     @id = movie_hash[:id]
