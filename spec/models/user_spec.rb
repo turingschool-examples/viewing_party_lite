@@ -16,7 +16,4 @@ RSpec.describe User, type: :model do
     it { should have_many(:user_parties) }
     it { should have_many(:parties).through(:user_parties) }
   end
-
-  describe 'class methods' do
-  end
 end

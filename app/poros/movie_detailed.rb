@@ -16,19 +16,19 @@ class MovieDetailed
 
   def genres
     @attributes[:genres].map do |genre|
-       genre[:name]
+      genre[:name]
     end
   end
 
   def cast
     @attributes[:cast].first(10).map do |member|
-      member[:name] + ' as ' + member[:character]
+      "#{member[:name]} as #{member[:character]}"
     end
   end
 
   def reviews
     @attributes[:results].map do |review|
-      {author: review[:author], content: review[:content]}
+      { author: review[:author], content: review[:content] }
     end
   end
 

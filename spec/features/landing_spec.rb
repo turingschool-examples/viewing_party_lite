@@ -8,11 +8,8 @@ RSpec.describe 'Landing Page' do
       visit root_path
 
       expect(page).to have_content('Viewing Party Lite')
-
       expect(page).to have_button('Create New User')
-
       expect(page).to have_link("#{users[0].email}'s dashboard")
-
       expect(page).to have_link('Home')
     end
   end
