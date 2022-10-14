@@ -6,4 +6,8 @@ class User < ApplicationRecord
     validates_presence_of :name, :email
     validates_uniqueness_of :email
     validates_format_of :email, with: URI::MailTo::EMAIL_REGEXP, message: "is not formatted correctly"
+
+    def self.all_except(user_id)
+        where.not(id: user_id)
+    end
 end
