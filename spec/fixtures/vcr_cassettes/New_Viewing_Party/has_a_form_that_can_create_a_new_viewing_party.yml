@@ -1,0 +1,1373 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/393404?api_key=<movie_db_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Key:
+      - b498d91ea0d0a2dbd1491ee3cff801636e031a7a
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '15121'
+      Last-Modified:
+      - Wed, 20 Jul 2022 04:51:30 GMT
+      Date:
+      - Fri, 14 Oct 2022 18:34:28 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 863cb6019a95f0a483e6ece04f49e0a0.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SFO5-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - HyXK7yzwFxDy_5R_A_TXDDm9NmVRXAKq7RYl_TCKf1swkSEJ2eOqvQ==
+      Age:
+      - '2296'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvcHd3czVCOEQ3QUlRa2xOZlNQZG9kUU5hNktmLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjowLCJnZW5yZXMiOlt7ImlkIjoyNywibmFtZSI6IkhvcnJvciJ9XSwiaG9tZXBhZ2UiOiIiLCJpZCI6MzkzNDA0LCJpbWRiX2lkIjoidHQ2NDAzNjgwIiwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJqYSIsIm9yaWdpbmFsX3RpdGxlIjoi5Zyw542E44Gu6KGA44G/44Gp44KN44Oe44OD44K544Or44OT44Or44OAIiwib3ZlcnZpZXciOiJBZnRlciBhIHN1cnByaXNlIHBob25lIGNhbGwgaW50ZXJydXB0cyBoaXMgZGFpbHkgd29ya291dCwgYmVlZnkgYm9keSBidWlsZGVyIE5hb3RvIGFncmVlcyB0byBtZWV0IGhpcyBwaG90b2pvdXJuYWxpc3QgZXgtZ2lybGZyaWVuZCB0byBoZWxwIHdpdGggaGVyIHJlc2VhcmNoIG9uIGhhdW50ZWQgaG91c2VzLiBBY2NvbXBhbmllZCBieSBhIHByb2Zlc3Npb25hbCBwc3ljaGljLCB0aGV5IHZpc2l0IGFuIGFiYW5kb25lZCBob3VzZSBvbmNlIG93bmVkIGJ5IE5hb3RvJ3MgZmF0aGVyLiBCdXQgaW5zaWRlIHRoZSBob3VzZSBhIGRhcmsgc2VjcmV0IGxpbmdlcnMgYW5kIHRoZXkgZmluZCB0aGVtc2VsdmVzIHRyYXBwZWQgYW5kIHRvcm1lbnRlZCBieSBhIHJlbGVudGxlc3MgZ2hvc3Qgd2l0aCBhIDMwIHllYXIgZ3J1ZGdlLiIsInBvcHVsYXJpdHkiOjEuNDE4LCJwb3N0ZXJfcGF0aCI6Ii9kcEdWU0N2eHc0cHR1SWlsMFRmTWhaaHk3MU8uanBnIiwicHJvZHVjdGlvbl9jb21wYW5pZXMiOlt7ImlkIjo5MTAxMiwibG9nb19wYXRoIjpudWxsLCJuYW1lIjoiVGVycmEgQ290dGEiLCJvcmlnaW5fY291bnRyeSI6IiJ9LHsiaWQiOjkxMDEzLCJsb2dvX3BhdGgiOm51bGwsIm5hbWUiOiJEcmFnb2RvbiBQaWN0dXJlcyIsIm9yaWdpbl9jb3VudHJ5IjoiIn1dLCJwcm9kdWN0aW9uX2NvdW50cmllcyI6W3siaXNvXzMxNjZfMSI6IkpQIiwibmFtZSI6IkphcGFuIn1dLCJyZWxlYXNlX2RhdGUiOiIxOTk1LTAxLTAxIiwicmV2ZW51ZSI6MCwicnVudGltZSI6NjIsInNwb2tlbl9sYW5ndWFnZXMiOlt7ImVuZ2xpc2hfbmFtZSI6IkphcGFuZXNlIiwiaXNvXzYzOV8xIjoiamEiLCJuYW1lIjoi5pel5pys6KqeIn1dLCJzdGF0dXMiOiJSZWxlYXNlZCIsInRhZ2xpbmUiOiIiLCJ0aXRsZSI6IkJsb29keSBNdXNjbGUgQm9keSBCdWlsZGVyIGluIEhlbGwiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6Ni45MTcsInZvdGVfY291bnQiOjEyfQ==
+  recorded_at: Fri, 14 Oct 2022 19:12:44 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/393404/images?api_key=<movie_db_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 47a7ae4054c8fd80103aafa407e6970aa1bf2016
+      X-Memc-Age:
+      - '6128'
+      X-Memc-Expires:
+      - '10160'
+      Date:
+      - Fri, 14 Oct 2022 18:34:28 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"9980e569ef316948efe14d3d98f40bfe"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 c858fcd4941dcc58025e22f092b26c28.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SFO5-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - KgnjeNZZXAdvn23Y-iWJtkJXLFaJ5CoQF3Xk1fBFeM7zVyObOh15HQ==
+      Age:
+      - '2296'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"backdrops":[{"aspect_ratio":1.778,"height":720,"iso_639_1":null,"file_path":"/pwws5B8D7AIQklNfSPdodQNa6Kf.jpg","vote_average":0.0,"vote_count":0,"width":1280},{"aspect_ratio":1.778,"height":720,"iso_639_1":null,"file_path":"/gUjVbRbG7mIYqS0XsRJF5uWUopy.jpg","vote_average":0.0,"vote_count":0,"width":1280}],"id":393404,"logos":[],"posters":[{"aspect_ratio":0.667,"height":1036,"iso_639_1":"en","file_path":"/dpGVSCvxw4ptuIil0TfMhZhy71O.jpg","vote_average":5.312,"vote_count":1,"width":691},{"aspect_ratio":0.667,"height":1500,"iso_639_1":"en","file_path":"/cCIxefjk19wq9N5vC3H5eRQEVd2.jpg","vote_average":5.312,"vote_count":1,"width":1000},{"aspect_ratio":0.728,"height":1167,"iso_639_1":"en","file_path":"/t9TsXERtGHZzmdHfb2kPX0bQjOK.jpg","vote_average":5.246,"vote_count":2,"width":850},{"aspect_ratio":0.707,"height":1500,"iso_639_1":"ja","file_path":"/ld70CMLQCjzghe8IahXn6qYhgqx.jpg","vote_average":0.0,"vote_count":0,"width":1061},{"aspect_ratio":0.667,"height":2048,"iso_639_1":"en","file_path":"/6j0ODZc9bp5uNQX7yyC1bfwLil4.jpg","vote_average":0.0,"vote_count":0,"width":1365},{"aspect_ratio":0.667,"height":1278,"iso_639_1":"ja","file_path":"/uvFcQOX6XUD4I6ypuAQrZg36uhw.jpg","vote_average":0.0,"vote_count":0,"width":852},{"aspect_ratio":0.667,"height":1440,"iso_639_1":"en","file_path":"/xUC67WDWhe0rl05jRMJkEeQLYcG.jpg","vote_average":0.0,"vote_count":0,"width":960}]}'
+  recorded_at: Fri, 14 Oct 2022 19:12:44 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/393404/credits?api_key=<movie_db_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 14 Oct 2022 18:34:29 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - baf4cb9bdcb6afccbde4a917df610359f6cb7eaf
+      X-Memc-Age:
+      - '16569'
+      X-Memc-Expires:
+      - '1087'
+      Etag:
+      - W/"429904f763a3c336c82b797eea0c8dca"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 36558cb00b679b60f8b6b32e03075a28.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SFO5-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - "-kSAvC7wAoSp59zpTj0LCLobnEcP89W1le3hE-S2X3-T1NThJju9Dw=="
+      Age:
+      - '2295'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":393404,"cast":[{"adult":false,"gender":0,"id":1693808,"known_for_department":"Directing","name":"Shinichi
+        Fukazawa","original_name":"Shinichi Fukazawa","popularity":0.6,"profile_path":null,"cast_id":1,"character":"Shinji","credit_id":"59313283925141160b00a16f","order":0},{"adult":false,"gender":0,"id":1827277,"known_for_department":"Acting","name":"Asako
+        Nosaka","original_name":"Asako Nosaka","popularity":0.6,"profile_path":null,"cast_id":2,"character":"Journalist,
+        Shinji''s ex-gf","credit_id":"593132adc3a36869e500a421","order":1},{"adult":false,"gender":0,"id":1827278,"known_for_department":"Acting","name":"Masaaki
+        Kai","original_name":"Masaaki Kai","popularity":0.6,"profile_path":null,"cast_id":3,"character":"Psychic","credit_id":"593132c5c3a3686a6200a0c5","order":2},{"adult":false,"gender":0,"id":2234265,"known_for_department":"Acting","name":"Masahiro
+        Kai","original_name":"Masahiro Kai","popularity":0.6,"profile_path":null,"cast_id":5,"character":"","credit_id":"5c578939c3a36826a68577ab","order":3},{"adult":false,"gender":0,"id":2234266,"known_for_department":"Acting","name":"Aki
+        Tama Mai","original_name":"Aki Tama Mai","popularity":0.6,"profile_path":null,"cast_id":6,"character":"","credit_id":"5c57893f92514157df50fc23","order":4}],"crew":[{"adult":false,"gender":0,"id":1693808,"known_for_department":"Directing","name":"Shinichi
+        Fukazawa","original_name":"Shinichi Fukazawa","popularity":0.6,"profile_path":null,"credit_id":"57ff32f89251416b6b00080b","department":"Directing","job":"Director"},{"adult":false,"gender":0,"id":1693808,"known_for_department":"Directing","name":"Shinichi
+        Fukazawa","original_name":"Shinichi Fukazawa","popularity":0.6,"profile_path":null,"credit_id":"5c5789720e0a260506c988b3","department":"Editing","job":"Editor"},{"adult":false,"gender":0,"id":1693808,"known_for_department":"Directing","name":"Shinichi
+        Fukazawa","original_name":"Shinichi Fukazawa","popularity":0.6,"profile_path":null,"credit_id":"5c578962c3a3680b57883fa1","department":"Production","job":"Producer"},{"adult":false,"gender":0,"id":1693808,"known_for_department":"Directing","name":"Shinichi
+        Fukazawa","original_name":"Shinichi Fukazawa","popularity":0.6,"profile_path":null,"credit_id":"593132d9925141162800a7ce","department":"Writing","job":"Writer"},{"adult":false,"gender":0,"id":2234268,"known_for_department":"Sound","name":"Notzan
+        Act","original_name":"Notzan Act","popularity":0.6,"profile_path":null,"credit_id":"5c57896a0e0a2601d6d2fdad","department":"Sound","job":"Music"},{"adult":false,"gender":0,"id":2234269,"known_for_department":"Camera","name":"Shinichi
+        Okuda","original_name":"Shinichi Okuda","popularity":0.6,"profile_path":null,"credit_id":"5c57898c0e0a263ccde436dd","department":"Camera","job":"Director
+        of Photography"}]}'
+  recorded_at: Fri, 14 Oct 2022 19:12:44 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/393404/reviews?api_key=<movie_db_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 14 Oct 2022 18:34:29 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Key:
+      - 758358e5d12cf556c62f16c46b256d1d7e6b054d
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '15615'
+      Last-Modified:
+      - Wed, 20 Jul 2022 04:51:30 GMT
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 36558cb00b679b60f8b6b32e03075a28.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SFO5-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - u2ZieWTqJI80ROEgLJgWaeiUoutndyrh5EoOZh--EjBLK0JWitbycw==
+      Age:
+      - '2295'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":393404,"page":1,"results":[],"total_pages":0,"total_results":0}'
+  recorded_at: Fri, 14 Oct 2022 19:12:44 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/393404?api_key=<movie_db_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Key:
+      - b498d91ea0d0a2dbd1491ee3cff801636e031a7a
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '15121'
+      Last-Modified:
+      - Wed, 20 Jul 2022 04:51:30 GMT
+      Date:
+      - Fri, 14 Oct 2022 18:34:28 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 2d8f89e435b7eede72670d12f5184086.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SFO5-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 36VTLT1sGLRPW2NjkRACX7Zg-_e23IcJ4JOZ_1WYm8BiG87QUvtkfA==
+      Age:
+      - '2296'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvcHd3czVCOEQ3QUlRa2xOZlNQZG9kUU5hNktmLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjowLCJnZW5yZXMiOlt7ImlkIjoyNywibmFtZSI6IkhvcnJvciJ9XSwiaG9tZXBhZ2UiOiIiLCJpZCI6MzkzNDA0LCJpbWRiX2lkIjoidHQ2NDAzNjgwIiwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJqYSIsIm9yaWdpbmFsX3RpdGxlIjoi5Zyw542E44Gu6KGA44G/44Gp44KN44Oe44OD44K544Or44OT44Or44OAIiwib3ZlcnZpZXciOiJBZnRlciBhIHN1cnByaXNlIHBob25lIGNhbGwgaW50ZXJydXB0cyBoaXMgZGFpbHkgd29ya291dCwgYmVlZnkgYm9keSBidWlsZGVyIE5hb3RvIGFncmVlcyB0byBtZWV0IGhpcyBwaG90b2pvdXJuYWxpc3QgZXgtZ2lybGZyaWVuZCB0byBoZWxwIHdpdGggaGVyIHJlc2VhcmNoIG9uIGhhdW50ZWQgaG91c2VzLiBBY2NvbXBhbmllZCBieSBhIHByb2Zlc3Npb25hbCBwc3ljaGljLCB0aGV5IHZpc2l0IGFuIGFiYW5kb25lZCBob3VzZSBvbmNlIG93bmVkIGJ5IE5hb3RvJ3MgZmF0aGVyLiBCdXQgaW5zaWRlIHRoZSBob3VzZSBhIGRhcmsgc2VjcmV0IGxpbmdlcnMgYW5kIHRoZXkgZmluZCB0aGVtc2VsdmVzIHRyYXBwZWQgYW5kIHRvcm1lbnRlZCBieSBhIHJlbGVudGxlc3MgZ2hvc3Qgd2l0aCBhIDMwIHllYXIgZ3J1ZGdlLiIsInBvcHVsYXJpdHkiOjEuNDE4LCJwb3N0ZXJfcGF0aCI6Ii9kcEdWU0N2eHc0cHR1SWlsMFRmTWhaaHk3MU8uanBnIiwicHJvZHVjdGlvbl9jb21wYW5pZXMiOlt7ImlkIjo5MTAxMiwibG9nb19wYXRoIjpudWxsLCJuYW1lIjoiVGVycmEgQ290dGEiLCJvcmlnaW5fY291bnRyeSI6IiJ9LHsiaWQiOjkxMDEzLCJsb2dvX3BhdGgiOm51bGwsIm5hbWUiOiJEcmFnb2RvbiBQaWN0dXJlcyIsIm9yaWdpbl9jb3VudHJ5IjoiIn1dLCJwcm9kdWN0aW9uX2NvdW50cmllcyI6W3siaXNvXzMxNjZfMSI6IkpQIiwibmFtZSI6IkphcGFuIn1dLCJyZWxlYXNlX2RhdGUiOiIxOTk1LTAxLTAxIiwicmV2ZW51ZSI6MCwicnVudGltZSI6NjIsInNwb2tlbl9sYW5ndWFnZXMiOlt7ImVuZ2xpc2hfbmFtZSI6IkphcGFuZXNlIiwiaXNvXzYzOV8xIjoiamEiLCJuYW1lIjoi5pel5pys6KqeIn1dLCJzdGF0dXMiOiJSZWxlYXNlZCIsInRhZ2xpbmUiOiIiLCJ0aXRsZSI6IkJsb29keSBNdXNjbGUgQm9keSBCdWlsZGVyIGluIEhlbGwiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6Ni45MTcsInZvdGVfY291bnQiOjEyfQ==
+  recorded_at: Fri, 14 Oct 2022 19:12:44 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/393404/images?api_key=<movie_db_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 47a7ae4054c8fd80103aafa407e6970aa1bf2016
+      X-Memc-Age:
+      - '6128'
+      X-Memc-Expires:
+      - '10160'
+      Date:
+      - Fri, 14 Oct 2022 18:34:28 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"9980e569ef316948efe14d3d98f40bfe"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 d2eee4570fb3f8a71019ccb7acd567ce.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SFO5-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - y6-cWuaEz9hCpaxndVQxezfCYmJewmkWCSYTPS5xf9EfduI_8EYYPQ==
+      Age:
+      - '2297'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"backdrops":[{"aspect_ratio":1.778,"height":720,"iso_639_1":null,"file_path":"/pwws5B8D7AIQklNfSPdodQNa6Kf.jpg","vote_average":0.0,"vote_count":0,"width":1280},{"aspect_ratio":1.778,"height":720,"iso_639_1":null,"file_path":"/gUjVbRbG7mIYqS0XsRJF5uWUopy.jpg","vote_average":0.0,"vote_count":0,"width":1280}],"id":393404,"logos":[],"posters":[{"aspect_ratio":0.667,"height":1036,"iso_639_1":"en","file_path":"/dpGVSCvxw4ptuIil0TfMhZhy71O.jpg","vote_average":5.312,"vote_count":1,"width":691},{"aspect_ratio":0.667,"height":1500,"iso_639_1":"en","file_path":"/cCIxefjk19wq9N5vC3H5eRQEVd2.jpg","vote_average":5.312,"vote_count":1,"width":1000},{"aspect_ratio":0.728,"height":1167,"iso_639_1":"en","file_path":"/t9TsXERtGHZzmdHfb2kPX0bQjOK.jpg","vote_average":5.246,"vote_count":2,"width":850},{"aspect_ratio":0.707,"height":1500,"iso_639_1":"ja","file_path":"/ld70CMLQCjzghe8IahXn6qYhgqx.jpg","vote_average":0.0,"vote_count":0,"width":1061},{"aspect_ratio":0.667,"height":2048,"iso_639_1":"en","file_path":"/6j0ODZc9bp5uNQX7yyC1bfwLil4.jpg","vote_average":0.0,"vote_count":0,"width":1365},{"aspect_ratio":0.667,"height":1278,"iso_639_1":"ja","file_path":"/uvFcQOX6XUD4I6ypuAQrZg36uhw.jpg","vote_average":0.0,"vote_count":0,"width":852},{"aspect_ratio":0.667,"height":1440,"iso_639_1":"en","file_path":"/xUC67WDWhe0rl05jRMJkEeQLYcG.jpg","vote_average":0.0,"vote_count":0,"width":960}]}'
+  recorded_at: Fri, 14 Oct 2022 19:12:45 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/393404/credits?api_key=<movie_db_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 14 Oct 2022 18:34:29 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - baf4cb9bdcb6afccbde4a917df610359f6cb7eaf
+      X-Memc-Age:
+      - '16569'
+      X-Memc-Expires:
+      - '1087'
+      Etag:
+      - W/"429904f763a3c336c82b797eea0c8dca"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 36558cb00b679b60f8b6b32e03075a28.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SFO5-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - eFvqYSwcSURr6Y0R5VpExiCX7Ucg44yYUJe3ATQwX_Kau97aD7uuHw==
+      Age:
+      - '2296'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":393404,"cast":[{"adult":false,"gender":0,"id":1693808,"known_for_department":"Directing","name":"Shinichi
+        Fukazawa","original_name":"Shinichi Fukazawa","popularity":0.6,"profile_path":null,"cast_id":1,"character":"Shinji","credit_id":"59313283925141160b00a16f","order":0},{"adult":false,"gender":0,"id":1827277,"known_for_department":"Acting","name":"Asako
+        Nosaka","original_name":"Asako Nosaka","popularity":0.6,"profile_path":null,"cast_id":2,"character":"Journalist,
+        Shinji''s ex-gf","credit_id":"593132adc3a36869e500a421","order":1},{"adult":false,"gender":0,"id":1827278,"known_for_department":"Acting","name":"Masaaki
+        Kai","original_name":"Masaaki Kai","popularity":0.6,"profile_path":null,"cast_id":3,"character":"Psychic","credit_id":"593132c5c3a3686a6200a0c5","order":2},{"adult":false,"gender":0,"id":2234265,"known_for_department":"Acting","name":"Masahiro
+        Kai","original_name":"Masahiro Kai","popularity":0.6,"profile_path":null,"cast_id":5,"character":"","credit_id":"5c578939c3a36826a68577ab","order":3},{"adult":false,"gender":0,"id":2234266,"known_for_department":"Acting","name":"Aki
+        Tama Mai","original_name":"Aki Tama Mai","popularity":0.6,"profile_path":null,"cast_id":6,"character":"","credit_id":"5c57893f92514157df50fc23","order":4}],"crew":[{"adult":false,"gender":0,"id":1693808,"known_for_department":"Directing","name":"Shinichi
+        Fukazawa","original_name":"Shinichi Fukazawa","popularity":0.6,"profile_path":null,"credit_id":"57ff32f89251416b6b00080b","department":"Directing","job":"Director"},{"adult":false,"gender":0,"id":1693808,"known_for_department":"Directing","name":"Shinichi
+        Fukazawa","original_name":"Shinichi Fukazawa","popularity":0.6,"profile_path":null,"credit_id":"5c5789720e0a260506c988b3","department":"Editing","job":"Editor"},{"adult":false,"gender":0,"id":1693808,"known_for_department":"Directing","name":"Shinichi
+        Fukazawa","original_name":"Shinichi Fukazawa","popularity":0.6,"profile_path":null,"credit_id":"5c578962c3a3680b57883fa1","department":"Production","job":"Producer"},{"adult":false,"gender":0,"id":1693808,"known_for_department":"Directing","name":"Shinichi
+        Fukazawa","original_name":"Shinichi Fukazawa","popularity":0.6,"profile_path":null,"credit_id":"593132d9925141162800a7ce","department":"Writing","job":"Writer"},{"adult":false,"gender":0,"id":2234268,"known_for_department":"Sound","name":"Notzan
+        Act","original_name":"Notzan Act","popularity":0.6,"profile_path":null,"credit_id":"5c57896a0e0a2601d6d2fdad","department":"Sound","job":"Music"},{"adult":false,"gender":0,"id":2234269,"known_for_department":"Camera","name":"Shinichi
+        Okuda","original_name":"Shinichi Okuda","popularity":0.6,"profile_path":null,"credit_id":"5c57898c0e0a263ccde436dd","department":"Camera","job":"Director
+        of Photography"}]}'
+  recorded_at: Fri, 14 Oct 2022 19:12:45 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/393404/reviews?api_key=<movie_db_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 14 Oct 2022 18:34:29 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Key:
+      - 758358e5d12cf556c62f16c46b256d1d7e6b054d
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '15615'
+      Last-Modified:
+      - Wed, 20 Jul 2022 04:51:30 GMT
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 e2d7efb4a6fe4a49c212c47079f43f9c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SFO5-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - "-utrLn_WhqTtikLNYqee9G65J8vHJEVmu1EkLCqELYUpWCspzS-5yw=="
+      Age:
+      - '2296'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":393404,"page":1,"results":[],"total_pages":0,"total_results":0}'
+  recorded_at: Fri, 14 Oct 2022 19:12:45 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/393404?api_key=<movie_db_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Key:
+      - b498d91ea0d0a2dbd1491ee3cff801636e031a7a
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '15121'
+      Last-Modified:
+      - Wed, 20 Jul 2022 04:51:30 GMT
+      Date:
+      - Fri, 14 Oct 2022 18:34:28 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 7189b8cad57dc2d1ab0dd5f90144f2a2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SFO5-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - K20BuKyYHqUl9ELl4_PWOnR1zp4i_fr3w_WZ1hMSo5G7JCDiqTTsVQ==
+      Age:
+      - '2297'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvcHd3czVCOEQ3QUlRa2xOZlNQZG9kUU5hNktmLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjowLCJnZW5yZXMiOlt7ImlkIjoyNywibmFtZSI6IkhvcnJvciJ9XSwiaG9tZXBhZ2UiOiIiLCJpZCI6MzkzNDA0LCJpbWRiX2lkIjoidHQ2NDAzNjgwIiwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJqYSIsIm9yaWdpbmFsX3RpdGxlIjoi5Zyw542E44Gu6KGA44G/44Gp44KN44Oe44OD44K544Or44OT44Or44OAIiwib3ZlcnZpZXciOiJBZnRlciBhIHN1cnByaXNlIHBob25lIGNhbGwgaW50ZXJydXB0cyBoaXMgZGFpbHkgd29ya291dCwgYmVlZnkgYm9keSBidWlsZGVyIE5hb3RvIGFncmVlcyB0byBtZWV0IGhpcyBwaG90b2pvdXJuYWxpc3QgZXgtZ2lybGZyaWVuZCB0byBoZWxwIHdpdGggaGVyIHJlc2VhcmNoIG9uIGhhdW50ZWQgaG91c2VzLiBBY2NvbXBhbmllZCBieSBhIHByb2Zlc3Npb25hbCBwc3ljaGljLCB0aGV5IHZpc2l0IGFuIGFiYW5kb25lZCBob3VzZSBvbmNlIG93bmVkIGJ5IE5hb3RvJ3MgZmF0aGVyLiBCdXQgaW5zaWRlIHRoZSBob3VzZSBhIGRhcmsgc2VjcmV0IGxpbmdlcnMgYW5kIHRoZXkgZmluZCB0aGVtc2VsdmVzIHRyYXBwZWQgYW5kIHRvcm1lbnRlZCBieSBhIHJlbGVudGxlc3MgZ2hvc3Qgd2l0aCBhIDMwIHllYXIgZ3J1ZGdlLiIsInBvcHVsYXJpdHkiOjEuNDE4LCJwb3N0ZXJfcGF0aCI6Ii9kcEdWU0N2eHc0cHR1SWlsMFRmTWhaaHk3MU8uanBnIiwicHJvZHVjdGlvbl9jb21wYW5pZXMiOlt7ImlkIjo5MTAxMiwibG9nb19wYXRoIjpudWxsLCJuYW1lIjoiVGVycmEgQ290dGEiLCJvcmlnaW5fY291bnRyeSI6IiJ9LHsiaWQiOjkxMDEzLCJsb2dvX3BhdGgiOm51bGwsIm5hbWUiOiJEcmFnb2RvbiBQaWN0dXJlcyIsIm9yaWdpbl9jb3VudHJ5IjoiIn1dLCJwcm9kdWN0aW9uX2NvdW50cmllcyI6W3siaXNvXzMxNjZfMSI6IkpQIiwibmFtZSI6IkphcGFuIn1dLCJyZWxlYXNlX2RhdGUiOiIxOTk1LTAxLTAxIiwicmV2ZW51ZSI6MCwicnVudGltZSI6NjIsInNwb2tlbl9sYW5ndWFnZXMiOlt7ImVuZ2xpc2hfbmFtZSI6IkphcGFuZXNlIiwiaXNvXzYzOV8xIjoiamEiLCJuYW1lIjoi5pel5pys6KqeIn1dLCJzdGF0dXMiOiJSZWxlYXNlZCIsInRhZ2xpbmUiOiIiLCJ0aXRsZSI6IkJsb29keSBNdXNjbGUgQm9keSBCdWlsZGVyIGluIEhlbGwiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6Ni45MTcsInZvdGVfY291bnQiOjEyfQ==
+  recorded_at: Fri, 14 Oct 2022 19:12:45 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/393404/images?api_key=<movie_db_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 47a7ae4054c8fd80103aafa407e6970aa1bf2016
+      X-Memc-Age:
+      - '6128'
+      X-Memc-Expires:
+      - '10160'
+      Date:
+      - Fri, 14 Oct 2022 18:34:28 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"9980e569ef316948efe14d3d98f40bfe"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 d2eee4570fb3f8a71019ccb7acd567ce.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SFO5-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - zWoH6-MAerbXvpcFpS9XeQR_yz4inhhUMwtaI2XMQgD7iMWlV34hQQ==
+      Age:
+      - '2297'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"backdrops":[{"aspect_ratio":1.778,"height":720,"iso_639_1":null,"file_path":"/pwws5B8D7AIQklNfSPdodQNa6Kf.jpg","vote_average":0.0,"vote_count":0,"width":1280},{"aspect_ratio":1.778,"height":720,"iso_639_1":null,"file_path":"/gUjVbRbG7mIYqS0XsRJF5uWUopy.jpg","vote_average":0.0,"vote_count":0,"width":1280}],"id":393404,"logos":[],"posters":[{"aspect_ratio":0.667,"height":1036,"iso_639_1":"en","file_path":"/dpGVSCvxw4ptuIil0TfMhZhy71O.jpg","vote_average":5.312,"vote_count":1,"width":691},{"aspect_ratio":0.667,"height":1500,"iso_639_1":"en","file_path":"/cCIxefjk19wq9N5vC3H5eRQEVd2.jpg","vote_average":5.312,"vote_count":1,"width":1000},{"aspect_ratio":0.728,"height":1167,"iso_639_1":"en","file_path":"/t9TsXERtGHZzmdHfb2kPX0bQjOK.jpg","vote_average":5.246,"vote_count":2,"width":850},{"aspect_ratio":0.707,"height":1500,"iso_639_1":"ja","file_path":"/ld70CMLQCjzghe8IahXn6qYhgqx.jpg","vote_average":0.0,"vote_count":0,"width":1061},{"aspect_ratio":0.667,"height":2048,"iso_639_1":"en","file_path":"/6j0ODZc9bp5uNQX7yyC1bfwLil4.jpg","vote_average":0.0,"vote_count":0,"width":1365},{"aspect_ratio":0.667,"height":1278,"iso_639_1":"ja","file_path":"/uvFcQOX6XUD4I6ypuAQrZg36uhw.jpg","vote_average":0.0,"vote_count":0,"width":852},{"aspect_ratio":0.667,"height":1440,"iso_639_1":"en","file_path":"/xUC67WDWhe0rl05jRMJkEeQLYcG.jpg","vote_average":0.0,"vote_count":0,"width":960}]}'
+  recorded_at: Fri, 14 Oct 2022 19:12:45 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/393404/credits?api_key=<movie_db_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 14 Oct 2022 18:34:29 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - baf4cb9bdcb6afccbde4a917df610359f6cb7eaf
+      X-Memc-Age:
+      - '16569'
+      X-Memc-Expires:
+      - '1087'
+      Etag:
+      - W/"429904f763a3c336c82b797eea0c8dca"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 7813f25b54ee9165a28165976654eb52.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SFO5-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - "-dAr-J6a0-AaN3cVptoOVGBj7iBcdfm7SdGvTj_P3UpOXYhcjH4Mog=="
+      Age:
+      - '2296'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":393404,"cast":[{"adult":false,"gender":0,"id":1693808,"known_for_department":"Directing","name":"Shinichi
+        Fukazawa","original_name":"Shinichi Fukazawa","popularity":0.6,"profile_path":null,"cast_id":1,"character":"Shinji","credit_id":"59313283925141160b00a16f","order":0},{"adult":false,"gender":0,"id":1827277,"known_for_department":"Acting","name":"Asako
+        Nosaka","original_name":"Asako Nosaka","popularity":0.6,"profile_path":null,"cast_id":2,"character":"Journalist,
+        Shinji''s ex-gf","credit_id":"593132adc3a36869e500a421","order":1},{"adult":false,"gender":0,"id":1827278,"known_for_department":"Acting","name":"Masaaki
+        Kai","original_name":"Masaaki Kai","popularity":0.6,"profile_path":null,"cast_id":3,"character":"Psychic","credit_id":"593132c5c3a3686a6200a0c5","order":2},{"adult":false,"gender":0,"id":2234265,"known_for_department":"Acting","name":"Masahiro
+        Kai","original_name":"Masahiro Kai","popularity":0.6,"profile_path":null,"cast_id":5,"character":"","credit_id":"5c578939c3a36826a68577ab","order":3},{"adult":false,"gender":0,"id":2234266,"known_for_department":"Acting","name":"Aki
+        Tama Mai","original_name":"Aki Tama Mai","popularity":0.6,"profile_path":null,"cast_id":6,"character":"","credit_id":"5c57893f92514157df50fc23","order":4}],"crew":[{"adult":false,"gender":0,"id":1693808,"known_for_department":"Directing","name":"Shinichi
+        Fukazawa","original_name":"Shinichi Fukazawa","popularity":0.6,"profile_path":null,"credit_id":"57ff32f89251416b6b00080b","department":"Directing","job":"Director"},{"adult":false,"gender":0,"id":1693808,"known_for_department":"Directing","name":"Shinichi
+        Fukazawa","original_name":"Shinichi Fukazawa","popularity":0.6,"profile_path":null,"credit_id":"5c5789720e0a260506c988b3","department":"Editing","job":"Editor"},{"adult":false,"gender":0,"id":1693808,"known_for_department":"Directing","name":"Shinichi
+        Fukazawa","original_name":"Shinichi Fukazawa","popularity":0.6,"profile_path":null,"credit_id":"5c578962c3a3680b57883fa1","department":"Production","job":"Producer"},{"adult":false,"gender":0,"id":1693808,"known_for_department":"Directing","name":"Shinichi
+        Fukazawa","original_name":"Shinichi Fukazawa","popularity":0.6,"profile_path":null,"credit_id":"593132d9925141162800a7ce","department":"Writing","job":"Writer"},{"adult":false,"gender":0,"id":2234268,"known_for_department":"Sound","name":"Notzan
+        Act","original_name":"Notzan Act","popularity":0.6,"profile_path":null,"credit_id":"5c57896a0e0a2601d6d2fdad","department":"Sound","job":"Music"},{"adult":false,"gender":0,"id":2234269,"known_for_department":"Camera","name":"Shinichi
+        Okuda","original_name":"Shinichi Okuda","popularity":0.6,"profile_path":null,"credit_id":"5c57898c0e0a263ccde436dd","department":"Camera","job":"Director
+        of Photography"}]}'
+  recorded_at: Fri, 14 Oct 2022 19:12:45 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/393404/reviews?api_key=<movie_db_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 14 Oct 2022 18:34:29 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Key:
+      - 758358e5d12cf556c62f16c46b256d1d7e6b054d
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '15615'
+      Last-Modified:
+      - Wed, 20 Jul 2022 04:51:30 GMT
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 9525a1adf6d0a16da3bb7589fe5684a4.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SFO5-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - phIgVVKBVZ4y7Fktks0Ux5Z5RqX61_prY5-VFcwMUIa1PhAMVUbRiA==
+      Age:
+      - '2296'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":393404,"page":1,"results":[],"total_pages":0,"total_results":0}'
+  recorded_at: Fri, 14 Oct 2022 19:12:45 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/393404?api_key=<movie_db_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Key:
+      - b498d91ea0d0a2dbd1491ee3cff801636e031a7a
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '15121'
+      Last-Modified:
+      - Wed, 20 Jul 2022 04:51:30 GMT
+      Date:
+      - Fri, 14 Oct 2022 18:34:28 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 5e3db235184770510999a272e515dfbc.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SFO5-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 3E3ROTJ_91UPSAE2TubAawJSN4scWMiBY2ofd9qzgonepa_Eg-rr7w==
+      Age:
+      - '2298'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvcHd3czVCOEQ3QUlRa2xOZlNQZG9kUU5hNktmLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjowLCJnZW5yZXMiOlt7ImlkIjoyNywibmFtZSI6IkhvcnJvciJ9XSwiaG9tZXBhZ2UiOiIiLCJpZCI6MzkzNDA0LCJpbWRiX2lkIjoidHQ2NDAzNjgwIiwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJqYSIsIm9yaWdpbmFsX3RpdGxlIjoi5Zyw542E44Gu6KGA44G/44Gp44KN44Oe44OD44K544Or44OT44Or44OAIiwib3ZlcnZpZXciOiJBZnRlciBhIHN1cnByaXNlIHBob25lIGNhbGwgaW50ZXJydXB0cyBoaXMgZGFpbHkgd29ya291dCwgYmVlZnkgYm9keSBidWlsZGVyIE5hb3RvIGFncmVlcyB0byBtZWV0IGhpcyBwaG90b2pvdXJuYWxpc3QgZXgtZ2lybGZyaWVuZCB0byBoZWxwIHdpdGggaGVyIHJlc2VhcmNoIG9uIGhhdW50ZWQgaG91c2VzLiBBY2NvbXBhbmllZCBieSBhIHByb2Zlc3Npb25hbCBwc3ljaGljLCB0aGV5IHZpc2l0IGFuIGFiYW5kb25lZCBob3VzZSBvbmNlIG93bmVkIGJ5IE5hb3RvJ3MgZmF0aGVyLiBCdXQgaW5zaWRlIHRoZSBob3VzZSBhIGRhcmsgc2VjcmV0IGxpbmdlcnMgYW5kIHRoZXkgZmluZCB0aGVtc2VsdmVzIHRyYXBwZWQgYW5kIHRvcm1lbnRlZCBieSBhIHJlbGVudGxlc3MgZ2hvc3Qgd2l0aCBhIDMwIHllYXIgZ3J1ZGdlLiIsInBvcHVsYXJpdHkiOjEuNDE4LCJwb3N0ZXJfcGF0aCI6Ii9kcEdWU0N2eHc0cHR1SWlsMFRmTWhaaHk3MU8uanBnIiwicHJvZHVjdGlvbl9jb21wYW5pZXMiOlt7ImlkIjo5MTAxMiwibG9nb19wYXRoIjpudWxsLCJuYW1lIjoiVGVycmEgQ290dGEiLCJvcmlnaW5fY291bnRyeSI6IiJ9LHsiaWQiOjkxMDEzLCJsb2dvX3BhdGgiOm51bGwsIm5hbWUiOiJEcmFnb2RvbiBQaWN0dXJlcyIsIm9yaWdpbl9jb3VudHJ5IjoiIn1dLCJwcm9kdWN0aW9uX2NvdW50cmllcyI6W3siaXNvXzMxNjZfMSI6IkpQIiwibmFtZSI6IkphcGFuIn1dLCJyZWxlYXNlX2RhdGUiOiIxOTk1LTAxLTAxIiwicmV2ZW51ZSI6MCwicnVudGltZSI6NjIsInNwb2tlbl9sYW5ndWFnZXMiOlt7ImVuZ2xpc2hfbmFtZSI6IkphcGFuZXNlIiwiaXNvXzYzOV8xIjoiamEiLCJuYW1lIjoi5pel5pys6KqeIn1dLCJzdGF0dXMiOiJSZWxlYXNlZCIsInRhZ2xpbmUiOiIiLCJ0aXRsZSI6IkJsb29keSBNdXNjbGUgQm9keSBCdWlsZGVyIGluIEhlbGwiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6Ni45MTcsInZvdGVfY291bnQiOjEyfQ==
+  recorded_at: Fri, 14 Oct 2022 19:12:46 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/393404/images?api_key=<movie_db_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 47a7ae4054c8fd80103aafa407e6970aa1bf2016
+      X-Memc-Age:
+      - '6128'
+      X-Memc-Expires:
+      - '10160'
+      Date:
+      - Fri, 14 Oct 2022 18:34:28 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"9980e569ef316948efe14d3d98f40bfe"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 cad90a633aa6c25fa3cd0575469d15aa.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SFO5-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - oDKk6Q6mh0PlqH-OIqADU2H5XnbfmlreVG90tIuDODHgGQ3zQ-VDbw==
+      Age:
+      - '2298'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"backdrops":[{"aspect_ratio":1.778,"height":720,"iso_639_1":null,"file_path":"/pwws5B8D7AIQklNfSPdodQNa6Kf.jpg","vote_average":0.0,"vote_count":0,"width":1280},{"aspect_ratio":1.778,"height":720,"iso_639_1":null,"file_path":"/gUjVbRbG7mIYqS0XsRJF5uWUopy.jpg","vote_average":0.0,"vote_count":0,"width":1280}],"id":393404,"logos":[],"posters":[{"aspect_ratio":0.667,"height":1036,"iso_639_1":"en","file_path":"/dpGVSCvxw4ptuIil0TfMhZhy71O.jpg","vote_average":5.312,"vote_count":1,"width":691},{"aspect_ratio":0.667,"height":1500,"iso_639_1":"en","file_path":"/cCIxefjk19wq9N5vC3H5eRQEVd2.jpg","vote_average":5.312,"vote_count":1,"width":1000},{"aspect_ratio":0.728,"height":1167,"iso_639_1":"en","file_path":"/t9TsXERtGHZzmdHfb2kPX0bQjOK.jpg","vote_average":5.246,"vote_count":2,"width":850},{"aspect_ratio":0.707,"height":1500,"iso_639_1":"ja","file_path":"/ld70CMLQCjzghe8IahXn6qYhgqx.jpg","vote_average":0.0,"vote_count":0,"width":1061},{"aspect_ratio":0.667,"height":2048,"iso_639_1":"en","file_path":"/6j0ODZc9bp5uNQX7yyC1bfwLil4.jpg","vote_average":0.0,"vote_count":0,"width":1365},{"aspect_ratio":0.667,"height":1278,"iso_639_1":"ja","file_path":"/uvFcQOX6XUD4I6ypuAQrZg36uhw.jpg","vote_average":0.0,"vote_count":0,"width":852},{"aspect_ratio":0.667,"height":1440,"iso_639_1":"en","file_path":"/xUC67WDWhe0rl05jRMJkEeQLYcG.jpg","vote_average":0.0,"vote_count":0,"width":960}]}'
+  recorded_at: Fri, 14 Oct 2022 19:12:46 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/393404/credits?api_key=<movie_db_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 14 Oct 2022 18:34:29 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - baf4cb9bdcb6afccbde4a917df610359f6cb7eaf
+      X-Memc-Age:
+      - '16569'
+      X-Memc-Expires:
+      - '1087'
+      Etag:
+      - W/"429904f763a3c336c82b797eea0c8dca"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 cad90a633aa6c25fa3cd0575469d15aa.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SFO5-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 42dHxSAqgpWjWBRjCw0LSbfo-fuQMB-JOM2YWdWFaYE1gCFUv0fjYw==
+      Age:
+      - '2297'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":393404,"cast":[{"adult":false,"gender":0,"id":1693808,"known_for_department":"Directing","name":"Shinichi
+        Fukazawa","original_name":"Shinichi Fukazawa","popularity":0.6,"profile_path":null,"cast_id":1,"character":"Shinji","credit_id":"59313283925141160b00a16f","order":0},{"adult":false,"gender":0,"id":1827277,"known_for_department":"Acting","name":"Asako
+        Nosaka","original_name":"Asako Nosaka","popularity":0.6,"profile_path":null,"cast_id":2,"character":"Journalist,
+        Shinji''s ex-gf","credit_id":"593132adc3a36869e500a421","order":1},{"adult":false,"gender":0,"id":1827278,"known_for_department":"Acting","name":"Masaaki
+        Kai","original_name":"Masaaki Kai","popularity":0.6,"profile_path":null,"cast_id":3,"character":"Psychic","credit_id":"593132c5c3a3686a6200a0c5","order":2},{"adult":false,"gender":0,"id":2234265,"known_for_department":"Acting","name":"Masahiro
+        Kai","original_name":"Masahiro Kai","popularity":0.6,"profile_path":null,"cast_id":5,"character":"","credit_id":"5c578939c3a36826a68577ab","order":3},{"adult":false,"gender":0,"id":2234266,"known_for_department":"Acting","name":"Aki
+        Tama Mai","original_name":"Aki Tama Mai","popularity":0.6,"profile_path":null,"cast_id":6,"character":"","credit_id":"5c57893f92514157df50fc23","order":4}],"crew":[{"adult":false,"gender":0,"id":1693808,"known_for_department":"Directing","name":"Shinichi
+        Fukazawa","original_name":"Shinichi Fukazawa","popularity":0.6,"profile_path":null,"credit_id":"57ff32f89251416b6b00080b","department":"Directing","job":"Director"},{"adult":false,"gender":0,"id":1693808,"known_for_department":"Directing","name":"Shinichi
+        Fukazawa","original_name":"Shinichi Fukazawa","popularity":0.6,"profile_path":null,"credit_id":"5c5789720e0a260506c988b3","department":"Editing","job":"Editor"},{"adult":false,"gender":0,"id":1693808,"known_for_department":"Directing","name":"Shinichi
+        Fukazawa","original_name":"Shinichi Fukazawa","popularity":0.6,"profile_path":null,"credit_id":"5c578962c3a3680b57883fa1","department":"Production","job":"Producer"},{"adult":false,"gender":0,"id":1693808,"known_for_department":"Directing","name":"Shinichi
+        Fukazawa","original_name":"Shinichi Fukazawa","popularity":0.6,"profile_path":null,"credit_id":"593132d9925141162800a7ce","department":"Writing","job":"Writer"},{"adult":false,"gender":0,"id":2234268,"known_for_department":"Sound","name":"Notzan
+        Act","original_name":"Notzan Act","popularity":0.6,"profile_path":null,"credit_id":"5c57896a0e0a2601d6d2fdad","department":"Sound","job":"Music"},{"adult":false,"gender":0,"id":2234269,"known_for_department":"Camera","name":"Shinichi
+        Okuda","original_name":"Shinichi Okuda","popularity":0.6,"profile_path":null,"credit_id":"5c57898c0e0a263ccde436dd","department":"Camera","job":"Director
+        of Photography"}]}'
+  recorded_at: Fri, 14 Oct 2022 19:12:46 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/393404/reviews?api_key=<movie_db_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 14 Oct 2022 18:34:29 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Key:
+      - 758358e5d12cf556c62f16c46b256d1d7e6b054d
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '15615'
+      Last-Modified:
+      - Wed, 20 Jul 2022 04:51:30 GMT
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 9525a1adf6d0a16da3bb7589fe5684a4.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SFO5-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - Z0elyOkzvxN0i1jkp6IGUFH02Jb1GMLXKFJuO1zvlsv-6B3c9brGww==
+      Age:
+      - '2297'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":393404,"page":1,"results":[],"total_pages":0,"total_results":0}'
+  recorded_at: Fri, 14 Oct 2022 19:12:46 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/393404?api_key=<movie_db_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Key:
+      - b498d91ea0d0a2dbd1491ee3cff801636e031a7a
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '15121'
+      Last-Modified:
+      - Wed, 20 Jul 2022 04:51:30 GMT
+      Date:
+      - Fri, 14 Oct 2022 18:34:28 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 fde752a2d4e95c2353cf5fc17ef7bf2a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SFO5-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - CCSpZor6CTB4IhK-fCitEngeEw1XF2EWfR3kOmNEP6MNMtkyK97FWw==
+      Age:
+      - '2298'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvcHd3czVCOEQ3QUlRa2xOZlNQZG9kUU5hNktmLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjowLCJnZW5yZXMiOlt7ImlkIjoyNywibmFtZSI6IkhvcnJvciJ9XSwiaG9tZXBhZ2UiOiIiLCJpZCI6MzkzNDA0LCJpbWRiX2lkIjoidHQ2NDAzNjgwIiwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJqYSIsIm9yaWdpbmFsX3RpdGxlIjoi5Zyw542E44Gu6KGA44G/44Gp44KN44Oe44OD44K544Or44OT44Or44OAIiwib3ZlcnZpZXciOiJBZnRlciBhIHN1cnByaXNlIHBob25lIGNhbGwgaW50ZXJydXB0cyBoaXMgZGFpbHkgd29ya291dCwgYmVlZnkgYm9keSBidWlsZGVyIE5hb3RvIGFncmVlcyB0byBtZWV0IGhpcyBwaG90b2pvdXJuYWxpc3QgZXgtZ2lybGZyaWVuZCB0byBoZWxwIHdpdGggaGVyIHJlc2VhcmNoIG9uIGhhdW50ZWQgaG91c2VzLiBBY2NvbXBhbmllZCBieSBhIHByb2Zlc3Npb25hbCBwc3ljaGljLCB0aGV5IHZpc2l0IGFuIGFiYW5kb25lZCBob3VzZSBvbmNlIG93bmVkIGJ5IE5hb3RvJ3MgZmF0aGVyLiBCdXQgaW5zaWRlIHRoZSBob3VzZSBhIGRhcmsgc2VjcmV0IGxpbmdlcnMgYW5kIHRoZXkgZmluZCB0aGVtc2VsdmVzIHRyYXBwZWQgYW5kIHRvcm1lbnRlZCBieSBhIHJlbGVudGxlc3MgZ2hvc3Qgd2l0aCBhIDMwIHllYXIgZ3J1ZGdlLiIsInBvcHVsYXJpdHkiOjEuNDE4LCJwb3N0ZXJfcGF0aCI6Ii9kcEdWU0N2eHc0cHR1SWlsMFRmTWhaaHk3MU8uanBnIiwicHJvZHVjdGlvbl9jb21wYW5pZXMiOlt7ImlkIjo5MTAxMiwibG9nb19wYXRoIjpudWxsLCJuYW1lIjoiVGVycmEgQ290dGEiLCJvcmlnaW5fY291bnRyeSI6IiJ9LHsiaWQiOjkxMDEzLCJsb2dvX3BhdGgiOm51bGwsIm5hbWUiOiJEcmFnb2RvbiBQaWN0dXJlcyIsIm9yaWdpbl9jb3VudHJ5IjoiIn1dLCJwcm9kdWN0aW9uX2NvdW50cmllcyI6W3siaXNvXzMxNjZfMSI6IkpQIiwibmFtZSI6IkphcGFuIn1dLCJyZWxlYXNlX2RhdGUiOiIxOTk1LTAxLTAxIiwicmV2ZW51ZSI6MCwicnVudGltZSI6NjIsInNwb2tlbl9sYW5ndWFnZXMiOlt7ImVuZ2xpc2hfbmFtZSI6IkphcGFuZXNlIiwiaXNvXzYzOV8xIjoiamEiLCJuYW1lIjoi5pel5pys6KqeIn1dLCJzdGF0dXMiOiJSZWxlYXNlZCIsInRhZ2xpbmUiOiIiLCJ0aXRsZSI6IkJsb29keSBNdXNjbGUgQm9keSBCdWlsZGVyIGluIEhlbGwiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6Ni45MTcsInZvdGVfY291bnQiOjEyfQ==
+  recorded_at: Fri, 14 Oct 2022 19:12:46 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/393404/images?api_key=<movie_db_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 47a7ae4054c8fd80103aafa407e6970aa1bf2016
+      X-Memc-Age:
+      - '6128'
+      X-Memc-Expires:
+      - '10160'
+      Date:
+      - Fri, 14 Oct 2022 18:34:28 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"9980e569ef316948efe14d3d98f40bfe"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 1610908c71e02a3a4a7c5003a074ddd2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SFO5-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - "-izsxSpkYikswvkVaJ7qxrrrClnB1lefzOxvZ9qY5NvFr3CeRBiDPQ=="
+      Age:
+      - '2298'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"backdrops":[{"aspect_ratio":1.778,"height":720,"iso_639_1":null,"file_path":"/pwws5B8D7AIQklNfSPdodQNa6Kf.jpg","vote_average":0.0,"vote_count":0,"width":1280},{"aspect_ratio":1.778,"height":720,"iso_639_1":null,"file_path":"/gUjVbRbG7mIYqS0XsRJF5uWUopy.jpg","vote_average":0.0,"vote_count":0,"width":1280}],"id":393404,"logos":[],"posters":[{"aspect_ratio":0.667,"height":1036,"iso_639_1":"en","file_path":"/dpGVSCvxw4ptuIil0TfMhZhy71O.jpg","vote_average":5.312,"vote_count":1,"width":691},{"aspect_ratio":0.667,"height":1500,"iso_639_1":"en","file_path":"/cCIxefjk19wq9N5vC3H5eRQEVd2.jpg","vote_average":5.312,"vote_count":1,"width":1000},{"aspect_ratio":0.728,"height":1167,"iso_639_1":"en","file_path":"/t9TsXERtGHZzmdHfb2kPX0bQjOK.jpg","vote_average":5.246,"vote_count":2,"width":850},{"aspect_ratio":0.707,"height":1500,"iso_639_1":"ja","file_path":"/ld70CMLQCjzghe8IahXn6qYhgqx.jpg","vote_average":0.0,"vote_count":0,"width":1061},{"aspect_ratio":0.667,"height":2048,"iso_639_1":"en","file_path":"/6j0ODZc9bp5uNQX7yyC1bfwLil4.jpg","vote_average":0.0,"vote_count":0,"width":1365},{"aspect_ratio":0.667,"height":1278,"iso_639_1":"ja","file_path":"/uvFcQOX6XUD4I6ypuAQrZg36uhw.jpg","vote_average":0.0,"vote_count":0,"width":852},{"aspect_ratio":0.667,"height":1440,"iso_639_1":"en","file_path":"/xUC67WDWhe0rl05jRMJkEeQLYcG.jpg","vote_average":0.0,"vote_count":0,"width":960}]}'
+  recorded_at: Fri, 14 Oct 2022 19:12:46 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/393404/credits?api_key=<movie_db_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 14 Oct 2022 18:34:29 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - baf4cb9bdcb6afccbde4a917df610359f6cb7eaf
+      X-Memc-Age:
+      - '16569'
+      X-Memc-Expires:
+      - '1087'
+      Etag:
+      - W/"429904f763a3c336c82b797eea0c8dca"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 81f818adbacff6b703252be1c8922598.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SFO5-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - f9pENYbMVk99b4zsbP5n4n9CSgNFE_edu-71HEdYPwJ0cEEs88TAJw==
+      Age:
+      - '2297'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":393404,"cast":[{"adult":false,"gender":0,"id":1693808,"known_for_department":"Directing","name":"Shinichi
+        Fukazawa","original_name":"Shinichi Fukazawa","popularity":0.6,"profile_path":null,"cast_id":1,"character":"Shinji","credit_id":"59313283925141160b00a16f","order":0},{"adult":false,"gender":0,"id":1827277,"known_for_department":"Acting","name":"Asako
+        Nosaka","original_name":"Asako Nosaka","popularity":0.6,"profile_path":null,"cast_id":2,"character":"Journalist,
+        Shinji''s ex-gf","credit_id":"593132adc3a36869e500a421","order":1},{"adult":false,"gender":0,"id":1827278,"known_for_department":"Acting","name":"Masaaki
+        Kai","original_name":"Masaaki Kai","popularity":0.6,"profile_path":null,"cast_id":3,"character":"Psychic","credit_id":"593132c5c3a3686a6200a0c5","order":2},{"adult":false,"gender":0,"id":2234265,"known_for_department":"Acting","name":"Masahiro
+        Kai","original_name":"Masahiro Kai","popularity":0.6,"profile_path":null,"cast_id":5,"character":"","credit_id":"5c578939c3a36826a68577ab","order":3},{"adult":false,"gender":0,"id":2234266,"known_for_department":"Acting","name":"Aki
+        Tama Mai","original_name":"Aki Tama Mai","popularity":0.6,"profile_path":null,"cast_id":6,"character":"","credit_id":"5c57893f92514157df50fc23","order":4}],"crew":[{"adult":false,"gender":0,"id":1693808,"known_for_department":"Directing","name":"Shinichi
+        Fukazawa","original_name":"Shinichi Fukazawa","popularity":0.6,"profile_path":null,"credit_id":"57ff32f89251416b6b00080b","department":"Directing","job":"Director"},{"adult":false,"gender":0,"id":1693808,"known_for_department":"Directing","name":"Shinichi
+        Fukazawa","original_name":"Shinichi Fukazawa","popularity":0.6,"profile_path":null,"credit_id":"5c5789720e0a260506c988b3","department":"Editing","job":"Editor"},{"adult":false,"gender":0,"id":1693808,"known_for_department":"Directing","name":"Shinichi
+        Fukazawa","original_name":"Shinichi Fukazawa","popularity":0.6,"profile_path":null,"credit_id":"5c578962c3a3680b57883fa1","department":"Production","job":"Producer"},{"adult":false,"gender":0,"id":1693808,"known_for_department":"Directing","name":"Shinichi
+        Fukazawa","original_name":"Shinichi Fukazawa","popularity":0.6,"profile_path":null,"credit_id":"593132d9925141162800a7ce","department":"Writing","job":"Writer"},{"adult":false,"gender":0,"id":2234268,"known_for_department":"Sound","name":"Notzan
+        Act","original_name":"Notzan Act","popularity":0.6,"profile_path":null,"credit_id":"5c57896a0e0a2601d6d2fdad","department":"Sound","job":"Music"},{"adult":false,"gender":0,"id":2234269,"known_for_department":"Camera","name":"Shinichi
+        Okuda","original_name":"Shinichi Okuda","popularity":0.6,"profile_path":null,"credit_id":"5c57898c0e0a263ccde436dd","department":"Camera","job":"Director
+        of Photography"}]}'
+  recorded_at: Fri, 14 Oct 2022 19:12:46 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/393404/reviews?api_key=<movie_db_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 14 Oct 2022 18:34:29 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Key:
+      - 758358e5d12cf556c62f16c46b256d1d7e6b054d
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '15615'
+      Last-Modified:
+      - Wed, 20 Jul 2022 04:51:30 GMT
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 cad90a633aa6c25fa3cd0575469d15aa.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SFO5-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - YfX1ibgA_RQKNRX5eSiRJoT4Tbo5nZMXP9aGmenkaE6zpaOSU9kCFg==
+      Age:
+      - '2297'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":393404,"page":1,"results":[],"total_pages":0,"total_results":0}'
+  recorded_at: Fri, 14 Oct 2022 19:12:46 GMT
+recorded_with: VCR 6.1.0
