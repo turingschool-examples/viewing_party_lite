@@ -14,8 +14,8 @@ class Party < ApplicationRecord
   end
 
   def hours_and_minutes
-    hours = self.duration / 60
-    minutes = self.duration % 60
+    hours = duration / 60
+    minutes = duration % 60
     "#{hours}hr #{minutes}min"
   end
 end
