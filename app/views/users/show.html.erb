@@ -43,7 +43,7 @@
               <img class='rounded' alt = <%= @movies[image].title %> src="https://image.tmdb.org/t/p/w200/<%= @movies[image].image %>">
               <li id="date_invited"><%= vp.date.strftime('%B %d, %Y %I:%M %p') %></li>
               <li id="role_invited">Your Role: <%= vp.current_party(@user.id).role %></li>
-              <li id="host_invited">Host By: <%=vp.host%> (you) </li>
+              <li id="host_invited">Host By: <%=vp.host%> </li>
               Other Viewers:
                 <ul id="viewers">
                   <%vp.users.each do |user|%>
