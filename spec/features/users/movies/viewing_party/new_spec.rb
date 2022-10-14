@@ -6,6 +6,11 @@ RSpec.describe 'New viewing party page', type: :feature do
     stub_request(:get, 'https://api.themoviedb.org/3/movie/238').
       with(query: {'api_key' => ENV['movie_api_key']}).
       to_return(status: 200, body: json_response)
+    
+    json_response2 = File.open('./fixtures/godfather_image.json')
+    stub_request(:get, 'https://api.themoviedb.org/3/movie/238/images').
+      with(query: {'api_key' => ENV['movie_api_key']}).
+      to_return(status: 200, body: json_response2) 
   end
   describe 'When I visit the new viewing party page' do
     it 'I should see the name of the movie title rendered above a form' do

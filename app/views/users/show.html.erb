@@ -5,9 +5,11 @@
 <div id="viewing_parties">
   <h3> Viewing Parties </h3>
   <% @user.viewing_parties.each do |party| %>
-    <% film = @movies.find do |movie| %>
+    <% film = @movies.find do |movie| %> 
       <% movie.movie_id == party.movie_id %>
     <% end %>
+    <% image_uri = film.image_path %>
+    <%= image_tag("https://image.tmdb.org/t/p/w300/#{image_uri}") %><br>
     <%= film.title %><br>
     <%= party.date.strftime('%B %d, %Y') %><br>
     <%= party.start_time.strftime('%I:%M %p') %><br>

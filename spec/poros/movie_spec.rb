@@ -1,6 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Movie do
+  before :all do
+    json_response = File.open('./fixtures/godfather_image.json')
+    stub_request(:get, 'https://api.themoviedb.org/3/movie/238/images').
+      with(query: {'api_key' => ENV['movie_api_key']}).
+      to_return(status: 200, body: json_response) 
+  end
+
   it 'exists' do
     movie_data = {
       "adult": false,
@@ -88,5 +95,6 @@ RSpec.describe Movie do
     expect(movie.summary).to include('launching a campaign of bloody revenge.')
     expect(movie.vote_average).to eq(8.715)
     expect(movie.genres).to eq(["Drama", "Crime"])
+    expect(movie.image_path).to eq('/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg')
   end
 end
