@@ -8,7 +8,7 @@ RSpec.describe 'Movie results page' do
       visit user_discover_index_path(user)
 
       VCR.use_cassette('top_rated_movies_index') do
-        click_button "Discover Top Rated Movies"
+        click_button 'Discover Top Rated Movies'
         movies = MoviesFacade.top_rated
         expect(current_path).to eq(user_movies_path(user))
         expect(page).to have_content(movies.first.title)
@@ -29,11 +29,11 @@ RSpec.describe 'Movie results page' do
       visit user_discover_index_path(user)
 
       VCR.use_cassette('search_top_gun_feature') do
-        fill_in "Search", with: "Top Gun"
-        click_on "Search by Movie Title"
-        movies = MoviesFacade.search("Top Gun")
+        fill_in 'Search', with: 'Top Gun'
+        click_on 'Search by Movie Title'
+        movies = MoviesFacade.search('Top Gun')
         expect(current_path).to eq(user_movies_path(user))
-        expect(page).to have_content("Top Gun")
+        expect(page).to have_content('Top Gun')
         expect(page).to have_link movies.first.title
         click_on movies.first.title
         expect(current_path).to eq(user_movie_path(user, movies.first.id))
@@ -45,10 +45,10 @@ RSpec.describe 'Movie results page' do
 
       visit user_discover_index_path(user)
 
-      fill_in 'Search', with: "Top Gun 17"
+      fill_in 'Search', with: 'Top Gun 17'
       click_on 'Search by Movie Title'
 
-      expect(current_path).to_not have_content("Top Gun")
+      expect(current_path).to_not have_content('Top Gun')
     end
   end
 end

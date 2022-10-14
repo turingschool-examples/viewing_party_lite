@@ -8,7 +8,7 @@ class MoviesFacade
   end
 
   def self.search(keyword)
-    response = MoviesService.search(keyword.titleize.gsub(" ", "+"))
+    response = MoviesService.search(keyword.titleize.gsub(' ', '+'))
 
     movies = response[:results].map do |movie|
       Movie.new(movie)
@@ -18,9 +18,7 @@ class MoviesFacade
 
     movies.each do |movie|
       keyword.titleize.split.each do |word|
-        if movie.title.include?(word)
-          found_movies << movie
-        end
+        found_movies << movie if movie.title.include?(word)
       end
     end
 
@@ -37,7 +35,7 @@ class MoviesFacade
     movie_ids.each_with_object({}) do |movie_id, hash|
       response = MoviesService.details(movie_id)
       movie = MovieDetailed.new(response)
-      hash[movie.id] = movie.poster_path 
+      hash[movie.id] = movie.poster_path
     end
   end
 end

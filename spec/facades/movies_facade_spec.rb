@@ -3,15 +3,15 @@ require 'rails_helper'
 RSpec.describe MoviesFacade do
   it 'returns collections of top rated movies' do
     VCR.use_cassette('top_rated_movies') do
-    result = MoviesFacade.top_rated
+      result = MoviesFacade.top_rated
 
-    expect(result).to be_an(Array)
-    expect(result.first).to be_a(Movie)   
+      expect(result).to be_an(Array)
+      expect(result.first).to be_a(Movie)
     end
   end
 
   it 'returns a collection of movies containing a given keyword' do
-    keyword = "Minions"
+    keyword = 'Minions'
 
     VCR.use_cassette("search_#{keyword}") do
       response = MoviesFacade.search(keyword)
@@ -24,7 +24,7 @@ RSpec.describe MoviesFacade do
   end
 
   it 'can search multiple keywords' do
-    keyword = "Lord Rings"
+    keyword = 'Lord Rings'
 
     VCR.use_cassette("search_#{keyword}") do
       response = MoviesFacade.search(keyword)
@@ -40,14 +40,14 @@ RSpec.describe MoviesFacade do
 
   it 'can return a movies details given its id' do
     VCR.use_cassette('movie-detailed') do
-      @movie = MoviesFacade.details(438148)
+      @movie = MoviesFacade.details(438_148)
 
       expect(@movie).to be_a(MovieDetailed)
     end
   end
 
   it 'can return a hash of movie ids with poster URLs' do
-    movie_ids = [238, 372754, 497]
+    movie_ids = [238, 372_754, 497]
     VCR.use_cassette('movie-posters') do
       expect(MoviesFacade.images(movie_ids)).to be_a(Hash)
     end
