@@ -1,0 +1,114 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=6f974f2eba74445f2915a36f183702b7&include_adult=false&language=en-US&page=1&query=grand%20budapest
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 14 Oct 2022 04:51:41 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=600
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 23d87d8c2ce38e34462e6c134d187eea.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - nPGVSoGYHZZ0BxHjAjJ1Yzwdbmrko8lz1HFpm9BRZsBLmQqxl8oMIw==
+      Age:
+      - '545'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJwYWdlIjoxLCJyZXN1bHRzIjpbeyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvNXZQVzZNUEF5Q0ZkODRGRVFRZ3RQRG1WRFBRLmpwZyIsImdlbnJlX2lkcyI6WzM1LDE4XSwiaWQiOjEyMDQ2Nywib3JpZ2luYWxfbGFuZ3VhZ2UiOiJlbiIsIm9yaWdpbmFsX3RpdGxlIjoiVGhlIEdyYW5kIEJ1ZGFwZXN0IEhvdGVsIiwib3ZlcnZpZXciOiJUaGUgR3JhbmQgQnVkYXBlc3QgSG90ZWwgdGVsbHMgb2YgYSBsZWdlbmRhcnkgY29uY2llcmdlIGF0IGEgZmFtb3VzIEV1cm9wZWFuIGhvdGVsIGJldHdlZW4gdGhlIHdhcnMgYW5kIGhpcyBmcmllbmRzaGlwIHdpdGggYSB5b3VuZyBlbXBsb3llZSB3aG8gYmVjb21lcyBoaXMgdHJ1c3RlZCBwcm90w6lnw6kuIFRoZSBzdG9yeSBpbnZvbHZlcyB0aGUgdGhlZnQgYW5kIHJlY292ZXJ5IG9mIGEgcHJpY2VsZXNzIFJlbmFpc3NhbmNlIHBhaW50aW5nLCB0aGUgYmF0dGxlIGZvciBhbiBlbm9ybW91cyBmYW1pbHkgZm9ydHVuZSBhbmQgdGhlIHNsb3cgYW5kIHRoZW4gc3VkZGVuIHVwaGVhdmFscyB0aGF0IHRyYW5zZm9ybWVkIEV1cm9wZSBkdXJpbmcgdGhlIGZpcnN0IGhhbGYgb2YgdGhlIDIwdGggY2VudHVyeS4iLCJwb3B1bGFyaXR5IjozMy44MiwicG9zdGVyX3BhdGgiOiIvZVdkeVlRcmVqYTZKR0N6cUhXWHBXSERyclBvLmpwZyIsInJlbGVhc2VfZGF0ZSI6IjIwMTQtMDItMjYiLCJ0aXRsZSI6IlRoZSBHcmFuZCBCdWRhcGVzdCBIb3RlbCIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjo4LjEsInZvdGVfY291bnQiOjEyNjg2fSx7ImFkdWx0IjpmYWxzZSwiYmFja2Ryb3BfcGF0aCI6bnVsbCwiZ2VucmVfaWRzIjpbOTldLCJpZCI6NjY1MDI3LCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiJUaGUgV2VzIEFuZGVyc29uIENvbGxlY3Rpb246IFRoZSBHcmFuZCBCdWRhcGVzdCBIb3RlbCIsIm92ZXJ2aWV3IjoiVmlzdWFsIGVzc2F5IG9uIFdlcyBBbmRlcnNvbidzIDIwMTQgZmlsbSBUSEUgR1JBTkQgQlVEQVBFU1QgSE9URUwiLCJwb3B1bGFyaXR5IjowLjYyNSwicG9zdGVyX3BhdGgiOiIvZ3ZDN2xoWVZ6Q1Byc1dMVTFXbUFmTHRmbWtFLmpwZyIsInJlbGVhc2VfZGF0ZSI6IjIwMTUtMDItMTYiLCJ0aXRsZSI6IlRoZSBXZXMgQW5kZXJzb24gQ29sbGVjdGlvbjogVGhlIEdyYW5kIEJ1ZGFwZXN0IEhvdGVsIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjcsInZvdGVfY291bnQiOjF9XSwidG90YWxfcGFnZXMiOjEsInRvdGFsX3Jlc3VsdHMiOjJ9
+  recorded_at: Fri, 14 Oct 2022 05:00:46 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=6f974f2eba74445f2915a36f183702b7&include_adult=false&language=en-US&page=2&query=grand%20budapest
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 14 Oct 2022 04:51:41 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=600
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 ce4b35590464ed34415a13badd946eba.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - X-oV4qsV8B80M0Ej8Eb644E-sgmQUqAOd_PULmoH-2oj8FRxZSFVbA==
+      Age:
+      - '545'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":2,"results":[],"total_pages":1,"total_results":2}'
+  recorded_at: Fri, 14 Oct 2022 05:00:46 GMT
+recorded_with: VCR 6.1.0
