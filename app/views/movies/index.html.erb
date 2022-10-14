@@ -1,0 +1,10 @@
+
+<% if params[:search] == "top rated" %>
+    <h2>Top Rated Movies</h2>
+<% else %>
+    <h2>Movie results for: <%= params[:search] %></h2>
+<% end %><br>
+<%= button_to  "Discover Movies", user_discover_path(@user), method: :get %>
+<% @movies.each do |movie| %>
+    <li><%= link_to "#{movie.title}", user_movie_path(@user, movie.id) %> <p>Vote Average: <%= movie.vote_average %></p></li>
+<% end %>
