@@ -1,13 +1,7 @@
 class Credits
-  attr_reader :cast_info
+  attr_reader :name
 
   def initialize(api)
-    @cast_info = api[:cast]
-  end
-
-  def cast_names
-    @cast_info.map do |credit|
-      credit[:name]
-    end.slice(0, 10)
+    @name = api[:name]
   end
 end
