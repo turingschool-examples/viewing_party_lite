@@ -20,9 +20,7 @@ class MoviesFacade
     reviews = MoviesService.movie_reviews(id)
     credits = MoviesService.movie_credits(id)
 
-
     response = details.merge(credits, reviews)
-
 
     @movie = MovieDetailed.new(response)
   end

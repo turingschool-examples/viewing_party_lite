@@ -42,7 +42,7 @@ RSpec.describe 'User Registration' do
 
     describe 'when I add a non-unique email and click submit' do
       before(:each) do
-        user = User.create!(name: 'Matt Duttko', email: 'jduttko149@gmail.com')
+        User.create!(name: 'Matt Duttko', email: 'jduttko149@gmail.com')
         fill_in 'Name', with: 'Jon Duttko'
         fill_in 'Email', with: 'jduttko149@gmail.com'
       end
