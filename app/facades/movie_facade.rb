@@ -21,12 +21,16 @@ class MovieFacade
 
   def self.lead_roles(movie_id)
     data = MovieService.movie_cast(movie_id)
-    Cast.new(data)[0..9]
+    data[:cast].map do |thespian|
+      Cast.new(thespian)
+    end[0..9]
   end
 
   def self.movie_critics(movie_id)
     data = MovieService.movie_reviews(movie_id)
-    Review.new(data)
+    data[:results].map do |critic|
+      Review.new(critic)
+    end
   end
 
 end
