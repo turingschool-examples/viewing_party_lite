@@ -6,16 +6,23 @@ class PartiesController < ApplicationController
   end
 
   def create
-    user = User.find(params[:user_id])
+    @user = User.find(params[:user_id])
     movie = MovieFacade.movie_details(params[:movie_id])
     @party = Party.new(party_params)
+    @users = User.all
+    if @party.save
+      UserParty.create!(user_id: @user.id, party_id: @party.id)
+      @users.each do |user|
+        if params["#{user.id}"] = 1
+          UserParty.create!(user_id: user.id, party_id: @party.id)
+        end
+      end
     
-    if @party.save 
       flash.notice = "Party was successfully added!"
-      redirect_to(user_path(user))
+      redirect_to(user_path(@user))
     else
       flash.alert = "ERROR not saved!"
-      redirect_to(new_user_movie_party_path(user, movie.id))
+      redirect_to(new_user_movie_party_path(@user, movie.id))
     end
   end
 

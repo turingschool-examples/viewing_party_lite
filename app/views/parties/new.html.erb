@@ -10,7 +10,7 @@
   <% @users.each do |user| %>
     <% if user.id != @user.id %>
       <p><%= form.label "#{user.name}", "#{user.name}" %></p>
-      <p><%= form.check_box "#{user.name}" %></p>
+      <p><%= form.check_box "#{user.id}" %></p>
     <% end %>
   <% end %>
 
