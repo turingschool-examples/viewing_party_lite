@@ -1,26 +1,21 @@
-# Viewing Party
+# Background and Description
+Viewing Part Lite is an application in which users can explore movie options and create a viewing party event for themselves and other users of the application. Feature include browsing top rated movies, searching for movies by title, creating viewing parties for a movie, and viewing movie data such as vote average, cast, runtime, and reviews.
 
-This is the base repo for the [Viewing Party Lite project](https://backend.turing.io/module3/projects/viewing_party_lite) used for Turing's Backend Module 3.
+<img width="1440" alt="monsters-inc" src="https://user-images.githubusercontent.com/99758586/195881975-3c39c353-b8da-4665-8f6b-3f7e25b5eef4.png">
 
-### About this Project
+<img width="375" alt="viewing-party-page" src="https://user-images.githubusercontent.com/99758586/195881599-e01a1d99-76cd-487e-af1f-39b1848b12b3.png">
 
-Viewing Part Lite is an application in which users can explore movie options and create a viewing party event for themselves and other users of the application.
 
-## Setup for the use of the project
 
-1. A conveyor belt link will be sent out at project kickoff so that you can both fork and copy the project board on this base repo. 
+## [Visit Viewing Party Lite here](https://whispering-bastion-33817.herokuapp.com)
+![viewing-party-diagram](https://user-images.githubusercontent.com/99758586/195879536-b5dd7b7a-ee38-4468-af75-e282c1268a59.png)
 
-## Local Setup for any other use
-
-1. Fork and Clone the repo
+## Setup
+* This project require Ruby 2.7.4 and Rails 5.2.6
+1. Fork and Clone this repo
 2. Install gem packages: `bundle install`
 3. Setup the database: `rails db:create`
+4. Run migrations: `rails db:migrate`
 
-
-## Versions
-
-- Ruby 2.7.2
-
-- Rails 5.2.6
-
-Example wireframes to follow are found [here](https://backend.turing.io/module3/projects/viewing_party_lite/wireframes)
+### Contributors to this project include:
+[AJ Krumholz](https://github.com/ajkrumholz), [Sid Mann](https://github.com/sjmann2)
