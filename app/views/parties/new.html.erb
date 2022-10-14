@@ -1,9 +1,17 @@
-<h3>Viewing Party for <%= @movie.title  %></h3>
+<h3><%= @user.name %>'s  Viewing Party for <%= @movie.title  %></h3>
 
 <%= form_with url: user_movie_parties_path(@user.id, @movie.id), method: :post, skip_enforcing_utf8: true, local: true do |f| %>
   <p><%= f.label :duration, 'Party Duration:' %>
     <%= f.number_field :duration, value: @movie.runtime %></p>
   <p><%= f.label :start_time, "Start Time:" %>
-  <%= f.datetime_select  :start_time, order: [:day, :month, :year], ampm: true, minute_step: 15%>
+  <%= f.datetime_select  :start_time, selected: DateTime.now, ampm: true, minute_step: 15%>
+  <p><% @users.each do |user| %>
+  <% if user.id != @user.id %>
+      <%= check_box_tag "user_ids[#{user.id}]"  -%>
+      <%= h user.email -%>
+    <% end %>
+  <% end %></p>
+  <%= f.hidden_field :movie_title, value: @movie.title %>
+  <%= f.hidden_field :host_id, value: @user.id %>
   <p><%= f.submit 'Create Party' %></p>
 <% end %>
