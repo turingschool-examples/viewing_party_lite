@@ -49,38 +49,12 @@ RSpec.describe 'User Dashboard Page' do
       expect(current_path).to eq(user_discover_index_path(@user_2))
     end
 
-    # it 'has a section for users current viewing parties' do
-    #     visit user_path(@user_1)
-    #
-    #     within("#party-#{@party_1.id}") do
-    #       expect(page).to have_content(@party_1.id)
-    #     end
-    #     within("#party-#{@party_2.id}") do
-    #       expect(page).to have_content(@party_2.id)
-    #     end
-    #     within("#party-#{@party_3.id}") do
-    #       expect(page).to have_content(@party_3.id)
-    #     end
-    #
-    #     visit user_path(@user_2)
-    #
-    #     within("#party-#{@party_4.id}") do
-    #       expect(page).to have_content(@party_4.id)
-    #     end
-    #     within("#party-#{@party_5.id}") do
-    #       expect(page).to have_content(@party_5.id)
-    #     end
-    #
-    # end
-
-    ###############
     it 'shows the viewing parties the user has been invited to with details', :vcr do
       visit user_path(@user_3)
 
       within('#attending') do
         within("#party-#{@party_7.id}") do
-          # expect(page).to have_content(PICTUREHERE) #update with API
-          expect(page).to have_content(@party_7.start_time) # change to name with API
+          expect(page).to have_content(@party_7.start_time)
           expect(page).to have_content(@party_7.date)
           expect(page).to have_content("Host: #{@user_2.name}")
           expect(page).to have_content(@user_3.name.to_s)
@@ -92,14 +66,14 @@ RSpec.describe 'User Dashboard Page' do
         end
       end
 
-      expect(current_path).to eq(user_movie_path(@user_3, @party_7.movie_id)) # fix routing
+      expect(current_path).to eq(user_movie_path(@user_3, @party_7.movie_id))
     end
 
     it 'shows the viewing parties the user has created with details (host)' do
       visit user_path(@user_1)
+
       within('#hosting') do
         within("#party-#{@party_6.id}") do
-          # expect(page).to have_content(PICTUREHERE) #update with API
           expect(page).to have_content(@party_6.start_time)
           expect(page).to have_content(@party_6.date)
           expect(page).to have_content("Host: #{@user_1.name}")

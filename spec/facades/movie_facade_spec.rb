@@ -23,7 +23,6 @@ describe 'Movie Facade' do
       movie_term = 'Jack'
       search_movies = MovieFacade.search_results(movie_term)
       expect(search_movies).to be_a(Array)
-      # expect(top_rated_movies.count).to eq(20)
     end
   end
 
