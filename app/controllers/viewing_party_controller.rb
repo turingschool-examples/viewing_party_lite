@@ -1,4 +1,4 @@
-class ViewingPartyController < ApplicationController 
+class ViewingPartyController < ApplicationController
   def new
     @user = User.find(params[:user_id])
     @movie = MovieFacade.movie_data(params[:movie_id])
@@ -14,7 +14,10 @@ class ViewingPartyController < ApplicationController
     users = User.all.where.not(id: params[:user_id])
     if party.save
       users.each do |user|
-        UserParty.create(party_id: party.id, user_id: user_params[:"#{user.name}"]) if user_params[:"#{user.name}"] != " "
+        if user_params[:"#{user.name}"] != ' '
+          UserParty.create(party_id: party.id,
+                           user_id: user_params[:"#{user.name}"])
+        end
       end
       UserParty.create(party_id: party.id, user_id: params[:user_id])
       redirect_to user_path(user)
@@ -24,12 +27,11 @@ class ViewingPartyController < ApplicationController
     end
   end
 
-
   private
 
-  def user_params 
+  def user_params
     users = User.all.where.not(id: params[:user_id])
-    user_names = users.map{|user| user.name}
+    user_names = users.map { |user| user.name }
     params.permit(user_names)
   end
 

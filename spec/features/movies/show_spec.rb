@@ -5,12 +5,12 @@ RSpec.describe 'Movie Detail Page', type: :feature do
     before :each do
       @user_1 = User.create!(name: 'Jane', email: 'jane@mail.com')
 
-      @movie_1 = MovieFacade.movie_data(271110)
+      @movie_1 = MovieFacade.movie_data(271_110)
       @movie_2 = MovieFacade.movie_data(3)
     end
 
     describe 'When I visit a movies detail page' do
-      it 'I see a button to create a viewing party', :vcr => {:record => :new_episodes } do
+      it 'I see a button to create a viewing party', vcr: { record: :new_episodes } do
         visit user_movie_path(@user_1, @movie_1.id)
 
         within('#action_options') do
@@ -159,7 +159,7 @@ RSpec.describe 'Movie Detail Page', type: :feature do
 
         it "Each review's author and information", :vcr do
           visit user_movie_path(@user_1, @movie_1.id)
-          
+
           within("#movie-#{@movie_1.id}-reviews") do
             MovieFacade.review_data(@movie_1.id).each_with_index do |review, index|
               within("#review-#{index}") do

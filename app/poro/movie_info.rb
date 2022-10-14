@@ -1,5 +1,4 @@
 class MovieInfo
-
   attr_reader :id, :title, :image, :rating, :runtime, :genre, :summary
 
   def initialize(movie_api_data)
@@ -8,7 +7,7 @@ class MovieInfo
     @image = 'https://image.tmdb.org/t/p/w500' + movie_api_data[:poster_path]
     @rating = movie_api_data[:vote_average].round(1)
     @runtime = movie_api_data[:runtime]
-    @genre = movie_api_data[:genres].map{|genre_hash| genre_hash[:name]}
+    @genre = movie_api_data[:genres].map { |genre_hash| genre_hash[:name] }
     @summary = movie_api_data[:overview]
   end
 
@@ -17,6 +16,6 @@ class MovieInfo
   end
 
   def genre_list
-    @genre.join(", ")
+    @genre.join(', ')
   end
 end
