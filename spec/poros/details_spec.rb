@@ -26,6 +26,10 @@ RSpec.describe Details do
       expect(@details.runtime).to be_a(Integer)
     end
 
+    it 'returns id as an integer' do
+      expect(@details.id).to be_a(Integer)
+    end
+
     it 'genres_names_array returns array of genre names as strings' do
       expect(@details.genres_names_array).to be_a(Array)
       @details.genres_names_array.each do |name|
