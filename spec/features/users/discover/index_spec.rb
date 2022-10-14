@@ -34,6 +34,7 @@ RSpec.describe 'the users discover index' do
           fill_in 'Search', with: 'Minions'
           click_button 'Search by Movie Title'
           expect(current_path).to eq(user_movies_path(user))
+          expect(page).to have_content('Minions')
         end
       end
     end
