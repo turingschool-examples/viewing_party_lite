@@ -52,15 +52,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 d6607d73bef7063073eef009c9576128.cloudfront.net (CloudFront)
+      - 1.1 e7ff4a714a3b1f464db9c76ee954a564.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - LAX53-P3
+      - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - trU8nvUqkRmN2LKI9_vezWUU_crBeTvIujwiH1q2C1C1xA9sqWq77w==
+      - SBf0AN9v0yCJngBjIUZyC2VEJsnUPm-tdwf6G2lrFAzvQp8EErEXOQ==
       Age:
-      - '4189'
+      - '6149'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/tqj7NKj11keFuLzPsBDMUq2dOUO.jpg","belongs_to_collection":{"id":119,"name":"The
@@ -77,7 +77,7 @@ http_interactions:
         Zealand"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"2001-12-18","revenue":871368364,"runtime":179,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"One
         ring to rule them all","title":"The Lord of the Rings: The Fellowship of the
         Ring","video":false,"vote_average":8.388,"vote_count":21629}'
-  recorded_at: Fri, 14 Oct 2022 00:02:29 GMT
+  recorded_at: Fri, 14 Oct 2022 00:35:09 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/457840?api_key=<api_key>
@@ -130,18 +130,18 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 48c63ba47fad740451a07174d1ac9b68.cloudfront.net (CloudFront)
+      - 1.1 045f1e1f031241f3808c557a2b5d6b0a.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - LAX53-P3
+      - DEN50-C2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - ipvKVRiNxxaYSrPxYHbB-tJFcImeq8G8tw3bfZPCYJFZpgsxt1zUWg==
+      - 4OZRnG87S_Sjb0m4w57eAv-Pnzj--l_bHZvbXEWw9Ax7fFxEs3GHIw==
       Age:
-      - '4153'
+      - '6113'
     body:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvZmhhakJKY2hxNzRVMEttVlYxdVNINm1Nanh3LmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6eyJpZCI6NzE4OTM0LCJuYW1lIjoiUHN5Y2ggQ29sbGVjdGlvbiIsInBvc3Rlcl9wYXRoIjoiLzJXRFROSHY2WDd5SkFtSDNJUmRKUHQ5ZWpHMC5qcGciLCJiYWNrZHJvcF9wYXRoIjoiLzNoT3dtbThEMm1ESjY3MXdIUnZLbUF3cWhuMy5qcGcifSwiYnVkZ2V0IjowLCJnZW5yZXMiOlt7ImlkIjozNSwibmFtZSI6IkNvbWVkeSJ9LHsiaWQiOjgwLCJuYW1lIjoiQ3JpbWUifSx7ImlkIjo5NjQ4LCJuYW1lIjoiTXlzdGVyeSJ9LHsiaWQiOjEwNzcwLCJuYW1lIjoiVFYgTW92aWUifV0sImhvbWVwYWdlIjoiaHR0cDovL3d3dy51c2FuZXR3b3JrLmNvbS9wc3ljaCIsImlkIjo0NTc4NDAsImltZGJfaWQiOiJ0dDY4NjgyMTYiLCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiJQc3ljaDogVGhlIE1vdmllIiwib3ZlcnZpZXciOiJUaGUgYW1iaXRpb3VzIGZyaWVuZHMgY29tZSB0b2dldGhlciBkdXJpbmcgdGhlIGhvbGlkYXlzIGFmdGVyIGEgbXlzdGVyeSBhc3NhaWxhbnQgdGFyZ2V0cyBvbmUgb2YgdGhlaXIgb3duLiBBIGNvbWVkaWMgdGhyaWxsLXJpZGUgZm9sbG93cywgYXMgdGhlIHdpbGQgYW5kIHVucHJlZGljdGFibGUgUHN5Y2ggdGVhbSBwdXJzdWVzIHRoZSBiYWQgZ3V5cywganVzdGljZSDigKYgYW5kLCBvZiBjb3Vyc2UsIGZvb2QhIiwicG9wdWxhcml0eSI6MTQuMzg4LCJwb3N0ZXJfcGF0aCI6Ii84Mlo2TEVua2V3SDQwcHY2ZmEyQ2kxQ2tTbmQuanBnIiwicHJvZHVjdGlvbl9jb21wYW5pZXMiOlt7ImlkIjo3OTM4LCJsb2dvX3BhdGgiOiIvOEk1MnFweTJEcDQ4Z0Q5SmY2VzFENkU3SW1vLnBuZyIsIm5hbWUiOiJVQ1AiLCJvcmlnaW5fY291bnRyeSI6IlVTIn0seyJpZCI6NzI5NzgsImxvZ29fcGF0aCI6bnVsbCwibmFtZSI6IlBhY2lmaWMgTW91bnRhaW4gUHJvZHVjdGlvbnMiLCJvcmlnaW5fY291bnRyeSI6IlVTIn0seyJpZCI6ODk5ODUsImxvZ29fcGF0aCI6bnVsbCwibmFtZSI6IlRocnVsaW5lIEVudGVydGFpbm1lbnQiLCJvcmlnaW5fY291bnRyeSI6IlVTIn1dLCJwcm9kdWN0aW9uX2NvdW50cmllcyI6W3siaXNvXzMxNjZfMSI6IlVTIiwibmFtZSI6IlVuaXRlZCBTdGF0ZXMgb2YgQW1lcmljYSJ9XSwicmVsZWFzZV9kYXRlIjoiMjAxNy0xMi0wNyIsInJldmVudWUiOjAsInJ1bnRpbWUiOjgwLCJzcG9rZW5fbGFuZ3VhZ2VzIjpbeyJlbmdsaXNoX25hbWUiOiJFbmdsaXNoIiwiaXNvXzYzOV8xIjoiZW4iLCJuYW1lIjoiRW5nbGlzaCJ9XSwic3RhdHVzIjoiUmVsZWFzZWQiLCJ0YWdsaW5lIjoiIiwidGl0bGUiOiJQc3ljaDogVGhlIE1vdmllIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjcuMzkzLCJ2b3RlX2NvdW50IjoxNzh9
-  recorded_at: Fri, 14 Oct 2022 00:02:29 GMT
+  recorded_at: Fri, 14 Oct 2022 00:35:09 GMT
 recorded_with: VCR 6.1.0
