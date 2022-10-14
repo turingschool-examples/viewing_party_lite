@@ -20,6 +20,7 @@ RSpec.describe 'the New Party Page' do
       VCR.use_cassette("new_party", :allow_playback_repeats => true) do
         user = create(:user, id: 50, name: "Bubbles", email: "bubbles@sunnyvale.ca")
         visit "/users/#{user.id}/movies/550/viewing-party/new"
+    
         fill_in "Duration of Party", with: 180
         fill_in "Day", with: Date.today
         fill_in "Start Time", with: Time.now
@@ -36,10 +37,30 @@ RSpec.describe 'the New Party Page' do
 
   describe 'UserParty creation' do
     it 'creates new user parties for all invited users when the form is submitted' do
-      host = create(:user, id: 50, name: "Bubbles", email: "bubbles@sunnyvale.ca")
-      guest_1 = create(:user, id: 51, name: "Julian", email: "julian@sunnyvale.ca")
-      guest_2 = create(:user, id: 53, name: "Jim Lahey", email: "supervisor@sunnyvale.ca")
-      guest_3 = create(:user, id: 54, name: "Ricky", email: "ricky@sunnyvale.ca")
+      VCR.use_cassette("new_party", :allow_playback_repeats => true) do
+        host = create(:user, id: 50, name: "Bubbles", email: "bubbles@sunnyvale.ca")
+        guest_1 = create(:user, id: 51, name: "Julian", email: "julian@sunnyvale.ca")
+        guest_2 = create(:user, id: 53, name: "Jim Lahey", email: "supervisor@sunnyvale.ca")
+        guest_3 = create(:user, id: 54, name: "Ricky", email: "ricky@sunnyvale.ca")
+        visit "/users/#{host.id}/movies/550/viewing-party/new"
+        
+        fill_in "Duration of Party", with: 180
+        fill_in "Day", with: Date.today
+        fill_in "Start Time", with: Time.now
+       
+        check("added_users_51")
+        check("added_users_53")
+       
+        expect { click_on 'Create Party' }.to change { UserParty.count }.by(3)
+        host_up = UserParty.first
+        invitee = UserParty.last
+
+        expect(host_up.user_status).to eq("host")
+        expect(invitee.user_status).to eq("invited")
+        expect(host_up.user_id).to eq(host.id)
+        expect(invitee.user_id).to eq(guest_2.id)
+        expect(host_up.party_id).to eq(invitee.party_id)
+      end
     end
   end
 end

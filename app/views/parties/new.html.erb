@@ -10,13 +10,14 @@
   <%= f.label :start_time, "Start Time" %>
   <%= f.time_field :start_time %>
   <br>
+  <h4> Invite Other Users </h4>
   <%@users.each do |user|%>
     <% if user.id == params[:user_id].to_i%>
     <%= f.check_box :added_users, {disabled: true, multiple: true, checked: true}, nil, nil %>
     <%else%>
     <%= f.check_box :added_users, {disabled: false, multiple: true}, user.id, nil %>
     <%end%>
-    <%= f.label :added_users, user.email%>
+    <%= f.label :added_users, user.email %>
     <br>
   <%end%>
   <br>
