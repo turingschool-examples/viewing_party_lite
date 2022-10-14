@@ -1,9 +1,11 @@
-<h1>Movie Results</h1>
-<h2> <%= button_to "Return To Discover Movies", user_discover_index_path(@user), method: :get %> </h2>
+<h1 class="text-info">Movie Results</h1>
+<h2 class="mb-4"><%= button_to "Return To Discover Movies", user_discover_index_path(@user), method: :get, class: "btn btn-success" %> </h2>
 
 
 <% @movies.each do |movie| %>
-   <p> <h3>Title: <%= link_to movie.title, "/users/#{@user.id}/movies/#{movie.id}" %></h3> </p>
-   <p> <h3>Vote Avg: <%=  movie.vote_average %></h3> </p>
-    <br>
+  <div class="m-2">
+    <h3 class="text-info">Title: <%= link_to movie.title, "/users/#{@user.id}/movies/#{movie.id}", class: 'link-success' %></h3>
+    <h3 class="text-info">Vote Avg: <span class="text-success"><%=  movie.vote_average %></span></h3>
+  </div>
+  <br>
 <% end %>

@@ -1,6 +1,12 @@
-<%= form_with url: user_movies_path(@user), method: :get, local: true do |f| %>
-  <%= f.label "Movie Title"  %>
-  <%= f.text_field :search %>
-  <%= f.submit 'Search' %>
+<%= form_with url: user_movies_path(@user), method: :get, local: true, class: "d-flex column g-3 container-sm", role: 'search' do |f| %>
+  <div class="row mb-3 text-info">
+    <%= f.label "Movie Title", class: 'fs-5 col-form-label col-form-label-sm'  %>
+    <div class="column-sm-8 mt-1">
+      <%= f.text_field :search, placeholder: 'Search', type: 'search', class: 'form-control form-control-sm' %>
+    </div>
+    <div class="column-sm-7 mt-2">
+    <%= f.submit 'Search', class: 'btn btn-outline-success p-1' %>
+    </div>
+  </div>
 <% end %>
-<%= button_to "Discover Top Rated Movies", "/users/#{@user.id}/movies?q=top%20rated", method: :get %>
+<%= button_to "Discover Top Rated Movies", "/users/#{@user.id}/movies?q=top%20rated", class: 'btn btn-primary', method: :get %>
