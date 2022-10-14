@@ -17,9 +17,7 @@ RSpec.describe 'Viewing Party Page (new)' do
       create(:user_parties, user_id: @user_2.id, party_id: @party_1.id)
       create(:user_parties, user_id: @user_3.id, party_id: @party_1.id)
 
-      visit new_user_movie_party_path(@user_1, @fight_club.id) #?????????????????????????
-      # visit "/dashboard/#{@user_1.id}/movies/#{@fight_club.id}/parties/new"
-
+      visit new_user_movie_party_path(@user_1, @fight_club.id)
     end
 
     it 'shows the name of the movie title above a form with party details to fill out' do
@@ -27,14 +25,12 @@ RSpec.describe 'Viewing Party Page (new)' do
       expect(page).to have_content(@user_2.name)
       expect(page).to have_content(@user_3.name)
       fill_in :duration, with: "#{@party_1.duration}"
-      # fill_in :date, with: "#{@party_1.date}"
-      # fill_in :start_time, with: "#{@party_1.start_time}"
+
       check("#{@user_2.id}")
       click_button "Create Party"
 
       expect(current_path).to eq("/dashboard/#{@user_1.id}")
-      expect(page).to have_content(@party_1.start_time) #might need to update to expect 'Host = user 1'
-
+      expect(page).to have_content(@party_1.date)
     end
   end
 end
