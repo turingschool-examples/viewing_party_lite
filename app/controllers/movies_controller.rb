@@ -5,6 +5,4 @@ class MoviesController < ApplicationController
     @reviews_list = MovieDbFacade.reviews_by_movie(@movie.id)
     @cast_members = MovieDbFacade.cast(@movie.id)
   end
-
-
 end

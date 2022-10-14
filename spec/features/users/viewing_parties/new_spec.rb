@@ -42,7 +42,7 @@ RSpec.describe 'User Viewing Party New Page', :vcr do
     fill_in 'Start Time', with: '20:00'
     check "user_#{@user2.id}"
     check "user_#{@user3.id}"
-
+    # save_and_open_page
     click_button 'Create Party'
     expect(current_path).to eq("/users/#{@user1.id}")
   end

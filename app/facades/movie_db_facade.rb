@@ -31,9 +31,4 @@ class MovieDbFacade
     json = MovieDbService.cast_data(movie_id)
     json[:cast].first(10).map { |cast_data| CastMember.new(cast_data) }
   end
-
-  def self.poster(movie_id)
-    json = MovieDbService.image_data(movie_id)
-    json[:posters].first[:file_path]
-  end
 end
