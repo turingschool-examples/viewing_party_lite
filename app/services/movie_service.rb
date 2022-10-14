@@ -5,9 +5,14 @@ require 'json'
 class MovieService
   def self.conn
     Faraday.new(
-      url: 'https://api.themoviedb.org',
+      url: 'https://api.themoviedb.org/',
       params: { api_key: ENV['moviebd_api_key'] }
     )
+  end
+
+
+  def self.poster(poster_path)
+    "https://image.tmdb.org/t/p/w500/#{poster_path}"
   end
 
   def self.top_rated
@@ -38,4 +43,5 @@ class MovieService
   def self.parse(api_data)
     JSON.parse(api_data.body, symbolize_names: true)
   end
+
 end

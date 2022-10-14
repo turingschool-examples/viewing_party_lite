@@ -47,5 +47,10 @@ RSpec.describe 'Movie API Services' do
       expect(response[:results][0][:popularity]).to be_a(Float)
       expect(response[:results][0][:vote_count]).to be_a(Integer)
     end
+
+    it 'poster', :vcr do
+      response = MovieService.poster("/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg")
+      expect(response).to be_a(String)
+    end
   end
 end
