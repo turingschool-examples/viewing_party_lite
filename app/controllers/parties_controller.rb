@@ -17,8 +17,6 @@ class PartiesController < ApplicationController
         end
       end
       redirect_to(user_path(@user))
-    # else
-    #   redirect_to(new_user_movie_party_path(@user, movie.id))
     end
   end
 

@@ -16,7 +16,6 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to user_path(@user)
     else
-      # flash.alert = "Did NOT save"
       redirect_to "/register/new"
     end
   end
