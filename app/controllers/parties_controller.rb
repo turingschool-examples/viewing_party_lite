@@ -27,7 +27,7 @@ class PartiesController < ApplicationController
 
     invited = params[:user_ids].keys
     invited.each do |user, _invited|
-      PartyUser.create!(party: @party.id, user_id: @user.id)
+      PartyUser.create!(party_id: @party.id, user_id: @user.id)
     end
     redirect_to user_path(@user)
   end

@@ -2,6 +2,13 @@
 
 <p><%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %></p>
 
-<div id="viewing-parties">
-  <h4><%= "#{@user.name}'s "%>Viewing Parties</h4>
-</div>
+<h4><%= "#{@user.name}'s " %>Viewing Parties</h4>
+<% @user.parties.each do |party| %>
+  <div id="viewingparty-<%= party.id %>">
+    Movie Title: <%= link_to party.movie_title, user_movie_path(@user, party.movie_id) %>
+    <br/>
+    <% if party.host.present? %>
+      Host: <%= party.host.name %>
+    <% end %>
+  </div>
+<% end %>
