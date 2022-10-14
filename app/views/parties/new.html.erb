@@ -1,6 +1,6 @@
 <h2> Create a Movie Party for <%= @movie.title %> </h2>
 
-<%= form_with url: "/users/#{params[:user_id]}/movies/#{@movie.id}/viewing-party/create", method: :post do |f| %>
+<%= form_with url: "/users/#{params[:user_id]}/movies/#{@movie.id}/viewing-party/create", method: :post, local: true do |f| %>
   <%= f.label :duration, "Duration of Party" %>
   <%= f.number_field :duration, value: @movie.runtime %>
   <br>
