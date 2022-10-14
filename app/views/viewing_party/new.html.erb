@@ -1,0 +1,26 @@
+<h2>Create a Movie Party for <%= @movie.title %></h2>
+
+<%= form_with model: @viewing_party, url: user_movie_viewing_party_index_path(@user, @movie.movie_id), local: true do |f| %>
+  <%= f.label :duration, 'Duration of Party' %>
+  <%= f.number_field :duration, min: @movie.runtime, value: @movie.runtime %><br>
+
+  <%= f.label :date, 'Day' %>
+  <%= f.date_field :date %><br>
+
+  <%= f.label :start_time, 'Start Time' %>
+  <%= f.time_field :start_time %><br>
+
+  <%= f.hidden_field :movie_id, :value => @movie.movie_id %>
+
+  <%= f.label :invitees, 'Invite Other Users' %><br>
+  <% @users.each do |user| %>
+    <div id="invitee_<%= "#{user.name}" %>">
+      <% if user.id != @user.id %>
+        <%= check_box_tag('user_ids[]', user.id) %>
+        <%= label_tag('invitee', "#{user.name} (#{user.email})") %>
+      <% end %>
+    </div>
+  <% end %><br>
+
+  <%= f.submit "Create Party" %>
+<% end %>
