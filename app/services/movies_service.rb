@@ -1,4 +1,5 @@
 require 'json'
+require 'faraday'
 #limit in the service via params (length, page number, etc)
 class MoviesService
   def self.conn
