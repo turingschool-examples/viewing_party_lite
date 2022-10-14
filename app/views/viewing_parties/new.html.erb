@@ -13,7 +13,9 @@
   <%= form.label :start_time, "Start Time: " %>
   <%= form.time_field :start_time, include_seconds: false %><br>
   <strong>Invite Other Users: </strong><br>
-  <%= form.collection_check_boxes :user_ids, @other_users, :id, :name %>
+  <%= form.collection_check_boxes :user_ids, @other_users, :id, :name do |box| %>
+    <%= box.label { box.check_box + box.text } %><br>
+  <% end %>
   <br>
   <%= form.submit "Create Party" %>
 <% end %>

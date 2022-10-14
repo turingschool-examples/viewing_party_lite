@@ -8,7 +8,6 @@ class ViewingPartiesController < ApplicationController
 
   def create   
     @viewing_party = ViewingParty.new(vp_params)
-
     if @viewing_party.save
       redirect_to user_path(params[:user_id])
     else
