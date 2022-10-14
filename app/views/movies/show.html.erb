@@ -1,0 +1,31 @@
+<h1><%= @movie.title %></h1>
+<%= button_to 'Create Viewing Party', "/users/#{@user.id}/movies/:movie_id/viewing-party/new" %>
+<%= button_to 'Return to Discover', "/users/#{@user.id}/discover", method: :get %>
+
+<h3>Movie Details</h3>
+<p>Movie Title: <%= @movie.title %></p>
+<p>Vote Average: <%= @movie.vote_average %></p>
+<p>Runtime: <%= @movie.formatted_runtime %></p>
+<p>Genres: <%= @movie.genres.map { |genre| genre[:name] }.to_sentence %></p>
+<p>Summary: <%= @movie.summary %></p>
+
+
+<h3>Reviews (<%= @reviews.count %>)</h3>
+<ul>
+  <% @reviews.each do |review| %>
+    <li>
+      From <strong><%= review.username %></strong>:
+      <%= review.content.truncate(500) %>
+      <% if review.content.length > 500 %>
+        <%= link_to "read more", "#" %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
+
+<h3>Cast Members</h3>
+<ul>
+  <% @cast.each do |member| %>
+    <li><%= member.name %> as <%= member.character %></li>
+  <% end %>
+</ul>

@@ -7,4 +7,11 @@ class MoviesController < ApplicationController
       MovieFacade.top_rated
     end
   end
+
+  def show
+    @user = User.find(params[:user_id])
+    @movie = MovieFacade.find(params[:id])
+    @reviews = MovieFacade.get_reviews(params[:id])
+    @cast = MovieFacade.get_cast(params[:id]).first(10)
+  end
 end
