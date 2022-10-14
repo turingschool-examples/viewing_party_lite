@@ -6,7 +6,7 @@ module Users
       @host = User.find(params[:user_id])
       @friends = @host.friends
       @movie = MoviesFacade.details(params[:movie_id])
-      @current_time = DateTime.now
+      #@current_time = DateTime.now
     end
 
     def create
