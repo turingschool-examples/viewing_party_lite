@@ -13,10 +13,17 @@ RSpec.describe 'New Viewing Party Page' do
     end
 
     it 'Has button to return to Discover Page' do
+      visit new_user_movie_viewing_party_path(@user_1, 278)
       click_button("Discover Page")
-      expect(current_path).to eq(user_discover_path(@user1))
+      expect(current_path).to eq(user_discover_path(@user_1))
     end
 
-    
+    it 'Has form field for duration, day, time. And checkbox to invite users' do
+      visit new_user_movie_viewing_party_path(@user_1, 278)
+      fill_in "Duration", with: "140"
+      fill_in "Date", with: "12/30/2022"
+      fill_in "Time", with: "6:00 PM"
+      check "user_#{@user_2.id}" 
+    end
   end
 end
