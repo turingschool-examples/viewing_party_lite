@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     # post '/discover', to: 'movies#index' #discover controller with search, that searches user from there
     resources :discover, only: :index
     resources :movies, only: [:show, :index] do
-      resources :viewing_party, only: [:new, :create]
+      resources :parties, only: [:new, :create]
     end
   end
   resources :users, only: :new, path: 'register'
