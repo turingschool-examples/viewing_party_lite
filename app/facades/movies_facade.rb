@@ -8,7 +8,7 @@ class MoviesFacade
   end
 
   def self.search(keyword)
-    response = MoviesService.search(keyword.gsub(" ", "+"))
+    response = MoviesService.search(keyword.titleize.gsub(" ", "+"))
 
     movies = response[:results].map do |movie|
       Movie.new(movie)
