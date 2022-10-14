@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe 'Movie Facade' do
@@ -5,7 +7,6 @@ describe 'Movie Facade' do
     VCR.use_cassette('fight_club') do
       fight_club = MovieFacade.movie_details(550)
       expect(fight_club).to be_a(Movie)
-
     end
   end
 
@@ -19,10 +20,9 @@ describe 'Movie Facade' do
 
   it 'can display movies by search results' do
     VCR.use_cassette('search_movies') do
-      movie_term = "Jack"
+      movie_term = 'Jack'
       search_movies = MovieFacade.search_results(movie_term)
       expect(search_movies).to be_a(Array)
-      # expect(top_rated_movies.count).to eq(20)
     end
   end
 
@@ -31,7 +31,6 @@ describe 'Movie Facade' do
       lead_actors = MovieFacade.lead_roles(550)
       expect(lead_actors).to be_a(Array)
       expect(lead_actors.count).to eq(10)
-
     end
   end
 

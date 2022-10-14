@@ -1,5 +1,6 @@
-class MovieFacade
+# frozen_string_literal: true
 
+class MovieFacade
   def self.movie_details(search_id)
     data = MovieService.movie_by_id(search_id)
     Movie.new(data)
@@ -32,5 +33,4 @@ class MovieFacade
       Review.new(critic)
     end
   end
-
 end

@@ -1,5 +1,6 @@
-class UsersController < ApplicationController
+# frozen_string_literal: true
 
+class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @movies = @user.parties.map do |party|
@@ -16,14 +17,13 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to user_path(@user)
     else
-      redirect_to "/register/new"
+      redirect_to '/register/new'
     end
   end
 
-
   private
+
   def user_params
     params.require(:user).permit(:name, :email)
   end
-
 end
