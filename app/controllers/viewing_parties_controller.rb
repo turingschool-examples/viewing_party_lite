@@ -10,7 +10,7 @@ class ViewingPartiesController < ApplicationController
     movie = MovieDbFacade.find_by_movie_id(params[:movie_id])
 
     if params[:length].to_i >= movie.runtime && params[:date] != "" && params[:start_time] != ""
-      new_view_party = ViewingParty.create(movie_title: movie.title, start_time: params[:start_time], date: params[:date], length: params[:length])
+      new_view_party = ViewingParty.create(movie_id: movie.id, movie_title: movie.title, start_time: params[:start_time], date: params[:date], length: params[:length])
       ViewingPartyUser.create(viewing_party_id: new_view_party.id, user_id: user.id, status: 0)
 
       if params[:user] != nil

@@ -1,0 +1,147 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/120?api_key=<api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 13 Oct 2022 22:52:40 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 535da0495e73e0e503ec7407cb3029b8882f05be
+      X-Memc-Age:
+      - '4011'
+      X-Memc-Expires:
+      - '12785'
+      Etag:
+      - W/"b5c4ebc9bc9ae93ddb932cf666a0d586"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 48ea53c7edffa2cdbdc32f7d94966344.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - VjNU385kHWAlq5d58U4AxdoHQG-RLfQlXDXvozjndnm7-Az26aoVbA==
+      Age:
+      - '6149'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/tqj7NKj11keFuLzPsBDMUq2dOUO.jpg","belongs_to_collection":{"id":119,"name":"The
+        Lord of the Rings Collection","poster_path":"/nSNle6UJNNuEbglNvXt67m1a1Yn.jpg","backdrop_path":"/bccR2CGTWVVSZAG0yqmy3DIvhTX.jpg"},"budget":93000000,"genres":[{"id":12,"name":"Adventure"},{"id":14,"name":"Fantasy"},{"id":28,"name":"Action"}],"homepage":"http://www.lordoftherings.net/","id":120,"imdb_id":"tt0120737","original_language":"en","original_title":"The
+        Lord of the Rings: The Fellowship of the Ring","overview":"Young hobbit Frodo
+        Baggins, after inheriting a mysterious ring from his uncle Bilbo, must leave
+        his home in order to keep it from falling into the hands of its evil creator.
+        Along the way, a fellowship is formed to protect the ringbearer and make sure
+        that the ring arrives at its final destination: Mt. Doom, the only place where
+        it can be destroyed.","popularity":183.66,"poster_path":"/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg","production_companies":[{"id":11,"logo_path":"/6FAuASQHybRkZUk08p9PzSs9ezM.png","name":"WingNut
+        Films","origin_country":"NZ"},{"id":12,"logo_path":"/iaYpEp3LQmb8AfAtmTvpqd4149c.png","name":"New
+        Line Cinema","origin_country":"US"},{"id":5237,"logo_path":null,"name":"The
+        Saul Zaentz Company","origin_country":"US"}],"production_countries":[{"iso_3166_1":"NZ","name":"New
+        Zealand"},{"iso_3166_1":"US","name":"United States of America"}],"release_date":"2001-12-18","revenue":871368364,"runtime":179,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"One
+        ring to rule them all","title":"The Lord of the Rings: The Fellowship of the
+        Ring","video":false,"vote_average":8.388,"vote_count":21629}'
+  recorded_at: Fri, 14 Oct 2022 00:35:09 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/457840?api_key=<api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 13 Oct 2022 22:53:16 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 5135d41e7f47dae57e78e2e614c8f2c06b95ae9e
+      X-Memc-Age:
+      - '11581'
+      X-Memc-Expires:
+      - '3663'
+      Etag:
+      - W/"8d0975a051c082062140378e1f090e3b"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 9204cf44179493ed42c678800a26918a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 39o-WJcEaaouA2-MiLojbFB98HJa__3VCxo7dpSe4QC3R9poaAnP-A==
+      Age:
+      - '6113'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvZmhhakJKY2hxNzRVMEttVlYxdVNINm1Nanh3LmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6eyJpZCI6NzE4OTM0LCJuYW1lIjoiUHN5Y2ggQ29sbGVjdGlvbiIsInBvc3Rlcl9wYXRoIjoiLzJXRFROSHY2WDd5SkFtSDNJUmRKUHQ5ZWpHMC5qcGciLCJiYWNrZHJvcF9wYXRoIjoiLzNoT3dtbThEMm1ESjY3MXdIUnZLbUF3cWhuMy5qcGcifSwiYnVkZ2V0IjowLCJnZW5yZXMiOlt7ImlkIjozNSwibmFtZSI6IkNvbWVkeSJ9LHsiaWQiOjgwLCJuYW1lIjoiQ3JpbWUifSx7ImlkIjo5NjQ4LCJuYW1lIjoiTXlzdGVyeSJ9LHsiaWQiOjEwNzcwLCJuYW1lIjoiVFYgTW92aWUifV0sImhvbWVwYWdlIjoiaHR0cDovL3d3dy51c2FuZXR3b3JrLmNvbS9wc3ljaCIsImlkIjo0NTc4NDAsImltZGJfaWQiOiJ0dDY4NjgyMTYiLCJvcmlnaW5hbF9sYW5ndWFnZSI6ImVuIiwib3JpZ2luYWxfdGl0bGUiOiJQc3ljaDogVGhlIE1vdmllIiwib3ZlcnZpZXciOiJUaGUgYW1iaXRpb3VzIGZyaWVuZHMgY29tZSB0b2dldGhlciBkdXJpbmcgdGhlIGhvbGlkYXlzIGFmdGVyIGEgbXlzdGVyeSBhc3NhaWxhbnQgdGFyZ2V0cyBvbmUgb2YgdGhlaXIgb3duLiBBIGNvbWVkaWMgdGhyaWxsLXJpZGUgZm9sbG93cywgYXMgdGhlIHdpbGQgYW5kIHVucHJlZGljdGFibGUgUHN5Y2ggdGVhbSBwdXJzdWVzIHRoZSBiYWQgZ3V5cywganVzdGljZSDigKYgYW5kLCBvZiBjb3Vyc2UsIGZvb2QhIiwicG9wdWxhcml0eSI6MTQuMzg4LCJwb3N0ZXJfcGF0aCI6Ii84Mlo2TEVua2V3SDQwcHY2ZmEyQ2kxQ2tTbmQuanBnIiwicHJvZHVjdGlvbl9jb21wYW5pZXMiOlt7ImlkIjo3OTM4LCJsb2dvX3BhdGgiOiIvOEk1MnFweTJEcDQ4Z0Q5SmY2VzFENkU3SW1vLnBuZyIsIm5hbWUiOiJVQ1AiLCJvcmlnaW5fY291bnRyeSI6IlVTIn0seyJpZCI6NzI5NzgsImxvZ29fcGF0aCI6bnVsbCwibmFtZSI6IlBhY2lmaWMgTW91bnRhaW4gUHJvZHVjdGlvbnMiLCJvcmlnaW5fY291bnRyeSI6IlVTIn0seyJpZCI6ODk5ODUsImxvZ29fcGF0aCI6bnVsbCwibmFtZSI6IlRocnVsaW5lIEVudGVydGFpbm1lbnQiLCJvcmlnaW5fY291bnRyeSI6IlVTIn1dLCJwcm9kdWN0aW9uX2NvdW50cmllcyI6W3siaXNvXzMxNjZfMSI6IlVTIiwibmFtZSI6IlVuaXRlZCBTdGF0ZXMgb2YgQW1lcmljYSJ9XSwicmVsZWFzZV9kYXRlIjoiMjAxNy0xMi0wNyIsInJldmVudWUiOjAsInJ1bnRpbWUiOjgwLCJzcG9rZW5fbGFuZ3VhZ2VzIjpbeyJlbmdsaXNoX25hbWUiOiJFbmdsaXNoIiwiaXNvXzYzOV8xIjoiZW4iLCJuYW1lIjoiRW5nbGlzaCJ9XSwic3RhdHVzIjoiUmVsZWFzZWQiLCJ0YWdsaW5lIjoiIiwidGl0bGUiOiJQc3ljaDogVGhlIE1vdmllIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjcuMzkzLCJ2b3RlX2NvdW50IjoxNzh9
+  recorded_at: Fri, 14 Oct 2022 00:35:09 GMT
+recorded_with: VCR 6.1.0
