@@ -1,0 +1,13 @@
+
+
+<section id= "movie_details" >
+  <p> Title: <%= @movie.title %> </p>
+  <p> Vote Average: <%= @movie.vote_avg %> </p>
+  <p> Runtime: <%= @movie.runtime %> </p>
+  <p> Summary: <%= @movie.summary %> </p>
+  <p> Genres:
+  <% @movie.genres.each do |genre| %>
+    <%=genre %> 
+  <%end%></p>
+  
+</section>
