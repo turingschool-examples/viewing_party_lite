@@ -8,8 +8,8 @@ RSpec.describe 'the user movie show page', type: :feature do
       VCR.use_cassette("user_movies_show", :allow_playback_repeats => true) do
         user = create(:user, id: 50, name: "Bubbles", email: "bubbles@sunnyvale.ca")
         visit "/users/#{user.id}/movies/550"
+        save_and_open_page
         within("#movie_details") do
-          expect(page).to have_content("Movie Title: Fight Club")
           expect(page).to have_content("Vote Average: 8.433")
           expect(page).to have_content("Runtime: 139")
           expect(page).to have_content("Summary:")
@@ -25,8 +25,7 @@ RSpec.describe 'the user movie show page', type: :feature do
         user = create(:user, id: 50, name: "Bubbles", email: "bubbles@sunnyvale.ca")
         visit "/users/#{user.id}/movies/550"
         within("#cast_info") do
-          expect(page).to have_content("Actor:", count: 10)
-          expect(page).to have_content("Role:", count: 10)
+          expect(page).to have_content(" as ", count: 10)
           expect(page).to have_content("Helena Bonham Carter", count: 1)
           expect(page).to have_content("Angel Face", count: 1)
         end
@@ -41,7 +40,6 @@ RSpec.describe 'the user movie show page', type: :feature do
         visit "/users/#{user.id}/movies/550"
         within("#reviews_info") do
           expect(page).to have_content("Author:", count: 7)
-          expect(page).to have_content("Review:", count: 7)
           expect(page).to have_content("Wuchak", count: 1)
           expect(page).to have_content("Madness unbounded. Don't try to make sense of insanity, just ride a wild ride.", count: 1)
         end
@@ -70,7 +68,7 @@ RSpec.describe 'the user movie show page', type: :feature do
         visit "/users/#{user.id}/movies/550"
         within("#buttons") do
           within("#new_party_button") do
-            expect(page).to have_button("Create A New Viewing Party")
+            expect(page).to have_button("Create Viewing Party for Fight Club")
             # click_on("Create A New Viewing Party")
             # expect(current_path).to eq("/users/#{user.id}/movies/550/viewing-party/new")
           end

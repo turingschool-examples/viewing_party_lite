@@ -1,18 +1,16 @@
+<h1> <%= "#{@movie.title}" %> </h1>
+
 <section id= "buttons" >
-<div id= "new_party_button">
-<%= button_to "Create A New Viewing Party", "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/viewing-party/new", method: :get %>
+<div id= "discover_button">
+<%= button_to "Discover Page", "/users/#{params[:user_id]}/discover", method: :get %>
 </div>
 
-
-<div id= "discover_button">
-<%= button_to "Discover", "/users/#{params[:user_id]}/discover", method: :get %>
+<div id= "new_party_button">
+<%= button_to "Create Viewing Party for #{@movie.title}", "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/viewing-party/new", method: :get %>
 </div>
 </section>
 
-
-
 <section id= "movie_details" >
-<h3> Movie Title: <%= @movie.title %> </h3>
 <p> Vote Average: <%= @movie.vote_avg %> </p>
 <p> Runtime: <%= @movie.runtime %> </p>
 <p> Summary: <%= @movie.summary %> </p>
@@ -23,19 +21,17 @@
 </section>
 
 <section id= "cast_info" >
-<h3> Cast Members </h3>
+<h3> Cast </h3>
 <%@cast.each do |member|%>
-  <p> Actor: <%= member[:actor] %> </p>
-  <p> Role: <%= member[:role] %> </p>
-  <br>
+  <p> <%= member[:actor] %> as <%= member[:role] %> </p>
 <%end%>
 </section>
 
 <section id= "reviews_info" >
-<h3> Reviews </h3>
+<h3> <%= @reviews.count %> Reviews </h3>
 <% @reviews.each do |review| %>
   <p> Author: <%= review[:author] %> </p>
-  <p> Review: <%= review[:content] %> </p>
+  <p> <%= review[:content] %> </p>
   <br>
 <%end%>
 </section>
