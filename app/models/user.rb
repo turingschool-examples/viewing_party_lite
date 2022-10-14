@@ -5,8 +5,4 @@ class User < ApplicationRecord
 
   has_many :viewing_party_users
   has_many :viewing_parties, through: :viewing_party_users
-
-  def self.sort_invitees(user_id)
-    User.where.not(id: user_id)
-  end
 end

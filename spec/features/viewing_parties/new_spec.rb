@@ -68,7 +68,7 @@ RSpec.describe 'New Viewing Party Page' do
       check "user_#{@user_2.id}" 
       check "user_#{@user_3.id}"
       click_button("Create Party")
-      save_and_open_page
+
       expect(page).to have_content("Party duration must be greater than movie runtime and all fields must be filled in")
       expect(@user_1.viewing_parties).to eq([])
     end

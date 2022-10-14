@@ -6,6 +6,7 @@ class Details
               :vote_average,
               :runtime,
               :genres,
+              :poster_path,
               :id
 
   def initialize(api)
@@ -15,6 +16,7 @@ class Details
     @vote_average = api[:vote_average]
     @runtime = api[:runtime]
     @genres = api[:genres]
+    @poster_path = api[:poster_path]
   end
 
   def genres_names_array

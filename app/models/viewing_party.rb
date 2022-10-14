@@ -6,4 +6,8 @@ class ViewingParty < ApplicationRecord
 
   has_many :viewing_party_users
   has_many :users, through: :viewing_party_users
+
+  def invitees(user_id)
+    self.users.where.not(id: user_id)
+  end
 end
