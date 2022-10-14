@@ -45,5 +45,6 @@ RSpec.describe 'User show page' do
     expect(page).to have_content('Movie Title: Spirited Away')
     expect(page).to have_content("Host: Mary")
     expect(page).to have_content("Guests: Mary, Legolas, and Gimli")
+    expect(page).to have_content("Date and Start Time: 10/31/2022, 11:30")
   end
 end

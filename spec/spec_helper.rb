@@ -17,7 +17,10 @@
 require 'simplecov'
 SimpleCov.start 'rails'
 SimpleCov.add_filter %w[spec config]
-
+SimpleCov.add_filter 'app/channels'
+SimpleCov.add_filter '/app/jobs/application_job.rb'
+SimpleCov.add_filter '/mailers/application_mailer.rb'
+SimpleCov.add_filter '/app/controllers/application_controller.rb'
 require 'webmock/rspec'
 
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration

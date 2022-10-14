@@ -5,12 +5,18 @@
 <h4><%= "#{@user.name}'s " %>Viewing Parties</h4>
 <% @user.parties.each do |party| %>
   <div id="viewingparty-<%= party.id %>">
+    <% if @user.id == party.host.id %>
+      <h4>Hosting</h4>
+    <% else %>
+      <h4>Invited</h4>
+    <% end %>
     Movie Title: <%= link_to party.movie_title, user_movie_path(@user, party.movie_id) %>
     <% if party.host.present? %>
       <br/>
-      Host: <%= party.host.name %>
+      Host: <strong><%= party.host.name %></strong>
     <% end %>
-    <br />
-    Guests: <%= party.users.map(&:name).to_sentence %>
+    <br/>
+    <p>Guests: <%= party.users.map(&:name).to_sentence %></p>
+    <p>Date and Start Time: <%= party.start_time.strftime("%m/%d/%Y, %H:%M") %></p>
   </div>
 <% end %>
