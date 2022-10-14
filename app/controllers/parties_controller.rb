@@ -14,8 +14,10 @@ class PartiesController < ApplicationController
       end
 
     end
-    redirect_to "/users/#{params[:user_id]}"
+
+    redirect_to user_path(params[:user_id])
     flash[:alert] = "Party successfully created"
+
   end
 
 
