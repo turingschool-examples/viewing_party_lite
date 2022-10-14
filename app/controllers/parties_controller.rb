@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PartiesController < ApplicationController
   def new
     @movie = MovieFacade.movie_details(params[:movie_id])
@@ -12,9 +14,7 @@ class PartiesController < ApplicationController
     @users = User.all
     if @party.save
       @users.each do |user|
-        if params["#{user.id}"] = 1
-          UserParty.create!(user_id: user.id, party_id: @party.id)
-        end
+        UserParty.create!(user_id: user.id, party_id: @party.id) if params[user.id.to_s] = 1
       end
       redirect_to(user_path(@user))
     end

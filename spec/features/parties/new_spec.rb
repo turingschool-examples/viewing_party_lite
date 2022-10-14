@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Viewing Party Page (new)' do
@@ -24,10 +26,10 @@ RSpec.describe 'Viewing Party Page (new)' do
       expect(page).to have_content(@fight_club.original_title)
       expect(page).to have_content(@user_2.name)
       expect(page).to have_content(@user_3.name)
-      fill_in :duration, with: "#{@party_1.duration}"
+      fill_in :duration, with: @party_1.duration.to_s
 
-      check("#{@user_2.id}")
-      click_button "Create Party"
+      check(@user_2.id.to_s)
+      click_button 'Create Party'
 
       expect(current_path).to eq("/dashboard/#{@user_1.id}")
       expect(page).to have_content(@party_1.date)
