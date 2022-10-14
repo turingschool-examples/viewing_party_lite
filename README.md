@@ -8,9 +8,11 @@
 <div style="color: lightblue">
 
 # "Viewing Party Lite" is a paired project where a user can create an account, search for a movie, and invite their friends to view the movie together at a specific date & time. 
+ <img align="center" alt="GIF" src="https://media2.giphy.com/media/kf9dfB18XB6JGM8J7s/giphy.gif?cid=ecf05e473f5j782gt2ntm7yy8rpep2ajd3dorfyvo38a2w3a&rid=giphy.gif&ct=g" width="200" height="200" />
 </div>
 
-<img src="./app/assets/images/schema.jpg" alt="The schema of the project includes 3 tables. One for users, one for parties and a joins table for user_parties."/>
+
+<img src="./app/assets/images/schema.jpg" alt="The schema of the project includes 3 tables. One for users, one for parties and a joins table for user_parties."  width="600" height="350" />
 
 #  ⚫ [Alaina Kneiling](https://github.com/Alaina-Noel) ⚫ [Gavin Carew](https://github.com/gjcarew) ⚫
 
