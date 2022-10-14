@@ -19,7 +19,7 @@ class MovieFacade
   end
 
   def self.top_rated
-   MovieService.get_top_rated[:results].map do |data|
+    MovieService.get_top_rated[:results].map do |data|
       TopMovie.new(data)
     end
   end

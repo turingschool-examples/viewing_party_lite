@@ -18,7 +18,7 @@
           <% if party.host_id == @user.id %>
             <%= "Hosting" %>
           <% else %>
-            <%= 'Invited - "#{party.find_host} is Host' %>
+            <%= "Invited - #{party.find_host} is Host" %>
           <% end %>
         </p>
         <h3>Guest List:</h3>

@@ -26,16 +26,19 @@ RSpec.describe 'User Dashboard', type: :feature do
     end
 
     describe 'Veiwing parties' do
-      describe 'I should see the viewing parties that the user has been invited to with the following details:' do 
+      describe 'I should see the viewing parties that the user has been invited to with the following details:' do
         before :each do
           @user_1 = User.create!(name: 'Jane', email: 'jane@mail.com')
           @user_2 = User.create!(name: 'John', email: 'john@mail.com')
           @user_3 = User.create!(name: 'Megan', email: 'megan@mail.com')
           @user_4 = User.create!(name: 'Mike', email: 'mike@mail.com')
 
-          @party_1 = Party.create!(movie_id: 8, duration: 80, date:'2023/8/10', start_time:'21:00', host_id: @user_1.id, movie_runtime: 80)
-          @party_2 = Party.create!(movie_id: 2, duration: 73, date: '10/12/2022', start_time:'18:00', host_id:@user_3.id, movie_runtime: 73)
-          @party_3 = Party.create!(movie_id: 3, duration: 74, date:'12/11/2022', start_time:'16:30', host_id: @user_2.id, movie_runtime: 70)
+          @party_1 = Party.create!(movie_id: 8, duration: 80, date: '2023/8/10', start_time: '21:00',
+                                   host_id: @user_1.id, movie_runtime: 80)
+          @party_2 = Party.create!(movie_id: 2, duration: 73, date: '10/12/2022', start_time: '18:00',
+                                   host_id: @user_3.id, movie_runtime: 73)
+          @party_3 = Party.create!(movie_id: 3, duration: 74, date: '12/11/2022', start_time: '16:30',
+                                   host_id: @user_2.id, movie_runtime: 70)
 
           @party_1.users << @user_1
           @party_1.users << @user_2
@@ -87,7 +90,7 @@ RSpec.describe 'User Dashboard', type: :feature do
             expect(page).to_not have_link("#{MovieFacade.movie_data(@party_3.movie_id).title}")
           end
         end
-          
+
         it 'Each viewing party has a Date and Time of the Event', :vcr do
           visit user_path(@user_1)
 
@@ -119,21 +122,20 @@ RSpec.describe 'User Dashboard', type: :feature do
           visit user_path(@user_1)
 
           within("#view-parties-#{@user_1.id}") do
-            expect(page).to have_content("Hosting")
-            expect(page).to have_content("Invited")
+            expect(page).to have_content('Hosting')
+            expect(page).to have_content('Invited')
           end
 
           visit user_path(@user_4)
 
           within("#view-parties-#{@user_4.id}") do
-            expect(page).to have_content("Invited")
+            expect(page).to have_content('Invited')
 
-            expect(page).to_not have_content("Hosting")
+            expect(page).to_not have_content('Hosting')
           end
         end
 
         it 'list of users invited', :vcr do
-
           visit user_path(@user_1)
 
           within("#view-parties-#{@user_1.id}") do

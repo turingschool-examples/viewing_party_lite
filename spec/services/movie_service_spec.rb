@@ -3,9 +3,6 @@ require 'rails_helper'
 RSpec.describe MovieService do
   describe 'api endpoint' do
     it 'can get_movie_data', :vcr do
-      # json_response = File.read('spec/fixtures/get_movie_data.json')
-      # stub_request(:get, "https://api.themoviedb.org/3/movie/8?api_key=791558f2c56bc172d18d3788419a5636&language=en-US").to_return(status: 200, body: json_response)
-
       movie_data = MovieService.get_movie_data(8)
 
       expect(movie_data).to be_a(Hash)
@@ -50,9 +47,6 @@ RSpec.describe MovieService do
     end
 
     it 'can get_cast_data', :vcr do
-      # json_response = File.read('spec/fixtures/get_movie_data.json')
-      # stub_request(:get, "https://api.themoviedb.org/3/movie/8?api_key=791558f2c56bc172d18d3788419a5636&language=en-US").to_return(status: 200, body: json_response)
-
       cast_data = MovieService.get_cast_data(3)
 
       expect(cast_data).to be_a(Hash)
@@ -68,9 +62,6 @@ RSpec.describe MovieService do
     end
 
     it 'can get_review_data', :vcr do
-      # json_response = File.read('spec/fixtures/get_movie_data.json')
-      # stub_request(:get, "https://api.themoviedb.org/3/movie/8?api_key=791558f2c56bc172d18d3788419a5636&language=en-US").to_return(status: 200, body: json_response)
-
       review_data = MovieService.get_review_data(3)
 
       expect(review_data).to be_a(Hash)

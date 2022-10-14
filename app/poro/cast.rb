@@ -1,5 +1,4 @@
 class Cast
-
   attr_reader :id, :name, :character
 
   def initialize(cast_api_data)

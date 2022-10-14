@@ -28,8 +28,6 @@ class Party < ApplicationRecord
   private
 
   def compare_duration_to_movie_time
-    if duration.to_i <  movie_runtime.to_i
-      errors.add(:duration, "cannot be less then movie length #{movie_runtime}")
-    end
+    errors.add(:duration, "cannot be less then movie length #{movie_runtime}") if duration.to_i < movie_runtime.to_i
   end
 end
