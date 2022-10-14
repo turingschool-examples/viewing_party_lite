@@ -6,6 +6,7 @@
 <div id="viewing-parties">
   <% @movies.each do |movie| %>
     <p>Movie Title: <%= movie.title  %></p>
+    <p> <%= poster_render(movie.poster_path) %> </p>
   <% end %>
   <% @user.viewing_parties.each do |viewing_party| %>
   <% if @user.id == viewing_party.host_id %>
