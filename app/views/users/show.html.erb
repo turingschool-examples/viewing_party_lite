@@ -3,11 +3,11 @@
   <%= @user.name %>'s Dashboard
 <%end%>
 
-<%= button_to 'Discover Movies', "/users/#{@user.id}/discover", method: :get%>
+<%= render 'partials/discover_button'%>
 <br>
 <hr>
-<div id='user-parties' style='width:100%; overflow-x: scroll;'>
-  <h2>Viewing Parties</h2>
+<h2>Viewing Parties</h2>
+<div id='user-parties' style='width:100%; overflow-x: scroll; display: flex'>
   <% @user.parties.each do |party| %>
     <div class='party-card' id='party-<%=party.id%>'style='float: left; margin: 15px'>
       <div class="poster">

@@ -52,11 +52,10 @@ RSpec.describe 'the user movie show page', type: :feature do
         user = create(:user, id: 50, name: "Bubbles", email: "bubbles@sunnyvale.ca")
         visit "/users/#{user.id}/movies/550"
         within("#buttons") do
-          within("#discover_button") do
-            expect(page).to have_button("Discover")
-            click_on("Discover")
-            expect(current_path).to eq("/users/#{user.id}/discover")
-          end
+          expect(page).to have_selector("#discover_button")
+          expect(page).to have_button("Discover")
+          click_on("Discover")
+          expect(current_path).to eq("/users/#{user.id}/discover")
         end
       end
     end

@@ -1,10 +1,8 @@
 <%=content_for :subtitle do%>
   <%= @subtitle %>
 <%end%>
-<br>
-<%= button_to 'Discover Movies', "/users/#{@user.id}/discover", method: :get%>
-<br>
-<table id='movie-table'>
+<%= render 'partials/discover_button'%>
+<table id='movie-table' class='center'>
   <tr>
     <th>Title</th>
     <th>Rating</th>

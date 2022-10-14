@@ -14,9 +14,4 @@ class MoviesController < ApplicationController
     #   flash[:alert] = 'Something went wrong, please try again'
     end
   end
-
-  private
-  def set_user
-    @user = User.find(params[:user_id])
-  end
 end
