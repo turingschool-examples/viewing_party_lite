@@ -8,13 +8,18 @@
 <p><% @parties.each do |party| %></p>
 
   <h4>Viewing Party for: <%= link_to party.movie(party.movie_id).title, user_movie_path(@user, party.movie_id)  %></h4>
-  <p>Duration: <%= party.duration %></p>
+  <p>Duration: <%= party.hours_and_minutes %></p>
+  <p>Date: <%= party.date %></p>
+  <p>Start Time: <%= party.start_time %></p>
   <% if @user.host_status(party.id) %>
     <strong><p>Host Status: <%= @user.host_status(party.id) %></p></strong>
     <% else %>
     <p> Host Status: <%= @user.host_status(party.id) %></p>
     <% end %>
-  <p>Date: <%= party.date %></p>
-  <p>Start Time: <%= party.start_time %></p>
-
+  <p>Other Guests:</p>
+  <ul><% party.users.each do |user| %>
+        <% if user.host_status(party.id) == false %>
+          <li><%= user.name %></li>
+        <% end %></ul>
+      <% end %>
 <% end %>
