@@ -72,5 +72,7 @@ RSpec.describe 'The new viewing party page', :vcr do
       
       expect(page).to have_content("Error: Start time can't be blank")
     end
+
+    it 'will not '
   end
 end
