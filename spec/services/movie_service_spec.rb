@@ -45,8 +45,35 @@ RSpec.describe MovieService do
         expect(search_movies).to have_key(:results)
         expect(search_movies).to have_key(:page)
         expect(search_movies[:results]).to be_a(Array)
+      end
+    end
+  end
 
+  describe 'returns the cast of movie by ID' do
 
+    it '#movie_cast' do
+
+      VCR.use_cassette('fight_club_cast') do
+        fight_club_cast = MovieService.movie_cast(550)
+
+        expect(fight_club_cast).to be_a(Hash)
+        expect(fight_club_cast).to have_key(:cast)
+        expect(fight_club_cast[:cast]).to be_a(Array)
+      end
+    end
+  end
+
+  describe 'returns the reviews of movie by ID' do
+
+    it '#movie_cast' do
+
+      VCR.use_cassette('fight_club_reviews') do
+        fight_club_reviews = MovieService.movie_reviews(550)
+
+        expect(fight_club_reviews).to be_a(Hash)
+        expect(fight_club_reviews).to have_key(:results)
+        expect(fight_club_reviews).to have_key(:page)
+        expect(fight_club_reviews[:results]).to be_a(Array)
       end
     end
   end
