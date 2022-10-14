@@ -1,12 +1,14 @@
-<h1> Discover <%=@user.name%>'s Movies! </h1>
+<%=content_for :subtitle do%>
+  Discover Movies
+<%end%>
 
-<%= button_to "Top Rated Movies", url: "users/#{@user.id}/movies", method: :get  %>
+<%= button_to "Top Rated Movies", user_movies_path(@user), method: :get, params: {q: 'top rated'}  %>
 <br>
 <br>
 <section id= "movie_search" >
 <%= form_with url: "/users/#{@user.id}/movies", method: :get, local: true do |f| %>
-  <%= f.label :movie, "Movie Search" %>
-  <%= f.text_field :movie %>
+  <%= f.label :q, "Movie Search" %>
+  <%= f.text_field :q %>
   <%= f.submit "Search" %>
 <% end %>
 </section>

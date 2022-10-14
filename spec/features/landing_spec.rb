@@ -60,7 +60,7 @@ RSpec.describe 'When I visit the landing page', type: :feature do
           expect(page).to have_link("#{meg.email}'s Dashboard", href: "/users/#{meg.id}")
           click_link "#{erin.email}'s Dashboard"
         end
-        expect(current_path).to eq(user_path(meg))
+        expect(current_path).to eq(user_path(erin))
       end
     end
   end

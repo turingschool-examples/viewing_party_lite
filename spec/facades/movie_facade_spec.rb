@@ -12,14 +12,14 @@ RSpec.describe MovieFacade do
     end
   end
 
-  describe '#popular' do
+  describe '#top_rated' do
     it 'returns the correct data type' do
-      VCR.use_cassette("popular", :allow_playback_repeats => true) do
-        expect(MovieFacade.popular).to be_a(Array)
-        expect(MovieFacade.popular.first).to be_a(Hash)
-        expect(MovieFacade.popular.first[:title]).to be_a(String)
-        expect(MovieFacade.popular.last).to have_key(:vote_avg)
-        expect(MovieFacade.popular.count).to eq(40)
+      VCR.use_cassette("top_rated", :allow_playback_repeats => true) do
+        expect(MovieFacade.top_rated).to be_a(Array)
+        expect(MovieFacade.top_rated.first).to be_a(Hash)
+        expect(MovieFacade.top_rated.first[:title]).to be_a(String)
+        expect(MovieFacade.top_rated.last).to have_key(:vote_avg)
+        expect(MovieFacade.top_rated.count).to eq(40)
       end
     end
 

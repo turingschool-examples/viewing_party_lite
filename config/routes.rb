@@ -8,8 +8,11 @@ Rails.application.routes.draw do
   get "/users/:user_id/movies/:movie_id/viewing-party/new", to: 'parties#new'
   post "/users/:user_id/movies/:movie_id/viewing-party/create", to: 'parties#create'
   
-  resources :users, only: [:create, :show] 
 
+
+  resources :users, only: [:create, :show] do #, module: 'user' 
+    resources :movies, only: [:index]
+  end
 
 
 end

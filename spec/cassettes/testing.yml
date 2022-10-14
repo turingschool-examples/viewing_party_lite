@@ -1,0 +1,285 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/550?api_key=6f974f2eba74445f2915a36f183702b7&language=en-US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 13 Oct 2022 15:18:22 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 8f3dc9fbf00ec8ef64b14b7080f4013a23d639da
+      X-Memc-Age:
+      - '13249'
+      X-Memc-Expires:
+      - '4127'
+      Etag:
+      - W/"c31a446eb95502d3c0501a0b104f3d3b"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 8a50fe9452625079391cf0ce7a3e0c56.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - U5NKIHpfDeHWMfOWvbGZsCxzg7QQuogB0C5JT_uVQC9oJmTs2q13Gg==
+      Age:
+      - '11711'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"},{"id":53,"name":"Thriller"},{"id":35,"name":"Comedy"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
+        Club","overview":"A ticking-time-bomb insomniac and a slippery soap salesman
+        channel primal male aggression into a shocking new form of therapy. Their
+        concept catches on, with underground \"fight clubs\" forming in every town,
+        until an eccentric gets in the way and ignites an out-of-control spiral toward
+        oblivion.","popularity":98.443,"poster_path":"/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg","production_companies":[{"id":508,"logo_path":"/7cxRWzi4LsVm4Utfpr1hfARNurT.png","name":"Regency
+        Enterprises","origin_country":"US"},{"id":711,"logo_path":"/tEiIH5QesdheJmDAqQwvtN60727.png","name":"Fox
+        2000 Pictures","origin_country":"US"},{"id":4700,"logo_path":"/A32wmjrs9Psf4zw0uaixF0GXfxq.png","name":"The
+        Linson Company","origin_country":"US"},{"id":20555,"logo_path":"/hD8yEGUBlHOcfHYbujp71vD8gZp.png","name":"Taurus
+        Film","origin_country":"DE"},{"id":54051,"logo_path":null,"name":"Atman Entertainment","origin_country":""},{"id":54052,"logo_path":null,"name":"Knickerbocker
+        Films","origin_country":"US"}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
+        Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.433,"vote_count":24945}'
+  recorded_at: Thu, 13 Oct 2022 18:33:33 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/550?api_key=6f974f2eba74445f2915a36f183702b7&language=en-US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 13 Oct 2022 15:18:22 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 8f3dc9fbf00ec8ef64b14b7080f4013a23d639da
+      X-Memc-Age:
+      - '13249'
+      X-Memc-Expires:
+      - '4127'
+      Etag:
+      - W/"c31a446eb95502d3c0501a0b104f3d3b"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 d4fb3448d1a8d3229dcf0a89f4bbe7e8.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - re3GBwzES-8GRn8b366pLuQKSEqqNOzdBSNxszC1fMTKXnP9DZyjCQ==
+      Age:
+      - '11711'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"},{"id":53,"name":"Thriller"},{"id":35,"name":"Comedy"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
+        Club","overview":"A ticking-time-bomb insomniac and a slippery soap salesman
+        channel primal male aggression into a shocking new form of therapy. Their
+        concept catches on, with underground \"fight clubs\" forming in every town,
+        until an eccentric gets in the way and ignites an out-of-control spiral toward
+        oblivion.","popularity":98.443,"poster_path":"/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg","production_companies":[{"id":508,"logo_path":"/7cxRWzi4LsVm4Utfpr1hfARNurT.png","name":"Regency
+        Enterprises","origin_country":"US"},{"id":711,"logo_path":"/tEiIH5QesdheJmDAqQwvtN60727.png","name":"Fox
+        2000 Pictures","origin_country":"US"},{"id":4700,"logo_path":"/A32wmjrs9Psf4zw0uaixF0GXfxq.png","name":"The
+        Linson Company","origin_country":"US"},{"id":20555,"logo_path":"/hD8yEGUBlHOcfHYbujp71vD8gZp.png","name":"Taurus
+        Film","origin_country":"DE"},{"id":54051,"logo_path":null,"name":"Atman Entertainment","origin_country":""},{"id":54052,"logo_path":null,"name":"Knickerbocker
+        Films","origin_country":"US"}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
+        Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.433,"vote_count":24945}'
+  recorded_at: Thu, 13 Oct 2022 18:33:33 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/81?api_key=6f974f2eba74445f2915a36f183702b7&language=en-US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 13 Oct 2022 18:33:33 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - f6bf9b95d0fae8066fd451b503f91a111dfa5047
+      X-Memc-Age:
+      - '13402'
+      X-Memc-Expires:
+      - '2354'
+      Etag:
+      - W/"511cb1b077fefe8d8e54f9922ca1e0d9"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 96971091469e558c8f8e351ccf0d7212.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - odWq39QusII_ikbEavz4ieL-sXQZFi423TVJ2bLoxGjAxAAVPETovA==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvdWxWVWEyTXZuSkFqQWVSdDdoMjNGRkpWUktILmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjoxMDAwMDAwLCJnZW5yZXMiOlt7ImlkIjoxMiwibmFtZSI6IkFkdmVudHVyZSJ9LHsiaWQiOjE2LCJuYW1lIjoiQW5pbWF0aW9uIn0seyJpZCI6MTQsIm5hbWUiOiJGYW50YXN5In1dLCJob21lcGFnZSI6Imh0dHBzOi8vbW92aWVzLmRpc25leS5jb20vbmF1c2ljYWEtb2YtdGhlLXZhbGxleS1vZi10aGUtd2luZCIsImlkIjo4MSwiaW1kYl9pZCI6InR0MDA4NzU0NCIsIm9yaWdpbmFsX2xhbmd1YWdlIjoiamEiLCJvcmlnaW5hbF90aXRsZSI6IumiqOOBruiwt+OBruODiuOCpuOCt+OCqyIsIm92ZXJ2aWV3IjoiQWZ0ZXIgYSBnbG9iYWwgd2FyLCB0aGUgc2Vhc2lkZSBraW5nZG9tIGtub3duIGFzIHRoZSBWYWxsZXkgb2YgdGhlIFdpbmQgcmVtYWlucyBvbmUgb2YgdGhlIGxhc3Qgc3Ryb25naG9sZHMgb24gRWFydGggdW50b3VjaGVkIGJ5IGEgcG9pc29ub3VzIGp1bmdsZSBhbmQgdGhlIHBvd2VyZnVsIGluc2VjdHMgdGhhdCBndWFyZCBpdC4gTGVkIGJ5IHRoZSBjb3VyYWdlb3VzIFByaW5jZXNzIE5hdXNpY2HDpCwgdGhlIHBlb3BsZSBvZiB0aGUgVmFsbGV5IGVuZ2FnZSBpbiBhbiBlcGljIHN0cnVnZ2xlIHRvIHJlc3RvcmUgdGhlIGJvbmQgYmV0d2VlbiBodW1hbml0eSBhbmQgRWFydGguIiwicG9wdWxhcml0eSI6NDQuMjczLCJwb3N0ZXJfcGF0aCI6Ii9zSXBjQVR4TXJLSFJSVUpBR0k1VUlVVDdYTUcuanBnIiwicHJvZHVjdGlvbl9jb21wYW5pZXMiOlt7ImlkIjoyOSwibG9nb19wYXRoIjoiLzJaR2thTE8xb1ZSMzl6eHRRY2E4aURhVTdmUi5wbmciLCJuYW1lIjoiVG9wY3JhZnQiLCJvcmlnaW5fY291bnRyeSI6IkpQIn1dLCJwcm9kdWN0aW9uX2NvdW50cmllcyI6W3siaXNvXzMxNjZfMSI6IkpQIiwibmFtZSI6IkphcGFuIn1dLCJyZWxlYXNlX2RhdGUiOiIxOTg0LTAzLTExIiwicmV2ZW51ZSI6MzMwMTQ0NiwicnVudGltZSI6MTE3LCJzcG9rZW5fbGFuZ3VhZ2VzIjpbeyJlbmdsaXNoX25hbWUiOiJKYXBhbmVzZSIsImlzb182MzlfMSI6ImphIiwibmFtZSI6IuaXpeacrOiqniJ9XSwic3RhdHVzIjoiUmVsZWFzZWQiLCJ0YWdsaW5lIjoiQSB5b3VuZyBnaXJsJ3MgbG92ZSBjYWxsZWQgZm9ydGggbWlyYWNsZXPigKYiLCJ0aXRsZSI6Ik5hdXNpY2HDpCBvZiB0aGUgVmFsbGV5IG9mIHRoZSBXaW5kIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjcuOTM3LCJ2b3RlX2NvdW50IjoyODQ5fQ==
+  recorded_at: Thu, 13 Oct 2022 18:33:33 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/81?api_key=6f974f2eba74445f2915a36f183702b7&language=en-US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.6.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 13 Oct 2022 18:33:33 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - f6bf9b95d0fae8066fd451b503f91a111dfa5047
+      X-Memc-Age:
+      - '13402'
+      X-Memc-Expires:
+      - '2354'
+      Etag:
+      - W/"511cb1b077fefe8d8e54f9922ca1e0d9"
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 f0a2a95cb4d25b2414a9c1a7a754943e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - d8MZ3U5oYzZv2jIp8AhSAz9Q7aJHs3qLmcnSlUXhH7kAgdrXyRZt3Q==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvdWxWVWEyTXZuSkFqQWVSdDdoMjNGRkpWUktILmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjoxMDAwMDAwLCJnZW5yZXMiOlt7ImlkIjoxMiwibmFtZSI6IkFkdmVudHVyZSJ9LHsiaWQiOjE2LCJuYW1lIjoiQW5pbWF0aW9uIn0seyJpZCI6MTQsIm5hbWUiOiJGYW50YXN5In1dLCJob21lcGFnZSI6Imh0dHBzOi8vbW92aWVzLmRpc25leS5jb20vbmF1c2ljYWEtb2YtdGhlLXZhbGxleS1vZi10aGUtd2luZCIsImlkIjo4MSwiaW1kYl9pZCI6InR0MDA4NzU0NCIsIm9yaWdpbmFsX2xhbmd1YWdlIjoiamEiLCJvcmlnaW5hbF90aXRsZSI6IumiqOOBruiwt+OBruODiuOCpuOCt+OCqyIsIm92ZXJ2aWV3IjoiQWZ0ZXIgYSBnbG9iYWwgd2FyLCB0aGUgc2Vhc2lkZSBraW5nZG9tIGtub3duIGFzIHRoZSBWYWxsZXkgb2YgdGhlIFdpbmQgcmVtYWlucyBvbmUgb2YgdGhlIGxhc3Qgc3Ryb25naG9sZHMgb24gRWFydGggdW50b3VjaGVkIGJ5IGEgcG9pc29ub3VzIGp1bmdsZSBhbmQgdGhlIHBvd2VyZnVsIGluc2VjdHMgdGhhdCBndWFyZCBpdC4gTGVkIGJ5IHRoZSBjb3VyYWdlb3VzIFByaW5jZXNzIE5hdXNpY2HDpCwgdGhlIHBlb3BsZSBvZiB0aGUgVmFsbGV5IGVuZ2FnZSBpbiBhbiBlcGljIHN0cnVnZ2xlIHRvIHJlc3RvcmUgdGhlIGJvbmQgYmV0d2VlbiBodW1hbml0eSBhbmQgRWFydGguIiwicG9wdWxhcml0eSI6NDQuMjczLCJwb3N0ZXJfcGF0aCI6Ii9zSXBjQVR4TXJLSFJSVUpBR0k1VUlVVDdYTUcuanBnIiwicHJvZHVjdGlvbl9jb21wYW5pZXMiOlt7ImlkIjoyOSwibG9nb19wYXRoIjoiLzJaR2thTE8xb1ZSMzl6eHRRY2E4aURhVTdmUi5wbmciLCJuYW1lIjoiVG9wY3JhZnQiLCJvcmlnaW5fY291bnRyeSI6IkpQIn1dLCJwcm9kdWN0aW9uX2NvdW50cmllcyI6W3siaXNvXzMxNjZfMSI6IkpQIiwibmFtZSI6IkphcGFuIn1dLCJyZWxlYXNlX2RhdGUiOiIxOTg0LTAzLTExIiwicmV2ZW51ZSI6MzMwMTQ0NiwicnVudGltZSI6MTE3LCJzcG9rZW5fbGFuZ3VhZ2VzIjpbeyJlbmdsaXNoX25hbWUiOiJKYXBhbmVzZSIsImlzb182MzlfMSI6ImphIiwibmFtZSI6IuaXpeacrOiqniJ9XSwic3RhdHVzIjoiUmVsZWFzZWQiLCJ0YWdsaW5lIjoiQSB5b3VuZyBnaXJsJ3MgbG92ZSBjYWxsZWQgZm9ydGggbWlyYWNsZXPigKYiLCJ0aXRsZSI6Ik5hdXNpY2HDpCBvZiB0aGUgVmFsbGV5IG9mIHRoZSBXaW5kIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjcuOTM3LCJ2b3RlX2NvdW50IjoyODQ5fQ==
+  recorded_at: Thu, 13 Oct 2022 18:33:33 GMT
+recorded_with: VCR 6.1.0
