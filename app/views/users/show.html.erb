@@ -2,41 +2,59 @@
 <div id='discover'>
 <%= button_to 'Discover Movies', user_discover_index_path(@user.id), method: :get %>
 </div>
-<section id="viewing_parties">
-  <% @user.viewing_parties.each_with_index do |vp, image| %>
-  <div id="party-<%= vp.id %>">
-    <ul>
-      <% if vp.host == @user.name%>
-          <h2>Hosted Party</h2>
-          <li><%= vp.current_movie.title %></li>
-          <img alt = <%= @movies[image].title %> src="https://image.tmdb.org/t/p/w200/<%= @movies[image].image %>">
-          <li><%= vp.date.strftime('%B %d, %Y %I:%M %p') %></li>
-          <li id="hosted">Your Role:<%= vp.current_party(@user.id).role %></li>
-          <li>Host By: <%=vp.host%> (you) </li>
-          <li>Other Viewers: <%vp.users.each do |user|%>
-              <%if vp.host == @user.name%>
-              <%=user.name %>
-            <%end%>
-          <%end%></li>
 
-      <%else%>
-          <h2>Invited Party</h2>
-          <li><%= vp.current_movie.title %></li>
+<section id="viewing_parties">
+    <ul>
+    <h2>Hosted Party/Parties</h2>
+    <% @user.viewing_parties.each_with_index do |vp, image| %>
+      <div id="party-<%= vp.id %>">
+        <% if vp.host == @user.name%>
+            <li><%= link_to vp.current_movie.title, user_movie_path(@user.id, vp.movie_id) %></li>
+            <img alt = <%= @movies[image].title %> src="https://image.tmdb.org/t/p/w200/<%= @movies[image].image %>">
+            <li><%= vp.date.strftime('%B %d, %Y %I:%M %p') %></li>
+            <li id="role">Your Role:<%= vp.current_party(@user.id).role %></li>
+            <li id="host">Host By: <%=vp.host%> (you) </li>
+            <li>
+              Other Viewers:
+              <ul id="viewers">
+                <%vp.users.each do |user|%>
+                  <%unless vp.host == @user.name%>
+                    <li><%=user.name %></li>
+                  <%end%>
+                <%end%>
+              </ul>
+            </li>
+            <br>
+            <br>
+        <%end%></li>
+    <%end%>
+      </div>
+    </ul>
+
+    <ul>
+    <h2>Invited Party/Parties</h2>
+    <% @user.viewing_parties.each_with_index do |vp, image| %>
+      <% if vp.host != @user.name%>
+          <li><%= link_to vp.current_movie.title, user_movie_path(@user.id, vp.movie_id)  %></li>
           <img alt = <%= @movies[image].title %> src="https://image.tmdb.org/t/p/w200/<%= @movies[image].image %>">
           <li><%= vp.date.strftime('%B %d, %Y %I:%M %p') %></li>
-          <li id="role">Your Role:<%= vp.current_party(@user.id).role %></li>
-          <li>Host By: <%=vp.host%></li>
-          <li>Viewers: <%vp.users.each do |user|%>
-              <% unless vp.host == user.name%>
-                <%if user.name == @user.name%>
-                  <strong> <%=user.name%> </strong>
-                <%else%>
-                <%=user.name %>
+          <li id="role">Your Role: <%= vp.current_party(@user.id).role %></li>
+          <li id="host">Host By: <%=vp.host%></li>
+          <li>Viewers:
+            <ul id="viewers">
+              <%vp.users.each do |user|%>
+                <% unless vp.host == user.name%>
+                  <%if user.name == @user.name%>
+                    <li><strong id="current_user"> <%=user.name%> </strong></li>
+                  <%else%>
+                    <li><%=user.name %></li>
+                  <%end%>
                 <%end%>
               <%end%>
-            <%end%></li>
+          </li>
       <%end%>
+    <%end%>
+          <br>
+          <br>
     </ul>
-  </div>
-  <% end %>
 </section>
