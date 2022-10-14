@@ -6,7 +6,7 @@ FactoryBot.define do
     end
 
     factory :viewing_party do
-        duration { rand(60..180) }
+        duration { 240 }
         date { Faker::Date.forward(days: 30) }
         start_time { Faker::Time.forward(days: 1, period: :evening) }
         movie_id { rand(1000..2000) }

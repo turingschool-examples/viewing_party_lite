@@ -10,7 +10,8 @@ RSpec.describe "Discover Movies Results Page", type: :feature do
     click_button('Find Top Rated Movies')  
     expect(current_path).to eq(user_movies_path(@user_1))
     expect(page).to have_link('The Godfather')
-    expect(page).to have_content("Vote Average: 8.715")
+    expect(page).to have_content("Vote Average: 8.7")
+    click_link('The Godfather')
     expect(current_path).to eq(user_movie_path(@user_1, 238))
   end
   
@@ -19,7 +20,7 @@ RSpec.describe "Discover Movies Results Page", type: :feature do
     click_button('Find Movies')  
     expect(current_path).to eq(user_movies_path(@user_1))
     expect(page).to have_link('The Evil Dead')
-    expect(page).to have_content("Vote Average: 7.315")
+    expect(page).to have_content("Vote Average: 7.3")
     click_link('The Evil Dead')
     expect(current_path).to eq(user_movie_path(@user_1, 764))
   end
