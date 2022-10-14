@@ -11,13 +11,13 @@ class PartiesController < ApplicationController
     @party = Party.new(party_params)
     @users = User.all
     if @party.save
-      UserParty.create!(user_id: @user.id, party_id: @party.id)
+      # UserParty.create!(user_id: @user.id, party_id: @party.id)
       @users.each do |user|
         if params["#{user.id}"] = 1
           UserParty.create!(user_id: user.id, party_id: @party.id)
         end
       end
-    
+
       flash.notice = "Party was successfully added!"
       redirect_to(user_path(@user))
     else
