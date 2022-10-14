@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MoviesFacade
   def self.top_rated
     response = MoviesService.top_rated

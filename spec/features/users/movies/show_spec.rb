@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'the movies detail page' do
@@ -34,11 +36,11 @@ RSpec.describe 'the movies detail page' do
       end
 
       it 'displays movie title/vote average/runtime/genre/summary/10 cast members/count of reviews/reviews author and information' do
-        expect(page).to have_content("#{@movie.title}")
-        expect(page).to have_content("#{@movie.vote_average}")
-        expect(page).to have_content("#{@movie.hours_and_minutes}")
-        expect(page).to have_content("#{@movie.summary}")
-        expect(page).to have_content("#{@movie.reviews.count}")
+        expect(page).to have_content(@movie.title.to_s)
+        expect(page).to have_content(@movie.vote_average.to_s)
+        expect(page).to have_content(@movie.hours_and_minutes.to_s)
+        expect(page).to have_content(@movie.summary.to_s)
+        expect(page).to have_content(@movie.reviews.count.to_s)
 
         @movie.genres.each do |genre|
           expect(page).to have_content(genre)

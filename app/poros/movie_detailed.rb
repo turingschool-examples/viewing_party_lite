@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MovieDetailed < Movie
   attr_reader :id,
               :title,
@@ -21,7 +23,7 @@ class MovieDetailed < Movie
 
   def cast
     @attributes[:credits][:cast].first(10).map do |member|
-      member[:name] + ' as ' + member[:character]
+      "#{member[:name]} as #{member[:character]}"
     end
   end
 
@@ -38,6 +40,6 @@ class MovieDetailed < Movie
   end
 
   def poster_path
-    'https://image.tmdb.org/t/p/w500' + attributes[:poster_path]
+    "https://image.tmdb.org/t/p/w500#{attributes[:poster_path]}"
   end
 end
