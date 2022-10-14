@@ -8,9 +8,9 @@ RSpec.describe 'the New Party Page' do
         user = create(:user, id: 50, name: "Bubbles", email: "bubbles@sunnyvale.ca")
         visit "/users/#{user.id}/movies/550/viewing-party/new"
         expect(page).to have_content('Create a Movie Party for Fight Club')
-        expect(find('form')).to have_content('Day')
-        expect(find('form')).to have_content('Start Time')
-        expect(find('form')).to have_button('Create Party')
+        expect(find('.new-party')).to have_content('Day')
+        expect(find('.new-party')).to have_content('Start Time')
+        expect(find('.new-party')).to have_button('Create Party')
 
         
       end
