@@ -1,12 +1,13 @@
-
-<section id="user_creation">
-  <p> Not a member?<%= button_to "Register Here", "/register", method: :get %> <p>
-</section>
-<section id="current_users">
-  <p>Current Users:</p>
-  <ul>
+<section id="current_users" class="d-flex justify-content-center align-items-center flex-column">
+  <p class="fw-bold fs-4 text-info">Current Users:</p>
+  <ol class="list-group list-group-numbered">
     <% @users.each do |u| %>
-      <li id="user-<%= u.id %>"><%= link_to "#{u.email}'s dashboard", user_path(u.id) %></li>
+    <li class="list-group-item-dark list-group-item d-flex justify-content-between align-items-start">
+      <div class="ms-2 me-auto" id="user-<%= u.id %>">
+        <div class="fw-bold text-capitalize"><%= u.name %></div>
+        <%= link_to "#{u.email}'s dashboard", user_path(u.id) %>
+      </div>
+    </li>
     <% end %>
-  </ul>
+  </ol>
 </section>

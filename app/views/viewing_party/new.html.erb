@@ -1,18 +1,31 @@
-<h2 id="movie_title"><%= @movie.title %></h2>
+<h2 id="movie_title" class="text-info"><%= @movie.title %></h2>
 <section id="view_party_form">
-  <%= form_with url: user_movie_viewing_party_index_path(@user, @movie.id), method: :post, local: :true do |form| %>
-    <%= form.label "Viewing Party Duration" %>
-    <%= form.text_field "form_info[duration]", placeholder: "#{@movie.runtime}" %>
-    <%= form.label "Day" %>
-    <%= form.date_field "form_info[date]" %>
-    <%= form.label "Start Time" %>
-    <%= form.time_field "form_info[time]" %>
+  <%= form_with url: user_movie_viewing_party_index_path(@user, @movie.id), method: :post, local: :true, class: "d-flex flex-column g-3 container-sm" do |form| %>
+    <%= form.label "Viewing Party Duration", class: 'text-info fs-4 col-form-label-sm' %>
+    <div class="col-sm-3">
+      <%= form.text_field "form_info[duration]", placeholder: "#{@movie.runtime}", class: "form-control form-control-sm" %>
+    </div>
+    <%= form.label "Day", class: 'text-info fs-4 col-form-label-sm' %>
+    <div class="col-sm-3">
+      <%= form.date_field "form_info[date]", class: "form-control form-control-sm" %>
+    </div>
+    <%= form.label "Start Time", class: 'text-info fs-4 col-form-label-sm' %>
+    <div class="col-sm-3">
+      <%= form.time_field "form_info[time]", class: "form-control form-control-sm" %>
+    </div>
     <%= form.hidden_field "form_info[movie_id]", value: @movie.id %>
-    <h5>Invite Other Users:</h5>
-    <% @users.each do |u| %>
-      <%= form.check_box "users[#{u.id}]", class: 'checkbox' %>
-      <%= form.label "#{u.email}" %>
+    <h5 class = 'text-info mt-2'>Invite Other Users:</h5>
+    <div class="m-2 d-flex justify-content-start align-items-start flex-column flex-wrap">
+      <% @users.each do |u| %>
+        <div class="form-check d-flex justify-content-start align-items-center flex-row">
+          <%= form.check_box "users[#{u.id}]", class: 'checkbox form-check-input me-1' %>
+          <%= form.label "#{u.email}", class: 'text-info fs-4 form-check-label' %>
+        </div>
     <% end %>
-    <%= form.submit "Create Viewing Party" %>
-  <% end %>
+    </div>
+    <div class="d-flex justify-content-start align-items-center">
+      <%= form.submit "Create Viewing Party", class: "btn btn-success" %>
+    </div>
+<% end %>
 </section>
+

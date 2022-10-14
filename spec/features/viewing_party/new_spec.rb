@@ -61,7 +61,7 @@ RSpec.describe 'Viewing Party | New', type: :feature do
           click_on 'Create Viewing Party'
           expect(page.current_path).to eq user_path(@user1)
         end
-        within('.container') do
+        within('#flash') do
           expect(page).to have_content('View Party created successfully')
         end
         party = ViewingParty.last

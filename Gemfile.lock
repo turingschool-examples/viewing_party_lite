@@ -46,16 +46,10 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     arel (9.0.0)
     ast (2.4.2)
-    autoprefixer-rails (10.4.7.0)
-      execjs (~> 2)
     bcrypt (3.1.18)
     bindex (0.8.1)
     bootsnap (1.9.1)
       msgpack (~> 1.0)
-    bootstrap (5.2.0)
-      autoprefixer-rails (>= 9.1.0)
-      popper_js (>= 2.11.5, < 3)
-      sassc-rails (>= 2.0.0)
     builder (3.2.4)
     capybara (3.36.0)
       addressable
@@ -127,7 +121,6 @@ GEM
     parser (3.0.2.0)
       ast (~> 2.4.1)
     pg (1.2.3)
-    popper_js (2.11.5)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -218,14 +211,6 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
-    sassc (2.4.0)
-      ffi (~> 1.9)
-    sassc-rails (2.1.2)
-      railties (>= 4.0.0)
-      sassc (>= 2.0)
-      sprockets (> 3.0)
-      sprockets-rails
-      tilt
     shoulda-matchers (5.2.0)
       activesupport (>= 5.2.0)
     simplecov (0.21.2)
@@ -272,7 +257,6 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.1.0)
-  bootstrap
   capybara
   coffee-rails (~> 4.2)
   faraday

@@ -1,21 +1,26 @@
-<h3>Movie Details</h3> 
-<h2> <%= button_to "Return To Discover Movies", user_discover_index_path(@user), method: :get %> </h2>
-<h2> <%= button_to "Create Viewing Party", new_user_movie_viewing_party_path(@user, @movie.id), method: :get %> </h2>
-<h2>Title: <%= @movie.title %></h2>
-<p><h3>Vote Average: <%= @movie.vote_average %></h3></p>
-<p>Runtime: <%= @movie.runtime / 60 %> hours and <%= @movie.runtime % 60 %> minutes</p>
+<div class="bg-dark rounded text-info">
+  <div class="m-3 p-3">
+    <div class="d-flex align-content-center justify-content-start">
+      <h2> <%= button_to "Return To Discover Movies", user_discover_index_path(@user), method: :get, class: 'btn btn-success mx-1' %> </h2>
+      <h2> <%= button_to "Create Viewing Party", new_user_movie_viewing_party_path(@user, @movie.id), method: :get, class: 'btn btn-success mx-1' %> </h2>
+    </div>
+    <h3>Movie Details</h3>
+    <h2 class="fw-bold">Title: <span class="text-light"><%= @movie.title %></span></h2>
+    <h3>Vote Average: <span class="text-light"><%= @movie.vote_average %></span></h3>
+    <h3>Runtime: <span class="text-light"><%= @movie.runtime / 60 %> hours and <%= @movie.runtime % 60 %> minutes</span></h3>
+    <h3>Genre: <span class="text-light"><%= @movie.genres.join(', ') %></span></h3>
+    <h3>Total Reviews: <span class="text-light"><%=@reviews.count  %></span></h3>
+    <div class="mt-3">
+      <h3>Summary:</h3> <span class="text-light"><%= @movie.overview %></span>
 
-<h3>Genre: <%= @movie.genres.join(', ') %>
-
-<h3>Summary:</h3> <%= @movie.overview %>
-
-  <h3>Cast Members:</h3> <% @cast.each do |member|%>
-  <%= member %>
-  <% end %>
- 
-<br>
-<h3>Total Reviews: <%=@reviews.count  %></h3>
-<br>
-<h4>Review Authors and Information: </h4>
-<%=@reviews.join(', ') %>
+      <h3>Cast Members:</h3> <% @cast.each do |member|%>
+        <span class="text-light"><%= member %></span>
+      <% end %>
+      <br>
+      <br>
+      <h4>Review Authors and Information: </h4>
+      <span class="text-light"><%=@reviews.join(', ') %></span>
+    </div>
+  </div>
+</div>
 
