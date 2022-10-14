@@ -25,7 +25,6 @@ RSpec.describe MovieService do
       expect(movie_data[:overview]).to be_an(String)
     end
 
-<<<<<<< HEAD
     it 'can get_top_rated movies', :vcr do
       parsed = MovieService.get_top_rated
       data = parsed[:results].first
@@ -48,11 +47,12 @@ RSpec.describe MovieService do
       expect(data[:title]).to be_a(String)
       expect(data).to have_key :vote_average
       expect(data[:vote_average]).to be_a(Float)
-=======
+    end
+
     it 'can get_cast_data', :vcr do
       # json_response = File.read('spec/fixtures/get_movie_data.json')
       # stub_request(:get, "https://api.themoviedb.org/3/movie/8?api_key=791558f2c56bc172d18d3788419a5636&language=en-US").to_return(status: 200, body: json_response)
-      
+
       cast_data = MovieService.get_cast_data(3)
 
       expect(cast_data).to be_a(Hash)
@@ -65,13 +65,12 @@ RSpec.describe MovieService do
       expect(cast_data[:cast][0][:character]).to be_a(String)
       expect(cast_data[:cast][0]).to have_key :cast_id
       expect(cast_data[:cast][0][:cast_id]).to be_a(Integer)
-
     end
 
     it 'can get_review_data', :vcr do
       # json_response = File.read('spec/fixtures/get_movie_data.json')
       # stub_request(:get, "https://api.themoviedb.org/3/movie/8?api_key=791558f2c56bc172d18d3788419a5636&language=en-US").to_return(status: 200, body: json_response)
-      
+
       review_data = MovieService.get_review_data(3)
 
       expect(review_data).to be_a(Hash)
@@ -83,7 +82,6 @@ RSpec.describe MovieService do
       expect(review_data[:results][0][:content]).to be_a(String)
       expect(review_data).to have_key :total_pages
       expect(review_data[:total_pages]).to be_a(Integer)
->>>>>>> 00374cb3e5da8fdd745d0654e6d2de469ddb7313
     end
   end
 end

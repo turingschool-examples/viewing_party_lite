@@ -1,4 +1,4 @@
-<h1>Viewing Party Lite<h1>
+<center><h1>Viewing Party Lite<h1>
 <div>
    <%= button_to 'Create a New User', '/register', method: :get  %><br>
 </div>
@@ -6,7 +6,7 @@
 <h3>Existing Users</h3>
 <% @users.each_with_index do |user, index| %>
    <div id="user-<%= index %>">
-      <p><%= user.name %></p>
-      <p><%= link_to "#{user.name}'s Dashboard", "/users/#{user.id}" %></p>
+      <p>User's name: <%= user.name %></p>
+      <p>User's email: <%= link_to "#{user.name}'s Dashboard", "/users/#{user.id}" %></p>
    </div>
-<% end %>
+<% end %></center>
