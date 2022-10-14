@@ -7,8 +7,24 @@
   <img src=<%= party.poster_path %>>
   <h3><%= link_to party.movie_title, "/users/#{@user.id}/movies/#{party.movie_id}"%></h3>
   <p>Date: <%= party.date.strftime("%B %-d, %Y") %></p>
-  <p>Starting Time: <%= party.start_time.strftime("%H:%M") %></p>
-  <p>Status: <%= ViewingPartyUser.find_by(user_id: @user.id, viewing_party_id: party.id).status%></p>
+  <p>Starting Time: <%= party.start_time.strftime("%I:%M %p") %></p>
+  <p>Host: <%=link_to "#{party.find_host.name} (#{party.find_host.email})","/users/#{party.find_host.id}" %></p>
+
+  <p>Invited:</p>
+  <ul>
+
+    <% party.invites.each do |invite| %>
+      <% if invite.email == @user.email %>
+        <li><b><%=link_to "#{invite.name} (#{invite.email})","/users/#{invite.id}" %></b></li>
+      <% else %>
+        <li><%=link_to "#{invite.name} (#{invite.email})","/users/#{invite.id}" %></li>
+      <% end %>
+    <% end %>
+  </ul>
+
+
+  <p>User Status: <%= ViewingPartyUser.find_by(user_id: @user.id, viewing_party_id: party.id).status%></p>
   <br>
   <br>
+
 <% end %>
