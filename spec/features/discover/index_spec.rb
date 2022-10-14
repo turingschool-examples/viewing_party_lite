@@ -54,13 +54,6 @@ RSpec.describe 'Discover Movies page', type: :feature do
     expect(page).to_not have_content('Fight Club')
   end
 
-  xit 'has the correct page title', :vcr do
-    fill_in(:q, with: 'miss cong')
-    click_button('Find Movies')
-
-    expect(page).to have_content('Movie results for: miss cong')
-  end
-
   it 'button to return to discover page', :vcr do
     fill_in(:q, with: 'miss cong')
     click_button('Find Movies')

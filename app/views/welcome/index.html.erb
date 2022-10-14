@@ -1,6 +1,5 @@
-<center><h1>Viewing Party Lite<h1>
-<div>
-   <%= button_to 'Create a New User', '/register', method: :get  %><br>
+<div id="page-title">
+   <center><%= button_to 'Create a New User', '/register', method: :get  %><br>
 </div>
 
 <h3>Existing Users</h3>
@@ -10,3 +9,4 @@
       <p>User's email: <%= link_to "#{user.name}'s Dashboard", "/users/#{user.id}" %></p>
    </div>
 <% end %></center>
+</div>

@@ -1,9 +1,13 @@
-<center><h1><%= @user.name %>'s Dashboard</h1>
+<div id="page-title">
+<center><h3><%= @user.name %>'s Dashboard</h3><br>
+</div>
 
-<%= button_to 'Discover Movies', user_discover_path(@user), method: :get %>
- 
+<div id="action_options">
+<%= button_to 'Discover Movies', user_discover_path(@user), method: :get %><br>
+</div>
+
 <div id="view-parties-<%= @user.id %>">
-  <h3>Viewing Parties</h3></center>
+  <h4>Viewing Parties</h4></center>
     
     <% @user.parties.each do |party| %>
       <span id="party-<%= party.id %>">

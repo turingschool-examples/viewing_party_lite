@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 14 Oct 2022 07:48:38 GMT
+      - Fri, 14 Oct 2022 16:19:53 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,15 +42,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 1b0ec06e2dc8a07d495632f96e0234b4.cloudfront.net (CloudFront)
+      - 1.1 826c1e6708fc2793a1970a08d4ea25de.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - LAX53-P3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - D3mQbJgrt3HmxJJQrX59aZ4Ao4uAGT3YeDhg2GYB_xQ8FEugbXf-4Q==
+      - wM6O4qnwuOJqhNPuB8hydLk7yjHfnJKRd_MX_qTQx0T_HhoNpjv3gQ==
       Age:
-      - '8433'
+      - '1074'
     body:
       encoding: UTF-8
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg","genre_ids":[18,80],"id":238,"original_language":"en","original_title":"The
@@ -160,6 +160,6 @@ http_interactions:
         broken fellowship struggle to save Gondor from Sauron''s forces. Meanwhile,
         Frodo and Sam take the ring closer to the heart of Mordor, the dark lord''s
         realm.","popularity":132.794,"poster_path":"/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg","release_date":"2003-12-01","title":"The
-        Lord of the Rings: The Return of the King","video":false,"vote_average":8.5,"vote_count":20340}],"total_pages":521,"total_results":10409}'
-  recorded_at: Fri, 14 Oct 2022 10:09:11 GMT
+        Lord of the Rings: The Return of the King","video":false,"vote_average":8.5,"vote_count":20340}],"total_pages":521,"total_results":10411}'
+  recorded_at: Fri, 14 Oct 2022 16:37:47 GMT
 recorded_with: VCR 6.1.0
