@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   get 'users/:id/discover', to: 'users#discover'
   get '/users/:user_id/movies/:movie_id', to: 'user_movies#show' #namespace?
 
-  resources :users, only: [:create, :show]
-
+  resources :users, only: [:create, :show] do #, module: 'user' 
+    resources :movies, only: [:index]
+  end
 
 end
