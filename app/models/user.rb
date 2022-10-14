@@ -9,34 +9,30 @@ class User < ApplicationRecord
     User.where.not(id: id)
   end
 
-  def hosted_parties
-    ViewingParty.joins(:viewing_party_users)
-                .where(viewing_party_users: {
-                         user_id: id,
-                         hosting: true
-                       })
-  end
-
-  def invited_parties
-    ViewingParty.joins(:viewing_party_users)
-                .where(viewing_party_users: {
-                         user_id: id,
-                         hosting: false
-                       })
+  #takes a boolean argument true if hosting, false if invited
+  def parties(is_host)
+    ViewingParty.joins(:viewing_party_users).
+      where(viewing_party_users: {
+         user_id: self.id, 
+         hosting: is_host }
+    )
   end
 
   def movie_ids
     viewing_parties.map { |party| party.movie_id }
   end
 
+  def set_host(viewing_party)
+    viewing_party_user = viewing_party_users.where(viewing_party_id: viewing_party.id)
+    viewing_party_user.update(hosting: true)
+  end
+
   def self.invited_users(param_hash)
-    # is this super sketchY?????
-    # another option - https://stackoverflow.com/questions/34949505/rails-5-unable-to-retrieve-hash-values-from-parameter
-    param_hash = param_hash.to_unsafe_h
-    param_hash.filter_map do |user_id, status|
-      user = User.find(user_id.to_i)
-      status = status.to_i
-      user if status == 1
+  #if we want a user to be able to add friends, this method should only iterate through friends rather than every user in the db
+    User.all.filter_map do |user|
+      if param_hash[user.id.to_s] == "1"
+        user
+      end
     end
   end
 end

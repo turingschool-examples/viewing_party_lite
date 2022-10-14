@@ -24,8 +24,8 @@ RSpec.describe User, type: :model do
         expect(user.friends).not_to include(user)
       end
     end
-
-    describe 'party filtering methods' do
+    
+    describe 'party filtering' do
       let!(:user) { create :user }
 
       let(:party_1) { create :viewing_party }
@@ -39,21 +39,19 @@ RSpec.describe User, type: :model do
       let!(:vpu_3) { ViewingPartyUser.create!(user_id: user.id, viewing_party_id: party_3.id, hosting: false) }
       let!(:vpu_4) { ViewingPartyUser.create!(user_id: user.id, viewing_party_id: party_4.id, hosting: false) }
 
-      describe '#hosted_parties' do
+      describe '#parties(is_host)' do
         it 'returns an array of party objects where user is host' do
-          expect(user.hosted_parties).to include(party_1, party_2)
-          expect(user.hosted_parties).not_to include(party_3, party_4)
-          expect(user.hosted_parties).not_to include(party_5)
+          expect(user.parties(true)).to include(party_1, party_2)
+          expect(user.parties(true)).not_to include(party_3, party_4)
+          expect(user.parties(true)).not_to include(party_5)
         end
       end
 
-      describe '#invited_parties' do
         it 'returns an array of party objects where user is invited' do
-          expect(user.invited_parties).to include(party_3, party_4)
-          expect(user.invited_parties).not_to include(party_1, party_2)
-          expect(user.invited_parties).not_to include(party_5)
+          expect(user.parties(false)).to include(party_3, party_4)
+          expect(user.parties(false)).not_to include(party_1, party_2)
+          expect(user.parties(false)).not_to include(party_5)
         end
-      end
 
       describe '#movie_ids' do
         it 'returns an array of movie ids for a users viewing parties' do
@@ -76,7 +74,7 @@ RSpec.describe User, type: :model do
       let!(:friend_2) { create :user }
       let!(:friend_3) { create :user }
 
-      xit 'accepts a hash from params and returns an array of user objects where original hash value = 1' do
+      it 'accepts a hash from params and returns an array of user objects where original hash value = 1' do
         params_hash = {
           friend_1.id.to_s => '1',
           friend_2.id.to_s => '1',
