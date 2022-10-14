@@ -10,7 +10,7 @@ FactoryBot.define do
     date { Faker::Date.between(from: Date.today, to: 1.month.from_now) }
     duration { Faker::Number.within(range: 20..200) }
     movie_id { Faker::Number.within(range: 1..1000) }
-    start_time { Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :afternoon) }
+    start_time { Faker::Time.between_dates(from: Date.today - 1, to: Date.today, period: :morning) }
   end
 
   factory :user_parties, class: UserParty do
