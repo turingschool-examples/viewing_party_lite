@@ -6,7 +6,7 @@ class User < ApplicationRecord
   validates_uniqueness_of :email
 
   def friends
-    User.where.not(id: self.id)
+    User.where.not(id: id)
   end
 
   #takes a boolean argument true if hosting, false if invited
@@ -28,6 +28,7 @@ class User < ApplicationRecord
   end
 
   def self.invited_users(param_hash)
+  #if we want a user to be able to add friends, this method should only iterate through friends rather than every user in the db
     User.all.filter_map do |user|
       if param_hash[user.id.to_s] == "1"
         user

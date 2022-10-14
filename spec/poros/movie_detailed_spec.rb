@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe MovieDetailed do
   before :each do
     VCR.use_cassette('movie-detailed') do
-      @movie = MoviesFacade.details(438148)
+      @movie = MoviesFacade.details(438_148)
     end
   end
 
@@ -29,7 +29,7 @@ RSpec.describe MovieDetailed do
   end
 
   it 'has a summary' do
-    expect(@movie.summary).to include("A fanboy of a supervillain")
+    expect(@movie.summary).to include('A fanboy of a supervillain')
   end
 
   it 'has the first 10 cast members characters and names' do
@@ -48,13 +48,13 @@ RSpec.describe MovieDetailed do
 
   describe 'hours_and_minutes' do
     it 'displays runtime in x hr x min format' do
-      expect(@movie.hours_and_minutes).to eq("1hr 27min")
+      expect(@movie.hours_and_minutes).to eq('1hr 27min')
     end
   end
 
   describe 'poster_path' do
     it 'returns a useable URL for the movie poster' do
-      full_poster_path = "https://image.tmdb.org/t/p/w500/wKiOkZTN9lUUUNZLmtnwubZYONg.jpg"
+      full_poster_path = 'https://image.tmdb.org/t/p/w500/wKiOkZTN9lUUUNZLmtnwubZYONg.jpg'
 
       expect(@movie.poster_path).to eq(full_poster_path)
     end
