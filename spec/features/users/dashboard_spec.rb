@@ -15,17 +15,16 @@ RSpec.describe 'User Dashboard Page', :vcr do
 
   it 'has propper page attributes from only user 1' do
     visit "/users/#{@user1.id}"
-
     expect(page).to have_content('Viewing Party Lite')
     expect(page).to have_content("Jake's Dashboard")
     expect(page).to have_button('Return to the Homepage')
-
     expect(page).to have_content('Viewing Parties')
   end
 
   it "shows user's viewing_parties" do
     visit "/users/#{@user1.id}"
     expect(page).to have_content("#{@user1.name}'s Dashboard")
+    expect(page).to have_content(@party1.movie_title)
     expect(page).to have_content("Date: #{@party1.date.strftime("%B %-d, %Y")}")
     expect(page).to have_content("Starting Time: #{@party1.start_time.strftime('%I:%M %p')}")
     expect(page).to have_content("Status: #{@user_party1.status}")
