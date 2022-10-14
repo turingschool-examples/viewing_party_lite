@@ -20,7 +20,7 @@ RSpec.describe 'New Viewing Party Page' do
       end
 
       it "Form has the following fields: duration of Party, date, start Time, checkboxes next to each existing user" do
-        save_and_open_page
+        
         expect(page).to have_field("Duration of Party", with: "#{@movie_1.runtime}")
         expect(page).to have_field("Date")
         expect(page).to have_field("Start Time")
