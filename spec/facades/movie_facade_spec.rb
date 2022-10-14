@@ -25,4 +25,20 @@ describe 'Movie Facade' do
       # expect(top_rated_movies.count).to eq(20)
     end
   end
+
+  it 'can see the 10 lead roles' do
+    VCR.use_cassette('lead_actors') do
+      lead_actors = MovieFacade.lead_roles(550)
+      expect(lead_actors).to be_a(Array)
+      expect(lead_actors.count).to eq(10)
+
+    end
+  end
+
+  it 'can see the moview reviews' do
+    VCR.use_cassette('movie_critics') do
+      movie_critics = MovieFacade.movie_critics(550)
+      expect(movie_critics).to be_a(Array)
+    end
+  end
 end
