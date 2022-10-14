@@ -34,4 +34,15 @@ RSpec.describe 'Register Page' do
     expect(User.find_by(name: 'Jimmy', email: 'imjakekim@gmail.com')).to eq(nil)
     expect(current_path).to eq(register_path)
   end
+
+  it 'cannot create user without name' do
+    visit register_path
+
+    fill_in 'Email', with: 'imjakekim@gmail35.com'
+    click_on 'Create New User'
+
+    expect(User.find_by(email: 'imjakekim@gmail35.com')).to eq(nil)
+    expect(current_path).to eq(register_path)
+
+  end
 end
