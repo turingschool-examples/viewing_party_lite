@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'user dashboard' do
@@ -34,7 +36,7 @@ RSpec.describe 'user dashboard' do
 
     it 'lists viewing parties the user is invited to as a link to the movie show page', :vcr do
       within '#invited-parties' do
-        expect(page).to have_link "#{@viewing_party_2.movie_title}"
+        expect(page).to have_link @viewing_party_2.movie_title.to_s
 
         click_link @viewing_party_2.movie_title
         expect(current_path).to eq(user_movie_path(user, @movie_2.id))
@@ -49,13 +51,13 @@ RSpec.describe 'user dashboard' do
         expect(page).to have_content(@viewing_party_2.start_time.strftime('The party starts at %I:%M %p on %B %d, %Y'))
         expect(page).to have_content("Host: #{friend.name}")
         expect(page).to have_content(user.name)
-        expect(sentence_element).to have_css('b', text: "#{user.name}")
+        expect(sentence_element).to have_css('b', text: user.name.to_s)
       end
     end
 
     it 'lists viewing parties the user is hosting as a link to the movie show page', :vcr do
       within '#hosted-parties' do
-        expect(page).to have_link "#{@viewing_party_1.movie_title}"
+        expect(page).to have_link @viewing_party_1.movie_title.to_s
         click_link @viewing_party_1.movie_title
         expect(current_path).to eq(user_movie_path(user, @movie_1.id))
       end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'The new viewing party page', :vcr do
@@ -15,10 +17,10 @@ RSpec.describe 'The new viewing party page', :vcr do
     VCR.use_cassette('minions-details') do
       it 'I see name of movie/form with duration of party/date and time/checkboxes next to each user/button to create' do
         expect(page).to have_content(@movie.title)
-        expect(page).to have_field('Duration', with: "#{@movie.runtime}")
+        expect(page).to have_field('Duration', with: @movie.runtime.to_s)
 
         fill_in :start_time, with: Faker::Time.forward(days: 7, period: :evening)
-        
+
         check "_users_#{@user_2.id}"
         click_button "Create Party Viewing Party for #{@movie.title}"
 

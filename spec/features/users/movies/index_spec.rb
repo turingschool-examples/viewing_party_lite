@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Movie results page' do
@@ -15,8 +17,8 @@ RSpec.describe 'Movie results page' do
         expect(page).to have_content(movies.first.vote_average)
         expect(page).to have_content(movies.last.title)
         expect(page).to have_content(movies.last.vote_average)
-        expect(page).to have_link("#{movies.first.title}")
-        click_link "#{movies.first.title}"
+        expect(page).to have_link(movies.first.title.to_s)
+        click_link movies.first.title.to_s
         expect(page).to have_current_path user_movie_path(user, movies.first.id)
       end
     end

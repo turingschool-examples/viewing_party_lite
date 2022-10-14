@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
@@ -24,7 +26,7 @@ RSpec.describe User, type: :model do
         expect(user.friends).not_to include(user)
       end
     end
-    
+
     describe 'party filtering' do
       let!(:user) { create :user }
       let!(:user_2) { create :user }
@@ -53,11 +55,11 @@ RSpec.describe User, type: :model do
           expect(user_2.parties(true)).to eq([])
         end
 
-        it 'returns an array of party objects where user is invited' do
-          expect(user.parties(false)).to include(party_3, party_4)
-          expect(user.parties(false)).not_to include(party_1, party_2)
-          expect(user.parties(false)).not_to include(party_5)
-        end
+      it 'returns an array of party objects where user is invited' do
+        expect(user.parties(false)).to include(party_3, party_4)
+        expect(user.parties(false)).not_to include(party_1, party_2)
+        expect(user.parties(false)).not_to include(party_5)
+      end
 
         it 'returns an empty array if a user is not invited to any parties' do
           expect(user_2.parties(false)).to eq([])
