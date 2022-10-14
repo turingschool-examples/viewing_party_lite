@@ -36,7 +36,7 @@ table {
     <table>
         <% @top_movies.each do |movie| %>
       <tr>
-          <td><%= link_to movie.title, movie_path(movie) %></td>
+          <td><%= link_to movie.title, user_movie_path(@user, movie.id) %></td>
           <td><%= number_with_precision(movie.vote_average, precision: 1) %> / 10</td>
       </tr>
         <% end %>
@@ -50,7 +50,7 @@ table {
     <table>
       <% @movies.each do |movie| %>
     <tr> 
-         <td><%= link_to movie.title, movie_path(movie) %></td>
+         <td><%= link_to movie.title, user_movie_path(@user, movie.id) %></td>
          <td><%= number_with_precision(movie.vote_average, precision: 1) %> / 10</td>
     </tr>
       <% end %> 

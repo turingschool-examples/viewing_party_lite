@@ -1,4 +1,9 @@
 class MovieFacade
+
+  def self.movie_details(movie_id)
+   data = MovieService.get_movie_data(movie_id)
+   Movie.new(data)
+  end
   
   def self.top_1_through_20_movies
     json = MovieService.get_rated_movies_asc(1)
@@ -49,6 +54,5 @@ class MovieFacade
     end
     results
   end
-
 
 end

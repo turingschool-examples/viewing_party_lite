@@ -15,7 +15,7 @@ RSpec.describe MovieService do
           expect(response[:title]).to be_a(String)
           expect(response[:runtime]).to be_a(Integer)
           expect(response[:vote_average]).to be_a(Float)
-          expect(response[:images][:posters]).to be_an(Array)
+          expect(response[:poster_path]).to be_an(String)
           expect(response[:reviews][:results]).to be_an(Array)
         end
       end
