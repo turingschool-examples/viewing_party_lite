@@ -44,16 +44,20 @@ table {
   </html>
   </div>
   <% elsif !@movies.empty? %>
-  <div id="search_results">
-  <h3> <%= button_to "Discover Page", user_discover_path(@user), method: :get %> </h3>
-  <h2> Movie Results for: <%= @search %> </h2>
-    <table>
-      <% @movies.each do |movie| %>
-    <tr> 
-         <td><%= link_to movie.title, user_movie_path(@user, movie.id) %></td>
-         <td><%= number_with_precision(movie.vote_average, precision: 1) %> / 10</td>
-    </tr>
+    <div id="search_results">
+      <% if @movies.include?("No Movies Found, Please Try Again") %>
+        <h2> <%= "No Movies Found, Please Try Again" %> </h2>
+      <% else %>
+        <h3> <%= button_to "Discover Page", user_discover_path(@user), method: :get %> </h3>
+        <h2> Movie Results for: <%= @search %> </h2>
+          <table>
+            <% @movies.each do |movie| %>
+          <tr> 
+              <td><%= link_to movie.title, user_movie_path(@user, movie.id) %></td>
+              <td><%= number_with_precision(movie.vote_average, precision: 1) %> / 10</td>
+          </tr>
       <% end %> 
+    <% end %>
     </table>
     </html>
   </div>

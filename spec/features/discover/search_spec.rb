@@ -94,5 +94,34 @@ RSpec.describe 'Discover Movies Page' do
         expect(current_path).to eq user_movie_path(user, 238)
       end
     end
+
+    it 'should be able to navigate to the discover page' do
+      VCR.use_cassette('user_movies_show_page') do
+        user = create(:user)
+
+        visit user_discover_path(user)
+
+        click_button "Top Rated Movies"
+
+        click_link "The Godfather"
+
+        expect(current_path).to eq user_movie_path(user, 238)
+      end
+    end
+
+    it 'it returns a message on the page' do
+      VCR.use_cassette('search_no_searches') do
+        user = create(:user)
+
+        visit user_discover_path(user)
+
+        page.fill_in with: "supercalir"
+        click_button 'Find Movies'
+
+        within("#search_results") do
+          expect(page).to have_content("No Movies Found, Please Try Again")
+        end
+      end
+    end
   end
 end
