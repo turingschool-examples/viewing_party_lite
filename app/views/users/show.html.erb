@@ -5,12 +5,12 @@
 <div id="viewing_parties">
   <h3> Viewing Parties </h3>
     <% @user.viewing_parties.each do |party| %>
-      <div id="viewing_party_<%= "#{party.id}" %>" style="border: 2px solid; width: 300px; padding: 10px; margin: 10px; float: left;">
+      <div id="viewing_party_<%= "#{party.movie_id}" %>" style="border: 2px solid; width: 300px; padding: 10px; margin: 10px; float: left;">
           <% film = @movies.find do |movie| %> 
             <% movie.movie_id == party.movie_id %>
           <% end %>
 
-          <%= image_tag("https://image.tmdb.org/t/p/w300/#{film.image_path}") %><br>
+          <%= image_tag("https://image.tmdb.org/t/p/w300/#{film.image_path}", id: "image_#{film.movie_id}") %><br>
           <%= link_to "#{film.title}", user_movie_path(@user, film.movie_id) %><br>
           <%= party.date.strftime('%B %d, %Y') %><br>
           <%= party.start_time.strftime('%I:%M %p') %><br>
@@ -32,7 +32,6 @@
                   <% user.id == invitee_id %>
                 <% end %>
               <% end %>
-                <div><b><%= @user.name %> (<%= @user.email %>)</b></div>
               <% invitee_users.each do |user| %>
                 <div><%= user.name %> (<%= user.email %>)</div>
               <% end %>
@@ -44,8 +43,7 @@
                 <% user.id == host_viewing_party.user_id %>
               <% end %>
 
-              <div><b><u>Host:</u></b></div> 
-              <div><%= host.name %> (<%= host.email %>)</div><br>
+              <div><b><u>Host:</u></b> <%= host.name %> (<%= host.email %>)</div><br>
                 
               <div><b><u>Invitees:</u></b></div>
                 <% invitees = @user_viewing_parties.find_all do |user_viewing_party| %>
@@ -59,8 +57,11 @@
                     <% user.id == invitee_id %>
                   <% end %>
                 <% end %>
+                <div><b><%= @user.name %> (<%= @user.email %>)</b></div>
                 <% invitee_users.each do |user| %>
-                  <div><%= user.name %> (<%= user.email %>)</div>
+                  <% if user.id != @user.id %>
+                    <div><%= user.name %> (<%= user.email %>)</div>
+                  <% end %>
                 <% end %>
           <% end %>
       </div>

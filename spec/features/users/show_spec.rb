@@ -31,7 +31,7 @@ RSpec.describe 'User Dashboard Page' do
     end
 
     describe 'Viewing Parties' do
-      before :all do
+      before :each do
         @movie_response = File.open('./fixtures/godfather_details.json')
         stub_request(:get, 'https://api.themoviedb.org/3/movie/238').
           with(query: {'api_key' => ENV['movie_api_key']}).
@@ -47,54 +47,83 @@ RSpec.describe 'User Dashboard Page' do
           with(query: {'api_key' => ENV['movie_api_key']}).
           to_return(status: 200, body: json_response)
 
+        @user1 = User.create!(name: 'Becka', email: 'rebecka@gmail.com')
+        @user2 = User.create!(name: 'Mike', email: 'mike@turing.edu')
+        @user3 = User.create!(name: 'Meg', email: 'mstang@turing.edu')
+
+        visit new_user_movie_viewing_party_path(@user1, 238)
+
+        fill_in('Duration of Party', with: 200)
+        fill_in('Day', with: Date.today)
+        fill_in('Start Time', with: '7:00 PM')
+
+        within "#invitee_#{@user2.name}" do
+          check
+        end
+
+        within "#invitee_#{@user3.name}" do
+          check
+        end
+
+        click_button('Create Party')
       end
 
       it 'has a section that lists viewing parties' do
-        user1 = User.create!(name: 'Erin', email: 'epintozzi@turing.edu')
-        visit user_path(user1)
-
         expect(page).to have_css('#viewing_parties')
       end
 
       it 'I see a movie image with each movie' do
-        user1 = User.create!(name: 'Erin', email: 'epintozzi@turing.edu')
-        user2 = User.create!(name: 'Mike', email: 'mike@turing.edu')
-        user3 = User.create!(name: 'Meg', email: 'mstang@turing.edu')
-
-        # visit user_discover_index_path(user1)
-
-        # click_button('Find Top Rated Movies')
-        # save_and_open_page
-        # expect(page).should have_css('img', text: "image1.jpg")
+        within '#viewing_party_238' do
+          expect(page).to have_css('#image_238')
+        end
       end
 
       it 'I see the movie title for each movie, and it is a link to its movie show page' do
-
+        within '#viewing_party_238' do
+          expect(page).to have_link('The Godfather')
+        end
       end
 
       it 'I see the date and time of the event' do
-
-      end
-
-      describe 'I am invited to the event' do
-        it 'I see who is hosting the event' do
-
-        end
-
-        it 'I see a list of users invited, with my name in bold' do
-
+        within '#viewing_party_238' do
+          expect(page).to have_content('October 14, 2022')
+          expect(page).to have_content('07:00 PM')
         end
       end
 
       describe 'I am the host of the event' do
         it 'I see that I am the host of the event' do
-
+          within '#viewing_party_238' do
+            expect(page).to have_content('Hosting')
+          end
         end
 
         it 'I see a list of friends invited to the viewing party' do
-          
+          within '#viewing_party_238' do
+            expect(page).to have_content('Mike (mike@turing.edu)')
+            expect(page).to have_content('Meg (mstang@turing.edu)')
+          end
         end
       end
-    end 
+
+      describe 'I am invited to the event' do
+        it 'I see who is hosting the event' do
+          visit user_path(@user2)
+
+          within '#viewing_party_238' do
+            expect(page).to have_content('Host: Becka (rebecka@gmail.com)')
+          end
+        end
+
+        it 'I see a list of users invited, with my name in bold' do
+          visit user_path(@user2)
+
+          within '#viewing_party_238' do
+            expect(page).to have_content('Mike (mike@turing.edu)')
+            expect(page).to have_content('Meg (mstang@turing.edu)')
+          end
+        end
+      end
+    end
   end
 end
