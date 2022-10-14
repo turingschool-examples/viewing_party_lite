@@ -44,5 +44,6 @@ RSpec.describe 'User show page' do
     within("#viewingparty-#{@party1.id}")
     expect(page).to have_content('Movie Title: Spirited Away')
     expect(page).to have_content("Host: Mary")
+    expect(page).to have_content("Guests: Mary, Legolas, and Gimli")
   end
 end

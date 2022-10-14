@@ -6,9 +6,11 @@
 <% @user.parties.each do |party| %>
   <div id="viewingparty-<%= party.id %>">
     Movie Title: <%= link_to party.movie_title, user_movie_path(@user, party.movie_id) %>
-    <br/>
     <% if party.host.present? %>
+      <br/>
       Host: <%= party.host.name %>
     <% end %>
+    <br />
+    Guests: <%= party.users.map(&:name).to_sentence %>
   </div>
 <% end %>

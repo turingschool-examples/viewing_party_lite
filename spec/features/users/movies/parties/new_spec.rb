@@ -50,4 +50,8 @@ RSpec.describe 'parties/new' do
     click_button 'Create Party'
     expect(current_path).to eq(user_path(@user.id))
   end
+
+  it 'displays the checked users on a users show page and lists the host and other attendees' do
+
+  end
 end
