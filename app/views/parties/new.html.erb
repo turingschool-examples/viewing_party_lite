@@ -1,0 +1,18 @@
+<h1><%= @movie.original_title %></h1>
+<%= form_with url: user_movie_parties_path(@user, @movie.id), method: :post, local: true do |form| %>
+<%= form.hidden_field :host_id, value: "#{@user.id}" %>
+  <p><%= form.label :duration, "Duration:"%></p>
+    <%= form.number_field :duration, min: @movie.runtime %>
+  <p><%= form.label :date, "When:"%></p>
+    <%= form.date_select :date%>
+  <p><%= form.label :start_time, "Start Time:"%></p>
+    <%= form.time_select :start_time%>
+  <% @users.each do |user| %>
+    <% if user.id != @user.id %>
+      <p><%= form.label "#{user.name}", "#{user.name}" %></p>
+      <p><%= form.check_box "#{user.id}" %></p>
+    <% end %>
+  <% end %>
+
+    <p><%= form.submit "Create Party" %></p>
+<% end %>

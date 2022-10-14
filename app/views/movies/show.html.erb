@@ -1,6 +1,6 @@
 <h3><%= @movie.original_title %></h3>
 <p><%= button_to "Discover Page", user_discover_index_path(@user), method: :get %></p>
-<p><%= button_to "Create Viewing Party", new_user_movie_viewing_party_path(@user, @movie.id), method: :get %></p>
+<p><%= button_to "Create Viewing Party", new_user_movie_party_path(@user, @movie.id), method: :get %></p>
 
 <div id="movie-details">
   <p>Genres:</p>
