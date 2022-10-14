@@ -1,5 +1,5 @@
 <h1><%= @movie.title %></h1>
-<%= button_to 'Create Viewing Party', "/users/#{@user.id}/movies/:movie_id/viewing-party/new" %>
+<%= button_to 'Create Viewing Party', new_user_movie_party_path(@user.id, @movie.id) %>
 <%= button_to 'Return to Discover', "/users/#{@user.id}/discover", method: :get %>
 
 <h3>Movie Details</h3>
