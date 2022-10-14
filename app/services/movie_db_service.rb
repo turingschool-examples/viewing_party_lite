@@ -28,11 +28,6 @@ class MovieDbService
     parse(response.body)
   end
 
-  def self.image_data(movie_id)
-    response = connection.get("3/movie/#{movie_id}/images")
-    parse(response.body)
-  end
-
 private
 
   def self.connection
