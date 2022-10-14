@@ -17,9 +17,12 @@
   <%= form.time_field :time, :value => Time.at(5460).utc.strftime("%H:%M") %>
   
   <p> Invite Users </p>
+
+  <div id= "user_<%= user.id %>">
   <% @users.each do |user| %>
     <%= form.check_box(:user, {multiple: true}, user.id) %>
     <%= form.label :user, "#{user.name}, (#{user.email})" %>
+  </div>
   <% end %>
  
   <%= form.submit "Create Party" %>
