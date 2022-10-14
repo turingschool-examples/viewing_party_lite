@@ -17,4 +17,17 @@ class MovieFacade
       Reviews.new(review)
     end
   end
+
+  def self.top_rated
+   MovieService.get_top_rated[:results].map do |data|
+      TopMovie.new(data)
+    end
+  end
+
+  def self.movies_search(keyword)
+    search_results = MovieService.get_movies_search(keyword)
+    search_results[:results].map do |data|
+      TopMovie.new(data)
+    end
+  end
 end
