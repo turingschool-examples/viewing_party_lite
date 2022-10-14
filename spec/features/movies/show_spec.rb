@@ -11,15 +11,14 @@ RSpec.describe 'User Movie Show Page' do
 
     end
 
-    xit 'has a button to create a viewing party' do
-      visit user_movie_path(@user_1, @fight_club)
-      save_and_open_page
+    it 'has a button to create a viewing party' do
+      visit user_movie_path(@user_1, @fight_club.id)
       click_button "Create Viewing Party"
-      expect(current_path).to eq(new_user_movie_viewing_party_path(@user_1, @fight_club))
+      expect(current_path).to eq(new_user_movie_viewing_party_path(@user_1, @fight_club.id))
     end
 
     it 'has a button to return to discover page' do
-      visit user_movie_path(@user_1, @fight_club)
+      visit user_movie_path(@user_1, @fight_club.id)
 
       click_button "Discover Page"
       expect(current_path).to eq(user_discover_index_path(@user_1))
