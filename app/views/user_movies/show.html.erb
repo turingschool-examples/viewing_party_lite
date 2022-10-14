@@ -1,0 +1,65 @@
+<%= content_for :subtitle do%>
+  <%=@movie.title%>
+<%end%>
+
+<section id= "buttons" style='margin-bottom:50px' >
+  <%= render 'partials/discover_button'%>
+  <br>
+  <div id= "new_party_button">
+    <%= button_to "Create Viewing Party for #{@movie.title}", "/users/#{params[:user_id]}/movies/#{params[:movie_id]}/viewing-party/new", method: :get %>
+  </div>
+</section>
+
+
+<div style='text-align: left;'>
+  <section id= "movie_details" >
+    <div style='font-weight: bold; border-bottom:3px solid; padding: 3px'>
+      <span class='stats'> 
+        Vote Average: <%= @movie.vote_avg %> 
+      </span>
+      <span class='stats'>
+        Runtime: <%= @movie.runtime %> 
+      </span>
+      <span class='stats'>
+        Genres: <% @movie.genres.each do |genre| %>
+                  <span class='genres' >
+                    <%=genre %> 
+                  </span>
+                <%end%>
+      </span>
+      
+      </div>
+      <h3>Summary:</h3> 
+      <p class='center'><%= @movie.summary %></p>
+  </section>
+
+  <section id= "cast_info" >
+    <h3> Cast: </h3>
+    <div class='center'>
+      <%@cast.each_with_index do |member, index|%>
+        <% if index.even?%>
+          <p>
+        <%else%>
+          <span style='float: right;'>
+        <%end%>
+        <%= member[:actor] %> as <%= member[:role] %> 
+        <% if index.odd?%>
+          </span></p>
+        <%end%>
+      <%end%>
+    </div>
+  </section>
+
+  <section id= "reviews_info" >
+    <h3> <%= @reviews.count %> Reviews: </h3>
+    <div class='center'>
+      <% @reviews.each do |review| %>
+        <div class='reviews'>
+          <p> Author: <%= review[:author] %> </p>
+          <hr>
+          <p class='center'> <%= review[:content] %> </p>
+        </div>
+      <%end%>
+    </div>
+  </section>
+</div>

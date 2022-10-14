@@ -1,0 +1,22 @@
+<%=content_for :subtitle do%>
+  <%= @subtitle %>
+<%end%>
+<%= render 'partials/discover_button'%>
+<table id='movie-table' class='center'>
+  <tr>
+    <th>Title</th>
+    <th>Rating</th>
+  </tr>
+  <%@movies.each do |movie|%>
+  <tr class='movie' id='mov-<%=movie[:movie_id]%>'>
+    <td class='title'>
+      <%= link_to movie[:title], "/users/#{@user.id}/movies/#{movie[:movie_id]}"%>
+    </td>
+    <td class='rating'>
+      <%=movie[:vote_avg]%>
+    </td>
+  </tr>
+  <%end%>
+
+    
+</table>

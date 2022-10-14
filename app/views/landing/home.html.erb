@@ -1,0 +1,15 @@
+<article>
+
+  <%= button_to 'Create a New User', '/register', method: :get %>
+  <br>
+  <div id="user-list">
+    <table class='center'>
+    <tr><th>Existing Users:</th></tr>
+    <% @users.each do |user| %>
+      <tr><td class="user-dash-link">
+        <%= link_to "#{user.email}'s Dashboard", user_path(user) %>
+      </td></tr>
+      <%end%>
+    </table>
+  </div>
+</article>
