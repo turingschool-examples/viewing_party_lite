@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 13 Oct 2022 19:59:30 GMT
+      - Thu, 13 Oct 2022 23:57:48 GMT
       Server:
       - openresty
       Access-Control-Allow-Origin:
@@ -42,25 +42,25 @@ http_interactions:
       X-Memc-Key:
       - 8f3dc9fbf00ec8ef64b14b7080f4013a23d639da
       X-Memc-Age:
-      - '12713'
+      - '10210'
       X-Memc-Expires:
-      - '4079'
+      - '4330'
       Etag:
-      - W/"c0068b418e5b9ff891cec96639d028c4"
+      - W/"6e6516ad7d689f9ba520082d2efe5c14"
       Vary:
       - Accept-Encoding
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 dc50b0effd72a7b2c19bcb0909cfae82.cloudfront.net (CloudFront)
+      - 1.1 f0a2a95cb4d25b2414a9c1a7a754943e.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN50-C2
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - dq_YdszoxjSHw5eXPtIVY-nPUvg9VLLDm9HfavMMjWWQg4pxeU06RA==
+      - 5Y1GSC_5Inw7uL4VgBNZvweuBDaNNv7C3eBXUfVR6IJuBsQdbXOWrQ==
       Age:
-      - '27183'
+      - '24953'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"},{"id":53,"name":"Thriller"},{"id":35,"name":"Comedy"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
@@ -75,6 +75,6 @@ http_interactions:
         Film","origin_country":"DE"},{"id":54051,"logo_path":null,"name":"Atman Entertainment","origin_country":""},{"id":54052,"logo_path":null,"name":"Knickerbocker
         Films","origin_country":"US"}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
-        Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.433,"vote_count":24948}'
-  recorded_at: Fri, 14 Oct 2022 03:32:33 GMT
+        Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.433,"vote_count":24949}'
+  recorded_at: Fri, 14 Oct 2022 06:53:41 GMT
 recorded_with: VCR 6.1.0

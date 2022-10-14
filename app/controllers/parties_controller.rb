@@ -3,16 +3,13 @@ class PartiesController < ApplicationController
     @movie = MovieFacade.movie_details(params[:movie_id])
     @user = User.find(params[:user_id])
     @users = User.all
-
-    
   end
 
   def create
     user = User.find(params[:user_id])
     movie = MovieFacade.movie_details(params[:movie_id])
-
     @party = Party.new(party_params)
-    require 'pry'; binding.pry
+    
     if @party.save 
       flash.notice = "Party was successfully added!"
       redirect_to(user_path(user))
@@ -25,6 +22,6 @@ class PartiesController < ApplicationController
   private
 
   def party_params
-    params.require(:party).permit(:duration, :date, :start_time)
+    params.permit(:duration, :date, :start_time, :host_id, :movie_id)
   end
 end
