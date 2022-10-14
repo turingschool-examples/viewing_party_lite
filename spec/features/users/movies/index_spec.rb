@@ -39,5 +39,16 @@ RSpec.describe 'Movie results page' do
         expect(current_path).to eq(user_movie_path(user, movies.first.id))
       end
     end
+
+    it 'will return nothing if a movie title has no match', :vcr do
+      user = create(:user)
+
+      visit user_discover_index_path(user)
+
+      fill_in 'Search', with: "Top Gun 17"
+      click_on 'Search by Movie Title'
+
+      expect(current_path).to_not have_content("Top Gun")
+    end
   end
 end

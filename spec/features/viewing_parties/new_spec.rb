@@ -62,7 +62,6 @@ RSpec.describe 'The new viewing party page', :vcr do
 
         expect(page).to have_content('Error: Duration cannot be shorter than movie runtime')
       end
-    end
 
     it 'will not create a viewing party if any fields are left blank' do
       click_button "Create Party Viewing Party for #{@movie.title}"
