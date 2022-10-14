@@ -43,7 +43,7 @@
 <br/>
 
 <section id="invite_others">
-  <%= f.collection_check_boxes(:attendees, @attendees, :id, :name_and_email, include_hidden: false) do |attendee| %>
+  <%= f.collection_check_boxes(:attendees, @invitees, :id, :name_and_email, include_hidden: false) do |attendee| %>
     <div id='check_boxes'>
       <%= attendee.check_box %>
       <%= attendee.label %>
