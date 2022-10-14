@@ -8,6 +8,8 @@ Viewing Part Lite is an application in which users can explore movie options and
 
 Our take on it exhibits polymorphism in the service methods, encapsulation through use of specific controllers and classes as well as private methods for abstraction, and inheritance in the form of the `before_action set_user` in the application controller as it carries through into almost every page.
 
+Also! Forgot to mention it in the readme, but the conditionals in the movieController index also catch searches with the string 'top rated' and puts it through as a search instead of catching it as accessing the top rated page.
+
 ## Links
 
 Heroku: https://viewing-party-light-ah-cb.herokuapp.com/
