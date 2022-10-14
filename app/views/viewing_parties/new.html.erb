@@ -7,10 +7,10 @@
   <%= f.number_field :duration, options = { value: @movie.runtime, min: @movie.runtime } %>
 
   <%= f.label :date, 'Date' %>
-  <%= f.date_select :date, { use_two_digit_numbers: true, prefix: :start }%>
+  <%= f.date_field :date %>
 
   <%= f.label :time, 'Start Time' %>
-  <%= f.time_select :time, { ignore_date: true, prefix: :start }  %>
+  <%= f.time_field :time %>
 
   <ul id="invited_users_list">
     <% @all_other_users.each do |user| %>

@@ -24,11 +24,8 @@ class ViewingPartiesController < ApplicationController
   private
 
   def viewing_party_params
-    params[:viewing_party][:start_time] = Time.new(params[:start]["date(1i)"].to_i,
-                                                    params[:start]["date(2i)"].to_i,
-                                                    params[:start]["date(3i)"].to_i,
-                                                    params[:start]["time(4i)"].to_i,
-                                                    params[:start]["time(5i)"].to_i)
+    params[:viewing_party][:start_time] =
+      "#{params[:viewing_party][:date]} #{params[:viewing_party][:time]}".to_datetime
     params.require(:viewing_party).permit(:host, :image_path, :movie_title, :start_time, :duration, :movie_id)
   end
 end
