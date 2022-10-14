@@ -4,7 +4,7 @@ class Party < ApplicationRecord
   validates :start_time, :date, :duration, presence: true
 
   def movie
-    MovieFacade.movie_by_id(movie_id)
+    @movie ||= MovieFacade.movie_by_id(movie_id)
   end
 
   def poster_path

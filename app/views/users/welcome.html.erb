@@ -4,6 +4,6 @@
 <h3> All Users</h3>
   <div id='all_users'>
   <% @users.each do |user| %>
-    <%= user.email%>
+    <%= link_to user.email, user_path(user) %>
 <% end %>
   </div>
