@@ -7,13 +7,14 @@
   <%= form.hidden_field :host_id %>
   Movie Title: <strong><%= @viewing_party.movie.title %></strong><br>
   <%= form.label :duration, "Duration of Party: " %>
-  <%= form.text_field :duration %><br>
+  <%= form.text_field :duration, size: "5" %><br>
   <%= form.label :date, "Date: " %>
   <%= form.date_field :date %><br>
   <%= form.label :start_time, "Start Time: " %>
   <%= form.time_field :start_time, include_seconds: false %><br>
   <strong>Invite Other Users: </strong><br>
-  <%= form.collection_check_boxes :users, @other_users, :id, :name %><br>
+  <%= form.collection_check_boxes :user_ids, @other_users, :id, :name %>
+  <br>
   <%= form.submit "Create Party" %>
 <% end %>
 </div>
