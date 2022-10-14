@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @parties = @user.parties
 
-    ##@hosted_parties = @user.parties.where(host_status: true)
+    # #@hosted_parties = @user.parties.where(host_status: true)
   end
 
   def discover

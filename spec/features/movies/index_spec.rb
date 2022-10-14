@@ -23,7 +23,6 @@ RSpec.describe 'Movie Index' do
 
     it 'when I click on a link, I am taken to the movie details page' do
       VCR.use_cassette("top_rated_movies_2_this_time_its_personal") do
-
         # click_button 'Discover Top Rated Movies'
         visit user_movies_path(@user)
         movies = MoviesFacade.top_rated_movies
@@ -39,7 +38,6 @@ RSpec.describe 'Movie Index' do
       visit user_discover_path(@user)
 
       VCR.use_cassette("search_falcon") do
-
         fill_in "search", with: "falcon"
         click_button "Search by movie title"
 

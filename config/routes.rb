@@ -6,8 +6,7 @@ Rails.application.routes.draw do
     get '/discover', to: 'users#discover'
 
     resources :movies, only: %i[index show] do
-      resources :viewing_parties, only: %i[new create]
-
+      resources :parties, only: %i[new create]
     end
   end
 

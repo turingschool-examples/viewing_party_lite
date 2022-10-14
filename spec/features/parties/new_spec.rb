@@ -24,8 +24,6 @@ RSpec.describe 'New Viewing Party Page' do
         expect(page).to have_button("Submit")
       end
 
-
-
       it 'will create a new viewing party when I fill in the fields with admissable values', :vcr do
         fill_in :start_time, with: Faker::Time.forward(days: 1, period: :evening).to_formatted_s(:time)
         fill_in :date, with: Faker::Time.forward(days: 4).to_formatted_s(:date)
@@ -60,5 +58,3 @@ end
 # _Button to create a party
 
 # Details: When the party is created, the user should be redirected back to the dashboard where the new event is shown. The event should also be listed on any other user's dashbaords that were also invited to the party.
-
-
