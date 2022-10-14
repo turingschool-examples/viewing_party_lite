@@ -23,14 +23,14 @@
   <br>
   <div class='cast_columns'>
     <p><% @movie.cast[0..4].each do |person| %>
-      <%=  person[0] %> as <%= person[1] %>
+      <%=  person.to_sentence(two_words_connector: ' as ') %>
       <br>
     <% end %></p>
   </div>
 
   <div class='cast_columns'>
     <p><% @movie.cast[5..9].each do |person| %>
-      <%=  person[0] %> as <%= person[1] %>
+      <%=  person.to_sentence(two_words_connector: ' as ') %>
       <br>
     <% end %></p>
   </div>
