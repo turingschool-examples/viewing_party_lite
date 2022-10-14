@@ -33,4 +33,13 @@ RSpec.describe 'the New Party Page' do
       end
     end
   end
+
+  describe 'UserParty creation' do
+    it 'creates new user parties for all invited users when the form is submitted' do
+      host = create(:user, id: 50, name: "Bubbles", email: "bubbles@sunnyvale.ca")
+      guest_1 = create(:user, id: 51, name: "Julian", email: "julian@sunnyvale.ca")
+      guest_2 = create(:user, id: 53, name: "Jim Lahey", email: "supervisor@sunnyvale.ca")
+      guest_3 = create(:user, id: 54, name: "Ricky", email: "ricky@sunnyvale.ca")
+    end
+  end
 end
