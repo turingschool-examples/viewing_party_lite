@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<h4><%= link_to "Home", "/" %></h4>
   <head>
     <title>Viewing Party Lite</title>
     <%= csrf_meta_tags %>
@@ -17,6 +16,14 @@
       <p><%= msg %></p>
       </div>
     <% end %>
+
+    <nav class="site-header sticky-top py-1 bg-dark">
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2 d-none d-md-inline-block text-white" href="/">Home</a>
+      </div>
+    </nav>
+
+    <br><center><h1>Viewing Party Lite<h1></center>
 
     <%= yield %>
   </body>

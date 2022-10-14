@@ -5,7 +5,7 @@ RSpec.describe MovieService do
     it 'can get_movie_data', :vcr do
       # json_response = File.read('spec/fixtures/get_movie_data.json')
       # stub_request(:get, "https://api.themoviedb.org/3/movie/8?api_key=791558f2c56bc172d18d3788419a5636&language=en-US").to_return(status: 200, body: json_response)
-      
+
       movie_data = MovieService.get_movie_data(8)
 
       expect(movie_data).to be_a(Hash)
@@ -25,10 +25,34 @@ RSpec.describe MovieService do
       expect(movie_data[:overview]).to be_an(String)
     end
 
+    it 'can get_top_rated movies', :vcr do
+      parsed = MovieService.get_top_rated
+      data = parsed[:results].first
+
+      expect(parsed).to be_a(Hash)
+      expect(parsed[:results]).to be_a(Array)
+      expect(data).to have_key :title
+      expect(data[:title]).to be_a(String)
+      expect(data).to have_key :vote_average
+      expect(data[:vote_average]).to be_a(Float)
+    end
+
+    it 'can retrieve movies_search with keyword', :vcr do
+      parsed = MovieService.get_movies_search('Miss Congeniality')
+      data = parsed[:results].first
+
+      expect(parsed).to be_a(Hash)
+      expect(parsed[:results]).to be_a(Array)
+      expect(data).to have_key :title
+      expect(data[:title]).to be_a(String)
+      expect(data).to have_key :vote_average
+      expect(data[:vote_average]).to be_a(Float)
+    end
+
     it 'can get_cast_data', :vcr do
       # json_response = File.read('spec/fixtures/get_movie_data.json')
       # stub_request(:get, "https://api.themoviedb.org/3/movie/8?api_key=791558f2c56bc172d18d3788419a5636&language=en-US").to_return(status: 200, body: json_response)
-      
+
       cast_data = MovieService.get_cast_data(3)
 
       expect(cast_data).to be_a(Hash)
@@ -41,13 +65,12 @@ RSpec.describe MovieService do
       expect(cast_data[:cast][0][:character]).to be_a(String)
       expect(cast_data[:cast][0]).to have_key :cast_id
       expect(cast_data[:cast][0][:cast_id]).to be_a(Integer)
-
     end
 
     it 'can get_review_data', :vcr do
       # json_response = File.read('spec/fixtures/get_movie_data.json')
       # stub_request(:get, "https://api.themoviedb.org/3/movie/8?api_key=791558f2c56bc172d18d3788419a5636&language=en-US").to_return(status: 200, body: json_response)
-      
+
       review_data = MovieService.get_review_data(3)
 
       expect(review_data).to be_a(Hash)
