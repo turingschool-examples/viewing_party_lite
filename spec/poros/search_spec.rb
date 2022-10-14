@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Search do
@@ -15,7 +17,7 @@ RSpec.describe Search do
 
     it 'returns an array of Search objects which contain name as string, id as integer, vote average as float' do
       expect(@movie_array1).to be_a(Array)
-      
+
       @movie_array1.each do |movie|
         expect(movie.name).to be_a(String)
         expect(movie.id).to be_a(Integer)
@@ -27,7 +29,7 @@ RSpec.describe Search do
       end
     end
 
-    it 'search results include keyword' do 
+    it 'search results include keyword' do
       @movie_array1.each do |movie|
         expect(movie.name).to include('Dark')
       end

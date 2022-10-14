@@ -1,5 +1,6 @@
-class ViewingPartiesController < ApplicationController
+# frozen_string_literal: true
 
+class ViewingPartiesController < ApplicationController
   
   def new
     @user = User.find(params[:user_id])
@@ -37,4 +38,5 @@ class ViewingPartiesController < ApplicationController
     params.permit(:duration, :date, :time, :movie_id)
   end
 end
+
 

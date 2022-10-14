@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Details
   attr_reader :title,
               :summary,

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :movies do
-      resources :viewing_parties, only: [:new, :create]
+      resources :viewing_parties, only: %i[new create]
     end
 
     get 'discover', to: 'movies#search'

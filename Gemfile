@@ -42,9 +42,9 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'figaro'
+  gem 'orderly'
   gem 'pry'
   gem 'shoulda-matchers'
-  gem 'orderly'
 end
 
 group :development do

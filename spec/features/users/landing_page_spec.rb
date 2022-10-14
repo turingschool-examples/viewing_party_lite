@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'landing page' do
@@ -18,17 +20,17 @@ RSpec.describe 'landing page' do
       visit landing_page_path
 
       expect(page).to have_content('Viewing Party Lite')
-      click_link "#{@user_1.name}"
+      click_link @user_1.name.to_s
       expect(current_path).to eq(user_path(@user_1))
 
       visit landing_page_path
 
-      click_link "#{@user_2.name}"
+      click_link @user_2.name.to_s
       expect(current_path).to eq(user_path(@user_2))
 
       visit landing_page_path
 
-      click_link "#{@user_3.name}"
+      click_link @user_3.name.to_s
       expect(current_path).to eq(user_path(@user_3))
     end
 
