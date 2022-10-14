@@ -9,6 +9,7 @@ class ViewingPartiesController < ApplicationController
     user = User.find(params[:id])
     movie = MovieDbFacade.find_by_movie_id(params[:movie_id])
     new_view_party = ViewingParty.new(movie_id: movie.id, movie_title: movie.title, start_time: params[:start_time], date: params[:date], length: params[:length])
+
     if params[:length].to_i >= movie.runtime && new_view_party.valid?  #these - active model validations
       new_view_party.save
       ViewingPartyUser.create(viewing_party_id: new_view_party.id, user_id: user.id, status: 0)

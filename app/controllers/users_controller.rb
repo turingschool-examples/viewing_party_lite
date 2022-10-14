@@ -22,11 +22,10 @@ class UsersController < ApplicationController
     if User.find_by(email: user.email)
       redirect_to register_path
       flash[:alert] = "Email Already in Use"
-    elsif user.save
+    elsif  user.save
       redirect_to "/users/#{user.id}"
     else
       redirect_to register_path
-      flash[:alert] = "Error: Incomplete Form"
     end
   end
 

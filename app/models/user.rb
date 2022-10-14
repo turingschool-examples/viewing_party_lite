@@ -2,6 +2,8 @@ class User < ApplicationRecord
   has_many :viewing_party_users
   has_many :viewing_parties, through: :viewing_party_users
 
+  validates :name, presence: true
+  validates :email, presence: true
   # def top_20_movies
   #     conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
   #         faraday.params["api_key"] = ENV['themoviedb_key']
