@@ -65,7 +65,7 @@ RSpec.describe 'Viewing Party | New', type: :feature do
           expect(page).to have_content('View Party created successfully')
         end
         party = ViewingParty.last
-        within("#party-#{party.id}") do
+        within("#hosted-#{party.id}") do
           expect(page).to have_content 'Top Gun: Maverick'
           expect(page).to have_content 'July 20, 1999 12:00 AM'
           within('#role') do
@@ -87,7 +87,7 @@ RSpec.describe 'Viewing Party | New', type: :feature do
         within('#viewing_parties') do
           expect(page).to have_content('Top Gun: Maverick')
           expect(page).to have_content('July 20, 1999 12:00 AM')
-          within('#role') do
+          within('#role_invited') do
             expect(page).to_not have_content('Host')
             expect(page).to have_content('Invited')
           end

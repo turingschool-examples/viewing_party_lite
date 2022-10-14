@@ -33,20 +33,24 @@ RSpec.describe 'User | Show', type: :feature do
     end
     it 'I see a section that lists all of my viewing parties' do
       within('#viewing_parties') do
-        within("#party-#{@vp1.id}") do
+        within("#hosted-#{@vp1.id}") do
           expect(page).to have_content('The Flesh and Blood Show')
-          expect(page).to have_content('October 11, 2022 05:19 PM')
-          expect(page).to_not have_content('October 12, 2022 04:18 PM')
+          within('#date') do
+            expect(page).to have_content('October 11, 2022 05:19 PM')
+            expect(page).to_not have_content('October 12, 2022 04:18 PM')
+          end
           within('#role') do
             expect(page).to_not have_content('Invited')
             expect(page).to have_content('Host')
           end
         end
-        within("#party-#{@vp2.id}") do
+        within("#invited-#{@vp2.id}") do
           expect(page).to have_content('Three Way')
-          expect(page).to have_content('October 12, 2022 04:18 PM')
-          expect(page).to_not have_content('October 11, 2022 05:19 PM')
-          within('#role') do
+          within('#date_invited') do
+            expect(page).to have_content('October 12, 2022 04:18 PM')
+            expect(page).to_not have_content('October 11, 2022 05:19 PM')
+          end
+          within('#role_invited') do
             expect(page).to have_content('Invited')
             expect(page).to_not have_content('Host')
           end
@@ -55,8 +59,8 @@ RSpec.describe 'User | Show', type: :feature do
     end
     it 'I see the invited viewers, host, and my name in bold' do
       within('#viewing_parties') do
-        within("#party-#{@vp2.id}") do
-          within('#host') do
+        within("#invited-#{@vp2.id}") do
+          within('#host_invited') do
             expect(page).to have_content(@user3.name)
           end
           within('#viewers') do
