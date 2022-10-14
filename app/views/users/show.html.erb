@@ -24,12 +24,15 @@
     </div>
   <% end %>
 </div>
-
 <h3>Your Hosted Viewing Parties:</h3>
 <div class="vp_container">
   <% @user.hosted_viewing_parties.each do |vp| %>
     <div id="vp_<%= vp.id %>">
-      <img id="movie_img_<%= vp.movie_id %>" src="<%= vp.movie.image_path %>"><br>
+      <% if vp.movie.image_path %>
+        <img id="movie_img_<%= vp.movie_id %>" src="<%= vp.movie.image_path %>"><br>
+      <% else %>
+        <p>No Image</p>
+      <% end %>
       <h4><%= link_to vp.movie.title, user_movie_path( @user.id, vp.movie_id ) %></h4>
       <br>
       <%= vp.date.strftime("%B %-d, %Y") %><br>
