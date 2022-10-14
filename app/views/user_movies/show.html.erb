@@ -1,13 +1,30 @@
 
 
 <section id= "movie_details" >
-  <p> Title: <%= @movie.title %> </p>
-  <p> Vote Average: <%= @movie.vote_avg %> </p>
-  <p> Runtime: <%= @movie.runtime %> </p>
-  <p> Summary: <%= @movie.summary %> </p>
-  <p> Genres:
-  <% @movie.genres.each do |genre| %>
-    <%=genre %> 
-  <%end%></p>
-  
+<h3> Movie Title: <%= @movie.title %> </h3>
+<p> Vote Average: <%= @movie.vote_avg %> </p>
+<p> Runtime: <%= @movie.runtime %> </p>
+<p> Summary: <%= @movie.summary %> </p>
+<p> Genres:
+<% @movie.genres.each do |genre| %>
+  <%=genre %> 
+<%end%></p>
+</section>
+
+<section id= "cast_info" >
+<h3> Cast Members </h3>
+<%@cast.each do |member|%>
+  <p> Actor: <%= member[:actor] %> </p>
+  <p> Role: <%= member[:role] %> </p>
+  <br>
+<%end%>
+</section>
+
+<section id= "reviews_info" >
+<h3> Reviews </h3>
+<% @reviews.each do |review| %>
+  <p> Author: <%= review[:author] %> </p>
+  <p> Review: <%= review[:content] %> </p>
+  <br>
+<%end%>
 </section>

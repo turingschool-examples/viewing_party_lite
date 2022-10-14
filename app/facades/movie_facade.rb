@@ -84,5 +84,5 @@ class MovieFacade
     parsed_data['results'].map { |review| { author: review['author'], content: review['content'] } }
   end
 
-  # private_class_method :show_details, :show_credits, :show_reviews
+  private_class_method :show_details, :show_credits, :show_reviews
 end
