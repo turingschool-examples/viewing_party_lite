@@ -26,5 +26,11 @@ RSpec.describe 'Users discover page' do
       click_button('Search by movie title')
       expect(current_path).to eq(user_movies_path(@user))
     end
+
+    it 'will not search without search field input', :vcr do
+      click_button('Search by movie title')
+      expect(current_path).to eq user_discover_path(@user)
+      expect(page).to have_content("Search Field Can't Be Blank")
+    end
   end
 end

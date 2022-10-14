@@ -4,8 +4,10 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[create show] do
     get '/discover', to: 'users#discover'
+
     resources :movies, only: %i[index show] do
       resources :viewing_parties, only: %i[new create]
+
     end
   end
 
