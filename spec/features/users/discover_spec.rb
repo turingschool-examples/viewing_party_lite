@@ -20,10 +20,9 @@ RSpec.describe 'Users discover page' do
 
     it 'can search by movie title', :vcr do
       # expect(page).to have_field('search')
-      fill_in "search", with: 'y'
+      fill_in 'search', with: 'y'
       # _ A Button to Search by Movie Title
       expect(page).to have_button('Search by movie title')
-      # Details: When the user clicks on the Top Rated Movies OR the search button, they should be taken to the movies results page (more details of this on the Movies Results Page issue.
       click_button('Search by movie title')
       expect(current_path).to eq(user_movies_path(@user))
     end

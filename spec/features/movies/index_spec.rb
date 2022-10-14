@@ -5,7 +5,6 @@ RSpec.describe 'Movie Index' do
     @user = User.create!(name: 'John', email: 'john@user.com')
   end
 
-
   describe 'Top Rated Movies' do
     before(:each) do
       visit user_discover_path(@user)
@@ -18,6 +17,7 @@ RSpec.describe 'Movie Index' do
         expect(current_path).to eq(user_movies_path(@user))
         expect(page).to have_link("Godfather")
         expect(page).to have_link("Shawshank Redemption")
+        expect(page).to_not have_link("Forrest Gump")
       end
     end
 
@@ -29,10 +29,10 @@ RSpec.describe 'Movie Index' do
         movies = MoviesFacade.top_rated_movies
         click_link "#{movies.first.title}"
         expect(current_path).to eq(user_movie_path(@user, movies.first.id))
+        expect(current_path).to_not eq(user_movie_path(@user, movies.second.id))
       end
     end
   end
-
 
   describe 'when a user searches for a movie by title' do
     it 'searched_movies' do

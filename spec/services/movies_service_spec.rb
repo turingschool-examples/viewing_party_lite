@@ -1,6 +1,6 @@
 require 'rails_helper'
 RSpec.describe 'Movie API Services' do
-  describe 'Top Rated Movies Endpoint'  do
+  describe 'Top Rated Movies Endpoint' do
     it 'top rated movies', :vcr do
       response = MoviesService.top_rated
 
@@ -12,8 +12,7 @@ RSpec.describe 'Movie API Services' do
 
   describe 'Searched Movies Endpoint' do
     it 'searched movies', :vcr do
-
-      response = MoviesService.search_by_title("falcon")
+      response = MoviesService.search_by_title('falcon')
       expect(response).to be_a(Hash)
 
       expect(response[:results]).to be_an Array
@@ -29,7 +28,6 @@ RSpec.describe 'Movie API Services' do
 
   describe 'Movie Details Endpoint' do
     it 'gets the movie details', :vcr do
-
       movie_data = MoviesService.movie_details(238)
       expect(movie_data).to be_a(Hash)
 
@@ -52,7 +50,6 @@ RSpec.describe 'Movie API Services' do
 
   describe 'Movie Credits Endpoint' do
     it 'gets the movie credits', :vcr do
-
       movie_credits = MoviesService.movie_credits(238)
       expect(movie_credits).to be_an(Hash)
 
@@ -68,7 +65,6 @@ RSpec.describe 'Movie API Services' do
 
   describe 'Movie Reviews Endpoint' do
     it 'gets the movie reviews', :vcr do
-
       movie_reviews = MoviesService.movie_reviews(238)
       expect(movie_reviews).to be_an(Hash)
 

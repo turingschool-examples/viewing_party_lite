@@ -30,6 +30,7 @@ RSpec.describe 'Users dashboard' do
       click_on('Discover Movies')
       # I am redirected to a discover page '/users/:id/discover', where :id is the user id of the user who's dashboard I was just on.
       expect(current_path).to eq(user_discover_path(user))
+      expect(current_path).to_not eq(user_discover_path(user_2))
     end
   end
 end
