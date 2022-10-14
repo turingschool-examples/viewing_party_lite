@@ -76,7 +76,7 @@ RSpec.describe 'User Dashboard Page' do
       end
 
       visit new_user_movie_viewing_party_path(@user_2, 240)
-      fill_in "Duration", with: "160"
+      fill_in "Duration", with: "205"
       fill_in "Date", with: "Tue, 17 Oct 2022"
       fill_in "Time", with: "2:00 PM"
       check "user_#{@user_1.id}" 
@@ -87,18 +87,34 @@ RSpec.describe 'User Dashboard Page' do
 
       within "#viewing-parties" do
         expect(page).to have_content(@movie1.title)
-        expect(page).to have_content("Duration: 200")
+        expect(page).to have_content("Duration: 205")
         expect(page).to have_content(@user_1.name)
         expect(page).to have_content(@user_3.name)
       end
     end
 
     it 'I see should see movie image' do
-      
+      visit new_user_movie_viewing_party_path(@user_1, 550)
+      fill_in "Duration", with: "200"
+      fill_in "Date", with: "Tue, 11 Oct 2022"
+      fill_in "Time", with: "6:00 PM"
+      check "user_#{@user_2.id}" 
+      check "user_#{@user_3.id}"
+      click_button("Create Party")
+
+      expect(page).to have_css("img[src='https://image.tmdb.org/t/p/w500/#{@movie1.poster_path}']")
     end
 
-    it '' do
-      
+    it 'I should see other movie posters' do
+      visit new_user_movie_viewing_party_path(@user_2, 240)
+      fill_in "Duration", with: "205"
+      fill_in "Date", with: "Tue, 17 Oct 2022"
+      fill_in "Time", with: "2:00 PM"
+      check "user_#{@user_1.id}" 
+      check "user_#{@user_3.id}"
+      click_button("Create Party")
+      save_and_open_page
+      expect(page).to have_css("img[src='https://image.tmdb.org/t/p/w500/#{@movie2.poster_path}']")
     end
   end
 end
