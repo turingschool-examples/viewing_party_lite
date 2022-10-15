@@ -23,7 +23,7 @@ RSpec.describe 'User show page' do
     expect(current_path).to eq("/users/#{@user.id}/discover")
   end
 
-  it 'has a section that lists the viewing parties the user is invited to', vcr: 'movie_details' do
+  it 'has a section that lists the viewing parties the user is invited to', vcr: 'party_movie_details' do
     @user1 = User.create!(name: "Mary", email: 'random_email@gmail.com')
     @user2 = User.create!(name: "Legolas", email: 'youhavemybow@gmail.com')
     @user3 = User.create!(name: "Gimli", email: 'andmyaxe@gmail.com')

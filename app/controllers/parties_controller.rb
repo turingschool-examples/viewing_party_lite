@@ -13,7 +13,7 @@ class PartiesController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @movie = MovieFacade.find(params[:movie_id])
-    
+
     if params[:duration].to_i < @movie.runtime
       flash[:alert] = "Error: Duration is less than movie duration"
     elsif parse_date_params <= Time.now
@@ -21,7 +21,10 @@ class PartiesController < ApplicationController
     elsif params[:user_ids].keys == []
       flash[:alert] = "Error: Please select users to invite"
     else
-      @party = Party.create!(party_params)
+      @party = Party.new(party_params)
+      @party.movie_poster_url = @movie.poster
+      @party.save!
+
       PartyUser.create!(party: @party, user_id: params[:user_id])
       invited = params[:user_ids].keys
       invited.each do |user|
@@ -33,12 +36,13 @@ class PartiesController < ApplicationController
   end
 
   def parse_date_params
-    DateTime.new(params["start_time(1i)"].to_i, 
-                params["start_time(2i)"].to_i,
-                params["start_time(3i)"].to_i,
-                params["start_time(4i)"].to_i,
-                params["start_time(5i)"].to_i)
+    DateTime.new(params["start_time(1i)"].to_i,
+      params["start_time(2i)"].to_i,
+      params["start_time(3i)"].to_i,
+      params["start_time(4i)"].to_i,
+      params["start_time(5i)"].to_i)
   end
+
   private
 
   def party_params

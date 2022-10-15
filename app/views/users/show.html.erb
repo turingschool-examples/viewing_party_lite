@@ -10,6 +10,8 @@
     <% else %>
       <h4>Invited</h4>
     <% end %>
+    <img src="<%= party.movie_poster_url %>" alt="<%= party.movie_title %>" width="250"/>
+    <br/>
     Movie Title: <%= link_to party.movie_title, user_movie_path(@user, party.movie_id) %>
     <% if party.host.present? %>
       <br/>
