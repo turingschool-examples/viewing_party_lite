@@ -12,6 +12,12 @@ RSpec.describe 'user movies show page' do
     expect(page).to have_button('Return to Discover')
   end
 
+  it 'has a button that directs to a form to create new viewing party', vcr: 'top_movies' do
+    visit "/users/#{@user1.id}/movies/129"
+    click_button 'Create Viewing Party'
+    expect(current_path).to eq("/users/#{@user1.id}/movies/129/parties/new")
+  end
+
   it 'shows reviews', vcr: 'movie_details' do
     visit "/users/#{@user1.id}/movies/129"
     expect(page).to have_content("Reviews (1)")
