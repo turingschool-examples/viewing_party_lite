@@ -48,7 +48,7 @@ RSpec.describe 'the user dashboard' do
     expect(page).to have_content(Date.tomorrow.strftime('%B %e, %Y') )
     expect(page).to have_content('Hosting')
     expect(page).to have_content("Hosted By: #{user1.name}")
-    expect(page).to have_content("Attendees: #{user2.name} #{user3.name}")
+    expect(page).to have_content("Attendees: #{user2.name} and #{user3.name}")
     expect(page).to_not have_content(user4.name)
 
     visit user_dashboard_path(user2)
@@ -71,7 +71,7 @@ RSpec.describe 'the user dashboard' do
     expect(page).to have_content(Date.tomorrow.strftime('%B %e, %Y') )
     expect('Burn the Stage: The Movie').to appear_before('The Godfather')
     expect(page).to have_content("Hosted By: #{user2.name}")
-    expect(page).to have_content("Attendees: #{user1.name} #{user3.name}")
+    expect(page).to have_content("Attendees: #{user1.name} and #{user3.name}")
     expect(page).to_not have_content(user4.name)
 
     visit user_dashboard_path(user4)

@@ -7,20 +7,6 @@
 <%= party.start_time.strftime('%I:%M %p') %>
 <br>
 
-<p>Hosted By: 
-  <% if party.host.id == @user.id%>
-    <strong><%= party.host.name %></strong>
-  <% else %>
-    <%= party.host.name %>
-  <% end %>
-</p>
-
-<p>Attendees:
-  <% party.attendees.each do |attendee| %>
-    <% if attendee == @user.name%>
-      <strong><%= attendee %></strong>
-    <% else %>
-      <%= attendee %>
-    <% end %>
-  <% end %>
-</p>
+Hosted By: <%= highlight("#{party.host.name}", "#{@user.name}", highlighter: '<strong>\1</strong>') %>
+<br>
+Attendees: <%= highlight("#{party.attendees}", "#{@user.name}", highlighter: '<strong>\1</strong>') %>
