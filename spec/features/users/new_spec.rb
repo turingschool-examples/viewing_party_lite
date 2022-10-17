@@ -29,9 +29,9 @@ RSpec.describe 'user registration page', type: :feature do
 
         it "You can see a link to the home page" do
           visit new_user_path
-          expect(page).to have_link('Home Page')
+          expect(page).to have_link('Home')
 
-          click_on('Home Page')
+          click_on('Home')
           expect(current_path).to eq(root_path)
         end
       end
@@ -60,7 +60,7 @@ RSpec.describe 'user registration page', type: :feature do
           fill_in(:password_confirmation, with: "IlovePeppers")
 
           click_on('Create User')
-          click_on('Home Page')
+          click_on('Home')
           click_on('New User')
 
           fill_in(:name, with: "Megan Piper")
