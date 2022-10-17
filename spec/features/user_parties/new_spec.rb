@@ -52,7 +52,7 @@ RSpec.describe 'new user party page', type: :feature do
         click_button('Create Party')
 
         expect(current_path).to eq(user_path(user1))
-        expect(page).to have_content("Date: 2022-10-31")
+        expect(page).to have_content("Date: 10/31/2022")
       end
 
       it "When the party is created, user_parties are created for each attendee", :vcr do
