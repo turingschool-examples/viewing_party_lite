@@ -1,28 +1,37 @@
-<h1>Movie Details Page</h1>
-
-<%= @movie_details.title %>
-<p> Average votes: <%= @movie_details.average_votes%></p>
-<p> Duration: <%= @movie_details.runtime %></p>
-<p> Genres: <%= @movie_details.genres %></p>
-<p> Description: <%= @movie_details.overview %></p>
-
-<div id="cast">
-<p> Cast: <% @movie_details.top_10_cast.each do |cast| %></p>
-  <p><%= cast %></p>
-<% end %>
-</div>
-
-<p> Review Count: <%= @movie_details.review_count %></p>
-
-<div id="reviews">
-<% @movie_details.reviews.each do |review| %>
-<p> Author Name: <%= review.author_name %></p>
-<p>Review: <%= review.author_review %></p>
-<% end %>
-</div>
-
-
-
-
-<%= button_to 'Create a Viewing Party', "/users/#{@movie_details.user_id}/movies/#{@movie_details.movie.id}/viewing-party/new", method: :get %>
-<%= button_to 'Return to Discover Page', "/users/#{@movie_details.user_id}/discover", method: :get %>
+<main class="container">
+  <div class="row g-5">
+    <div class="col-md-8">
+      <article class="blog-post">
+        <h1 class="display-5 fw-bold"><%= @movie_details.title %></h1>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-start">
+          <%= button_to 'Create a Viewing Party', "/users/#{@movie_details.user_id}/movies/#{@movie_details.movie.id}/viewing-party/new", method: :get, class: "btn btn-primary btn-md px-4" %>
+          <%= button_to 'Return to Discover Page', "/users/#{@movie_details.user_id}/discover", method: :get, class: "btn btn-outline-secondary btn-md px-4" %>
+        </div>
+        <p><strong> Average votes:</strong> <%= @movie_details.average_votes%></p>
+        <p><strong> Duration:</strong> <%= @movie_details.runtime %></p>
+        <p><strong> Genres:</strong> <%= @movie_details.genres %></p>
+        <p><strong> Description:</strong> <%= @movie_details.overview %></p>
+        <h2>Cast</h2>
+        <ul id="cast">
+        <% @movie_details.top_10_cast.each do |cast| %>
+          <li><%= cast %></li>
+        <% end %>
+        </ul>
+        <hr>
+        <h2> <%= @movie_details.review_count %> Reviews </h2>
+        <dl id="reviews">
+        <% @movie_details.reviews.each do |review| %>
+          <dt><%= review.author_name %></dt>
+          <dd><%= review.author_review %></dd>
+        <% end %>
+        </dl>
+        <dl>
+      </article>
+    </div>
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+        <div class="p-4 mb-3 bg-light rounded">
+          <img src="<%= @movie_details.poster_path %>" class="card-img-top" alt="<%= @movie_details.title %>">
+        </div>
+  </div>
+</main>

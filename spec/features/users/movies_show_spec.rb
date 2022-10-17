@@ -48,7 +48,7 @@ RSpec.describe 'a users movies show page', type: :feature do
         user = create(:user)
         visit "/users/#{user.id}/movies/550"
 
-        expect(page).to have_content("Review Count: 7")
+        expect(page).to have_content("7 Reviews")
 
         within('#reviews') do 
           expect(page).to have_content("Brett Pascoe") 
