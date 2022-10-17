@@ -26,8 +26,8 @@
                 <% else %>
                   <h6 class="card-subtitle mb-2 text-muted"> <%= party.host[:name]%> is the host </h6>
                 <% end %>
-                <p>Date: <%= party.date %></p>
-                <p>Start time: <%= party.start_time %></p>
+                <p>Date: <%= party.date.strftime("%m/%d/%Y") %></p>
+                <p>Start time: <%= party.start_time.strftime("%l:%M %p") %></p>
                 <p>Attendees: <% party.users.each do |attendee| %>
                                   <div id="user-<%= attendee.id %>">
                                   <% if attendee.id == @user.id %>

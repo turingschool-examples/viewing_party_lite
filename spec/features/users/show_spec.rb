@@ -48,8 +48,8 @@ RSpec.describe 'User show page' do
       party = create(:party, movie_id: 550, start_time: Time.now)
       viewing_party = create(:userParty, user_id: user.id, party_id: party.id, is_host: true)
       visit user_path(user)
-      expect(page).to have_content(party.start_time)
-      expect(page).to have_content(party.date)
+      expect(page).to have_content(party.start_time.strftime("%l:%M %p"))
+      expect(page).to have_content(party.date.strftime("%m/%d/%Y"))
     end
 
     it 'There is a list of invited users with my name in bold', :vcr do

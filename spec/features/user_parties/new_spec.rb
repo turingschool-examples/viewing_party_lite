@@ -20,7 +20,7 @@ RSpec.describe 'new user party page', type: :feature do
         user5 = create(:user)
 
         visit "/users/#{user1.id}/movies/550/viewing-party/new"
-        expect(page).to have_content('Duration:')
+        expect(page).to have_content('Duration')
         expect(page).to have_content('Date:')
         expect(page).to have_content('Start Time:')
 
