@@ -37,7 +37,7 @@ class UsersController < ApplicationController
     elsif params["Search by Movie Title"] != ""
       @movies = MovieFacade.get_movies(params["Search by Movie Title"])
     else
-      flash[:alert] = "You must fill in a title."
+      flash.now[:alert] = "You must fill in a title."
       render :discover
     end
   end

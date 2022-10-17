@@ -1,27 +1,49 @@
-<h1>User Dashboard</h1>
-<%= @user.name %>
+ <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="display-5 fw-bold"><%= @user.name %>'s Viewing Parties</h1>
+        <p class="lead text-muted">All your viewing parties are below, or you can discover new movies to watch with friends. </p>
+        <p>
+          <%= button_to 'Discover Movies', "/users/#{@user.id}/discover", method: :get, class: "btn btn-primary my-2" %>
+        </p>
+      </div>
+    </div>
+  </section>
 
-<%= button_to 'Discover Movies', "/users/#{@user.id}/discover", method: :get %>
+  <div class="album py-5 bg-light">
+    <div class="container">
 
-<h3> Viewing Parties </h3>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <% @user.parties.each do |party| %>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="<%= party.poster_path %>" class="card-img-top" alt="<%= party.title %>">
+            <div class="card-body">
+              <h5 class="card-title"><%= link_to party.title, "/users/#{@user.id}/movies/#{party.movie_id}"%></h5>
+              <p class="card-text">
+                <% if party.host[:id] == @user.id %>
+                  <h6 class="card-subtitle mb-2 text-muted"> You are the host </h6>
+                <% else %>
+                  <h6 class="card-subtitle mb-2 text-muted"> <%= party.host[:name]%> is the host </h6>
+                <% end %>
+                <p>Date: <%= party.date.strftime("%m/%d/%Y") %></p>
+                <p>Start time: <%= party.start_time.strftime("%l:%M %p") %></p>
+                <p>Attendees: <% party.users.each do |attendee| %>
+                                  <div id="user-<%= attendee.id %>">
+                                  <% if attendee.id == @user.id %>
+                                    <strong><%= attendee.name %></strong>
+                                  <% else %>
+                                    <%= attendee.name %>
+                                  <% end %>
+                                  </div>
+                                <% end %></p>
 
-<% @user.parties.each do |party| %>
-  <img src="<%= party.poster_path %>">
-  <h2><%= link_to party.title, "/users/#{@user.id}/movies/#{party.movie_id}"%></h2>
-  <% if party.host[:id] == @user.id %>
-    <p> You are the host </p>
-  <% else %>
-    <p> <%= party.host[:name]%> is the host </p>
-  <% end %>
-  <p>Date: <%= party.date %></p>
-  <p>Start time: <%= party.start_time %></p>
-  <p>Attendees: <% party.users.each do |attendee| %>
-                    <div id="user-<%= attendee.id %>">
-                    <% if attendee.id == @user.id %>
-                      <strong><%= attendee.name %></strong>
-                    <% else %>
-                      <%= attendee.name %>
-                    <% end %>
-                    </div>
-                  <% end %>
-<% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</main>
+

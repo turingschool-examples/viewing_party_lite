@@ -1,10 +1,25 @@
-<h1>Viewing Party Lite</h1>
-  <%= button_to "New User", '/register', method: :get %>
 
-<h3> All Users</h3>
-  <div id='all_users'>
-  <% @users.each do |user| %>
-    <%= link_to user.email, user_path(user) %>
-    <br>
-  <% end %>
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold">Viewing Party Lite</h1>
+    <div class="col-lg-6 mx-auto">
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <%= button_to "New User",  '/register', method: :get, class: "btn btn-primary btn-lg px-4 gap-3" %>
+      </div>
+      
+    </div>
+  <div class="col-lg-2 mx-auto" >
+    <div class="row mt-4">  
+      <h3 class="display-8 fw-bold">All Users</h3>
+    </div>
+    <div id="all_users" class="list-group w-auto">
+      <% @users.each do |user| %>
+      <a href="<%=user_path(user)%>" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+        <div class="d-flex gap-2 w-50 justify-content-between">
+            <h6 class="mb-0"><%= user.email %></h6>
+        </div>
+      </a>
+      <% end %>
+    </div>
   </div>
+  </div>
+</div>

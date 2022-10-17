@@ -34,4 +34,8 @@ class MovieDetailPresenter
   def review_count
     @reviews.size
   end
+
+  def poster_path
+    @movie.poster_path
+  end
 end

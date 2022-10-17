@@ -9,9 +9,9 @@ RSpec.describe 'application welcome page', type: :feature do
         visit root_path
         expect(page).to have_content('Viewing Party Lite')
         expect(page).to have_button('New User')
-        expect(page).to have_link('Home Page')
+        expect(page).to have_link('Home')
 
-        click_on('Home Page')
+        click_on('Home')
         expect(current_path).to eq(root_path)
       end
 
