@@ -51,6 +51,19 @@ RSpec.describe 'user registration page', type: :feature do
           expect(page).to have_content("Name can't be blank")
         end
 
+        it "If the user fails to password match they see an error message & are redirected to the current page to fill in the form again" do
+          visit new_user_path
+
+          fill_in(:name, with: "Peter Piper")
+          fill_in(:email, with: "Peter.Piper@peppers.com")
+          fill_in(:password, with: "IlovePeppers")
+          fill_in(:password_confirmation, with: "IlovePeppers!!!!!")
+
+          click_on('Create User')
+          expect(current_path).to eq('/users')
+          expect(page).to have_content("Error: Password doesn't match.")
+        end
+
         it "If the user tried to use an email address that's already been taken they are not allowed to sign up." do
           visit new_user_path
 
