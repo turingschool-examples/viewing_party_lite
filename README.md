@@ -14,7 +14,7 @@ Viewing Part Lite is an application in which users can explore movie options and
 
 1. Fork and Clone the repo
 2. Install gem packages: `bundle install`
-3. Setup the database: `rails db:create`
+3. Setup the database: `rails db:{drop,create,migrate,seed}`
 
 
 ## Versions
@@ -24,3 +24,50 @@ Viewing Part Lite is an application in which users can explore movie options and
 - Rails 5.2.6
 
 Example wireframes to follow are found [here](https://backend.turing.io/module3/projects/viewing_party_lite/wireframes)
+
+## Database Schema
+![image](https://user-images.githubusercontent.com/54329737/197135855-a9a1405d-80ea-4d98-9762-7d85dc8cd9a2.png)
+
+ ## GETTING STARTED
+
+<p><b>1. </b> Create a new directory on your computer where you'd like the program to live.</p>
+<pre><code>$ mkdir /your_folder/viewing_party_lite</code></pre>
+
+<p><b>2. </b> Navigate into the recently created directory.</p>
+<pre><code>$ cd /your_folder/viewing_party_lite</code></pre>
+<p><b>3. </b> Copy the repository by clicking on the code button on Github repo page (using SSH).</p>
+
+![image](https://user-images.githubusercontent.com/54329737/197137944-e8b3813b-c312-461a-b034-ee8926dd3c1c.png)
+
+<p><b>4. </b> Clone the recently copied repository information into your currenty directory.</p>
+<pre><code>$ git clone git@github.com:wes30303/viewing_party_lite</code></pre>
+
+<p><b>5. </b> Open the repository in your preferred IDE.  If you are using VSCode, use the code command shown below:</p>
+<pre><code>$ code .</code></pre>
+
+<p><b>6. </b> Install dependencies found in Gemfile</a>.</p>
+<pre><code>$ bundle install</code></pre>
+
+<p><b>7. </b> Inside your project directory, install <a href="https://github.com/laserlemon/figaro"> Figaro</a> via your terminal.</p>
+<pre><code>$ bundle exec figaro install</code></pre>
+
+<p><b>8. </b> Install <a href="https://lostisland.github.io/faraday/"> Faraday</a>.</p>
+<pre><code>$ bundle exec faraday install</code></pre>
+
+<p><b>9. </b> Add API key to config/applicalion.yml</a>.</p>
+<pre><code>$ api_key: XXXXX</code></pre>
+
+<p><b>10. </b> Run migrations</p>
+<pre><code>$ rails db:{create,migrate,seed}</code></pre>
+
+# Credit
+<h3>Wesley Miranda</h3>
+
+[![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/wes30303)
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/wesley-miranda-80a725196/)
+
+<h3>Thomas Turner</h3>
+
+[![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/EagleEye5085)
+[![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/thomasturner482/)
+
