@@ -28,15 +28,6 @@ Example wireframes to follow are found [here](https://backend.turing.io/module3/
 ## Database Schema
 ![image](https://user-images.githubusercontent.com/54329737/197135855-a9a1405d-80ea-4d98-9762-7d85dc8cd9a2.png)
 
-
-## Wire Frames
-### users/1/movies/index?utf8=✓&name=tom+and+&commit=Search+for+movies
-![image](https://user-images.githubusercontent.com/54329737/197136351-75104891-659e-4e2d-99e7-bcbef671045a.png)
-### /users/1/discover?
-![image](https://user-images.githubusercontent.com/54329737/197136550-936dafba-31c0-471b-a975-49fa3b6b13b7.png)
-
-![image](https://user-images.githubusercontent.com/54329737/197136351-75104891-659e-4e2d-99e7-bcbef671045a.png)
-
  ## GETTING STARTED
 
 <p><b>1. </b> Create a new directory on your computer where you'd like the program to live.</p>
@@ -75,7 +66,8 @@ Example wireframes to follow are found [here](https://backend.turing.io/module3/
 [![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/wes30303)
 [![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/wesley-miranda-80a725196/)
 
-<h3Thomas Turner</h3>
+<h3>Thomas Turner</h3>
+
 [![GitHub Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/EagleEye5085)
 [![LinkedIn Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/thomasturner482/)
 
