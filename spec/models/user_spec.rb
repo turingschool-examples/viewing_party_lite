@@ -17,21 +17,21 @@ RSpec.describe User, type: :model do
   before :each do
     @user1 = User.create!(
       name: 'Saylor',
-      email: 'SAyLoR@fakemail.COM',
+      email: 'SAyLoR@webmail.COM',
       password: 'password',
       password_confirmation: 'password'
       )
 
     @user2 = User.create!(
       name: 'Sterling',
-      email: 'sterling@fakemail.com',
+      email: 'sterling@webmail.com',
       password: 'password',
       password_confirmation: 'password'
     )
 
     @user3 = User.create!(
       name: 'Coleman',
-      email: 'dani@fakemail.com',
+      email: 'dani@webmail.com',
       password: 'password',
       password_confirmation: 'password'
     )
@@ -120,12 +120,12 @@ RSpec.describe User, type: :model do
 
     it 'can downcase an email when input' do
 
-      expect(@user1.email).to eq 'saylor@fakemail.com'
+      expect(@user1.email).to eq 'saylor@webmail.com'
     end
 
     it 'can combine name and email' do
 
-      expect(@user1.name_and_email).to eq('Saylor (saylor@fakemail.com)')
+      expect(@user1.name_and_email).to eq('Saylor (saylor@webmail.com)')
     end
   end
 end
