@@ -1,7 +1,11 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
-
+# As a registered user
+# When I visit the landing page `/`
+# I see a link for "Log In"
+# When I click on "Log In"
+# I'm taken to a Log In page ('/login') where I can input my unique email and password.
+# When I enter my unique email and correct password 
+# I'm taken to my dashboard page
 RSpec.describe 'landing page' do
   describe 'when I visit the landing page' do
     let!(:users) { create_list(:user, 10) }
@@ -18,11 +22,26 @@ RSpec.describe 'landing page' do
     end
 
     it 'has a button to create a new user' do
-      expect(page).to have_button 'Create a New User'
+      expect(page).to have_button('Create a New User')
 
-      click_on 'Create a New User'
+      click_button 'Create a New User'
 
-      expect(page).to have_current_path register_path
+      expect(current_path).to eq(register_path)
+    end
+
+    it 'has a button to log in' do
+      expect(page).to have_button('Log In')
+
+      click_button 'Log In'
+
+      expect(current_path).to eq(login_path)
+
+      fill_in 'Email', with: "#{user_1.email}"
+      fill_in 'Password', with: "#{user_1.password}"
+
+      click_button 'Log In'
+
+      expect(current_path).to eq(user_path(user_1))
     end
 
     it 'displays a list of all current users' do

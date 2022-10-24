@@ -65,8 +65,3 @@ RSpec.describe 'the register page' do
     end
   end
 end
-# As a visitor 
-# When I visit `/register`
-# and I fail to fill in my name, unique email, OR matching passwords,
-# I'm taken back to the `/register` page
-# and a flash message pops up, telling me what went wrong

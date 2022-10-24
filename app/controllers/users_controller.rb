@@ -10,9 +10,24 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def create
-    user = User.new(user_params)
+  def login_form
+  end
 
+  def login_user
+    user = User.find_by(email: params[:email])
+    if user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect_to user_path(user.id)
+    else
+      flash[:alert] = "Error: #{error_message(user.errors)}"
+      render :login_form
+    end
+  end
+
+  def create
+    user = user_params
+    user[:email] = user[:email].downcase
+    new_user = User.new(user_params)
     if user.save
       redirect_to user_path(user.id)
     else
