@@ -14,12 +14,11 @@ class UsersController < ApplicationController
   end
 
   def login_user
+    user = User.find_by(email: params[:email]) if User.exists?(email: params[:email]) 
     if !User.exists?(email: params[:email])
       flash[:alert] = "Error: Invalid email address"
       render :login_form
-    end
-    user = User.find_by(email: params[:email])
-    if !user.authenticate(params[:password])
+    elsif !user.authenticate(params[:password])
       flash[:alert] = "Error: Invalid password"
       render :login_form
     else
@@ -32,11 +31,11 @@ class UsersController < ApplicationController
     user = user_params
     user[:email] = user[:email].downcase
     new_user = User.new(user_params)
-    if user.save
-      redirect_to user_path(user.id)
+    if new_user.save
+      redirect_to user_path(new_user.id)
     else
       redirect_to register_path
-      flash[:alert] = "Error: #{error_message(user.errors)}"
+      flash[:alert] = "Error: #{error_message(new_user.errors)}"
     end
   end
 
