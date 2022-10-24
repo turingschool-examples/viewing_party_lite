@@ -113,7 +113,7 @@ RSpec.describe 'User Dashboard Page' do
       check "user_#{@user_1.id}" 
       check "user_#{@user_3.id}"
       click_button("Create Party")
-      save_and_open_page
+      
       expect(page).to have_css("img[src='https://image.tmdb.org/t/p/w500/#{@movie2.poster_path}']")
     end
   end
