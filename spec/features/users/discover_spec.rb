@@ -16,7 +16,7 @@ RSpec.describe 'Discover movies page' do
     end
 
     describe 'happy path' do
-      xit 'When I search for a movie I am taken to the Movie Results Page', :vcr do
+      it 'When I search for a movie I am taken to the Movie Results Page', :vcr do
         # json_response = File.read("spec/fixtures/movies_query_data.json")
         # stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['movies_api_key']}&query=fight").to_return(status: 200, body: json_response)
 
@@ -28,7 +28,7 @@ RSpec.describe 'Discover movies page' do
         expect(current_path).to eq("/users/#{user.id}/movies")
         expect(page).to have_content('Average Votes:')
         expect(page).to have_link('Fight Club')
-        expect(page).to have_button('Return to Discover Page')
+        expect(page).to have_button('Discover Movies')
       end
 
       it 'When I click top rated movies I see the current top 20 movies', :vcr do
