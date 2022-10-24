@@ -48,17 +48,17 @@ RSpec.describe 'application welcome page', type: :feature do
         expect(page).to have_content("Re-Enter Password")
       end
 
-      xit "On the login page When I enter my unique email and correct password I'm taken to my dashboard page" do
+      it "On the login page When I enter my unique email and correct password I'm taken to my dashboard page" do
         visit login_path
 
-        user1 = User.create!(name: "Alaina", email:"alaina@fake.com", password_digest: "Il0vePeppers")
+        user1 = User.create!(name: "Alaina", email:"alaina@fake.com", password: "Il0vePeppers", password_confirmation: "Il0vePeppers" )
 
         fill_in(:email, with: "alaina@fake.com")
-        fill_in(:password, with: "Il0vePeppers")
-        click_button("Log In")
-        user4 = create(:user, password_digest:BCrypt::Password.create('IlovecOde2!'))
+        fill_in("Password", with: "Il0vePeppers")
+        fill_in(:password_confirmation, with: "Il0vePeppers")
+        click_button("Login")
 
-        expect(current_path).to eq("/users/#{(user4.id) - 1}") #could we change this to be user1.id?
+        expect(current_path).to eq("/users/#{user1.id}")
       end
     end
   end
