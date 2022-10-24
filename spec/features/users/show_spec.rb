@@ -92,10 +92,8 @@ RSpec.describe 'User Dashboard', type: :feature do
 
         it 'Each viewing party has a Date and Time of the Event', :vcr do
           visit user_path(@user_1)
-          save_and_open_page
 
           within("#view-parties-#{@user_1.id}") do
-            # require "pry"; binding.pry
             expect(page).to have_content(@party_1.start_date)
             expect(page).to have_content(@party_2.start_date)
             expect(page).to have_content(@party_3.start_date)
