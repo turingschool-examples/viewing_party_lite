@@ -16,11 +16,11 @@ RSpec.describe 'application welcome page', type: :feature do
       end
 
       it 'I can see a list of existing users' do
-        user1 = User.create!(name: Faker::Name.name , email: Faker::Internet.email, password_digest: BCrypt::Password.create('bananaBro'))
-        user2 = User.create!(name: Faker::Name.name , email: Faker::Internet.email, password_digest: BCrypt::Password.create('Ilovecode'))
-        user3 = User.create!(name: Faker::Name.name , email: Faker::Internet.email, password_digest: BCrypt::Password.create('IlovecOde2!'))
-        user4 = create(:user, password_digest:BCrypt::Password.create('IlovecOde2!'))
-        
+        user1 = create(:user)
+        user2 = create(:user)
+        user3 = create(:user)
+        user4 = create(:user)
+
         visit root_path
         within('#all_users') do
           expect(page).to have_content("#{user1.email}")
