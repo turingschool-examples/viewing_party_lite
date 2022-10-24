@@ -4,6 +4,9 @@ FactoryBot.define do
   factory :user, class: User do
     name { Faker::Name.name }
     email { Faker::Internet.safe_email }
+    fake_password = Faker::Internet.password
+    password { fake_password }
+    password_confirmation {fake_password }
   end
 
   factory :viewing_party, class: ViewingParty do

@@ -22,6 +22,8 @@ RSpec.describe 'User Registration page' do
 
       fill_in 'name', with: 'James Dean'
       fill_in 'email', with: 'jimmydean1979@goodinternet.net'
+      fill_in 'password', with: 'password123'
+      fill_in 'password_confirmation', with: 'password123'
 
       click_on 'Save'
 
@@ -34,6 +36,8 @@ RSpec.describe 'User Registration page' do
 
       fill_in 'name', with: 'James Dean'
       fill_in 'email', with: 'jimmydean1979@goodinternet.net'
+      fill_in 'password', with: 'password123'
+      fill_in 'password_confirmation', with: 'password123'
 
       click_on 'Save'
 
@@ -45,7 +49,45 @@ RSpec.describe 'User Registration page' do
 
       click_on 'Save'
 
-      expect(page).to have_content("Name can't be blank and Email can't be blank")
+      expect(page).to have_content("Name can't be blank, Email can't be blank")
+    end
+
+    it 'has sad path for password not being entered' do
+      visit register_path
+
+      fill_in 'name', with: 'James Dean'
+      fill_in 'email', with: 'jimmydean1979@goodinternet.net'
+
+      click_on 'Save'
+
+      expect(page).to have_content("Password digest can't be blank, Password confirmation can't be blank, and Password can't be blank")
+    end
+
+    it 'has sad path for password confirmaiton not matching password' do
+      visit register_path
+
+      fill_in 'name', with: 'James Dean'
+      fill_in 'email', with: 'jimmydean1979@goodinternet.net'
+      fill_in 'password', with: "testing123"
+      fill_in 'password_confirmation', with: "123testing"
+
+      click_on 'Save'
+
+      expect(page).to have_content("Password confirmation doesn't match Password")
+    end
+
+    it 'stores user password securely in password digest' do
+      visit register_path
+
+      fill_in 'name', with: 'James Dean'
+      fill_in 'email', with: 'jimmydean1979@goodinternet.net'
+      fill_in 'password', with: "testing123"
+      fill_in 'password_confirmation', with: "testing123"
+
+      click_on 'Save'
+      expect(User.last).to have_attribute(:password_digest)
+      expect(User.last).to_not have_attribute(:password)
+      expect(User.last.password_digest).to_not eq('testing123')
     end
   end
 end
