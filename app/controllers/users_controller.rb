@@ -10,13 +10,36 @@ class UsersController < ApplicationController
   def new; end
 
   def create
-    user = User.new(user_params)
-    if user.save
-      redirect_to(user_path(user))
-      flash.notice = 'User Registered Successfully'
+    user = user_params
+    user[:email] = user[:email].downcase 
+    new_user = User.new(user)
+    if new_user.save
+      redirect_to(user_path(new_user))
+      flash.notice = 'User Created Successfully'
     else
-      flash.alert = user.errors.full_messages.to_sentence
+      flash.alert = new_user.errors.full_messages.to_sentence
       render :new
+    end
+  end
+
+  def login_form
+
+  end
+
+  def login_user
+    if !User.find_by(email: params[:email]).nil?
+      user = User.find_by(email: params[:email])
+      if user.authenticate(params[:password])
+        session[:user_id] = user.id
+        flash[:success] = "Welcome, #{user.name}!"
+        redirect_to user_path(user)
+      else
+        flash[:error] = "Password Incorrect"
+        render :login_form
+      end
+    else
+      flash[:alert] = "Email Not Found"
+      render :login_form
     end
   end
 

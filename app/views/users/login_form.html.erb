@@ -1,0 +1,9 @@
+<h2>Login Form</h2>
+
+<%= form_with url: user_login_path, method: :post, local: true do |form| %>
+  <p><%= form.label :email %>
+  <%= form.text_field :email %></p>
+  <p><%= form.label :password %>
+  <%= form.text_field :password %></p>
+  <%= form.submit "Login" %>
+<% end %>
