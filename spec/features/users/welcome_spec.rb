@@ -30,20 +30,6 @@ RSpec.describe 'application welcome page', type: :feature do
         expect(current_path).to eq(login_path)
         expect(page).to have_content("Email")
         expect(page).to have_content("Password")
-        expect(page).to have_content("Re-Enter Password")
-      end
-
-      it "On the login page When I enter my unique email and correct password I'm taken to my dashboard page" do
-        visit login_path
-
-        user1 = User.create!(name: "Alaina", email:"alaina@fake.com", password: "Il0vePeppers", password_confirmation: "Il0vePeppers" )
-
-        fill_in(:email, with: "alaina@fake.com")
-        fill_in("Password", with: "Il0vePeppers")
-        fill_in(:password_confirmation, with: "Il0vePeppers")
-        click_button("Login")
-
-        expect(current_path).to eq("/users/#{user1.id}")
       end
     end
   end

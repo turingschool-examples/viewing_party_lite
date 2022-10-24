@@ -33,11 +33,11 @@ class UsersController < ApplicationController
         #start a session
         redirect_to user_path(@user)
       else
-        flash[:failure] = "Your credentials don't match our records."
+        flash[:failure] = "Your passwords don't match our records"
         render :login_form
       end
     else
-      flash[:failure] = "Your credentials don't match our records."
+      flash[:failure] = "You are not a registered user."
       render :login_form
     end
   end
