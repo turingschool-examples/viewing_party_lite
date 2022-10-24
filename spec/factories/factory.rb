@@ -17,7 +17,7 @@ FactoryBot.define do
     duration {Faker::Number.within(range: 90..180)}
     date {Faker::Date.forward(days: 40)}
     start_time {Faker::Time.between(from: DateTime.now - 1, to: DateTime.now)}
-    movie_runtime {duration + 15}
+    movie_runtime {duration - 15}
     association :host_id, factory: :user
   end
 
