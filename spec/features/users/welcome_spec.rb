@@ -36,6 +36,30 @@ RSpec.describe 'application welcome page', type: :feature do
         click_on('New User')
         expect(current_path).to eq('/register')
       end
+
+      it 'I see a link to login & can click that link and be taken to a login page' do
+        visit root_path
+
+        expect(page).to have_button("Log In")
+        click_button("Log In")
+        expect(current_path).to eq(login_path)
+        expect(page).to have_content("Email")
+        expect(page).to have_content("Password")
+        expect(page).to have_content("Password Confirmation")
+      end
+
+      it "On the login page When I enter my unique email and correct password I'm taken to my dashboard page" do
+        visit login_path
+
+        user1 = User.create!(name: "Alaina", email:"alaina@fake.com", password_digest: "Il0vePeppers")
+
+        fill_in(:email, with: "alaina@fake.com")
+        fill_in(:password, with: "Il0vePeppers")
+        click_button("Log In")
+        user4 = create(:user, password_digest:BCrypt::Password.create('IlovecOde2!'))
+
+        expect(current_path).to eq("/users/#{(user4.id) - 1}") #could we change this to be user1.id?
+      end
     end
   end
 end
