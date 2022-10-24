@@ -56,10 +56,21 @@ RSpec.describe 'landing page' do
       
       expect(current_path).to eq(login_path)
       expect(page).to have_content("Error: Invalid email address")
-
     end
 
-    it 'will redirect to the login form if password is incorrect'
+    it 'will redirect to the login form if password is incorrect' do
+      click_button 'Log In'
+
+      expect(current_path).to eq(login_path)
+
+      fill_in 'Email', with: "#{user_1.email}"
+      fill_in 'Password', with: "s#{user_1.password}"
+
+      click_button 'Log In'
+      
+      expect(current_path).to eq(login_path)
+      expect(page).to have_content("Error: Invalid password")
+    end
 
 
     it 'displays a list of all current users' do

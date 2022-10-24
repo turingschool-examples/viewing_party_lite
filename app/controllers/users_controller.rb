@@ -14,19 +14,17 @@ class UsersController < ApplicationController
   end
 
   def login_user
-    # require 'pry' ; binding.pry
     if !User.exists?(email: params[:email])
       flash[:alert] = "Error: Invalid email address"
       render :login_form
+    end
+    user = User.find_by(email: params[:email])
+    if !user.authenticate(params[:password])
+      flash[:alert] = "Error: Invalid password"
+      render :login_form
     else
-      user = User.find_by(email: params[:email])
-      if user.authenticate(params[:password])
-        session[:user_id] = user.id
-        redirect_to user_path(user.id)
-      else
-        flash[:alert] = "Error: #{error_message(user.errors)}"
-        render :login_form
-      end
+      session[:user_id] = user.id
+      redirect_to user_path(user.id)
     end
   end
 
