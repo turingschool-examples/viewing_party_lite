@@ -15,21 +15,6 @@ RSpec.describe 'application welcome page', type: :feature do
         expect(current_path).to eq(root_path)
       end
 
-      it 'I can see a list of existing users' do
-        user1 = create(:user)
-        user2 = create(:user)
-        user3 = create(:user)
-        user4 = create(:user)
-
-        visit root_path
-        within('#all_users') do
-          expect(page).to have_content("#{user1.email}")
-          expect(page).to have_content("#{user2.email}")
-          expect(page).to have_content("#{user3.email}")
-          expect(page).to have_content("#{user4.email}")
-        end
-      end
-
       it 'The New User button should lead to the registration page' do
         visit root_path
 
