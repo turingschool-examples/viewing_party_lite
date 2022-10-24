@@ -4,7 +4,7 @@ RSpec.describe 'a users movies show page', type: :feature do
   describe 'As a user once I am logged in' do
     describe 'When I have already searched for a movie & see the list of results' do
 
-      xit 'I can click on one movie result link and be taken to that movies details page', :vcr do
+      it 'I can click on one movie result link and be taken to that movies details page', :vcr do
         user = create(:user)
         visit "/users/#{user.id}/discover"
         fill_in('Search by Movie Title', with: 'fight')
@@ -12,7 +12,6 @@ RSpec.describe 'a users movies show page', type: :feature do
 
         click_link('Fight Club') 
         expect(current_path).to eq("/users/#{user.id}/movies/550")
-
       end
 
       it 'I can see a button to create a viewing party &  a button to return to the discover page which takes you back to the discover page', :vcr do
@@ -37,11 +36,16 @@ RSpec.describe 'a users movies show page', type: :feature do
       it 'has the movie attributes on the movie show page', :vcr do
         user = create(:user)
         visit "/users/#{user.id}/movies/550"
+
         expect(page).to have_content('Fight Club')
         expect(page).to have_content('2:19')
-        expect(page).to have_content(8.433)
-        expect(page).to have_content("A ticking-time-bomb insomniac")
-        expect(page).to have_content("Drama")
+
+        expect(page).to have_css('div.col-md-8')
+        within('div.col-md-8') do
+          expect(page).to have_content("Average votes:")
+          expect(page).to have_content("A ticking-time-bomb insomniac")
+          expect(page).to have_content("Drama")
+        end
       end
 
       it 'has the movie total review count, reviewed information, and top 10 cast members for the movie', :vcr do

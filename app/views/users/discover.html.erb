@@ -6,18 +6,12 @@
       </div>
     </div>
     <h3 class="display-8 fw-bold mt-3">OR</h3>
-    <div class="col-lg-6 mx-auto">
-      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-      <%= form_with url: "/users/#{@user.id}/movies", method: :get, local: :true, class: "form-control" do |f| %>
-        <%= f.text_field 'Search by Movie Title', { class: "form-control input-sm", id: "floatingInput", placeholder: "Movie Title" } %>
+     <div class="col-lg-6 mx-auto">
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <%= form_with url: "/users/#{@user.id}/movies", method: :get, local: :true, class: "form-control" do |f| %>
+              <%= f.text_field 'Search by Movie Title', { class: "form-control input-sm", placeholder: "Movie Title" } %>
+              <%= f.submit "Search by Movie Title", class: "btn btn-primary btn-lg px-4 gap-3" %>
+          <% end %> 
+        </div>
       </div>
-    </div>
-    <div class="col-lg-6 mx-auto">
-      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">    
-        <%= f.submit "Search by Movie Title", class: "btn btn-primary btn-lg px-4 gap-3" %>
-      <% end %> 
-      </div>
-    </div>
-  </div>
-</div>
 
