@@ -22,6 +22,26 @@ class UsersController < ApplicationController
     end
   end
 
+  def login_form
+  end
+
+  def login_user
+    if !User.find_by(email: params[:email]).nil?
+      @user = User.find_by(email: params[:email])
+      if @user.authenticate(params[:password])
+        flash[:success] = "Welcome, #{@user.name}!"
+        #start a session
+        redirect_to user_path(@user)
+      else
+        flash[:failure] = "Your credentials don't match our records."
+        render :login_form
+      end
+    else
+      flash[:failure] = "Your credentials don't match our records."
+      render :login_form
+    end
+  end
+
   def show
     @user = User.find(params[:id])
   end
