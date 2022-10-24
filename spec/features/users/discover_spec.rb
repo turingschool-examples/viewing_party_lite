@@ -41,7 +41,7 @@ RSpec.describe 'Discover movies page' do
       end
     end
 
-    xdescribe 'sad path' do
+    describe 'sad path' do
       it 'When I fill in nothing and click Search by Movie Title I recieve an error message', :vcr do
         user = create(:user)
         visit "/users/#{user.id}/discover"
