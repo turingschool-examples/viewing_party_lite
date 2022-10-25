@@ -22,9 +22,8 @@ RSpec.describe 'user registration page', type: :feature do
           fill_in(:password_confirmation, with: "IlovePeppers")
 
           click_on('Create User')
-          user4 = create(:user, password_digest:BCrypt::Password.create('IlovecOde2!'))
 
-          expect(current_path).to eq("/users/#{(user4.id) - 1}")
+          expect(current_path).to eq(dashboard_path)
         end
 
         it "You can see a link to the home page" do

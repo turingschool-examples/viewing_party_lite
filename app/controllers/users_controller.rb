@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to user_path(@user)
+      redirect_to dashboard_path
       flash[:notice] = "Welcome #{@user.name}"
     elsif params[:password] != params[:password_confirmation]
       flash[:failure] = "Error: Password doesn't match."
