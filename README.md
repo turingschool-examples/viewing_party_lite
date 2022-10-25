@@ -95,6 +95,7 @@ Example wireframes are found [here](https://backend.turing.io/module3/projects/v
 * [![Ruby][Ruby]][Ruby-url]
 * [![RSpec][RSpec]][RSpec-url]
 * [![Atom][Atom]][Atom-url]
+* [![Visual Studio Code][Visual Studio Code]][Visual Studio Code-url]
 * [![CSS][CSS]][CSS-url]
 * [![HTML5][HTML5]][HTML5-url]
 * [![JavaScript][JavaScript]][JavaScript-url]
@@ -220,6 +221,9 @@ Don't forget to give the project a star! Thanks again!
 
 [Atom]: https://img.shields.io/badge/Atom-66595C?style=for-the-badge&logo=Atom&logoColor=white
 [Atom-url]: https://atom.io/
+
+[Visual Studio Code]: https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white
+[Visual Studio Code-url]: https://code.visualstudio.com/
 
 [Rails]: https://img.shields.io/badge/rails-%23CC0000.svg?style=for-the-badge&logo=ruby-on-rails&logoColor=white
 [Rails-url]: https://rubyonrails.org/
