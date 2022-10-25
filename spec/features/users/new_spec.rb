@@ -27,15 +27,18 @@ RSpec.describe 'creating a new user' do
     visit root_path
 
     within "#user-#{user1.id}" do
-      expect(page).to have_content("geraldo@trashtv.com")
+      expect(page).to have_content('Geraldo: geraldo@trashtv.com')
+      expect(page).to have_content("#{user1.name}: #{user1.email}")
     end
 
     within "#user-#{user2.id}" do
-      expect(page).to have_content("maury@trashtv.com")
+      expect(page).to have_content('Maury: maury@trashtv.com')
+      expect(page).to have_content("#{user2.name}: #{user2.email}")
     end
 
     within "#user-#{user3.id}" do
-      expect(page).to have_content("jenny@trashtv.com")
+      expect(page).to have_content('Jenny: jenny@trashtv.com')
+      expect(page).to have_content("#{user3.name}: #{user3.email}")
     end
 
     expect(page).to have_link("jerry@trashtv.com's Dashboard")

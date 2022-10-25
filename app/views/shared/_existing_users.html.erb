@@ -6,7 +6,7 @@
         <% if current_user.email == user.email %>
           <p><%= link_to "#{user.email}'s Dashboard", dashboard_path %></p>
         <% else %>
-          <p><%= user.email %></p>
+          <p><%= user.name %>: <%= user.email %></p>
         <% end %>
       </div>
     <% end %>
@@ -17,9 +17,9 @@
   <div id='user-info'>
     <% @users.each do |user| %>
       <div id="user-<%= user.id %>">
-        <p><%= user.email %></p>
+        <p><%= user.name %>: <%= user.email.gsub(/(?<=[\w\d])[\w\d]+(?=[\w\d])/, "**") %></p>
       </div>
     <% end %>
   </div>
-  
+
 <% end %>

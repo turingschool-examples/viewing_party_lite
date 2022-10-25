@@ -27,15 +27,15 @@ RSpec.describe 'user log in' do
     expect(page).to have_content('Existing Users:')
 
     within "#user-#{user1.id}" do
-      expect(page).to have_content("geraldo@trashtv.com")
+      expect(page).to have_content('g**o@t**v.c**m')
     end
 
     within "#user-#{user2.id}" do
-      expect(page).to have_content("maury@trashtv.com")
+      expect(page).to have_content('m**y@t**v.c**m')
     end
 
     within "#user-#{user3.id}" do
-      expect(page).to have_content("jenny@trashtv.com")
+      expect(page).to have_content('j**y@t**v.c**m')
     end
   end
 

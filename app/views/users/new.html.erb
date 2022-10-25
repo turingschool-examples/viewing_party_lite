@@ -4,20 +4,20 @@
 
 <div id='create-user'>
   <%= form_with model: @user, method: :post, local: true do |f| %>
-    <%= f.label :name, "Name: " %>
+    <%= f.label :name, 'Name: ' %>
     <%= f.text_field :name, placeholder: 'Username', required: true %>
     <br>
     <br>
-    <%= f.label :email, "Email Address: " %>
-    <%= f.text_field :email, required: true %>
+    <%= f.label :email, 'Email Address: ' %>
+    <%= f.text_field :email, placeholder: 'email', required: true %>
     <br>
     <br>
-    <%= f.label :password, "Password: " %>
-    <%= f.password_field :password, required: true %>
+    <%= f.label :password, 'Password: ' %>
+    <%= f.password_field :password, placeholder: 'password', required: true %>
     <br>
     <br>
-    <%= f.label :password_confirmation, "Password Confirmation: " %>
-    <%= f.password_field :password_confirmation, required: true %>
+    <%= f.label :password_confirmation, 'Password Confirmation: ' %>
+    <%= f.password_field :password_confirmation, placeholder: 're-enter password', required: true %>
     <br>
     <br>
     <%= f.submit 'Create New User' %>

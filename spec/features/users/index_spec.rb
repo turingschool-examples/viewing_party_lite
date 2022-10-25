@@ -9,15 +9,18 @@ RSpec.describe 'the landing page' do
     visit root_path
 
     within "#user-#{user1.id}" do
-      expect(page).to have_content("geraldo@trashtv.com")
+      expect(page).to have_content('Geraldo: g**o@t**v.c**m')
+      expect(page).to have_content("#{user1.name}: #{user1.email.gsub(/(?<=[\w\d])[\w\d]+(?=[\w\d])/, "**")}")
     end
 
     within "#user-#{user2.id}" do
-      expect(page).to have_content("maury@trashtv.com")
+      expect(page).to have_content('Maury: m**y@t**v.c**m')
+      expect(page).to have_content("#{user2.name}: #{user2.email.gsub(/(?<=[\w\d])[\w\d]+(?=[\w\d])/, "**")}")
     end
 
     within "#user-#{user3.id}" do
-      expect(page).to have_content("jenny@trashtv.com")
+      expect(page).to have_content('Jenny: j**y@t**v.c**m')
+      expect(page).to have_content("#{user3.name}: #{user3.email.gsub(/(?<=[\w\d])[\w\d]+(?=[\w\d])/, "**")}")
     end
 
     fill_in :email, with: 'geraldo@trashtv.com'
@@ -30,11 +33,13 @@ RSpec.describe 'the landing page' do
     end
 
     within "#user-#{user2.id}" do
-      expect(page).to have_content("maury@trashtv.com")
+      expect(page).to have_content('Maury: maury@trashtv.com')
+      expect(page).to have_content("#{user2.name}: #{user2.email}")
     end
 
     within "#user-#{user3.id}" do
-      expect(page).to have_content("jenny@trashtv.com")
+      expect(page).to have_content('Jenny: jenny@trashtv.com')
+      expect(page).to have_content("#{user3.name}: #{user3.email}")
     end
 
     click_link("geraldo@trashtv.com's Dashboard")
