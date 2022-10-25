@@ -69,8 +69,6 @@ RSpec.describe 'User show page' do
         create(:userParty, user_id: @users_list[0].id, party_id: @party.id, is_host: false)
         create(:userParty, user_id: @users_list[1].id, party_id: @party.id, is_host: true)
         create(:userParty, user_id: @users_list[2].id, party_id: @party.id, is_host: false)
-        create(:userParty, user_id: @users_list[1].id, party_id: @party2.id, is_host: true)
-        create(:userParty, user_id: @users_list[0].id, party_id: @party2.id, is_host: false)
         visit login_path
         fill_in(:email, with: "#{@users_list[0].email}")
         fill_in(:password, with: "#{@users_list[0].password}")
@@ -81,6 +79,7 @@ RSpec.describe 'User show page' do
         expect(page).to have_content(@users_list[0].name)
         expect(page).to have_content(@users_list[1].name)
         expect(page).to have_content(@users_list[2].name)
+
         within("#user-#{@users_list[0].id}") do
           expect(page).to have_css('strong', text: @users_list[0].name)
         end
@@ -114,6 +113,19 @@ RSpec.describe 'User show page' do
       end
 
       it 'I should be able to see multiple parties I am attending', :vcr do
+        @users_list = create_list(:user, 5)
+        @party = create(:party, movie_id: 550, start_time: Time.now)
+        @party2 = create(:party, movie_id: 551, start_time: Time.now)
+        create(:userParty, user_id: @users_list[0].id, party_id: @party.id, is_host: false)
+        create(:userParty, user_id: @users_list[1].id, party_id: @party.id, is_host: true)
+        create(:userParty, user_id: @users_list[2].id, party_id: @party.id, is_host: false)
+        create(:userParty, user_id: @users_list[3].id, party_id: @party2.id, is_host: true)
+        create(:userParty, user_id: @users_list[0].id, party_id: @party2.id, is_host: false)
+        visit login_path
+        fill_in(:email, with: "#{@users_list[0].email}")
+        fill_in(:password, with: "#{@users_list[0].password}")
+        click_on("Login")
+
         expect(page).to have_content(@party.title)
         expect(page).to have_content(@party2.title)
       end
