@@ -1,5 +1,5 @@
 <h1>Movies Index</h1>
 <% @movies.each do |movie| %>
-  <p><%= link_to movie.title, dashboard_movies_path(movie.id) %></p><%= binding.pry %>
+  <p><%= link_to movie.title, "/dashboard/movies/#{movie.id}" %></p>
   <p>Vote Average: <%= movie.vote_average %></p>
 <% end %>

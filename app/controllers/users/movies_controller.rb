@@ -7,13 +7,11 @@ module Users
         @movies = MoviesFacade.top_rated
       elsif params[:search]
         @movies = MoviesFacade.search(params[:search])
-      # else
-      #   @movies = 123
       end
     end
 
     def show
-      @movie = MoviesFacade.details(params[:id])
+      @movie = MoviesFacade.details(params[:movie_id])
     end
   end
 end

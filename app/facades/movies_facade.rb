@@ -26,7 +26,6 @@ class MoviesFacade
 
   def self.details(movie_id)
     response = MoviesService.details(movie_id)
-
     MovieDetailed.new(response)
   end
 

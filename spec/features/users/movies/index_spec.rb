@@ -14,7 +14,6 @@ RSpec.describe 'Movie results page' do
       click_button 'Log In'
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-
       visit dashboard_discover_path
     end
 
@@ -32,30 +31,32 @@ RSpec.describe 'Movie results page' do
 
         click_link movies.first.title.to_s
 
-        expect(page).to have_current_path user_movie_path(user, movies.first.id)
+        expect(current_path).to eq("/dashboard/movies/#{movies.first.id}")
       end
     end
-  end
 
-  describe 'When a movie title is searched' do
-    it 'displays up to 40 results from the search' do
-      VCR.use_cassette('search_top_gun_feature') do
+    describe 'When a movie title is searched' do
+      it 'displays up to 40 results from the search', :vcr do
         fill_in 'Search', with: 'Top Gun'
         click_on 'Search by Movie Title'
+
         movies = MoviesFacade.search('Top Gun')
+
         expect(current_path).to eq(dashboard_movies_path)
         expect(page).to have_content('Top Gun')
         expect(page).to have_link movies.first.title
+
         click_on movies.first.title
-        expect(current_path).to eq(user_movie_path(user, movies.first.id))
+
+        expect(current_path).to eq("/dashboard/movies/#{movies.first.id}")
       end
-    end
 
-    it 'will return nothing if a movie title has no match', :vcr do
-      fill_in 'Search', with: 'Top Gun 17'
-      click_on 'Search by Movie Title'
+      it 'will return nothing if a movie title has no match', :vcr do  
+        fill_in 'Search', with: 'Top Gun 17'
+        click_on 'Search by Movie Title'
 
-      expect(current_path).to_not have_content('Top Gun')
+        expect(current_path).to_not have_content('Top Gun')
+      end
     end
   end
 end

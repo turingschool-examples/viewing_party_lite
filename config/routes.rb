@@ -14,10 +14,10 @@ Rails.application.routes.draw do
   get '/dashboard/movies', to: 'users/movies#index'
   get '/dashboard/movies/:movie_id', to: 'users/movies#show'
 
-  get 'dashboard/viewing_parties', to: 'users/viewing_parties#index'
-  get '/dashboard/viewing_parties/new', to: 'users/viewing_parties#new'
-  post '/dashboard/viewing_parties', to: 'users/viewing_parties#create'
-  get '/dashboard/viewing_parties/:id', to: 'users/viewing_parties#show'
+  # get '/dashboard/viewing_parties', to: 'users/viewing_parties#index'
+  get '/dashboard/movies/:movie_id/viewing_parties/new', to: 'users/viewing_parties#new'
+  post '/dashboard/movies/:movie_id/viewing_parties', to: 'users/viewing_parties#create'
+  get '/dashboard/movies/:movie_id/viewing_parties/:id', to: 'users/viewing_parties#show'
 
   # resources :users, only: %i[show create] do
   #     resources :viewing_parties, only: %i[new create index show]
