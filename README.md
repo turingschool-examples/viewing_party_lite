@@ -23,6 +23,7 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
+[![LinkedIn][linkedin-shield2]][linkedin-url2]
 
 
 
@@ -36,7 +37,7 @@
 <h3 align="center">Viewing Party Lite</h3>
 
   <p align="center">
-    Viewing Part Lite is an application in which users can explore movie options and create 
+    Viewing Party Lite is an application in which users can explore movie options and create 
     a viewing party event for themselves and other users of the application.
     <br />
     <a href="https://github.com/AMSterling/viewing_party_lite"><strong>Explore the docs »</strong></a>
@@ -95,6 +96,7 @@ Example wireframes are found [here](https://backend.turing.io/module3/projects/v
 * [![Ruby][Ruby]][Ruby-url]
 * [![RSpec][RSpec]][RSpec-url]
 * [![Atom][Atom]][Atom-url]
+* [![Visual Studio Code][Visual Studio Code]][Visual Studio Code-url]
 * [![CSS][CSS]][CSS-url]
 * [![HTML5][HTML5]][HTML5-url]
 * [![JavaScript][JavaScript]][JavaScript-url]
@@ -165,7 +167,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Feature 3
     - [ ] Nested Feature
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/AMSterling/viewing_party_lite/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -219,7 +221,7 @@ Don't forget to give the project a star! Thanks again!
 [contributors-shield]: https://img.shields.io/github/contributors/AMSterling/viewing_party_lite.svg?style=for-the-badge
 [contributors-url]: https://github.com/AMSterling/viewing_party_lite/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/AMSterling/viewing_party_lite.svg?style=for-the-badge
-[forks-url]: https://github.com/AMSterling/repo_name/network/members
+[forks-url]: https://github.com/AMSterling/viewing_party_lite/network/members
 [stars-shield]: https://img.shields.io/github/stars/AMSterling/viewing_party_lite.svg?style=for-the-badge
 [stars-url]: https://github.com/AMSterling/viewing_party_lite/stargazers
 [issues-shield]: https://img.shields.io/github/issues/AMSterling/viewing_party_lite.svg?style=for-the-badge
@@ -228,10 +230,15 @@ Don't forget to give the project a star! Thanks again!
 [license-url]: https://github.com/AMSterling/viewing_party_lite/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/sterling-316a6223a/
+[linkedin-shield2]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url2]: https://linkedin.com/in/blake-saylor
 [product-screenshot]: images/screenshot.png
 
 [Atom]: https://img.shields.io/badge/Atom-66595C?style=for-the-badge&logo=Atom&logoColor=white
 [Atom-url]: https://atom.io/
+
+[Visual Studio Code]: https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white
+[Visual Studio Code-url]: https://code.visualstudio.com/
 
 [Rails]: https://img.shields.io/badge/rails-%23CC0000.svg?style=for-the-badge&logo=ruby-on-rails&logoColor=white
 [Rails-url]: https://rubyonrails.org/
