@@ -1,8 +1,6 @@
 class ViewingParty < ApplicationRecord
-  validates_presence_of :movie_id, :host_id
+  validates :movie_id, :host_id, :eventdate, :starttime, presence: true
   validates :duration, presence: true, numericality: true
-  validates :eventdate, presence: true
-  validates :starttime, presence: true
 
   belongs_to :host, class_name: 'User'
 
