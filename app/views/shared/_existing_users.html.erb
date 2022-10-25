@@ -1,4 +1,14 @@
-<% if current_user %>
+<% if current_admin? %>
+
+  <div id='user-info'>
+    <% @users.each do |user| %>
+      <div id="user-<%= user.id %>">
+        <p><%= user.name %>: <%= link_to "#{user.email}'s Dashboard", dashboard_path(user) %></p>
+      </div>
+    <% end %>
+  </div>
+
+<% elsif current_user %>
 
   <div id='user-info'>
     <% @users.each do |user| %>

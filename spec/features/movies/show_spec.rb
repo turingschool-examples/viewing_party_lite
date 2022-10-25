@@ -1,8 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe 'Movies Show Page' do
+  let!(:users) { create_list(:user, 3) }
+  let!(:user1) { users.first }
+  let!(:user2) { users.second }
+  let!(:user3) { users.third }
+
   it 'has a button to go back to the discover page' do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
     visit movies_path
@@ -15,7 +19,6 @@ RSpec.describe 'Movies Show Page' do
   end
 
   it 'shows all of the details for a specific movie', :vcr do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
     visit movie_path(278)
@@ -46,7 +49,6 @@ RSpec.describe 'Movies Show Page' do
   end
 
   it 'has a button to create a viewing party for the movie', :vcr do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
     visit movie_path(278)
