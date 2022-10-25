@@ -53,9 +53,7 @@ class UsersController < ApplicationController
 
   def show
     if session[:user_id]
-      # @user = User.find(session[:user_id])
       flash[:success] = "Welcome, #{@user.name}!"
-      redirect_to "/users/discover"
     end
   end
 
@@ -65,14 +63,15 @@ class UsersController < ApplicationController
   end
 
   def results
-    @user = User.find(params[:id])
-    if params["q"] == "top rated"
-      @movies = MovieFacade.get_top20_movies
-    elsif params["Search by Movie Title"] != ""
-      @movies = MovieFacade.get_movies(params["Search by Movie Title"])
-    else
-      flash.now[:alert] = "You must fill in a title."
-      render :discover
+    if session[:user_id]
+      if params["q"] == "top rated"
+        @movies = MovieFacade.get_top20_movies
+      elsif params["Search by Movie Title"] != ""
+        @movies = MovieFacade.get_movies(params["Search by Movie Title"])
+      else
+        flash.now[:alert] = "You must fill in a title."
+        render :discover
+      end
     end
   end
 

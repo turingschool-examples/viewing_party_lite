@@ -1,5 +1,7 @@
 class MoviesController < ApplicationController
   def show
-    @movie_details = MovieDetailPresenter.new(params[:id], params[:movie_id])
+    if session[:user_id]
+      @movie_details = MovieDetailPresenter.new(params[:id], params[:movie_id])
+    end
   end
 end
