@@ -52,7 +52,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if session[:user_id]
+    if @user
       flash[:success] = "Welcome, #{@user.name}!"
     end
   end

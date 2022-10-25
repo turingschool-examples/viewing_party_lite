@@ -22,7 +22,6 @@ RSpec.describe 'user registration page', type: :feature do
           fill_in(:password_confirmation, with: "IlovePeppers")
 
           click_on('Create User')
-
           expect(current_path).to eq(dashboard_path)
         end
 
@@ -34,7 +33,6 @@ RSpec.describe 'user registration page', type: :feature do
           expect(current_path).to eq(root_path)
         end
       end
-
 
       describe 'sad path' do
         it "If the user fails to fill in valid information they see an error message & are redirected to the current page to fill in the form again" do
