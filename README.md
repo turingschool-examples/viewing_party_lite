@@ -83,6 +83,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
+Example wireframes are found [here](https://backend.turing.io/module3/projects/viewing_party_lite/wireframes)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -244,7 +245,6 @@ Don't forget to give the project a star! Thanks again!
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com
 
-Example wireframes to follow are found [here](https://backend.turing.io/module3/projects/viewing_party_lite/wireframes)
 
 ## Heroku
 
