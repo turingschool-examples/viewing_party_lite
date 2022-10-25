@@ -196,6 +196,20 @@ Don't forget to give the project a star! Thanks again!
 
 
 
+## Heroku
+
+- heroku restart
+- heroku pg:reset DATABASE
+- heroku run rails db:migrate
+- git push heroku main
+- heroku buildpacks:set heroku/ruby
+- heroku stack:set heroku-20
+<!-- - heroku ps:scale web=1 -->
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/AMSterling/viewing_party_lite.svg?style=for-the-badge
@@ -244,14 +258,3 @@ Don't forget to give the project a star! Thanks again!
 
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com
-
-
-## Heroku
-
-- heroku restart
-- heroku pg:reset DATABASE
-- heroku run rails db:migrate
-- git push heroku main
-- heroku buildpacks:set heroku/ruby
-- heroku stack:set heroku-20
-<!-- - heroku ps:scale web=1 -->
