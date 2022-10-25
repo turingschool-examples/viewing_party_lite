@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
     else
       session[:user_id] = user.id
       flash[:alert] = "Welcome, #{user.email}"
-      redirect_to user_path(user.id)
+      redirect_to dashboard_path
     end
   end
 end

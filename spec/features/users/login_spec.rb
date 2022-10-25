@@ -21,7 +21,7 @@ RSpec.describe 'User login' do
 
       click_button 'Log In'
 
-      expect(current_path).to eq(user_path(user_1))
+      expect(current_path).to eq(dashboard_path)
     end
 
     it 'will redirect to the login form if email is not registered' do

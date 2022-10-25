@@ -13,7 +13,7 @@ RSpec.describe 'the register page' do
 
         click_button 'Register'
 
-        expect(current_path).to eq(user_path(User.last.id))
+        expect(current_path).to eq(dashboard_path)
       end
 
       it 'redirects to the register page if an email is not unique' do

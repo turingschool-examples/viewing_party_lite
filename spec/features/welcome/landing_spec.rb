@@ -35,7 +35,7 @@ RSpec.describe 'landing page' do
 
       click_button 'Log In'
 
-      expect(current_path).to eq(user_path(user_1))
+      expect(current_path).to eq(dashboard_path)
     end
 
     it 'displays a list of all current users' do
@@ -50,7 +50,7 @@ RSpec.describe 'landing page' do
         click_on 'User Page'
       end
 
-      expect(page).to have_current_path user_path(random_user)
+      expect(page).to have_current_path dashboard_path
     end
 
     it 'links back to landing page' do

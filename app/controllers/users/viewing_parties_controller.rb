@@ -2,8 +2,10 @@
 
 module Users
   class ViewingPartiesController < ApplicationController
+    before_action :require_user
+
     def new
-      @host = User.find(params[:user_id])
+      @host = User.find(session[:user_id]) if session[:user_id]
       @friends = @host.friends
       @movie = MoviesFacade.details(params[:movie_id])
     end

@@ -8,6 +8,13 @@ RSpec.describe 'user dashboard' do
     let!(:friend) { create :user }
 
     before :each do
+      visit login_path
+      
+      fill_in 'Email', with: "#{user.email}"
+      fill_in 'Password', with: "#{user.password}"
+
+      click_button 'Log In'
+      
       @movies = MoviesFacade.top_rated
       @movie_1 = @movies[0]
       @movie_2 = @movies[1]
@@ -19,7 +26,7 @@ RSpec.describe 'user dashboard' do
       @vpu_4 = ViewingPartyUser.create!(user_id: friend.id, viewing_party_id: @viewing_party_1.id, hosting: false)
       @vpu_2 = ViewingPartyUser.create!(user_id: user.id, viewing_party_id: @viewing_party_2.id, hosting: false)
       @vpu_3 = ViewingPartyUser.create!(user_id: friend.id, viewing_party_id: @viewing_party_2.id, hosting: true)
-      visit user_path(user)
+      visit dashboard_path
     end
 
     it 'displays a user name' do

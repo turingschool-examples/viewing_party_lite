@@ -3,14 +3,23 @@
 require 'rails_helper'
 
 RSpec.describe 'The new viewing party page', :vcr do
+  let!(:user) { create :user }
   before :each do
+ 
+    visit login_path
+    
+    fill_in 'Email', with: "#{user.email}"
+    fill_in 'Password', with: "#{user.password}"
+
+    click_button 'Log In'
+    
     @movie = MoviesFacade.details(438_148)
     users = create_list(:user, 4)
 
     @host = users[0]
     @user_2 = users[1]
     @user_3 = users[2]
-    visit new_user_movie_viewing_party_path(@host, @movie.id)
+    visit dashboard_viewing_parties_new_path(@movie.id)
   end
 
   describe 'When I visit the new viewing party page' do
@@ -60,7 +69,7 @@ RSpec.describe 'The new viewing party page', :vcr do
 
         click_button "Create Party Viewing Party for #{@movie.title}"
 
-        expect(current_path).to eq(new_user_movie_viewing_party_path(@host, @movie.id))
+        expect(current_path).to eq(dashboard_viewing_parties_new_path(@host, @movie.id))
 
         expect(page).to have_content('Error: Duration cannot be shorter than movie runtime')
       end
@@ -68,7 +77,7 @@ RSpec.describe 'The new viewing party page', :vcr do
       it 'will not create a viewing party if any fields are left blank' do
         click_button "Create Party Viewing Party for #{@movie.title}"
 
-        expect(current_path).to eq(new_user_movie_viewing_party_path(@host, @movie.id))
+        expect(current_path).to eq(dashboard_viewing_parties_new_path(@host, @movie.id))
 
         expect(page).to have_content("Error: Start time can't be blank")
       end

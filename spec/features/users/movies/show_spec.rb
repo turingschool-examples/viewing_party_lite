@@ -7,6 +7,12 @@ RSpec.describe 'the movies detail page' do
 
   before :each do
     VCR.use_cassette('minion-details') do
+      visit login_path
+        
+      fill_in 'Email', with: "#{user.email}"
+      fill_in 'Password', with: "#{user.password}"
+  
+      click_button 'Log In'
       @movie = MoviesFacade.details(438_148)
       visit dashboard_movies_path(@movie)
     end

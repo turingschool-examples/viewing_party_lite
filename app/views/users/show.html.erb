@@ -15,7 +15,7 @@
       <li>
         <p><%= image_tag @image_url_hash[party.movie_id], size:"250x300", alt: "#{party.movie_title} Poster" %></p>
 
-        <p><%= link_to party.movie_title, user_movie_path(@user, party.movie_id) %></p>
+        <p><%= link_to party.movie_title, dashboard_movies_path(party.movie_id) %></p>
         <h3>Partygoers:</h3>
         <% party.users.each do |user| %>
           <% if user.name == @user.name %>
@@ -38,7 +38,7 @@
       <li>
         <p><%= image_tag @image_url_hash[party.movie_id], size:"250x300", alt: "#{party.movie_title} Poster" %></p>
 
-        <p><%= link_to party.movie_title, user_movie_path(@user, party.movie_id) %></p>
+        <p><%= link_to party.movie_title, dashboard_movies_path(party.movie_id) %></p>
         <h3>Partygoers:</h3>
 
         <% party.users.each do |user| %>

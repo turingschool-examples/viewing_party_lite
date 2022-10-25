@@ -6,7 +6,16 @@ RSpec.describe 'the users discover index' do
   describe 'When I visit the users discover path' do
     let!(:user) { create :user }
     before :each do
+      visit login_path
+
+      fill_in 'Email', with: "#{user.email}"
+      fill_in 'Password', with: "#{user.password}"
+
+      click_button 'Log In'
+
       visit dashboard_discover_path
+      save_and_open_page
+
     end
 
     it 'has a button to discover top rated movies' do
