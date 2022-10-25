@@ -40,7 +40,7 @@ RSpec.describe 'user dashboard' do
 
       click_button 'Discover Movies'
 
-      expect(current_path).to eq(user_discover_index_path(user))
+      expect(current_path).to eq(dashboard_discover_path)
     end
 
     it 'lists viewing parties the user is invited to as a link to the movie show page', :vcr do
@@ -48,7 +48,7 @@ RSpec.describe 'user dashboard' do
         expect(page).to have_link @viewing_party_2.movie_title.to_s
 
         click_link @viewing_party_2.movie_title
-        expect(current_path).to eq(user_movie_path(user, @movie_2.id))
+        expect(current_path).to eq("/dashboard/movies/#{@movie_2.id}")
       end
     end
 
@@ -68,7 +68,7 @@ RSpec.describe 'user dashboard' do
       within '#hosted-parties' do
         expect(page).to have_link @viewing_party_1.movie_title.to_s
         click_link @viewing_party_1.movie_title
-        expect(current_path).to eq(user_movie_path(user, @movie_1.id))
+        expect(current_path).to eq("/dashboard/movies/#{@movie_1.id}")
       end
     end
 
