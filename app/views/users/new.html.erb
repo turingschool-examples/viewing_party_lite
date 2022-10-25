@@ -1,0 +1,23 @@
+<center>
+<h2>Register a New User</h2>
+<br>
+<%= form_with model: @user, local: true do |f|%>
+  <%= f.label :name, 'Name: ' %>
+  <%= f.text_field :name, placeholder: 'Username', required: true %>
+<br>
+<br>
+  <%= f.label :email, 'Email: ' %>
+  <%= f.text_field :email, placeholder: 'email', required: true %>
+<br>
+<br>
+  <%= f.label :password, "Password: " %>
+  <%= f.password_field :password, required: true %>
+<br>
+<br>
+  <%= f.label :password_confirmation, "Password Confirmation: " %>
+  <%= f.password_field :password_confirmation, required: true %>
+<br>
+<br>
+  <%= f.submit 'Create New User'%>
+<% end %>
+</center>

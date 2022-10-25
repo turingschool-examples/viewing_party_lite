@@ -61,6 +61,8 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  config.include FactoryBot::Syntax::Methods
 end
 
 Shoulda::Matchers.configure do |config|
@@ -68,4 +70,16 @@ Shoulda::Matchers.configure do |config|
     with.test_framework :rspec
     with.library :rails
   end
+end
+
+VCR.configure do |config|
+  config.before_record do |i|
+    i.response.body.force_encoding('UTF-8')
+  end
+  config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+  config.hook_into :webmock
+  config.filter_sensitive_data('<API Key>') { ENV['movie_api_key'] }
+  config.configure_rspec_metadata!
+  config.default_cassette_options = { re_record_interval: 30.days }
+  config.allow_http_connections_when_no_cassette = true
 end

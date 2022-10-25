@@ -1,0 +1,21 @@
+<center>
+  <h3>Discover Movies</h3>
+
+<div id='button'>
+  <%= button_to 'Find Top Rated Movies', "movies", method: :get, params: { :q => 'top_rated' } %>
+</div>
+
+  <br>
+
+  <p>OR</p>
+
+  <br>
+
+<div id='movie-search'>
+  <%= form_with url: "movies", method: :get , local: true do |f| %>
+    <%= f.text_field :q, placeholder: 'Search by movie title' %>
+    <%= f.submit 'Find Movies' %>
+  <% end %>
+</div>
+
+</center>

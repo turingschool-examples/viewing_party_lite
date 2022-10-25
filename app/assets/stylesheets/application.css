@@ -13,3 +13,79 @@
  *= require_tree .
  *= require_self
  */
+nav {
+ padding: 8px;
+ font-size: 18px
+}
+
+header {
+  margin: auto;
+  padding: 20px
+}
+
+h1, h2 {
+  margin: auto;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  text-align: center;
+  display: inline-flex;
+  gap: 50px
+}
+
+table {
+  margin: auto;
+  text-align: center;
+  font-weight: bold
+}
+
+#button {
+  width: 100%;
+  text-align: center
+}
+
+#existing_users {
+  margin: auto;
+  text-align: center;
+  font-weight: bold
+}
+
+#cast {
+  display: inline-flex;
+}
+
+.cast_columns {
+  align-self: flex-start;
+  min-width: 55%;
+  justify-content: space-evenly;
+}
+
+#container {
+  border: solid;
+}
+
+#check_boxes {
+  display: inline-flex;
+  padding: 10px
+}
+
+#party_details {
+  align-content: center;
+  border: solid;
+  padding: 20px;
+  width: 50%
+}
+
+#party {
+  margin: auto;
+  display: inline-flex;
+  justify-content: space-between
+}
+
+#vp-column {
+  padding:5px;
+  text-align: center;
+  align: center
+}

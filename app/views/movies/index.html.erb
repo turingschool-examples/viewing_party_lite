@@ -1,0 +1,58 @@
+<br>
+
+<div id='button'>
+  <%= button_to "Discover Page", user_discover_path(@user), method: :get %>
+</div>
+
+<br>
+<% if @top_movies != nil %>
+<h2>Top Rated Movies</h2>
+  <% @top_movies.each do |movie| %>
+  <center>
+    <div id="#movie_"<%= movie.movie_id %>>
+      <strong><%=link_to movie.title, user_movie_path(@user, movie.movie_id)%></strong>
+      Vote Average: <%= movie.rating %>
+    </div>
+    <br>
+  </center>
+  <% end %>
+<% else %>
+<h2>Movie Results for: <%= params[:q] %></h2>
+  <br>
+  <% @searched_movies.each do |movie| %>
+  <center>
+    <div id='searched_movies'>
+      <strong><%= link_to movie.title, user_movie_path(@user, movie.movie_id)%></strong>
+      Vote Average: <%= movie.rating %>
+    </div>
+    <br>
+  </center>
+  <% end %>
+<% end %>
+
+  <!-- <% if @top_movies != nil %>
+  <h2>Top Rated Movies</h2>
+  <br>
+    <table id='top-movie-results'>
+      <% @top_movies.each do |movie| %>
+        <tr id='#movie_<%= movie.movie_id %>'>
+          <th><strong><%= link_to movie.title, user_movie_path(@user, movie.movie_id) %></strong></th>
+          <th>Vote Average: <%= movie.rating %></th>
+        </tr>
+        <br>
+      <% end %>
+    </table>
+  <% end %>
+
+  <% if @searched_movies %>
+  <h2>Movie Results for: <%= params[:q] %></h2>
+    <table id='searched-movie-results'>
+      <% @searched_movies.each do |movie| %>
+        <tr id='searched_movies-<%= movie.movie_id %>'>
+          <th><strong><%= link_to movie.title, user_movie_path(@user, movie.movie_id)%></strong></th>
+          <th>Vote Average: <%= movie.rating %></th>
+        </tr>
+        <br>
+      <% end %>
+    </table>
+  <% end %> -->
