@@ -8,7 +8,7 @@ RSpec.describe 'the movies detail page' do
   before :each do
     VCR.use_cassette('minion-details') do
       @movie = MoviesFacade.details(438_148)
-      visit user_movie_path(user, @movie.id)
+      visit dashboard_movies_path(@movie)
     end
   end
 

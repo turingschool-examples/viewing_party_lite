@@ -6,7 +6,7 @@ RSpec.describe 'the users discover index' do
   describe 'When I visit the users discover path' do
     let!(:user) { create :user }
     before :each do
-      visit user_discover_index_path(user)
+      visit dashboard_discover_path
     end
 
     it 'has a button to discover top rated movies' do
@@ -25,7 +25,7 @@ RSpec.describe 'the users discover index' do
       it 'redirects to the movies results page' do
         VCR.use_cassette('top_rated_movies') do
           click_button 'Discover Top Rated Movies'
-          expect(current_path).to eq(user_movies_path(user))
+          expect(current_path).to eq(dashboard_movies_path)
         end
       end
     end
@@ -35,7 +35,7 @@ RSpec.describe 'the users discover index' do
         VCR.use_cassette('search_Minions') do
           fill_in 'Search', with: 'Minions'
           click_button 'Search by Movie Title'
-          expect(current_path).to eq(user_movies_path(user))
+          expect(current_path).to eq(dashboard_movies_path)
           expect(page).to have_content('Minions')
         end
       end

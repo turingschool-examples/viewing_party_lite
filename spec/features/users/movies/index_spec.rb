@@ -7,7 +7,7 @@ RSpec.describe 'Movie results page' do
     it 'displays the 20 top rated movies' do
       user = create(:user)
 
-      visit user_discover_index_path(user)
+      visit dashboard_discover_path
 
       VCR.use_cassette('top_rated_movies_index') do
         click_button 'Discover Top Rated Movies'
@@ -28,7 +28,7 @@ RSpec.describe 'Movie results page' do
     it 'displays up to 40 results from the search' do
       user = create(:user)
 
-      visit user_discover_index_path(user)
+      visit dashboard_discover_path
 
       VCR.use_cassette('search_top_gun_feature') do
         fill_in 'Search', with: 'Top Gun'
@@ -45,7 +45,7 @@ RSpec.describe 'Movie results page' do
     it 'will return nothing if a movie title has no match', :vcr do
       user = create(:user)
 
-      visit user_discover_index_path(user)
+      visit dashboard_discover_path
 
       fill_in 'Search', with: 'Top Gun 17'
       click_on 'Search by Movie Title'
