@@ -109,7 +109,11 @@ Example wireframes are found [here](https://backend.turing.io/module3/projects/v
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Follow installation instructions below. Push to your preferred production server or run rails s in your terminal and open [http://localhost:3000](http://localhost:3000) in your browser.
+Follow installation instructions below. Push to your preferred production server or in your terminal run 
+  ```sh 
+  rails server
+  ``` 
+Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ### Prerequisites
 
