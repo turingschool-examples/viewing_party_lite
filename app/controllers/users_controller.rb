@@ -1,7 +1,16 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [ :show, :discover, :results ]
+
+  def set_user
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+    else
+      flash[:error] = "Bad credentials, try again."
+      redirect_to '/login'
+    end
+  end
 
   def welcome
-    @users = User.all
   end
 
   def new
@@ -31,8 +40,7 @@ class UsersController < ApplicationController
       if @user.authenticate(params[:password])
         session[:user_id] = @user.id
         flash[:success] = "Welcome, #{@user.name}!"
-        session[:user_id] = @user.id
-        redirect_to user_path(@user)
+        redirect_to '/dashboard'
       else
         flash[:failure] = "Your passwords don't match our records"
         render :login_form
@@ -44,11 +52,16 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    if session[:user_id]
+      # @user = User.find(session[:user_id])
+      flash[:success] = "Welcome, #{@user.name}!"
+      redirect_to "/users/discover"
+    end
   end
 
   def discover
-    @user = User.find(params[:id])
+    if session[:user_id]
+    end
   end
 
   def results

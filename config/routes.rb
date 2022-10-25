@@ -5,11 +5,12 @@ Rails.application.routes.draw do
   get '/login', to: 'users#login_form'
   post '/login', to: 'users#login_user'
 
+  get '/dashboard', to: 'users#show'
 
   resources :user_parties
   resources :parties
-  resources :users
-  get '/users/:id/discover', to: 'users#discover'
+  resources :users, only: [:create, :new] #added these in when I took out dashboard
+  get '/users/discover', to: 'users#discover'
   get '/users/:id/movies/:movie_id', to: 'movies#show'
   get '/users/:id/movies', to: 'users#results'
   get '/users/:id/movies/:movie_id/viewing-party/new', to: 'user_parties#new'
