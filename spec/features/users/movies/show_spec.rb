@@ -13,6 +13,9 @@ RSpec.describe 'the movies detail page' do
       fill_in 'Password', with: "#{user.password}"
   
       click_button 'Log In'
+
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
       @movie = MoviesFacade.details(438_148)
       visit dashboard_movies_path(@movie)
     end

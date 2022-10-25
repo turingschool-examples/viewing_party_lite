@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-  before_action :require_user
+  before_action :require_user, only: [:show]
 
   def show
-    @user = User.find(session[:user_id]) if session[:user_id]
+    @user = User.find(session[:user_id])
     @image_url_hash = MoviesFacade.images(@user.movie_ids)
   end
 

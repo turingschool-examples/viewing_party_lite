@@ -15,6 +15,8 @@ RSpec.describe 'user dashboard' do
 
       click_button 'Log In'
       
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
       @movies = MoviesFacade.top_rated
       @movie_1 = @movies[0]
       @movie_2 = @movies[1]

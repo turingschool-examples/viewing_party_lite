@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.describe 'the users discover index' do
@@ -13,9 +11,9 @@ RSpec.describe 'the users discover index' do
 
       click_button 'Log In'
 
-      visit dashboard_discover_path
-      save_and_open_page
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
+      visit dashboard_discover_path
     end
 
     it 'has a button to discover top rated movies' do

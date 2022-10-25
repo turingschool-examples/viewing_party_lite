@@ -1,6 +1,6 @@
 module Users
   class MoviesController < ApplicationController
-    before_action :require_user, :current_user
+    before_action :require_user
 
     def index
       if params[:top_rated]

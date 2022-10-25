@@ -13,6 +13,8 @@ RSpec.describe 'The new viewing party page', :vcr do
 
     click_button 'Log In'
     
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
     @movie = MoviesFacade.details(438_148)
     users = create_list(:user, 4)
 

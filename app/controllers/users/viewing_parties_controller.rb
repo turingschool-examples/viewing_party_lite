@@ -1,17 +1,15 @@
-# frozen_string_literal: true
-
 module Users
   class ViewingPartiesController < ApplicationController
     before_action :require_user
 
     def new
-      @host = User.find(session[:user_id]) if session[:user_id]
+      @host = User.find(session[:user_id])
       @friends = @host.friends
       @movie = MoviesFacade.details(params[:movie_id])
     end
 
     def create
-      host = User.find(params[:user_id])
+      host = User.find(session[:user_id])
       invitees = User.invited_users(params[:users])
       viewing_party = ViewingParty.new(viewing_party_params)
       if params[:duration] >= params[:movie_duration]
