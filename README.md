@@ -30,7 +30,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/AMSterling/viewing-party-lite-2">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/logo.png" alt="Viewing Party Lite Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Viewing Party Lite</h3>
@@ -81,7 +81,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Viewing Party Lite Screen Shot][product-screenshot]](https://example.com)
 
 Example wireframes are found [here](https://backend.turing.io/module3/projects/viewing_party_lite/wireframes)
 
