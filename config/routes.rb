@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   post '/dashboard/movies_search', to: 'users/movies#search'
   get '/dashboard/discover', to: 'users/discover#index'
   get '/dashboard/movies', to: 'users/movies#index'
-  get '/dashboard/movies/:id', to: 'users/movies#show'
+  get '/dashboard/movies/:movie_id', to: 'users/movies#show'
 
   get 'dashboard/viewing_parties', to: 'users/viewing_parties#index'
   get '/dashboard/viewing_parties/new', to: 'users/viewing_parties#new'
