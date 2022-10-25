@@ -13,7 +13,7 @@ RSpec.describe 'login an existing user page', type: :feature do
           fill_in("Password", with: "Il0vePeppers")
           click_button("Login")
 
-          expect(current_path).to eq("/users/#{user1.id}")
+          expect(current_path).to eq(dashboard_path)
         end
       end
 
