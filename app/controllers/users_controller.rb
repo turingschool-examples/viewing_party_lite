@@ -23,8 +23,11 @@ class UsersController < ApplicationController
 
   def login_user
     user = User.find_by(email: params[:email])
-    if user.authenticate(params[:password])
+    if user && user.authenticate(params[:password])
       redirect_to user_path(user)
+    else
+      redirect_to login_path
+      flash.alert = "Invaild email or password"
     end
   end
 
