@@ -30,7 +30,7 @@ class UsersController < ApplicationController
       @user = User.find_by(email: params[:email])
       if @user.authenticate(params[:password])
         flash[:success] = "Welcome, #{@user.name}!"
-        #start a session
+        session[:user_id] = @user.id
         redirect_to user_path(@user)
       else
         flash[:failure] = "Your passwords don't match our records"
