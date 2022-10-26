@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'welcome#landing'
   get '/register', to: 'users#new'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 
   post '/users', to: 'users#create'
   get '/dashboard', to: 'users#show'
@@ -18,8 +18,4 @@ Rails.application.routes.draw do
   get '/dashboard/movies/:movie_id/viewing_parties/new', to: 'users/viewing_parties#new'
   post '/dashboard/movies/:movie_id/viewing_parties', to: 'users/viewing_parties#create'
   get '/dashboard/movies/:movie_id/viewing_parties/:id', to: 'users/viewing_parties#show'
-
-  # resources :users, only: %i[show create] do
-  #     resources :viewing_parties, only: %i[new create index show]
-  #   end
   end

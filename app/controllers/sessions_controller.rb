@@ -17,5 +17,9 @@ class SessionsController < ApplicationController
       redirect_to dashboard_path
     end
   end
+
+  def destroy
+    session.delete :user_id
+    redirect_to '/'
+  end
 end
-# allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
