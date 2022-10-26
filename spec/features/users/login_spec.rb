@@ -18,6 +18,14 @@ RSpec.describe 'login an existing user page', type: :feature do
       end
 
       describe 'sad path' do
+        it "If I am not a registered user and I try to access a page I don't have rights to see I recieve an error message" do
+          visit dashboard_path
+
+          expect(current_path).to eq(login_path)
+          expect(page).to have_content("Bad credentials, try again.")
+        end
+
+
         it "If I am not a registered user I recieve an error message" do
           visit login_path
 
