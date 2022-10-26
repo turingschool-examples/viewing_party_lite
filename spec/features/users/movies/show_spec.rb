@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.describe 'the movies detail page' do
@@ -17,7 +15,7 @@ RSpec.describe 'the movies detail page' do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
       @movie = MoviesFacade.details(438_148)
-      visit dashboard_movies_path(@movie)
+      visit "/dashboard/movies/#{@movie.id}"
     end
   end
 
@@ -32,7 +30,7 @@ RSpec.describe 'the movies detail page' do
         it 'takes me to the new viewing party page', :vcr do
           click_on "Create a Viewing Party for #{@movie.title}"
 
-          expect(current_path).to eq(new_user_movie_viewing_party_path(user, @movie.id))
+          expect(current_path).to eq("/dashboard/movies/#{@movie.id}/viewing_parties/new")
         end
       end
 
@@ -40,7 +38,7 @@ RSpec.describe 'the movies detail page' do
         it 'returns to discover page' do
           click_on 'Back to Discover Page'
 
-          expect(current_path).to eq(user_discover_index_path(user))
+          expect(current_path).to eq(dashboard_discover_path)
         end
       end
 
@@ -61,7 +59,6 @@ RSpec.describe 'the movies detail page' do
 
         @movie.reviews.each do |review|
           expect(page).to have_content(review[:author])
-          # expect(page.has_content?("##{review[:author]}-text")).to eq(true)
         end
       end
     end

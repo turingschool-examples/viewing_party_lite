@@ -49,8 +49,7 @@ RSpec.describe 'landing page' do
       within "#user-#{random_user.id}" do
         click_on 'User Page'
       end
-
-      expect(page).to have_current_path dashboard_path
+      expect(current_path).to eq(dashboard_path)
     end
 
     it 'links back to landing page' do
@@ -58,7 +57,7 @@ RSpec.describe 'landing page' do
 
       click_on 'Home'
 
-      expect(page).to have_current_path(root_path)
+      expect(current_path).to eq(root_path)
     end
   end
 end

@@ -4,7 +4,7 @@
 
 <p>Movie Title: <%= @movie.title %></p>
 
-<%= form_with url: dashboard_viewing_parties_new_path(@movie.id), method: :post, local: true do |f| %>
+<%= form_with url: "/dashboard/movies/#{@movie.id}/viewing_parties", method: :post, local: true do |f| %>
   <%= f.label :duration %>
   <%= f.number_field :duration, 
     value: @movie.runtime, 

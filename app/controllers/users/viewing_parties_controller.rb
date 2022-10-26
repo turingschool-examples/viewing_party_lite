@@ -19,13 +19,13 @@ module Users
           invitees.each do |invitee|
             invitee.viewing_parties << viewing_party
           end
-          redirect_to user_path(host)
+          redirect_to dashboard_path
         else
-          redirect_to new_user_movie_viewing_party_path(host, params[:movie_id])
+          redirect_to "/dashboard/movies/#{params[:movie_id]}/viewing_parties/new"
           flash[:alert] = "Error: #{error_message(viewing_party.errors)}"
         end
       else
-        redirect_to new_user_movie_viewing_party_path(host, params[:movie_id])
+        redirect_to "/dashboard/movies/#{params[:movie_id]}/viewing_parties/new"
         flash[:alert] = 'Error: Duration cannot be shorter than movie runtime'
       end
     end
