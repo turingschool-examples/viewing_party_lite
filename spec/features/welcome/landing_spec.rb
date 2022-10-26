@@ -69,6 +69,14 @@ RSpec.describe 'landing page' do
       expect(current_path).to eq(root_path)
     end
   end
+ 
+  describe 'As a visitor when I visit the landing page' do
+    it 'does not display existing users' do
+      visit '/'
+
+      expect(page).to_not have_content('Current Users')
+    end
+  end
 
   describe 'As a logged in user' do
     let!(:users) { create_list(:user, 10) }
