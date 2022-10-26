@@ -7,11 +7,14 @@
   <% end %>
 </div>
 
-<h3>Existing Users</h3>
-<% @users.each_with_index do |user, index| %>
-  <div id="user-<%= index %>">
-    <p>User's name: <%= user.name %></p>
-    <p>User's email: <%= link_to "#{user.name}'s Dashboard", dashboard_path %></p>
-  </div>
-<% end %></center>
-</div>
+<% if session[:user_id] %>
+  <ul style="center">
+    <h3>Existing Users</h3>
+    <% @users.each_with_index do |user, index| %>
+      <li id="user-<%= index %>">
+        <p>User's name: <%= user.name %></p>
+        <p>User's email: <%= user.email%></p>
+      </li>
+    <% end %>
+  </ul >
+<% end %>
