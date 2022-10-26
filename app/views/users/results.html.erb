@@ -1,0 +1,31 @@
+<section class="py-5 text-center container">
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h1 class="display-5 fw-bold">Results</h1>
+      <p>
+        <%= button_to 'Discover Movies', "/users/discover", method: :get, class: "btn btn-primary my-2" %>
+      </p>
+    </div>
+  </div>
+</section>
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    <% @movies.each do |movie| %>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="<%= movie.poster_path %>" class="card-img-top" alt="<%= movie.title %>">
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to movie.title, "/users/movies/#{movie.id}" %></h5>
+            <p class="card-text">
+              <h6 class="card-subtitle mb-2 text-muted">  Average Votes: <%= movie.average_votes %></h6>
+            </p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+

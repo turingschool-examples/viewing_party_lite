@@ -1,0 +1,2 @@
+module UserPartiesHelper
+end

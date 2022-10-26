@@ -1,0 +1,47 @@
+<main class="form-signin w-50 m-auto">
+  <center><h1 class="display-5 fw-bold">New Viewing Party</h1></center>
+  <%= form_with url: "/users/movies/#{@movie.id}/create", method: :post, local: true, class: "form-control" do |f| %>
+    <div class="field">
+      <div class="row">
+        <div class="col-md-4 offset-4">
+          <%= f.label :duration, for: "floatingInput" %>
+          <%= f.number_field :duration, value: @movie.runtime, class: "form-control input-sm", id: "floatingInput" %>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <div class="row">
+        <div class="col-md-4 offset-4">
+          <%= f.label :date, "Date:", for: "floatingInput" %>
+          <%= f.date_field :date, class: "form-control input-sm", id: "floatingInput" %>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <div class="row">
+        <div class="col-md-4 offset-4">
+            <%= f.label :start_time, "Start Time:", for: "floatingInput" %>
+            <%= f.time_select :start_time, class: "form-control input-sm", id: "floatingInput" %>
+        </div>
+      </div>
+    </div>
+    <div class="field">
+      <div class="row">
+        <div class="col-md-4 offset-4">
+            <div id="potential_invitees">
+              <br> <h5>Invite Friends</h5>
+            <%= f.collection_check_boxes :invitees, @user.friends, :id, :name do |b| %>
+                <label class="list-group-item d-flex gap-2">
+                  <%= b.check_box %>
+                  <%= b.label %>
+                </label>
+            <% end %>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 offset-4">
+      <%= f.submit "Create Party", class: "w-100 btn btn-lg btn-primary" %>
+    </div>
+  <% end %>
+</main>
