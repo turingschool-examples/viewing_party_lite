@@ -11,9 +11,16 @@ RSpec.describe 'The new viewing party page', :vcr do
   end
 
   describe 'When I visit the new viewing party page' do
+ 
     VCR.use_cassette('minions-details') do
-      xit 'I see name of movie/form with duration of party/date and time/checkboxes next to each user/button to create' do
-        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@host.id)
+      it 'I see name of movie/form with duration of party/date and time/checkboxes next to each user/button to create' do
+        visit login_path
+        
+        fill_in 'Email', with: "#{@host.email}"
+        fill_in 'Password', with: "#{@host.password}"
+  
+        click_button 'Log In'
+
         visit "/dashboard/movies/#{@movie.id}/viewing_parties/new"
 
         expect(page).to have_content(@movie.title)
@@ -32,8 +39,14 @@ RSpec.describe 'The new viewing party page', :vcr do
         expect(page).to have_content('Invited Parties')
       end
 
-      xit 'should not show my name in the invite user box' do
-        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@host.id)
+      it 'should not show my name in the invite user box' do
+        visit login_path
+        
+        fill_in 'Email', with: "#{@host.email}"
+        fill_in 'Password', with: "#{@host.password}"
+  
+        click_button 'Log In'
+                
         visit "/dashboard/movies/#{@movie.id}/viewing_parties/new"
 
         within '#user-subform' do
@@ -41,8 +54,14 @@ RSpec.describe 'The new viewing party page', :vcr do
         end
       end
 
-      xit 'Displays the event on any users that were invited to the party' do
-        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@host.id)
+      it 'Displays the event on any users that were invited to the party' do
+        visit login_path
+        
+        fill_in 'Email', with: "#{@host.email}"
+        fill_in 'Password', with: "#{@host.password}"
+  
+        click_button 'Log In'
+                
         visit "/dashboard/movies/#{@movie.id}/viewing_parties/new"
         
         fill_in :start_time, with: Faker::Time.forward(days: 7, period: :evening)
@@ -50,20 +69,26 @@ RSpec.describe 'The new viewing party page', :vcr do
         check "_users_#{@user_2.id}"
         click_button "Create Party Viewing Party for #{@movie.title}"
 
-        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user_2.id)
+        visit login_path
+        
+        fill_in 'Email', with: "#{@user_2.email}"
+        fill_in 'Password', with: "#{@user_2.password}"
+  
+        click_button 'Log In'
 
         visit dashboard_path
         expect(page).to have_content(@movie.title)
         expect(page).to have_content('Invited')
-
-        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@host.id)
-
-        visit dashboard_path
-        expect(page).to_not have_content(@movie.title)
       end
 
-      xit 'will not create a viewing party if the duration is less than the movie runtime', :vcr do
-        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@host.id)
+      it 'will not create a viewing party if the duration is less than the movie runtime', :vcr do
+        visit login_path
+        
+        fill_in 'Email', with: "#{@host.email}"
+        fill_in 'Password', with: "#{@host.password}"
+  
+        click_button 'Log In'
+                
         visit "/dashboard/movies/#{@movie.id}/viewing_parties/new"
         
         fill_in :start_time, with: Faker::Time.forward(days: 7, period: :evening)
@@ -78,8 +103,15 @@ RSpec.describe 'The new viewing party page', :vcr do
         expect(page).to have_content('Error: Duration cannot be shorter than movie runtime')
       end
 
-      xit 'will not create a viewing party if any fields are left blank' do
-        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@host.id)
+      it 'will not create a viewing party if any fields are left blank' do
+        visit login_path
+        
+        fill_in 'Email', with: "#{@host.email}"
+        fill_in 'Password', with: "#{@host.password}"
+  
+        click_button 'Log In'
+
+        visit "/dashboard/movies/#{@movie.id}/viewing_parties/new"
 
         click_button "Create Party Viewing Party for #{@movie.title}"
 
