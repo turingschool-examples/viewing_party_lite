@@ -1,7 +1,16 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [ :show, :discover, :results ]
+
+  def set_user
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+    else
+      flash[:error] = "Bad credentials, try again."
+      redirect_to '/login'
+    end
+  end
 
   def welcome
-    @users = User.all
   end
 
   def new
@@ -11,7 +20,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to user_path(@user)
+      redirect_to dashboard_path
       flash[:notice] = "Welcome #{@user.name}"
     elsif params[:password] != params[:password_confirmation]
       flash[:failure] = "Error: Password doesn't match."
@@ -29,9 +38,9 @@ class UsersController < ApplicationController
     if !User.find_by(email: params[:email]).nil?
       @user = User.find_by(email: params[:email])
       if @user.authenticate(params[:password])
-        flash[:success] = "Welcome, #{@user.name}!"
         session[:user_id] = @user.id
-        redirect_to user_path(@user)
+        flash[:success] = "Welcome, #{@user.name}!"
+        redirect_to '/dashboard'
       else
         flash[:failure] = "Your passwords don't match our records"
         render :login_form
@@ -43,22 +52,26 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    if @user
+      flash[:success] = "Welcome, #{@user.name}!"
+    end
   end
 
   def discover
-    @user = User.find(params[:id])
+    if session[:user_id]
+    end
   end
 
   def results
-    @user = User.find(params[:id])
-    if params["q"] == "top rated"
-      @movies = MovieFacade.get_top20_movies
-    elsif params["Search by Movie Title"] != ""
-      @movies = MovieFacade.get_movies(params["Search by Movie Title"])
-    else
-      flash.now[:alert] = "You must fill in a title."
-      render :discover
+    if session[:user_id]
+      if params["q"] == "top rated"
+        @movies = MovieFacade.get_top20_movies
+      elsif params["Search by Movie Title"] != ""
+        @movies = MovieFacade.get_movies(params["Search by Movie Title"])
+      else
+        flash.now[:alert] = "You must fill in a title."
+        render :discover
+      end
     end
   end
 

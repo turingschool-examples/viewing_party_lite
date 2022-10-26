@@ -5,7 +5,6 @@ RSpec.describe 'user registration page', type: :feature do
     describe 'When I visit the /register page' do
 
       it 'I can see a form to register including name, email, password & register button' do
-
         visit new_user_path
         expect(page).to have_content('Name')
         expect(page).to have_content('Email')
@@ -22,9 +21,7 @@ RSpec.describe 'user registration page', type: :feature do
           fill_in(:password_confirmation, with: "IlovePeppers")
 
           click_on('Create User')
-          user4 = create(:user, password_digest:BCrypt::Password.create('IlovecOde2!'))
-
-          expect(current_path).to eq("/users/#{(user4.id) - 1}")
+          expect(current_path).to eq(dashboard_path)
         end
 
         it "You can see a link to the home page" do
@@ -35,7 +32,6 @@ RSpec.describe 'user registration page', type: :feature do
           expect(current_path).to eq(root_path)
         end
       end
-
 
       describe 'sad path' do
         it "If the user fails to fill in valid information they see an error message & are redirected to the current page to fill in the form again" do
