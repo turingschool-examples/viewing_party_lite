@@ -14,7 +14,7 @@ RSpec.describe 'new user party page', type: :feature do
 
       it 'I can click create a viewing party and be brough to the right page', :vcr do
         visit "/users/movies/550"
-        save_and_open_page
+
         click_button('Create a Viewing Party')
 
         expect(current_path).to eq("/users/movies/550/viewing-party/new")
@@ -113,13 +113,21 @@ RSpec.describe 'new user party page', type: :feature do
 
     context 'Sad path testing' do
       it 'a viewing party should NOT be created if set to a value less than the duration of the movie', :vcr do
-        user1 = create(:user)
+        user_1 = create(:user)
         user2 = create(:user)
         user3 = create(:user)
         user4 = create(:user)
         user5 = create(:user)
 
-        visit "/users/#{user1.id}/movies/550/viewing-party/new"
+        visit login_path
+        fill_in(:email, with: "#{user_1.email}")
+        fill_in(:password, with: "#{user_1.password}")
+        click_on("Login")
+        click_on("Discover Movies")
+        click_on("Top Rated Movies")
+        click_on("The Godfather")
+        click_on("Create a Viewing Party")
+
         fill_in(:duration, with: 1)
         fill_in(:date, with: "31/10/2022")
 
@@ -130,19 +138,27 @@ RSpec.describe 'new user party page', type: :feature do
           end
         click_button('Create Party')
 
-        expect(current_path).to eq("/users/#{user1.id}/movies/550/viewing-party/new")
+        expect(current_path).to eq("/users/movies/238/viewing-party/new")
         expect(page).to have_content("The duration can not be shorter than the run time of the movie, silly.")
       end
 
       it "I can't create a viewing party without a date", :vcr do
-        user1 = create(:user)
+        user_1 = create(:user)
         user2 = create(:user)
         user3 = create(:user)
         user4 = create(:user)
         user5 = create(:user)
 
-        visit "/users/#{user1.id}/movies/550/viewing-party/new"
-        fill_in(:duration, with: 180)
+        visit login_path
+        fill_in(:email, with: "#{user_1.email}")
+        fill_in(:password, with: "#{user_1.password}")
+        click_on("Login")
+        click_on("Discover Movies")
+        click_on("Top Rated Movies")
+        click_on("The Godfather")
+        click_on("Create a Viewing Party")
+
+        fill_in(:duration, with: 380)
 
         select "18", from: "[start_time(4i)]" #got this by inspecting the page
         within('#potential_invitees') do
@@ -151,7 +167,7 @@ RSpec.describe 'new user party page', type: :feature do
           end
         click_button('Create Party')
         expect(page).to have_content('Please use a valid time and date')
-        expect(current_path).to eq("/users/#{user1.id}/movies/550/create")
+        expect(current_path).to eq("/users/movies/238/create")
       end
     end
   end
