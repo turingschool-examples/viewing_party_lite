@@ -14,7 +14,7 @@ class UserPartiesController < ApplicationController
       @movie = MovieFacade.movie_by_id(params[:movie_id])
 
       if @movie.runtime > party.duration
-        redirect_to "/users/#{@user.id}/movies/#{@movie.id}/viewing-party/new"
+        redirect_to "/users/movies/#{@movie.id}/viewing-party/new"
         flash[:alert] = 'The duration can not be shorter than the run time of the movie, silly.'
       elsif party.save
         PartyMaker.make_party(@user.id, party.id, params[:invitees])

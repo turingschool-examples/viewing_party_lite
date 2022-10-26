@@ -5,7 +5,6 @@ RSpec.describe 'user registration page', type: :feature do
     describe 'When I visit the /register page' do
 
       it 'I can see a form to register including name, email, password & register button' do
-
         visit new_user_path
         expect(page).to have_content('Name')
         expect(page).to have_content('Email')
