@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :require_user
+  # before_action :require_user
 
   def show
     @user = current_user

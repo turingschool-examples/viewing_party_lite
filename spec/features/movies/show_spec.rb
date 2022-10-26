@@ -1,6 +1,26 @@
 require 'rails_helper'
 
 RSpec.describe 'Movie Detail Page', type: :feature do
+   describe 'As a visitor' do
+    before :each do
+      @user_1 = create(:user)
+
+      @movie_1 = MovieFacade.movie_data(271_110)
+      @movie_2 = MovieFacade.movie_data(3)
+    end
+
+    it "If I go to a movies show page And click the button to create a viewing party I'm redirected to the movies show page, and a message appears to let me know I must be logged in or registered to create a movie party", vcr: { record: :new_episodes } do
+      visit movie_path(@movie_1.id)
+
+      within('#action_options') do
+        click_button "Create Viewing Party for #{@movie_1.title}"
+      end
+
+      expect(current_path).to eq(movie_path(@movie_1.id))
+      expect(page).to have_content("Please log in to to create a movie party")
+    end
+  end
+  
   describe 'As a User' do
     before :each do
       @user_1 = create(:user)

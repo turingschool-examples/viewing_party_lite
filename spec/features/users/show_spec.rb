@@ -1,6 +1,20 @@
 require 'rails_helper'
 
 RSpec.describe 'User Dashboard', type: :feature do
+  describe 'As a visitor' do
+    before :each do
+      @user_1 = create(:user)
+      @user_2 = create(:user)
+    end
+
+    it "When I try to visit '/dashboard' I remain on the landing page And I see a message telling me that I must be logged in or registered to access my dashboard" do
+      visit dashboard_path
+
+      expect(current_path).to eq(root_path)
+      expect(page).to have_content("Please log in to access the requested page")
+    end
+  end
+
   describe 'As a User' do
     before :each do
       @user_1 = create(:user)
