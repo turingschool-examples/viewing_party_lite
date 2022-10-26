@@ -46,6 +46,15 @@ RSpec.describe 'landing page' do
     end
 
     it 'links to each users profile page' do
+      visit login_path
+        
+      fill_in 'Email', with: "#{user_1.email}"
+      fill_in 'Password', with: "#{user_1.password}"
+  
+      click_button 'Log In'
+
+      visit "/"
+      
       within "#user-#{random_user.id}" do
         click_on 'User Page'
       end
