@@ -76,6 +76,13 @@ RSpec.describe 'landing page' do
 
       expect(page).to_not have_content('Current Users')
     end
+
+    it 'does not allow me access to /dashboard without being logged in' do
+      visit '/dashboard'
+
+      expect(current_path).to eq('/')
+      expect(page).to have_content('You must be a registered user to access this page')
+    end
   end
 
   describe 'As a logged in user' do
@@ -104,6 +111,14 @@ RSpec.describe 'landing page' do
 
         expect(current_path).to eq('/')
         expect(page).to have_button('Log In')
+      end
+    end
+
+    describe 'the list of existing users is no longer a link to their show page' do
+      it 'displays a list of current users email addresses' do
+        expect(page).to have_content('Current Users')
+        expect(page).to_not have_link("User Page")
+        expect(page).to have_content("#{user_1.email}")
       end
     end
   end
