@@ -6,7 +6,7 @@ RSpec.describe 'User Login Page' do
       it "I see a link for 'Log In', When I click on 'Log In' I'm taken to a Log In page" do
         visit root_path
 
-        click_button "Login"
+        click_button "Log In"
 
         expect(current_path).to eq login_path
       end

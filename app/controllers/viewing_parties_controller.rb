@@ -1,4 +1,6 @@
 class ViewingPartiesController < ApplicationController
+  before_action :require_user
+  
   def new
     @user = current_user
     @movie = MovieFacade.movie_data(params[:movie_id])

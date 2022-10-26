@@ -5,11 +5,6 @@ RSpec.describe 'welcome page', type: :feature do
     before :each do 
       @user_1 = create(:user)
       @user_2 = create(:user)
-
-      visit login_path
-      fill_in 'Email', with: "#{@user_1.email}"
-      fill_in 'Password', with: "#{@user_1.password}"
-      click_button "Submit"
     end
 
     it 'has the title of the application' do
@@ -19,12 +14,12 @@ RSpec.describe 'welcome page', type: :feature do
 
     it 'has a button to create a new user' do
       visit root_path
-      expect(page).to have_button('Create a New User')
-      click_button('Create a New User')
+      expect(page).to have_button('Create an Account')
+      click_button('Create an Account')
       expect(page).to have_current_path(new_register_path)
     end
 
-    it 'has a link to return to landing page' do
+    it 'has a section for existing users where each users name is a link' do
       visit root_path
       expect(page).to have_content('Existing Users')
 
@@ -39,7 +34,7 @@ RSpec.describe 'welcome page', type: :feature do
       end
     end
 
-    it 'each existing user links to user dashboard' do
+    xit 'each existing user links to user dashboard' do
       visit root_path
       
       click_link("#{@user_1.name}'s Dashboard")

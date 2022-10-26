@@ -1,13 +1,17 @@
 <div id="page-title">
-   <center><%= button_to 'Create a New User', new_register_path, method: :get  %><br>
-   <center><%= button_to 'Login', login_path, method: :get  %><br>
+  <% if session[:user_id].nil? %>
+    <center><%= button_to 'Create an Account', new_register_path, method: :get  %><br>
+    <center><%= button_to 'Log In', login_path, method: :get  %><br>
+  <% else %>
+    <center><%= button_to 'Log Out', login_path, method: :delete  %><br>
+  <% end %>
 </div>
 
 <h3>Existing Users</h3>
 <% @users.each_with_index do |user, index| %>
-   <div id="user-<%= index %>">
-      <p>User's name: <%= user.name %></p>
-      <p>User's email: <%= link_to "#{user.name}'s Dashboard", dashboard_path %></p>
-   </div>
+  <div id="user-<%= index %>">
+    <p>User's name: <%= user.name %></p>
+    <p>User's email: <%= link_to "#{user.name}'s Dashboard", dashboard_path %></p>
+  </div>
 <% end %></center>
 </div>

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def show
+    require_user
     @user = current_user
   end
 
@@ -15,21 +16,6 @@ class UsersController < ApplicationController
     else
       flash.alert = @user.errors.full_messages.to_sentence
       redirect_to new_register_path
-    end
-  end
-
-  def login_form
-    @user = User.new
-  end
-
-  def login_user
-    user = User.find_by(email: params[:email])
-    if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
-      redirect_to dashboard_path
-    else
-      redirect_to login_path
-      flash.alert = "Invaild email or password"
     end
   end
 
