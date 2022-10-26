@@ -39,26 +39,19 @@ RSpec.describe 'landing page' do
     end
 
     it 'displays a list of all current users' do
+      click_button 'Log In'
+
+      fill_in 'Email', with: "#{user_1.email}"
+      fill_in 'Password', with: "#{user_1.password}"
+
+      click_button 'Log In'
+
+      visit '/'
+
       expect(page).to have_content(user_1.name)
       expect(page).to have_content(user_1.email)
       expect(page).to have_content(user_2.name)
       expect(page).to have_content(user_2.email)
-    end
-
-    it 'links to each users profile page' do
-      visit login_path
-        
-      fill_in 'Email', with: "#{user_1.email}"
-      fill_in 'Password', with: "#{user_1.password}"
-  
-      click_button 'Log In'
-
-      visit "/"
-
-      within "#user-#{random_user.id}" do
-        click_on 'User Page'
-      end
-      expect(current_path).to eq(dashboard_path)
     end
 
     it 'links back to landing page' do
