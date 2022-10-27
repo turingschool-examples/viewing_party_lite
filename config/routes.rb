@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   post '/users', to: 'users#create'
   get '/dashboard', to: 'users#show'
 
-  post '/dashboard/movies_top_rated', to: 'users/movies#top_rated'
-  post '/dashboard/movies_search', to: 'users/movies#search'
+  post '/movies_top_rated', to: 'movies#top_rated'
+  post '/movies_search', to: 'movies#search'
   get '/dashboard/discover', to: 'users/discover#index'
   get '/dashboard/movies', to: 'users/movies#index'
   get '/dashboard/movies/:movie_id', to: 'users/movies#show'
