@@ -45,7 +45,7 @@ RSpec.describe 'the admin dashboard' do
         expect(current_path).to eq(root_path)
         expect(page).to have_content("You are not authorized to view this page")
 
-        visit admin_path(user)
+        visit admin_user_path(user)
 
         expect(current_path).to eq(root_path)
         expect(page).to have_content("You are not authorized to view this page")
@@ -53,7 +53,3 @@ RSpec.describe 'the admin dashboard' do
     end
   end
 end
-# As a visitor or default user 
-# If I try to go to any admin routes ('/admin/dashboard' or '/admin/users/:id')
-# I get redirected to the landing page
-# And I see a message pop up telling me I'm not authorized to access those pages. 
