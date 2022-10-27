@@ -45,7 +45,7 @@ RSpec.describe 'User login' do
       click_button 'Log In'
       
       expect(current_path).to eq(login_path)
-      expect(page).to have_content("Error: Invalid password")
+      expect(page).to have_content("Error: Invalid email address or password")
     end
   end
 end

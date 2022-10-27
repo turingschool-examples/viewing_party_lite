@@ -13,6 +13,10 @@ class ApplicationController < ActionController::Base
   end
   private
 
+  def current_admin?
+    current_user && current_user.admin?
+  end
+  
   def error_message(errors)
     errors.full_messages.join(', ')
   end
