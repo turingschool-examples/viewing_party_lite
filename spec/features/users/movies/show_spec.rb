@@ -1,23 +1,23 @@
 require 'rails_helper'
 
 RSpec.describe 'the movies detail page' do
-  let!(:user) { create :user }
+  describe 'As a logged in user, when I visit a movies detail page' do
+    let!(:user) { create :user }
 
-  before :each do
-    VCR.use_cassette('minion-details') do
-      visit login_path
-        
-      fill_in 'Email', with: "#{user.email}"
-      fill_in 'Password', with: "#{user.password}"
-  
-      click_button 'Log In'
+    before :each do
+      VCR.use_cassette('minion-details') do
+        visit login_path
+          
+        fill_in 'Email', with: "#{user.email}"
+        fill_in 'Password', with: "#{user.password}"
+    
+        click_button 'Log In'
 
-      @movie = MoviesFacade.details(438_148)
-      visit movie_path(@movie.id)
+        @movie = MoviesFacade.details(438_148)
+        visit movie_path(@movie.id)
+      end
     end
-  end
 
-  describe 'When I visit a movies detail page' do
     VCR.use_cassette('minion-details') do
       it 'displays a button to create a viewing party and a button to return to the discover page' do
         expect(page).to have_button("Create a Viewing Party for #{@movie.title}")
@@ -61,9 +61,22 @@ RSpec.describe 'the movies detail page' do
       end
     end
   end
+
+  describe 'As a visitor if I go to a movies show page' do
+    let!(:user) { create :user }
+
+    before :each do
+      VCR.use_cassette('minion-details') do
+        @movie = MoviesFacade.details(438_148)
+        visit movie_path(@movie.id)
+      end
+    end
+
+    it 'does not allow access to a new viewing party without first logging in' do
+      click_on "Create a Viewing Party for #{@movie.title}"
+
+      expect(current_path).to eq(root_path)
+      expect(page).to have_content('You must be logged in to access this page')
+    end
+  end
 end
-# As a visitor
-# If I go to a movies show page 
-# And click the button to create a viewing party
-# I'm redirected to the movies show page, and a message
-#  appears to let me know I must be logged in or registered to create a movie party. 

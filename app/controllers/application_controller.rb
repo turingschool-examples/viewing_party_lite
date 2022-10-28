@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   def require_user
     if !current_user
-      flash[:alert] = "You must be a registered user to access this page"
+      flash[:alert] = "You must be logged in to access this page"
       redirect_to '/'
     end
   end
