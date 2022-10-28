@@ -21,7 +21,7 @@ RSpec.describe 'The new viewing party page', :vcr do
   
         click_button 'Log In'
 
-        visit "/dashboard/movies/#{@movie.id}/viewing_parties/new"
+        visit new_movie_viewing_party_path(@movie.id)
 
         expect(page).to have_content(@movie.title)
         expect(page).to have_field('Duration', with: @movie.runtime.to_s)
@@ -47,7 +47,7 @@ RSpec.describe 'The new viewing party page', :vcr do
   
         click_button 'Log In'
                 
-        visit "/dashboard/movies/#{@movie.id}/viewing_parties/new"
+        visit new_movie_viewing_party_path(@movie.id)
 
         within '#user-subform' do
           expect(page).not_to have_content(@host.name)
@@ -62,7 +62,7 @@ RSpec.describe 'The new viewing party page', :vcr do
   
         click_button 'Log In'
                 
-        visit "/dashboard/movies/#{@movie.id}/viewing_parties/new"
+        visit new_movie_viewing_party_path(@movie.id)
         
         fill_in :start_time, with: Faker::Time.forward(days: 7, period: :evening)
 
@@ -89,7 +89,7 @@ RSpec.describe 'The new viewing party page', :vcr do
   
         click_button 'Log In'
                 
-        visit "/dashboard/movies/#{@movie.id}/viewing_parties/new"
+        visit new_movie_viewing_party_path(@movie.id)
         
         fill_in :start_time, with: Faker::Time.forward(days: 7, period: :evening)
         fill_in 'Duration', with: 10
@@ -98,7 +98,7 @@ RSpec.describe 'The new viewing party page', :vcr do
 
         click_button "Create Party Viewing Party for #{@movie.title}"
 
-        expect(current_path).to eq("/dashboard/movies/#{@movie.id}/viewing_parties/new")
+        expect(current_path).to eq(new_movie_viewing_party_path(@movie.id))
 
         expect(page).to have_content('Error: Duration cannot be shorter than movie runtime')
       end
@@ -111,11 +111,11 @@ RSpec.describe 'The new viewing party page', :vcr do
   
         click_button 'Log In'
 
-        visit "/dashboard/movies/#{@movie.id}/viewing_parties/new"
+        visit new_movie_viewing_party_path(@movie.id)
 
         click_button "Create Party Viewing Party for #{@movie.title}"
 
-        expect(current_path).to eq("/dashboard/movies/#{@movie.id}/viewing_parties/new")
+        expect(current_path).to eq(new_movie_viewing_party_path(@movie.id))
 
         expect(page).to have_content("Error: Start time can't be blank")
       end

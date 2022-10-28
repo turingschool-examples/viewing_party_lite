@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.describe 'user dashboard' do
@@ -15,8 +13,6 @@ RSpec.describe 'user dashboard' do
 
       click_button 'Log In'
       
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-
       @movies = MoviesFacade.top_rated
       @movie_1 = @movies[0]
       @movie_2 = @movies[1]
@@ -48,7 +44,7 @@ RSpec.describe 'user dashboard' do
         expect(page).to have_link @viewing_party_2.movie_title.to_s
 
         click_link @viewing_party_2.movie_title
-        expect(current_path).to eq("/dashboard/movies/#{@movie_2.id}")
+        expect(current_path).to eq(movie_path(@movie_2.id))
       end
     end
 
@@ -68,7 +64,7 @@ RSpec.describe 'user dashboard' do
       within '#hosted-parties' do
         expect(page).to have_link @viewing_party_1.movie_title.to_s
         click_link @viewing_party_1.movie_title
-        expect(current_path).to eq("/dashboard/movies/#{@movie_1.id}")
+        expect(current_path).to eq(movie_path(@movie_1.id))
       end
     end
 

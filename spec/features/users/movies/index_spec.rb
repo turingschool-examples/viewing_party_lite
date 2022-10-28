@@ -13,7 +13,6 @@ RSpec.describe 'Movie results page' do
 
       click_button 'Log In'
 
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
       visit discover_path
     end
 
@@ -21,17 +20,18 @@ RSpec.describe 'Movie results page' do
       VCR.use_cassette('top_rated_movies_index') do
         click_button 'Discover Top Rated Movies'
         movies = MoviesFacade.top_rated
+        movie = movies.first
 
-        expect(current_path).to eq(dashboard_movies_path)
-        expect(page).to have_content(movies.first.title)
-        expect(page).to have_content(movies.first.vote_average)
+        expect(current_path).to eq(movies_path)
+        expect(page).to have_content(movie.title)
+        expect(page).to have_content(movie.vote_average)
         expect(page).to have_content(movies.last.title)
         expect(page).to have_content(movies.last.vote_average)
         expect(page).to have_link(movies.first.title.to_s)
 
-        click_link movies.first.title.to_s
+        click_link "#{movie.title}"
 
-        expect(current_path).to eq("/dashboard/movies/#{movies.first.id}")
+        expect(current_path).to eq(movie_path(movie.id))
       end
     end
 
@@ -41,14 +41,15 @@ RSpec.describe 'Movie results page' do
         click_on 'Search by Movie Title'
 
         movies = MoviesFacade.search('Top Gun')
+        movie = movies.first
 
-        expect(current_path).to eq(dashboard_movies_path)
+        expect(current_path).to eq(movies_path)
         expect(page).to have_content('Top Gun')
-        expect(page).to have_link movies.first.title
+        expect(page).to have_link movie.title
 
-        click_on movies.first.title
+        click_on "#{movie.title}"
 
-        expect(current_path).to eq("/dashboard/movies/#{movies.first.id}")
+        expect(current_path).to eq(movie_path(movie.id))
       end
 
       it 'will return nothing if a movie title has no match', :vcr do  

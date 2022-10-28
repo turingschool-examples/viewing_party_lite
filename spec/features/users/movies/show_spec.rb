@@ -12,10 +12,8 @@ RSpec.describe 'the movies detail page' do
   
       click_button 'Log In'
 
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-
       @movie = MoviesFacade.details(438_148)
-      visit "/dashboard/movies/#{@movie.id}"
+      visit movie_path(@movie.id)
     end
   end
 
@@ -30,7 +28,7 @@ RSpec.describe 'the movies detail page' do
         it 'takes me to the new viewing party page', :vcr do
           click_on "Create a Viewing Party for #{@movie.title}"
 
-          expect(current_path).to eq("/dashboard/movies/#{@movie.id}/viewing_parties/new")
+          expect(current_path).to eq(new_movie_viewing_party_path(@movie.id))
         end
       end
 
@@ -64,3 +62,8 @@ RSpec.describe 'the movies detail page' do
     end
   end
 end
+# As a visitor
+# If I go to a movies show page 
+# And click the button to create a viewing party
+# I'm redirected to the movies show page, and a message
+#  appears to let me know I must be logged in or registered to create a movie party. 

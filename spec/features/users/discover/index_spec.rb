@@ -32,7 +32,7 @@ RSpec.describe 'the users discover index' do
       it 'redirects to the movies results page' do
         VCR.use_cassette('top_rated_movies') do
           click_button 'Discover Top Rated Movies'
-          expect(current_path).to eq(dashboard_movies_path)
+          expect(current_path).to eq(movies_path)
         end
       end
     end
@@ -42,7 +42,7 @@ RSpec.describe 'the users discover index' do
         VCR.use_cassette('search_Minions') do
           fill_in 'Search', with: 'Minions'
           click_button 'Search by Movie Title'
-          expect(current_path).to eq(dashboard_movies_path)
+          expect(current_path).to eq(movies_path)
           expect(page).to have_content('Minions')
         end
       end
