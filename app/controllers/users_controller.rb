@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_user, only: [:show]
-  # before_save :downcase_email
+  
   def show
     @user = User.find(session[:user_id])
     @image_url_hash = MoviesFacade.images(@user.movie_ids)
@@ -28,9 +28,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
-  
-  # def downcase_email
-  #   user = user_params
-  #   user[:email] = user[:email].downcase
-  # end
 end

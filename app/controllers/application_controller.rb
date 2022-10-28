@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
       redirect_to '/'
     end
   end
+  
   private
 
   def current_admin?

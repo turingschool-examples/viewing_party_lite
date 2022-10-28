@@ -1,7 +1,5 @@
 class SessionsController < ApplicationController
-  # before_action :set_user, only: [:create]
   def new
-
   end
 
   def create
@@ -26,13 +24,3 @@ class SessionsController < ApplicationController
     redirect_to '/'
   end
 end
-
-  private
-  
-  # def set_user
-  #   if User.exists?(email: [params[:email]]) && User.find_by(email: params[:email]).authenticate(params[:password])
-  #     user = User.find(session[:user_id])
-  #   else
-  #     flash[:alert] = "Error: Invalid email address or password"
-  #     render :new
-  #   end
