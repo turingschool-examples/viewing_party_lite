@@ -13,7 +13,7 @@ RSpec.describe 'the users discover index' do
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-      visit dashboard_discover_path
+      visit discover_path
     end
 
     it 'has a button to discover top rated movies' do

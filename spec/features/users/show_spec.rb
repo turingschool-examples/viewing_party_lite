@@ -40,7 +40,7 @@ RSpec.describe 'user dashboard' do
 
       click_button 'Discover Movies'
 
-      expect(current_path).to eq(dashboard_discover_path)
+      expect(current_path).to eq(discover_path)
     end
 
     it 'lists viewing parties the user is invited to as a link to the movie show page', :vcr do

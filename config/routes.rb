@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   post '/movies_top_rated', to: 'movies#top_rated'
   post '/movies_search', to: 'movies#search'
-  get '/dashboard/discover', to: 'users/discover#index'
+  get '//discover', to: 'discover#index'
   get '/dashboard/movies', to: 'users/movies#index'
   get '/dashboard/movies/:movie_id', to: 'users/movies#show'
 

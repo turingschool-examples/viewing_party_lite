@@ -14,7 +14,7 @@ RSpec.describe 'Movie results page' do
       click_button 'Log In'
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
-      visit dashboard_discover_path
+      visit discover_path
     end
 
     it 'displays the 20 top rated movies' do

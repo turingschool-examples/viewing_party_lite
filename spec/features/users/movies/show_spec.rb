@@ -38,7 +38,7 @@ RSpec.describe 'the movies detail page' do
         it 'returns to discover page' do
           click_on 'Back to Discover Page'
 
-          expect(current_path).to eq(dashboard_discover_path)
+          expect(current_path).to eq(discover_path)
         end
       end
 

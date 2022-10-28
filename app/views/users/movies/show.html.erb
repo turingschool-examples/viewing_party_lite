@@ -1,7 +1,7 @@
 <h1><%= @movie.title %></h1>
 
 <p><%= button_to "Create a Viewing Party for #{@movie.title}", "/dashboard/movies/#{@movie.id}/viewing_parties/new", method: :get %></p>
-<p><%= button_to "Back to Discover Page", "/dashboard/discover", method: :get %></p>
+<p><%= button_to "Back to Discover Page", discover_path, method: :get %></p>
 
 <p>Vote Average: <%= @movie.vote_average %></p>
 <p>Runtime: <%= @movie.hours_and_minutes %></p>
