@@ -12,9 +12,9 @@ RSpec.describe 'user dashboard' do
       @movie_1 = @movies[0]
       @movie_2 = @movies[1]
       @viewing_party_1 = ViewingParty.create!(duration: 300,
-                                              start_time: Faker::Time.forward(days: 7, period: :evening), movie_id: @movie_1.id, movie_title: @movie_1.title, host_id: user.id)
+                                              start_time: Faker::Time.forward(days: 7, period: :morning), movie_id: @movie_1.id, movie_title: @movie_1.title, host_id: user.id)
       @viewing_party_2 = ViewingParty.create!(duration: 300,
-                                              start_time: Faker::Time.forward(days: 7, period: :evening), movie_id: @movie_2.id, movie_title: @movie_2.title, host_id: friend.id)
+                                              start_time: Faker::Time.forward(days: 7, period: :morning), movie_id: @movie_2.id, movie_title: @movie_2.title, host_id: friend.id)
       @vpu_1 = ViewingPartyUser.create!(user_id: user.id, viewing_party_id: @viewing_party_1.id, hosting: true)
       @vpu_4 = ViewingPartyUser.create!(user_id: friend.id, viewing_party_id: @viewing_party_1.id, hosting: false)
       @vpu_2 = ViewingPartyUser.create!(user_id: user.id, viewing_party_id: @viewing_party_2.id, hosting: false)
