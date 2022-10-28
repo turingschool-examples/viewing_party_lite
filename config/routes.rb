@@ -22,4 +22,4 @@ Rails.application.routes.draw do
   get '/dashboard/movies/:movie_id/viewing_parties/new', to: 'users/viewing_parties#new'
   post '/dashboard/movies/:movie_id/viewing_parties', to: 'users/viewing_parties#create'
   get '/dashboard/movies/:movie_id/viewing_parties/:id', to: 'users/viewing_parties#show'
-  end
+end
