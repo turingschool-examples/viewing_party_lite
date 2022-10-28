@@ -1,5 +1,5 @@
 <h1>Movies Index</h1>
 <% @movies.each do |movie| %>
-  <p><%= link_to movie.title, user_movie_path(@user, movie.id) %></p>
+  <p><%= link_to movie.title, movie_path(movie.id) %></p>
   <p>Vote Average: <%= movie.vote_average %></p>
 <% end %>

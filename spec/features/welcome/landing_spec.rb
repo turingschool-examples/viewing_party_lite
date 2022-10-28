@@ -1,11 +1,5 @@
 require 'rails_helper'
-# As a registered user
-# When I visit the landing page `/`
-# I see a link for "Log In"
-# When I click on "Log In"
-# I'm taken to a Log In page ('/login') where I can input my unique email and password.
-# When I enter my unique email and correct password 
-# I'm taken to my dashboard page
+
 RSpec.describe 'landing page' do
   describe 'when I visit the landing page' do
     let!(:users) { create_list(:user, 10) }
@@ -21,10 +15,10 @@ RSpec.describe 'landing page' do
       expect(page).to have_content 'Viewing Party'
     end
 
-    it 'has a button to create a new user' do
-      expect(page).to have_button('Create a New User')
+    it 'has a button to create a new account' do
+      expect(page).to have_button('Create a New Account')
 
-      click_button 'Create a New User'
+      click_button 'Create a New Account'
 
       expect(current_path).to eq(register_path)
     end
@@ -41,51 +35,23 @@ RSpec.describe 'landing page' do
 
       click_button 'Log In'
 
-      expect(current_path).to eq(user_path(user_1))
+      expect(current_path).to eq(dashboard_path)
     end
 
-    it 'will redirect to the login form if email is not registered' do
+    it 'displays a list of all current users' do
       click_button 'Log In'
 
-      expect(current_path).to eq(login_path)
-
-      fill_in 'Email', with: "s#{user_1.email}"
+      fill_in 'Email', with: "#{user_1.email}"
       fill_in 'Password', with: "#{user_1.password}"
 
       click_button 'Log In'
-      
-      expect(current_path).to eq(login_path)
-      expect(page).to have_content("Error: Invalid email address")
-    end
 
-    it 'will redirect to the login form if password is incorrect' do
-      click_button 'Log In'
+      visit '/'
 
-      expect(current_path).to eq(login_path)
-
-      fill_in 'Email', with: "#{user_1.email}"
-      fill_in 'Password', with: "s#{user_1.password}"
-
-      click_button 'Log In'
-      
-      expect(current_path).to eq(login_path)
-      expect(page).to have_content("Error: Invalid password")
-    end
-
-
-    it 'displays a list of all current users' do
       expect(page).to have_content(user_1.name)
       expect(page).to have_content(user_1.email)
       expect(page).to have_content(user_2.name)
       expect(page).to have_content(user_2.email)
-    end
-
-    it 'links to each users profile page' do
-      within "#user-#{random_user.id}" do
-        click_on 'User Page'
-      end
-
-      expect(page).to have_current_path user_path(random_user)
     end
 
     it 'links back to landing page' do
@@ -93,7 +59,60 @@ RSpec.describe 'landing page' do
 
       click_on 'Home'
 
-      expect(page).to have_current_path(root_path)
+      expect(current_path).to eq(root_path)
+    end
+  end
+ 
+  describe 'As a visitor when I visit the landing page' do
+    it 'does not display existing users' do
+      visit '/'
+
+      expect(page).to_not have_content('Current Users')
+    end
+
+    it 'does not allow me access to /dashboard without being logged in' do
+      visit '/dashboard'
+
+      expect(current_path).to eq('/')
+      expect(page).to have_content('You must be logged in to access this page')
+    end
+  end
+
+  describe 'As a logged in user' do
+    let!(:users) { create_list(:user, 10) }
+    let!(:user_1) { users.first }
+    let!(:user_2) { users.last }
+    let!(:random_user) { users.sample }
+    before :each do
+      visit login_path
+        
+      fill_in 'Email', with: "#{user_1.email}"
+      fill_in 'Password', with: "#{user_1.password}"
+  
+      click_button 'Log In'
+
+      visit '/'
+    end
+
+    describe 'When I visit the landing page I no longer see a link to log in or create an account' do
+      it 'displays a link to log out which redirects me to the landing page and I see a log in link' do
+        expect(page).to have_button("Log Out")
+        expect(page).to_not have_button("Log In")
+        expect(page).to_not have_button("Create a New Account")
+
+        click_button("Log Out")
+
+        expect(current_path).to eq('/')
+        expect(page).to have_button('Log In')
+      end
+    end
+
+    describe 'the list of existing users is no longer a link to their show page' do
+      it 'displays a list of current users email addresses' do
+        expect(page).to have_content('Current Users')
+        expect(page).to_not have_link("User Page")
+        expect(page).to have_content("#{user_1.email}")
+      end
     end
   end
 end

@@ -1,18 +1,23 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.describe 'the movies detail page' do
-  let!(:user) { create :user }
+  describe 'As a logged in user, when I visit a movies detail page' do
+    let!(:user) { create :user }
 
-  before :each do
-    VCR.use_cassette('minion-details') do
-      @movie = MoviesFacade.details(438_148)
-      visit user_movie_path(user, @movie.id)
+    before :each do
+      VCR.use_cassette('minion-details') do
+        visit login_path
+          
+        fill_in 'Email', with: "#{user.email}"
+        fill_in 'Password', with: "#{user.password}"
+    
+        click_button 'Log In'
+
+        @movie = MoviesFacade.details(438_148)
+        visit movie_path(@movie.id)
+      end
     end
-  end
 
-  describe 'When I visit a movies detail page' do
     VCR.use_cassette('minion-details') do
       it 'displays a button to create a viewing party and a button to return to the discover page' do
         expect(page).to have_button("Create a Viewing Party for #{@movie.title}")
@@ -23,7 +28,7 @@ RSpec.describe 'the movies detail page' do
         it 'takes me to the new viewing party page', :vcr do
           click_on "Create a Viewing Party for #{@movie.title}"
 
-          expect(current_path).to eq(new_user_movie_viewing_party_path(user, @movie.id))
+          expect(current_path).to eq(new_movie_viewing_party_path(@movie.id))
         end
       end
 
@@ -31,7 +36,7 @@ RSpec.describe 'the movies detail page' do
         it 'returns to discover page' do
           click_on 'Back to Discover Page'
 
-          expect(current_path).to eq(user_discover_index_path(user))
+          expect(current_path).to eq(discover_path)
         end
       end
 
@@ -54,6 +59,24 @@ RSpec.describe 'the movies detail page' do
           expect(page).to have_content(review[:author])
         end
       end
+    end
+  end
+
+  describe 'As a visitor if I go to a movies show page' do
+    let!(:user) { create :user }
+
+    before :each do
+      VCR.use_cassette('minion-details') do
+        @movie = MoviesFacade.details(438_148)
+        visit movie_path(@movie.id)
+      end
+    end
+
+    it 'does not allow access to a new viewing party without first logging in' do
+      click_on "Create a Viewing Party for #{@movie.title}"
+
+      expect(current_path).to eq(root_path)
+      expect(page).to have_content('You must be logged in to access this page')
     end
   end
 end

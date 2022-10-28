@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.describe 'user dashboard' do
@@ -8,6 +6,13 @@ RSpec.describe 'user dashboard' do
     let!(:friend) { create :user }
 
     before :each do
+      visit login_path
+      
+      fill_in 'Email', with: "#{user.email}"
+      fill_in 'Password', with: "#{user.password}"
+
+      click_button 'Log In'
+      
       @movies = MoviesFacade.top_rated
       @movie_1 = @movies[0]
       @movie_2 = @movies[1]
@@ -19,7 +24,7 @@ RSpec.describe 'user dashboard' do
       @vpu_4 = ViewingPartyUser.create!(user_id: friend.id, viewing_party_id: @viewing_party_1.id, hosting: false)
       @vpu_2 = ViewingPartyUser.create!(user_id: user.id, viewing_party_id: @viewing_party_2.id, hosting: false)
       @vpu_3 = ViewingPartyUser.create!(user_id: friend.id, viewing_party_id: @viewing_party_2.id, hosting: true)
-      visit user_path(user)
+      visit dashboard_path
     end
 
     it 'displays a user name' do
@@ -31,7 +36,7 @@ RSpec.describe 'user dashboard' do
 
       click_button 'Discover Movies'
 
-      expect(current_path).to eq(user_discover_index_path(user))
+      expect(current_path).to eq(discover_path)
     end
 
     it 'lists viewing parties the user is invited to as a link to the movie show page', :vcr do
@@ -39,7 +44,7 @@ RSpec.describe 'user dashboard' do
         expect(page).to have_link @viewing_party_2.movie_title.to_s
 
         click_link @viewing_party_2.movie_title
-        expect(current_path).to eq(user_movie_path(user, @movie_2.id))
+        expect(current_path).to eq(movie_path(@movie_2.id))
       end
     end
 
@@ -59,7 +64,7 @@ RSpec.describe 'user dashboard' do
       within '#hosted-parties' do
         expect(page).to have_link @viewing_party_1.movie_title.to_s
         click_link @viewing_party_1.movie_title
-        expect(current_path).to eq(user_movie_path(user, @movie_1.id))
+        expect(current_path).to eq(movie_path(@movie_1.id))
       end
     end
 

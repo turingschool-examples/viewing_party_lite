@@ -1,0 +1,58 @@
+<h1><%= @user.name + "'s Dashboard" %></h1>
+
+<div id="#discover-movie-btn">
+  <%= button_to "Discover Movies", 
+    discover_path,
+    method: :get %>
+</div>
+
+<h2>Viewing Parties</h2>
+
+<div id="hosted-parties">
+  <h3>Hosted Parties</h3>
+  <ul>
+    <% @user.parties(true).each do |party| %>
+        <p><%= image_tag @image_url_hash[party.movie_id], size:"250x300", alt: "#{party.movie_title} Poster" %></p>
+
+        <p><%= link_to party.movie_title, movie_path(party.movie_id) %></p>
+      <li>
+        <h3>Partygoers:</h3>
+        <% party.users.each do |user| %>
+          <% if user.name == @user.name %>
+            <h4><%= "Host: #{user.name}" %></h4>
+          <% else %>
+            <p><%= user.name %></p>
+          <% end %>
+        <% end %>
+
+        <p><%= party.start_time.strftime("The party starts at %I:%M %p on %B %d, %Y") %></p>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div id="invited-parties">
+  <h3>Invited Parties</h3>
+  <ul>
+    <% @user.parties(false).each do |party| %>
+      <li>
+        <p><%= image_tag @image_url_hash[party.movie_id], size:"250x300", alt: "#{party.movie_title} Poster" %></p>
+
+        <p><%= link_to party.movie_title, movie_path(party.movie_id) %></p>
+        <h3>Partygoers:</h3>
+
+        <% party.users.each do |user| %>
+          <% if user.id == party.host_id %>
+            <p>Host: <%= user.name %></p>
+          <% elsif user.name == @user.name %>
+            <p class="user-name"><b><%= user.name %></b></p>
+          <% else %>
+            <%= user.name %>
+          <% end %>
+        <% end %>
+
+        <p><%= party.start_time.strftime("The party starts at %I:%M %p on %B %d, %Y") %></p>
+      </li>
+    <% end %>
+  </ul>
+</div>

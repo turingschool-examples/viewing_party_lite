@@ -1,9 +1,6 @@
-# frozen_string_literal: true
-
 class MoviesFacade
   def self.top_rated
     response = MoviesService.top_rated
-
     response[:results].map do |movie|
       Movie.new(movie)
     end
@@ -29,7 +26,6 @@ class MoviesFacade
 
   def self.details(movie_id)
     response = MoviesService.details(movie_id)
-
     MovieDetailed.new(response)
   end
 
