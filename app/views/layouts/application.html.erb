@@ -13,7 +13,10 @@
   </head>
   <body>
   <div id='navlinks'>
-    <%= link_to "Home", root_path %>
+    <%= button_to "Home", root_path, method: :get %> 
+    <% if session[:user_id] %>
+      <%= button_to "Log Out", logout_path, method: :delete %>
+    <% end %>
   </div>
   <% if alert %>
     <% flash.each do |type, msg| %>
