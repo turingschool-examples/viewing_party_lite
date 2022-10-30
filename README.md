@@ -19,10 +19,10 @@ Viewing Part Lite is an application in which users can explore movie options and
    ![factory bot](https://img.shields.io/gem/v/factory_bot_rails?color=blue&label=factory_bot_rails)
    ![faraday](https://img.shields.io/gem/v/faraday?color=blue&label=faraday)
 
+<img width="444" alt="dashboard-party" src="https://user-images.githubusercontent.com/99758586/198903816-0311d75d-95dd-439b-adae-103160029ae0.png">
 
-<img width="498" alt="dashboard" src="https://user-images.githubusercontent.com/99758586/198903192-a359aa2d-5b17-4aa1-b0e8-b354130cc180.png">
+<img width="1438" alt="monsters-party" src="https://user-images.githubusercontent.com/99758586/198903828-fc67542e-8313-4da6-9336-2d41ef4aa6b6.png">
 
-<img width="1440" alt="monsters-inc" src="https://user-images.githubusercontent.com/99758586/198902048-f0322867-7bdb-4cb5-b6db-36693fb76a71.png">
 
 ## [Visit Viewing Party Lite here](https://viewing-movie-party.herokuapp.com/)
 
