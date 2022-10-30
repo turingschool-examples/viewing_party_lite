@@ -15,6 +15,7 @@ RSpec.describe 'the movies detail page' do
 
         @movie = MoviesFacade.details(438_148)
         visit movie_path(@movie.id)
+        save_and_open_page
       end
     end
 

@@ -10,19 +10,20 @@ RSpec.describe 'Movie results page' do
       
       fill_in 'Email', with: "#{user.email}"
       fill_in 'Password', with: "#{user.password}"
-
+      
       click_button 'Log In'
-
+      
       visit discover_path
     end
-
+    
     it 'displays the 20 top rated movies' do
       VCR.use_cassette('top_rated_movies_index') do
         click_button 'Discover Top Rated Movies'
         movies = MoviesFacade.top_rated
         movie = movies.first
-
+        
         expect(current_path).to eq(movies_path)
+        
         expect(page).to have_content(movie.title)
         expect(page).to have_content(movie.vote_average)
         expect(page).to have_content(movies.last.title)

@@ -1,15 +1,28 @@
-<%= form_with model: @user, local: true do |form|  %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
+<div class="container">
+  <div class="grid">
+    <div class="g-col-10 g-start-4">
+      <%= form_with model: @user, local: true do |form|  %>
+        <div class="form-floating">
+          <%= form.text_field :name, class: "form-control", placeholder: "Name" %>
+          <%= form.label :name, "Name" %>
+        </div>
 
-  <%= form.label :email %>
-  <%= form.text_field :email %>
+        <div class="form-floating">
+          <%= form.email_field :email, class: "form-control", placeholder: "name@example.com" %>
+          <%= form.label :email, "Email" %>
+        </div>
 
-  <%= form.label :password %>
-  <%= form.text_field :password %>
+        <div class="form-floating">
+          <%= form.password_field :password, class: "form-control" %>
+          <%= form.label :password, "Password" %>
+        </div>
 
-  <%= form.label :password_confirmation, 'Confirm password' %>
-  <%= form.text_field :password_confirmation %>
-
-  <%= form.submit 'Register' %>
-<% end %>
+        <div class="form-floating">
+          <%= form.password_field :password_confirmation, class: "form-control" %>
+          <%= form.label :password_confirmation, 'Confirm password' %>
+        </div>
+        <%= form.submit "Register", class: "w-100 mb-3 btn btn-lg btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
