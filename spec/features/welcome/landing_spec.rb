@@ -55,7 +55,7 @@ RSpec.describe 'landing page' do
     end
 
     it 'links back to landing page' do
-      expect(page).to have_link('Home')
+      expect(page).to have_button('Home')
 
       click_on 'Home'
 

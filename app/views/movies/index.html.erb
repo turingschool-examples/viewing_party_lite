@@ -1,5 +1,14 @@
-<h1>Movies Index</h1>
-<% @movies.each do |movie| %>
-  <p><%= link_to movie.title, movie_path(movie.id) %></p>
-  <p>Vote Average: <%= movie.vote_average %></p>
-<% end %>
+<div class="movies">
+  <h1>Movies</h1>
+
+  <div class="container" > 
+    <div class="row">
+      <% @movies.each do |movie| %>
+        <div class="col-md-3"> 
+        <h5>Name: <%= link_to movie.title, movie_path(movie.id) %></h5>
+        
+        <h5>Vote Average:</h5> <p><%= movie.vote_average %></p> 
+        </div>
+    <% end %>
+  </div>
+</div>
