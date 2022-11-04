@@ -17,7 +17,7 @@ RSpec.describe 'Movie Detail Page', type: :feature do
       end
 
       expect(current_path).to eq(movie_path(@movie_1.id))
-      expect(page).to have_content("Please log in to to create a movie party")
+      expect(page).to have_content("Please log in to access the requested page")
     end
   end
   

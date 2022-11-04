@@ -7,14 +7,14 @@ class ApplicationController < ActionController::Base
   def require_user
     if !current_user
       flash[:error] = "Please log in to access the requested page"
-      redirect_to root_path
+      redirect_back fallback_location: root_path
     end
   end
 
-  def require_user_party
-    if !current_user
-      flash[:error] = "Please log in to to create a movie party"
-      redirect_back fallback_location: movie_path(params[:movie_id])
-    end
-  end
+  # def require_user_party
+  #   if !current_user
+  #     flash[:error] = "Please log in to access the requested page"
+  #     redirect_back fallback_location: movie_path(params[:movie_id])
+  #   end
+  # end
 end

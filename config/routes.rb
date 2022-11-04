@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resource :login, only: [:create, :destroy], controller: :session
   resource :register, only: [:create, :new], controller: :users
   resource :dashboard, only: [:show], controller: :users
+
   resources :movies, only: [:show, :index] do
     resource :viewing_party, only: [:new, :create]
   end

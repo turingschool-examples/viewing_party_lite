@@ -1,5 +1,5 @@
 class ViewingPartiesController < ApplicationController
-  before_action :require_user_party
+  before_action :require_user
   
   def new
     @user = current_user
