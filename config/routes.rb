@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   namespace :admin do
     get '/dashboard', to: 'dashboard#index'
   end
-  
+
   get '/dashboard', to: 'dashboard#index'
   delete '/logout', to: 'sessions#destroy'
   get '/discover', to: 'discover#index'
