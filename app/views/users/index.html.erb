@@ -1,3 +1,5 @@
+<body class='splash'>
+
 <% if !current_user %>
 <div id='login'>
   <%= render partial: 'login_form', locals: {path: login_path} %>
@@ -5,9 +7,8 @@
 
 <br>
 
-<div id='button'>
-  <p>Don't have an account?</p>
-  <%= button_to 'Create a New User', register_path, method: :get %>
+<div id='create-user'>
+  <%= link_to 'Create a New User', register_path, method: :get %>
 </div>
 <% end %>
 
@@ -19,3 +20,5 @@
 <br>
 
 <%= render partial: "shared/existing_users", locals: {users: @users} %>
+
+</body>

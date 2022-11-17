@@ -12,10 +12,10 @@ RSpec.describe 'creating a new user' do
 
   it 'links to a form to create a new user' do
 
-    click_button('Create a New User')
+    click_link('Create a New User')
     expect(current_path).to eq(register_path)
 
-    within '#create-user' do
+    within '#new-user' do
       fill_in 'Name', with: 'Jerry'
       fill_in 'Email', with: 'jerry@trashtv.com'
       fill_in :password, with: 'guiltypleasure99'
@@ -48,10 +48,10 @@ RSpec.describe 'creating a new user' do
   it 'should check for uniqueness of email address and be case insensitive' do
     User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
 
-    click_button('Create a New User')
+    click_link('Create a New User')
     expect(current_path).to eq(register_path)
 
-    within '#create-user' do
+    within '#new-user' do
       fill_in 'Name', with: 'Rivera Geraldo'
       # Test that capitalization will still result in account not being createable
       fill_in 'Email', with: 'Geraldo@trashtv.com'
@@ -66,10 +66,10 @@ RSpec.describe 'creating a new user' do
 
   it 'should check that password and confirmation match' do
 
-    click_button('Create a New User')
+    click_link('Create a New User')
     expect(current_path).to eq(register_path)
 
-    within '#create-user' do
+    within '#new-user' do
       fill_in 'Name', with: 'Jerry'
       fill_in 'Email', with: 'jerry@trashtv.com'
       fill_in :password, with: 'guiltypleasure99'
@@ -83,10 +83,10 @@ RSpec.describe 'creating a new user' do
 
   it 'should not create user if name is not filled in' do
 
-    click_button('Create a New User')
+    click_link('Create a New User')
     expect(current_path).to eq(register_path)
 
-    within '#create-user' do
+    within '#new-user' do
       fill_in 'Email', with: 'jerry@trashtv.com'
       fill_in :password, with: 'guiltypleasure99'
       fill_in :password_confirmation, with: 'guiltypleasure99'

@@ -26,7 +26,7 @@ RSpec.describe 'the landing page' do
 
     fill_in :email, with: "#{user1.email}"
     fill_in :password, with: "#{user1.password}"
-    click_on 'Log In'
+    click_on '🎟'
     click_link 'Home'
 
     within "#user-#{user1.id}" do
@@ -47,9 +47,9 @@ RSpec.describe 'the landing page' do
 
   it 'has a button to create a new user that directs to the register page' do
 
-    expect(page).to have_button('Create a New User')
+    expect(page).to have_link('Create a New User')
 
-    click_button('Create a New User')
+    click_link('Create a New User')
 
     expect(current_path).to eq register_path
     expect(page).to have_field(:name)
@@ -59,10 +59,10 @@ RSpec.describe 'the landing page' do
     expect(page).to have_button('Create New User')
   end
 
-  it 'has a button to login' do
+  it 'has a 🎟 button to login' do
 
     expect(page).to have_field(:email)
     expect(page).to have_field(:password)
-    expect(page).to have_button('Log In')
+    expect(page).to have_button('🎟')
   end
 end

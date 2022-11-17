@@ -3,20 +3,20 @@
 <br>
 
 <div id='button'>
-  <%= button_to "Find Top Rated Movies", "movies", method: :get, params: { :q => "top-rated"} %>
+  <%= button_to 'Find Top Rated Movies', 'movies', method: :get, params: { :q => 'top-rated' } %>
 </div>
 
 <br>
 
 <center>
-  OR
+  <p>OR</p>
 </center>
 
 <br>
 
 <div id='movie-search'>
-  <%= form_with url: "movies", method: :get, local: true, skip_enforcing_utf8: true do |f| %>
-    <%= f.text_field :q, placeholder: "Search by movie title" %>
-    <%= f.submit "Find Movies", name: nil %>
+  <%= form_with url: 'movies', method: :get, local: true, skip_enforcing_utf8: true do |f| %>
+    <%= f.text_field :q, placeholder: 'Search by movie title' %>
+    <%= f.submit 'Find Movies', name: nil %>
   <% end %>
 </div>

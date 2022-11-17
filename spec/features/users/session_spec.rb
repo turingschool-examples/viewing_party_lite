@@ -14,19 +14,19 @@ RSpec.describe 'user log in' do
 
     fill_in :email, with: "#{user1.email}"
     fill_in :password, with: "#{user1.password}"
-    click_on 'Log In'
+    click_on '🎟'
 
     expect(current_path).to eq(dashboard_path)
     expect(page).to have_content("Welcome #{user1.name}!")
-    expect(page).to_not have_button('Log In')
-    expect(page).to_not have_button('Create a New User')
+    expect(page).to_not have_button('🎟')
+    expect(page).to_not have_link('Create a New User')
     expect(page).to have_link('Log Out')
 
     click_link 'Log Out'
 
     expect(current_path).to eq(root_path)
-    expect(page).to have_button('Log In')
-    expect(page).to have_button('Create a New User')
+    expect(page).to have_button('🎟')
+    expect(page).to have_link('Create a New User')
     expect(page).to_not have_link('Log Out')
     expect(page).to have_content('Existing Users:')
 
@@ -47,7 +47,7 @@ RSpec.describe 'user log in' do
 
     fill_in :email, with: "#{user1.email}"
     fill_in :password, with: '12345'
-    click_on 'Log In'
+    click_on '🎟'
 
     expect(current_path).to eq(root_path)
     expect(page).to have_content('Invalid credentials!')
@@ -57,7 +57,7 @@ RSpec.describe 'user log in' do
 
     fill_in :email, with: 'ricki@trashtv.com'
     fill_in :password, with: 'password'
-    click_on 'Log In'
+    click_on '🎟'
 
     expect(current_path).to eq(root_path)
     expect(page).to have_content('Invalid credentials!')
@@ -69,7 +69,7 @@ RSpec.describe 'user log in' do
 
       fill_in :email, with: admin.email
       fill_in :password, with: admin.password
-      click_button 'Log In'
+      click_button '🎟'
 
       expect(current_path).to eq(admin_dashboard_path)
 

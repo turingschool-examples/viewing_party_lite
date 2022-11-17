@@ -1,5 +1,5 @@
 <div id='button'>
-  <%= button_to "Discover Page", discover_path, method: :get %>
+  <%= button_to 'Discover Page', discover_path, method: :get %>
 </div>
 
 <br>
@@ -7,7 +7,7 @@
 <% if @top_movies %>
   <h2>Top Rated Movies</h2>
   <br>
-  <table id="top-movies">
+  <table id='top-movies'>
     <tr>
       <th>Number</th>
       <th>Title</th>
@@ -15,7 +15,7 @@
     </tr>
 
     <% @top_movies.each_with_index do |movie, index| %>
-      <tr id="<%=movie.movie_id%>-info">
+      <tr id='<%=movie.movie_id%>-info'>
         <th><%= index + 1 %></th>
         <th><%= link_to movie.title, movie_path(movie.movie_id) %></th>
         <th><%= movie.rating %></th>
@@ -28,7 +28,7 @@
   <div id='searched-movies'>
     <h2>Movie Results for: <%= params[:q] %></h2>
     <br>
-    <table id="searched-movies-table">
+    <table id='searched-movies-table'>
       <tr>
         <th>Number</th>
         <th>Title</th>
@@ -36,7 +36,7 @@
       </tr>
 
       <% @searched_movies.each_with_index do |movie, index| %>
-        <tr id="<%=movie.movie_id%>-info">
+        <tr id='<%=movie.movie_id%>-info'>
           <th><%= index + 1 %></th>
           <th><%= link_to movie.title, movie_path(movie.movie_id) %></th>
           <th><%= movie.rating %></th>

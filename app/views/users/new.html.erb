@@ -2,7 +2,7 @@
 
 <br>
 
-<div id='create-user'>
+<div id='new-user'>
   <%= form_with model: @user, method: :post, local: true do |f| %>
     <%= f.label :name, 'Name: ' %>
     <%= f.text_field :name, placeholder: 'Username', required: true %>

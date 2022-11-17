@@ -1,9 +1,9 @@
 <div id='login-form'>
   <%= form_with url: login_path, local: true do |f| %>
-    <%= f.label :email, "Email Address: " %>
+    <%= f.label :email, 'Email Address: ' %>
     <%= f.text_field :email, placeholder: 'email', required: true %>
-    <%= f.label :password, "Password: " %>
+    <%= f.label :password, 'Password: ' %>
     <%= f.password_field :password, placeholder: 'password', required: true %>
-    <%= f.submit 'Log In' %>
+    <%= f.submit '🎟' %>
   <% end %>
 </div>

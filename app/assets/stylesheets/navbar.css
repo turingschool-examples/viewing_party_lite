@@ -2,11 +2,12 @@
 *= require_tree .
 *= require_self
 */
+
 header {
+  font-family: 'Limelight', cursive;
   margin: auto;
   text-align: center;
-  font-weight: bold;
-  font-size: 36px;
+  font-size: 58px;
   width: 50%
 }
 
@@ -16,9 +17,14 @@ ul {
 }
 
 ul li {
+  font-family: 'Oswald', sans-serif;
   list-style: none;
   display: inline-block;
   justify-content: flex-end;
-  font-size: 18px;
+  font-size: 20px;
   padding: 5px;
+}
+
+li a {
+  text-decoration: none;
 }

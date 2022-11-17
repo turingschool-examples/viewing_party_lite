@@ -7,6 +7,9 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Limelight&family=Oswald:wght@300&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -15,8 +18,12 @@
 
     <nav>
       <ul>
-        <li><%= link_to 'Home', root_path %></li>
-        <li style="float:right">
+        <li style='float:left'>
+          <% unless current_page?(root_path) %>
+            <%= link_to 'Home', root_path %>
+          <% end %>
+        </li>
+        <li style='float:right'>
           <% if current_user %>
             <strong><%= current_user.name %></strong>
             <%= link_to 'Log Out', logout_path, method: :delete %>
@@ -25,7 +32,9 @@
       </ul>
     </nav>
 
-    <header>Movie Viewing Party</header>
+    <header>
+      MOVIE VIEWING PARTY
+    </header>
 
     <br>
 
