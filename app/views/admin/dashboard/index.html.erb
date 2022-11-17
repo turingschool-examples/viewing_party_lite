@@ -1,0 +1,16 @@
+<h1>Admin Dashboard</h1>
+<h1>Viewing Party</h1>
+
+<div id="current-users">
+  <h2>Current Users</h2>
+  <ul>
+    <% @users.each do |user| %>
+      <li id="user-<%= user.id %>">
+        <ul>
+          <li><%= "Name: #{user.name}" %></li>
+          <li><%= link_to "#{user.email}", "/admin/users/#{user.id}" %></li>
+        </ul>
+      </li>
+    <% end %>
+  </ul>
+</div>

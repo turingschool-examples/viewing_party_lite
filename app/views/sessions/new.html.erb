@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="grid">
+    <div class="g-col-6 g-start-4">
+      <%= form_with url: login_path, method: :post, local: true do |form| %>
+        <h1 class="h1 mb-3 fw-normal">Login</h1>
+        <div class="form-floating my-2">
+          <%= form.email_field :email, class: "form-control", placeholder: "name@example.com" %>
+          <%= form.label :email, "Email"%>  
+        </div>
+
+        <div class="form-floating my-2">
+          <%= form.password_field :password, class: "form-control", placeholder: "Password" %>
+          <%= form.label :password, "Password" %>
+        </div>
+       
+        <%= form.submit "Log In", class: "w-100 mb-3 btn btn-lg btn-primary" %>
+      <% end %>
+      <p>New User? <%= link_to "click here", register_path %> to register.</p>
+    </div>
+  </div>
+</div>
