@@ -1,12 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe 'creating a new user' do
-  it 'links to a form to create a new user' do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
-    user2 = User.create!(name: 'Maury', email: 'maury@trashtv.com', password: 'password', password_confirmation: 'password')
-    user3 = User.create!(name: 'Jenny', email: 'jenny@trashtv.com', password: 'password', password_confirmation: 'password')
+  let!(:users) { create_list(:user, 3) }
+  let!(:user1) { users.first }
+  let!(:user2) { users.second }
+  let!(:user3) { users.third }
 
+  before :each do
     visit root_path
+  end
+
+  it 'links to a form to create a new user' do
 
     click_button('Create a New User')
     expect(current_path).to eq(register_path)
@@ -21,30 +25,28 @@ RSpec.describe 'creating a new user' do
 
     expect(current_path).to eq(dashboard_path)
     expect(page).to have_content("Jerry's Dashboard")
-    expect(page).to_not have_content("Maury's Dashboard")
-    expect(page).to_not have_content("Jenny's Dashboard")
+    expect(page).to_not have_content("#{user1.name}'s Dashboard")
+    expect(page).to_not have_content("#{user2.name}'s Dashboard")
 
     visit root_path
 
     within "#user-#{user1.id}" do
-      expect(page).to have_content("geraldo@trashtv.com")
+      expect(page).to have_content("#{user1.name}: #{user1.email}")
     end
 
     within "#user-#{user2.id}" do
-      expect(page).to have_content("maury@trashtv.com")
+      expect(page).to have_content("#{user2.name}: #{user2.email}")
     end
 
     within "#user-#{user3.id}" do
-      expect(page).to have_content("jenny@trashtv.com")
+      expect(page).to have_content("#{user3.name}: #{user3.email}")
     end
 
     expect(page).to have_link("jerry@trashtv.com's Dashboard")
   end
 
   it 'should check for uniqueness of email address and be case insensitive' do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
-
-    visit root_path
+    User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
 
     click_button('Create a New User')
     expect(current_path).to eq(register_path)
@@ -63,9 +65,6 @@ RSpec.describe 'creating a new user' do
   end
 
   it 'should check that password and confirmation match' do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
-
-    visit root_path
 
     click_button('Create a New User')
     expect(current_path).to eq(register_path)
@@ -83,9 +82,6 @@ RSpec.describe 'creating a new user' do
   end
 
   it 'should not create user if name is not filled in' do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
-
-    visit root_path
 
     click_button('Create a New User')
     expect(current_path).to eq(register_path)

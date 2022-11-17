@@ -1,19 +1,20 @@
 require 'rails_helper'
 
 RSpec.describe 'the User Dashboard' do
+  let!(:users) { create_list(:user, 3) }
+  let!(:user1) { users.first }
+  let!(:user2) { users.second }
+  let!(:user3) { users.third }
+
   it 'shows the users name at the top of the page' do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
-    user2 = User.create!(name: 'Maury', email: 'maury@trashtv.com', password: 'password', password_confirmation: 'password')
-    user3 = User.create!(name: 'Jenny', email: 'jenny@trashtv.com', password: 'password', password_confirmation: 'password')
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
     visit dashboard_path
 
-    expect(page).to have_content("Geraldo's Dashboard")
+    expect(page).to have_content("#{user1.name}'s Dashboard")
   end
 
   it 'should have a button to discover movies' do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: "password")
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
     visit dashboard_path
@@ -25,9 +26,6 @@ RSpec.describe 'the User Dashboard' do
   end
 
   it 'has a section that displays viewing parties hosted by the user', :vcr do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
-    user2 = User.create!(name: 'Maury', email: 'maury@trashtv.com', password: 'password', password_confirmation: 'password')
-    user3 = User.create!(name: 'Jenny', email: 'jenny@trashtv.com', password: 'password', password_confirmation: 'password')
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
     visit new_movie_viewing_party_path(278)
@@ -51,9 +49,6 @@ RSpec.describe 'the User Dashboard' do
   end
 
   it 'displays viewing parties which the user is invited', :vcr do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
-    user2 = User.create!(name: 'Maury', email: 'maury@trashtv.com', password: 'password', password_confirmation: 'password')
-    user3 = User.create!(name: 'Jenny', email: 'jenny@trashtv.com', password: 'password', password_confirmation: 'password')
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user2)
 
     visit new_movie_viewing_party_path(238)

@@ -1,4 +1,14 @@
-<% if current_user %>
+<% if current_admin? %>
+
+  <div id='user-info'>
+    <% @users.each do |user| %>
+      <div id="user-<%= user.id %>">
+        <p><%= user.name %>: <%= link_to "#{user.email}'s Dashboard", dashboard_path(user) %></p>
+      </div>
+    <% end %>
+  </div>
+
+<% elsif current_user %>
 
   <div id='user-info'>
     <% @users.each do |user| %>
@@ -6,7 +16,7 @@
         <% if current_user.email == user.email %>
           <p><%= link_to "#{user.email}'s Dashboard", dashboard_path %></p>
         <% else %>
-          <p><%= user.email %></p>
+          <p><%= user.name %>: <%= user.email %></p>
         <% end %>
       </div>
     <% end %>
@@ -17,9 +27,9 @@
   <div id='user-info'>
     <% @users.each do |user| %>
       <div id="user-<%= user.id %>">
-        <p><%= user.email %></p>
+        <p><%= user.name %>: <%= user.email.gsub(/(?<=[\w\d])[\w\d]+(?=[\w\d])/, "**") %></p>
       </div>
     <% end %>
   </div>
-  
+
 <% end %>

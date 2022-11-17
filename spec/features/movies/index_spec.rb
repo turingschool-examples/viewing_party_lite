@@ -1,8 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe 'Movies Index Page' do
+  let!(:users) { create_list(:user, 3) }
+  let!(:user1) { users.first }
+  let!(:user2) { users.second }
+  let!(:user3) { users.third }
+
   it 'can show the top 40 movies from the API', :vcr do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
     visit discover_path
@@ -15,7 +19,6 @@ RSpec.describe 'Movies Index Page' do
   end
 
   it 'can show the top 40 movies from the API based on a search string', :vcr do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
     visit discover_path
@@ -32,7 +35,6 @@ RSpec.describe 'Movies Index Page' do
   end
 
   it 'has a link to the show page for movies', :vcr do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
     visit discover_path
@@ -48,7 +50,6 @@ RSpec.describe 'Movies Index Page' do
   end
 
   it 'has a button to go back to the discover page' do
-    user1 = User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
     visit movies_path

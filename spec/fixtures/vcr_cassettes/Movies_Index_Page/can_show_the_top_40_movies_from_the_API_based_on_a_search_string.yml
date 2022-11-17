@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.5.2
+      - Faraday v2.6.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -25,86 +25,83 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Mon, 10 Oct 2022 18:35:34 GMT
+      - Thu, 17 Nov 2022 01:22:33 GMT
       Server:
       - openresty
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, HEAD, POST, PUT, DELETE, OPTIONS
-      Access-Control-Expose-Headers:
-      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
-        Content-Length, Content-Range
       Cache-Control:
       - public, max-age=600
       Vary:
-      - Accept-Encoding
+      - Accept-Encoding,Accept-Encoding
+      - Origin
       X-Cache:
-      - Hit from cloudfront
+      - Miss from cloudfront
       Via:
-      - 1.1 1c80fe425edf82026702c486fb324fd0.cloudfront.net (CloudFront)
+      - 1.1 9eceed849af3c369b60088e6ae5ad92c.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - EhLSepeYcfXOaapY2oHF9q2b0JWC4wMeoFoy9nI6jQDXnbwFW__dwA==
-      Age:
-      - '486'
+      - iFmeVnZh58_mzy2XTYSH6HQE0I1_srdlAO9BcDVR__aYWjtbMPq-rg==
     body:
       encoding: UTF-8
-      string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/wu1uilmhM4TdluKi2ytfz8gidHf.jpg","genre_ids":[10751,16,14,12,35],"id":400160,"original_language":"en","original_title":"The
-        SpongeBob Movie: Sponge on the Run","overview":"When his best friend Gary
-        is suddenly snatched away, SpongeBob takes Patrick on a madcap mission far
-        beyond Bikini Bottom to save their pink-shelled pal.","popularity":240.158,"poster_path":"/jlJ8nDhMhCYJuzOw3f52CP1W8MW.jpg","release_date":"2020-08-14","title":"The
-        SpongeBob Movie: Sponge on the Run","video":false,"vote_average":7.6,"vote_count":2537},{"adult":false,"backdrop_path":"/i2fZIltljrhFPsUK9PN6O6ZE7M4.jpg","genre_ids":[10751,16,35,14],"id":11836,"original_language":"en","original_title":"The
+      string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/i2fZIltljrhFPsUK9PN6O6ZE7M4.jpg","genre_ids":[10751,16,35,14,12],"id":11836,"original_language":"en","original_title":"The
         SpongeBob SquarePants Movie","overview":"There''s trouble brewing in Bikini
         Bottom. Someone has stolen King Neptune''s crown, and it looks like Mr. Krab,
         SpongeBob''s boss, is the culprit. Though he''s just been passed over for
         the promotion of his dreams, SpongeBob stands by his boss, and along with
         his best pal Patrick, sets out on a treacherous mission to Shell City to reclaim
-        the crown and save Mr. Krab''s life.","popularity":104.686,"poster_path":"/gjZD811kfY1ideNuBukcuCy8ocA.jpg","release_date":"2004-11-14","title":"The
-        SpongeBob SquarePants Movie","video":false,"vote_average":7,"vote_count":2368},{"adult":false,"backdrop_path":"/sqcqFzAj3IPSFprQSLHr5JOBU4m.jpg","genre_ids":[10751,12,35,14,16],"id":228165,"original_language":"en","original_title":"The
+        the crown and save Mr. Krab''s life.","popularity":73.121,"poster_path":"/gjZD811kfY1ideNuBukcuCy8ocA.jpg","release_date":"2004-11-14","title":"The
+        SpongeBob SquarePants Movie","video":false,"vote_average":7,"vote_count":2398},{"adult":false,"backdrop_path":"/wu1uilmhM4TdluKi2ytfz8gidHf.jpg","genre_ids":[10751,16,14,12,35],"id":400160,"original_language":"en","original_title":"The
+        SpongeBob Movie: Sponge on the Run","overview":"When his best friend Gary
+        is suddenly snatched away, SpongeBob takes Patrick on a madcap mission far
+        beyond Bikini Bottom to save their pink-shelled pal.","popularity":129.517,"poster_path":"/jlJ8nDhMhCYJuzOw3f52CP1W8MW.jpg","release_date":"2020-08-14","title":"The
+        SpongeBob Movie: Sponge on the Run","video":false,"vote_average":7.6,"vote_count":2551},{"adult":false,"backdrop_path":"/pxo2c6WeVrQMpZaZvpgQGrHMUxH.jpg","genre_ids":[10751,16,35],"id":298016,"original_language":"en","original_title":"It''s
+        a SpongeBob Christmas!","overview":"Plankton, Mr. Krabs'' nemesis, vows to
+        get his Christmas wish - obtaining the Krusty Krab''s secret Krabby Patty
+        formula - by turning everyone bad in Bikini Bottom with the help of his special
+        jerktonium-laced fruitcake.","popularity":18.817,"poster_path":"/ewcwsytxHGoa3tIUdfwffzphuzc.jpg","release_date":"2012-11-23","title":"It''s
+        a SpongeBob Christmas!","video":false,"vote_average":6.9,"vote_count":188},{"adult":false,"backdrop_path":"/sqcqFzAj3IPSFprQSLHr5JOBU4m.jpg","genre_ids":[10751,12,35,14,16],"id":228165,"original_language":"en","original_title":"The
         SpongeBob Movie: Sponge Out of Water","overview":"Burger Beard is a pirate
         who is in search of the final page of a magical book that makes any evil plan
         he writes in it come true, which happens to be the Krabby Patty secret formula.
         When the entire city of Bikini Bottom is put in danger, SpongeBob, Patrick,
         Mr. Krabs, Squidward, Sandy, and Plankton need to go on a quest that takes
         them to the surface. In order to get back the recipe and save their city,
-        the gang must retrieve the book and transform themselves into superheroes.","popularity":78.345,"poster_path":"/2WDmjUlSAPlA27i2OwEC7sRTFw3.jpg","release_date":"2015-01-28","title":"The
-        SpongeBob Movie: Sponge Out of Water","video":false,"vote_average":6.1,"vote_count":2019},{"adult":false,"backdrop_path":"/pxo2c6WeVrQMpZaZvpgQGrHMUxH.jpg","genre_ids":[10751,16,35],"id":298016,"original_language":"en","original_title":"It''s
-        a SpongeBob Christmas!","overview":"Plankton, Mr. Krabs'' nemesis, vows to
-        get his Christmas wish - obtaining the Krusty Krab''s secret Krabby Patty
-        formula - by turning everyone bad in Bikini Bottom with the help of his special
-        jerktonium-laced fruitcake.","popularity":19.883,"poster_path":"/ewcwsytxHGoa3tIUdfwffzphuzc.jpg","release_date":"2012-11-23","title":"It''s
-        a SpongeBob Christmas!","video":false,"vote_average":6.9,"vote_count":185},{"adult":false,"backdrop_path":null,"genre_ids":[16,12,35],"id":336978,"original_language":"en","original_title":"SpongeBob
+        the gang must retrieve the book and transform themselves into superheroes.","popularity":49.049,"poster_path":"/2WDmjUlSAPlA27i2OwEC7sRTFw3.jpg","release_date":"2015-01-28","title":"The
+        SpongeBob Movie: Sponge Out of Water","video":false,"vote_average":6.1,"vote_count":2032},{"adult":false,"backdrop_path":null,"genre_ids":[16,12,35],"id":336978,"original_language":"en","original_title":"SpongeBob
         Squarepants: Christmas","overview":"Featuring a variety of holiday-themed
         episodes from everyone’s favorite sea-dwelling sponge. Included are the double-length
         episodes \"Christmas Who,\" as well as \"Procrastination,\" \"The Snowball
         Effect,\" \"Survival of the Idiots,\" \"Mermaidman and Barnacleboy IV,\" \"Chocolate
-        With Nuts,\" \"As Seen on TV,\" \"Pizza Delivery\" and \"The Squeaky Boots.\"","popularity":13.477,"poster_path":"/8IYzzycC2sYDbhEZwsOcZZVIlxN.jpg","release_date":"2003-09-30","title":"SpongeBob
+        With Nuts,\" \"As Seen on TV,\" \"Pizza Delivery\" and \"The Squeaky Boots.\"","popularity":12.472,"poster_path":"/8IYzzycC2sYDbhEZwsOcZZVIlxN.jpg","release_date":"2003-09-30","title":"SpongeBob
         Squarepants: Christmas","video":true,"vote_average":7.5,"vote_count":13},{"adult":false,"backdrop_path":"/2MGz166JSjiIgAg7ZVizbxCXWZ5.jpg","genre_ids":[14,16,35,10751],"id":281649,"original_language":"en","original_title":"SpongeBob
         SquarePants: Spongicus","overview":"Prepare to be blown back on your tail
         fins! Visit the Bikini Bottom Symphony, check out the Chum Bucket''s Rome-antic
         new look, see SpongeBob''s take on normal, hear Plankton''s new band, the
-        Patty Stealers, take a trip to the Nautical Museum and more!","popularity":9.747,"poster_path":"/zyL7QGngIRKigzumIXcAr2gwp8D.jpg","release_date":"2009-01-27","title":"SpongeBob
-        SquarePants: Spongicus","video":true,"vote_average":6.7,"vote_count":24},{"adult":false,"backdrop_path":"/3N1USkR8Akp23nZqwvsUfY6DmWN.jpg","genre_ids":[16,35],"id":448825,"original_language":"en","original_title":"SpongeBob
+        Patty Stealers, take a trip to the Nautical Museum and more!","popularity":7.531,"poster_path":"/zyL7QGngIRKigzumIXcAr2gwp8D.jpg","release_date":"2009-01-27","title":"SpongeBob
+        SquarePants: Spongicus","video":true,"vote_average":6.7,"vote_count":24},{"adult":false,"backdrop_path":"/kXBm2RTGCF9NnD3LAUy3HcoG8hf.jpg","genre_ids":[10751,16,35],"id":299078,"original_language":"en","original_title":"Spongebob
+        Squarepants: Spongebob''s Frozen Face-Off","overview":"It''s a race to the
+        South Pole. With the whole town occupied, will Plankton finally get his hands
+        on the formula and end the Krusty Krab''s fast-food supremacy for good?","popularity":3.109,"poster_path":"/boX9veaa90RtaFcdGSsAkzD0U5y.jpg","release_date":"2012-01-03","title":"Spongebob
+        Squarepants: Spongebob''s Frozen Face-Off","video":true,"vote_average":7.8,"vote_count":13},{"adult":false,"backdrop_path":null,"genre_ids":[16],"id":476537,"original_language":"en","original_title":"Spongebob
+        Squarepants: Factory Fresh","overview":"","popularity":5.099,"poster_path":"/h1Buh7MNozlF8IS2UxufePDj3uH.jpg","release_date":"2017-09-22","title":"Spongebob
+        Squarepants: Factory Fresh","video":true,"vote_average":6.4,"vote_count":7},{"adult":false,"backdrop_path":"/3N1USkR8Akp23nZqwvsUfY6DmWN.jpg","genre_ids":[16,35],"id":448825,"original_language":"en","original_title":"SpongeBob
         SquarePants: Sea Side Story","overview":"Bikini Bottom''s baddest gang, the
         Sharks, just got a new member! But can SpongeBob prove that he isn''t as square
         as he looks when they face their rivals, the Pods? Soak up the action and
         7 more tales of nautical nonsense, including prophetic fortune cookies, Sandy''s
-        newest food craze, countless SpongeBob clones and more!","popularity":10.136,"poster_path":"/kA0Dsum46Rp9RQXaBMrMvqEMNo.jpg","release_date":"2017-03-01","title":"SpongeBob
-        SquarePants: Sea Side Story","video":true,"vote_average":7.2,"vote_count":19},{"adult":false,"backdrop_path":"/kXBm2RTGCF9NnD3LAUy3HcoG8hf.jpg","genre_ids":[10751,16,35],"id":299078,"original_language":"en","original_title":"Spongebob
-        Squarepants: Spongebob''s Frozen Face-Off","overview":"It''s a race to the
-        South Pole. With the whole town occupied, will Plankton finally get his hands
-        on the formula and end the Krusty Krab''s fast-food supremacy for good?","popularity":4.348,"poster_path":"/boX9veaa90RtaFcdGSsAkzD0U5y.jpg","release_date":"2012-01-03","title":"Spongebob
-        Squarepants: Spongebob''s Frozen Face-Off","video":true,"vote_average":7.8,"vote_count":13},{"adult":false,"backdrop_path":null,"genre_ids":[16],"id":476537,"original_language":"en","original_title":"Spongebob
-        Squarepants: Factory Fresh","overview":"","popularity":6.285,"poster_path":"/h1Buh7MNozlF8IS2UxufePDj3uH.jpg","release_date":"2017-09-22","title":"Spongebob
-        Squarepants: Factory Fresh","video":true,"vote_average":6.4,"vote_count":7},{"adult":false,"backdrop_path":"/AnHIt1uIUcG4Q5AF0ySowaUW67Z.jpg","genre_ids":[16],"id":345889,"original_language":"en","original_title":"SpongeBob
+        newest food craze, countless SpongeBob clones and more!","popularity":8.374,"poster_path":"/kA0Dsum46Rp9RQXaBMrMvqEMNo.jpg","release_date":"2017-03-01","title":"SpongeBob
+        SquarePants: Sea Side Story","video":true,"vote_average":7.2,"vote_count":19},{"adult":false,"backdrop_path":"/AnHIt1uIUcG4Q5AF0ySowaUW67Z.jpg","genre_ids":[16],"id":345889,"original_language":"en","original_title":"SpongeBob
         SquarePants: To Love a Patty","overview":"To Love a Patty is a SpongeBob SquarePants
         DVD that contains seven episodes from Season 5. The DVD is based on the episode
-        of the same name.","popularity":5.93,"poster_path":"/5cAc1rNJHdcI8SHGdYE0EjgGqAn.jpg","release_date":"2008-01-29","title":"SpongeBob
-        SquarePants - To Love a Patty","video":true,"vote_average":6.9,"vote_count":7},{"adult":false,"backdrop_path":null,"genre_ids":[35,16],"id":440353,"original_language":"en","original_title":"SpongeBob
+        of the same name.","popularity":3.715,"poster_path":"/5cAc1rNJHdcI8SHGdYE0EjgGqAn.jpg","release_date":"2008-01-29","title":"SpongeBob
+        SquarePants - To Love a Patty","video":true,"vote_average":6.9,"vote_count":7},{"adult":false,"backdrop_path":null,"genre_ids":[16],"id":303110,"original_language":"en","original_title":"Spongebob
+        Squarepants: It Came from Goo Lagoon","overview":"It''s a special episode
+        featuring a threatening giant purple ball of goo. Then, Plankton sabotages
+        SpongeBob''s spatula, SpongeBob''s deepest secrets are revealed, Patrick wreaks
+        havoc, and SpongeBob goes back to milkshake-making school.","popularity":4.876,"poster_path":"/dCNXcscr8dGBEN781chdOs20E3P.jpg","release_date":"2014-11-07","title":"Spongebob
+        Squarepants: It Came from Goo Lagoon","video":true,"vote_average":5.8,"vote_count":10},{"adult":false,"backdrop_path":null,"genre_ids":[35,16],"id":440353,"original_language":"en","original_title":"SpongeBob
         SquarePants: Glove World Forever","overview":"Dive down to Bikini Bottom’s
         fun-tastic Glove World and soak up 10 seafaring episodes of SpongeBob SquarePants!
         Grab a glove balloon and join SpongeBob and Patrick as they face the Fiery
@@ -112,17 +109,8 @@ http_interactions:
         day at the beloved park before it shuts down! Plus, join SpongeBob as he embraces
         his abrasive side, fails his driving test — again — and more! INCLUDES: Rock
         Bottom Roller Cowards The Abrasive Side Tunnel of Glove Glove World R.I.P.
-        Are You Happy Now? Squiditis Bumper to Bumper Gary’s New Toy Kenny the Cat","popularity":7.097,"poster_path":"/f1sy5zB4cHGCv3vXM13FyoErmbR.jpg","release_date":"2016-03-11","title":"SpongeBob
-        SquarePants: Glove World Forever","video":true,"vote_average":6.5,"vote_count":4},{"adult":false,"backdrop_path":"/d6Uzz1DiMG4fRLeh68Lf4wtbMTD.jpg","genre_ids":[16,10751],"id":296559,"original_language":"en","original_title":"SpongeBob
-        SquarePants: Viking-sized Adventures","overview":"","popularity":5.473,"poster_path":"/kraVKWoQOOJa6DRASBOc4755UJV.jpg","release_date":"2010-01-06","title":"SpongeBob
-        SquarePants: Viking-sized Adventures","video":true,"vote_average":7.3,"vote_count":10},{"adult":false,"backdrop_path":"/tEYam8Htz1JELye7G56oyh9AzgS.jpg","genre_ids":[],"id":782398,"original_language":"en","original_title":"SpongeBob,
-        You Fired!","overview":"","popularity":5.192,"poster_path":"/w9lAzT0H5GMaewXZM6SRN6zvS0e.jpg","release_date":"2013-11-11","title":"SpongeBob,
-        You Fired!","video":true,"vote_average":7,"vote_count":2},{"adult":false,"backdrop_path":null,"genre_ids":[16],"id":303110,"original_language":"en","original_title":"Spongebob
-        Squarepants: It Came from Goo Lagoon","overview":"It''s a special episode
-        featuring a threatening giant purple ball of goo. Then, Plankton sabotages
-        SpongeBob''s spatula, SpongeBob''s deepest secrets are revealed, Patrick wreaks
-        havoc, and SpongeBob goes back to milkshake-making school.","popularity":9.024,"poster_path":"/dCNXcscr8dGBEN781chdOs20E3P.jpg","release_date":"2014-11-07","title":"Spongebob
-        Squarepants: It Came from Goo Lagoon","video":true,"vote_average":5.6,"vote_count":9},{"adult":false,"backdrop_path":null,"genre_ids":[16],"id":299712,"original_language":"pt","original_title":"Spongebob
+        Are You Happy Now? Squiditis Bumper to Bumper Gary’s New Toy Kenny the Cat","popularity":4.567,"poster_path":"/f1sy5zB4cHGCv3vXM13FyoErmbR.jpg","release_date":"2016-03-11","title":"SpongeBob
+        SquarePants: Glove World Forever","video":true,"vote_average":6.5,"vote_count":4},{"adult":false,"backdrop_path":null,"genre_ids":[16],"id":299712,"original_language":"pt","original_title":"Spongebob
         Heroes of Bikini Bottom","overview":"Evildoers, and everyone else, beware!
         Mermaidman and Barnacleboy have opened their locker of memories for SpongeBob
         and Patrick (MISTAKE!), the Dirty Bubble, Man Ray, The Atomic Flounder and
@@ -131,34 +119,33 @@ http_interactions:
         crying, Gary''s new play pal Puffy Fluffy is a real terror, Squidward cleans
         up Bikini Bottom with \"help\" from SpongeBob, SpongeBob and Patrick try to
         share a toy, SpongeBob nearly ruins Mr. Krabs'' tightwad reputation at the
-        Cheapest Crab Convention, and oceans more!","popularity":4.018,"poster_path":"/Od5JI8qicmBS0lCuowEsjP2P2b.jpg","release_date":"2011-10-29","title":"SpongeBob
-        SquarePants: Heroes of Bikini Bottom","video":true,"vote_average":6.2,"vote_count":6},{"adult":false,"backdrop_path":null,"genre_ids":[16,10751],"id":286882,"original_language":"en","original_title":"Spongebob
+        Cheapest Crab Convention, and oceans more!","popularity":2.397,"poster_path":"/Od5JI8qicmBS0lCuowEsjP2P2b.jpg","release_date":"2011-10-29","title":"SpongeBob
+        SquarePants: Heroes of Bikini Bottom","video":true,"vote_average":6.2,"vote_count":6},{"adult":false,"backdrop_path":"/tEYam8Htz1JELye7G56oyh9AzgS.jpg","genre_ids":[],"id":782398,"original_language":"en","original_title":"SpongeBob,
+        You Fired!","overview":"","popularity":3.017,"poster_path":"/w9lAzT0H5GMaewXZM6SRN6zvS0e.jpg","release_date":"2013-11-11","title":"SpongeBob,
+        You Fired!","video":true,"vote_average":7,"vote_count":2},{"adult":false,"backdrop_path":null,"genre_ids":[16,10751],"id":286882,"original_language":"en","original_title":"Spongebob
         Squarepants: Spongebob Goes Prehistoric","overview":"It''s twice the underwater
         hilarity in a double-length feature episode with SpongeBob, Patrick and Squidward
         as three pioneering sea dwellers in the time before comedy (BC). \"SpongeBob
         Goes Prehistoric\" includes a double-length episode plus eight bonus episodes:
         SpongeBob BC, Nature Pants, Fools in April, I''m with Stupid, Patty Hype,
-        Squid on Strike, The Great Snail Race, Plankton''s Arm, and Squilliam Returns.","popularity":3.004,"poster_path":"/u2jedWrVMg4cAI0W4TPx1MYauGA.jpg","release_date":"2004-03-09","title":"Spongebob
-        Squarepants: Spongebob Goes Prehistoric","video":true,"vote_average":6.7,"vote_count":22},{"adult":false,"backdrop_path":"/ehE5tJW8o250FRZ7Hj2Q7qXxMJo.jpg","genre_ids":[10751,16,35],"id":383525,"original_language":"en","original_title":"SpongeBob
+        Squid on Strike, The Great Snail Race, Plankton''s Arm, and Squilliam Returns.","popularity":2.231,"poster_path":"/u2jedWrVMg4cAI0W4TPx1MYauGA.jpg","release_date":"2004-03-09","title":"Spongebob
+        Squarepants: Spongebob Goes Prehistoric","video":true,"vote_average":6.7,"vote_count":22},{"adult":false,"backdrop_path":"/d6Uzz1DiMG4fRLeh68Lf4wtbMTD.jpg","genre_ids":[16,10751],"id":296559,"original_language":"en","original_title":"SpongeBob
+        SquarePants: Viking-sized Adventures","overview":"","popularity":2.974,"poster_path":"/kraVKWoQOOJa6DRASBOc4755UJV.jpg","release_date":"2010-01-06","title":"SpongeBob
+        SquarePants: Viking-sized Adventures","video":true,"vote_average":7.3,"vote_count":10},{"adult":false,"backdrop_path":null,"genre_ids":[16,10751],"id":358711,"original_language":"en","original_title":"SpongeBob
+        SquarePants Halloween","overview":"A collection of spooky SpongeBob episodes
+        from the series.","popularity":1.201,"poster_path":null,"release_date":"2002-08-27","title":"SpongeBob
+        SquarePants: Halloween","video":true,"vote_average":7,"vote_count":7},{"adult":false,"backdrop_path":null,"genre_ids":[16,35,10751],"id":300173,"original_language":"en","original_title":"SpongeBob
+        SquarePants: Triton''s Revenge","overview":"","popularity":2.168,"poster_path":null,"release_date":"2010-07-13","title":"SpongeBob
+        SquarePants: Triton''s Revenge","video":true,"vote_average":7.2,"vote_count":11},{"adult":false,"backdrop_path":"/ehE5tJW8o250FRZ7Hj2Q7qXxMJo.jpg","genre_ids":[10751,16,35],"id":383525,"original_language":"en","original_title":"SpongeBob
         SquarePants: Truth or Square","overview":"The cast look back on major events
-        in their lives; Patchy hosts a star-studded anniversary special.","popularity":6.256,"poster_path":"/5XCPg8DVN36vVdE7wOMns8ekVnJ.jpg","release_date":"2009-11-06","title":"SpongeBob
+        in their lives; Patchy hosts a star-studded anniversary special.","popularity":4.249,"poster_path":"/5XCPg8DVN36vVdE7wOMns8ekVnJ.jpg","release_date":"2009-11-06","title":"SpongeBob
         SquarePants: Truth or Square","video":false,"vote_average":5.6,"vote_count":4},{"adult":false,"backdrop_path":"/kaeSZ8u7239iLJGdC5AFRmAZnMC.jpg","genre_ids":[10751,16],"id":336975,"original_language":"en","original_title":"SpongeBob''s
         Atlantis SquarePantis","overview":"SpongeBob and his pals are on the ultimate
         underwater adventure in SpongeBob SquarePants: Atlantis SquarePantis! Join
         them as they travel to Atlantis in search of \"The Oldest Living Bubble\"
-        and other whacky adventures filled with outrageous fun!","popularity":8.933,"poster_path":"/oYiMhdTzhJ3NulRwqAQD12TVEl0.jpg","release_date":"2007-11-12","title":"SpongeBob''s
-        Atlantis SquarePantis","video":true,"vote_average":7.1,"vote_count":14},{"adult":false,"backdrop_path":"/bD2PYUSh3xcwGzya5UD8KkM7uv8.jpg","genre_ids":[28,12,16,35],"id":444743,"original_language":"en","original_title":"SpongeBob
-        & Friends: Patrick SquarePants","overview":"Patrick SquarePants is a SpongeBob
-        SquarePants DVD featuring Patrick. It features episodes where Patrick plays
-        a very big role. The DVD contains 3 episodes from Season 2, 1 episode from
-        Season 3, 5 episodes from Season 4, 2 episodes from Season 7 and 3 episodes
-        from Season 8.","popularity":4.103,"poster_path":null,"release_date":"2014-01-14","title":"SpongeBob
-        & Friends: Patrick SquarePants","video":true,"vote_average":7.1,"vote_count":12},{"adult":false,"backdrop_path":"/9lNmWESsYwv0wgLDkQuDHhA55x5.jpg","genre_ids":[16,35,12],"id":384715,"original_language":"en","original_title":"Spongebob
-        Squarepants: SpongeGuard on Duty","overview":"Eight more episodes of deep-sea
-        silliness! Includes SpongeGuard on Duty,\" Naughty Nautical Neighbors,\" Walking
-        Small,\" Pressure,\" Jellyfish Hunter,\" Nasty Patty,\" Doing Time\" and Clams.\"","popularity":4.862,"poster_path":"/bSHpzrBv9SEcDIASXrslTAS4mBW.jpg","release_date":"2004-06-01","title":"Spongebob
-        Squarepants: SpongeGuard on Duty","video":true,"vote_average":0,"vote_count":0}],"total_pages":4,"total_results":67}'
-  recorded_at: Mon, 10 Oct 2022 18:43:40 GMT
+        and other whacky adventures filled with outrageous fun!","popularity":5.907,"poster_path":"/oYiMhdTzhJ3NulRwqAQD12TVEl0.jpg","release_date":"2007-11-12","title":"SpongeBob''s
+        Atlantis SquarePantis","video":true,"vote_average":7.1,"vote_count":14}],"total_pages":4,"total_results":68}'
+  recorded_at: Thu, 17 Nov 2022 01:22:33 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/search/movie?api_key=<API Key>&page=2&query=spongebob
@@ -167,7 +154,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v2.5.2
+      - Faraday v2.6.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -184,118 +171,103 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Mon, 10 Oct 2022 18:35:34 GMT
+      - Thu, 17 Nov 2022 01:22:33 GMT
       Server:
       - openresty
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, HEAD, POST, PUT, DELETE, OPTIONS
-      Access-Control-Expose-Headers:
-      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
-        Content-Length, Content-Range
       Cache-Control:
       - public, max-age=600
       Vary:
-      - Accept-Encoding
+      - Accept-Encoding,Accept-Encoding
+      - Origin
       X-Cache:
-      - Hit from cloudfront
+      - Miss from cloudfront
       Via:
-      - 1.1 a7c0ba01db75946f7df3f7eaf69984b6.cloudfront.net (CloudFront)
+      - 1.1 1c80fe425edf82026702c486fb324fd0.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - S8yOfRdtUM43jUmypj_UOCAIuRMKjrQyUUnLCVBri2bJIj_dmZ86Sw==
-      Age:
-      - '486'
+      - Dfz_jlcSIetHO9fj-oqiAEXHmSB2bUiOfu6NY1OCVLlWd229YGPf1A==
     body:
       encoding: UTF-8
-      string: '{"page":2,"results":[{"adult":false,"backdrop_path":null,"genre_ids":[16,35,10751],"id":300173,"original_language":"en","original_title":"SpongeBob
-        SquarePants: Triton''s Revenge","overview":"","popularity":2.395,"poster_path":null,"release_date":"2010-07-13","title":"SpongeBob
-        SquarePants: Triton''s Revenge","video":true,"vote_average":7.2,"vote_count":11},{"adult":false,"backdrop_path":"/30rShrB6Nc6Lu64qYTzkJpFmz0Z.jpg","genre_ids":[16,35,12],"id":782365,"original_language":"en","original_title":"Spongebob
-        Square Pants: Bikini Bottom Buddies","overview":"","popularity":5.737,"poster_path":"/8RwKrAj4QkLliYvP80HaWMgDBz5.jpg","release_date":"2014-07-21","title":"Spongebob
-        Square Pants: Bikini Bottom Buddies","video":true,"vote_average":1,"vote_count":1},{"adult":false,"backdrop_path":"/hznC6fqTDStjn6vQKZBcaoehby1.jpg","genre_ids":[10751,10402,35,10770],"id":651985,"original_language":"en","original_title":"The
+      string: '{"page":2,"results":[{"adult":false,"backdrop_path":"/bD2PYUSh3xcwGzya5UD8KkM7uv8.jpg","genre_ids":[28,12,16,35],"id":444743,"original_language":"en","original_title":"SpongeBob
+        & Friends: Patrick SquarePants","overview":"Patrick SquarePants is a SpongeBob
+        SquarePants DVD featuring Patrick. It features episodes where Patrick plays
+        a very big role. The DVD contains 3 episodes from Season 2, 1 episode from
+        Season 3, 5 episodes from Season 4, 2 episodes from Season 7 and 3 episodes
+        from Season 8.","popularity":3.336,"poster_path":null,"release_date":"2014-01-14","title":"SpongeBob
+        & Friends: Patrick SquarePants","video":true,"vote_average":7.1,"vote_count":12},{"adult":false,"backdrop_path":"/hznC6fqTDStjn6vQKZBcaoehby1.jpg","genre_ids":[10751,10402,35,10770],"id":651985,"original_language":"en","original_title":"The
         SpongeBob Musical: Live on Stage!","overview":"SpongeBob and all of Bikini
         Bottom face catastrophe—until a most unexpected hero rises to take center
-        stage.","popularity":3.27,"poster_path":"/pbhA6MorVpzWozMgGKLpdyBn8vE.jpg","release_date":"2019-12-07","title":"The
-        SpongeBob Musical: Live on Stage!","video":false,"vote_average":7.4,"vote_count":16},{"adult":false,"backdrop_path":null,"genre_ids":[16],"id":299702,"original_language":"en","original_title":"Spongebob
-        Squarepants: Deep-Sea Games","overview":"12 more wacky adventures featuring
-        the kind-hearted sea sponge and his friends Squidward, Mr Krabs, Patrick the
-        Starfish, and Sandy the Squirrel. The episodes are: ''Extreme Spots'', ''The
-        Fry Cook Games'', ''Karate Choppers'', ''A Friendly Game'', ''Jellyfishing'',
-        ''Demolition Doofus'', ''Shuffleboarding'', ''Krusty Krushers'', ''A Life
-        in the Day'', ''The Hot Shot'', ''Prehibernation Week'' and ''Musclebob Buffpants''.","popularity":2.225,"poster_path":null,"release_date":"1999-04-26","title":"Spongebob
-        Squarepants: Deep-Sea Games","video":true,"vote_average":5.6,"vote_count":7},{"adult":false,"backdrop_path":"/8QlYQxBo6SueGdFgZKBWfkQ98ur.jpg","genre_ids":[16,12,35],"id":782395,"original_language":"en","original_title":"SpongeBob
-        SquarePants: SpongeBob''s Extreme Ka-ra-tay","overview":"","popularity":3.105,"poster_path":"/7Zm52fLu01EtxB0sWx6HIrKDrj6.jpg","release_date":"2013-01-15","title":"SpongeBob
-        SquarePants: SpongeBob''s Extreme Ka-ra-tay","video":false,"vote_average":1,"vote_count":1},{"adult":false,"backdrop_path":"/qWCLqvJcpzahFi2lcVTFGKtyqhZ.jpg","genre_ids":[10751],"id":892303,"original_language":"en","original_title":"SpongeBob
-        SquarePants Halloween","overview":"SpongeBob and friends have an ocean full
-        of spookiness to deal with in this five episode spooky compilation DVD special,
-        including: Scaredy Pants, Imitation Krabs, Frankendoodle, I Was a Teenage
-        Gary, and Squidward the Unfriendly Ghost. And five extra bubblin'' bonus episodes,
-        including: The Secret Box, Band Geeks, Welcome to the Chum Bucket, My Pretty
-        Seahorse, and Idiot Box.","popularity":2.655,"poster_path":"/rINH04lqf4mBqcH5RLfTAXRWuYD.jpg","release_date":"2002-08-27","title":"SpongeBob
-        SquarePants Halloween","video":true,"vote_average":8.7,"vote_count":3},{"adult":false,"backdrop_path":"/vddYNt2guSr1pu0uJq6ee0Q0k2.jpg","genre_ids":[16],"id":299717,"original_language":"en","original_title":"Spongebob
+        stage.","popularity":3.963,"poster_path":"/pbhA6MorVpzWozMgGKLpdyBn8vE.jpg","release_date":"2019-12-07","title":"The
+        SpongeBob Musical: Live on Stage!","video":false,"vote_average":7.4,"vote_count":16},{"adult":false,"backdrop_path":null,"genre_ids":[35,16],"id":991494,"original_language":"en","original_title":"Untitled
+        Fourth SpongeBob Movie","overview":"The 4th movie in The Spongebob movie franchise","popularity":3.444,"poster_path":null,"release_date":"2025-05-23","title":"Untitled
+        Fourth SpongeBob Movie","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":"/wtMsc1ytHmnEzIQFTMv7xVkWMIu.jpg","genre_ids":[35,16,10751],"id":733891,"original_language":"en","original_title":"SpongeBob
+        SquarePants: Where''s Gary?","overview":"SpongeBob''s pet snail Gary runs
+        away from home after feeling neglect from the distracted pet owner. After
+        realizing his mistakes, SpongeBob and his best pal, Patrick, set out to search
+        and find his adored pet snail and bring him back to his pineapple home.","popularity":1.4,"poster_path":"/emqT4yY32jfkDAc4tkXsJPkg1Qj.jpg","release_date":"2005-11-11","title":"SpongeBob
+        SquarePants: Where''s Gary?","video":true,"vote_average":8.5,"vote_count":8},{"adult":false,"backdrop_path":"/vddYNt2guSr1pu0uJq6ee0Q0k2.jpg","genre_ids":[16],"id":299717,"original_language":"en","original_title":"Spongebob
         Squarepants: The Great Patty Caper","overview":"Tired of Plankton always trying
         to steal his Krabby Patty recipe, Mr. Krabs sends it to be safely stored in
         a bank in Way Far-Out Townville on the other side of the ocean. But now he
         can''t remember what goes into making the perfect patty! Spongebob and Patrick
         get on a train to retrieve the Krabby Patty recipe-and so does Plankton! Will
         our heroic duo get to the recipe before Plankton does? Find out in this action-packed
-        story!","popularity":3.675,"poster_path":"/6h9IcAVfaU9pPjlGXnYrhTutxkm.jpg","release_date":"2012-10-29","title":"Spongebob
-        Squarepants: The Great Patty Caper","video":true,"vote_average":5,"vote_count":3},{"adult":false,"backdrop_path":"/wtMsc1ytHmnEzIQFTMv7xVkWMIu.jpg","genre_ids":[35,16,10751],"id":733891,"original_language":"en","original_title":"SpongeBob
-        SquarePants: Where''s Gary?","overview":"SpongeBob''s pet snail Gary runs
-        away from home after feeling neglect from the distracted pet owner. After
-        realizing his mistakes, SpongeBob and his best pal, Patrick, set out to search
-        and find his adored pet snail and bring him back to his pineapple home.","popularity":1.497,"poster_path":"/emqT4yY32jfkDAc4tkXsJPkg1Qj.jpg","release_date":"2005-11-11","title":"SpongeBob
-        SquarePants: Where''s Gary?","video":true,"vote_average":8.5,"vote_count":8},{"adult":false,"backdrop_path":"/wtqb1gknddPnDB18FdZHMYqLBW0.jpg","genre_ids":[16,12,35],"id":782397,"original_language":"en","original_title":"SpongeBob
-        Squarepants: Sweet and Sour Squidward","overview":"","popularity":3.284,"poster_path":"/kNazezSMuryDT34nmeDlhnmAKPr.jpg","release_date":"2013-03-01","title":"SpongeBob
-        Squarepants: Sweet and Sour Squidward","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":"/zd1zMWrr8OeOVQFgiaB9yAhMh4V.jpg","genre_ids":[16,12,35],"id":782256,"original_language":"en","original_title":"Spongebob
-        Squarepants The Great Sleigh Race","overview":"","popularity":3.497,"poster_path":"/tqbV7kdQWwVIsx8j4G8pNqmsClD.jpg","release_date":"2011-01-01","title":"Spongebob
-        Squarepants The Great Sleigh Race","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[16,10751],"id":358711,"original_language":"en","original_title":"SpongeBob
-        SquarePants Halloween","overview":"A collection of spooky SpongeBob episodes
-        from the series.","popularity":0.6,"poster_path":null,"release_date":"2002-08-27","title":"SpongeBob
-        SquarePants: Halloween","video":true,"vote_average":7,"vote_count":7},{"adult":false,"backdrop_path":null,"genre_ids":[16],"id":488884,"original_language":"en","original_title":"SpongeBob
-        Squarepants - Absorbing Favorites","overview":"9 underwater Favorites!","popularity":1.587,"poster_path":"/gA0h1uVRotv9cvpIiCwVy9BIKXh.jpg","release_date":"2005-09-20","title":"SpongeBob
-        Squarepants - Absorbing Favorites","video":true,"vote_average":5.7,"vote_count":3},{"adult":false,"backdrop_path":"/kKZpQuXmTAM3VZUMKVxyFwHrk71.jpg","genre_ids":[16],"id":427030,"original_language":"en","original_title":"SpongeBob
-        SquarePants - Karate Island","overview":"Episode\r 71b - \"Karate Island\"\r
-        68b - \"SquidBob TentaclePants\"\r 69a - \"Krusty Towers\"\r 69b - \"Mrs.
-        Puff, You''re Fired\"\r 70b - \"Ghost Host\"\r 72b - \"Wishing You Well\"\r
-        73a - \"New Leaf\"\r 72a - \"All That Glitters\"*","popularity":0.84,"poster_path":"/kDlJBAYFHuwzVqbqYxFDLl20t7f.jpg","release_date":"2007-02-22","title":"SpongeBob
-        SquarePants - Karate Island","video":true,"vote_average":10,"vote_count":1},{"adult":false,"backdrop_path":"/iLIxJ9YjKnfafBGqwUoFrkYG3nA.jpg","genre_ids":[10751,16,35],"id":299082,"original_language":"en","original_title":"SpongeBob
+        story!","popularity":2.794,"poster_path":"/6h9IcAVfaU9pPjlGXnYrhTutxkm.jpg","release_date":"2012-10-29","title":"Spongebob
+        Squarepants: The Great Patty Caper","video":true,"vote_average":5,"vote_count":3},{"adult":false,"backdrop_path":"/8QlYQxBo6SueGdFgZKBWfkQ98ur.jpg","genre_ids":[16,12,35],"id":782395,"original_language":"en","original_title":"SpongeBob
+        SquarePants: SpongeBob''s Extreme Ka-ra-tay","overview":"","popularity":1.96,"poster_path":"/7Zm52fLu01EtxB0sWx6HIrKDrj6.jpg","release_date":"2013-01-15","title":"SpongeBob
+        SquarePants: SpongeBob''s Extreme Ka-ra-tay","video":false,"vote_average":1,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[16],"id":488884,"original_language":"en","original_title":"SpongeBob
+        Squarepants - Absorbing Favorites","overview":"9 underwater Favorites!","popularity":2.577,"poster_path":"/gA0h1uVRotv9cvpIiCwVy9BIKXh.jpg","release_date":"2005-09-20","title":"SpongeBob
+        Squarepants - Absorbing Favorites","video":true,"vote_average":5.7,"vote_count":3},{"adult":false,"backdrop_path":"/iLIxJ9YjKnfafBGqwUoFrkYG3nA.jpg","genre_ids":[10751,16,35],"id":299082,"original_language":"en","original_title":"SpongeBob
         SquarePants: Spongebob''s Last Stand","overview":"In the never-before seen
         episode, SpongeBob''s Last stand, all chaos breaks loose in Bikini Bottom
         when SpongeBob and Patrick hear that a new highway will be running through
         Jellyfish fields, outraged they decide to protest; SpongeBob style. Plus,
         don''t miss out on the other new-to-DVD adventures that will surely keep you
-        laughing.","popularity":0.683,"poster_path":"/uAYHpv2fFSrtDbvjNrZTPTUoodx.jpg","release_date":"2010-03-16","title":"SpongeBob
-        SquarePants: Spongebob''s Last Stand","video":true,"vote_average":8.7,"vote_count":3},{"adult":false,"backdrop_path":"/3KUBUqnGd8lZfkfw6hRxf234bbu.jpg","genre_ids":[16],"id":369206,"original_language":"en","original_title":"SpongeBob
+        laughing.","popularity":0.6,"poster_path":"/uAYHpv2fFSrtDbvjNrZTPTUoodx.jpg","release_date":"2010-03-16","title":"SpongeBob
+        SquarePants: Spongebob''s Last Stand","video":true,"vote_average":8.7,"vote_count":3},{"adult":false,"backdrop_path":"/5w0i4BaLAKJoud0xgCtbikokF2C.jpg","genre_ids":[16],"id":378981,"original_language":"en","original_title":"SpongeBob
+        SquarePants: Lost in Time","overview":"Journey back to Medieval Bikini Bottom,
+        to the land of fair maidens, evil knights, fire-breathing jellyfish and daring
+        rescues. Thou art in for an exciting role!","popularity":0.992,"poster_path":"/3VC3JkH9oMjKG7qx6VPcJKGmGM9.jpg","release_date":"2007-02-21","title":"SpongeBob
+        SquarePants: Lost in Time","video":true,"vote_average":8,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[16],"id":299702,"original_language":"en","original_title":"Spongebob
+        Squarepants: Deep-Sea Games","overview":"12 more wacky adventures featuring
+        the kind-hearted sea sponge and his friends Squidward, Mr Krabs, Patrick the
+        Starfish, and Sandy the Squirrel. The episodes are: ''Extreme Spots'', ''The
+        Fry Cook Games'', ''Karate Choppers'', ''A Friendly Game'', ''Jellyfishing'',
+        ''Demolition Doofus'', ''Shuffleboarding'', ''Krusty Krushers'', ''A Life
+        in the Day'', ''The Hot Shot'', ''Prehibernation Week'' and ''Musclebob Buffpants''.","popularity":0.71,"poster_path":null,"release_date":"1999-04-26","title":"Spongebob
+        Squarepants: Deep-Sea Games","video":true,"vote_average":5.6,"vote_count":7},{"adult":false,"backdrop_path":"/sNf5d6Y9UjvAjjis1zARJhtkSI8.jpg","genre_ids":[],"id":435298,"original_language":"en","original_title":"Spongebob
+        Squarepants: 10 Happiest Moments","overview":"Celebrate Spongebob''s 10th
+        anniversary with this collection with over two hours of laughs featuring Spongebob''s
+        happiest moments!","popularity":1.177,"poster_path":"/vaqwlA4ckt45axcLFF2wQA4oY0Q.jpg","release_date":"2009-02-12","title":"Spongebob
+        Squarepants: 10 Happiest Moments","video":true,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":"/jVuNNBERV7UjHwJmdftQxjpZUJO.jpg","genre_ids":[],"id":397698,"original_language":"en","original_title":"SpongeBob
+        SquarePants: Pest of the West","overview":"","popularity":1.185,"poster_path":"/hvuHRUhExmwqzs44FvzwVqmMe9y.jpg","release_date":"2008-04-10","title":"SpongeBob
+        SquarePants: Pest of the West","video":true,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":"/kKZpQuXmTAM3VZUMKVxyFwHrk71.jpg","genre_ids":[16],"id":427030,"original_language":"en","original_title":"SpongeBob
+        SquarePants - Karate Island","overview":"Episode\r 71b - \"Karate Island\"\r
+        68b - \"SquidBob TentaclePants\"\r 69a - \"Krusty Towers\"\r 69b - \"Mrs.
+        Puff, You''re Fired\"\r 70b - \"Ghost Host\"\r 72b - \"Wishing You Well\"\r
+        73a - \"New Leaf\"\r 72a - \"All That Glitters\"*","popularity":0.644,"poster_path":"/kDlJBAYFHuwzVqbqYxFDLl20t7f.jpg","release_date":"2007-02-22","title":"SpongeBob
+        SquarePants - Karate Island","video":true,"vote_average":10,"vote_count":1},{"adult":false,"backdrop_path":"/wtqb1gknddPnDB18FdZHMYqLBW0.jpg","genre_ids":[16,12,35],"id":782397,"original_language":"en","original_title":"SpongeBob
+        Squarepants: Sweet and Sour Squidward","overview":"","popularity":2.015,"poster_path":"/kNazezSMuryDT34nmeDlhnmAKPr.jpg","release_date":"2013-03-01","title":"SpongeBob
+        Squarepants: Sweet and Sour Squidward","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":"/9lNmWESsYwv0wgLDkQuDHhA55x5.jpg","genre_ids":[16,35,12],"id":384715,"original_language":"en","original_title":"Spongebob
+        Squarepants: SpongeGuard on Duty","overview":"Eight more episodes of deep-sea
+        silliness! Includes SpongeGuard on Duty,\" Naughty Nautical Neighbors,\" Walking
+        Small,\" Pressure,\" Jellyfish Hunter,\" Nasty Patty,\" Doing Time\" and Clams.\"","popularity":2.174,"poster_path":"/bSHpzrBv9SEcDIASXrslTAS4mBW.jpg","release_date":"2004-06-01","title":"Spongebob
+        Squarepants: SpongeGuard on Duty","video":true,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":"/zd1zMWrr8OeOVQFgiaB9yAhMh4V.jpg","genre_ids":[16,12,35],"id":782256,"original_language":"en","original_title":"Spongebob
+        Squarepants The Great Sleigh Race","overview":"","popularity":2.39,"poster_path":"/tqbV7kdQWwVIsx8j4G8pNqmsClD.jpg","release_date":"2011-01-01","title":"Spongebob
+        Squarepants The Great Sleigh Race","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":"/30rShrB6Nc6Lu64qYTzkJpFmz0Z.jpg","genre_ids":[16,35,12],"id":782365,"original_language":"en","original_title":"Spongebob
+        Square Pants: Bikini Bottom Buddies","overview":"","popularity":1.775,"poster_path":"/8RwKrAj4QkLliYvP80HaWMgDBz5.jpg","release_date":"2014-07-21","title":"Spongebob
+        Square Pants: Bikini Bottom Buddies","video":true,"vote_average":1,"vote_count":1},{"adult":false,"backdrop_path":"/3KUBUqnGd8lZfkfw6hRxf234bbu.jpg","genre_ids":[16],"id":369206,"original_language":"en","original_title":"SpongeBob
         SquarePants - Sea Stories","overview":"10 more episodes of deep-sea silliness!
         Includes Shanghaied,\" Gary Takes a Bath,\" Hooky,\" Life of Crime,\" Pickles,\"
         No Free Rides,\" Sailor Mouth,\" No Weenies Allowed,\" Jellyfish Jam\" and
-        The Algae''s Always Greener,\" with a music video, alternate endings and more.","popularity":1.168,"poster_path":null,"release_date":"2002-11-05","title":"SpongeBob
-        SquarePants - Sea Stories","video":true,"vote_average":8,"vote_count":1},{"adult":false,"backdrop_path":"/kpZLC6lCaO7vXIqN0TJbzPYvf1u.jpg","genre_ids":[16],"id":683417,"original_language":"en","original_title":"SpongeBob
-        SquarePants - The Seascape Capers","overview":"The Seascape Capers is a SpongeBob
-        SquarePants DVD that was released on January 6, 2004 and contains one episode
-        from season 1, six episodes from season 2, and three episodes from season
-        3. It was re-released on September 25, 2012.","popularity":1.551,"poster_path":"/bIR5o4lCOSJySp5QuS7cgKSCjjZ.jpg","release_date":"2004-01-06","title":"SpongeBob
-        SquarePants - The Seascape Capers","video":true,"vote_average":8.7,"vote_count":3},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":1027292,"original_language":"en","original_title":"The
-        Ultimate SpongeBob SpongeBash","overview":"This is a 50 hour marathon celebrating
-        the 10th Anniversary of SpongeBob SquarePants","popularity":1.493,"poster_path":"/edcAckVG5hdc7IpCObrLsrew2qh.jpg","release_date":"2009-07-17","title":"The
-        Ultimate SpongeBob SpongeBash","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[16],"id":355181,"original_language":"en","original_title":"Spongebob
-        Squarepants: Pilot Mini-Movie","overview":"It''s deep-sea hilarity with SpongeBob
-        and pals in a two-part mini-movie, 42 shorts AND the pilot episode! First,
-        help the Krusty Krew make it to the restaurant''s anniversary party. Then
-        enjoy a first-time collection of short episodes and the one that put SpongeBob
-        on the map.","popularity":1.215,"poster_path":null,"release_date":"2015-01-06","title":"Spongebob
-        Squarepants: Pilot Mini-Movie","video":true,"vote_average":7,"vote_count":4},{"adult":false,"backdrop_path":"/AfNA5F42iDXHDrgeThiozLGwA0O.jpg","genre_ids":[35],"id":991494,"original_language":"en","original_title":"The
-        Spongebob Movie 4","overview":"The 4th movie in The Spongebob movie franchise","popularity":1.279,"poster_path":"/iqOBXdn4Xdqv5kpnSCcqBTRYb2n.jpg","release_date":"","title":"The
-        Spongebob Movie 4","video":false,"vote_average":0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[16],"id":533185,"original_language":"en","original_title":"SpongeBob
-        SquarePants - Nautical Nonsense and Sponge Buddies","overview":"10 Sea-Worthy
-        Stores. Including Ripped Pants,\" SB-129,\" Texas,\" The Graveyard Shift,\"
-        Something Smells,\" Jellyfishing,\" Dying for Pie,\" Wormy,\" F.U.N.\" and
-        Club Spongebob.\"","popularity":2.225,"poster_path":"/yu97oqx372lviZqNnorbGDOrw7x.jpg","release_date":"2002-03-12","title":"SpongeBob
-        SquarePants - Nautical Nonsense and Sponge Buddies","video":true,"vote_average":6.3,"vote_count":3}],"total_pages":4,"total_results":67}'
-  recorded_at: Mon, 10 Oct 2022 18:43:40 GMT
+        The Algae''s Always Greener,\" with a music video, alternate endings and more.","popularity":1.407,"poster_path":null,"release_date":"2002-11-05","title":"SpongeBob
+        SquarePants - Sea Stories","video":true,"vote_average":8,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[16],"id":824890,"original_language":"it","original_title":"SpongeBob
+        – Krabby Days","overview":"","popularity":0.6,"poster_path":"/1WgJJ2wJnUU6aWFf7aOqRwcshdG.jpg","release_date":"","title":"SpongeBob
+        – Krabby Days","video":true,"vote_average":1,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":289137,"original_language":"en","original_title":"SpongeBob
+        SquarePants: Extreme Kah-Rah-Tay","overview":"","popularity":0.744,"poster_path":"/71XAalIrqWYV0hclxt9Brcx5OHR.jpg","release_date":"2013-11-17","title":"SpongeBob
+        SquarePants: Extreme Kah-Rah-Tay","video":true,"vote_average":8,"vote_count":5}],"total_pages":4,"total_results":68}'
+  recorded_at: Thu, 17 Nov 2022 01:22:33 GMT
 recorded_with: VCR 6.1.0
