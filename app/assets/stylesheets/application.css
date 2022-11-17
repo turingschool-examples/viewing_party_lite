@@ -14,10 +14,6 @@
  *= require_self
  */
 
- <style>
- @import url('https://fonts.googleapis.com/css2?family=Limelight&family=Oswald:wght@300&display=swap');
- </style>
-
 body {
   font-family: 'ABeeZee', sans-serif;
 }
