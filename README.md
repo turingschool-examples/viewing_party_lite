@@ -1,6 +1,6 @@
 # Background and Description
 
-Viewing Part Lite is an application in which users can explore movie options and create a viewing party event for themselves and invite other users on the application. Features include browsing top rated movies, searching for movies by title, creating viewing parties for a movie, and viewing movie data such as vote average, cast, runtime, and reviews. The app implements both authorization and authentication by restricting access to certain features to registered users and limiting admin access to only those registered as an admin account.
+Viewing Part Lite is an application that consumes the [The Movie DB API](https://developers.themoviedb.org/3/getting-started/introduction) to allow users to explore movie options, create viewing parties and invite friends to join in watching. Features include browsing top rated movies, searching for movies by title, creating viewing parties for a movie, and viewing movie data such as vote average, cast, runtime, and reviews. The app implements both authorization and authentication by restricting access to certain features to registered users and limiting admin access to only those registered as an admin account.
 
 ## Built With 
    ![RoR](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
