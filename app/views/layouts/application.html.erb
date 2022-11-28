@@ -7,9 +7,15 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
+    <%= link_to "Home", root_path %>
+
   </head>
 
   <body>
+    <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, class: name %>
+  <% end %>
     <%= yield %>
   </body>
 </html>
