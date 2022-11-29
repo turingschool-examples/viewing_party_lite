@@ -21,7 +21,7 @@
           null
         ]
       },
-      "/Users/elifuchsman/Turing/mod3_directory/projects/viewing_party_lite/app/models/viewing_party.rb": {
+      "/Users/elifuchsman/Turing/mod3_directory/projects/viewing_party_lite/app/models/viewing_party_user.rb": {
         "lines": [
           1,
           1,
@@ -29,10 +29,6 @@
           null,
           1,
           1,
-          1,
-          1,
-          1,
-          null,
           null
         ]
       },
@@ -40,14 +36,6 @@
         "lines": [
           null,
           null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/elifuchsman/Turing/mod3_directory/projects/viewing_party_lite/app/models/viewing_party_user.rb": {
-        "lines": [
-          1,
           1,
           1,
           null
@@ -62,6 +50,21 @@
           1,
           1,
           1,
+          null
+        ]
+      },
+      "/Users/elifuchsman/Turing/mod3_directory/projects/viewing_party_lite/app/models/viewing_party.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
           null
         ]
       },
@@ -151,6 +154,6 @@
         }
       }
     },
-    "timestamp": 1669691703
+    "timestamp": 1669692428
   }
 }
