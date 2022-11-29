@@ -3,7 +3,7 @@ require "rails_helper"
 
 RSpec.describe("New Register Page") do
   before(:each) do
-    visit(new_register_path)
+    visit("/register")
   end
 
   describe("when i vist root_path theres a linke to create a new register") do
