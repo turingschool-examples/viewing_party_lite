@@ -23,18 +23,17 @@
           null
         ]
       },
-      "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/models/user_viewing_party.rb": {
+      "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/controllers/welcome_controller.rb": {
         "lines": [
           1,
           1,
-          1,
+          4,
+          null,
           null
         ]
       },
-      "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/models/viewing_party.rb": {
+      "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/controllers/application_controller.rb": {
         "lines": [
-          1,
-          1,
           1,
           null
         ]
@@ -50,11 +49,11 @@
           null,
           null,
           1,
-          1,
+          0,
           null,
-          1,
-          1,
-          1,
+          0,
+          0,
+          0,
           null,
           0,
           null,
@@ -62,22 +61,27 @@
           null
         ]
       },
-      "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/controllers/welcome_controller.rb": {
-        "lines": [
-          1,
-          1,
-          5,
-          null,
-          null
-        ]
-      },
       "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/models/user_viewing_party.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/models/viewing_party.rb": {
         "lines": [
           0,
           0,
@@ -125,6 +129,6 @@
         }
       }
     },
-    "timestamp": 1669756836
+    "timestamp": 1669757761
   }
 }

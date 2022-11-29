@@ -5,7 +5,6 @@ RSpec.describe("Welcome Index Page") do
   before(:each) do
     @steve = User.create!(name: "Steve", email: "steve.smith@gmail.com")
     @mary = User.create!(name: "Mary", email: "mary.smith@gmail.com")
-    @margaret = User.create!(name: "Margaret", email: "mary.smith@gmail.com")
 
     visit(root_path)
   end
