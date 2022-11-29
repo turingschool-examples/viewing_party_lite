@@ -15,9 +15,10 @@ RSpec.describe "Landing Page" do
         expect(page).to have_content("Viewing Party Lite")
       end
 
-      it "I see a Button to Create a New User" do
+      it "I see a button to Create a New User" do
         visit "/"
 
+        expect(page).to have_button("Create New User")
       end
     end
   end
