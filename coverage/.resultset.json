@@ -7,6 +7,39 @@
           null
         ]
       },
+      "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          1,
+          0,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/models/user.rb": {
         "lines": [
           1,
@@ -27,40 +60,7 @@
         "lines": [
           1,
           1,
-          5,
-          null,
-          null
-        ]
-      },
-      "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/controllers/application_controller.rb": {
-        "lines": [
           1,
-          null
-        ]
-      },
-      "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/controllers/users_controller.rb": {
-        "lines": [
-          1,
-          1,
-          0,
-          null,
-          null,
-          1,
-          null,
-          null,
-          1,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          null,
-          1,
-          2,
           null,
           null
         ]
@@ -133,6 +133,6 @@
         }
       }
     },
-    "timestamp": 1669758607
+    "timestamp": 1669758910
   }
 }

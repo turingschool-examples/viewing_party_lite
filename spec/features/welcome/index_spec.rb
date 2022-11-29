@@ -43,7 +43,6 @@ RSpec.describe("Welcome Index Page") do
           click_link "mary.smith@gmail.com"
           expect(current_path).to eq(user_path(@mary))
           expect(current_path).to_not eq(user_path(@steve))
-
         end
       end
     end
