@@ -1,2 +1,11 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/create.html.erb</p>
+<h1><center>Viewing Party Lite<center></h1>
+<p><center>Register a New User<center> </p>
+
+
+<%= form_with url: users_path, method: :post, local: :true do |f| %>
+<p><%= f.label "Name:" %>
+<%= f.text_field :name %></p>
+<%= f.label "Email:" %>
+<%= f.text_field :email %>
+<p><%= f.submit "Create New User"%></p>
+<%end%>
