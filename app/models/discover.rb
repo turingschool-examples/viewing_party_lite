@@ -1,0 +1,3 @@
+class Discover < ApplicationRecord
+  
+end

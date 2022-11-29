@@ -5,4 +5,8 @@ Rails.application.routes.draw do
   resources :users, except: [:new, :create] 
   get("/register",   to: "users#new")
   post("/register",   to: "users#create")
+  
+
+
+  #discover controller to call API? "users/:id/discover"
 end
