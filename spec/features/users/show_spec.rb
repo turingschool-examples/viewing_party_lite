@@ -2,32 +2,27 @@ require 'rails_helper'
 
 RSpec.describe 'the user dashboard' do 
   before(:each) do 
-    @sean = User.create!(name: 'Sean', email: 'fake@gmail.com')
-    @rich = User.create!(name: 'Rich', email: 'fake2@gmail.com')
+    @user = create(:user)
 
-    date = DateTime.new(1991,3,13,12,0,0)
+    @party1 = create(:movie_party)
+    @party2 = create(:movie_party)
+    @party3 = create(:movie_party)
 
-    @party1 = MovieParty.create!(movie_title: 'The Godfather', duration: 180, start_time: date, movie_id: 1)
-    @party2 = MovieParty.create!(movie_title: 'Star Wars', duration: 180, start_time: date, movie_id: 2)
-    @party3 = MovieParty.create!(movie_title: 'Pride and Prejudice', duration: 180, start_time: date, movie_id: 3)
+    @ump1 = UserMovieParty.create!(user_id: @user.id, movie_party_id: @party1.id, status: 0)
+    @ump2 = UserMovieParty.create!(user_id: @user.id, movie_party_id: @party2.id, status: 1)
 
-    @ump1 = UserMovieParty.create!(user_id: @sean.id, movie_party_id: @party1.id, status: 0)
-    @ump2 = UserMovieParty.create!(user_id: @sean.id, movie_party_id: @party2.id, status: 1)
-
-    visit user_path(@sean)
+    visit user_path(@user)
   end
 
   describe 'sections' do 
     it 'shows "user names dashboard" at top of page' do 
-      expect(page).to have_content("#{@sean.name}'s Dashboard")
-
-      expect(page).to_not have_content("#{@rich.name}'s Dashboard")
+      expect(page).to have_content("#{@user.name}'s Dashboard")
     end
 
     it 'has a button to discover movies' do 
       expect(page).to have_button('Discover Movies')
       click_button 'Discover Movies'
-      expect(current_path).to eq("/users/#{@sean.id}/discover")
+      expect(current_path).to eq("/users/#{@user.id}/discover")
     end
 
     it 'lists viewing parties that user is associated with' do 
