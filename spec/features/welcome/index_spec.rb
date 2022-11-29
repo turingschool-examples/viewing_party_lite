@@ -2,6 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'welcome index page' do
   before :each do
+    @user1 = User.create!(name: "William", email: "William@gmail.com")
+    @user2 = User.create!(name: "Ashley", email: "Ashley@gmail.com")
+    @user3 = User.create!(name: "Abdul", email: "Abdul@gmail.com")
     visit(root_path)
   end
   it 'should include title of the application' do
@@ -12,8 +15,12 @@ RSpec.describe 'welcome index page' do
     # click_button "Create New User"
 
   end
-  it 'has a list of existing users which links to the users dashboard' do
-    #WIP
+  it 'has a list of existing users' do
+    expect(page).to have_content("Existing Users")
+  end
+
+  it 'which links to the users dashboard' do 
+    # expect(page).to have_link("#{@user1.name}s Dashboard") WIP
   end
 
   it 'includes a link to the landing page' do
