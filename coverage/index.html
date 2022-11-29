@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-11-28T21:04:36-07:00">2022-11-28T21:04:36-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-11-28T21:13:05-07:00">2022-11-28T21:13:05-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="red">
-  33.33%
+  37.5%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.33
+         0.38
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>30</b> relevant lines,
-    <span class="green"><b>10</b> lines covered</span> and
+    <b>32</b> relevant lines,
+    <span class="green"><b>12</b> lines covered</span> and
     <span class="red"><b>20</b> lines missed. </span>
     (<span class="red">
-  33.33%
+  37.5%
 </span>
 )
   </div>
@@ -161,9 +161,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#82c3593eb60bd2368c59a64338bde3e3586bfe3d" class="src_link" title="app/models/party.rb">app/models/party.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">4</td>
             <td class="cell--number">3</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">1</td>
+            <td class="cell--number">3</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -383,8 +383,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>9</b> relevant lines,
-    <span class="green"><b>9</b> lines covered</span> and
+    <b>11</b> relevant lines,
+    <span class="green"><b>11</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -424,9 +424,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#82c3593eb60bd2368c59a64338bde3e3586bfe3d" class="src_link" title="app/models/party.rb">app/models/party.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">4</td>
             <td class="cell--number">3</td>
-            <td class="cell--number">1</td>
-            <td class="cell--number">1</td>
+            <td class="cell--number">3</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -1283,8 +1283,8 @@
     
 
     <div class="t-line-summary">
-      <b>1</b> relevant lines.
-      <span class="green"><b>1</b> lines covered</span> and
+      <b>3</b> relevant lines.
+      <span class="green"><b>3</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -1307,18 +1307,29 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="2">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="2">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  </code>
+            
+
+            <code class="ruby">  has_many :user_parties</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="3">
+          <li class="covered" data-hits="1" data-linenumber="3">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  has_many :users, through: :user_parties</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="4">
             
             
 
