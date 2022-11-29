@@ -10,10 +10,9 @@ FactoryBot.define do
 
   factory :view_party, class: ViewParty do
     movie_name { Faker::Movie.title }
-    movie_id { Faker::Number.within(range(1..999)) }
-    duration { Faker::Number.within(range(90..150)) }
-    date { Faker::Date }
-    time { Faker::Time }
+    movie_id { Faker::Number.within(range: 1..100) }
+    duration { Faker::Number.within(range: 90..150) }
+    datetime { Faker::Time.between(from: DateTime.now, to: DateTime.now + 20) }
   end
 
   factory :user_view_party, class: UserViewParty do
