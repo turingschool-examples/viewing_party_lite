@@ -1,0 +1,12 @@
+<h1>Viewing Party</h1>
+<p><%= link_to 'Landing Page', '/' %></p>
+
+<p><%= button_to 'Create New User', '/register', method: :get %></p>
+
+<div id="users">
+    <ul>
+        <% @users.each do |user| %>
+            <li><%= user.name %></li>
+        <% end %>
+    </ul>
+</div>
