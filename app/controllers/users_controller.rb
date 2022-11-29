@@ -22,3 +22,4 @@ class UsersController < ApplicationController
     params.permit(:name, :email)
   end
 end
+ 
