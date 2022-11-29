@@ -1,8 +1,15 @@
-
+<center><h2>Viewing Party Landing Page</h2></center>
 <div class="row">
   <div class="column">
     <div id="creation">
-        <%=button_to"Create New User","/register", method: :get %>
+        <center><%=button_to"Create New User","/register", method: :get %></center>
     </div>
   </div>
+</div>
+
+<div id= "existing_users">
+  <strong><h3>Existing Users</h3></strong>
+  <%@users.each do |user|%>
+    <%=user.email%>
+  <%end%>
 </div>

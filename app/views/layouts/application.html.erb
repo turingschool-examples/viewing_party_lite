@@ -17,15 +17,18 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+  
+    <div class="center">
+      <center><h1>Viewing Party</h1></center>
+    </div>
+      <div class="topleft">
+        <%= link_to "Home", root_path, style: "color:black;padding-left:1em" %>
+      </div>
+      <hr>
   </head>
 
   <body>
     <%= yield %>
-      <div class="center">
-       <h1>Viewing Party</h1>
-      </div>
-        <div class="topleft">
-          <%= link_to "Home", root_path, style: "color:black;padding-left:3em" %>
-        </div>
+
   </body>
 </html>
