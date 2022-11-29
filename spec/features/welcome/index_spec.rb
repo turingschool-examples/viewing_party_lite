@@ -30,7 +30,7 @@ RSpec.describe 'the Welcome Page', type: :feature do
 
         click_link user_1.email
       end
-      save_and_open_page
+
       expect(current_path).to eq(user_path(user_1))
     end
 
