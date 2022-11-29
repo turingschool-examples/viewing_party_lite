@@ -17,17 +17,17 @@ class UsersController < ApplicationController
   def show
   end
 
-  private
-
-  def user_params
-    params.permit(:name, :email)
-  end
-
   def show
     @user = User.find(params[:id])
   end
 
   def discover
     
+  end
+
+  private
+
+  def user_params
+    params.permit(:name, :email)
   end
 end
