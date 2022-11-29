@@ -43,8 +43,6 @@ RSpec.describe 'the user dashboard' do
       end
 
       expect(page).to_not have_content(@party3.movie_title)
-
-      save_and_open_page
     end
 
     it 'has an image for each movie'
