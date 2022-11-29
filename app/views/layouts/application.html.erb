@@ -10,9 +10,14 @@
   </head>
 
   <body>
-  <header>
-    <%= link_to 'Home Page', '/', method: :get%>
-  </header>
+    <header>
+      <% flash.each do |type, msg| %>
+        <div style="color:purple;font-weight:bold;">
+          <%= msg %>
+        </div>
+      <% end %>
+      <%= link_to 'Home Page', '/', method: :get%>
+    </header>
     <%= yield %>
   </body>
 </html>
