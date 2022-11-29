@@ -29,11 +29,20 @@ RSpec.describe("Welcome Index Page") do
       end
 
       it 'lists existing users and each user links to their dashboard' do 
-        within "#existing_users" do 
+        within "#all_users" do 
           expect(page).to have_link("steve.smith@gmail.com")
           expect(page).to have_link("mary.smith@gmail.com")
+        end
+        within "#existing_users-#{@steve.id}" do
           click_link "steve.smith@gmail.com"
           expect(current_path).to eq(user_path(@steve))
+          expect(current_path).to_not eq(user_path(@mary))
+        end
+        click_link "Home"
+        within "#existing_users-#{@mary.id}" do
+          click_link "mary.smith@gmail.com"
+          expect(current_path).to eq(user_path(@mary))
+          expect(current_path).to_not eq(user_path(@steve))
 
         end
       end

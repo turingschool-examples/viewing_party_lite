@@ -7,9 +7,11 @@
   </div>
 </div>
 
-<div id= "existing_users">
+<div id= "all_users">
   <strong><h3>Existing Users</h3></strong>
   <%@users.each do |user|%>
+  <div id= <%="existing_users-#{user.id}"%>>
     <%=link_to user.email, user_path(user), method: :get%>
   <%end%>
+  </div>
 </div>
