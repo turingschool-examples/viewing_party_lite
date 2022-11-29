@@ -18,5 +18,17 @@ RSpec.describe 'Creating a new user' do
       new_user = User.last
       expect(current_path).to eq("/users/#{new_user.id}")
     end
+
+    it 'returns an error message if email is already taken' do
+      @yuji = User.create!(name: "Yuji", email: "yuji@yuji.com")
+      visit '/register'
+
+      fill_in('Name', with: 'Tony')
+      fill_in('Email', with: 'yuji@yuji.com')
+
+      click_button('Register')
+     
+      expect(page).to have_content("Email address already in use")
+    end
   end
 end
