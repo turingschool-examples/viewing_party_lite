@@ -13,11 +13,8 @@ RSpec.describe 'The Show Page', type: :feature do # rubocop:disable Metrics/Bloc
   end
 
   describe 'When I visit the user show path' do
-    it 'I see a <users name> Dashboard at the top' do
-      # within '#title' do
-        save_and_open_page
+    xit 'I see a <users name> Dashboard at the top' do
         expect(page).to have_content("#{user_1.name}'s Dashboard")
-      # end
     end
 
     xit 'I see a section that lists viewing parties' do
