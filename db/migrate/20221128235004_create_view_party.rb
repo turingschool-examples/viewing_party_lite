@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateViewParty < ActiveRecord::Migration[5.2]
   def change
     create_table :view_parties do |t|
