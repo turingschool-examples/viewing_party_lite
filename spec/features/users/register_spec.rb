@@ -24,7 +24,7 @@ RSpec.describe "the User registration page" do
 
       # visit '/'
       
-      # expect(page).to have_contnet('amanda@turing.edu')
+      # expect(page).to have_content('amanda@turing.edu')
     end
 
     it "doesn't allow you to leave fields blank" do 
