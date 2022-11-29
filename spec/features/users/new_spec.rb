@@ -21,7 +21,7 @@ RSpec.describe 'The Register Page', type: :feature do
       expect(current_path).to eq(user_path(new_user))
     end
 
-    it 'returns an error message if fields are not filled correctly' do
+    it 'returns an error message if field is blank' do
       within "#register-form" do
         fill_in :name, with: ''
         fill_in :email, with: 'bob@gmail.com'
