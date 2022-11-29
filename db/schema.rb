@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2022_11_29_201328) do
   create_table "user_viewing_parties", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "viewing_party_id"
-    t.integer "status"
+    t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_user_viewing_parties_on_user_id"
