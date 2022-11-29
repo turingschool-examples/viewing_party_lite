@@ -62,3 +62,5 @@ gem "shoulda-matchers", "~> 5.2", :groups => [:test, :development]
 gem "bootstrap", "~> 5.2"
 
 gem "jquery-rails", "~> 4.5"
+
+gem "faker", "~> 3.0"
