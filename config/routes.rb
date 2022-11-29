@@ -2,7 +2,7 @@
 Rails.application.routes.draw do
   root("welcome#index")
 
-  #resources(:users)
+  resources :users, except: [:new, :create] 
   get("/register",   to: "users#new")
   post("/register",   to: "users#create")
 end
