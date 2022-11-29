@@ -14,6 +14,7 @@ class UsersController < ApplicationController
 
   def show 
     @user = User.find(params[:id])
+    @viewing_parties = @user.users_parties
   end
 
   private
