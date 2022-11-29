@@ -1,2 +1,16 @@
-<h1>Discover#index</h1>
-<p>Find me in app/views/discover/index.html.erb</p>
+<div class="row">
+  <div class="col d-flex flex-column align-items-center">
+    <h3>Discover Movies</h3>
+    <%= link_to 'Discover Top Rated Movies', root_path, class: 'btn btn-primary' %>
+  </div>
+</div>
+<div class="row m-3">
+  <div class="col d-flex justify-content-center">
+    <%= form_with(url: "", method: "", local: true) do |f| %>
+    <div>
+      <%= f.text_field :search, placeholder: 'search' %>
+      <%= f.submit 'Find Movies' %>
+    </div>
+    <% end %>
+  </div>
+</div>
