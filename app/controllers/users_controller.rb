@@ -1,9 +1,9 @@
-class UsersController < ApplicationController
-  def new
-  end
+# frozen_string_literal: true
 
-  def show
-  end
+class UsersController < ApplicationController
+  def new; end
+
+  def show; end
 
   def create
     new_user = User.new(user_params)
@@ -16,7 +16,8 @@ class UsersController < ApplicationController
     end
   end
 
-private
+  private
+
   def user_params
     params.permit(:name, :email)
   end
