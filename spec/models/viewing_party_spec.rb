@@ -7,5 +7,7 @@ RSpec.describe ViewingParty, type: :model do
   end
 
   describe 'validations' do
+    it { should validate_presence_of :date }
+    it { should validate_presence_of :start_time }
   end
 end
