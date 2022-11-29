@@ -22,4 +22,12 @@ class UsersController < ApplicationController
   def user_params
     params.permit(:name, :email)
   end
+
+  def show
+    @user = User.find(params[:id])
+  end
+
+  def discover
+    
+  end
 end

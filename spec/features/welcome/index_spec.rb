@@ -28,7 +28,7 @@ RSpec.describe 'welcome index page', type: :feature do
         expect(page).to have_link('reba_mail@gmail.com', href: user_path(@reba))
       end
 
-      it '- has a link to go back to the landing page (this link will be present at the top of all pages' do
+      it '- has a link to go back to the landing page (this link will be present at the top of all pages)' do
         expect(page).to have_link('Home', href: root_path)
       end
     end
