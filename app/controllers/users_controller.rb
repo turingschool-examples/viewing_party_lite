@@ -3,7 +3,11 @@
 class UsersController < ApplicationController
   def new; end
 
-  def show; end
+  def show
+    @user = User.find(params[:id])
+    @movies = @user.view_parties
+    @file_paths = MovieFacade.posters(@movies)
+  end
 
   def create
     new_user = User.new(user_params)

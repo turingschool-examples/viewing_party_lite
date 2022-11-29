@@ -6,8 +6,7 @@ class CreateViewParty < ActiveRecord::Migration[5.2]
       t.integer :movie_id
       t.string :movie_name
       t.integer :duration
-      t.date :date
-      t.time :time
+      t.datetime :datetime
 
       t.timestamps
     end
