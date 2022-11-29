@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    # require 'pry'; binding.pry
     user = User.new(user_params)
     if user.save
       redirect_to "/users/#{user.id}"
@@ -13,14 +12,11 @@ class UsersController < ApplicationController
       flash[:alert] = "Error: #{error_message(user.errors)}"
     end
   end
-
-  def show
-  end
-
+  
   def show
     @user = User.find(params[:id])
   end
-
+  
   def discover
     
   end
@@ -30,4 +26,5 @@ class UsersController < ApplicationController
   def user_params
     params.permit(:name, :email)
   end
+
 end
