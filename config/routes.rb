@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root("welcome#index")
 
   #resources(:users)
-  get("/register",   to: "users#create")
+  get("/register",   to: "users#new")
+  post("/register",   to: "users#create")
 end

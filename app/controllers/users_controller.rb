@@ -7,9 +7,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new!(    name: params[:name],     email: params[:email])
+    @user = User.new(    name: params[:name],     email: params[:email])
 
-    if user.save
+    if @user.valid?
+      @user.save
       redirect_to((root_path))
     else
       flash[:alert] = "Try Again"

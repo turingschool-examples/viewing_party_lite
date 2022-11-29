@@ -21,7 +21,7 @@ RSpec.describe("Welcome Index Page") do
         within("#creation") do
           expect(page).to(have_button("Create New User"))
           click_button("Create New User")
-          expect(current_path).to(eq(new_register_path))
+          expect(current_path).to(eq("/register"))
         end
       end
     end
