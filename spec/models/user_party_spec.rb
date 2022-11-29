@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe UserParty do 
+RSpec.describe UserParty, type: :model do 
   describe 'validations' do 
 
-    it { should validates_presence_of :user_status }
-    it { should validates_presence_of :user_id }
-    it { should validates_presence_of :viewing_party_id }
+    it { should validate_presence_of :user_status }
+    it { should validate_presence_of :user_id }
+    it { should validate_presence_of :viewing_party_id }
   end
 
   describe 'relationships' do 
