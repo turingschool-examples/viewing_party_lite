@@ -11,24 +11,25 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
-    if user.save 
+    if user.save
       redirect_to user_path(user)
     elsif user_params[:name].blank? && !user_params[:email].blank?
-      redirect_to "/register"
-      flash[:alert] = "ERROR: Please enter a valid name"
+      redirect_to '/register'
+      flash[:alert] = 'ERROR: Please enter a valid name'
     elsif !user_params[:name].blank? && user_params[:email].blank?
-      redirect_to "/register"
-      flash[:alert] = "ERROR: Please enter a valid email"
+      redirect_to '/register'
+      flash[:alert] = 'ERROR: Please enter a valid email'
     elsif user_params[:name].blank? && user_params[:email].blank?
-      redirect_to "/register"
-      flash[:alert] = "ERROR: Please enter a valid name and email"
+      redirect_to '/register'
+      flash[:alert] = 'ERROR: Please enter a valid name and email'
     elsif !user_params[:name].blank? && user.errors[:email]
-      redirect_to "/register"
-      flash[:alert] = "ERROR: Email already in use. Please enter a different email"      
+      redirect_to '/register'
+      flash[:alert] = 'ERROR: Email already in use. Please enter a different email'
     end
   end
 
   private
+
   def user_params
     params.permit(:name, :email)
   end
