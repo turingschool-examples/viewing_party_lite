@@ -11,14 +11,18 @@ RSpec.describe 'user show page', type: :feature do
   describe 'as a user' do 
     describe 'when I visit user_path(:id)' do
       it '- shows the users name at the top of the page' do
-
+        expect(page).to have_content("Reba's Dashboard")
       end
 
       it '- has a button to discover movies' do
+        expect(page).to have_button('Discover Movies')
+        
+        click_button 'Discover Movies'
 
+        expect(current_path).to eq(discover_path(@reba))
       end
 
-      it '- has a section that lists viewing parties' do
+      xit '- has a section that lists viewing parties' do
 
       end
     end
