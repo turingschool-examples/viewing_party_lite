@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'Landing Page' do
   before :each do
-    @sherlock = User.create!(name: 'Sherlock', email: 'sherlockh@sleuth.com')
-    @watson = User.create!(name: 'Watson', email: 'watson@sleuth.com')
+    @user1 = create(:user)
+    @user2 = create(:user)
     visit '/'
   end
 
@@ -20,8 +20,8 @@ RSpec.describe 'Landing Page' do
 
     it 'I see a list of existing users' do
       within("#users") do
-        expect(page).to have_content(@sherlock.name)
-        expect(page).to have_content(@watson.name)
+        expect(page).to have_content(@user1.name)
+        expect(page).to have_content(@user2.name)
       end
     end
 
