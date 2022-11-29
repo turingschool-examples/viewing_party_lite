@@ -21,10 +21,26 @@
           null
         ]
       },
+      "/Users/elifuchsman/Turing/mod3_directory/projects/viewing_party_lite/app/models/user.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/elifuchsman/Turing/mod3_directory/projects/viewing_party_lite/app/models/application_record.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/elifuchsman/Turing/mod3_directory/projects/viewing_party_lite/app/controllers/landing_controller.rb": {
         "lines": [
           1,
           1,
+          6,
           null,
           null
         ]
@@ -34,6 +50,22 @@
           null,
           null,
           1,
+          null
+        ]
+      },
+      "/Users/elifuchsman/Turing/mod3_directory/projects/viewing_party_lite/app/controllers/users_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
           null
         ]
       },
@@ -49,48 +81,10 @@
         "branches": {
         }
       },
-      "/Users/elifuchsman/Turing/mod3_directory/projects/viewing_party_lite/app/models/application_record.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/elifuchsman/Turing/mod3_directory/projects/viewing_party_lite/app/models/user.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/Users/elifuchsman/Turing/mod3_directory/projects/viewing_party_lite/app/jobs/application_job.rb": {
         "lines": [
           null,
           null,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/elifuchsman/Turing/mod3_directory/projects/viewing_party_lite/app/controllers/users_controller.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          null,
-          0,
           0,
           0
         ],
@@ -122,6 +116,6 @@
         }
       }
     },
-    "timestamp": 1669684027
+    "timestamp": 1669687642
   }
 }
