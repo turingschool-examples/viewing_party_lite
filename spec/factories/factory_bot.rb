@@ -15,7 +15,7 @@ FactoryBot.define do
   end
 
   factory :user_view_party, class: UserViewParty do
-    host { Faker::Boolean.boolean(true_ration: 0.3) }
+    host { Faker::Boolean.boolean(true_ratio: 0.3) }
     association :user, factory: :user
     association :view_party, factory: :view_party
   end
