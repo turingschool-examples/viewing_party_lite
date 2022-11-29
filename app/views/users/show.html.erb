@@ -1,5 +1,17 @@
-<h1>User Dashboard</h1>
+<center><h1><%= "#{@user.name}'s Dashboard" %></h1></center>
 <p><%= link_to 'Landing Page', '/' %></p>
 
-<p><%= @user.name %></p>
-<p><%= @user.email %></p>
+<center><%= button_to 'Discover Movies', "/users/#{@user.id}/discover", method: :get %></center>
+
+<hr>
+
+<section id="viewing_parties">
+  <% @user.movie_parties.each do |movie_party| %>
+    <section id="party-<%= movie_party.id %>">
+      <h3><%= movie_party.movie_title %></h3>
+      <p><%= movie_party.start_time.strftime("%B %d, %Y - %H:%M%p") %></p>
+      <p><%= movie_party.status(@user) %></p>
+    </section>
+    <hr>
+  <% end %>
+</section>
