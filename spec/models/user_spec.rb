@@ -19,12 +19,12 @@ RSpec.describe User, type: :model do
         party_1 = ViewingParty.create!(movie_id: 1, movie_title: "The Princess Bride", duration: 180, date: '2022-12-12', start_time: '17:00')
         party_2 = ViewingParty.create!(movie_id: 2, movie_title: "Jurassic Park", duration: 200, date: '2022-12-13', start_time: '19:00')
         party_3 = ViewingParty.create!(movie_id: 3, movie_title: "Moana", duration: 160, date: '2022-12-14', start_time: '14:00')
-        UserViewingParty.create!(user: user, viewing_party: party_1, status: "hosting")
-        UserViewingParty.create!(user: user, viewing_party: party_2, status: "invited")
+        UserViewingParty.create!(user: user, viewing_party: party_1, status: "Hosting")
+        UserViewingParty.create!(user: user, viewing_party: party_2, status: "Invited")
         
         expect(user.users_parties).to eq([party_1, party_2])
-        expect(user.users_parties.first.status).to eq("hosting")
-        expect(user.users_parties.second.status).to eq("invited")
+        expect(user.users_parties.first.status).to eq("Hosting")
+        expect(user.users_parties.second.status).to eq("Invited")
       end
     end
   end

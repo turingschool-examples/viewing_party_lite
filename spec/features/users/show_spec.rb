@@ -6,8 +6,8 @@ RSpec.describe "the User Show page aka the user's dashboard" do
       user = User.create!(name: 'Amanda', email: 'amanda@turing.ed')
       party_1 = ViewingParty.create!(movie_id: 1, movie_title: "The Princess Bride", duration: 180, date: '2022-12-12', start_time: '17:00')
       party_2 = ViewingParty.create!(movie_id: 2, movie_title: "Jurassic Park", duration: 200, date: '2022-12-13', start_time: '19:00')
-      UserViewingParty.create!(user: user, viewing_party: party_1, status: "hosting")
-      UserViewingParty.create!(user: user, viewing_party: party_2, status: "invited")
+      UserViewingParty.create!(user: user, viewing_party: party_1, status: "Hosting")
+      UserViewingParty.create!(user: user, viewing_party: party_2, status: "Invited")
 
       visit user_path(user)
 
@@ -21,7 +21,7 @@ RSpec.describe "the User Show page aka the user's dashboard" do
         expect(page).to have_content("Hosting")
       end
 
-      within "#viewing-party-#{party_1.id}" do 
+      within "#viewing-party-#{party_2.id}" do 
         expect(page).to have_content("Jurassic Park")
         expect(page).to have_content("December 13, 2022")
         expect(page).to have_content("7:00 PM")
