@@ -10,6 +10,7 @@ RSpec.describe 'welcome index page' do
   it 'should include title of the application' do
     expect(page).to have_content("Viewing Party")
   end
+  
   it 'should have a button to create a new user' do
     expect(page).to have_button("Create New User")
     # click_button "Create New User"
@@ -27,5 +28,6 @@ RSpec.describe 'welcome index page' do
     expect(page).to have_link("Home Page")
     click_link "Home Page"
     expect(current_path).to eq(root_path)
+    save_and_open_page
   end
 end
