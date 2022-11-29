@@ -23,21 +23,9 @@ RSpec.describe 'welcome index page', type: :feature do
       end
 
       it '- shows a list of existing users which links to the users dashboard' do
-        expect(page).to have_css("#user-#{@kenz.id}")
-        expect(page).to have_css("#user-#{@astrid.id}")
-        expect(page).to have_css("#user-#{@reba.id}")
-
-        within "#user-#{@kenz.id}" do
-          expect(page).to have_link('kenz_mail@gmail.com', href: user_path(@kenz))
-        end
-
-        within "#user-#{@astrid.id}" do
-          expect(page).to have_link('astrid_mail@gmail.com', href: user_path(@astrid))
-        end
-
-        within "#user-#{@reba.id}" do
-          expect(page).to have_link('reba_mail@gmail.com', href: user_path(@reba))
-        end
+        expect(page).to have_link('kenz_mail@gmail.com', href: user_path(@kenz))
+        expect(page).to have_link('astrid_mail@gmail.com', href: user_path(@astrid))
+        expect(page).to have_link('reba_mail@gmail.com', href: user_path(@reba))
       end
 
       it '- has a link to go back to the landing page (this link will be present at the top of all pages' do
