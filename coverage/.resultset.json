@@ -16,7 +16,6 @@
           null,
           1,
           1,
-          null,
           null
         ]
       },
@@ -30,7 +29,6 @@
       "/Users/kevinta/03module/projects/viewing_party_lite/app/models/user.rb": {
         "lines": [
           1,
-          null,
           1,
           1,
           null,
@@ -50,6 +48,22 @@
           null
         ]
       },
+      "/Users/kevinta/03module/projects/viewing_party_lite/app/controllers/landing_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/kevinta/03module/projects/viewing_party_lite/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/Users/kevinta/03module/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
           0,
@@ -61,14 +75,6 @@
         }
       },
       "/Users/kevinta/03module/projects/viewing_party_lite/app/jobs/application_job.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/kevinta/03module/projects/viewing_party_lite/app/controllers/application_controller.rb": {
         "lines": [
           0,
           0
@@ -97,6 +103,6 @@
         }
       }
     },
-    "timestamp": 1669755393
+    "timestamp": 1669758276
   }
 }
