@@ -1,2 +1,19 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="row">
+  <div class="col d-flex justify-content-center">
+    <h4><%= "#{@user.name} Dashboard" %> </h4>
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col d-flex justify-content-center">
+    <%= link_to 'Discover Movies', root_path, class: 'btn btn-primary' %>
+  </div>
+</div>
+<hr>
+<div class="row justify-content-center" id="parties">
+  <div class="col-2 border border-1 m-3">
+    party here
+  </div>
+  <div class="col-2 border border-1 m-3">
+    party here
+  </div>
+</div>
