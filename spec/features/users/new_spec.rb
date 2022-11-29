@@ -9,7 +9,7 @@ RSpec.describe 'The Register Page', type: :feature do
   describe 'When I visit the register path' do
     it 'includes a form with name, email, and register button, once user registers they are directed to their dashboard page' do
       expect(page).to have_content("Register a New User")
-      save_and_open_page
+   
       within "#register-form" do
         fill_in :name, with: 'Bob'
         fill_in :email, with: 'bob@gmail.com'
@@ -21,28 +21,30 @@ RSpec.describe 'The Register Page', type: :feature do
       expect(current_path).to eq(user_path(new_user))
     end
 
-    xit 'returns an error message if fields are not filled correctly' do
+    it 'returns an error message if fields are not filled correctly' do
       within "#register-form" do
         fill_in :name, with: ''
         fill_in :email, with: 'bob@gmail.com'
 
         click_button 'Create New User'
       end
-
+      
       expect(current_path).to eq(register_path)
       expect(page).to have_content("Name can't be blank")
     end
 
-    xit 'returns an error message if email already exists' do
+    it 'returns an error message if email already exists' do
+      existing_bob = User.create(name: 'Bob', email: 'bob@gmail.com')
+      
       within "#register-form" do
-        fill_in :name, with: ''
+        fill_in :name, with: 'Bob'
         fill_in :email, with: 'bob@gmail.com'
 
         click_button 'Create New User'
       end
 
       expect(current_path).to eq(register_path)
-      expect(page).to have_content("Name can't be blank")
+      expect(page).to have_content("Email has already been taken")
     end
   end
 end
