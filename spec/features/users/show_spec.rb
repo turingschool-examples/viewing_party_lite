@@ -10,6 +10,10 @@ RSpec.describe 'user show page', type: :feature do
 
   describe 'as a user' do 
     describe 'when I visit user_path(:id)' do
+      it '- has a link to go back to the landing page (this link will be present at the top of all pages)' do
+        expect(page).to have_link('Home', href: root_path)
+      end
+
       it '- shows the users name at the top of the page' do
         expect(page).to have_content("Reba's Dashboard")
       end
