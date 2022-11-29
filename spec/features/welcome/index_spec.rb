@@ -20,7 +20,7 @@ RSpec.describe 'welcome index page' do
   end
 
   it 'which links to the users dashboard' do 
-    expect(page).to have_link() 
+    # expect(page).to have_link("#{@user1.name}s Dashboard") WIP
   end
 
   it 'includes a link to the landing page' do

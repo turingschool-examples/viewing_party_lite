@@ -10,7 +10,6 @@ RSpec.describe 'User Dashboard Page' do
   describe 'when I visit users/:id' do 
     it 'I see the user names dashboard header at top of page' do 
       visit "users/#{@user1.id}"
-      save_and_open_page
     end
   end
 end
