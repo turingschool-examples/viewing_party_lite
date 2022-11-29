@@ -6,6 +6,6 @@ class MovieFacade
   end
 
   def self.movie_image(movie_id)
-    MovieService.movie_details(movie_id)[:backdrop_path]
+    MovieService.movie_details(movie_id)[:poster_path]
   end
 end
