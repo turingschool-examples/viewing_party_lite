@@ -8,7 +8,7 @@ RSpec.describe 'movies results page' do
 
     json_response = File.read('spec/fixtures/top_rated_movies.json')
 
-    stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=a9f28a7ce46d86cfac371bf3b2883ad5").
+    stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV["movie_api_key"]}").
       to_return(status: 200, body: json_response)
 
     visit(user_movies_path(@user1.id))
