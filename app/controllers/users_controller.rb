@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     if user.save
       redirect_to "/users/#{user.id}"
     else
-      redirect_to '/register' #, notice: "Error: This email has already been registered"
+      redirect_to '/register'
       flash[:alert] = "Error: This email has already been registered"
     end
   end
