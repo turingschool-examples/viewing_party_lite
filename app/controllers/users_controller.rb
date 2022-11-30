@@ -33,6 +33,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def results
+    @user = User.find(params[:user_id])
+    @movies = MovieService.find_top_rated_movies
+  end
+
   private
 
   def user_params

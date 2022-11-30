@@ -24,6 +24,15 @@ RSpec.describe "Discover Page" do
         expect(page).to have_field("Search")
         expect(page).to have_button("Find Movies")
       end
+
+      it "has top movies button that redirects to movie results page" do 
+        user1 = create(:user)
+        visit "/users/#{user1.id}/discover"
+        
+        click_button "Find Top Rated Movies"
+        save_and_open_page
+        expect(current_path).to eq("/users/#{user1.id}/movies")
+      end
     end
   end
 end
