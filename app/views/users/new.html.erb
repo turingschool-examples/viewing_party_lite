@@ -1,11 +1,9 @@
-<center><h2>Register a New User</h2></center>
+<h1>Register a New User</h1>
 
 <%= form_with url: "/register", method: :post, local: true do |form| %>
-<%= form.label :name, "Name: " %>
+<%= form.label :name %>
 <%= form.text_field :name %>
-<br><br>
-<%= form.label :email, "Email: " %>
+<%= form.label :email, "Email" %>
 <%= form.text_field :email %>
-<br><br>
 <%= form.submit 'Create New User' %>
 <% end %>

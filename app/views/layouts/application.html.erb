@@ -17,7 +17,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-  
+
     <div class="center">
       <center><h1>Viewing Party</h1></center>
     </div>
@@ -28,6 +28,11 @@
   </head>
 
   <body>
+    <% flash.each do |type, msg| %>
+    <div id="flash-messages">
+      <%= msg %>
+    </div>
+    <% end %>
     <%= yield %>
 
   </body>

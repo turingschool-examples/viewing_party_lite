@@ -15,7 +15,6 @@ RSpec.describe("New Register Page") do
         fill_in("Email",         with: "MilosMurphyslaw@gmail.com")
         click_on("Create New User")
         expect(current_path).to(eq(root_path))
-        expect(page).to have_content("MilosMurphyslaw@gmail.com")
       end
     end
   end
