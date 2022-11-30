@@ -1,10 +1,2 @@
 <h1><%=@user.name%>'s Dashboard</h1>
 <%=button_to "Discover Movies", "users/#{@user.id}/discover"%>
-
-
-<h4>Search by Movie title: </h4>
-  <%= form_tag " ", method: :get, local: true do |f| %>
-  <%= label_tag :search_movie_name %>
-  <%= text_field_tag :search_by_movie_title, params[:search_movie_name] %>
-   <%= submit_tag "Find Movies" %>
-  <% end %>
