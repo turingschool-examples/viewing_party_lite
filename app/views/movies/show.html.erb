@@ -1,13 +1,29 @@
-<h1><center>Viewing Party Lite<center></h1>
-<p><center><%= @movie[:title]%><center></p>
-<p><%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %></p>
+<section id="headings" >
+  <h1><center>Viewing Party Lite<center></h1>
+  <p><center><%= @movie[:title]%><center></p>
+</section>
 
-<p><%= button_to "Create Viewing Party for #{@movie[:title]}", "/users/#{@user.id}/movies/#{@movie[:id]}/viewing-party/new"%></p>
+<section id= "buttons"><center>
+  <p><%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %></p>
+  <p><%= button_to "Create Viewing Party for #{@movie[:title]}", "/users/#{@user.id}/movies/#{@movie[:id]}/viewing-party/new"%></p>
+  <center>
+</section>
 
-<p>Vote: <%= @movie[:vote_average]%>
-<center>Runtime:<%= @movie[:runtime]%><center>
-Genre(s): 
-  <%@movie[:genres].each do |g| %>
-    <%=g[:name]%>
-  <%end%></p>
+<section id="stats">
+  <p><center>Rating: <%= @movie[:vote_average].round(2)%><center></p>
+  <p><center>Runtime:<%= "#{@movie[:runtime]} Minutes" %><center></p>
+</section>
+
+<section id="genres">
+  <p>Genre(s): </p>
+    <% @movie[:genres].each do |g| %>
+      | <%= g[:name] %> |
+    <% end %>
+  </section>
+
+  <section id= "movie_summary">
+    <p><b>Summary</b></p>
+    <p><%= @movie[:overview] %></p>
+  </section>
+
 <hr>

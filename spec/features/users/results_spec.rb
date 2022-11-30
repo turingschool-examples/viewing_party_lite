@@ -56,7 +56,7 @@ RSpec.describe 'Movie Results Page' do
             user1 = create(:user)
             visit "/users/#{user1.id}/movies"
 
-            click_button("Discover Page")
+            click_button('Discover Page')
 
             expect(current_path).to eq("/users/#{user1.id}/discover")
           end
