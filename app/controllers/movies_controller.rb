@@ -1,7 +1,7 @@
-class DiscoverController < ApplicationController
+class MoviesController 
   def index 
     connection = Faraday.new(url: "https://api.themoviedb.org/3") do |faraday|
-    faraday.headers["X-API-KEY"] = ENV['api_key']
+    faraday.params["api_key"] = ENV['movies_api_key']
     end
    
     response = connection.get("/discover/movie?sort_by=popularity.desc")
@@ -10,5 +10,6 @@ class DiscoverController < ApplicationController
 
    
   end
+  require 'pry'; binding.pry
 end
 
