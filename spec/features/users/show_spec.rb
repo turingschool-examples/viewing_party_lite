@@ -24,13 +24,13 @@ RSpec.describe 'user show page' do
                                                start_time: '7 PM')
         @viewing_party2 = ViewingParty.create!(movie_id: 45, duration: 135, date: 'December 14, 2022',
                                                start_time: '6:30 PM')
-        @vpu1 = ViewingPartyUser.create!(user: @user1, viewing_party: @viewing_party1, host: false)
-        @vpu2 = ViewingPartyUser.create!(user: @user1, viewing_party: @viewing_party2, host: true)
+        @vpu1 = ViewingPartyUser.create!(user: @user1, viewing_party: @viewing_party1)
+        @vpu2 = ViewingPartyUser.create!(user: @user1, viewing_party: @viewing_party2, host: 1)
       end
 
       it 'has a list of users viewing parties' do
         visit "/users/#{@user1.id}"
-        # save_and_open_page
+        #  save_and_open_page
 
         within("#viewing_party-#{@viewing_party1.id}") do
           expect(page).to have_content('Date: 11/30/2022')

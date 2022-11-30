@@ -13,7 +13,7 @@
       <p>Party Length: <%= "#{v_p.duration} Minutes" %></p>
 
       <% v_p.viewing_party_users.each do |vpu| %>
-        <% if vpu.host %>
+        <% if vpu.hosting? %>
           <p><%= "Hosting" %></p>
         <% else %>
           <p><%= "Invited" %></p>
