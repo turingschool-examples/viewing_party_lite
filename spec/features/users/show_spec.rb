@@ -63,11 +63,10 @@ RSpec.describe 'user show page' do
       it "I am redirected to a discover page '/users/:id/discover' " do
         visit "/users/#{@user1.id}"
 
-        click_button("Discover Movies")
+        click_button('Discover Movies')
 
         expect(current_path).to eq("/users/#{@user1.id}/discover")
       end
     end
   end
 end
-

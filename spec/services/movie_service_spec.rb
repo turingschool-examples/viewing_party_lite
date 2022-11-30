@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe MovieService do
@@ -7,9 +9,9 @@ RSpec.describe MovieService do
     expect(movie).to be_an_instance_of(MovieService)
   end
 
-  describe "Class Methods" do
-    describe "#movie_by_id" do
-      it "returns a movie from a given id" do
+  describe 'Class Methods' do
+    describe '#movie_by_id' do
+      it 'returns a movie from a given id' do
         movie = MovieService.movie_by_id(11)
 
         expect(movie.class).to be Hash
@@ -20,26 +22,26 @@ RSpec.describe MovieService do
         expect(movie).to have_key(:poster_path)
 
         expect(movie[:id]).to eq(11)
-        expect(movie[:title]).to eq("Star Wars")
+        expect(movie[:title]).to eq('Star Wars')
         expect(movie[:runtime]).to eq(121)
         expect(movie[:vote_average]).to eq(8.206)
-        expect(movie[:poster_path]).to eq("/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg")
+        expect(movie[:poster_path]).to eq('/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg')
       end
     end
 
-    describe "#movies_by_keyword" do
-      it "finds movies based on a given word argument" do
-        movies = MovieService.movies_by_keyword("Spinal Tap")
+    describe '#movies_by_keyword' do
+      it 'finds movies based on a given word argument' do
+        movies = MovieService.movies_by_keyword('Spinal Tap')
 
         expect(movies.class).to be Hash
         expect(movies[:results].class).to be Array
-        expect(movies[:results].first[:title].include?("This Is Spinal Tap")).to be true
+        expect(movies[:results].first[:title].include?('This Is Spinal Tap')).to be true
         expect(movies[:total_results]).to eq(5)
       end
     end
 
-    describe "#find_top_rated_movies" do
-      it "finds the 20 top rated movies" do
+    describe '#find_top_rated_movies' do
+      it 'finds the 20 top rated movies' do
         movies = MovieService.find_top_rated_movies
 
         expect(movies.class).to be Hash
