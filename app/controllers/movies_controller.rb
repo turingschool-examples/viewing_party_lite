@@ -10,6 +10,9 @@ class MoviesController < ApplicationController
   end
 
   def show
-    binding.pry
+    @user = User.find(params[:user_id])
+    @movie = MovieFacade.movie_by_id(params[:id])
+    @cast = MovieFacade.movie_cast(params[:id])
+    @reviews = MovieFacade.movie_reviews(params[:id])
   end
 end

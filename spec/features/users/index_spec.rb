@@ -16,7 +16,7 @@ RSpec.describe 'the Discover Movies Page', type: :feature do
       within "#top-rated" do
         click_button 'Find Top Rated Movies'
       end
-      
+
       expect(page.status_code).to eq 200
       expect(current_path).to eq(user_movies_path(user_1))
     end
@@ -30,7 +30,7 @@ RSpec.describe 'the Discover Movies Page', type: :feature do
 
         click_button 'Find Movies'
       end
-      
+
       expect(page.status_code).to eq 200
       expect(current_path).to eq(user_movies_path(user_1))
     end
