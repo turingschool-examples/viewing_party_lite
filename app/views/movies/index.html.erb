@@ -9,6 +9,9 @@
 
 <div id="movie-results">
   <table class="center">
+
+  <center><%= "No Movies Found" if @movies == [] %></center>
+
   <% @movies.each do |movie| %>
     <tr class="results">
       <td style="padding-right: 4em;"><%= link_to movie.title, user_movie_path(@user, movie) %></td>
