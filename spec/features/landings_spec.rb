@@ -35,7 +35,7 @@ RSpec.describe 'Landing Page' do
 
   it 'has a home link at top of the page, that goes to landing page' do 
     visit root_path
-    save_and_open_page
+    
     expect(page).to have_link('Home')
     click_link('Home')
 
