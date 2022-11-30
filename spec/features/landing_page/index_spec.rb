@@ -12,7 +12,7 @@ RSpec.describe 'landing Page', type: :feature do
       end
 
       it 'I see the title of the applications' do
-        within ('#app_title') do
+        within('#app_title') do
           expect(page).to have_content 'Viewing Party'
         end
       end
@@ -50,3 +50,4 @@ RSpec.describe 'landing Page', type: :feature do
       end
     end
   end
+end
