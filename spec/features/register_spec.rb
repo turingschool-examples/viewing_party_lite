@@ -10,5 +10,7 @@ RSpec.describe 'register page' do
     fill_in "name", with: "Dwight Schrute"
     fill_in "email", with: "dwight.schrute@gmail.com"
     click_button "Register"
+    new_user = User.last.id
+    expect(current_path).to eq(user_path(new_user))
   end
 end
