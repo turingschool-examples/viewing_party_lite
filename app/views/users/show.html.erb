@@ -1,7 +1,10 @@
-<%= link_to "Home", root_path, method: :get %>
-
-<h1>Viewing Party</h1>
-
 <h3><%= @user.name %>'s Dashboard</h3>
 
 <%= button_to "Discover Movies", discover_path(@user), method: :get %>
+<p>-------------------------------------------</p>
+
+<div id="viewing-parties">
+  <% @user.parties.each do |party| %>
+    
+  <% end %>
+</div>
