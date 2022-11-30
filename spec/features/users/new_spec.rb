@@ -8,9 +8,9 @@ RSpec.describe 'The User registration' do
         @user2 = User.create!(name: 'Larry', email: 'larry@hotmail.com')
         @user3 = User.create!(name: 'Sherri', email: 'sherri@aol.com')
       end
-      it 'I see a link to create a new user'
+      it 'I see a link to create a new user' do
         visit root_path
-        click_button('New User')
+        click_button('Create User')
         expect(current_path).to eq(register_path)
 
         fill_in 'Name', with: 'Martin'
