@@ -13,7 +13,8 @@ RSpec.describe 'welcome index page' do
 
   it 'should have a button to create a new user' do
     expect(page).to have_button("Create New User")
-    # click_button "Create New User"
+    click_button "Create New User"
+    expect(current_path).to eq("/register")
 
   end
   it 'has a list of existing users' do
