@@ -34,7 +34,6 @@ RSpec.describe 'new user page' do
       new_user = User.last
       expect(current_path).to eq(user_path(new_user))
       expect(page).to have_content(new_user.name)
-      expect(page).to have_content(new_user.email)
     end
 
     it 'will redirect back to registration page if information is not entered correctly' do

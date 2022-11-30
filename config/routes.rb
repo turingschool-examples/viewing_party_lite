@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root 'landings#index'
 
   # users
-  resources :users do 
-    resources :discovers, only: [:index]
+  resources :users do
+    resources :discovers
   end
 
   # registration page
