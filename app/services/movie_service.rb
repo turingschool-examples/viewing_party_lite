@@ -1,9 +1,7 @@
 class MovieService
   def self.posters_en_us(movie)
     movie_id = movie.movie_id
-
     response = conn.get("/3/movie/#{movie_id}/images")
-
     json = JSON.parse(response.body, symbolize_names: true)
   end
 
