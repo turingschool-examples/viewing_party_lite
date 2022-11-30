@@ -1,13 +1,5 @@
 # frozen_string_literal: true
 
-# I should be taken to the movies results page (users/:user_id/movies) where I see:
-
-# Title (As a Link to the Movie Details page)
-# Vote Average of the movie
-# Details: There should only be a maximum of 20 results. The above details should be listed for each movie.
-
-# I should also see a button to return to the Discover Page.
-
 require 'rails_helper'
 
 RSpec.describe 'Movie Results Page' do
@@ -40,13 +32,13 @@ RSpec.describe 'Movie Results Page' do
 
           fill_in('Find Movies', with: 'Spinal Tap')
           click_button('Find Movies')
-           save_and_open_page
+          #  save_and_open_page
           expect(current_path).to eq("/users/#{user1.id}/movies")
           expect(page).to have_content('Movie results for: Spinal Tap')
         end
       end
 
-      describe "When I do not type anything into search and select find movies" do
+      describe 'When I do not type anything into search and select find movies' do
         it "Then I am directed to '/users/user_id/movies' where I see top rate movies" do
           user1 = create(:user)
           visit "/users/#{user1.id}/discover/"
@@ -55,6 +47,19 @@ RSpec.describe 'Movie Results Page' do
           # save_and_open_page
           expect(current_path).to eq("/users/#{user1.id}/movies")
           expect(page).to have_content('Top Rated Movies')
+        end
+      end
+
+      describe 'When on the results page' do
+        describe 'When I click the button Discover Page' do
+          it "Then I am redirected back to '/users/id/discover' " do
+            user1 = create(:user)
+            visit "/users/#{user1.id}/movies"
+
+            click_button("Discover Page")
+
+            expect(current_path).to eq("/users/#{user1.id}/discover")
+          end
         end
       end
     end
