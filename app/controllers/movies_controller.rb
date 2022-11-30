@@ -12,7 +12,6 @@ class MoviesController < ApplicationController
       parsed_response = JSON.parse(json_body, symbolize_names: true)
       @results = parsed_response[:results]
     end
-    # require 'pry'; binding.pry
     if params[:keyword]
 
     end

@@ -6,13 +6,18 @@ RSpec.describe "discover movies page or movies index page " do
       @steve = User.create!(name: "Steve", email: "steve.smith@gmail.com")
       @mary = User.create!(name: "Mary", email: "mary.smith@gmail.com")
     end
-    it 'lists popular movies' do 
-      # visit user_discover_path(@steve)
-      # # require 'pry'; binding.pry
+    describe 'after top rated movies button is clicked' do 
+      it 'shows a list of top rated movies from the api' do 
+        visit user_discover_path(@steve)
+        click_button "Find Top Rated Movies"
+      end
+    end
 
-      # click_button "Find Top Rated Movies"
-      # expect(page.status_code).to eq 200 
-      # expect(page).to have_content("Black Adam")
+    describe 'find movies search function' do 
+      it 'enter keyword into search and it returns movies with that word' do 
+        visit user_discover_path(@steve)
+        # click_button "Submit"
+      end
     end
   end
   

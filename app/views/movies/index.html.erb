@@ -1,6 +1,9 @@
 
 <%@results.each do |result|%>
-  <%=result[:title]%>
-  <%=result[:vote_average]%>
+  <p>
+  <%=result[:title]%> 
+  Vote Average: <%=result[:vote_average]%>
+  <br>
+  </p>
 <%end%>
 
