@@ -8,6 +8,7 @@
 <section id="viewing_parties">
   <% @user.movie_parties.each do |movie_party| %>
     <section id="party-<%= movie_party.id %>">
+      <%= image_tag MoviesFacade.movie_poster_url(movie_party.movie_id), class: ".img", size: "150x225"  %>
       <h3><%= movie_party.movie_title %></h3>
       <p><%= movie_party.start_time.strftime("%B %d, %Y - %H:%M%p") %></p>
       <p><%= movie_party.status(@user) %></p>
