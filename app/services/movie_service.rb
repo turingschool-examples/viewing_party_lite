@@ -1,14 +1,10 @@
 class MovieService
-  def self.posters_en_us(movies)
-    movie_ids = movies.map { |movie| movie.movie_id }
+  def self.posters_en_us(movie)
+    movie_id = movie.movie_id
 
-    responses = movie_ids.map do |movie_id|
-      conn.get("/3/movie/#{movie_id}/images")
-    end
+    response = conn.get("/3/movie/#{movie_id}/images")
 
-    jsons = responses.map do |response|
-      JSON.parse(response.body, symbolize_names: true)
-    end
+    json = JSON.parse(response.body, symbolize_names: true)
   end
 
   def self.conn
