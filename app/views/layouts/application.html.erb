@@ -7,7 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-     <%= link_to 'Welcome Page', '/welcome' %>
+     <%= link_to 'Home', '/' %>
   </head>
 
   <body>
@@ -16,6 +16,7 @@
         <%= msg %>
       </div>
     <% end %>
+    <h1 style="text-align:center;">Viewing Party Lite</h1>
     <%= yield %>
   </body>
 </html>

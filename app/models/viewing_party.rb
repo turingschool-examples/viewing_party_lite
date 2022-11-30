@@ -4,4 +4,18 @@ class ViewingParty < ApplicationRecord
 
   validates_presence_of :date
   validates_presence_of :start_time
+
+  def host 
+    users
+      .joins(:user_viewing_parties)
+      .find_by("user_viewing_parties.status = 'Hosting'")
+      .name
+  end
+
+  def invitees
+    users
+      .includes(:user_viewing_parties)
+      .where("user_viewing_parties.status = 'Invited'").to_a
+      .pluck(:name)
+  end
 end
