@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root 'landings#index'
 
   # users
-  resources :users
+  resources :users do 
+    resources :discovers, only: [:index]
+  end
 
   # registration page
   get '/register', to: 'users#new', as: :register

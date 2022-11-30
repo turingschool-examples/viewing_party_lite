@@ -1,2 +1,10 @@
-<%= @user.name %>
-<%= @user.email %>
+<h1><center>Viewing Party </center></h1>
+<h2><center><%= "#{@user.name}'s Dashboard" %> </center></h2>
+<br>
+<center><%= button_to "Discover Movies", user_discovers_path(@user), method: :get %> </center>
+<br>
+<hr>
+<h4><center>Current Viewing Parties<center></h4>
+<br>
+
+
