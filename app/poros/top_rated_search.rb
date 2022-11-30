@@ -5,7 +5,7 @@ class TopRatedSearch
 
   def movie_list
     movies = service.top_rated
-    movies = movies[:results]
+    movies = movies[:results].first(20)
     movies.map { |movie_hash| Movie.new(movie_hash) }
   end
 
