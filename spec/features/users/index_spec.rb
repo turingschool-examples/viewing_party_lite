@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'the Discover Movies Page', type: :feature do
   let!(:user_1) { create(:user) }
   before(:each) do
-    visit user_discover_index_path(user_1)
+    visit "/users/#{user_1.id}/discover"
   end
 
   describe 'When I visit the user discover path' do

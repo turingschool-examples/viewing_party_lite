@@ -5,8 +5,9 @@ Rails.application.routes.draw do
 
   get '/register', to: 'users#new'
 
+  get '/users/:id/discover', to: 'users#index'
+
   resources :users, only: %i[show create] do
-    resources :discover, only: %i[index]
     resources :movies, only: %i[index]
   end
 end
