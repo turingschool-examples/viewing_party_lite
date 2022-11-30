@@ -27,8 +27,8 @@
 /config/master.key
 
 # Ignore test-related files
- /coverage.data
- coverage
+/coverage.data
+coverage
 
 # Ignore application configuration
 /config/application.yml
