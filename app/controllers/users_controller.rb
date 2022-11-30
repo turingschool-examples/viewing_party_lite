@@ -17,7 +17,8 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to user_path(@user.id)
     else
-      redirect_to "/register", alert: "Your request could not be completed, please fill out all fields/choose an email that has not already been claimed"
+      flash[:alert] = "Error: #{error_message(@user.errors)}"
+      redirect_to "/register"
     end
   end
 

@@ -31,28 +31,29 @@ RSpec.describe "New Users Page", type: :feature do
   end
 
   it "if the form is not completely filled in, the user will be redirected back to the '/register' page
-    and see an alert to complete the form" do
+    and see an alert that the name can't be blank" do
       visit "/register"
 
-      expect(page).to have_no_content("Your request could not be completed, please fill out all fields/choose an email that has not already been claimed")
+      expect(page).to have_no_content("Name can't be blank")
       
       fill_in :name,	with: ''
       fill_in :email,	with: 'pieisdelici0us@gmail.com'
       click_button "Register"
 
       expect(current_path).to eq("/register")
-      expect(page).to have_content("Your request could not be completed, please fill out all fields/choose an email that has not already been claimed")
+      expect(page).to have_content("Name can't be blank")
   end
 
   it "if the email is not unique, the user will be redirected to back to the '/register page and see
-    an alert that the email they entered has already been taken, choose another" do
+    an alert that the email they entered has already been taken" do
       visit "/register"
 
-      expect(page).to have_no_content("Your request could not be completed, please fill out all fields/choose an email that has not already been claimed")
+      expect(page).to have_no_content("Email has already been taken")
+
       fill_in :name,	with: "Tammy"
       fill_in :email,	with: 'chad1@gmail.com'
       click_button "Register"
 
-      expect(page).to have_content("Your request could not be completed, please fill out all fields/choose an email that has not already been claimed")
+      expect(page).to have_content("Email has already been taken")
   end
 end
