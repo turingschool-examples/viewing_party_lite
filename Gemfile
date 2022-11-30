@@ -66,3 +66,7 @@ gem "jquery-rails", "~> 4.5"
 gem "faker", "~> 3.0"
 
 gem "figaro", "~> 1.2", :groups => [:test, :development]
+
+gem "webmock", "~> 3.18", :group => :test
+
+gem "httparty", "~> 0.20.0"
