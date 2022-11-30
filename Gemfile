@@ -64,3 +64,5 @@ gem "bootstrap", "~> 5.2"
 gem "jquery-rails", "~> 4.5"
 
 gem "faker", "~> 3.0"
+
+gem "figaro", "~> 1.2", :groups => [:test, :development]
