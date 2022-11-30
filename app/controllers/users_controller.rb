@@ -9,10 +9,10 @@ class UsersController < ApplicationController
 
   def create
     new_user = User.create(user_params)
-    if new_user.exists?
+    if User.exists?(new_user.id)
       redirect_to user_path(new_user)
     else
-      render '/register'
+      redirect_to '/register'
     end
   end
 
