@@ -5,7 +5,7 @@ class TopRatedSearch
 
   def movie_list
     movies = service.top_rated
-    require 'pry'; binding.pry
+    #require 'pry'; binding.pry
   end
 
   # def team_info(id)

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Register' do
+RSpec.describe 'New User Registration' do
   before(:each) do
     visit '/register'
     @email = Faker::Internet.safe_email
