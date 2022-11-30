@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2022_11_29_022603) do
   end
 
   create_table "viewing_parties", force: :cascade do |t|
-    t.string "movie_title"
+    t.integer "movie_id"
     t.integer "duration"
     t.date "date"
     t.time "start_time"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2022_11_29_022603) do
   create_table "viewing_party_users", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "viewing_party_id"
-    t.boolean "host"
+    t.integer "host", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_viewing_party_users_on_user_id"

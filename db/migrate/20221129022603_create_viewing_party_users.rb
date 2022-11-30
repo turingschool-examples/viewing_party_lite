@@ -5,7 +5,7 @@ class CreateViewingPartyUsers < ActiveRecord::Migration[5.2]
     create_table :viewing_party_users do |t|
       t.references :user, foreign_key: true
       t.references :viewing_party, foreign_key: true
-      t.boolean :host
+      t.integer :host, default: 0
 
       t.timestamps
     end

@@ -1,2 +1,25 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1><center>Viewing Party Lite<center></h1>
+<p><center><%="#{@user.name}'s Dashboard"%><center></p>
+
+<p><%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %></p>
+<hr>
+<br>
+<section id= "viewing_parties">
+  <h3>Viewing Parties:</h3>
+  <% @user.viewing_parties.each do |v_p| %>
+    <div id="viewing_party-<%= v_p.id %>">
+      <p>Date: <%= v_p.date.strftime("%m/%d/%Y") %></p>
+      <p>Start Time: <%= v_p.start_time.strftime("%I:%M%p")  %></p>
+      <p>Party Length: <%= "#{v_p.duration} Minutes" %></p>
+
+      <% v_p.viewing_party_users.each do |vpu| %>
+        <% if vpu.hosting? %>
+          <p><%= "Hosting" %></p>
+        <% else %>
+          <p><%= "Invited" %></p>
+        <% end %>
+       <p>____________</p>
+      <% end %>
+    </div>
+  <% end %>
+</section>
