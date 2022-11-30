@@ -1,11 +1,12 @@
 require './app/services/tmdb_services'
-# require './app/poros/team'
+require './app/poros/movie'
 
 class TopRatedSearch
 
   def movie_list
     movies = service.top_rated
-    #require 'pry'; binding.pry
+    movies = movies[:results]
+    movies.map { |movie_hash| Movie.new(movie_hash) }
   end
 
   # def team_info(id)

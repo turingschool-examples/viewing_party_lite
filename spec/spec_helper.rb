@@ -13,6 +13,7 @@
 # it.
 #
 require 'simplecov'
+require 'webmock/rspec'
 SimpleCov.start 'rails'
 SimpleCov.add_filter ['spec', 'config', 'application_cable', 'mailers', 'jobs', 'application_controller']
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
