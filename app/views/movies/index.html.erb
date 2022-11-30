@@ -7,10 +7,10 @@
 
 <center><%= button_to 'Discover Page', "/users/#{@user.id}/discover", method: :get %></center><br><br>
 
-<div id="movie-results", class="results">
+<div id="movie-results">
   <table class="center">
   <% @movies.each do |movie| %>
-    <tr>
+    <tr class="results">
       <td style="padding-right: 4em;"><%= link_to movie.title, user_movie_path(@user, movie) %></td>
       <td><%= movie.vote_average %></td>
     </tr>
