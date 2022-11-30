@@ -32,4 +32,14 @@ RSpec.describe 'Landing Page' do
     expect(page).to_not have_content(user2.name)
     
   end
+
+  it 'has a home link at top of the page, that goes to landing page' do 
+    visit root_path
+
+    expect(page).to have_link('Home')
+    click_link('Home')
+
+    expect(current_path).to eq(root_path)
+  end
+
 end
