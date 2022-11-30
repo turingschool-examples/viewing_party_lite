@@ -13,7 +13,7 @@ RSpec.describe 'user show page', type: :feature do
     @astrid.user_parties << @party_1
     @astrid.user_parties << @party_2
     @reba.user_parties << @party_2
-    
+
     visit user_path(@reba)
   end
 
@@ -35,8 +35,14 @@ RSpec.describe 'user show page', type: :feature do
         expect(current_path).to eq(discover_path(@reba))
       end
 
-      xit '- has a section that lists the users viewing parties' do
+      it '- has a section that lists the users viewing parties' do
+        expect(page).to have_css("#viewing-parties")
 
+        within "#viewing-parties" do
+          expect(page).to have_content("Octopussy")
+          expect(page).to have_content("December 27, 2022")
+          expect(page).to have_content("8:00 pm")
+        end
       end
     end
   end
