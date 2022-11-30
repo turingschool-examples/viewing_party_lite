@@ -17,6 +17,12 @@ RSpec.describe 'Users' do
       expect(page).to have_link('Discover Movies')
     end
 
+    it 'links to the discover page for the user' do
+      click_link('Discover Movies')
+      expect(current_path).to eq("/users/#{@user.id}/discover")
+    end
+
+
     it 'has section to display parties' do
       within('#parties') do
         expect(page).to have_content('party here')
