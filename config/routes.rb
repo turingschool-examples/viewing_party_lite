@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     resources :discover, only: [:index]
   end
 
-  resources :register, only: [:index, :new, :create], controller: "users"
+  resources :register, only: [:new, :create], controller: "users"
 end
