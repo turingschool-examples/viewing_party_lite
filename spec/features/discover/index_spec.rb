@@ -13,7 +13,7 @@ RSpec.describe 'user discover movies page' do
 
     click_on "Find Top Rated Movies"
 
-    expect(current_path).to eq("/users/#{@user_1.id}/movies?q=top%20rated")
+    expect(current_path).to eq("/users/#{@user_1.id}/movies")
   end
 
   it 'has a text field to enter keywords and button to search by movie title' do
@@ -25,6 +25,6 @@ RSpec.describe 'user discover movies page' do
     fill_in :search, with: "Nemo"
     click_on "Find Movies"
 
-    expect(current_path).to eq("/users/#{@user_1.id}/movies?q=Nemo")
+    expect(current_path).to eq("/users/#{@user_1.id}/movies")
   end
 end
