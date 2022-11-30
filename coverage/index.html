@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-11-29T22:38:59-07:00">2022-11-29T22:38:59-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-11-30T11:20:42-07:00">2022-11-30T11:20:42-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -2318,7 +2318,7 @@
 
             
 
-            <code class="ruby">    conn = Faraday.new(url: &quot;https://api.themoviedb.org/3&quot;) do |faraday|</code>
+            <code class="ruby">    conn = Faraday.new(url: &quot;https://api.themoviedb.org/3/&quot;) do |faraday|</code>
           </li>
         </div>
       
@@ -2373,7 +2373,7 @@
 
             
 
-            <code class="ruby">    response = conn.get(&quot;/movies/#{movie_id}?api_key=#{ENV[&quot;moviedb_api_key&quot;]}&quot;)</code>
+            <code class="ruby">    response = conn.get(&quot;movie/#{movie_id}?api_key=#{ENV[&quot;moviedb_api_key&quot;]}&quot;)</code>
           </li>
         </div>
       
