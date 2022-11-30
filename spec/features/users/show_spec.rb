@@ -9,10 +9,10 @@ RSpec.describe 'user show page', type: :feature do
     @party_1 = Party.create!(movie_id: 550, duration: 170, date: Date.new(2022,12,20), start_time: Time.new(2022,12,20,18,30,00))
     @party_2 = Party.create!(movie_id: 700, duration: 160, date: Date.new(2022,12,27), start_time: Time.new(2022,12,27,20,00,00))
 
-    @kenz.user_parties << @party_1
-    @astrid.user_parties << @party_1
-    @astrid.user_parties << @party_2
-    @reba.user_parties << @party_2
+    @kenz.parties << @party_1
+    @astrid.parties << @party_1
+    @astrid.parties << @party_2
+    @reba.parties << @party_2
 
     visit user_path(@reba)
   end
