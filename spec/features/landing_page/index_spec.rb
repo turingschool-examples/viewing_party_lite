@@ -26,19 +26,19 @@ RSpec.describe 'landing Page', type: :feature do
       it 'I see a list of existing users, as a link to each users dashboards' do
         within('#existing_users') do
           within("#user-#{@user1.id}") do
-            expect(page).to have_link("#{@user1.email}'s dashboard'")
-            expect(page).to_not have_link("#{@user2.email}'s dashboard'")
-            expect(page).to_not have_link("#{@user3.email}'s dashboard'")
+            expect(page).to have_link("#{@user1.email}'s Dashboard'")
+            expect(page).to_not have_link("#{@user2.email}'s Dashboard'")
+            expect(page).to_not have_link("#{@user3.email}'s Dashboard'")
           end
           within("#user-#{@user2.id}") do
-            expect(page).to have_link("#{@user2.email}'s dashboard'")
-            expect(page).to_not have_link("#{@user1.email}'s dashboard'")
-            expect(page).to_not have_link("#{@user3.email}'s dashboard'")
+            expect(page).to have_link("#{@user2.email}'s Dashboard'")
+            expect(page).to_not have_link("#{@user1.email}'s Dashboard'")
+            expect(page).to_not have_link("#{@user3.email}'s Dashboard'")
           end
           within("#user-#{@user3.id}") do
-            expect(page).to have_link("#{@user3.email}'s dashboard'")
-            expect(page).to_not have_link("#{@user1.email}'s dashboard'")
-            expect(page).to_not have_link("#{@user2.email}'s dashboard'")
+            expect(page).to have_link("#{@user3.email}'s Dashboard'")
+            expect(page).to_not have_link("#{@user1.email}'s Dashboard'")
+            expect(page).to_not have_link("#{@user2.email}'s Dashboard'")
           end
         end
       end
