@@ -1,6 +1,10 @@
 <h1>Register a New User</h1>
 <p><%= link_to 'Landing Page', '/' %></p>
 
+<% flash.each do |type, msg| %>
+  <p><%= msg %></p>
+<% end %>
+
 <%= form_with url: "/users", method: :post, local: true do |f| %>
     <%= f.label :name, "User Name:" %>
     <%= f.text_field :name %>

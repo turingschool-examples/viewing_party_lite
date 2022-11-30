@@ -8,8 +8,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.create!(user_params)
-    redirect_to "/users/#{user.id}"
+    user = User.new(user_params)
+    if user.save
+      redirect_to "/users/#{user.id}"
+    else
+      redirect_to '/register' #, notice: "Error: This email has already been registered"
+      flash[:alert] = "Error: This email has already been registered"
+    end
   end
 
   def show
