@@ -13,7 +13,7 @@ RSpec.describe 'Landing Page' do
 
     click_button('Create a New User')
 
-    expect(current_path).to eq('/register')
+    expect(current_path).to eq(register_path)
   end
 
   it 'has a section that displays existing users emails. Each email is a link to their dashboard page' do
