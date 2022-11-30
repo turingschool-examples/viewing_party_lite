@@ -1,7 +1,7 @@
 <h1><center>Viewing Party Lite<center></h1>
 <p><center><%="#{@user.name}'s Dashboard"%><center></p>
 
-<p><%= button_to "Discover Movies", "/users/#{@user.id}/discover" %></p>
+<p><%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %></p>
 <hr>
 <br>
 <section id= "viewing_parties">

@@ -29,6 +29,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def discover
+    if params[:user_id]
+    end
+  end
+
   private
 
   def user_params
