@@ -156,11 +156,45 @@
         "branches": {
         }
       },
+      "/Users/elifuchsman/Turing/mod3_directory/projects/viewing_party_lite/app/poros/movie.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/elifuchsman/Turing/mod3_directory/projects/viewing_party_lite/app/jobs/application_job.rb": {
         "lines": [
           null,
           null,
           0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/elifuchsman/Turing/mod3_directory/projects/viewing_party_lite/app/services/movie_service.rb": {
+        "lines": [
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
           0
         ],
         "branches": {
@@ -191,6 +225,6 @@
         }
       }
     },
-    "timestamp": 1669771135
+    "timestamp": 1669775467
   }
 }
