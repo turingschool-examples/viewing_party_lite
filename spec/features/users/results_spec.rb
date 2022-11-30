@@ -8,7 +8,7 @@
 
 # I should also see a button to return to the Discover Page.
 
-# require 'rails_helper'
+require 'rails_helper'
 
 RSpec.describe 'Movie Results Page' do
   describe 'As a User' do
@@ -17,8 +17,11 @@ RSpec.describe 'Movie Results Page' do
         describe 'when I click this button' do
           it 'then I am taken to a page where I see top 20 movie titles as links and their vote averages' do
             user1 = create(:user)
-            visit "/users/#{user1.id}/movies/"
+            visit "/users/#{user1.id}/discover/"
 
+            click_button 'Find Top Rated Movies'
+
+            expect(current_path).to eq("/users/#{user1.id}/movies")
             expect(page).to have_link('Home')
             expect(page).to have_content('Viewing Party Lite')
             expect(page).to have_content('Vote Average: 8.7')
@@ -26,6 +29,19 @@ RSpec.describe 'Movie Results Page' do
             expect(page).to have_button('Discover Page')
             expect(page).to have_content('Vote Average', count: 20)
           end
+        end
+      end
+
+      describe "When I type a keyword into search and select find movies" do
+        it "I am taken to '/users/user_id/movies' and I see of movies that include that keyword" do
+          user1 = create(:user)
+          visit "/users/#{user1.id}/discover/"
+          # save_and_open_page
+          fill_in("Find Movies", with: "Spinal Tap")
+          click_button('Find Movies')
+
+          expect(current_path).to eq("/users/#{user1.id}/movies")
+
         end
       end
     end
