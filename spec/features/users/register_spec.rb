@@ -3,12 +3,11 @@ require "rails_helper"
 RSpec.describe "the User registration page" do 
   describe "when a user visits '/register'" do 
     it "shows a form to register, once registered they're directed to the user show page" do 
-      # visit '/'
+      visit '/'
 
-      # expect(page)to_not have_content('amanda@turing.edu')
+      expect(page).to_not have_content('amanda@turing.edu')
 
-      # click_on('Create New User')
-      visit register_path
+      click_on('Create A New User')
 
       expect(current_path).to eq(register_path)
       expect(page).to have_field(:name)
@@ -22,9 +21,9 @@ RSpec.describe "the User registration page" do
       last_created = User.last
       expect(current_path).to eq(user_path(last_created))
 
-      # visit '/'
+      visit '/'
       
-      # expect(page).to have_content('amanda@turing.edu')
+      expect(page).to have_content('amanda@turing.edu')
     end
 
     it "doesn't allow you to leave fields blank" do 
