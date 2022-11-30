@@ -7,6 +7,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def new
+  end
+
   def create
     new_user = User.create(user_params)
     if User.exists?(new_user.id)
