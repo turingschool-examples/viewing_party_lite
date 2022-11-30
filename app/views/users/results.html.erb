@@ -1,8 +1,13 @@
 <h1><center>Viewing Party Lite<center></h1>
+  <% if params["Find Movies"].present? %>
+    <h4><center><%= "Movie results for: #{params["Find Movies"]}" %><center></h4>
+  <% else %>
+    <h4><center>Top Rated Movies<center></h4>
+  <% end %>
 
 <p><center><%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %><center></p>
 
 <% @movies[:results].each do |movie|%>
-  <p><%= link_to movie[:title], url: "/users/#{@user.id}/movies/#{movie[:id]}", method: :get %> 
+  <p><%= link_to movie[:title], url: "/users/#{@user.id}/movies/#{movie[:id]}", method: :get %>
   Vote Average: <%= movie[:vote_average] %></p>
 <%end%>

@@ -20,10 +20,11 @@ RSpec.describe 'Movie Results Page' do
             visit "/users/#{user1.id}/discover/"
 
             click_button 'Find Top Rated Movies'
-
+            #  save_and_open_page
             expect(current_path).to eq("/users/#{user1.id}/movies")
             expect(page).to have_link('Home')
             expect(page).to have_content('Viewing Party Lite')
+            expect(page).to have_content('Top Rated Movies')
             expect(page).to have_content('Vote Average: 8.7')
             expect(page).to have_link('The Godfather')
             expect(page).to have_button('Discover Page')
@@ -32,16 +33,28 @@ RSpec.describe 'Movie Results Page' do
         end
       end
 
-      describe "When I type a keyword into search and select find movies" do
+      describe 'When I type a keyword into search and select find movies' do
         it "I am taken to '/users/user_id/movies' and I see of movies that include that keyword" do
           user1 = create(:user)
           visit "/users/#{user1.id}/discover/"
-          # save_and_open_page
-          fill_in("Find Movies", with: "Spinal Tap")
+
+          fill_in('Find Movies', with: 'Spinal Tap')
           click_button('Find Movies')
-
+           save_and_open_page
           expect(current_path).to eq("/users/#{user1.id}/movies")
+          expect(page).to have_content('Movie results for: Spinal Tap')
+        end
+      end
 
+      describe "When I do not type anything into search and select find movies" do
+        it "Then I am directed to '/users/user_id/movies' where I see top rate movies" do
+          user1 = create(:user)
+          visit "/users/#{user1.id}/discover/"
+
+          click_button('Find Movies')
+          # save_and_open_page
+          expect(current_path).to eq("/users/#{user1.id}/movies")
+          expect(page).to have_content('Top Rated Movies')
         end
       end
     end
