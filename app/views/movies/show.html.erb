@@ -1,0 +1,13 @@
+<h1><center>Viewing Party Lite<center></h1>
+<p><center><%= @movie[:title]%><center></p>
+<p><%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %></p>
+
+<p><%= button_to "Create Viewing Party for #{@movie[:title]}", "/users/#{@user.id}/movies/#{@movie[:id]}/viewing-party/new"%></p>
+
+<p>Vote: <%= @movie[:vote_average]%>
+<center>Runtime:<%= @movie[:runtime]%><center>
+Genre(s): 
+  <%@movie[:genres].each do |g| %>
+    <%=g[:name]%>
+  <%end%></p>
+<hr>
