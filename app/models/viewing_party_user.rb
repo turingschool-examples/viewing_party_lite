@@ -6,5 +6,5 @@ class ViewingPartyUser < ApplicationRecord
 
   validates_presence_of :host
   # validates_inclusion_of :host, in: [true, false]
-  enum host: { invited: 0, hosting: 1}
+  enum host: { invited: 0, hosting: 1 }
 end

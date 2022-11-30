@@ -1,23 +1,10 @@
 <h1><center>Viewing Party Lite<center></h1>
 <h4><center>Discover Movies<center></h4>
 
-<p><center><%= button_to "Find Top Rated Movies", "/users/#{@user.id}/movies" %><center></p>
+<p><center><%= button_to "Find Top Rated Movies", "/users/#{@user.id}/movies", method: :get %><center></p>
 
 
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Search Field</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <form action="/users/:user_id/movies" method="GET" class="form">
-        <input type="search" placeholder="Search" class="search-field" />
-        <%= button_to "Find Movies" %>
-        </button>
-      </form>
-    </div>
-  </body>
-</html>
+<%= form_with url: "/users/#{@user.id}/movies", method: :get, local: :true do |f| %>
+  <%= f.search_field "Find Movies" %>
+  <%= f.submit "Find Movies" %>
+<% end %>
