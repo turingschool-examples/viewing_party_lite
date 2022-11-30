@@ -27,6 +27,7 @@ div.party-card {
     <br><br>
     <%= party.status %><br><br>
     <% if party.status == "Hosting" %>
+      Host: You!<br><br>
       <div id="invitees">
       Invitees: <br>
                 <% party.invitees.each do |name| %>
