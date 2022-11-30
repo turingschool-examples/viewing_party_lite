@@ -14,5 +14,9 @@ class MovieService
     JSON.parse(response.body, symbolize_names: true)
   end
 
+  def self.find_top_rated_movies
+    response = conn.get("movie/top_rated?api_key=#{ENV["movie_api_key"]}")
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end
 

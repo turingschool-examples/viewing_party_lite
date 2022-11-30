@@ -29,13 +29,22 @@ RSpec.describe MovieService do
 
     describe "#movies_by_keyword" do
       it "finds movies based on a given word argument" do
-        movie = MovieService.movies_by_keyword("Spinal Tap")
+        movies = MovieService.movies_by_keyword("Spinal Tap")
 
-        expect(movie.class).to be Hash
-        expect(movie[:results].class).to be Array
-        expect(movie[:results].first[:title].include?("This Is Spinal Tap")).to be true
-        expect(movie[:total_results]).to eq(5)
+        expect(movies.class).to be Hash
+        expect(movies[:results].class).to be Array
+        expect(movies[:results].first[:title].include?("This Is Spinal Tap")).to be true
+        expect(movies[:total_results]).to eq(5)
+      end
+    end
 
+    describe "#find_top_rated_movies" do
+      it "finds the 20 top rated movies" do
+        movies = MovieService.find_top_rated_movies
+
+        expect(movies.class).to be Hash
+        expect(movies[:results].class).to be Array
+        expect(movies[:results].count).to eq(20)
       end
     end
   end
