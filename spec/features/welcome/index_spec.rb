@@ -13,21 +13,22 @@ RSpec.describe 'welcome index page' do
 
   it 'should have a button to create a new user' do
     expect(page).to have_button("Create New User")
-    # click_button "Create New User"
+    click_button "Create New User"
+    expect(current_path).to eq("/register")
 
   end
   it 'has a list of existing users' do
     expect(page).to have_content("Existing Users")
+    expect(page).to have_content(@user1.name)
   end
 
   it 'which links to the users dashboard' do
-    # expect(page).to have_link("#{@user1.name}s Dashboard") WIP
+    expect(page).to have_link("#{@user1.name}")
   end
 
   it 'includes a link to the landing page' do
     expect(page).to have_link("Home Page")
     click_link "Home Page"
     expect(current_path).to eq(root_path)
-    # save_and_open_page
   end
 end
