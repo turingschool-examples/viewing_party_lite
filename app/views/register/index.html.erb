@@ -1,2 +1,7 @@
-<%=form_with url: users_path do |f|%>
+<%=form_with url: users_path, method: :post do |f|%>
+<%=f.label :name, 'Name'%>
+<%=f.name%><br>
+<%=f.label :email, 'Email'%>
+<%=f.email%><br>
+<%=f.submit 'Register'%>
 <%end%>
