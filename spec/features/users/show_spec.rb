@@ -6,7 +6,7 @@ RSpec.describe 'User Dashboard' do
     user1 = User.create!(name: "Kevin", email: "kta@turing.edu")
     user2 = User.create!(name: "Bryan", email: "bkeener@turing.edu")
     visit user_path(user1)
-
+    
     expect(page).to have_content("Kevin's Dashboard")
     expect(page).to_not have_content(user1.email)
     expect(page).to have_link('Home')
@@ -16,18 +16,18 @@ RSpec.describe 'User Dashboard' do
 
   it 'has a button that will take you to a movies discover page' do 
     user1 = User.create!(name: "Kevin", email: "kta@turing.edu")
-
+    
     visit user_path(user1)
 
     expect(page).to have_button("Discover Movies")
     click_button("Discover Movies")
-
-    expect(current_path).to eq(user_discover_index(user1))
+    
+    expect(current_path).to eq(user_discovers_path(user1))
   end
 
   it 'has a section that lists viewing parties' do 
     user1 = User.create!(name: "Kevin", email: "kta@turing.edu")
-
+    
     visit user_path(user1)
 
     expect(page).to have_content("Current Viewing Parties")
