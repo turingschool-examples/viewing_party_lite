@@ -10,9 +10,9 @@ RSpec.describe "discover index page " do
       visit user_discover_path(@steve)
 
       click_button "Find Top Rated Movies"
-      expect(current_path).to eq("/users/#{@steve.id}/movies/search")
+      expect(current_path).to eq("/users/#{@steve.id}/movies")
       expect(page.status_code).to eq 200 
-      expect(page).to have_content("Black Adam")
+      expect(page).to have_content("The Godfather")
     end
   end
   

@@ -1,7 +1,5 @@
 class MoviesController < ApplicationController 
-  # def index 
-  #   @user = User.find(params[:user_id])
-  # end
+
   def index  
     @user = User.find(params[:user_id])
     connection = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
