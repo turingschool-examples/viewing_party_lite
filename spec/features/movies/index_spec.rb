@@ -1,28 +1,65 @@
 require 'rails_helper'
 
 RSpec.describe 'the movies result page' do 
-  describe 'as a user' do 
-    it 'i see the movie title as a link to the movie details page and the vote average of the movie' do 
+  describe 'layout' do 
+    before(:each) do 
+      @user1 = create(:user)
+
+      VCR.use_cassette('top_rated_movies') do 
+        visit "users/#{@user1.id}/discover"
+        click_button 'Discover Top Rated Movies'
+      end
+    end
+
+    it 'has a button to return to the discover page' do 
+      click_button 'Discover Page'
+      expect(current_path).to eq(user_discover_index_path(@user1))
+    end
+  end
+
+  describe 'top rated movies' do 
+    before(:each) do 
       VCR.use_cassette('top_rated_movies') do 
         movies = MoviesService.top_rated_movies
         @first_movie = movies[:results].first
         @last_movie = movies[:results].last
       end
 
+      @user1 = create(:user)
+
       VCR.use_cassette('top_rated_movies') do 
-        user1 = create(:user)
+        visit "users/#{@user1.id}/discover"
+        click_button 'Discover Top Rated Movies'
+      end
+    end
 
-        visit "users/#{user1.id}/movies"
+    it 'i see the movie title as a link to the movie details page and the vote average of the movie' do 
+      within "#movies" do 
+        expect(page).to have_link(@first_movie[:title])
+        expect(page).to have_content(@first_movie[:vote_average])
 
-        within "#movies" do 
-          expect(page).to have_link(@first_movie[:title])
-          expect(page).to have_content(@first_movie[:vote_average])
+        expect(page).to have_link(@last_movie[:title])
+        expect(page).to have_content(@last_movie[:vote_average])
 
-          expect(page).to have_link(@last_movie[:title])
-          expect(page).to have_content(@last_movie[:vote_average])
+        # Can we test for amount of items on page?
+      end
+    end
+  end
 
-          # Can we test for amount of items on page?
-        end
+  describe 'movie search' do 
+    before(:each) do 
+      VCR.use_cassette('movie_search') do 
+        movies = MoviesService.top_rated_movies
+        @first_movie = movies[:results].first
+        @last_movie = movies[:results].last
+      end
+
+      @user1 = create(:user)
+
+      VCR.use_cassette('movie_search') do 
+        visit "users/#{@user1.id}/discover"
+        fill_in 'Search', with: 'godfather'
+        click_button 'Search by Movie Title'
       end
     end
   end

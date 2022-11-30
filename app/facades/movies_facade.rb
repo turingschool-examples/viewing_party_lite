@@ -3,7 +3,15 @@ class MoviesFacade
     json = MoviesService.top_rated_movies
 
     @movies = json[:results].map do |movie_data|
-      Movie.new(movie_data)
+      MovieLite.new(movie_data)
+    end
+  end
+
+  def self.search(query)
+    json = MoviesService.search(query)
+
+    @movies = json[:results].first(20).map do |movie_data|
+      MovieLite.new(movie_data)
     end
   end
 end
