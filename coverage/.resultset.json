@@ -23,31 +23,11 @@
           null
         ]
       },
-      "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/controllers/users_controller.rb": {
+      "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/controllers/discover_controller.rb": {
         "lines": [
           1,
           1,
-          0,
-          null,
-          null,
           1,
-          null,
-          null,
-          1,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
           null,
           null
         ]
@@ -55,29 +35,6 @@
       "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/controllers/application_controller.rb": {
         "lines": [
           1,
-          null
-        ]
-      },
-      "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/controllers/movies_controller.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
           null
         ]
       },
@@ -137,6 +94,70 @@
         "branches": {
         }
       },
+      "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/controllers/movies_controller.rb": {
+        "lines": [
+          0,
+          null,
+          null,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null
+        ],
+        "branches": {
+        }
+      },
+      "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/controllers/users_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/controllers/welcome_controller.rb": {
         "lines": [
           0,
@@ -169,6 +190,6 @@
         }
       }
     },
-    "timestamp": 1669825121
+    "timestamp": 1669827547
   }
 }

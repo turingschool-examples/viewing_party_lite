@@ -17,7 +17,6 @@ RSpec.describe "user dashboard page" do
         expect(current_path).to_not eq(user_discover_path(@steve))
       end
       expect(page).to have_content("Discover Movies")
-
     end
   end
 end
