@@ -5,5 +5,5 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :register, only: [:new, :create], controller: "users"
+  resources :register, only: [:index, :new, :create], controller: "users"
 end
