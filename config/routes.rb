@@ -9,4 +9,6 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :users, path_names: { new: 'register' }
+  # get '/register', to: 'users#index'
 end
