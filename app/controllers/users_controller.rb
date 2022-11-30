@@ -12,8 +12,8 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to user_path(@user.id)
     else
+      flash[:alert] = @user.errors.full_messages
       redirect_to new_register_path
-      flash[:alert] = "Error: "
     end
   end
 
