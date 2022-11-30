@@ -20,7 +20,7 @@ RSpec.describe "the User Show page aka the user's dashboard" do
 
 
       visit user_path(user)
-save_and_open_page
+
       expect(page).to have_content("Amanda's Dashboard")
       expect(page).to have_button("Discover Movies")
 

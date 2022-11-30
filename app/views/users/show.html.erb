@@ -14,7 +14,7 @@ div.party-card {
 <hr>
 <% @viewing_parties.each do |party| %>
   <div class="party-card" id="viewing-party-<%= party.id %>">
-    <p>Movie Image to GO HERE</p>
+    <p>movie image to go here</p>
     <%= link_to party.movie_title, user_movie_path(@user, party.movie_id) %>
     <br><br>
     <%= party.date.strftime("%B %d, %Y") %>

@@ -39,5 +39,12 @@ RSpec.describe ViewingParty, type: :model do
         expect(party.invitees).to eq(["James", "Annie"])
       end
     end
+
+    # describe "#image" do 
+    #   xit "returns the source path for the image related to the movie party" do 
+    #     party = ViewingParty.create!(movie_id: 1, movie_title: "The Princess Bride", duration: 180, date: '2022-12-12', start_time: '17:00')
+    #     expect(party.image).to eq("something")
+    #   end
+    # end
   end
 end
