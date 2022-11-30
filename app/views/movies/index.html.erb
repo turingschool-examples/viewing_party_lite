@@ -1,0 +1,7 @@
+<center><h2>Discover Movies</h2></center>
+for <%=@user.name%>
+
+<%=button_to "Find Top Rated Movies", url: user_discover_path(@user)%> 
+<%if @popular%>
+  <%=@poular%>
+<%end%>
