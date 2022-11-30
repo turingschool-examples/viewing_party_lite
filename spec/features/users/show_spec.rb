@@ -10,19 +10,19 @@ RSpec.describe 'The User show page' do
       end
 
       it 'shows the users name at the top of the page' do
-        visit user_path(@user_1)
+        visit user_path(@user1)
 
         expect(page).to have_content("Mary's Dashboard")
         expect(page).not_to have_content("Sherri's Dashboard")
         expect(page).not_to have_content("Larry's Dashboard")
 
-        visit user_path(@user_1)
+        visit user_path(@user2)
 
         expect(page).to have_content("Larry's Dashboard")
         expect(page).not_to have_content("Mary's Dashboard")
         expect(page).not_to have_content("Sherri's Dashboard")
 
-        visit user_path(@user_2)
+        visit user_path(@user3)
 
         expect(page).to have_content("Sherri's Dashboard")
         expect(page).not_to have_content("Larry's Dashboard")
