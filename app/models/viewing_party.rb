@@ -14,8 +14,8 @@ class ViewingParty < ApplicationRecord
 
   def invitees
     users
-      .joins(:user_viewing_parties)
-      .where("user_viewing_parties.status = 'Invited'")
+      .includes(:user_viewing_parties)
+      .where("user_viewing_parties.status = 'Invited'").to_a
       .pluck(:name)
   end
 end

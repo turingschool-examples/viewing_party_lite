@@ -4,6 +4,7 @@ div.party-card {
     border: 2px solid #ccc;
     float: left;
     width: 180px;
+    height: 500px;
     text-align: center;
   }
 </style>
@@ -20,11 +21,26 @@ div.party-card {
     <br>
     <%= party.start_time.strftime("%l:%M %p") %>
     <br><br>
-    <%= party.status %>
+    <%= party.status %><br><br>
     <% if party.status == "Hosting" %>
-      
+      <div id="invitees">
+      Invitees: <br>
+                <% party.invitees.each do |name| %>
+                  <%= name %><br>
+                <% end %>
+      </div>
     <% else %>
-      Host: 
+      Host: <%= party.host %><br><br>
+      <div id="invitees">
+      Invitees:<br>
+      <% party.invitees.each do |name| %>
+        <% if name == @user.name %>
+          <b><%= name %></b><br>
+        <% else %>
+          <%= name %><br>
+        <% end %>
+      <% end %>
+      </div>
     <% end %>
   </div>
 <% end %>
