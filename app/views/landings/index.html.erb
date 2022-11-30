@@ -1,0 +1,15 @@
+<h1><center> Viewing Party Lite! </center></h1>
+<hr>
+<br>
+<br>
+<br>
+<center><%= button_to "Create a New User", '/register', method: :get %></center>
+
+<br>
+<br>
+
+<h3><center><strong> Existing Users </strong></h3>
+<% @users.each do |user| %>
+  <p><%= link_to user.email, user_path(user) %> </p>
+<% end %>
+</center>
