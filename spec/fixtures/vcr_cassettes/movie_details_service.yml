@@ -2,6 +2,151 @@
 http_interactions:
 - request:
     method: get
+    uri: https://api.themoviedb.org/3/movie/550
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - a1905be2994d0fa21bf724f7fc1aff66
+      User-Agent:
+      - Faraday v2.7.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 30 Nov 2022 18:23:10 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=300
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 28390a4d24ed4fdccd685d99cd06cf4e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA73-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 14ontoyHG1Tg5KRK15ELlajSzczHd47SpiTCPcOvxAghJGoik8BY5A==
+      Vary:
+      - Origin
+    body:
+      encoding: UTF-8
+      string: '{"status_code":7,"status_message":"Invalid API key: You must be granted
+        a valid key.","success":false}
+
+'
+  recorded_at: Wed, 30 Nov 2022 18:23:10 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/movie/550
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Api-Key:
+      - a1905be2994d0fa21bf724f7fc1aff66
+      User-Agent:
+      - Faraday v2.7.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - text/html
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 30 Nov 2022 18:30:11 GMT
+      Server:
+      - openresty
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 35575576af8067e30cfb17c6b9fde8e2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA73-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - k-CRz0dtCpCa8CFA5dmNPLzQgYd5UyifsR_XWea7WgNb6BpsEcu0uA==
+    body:
+      encoding: ASCII-8BIT
+      string: "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404
+        Not Found</h1></center>\r\n<hr><center>openresty</center>\r\n</body>\r\n</html>\r\n"
+  recorded_at: Wed, 30 Nov 2022 18:30:10 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/movie/550?api_key=a1905be2994d0fa21bf724f7fc1aff66
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - text/html
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 30 Nov 2022 18:38:10 GMT
+      Server:
+      - openresty
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 5397b304713f6301c7c94ac084b6ed08.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SEA73-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - R-KtQv-oZD2VKrGYamxUNoOrnD8Noz281MQEELDiHw5h-2dnmfkhhg==
+    body:
+      encoding: ASCII-8BIT
+      string: "<html>\r\n<head><title>404 Not Found</title></head>\r\n<body>\r\n<center><h1>404
+        Not Found</h1></center>\r\n<hr><center>openresty</center>\r\n</body>\r\n</html>\r\n"
+  recorded_at: Wed, 30 Nov 2022 18:38:10 GMT
+- request:
+    method: get
     uri: https://api.themoviedb.org/3/movie/550?api_key=a1905be2994d0fa21bf724f7fc1aff66
     body:
       encoding: US-ASCII
@@ -44,15 +189,17 @@ http_interactions:
       - Accept-Encoding,Accept-Encoding,Accept-Encoding
       - Origin
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 1481cc55c02c3a782ad420b6bac2cb32.cloudfront.net (CloudFront)
+      - 1.1 89791e6b21b9a30cc51cac1bc51cf098.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - SEA73-P1
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - XKiHzILW1D4U-HYs00OQxDDK-2BEf6Vm2LCfz7ruo8FAzOqZNwsjcQ==
+      - QmEIzUrsqEzvLPLZBVh5r_jBFaZeD3nkng8OT-DyeRTxoSJygTmE7A==
+      Age:
+      - '1458'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/hZkgoQYus5vegHoetLkCJzb17zJ.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"},{"id":53,"name":"Thriller"},{"id":35,"name":"Comedy"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
@@ -68,5 +215,5 @@ http_interactions:
         Films","origin_country":"US"}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
         Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.428,"vote_count":25238}'
-  recorded_at: Wed, 30 Nov 2022 18:14:33 GMT
+  recorded_at: Wed, 30 Nov 2022 18:38:51 GMT
 recorded_with: VCR 6.1.0
