@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       @user.save
       redirect_to(user_path(@user))
     else
-      flash[:alert] = "Email Must be Unique. Please Try Again"
+      flash[:alert] = @user.errors.full_messages
       redirect_to("/register")
     end
   end
