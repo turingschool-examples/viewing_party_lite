@@ -11,8 +11,8 @@ RSpec.describe 'movie details page' do
     # stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV["movie_api_key"]}").
     #   to_return(status: 200, body: json_response)
 
-    visit(user_movie_path(@user1.id))
-    require 'pry'; binding.pry
+    visit(user_movie_path(@user1.id, 278))
+    
   end
 
   describe 'when I visit a movie details page' do 
