@@ -6,7 +6,7 @@ RSpec.describe 'the movies result page' do
       @user1 = create(:user)
 
       VCR.use_cassette('top_rated_movies') do 
-        visit "users/#{@user1.id}/discover"
+        visit "/users/#{@user1.id}/discover"
         click_button 'Discover Top Rated Movies'
       end
     end
@@ -28,7 +28,7 @@ RSpec.describe 'the movies result page' do
       @user1 = create(:user)
 
       VCR.use_cassette('top_rated_movies') do 
-        visit "users/#{@user1.id}/discover"
+        visit "/users/#{@user1.id}/discover"
         click_button 'Discover Top Rated Movies'
       end
     end
@@ -55,7 +55,7 @@ RSpec.describe 'the movies result page' do
       @user1 = create(:user)
 
       VCR.use_cassette('search_godfather') do 
-        visit "users/#{@user1.id}/discover"
+        visit "/users/#{@user1.id}/discover"
         fill_in 'Search', with: 'godfather'
         click_button 'Search by Movie Title'
       end
@@ -69,6 +69,20 @@ RSpec.describe 'the movies result page' do
         expect(page).to have_link(@last_movie[:title])
         expect(page).to have_content(@last_movie[:vote_average])
       end
+    end
+
+    it 'displays search query' do 
+      expect(page).to have_content('Movie results for: "godfather"')
+    end
+
+    it 'displays no results found if search unsuccessful' do 
+      VCR.use_cassette('no_results_search') do 
+        visit "/users/#{@user1.id}/discover"
+        fill_in 'Search', with: '1098236'
+        click_button 'Search by Movie Title'
+      end
+
+      expect(page).to have_content('No Results Found')
     end
   end
 end
