@@ -20,7 +20,7 @@ RSpec.describe 'User Dashboard' do
     visit user_path(user1)
 
     expect(page).to have_button("Discover Movies")
-    click_link("Discover Movies")
+    click_button("Discover Movies")
 
     expect(current_path).to eq(user_discover_index(user1))
   end
@@ -30,6 +30,6 @@ RSpec.describe 'User Dashboard' do
 
     visit user_path(user1)
 
-    expect(page).to have_content("Viewing Parties List")
+    expect(page).to have_content("Current Viewing Parties")
   end
 end
