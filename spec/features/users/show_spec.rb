@@ -11,8 +11,8 @@ RSpec.describe 'User Dashboard Page' do
     visit user_path(@user1.id)
 
     within '#header' do
-      expect(page).to have_content("Chad's Dashboard")
-      expect(page).to_not have_content("Jessica's Dashboard")
+      expect(page).to have_content("#{@user1.name}'s Dashboard")
+      expect(page).to_not have_content("#{@user2.name}'s Dashboard")
     end
   end
 
@@ -29,6 +29,17 @@ RSpec.describe 'User Dashboard Page' do
 
     within '#viewing-parties' do
       expect(page).to have_content('Viewing Parties')
+    end
+  end
+
+  it 'should contain title of Viewing Party and a Home link that will redirect the user the landing page' do
+    visit user_path(@user1.id)
+
+    within('#dashboard') do
+      expect(page).to have_content('Viewing Party')
+      expect(page).to have_link('Home')
+      click_link('Home')
+      expect(current_path).to eq(root_path)
     end
   end
 end
