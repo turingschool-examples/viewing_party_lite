@@ -20,8 +20,4 @@ class MovieHeavy
     @first_10_cast_members = MoviesService.credits(data[:id])[:cast].first(10)
     @reviews_count = MoviesService.reviews(data[:id])[:results].size
   end
-
-  def get_cast
-    MoviesService.credits(@id)[:cast].first(10)
-  end
 end
