@@ -1,0 +1,225 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/129?api_key=<tmdb_key>&language=en-US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 30 Nov 2022 17:42:39 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - aeeae71f375662efe30273aebb47808a855e3cd3
+      X-Memc-Age:
+      - '11751'
+      X-Memc-Expires:
+      - '3680'
+      Etag:
+      - W/"2cdd541bfff5558802dcf229dd0afd0a"
+      Vary:
+      - Accept-Encoding,Accept-Encoding,Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 e4ca364cc5959e3bf697ae231c5b56b0.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - D0jHoKBuKIJU_xrx-qCdKUabAmRm60U9n1JJ7lAODI2tUD_kF-8a_A==
+      Age:
+      - '445'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvQWI4bWtIbWtZQURqVTd3UWlPa2lhOUJ6R3ZTLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjoxOTAwMDAwMCwiZ2VucmVzIjpbeyJpZCI6MTYsIm5hbWUiOiJBbmltYXRpb24ifSx7ImlkIjoxMDc1MSwibmFtZSI6IkZhbWlseSJ9LHsiaWQiOjE0LCJuYW1lIjoiRmFudGFzeSJ9XSwiaG9tZXBhZ2UiOiJodHRwOi8vbW92aWVzLmRpc25leS5jb20vc3Bpcml0ZWQtYXdheSIsImlkIjoxMjksImltZGJfaWQiOiJ0dDAyNDU0MjkiLCJvcmlnaW5hbF9sYW5ndWFnZSI6ImphIiwib3JpZ2luYWxfdGl0bGUiOiLljYPjgajljYPlsIvjga7npZ7pmqDjgZciLCJvdmVydmlldyI6IkEgeW91bmcgZ2lybCwgQ2hpaGlybywgYmVjb21lcyB0cmFwcGVkIGluIGEgc3RyYW5nZSBuZXcgd29ybGQgb2Ygc3Bpcml0cy4gV2hlbiBoZXIgcGFyZW50cyB1bmRlcmdvIGEgbXlzdGVyaW91cyB0cmFuc2Zvcm1hdGlvbiwgc2hlIG11c3QgY2FsbCB1cG9uIHRoZSBjb3VyYWdlIHNoZSBuZXZlciBrbmV3IHNoZSBoYWQgdG8gZnJlZSBoZXIgZmFtaWx5LiIsInBvcHVsYXJpdHkiOjc2Ljg1MiwicG9zdGVyX3BhdGgiOiIvMzl3bUl0SVdzZzVzWk15UlVITGtXQmN1VkNNLmpwZyIsInByb2R1Y3Rpb25fY29tcGFuaWVzIjpbeyJpZCI6MTAzNDIsImxvZ29fcGF0aCI6Ii9lUzc5cHNsbm9LYldnN3QzUE1BOWF5bDBiR3MucG5nIiwibmFtZSI6IlN0dWRpbyBHaGlibGkiLCJvcmlnaW5fY291bnRyeSI6IkpQIn1dLCJwcm9kdWN0aW9uX2NvdW50cmllcyI6W3siaXNvXzMxNjZfMSI6IkpQIiwibmFtZSI6IkphcGFuIn1dLCJyZWxlYXNlX2RhdGUiOiIyMDAxLTA3LTIwIiwicmV2ZW51ZSI6Mjc0OTI1MDk1LCJydW50aW1lIjoxMjUsInNwb2tlbl9sYW5ndWFnZXMiOlt7ImVuZ2xpc2hfbmFtZSI6IkphcGFuZXNlIiwiaXNvXzYzOV8xIjoiamEiLCJuYW1lIjoi5pel5pys6KqeIn1dLCJzdGF0dXMiOiJSZWxlYXNlZCIsInRhZ2xpbmUiOiIiLCJ0aXRsZSI6IlNwaXJpdGVkIEF3YXkiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6OC41NDEsInZvdGVfY291bnQiOjEzNTkwfQ==
+  recorded_at: Wed, 30 Nov 2022 17:50:04 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=<tmdb_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 30 Nov 2022 17:33:55 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=43200
+      Etag:
+      - W/"8ee6fd095d2be6e301251d766501a916"
+      Vary:
+      - Accept-Encoding,Accept-Encoding,Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 cddde15c11afac53ac9fe7978dcfecd6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - kbMyOuLJC2SxlfkGwsR91ztfwZH_cOnp3hVE7w1YhCcwo1zz7myAqQ==
+      Age:
+      - '969'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"images":{"base_url":"http://image.tmdb.org/t/p/","secure_base_url":"https://image.tmdb.org/t/p/","backdrop_sizes":["w300","w780","w1280","original"],"logo_sizes":["w45","w92","w154","w185","w300","w500","original"],"poster_sizes":["w92","w154","w185","w342","w500","w780","original"],"profile_sizes":["w45","w185","h632","original"],"still_sizes":["w92","w185","w300","original"]},"change_keys":["adult","air_date","also_known_as","alternative_titles","biography","birthday","budget","cast","certifications","character_names","created_by","crew","deathday","episode","episode_number","episode_run_time","freebase_id","freebase_mid","general","genres","guest_stars","homepage","images","imdb_id","languages","name","network","origin_country","original_name","original_title","overview","parts","place_of_birth","plot_keywords","production_code","production_companies","production_countries","releases","revenue","runtime","season","season_number","season_regular","spoken_languages","status","tagline","title","translations","tvdb_id","tvrage_id","type","video","videos"]}'
+  recorded_at: Wed, 30 Nov 2022 17:50:04 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/680?api_key=<tmdb_key>&language=en-US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 30 Nov 2022 17:42:39 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - a517567134a0a41154708cbd6e24706e2dc6476a
+      X-Memc-Age:
+      - '2693'
+      X-Memc-Expires:
+      - '15302'
+      Etag:
+      - W/"685bc84834453c50a701f2f2e723c15a"
+      Vary:
+      - Accept-Encoding,Accept-Encoding,Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 f0b290c4e2273a7586bc6f080031d9bc.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - bF-u-bWY6E5qFA0bZrWokpc1TM-NdUyrQgJBFR_shniCCwQ4Ret2_g==
+      Age:
+      - '445'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvc3VhRU90azFOMXNnZzJNVE03b1pkMmNmVnAzLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0Ijo4MDAwMDAwLCJnZW5yZXMiOlt7ImlkIjo1MywibmFtZSI6IlRocmlsbGVyIn0seyJpZCI6ODAsIm5hbWUiOiJDcmltZSJ9XSwiaG9tZXBhZ2UiOiJodHRwczovL3d3dy5taXJhbWF4LmNvbS9tb3ZpZS9wdWxwLWZpY3Rpb24vIiwiaWQiOjY4MCwiaW1kYl9pZCI6InR0MDExMDkxMiIsIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6IlB1bHAgRmljdGlvbiIsIm92ZXJ2aWV3IjoiQSBidXJnZXItbG92aW5nIGhpdCBtYW4sIGhpcyBwaGlsb3NvcGhpY2FsIHBhcnRuZXIsIGEgZHJ1Zy1hZGRsZWQgZ2FuZ3N0ZXIncyBtb2xsIGFuZCBhIHdhc2hlZC11cCBib3hlciBjb252ZXJnZSBpbiB0aGlzIHNwcmF3bGluZywgY29tZWRpYyBjcmltZSBjYXBlci4gVGhlaXIgYWR2ZW50dXJlcyB1bmZ1cmwgaW4gdGhyZWUgc3RvcmllcyB0aGF0IGluZ2VuaW91c2x5IHRyaXAgYmFjayBhbmQgZm9ydGggaW4gdGltZS4iLCJwb3B1bGFyaXR5Ijo2My45MTIsInBvc3Rlcl9wYXRoIjoiL2ZJRTNsQUdjWkRWMUc2WE01S211V25Oc1BwMS5qcGciLCJwcm9kdWN0aW9uX2NvbXBhbmllcyI6W3siaWQiOjE0LCJsb2dvX3BhdGgiOiIvbTZBSHU4NG9aUXh2cTduMXJzdk1OSklBc011LnBuZyIsIm5hbWUiOiJNaXJhbWF4Iiwib3JpZ2luX2NvdW50cnkiOiJVUyJ9LHsiaWQiOjU5LCJsb2dvX3BhdGgiOiIveUg3T01lU3hoZlAwQVZNNmlUMHJzRjNGNFpDLnBuZyIsIm5hbWUiOiJBIEJhbmQgQXBhcnQiLCJvcmlnaW5fY291bnRyeSI6IlVTIn0seyJpZCI6MjE2LCJsb2dvX3BhdGgiOm51bGwsIm5hbWUiOiJKZXJzZXkgRmlsbXMiLCJvcmlnaW5fY291bnRyeSI6IlVTIn1dLCJwcm9kdWN0aW9uX2NvdW50cmllcyI6W3siaXNvXzMxNjZfMSI6IlVTIiwibmFtZSI6IlVuaXRlZCBTdGF0ZXMgb2YgQW1lcmljYSJ9XSwicmVsZWFzZV9kYXRlIjoiMTk5NC0wOS0xMCIsInJldmVudWUiOjIxNDE3OTA4OCwicnVudGltZSI6MTU0LCJzcG9rZW5fbGFuZ3VhZ2VzIjpbeyJlbmdsaXNoX25hbWUiOiJFbmdsaXNoIiwiaXNvXzYzOV8xIjoiZW4iLCJuYW1lIjoiRW5nbGlzaCJ9LHsiZW5nbGlzaF9uYW1lIjoiU3BhbmlzaCIsImlzb182MzlfMSI6ImVzIiwibmFtZSI6IkVzcGHDsW9sIn0seyJlbmdsaXNoX25hbWUiOiJGcmVuY2giLCJpc29fNjM5XzEiOiJmciIsIm5hbWUiOiJGcmFuw6dhaXMifV0sInN0YXR1cyI6IlJlbGVhc2VkIiwidGFnbGluZSI6Ikp1c3QgYmVjYXVzZSB5b3UgYXJlIGEgY2hhcmFjdGVyIGRvZXNuJ3QgbWVhbiB5b3UgaGF2ZSBjaGFyYWN0ZXIuIiwidGl0bGUiOiJQdWxwIEZpY3Rpb24iLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6OC40OTEsInZvdGVfY291bnQiOjI0MTEyfQ==
+  recorded_at: Wed, 30 Nov 2022 17:50:04 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/configuration?api_key=<tmdb_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 30 Nov 2022 17:33:55 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=43200
+      Etag:
+      - W/"8ee6fd095d2be6e301251d766501a916"
+      Vary:
+      - Accept-Encoding,Accept-Encoding,Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 48a6ccbb0ddb052ab512a3422295bd38.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 6GKJ7OXom32dFHER9uQyI6jiBIr0O-jVd74-8VablUHTLysNzFAT0A==
+      Age:
+      - '969'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"images":{"base_url":"http://image.tmdb.org/t/p/","secure_base_url":"https://image.tmdb.org/t/p/","backdrop_sizes":["w300","w780","w1280","original"],"logo_sizes":["w45","w92","w154","w185","w300","w500","original"],"poster_sizes":["w92","w154","w185","w342","w500","w780","original"],"profile_sizes":["w45","w185","h632","original"],"still_sizes":["w92","w185","w300","original"]},"change_keys":["adult","air_date","also_known_as","alternative_titles","biography","birthday","budget","cast","certifications","character_names","created_by","crew","deathday","episode","episode_number","episode_run_time","freebase_id","freebase_mid","general","genres","guest_stars","homepage","images","imdb_id","languages","name","network","origin_country","original_name","original_title","overview","parts","place_of_birth","plot_keywords","production_code","production_companies","production_countries","releases","revenue","runtime","season","season_number","season_regular","spoken_languages","status","tagline","title","translations","tvdb_id","tvrage_id","type","video","videos"]}'
+  recorded_at: Wed, 30 Nov 2022 17:50:04 GMT
+recorded_with: VCR 6.1.0

@@ -18,4 +18,11 @@ class ViewingParty < ApplicationRecord
       .where("user_viewing_parties.status = 'Invited'").to_a
       .pluck(:name)
   end
+
+  def image 
+    #this will return the url path for the movie image for that party
+    movie = MovieSearch.new.movie(movie_id)
+    config_path = ConfigSearch.new.base_path
+    "#{config_path}w200/#{movie.partial_image_path}"
+  end
 end
