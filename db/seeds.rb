@@ -6,3 +6,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+user = User.create(name: "John Doe", email: "JohnDoe@email.net")
+party_1 = ViewParty.create(movie_id: 550, movie_name: "Fight Club", duration: 139, datetime: DateTime.now + 1)
+party_2 = ViewParty.create(movie_id: 390, movie_name: "Lisbon Story", duration: 139, datetime: DateTime.now + 9)
+UserViewParty.create(user_id: user.id, view_party_id: party_1.id, host: true)
+UserViewParty.create(user_id: user.id, view_party_id: party_2.id, host: false)
