@@ -1,12 +1,30 @@
+<style>
+div.party-card {
+    margin: 5px;
+    border: 2px solid #ccc;
+    float: left;
+    width: 180px;
+    text-align: center;
+  }
+</style>
+
 <h2 style="text-align:center;"><%= "#{@user.name}'s Dashboard" %></h2>
 <center><%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %></center>
 <hr>
 <% @viewing_parties.each do |party| %>
   <div class="party-card" id="viewing-party-<%= party.id %>">
     <p>Movie Image to GO HERE</p>
-    <p><%= party.movie_title %></p>
-    <p><%= party.date.strftime("%B %d, %Y") %></p>
-    <p><%= party.start_time.strftime("%l:%M %p") %></p>
-    <p><%= party.status %></p>
+    <%= link_to party.movie_title, user_movie_path(@user, party.movie_id) %>
+    <br><br>
+    <%= party.date.strftime("%B %d, %Y") %>
+    <br>
+    <%= party.start_time.strftime("%l:%M %p") %>
+    <br><br>
+    <%= party.status %>
+    <% if party.status == "Hosting" %>
+      
+    <% else %>
+      Host: 
+    <% end %>
   </div>
 <% end %>

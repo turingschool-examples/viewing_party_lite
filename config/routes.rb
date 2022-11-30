@@ -2,7 +2,9 @@
 
 Rails.application.routes.draw do
 
-  resources :users, only: [:create, :show]
+  resources :users, only: [:create, :show] do 
+    resources :movies, only: [:show]
+  end
   get "/register", to: "users#new"
   get "/users/:id/discover", to: "movies#discover"
 
