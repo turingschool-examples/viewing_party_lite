@@ -21,14 +21,14 @@ RSpec.describe 'the home page' do
     expect(current_path).to eql('/')
   end
 
-  xit "has a button to create a new user" do
+  it "has a button to create a new user" do
     visit '/'
 
     expect(page).to have_button('Create New User')
 
     click_button 'Create New User'
 
-    expect(current_path).to eql('/users/new')
+    expect(current_path).to eql('/register')
   end
 
   it "has a list of existing users with each user being a link to their respective dashboard" do
@@ -38,9 +38,9 @@ RSpec.describe 'the home page' do
     expect(page).to have_link("Yuji")
     expect(page).to have_link("Bryan")
 
-    save_and_open_page
-    # click_on "Yuji"
+   
+    click_on "Yuji"
 
-    # expect(current_path).to eql("/users/#{@yuji.id}")
+    expect(current_path).to eql("/users/#{@yuji.id}")
   end
 end
