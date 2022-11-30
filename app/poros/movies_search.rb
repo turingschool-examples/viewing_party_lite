@@ -1,10 +1,11 @@
 require "./app/poros/movie"
 require "./app/services/tmdb_service"
 
-class MovieSearch
-  def movie(id)
-    data = service.movie_details(id)
-    Movie.new(data)
+class MoviesSearch
+  def movies
+    service.top_rated_movies[:results].map do |data| 
+     Movie.new(data)
+    end
   end
 
   def service 
