@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  root "landings#index"
+  # landing page
+  root 'landings#index'
 
-  resources :users do 
-    resources :discovers, only: [:index]
+  # users
+  resources :users do
+    resources :discovers
   end
-  get '/register', to: 'users#new'
-  
+
+  # registration page
+  get '/register', to: 'users#new', as: :register
 end
