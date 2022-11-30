@@ -23,6 +23,10 @@ RSpec.describe 'the user show page' do
     visit "/users/#{@yuji.id}"
 
     expect(page).to have_button("Discover Movies")
+
+    click_button "Discover Movies"
+    
+    expect(current_path).to eql("/users/#{@yuji.id}/discover")
   end
 
   it "has a section for viewing parties" do
