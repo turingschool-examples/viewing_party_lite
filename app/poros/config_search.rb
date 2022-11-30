@@ -1,10 +1,10 @@
 require "./app/poros/movie"
 require "./app/services/tmdb_service"
 
-class MovieSearch
-  def movie(id)
-    data = service.movie_details(id)
-    Movie.new(data)
+class ConfigSearch
+  def base_path
+    data = service.config_base_path
+    data[:images][:base_url]
   end
 
   def service 

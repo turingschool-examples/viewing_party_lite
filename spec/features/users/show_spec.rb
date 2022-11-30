@@ -8,7 +8,7 @@ RSpec.describe "the User Show page aka the user's dashboard" do
       user_3 = User.create!(name: "Annie", email: "annie@turing.edu")
       user_4 = User.create!(name: "Naomi", email: "naomi@turing.edu")
 
-      party_1 = ViewingParty.create!(movie_id: 1, movie_title: "The Princess Bride", duration: 180, date: '2022-12-12', start_time: '17:00')
+      party_1 = ViewingParty.create!(movie_id: 278, movie_title: "The Princess Bride", duration: 180, date: '2022-12-12', start_time: '17:00')
       party_2 = ViewingParty.create!(movie_id: 2, movie_title: "Jurassic Park", duration: 200, date: '2022-12-13', start_time: '19:00')
       UserViewingParty.create!(user: user, viewing_party: party_1, status: "Hosting")
       UserViewingParty.create!(user: user_3, viewing_party: party_1, status: "Invited")
