@@ -9,7 +9,6 @@ class MovieFacade
     data = JSON.parse(response.body, symbolize_names: true)
 
     movies = data[:results][0..19]
-    # require "pry"; binding.pry
   end
 
   def self.top_rated
@@ -21,8 +20,9 @@ class MovieFacade
     data = JSON.parse(response.body, symbolize_names: true)
 
     movies = data[:results][0..19]
-
-
-    # require "pry"; binding.pry
   end
+
+  # def self.find_movie(movie_id)
+    
+  # end
 end

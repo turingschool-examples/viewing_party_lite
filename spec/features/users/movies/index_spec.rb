@@ -6,6 +6,7 @@ RSpec.describe 'movies results page' do
     @user2 = User.create!(name: "Ashley", email: "Ashley@gmail.com")
     @user3 = User.create!(name: "Abdul", email: "Abdul@gmail.com")
 
+    
     json_response = File.read('spec/fixtures/top_rated_movies.json')
 
     stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV["movie_api_key"]}").
@@ -13,6 +14,7 @@ RSpec.describe 'movies results page' do
 
     visit(user_movies_path(@user1.id))
   end
+
   it 'displays the titles and vote average of the top 20 movies' do
 
     expect(page).to have_content("20th Century Girl")
@@ -24,6 +26,7 @@ RSpec.describe 'movies results page' do
     expect(page).to have_content("The Shawshank Redemption")
     expect(page).to have_content("Vote Average: 8.7")
   end
+
   it 'can search for movies by title from the discover movies page' do
     visit(user_discover_index_path(@user1.id))
 
@@ -51,5 +54,17 @@ RSpec.describe 'movies results page' do
     expect(page).to have_button("Return to Discover Page")
     click_button "Return to Discover Page"
     expect(current_path).to eq(user_discover_index_path(@user1.id))
+  end
+
+  it 'has a link to each movies show page as the title' do 
+    visit(user_movies_path(@user1.id))
+
+    json_response = File.read('spec/fixtures/search_movies.json')
+    stub_request(:get, ("https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV["movie_api_key"]}")).
+      to_return(status: 200, body: json_response)
+
+    expect(page).to have_link("The Shawshank Redemption")
+    click_link "The Shawshank Redemption"
+    expect(current_path).to eq(user_movie_path(@user1.id, 278))
   end
 end
