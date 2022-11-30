@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-11-30T09:59:07-07:00">2022-11-30T09:59:07-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-11-30T12:04:24-07:00">2022-11-30T12:04:24-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -23,14 +23,14 @@
     <span class="group_name">All Files</span>
     (<span class="covered_percent">
       <span class="red">
-  13.92%
+  23.61%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.14
+         0.24
        </span>
     </span> hits/line
     )
@@ -43,11 +43,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>79</b> relevant lines,
-    <span class="green"><b>11</b> lines covered</span> and
-    <span class="red"><b>68</b> lines missed. </span>
+    <b>72</b> relevant lines,
+    <span class="green"><b>17</b> lines covered</span> and
+    <span class="red"><b>55</b> lines missed. </span>
     (<span class="red">
-  13.92%
+  23.61%
 </span>
 )
   </div>
@@ -116,12 +116,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#e847ee03747059d8ad132be959b9ecb71a5cb970" class="src_link" title="app/controllers/movies_controller.rb">app/controllers/movies_controller.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">0.00 %</td>
-            <td class="cell--number">27</td>
-            <td class="cell--number">18</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">18</td>
-            <td class="cell--number">0.00</td>
+            <td class="red strong cell--number t-file__coverage">54.55 %</td>
+            <td class="cell--number">29</td>
+            <td class="cell--number">11</td>
+            <td class="cell--number">6</td>
+            <td class="cell--number">5</td>
+            <td class="cell--number">0.55</td>
             
           </tr>
         
@@ -258,14 +258,14 @@
     <span class="group_name">Controllers</span>
     (<span class="covered_percent">
       <span class="red">
-  8.33%
+  24.39%
 </span>
 
      </span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.08
+         0.24
        </span>
     </span> hits/line
     )
@@ -278,11 +278,11 @@
   </div>
 
   <div class="t-line-summary">
-    <b>48</b> relevant lines,
-    <span class="green"><b>4</b> lines covered</span> and
-    <span class="red"><b>44</b> lines missed. </span>
+    <b>41</b> relevant lines,
+    <span class="green"><b>10</b> lines covered</span> and
+    <span class="red"><b>31</b> lines missed. </span>
     (<span class="red">
-  8.33%
+  24.39%
 </span>
 )
   </div>
@@ -329,12 +329,12 @@
         
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#e847ee03747059d8ad132be959b9ecb71a5cb970" class="src_link" title="app/controllers/movies_controller.rb">app/controllers/movies_controller.rb</a></td>
-            <td class="red strong cell--number t-file__coverage">0.00 %</td>
-            <td class="cell--number">27</td>
-            <td class="cell--number">18</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">18</td>
-            <td class="cell--number">0.00</td>
+            <td class="red strong cell--number t-file__coverage">54.55 %</td>
+            <td class="cell--number">29</td>
+            <td class="cell--number">11</td>
+            <td class="cell--number">6</td>
+            <td class="cell--number">5</td>
+            <td class="cell--number">0.55</td>
             
           </tr>
         
@@ -1139,7 +1139,7 @@
     <h3>app/controllers/movies_controller.rb</h3>
     <h4>
       <span class="red">
-  0.0%
+  54.55%
 </span>
 
       lines covered
@@ -1148,9 +1148,9 @@
     
 
     <div class="t-line-summary">
-      <b>18</b> relevant lines.
-      <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>18</b> lines missed.</span>
+      <b>11</b> relevant lines.
+      <span class="green"><b>6</b> lines covered</span> and
+      <span class="red"><b>5</b> lines missed.</span>
     </div>
 
     
@@ -1161,8 +1161,8 @@
     <ol>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="1">
-            
+          <li class="covered" data-hits="1" data-linenumber="1">
+            <span class="hits">1</span>
             
 
             
@@ -1205,19 +1205,30 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="5">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="5">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">  def top_rated </code>
+            
+
+            <code class="ruby">  def search  </code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="6">
+          <li class="covered" data-hits="1" data-linenumber="6">
+            <span class="hits">1</span>
             
+
+            
+
+            <code class="ruby">    @user = User.find(params[:user_id])</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="7">
+            <span class="hits">1</span>
             
 
             
@@ -1227,24 +1238,13 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="7">
-            
+          <li class="covered" data-hits="1" data-linenumber="8">
+            <span class="hits">1</span>
             
 
             
 
             <code class="ruby">    faraday.params[&quot;api_key&quot;] = ENV[&#39;movies_api_key&#39;]</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="8">
-            
-            
-
-            
-
-            <code class="ruby">    end</code>
           </li>
         </div>
       
@@ -1255,18 +1255,18 @@
 
             
 
-            <code class="ruby">   </code>
+            <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="10">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="10">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">    response = connection.get(&quot;/discover/movie?sort_by=popularity.desc&quot;)</code>
+            
+
+            <code class="ruby">    if params[&quot;top rated&quot;]</code>
           </li>
         </div>
       
@@ -1277,7 +1277,7 @@
 
             
 
-            <code class="ruby">    json_body = response.body </code>
+            <code class="ruby">      response = connection.get(&quot;/movie/top_rated&quot;)</code>
           </li>
         </div>
       
@@ -1288,7 +1288,7 @@
 
             
 
-            <code class="ruby">    parsed_response = JSON.parse(json_body, symbolize_names: true)</code>
+            <code class="ruby">      json_body = response.body </code>
           </li>
         </div>
       
@@ -1299,51 +1299,51 @@
 
             
 
-            <code class="ruby">    @popular = parsed_response[:results][0][:original_title]</code>
+            <code class="ruby">      parsed_response = JSON.parse(json_body, symbolize_names: true)</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="14">
+          <li class="missed" data-hits="0" data-linenumber="14">
             
             
 
             
 
-            <code class="ruby">  </code>
+            <code class="ruby">      @popular = parsed_response[:results][0][:original_title]</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="15">
+          <li class="missed" data-hits="0" data-linenumber="15">
+            
+            
+
+            
+
+            <code class="ruby">      redirect_to user_movies_path(@user)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
+            
+            
+
+            
+
+            <code class="ruby">    end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="17">
             
             
 
             
 
             <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="16">
-            
-            
-
-            
-
-            <code class="ruby">    render </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="17">
-            
-            
-
-            
-
-            <code class="ruby">  end</code>
           </li>
         </div>
       
@@ -1354,78 +1354,12 @@
 
             
 
-            <code class="ruby"></code>
+            <code class="ruby">   </code>
           </li>
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="19">
-            
-            
-
-            
-
-            <code class="ruby">  def search </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="20">
-            
-            
-
-            
-
-            <code class="ruby">    connection = Faraday.new(url: &quot;https://api.themoviedb.org/3&quot;) do |faraday|</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="21">
-            
-            
-
-            
-
-            <code class="ruby">      faraday.params[&quot;api_key&quot;] = ENV[&#39;movies_api_key&#39;]</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="22">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="23">
-            
-            
-
-            
-
-            <code class="ruby">     </code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="24">
-            
-            
-
-            
-
-            <code class="ruby">      response = connection.get(&quot;/discover/movie?sort_by=popularity.desc&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="missed" data-hits="0" data-linenumber="25">
+          <li class="never" data-hits="" data-linenumber="19">
             
             
 
@@ -1436,7 +1370,95 @@
         </div>
       
         <div>
-          <li class="missed" data-hits="0" data-linenumber="26">
+          <li class="never" data-hits="" data-linenumber="20">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="21">
+            
+            
+
+            
+
+            <code class="ruby">  # def search </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="22">
+            
+            
+
+            
+
+            <code class="ruby">  #   connection = Faraday.new(url: &quot;https://api.themoviedb.org/3&quot;) do |faraday|</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="23">
+            
+            
+
+            
+
+            <code class="ruby">  #     faraday.params[&quot;api_key&quot;] = ENV[&#39;movies_api_key&#39;]</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="24">
+            
+            
+
+            
+
+            <code class="ruby">  #     end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="25">
+            
+            
+
+            
+
+            <code class="ruby">     </code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="26">
+            
+            
+
+            
+
+            <code class="ruby">  #     response = connection.get(&quot;/discover/movie?sort_by=popularity.desc&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="27">
+            
+            
+
+            
+
+            <code class="ruby">  # end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="28">
             
             
 
@@ -1447,7 +1469,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="27">
+          <li class="never" data-hits="" data-linenumber="29">
             
             
 

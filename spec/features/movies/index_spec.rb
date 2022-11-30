@@ -8,7 +8,7 @@ RSpec.describe "discover movies page or movies index page " do
     end
     it 'has a button to find top rated movies' do 
       visit user_discover_path(@steve)
-      require 'pry'; binding.pry
+      # require 'pry'; binding.pry
 
       click_button "Find Top Rated Movies"
       expect(page.status_code).to eq 200 

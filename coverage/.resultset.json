@@ -38,6 +38,39 @@
           null
         ]
       },
+      "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/controllers/movies_controller.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
           0,
@@ -90,39 +123,6 @@
           0,
           null,
           0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/controllers/movies_controller.rb": {
-        "lines": [
-          0,
-          null,
-          null,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null
         ],
         "branches": {
         }
@@ -190,6 +190,6 @@
         }
       }
     },
-    "timestamp": 1669827547
+    "timestamp": 1669835064
   }
 }
