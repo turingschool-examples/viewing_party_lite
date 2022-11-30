@@ -17,7 +17,9 @@ RSpec.describe 'Welcome' do
     end
 
     it 'has a button to create a new user' do
-      expect(page).to have_button('Create a New User')
+      expect(page).to have_link('Create a New User')
+      click_link 'Create a New User'
+      expect(current_path).to eq(register_path)
     end
 
     it 'has a heading for existing users' do
