@@ -7,9 +7,18 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <div id='dashboard'>
+      <%= render partial: "shared/navbar" %>
+    </div>
   </head>
 
   <body>
+  <div>
+  <% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+<% end %>
     <%= yield %>
   </body>
 </html>
