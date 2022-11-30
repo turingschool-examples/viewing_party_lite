@@ -30,8 +30,7 @@ class UsersController < ApplicationController
   end
 
   def discover
-    if params[:user_id]
-    end
+    @user = User.find(params[:id])
   end
 
   private
