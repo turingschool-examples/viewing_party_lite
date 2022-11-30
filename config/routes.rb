@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   get '/users/:id/discover', to: 'users#index'
 
   resources :users, only: %i[show create] do
-    resources :movies, only: %i[index]
+    resources :movies, only: %i[index show]
   end
 end
