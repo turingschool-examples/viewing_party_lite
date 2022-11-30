@@ -9,7 +9,11 @@ RSpec.describe 'The Show Page', type: :feature do # rubocop:disable Metrics/Bloc
   let!(:user_1_party_1) { create(:user_view_party, user: user_1, view_party: view_party_1) }
   let!(:user_1_party_2) { create(:user_view_party, user: user_1, view_party: view_party_2) }
   before(:each) do
+    VCR.insert_cassette "image url"
     visit user_path(user_1)
+  end
+  after(:each) do
+    VCR.eject_cassette
   end
 
   describe 'When I visit the user show path' do
