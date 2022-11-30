@@ -1,5 +1,7 @@
 <center><h1>Viewing Party</h1>
 <%= button_to "Create New User", "/register", method: :get %>
 <p>Existing Users:</p>
-
+<% @users.each do |user| %>
+  <li><%= link_to user.name, user_path(user.id) %></li>
+<% end %>
 </center>
