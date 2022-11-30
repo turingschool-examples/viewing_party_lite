@@ -21,5 +21,6 @@ private
 
   def user_params
     params.permit(:name, :email)
+    @user = User.find(params[:id])
   end
 end
