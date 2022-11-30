@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  root "landings#index"
+  root 'landings#index'
 
-  resources :users 
+  resources :users
   get '/register', to: 'users#new'
-  
 end
