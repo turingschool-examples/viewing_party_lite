@@ -41,5 +41,4 @@ RSpec.describe 'Landing Page' do
 
     expect(current_path).to eq(root_path)
   end
-
 end
