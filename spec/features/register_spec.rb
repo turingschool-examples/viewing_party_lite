@@ -9,6 +9,6 @@ RSpec.describe 'register page' do
     visit new_register_path
     fill_in "name", with: "Dwight Schrute"
     fill_in "email", with: "dwight.schrute@gmail.com"
-    click_button "Submit"
+    click_button "Register"
   end
 end
