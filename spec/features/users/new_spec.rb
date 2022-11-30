@@ -8,7 +8,7 @@ RSpec.describe "New Users Page", type: :feature do
     @user3 = User.create!(name: 'Fiona', email: 'Fiona3@gmail.com')
   end
 
-  it 'should contain title of Viewing Party and a Home button that will redirect the user
+  it 'should contain title of Viewing Party and a Home link that will redirect the user
     the landing page' do
     visit root_path
     within('#dashboard') do
