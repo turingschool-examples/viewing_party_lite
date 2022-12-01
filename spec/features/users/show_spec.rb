@@ -16,11 +16,14 @@ RSpec.describe 'User Dashboard Page' do
     end
   end
 
-  it 'should have a button to discover movies' do
+  it 'should have a button to discover movies that redirects to the user discover page' do
     visit user_path(@user1.id)
 
     within '#discover-movies' do
       expect(page).to have_button('Discover Movies')
+      click_on 'Discover Movies'
+
+      expect(current_path).to eq("/users/#{@user1.id}/discover")
     end
   end
 
@@ -32,7 +35,7 @@ RSpec.describe 'User Dashboard Page' do
     end
   end
 
-  it 'should contain title of Viewing Party and a Home link that will redirect the user the landing page' do
+  it 'should contain title of Viewing Party and a Home link that will redirect to the user landing page' do
     visit user_path(@user1.id)
 
     within('#dashboard') do
