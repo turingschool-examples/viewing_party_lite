@@ -1,0 +1,12 @@
+<center><h2>Movie Search Results</h2><center>
+<br>
+<center><%= button_to "Return to Discover Movies", "/users/#{@user.id}/discover", method: :get %><center>
+<br>
+<% @movies.each do |movie| %>
+  <center><h3>Title: <%= link_to "#{movie.title}", user_movie_path(@user.id, movie.id) %></h3><center>
+  <center><p>Average Review Score: <%= movie.vote_average %></p><center>
+<% end %>
+
+
+
+

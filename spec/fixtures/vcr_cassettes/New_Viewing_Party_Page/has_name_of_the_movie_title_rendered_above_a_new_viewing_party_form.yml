@@ -1,0 +1,225 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/505?api_key=<movie_api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 26 Aug 2022 14:59:29 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Key:
+      - 311da871cc80de448d8898ff3a4b02d56e2aec87
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '17512'
+      Last-Modified:
+      - Thu, 11 Nov 2021 19:29:05 GMT
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 91faf71c2c8a7887307bb914b7ede89e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - PHX50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - RuM3kzQgzO9FBlz17cRTdrALsUd6DHgbgqTF86B8Idvan-5hx2QZbA==
+      Age:
+      - '17820'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/v7baGyne7CsLxnM2maMwIxKZdVF.jpg","belongs_to_collection":null,"budget":20000000,"genres":[{"id":80,"name":"Crime"},{"id":18,"name":"Drama"}],"homepage":"","id":505,"imdb_id":"tt0097626","original_language":"en","original_title":"Johnny
+        Handsome","overview":"A career criminal who has been deformed since birth
+        is given a new face by a kindly doctor and paroled from prison. It appears
+        that he has gone straight, but he is really planning his revenge on the man
+        who killed his mentor and sent him to prison.","popularity":10.083,"poster_path":"/hdEIkpL17rvfZH0l34FJ8H9LAa.jpg","production_companies":[{"id":275,"logo_path":"/2MxNWlN5b3UXt1OfmznsWEQzFwq.png","name":"Carolco
+        Pictures","origin_country":"US"},{"id":276,"logo_path":null,"name":"Guber/Peters
+        Company","origin_country":""},{"id":277,"logo_path":null,"name":"Roven Productions","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1989-09-12","revenue":7237794,"runtime":94,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"They
+        changed his looks, his life and his future... but they couldn''t change his
+        past .","title":"Johnny Handsome","video":false,"vote_average":6.284,"vote_count":199}'
+  recorded_at: Fri, 26 Aug 2022 19:56:29 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/505?api_key=<movie_api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 26 Aug 2022 14:59:29 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Key:
+      - 311da871cc80de448d8898ff3a4b02d56e2aec87
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '17512'
+      Last-Modified:
+      - Thu, 11 Nov 2021 19:29:05 GMT
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 ccc510d9fa113327bf208090b7184c22.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - PHX50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 3jsh2_rUbz6Bid77Sgkw_cKAlDA3rnXVxXtYxtv_iROkZAEFacQHZw==
+      Age:
+      - '17820'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/v7baGyne7CsLxnM2maMwIxKZdVF.jpg","belongs_to_collection":null,"budget":20000000,"genres":[{"id":80,"name":"Crime"},{"id":18,"name":"Drama"}],"homepage":"","id":505,"imdb_id":"tt0097626","original_language":"en","original_title":"Johnny
+        Handsome","overview":"A career criminal who has been deformed since birth
+        is given a new face by a kindly doctor and paroled from prison. It appears
+        that he has gone straight, but he is really planning his revenge on the man
+        who killed his mentor and sent him to prison.","popularity":10.083,"poster_path":"/hdEIkpL17rvfZH0l34FJ8H9LAa.jpg","production_companies":[{"id":275,"logo_path":"/2MxNWlN5b3UXt1OfmznsWEQzFwq.png","name":"Carolco
+        Pictures","origin_country":"US"},{"id":276,"logo_path":null,"name":"Guber/Peters
+        Company","origin_country":""},{"id":277,"logo_path":null,"name":"Roven Productions","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1989-09-12","revenue":7237794,"runtime":94,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"They
+        changed his looks, his life and his future... but they couldn''t change his
+        past .","title":"Johnny Handsome","video":false,"vote_average":6.284,"vote_count":199}'
+  recorded_at: Fri, 26 Aug 2022 19:56:29 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/505?api_key=<movie_api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 26 Aug 2022 14:59:29 GMT
+      Server:
+      - openresty
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET, HEAD, POST, PUT, DELETE, OPTIONS
+      Access-Control-Expose-Headers:
+      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
+        Content-Length, Content-Range
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Key:
+      - 311da871cc80de448d8898ff3a4b02d56e2aec87
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '17512'
+      Last-Modified:
+      - Thu, 11 Nov 2021 19:29:05 GMT
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 91faf71c2c8a7887307bb914b7ede89e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - PHX50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - _RnmHKjwJO3YIrqlqejLBlM_ZfzIPaMzDVr5LibrPUzsBWMj2VHIkw==
+      Age:
+      - '17821'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/v7baGyne7CsLxnM2maMwIxKZdVF.jpg","belongs_to_collection":null,"budget":20000000,"genres":[{"id":80,"name":"Crime"},{"id":18,"name":"Drama"}],"homepage":"","id":505,"imdb_id":"tt0097626","original_language":"en","original_title":"Johnny
+        Handsome","overview":"A career criminal who has been deformed since birth
+        is given a new face by a kindly doctor and paroled from prison. It appears
+        that he has gone straight, but he is really planning his revenge on the man
+        who killed his mentor and sent him to prison.","popularity":10.083,"poster_path":"/hdEIkpL17rvfZH0l34FJ8H9LAa.jpg","production_companies":[{"id":275,"logo_path":"/2MxNWlN5b3UXt1OfmznsWEQzFwq.png","name":"Carolco
+        Pictures","origin_country":"US"},{"id":276,"logo_path":null,"name":"Guber/Peters
+        Company","origin_country":""},{"id":277,"logo_path":null,"name":"Roven Productions","origin_country":""}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1989-09-12","revenue":7237794,"runtime":94,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"They
+        changed his looks, his life and his future... but they couldn''t change his
+        past .","title":"Johnny Handsome","video":false,"vote_average":6.284,"vote_count":199}'
+  recorded_at: Fri, 26 Aug 2022 19:56:30 GMT
+recorded_with: VCR 6.1.0

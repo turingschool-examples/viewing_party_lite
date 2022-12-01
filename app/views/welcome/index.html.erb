@@ -1,0 +1,11 @@
+<br>
+<br>
+<br>
+<br>
+<center><h3> <%= button_to 'Create New User', '/register', method: :get  %><h3><center><br>
+<center><p>Exisiting Users:</p><center>
+  <% @users.each_with_index do |user, index| %>
+    <div id="users<%= index %>">
+      <center><p> <%= link_to "#{user.email}'s Dashboard", user_path(user.id) %></p><center>
+    </div>
+  <% end %>
