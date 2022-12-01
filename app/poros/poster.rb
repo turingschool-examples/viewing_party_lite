@@ -4,6 +4,6 @@ class Poster
   attr_reader :url
 
   def initialize(attributes)
-    @url = attributes[:posters].first[:file_path]
+    @url = attributes[:poster_path]
   end
 end
