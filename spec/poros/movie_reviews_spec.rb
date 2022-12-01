@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe MovieReviews do
+RSpec.describe MovieReviews do
   before(:each) do
     attrs = {
       results: [

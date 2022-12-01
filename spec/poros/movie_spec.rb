@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Movie do
+RSpec.describe Movie do
   before(:each) do
     attrs = {
       id: 550,

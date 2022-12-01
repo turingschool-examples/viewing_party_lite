@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe MovieCast do
+RSpec.describe MovieCast do
   before(:each) do
     attrs = {
       cast: [
