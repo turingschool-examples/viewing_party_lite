@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       redirect_to "/users/#{@user.id}"
     else
       redirect_to "/register"
-      flash[:alert] = "Email address already in use"
+      flash[:alert] = "Error: #{error_message(@user.errors)}"
     end
   end
 
@@ -18,6 +18,11 @@ class UsersController < ApplicationController
   end
 
   def discover
+    @user = User.find(params[:id])
+  end
+
+  def movies
+    @user = User.find(params[:id])
   end
 
   private
