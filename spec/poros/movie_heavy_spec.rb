@@ -1,23 +1,21 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 require './app/poros/movie_heavy'
 
 RSpec.describe MovieHeavy do
   before :each do
-    @godfather_genres = [{id: 18,
-              name: 'Drama'
-              },
-              {id: 80,
-              name: 'Crime'
-              }
-              ]
-    @godfather_hash = {id: 238,
-                      title: 'The Godfather',
-                      vote_average: 8.715,
-                      runtime: 175,
-                      genres: @godfather_genres,
-                      overview: "Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge."
-                    }
-    VCR.use_cassette('movie_credits') do 
+    @godfather_genres = [{ id: 18,
+                           name: 'Drama' },
+                         { id: 80,
+                           name: 'Crime' }]
+    @godfather_hash = { id: 238,
+                        title: 'The Godfather',
+                        vote_average: 8.715,
+                        runtime: 175,
+                        genres: @godfather_genres,
+                        overview: 'Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.' }
+    VCR.use_cassette('movie_credits') do
       VCR.use_cassette('movie_reviews') do
         @godfather = MovieHeavy.new(@godfather_hash)
       end
@@ -25,7 +23,7 @@ RSpec.describe MovieHeavy do
   end
 
   describe 'initialize' do
-    it "is an instance of its class" do
+    it 'is an instance of its class' do
       expect(@godfather).to be_a MovieHeavy
     end
     it 'has readable attributes' do

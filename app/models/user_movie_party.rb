@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UserMovieParty < ApplicationRecord
   enum status: { hosting: 0, invited: 1 }
 

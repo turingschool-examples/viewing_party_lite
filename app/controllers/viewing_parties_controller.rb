@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class ViewingPartiesController < ApplicationController
   def new
     @user = User.find(params[:user_id])
     @movie = MoviesFacade.get_movie_heavy(params[:movie_id])
-    
+
     @users = User.find_all_except(@user)
   end
 
@@ -15,7 +17,7 @@ class ViewingPartiesController < ApplicationController
     params[:invitees].each do |invitee|
       UserMovieParty.create!(user_id: invitee, movie_party_id: party.id, status: 1)
     end
-    
+
     redirect_to user_path(user)
   end
 
