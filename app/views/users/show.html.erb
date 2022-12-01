@@ -11,8 +11,8 @@
                 <p><b>Viewing Party</b>
                 <li><%= party.start_date %></li>
                 <li><%= party.start_time %></li>
-                <li><%= party.user_hosting_status(@user) %></li>
-                <li><% binding.pry %>
+                <li>Hosting: <%= party.host %></li>
+                <li>Invited: <%= party.attendees %></li>
             </ul></p>
             <% end %>
 </div>

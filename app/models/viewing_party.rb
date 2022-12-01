@@ -22,9 +22,11 @@ class ViewingParty < ApplicationRecord
     end
   end
 
-  def user_hosting_status(user)
+  def host
     user_parties.select do |participant|
-      return participant.user_status.capitalize if participant.user_id == user.id
+      return participant.user.name if participant.user_status == 'hosting'
     end
   end
+
+  
 end
