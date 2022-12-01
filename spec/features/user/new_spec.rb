@@ -28,7 +28,19 @@ RSpec.describe 'Creating a new user' do
 
       click_button('Register')
      
-      expect(page).to have_content("Email address already in use")
+      expect(page).to have_content("Email has already been taken")
+    end
+
+    it 'returns an error message if email is already taken and blank name' do
+      @yuji = User.create!(name: "Yuji", email: "yuji@yuji.com")
+      visit '/register'
+
+      fill_in('Name', with: '')
+      fill_in('Email', with: 'yuji@yuji.com')
+
+      click_button('Register')
+     
+      expect(page).to have_content("Error: Name can't be blank, Email has already been taken")
     end
   end
 end
