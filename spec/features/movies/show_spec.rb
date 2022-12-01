@@ -15,6 +15,9 @@ RSpec.describe "movies show page" do
     # expect(current_path).to eq("users/#{@steve.id}/movies/#{result[:id]}")
     expect(page).to have_content("Genre: [\"Drama\", \"Crime\"]")
     expect(page).to have_content("Vote: 8.715")
+    expect(page).to have_content("Actor Name: Marlon Brando Character Name: Don Vito Corleone")
+    expect(page).to have_content("The best movie ever...")
 
+  
   end
 end
