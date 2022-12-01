@@ -21,6 +21,5 @@ class MovieHeavy
     @summary = data[:overview]
     @first_10_cast_members = CastMembersFacade.cast(data[:id])
     @reviews = ReviewsFacade.reviews(data[:id])
-    # @reviews = MoviesService.reviews(data[:id])
   end
 end

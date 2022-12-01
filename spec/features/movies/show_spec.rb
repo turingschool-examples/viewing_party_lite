@@ -75,11 +75,6 @@ RSpec.describe 'Movies Detail (show) page' do
         expect(page).to have_content(@godfather.reviews.last.author)
         expect(page).to have_content(@godfather.reviews.last.content.gsub(/\n/, ' '))
         expect(page).to have_content("Review Count: #{@godfather.reviews.size}")
-        # expect(page).to have_content(@godfather.reviews[:results].first[:author])
-        # expect(page).to have_content(@godfather.reviews[:results].first[:content].gsub(/\n/, ' '))
-        # expect(page).to have_content(@godfather.reviews[:results].last[:author])
-        # expect(page).to have_content(@godfather.reviews[:results].last[:content].gsub(/\n/, ' '))
-        # expect(page).to have_content("Review Count: #{@godfather.reviews[:results].size}")
       end
     end
   end
