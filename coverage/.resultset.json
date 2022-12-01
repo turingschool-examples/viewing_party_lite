@@ -148,15 +148,6 @@
           null
         ]
       },
-      "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/models/discover.rb": {
-        "lines": [
-          0,
-          null,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/controllers/viewing_parties_controller.rb": {
         "lines": [
           0,
@@ -167,6 +158,6 @@
         }
       }
     },
-    "timestamp": 1669868735
+    "timestamp": 1669869111
   }
 }
