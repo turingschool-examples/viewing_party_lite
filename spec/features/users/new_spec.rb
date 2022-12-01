@@ -29,7 +29,7 @@ RSpec.describe 'The User registration' do
         click_button('Create User')
 
         fill_in 'Name', with: "Mary"
-        fill_in 'Email', with: "mary@gmail.com"
+        fill_in 'Email', with: "Mary@gmail.com"
         click_on 'Create Account'
 
         expect(current_path).to eq(register_path)
