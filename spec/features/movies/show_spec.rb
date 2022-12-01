@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'The Show Page', type: :feature do # rubocop:disable Metrics/BlockLength
+RSpec.describe 'The Movie Show Page', type: :feature do # rubocop:disable Metrics/BlockLength
   let!(:user_1) { create(:user) }
   before(:each) do
     VCR.insert_cassette 'movie_show'
@@ -29,9 +29,11 @@ RSpec.describe 'The Show Page', type: :feature do # rubocop:disable Metrics/Bloc
     end
 
     describe 'When I click on "Create Viewing Party for Fight Club"' do
-      xit 'I am taken to new_user_movie_viewing_party' do
+      it 'I am taken to new_user_movie_viewing_party' do
+        VCR.eject_cassette
+        VCR.insert_cassette 'view_party'
         click_button("Create Viewing Party for Fight Club")
-        expect(current_path).to eq(new_user_movie_viewing_party(user_1, 550))
+        expect(current_path).to eq(new_user_movie_view_party_path(user_1, 550))
       end
     end
 

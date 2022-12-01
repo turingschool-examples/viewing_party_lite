@@ -10,7 +10,7 @@
 
     <hr class='demo'>
 
-    <div class='cards'>
+    <div class='cards' id='cards'>
       <% @view_parties.each do |party| %>
         <article class='card'>
           <img src=<%="http://image.tmdb.org/t/p/original#{party.file_path}"%>>
@@ -18,7 +18,7 @@
             <h3><%= party.movie_name %></h3>
             <p><%= party.datetime.strftime("%A, %d %B %Y") %></p>
             <p><%= party.datetime.strftime("%l:%M %P") %></p>
-            <p><%= if party.host?(@user) then "Hoasting" else "Invited" end %></p>
+            <p><%= if party.host?(@user) then "Hosting" else "Invited" end %></p>
           </div>
         </article>
       <% end %>

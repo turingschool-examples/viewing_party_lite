@@ -3,7 +3,7 @@
     <div class="flex-items" id="title">
       <h3><%= @movie.title %></h3>
       <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get, class: 'button2' %>
-      <%= button_to "Create Viewing Party for #{@movie.title}", new_user_movie_viewing_party_path(@user, @movie), method: :get, class: 'button2' %>
+      <%= button_to "Create Viewing Party for #{@movie.title}", new_user_movie_view_party_path(@user, @movie.id), method: :get, class: 'button2' %>
     </div>
 
     <div class="flex-items" style='margin-block-start: 0.5em; margin-block-end: 0.0em;'>
