@@ -2,7 +2,19 @@ require 'rails_helper'
 require 'faker'
 
 RSpec.describe 'Users' do
-  before(:each) do
+  before(:all) do
+    up_search_json = File.read('spec/fixtures/search_up_movies.json')
+    alien_search_json = File.read('spec/fixtures/search_alien_movies.json')
+    whiplash_search_json = File.read('spec/fixtures/search_whiplash_movies.json')
+    toy_story_search_json = File.read('spec/fixtures/search_toy_story_movies.json')
+    brave_search_json = File.read('spec/fixtures/search_brave_movies.json')
+
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['tmdb_api_key']}&language=en-US&page=1&include_adult=false&query=Up").to_return(status: 200, body: up_search_json)
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['tmdb_api_key']}&language=en-US&page=1&include_adult=false&query=Alien").to_return(status: 200, body: alien_search_json)
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['tmdb_api_key']}&language=en-US&page=1&include_adult=false&query=Whiplash").to_return(status: 200, body: whiplash_search_json)
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['tmdb_api_key']}&language=en-US&page=1&include_adult=false&query=Toy Story").to_return(status: 200, body: toy_story_search_json)
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['tmdb_api_key']}&language=en-US&page=1&include_adult=false&query=Brave").to_return(status: 200, body: brave_search_json)
+
     @user1 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.free_email)
     @user2 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.free_email)
     @user3 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.free_email)
@@ -50,7 +62,7 @@ RSpec.describe 'Users' do
 
     it 'has section to display parties' do
       within('#parties') do
-        expect(page).to have_content('party here')
+        expect(page).to have_content('Viewing Parties')
       end
     end
     describe 'parties section' do

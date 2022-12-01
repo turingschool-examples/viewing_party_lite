@@ -10,10 +10,18 @@
 </div>
 <hr>
 <div class="row justify-content-center" id="parties">
-  <div class="col-2 border border-1 m-3">
-    party here
+  <b>Viewing Parties</b>
+  <div id="invited_to">
+    <%@parties_invited_to.each do |party|%>
+      <div id="party_<%=party.id%>">
+      
+      </div>
+    <%end%>
   </div>
-  <div class="col-2 border border-1 m-3">
-    party here
+  <div id="hosting">
+    <%@parties_invited_to.each do |party|%>
+      <div id="party_<%=party.id%>">
+      </div>
+    <%end%>
   </div>
 </div>
