@@ -17,6 +17,7 @@
   </div>
   <p>Summary: <%= @movie.summary %></p>
   <div id="cast">
+    <h2>Cast:</h2>
     <ul>
       <% @movie.first_10_cast_members.each do |cast_member| %>
         <li><%= "Character: #{cast_member[:character]} - #{cast_member[:name]}" %></li>
@@ -24,7 +25,7 @@
     </ul>
   </div>
   <div id="reviews">
-    <h2>Reviews</h2>
+    <h2>Reviews:</h2>
     <% @movie.reviews[:results].each do |review| %>
       <p><%= "#{review[:author]}: #{review[:content]}" %></p>
     <% end %>
