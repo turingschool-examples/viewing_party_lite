@@ -5,4 +5,8 @@ class Party < ApplicationRecord
   def invited_users
     users.where('party_users.host = ?', false).pluck(:name)
   end
+  
+  def host
+    users.where('party_users.host = ?', true).first.name
+  end
 end
