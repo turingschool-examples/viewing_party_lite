@@ -61,6 +61,7 @@ RSpec.describe 'the user show page' do
         expect(page).to have_content("Bryan")
         expect(page).to have_content("Date: 12/01/2022")
         expect(page).to have_content("Time: 7:00 pm")
+        expect(page).to have_css("img[src*='image.tmdb.org/t/p/original]")
       end
       expect(page).to have_link("Young Adam")
       expect(page).to have_link("Natural Born Killers")
@@ -89,6 +90,7 @@ RSpec.describe 'the user show page' do
         expect(page).to_not have_content("Yuji")
         expect(page).to have_content("Date: 12/08/2022")
         expect(page).to have_content("Time: 5:00 pm")
+        expect(page).to have_css("img[src*='image.tmdb.org/t/p/original']")
       end
     end
   end
