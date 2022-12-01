@@ -25,10 +25,11 @@ RSpec.describe 'Users' do
     @party_user7 = PartyUser.create!(user_id: @user2.id, party_id: @party1.id, host: false)
     @party_user8 = PartyUser.create!(user_id: @user2.id, party_id: @party2.id, host: false)
     @party_user9 = PartyUser.create!(user_id: @user3.id, party_id: @party1.id, host: false)
+    @party_user10 = PartyUser.create!(user_id: @user3.id, party_id: @party3.id, host: false)
 
-    @party_user10 = PartyUser.create!(user_id: @user4.id, party_id: @party5.id, host: true)
-    @party_user11 = PartyUser.create!(user_id: @user3.id, party_id: @party5.id, host: false)
-    
+    @party_user11 = PartyUser.create!(user_id: @user4.id, party_id: @party5.id, host: true)
+    @party_user12 = PartyUser.create!(user_id: @user3.id, party_id: @party5.id, host: false)
+
     visit "/users/#{@user1.id}"
   end
 
@@ -55,37 +56,71 @@ RSpec.describe 'Users' do
     describe 'parties section' do
       context 'user is not host' do
         it 'has each party that the user is invited to' do
-
+          within('#invited_to') do
+            expect(page).to have_content('Whiplash')
+            expect(page).to have_content('Toy Story')
+          end
         end
         it 'has a list of each user invited to the party including my user' do
-
+          within("#invited_to_#{@party3}") do
+            expect(page).to have_content(@user1.name)
+            expect(page).to have_content(@user3.name)
+            expect(page).not_to have_content(@user2.name)
+          end
         end
         it 'has the name of my user in bold in the list' do
-
+          within("#invited_to_#{@party3}") do
+            expect(page).to have_css('b', text: @user1.name)
+          end
         end
       end
       context 'user is host' do
         it 'has each party that the user is host of' do
-
+          within('#hosting') do
+            expect(page).to have_content('Up')
+            expect(page).to have_content('Alien')
+          end
         end
-        it 'has a list of users invited to the party excluding my user' do
-
+        it 'has a list of users invited to the party' do
+          within("#invited_to_#{@party1}") do
+            expect(page).not_to have_content(@user1.name)
+            expect(page).to have_content(@user2.name)
+            expect(page).to have_content(@user3.name)
+          end
         end
       end
       it 'has the movie title of each party that the user is involved in' do
-
+        within('#hosting') do
+          expect(page).to have_content('Up')
+          expect(page).to have_content('Alien')
+        end
+        within('#invited_to') do
+          expect(page).to have_content('Whiplash')
+          expect(page).to have_content('Toy Story')
+        end
+        expect(page).not_to have_content('Brave')
       end
       it 'redirects to the movie show page when the movie title is clicked' do
-
+        click_link 'Up'
+        expect(page).to have_current_path("/users/#{@user1.id}/movies/14160")
       end
       it 'has the image of each movie' do
-
+        expect(page).to have_css('img', text: 'https://api.themoviedb.org/vpbaStTMt8qqXaEgnOR2EE4DNJk.jpg')
+        expect(page).to have_css('img', text: 'https://api.themoviedb.org/vfrQk5IPloGg1v9Rzbh2Eg3VGyM.jpg')
       end
       it 'has the date and time of the event' do
-
+        within "#party_#{@party1.id}" do
+          expect(page).to have_content(@party1.date)
+          expect(page).to have_content(@party1.start_time)
+        end
       end
       it 'has the name of the party host' do
-
+        within "#party_#{@party1.id}" do
+          expect(page).to have_content("Host: #{@user1.name}")
+        end
+        within "#party_#{@party3.id}" do
+          expect(page).to have_content("Host: #{@user2.name}")
+        end
       end
     end
   end
