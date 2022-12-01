@@ -9,4 +9,9 @@ class Party < ApplicationRecord
   def host
     users.where('party_users.host = ?', true).first.name
   end
+
+  def movie_details
+    movie_search = MovieSearch.new
+    movie_search.retrieve_movie_by_name(self.movie_title)
+  end
 end
