@@ -50,7 +50,7 @@ RSpec.describe 'the new viewing parties page' do
       end
 
       expect(current_path).to eq(user_path(@user1))
-
+      save_and_open_page
       # Add test here to ensure @user2 and @user3 info gets added to dashboard
     end
   end

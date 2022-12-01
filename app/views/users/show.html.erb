@@ -11,7 +11,12 @@
       <%= image_tag movie_party.poster_url, class: ".img", size: "150x225"  %>
       <h3><%= movie_party.movie_title %></h3>
       <p><%= movie_party.start_time.strftime("%B %d, %Y - %H:%M%p") %></p>
-      <p><%= movie_party.status(@user) %></p>
+      <p><%= movie_party.status(@user).capitalize %></p>
+      <p>Invitees:</p>
+      <ul>
+        <% movie_party.user_movie_parties.each do |ump| %>
+          <li><%= "#{ump.user.name} (#{ump.user.email})" %> <strong><%= ' (host)' if ump.status == 'hosting' %></strong></li>
+        <% end %>
     </section>
     <hr>
   <% end %>
