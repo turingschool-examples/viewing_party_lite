@@ -27,6 +27,4 @@ class ViewingParty < ApplicationRecord
       return participant.user.name if participant.user_status == 'hosting'
     end
   end
-
-  
 end

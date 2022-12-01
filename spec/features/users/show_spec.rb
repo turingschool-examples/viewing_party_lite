@@ -5,6 +5,7 @@ RSpec.describe 'User Dashboard' do
   let!(:user2) { create(:user) }
   let!(:user3) { create(:user) }
   let!(:user4) { create(:user) }
+  let!(:user5) { create(:user) }
   let!(:party1) { create(:viewing_party) }
   let!(:party2) { create(:viewing_party) }
   let!(:party3) { create(:viewing_party) }
@@ -14,6 +15,7 @@ RSpec.describe 'User Dashboard' do
   let!(:user_party4) { create(:user_party, user_status: 0, user: user2, viewing_party: party2) }
   let!(:user_party5) { create(:user_party, user: user3, viewing_party: party3) }
   let!(:user_party6) { create(:user_party, user_status: 0, user: user2, viewing_party: party3) }
+  let!(:user_party7) { create(:user_party, user: user5, viewing_party: party1) }
 
   before :each do
     visit user_path(user1)
@@ -35,7 +37,6 @@ RSpec.describe 'User Dashboard' do
   end
 
   it 'has a section that lists viewing parties' do
-    save_and_open_page
     within '#viewing_parties' do
       expect(page).to have_content('Current Viewing Parties')
       expect(page).to have_content(party1.start_date)
@@ -44,13 +45,10 @@ RSpec.describe 'User Dashboard' do
       expect(page).to have_content(party1.start_time)
       expect(page).to have_content(party2.start_time)
       expect(page).to_not have_content(party3.start_time)
-      expect(page).to have_content("#{party1.user_hosting_status(user1)}: #{user1.name}")
-      expect(page).to have_content("#{party2.user_hosting_status(user2)}: #{user2.name}")
-      expect(page).to have_content(user1.name, user2.name, user3.name)
+      expect(page).to have_content("Hosting: #{user1.name}")
+      expect(page).to have_content("Invited: #{user2.name} #{user5.name}")
       expect(page).to_not have_content(user4.name)
     end
-
-    
   end
 
   describe 'viewing parties details that a user is invited to' do # USER STORY 7 DASHBOARD VIEWING PARTIES

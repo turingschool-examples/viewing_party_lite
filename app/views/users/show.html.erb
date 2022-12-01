@@ -12,7 +12,9 @@
                 <li><%= party.start_date %></li>
                 <li><%= party.start_time %></li>
                 <li>Hosting: <%= party.host %></li>
-                <li>Invited: <%= party.attendees %></li>
+                <li>Invited: <% party.attendees.each do |attendee| %>
+                    <%= attendee %>
+                <% end %></li>
             </ul></p>
             <% end %>
 </div>
