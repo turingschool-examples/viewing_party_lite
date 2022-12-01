@@ -7,14 +7,14 @@ RSpec.describe 'Movies Page' do
       @user2 = User.create!(name: 'Larry', email: 'larry@hotmail.com')
       @user3 = User.create!(name: 'Sherri', email: 'sherri@aol.com')
 
-      # movie_results =
-      # stub_request(:get, "https://api.themoviedb.org/3/movie/popular").
-      # to_return(body: "abc", status: 200)
+      movie_results = File.read('spec/fixtures/movie_results.json')
+      stub_request(:get, "https://api.themoviedb.org/3/movie/popular").
+      to_return(status: 200, body: movie_results)
 
       visit "users/#{@user1.id}/movies"
     end
 
-    xit 'i should be taken to the movie results page' do
+    it 'i should be taken to the movie results page' do
 
       expect(page).to have_content("The Godfather")
 
