@@ -8,4 +8,8 @@ class User < ApplicationRecord
   def parties_invited_to
     parties.where('party_users.host = ?', false)
   end
+
+  def parties_hosting
+    parties.where('party_users.host = ?', true)
+  end
 end
