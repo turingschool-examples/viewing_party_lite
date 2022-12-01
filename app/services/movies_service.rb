@@ -4,6 +4,11 @@ class MoviesService
     JSON.parse(response.body, symbolize_names: true)
   end
 
+  def self.search(query)
+    response = conn.get("/3/search/movie?query=#{query}")
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
   def self.cast_members(movie_id)
     response = conn.get("/3/movie/#{movie_id}/credits")
     JSON.parse(response.body, symbolize_names: true)[:cast]
