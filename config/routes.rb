@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     # shallow_path: '/register', shallow: true do
     # get'/register', to: 'users#new', shallow: true
     # post '/register', to: 'users#new', shallow: true
-    get '/discover', to: 'movies#discover'
+    get '/discover', to: 'users#discover'
     resources :movies do
       resources :viewing_parties
     end
