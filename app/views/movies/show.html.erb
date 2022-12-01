@@ -27,7 +27,8 @@
   <div id="reviews">
     <h2>Reviews:</h2>
     <% @movie.reviews[:results].each do |review| %>
-      <p><%= "#{review[:author]}: #{review[:content]}" %></p>
+      <p><strong><%= "#{review[:author]}:" %></strong></p>
+      <p><%= review[:content] %></p>
     <% end %>
     <p>Review Count: <%= @movie.reviews[:results].size %></p>
   </div>
