@@ -8,7 +8,7 @@ class MovieHeavy
               :genres,
               :summary,
               :first_10_cast_members,
-              :reviews_count
+              :reviews
 
   def initialize(data)
     @id = data[:id]
@@ -18,6 +18,6 @@ class MovieHeavy
     @genres = data[:genres]
     @summary = data[:overview]
     @first_10_cast_members = MoviesService.credits(data[:id])[:cast].first(10)
-    @reviews_count = MoviesService.reviews(data[:id])[:results].size
+    @reviews = MoviesService.reviews(data[:id])
   end
 end

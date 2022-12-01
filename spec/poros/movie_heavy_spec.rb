@@ -35,7 +35,7 @@ RSpec.describe MovieHeavy do
       expect(@godfather.runtime).to eq(@godfather_hash[:runtime])
       expect(@godfather.genres).to eq(@godfather_genres)
       expect(@godfather.first_10_cast_members).to be_a Array
-      expect(@godfather.reviews_count).to be_a Integer
+      expect(@godfather.reviews[:results]).to be_a Array
     end
   end
 end
