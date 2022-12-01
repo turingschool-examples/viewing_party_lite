@@ -22,13 +22,18 @@ RSpec.describe 'The movie show page' do
       expect(page).to have_content("Vote: 8.348")
       expect(page).to have_content("Runtime: 2hr 14min")
       expect(page).to have_content("Genre: Adventure, Fantasy, Animation")
+      expect(page).to have_content("Summary:")
+      expect(page).to have_content("Ashitaka, a prince of the disappearing Emishi people, is cursed by a demonized boar god and must journey to the west to find a cure. Along the way, he encounters San, a young human woman fighting to protect the forest, and Lady Eboshi, who is trying to destroy it. Ashitaka must find a way to bring balance to this conflict.")
     end
 
-    it 'displays the first 10 cast members' do 
+    xit 'displays the first 10 cast members' do 
+      user = User.create!(name: "Amanda", email: "amanda@turing.edu")
+      visit user_movie_path(user, 128)
+
 
     end
 
-    it 'displays count of total reviews and all the authors and their information' do 
+    xit 'displays count of total reviews and all the authors and their information' do 
 
     end
   end

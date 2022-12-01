@@ -21,3 +21,9 @@ ul.even_horizontal {
     <li>Runtime: <%= @movie.runtime_in_hours_and_min %></li>
     <li>Genre: <%= @movie.genres.join(", ") %></li>
 </ul>  
+<br>
+<hr>
+<h4>Summary:</h4>
+<p>
+  <%= @movie.summary %>
+</p>
