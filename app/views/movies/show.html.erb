@@ -3,16 +3,21 @@
 <ul>
 <b>Vote Average: </b><%= @movie.vote_average %>
 <b>Run Time: </b><%= @movie.runtime %>
-<b>Genres: </b><%= @movie.genres %>
+<b>Genres: </b><%= @movie.genres.to_sentence %>
+ 
 <b>Summary: </b><%= @movie.summary %>
-<b>Cast: </b><%= @movie.cast %>
+<b>Cast: </b><% @movie.cast.each do |name, character| %>
+  <p>Name: <%= name %></p>
+  <p>Character Name: <%= character %></p>
+<% end %>
 <b>Total Reviews: </b><%= @movie.review_count %>
 <b>Reviewer Information: </b>
 <% @movie.reviews.each do |name, review| %>
   <p><b>Name:</b> <%= name %></p>
   <b>Rating:</b> <%= review %>
   <% end %>
-<b>Total Reviews: </b><%= @movie.review_count %></ul>
+
+<br>
 
 
 
