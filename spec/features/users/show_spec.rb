@@ -29,7 +29,7 @@ RSpec.describe 'The Show Page', type: :feature do # rubocop:disable Metrics/Bloc
         expect(page).to have_content(view_party_1.datetime.strftime("%A, %d %B %Y"))
         expect(page).to have_content(view_party_1.datetime.strftime("%l:%M %P"))
         if user_1_party_1.host
-          expect(page).to have_content("Hoasting")
+          expect(page).to have_content("Hosting")
         else
           expect(page).to have_content("Invited")
         end
