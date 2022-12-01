@@ -53,6 +53,7 @@ RSpec.describe 'User Dashboard' do
       # within block necessary? (will need to differentiate between viewing party as host / guest. see wireframe)
       expect(page).to have_content('Movie image pulled from api')
     end
+
     xit 'displays Movie title, which links to the movie show page' do
       # requires api call for movie title
       expect(page).to have_content(movie(title(here)))
@@ -60,6 +61,7 @@ RSpec.describe 'User Dashboard' do
       click_link('movie_title here')
       expect(current_path).to eq(movie_show_page)
     end
+
     xit 'displays date and time of event underneath title of movie of viewing party' do
       # within block for specific invitation
       expect(page).to have_content(date_of_event) # format November 30, 2022
@@ -94,6 +96,7 @@ RSpec.describe 'User Dashboard' do
       click_link('movie_title here')
       expect(current_path).to eq(movie_show_page)
     end
+
     xit 'displays date and time of event underneath title of movie of viewing party' do
       # within block for specific invitation
       expect(page).to have_content(date_of_event) # format November 30, 2022

@@ -8,7 +8,7 @@ RSpec.describe 'Movies Index Page' do
     visit discover_path(user1)
   end
 
-  it 'should have a button to find top rated movies' do
+  it 'has a button to find top rated movies' do
     expect(page).to have_content('Discover Movies')
     expect(page).to have_button('Find Top Rated Movies')
 
