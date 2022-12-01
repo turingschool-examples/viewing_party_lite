@@ -5,6 +5,7 @@ RSpec.describe 'Discover Movies Page' do
     user1 = User.create!(name: 'Amanda', email: 'amanda@turing.edu')
     
     visit "/users/#{user1.id}/discover"
+    save_and_open_page
     click_button 'Discover The Top Rated Movies'
     expect(current_path).to eq("/users/#{user1.id}/movies")
   end
@@ -39,7 +40,7 @@ RSpec.describe 'Discover Movies Page' do
     expect(page).to have_content('Space Princess')
     expect(page).to have_content("형님 아내4 - 우주공주 춘향")
     
-    
+    save_and_open_page
   end
 
 end
