@@ -1,4 +1,7 @@
 <center><h2><%=@results[:title]%></h2></center>
+<center><%=button_to "Discover Movies", user_discover_path(@user), method: :get%></center>
+<center><%=button_to "Create Viewing Party for #{@results[:title]}"%></center>
+
 <h3>Genre: <%=@results[:genres].pluck(:name)%></h3>
 <h3>Vote: <%=@results[:vote_average]%></h3>
 <h3>Summary: <%=@results[:overview]%></h3>

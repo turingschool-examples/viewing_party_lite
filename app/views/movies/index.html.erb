@@ -1,3 +1,4 @@
+<%=button_to "Discover Movies", user_discover_path(@user), method: :get%>
 <%@results.each do |result|%>
   <p>
   <%=link_to result[:title], user_movie_path(@user, result[:id]) %> 
