@@ -1,22 +1,19 @@
-<style>
-.center {
-  margin-left: auto;
-  margin-right: auto;
-}
-</style>
+<body>
+  <div class="flex-container">
+    <div class="flex-items" id="discover_page_button">
+      <%= button_to 'Discover Page', "/users/#{@user.id}/discover", method: :get, class: 'button1' %>
+    </div>
 
-<center><%= button_to 'Discover Page', "/users/#{@user.id}/discover", method: :get %></center><br><br>
-
-<div id="movie-results">
-  <table class="center">
-
-  <center><%= "No Movies Found" if @movies == [] %></center>
-
-  <% @movies.each do |movie| %>
-    <tr class="results">
-      <td style="padding-right: 4em;"><%= link_to movie.title, user_movie_path(@user, movie.id) %></td>
-      <td><%= movie.vote_average %></td>
-    </tr>
-    <% end %>
-  </table>
-</div>
+    <div class="flex-container" id="movie-results">
+      <%= "No Movies Found" if @movies == [] %>
+      <table style='text-align: left; margin: 1.5em;'>
+        <% @movies.each do |movie| %>
+          <tr class="results">
+            <td style="padding-right: 4em;"><%= link_to movie.title, user_movie_path(@user, movie.id) %></td>
+            <td style='text-align: right'><%= "Vote Average: #{movie.vote_average}" %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</body>

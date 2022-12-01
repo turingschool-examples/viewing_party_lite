@@ -14,18 +14,52 @@ RSpec.describe 'The Show Page', type: :feature do # rubocop:disable Metrics/Bloc
 
   describe 'When I visit the user movie path' do
     it 'I see a button to return to the "Discover Page"' do
-      save_and_open_page
+      expect(page).to have_button("Discover Page")
     end
 
-    xit "I see a button to 'Create Viewing Party for Fight Club'" do
+    describe 'When I click on "Discover Page"' do
+      it 'I am taken to the movies discover page' do
+        click_button("Discover Page")
+        expect(current_path).to eq("/users/#{user_1.id}/discover")
+      end
     end
 
-    describe "I see the Movie..." do
-      it 'Title, Vote Average, Runtime, and Genres'
-      it 'Summery'
-      it 'Top 10 cast members'
-      it 'Count of reviews'
-      it 'Each reviews author and info'
+    it "I see a button to 'Create Viewing Party for Fight Club'" do
+      expect(page).to have_button("Create Viewing Party for Fight Club")
+    end
+
+    describe 'When I click on "Create Viewing Party for Fight Club"' do
+      xit 'I am taken to new_user_movie_viewing_party' do
+        click_button("Create Viewing Party for Fight Club")
+        expect(current_path).to eq(new_user_movie_viewing_party(user_1, 550))
+      end
+    end
+
+    describe "I see the Movie's..." do
+      it 'Title, Vote Average, Runtime, and Genres' do
+        expect(page).to have_content("Fight Club")
+        expect(page).to have_content("Vote: 8.43")
+        expect(page).to have_content("Runtime: 2hr 19min")
+        expect(page).to have_content("Genre: Drama, Thriller, Comedy")
+      end
+
+      it 'Summery' do
+        expect(page).to have_content("A ticking-time-bomb insomniac")
+      end
+
+      it 'Top 10 cast members' do
+        expect(page).to have_content("Edward Norton as The Narrator")
+        expect(page).to have_content("David Andrews as Thomas")
+      end
+
+      it 'Count of reviews' do
+        expect(page).to have_content("7 Reviews:")
+      end
+
+      it 'Each reviews author and info' do
+        expect(page).to have_content("Goddard: Pretty awesome movie.")
+        expect(page).to have_content("katch22: Madness unbounded.")
+      end
     end
   end
 end

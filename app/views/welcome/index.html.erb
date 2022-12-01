@@ -1,25 +1,16 @@
-<style>
-  .button1 {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  }
-  .container {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-  .text {
-      text-align: center;
-    }
-</style>
 <body>
-  <div class='container'>
-    <%= button_to 'Create a New User', register_path, method: :get, class: 'button1' %>
+  <div class='flex-container'>
+    <div class="flex-items" id="new_user_button">
+      <%= button_to 'Create a New User', register_path, method: :get, class: 'button1' %>
+    </div>
 
-    <div id="existing-users" class='text'>
-      <h2>Existing Users</h2>
+    <div class='flex-container' id="existing_users">
+      <h3>Existing Users</h3>
+      <ul class="demo">
         <% @users.each do |user| %>
-          <p><%= link_to "#{user.email}", user_path(user) %></p>
+          <li><%= link_to "#{user.email}", user_path(user) %></li>
         <% end %>
+      </ul>
     </div>
   </div>
 </body>
