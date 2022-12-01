@@ -25,5 +25,13 @@ RSpec.describe MovieParty do
          expect(@party.status(@user)).to eq('hosting')
        end
      end
+
+     describe '#poster_url' do 
+      it 'returns the url for the image of the poster' do 
+        VCR.use_cassette('godfather_movie') do 
+          expect(@party.poster_url).to be_a String
+        end
+      end
+     end
    end
 end

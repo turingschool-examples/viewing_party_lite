@@ -17,6 +17,21 @@ RSpec.describe MoviesService do
       end
     end
 
+    describe '#search' do 
+      it 'returns a search of movies based on a title query' do 
+        VCR.use_cassette('search_godfather') do 
+          movies = MoviesService.search('godfather')
+
+          expect(movies[:results]).to be_a Array
+
+          first_movie = movies[:results].first
+
+          expect(first_movie[:title]).to be_a String
+          expect(first_movie[:vote_average]).to be_a Float 
+        end
+      end
+    end
+
     describe 'credits' do
       it 'returns movie credits json with cast array' do
         VCR.use_cassette('movie_credits') do
