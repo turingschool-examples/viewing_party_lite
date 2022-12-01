@@ -20,6 +20,13 @@ class MovieSearch
     Movie.new(movie)
   end
 
+  def retrieve_movie_by_name(movie_name)
+    search_response = service.search_movies(movie_name)
+    movies = search_response[:results]
+    movie_hash = movies.find { |hash| hash[:title] == movie_name}
+    Movie.new(movie_hash)
+  end
+
   def service
     TmdbService.new
   end
