@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
 class MovieCast
+  attr_reader :cast_list
   def initialize(attributes)
-    @cast = attributes[:cast]
+    @cast_list = attributes[:cast]
   end
 
   def cast
-    @cast.map { |member| "#{member[:name]} as #{member[:character]}" }
+    @cast_list.map { |member| "#{member[:name]} as #{member[:character]}" }
   end
 end

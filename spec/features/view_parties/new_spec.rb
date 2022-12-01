@@ -36,8 +36,7 @@ RSpec.describe 'New View Party Page', type: :feature do
     it 'the form should include the following fields: name, duration, when, start time, checkboxes next to each existing user in the system, after submitting I should be taken back to my dashboard where I see the new event' do
       within '#form' do
         fill_in :duration, with: 400
-        fill_in :datetime, with: '2023-02-02 01:00:00 UTC '
-        check "invite_users_#{user_2.id}"
+        fill_in :datetime, with: '2030-02-02 01:00:00 UTC '
         click_button 'Create Party'
       end
 
