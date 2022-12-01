@@ -17,7 +17,7 @@ RSpec.describe 'The movie show page' do
     it 'displays the movie details: title, vote average, runtime, genre(s), summary', :vcr do 
       user = User.create!(name: "Amanda", email: "amanda@turing.edu")
       visit user_movie_path(user, 128)
-
+save_and_open_page
       expect(page).to have_content("Princess Mononoke")
       expect(page).to have_content("Vote: 8.348")
       expect(page).to have_content("Runtime: 2hr 14min")

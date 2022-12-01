@@ -27,3 +27,7 @@ ul.even_horizontal {
 <p>
   <%= @movie.summary %>
 </p>
+<h4>Cast:</h4>
+<% @cast_list.each do |actor| %>
+  <p><%= "#{actor.character}:   #{actor.name}" %> </p>
+<% end %>
