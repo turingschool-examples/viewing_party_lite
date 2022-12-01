@@ -18,6 +18,6 @@ class MoviesController < ApplicationController
     @user = User.find(params[:user_id])
 
     # Refactor this into the MoviesFacade
-    @movie = MovieHeavy.new(MoviesService.details(params[:id]))
+    @movie = MoviesFacade.get_movie_heavy(params[:movie_id])
   end
 end

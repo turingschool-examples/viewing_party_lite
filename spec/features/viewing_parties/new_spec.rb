@@ -5,13 +5,21 @@ RSpec.describe 'the new viewing parties page' do
     @user1 = create(:user)
     @user2 = create(:user)
     @user3 = create(:user)
-    
-    VCR.use_cassette('godfather_movie') do 
-      @movie = MoviesFacade.get_movie_lite(238)
+
+    VCR.use_cassette('movie_details') do
+      VCR.use_cassette('movie_credits') do 
+        VCR.use_cassette('movie_reviews') do
+          @movie = MoviesFacade.get_movie_heavy(238)
+        end
+      end
     end
 
-    VCR.use_cassette('godfather_movie') do
-      visit new_user_movie_viewing_party_path(@user1, @movie.id)
+    VCR.use_cassette('movie_details') do
+      VCR.use_cassette('movie_credits') do 
+        VCR.use_cassette('movie_reviews') do
+          visit new_user_movie_viewing_party_path(@user1, @movie.id)
+        end
+      end
     end
   end
 
@@ -50,8 +58,6 @@ RSpec.describe 'the new viewing parties page' do
       end
 
       expect(current_path).to eq(user_path(@user1))
-      save_and_open_page
-      # Add test here to ensure @user2 and @user3 info gets added to dashboard
     end
   end
 

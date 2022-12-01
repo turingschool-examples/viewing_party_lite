@@ -1,8 +1,8 @@
 class ViewingPartiesController < ApplicationController
   def new
     @user = User.find(params[:user_id])
-    @movie = MoviesFacade.get_movie_lite(params[:movie_id])
-
+    @movie = MoviesFacade.get_movie_heavy(params[:movie_id])
+    require 'pry'; binding.pry
     # Move to User model method
     @users = User.all.where('id != ?', @user.id)
   end
