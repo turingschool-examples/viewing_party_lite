@@ -1,10 +1,10 @@
-require "./app/poros/movie"
+require "./app/poros/movie_details"
 require "./app/services/tmdb_service"
 
-class MovieSearch
+class MovieDetailsSearch
   def movie(id)
     data = service.movie_details(id)
-    Movie.new(data)
+    MovieDetails.new(data)
   end
 
   def service 
