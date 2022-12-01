@@ -17,9 +17,7 @@ class MovieFacade
   def self.searched_movies(keyword)
     json = MovieService.search(keyword)
 
-    searched_movies = json[:results].map do |movie_data|
-      Movie.new(movie_data)
-    end
+    json[:results].map {|movie_data| Movie.new(movie_data)} if json[:results] != nil
   end
 
   def self.movie_by_id(id)

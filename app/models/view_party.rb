@@ -5,11 +5,10 @@ class ViewParty < ApplicationRecord
   has_many :users, through: :user_view_parties
 
   validates :movie_id, :movie_name, :duration, :datetime, presence: true
-
   validate :datetime_cannot_be_in_the_past
 
   def datetime_cannot_be_in_the_past
-    errors.add(:datetime, 'cannot be in the past') if datetime.present? && datetime < Date.today
+    errors.add(:datetime, 'cannot be in the past') if datetime.present? && datetime < DateTime.now
   end
 
   def file_path

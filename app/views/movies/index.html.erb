@@ -5,14 +5,17 @@
     </div>
 
     <div class="flex-container" id="movie-results">
-      <%= "No Movies Found" if @movies == [] %>
       <table style='text-align: left; margin: 1.5em;'>
+      <% if @movies == nil %>
+       <h4><%= "No Movies Found"%></h4>
+      <% else %>
         <% @movies.each do |movie| %>
           <tr class="results">
             <td style="padding-right: 4em;"><%= link_to movie.title, user_movie_path(@user, movie.id) %></td>
             <td style='text-align: right'><%= "Vote Average: #{movie.vote_average}" %></td>
           </tr>
         <% end %>
+      <% end %>
       </table>
     </div>
   </div>
