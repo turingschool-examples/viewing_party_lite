@@ -1,0 +1,7 @@
+<br>
+<%= button_to 'Discover Movies', "/users/#{@user.id}/discover", method: :get %>
+<br>
+<% @movies.take(40).each do |movie| %>
+  <%= link_to "#{movie.title}", "/users/#{@user.id}/movies/#{movie.id}" %>
+  <p>Vote Average: <%= movie.vote_average %></p>
+<% end %>

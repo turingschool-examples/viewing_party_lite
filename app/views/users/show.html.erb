@@ -1,0 +1,28 @@
+<h1><%= @user.name %>'s Dashboard</h1>
+
+<%= button_to 'Discover Movies', "/users/#{@user.id}/discover", method: :get %>
+
+<h2>Viewing Parties</h2>
+<% @viewing_parties.each_with_index do |vp, i| %>
+  <div id="vp-<%= vp.id %>">
+  <p><%= link_to "#{@movies[i].title}", "/users/#{@user.id}/movies/#{vp.movie_id}" %></p>
+    <div id ="img-<%= vp.id %>">
+    <img alt = <%= @movies[i].title %> src="https://image.tmdb.org/t/p/w200/<%= @movies[i].poster %>">
+    </div>
+  <p>Start Time: <%= vp.start_time.strftime("%I:%M%p") %> on <%= vp.date %></p>
+  <p>Host: <%= vp.host_name %></p>
+
+  <u>Invited Users</u>
+  <% vp.users.each do |user| %>
+    <% if user.id == vp.host_id %>
+      <% next %>
+    <% elsif @user.id == user.id %>
+      <p><b><%= user.name %></b></p>
+    <% else %>
+      <p><%= user.name %></p>
+    <% end %>
+  <% end %>
+  </div>
+<% end %>
+
+
