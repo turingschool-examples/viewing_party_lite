@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root 'welcome#landing'
 
   resources :users, only: [:show, :create] do
-    resources :movies, only: [:index]
+    resources :movies, only: [:index, :show] do
+      resources :viewing_party, only: [:new]
+    end
   end
 
   get '/users', to: 'welcome#landing'
