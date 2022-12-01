@@ -35,7 +35,7 @@ RSpec.describe 'User Dashboard Page' do
     end
   end
 
-  it 'should contain title of Viewing Party and a Home link that will redirect the user landing page' do
+  it 'should contain title of Viewing Party and a Home link that will redirect to the user landing page' do
     visit user_path(@user1.id)
 
     within('#dashboard') do
