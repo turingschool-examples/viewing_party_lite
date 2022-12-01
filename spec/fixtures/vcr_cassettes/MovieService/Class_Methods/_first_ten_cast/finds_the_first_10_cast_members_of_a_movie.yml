@@ -24,37 +24,37 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
+      Date:
+      - Thu, 01 Dec 2022 02:38:57 GMT
       Server:
       - openresty
+      Cache-Control:
+      - public, max-age=28800
       X-Memc:
       - HIT
       X-Memc-Key:
       - 7688a8b40b3d4871388fc7b0d863ea192783cd4e
       X-Memc-Age:
-      - '4598'
+      - '7115'
       X-Memc-Expires:
-      - '11608'
-      Date:
-      - Wed, 30 Nov 2022 18:13:11 GMT
-      Cache-Control:
-      - public, max-age=28800
+      - '8830'
       Etag:
-      - W/"eef087a763cfc3ddb15c4e67aa1354cd"
+      - W/"78ff11e5844db954c8ce0f562001440b"
       Vary:
-      - Accept-Encoding
+      - Accept-Encoding,Accept-Encoding,Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 5257b3c7acd3727a389946b312557ff2.cloudfront.net (CloudFront)
+      - 1.1 5957ea451aa45a9d254075e89c5df686.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - aBKC9bw8jqAoXUqfXmYlIG4s0xP07imIDIoMfNvGPNi6s07s7W5n_w==
+      - D71tHruR8adlnGR6AK3bkyH_oSLR0e1CJttEiaiSorx54qS0dBqbEA==
       Age:
-      - '26925'
+      - '9443'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/xV7Kfz4TW3hN6q4xtZgu5vduBHA.jpg","belongs_to_collection":{"id":10,"name":"Star
@@ -64,12 +64,12 @@ http_interactions:
         forces in their effort to take over the galactic Empire. Venturesome Luke
         Skywalker and dashing captain Han Solo team together with the loveable robot
         duo R2-D2 and C-3PO to rescue the beautiful princess and restore peace and
-        justice in the Empire.","popularity":71.398,"poster_path":"/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg","production_companies":[{"id":1,"logo_path":"/o86DbpburjxrqAzEDhXZcyE8pDb.png","name":"Lucasfilm
+        justice in the Empire.","popularity":65.71,"poster_path":"/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg","production_companies":[{"id":1,"logo_path":"/o86DbpburjxrqAzEDhXZcyE8pDb.png","name":"Lucasfilm
         Ltd.","origin_country":"US"},{"id":25,"logo_path":"/qZCc1lty5FzX30aOCVRBLzaVmcp.png","name":"20th
         Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1977-05-25","revenue":775398007,"runtime":121,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"A
-        long time ago in a galaxy far, far away...","title":"Star Wars","video":false,"vote_average":8.206,"vote_count":17938}'
-  recorded_at: Thu, 01 Dec 2022 01:41:56 GMT
+        long time ago in a galaxy far, far away...","title":"Star Wars","video":false,"vote_average":8.2,"vote_count":17940}'
+  recorded_at: Thu, 01 Dec 2022 05:16:20 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/11/credits?api_key=<movie_api_key>
@@ -116,15 +116,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 9b688924e5b0f0b5e4c639d19cb145f0.cloudfront.net (CloudFront)
+      - 1.1 1152d84b916a23e4b38cef1a20064b3e.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - v2dgH0ry5yH7GNAexMr8Ng5tKDHviNOi05M1Xy6QkkO2S56yXZIrWQ==
+      - yTW1CfAuzNcqiw4faBh0TbIqVlOELgscd2j5Fv-irAZlOVnr1NQLZA==
       Age:
-      - '5039'
+      - '17904'
     body:
       encoding: ASCII-8BIT
       string: '{"id":11,"cast":[{"adult":false,"gender":2,"id":2,"known_for_department":"Acting","name":"Mark
@@ -445,5 +445,5 @@ http_interactions:
         In"},{"adult":false,"gender":0,"id":3583983,"known_for_department":"Crew","name":"Len
         Mathewman","original_name":"Len Mathewman","popularity":0.6,"profile_path":null,"credit_id":"62a423307e12f02ff658460c","department":"Crew","job":"Stand
         In"}]}'
-  recorded_at: Thu, 01 Dec 2022 01:41:56 GMT
+  recorded_at: Thu, 01 Dec 2022 05:16:21 GMT
 recorded_with: VCR 6.1.0

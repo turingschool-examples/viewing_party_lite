@@ -46,15 +46,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 7d885ba806a1846198f8b666005bec92.cloudfront.net (CloudFront)
+      - 1.1 a42ce842e0f60814700ead82353e9f08.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - DEN50-C2
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - GYsOKLFEzdU99CcHVl4q70DxtBGmo8cKup8iHTpM_yRC1DcJGu-XFw==
+      - GEAJetOAAMlFwknGHoSV1rY1TZbJAtr5OOdUIdzBFHk6mTsTVrh3Rg==
       Age:
-      - '606'
+      - '9443'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/xV7Kfz4TW3hN6q4xtZgu5vduBHA.jpg","belongs_to_collection":{"id":10,"name":"Star
@@ -69,5 +69,5 @@ http_interactions:
         Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1977-05-25","revenue":775398007,"runtime":121,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"A
         long time ago in a galaxy far, far away...","title":"Star Wars","video":false,"vote_average":8.2,"vote_count":17940}'
-  recorded_at: Thu, 01 Dec 2022 02:49:03 GMT
+  recorded_at: Thu, 01 Dec 2022 05:16:20 GMT
 recorded_with: VCR 6.1.0

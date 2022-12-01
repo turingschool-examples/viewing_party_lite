@@ -9,6 +9,6 @@
 
 <% @movies[:results].each do |movie| %>
 
-  <p><%= link_to "#{movie[:title]}", url: "/users/#{@user.id}/movies/#{movie[:id]}", method: :get %>
+  <p><%= link_to "#{movie[:title]}", "/users/#{@user.id}/movies/#{movie[:id]}" %>
   Vote Average: <%= movie[:vote_average] %></p>
 <%end%>
