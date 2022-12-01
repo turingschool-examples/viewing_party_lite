@@ -1,20 +1,21 @@
 <center><h2><%= "#{@movie.title}" %></h2>
 
-<ul>
-<b>Vote Average: </b><%= @movie.vote_average %>
-<b>Run Time: </b><%= @movie.runtime %>
-<b>Genres: </b><%= @movie.genres.to_sentence %>
+
+<p><b>Vote Average: </b><%= @movie.vote_average %></p>
+<p><b>Run Time: </b><%= @movie.runtime %></p>
+<p><b>Genres: </b><%= @movie.genres.to_sentence %></p>
  
-<b>Summary: </b><%= @movie.summary %>
-<b>Cast: </b><% @movie.cast.each do |name, character| %>
-  <p>Name: <%= name %></p>
-  <p>Character Name: <%= character %></p>
+<p><b>Summary: </b><%= @movie.summary %></p>
+<br>
+<p><b>Cast: </b><% @movie.cast.each do |name, character| %>
+  <p><b>Name:</b> <%= name %>
+  <b>Character Name:</b> <%= character %></p>
 <% end %>
 <b>Total Reviews: </b><%= @movie.review_count %>
-<b>Reviewer Information: </b>
+<p><b>Reviewer Information: </b>
 <% @movie.reviews.each do |name, review| %>
-  <p><b>Name:</b> <%= name %></p>
-  <b>Rating:</b> <%= review %>
+  <p><b>Name:</b> <%= name %>
+  <b>Rating:</b> <%= review %></p>
   <% end %>
 
 <br>

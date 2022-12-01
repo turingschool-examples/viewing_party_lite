@@ -32,7 +32,35 @@ RSpec.describe 'movie details page' do
     it 'I see title and vote average of the movie' do 
       expect(page).to have_content("The Shawshank Redemption")
       expect(page).to have_content("Vote Average: 8.7")
-      save_and_open_page
+      # save_and_open_page
+
     end
+
+    it 'I see the runtime in hours and minutes' do #WIP! 
+      expect(page).to have_content("Run Time: 142")
+    end 
+
+    it 'I see genres associated to the movie' do 
+      expect(page).to have_content("Genres: Drama and Crime")
+    end 
+
+    it 'I see summary description' do  
+      expect(page).to have_content("Summary:")
+    end 
+
+    it 'I see the first 10 characters government names and character names' do  
+      expect(page).to have_content("Name: Tim Robbins Character Name: Andy Dufresne")
+      expect(page).to have_content("Name: Morgan Freeman Character Name: Ellis Boyd 'Red' Redding")
+      expect(page).to have_content("Name: Bob Gunton Character Name: Warden Norton")
+    end 
+
+    it 'I see count of total reviews' do  
+      expect(page).to have_content("Total Reviews: 7")
+    end 
+
+    it 'I see each reviews author and information' do  
+      expect(page).to have_content("Name: elshaarawy Rating: 9.0")
+      expect(page).to_not have_content("Name: ashuhleyt Rating: 9.0")
+    end 
   end
 end
