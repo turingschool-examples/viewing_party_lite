@@ -40,5 +40,19 @@ RSpec.describe MoviesService do
         end
       end
     end
+
+    describe 'details' do
+      it 'returns movie details json' do
+        VCR.use_cassette('movie_details') do
+          details = MoviesService.details(238)
+
+          expect(details[:id]).to be_a Integer
+          expect(details[:title]).to be_a String
+          expect(details[:vote_average]).to be_a Float
+          expect(details[:runtime]).to be_a Integer
+          expect(details[:genres]).to be_a Array
+        end
+      end
+    end
   end
 end
