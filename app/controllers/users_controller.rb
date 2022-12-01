@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
-
-  def index
-  end
+  def index; end
 
   def show
     @user = User.find(params[:id])
@@ -11,6 +9,8 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def discover; end
+
   def create
     @user = User.new(user_params)
 
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       redirect_to user_path(@user.id)
     else
       flash[:alert] = "Error: #{error_message(@user.errors)}"
-      redirect_to "/register"
+      redirect_to '/register'
     end
   end
 
@@ -27,5 +27,4 @@ class UsersController < ApplicationController
   def user_params
     params.permit(:name, :email)
   end
-
 end
