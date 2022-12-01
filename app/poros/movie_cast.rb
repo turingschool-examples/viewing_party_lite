@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class MovieCast
+  attr_reader :cast
   def initialize(attributes)
     @cast = attributes[:cast]
   end
