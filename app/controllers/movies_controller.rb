@@ -34,6 +34,15 @@ class MoviesController < ApplicationController
     json_body = response.body
     @results = JSON.parse(json_body,       symbolize_names: true)
    
+    response = connection.get("/3/movie/#{params[:id]}/reviews")
+    json_body = response.body
+    @reviews = JSON.parse(json_body,       symbolize_names: true)
+
+    response = connection.get("/3/movie/#{params[:id]}/credits")
+    json_body = response.body
+    @cast = JSON.parse(json_body,       symbolize_names: true)
+    
+
     # @movies = parsed_response[:results].map do |movie_attributes|
     #   Movie.new(movie_attributes)
     # end
