@@ -12,7 +12,9 @@
   <body>
     <% flash.each do |type, msg| %>
       <div>
-        <%= msg %>
+        <% msg.each do |m| %>
+          <p><%= m %></p>
+        <% end %>
       </div>
     <% end %>
     <nav class="topnav-left">
