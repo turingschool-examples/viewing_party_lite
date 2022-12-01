@@ -29,7 +29,7 @@
 # Ignore test-related files
 /coverage.data
 coverage
-fixtures
+fixtures/
 
 # Ignore application configuration
 /config/application.yml
