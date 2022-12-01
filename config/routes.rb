@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   end
 
   get '/register', to: 'users#new'
-  post '/register', to: 'users#create' #having trouble
+  post '/users/new', to: 'users#create' 
 
 end
