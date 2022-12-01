@@ -70,11 +70,16 @@ RSpec.describe 'Movies Detail (show) page' do
         expect(page).to have_content(@godfather.first_10_cast_members[9].character)
       end
       within('#reviews') do
-        expect(page).to have_content(@godfather.reviews[:results].first[:author])
-        expect(page).to have_content(@godfather.reviews[:results].first[:content].gsub(/\n/, ' '))
-        expect(page).to have_content(@godfather.reviews[:results].last[:author])
-        expect(page).to have_content(@godfather.reviews[:results].last[:content].gsub(/\n/, ' '))
-        expect(page).to have_content("Review Count: #{@godfather.reviews[:results].size}")
+        expect(page).to have_content(@godfather.reviews.first.author)
+        expect(page).to have_content(@godfather.reviews.first.content.gsub(/\n/, ' '))
+        expect(page).to have_content(@godfather.reviews.last.author)
+        expect(page).to have_content(@godfather.reviews.last.content.gsub(/\n/, ' '))
+        expect(page).to have_content("Review Count: #{@godfather.reviews.size}")
+        # expect(page).to have_content(@godfather.reviews[:results].first[:author])
+        # expect(page).to have_content(@godfather.reviews[:results].first[:content].gsub(/\n/, ' '))
+        # expect(page).to have_content(@godfather.reviews[:results].last[:author])
+        # expect(page).to have_content(@godfather.reviews[:results].last[:content].gsub(/\n/, ' '))
+        # expect(page).to have_content("Review Count: #{@godfather.reviews[:results].size}")
       end
     end
   end

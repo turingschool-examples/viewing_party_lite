@@ -26,10 +26,10 @@
   </div>
   <div id="reviews">
     <h2>Reviews:</h2>
-    <% @movie.reviews[:results].each do |review| %>
-      <p><strong><%= "#{review[:author]}:" %></strong></p>
-      <p><%= review[:content] %></p>
+    <% @movie.reviews.each do |review| %>
+      <p><strong><%= "#{review.author}:" %></strong></p>
+      <p><%= review.content %></p>
     <% end %>
-    <p>Review Count: <%= @movie.reviews[:results].size %></p>
+    <p>Review Count: <%= @movie.reviews.size %></p>
   </div>
 </div>
