@@ -25,8 +25,8 @@
 
     <% @users.each do |user| %>
       <p>
-      <%= f.label user.name.to_sym, "#{user.name} (#{user.email})" %>
-      <%= f.check_box user.name.to_sym %>
+      <%= f.label :invitees, "#{user.name} (#{user.email})" %>
+      <%= f.check_box :invitees, { :multiple => true }, user.id, nil %>
       </p>
     <% end %>
 

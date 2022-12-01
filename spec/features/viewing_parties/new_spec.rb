@@ -37,13 +37,25 @@ RSpec.describe 'the new viewing parties page' do
         expect(page).to have_field('Start Time')
         fill_in 'Start Time', with: DateTime.now
 
-        expect(page).to have_unchecked_field(@user2.name)
-        expect(page).to have_unchecked_field(@user3.name)
-        expect(page).to_not have_unchecked_field(@user1.name)
-        check @user2.name
+        expect(page).to have_unchecked_field("invitees_#{@user2.id}")
+        expect(page).to have_unchecked_field("invitees_#{@user3.id}")
+        expect(page).to_not have_unchecked_field("invitees_#{@user1.id}") 
+        
+        check "invitees_#{@user2.id}"
+        check "invitees_#{@user3.id}"
 
-        click_button 'Create Party'
+        VCR.use_cassette('godfather_movie') do
+          click_button 'Create Party'
+        end
       end
+
+      expect(current_path).to eq(user_path(@user1))
+
+      # Add test here to ensure @user2 and @user3 info gets added to dashboard
     end
+  end
+
+  describe 'sad paths' do 
+    # test that party duration can only be longer than movie runtime
   end
 end
