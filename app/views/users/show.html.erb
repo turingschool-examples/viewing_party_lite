@@ -1,6 +1,6 @@
 <h3><%= @user.name %>'s Dashboard</h3>
 
-<%= button_to "Discover Movies", discover_path(@user), method: :get %>
+<%= render 'partials/discover_button' %>
 <p>-------------------------------------------</p>
 
 <div id="viewing-parties">
