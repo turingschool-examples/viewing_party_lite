@@ -2,6 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'New View Party Page', type: :feature do
   let!(:user_1) { create(:user) }
+  let!(:user_2) { create(:user) }
+  let!(:user_3) { create(:user) }
+
   let!(:movie_1) {Movie.new(id: 550, title: 'Fight Club', vote_average: 5.3, overview: 'hahaha', runtime: 330, genres: 'romance' )}
   
   before(:each) do
@@ -21,10 +24,11 @@ RSpec.describe 'New View Party Page', type: :feature do
       expect(current_path).to eq("/users/#{user_1.id}/discover")
     end
 
-    it 'the form should include the following fields: name, duration, when, start time, checkboxes next to each existing user in the system, after submitting I should be taken back to my dashboard where I see the new event' do
+    xit 'the form should include the following fields: name, duration, when, start time, checkboxes next to each existing user in the system, after submitting I should be taken back to my dashboard where I see the new event' do
       within "#form" do
         fill_in :duration, with: 400
         fill_in :datetime, with: "2023-02-02 01:00:00 UTC "
+        check "#{user_2.id}"
 
         click_button 'Create Party'
       end
@@ -39,8 +43,16 @@ RSpec.describe 'New View Party Page', type: :feature do
       end
     end
 
-    xit 'the duration in the form should be autofilled with the value of the movie runtime in minutes and cannot be set to a value less than the duration of the movie' do
+    xit 'the duration in the form cannot be set to a value less than the duration of the movie' do
+      within "#form" do
+        fill_in :duration, with: 1
+        fill_in :datetime, with: "2023-02-02 01:00:00 UTC "
 
+        click_button 'Create Party'
+      end
+
+      expect(current_path).to eq(new_user_movie_view_party_path(user_1, movie_1.id))
+      expect(page).to have_content("Party duration cannot be shorter than the movie duration")
     end
 
     xit 'the new view party should also show on dashboards of users that were invited' do

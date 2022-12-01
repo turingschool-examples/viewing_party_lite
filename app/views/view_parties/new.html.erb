@@ -17,6 +17,9 @@
     <%= f.label :datetime %>
     <%= f.datetime_local_field :datetime %><br><br>
 
+    <%= f.label :invite_users %>
+    <%= f.collection_check_boxes :invite_users, User.order(:email).where.not(id: @user.id), :id, :email %>
+
     <%= f.submit 'Create Party' %>
   <% end %>
 </div>
