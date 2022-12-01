@@ -8,7 +8,7 @@ RSpec.describe 'Movies Index Page' do
     visit discover_path(user1)
   end
 
-  it 'has a button to find top rated movies' do
+  it 'has a button to find top rated movies', :vcr do
     expect(page).to have_content('Discover Movies')
     expect(page).to have_button('Find Top Rated Movies')
 
@@ -17,7 +17,7 @@ RSpec.describe 'Movies Index Page' do
     expect(current_path).to eq(user_movies_path(user1))
   end
 
-  it 'shows the top 20 movies when Top Rated Movies button is pressed' do
+  it 'shows the top 20 movies when Top Rated Movies button is pressed', :vcr do
     click_button('Find Top Rated Movies')
 
     expect(page).to have_content('The Godfather')

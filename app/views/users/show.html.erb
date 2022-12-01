@@ -7,14 +7,12 @@
 <div id='viewing_parties'>
     <h4><center>Current Viewing Parties<center></h4>
     <% @viewing_parties.each do |party| %>
-            <ul>
+            <ul> 
                 <p><b>Viewing Party</b>
+                <%# https://image.tmdb.org/t/p/original %>
                 <li><%= party.start_date %></li>
                 <li><%= party.start_time %></li>
-                <li>Hosting: <%= party.host %></li>
-                <li>Invited: <% party.attendees.each do |attendee| %>
-                    <%= attendee %>
-                <% end %></li>
+                <li><%= party.user_hosting_status(@user) %></li>
             </ul></p>
             <% end %>
 </div>

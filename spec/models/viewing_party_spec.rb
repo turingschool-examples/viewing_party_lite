@@ -32,6 +32,12 @@ RSpec.describe ViewingParty, type: :model do
     expect(party1.start_date).to eq('December 06, 2022')
   end
 
+  it 'can display whether user is hosting or invited' do
+    expect(party1.user_hosting_status(user1)).to eq('Hosting')
+    expect(party1.user_hosting_status(user2)).to eq('Invited')
+    expect(party2.user_hosting_status(user4)).to eq('Hosting')
+  end
+
   it 'can return who is host' do
     expect(party1.host).to eq(user1.name)
     expect(party2.host).to eq(user4.name)

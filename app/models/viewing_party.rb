@@ -13,6 +13,12 @@ class ViewingParty < ApplicationRecord
     date.strftime('%B %d, %Y')
   end
 
+  def user_hosting_status(user)
+    user_parties.select do |participant|
+      return participant.user_status.capitalize if participant.user_id == user.id
+    end
+  end
+
   def attendees
     participants = user_parties.select do |participant|
       participant.user_status == 'invited'

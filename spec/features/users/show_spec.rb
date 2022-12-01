@@ -45,8 +45,8 @@ RSpec.describe 'User Dashboard' do
       expect(page).to have_content(party1.start_time)
       expect(page).to have_content(party2.start_time)
       expect(page).to_not have_content(party3.start_time)
-      expect(page).to have_content("Hosting: #{user1.name}")
-      expect(page).to have_content("Invited: #{user2.name} #{user5.name}")
+      expect(page).to have_content('Hosting')
+      expect(page).to have_content('Invited')
       expect(page).to_not have_content(user4.name)
     end
   end
