@@ -64,10 +64,10 @@ RSpec.describe 'Movies Detail (show) page' do
 
       expect(page).to have_content(@godfather.summary)
       within('#cast') do
-        expect(page).to have_content(@godfather.first_10_cast_members.first[:name])
-        expect(page).to have_content(@godfather.first_10_cast_members.first[:character])
-        expect(page).to have_content(@godfather.first_10_cast_members[9][:name])
-        expect(page).to have_content(@godfather.first_10_cast_members[9][:character])
+        expect(page).to have_content(@godfather.first_10_cast_members.first.actor)
+        expect(page).to have_content(@godfather.first_10_cast_members.first.character)
+        expect(page).to have_content(@godfather.first_10_cast_members[9].actor)
+        expect(page).to have_content(@godfather.first_10_cast_members[9].character)
       end
       within('#reviews') do
         expect(page).to have_content(@godfather.reviews[:results].first[:author])

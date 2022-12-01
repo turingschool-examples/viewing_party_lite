@@ -20,7 +20,7 @@
     <h2>Cast:</h2>
     <ul>
       <% @movie.first_10_cast_members.each do |cast_member| %>
-        <li><%= "Character: #{cast_member[:character]} - #{cast_member[:name]}" %></li>
+        <li><%= "Character: #{cast_member.character} - #{cast_member.actor}" %></li>
       <% end %>
     </ul>
   </div>
