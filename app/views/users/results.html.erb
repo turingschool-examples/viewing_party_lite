@@ -7,7 +7,8 @@
 
 <p><center><%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %><center></p>
 
-<% @movies[:results].each do |movie|%>
-  <p><%= link_to movie[:title], url: "/users/#{@user.id}/movies/#{movie[:id]}", method: :get %>
+<% @movies[:results].each do |movie| %>
+
+  <p><%= link_to "#{movie[:title]}", url: "/users/#{@user.id}/movies/#{movie[:id]}", method: :get %>
   Vote Average: <%= movie[:vote_average] %></p>
 <%end%>
