@@ -4,6 +4,9 @@ class ViewingPartiesController < ApplicationController
      @movie = MovieDetailsSearch.new.movie(params[:movie_id])
      @users = User.where.not(id: params[:user_id])
     end
+    def create
+       
+    end
 
 
 end
