@@ -53,7 +53,7 @@ RSpec.describe 'New viewing party page' do
         within "#invitees" do 
             expect(page).to have_content("Annie")
             expect(page).to have_content("James")
-             save_and_open_page
+            
         end
       end
    end
