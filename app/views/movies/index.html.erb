@@ -1,7 +1,6 @@
-
 <%@results.each do |result|%>
   <p>
-  <%=result[:title]%> 
+  <%=link_to result[:title], user_movie_path(@user, result[:id]) %> 
   Vote Average: <%=result[:vote_average]%>
   <br>
   </p>
