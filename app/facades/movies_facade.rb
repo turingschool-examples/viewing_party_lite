@@ -16,7 +16,7 @@ class MoviesFacade
   end
 
   def self.movie_poster_url(movie_id)
-    json = MoviesService.get_movie(movie_id)
+    json = MoviesService.details(movie_id)
 
     "https://image.tmdb.org/t/p/w500/#{json[:poster_path]}"
   end
