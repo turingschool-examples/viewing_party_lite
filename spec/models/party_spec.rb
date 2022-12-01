@@ -8,6 +8,9 @@ RSpec.describe Party, type: :model do
 
   describe 'instance methods' do
     before :each do
+      up_search_json = File.read('spec/fixtures/search_up_movies.json')
+      stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['tmdb_api_key']}&language=en-US&page=1&include_adult=false&query=Up").to_return(status: 200, body: up_search_json)
+
       @user1 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.free_email)
       @user2 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.free_email)
       @user3 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.free_email)
@@ -43,6 +46,13 @@ RSpec.describe Party, type: :model do
     describe '.host' do
       it 'retrieves the name of the host' do
         expect(@party1.host).to eq(@user1.name)
+      end
+    end
+    describe '.movie_details' do
+      it 'returns a Movie object that contains the information of the movie being viewed' do
+        expect(@party1.movie_details).to be_a(Movie)
+        expect(@party1.movie_details.title).to eq("Up")
+        expect(@party1.movie_details.id).to eq("14160")
       end
     end
   end
