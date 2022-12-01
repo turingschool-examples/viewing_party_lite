@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe MovieService do
-  it 'exists' do
+  it 'exists', :vcr do
     movie = MovieService.new
 
     expect(movie).to be_an_instance_of(MovieService)
@@ -11,7 +11,7 @@ RSpec.describe MovieService do
 
   describe 'Class Methods' do
     describe '#movie_by_id' do
-      it 'returns a movie from a given id' do
+      it 'returns a movie from a given id', :vcr do
         movie = MovieService.movie_by_id(11)
 
         expect(movie.class).to be Hash
@@ -30,7 +30,7 @@ RSpec.describe MovieService do
     end
 
     describe '#movies_by_keyword' do
-      it 'finds movies based on a given word argument' do
+      it 'finds movies based on a given word argument', :vcr do
         movies = MovieService.movies_by_keyword('Spinal Tap')
 
         expect(movies.class).to be Hash
@@ -41,7 +41,7 @@ RSpec.describe MovieService do
     end
 
     describe '#find_top_rated_movies' do
-      it 'finds the 20 top rated movies' do
+      it 'finds the 20 top rated movies', :vcr do
         movies = MovieService.find_top_rated_movies
 
         expect(movies.class).to be Hash
@@ -51,7 +51,7 @@ RSpec.describe MovieService do
     end
 
     describe "#first_ten_cast" do
-      it 'finds the first 10 cast members of a movie' do
+      it 'finds the first 10 cast members of a movie', :vcr do
         movie_id = 11
         movie = MovieService.movie_by_id(movie_id)
         cast = MovieService.first_ten_cast(movie_id)
@@ -61,12 +61,12 @@ RSpec.describe MovieService do
     end
 
     describe "#movie_reviews" do
-      it 'finds the reviews for a movie' do
+      it 'finds the reviews for a movie', :vcr do
         movie_id = 11
         movie = MovieService.movie_by_id(movie_id)
         reviews = MovieService.movie_reviews(movie_id)
 
-        expect(reviews[:results].count).to eq(4)
+        expect(reviews.count).to eq(4)
       end
     end
   end

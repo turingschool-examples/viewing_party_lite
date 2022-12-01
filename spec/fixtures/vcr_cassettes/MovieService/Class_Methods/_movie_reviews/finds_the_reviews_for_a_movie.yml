@@ -1,0 +1,133 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/11?api_key=<movie_api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - openresty
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 7688a8b40b3d4871388fc7b0d863ea192783cd4e
+      X-Memc-Age:
+      - '4598'
+      X-Memc-Expires:
+      - '11608'
+      Date:
+      - Wed, 30 Nov 2022 18:13:11 GMT
+      Cache-Control:
+      - public, max-age=28800
+      Etag:
+      - W/"eef087a763cfc3ddb15c4e67aa1354cd"
+      Vary:
+      - Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 8a50fe9452625079391cf0ce7a3e0c56.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - hAwt22izL1ZQwqGA8jZHnuV5ZFO5ohKj4IaOMTXcW7TMfn2gGiUCtA==
+      Age:
+      - '26925'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/xV7Kfz4TW3hN6q4xtZgu5vduBHA.jpg","belongs_to_collection":{"id":10,"name":"Star
+        Wars Collection","poster_path":"/gq5Wi7i4SF3lo4HHkJasDV95xI9.jpg","backdrop_path":"/d8duYyyC9J5T825Hg7grmaabfxQ.jpg"},"budget":11000000,"genres":[{"id":12,"name":"Adventure"},{"id":28,"name":"Action"},{"id":878,"name":"Science
+        Fiction"}],"homepage":"http://www.starwars.com/films/star-wars-episode-iv-a-new-hope","id":11,"imdb_id":"tt0076759","original_language":"en","original_title":"Star
+        Wars","overview":"Princess Leia is captured and held hostage by the evil Imperial
+        forces in their effort to take over the galactic Empire. Venturesome Luke
+        Skywalker and dashing captain Han Solo team together with the loveable robot
+        duo R2-D2 and C-3PO to rescue the beautiful princess and restore peace and
+        justice in the Empire.","popularity":71.398,"poster_path":"/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg","production_companies":[{"id":1,"logo_path":"/o86DbpburjxrqAzEDhXZcyE8pDb.png","name":"Lucasfilm
+        Ltd.","origin_country":"US"},{"id":25,"logo_path":"/qZCc1lty5FzX30aOCVRBLzaVmcp.png","name":"20th
+        Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1977-05-25","revenue":775398007,"runtime":121,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"A
+        long time ago in a galaxy far, far away...","title":"Star Wars","video":false,"vote_average":8.206,"vote_count":17938}'
+  recorded_at: Thu, 01 Dec 2022 01:41:56 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/11/reviews?api_key=<movie_api_key>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 01 Dec 2022 00:51:34 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 64c22ba18d7f5513081a9da5389048808a3aa4a9
+      X-Memc-Age:
+      - '8716'
+      X-Memc-Expires:
+      - '6853'
+      Etag:
+      - W/"cdd450d3e4f00fd7365dbd7dc25b6f7e"
+      Vary:
+      - Accept-Encoding,Accept-Encoding,Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 96971091469e558c8f8e351ccf0d7212.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - Lp1Mq6OZv4N48wkmk5zh-IL7LrRrurQRsvrjU4Rjo-ufTMvqV6bA4A==
+      Age:
+      - '3022'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJpZCI6MTEsInBhZ2UiOjEsInJlc3VsdHMiOlt7ImF1dGhvciI6IkNhdCBFbGxpbmd0b24iLCJhdXRob3JfZGV0YWlscyI6eyJuYW1lIjoiQ2F0IEVsbGluZ3RvbiIsInVzZXJuYW1lIjoiQ2F0RWxsaW5ndG9uIiwiYXZhdGFyX3BhdGgiOiIvdUNtd2dTYkpBY0hxTndTdlF2VHYyZEI5NXR4LmpwZyIsInJhdGluZyI6bnVsbH0sImNvbnRlbnQiOiIoQXMgSSdtIHdyaXRpbmcgdGhpcyByZXZpZXcsIERhcnRoIFZhZGVyJ3MgdGhlbWUgbXVzaWMgYmVnaW5zIHRvIGJ1aWxkIGluIG15IG1pbmQuLi4pXHJcblxyXG5XZWxsLCBpdCBhY3R1YWxseSBoYXMgYSB0aXRsZSwgd2hhdCB0aGUgRGFydGggVmFkZXIgdGhlbWUuIEFuZCB0aGF0IHRpdGxlIGlzIFwiVGhlIEltcGVyaWFsIE1hcmNoXCIsIGNvbXBvc2VkIGJ5IHRoZSBncmVhdCBKb2huIFdpbGxpYW1zLCB3aG9tLCBhcyBtYW55IG9mIHlvdSBtYXkgYWxyZWFkeSBrbm93LCBhbHNvIGNvbXBvc2VkIHRoZSB0aGVtZSBtdXNpYyBmb3IgXCJKYXdzXCIgLSB0aGF0IGxlZ2VuZGFyeSBzY29yZSBzaW1wbHkgdGl0bGVkLCBcIk1haW4gVGl0bGUgKFRoZW1lIEZyb20gSmF3cylcIi5cclxuXHJcbk5vdywgd2l0aCB0aGF0IGxpbCcgYml0IG9mIHRyaXZpYSBhc2lkZSwgbGV0IHVzIHByb2NlZGUgd2l0aCB0aGUgZmFibGVkIGZpbG0gY3VycmVudGx5IHVuZGVyIHJldmlldzogU3RhciBXYXJzLiBJdCBoYWQgYmVlbiBhdCBhIGRyaXZlLWluIHRoZWF0ZXIgaW4gc29tZSBzbWFsbCBJbGxpbm9pcyB0b3duIG9yIG90aGVyIHdoZXJlIG15IG1vdGhlciwgbXkgb2xkZXIgYnJvdGhlciwgYW5kIEkgaGFkIHNwZW50IG91ciB3ZWVrbHkgXCJNb3ZpZSBEYXRlIE5pZ2h0XCIgd2F0Y2hpbmcgdGhpcyBHZW9yZ2UgTHVjYXMgZGlyZWN0ZWQgY3VsdCBtYXN0ZXJwaWVjZSBmcm9tIG91ciBjYXIgaW4gdGhlIHBhcmtpbmcgbG90LiBPbiB0aGUgaHVnZSBvdXRkb29yIHNjcmVlbiwgdGhlIGZpbG0gYXBwZWFyZWQgdG8gYmUgYSBzaWxlbnQgb25lLCBidXQgdGhhbmtzIHRvIGFuIG9sZCB3aXJlLWF0dGFjaGVkIHNwZWFrZXIsIHdlIHdlcmUgYWJsZSB0byBoZWFyIGJvdGggdGhlIGNoYXJhY3RlciBkaWFsb2d1ZSBhbmQgc291bmR0cmFjayBsb3VkIGFuZCBjbGVhci4gV2UgZXZlbiBoYWQgb3Vyc2VsdmVzIGEgY2FyZnVsIG9mIHZpdHRsZXMgYW5kIHNuYWNrcyAtIHdhbGtlZCBiYWNrIHRvIG91ciB2ZWhpY2xlLCBvZiBjb3Vyc2UsIGZyb20gdGhlIHdpZGUtb3BlbmVkIGNpbmVtYSdzIGJyaWVmbHkgZGlzdGFudCBjb25jZXNzaW9uIHN0YW5kLiBJbmRlZWQsIGl0IGhhZCBiZWVuIGEgbG92ZWx5IHN1bW1lciBldmVuaW5nIHRoYXQgSnVseS5cclxuXHJcbkZyb20gdGhlIHRpbWUgdGhlIGZpbG0gc3RhcnRlZCwgd2l0aCBteSBicm90aGVyIGFuZCBJIGZvbGxvd2luZyBhbG9uZyBhcyBvdXIgbW90aGVyIHNwZWQtcmVhZCB0aGUgb3BlbmluZyBjcmF3bCwgSSBiZWdhbiB0byBmZWVsIHJhdGhlciBhbnRzeSwgdGhpbmtpbmcgdGhhdCB0aGlzIG1vdmllLCB0aGUgZmlyc3QgaW4gYSBmcmFuY2hpc2UgdGhhdCB3b3VsZCBzb29uIGJlIHdvcmxkLXJlbm93bmVkLCB3YXMgZ29pbmcgdG8gYmUgYm9yaW5nLCBkdWUgdG8gaXRzIGdlbnJlIGJlaW5nIFNjaWVuY2UgRmljdGlvbjogQSByZXNwZWN0YWJseSBsaWthYmxlLCBidXQgbm90IGEgcGFzc2lvbmF0ZWx5IGxvdmFibGUgZ2VucmUgb2YgbWluZSBEVVJJTkcgVEhBVCBUSU1FLiBJIGp1c3QgZGlkbid0IGJlbGlldmUgSSB3YXMgZ29pbmcgdG8gbGlrZSBTdGFyIFdhcnMgYWxsIHRoYXQgbXVjaCAuLi4gQnV0IEkgc29vbiBmb3VuZCBteXNlbGYgaW50cmlndWVkIC4uLiBBbmQgYXdlZC5cclxuXHJcbkdlb3JnZSBMdWNhcyBpcyBhIG1hbiB3aXRoIGEgcGhlbm9tZW5hbCwgYW5kIEkgZG8gbWVhbiBwaGVub21lbmFsIGltYWdpbmF0aW9uLiBBcGFydCBmcm9tIGhpcyBodW1hbiBjaGFyYWN0ZXJzIChIYW4sIEx1a2UsIExlaWEsIGFuZCBPYmktV2FuIEtlbm9iaSwgYW1vbmcgb3RoZXJzKSwgdGhlIGRyb2lkczogQy0zUDAsIFIyLUQyLCBSMi1zZXJpZXMsIGFuZCBJRy04OCwgbm90IHRvIG1lbnRpb24gdGhvc2UgdW51c3VhbCBjaGFyYWN0ZXJzIGxpa2UgSmFiYmEgdGhlIEh1dHQsIFlvZGEsIGFuZCBDaGV3YmFjY2EsIGp1c3QgdG8gbmFtZSBhIGZldywgYXJlIGFsbCBjcmVhdGlvbnMgb2YgTHVjYXMncyBwaGVub21lbmFsIGltYWdpbmF0aW9uLiBBbmQgSSB3YXMgY29tcGxldGVseSBpbiBhd2Ugb2YgZWFjaCBvbmUgb2YgdGhlc2Ugc3RyYW5nZSBiZWluZ3MuIFRoZW4gdGhlcmUgd2FzIFZhZGVyIC4uLiBBbmQgdGhlIGV2aWwgRW1wZXJvciAuLi4gQW5kIHRoZSBTdG9ybXRyb29wZXJzIC4uLiBBbmQgdGhlIFNwYWNlY3JhZnQgLi4uIEFuZCB0aGUgZ2FsYXhpZXMgKEknbGwgYWRtaXQgdGhhdCBJIGFtIGEgaHVnZSBsb3ZlciBvZiB0aGUgVW5pdmVyc2UgaW4gYWxsIGl0cyBDZWxlc3RpYWwgZ2xvcnkpIC4uLiBBbmQgdGhlIG1hZ25pZmljZW50IHBsYW5ldHMgLi4uIFRoZSBMaWdodHNhYmVycyAuLi4gQW5kIHNvIG9uLiBTdGFyIFdhcnMgaXMgYSBnb3JnZW91c2x5IHNob3Qgc3BhY2Ugb3BlcmE7IGl0IGlzIHRydWx5IGFuIGVwaWMgbWFzdGVycGllY2UuIFdlIGVuam95ZWQgdGhpcyBmaWxtIHRyZW1lbmRvdXNseS4gQW5kIG15IGJyb3RoZXIgd2FzIGEgZGllLWhhcmQgZmFuIGZyb20gdGhhdCBuaWdodCBvbndhcmQuIEhlLCBteSBicm90aGVyLCBoYWQgZXZlbiByZWNlaXZlZCBmb3IgQ2hyaXN0bWFzIHRoYXQgeWVhciwgbmVhcmx5IGV2ZXJ5IFN0YXIgV2FycyBhY3Rpb24gZmlndXJlIHRoYXQgbXkgbW90aGVyIGNvdWxkIGZpbmQsIGluY2x1ZGluZyB0d28gb2YgdGhlIHNwYWNlY3JhZnQ6IFRoZSBNaWxsZW5uaXVtIEZhbGNvbiBhbmQgU3RhciBEZXN0cm95ZXIuIFRoZSBEZWF0aCBTdGFyIHNwYWNlIHN0YXRpb24gaGFkIHRvbyBiZWVuIHdyYXBwZWQgYmVuZWF0aCBvdXIgQ2hyaXN0bWFzIHRyZWUgLSB0YWdnZWQgd2l0aCBoaXMgbmFtZS4gSXQgd2FzIHRvdGFsbHkgY3JhenksIHdoYXQgdGhlIG5ldyBTdGFyIFdhcnMgZXJhLiBGcmVuemllZCEgQnV0IGl0IHdhcyBncmVhdCAuLi4gRXZlbiBzdGlsbCwgdG8gdGhpcyBkYXkuXHJcblxyXG5JIGRvbid0IHBlcnNvbmFsbHkga25vdyBhbnlvbmUgd2hvbSBoYXMgeWV0IHRvIHNlZSBTdGFyIFdhcnMsIGJ1dCB0aGF0IGNlcnRhaW5seSBkb2Vzbid0IHN1Z2dlc3QgdGhlcmUgYXJlIHN0aWxsIGEgZmV3IHBlb3BsZSBvdXQgdGhlcmUgd2hvIGhhdmVuJ3QuIEFuZCBpZiB5b3UncmUgb25lIG9mIHRoZSBsYXR0ZXIsIHRoZW4geW91IHNob3VsZCBrbm93IHRoYXQgdGhpcyBjbGFzc2ljIHNwYWNlIG9wZXJhIGNvbWVzIGhpZ2hseSByZWNvbW1lbmRlZC4gVGhlIGVudGlyZSBzZXJpZXMgaXMgdG9sZCBiYWNrd2FyZHMsIHNvIHlvdSdsbCBkZWZpbml0ZWx5IHdhbnQgdG8gc2VlIFN0YXIgV2FycyBmaXJzdCwgZm9sbG93ZWQgYnkgaXRzIHR3byBzZXF1ZWxzOiBUaGUgRW1waXJlIFN0cmlrZXMgQmFjayBhbmQgUmV0dXJuIG9mIHRoZSBKZWRpIC4uLiBJbiB0aGF0IG9yZGVyLiBJIHRydXN0IHRoYXQgeW91J2xsIHRvbyBkaXNjb3ZlciB5b3Vyc2VsZiB0byBiZSBhIGxpZmVsb25nIGN1bHQgZmFuIGluIHRoZSB3YWtlLiDwn5iKIiwiY3JlYXRlZF9hdCI6IjIwMTctMDItMTNUMjI6MjM6MDEuMjY4WiIsImlkIjoiNThhMjMxYzU5MjUxNDExNzllMDAwNjc0IiwidXBkYXRlZF9hdCI6IjIwMjEtMDYtMjNUMTU6NTc6NTMuOTE1WiIsInVybCI6Imh0dHBzOi8vd3d3LnRoZW1vdmllZGIub3JnL3Jldmlldy81OGEyMzFjNTkyNTE0MTE3OWUwMDA2NzQifSx7ImF1dGhvciI6IkpvaG4gQ2hhcmQiLCJhdXRob3JfZGV0YWlscyI6eyJuYW1lIjoiIiwidXNlcm5hbWUiOiJKb2huIENoYXJkIiwiYXZhdGFyX3BhdGgiOiIvdXRFWGwyRURpWEJLNmY0MXdDTHN2cHJ2TWc0LmpwZyIsInJhdGluZyI6MTAuMH0sImNvbnRlbnQiOiJBIGxvbmcgdGltZSBhZ28gaW4gYSBjaGlsZGhvb2Qgbm90IHRvbyBmYXIgYXdheS4uLlxyXG5cclxuUHJpbmNlc3MgTGVpYSBpcyBjYXB0dXJlZCBhbmQgaGVsZCBob3N0YWdlIGJ5IHRoZSBJbXBlcmlhbCBBcm15IGFzIGl0IHNlZWtzIHRvIHJ1bGUgdGhlIEdhbGFjdGljIEVtcGlyZS4gQW4gb2xkIEplZGkgS25pZ2h0IGJ5IHRoZSBuYW1lIG9mIEJlbiBcIk9iaS1XYW5cIiBLZW5vYmkgbWF5IGp1c3QgYmUgaGVycywgYW5kIHRoZSByZWJlbHMgb25seSBob3BlLiBUZWFtaW5nIHVwIHdpdGggZmFybSBib3kgTHVrZSBTa3l3YWxrZXIsIHNjb3VuZHJlbCBDYXB0YWluIEhhbiBTb2xvLCBhbmQgYSBjb3VwbGUgb2YgcXVpcmt5IGRyb2lkcywgS2Vub2JpIHNldHMgb2ZmIG9uIGEgbWlzc2lvbiB0aGF0IGNvdWxkIHdlbGwgc2hhcGUgdGhlIGRlc3Rpbnkgb2YgdGhlIEdhbGF4eSwgYW5kIGFsbCB3aG8gZHdlbGwgd2l0aGluIGl0LlxyXG5cclxuQmFjayBpbiAxOTc3IEkgd2FzIGJ1dCBhIHdlZSAxMSB5ZWFyIG9sZCBib3ksIHdlZW5lZCBvbiBmaWxtcyBmcm9tIGFsbCBnZW5yZXMgYnkgbXkgbW92aWUgbG92aW5nIHBhcmVudHMsIEkgaGFkIG5vIGlkZWEgdGhhdCBTdGFyIFdhcnMgd2FzIHRvIGhhdmUgdGhlIHNhbWUgaW1wYWN0IG9uIG1lIGFzIEphd3MgaGFkIHR3byBzdW1tZXJzIHByZXZpb3VzbHksIHdoZXJlIHlldCBhZ2FpbiBJIGZvdW5kIG15c2VsZiBxdWV1ZWluZyBhcm91bmQgdGhlIGJsb2NrIGZvciB0d28gd2hvbGUgaG91cnMgdG8gc2VlIGEgZmlsbSBpbiBhIG9uZSBzY3JlZW4gdGhlYXRyZS4gTXkgbG92ZSBvZiBjaW5lbWEgZmlybWx5IGNlbWVudGVkLCBTdGFyIFdhcnMgd2FzIHRoZSBzdGFydCBvZiBhIGxvdmUgYWZmYWlyIHRoYXQgbGFzdHMgdG8gdGhpcyB2ZXJ5IGRheS5cclxuXHJcbkFzIHRoZSB5ZWFycyBoYXZlIHJvbGxlZCBieSBhbmQgbXkgbG92ZSBvZiBjaW5lbWEgaGFzIHRha2VuIG9uIG1vcmUgaW4tZGVwdGggYW5kIHNlcmlvdXMgdG9uZXMsIEkgaGF2ZSBjb21lIHRvIHJlYWxpc2UgdGhhdCBTdGFyIFdhcnMgcHJvdmVzIHRvIGJlIGEgZmFyIGZyb20gZmxhd2xlc3MgcGljdHVyZS4gQ2VydGFpbmx5IGl0cyBkZXRyYWN0b3JzIGRvIHBvaW50IHRvIHNvbWUgZnJheWVkIGFjdGluZyBhbmQgY2FsbCB0aGUgcGxvdCBzdHJ1Y3R1cmUgYSBqYXp6ZWQgdXAgZ29vZCB2ZXJzdXMgZXZpbCBheGlzLCB3aGlsZSB0aGUgY2hhcmdlIG9mIEdlb3JnZSBMdWNhcyByZWZlcmVuY2luZyBtYW55IHByaW9yIHBpY3R1cmVzIG1vc3QgYXNzdXJlZGx5IHN0YW5kcywgYnV0IHJlYWxseSBkbyB0aG9zZSB0aGluZ3MgbWF0dGVyPyBObyB0aGV5IGRvIG5vdCwgYmVjYXVzZSBTdGFyIFdhcnMgb3BlbmVkIHVwIGEgbmV3IHdvcmxkIG9mIGNpbmVtYSwgc29tZXRoaW5nIG9mIGEgcG9ydGFsIHRvIHlvdW5nc3RlcnMgc3VjaCBhcyBJLCBpdCBnb3QgcGVvcGxlIHRhbGtpbmcgYW5kIGRlYmF0aW5nIGFib3V0IHRoZSBtZXJpdHMgb2YgbW9kZWwgd29yayBpbiBmaWxtcyAod2hpY2ggaXMgb2YgYW4gZXh0cmFvcmRpbmFyeSBoaWdoIHN0YW5kYXJkIGhlcmUpLCBpdCBudWRnZWQgZmlsbSBtYWtlcnMgdG8gZXhwbG9yZSBiZWluZyBiaWdnZXIgYW5kIGJvbGRlciBpbiB0aGVpciBhcHByb2FjaCwgYW5kIGNydWNpYWxseSwgYWJvdmUgYWxsIGVsc2UsIGl0IGdvdCBmaWxtIGdvZXJzIGh1bmdyeSBhZ2FpbiwgYSBoYW5rZXJpbmcgZm9yIG1vcmUgcGxlYXNlIGlmIHlvdSBtYXkuIE5vdyBpdCBoYXMgdG8gYmUgc2FpZCB0aGF0IGFsbCB0aGF0IGZvbGxvd2VkIDIwdGggQ2VudHVyeSBGb3gncyBoaXN0b3JpYyBibG9ja2J1c3RlciBkaWRuJ3QgcnVuIHdpdGggdGhlIGJhdG9uLCBpbiBmYWN0IG1vc3QgcGFsZSBpbnRvIGNvbXBhcmlzb24gb24gaW1wYWN0IHZhbHVlLCBidXQgZm9yIGJldHRlciBvciB3b3JzZSAoZGVwZW5kaW5nIG9uIHRoZSBkaXNjZXJuaW5nIHZpZXdlcnMgcGVjY2FkaWxsb2VzKSwgU3RhciBXYXJzIHN0YW5kcyBhcyBhIGJhc3Rpb24gb2YgYWR2ZW50dXJlIGxhZGVuIGVudGVydGFpbm1lbnQuXHJcblxyXG5JdCBpcyBieSBkZWZpbml0aW9uIG9uZSBvZiB0aGUgbW9zdCBzdWNjZXNzZnVsIGZpbG1zIGluIGhpc3RvcnksIEdlb3JnZSBMdWNhcyBwZXJoYXBzIGRpZG4ndCBrbm93IGl0IGF0IHRoZSB0aW1lLCBidXQgaW4gd2hhdCB3YXMgdG8gYmVjb21lIGFuIGFsbW9zdCBvcGVyYXRpYyBhbnRob2xvZ3ksIGhlIGRpZG4ndCBqdXN0IG1ha2UgYSBtb3ZpZSwgaGUgY3JlYXRlZCBhIHdob2xlIG5ldyB3b3JsZCBzZWVwaW5nIHdpdGggc3R5bGUgYW5kIHJpY2ggdGV4dHVyZS4gQWxtb3N0IGFzIGFtYXppbmcgYXMgdGhlIHN1Y2Nlc3Mgb2YgdGhlIHNlcmllcywgaXMgaG93IGl0IGhhcyBiZWNvbWUgcGFydCBvZiBtb2Rlcm4gZGF5IHBvcCBjdWx0dXJlLCBhbnl0aGluZyBmcm9tIHJlbGlnaW9uIHRvIGV2ZXJ5ZGF5IHNwZWFrIGhhcyBhdCBzb21lIHRpbWUgb3IgYW5vdGhlciByZWZlcmVuY2VkIEx1Y2FzJyBiYWJ5LiBVbHRpbWF0ZWx5LCB0aG91Z2gsIGl0J3Mgb25lIHNpbmdsZSB0aGluZyB0aGF0IG1hZGUgKGFuZCBzdGlsbCBkb2VzIG1ha2UpIFN0YXIgV2FycyBzbyBncmVhdCwgaXQncyB0aGF0IGl0IGhhcyB0aGUgYWJpbGl0eSB0byBsaWZ0IHRoZSBhdWRpZW5jZSBpbnRvIGEgcm91c2luZyB1bml0ZWQgZmVlbCBnb29kIGNoZWVyOyBhbmQgdGhhdCBpcyBzb21ldGhpbmcgdGhhdCBmZXcgZmlsbXMgY2FuIGV2ZXIgbGF5IGNsYWltIHRvby4gSW4gMTk3NyBpdCB3YXMgYW4gYXdlIGluc3BpcmluZyBldmVudCB0byB3YXRjaCBpbiB0aGUgdGhlYXRyZSwgbm93IGhlcmUgaW4gbXkgbWlkZGxlIGFnZSBpdCdzIGFuIGV2ZW50IHRoYXQgaXMgbGlrZSBodWdnaW5nIGEgZGVhciBvbGQgZnJpZW5kLCBhIGZyaWVuZCB0aGF0IEkga25vdyB3aWxsIG5ldmVyIGV2ZXIgbGV0IG1lIGRvd24gbm8gbWF0dGVyIGhvdyBtYW55IHRpbWVzIEkgdHVybiB0byBpdC4gMTAvMTAiLCJjcmVhdGVkX2F0IjoiMjAxOS0wNy0yMVQwNzowNDoyNi45MzlaIiwiaWQiOiI1ZDM0MGU3YTJmOGQwOTAzODhkMjFmZjIiLCJ1cGRhdGVkX2F0IjoiMjAyMS0wNi0yM1QxNTo1ODoyNC42OThaIiwidXJsIjoiaHR0cHM6Ly93d3cudGhlbW92aWVkYi5vcmcvcmV2aWV3LzVkMzQwZTdhMmY4ZDA5MDM4OGQyMWZmMiJ9LHsiYXV0aG9yIjoiZ2FzdHlueSIsImF1dGhvcl9kZXRhaWxzIjp7Im5hbWUiOiIiLCJ1c2VybmFtZSI6Imdhc3R5bnkiLCJhdmF0YXJfcGF0aCI6bnVsbCwicmF0aW5nIjoxMC4wfSwiY29udGVudCI6IlN0YXIgV2FycyAoMTk3NykgaXMgYSB0cnVlIG1hc3RlcnBpZWNlIG9mIGNpbmVtYSwgYW5kIGlzIFxyXG4gIGRlZmluaXRlbHkgb25lIG9mIHRoZSBiZXN0IGZpbG1zIGV2ZXIgbWFkZS5cclxuXHJcbkZvciBtZSBTdGFyIFdhcnMgKDE5NzcpIGlzIHRoZSBiZXN0IG1vdmllIG9mIGFsbCB0aW1lLHRpZWQgd2l0aCBUaGUgTG9yZCBvZiB0aGUgUmluZ3MgdHJpbG9neS4gU3RhciBXYXJzICgxOTc3KSBpdCBpcyBmb3Igc3VyZSB0aGUgbW9zdCBpY29uaWMgZmlsbSBvZiBhbGwgdGltZSBldmVyeXRoaW5nIGluIGl0IGlzIGljb25pYy4gVGhlIGRpcmVjdGlvbiwgdGhlIHNjcmlwdCwgdGhlIHBlcmZvcm1hbmNlcyBpbiB0aGlzIGZpbG0gYXJlIGJyaWxsaWFudCwgYWxsIHRoZSBjaGFyYWN0ZXJzIGFyZSBjYXB0aXZhdGluZyBhbmQgd2VsbCBkZXZlbG9wZWQuIFxyXG5cclxuQW55d2F5LCB0aGlzIGlzIGEgdG90YWxseSBwZXJmZWN0IGZpbG0sIEkgb25seSBoYXZlIHByYWlzZSBmb3IgaXQsIGl0IGlzIGNlcnRhaW5seSBhIG1hc3RlcnBpZWNlIG9mIGNpbmVtYSwgYW5kIG15IGdyYWRlIGZvciBpdCBpcyAxMFxcMTAuIiwiY3JlYXRlZF9hdCI6IjIwMjAtMDQtMTNUMjI6NDA6MDUuNTM5WiIsImlkIjoiNWU5NGVhNDU2NjU2NWEwMDE0YmFhNmM1IiwidXBkYXRlZF9hdCI6IjIwMjEtMDYtMjNUMTU6NTg6MzYuODQ2WiIsInVybCI6Imh0dHBzOi8vd3d3LnRoZW1vdmllZGIub3JnL3Jldmlldy81ZTk0ZWE0NTY2NTY1YTAwMTRiYWE2YzUifSx7ImF1dGhvciI6InI5NnNrIiwiYXV0aG9yX2RldGFpbHMiOnsibmFtZSI6IiIsInVzZXJuYW1lIjoicjk2c2siLCJhdmF0YXJfcGF0aCI6Ii9odHRwczovL3d3dy5ncmF2YXRhci5jb20vYXZhdGFyLzk2YzJlMGU0YWM5ODQ1MGY5ZThlM2MwYTBhNDBhYWQ4LmpwZyIsInJhdGluZyI6OS4wfSwiY29udGVudCI6IkEgcXVhbGl0eSBzdGFydCB0byB0aGUgZnJhbmNoaXNlLlxyXG5cclxuSSBzYXkgc3RhcnQsIEkgZ3Vlc3MgdGhhdCBkZXBlbmRzIG9uIHRoZSAoc2VlbWluZ2x5KSBjb250cm92ZXJzaWFsIHdheSBvZiB3YXRjaGluZyB0aGVzZSBmaWxtcyAtIEkndmUgZGVjaWRlZCBvbiByZWxlYXNlIG9yZGVyLCBzbyBpdCdzIHRoZSBiZWdpbm5pbmcgZm9yIG1lIGFueXdheS4gSSd2ZSBoZWFyZCBhIGxvdCBhYm91dCA8ZW0+J1N0YXIgV2Fycyc8L2VtPiBzbyBJIGFtIGV4cGVjdGluZyBiaWcgdGhpbmdzLCB0aGlzIGRpZG4ndCBkaXNhcHBvaW50IHdoYXRzb2V2ZXIuXHJcblxyXG5JIHVucXVlc3Rpb25hYmx5IGVuam95ZWQgdGhpcyEgSWYgSSBkaWRuJ3Qga25vdyB0aGlzIHdhcyByZWxlYXNlZCBpbiAxOTc3IEkgd291bGQgbmV2ZXIgaGF2ZSBndWVzc2VkLCBpdCBzdGlsbCBob2xkcyB1cCBhc3RvbmlzaGluZ2x5IHdlbGwuIFRoZSBzcGVjaWFsIGVmZmVjdHMgYXJlIHNwZWN0YWN1bGFyIGZvciB0aGUgdmFzdCwgdmFzdCBtYWpvcml0eTsgZXZlbiB0aGUgc3R1ZmYgdGhhdCBwZXJoYXBzIGhhc24ndCBhZ2VkIGFzIHN1cHJlbWVseSBzdGlsbCBsb29rcyBzdXBlcmIuXHJcblxyXG5UaGUgY2FzdCBhcmUgYSBqb3kuIEkgYWN0dWFsbHkgd291bGRuJ3Qgc2F5IGFueSBwZXJmb3JtYW5jZSBzZW5zYXRpb25hbGx5IHN0b29kIG91dCwgYnV0IGFsbCB0aGUgYWN0b3JzIGFuZCBhbGwgdGhlIGNoYXJhY3RlcnMgYXJlIHNvIG11Y2ggZnVuIHRvIHdhdGNoIHRvZ2V0aGVyLiBNYXJrIEhhbWlsbCBpcyBpbXByZXNzaXZlIGFzIEx1a2UsIEhhcnJpc29uIEZvcmQgaXMgZW50ZXJ0YWluaW5nIGFzIEhhbiBhbmQgQ2FycmllIEZpc2hlciBpcyBzdXBlciBhcyBMZWlhLiBDcmVkaXQgYWxzbyB0byBKYW1lcyBFYXJsIEpvbmVzIGFuZCBBbGVjIEd1aW5uZXNzLCBhbW9uZyBvdGhlcnMuIERlc3BpdGUgbm90IHdhdGNoaW5nIHVudGlsIG5vdywgSSBsaXRlcmFsbHkgYWxyZWFkeSBrbmV3IGFsbCBvZiB0aGUgY2hhcmFjdGVyIG5hbWVzIC0gc2hvd3MgaG93IHRpbWVsZXNzIHRoZXNlIGFyZS5cclxuXHJcblRoZSBwbG90IG1ha2VzIGZvciB0b3Agbm90Y2ggdmlld2luZywgSSBmb3VuZCB0aGUgcGFjaW5nIHRvIGJlIHBhcnRpY3VsYXJseSBzcG90IG9uLiBBbmQgaG93IGFib3V0IHRoYXQgc2NvcmU/IFN0dXBlbmRvdXMhIEkgcmVhbGx5IGhhdmUgbm8gbmVnYXRpdmVzIGZvciB0aGlzLCBJJ20gc3VyZSBpdCBpc24ndCBwZXJmZWN0IGJ1dCBJIGhhZCBhIHZlcnkgZnVuIHRpbWUgd2l0aCBpdC4iLCJjcmVhdGVkX2F0IjoiMjAyMS0wMi0wMVQwMDo0Mjo0Mi4xMzVaIiwiaWQiOiI2MDE3NGU4MjFiNzBhZTAwM2M2NDM4MzQiLCJ1cGRhdGVkX2F0IjoiMjAyMS0wNi0yM1QxNTo1ODo1MC45NTlaIiwidXJsIjoiaHR0cHM6Ly93d3cudGhlbW92aWVkYi5vcmcvcmV2aWV3LzYwMTc0ZTgyMWI3MGFlMDAzYzY0MzgzNCJ9XSwidG90YWxfcGFnZXMiOjEsInRvdGFsX3Jlc3VsdHMiOjR9
+  recorded_at: Thu, 01 Dec 2022 01:41:56 GMT
+recorded_with: VCR 6.1.0

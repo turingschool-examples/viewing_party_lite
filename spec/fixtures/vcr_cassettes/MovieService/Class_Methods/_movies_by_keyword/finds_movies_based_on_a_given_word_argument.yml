@@ -1,0 +1,77 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=<movie_api_key>&query=Spinal%20Tap
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 01 Dec 2022 01:41:55 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=600
+      Vary:
+      - Accept-Encoding,Accept-Encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 5957ea451aa45a9d254075e89c5df686.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - KGkHlBlX1iE85Vpvu5uG0oGbLalQ4JJeLGlZIRUJ7_Op_Y1jIbOrMg==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/mQoSPZ8LR8d1ExCLWlcp8dlI78G.jpg","genre_ids":[10402,35],"id":11031,"original_language":"en","original_title":"This
+        Is Spinal Tap","overview":"\"This Is Spinal Tap\" shines a light on the self-contained
+        universe of a metal band struggling to get back on the charts, including everything
+        from its complicated history of ups and downs, gold albums, name changes and
+        undersold concert dates, along with the full host of requisite groupies, promoters,
+        hangers-on and historians, sessions, release events and those special behind-the-scenes
+        moments that keep it all real.","popularity":16.11,"poster_path":"/z2LA8eBTSuuPC4NBhIZRNIwpimH.jpg","release_date":"1984-05-04","title":"This
+        Is Spinal Tap","video":false,"vote_average":7.5,"vote_count":1157},{"adult":false,"backdrop_path":"/Arm2YH3FpRmDdguhH57BPAvTXYT.jpg","genre_ids":[10402,35,10770],"id":67872,"original_language":"en","original_title":"The
+        Return of Spinal Tap","overview":"Spinal Tap is back in a whole new feature-length
+        rockumentary. Go behind the scenes and find out where the somewhat-less-than-fab
+        three (Christopher Guest, Michael McKean and Harry Shearer) are now -- and
+        where it all began in Squatney, England. Also, catch up with director Marty
+        DiBergi (Rob Reiner), ex-Polymer marketing whiz Artie Fufkin (Paul Shaffer),
+        and Jeanine (June Chadwick), who now owns a shop specializing in itchy Irish
+        clothing.","popularity":2.154,"poster_path":"/9YoLgSKmLLcwpbY3VjTsZ5MPhlF.jpg","release_date":"1992-12-31","title":"The
+        Return of Spinal Tap","video":false,"vote_average":6.4,"vote_count":9},{"adult":false,"backdrop_path":"/yDRzYOyBZaZ6wb5FIYOHG6vTE0L.jpg","genre_ids":[35],"id":70725,"original_language":"en","original_title":"Spinal
+        Tap: Back from the Dead","overview":"The concept of Back from the Dead is
+        that Spinal Tap has reunited in honor of the 25th anniversary of This Is Spinal
+        Tap, and have launched an \"unwigged and unplugged\" tour. The album is packaged
+        with a DVD featuring commentary on each of the album''s tracks.","popularity":2.923,"poster_path":"/swU9ysUhpZnLsGeNyQV96wUeLX3.jpg","release_date":"2009-06-16","title":"Spinal
+        Tap: Back from the Dead","video":false,"vote_average":6,"vote_count":2},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":401459,"original_language":"en","original_title":"Spinal
+        Tap: The Final Tour","overview":"Spinal Tap, one of England''s loudest bands,
+        makes another final reunion. After all, it''s rock''n''roll. (This is actually
+        a demo reel that Rob Reiner created to get financing for his 1984 film \"This
+        Is Spinal Tap.\"","popularity":1.567,"poster_path":null,"release_date":"1994-12-07","title":"Spinal
+        Tap: The Final Tour","video":false,"vote_average":6,"vote_count":4},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":975225,"original_language":"en","original_title":"This
+        Is Spinal Tap Sequel","overview":"Sequel to This Is Spinal Tap","popularity":0.701,"poster_path":null,"release_date":"","title":"This
+        Is Spinal Tap Sequel","video":false,"vote_average":0,"vote_count":0}],"total_pages":1,"total_results":5}'
+  recorded_at: Thu, 01 Dec 2022 01:41:55 GMT
+recorded_with: VCR 6.1.0

@@ -28,6 +28,7 @@ class MovieService
 
   def self.movie_reviews(movie_id)
     response = conn.get("movie/#{movie_id}/reviews?api_key=#{ENV['movie_api_key']}")
-    JSON.parse(response.body, symbolize_names: true)
+    json = JSON.parse(response.body, symbolize_names: true)
+    json[:results]
   end
 end

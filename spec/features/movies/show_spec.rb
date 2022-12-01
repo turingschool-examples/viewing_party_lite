@@ -1,21 +1,3 @@
-# frozen_string_literal: true
-
-# Button to create a viewing party
-# Button to return to the Discover Page
-# Details This viewing party button should take the user to the new viewing party page (/users/:user_id/movies/:movie_id/viewing-party/new)
-
-# And I should see the following information about the movie:
-
-# Movie Title
-# Vote Average of the movie
-# Runtime in hours & minutes
-# Genre(s) associated to movie
-# Summary description
-# List the first 10 cast members (characters&actress/actors)
-# Count of total reviews
-# Each review's author and information
-# Details: This information should come from 3 different endpoints from The Movie DB API
-
 require 'rails_helper'
 
 RSpec.describe 'movies show page' do
@@ -27,7 +9,7 @@ RSpec.describe 'movies show page' do
   end
 
   describe 'When I visit /users/:user_id/movies/:movie_id' do
-    it 'I see a button to create a viewing party' do
+    it 'I see a button to create a viewing party', :vcr do
       visit "/users/#{@user1.id}/movies/#{@movie[:id]}"
 
       expect(page).to have_content('Viewing Party Lite')
@@ -36,7 +18,7 @@ RSpec.describe 'movies show page' do
     end
 
 
-    it 'has Button to return to the Discover Page' do
+    it 'has Button to return to the Discover Page', :vcr do
       visit "/users/#{@user1.id}/movies/#{@movie[:id]}"
 
       click_button('Discover Movies')
@@ -44,7 +26,7 @@ RSpec.describe 'movies show page' do
       expect(current_path).to eq("/users/#{@user1.id}/discover")
     end
 
-    it 'has movie information' do
+    it 'has movie information', :vcr do
       visit "/users/#{@user1.id}/movies/#{@movie[:id]}"
       #  save_and_open_page
       expect(page).to have_content('Viewing Party Lite')
@@ -56,7 +38,7 @@ RSpec.describe 'movies show page' do
       expect(page).to have_content((@movie[:overview]))
     end
 
-    it 'I see 10 cast members from the movie with the actor and character names' do
+    it 'I see 10 cast members from the movie with the actor and character names', :vcr do
       visit "/users/#{@user1.id}/movies/#{@movie[:id]}"
 
       within("#cast") do
@@ -64,11 +46,19 @@ RSpec.describe 'movies show page' do
         expect(page).to have_content("Actor", count: 10)
         expect(page).to have_content("Character", count: 10)
       end
+    end
 
+    it "I see a list of reviews for the movie including the author's name", :vcr do
+      visit "/users/#{@user1.id}/movies/#{@movie[:id]}"
+      # save_and_open_page
+
+      within("#reviews") do
+        expect(page).to have_content("Author:")
+      end
     end
 
     describe 'when I click create a viewing party button' do
-      it 'should redirect me to the new viewing party page' do
+      it 'should redirect me to the new viewing party page', :vcr do
         visit "/users/#{@user1.id}/movies/#{@movie[:id]}"
 
         click_button("Create Viewing Party for #{@movie[:title]}")

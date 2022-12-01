@@ -34,4 +34,14 @@
     <p><b>Actor: </b><%= actor[:name] %>, <b>Character: </b><%= actor[:character] %></p>
   <% end %>
 </section>
+
 <hr>
+
+<section id="reviews">
+   <p><b>Reviews: </b></p>
+   <% @reviews.each do |review| %>
+    <p><b>Author: </b><%= review[:author] %></p>
+    <p><%= review[:content] %></p>
+    <hr>
+  <% end %>
+</section>
