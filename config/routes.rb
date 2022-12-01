@@ -3,7 +3,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :create] do 
     resources :discover, only: [:index]
-    resources :movies, only: [:index]
+    resources :movies, only: [:index] do 
+      resources :viewing_parties, only: [:new, :create]
+    end
   end
 
   get '/', to: 'users#index'
