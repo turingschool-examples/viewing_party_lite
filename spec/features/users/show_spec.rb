@@ -40,7 +40,9 @@ RSpec.describe 'The User show page' do
       end
 
       it 'I see a section that lists all viewing parties' do
+        visit user_path(@user1)
 
+        expect(page).to have_content("Existing Viewing Parties")
       end
     end
   end
