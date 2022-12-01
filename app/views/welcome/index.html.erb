@@ -1,0 +1,10 @@
+<%= button_to("Create a New User", "/users/new", method: :get)  %>
+<%= button_to("Log In", "/login", method: :get)  %>
+
+
+<div id='existing-users'>
+    <p> Existing Users </p>
+    <% @users.each do |user| %>
+        <%= link_to("#{user.email}'s Dashboard", "/users/#{user.id}") %>
+    <% end %>
+</div>

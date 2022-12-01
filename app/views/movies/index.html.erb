@@ -1,0 +1,11 @@
+<% if  @search_term.present? %>
+    <h2>Movie results for: <%= @search_term %> </h2>
+<% else %>
+    <h2> Top Movies </h2>
+<% end %>
+
+<h3> <%= button_to "Discover Page", "/users/#{params[:user_id]}/discover", method: :get %></h3>
+
+<% @results.each do |movie| %>
+    <p> <%= link_to movie.title, "/users/#{params[:user_id]}/movies/#{movie.id}" %>                                 Vote Average: <%= movie.vote_average %></p>
+<% end %>
