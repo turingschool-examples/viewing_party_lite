@@ -17,7 +17,7 @@ RSpec.describe 'The movie show page' do
     it 'displays the movie details: title, vote average, runtime, genre(s), summary', :vcr do 
       user = User.create!(name: "Amanda", email: "amanda@turing.edu")
       visit user_movie_path(user, 128)
-save_and_open_page
+
       expect(page).to have_content("Princess Mononoke")
       expect(page).to have_content("Vote: 8.348")
       expect(page).to have_content("Runtime: 2hr 14min")
@@ -26,15 +26,29 @@ save_and_open_page
       expect(page).to have_content("Ashitaka, a prince of the disappearing Emishi people, is cursed by a demonized boar god and must journey to the west to find a cure. Along the way, he encounters San, a young human woman fighting to protect the forest, and Lady Eboshi, who is trying to destroy it. Ashitaka must find a way to bring balance to this conflict.")
     end
 
-    xit 'displays the first 10 cast members' do 
+    it 'displays the first 10 cast members', :vcr do 
       user = User.create!(name: "Amanda", email: "amanda@turing.edu")
       visit user_movie_path(user, 128)
 
-
+      expect(page).to have_content("Ashitaka (voice): Youji Matsuda")
+      expect(page).to have_content("San (voice): Yuriko Ishida")
+      expect(page).to have_content("Eboshi-gozen (voice): Yūko Tanaka")
+      expect(page).to have_content("Jiko-bô (voice): Kaoru Kobayashi")
+      expect(page).to have_content("Kouroku (voice): Masahiko Nishimura")
+      expect(page).to have_content("Gonza (voice): Tsunehiko Kamijô")
+      expect(page).to have_content("Toki (voice): Sumi Shimamoto")
+      expect(page).to have_content("Yama-inu (voice): Tetsu Watanabe")
+      expect(page).to have_content("Tatari-gami (voice): Mitsuru Satô")
+      expect(page).to have_content("Usi-kai (voice): Akira Nagoya")
     end
 
-    xit 'displays count of total reviews and all the authors and their information' do 
+    it 'displays count of total reviews and all the authors and their information', :vcr do 
+      user = User.create!(name: "Amanda", email: "amanda@turing.edu")
+      visit user_movie_path(user, 128)
 
+      expect(page).to have_content("2 Reviews:")
+      expect(page).to have_content("Andres Gomez")
+      expect(page).to have_content("tmdb79319797")
     end
   end
 end
