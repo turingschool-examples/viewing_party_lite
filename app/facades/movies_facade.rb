@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MoviesFacade
   def self.top_rated
     json = MoviesService.top_rated_movies
@@ -19,5 +21,11 @@ class MoviesFacade
     json = MoviesService.details(movie_id)
 
     "https://image.tmdb.org/t/p/w500/#{json[:poster_path]}"
+  end
+
+  def self.get_movie_heavy(movie_id)
+    json = MoviesService.details(movie_id)
+
+    MovieHeavy.new(json)
   end
 end
