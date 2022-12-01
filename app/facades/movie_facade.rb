@@ -1,4 +1,4 @@
-require_relative 'services/movie_service'
+require_relative '../services/movie_service'
 
 class MovieFacade
   def self.movie_title(movie_id)
