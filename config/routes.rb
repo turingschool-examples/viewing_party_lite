@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root("welcome#index")
 
   resources :users, except: [:new, :create] do 
-    resources :movies, except: [:show]
+    resources :movies
     get '/discover', to: 'discover#index'
     # get '/movies', to: 'movies#top_rated'
     # get '/movies/search', to: 'movies#search'

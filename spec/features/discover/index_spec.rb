@@ -8,7 +8,7 @@ RSpec.describe("discover index page ") do
       @mary = User.create!(      name: "Mary",       email: "mary.smith@gmail.com")
     end
 
-    it("has a button to find top rated movies") do
+    it 'has a button to find top rated movies', :vcr do
       visit(user_discover_path(@steve))
       click_button("Find Top Rated Movies")
       expect(current_path).to(eq("/users/#{@steve.id}/movies"))
