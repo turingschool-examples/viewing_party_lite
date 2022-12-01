@@ -13,7 +13,7 @@
 
     <p>
     <%= f.label :duration, 'Duration of Party' %>
-    <%= f.number_field :duration, min: @movie.runtime %>
+    <%= f.number_field :duration, min: @movie.runtime, value: @movie.runtime %>
     </p>
 
     <p>
