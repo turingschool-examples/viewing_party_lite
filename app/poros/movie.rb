@@ -3,7 +3,7 @@ class Movie
 
   def initialize(data)
     @id = data[:id]
-    @title = data[:original_title]
+    @title = data[:title]
     @vote = data[:vote_average]
     
   end

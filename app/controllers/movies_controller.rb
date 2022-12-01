@@ -11,4 +11,11 @@ class MoviesController < ApplicationController
                 MoviesSearch.new.movies_keyword(params[:q])
               end
   end
+
+  def show 
+    @user = User.find(params[:user_id])
+    @movie = MovieDetailsSearch.new.movie(params[:id])
+    # @cast_list = 
+    # @reviews = 
+  end
 end

@@ -1,0 +1,23 @@
+<style>
+ul#details li {
+  display:inline;
+}
+
+ul.even_horizontal {
+  display: flex;
+  justify-content: space-evenly;
+}
+</style>
+
+<center>
+  <h2><%= @movie.title %></h2>
+  <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %><br>
+  <%= button_to "Create Viewing Party For #{@movie.title}", new_user_movie_viewing_party_path(@user, @movie.id), method: :get %>
+</center>
+<br><br>
+
+<ul class="even_horizontal" id="details">
+    <li>Vote: <%= @movie.vote %></li>
+    <li>Runtime: <%= @movie.runtime_in_hours_and_min %></li>
+    <li>Genre: <%= @movie.genres.join(", ") %></li>
+</ul>  
