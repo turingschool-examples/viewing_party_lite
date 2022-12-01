@@ -148,28 +148,10 @@
           null
         ]
       },
-      "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/models/discover.rb": {
         "lines": [
           0,
           null,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/jobs/application_job.rb": {
-        "lines": [
-          0,
           0
         ],
         "branches": {
@@ -183,28 +165,8 @@
         ],
         "branches": {
         }
-      },
-      "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/channels/application_cable/connection.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/emilyport/Desktop/Turing/mod_3/projects/viewing_party_lite/app/channels/application_cable/channel.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1669868382
+    "timestamp": 1669868735
   }
 }
