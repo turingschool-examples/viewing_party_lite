@@ -12,10 +12,14 @@ class ViewParty < ApplicationRecord
   end
 
   def file_path
-    MovieFacade.posters(self).poster_path
+    MovieFacade.new(self.movie_id).movie_by_id.poster_path
   end
 
   def host?(user)
     user_view_parties.find_by(user_id: user.id).host
+  end
+
+  def members
+    User.where(id: self.user_view_parties.pluck('user_id'))
   end
 end

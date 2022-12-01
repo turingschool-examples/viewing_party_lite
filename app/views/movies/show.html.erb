@@ -1,16 +1,16 @@
 <body>
   <div class="flex-container">
     <div class="flex-items" id="title">
-      <h3><%= @movie.title %></h3>
+      <h3><%= @movie.movie_by_id.title %></h3>
       <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get, class: 'button2' %>
-      <%= button_to "Create Viewing Party for #{@movie.title}", new_user_movie_view_party_path(@user, @movie.id), method: :get, class: 'button2' %>
+      <%= button_to "Create Viewing Party for #{@movie.movie_by_id.title}", new_user_movie_view_party_path(@user, @movie.movie_by_id.id), method: :get, class: 'button2' %>
     </div>
 
     <div class="flex-items" style='margin-block-start: 0.5em; margin-block-end: 0.0em;'>
       <div style='display: flex; flex-direction: row; justify-content: space-around;'>
-        <div><%= "Vote: #{@movie.vote_average.round(2)}" %></div>
-        <div><%= "Runtime: #{@movie.runtime}" %></div>
-        <div><%= "Genre: #{@movie.genres.map { |genre| genre[:name] }.join(', ')}" %></div>
+        <div><%= "Vote: #{@movie.movie_by_id.vote_average.round(2)}" %></div>
+        <div><%= "Runtime: #{@movie.movie_by_id.runtime}" %></div>
+        <div><%= "Genre: #{@movie.movie_by_id.genres.map { |genre| genre[:name] }.join(', ')}" %></div>
       </div>
     </div>
 
@@ -18,17 +18,17 @@
 
     <div class="flex-items" style='text-align: left;'>
       <p>Summary:</p>
-      <%= @movie.overview %>
+      <%= @movie.movie_by_id.overview %>
     </div>
 
     <div class="flex-items" style='text-align: left;'>
       <p>Cast:</p>
-      <p><%= @cast.cast.first(10).join(', ') %></p>
+      <p><%= @movie.cast.first(10).join(', ') %></p>
     </div>
 
     <div class="flex-items" style='text-align: left;'>
-      <p><%= @reviews.reviews.count %> Reviews:</p>
-      <% @reviews.reviews.each do |review| %>
+      <p><%= @movie.reviews.count %> Reviews:</p>
+      <% @movie.reviews.each do |review| %>
         <p><%= review %></p>
       <% end %>
     </div>

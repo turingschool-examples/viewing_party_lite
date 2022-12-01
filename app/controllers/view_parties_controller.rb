@@ -3,12 +3,12 @@
 class ViewPartiesController < ApplicationController
   def new
     @user = User.find(params[:user_id])
-    @movie = MovieFacade.movie_by_id(params[:movie_id])
+    @movie = MovieFacade.new(params[:movie_id]).movie_by_id
   end
 
   def create
     user = User.find(params[:user_id])
-    movie = MovieFacade.movie_by_id(params[:movie_id])
+    movie = MovieFacade.new(params[:movie_id]).movie_by_id
     params[:invite_users].shift
     invitees = User.find(params[:invite_users])
     new_party = ViewParty.new(view_party_params)
