@@ -20,4 +20,10 @@ class MoviesFacade
 
     "https://image.tmdb.org/t/p/w500/#{json[:poster_path]}"
   end
+
+  def self.get_movie_heavy(movie_id) 
+    json = MoviesService.details(movie_id)
+
+    MovieHeavy.new(json)
+  end
 end
