@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
-  def index; end
+  def index
+    require 'pry'
+    binding.pry
+  end
 
   def show
     @user = User.find(params[:id])
@@ -9,7 +12,9 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def discover; end
+  def discover
+    redirect_to user_movies_path
+  end
 
   def create
     @user = User.new(user_params)
