@@ -11,8 +11,8 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to user_path(@user.id)
     else
-      redirect_to register_path
       flash[:alert] = "Error: Email already linked with an account"
+      redirect_to register_path
     end
   end
 
