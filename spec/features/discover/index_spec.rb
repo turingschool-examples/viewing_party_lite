@@ -6,7 +6,7 @@ RSpec.describe 'user discover movies page' do
     @user_2 = User.create!(name: 'Pam', email: 'pam.halpert@gmail.com')
   end
   
-  it 'has a button to discover top rated movies' do
+  it 'has a button to discover top rated movies', :vcr do
     visit user_discover_index_path(@user_1)
 
     expect(page).to have_button("Find Top Rated Movies")
@@ -16,7 +16,7 @@ RSpec.describe 'user discover movies page' do
     expect(current_path).to eq("/users/#{@user_1.id}/movies")
   end
 
-  it 'has a text field to enter keywords and button to search by movie title' do
+  it 'has a text field to enter keywords and button to search by movie title', :vcr do
     visit user_discover_index_path(@user_1)
 
     expect(page).to have_field(:search)

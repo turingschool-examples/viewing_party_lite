@@ -6,10 +6,7 @@ RSpec.describe 'movies index' do
     @user_2 = User.create!(name: 'Pam', email: 'pam.halpert@gmail.com')
   end
 
-  it 'has the title as a link to the movie details page from top rated movies' do
-    # json_response = File.read('spec/fixtures/top_movies.json')
-    # stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated").to_return(status: 200, body: json_response)
-
+  it 'has the title as a link to the movie details page from top rated movies', :vcr do
     visit user_discover_index_path(@user_1)
 
     expect(page).to have_button("Find Top Rated Movies")
@@ -22,10 +19,7 @@ RSpec.describe 'movies index' do
     expect(page).to_not have_content("Finding Nemo")
   end
 
-  it 'has the vote average for the movie from the top rated movies' do
-    # json_response = File.read('spec/fixtures/top_movies.json')
-    # stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated").to_return(status: 200, body: json_response)
-
+  it 'has the vote average for the movie from the top rated movies', :vcr do
     visit user_discover_index_path(@user_1)
 
     expect(page).to have_button("Find Top Rated Movies")
@@ -36,10 +30,7 @@ RSpec.describe 'movies index' do
     expect(page).to have_content("Vote average: 8.7")
   end
 
-  it 'has the title as a link to the movie details page from search field' do
-    # json_response = File.read('spec/fixtures/top_movies.json')
-    # stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated").to_return(status: 200, body: json_response)
-
+  it 'has the title as a link to the movie details page from search field', :vcr do
     visit user_discover_index_path(@user_1)
 
     expect(page).to have_field(:search)
@@ -54,10 +45,7 @@ RSpec.describe 'movies index' do
     expect(page).to_not have_content("20th Century Girl")
   end
 
-  it 'has the vote average for the movie from the search field' do
-    # json_response = File.read('spec/fixtures/top_movies.json')
-    # stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated").to_return(status: 200, body: json_response)
-
+  it 'has the vote average for the movie from the search field', :vcr do
     visit user_discover_index_path(@user_1)
 
     expect(page).to have_field(:search)
