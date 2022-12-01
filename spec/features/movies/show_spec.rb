@@ -14,7 +14,7 @@ RSpec.describe 'The Show Page', type: :feature do # rubocop:disable Metrics/Bloc
 
   describe 'When I visit the user movie path' do
     it 'I see a button to return to the "Discover Page"' do
-      save_and_open_page
+
     end
 
     xit "I see a button to 'Create Viewing Party for Fight Club'" do

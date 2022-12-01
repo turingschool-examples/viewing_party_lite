@@ -28,13 +28,13 @@
   </div>
 
   <main class='cards'>
-    <% @view_parties.each do |party| %>
+    <% @view_parties.each do |party|%>
       <article class='card'>
         <img src=<%="http://image.tmdb.org/t/p/original#{party.file_path}"%>>
         <div class='text' id=<%=party.movie_id %>>
           <h3><%= party.movie_name %></h3>
           <p><%= party.datetime.strftime("%A, %d %B %Y") %></p>
-          <p><%= if party.host?(@user) then "Hoasting" else "Invited" end %></p>
+          <p><%= if party.host?(@user) then "Hosting" else "Invited" end %></p>
         </div>
       </article>
     <% end %>

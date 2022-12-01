@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'the Movies Index Page', type: :feature do
   let!(:user_1) { create(:user) }
+  let!(:movie_1) {Movie.new(id: 238, title: 'The Godfather', vote_average: 8.7, overview: 'spanning the years of...', runtime: 175, genres: 'drama' )}
+
   before(:each) do
     VCR.insert_cassette "top rated"
     visit "/users/#{user_1.id}/discover"
@@ -17,8 +19,8 @@ RSpec.describe 'the Movies Index Page', type: :feature do
       expect(current_path).to eq(user_movies_path(user_1))
 
       within "#movie-results" do
-        expect(page).to have_content("The Godfather")
-        expect(page).to have_content("8.7")
+        expect(page).to have_content(movie_1.title)
+        expect(page).to have_content(movie_1.vote_average)
       end
     end
 
