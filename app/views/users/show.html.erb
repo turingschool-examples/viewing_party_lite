@@ -1,12 +1,24 @@
-<h3><%= @user.name %>'s Dashboard</h3>
+<%=content_for :subtitle do%>
+  <h3><%= @user.name %>'s Dashboard</h3>
+  <%end%>
 
-<%= button_to "Discover Movies", discover_path(@user), method: :get %>
-<p>-------------------------------------------</p>
+<%= render 'partials/discover_button' %>
 
-<div id="viewing-parties">
-  <% @user.parties.each do |party| %>
-    <p><%= @movie_title %></p>
-    <p><%= party.date.strftime("%B %e, %Y") %></p>
-    <p><%= party.start_time.strftime("%l:%M %P") %></p>
+<div id='user-parties' style='width:100%; overflow-x: scroll; display: flex'>
+  <% @user.parties.each_with_index do |party, index| %>
+    <div class='party-card' id='party-<%=party.id%>'style='float: left; margin: 15px'>
+      
+      <div class="poster">
+      <!-- insert image code here -->
+      </div>
+
+      <p class='title'> <%= @movie_title %></p>
+      <p><%= party.date.strftime("%B %e, %Y") %></p>
+      <p><%= party.start_time.strftime("%l:%M %P") %></p>
+
+      <!-- insert more movie info code here: 
+      working title and user party status -->
+
+    </div>
   <% end %>
 </div>

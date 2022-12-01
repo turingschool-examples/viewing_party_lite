@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :movies, only: [:index]
   end
 
+  get '/users', to: 'welcome#landing'
   get '/register', to: 'users#new', as: 'new_user'
   get '/users/:id/discover', to: 'users#discover', as: 'discover'
 end
