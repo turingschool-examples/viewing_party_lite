@@ -10,6 +10,6 @@ class User < ApplicationRecord
   end
 
   def invited_parties
-    parties.where(host_id: !self.id)
+    parties.where.not(host_id: self.id)
   end
 end
