@@ -49,5 +49,16 @@ RSpec.describe MovieService do
         expect(movies[:results].count).to eq(20)
       end
     end
+
+    describe "#first_ten_cast" do
+      it 'finds the first 10 cast members of a movie' do
+        movie_id = 11
+        movie = MovieService.movie_by_id(movie_id)
+        cast = MovieService.first_ten_cast(movie_id)
+
+        expect(cast.count).to eq(10)
+        # expect(cast.first).to eq("Actor: Mark Hamill, Character: Luke Skywalker")
+      end
+    end
   end
 end

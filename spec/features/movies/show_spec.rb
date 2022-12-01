@@ -56,6 +56,17 @@ RSpec.describe 'movies show page' do
       expect(page).to have_content((@movie[:overview]))
     end
 
+    it 'I see 10 cast members from the movie with the actor and character names' do
+      visit "/users/#{@user1.id}/movies/#{@movie[:id]}"
+
+      within("#cast") do
+        expect(page).to have_content("Cast:")
+        expect(page).to have_content("Actor", count: 10)
+        expect(page).to have_content("Character", count: 10)
+      end
+
+    end
+
     describe 'when I click create a viewing party button' do
       it 'should redirect me to the new viewing party page' do
         visit "/users/#{@user1.id}/movies/#{@movie[:id]}"

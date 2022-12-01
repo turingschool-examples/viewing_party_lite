@@ -15,15 +15,23 @@
 </section>
 
 <section id="genres">
-  <p>Genre(s): </p>
+  <center><p>Genre(s): </p>
     <% @movie[:genres].each do |g| %>
       | <%= g[:name] %> |
-    <% end %>
+    <% end %><center>
   </section>
 
   <section id= "movie_summary">
-    <p><b>Summary</b></p>
+    <p><b><center>Summary<center></b></p>
     <p><%= @movie[:overview] %></p>
   </section>
 
+<hr>
+
+<section id="cast">
+  <p><b>Cast: </b></p>
+  <% @cast.each do |actor| %>
+    <p><b>Actor: </b><%= actor[:name] %>, <b>Character: </b><%= actor[:character] %></p>
+  <% end %>
+</section>
 <hr>
