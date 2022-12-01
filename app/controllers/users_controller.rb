@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  def index
+  def discover
     @user = User.find(params[:id])
   end
 
