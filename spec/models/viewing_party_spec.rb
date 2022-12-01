@@ -16,4 +16,31 @@ RSpec.describe ViewingParty do
     it { should validate_presence_of :date }
     it { should validate_presence_of :start_time }
   end
+
+  describe "Instance Methods" do
+
+    before :each do
+      @viewing_party = ViewingParty.create!(movie_id: 11, duration: 200, date: 'December 14, 2022', start_time: '6:30 PM')
+    end
+
+    describe "#viewing_party_movie" do
+      it "returns a movie from a movie_id", :vcr do
+
+        expect(@viewing_party.viewing_party_movie[:title]).to eq("Star Wars")
+      end
+    end
+
+    describe "#poster_path" do
+      it "finds the poster path", :vcr do
+
+        expect(@viewing_party.poster_path).to eq("/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg")
+      end
+    end
+
+    describe "#full_poster_path" do
+      it "creates the full poster url", :vcr do
+        expect(@viewing_party.full_poster_path).to eq("https://image.tmdb.org/t/p/original/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg")
+      end
+    end
+  end
 end

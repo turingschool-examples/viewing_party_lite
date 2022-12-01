@@ -1,0 +1,47 @@
+<section id="headings" >
+  <h1><center>Viewing Party Lite<center></h1>
+  <p><center><%= @movie[:title]%><center></p>
+</section>
+
+<section id= "buttons"><center>
+  <p><%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %></p>
+  <p><%= button_to "Create Viewing Party for #{@movie[:title]}", "/users/#{@user.id}/movies/#{@movie[:id]}/viewing-party/new"%></p>
+  <center>
+</section>
+
+<section id="stats">
+  <p><center>Rating: <%= @movie[:vote_average].round(2)%><center></p>
+  <p><center>Runtime:<%= "#{@movie[:runtime]} Minutes" %><center></p>
+</section>
+
+<section id="genres">
+  <center><p>Genre(s): </p>
+    <% @movie[:genres].each do |g| %>
+      | <%= g[:name] %> |
+    <% end %><center>
+  </section>
+
+  <section id= "movie_summary">
+    <p><b><center>Summary<center></b></p>
+    <p><%= @movie[:overview] %></p>
+  </section>
+
+<hr>
+
+<section id="cast">
+  <p><b>Cast: </b></p>
+  <% @cast.each do |actor| %>
+    <p><b>Actor: </b><%= actor[:name] %>, <b>Character: </b><%= actor[:character] %></p>
+  <% end %>
+</section>
+
+<hr>
+
+<section id="reviews">
+   <p><b>Reviews: </b></p>
+   <% @reviews.each do |review| %>
+    <p><b>Author: </b><%= review[:author] %></p>
+    <p><%= review[:content] %></p>
+    <hr>
+  <% end %>
+</section>
