@@ -13,7 +13,13 @@ RSpec.describe 'The Discover Movies Page' do
         visit user_discover_index_path(@user1)
 
         expect(page).to have_button('Find Top Rated Movies')
+
+        click_button('Find Top Rated Movies')
+
+        expect(current_path).to eq(user_movies_path(@user1))
       end
+
+
     end
   end
 
