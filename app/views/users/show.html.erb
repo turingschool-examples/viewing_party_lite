@@ -5,7 +5,7 @@
     </div>
 
     <div class="flex-items" id="discover_movies_button">
-      <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get, class: "button1" %>
+      <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get, class: "button2" %>
     </div>
 
     <hr class='demo'>
@@ -19,6 +19,7 @@
             <p><%= party.datetime.strftime("%A, %d %B %Y") %></p>
             <p>&nbsp;<%= party.datetime.strftime("%l:%M %P") %></p>
             <p><%= if party.host?(@user) then "Hosting" else "Invited" end %></p>
+            <p><%= party.members.map { |member| member.name }.join(', ') %></p>
           </div>
         </article>
       <% end %>

@@ -18,4 +18,9 @@ class ViewParty < ApplicationRecord
   def host?(user)
     user_view_parties.find_by(user_id: user.id).host
   end
+
+  def members
+    # binding.pry
+    User.where(id: self.user_view_parties.pluck('user_id'))
+  end
 end
