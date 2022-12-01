@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require './app/services/movies_service'
 
 class MovieHeavy

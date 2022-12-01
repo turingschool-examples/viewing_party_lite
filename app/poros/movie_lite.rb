@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MovieLite
   attr_reader :id, :movie_title, :vote_average
 

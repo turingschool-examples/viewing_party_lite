@@ -1,25 +1,27 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe 'the movies result page' do 
-  describe 'layout' do 
-    before(:each) do 
+RSpec.describe 'the movies result page' do
+  describe 'layout' do
+    before(:each) do
       @user1 = create(:user)
 
-      VCR.use_cassette('top_rated_movies') do 
+      VCR.use_cassette('top_rated_movies') do
         visit "/users/#{@user1.id}/discover"
         click_button 'Discover Top Rated Movies'
       end
     end
 
-    it 'has a button to return to the discover page' do 
+    it 'has a button to return to the discover page' do
       click_button 'Discover Page'
       expect(current_path).to eq(user_discover_index_path(@user1))
     end
   end
 
-  describe 'top rated movies' do 
-    before(:each) do 
-      VCR.use_cassette('top_rated_movies') do 
+  describe 'top rated movies' do
+    before(:each) do
+      VCR.use_cassette('top_rated_movies') do
         movies = MoviesService.top_rated_movies
         @first_movie = movies[:results].first
         @last_movie = movies[:results].last
@@ -27,14 +29,14 @@ RSpec.describe 'the movies result page' do
 
       @user1 = create(:user)
 
-      VCR.use_cassette('top_rated_movies') do 
+      VCR.use_cassette('top_rated_movies') do
         visit "/users/#{@user1.id}/discover"
         click_button 'Discover Top Rated Movies'
       end
     end
 
-    it 'i see the movie title as a link to the movie details page and the vote average of the movie' do 
-      within "#movies" do 
+    it 'i see the movie title as a link to the movie details page and the vote average of the movie' do
+      within '#movies' do
         expect(page).to have_link(@first_movie[:title])
         expect(page).to have_content(@first_movie[:vote_average])
 
@@ -44,9 +46,9 @@ RSpec.describe 'the movies result page' do
     end
   end
 
-  describe 'movie search' do 
-    before(:each) do 
-      VCR.use_cassette('search_godfather') do 
+  describe 'movie search' do
+    before(:each) do
+      VCR.use_cassette('search_godfather') do
         movies = MoviesService.search('godfather')
         @first_movie = movies[:results].first
         @last_movie = movies[:results].last
@@ -54,7 +56,7 @@ RSpec.describe 'the movies result page' do
 
       @user1 = create(:user)
 
-      VCR.use_cassette('search_godfather') do 
+      VCR.use_cassette('search_godfather') do
         visit "/users/#{@user1.id}/discover"
         fill_in 'Search', with: 'godfather'
         click_button 'Search by Movie Title'
@@ -62,7 +64,7 @@ RSpec.describe 'the movies result page' do
     end
 
     it 'i see the movie title as a link to the movie details page and the vote average of the movie' do
-      within "#movies" do 
+      within '#movies' do
         expect(page).to have_link(@first_movie[:title])
         expect(page).to have_content(@first_movie[:vote_average])
 
@@ -71,12 +73,12 @@ RSpec.describe 'the movies result page' do
       end
     end
 
-    it 'displays search query' do 
+    it 'displays search query' do
       expect(page).to have_content('Movie results for: "godfather"')
     end
 
-    it 'displays no results found if search unsuccessful' do 
-      VCR.use_cassette('no_results_search') do 
+    it 'displays no results found if search unsuccessful' do
+      VCR.use_cassette('no_results_search') do
         visit "/users/#{@user1.id}/discover"
         fill_in 'Search', with: '1098236'
         click_button 'Search by Movie Title'

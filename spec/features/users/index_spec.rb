@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Landing Page' do
@@ -7,7 +9,7 @@ RSpec.describe 'Landing Page' do
     visit '/'
   end
 
-  describe 'as a user' do 
+  describe 'as a user' do
     it 'I see the title of the application' do
       expect(page).to have_content('Viewing Party')
     end
@@ -19,7 +21,7 @@ RSpec.describe 'Landing Page' do
     end
 
     it 'I see a list of existing users' do
-      within("#users") do
+      within('#users') do
         expect(page).to have_content(@user1.name)
         expect(page).to have_content(@user2.name)
       end
