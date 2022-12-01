@@ -1,15 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
+<style>
+  .center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+
+</style>
+
     <title>ViewingPartyLite</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
+    <div class="center">
+      <center><h1>Viewing Party</h1></center>
+    </div>
+      <div class="topleft">
+        <%= link_to "Home", root_path, style: "color:black;padding-left:1em" %>
+      </div>
+      <hr>
   </head>
 
   <body>
+    <% flash.each do |type, msg| %>
+    <div id="flash-messages">
+      <%= msg %>
+    </div>
+    <% end %>
     <%= yield %>
+
   </body>
 </html>
