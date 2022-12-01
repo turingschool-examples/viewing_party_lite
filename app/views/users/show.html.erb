@@ -10,15 +10,21 @@
 </div>
 <hr>
 <div class="row justify-content-center" id="parties">
-  <b>Viewing Parties</b>
+  <h3>Viewing Parties</h3>
   <div id="invited_to">
+  <h4>Invitations</h4>
     <%@parties_invited_to.each do |party|%>
       <div id="party_<%=party.id%>">
-        <%movie = %>
+        <%party_movie = party.movie_details%>
+        <%=image_tag party_movie.poster_path%>
+        <%=link_to party_movie.title, user_movie_path(@user, party_movie.id)%> 
+        Event Time: <%%>
+        Host:
       </div>
     <%end%>
   </div>
   <div id="hosting">
+    <h4>Hosted Parties</h4>
     <%@parties_invited_to.each do |party|%>
       <div id="party_<%=party.id%>">
       </div>

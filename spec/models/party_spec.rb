@@ -16,11 +16,11 @@ RSpec.describe Party, type: :model do
       @user3 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.free_email)
       @user4 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.free_email)
 
-      @party1 = Party.create!(date: (DateTime.now + rand(90).days), start_time: "#{rand(1..24)}:00", movie_title: "Up", duration: (240 + rand(30)))
-      @party2 = Party.create!(date: (DateTime.now + rand(90).days), start_time: "#{rand(1..24)}:00", movie_title: "Alien", duration: (240 + rand(30)))
-      @party3 = Party.create!(date: (DateTime.now + rand(90).days), start_time: "#{rand(1..24)}:00", movie_title: "Whiplash", duration: (240 + rand(30)))
-      @party4 = Party.create!(date: (DateTime.now + rand(90).days), start_time: "#{rand(1..24)}:00", movie_title: "Toy Story", duration: (240 + rand(30)))
-      @party5 = Party.create!(date: (DateTime.now + rand(90).days), start_time: "#{rand(1..24)}:00", movie_title: "Brave", duration: (240 + rand(30)))
+      @party1 = Party.create!(date: (Date.new + rand(90).days), start_time: "#{rand(1..24)}:00", movie_title: "Up", duration: (240 + rand(30)))
+      @party2 = Party.create!(date: (Date.new + rand(90).days), start_time: "#{rand(1..24)}:00", movie_title: "Alien", duration: (240 + rand(30)))
+      @party3 = Party.create!(date: (Date.new + rand(90).days), start_time: "#{rand(1..24)}:00", movie_title: "Whiplash", duration: (240 + rand(30)))
+      @party4 = Party.create!(date: (Date.new + rand(90).days), start_time: "#{rand(1..24)}:00", movie_title: "Toy Story", duration: (240 + rand(30)))
+      @party5 = Party.create!(date: (Date.new + rand(90).days), start_time: "#{rand(1..24)}:00", movie_title: "Brave", duration: (240 + rand(30)))
       
       @party_user1 = PartyUser.create!(user_id: @user1.id, party_id: @party1.id, host: true)
       @party_user2 = PartyUser.create!(user_id: @user1.id, party_id: @party2.id, host: true)
