@@ -27,9 +27,9 @@ RSpec.describe 'New viewing party page' do
      expect(page).to have_field("duration", with: 134)
      expect(page).to have_field("date")
      expect(page).to have_field("start_time")
-     expect(page).to have_field("#{user2.id}")
-     expect(page).to have_field("#{user3.id}")
+     expect(page).to have_field("invitees[]")
      expect(page).to have_button("Create Party")
+   
    end
 
    it 'returns the user back to their dashboard after create party button is clicked', :vcr do 
@@ -40,10 +40,21 @@ RSpec.describe 'New viewing party page' do
      fill_in("duration", with: 150)
      fill_in("date", with: "2022/12/01")
      fill_in("start_time", with: "19:00")
-     check("#{user2.id}")
-     check("#{user3.id}")
+     check("invitees_#{user2.id}")
+     check("invitees_#{user3.id}")
      click_button("Create Party")
-     #save_and_open_page
-
+     expect(current_path).to eq(user_path(user))
+     party = ViewingParty.last
+     within "#viewing-party-#{party.id}" do 
+        expect(page).to have_link("Princess Mononoke", href: user_movie_path(user, party.movie_id))
+        expect(page).to have_content("December 01, 2022")
+        expect(page).to have_content("7:00 PM")
+        expect(page).to have_content("Hosting")
+        within "#invitees" do 
+            expect(page).to have_content("Annie")
+            expect(page).to have_content("James")
+             save_and_open_page
+        end
+      end
    end
 end
