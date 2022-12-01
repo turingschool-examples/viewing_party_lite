@@ -1,1 +1,11 @@
-<%= "#{@user.name}'s Dashboard'" %>
+<h1> Viewing Party</h1>
+
+<%= "#{@user.name}'s Dashboard" %>
+<div id="discover">
+
+<%= button_to 'Discover Movies', user_discover_index_path(@user.id), method: :get %>
+</div>
+
+<section id="viewing_parties">
+
+</section>
