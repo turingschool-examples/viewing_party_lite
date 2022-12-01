@@ -1,21 +1,26 @@
 require 'rails_helper'
 
-RSpec.describe 'Discover Movies Index Page' do
-  before :each do
-    @user1 = User.create!(name: 'Kevin', email: 'Kta@turing.edu')
-    @user2 = User.create!(name: 'Bryan', email: 'Bkeen@turing.edu')
+RSpec.describe 'Movies Index Page' do
+  let!(:user1) { create(:user) }
+  let!(:user2) { create(:user) }
 
-    visit user_discovers_path(@user1)
+  before :each do
+    visit discover_path(user1)
   end
 
-  xit 'should have a button to find top rated movies' do
+  it 'should have a button to find top rated movies' do
     expect(page).to have_content('Discover Movies')
     expect(page).to have_button('Find Top Rated Movies')
 
-    click_button('Find Top Rated Movies') # This will/ should return only 20 by default
+    click_button('Find Top Rated Movies')
 
-    expect(current_path).to eq("/users/#{@user1.id}/movies")
-    expect(page).to have_content('The Godfather')               # two examples out of the two top results
+    expect(current_path).to eq(user_movies_path(user1))
+  end
+
+  it 'shows the top 20 movies when Top Rated Movies button is pressed' do
+    click_button('Find Top Rated Movies')
+
+    expect(page).to have_content('The Godfather')
     expect(page).to have_content('The Shawshank Redemption')
     expect(page).to_not have_content('Suicide Squad')
   end

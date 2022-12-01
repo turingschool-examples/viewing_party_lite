@@ -4,9 +4,10 @@ Rails.application.routes.draw do
 
   # users
   resources :users do
-    resources :discovers
+    resources :movies
   end
 
   # registration page
   get '/register', to: 'users#new', as: :register
+  get '/users/:id/discover', to: 'users#index', as: :discover
 end

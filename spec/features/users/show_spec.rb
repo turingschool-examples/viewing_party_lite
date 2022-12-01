@@ -3,14 +3,22 @@ require 'rails_helper'
 RSpec.describe 'User Dashboard' do
   let!(:user1) { create(:user) }
   let!(:user2) { create(:user) }
-  # let!(:party1) { create(:viewing_party) }
-  # let!(:user_party1) { create(:user_party, user: user1, viewing_party: party1) }
+  let!(:user3) { create(:user) }
+  let!(:party1) { create(:viewing_party) }
+  let!(:party2) { create(:viewing_party) }
+  let!(:party3) { create(:viewing_party) }
+  let!(:user_party1) { create(:user_party, user_status: 0, user: user1, viewing_party: party1) }
+  let!(:user_party2) { create(:user_party, user: user2, viewing_party: party1) }
+  let!(:user_party3) { create(:user_party, user: user1, viewing_party: party2) }
+  let!(:user_party4) { create(:user_party, user_status: 0, user: user2, viewing_party: party2) }
+  let!(:user_party5) { create(:user_party, user: user3, viewing_party: party3) }
+  let!(:user_party6) { create(:user_party, user_status: 0, user: user2, viewing_party: party3) }
 
   before :each do
     visit user_path(user1)
   end
 
-  it 'when I visit (/users/:id), I should see <user_name>s Dashboard at top of page' do
+  it 'when I visit user dashboard, I should see <user_name>s Dashboard at top of page' do
     expect(page).to have_content("#{user1.name}'s Dashboard")
     expect(page).to_not have_content(user1.email)
     expect(page).to have_link('Home')
@@ -22,11 +30,21 @@ RSpec.describe 'User Dashboard' do
     expect(page).to have_button('Discover Movies')
     click_button('Discover Movies')
 
-    expect(current_path).to eq(user_discovers_path(user1))
+    expect(current_path).to eq(discover_path(user1))
   end
 
   it 'has a section that lists viewing parties' do
-    expect(page).to have_content('Current Viewing Parties')
+    within '#viewing_parties' do
+      expect(page).to have_content('Current Viewing Parties')
+      expect(page).to have_content(party1.start_date)
+      expect(page).to have_content(party2.start_date)
+      expect(page).to_not have_content(party3.start_date)
+      expect(page).to have_content(party1.start_time)
+      expect(page).to have_content(party2.start_time)
+      expect(page).to_not have_content(party3.start_time)
+      expect(page).to have_content(party1.user_hosting_status(user1))
+      expect(page).to have_content(party2.user_hosting_status(user1))
+    end
   end
 
   describe 'viewing parties details that a user is invited to' do # USER STORY 7 DASHBOARD VIEWING PARTIES
