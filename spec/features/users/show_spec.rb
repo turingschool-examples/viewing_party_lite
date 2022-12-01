@@ -34,9 +34,9 @@ RSpec.describe 'user show page', :vcr, type: :feature do
       end
 
       it '- has a section that lists the users viewing parties' do
-        expect(page).to have_css("#viewing-parties")
+        expect(page).to have_css("#user-parties")
 
-        within "#viewing-parties" do
+        within "#user-parties" do
           expect(page).to have_content("Octopussy")
           expect(page).to have_content("December 27, 2022")
           expect(page).to have_content("8:00 pm")
