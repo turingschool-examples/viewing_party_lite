@@ -1,5 +1,6 @@
-
-Discover Movies
+<%=content_for :subtitle do%>
+  <h3>Discover Movies</h3>
+<%end%>
 
 <span>
   <%= button_to 'Top Rated Movies', user_movies_path(@user), method: :get, params: {q: 'top rated'}%>
