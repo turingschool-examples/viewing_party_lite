@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-  def index
+  def landing
     @users = User.all
   end
 end

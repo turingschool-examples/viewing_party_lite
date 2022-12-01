@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def new
-    # @user = User.new
   end
 
   def create
@@ -12,13 +11,11 @@ class UsersController < ApplicationController
       flash[:alert] = "Error: #{error_message(user.errors)}"
     end
   end
-  
+
   def show
-    @user = User.find(params[:id])
   end
-  
+
   def discover
-    
   end
 
   private

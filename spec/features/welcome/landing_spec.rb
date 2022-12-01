@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'welcome index page', type: :feature do
+RSpec.describe 'welcome landing page', type: :feature do
   before(:each) do
     @kenz = User.create!(name: 'Kenz', email: 'kenz_mail@gmail.com')
     @astrid = User.create!(name: 'Astrid', email: 'astrid_mail@gmail.com')
