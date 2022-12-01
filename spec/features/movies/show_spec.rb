@@ -35,7 +35,14 @@ RSpec.describe 'Movies Detail (show) page' do
   describe 'as a user' do
     it 'I see a button to create a viewing party' do
       expect(page).to have_button("Create Viewing Party for #{@godfather.movie_title}")
-      click_button ("Create Viewing Party for #{@godfather.movie_title}")
+      
+      VCR.use_cassette('movie_details') do
+        VCR.use_cassette('movie_credits') do 
+          VCR.use_cassette('movie_reviews') do
+            click_button ("Create Viewing Party for #{@godfather.movie_title}")
+          end
+        end
+      end
 
       expect(current_path).to eq(new_user_movie_viewing_party_path(@user.id, @godfather.id))
     end
