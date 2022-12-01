@@ -15,7 +15,8 @@
       <p>Invitees:</p>
       <ul>
         <% movie_party.user_movie_parties.each do |ump| %>
-          <li><%= "#{ump.user.name} (#{ump.user.email})" %> <strong><%= ' (host)' if ump.status == 'hosting' %></strong></li>
+          <li><%= "#{ump.user.name} (#{ump.user.email})" %> 
+          <strong><%= ' (host)' if ump.status == 'hosting' %></strong></li>
         <% end %>
     </section>
     <hr>
