@@ -1,3 +1,5 @@
+require_relative '../facades/movie_facade'
+
 class UsersController < ApplicationController
   def new
     # @user = User.new
