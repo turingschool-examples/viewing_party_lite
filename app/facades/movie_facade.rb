@@ -1,40 +1,35 @@
 # frozen_string_literal: true
 
 class MovieFacade
-  def self.posters(movie)
-    json = MovieService.posters_en_us(movie)
-    Movie.new(json)
+  def initialize(param)
+    @search_param = param
+    @service = MovieService.new
   end
 
-  def self.top_rated
-    json = MovieService.top_rated_movies
-
+  def top_rated
+    json = @service.top_rated_movies
     top_rated_movies = json[:results].map do |movie_data|
       Movie.new(movie_data)
     end
   end
 
-  def self.searched_movies(keyword)
-    json = MovieService.search(keyword)
-
+  def searched_movies
+    json = @service.search(@search_param)
     json[:results].map {|movie_data| Movie.new(movie_data)} if json[:results] != nil
   end
 
-  def self.movie_by_id(id)
-    json = MovieService.find_by_id(id)
-
+  def movie_by_id
+    json = @service.find_by_id(@search_param)
     Movie.new(json)
   end
 
-  def self.movie_cast(id)
-    json = MovieService.find_movie_cast(id)
-
-    MovieCast.new(json)
+  def cast
+    json = @service.find_movie_cast(@search_param)
+    MovieCast.new(json).cast
   end
 
-  def self.movie_reviews(id)
-    json = MovieService.find_movie_reviews(id)
-
-    MovieReviews.new(json)
+  def reviews
+    json = @service.find_movie_reviews(@search_param)
+    MovieReviews.new(json).reviews
   end
 end
