@@ -6,7 +6,7 @@
 
 <div>
   <p>Vote: <%= @movie.vote_average %></p>
-  <p>Runtime: <%= @movie.runtime %></p>
+  <p>Runtime: <%= "#{@movie.runtime/60}h #{@movie.runtime % 60}min" %></p>
   <div id="genre">
     <p>Genre:</p>
     <ul>

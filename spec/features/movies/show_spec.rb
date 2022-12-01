@@ -50,7 +50,7 @@ RSpec.describe 'Movies Detail (show) page' do
     it 'I see the details related to the movie' do
       expect(page).to have_content(@godfather.movie_title)
       expect(page).to have_content(@godfather.vote_average)
-      expect(page).to have_content(@godfather.runtime)
+      expect(page).to have_content("#{@godfather.runtime/60}h #{@godfather.runtime % 60}min")
 
       within("#genre") do
       expect(page).to have_content(@godfather.genres.first[:name])
