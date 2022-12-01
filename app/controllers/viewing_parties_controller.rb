@@ -3,8 +3,7 @@ class ViewingPartiesController < ApplicationController
     @user = User.find(params[:user_id])
     @movie = MoviesFacade.get_movie_heavy(params[:movie_id])
     
-    # Move to User model method
-    @users = User.all.where('id != ?', @user.id)
+    @users = User.find_all_except(@user)
   end
 
   def create
