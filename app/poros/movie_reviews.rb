@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MovieReviews
   def initialize(attributes)
     @results = attributes[:results]

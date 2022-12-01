@@ -22,7 +22,7 @@ RSpec.describe 'The Welcome Page', type: :feature do
     end
 
     it 'I see a list of existing users which links to the users dashboard' do
-      within '#existing-users' do
+      within '#existing_users' do
         expect(page).to have_content(user_1.email)
         expect(page).to have_content(user_2.email)
         expect(page).to have_content(user_3.email)

@@ -1,82 +1,32 @@
-<style>
-  .flex-container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: normal;
-    align-items: normal;
-    align-content: normal;
-    text-align: center;
-  }
-
-  .flex-items:nth-child(1) {
-    display: block;
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-    align-self: auto;
-    order: 0;
-  }
-
-  .flex-items:nth-child(2) {
-    display: block;
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-    align-self: auto;
-    order: 0;
-  }
-
-  .flex-items:nth-child(3) {
-    display: block;
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-    align-self: auto;
-    order: 0;
-  }
-
-  .flex-items:nth-child(4) {
-    display: block;
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-    align-self: auto;
-    order: 0;
-  }
-
-  .flex-items:nth-child(5) {
-    display: block;
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-    align-self: auto;
-    order: 0;
-  }
-</style>
 <body>
   <div class="flex-container">
-    <div class="flex-items">
+    <div class="flex-items" id="title">
       <h3><%= @movie.title %></h3>
-      <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %>
-      <%= button_to "Create Viewing Party for #{@movie.title}", new_user_movie_view_party_path(@user, @movie.id), method: :get %>
+      <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get, class: 'button2' %>
+      <%= button_to "Create Viewing Party for #{@movie.title}", new_user_movie_view_party_path(@user, @movie.id), method: :get, class: 'button2' %>
     </div>
-    <div class="flex-items">
-      <%= "Vote: #{@movie.vote_average}" %>
-      <%= "Runtime: #{@movie.runtime}" %>
-      <%= "Genre: #{@movie.genres.map { |genre| genre[:name] }.join(', ')}" %>
+
+    <div class="flex-items" style='margin-block-start: 0.5em; margin-block-end: 0.0em;'>
+      <div style='display: flex; flex-direction: row; justify-content: space-around;'>
+        <div><%= "Vote: #{@movie.vote_average.round(2)}" %></div>
+        <div><%= "Runtime: #{@movie.runtime}" %></div>
+        <div><%= "Genre: #{@movie.genres.map { |genre| genre[:name] }.join(', ')}" %></div>
+      </div>
     </div>
-    <div class="flex-items">
+
+    <hr class='demo'>
+
+    <div class="flex-items" style='text-align: left;'>
       <p>Summary:</p>
       <%= @movie.overview %>
     </div>
-    <div class="flex-items">
+
+    <div class="flex-items" style='text-align: left;'>
       <p>Cast:</p>
-      <% @cast.cast.first(10).each do |cast| %>
-        <p><%= cast %></p>
-      <% end %>
+      <p><%= @cast.cast.first(10).join(', ') %></p>
     </div>
-    <div class="flex-items">
+
+    <div class="flex-items" style='text-align: left;'>
       <p><%= @reviews.reviews.count %> Reviews:</p>
       <% @reviews.reviews.each do |review| %>
         <p><%= review %></p>

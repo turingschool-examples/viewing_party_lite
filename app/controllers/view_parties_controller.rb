@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ViewPartiesController < ApplicationController
   def new
     @user = User.find(params[:user_id])
@@ -15,10 +17,10 @@ class ViewPartiesController < ApplicationController
 
     if movie.minutes > params[:duration].to_i
       redirect_to new_user_movie_view_party_path(user, movie.id)
-      flash[:alert] = "Party duration cannot be shorter than the movie duration"
+      flash[:alert] = 'Party duration cannot be shorter than the movie duration'
     elsif new_party.save
       UserViewParty.create(user_id: user.id, view_party_id: new_party.id, host: true)
-      invitees.map {|invitee| invitee.view_parties << new_party }
+      invitees.map { |invitee| invitee.view_parties << new_party }
       redirect_to user_path(user)
     else
       redirect_to new_user_movie_view_party_path(user, movie.id)

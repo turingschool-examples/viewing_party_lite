@@ -1,42 +1,27 @@
-<style>
-  .text {
-    text-align: center;
-  }
-  .cards {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  .card {
-    flex: 0 0 200px;
-    margin: 10px;
-    border: 1px solid #ccc;
-    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
-  }
-  .card img {
-    max-width: 100%;
-  }
-  .card .text {
-    padding: 0 20px 20px;
-    text-align: center;
-  }
-</style>
 <body>
-  <div id='header' class='text'>
-    <h3><%= "#{@user.name}'s Dashboard" %></h3>
-    <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %>
-  </div>
+  <div class='flex-container'>
+    <div class="flex-items" id="title">
+      <h3><%= "#{@user.name}'s Dashboard" %></h3>
+    </div>
 
-  <main class='cards'>
-    <% @view_parties.each do |party|%>
-      <article class='card'>
-        <img src=<%="http://image.tmdb.org/t/p/original#{party.file_path}"%>>
-        <div class='text' id=<%=party.movie_id %>>
-          <h3><%= party.movie_name %></h3>
-          <p><%= party.datetime.strftime("%A, %d %B %Y") %></p>
-          <p><%= if party.host?(@user) then "Hosting" else "Invited" end %></p>
-        </div>
-      </article>
-    <% end %>
-  </main>
+    <div class="flex-items" id="discover_movies_button">
+      <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get, class: "button1" %>
+    </div>
+
+    <hr class='demo'>
+
+    <div class='cards' id='cards'>
+      <% @view_parties.each do |party| %>
+        <article class='card'>
+          <img src=<%="http://image.tmdb.org/t/p/original#{party.file_path}"%>>
+          <div class='text' id=<%=party.movie_id %>>
+            <h3><%= party.movie_name %></h3>
+            <p><%= party.datetime.strftime("%A, %d %B %Y") %></p>
+            <p><%= party.datetime.strftime("%l:%M %P") %></p>
+            <p><%= if party.host?(@user) then "Hosting" else "Invited" end %></p>
+          </div>
+        </article>
+      <% end %>
+    </div>
+  </div>
 </body>

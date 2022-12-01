@@ -1,13 +1,20 @@
-<center><h3>Register a New User<h3><br>
+<body>
+  <div class='flex-container'>
+    <div class="flex-items" id="title">
+      <h3>Register a New User<h3>
+    </div>
 
-<div id="register-form">
-<%= form_with url: users_path, method: :post, local: true do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %><br><br>
+    <div class="flex-items" id="new_user_form">
+      <div id="register-form">
+      <%= form_with url: users_path, method: :post, local: true do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %><br><br>
 
-  <%= f.label :email %>
-  <%= f.email_field :email %><br><br>
+        <%= f.label :email %>
+        <%= f.email_field :email %><br><br>
 
-  <%= f.submit "Create New User" %>
-<% end %>
-</div></center>
+        <%= f.submit "Create New User", class: 'button1' %>
+      <% end %>
+    </div>
+  </div>
+</body>
