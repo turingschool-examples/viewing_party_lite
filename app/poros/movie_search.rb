@@ -9,6 +9,12 @@ class MovieSearch
     movies.map { |movie_hash| Movie.new(movie_hash) }
   end
 
+  def search_movies(query)
+    movies = service.search_movies(query)
+    movies = movies[:results].first(20)
+    movies.map { |movie_hash| Movie.new(movie_hash) }
+  end
+
   def retrieve_movie(movie_id)
     movie = service.get_movie(movie_id)
     Movie.new(movie)

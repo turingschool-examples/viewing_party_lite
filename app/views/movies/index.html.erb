@@ -11,7 +11,7 @@
         <th>Movie name</th>
         <th>Average Score</th>
       </tr>
-      <% @top_rated.each do |movie| %>
+      <% @search_results.each do |movie| %>
       <tr>
         <td><%= link_to movie.title, movies_show_path(movie_id: movie.id) %></td>
         <td>Vote average: <%= movie.vote_average %></td>
