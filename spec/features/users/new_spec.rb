@@ -17,7 +17,10 @@ RSpec.describe 'The User registration' do
         fill_in 'Email', with: 'martin@gmail.com'
         click_on 'Create Account'
 
-        expect(page).to eq(user_path)
+        expect(page).to have_content("Martin")
+        expect(page).to_not have_content("Larry")
+        expect(page).to_not have_content("Mary")
+        expect(page).to_not have_content("Sherri")
       end
     end
   end
