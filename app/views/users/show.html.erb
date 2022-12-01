@@ -3,3 +3,39 @@
 <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %>
 
 <h2> Viewing Parties </h2>
+
+<div id="invited_parties"> 
+  <h3> Invited Parties</h3>
+  <% @invited.each do |party| %>
+    <div id="<%= party.id %>">
+      <h3> <%= link_to "#{party.movie_title}",  '/', method: :get%> </h3>
+      <p> Host: <%= party.find_host_name %> </p>
+      <p> Date: <%= party.date.strftime("%m/%d/%Y") %> </p>
+      <p> Time: <%= party.time.strftime("%l:%M %P") %> </p>
+      <h4> Users Invited: </h4>
+      <% party.users.each do |user| %>
+        <% if user.name == @user.name %>
+          <p><b> <%= user.name %> </b></p>
+        <% elsif user.name != party.find_host_name %>
+          <p> <%= user.name %> </p>
+        <% end %>
+      <% end %>
+    </div>
+  <% end%>
+</div>
+
+<div id="hosted_parties"> 
+  <h3> Hosted Parties</h3>
+  <% @hosted.each do |party| %>
+    <div id="<%= party.id %>">
+      <h3> <%= link_to "#{party.movie_title}",  '/', method: :get%> </h3>
+      <p> Host: <%= @user.name %> </p>
+      <p> Date: <%= party.date.strftime("%m/%d/%Y") %> </p>
+      <p> Time: <%= party.time.strftime("%l:%M %P") %> </p>
+      <h4> Users Invited: </h4>
+      <% party.users.each do |user| %>
+        <p> <%= user.name if user.id != @user.id %> </p>
+      <% end %>
+    </div>
+  <% end%>
+</div>
