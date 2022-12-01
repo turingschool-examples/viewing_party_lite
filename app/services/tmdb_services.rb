@@ -13,6 +13,14 @@ class TmdbService
     get_url("https://api.themoviedb.org/3/movie/#{movie_id}?api_key=#{ENV["tmdb_api_key"]}&language=en-US")
   end
 
+  def get_credits(movie_id)
+    get_url("https://api.themoviedb.org/3/movie/#{movie_id}/credits?api_key=#{ENV["tmdb_api_key"]}&language=en-US")
+  end
+
+  def get_reviews(movie_id)
+    get_url("https://api.themoviedb.org/3/movie/#{movie_id}/reviews?api_key=#{ENV["tmdb_api_key"]}&language=en-US")
+  end
+
   def get_url(url)
     response = HTTParty.get(url)
     JSON.parse(response.body, symbolize_names: true)
