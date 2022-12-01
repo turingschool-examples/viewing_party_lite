@@ -9,14 +9,21 @@
   <% @user.movie_parties.each do |movie_party| %>
     <section id="party-<%= movie_party.id %>">
       <%= image_tag movie_party.poster_url, class: ".img", size: "150x225"  %>
-      <h3><%= movie_party.movie_title %></h3>
-      <p><%= movie_party.start_time.strftime("%B %d, %Y - %H:%M%p") %></p>
+      <h3><%= link_to movie_party.movie_title, user_movie_path(@user, movie_party.movie_id) %></h3>
+      <p><%= movie_party.start_time.strftime("%B %d, %Y - %l:%M %p") %></p>
       <p><%= movie_party.status(@user).capitalize %></p>
       <p>Invitees:</p>
       <ul>
         <% movie_party.user_movie_parties.each do |ump| %>
-          <li><%= "#{ump.user.name} (#{ump.user.email})" %> 
-          <strong><%= ' (host)' if ump.status == 'hosting' %></strong></li>
+
+          <% if ump.user == @user %>
+            <strong><li><%= "#{ump.user.name} (#{ump.user.email})" %>
+            <%= ' (host)' if ump.status == 'hosting' %></strong></li>
+          <% else %>
+            <li><%= "#{ump.user.name} (#{ump.user.email})" %> 
+            <strong><%= ' (host)' if ump.status == 'hosting' %></strong></li>
+          <% end %>
+
         <% end %>
     </section>
     <hr>
