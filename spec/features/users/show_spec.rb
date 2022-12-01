@@ -5,7 +5,7 @@ RSpec.describe 'User Dashboard Page' do
     @user1 = User.create!(name: "William", email: "William@gmail.com")
     @user2 = User.create!(name: "Ashley", email: "Ashley@gmail.com")
     @user3 = User.create!(name: "Abdul", email: "Abdul@gmail.com")
-    visit(user_path(@user1.id)) 
+    visit(user_path(@user1.id))
   end
 
   describe 'when I visit users/:id' do
@@ -18,13 +18,13 @@ RSpec.describe 'User Dashboard Page' do
     it 'I see a button to discover movies' do
       expect(page).to have_button("Discover Movies")
       click_button "Discover Movies"
-      save_and_open_page
+      # save_and_open_page
       expect(current_path).to eq(user_discover_index_path(@user1.id))
     end
 
     it 'has a section that lists viewing parties' do
       expect(page).to have_content("#{@user1.name}s Viewing Parties")
-     
+
     end
   end
 end
