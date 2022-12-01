@@ -3,11 +3,16 @@ require 'rails_helper'
 RSpec.describe 'the user dashboard' do 
   before(:each) do 
     @user = create(:user)
+    @invitee1 = create(:user)
+    @invitee2 = create(:user)
+    @invitee3 = create(:user)
 
     @party1 = create(:movie_party)
     @party3 = create(:movie_party)
 
     @ump1 = UserMovieParty.create!(user_id: @user.id, movie_party_id: @party1.id, status: 0)
+    @ump2 = UserMovieParty.create!(user_id: @invitee1.id, movie_party_id: @party1.id, status: 1)
+    @ump3 = UserMovieParty.create!(user_id: @invitee2.id, movie_party_id: @party1.id, status: 1)
 
     VCR.use_cassette('godfather_movie') do
       @image_path = MoviesFacade.movie_poster_url(@party1.movie_id)
@@ -33,10 +38,18 @@ RSpec.describe 'the user dashboard' do
       within "#party-#{@party1.id}" do 
         expect(page).to have_content(@party1.movie_title)
         expect(page).to have_content(@party1.start_time.strftime("%B %d, %Y - %H:%M%p"))
-        expect(page).to have_content(@ump1.status)
+        expect(page).to have_content(@ump1.status.capitalize)
       end
 
       expect(page).to_not have_content(@party3.movie_title)
+    end
+
+    it 'lists invitees of each viewing party' do 
+      within "#party-#{@party1.id}" do 
+        expect(page).to have_content(@invitee1.name)
+        expect(page).to have_content(@invitee2.name)
+        expect(page).to_not have_content(@invitee3.name)
+      end
     end
 
     it 'has an image for each movie' do
