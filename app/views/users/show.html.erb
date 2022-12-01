@@ -8,7 +8,7 @@
   <h3>Viewing Parties:</h3>
   <% @user.viewing_parties.each do |v_p| %>
     <div id="viewing_party-<%= v_p.id %>">
-    <h3><%= v_p.viewing_party_movie[:title] %></h3>
+    <h3><%= link_to "#{v_p.viewing_party_movie[:title]}", "/users/#{@user.id}/movies/#{v_p.viewing_party_movie[:id]}" %></h3>
     <img src=<%= v_p.full_poster_path %> class='movie_poster'>
       <p>Date: <%= v_p.date.strftime("%m/%d/%Y") %></p>
       <p>Start Time: <%= v_p.start_time.strftime("%I:%M%p")  %></p>
