@@ -60,8 +60,4 @@ RSpec.describe 'the new viewing parties page' do
       expect(current_path).to eq(user_path(@user1))
     end
   end
-
-  describe 'sad paths' do 
-    # test that party duration can only be longer than movie runtime
-  end
 end
