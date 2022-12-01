@@ -39,7 +39,7 @@ RSpec.describe 'the user dashboard' do
     it 'lists viewing parties that user is associated with' do
       within "#party-#{@party1.id}" do
         expect(page).to have_content(@party1.movie_title)
-        expect(page).to have_content(@party1.start_time.strftime('%B %d, %Y - %l:%M %p'))
+        expect(page).to have_content(@party1.start_time.strftime('%B %d, %Y - %I:%M %p'))
         expect(page).to have_content(@ump1.status.capitalize)
       end
 
