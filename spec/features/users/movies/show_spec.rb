@@ -32,12 +32,10 @@ RSpec.describe 'movie details page' do
     it 'I see title and vote average of the movie' do 
       expect(page).to have_content("The Shawshank Redemption")
       expect(page).to have_content("Vote Average: 8.7")
-      # save_and_open_page
-
     end
 
-    it 'I see the runtime in hours and minutes' do #WIP! 
-      expect(page).to have_content("Run Time: 142")
+    it 'I see the runtime in hours and minutes' do  
+      expect(page).to have_content("Run Time: 2h 22min")
     end 
 
     it 'I see genres associated to the movie' do 
@@ -61,6 +59,7 @@ RSpec.describe 'movie details page' do
     it 'I see each reviews author and information' do  
       expect(page).to have_content("Name: elshaarawy Rating: 9.0")
       expect(page).to_not have_content("Name: ashuhleyt Rating: 9.0")
+      save_and_open_page
     end 
   end
 end
