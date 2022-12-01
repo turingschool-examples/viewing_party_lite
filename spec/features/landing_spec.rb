@@ -38,9 +38,9 @@ RSpec.describe 'root path; application landing page' do
   it 'has a link to visit the landing page' do
     visit root_path
 
-    expect(page).to have_link("Landing Page")
+    expect(page).to have_link("Home")
 
-    click_on "Landing Page"
+    click_on "Home"
 
     expect(current_path).to eq('/')
   end

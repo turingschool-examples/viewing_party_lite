@@ -1,0 +1,19 @@
+<center><h1>Viewing Party</h1><center>
+<center><h3>Discover Movies</h3><center>
+
+<center>
+  <%= form_with url: "/users/#{@user.id}/movies", method: :get, local: true do |f| %>
+    <%= f.hidden_field :top_movies, value: "top%20rated" %>
+    <%= f.submit "Find Top Rated Movies" %>
+  <% end %>
+<center>
+
+<br>
+
+<center>
+  <%= form_with url: "/users/#{@user.id}/movies", method: :get, local: true do |f| %>
+    <%= f.label :search %>
+    <%= f.text_field :search %>
+    <%= f.submit "Find Movies" %>
+  <% end %>
+<center>

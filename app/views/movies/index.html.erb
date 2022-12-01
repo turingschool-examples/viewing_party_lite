@@ -1,0 +1,7 @@
+<h1>Viewing Party</h1>
+
+<%= button_to "Discover Page", user_discover_index_path(@user), method: :get %>
+
+<% @movie_titles.each do |movie, rating| %>
+  <p><%= movie %> Vote average: <%= rating %></p>
+<% end %>
