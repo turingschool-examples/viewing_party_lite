@@ -9,9 +9,10 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.save
-      redirect_to "/users/#{@user.id}"
+      redirect_to user_path(@user.id)
     else
-      render new
+      redirect_to register_path
+      flash[:alert] = "Error: Email already linked with an account"
     end
   end
 
