@@ -9,9 +9,7 @@ class ViewParty < ApplicationRecord
   validate :datetime_cannot_be_in_the_past
 
   def datetime_cannot_be_in_the_past
-    if datetime.present? && datetime < Date.today
-      errors.add(:datetime, "cannot be in the past")
-    end
+    errors.add(:datetime, 'cannot be in the past') if datetime.present? && datetime < Date.today
   end
 
   def file_path
@@ -19,6 +17,6 @@ class ViewParty < ApplicationRecord
   end
 
   def host?(user)
-    self.user_view_parties.find_by(user_id: user.id).host
+    user_view_parties.find_by(user_id: user.id).host
   end
 end

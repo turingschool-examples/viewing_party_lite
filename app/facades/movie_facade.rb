@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MovieFacade
   def self.posters(movie)
     json = MovieService.posters_en_us(movie)
