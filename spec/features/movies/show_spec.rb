@@ -21,6 +21,11 @@ RSpec.describe 'Movies Detail (show) page' do
       end
     end
 
+    VCR.use_cassette('search_green_mile') do
+      movie_data = MoviesService.search('The Green Mile')[:results].first
+      @another_movie = MovieLite.new(movie_data)
+    end
+
     VCR.use_cassette('movie_details') do
       VCR.use_cassette('movie_credits') do
         VCR.use_cassette('movie_reviews') do
@@ -76,6 +81,10 @@ RSpec.describe 'Movies Detail (show) page' do
         expect(page).to have_content(@godfather.reviews.last.content.gsub(/\n/, ' '))
         expect(page).to have_content("Review Count: #{@godfather.reviews.size}")
       end
+
+    end
+    it 'I do not see content related to other movies' do
+      expect(page).to_not have_content(@another_movie.movie_title)
     end
   end
 end
