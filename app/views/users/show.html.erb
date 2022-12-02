@@ -16,7 +16,7 @@
     <%@parties_invited_to.each do |party|%>
       <div id="party_<%=party.id%>">
         <%party_movie = party.movie_details%>
-        <%=image_tag party_movie.poster_path%>
+        <img src="https://api.themoviedb.org<%=party_movie.poster_path%>">
         <%=link_to party_movie.title, user_movie_path(@user, party_movie.id)%> 
         Event Start Time: <%=party.date%> at <%=party.start_time%>
         Host: <%=party.host%>
@@ -36,7 +36,7 @@
     <%@parties_hosting.each do |party|%>
       <div id="party_<%=party.id%>">
         <%party_movie = party.movie_details%>
-        <%=image_tag party_movie.poster_path%>
+        <img src="https://api.themoviedb.org<%=party_movie.poster_path%>">
         <%=link_to party_movie.title, user_movie_path(@user, party_movie.id)%> 
         Event Start Time: <%=party.date%> at <%=party.start_time%>
         Host: <%=party.host%>

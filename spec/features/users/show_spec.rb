@@ -118,8 +118,8 @@ RSpec.describe 'Users' do
         expect(page).to have_current_path("/users/#{@user1.id}/movies/14160")
       end
       it 'has the image of each movie' do
-        expect(page).to have_css('img', text: 'https://api.themoviedb.org/vpbaStTMt8qqXaEgnOR2EE4DNJk.jpg')
-        expect(page).to have_css('img', text: 'https://api.themoviedb.org/vfrQk5IPloGg1v9Rzbh2Eg3VGyM.jpg')
+        expect(page).to have_css('img[src*="vpbaStTMt8qqXaEgnOR2EE4DNJk.jpg"]')
+        expect(page).to have_css('img[src*="vfrQk5IPloGg1v9Rzbh2Eg3VGyM.jpg"]')
       end
       it 'has the date and time of the event' do
         within "#party_#{@party1.id}" do
