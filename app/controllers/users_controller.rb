@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def new
-    
   end
 
   def create
@@ -15,6 +14,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @hosted = @user.hosted_parties
+    @invited = @user.invited_parties
   end
 
   def discover

@@ -5,7 +5,7 @@ class MoviesController < ApplicationController
     @user = User.find(params[:id])
   
     data = MoviesService.new.search("top_rated")
-    movies = data[:results][1..20]
+    movies = data[:results][0..19]
     @top_20 = movies.pluck(:original_title, :id, :vote_average)
   end
 

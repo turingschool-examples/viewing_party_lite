@@ -5,4 +5,7 @@ class Party < ApplicationRecord
   validates_presence_of :movie_title, :duration, :date, :time, :host_id
   validates_numericality_of :duration
 
+  def find_host_name
+    User.find(self.host_id).name
+  end
 end
