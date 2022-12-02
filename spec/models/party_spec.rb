@@ -8,8 +8,8 @@ RSpec.describe Party, type: :model do
 
   describe 'instance methods' do
     before :each do
-      up_search_json = File.read('spec/fixtures/search_up_movies.json')
-      stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['tmdb_api_key']}&language=en-US&page=1&include_adult=false&query=Up").to_return(status: 200, body: up_search_json)
+      # up_search_json = File.read('spec/fixtures/search_up_movies.json')
+      # stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['tmdb_api_key']}&language=en-US&page=1&include_adult=false&query=Up").to_return(status: 200, body: up_search_json)
 
       @user1 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.email)
       @user2 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.email)
@@ -39,17 +39,17 @@ RSpec.describe Party, type: :model do
       @party_user12 = PartyUser.create!(user_id: @user3.id, party_id: @party5.id, host: false)
     end
     describe '.invited_users' do
-      it 'retrieves the names all users invited to the party excluding the host' do
+      it 'retrieves the names all users invited to the party excluding the host', :vcr do
         expect(@party1.invited_users).to eq([@user2.name, @user3.name])
       end
     end
     describe '.host' do
-      it 'retrieves the name of the host' do
+      it 'retrieves the name of the host', :vcr do
         expect(@party1.host).to eq(@user1.name)
       end
     end
     describe '.movie_details' do
-      it 'returns a Movie object that contains the information of the movie being viewed' do
+      it 'returns a Movie object that contains the information of the movie being viewed', :vcr do
         expect(@party1.movie_details).to be_a(Movie)
         expect(@party1.movie_details.title).to eq("Up")
         expect(@party1.movie_details.id).to eq(14160)
