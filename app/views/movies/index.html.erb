@@ -19,17 +19,22 @@
   text-align: center;
 }
 </style>
+<% if @facade.query_params == 'top 20rated' %>
+  <% movies = @facade.top_rated_movies %>
+<% else %>
+  <% movies = @facade.movies_keyword %>
+<% end %>
 
 <div id='centered'>
-<%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %>
-<% if @keywords == 'top 20rated' %>
+<%= button_to "Discover Page", "/users/#{@facade.user_id}/discover", method: :get %>
+<% if @facade.query_params == 'top 20rated' %>
   <h2>Movie Results</h2>
 <% else %>
-  <h2>Movie Results For: <%= @keywords %></h2>
+  <h2>Movie Results For: <%= @facade.query_params %></h2>
 <% end %>
 <div class='row' id='movies'>
-<% @movies.each do |movie|%>
-  <div class='column'><%= link_to movie.title, user_movie_path(@user, movie.id), method: :get%></div>
+<% movies.each do |movie|%>
+  <div class='column'><%= link_to movie.title, user_movie_path(@facade.user, movie.id), method: :get%></div>
   <div class='column'>Vote Average:<%= movie.vote %><br></div>
 <% end %>
 </div>
