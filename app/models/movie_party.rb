@@ -19,7 +19,8 @@ class MovieParty < ApplicationRecord
 
   def create_user_movie_parties(host, invitee_ids)
     UserMovieParty.create!(user_id: host.id, movie_party_id: id, status: 0)
-
+    return if invitee_ids.nil?
+    
     invitee_ids.each do |invitee_id|
       UserMovieParty.create!(user_id: invitee_id, movie_party_id: id, status: 1)
     end
