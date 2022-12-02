@@ -1,4 +1,8 @@
-<h3><%= @movie.movie_title %></h3>
+<%= content_for :subtitle do%>
+  <%= @movie.movie_title %>
+<%end%>
+
+<%= render 'partials/discover_button'%>
 
 <%= button_to "Create Viewing Party for #{@movie.movie_title}", new_viewing_party_path(@user, @movie.id), method: :get %>
 
