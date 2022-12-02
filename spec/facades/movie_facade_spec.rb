@@ -34,7 +34,7 @@ RSpec.describe MovieFacade, :vcr do
 
     describe '#summary_description(movie_id)' do
       it '- returns the summary description of a given movie id' do
-
+        expect(MovieFacade.summary_description(550)).to eq("A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.")
       end
     end
 

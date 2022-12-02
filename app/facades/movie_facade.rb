@@ -22,4 +22,8 @@ class MovieFacade
       key[:name]
     end
   end
+
+  def self.summary_description(movie_id)
+    MovieService.movie_details(movie_id)[:overview]
+  end
 end
