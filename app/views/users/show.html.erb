@@ -11,7 +11,9 @@
     <% user_viewing_party = UserViewingParty.where(viewing_party_id: party.id) %>
     <% user_viewing_party.each do |uvp| %>
       <% if uvp.host %>
-        Host: <%= User.find(uvp.user_id).name %>
+        <b>Host:</b> <p><%= User.find(uvp.user_id).name %></p><br>
+        <% else %>
+        <b>Attendees:</b> <p><%= User.find(uvp.user_id).name %></p>
       <% end %>
     <% end %>
   <% end %>
