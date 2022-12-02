@@ -62,4 +62,19 @@ RSpec.describe 'the new viewing parties page' do
       expect(current_path).to eq(user_path(@user1))
     end
   end
+
+  describe 'sad paths' do 
+    it 'throws error message if datetime left blank' do 
+      VCR.use_cassette('movie_details') do
+        VCR.use_cassette('movie_credits') do
+          VCR.use_cassette('movie_reviews') do
+            click_button 'Create Party'
+
+            expect(current_path).to eq(new_user_movie_viewing_party_path(@user1, @movie.id))
+            expect(page).to have_content('Error: Datetime field cannot be left blank')
+          end
+        end
+      end
+    end
+  end
 end
