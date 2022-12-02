@@ -18,7 +18,7 @@ class MovieService
   end
 
   def self.search(query, page = 1)
-    response = MovieService.conn.get("movie/search?api_key=#{ENV["moviedb_api_key"]}&language=en-US&query=#{query}page=#{page}&include_adult=false")
+    response = MovieService.conn.get("search/movie?api_key=#{ENV["moviedb_api_key"]}&language=en-US&query=#{query}&page=#{page}&include_adult=false")
     JSON.parse(response.body, symbolize_names: true)
   end
 end

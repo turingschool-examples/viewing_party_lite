@@ -11,16 +11,14 @@ class MovieFacade
 
   def self.top_rated(page = 1)
     movies = []
-    MovieService.top_rated(page)
-                .map { |hash| hash[:results] }
+    MovieService.top_rated(page)[:results]
                 .each { |result| movies << MinMovie.new(result) }
     movies
   end
 
   def self.search(query, page = 1)
     movies = []
-    MovieService.search(query, page)
-                .map { |hash| hash[:results] }
+    MovieService.search(query, page)[:results]
                 .each { |result| movies << MinMovie.new(result) }
     movies
   end
