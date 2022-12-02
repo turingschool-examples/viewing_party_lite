@@ -20,6 +20,20 @@ Viewing Party Lite is an application in which users can explore movie options an
 
 - Rails 5.2.6
 
+## Tools & Gems
+
+- RSpec
+- Simplecov
+- Webmock
+- VCR
+- Faraday
+- Figaro
+- Postman
+
+## API Endpoints
+
+- [The Movie Database API](https://www.themoviedb.org/)
+
 ## Contributors
 
 - Darby Smith | [LinkedIn](https://www.linkedin.com/in/darby-m-smith/) | [GitHub](https://github.com/DarbySmith)
