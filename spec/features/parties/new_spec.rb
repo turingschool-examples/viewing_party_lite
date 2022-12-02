@@ -70,6 +70,26 @@ RSpec.describe 'the new party form' do
     expect(page).to have_button("Submit")
   end
 
-  # it "creates a party when the Submit button is clicked"
-  # end
+  it "creates a party when the Submit button is clicked" do
+    visit "/users/#{@jim.id}/movies/680/viewing-party/new"
+
+    select '2022', :from => "[date(1i)]"
+    select 'December', :from => "[date(2i)]"
+    select '13', :from => "[date(3i)]"
+    select '17', :from => "[time(4i)]"
+    select '03', :from => "[time(5i)]"
+
+    check "1"
+
+    click_button "Submit"
+
+    expect(current_path).to eq("/users/#{@jim.id}")
+
+    expect(page).to have_link("Pulp Fiction")
+    expect(page).to have_content("Host: Jimothy")
+    expect(page).to have_content("Date: 12/13/2022")
+    expect(page).to have_content("Time: 12:03 am")
+    expect(page).to have_content("Mostafa")
+    expect(page).to_not have_content("Bryan")
+  end
 end
