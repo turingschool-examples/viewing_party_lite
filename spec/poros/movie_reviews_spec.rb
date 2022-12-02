@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe MovieReviews do
-  before(:each) do
+  before do
     attrs = {
       results: [
         {
@@ -16,11 +16,11 @@ RSpec.describe MovieReviews do
         }
       ]
     }
-    @movie_reviews = MovieReviews.new(attrs)
+    @movie_reviews = described_class.new(attrs)
   end
 
   it 'exists' do
-    expect(@movie_reviews).to be_a MovieReviews
+    expect(@movie_reviews).to be_a described_class
     expect(@movie_reviews.results[0][:author]).to eq('Goddard')
     expect(@movie_reviews.results[0][:content]).to eq('Pretty awesome movie.')
     expect(@movie_reviews.results[1][:author]).to eq('Brett Pascoe')

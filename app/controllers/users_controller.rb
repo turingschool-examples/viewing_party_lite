@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  before_action :find_user, only: [:discover, :show]
+  before_action :find_user, only: %i[discover show]
 
   def discover; end
 

@@ -6,7 +6,8 @@ RSpec.describe 'The Welcome Page', type: :feature do
   let!(:user_1) { create(:user) }
   let!(:user_2) { create(:user) }
   let!(:user_3) { create(:user) }
-  before(:each) do
+
+  before do
     visit root_path
   end
 
@@ -18,7 +19,7 @@ RSpec.describe 'The Welcome Page', type: :feature do
     it 'I see a button to create a new user' do
       click_button 'Create a New User'
 
-      expect(current_path).to eq(register_path)
+      expect(page).to have_current_path(register_path, ignore_query: true)
     end
 
     it 'I see a list of existing users which links to the users dashboard' do
@@ -30,13 +31,13 @@ RSpec.describe 'The Welcome Page', type: :feature do
         click_link user_1.email
       end
 
-      expect(current_path).to eq(user_path(user_1))
+      expect(page).to have_current_path(user_path(user_1), ignore_query: true)
     end
 
     it 'I see a link to go back to the landing page' do
       click_link 'Home'
 
-      expect(current_path).to eq(root_path)
+      expect(page).to have_current_path(root_path, ignore_query: true)
     end
   end
 end

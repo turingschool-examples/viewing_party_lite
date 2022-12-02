@@ -2,13 +2,15 @@
 
 require 'rails_helper'
 
-RSpec.describe 'The Movie Show Page', type: :feature do # rubocop:disable Metrics/BlockLength
+RSpec.describe 'The Movie Show Page', type: :feature do
   let!(:user_1) { create(:user) }
-  before(:each) do
+
+  before do
     VCR.insert_cassette 'movie_show'
     visit user_movie_path(user_1, 550)
   end
-  after(:each) do
+
+  after do
     VCR.eject_cassette
   end
 
@@ -20,7 +22,7 @@ RSpec.describe 'The Movie Show Page', type: :feature do # rubocop:disable Metric
     describe 'When I click on "Discover Page"' do
       it 'I am taken to the movies discover page' do
         click_button('Discover Page')
-        expect(current_path).to eq("/users/#{user_1.id}/discover")
+        expect(page).to have_current_path("/users/#{user_1.id}/discover", ignore_query: true)
       end
     end
 
@@ -33,7 +35,7 @@ RSpec.describe 'The Movie Show Page', type: :feature do # rubocop:disable Metric
         VCR.eject_cassette
         VCR.insert_cassette 'view_party'
         click_button('Create Viewing Party for Fight Club')
-        expect(current_path).to eq(new_user_movie_view_party_path(user_1, 550))
+        expect(page).to have_current_path(new_user_movie_view_party_path(user_1, 550), ignore_query: true)
       end
     end
 
