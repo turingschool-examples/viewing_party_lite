@@ -3,6 +3,6 @@
 
 
 
-<% @top_20.each do |movie| %>
-<p><%= link_to "#{movie.first}",  "/users/#{@user.id}/movies/#{movie[1]}", method: :get %>            Vote Average:<%= movie.last %></p>
+<% @top_20_rated.each do |movie| %>
+<p><%= link_to "#{movie.first}",  "/users/#{@user.id}/movies/#{movie[1]}", method: :get %> Vote Average:<%= movie.last %></p>
 <% end %>
