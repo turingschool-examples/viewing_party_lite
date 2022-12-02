@@ -15,5 +15,10 @@ class MovieFacade
     data = MovieService.search_by_movie_id(id)
     movie = Movie.new(data)
   end
+
+  def self.movie_reviews(id)
+    data = MovieService.search_movie_reviews(id)
+    movie = Movie.new(data)
+  end
 end
 

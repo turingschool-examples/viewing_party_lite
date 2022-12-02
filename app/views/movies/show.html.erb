@@ -1,0 +1,8 @@
+<ul>
+<% @reviews.reviews.each do |review| %>
+<li id="review-<%= review[:author] %>">
+Author: <%= review[:author] %>
+Review: <%= review[:content] %>
+</li>
+<% end%>
+</ul>

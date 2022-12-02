@@ -6,9 +6,8 @@ class Movie
               :genres,
               :summary,
               # :cast_members,
-              :total_review_count
-
-  # :review_author,
+              :total_review_count,
+              :reviews
   # :review_description
 
   def initialize(data)
@@ -20,9 +19,9 @@ class Movie
     @summary = data[:overview]
     # @cast_members = data[:cast].map { |member| (member[:name] => member[:character]) } #not right
     @total_review_count = data[:total_results]
-    # @review_author = data[:results].map { |review| (review[:author] => member[:content]) }
-  end
+    @reviews = data[:results]
 
+  end 
   # def genres
   #   data[]
   # end
