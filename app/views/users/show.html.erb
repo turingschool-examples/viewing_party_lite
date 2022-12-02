@@ -1,10 +1,20 @@
 <h1><center>Viewing Party </center></h1>
 <h2><center><%= "#{@user.name}'s Dashboard" %> </center></h2>
 <br>
-<center><%= button_to "Discover Movies", user_discovers_path(@user), method: :get %> </center>
+<center><%= button_to "Discover Movies", discover_path(@user), method: :get %> </center>
 <br>
 <hr>
-<h4><center>Current Viewing Parties<center></h4>
-<br>
+<div id='viewing_parties'>
+    <h4><center>Current Viewing Parties<center></h4>
+    <% @viewing_parties.each do |party| %>
+            <ul> 
+                <p><b>Viewing Party</b>
+                <%# https://image.tmdb.org/t/p/original %>
+                <li><%= party.start_date %></li>
+                <li><%= party.start_time %></li>
+                <li><%= party.user_hosting_status(@user) %></li>
+            </ul></p>
+            <% end %>
+</div>
 
 

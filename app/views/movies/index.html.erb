@@ -1,0 +1,5 @@
+<h1>Top Rated Movies</h1>
+
+<ul><% @movies.each do |movie| %>
+    <li><%= link_to "#{movie.movie_title}", user_movie_path(@user, movie.id), method: :get %> - Vote Average: <%= movie.rating %></li>
+<% end %>

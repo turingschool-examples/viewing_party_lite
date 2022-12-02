@@ -1,15 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe 'new user page' do
+  before :each do
+    visit register_path
+  end
+
   describe 'when I visit /register I see a form to create a new user' do
     it 'takes me to the new user path' do
       visit '/register'
       expect(current_path).to eq(register_path)
     end
-  end
-
-  before :each do
-    visit register_path
   end
 
   describe 'when I visit new_user_path' do

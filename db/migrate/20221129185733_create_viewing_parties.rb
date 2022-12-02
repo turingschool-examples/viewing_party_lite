@@ -3,8 +3,7 @@ class CreateViewingParties < ActiveRecord::Migration[5.2]
     create_table :viewing_parties do |t|
       t.string :movie_title
       t.integer :duration
-      t.date :date
-      t.time :start_time
+      t.datetime :date
 
       t.timestamps
     end
