@@ -59,10 +59,9 @@ RSpec.describe 'the new party form' do
   it "the form has a list of users with checkboxes next to each one" do
     visit "/users/#{@jim.id}/movies/680/viewing-party/new"
     
-    expect(page).to have_unchecked_field("#{@mostafa.id}")
-    expect(page).to have_unchecked_field("#{@bryan.id}")
-    expect(page).to_not have_unchecked_field("#{@jim.id}")
-    expect(page).to_not have_checked_field("#{@jim.id}")
+    expect(page).to have_unchecked_field("1")
+    expect(page).to have_unchecked_field("2")
+    expect(page).to_not have_unchecked_field("3")
   end
 
   it "has a submit button" do
@@ -70,4 +69,7 @@ RSpec.describe 'the new party form' do
     
     expect(page).to have_button("Submit")
   end
+
+  # it "creates a party when the Submit button is clicked"
+  # end
 end
