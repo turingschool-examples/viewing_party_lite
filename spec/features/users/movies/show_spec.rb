@@ -60,5 +60,11 @@ RSpec.describe 'movie details page' do
       expect(page).to have_content("Name: elshaarawy Rating: 9.0")
       expect(page).to_not have_content("Name: ashuhleyt Rating: 9.0")
     end
+
+    it 'contains a link to return to the discover page' do
+      expect(page).to have_button("Return to Discover Page")
+      click_button "Return to Discover Page"
+      expect(current_path).to eq(user_discover_index_path(@user1.id))
+    end
   end
 end

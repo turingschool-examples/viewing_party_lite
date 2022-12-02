@@ -7,7 +7,8 @@ class ViewingPartyController < ApplicationController
   def create
     user = User.find(params[:user_id])
     movie = MovieFacade.find_movie(params[:movie_id])
-    viewing_party = ViewingParty.create!(movie_id: movie.id, movie_title: movie.title, date: params[:date], start_time: params[:time], duration: params[:duration])
+    # require "pry"; binding.pry
+    viewing_party = ViewingParty.create!(movie_id: movie.id, movie_title: movie.title, date: params[:date], start_time: "#{params[:date]} #{params[:time]}", duration: params[:duration])
 
     params[:users].each do |user_id|
       if user_id == params[:user_id]

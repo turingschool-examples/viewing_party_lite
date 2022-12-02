@@ -4,7 +4,7 @@
 <p><b>Vote Average: </b><%= @movie.vote_average %></p>
 <p><b>Run Time: </b><%= "#{@movie.runtime/60}h #{@movie.runtime % 60}min" %></p>
 <p><b>Genres: </b><%= @movie.genres.to_sentence %></p>
- 
+
 <p><b>Summary: </b><%= @movie.summary %></p>
 <br>
 <h3>Cast: </h3><% @movie.cast.each do |name, character| %>
@@ -20,4 +20,5 @@
 
 <br>
 <%= button_to  "Create Viewing Party",  new_user_movie_viewing_party_path(@user.id, @movie.id), method: :get %>
+<%= button_to  "Return to Discover Page",  user_discover_index_path(@user.id), method: :get %>
 </center>

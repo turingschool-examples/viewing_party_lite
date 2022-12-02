@@ -21,15 +21,15 @@ RSpec.describe 'User Dashboard Page' do
     reviews_response = File.read('spec/fixtures/shawshank_reviews.json')
     stub_request(:get, "https://api.themoviedb.org/3/movie/278/reviews?api_key=#{ENV["movie_api_key"]}").
       to_return(status: 200, body: reviews_response)
-    
+
     visit(user_path(@user1.id))
   end
 
   describe 'when I visit users/:id' do
     it 'I see the user names dashboard header at top of page' do
 
-      expect(page).to have_content("#{@user1.name}s Dashboard")
-      expect(page).to_not have_content("#{@user2.name}s Dashboard")
+      expect(page).to have_content("#{@user1.name}'s Dashboard")
+      expect(page).to_not have_content("#{@user2.name}'s Dashboard")
     end
 
     it 'I see a button to discover movies' do
@@ -43,28 +43,28 @@ RSpec.describe 'User Dashboard Page' do
       expect(page).to have_content("#{@user1.name}s Viewing Parties")
     end
 
-    it 'in viewing parties, I should see the movie image' do 
-      # expect(page).to have_content(#image)
+    it 'in viewing parties, I should see the movie image' do
+      expect(page).to have_xpath("//img[@src='https://image.tmdb.org/t/p/original/hBcY0fE9pfXzvVaY4GKarweriG2.jpg']")
     end
 
-    it 'displays movie title that links to the movie show page' do 
+    it 'displays movie title that links to the movie show page' do
       expect(page).to have_link("The Shawshank Redemption")
       click_link("The Shawshank Redemption")
       expect(current_path).to eq(user_movie_path( @user1.id, 278))
     end
 
-    it 'displays date and time of event' do 
+    it 'displays date and time of event' do
       expect(page).to have_content(@viewingparty1.date)
-      expect(page).to have_content(@viewingparty1.start_time)
+      expect(page).to have_content(@viewingparty1.start_time.strftime('%I:%M:%S %p'))
     end
 
-    it 'displays host of event' do 
+    it 'displays host of event' do
       expect(page).to have_content(@user1.name)
       expect(page).to have_content("Congrats! You are the host of this partayyyyy!")
     end
 
-    it 'displays attendees of event' do 
-      expect(page).to have_content("Attendee:")
+    it 'displays attendees of event' do
+      expect(page).to have_content("Attendees:")
       expect(page).to have_content(@user2.name)
     end
   end
