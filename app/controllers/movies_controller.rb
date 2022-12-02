@@ -20,6 +20,7 @@ class MoviesController < ApplicationController
     @title = movie_data[:original_title]
     @vote = movie_data[:vote_average]
     @runtime = movie_data[:runtime]
+    @poster_path = movie_data[:poster_path]
     @genre = movie_data[:genres]
     @summary = movie_data[:overview]
     @movie_cast = MoviesService.new.cast_list(params[:id])[:cast][0..9].pluck(:name, :character)

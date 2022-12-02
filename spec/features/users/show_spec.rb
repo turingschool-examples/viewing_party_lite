@@ -6,11 +6,11 @@ RSpec.describe 'the user show page' do
     @yuji = User.create!(name: "Yuji", email: "yuyuhakusho2020@hotmail.com")
     @bryan = User.create!(name: "Bryan", email: "breakingbad2020@hotmail.com")
 
-    @party_1 = @mostafa.parties.create!(movie_title: "The Godfather", duration: 175, date: "1/12/2022", time: "19:00", host_id: @mostafa.id)
-    @party_2 = @mostafa.parties.create!(movie_title: "Young Adam", duration: 93, date: "4/12/2022", time: "18:00", host_id: @mostafa.id)
-    @party_3 = @mostafa.parties.create!(movie_title: "Natural Born Killers", duration: 118, date: "7/12/2022", time: "20:00", host_id: @mostafa.id)
-    @party_4 = @yuji.parties.create!(movie_title: "Pulp Fiction", duration: 154, date: "8/12/2022", time: "19:30", host_id: @yuji.id)
-    @party_5 = @bryan.parties.create!(movie_title: "Up", duration: 96, date: "8/12/2022", time: "17:00", host_id: @bryan.id)
+    @party_1 = @mostafa.parties.create!(movie_title: "The Godfather", duration: 175, date: "1/12/2022", time: "19:00", host_id: @mostafa.id, movie_poster: "https://image.tmdb.org/t/p/original/3bhkrj58Vtu7enYsRolD1fZdja1.jpg")
+    @party_2 = @mostafa.parties.create!(movie_title: "Young Adam", duration: 93, date: "4/12/2022", time: "18:00", host_id: @mostafa.id, movie_poster: "https://image.tmdb.org/t/p/original/3bhkrj58Vtu7enYsRolD1fZdja1.jpg")
+    @party_3 = @mostafa.parties.create!(movie_title: "Natural Born Killers", duration: 118, date: "7/12/2022", time: "20:00", host_id: @mostafa.id, movie_poster: "https://image.tmdb.org/t/p/original/3bhkrj58Vtu7enYsRolD1fZdja1.jpg")
+    @party_4 = @yuji.parties.create!(movie_title: "Pulp Fiction", duration: 154, date: "8/12/2022", time: "19:30", host_id: @yuji.id, movie_poster: "https://image.tmdb.org/t/p/original/3bhkrj58Vtu7enYsRolD1fZdja1.jpg")
+    @party_5 = @bryan.parties.create!(movie_title: "Up", duration: 96, date: "8/12/2022", time: "17:00", host_id: @bryan.id, movie_poster: "https://image.tmdb.org/t/p/original/3bhkrj58Vtu7enYsRolD1fZdja1.jpg")
 
     @yuji_party_1 = UserParty.create(user_id: @yuji.id, party_id: @party_1.id)
     @yuji_party_2 = UserParty.create(user_id: @yuji.id, party_id: @party_2.id)
