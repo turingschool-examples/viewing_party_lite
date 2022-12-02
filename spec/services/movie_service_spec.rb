@@ -28,7 +28,7 @@ RSpec.describe MovieService do
     context "#search(query)" do 
       it 'returns a movies details' do
         VCR.use_cassette('search_service') do
-          movie_data = MovieService.search
+          movie_data = MovieService.search('a')
           expect(movie_data).to be_a Hash
           expect(movie_data[:results]).to be_a Array
           expect(movie_data[:results][0]).to be_a Hash
