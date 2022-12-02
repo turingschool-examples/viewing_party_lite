@@ -14,9 +14,9 @@ RSpec.describe 'movies index' do
     click_on "Find Top Rated Movies"
 
     expect(page.status_code).to eq(200)
-    expect(page).to have_content("The Godfather")
-    expect(page).to have_content("20th Century Girl")
-    expect(page).to_not have_content("Finding Nemo")
+    expect(page).to have_link("The Godfather")
+    expect(page).to have_link("20th Century Girl")
+    expect(page).to_not have_link("Finding Nemo")
   end
 
   it 'has the vote average for the movie from the top rated movies', :vcr do
@@ -40,9 +40,9 @@ RSpec.describe 'movies index' do
     click_on "Find Movies"
 
     expect(page.status_code).to eq(200)
-    expect(page).to have_content("Finding Nemo")
-    expect(page).to have_content("Little Nemo")
-    expect(page).to_not have_content("20th Century Girl")
+    expect(page).to have_link("Finding Nemo")
+    expect(page).to have_link("Little Nemo")
+    expect(page).to_not have_link("20th Century Girl")
   end
 
   it 'has the vote average for the movie from the search field', :vcr do
@@ -56,5 +56,19 @@ RSpec.describe 'movies index' do
 
     expect(page.status_code).to eq(200)
     expect(page).to have_content("Vote average: 7.8")
+  end
+
+  it 'has a link to the movies show page', :vcr do
+    visit user_discover_index_path(@user_1)
+
+    expect(page).to have_button("Find Top Rated Movies")
+
+    click_on "Find Top Rated Movies"
+
+    expect(page.status_code).to eq(200)
+    expect(page).to have_link("The Godfather")
+
+    click_on "The Godfather"
+    expect(current_path).to eq(user_movie_path(@user_1, 238))
   end
 end
