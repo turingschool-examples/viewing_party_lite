@@ -15,6 +15,7 @@ class MoviesController < ApplicationController
     id = params[:id]
     @movie = MovieFacade.movie_id(id)
     @reviews = MovieFacade.movie_reviews(id)
+    @cast = MovieFacade.movie_cast(id)
   end
 
   # def search
