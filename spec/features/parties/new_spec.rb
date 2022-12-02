@@ -64,9 +64,8 @@ RSpec.describe 'the new party form' do
     expect(page).to_not have_unchecked_field("3")
   end
 
-  it "has a submit button" do
+  it "has Discover Page and Create Party buttons" do
     visit "/users/#{@jim.id}/movies/680/viewing-party/new"
-    
     expect(page).to have_button("Create Party")
     expect(page).to have_button("Discover Page")
 
@@ -75,7 +74,7 @@ RSpec.describe 'the new party form' do
     expect(current_path).to eq("/users/#{@jim.id}/discover")
   end
 
-  it "creates a party when the Submit button is clicked" do
+  it "creates a party when the Create Party button is clicked" do
     visit "/users/#{@jim.id}/movies/680/viewing-party/new"
 
     select '2022', :from => "[date(1i)]"
@@ -86,7 +85,7 @@ RSpec.describe 'the new party form' do
 
     check "1"
 
-    click_button "Submit"
+    click_button "Create Party"
 
     expect(current_path).to eq("/users/#{@jim.id}")
 
