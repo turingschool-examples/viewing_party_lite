@@ -8,6 +8,7 @@ FactoryBot.define do
 
   factory :viewing_party, class: ViewingParty do
     movie_title { Faker::Movie.title }
+    movie_id { Faker::Number.between(from: 200, to: 240) }
     duration { Faker::Number.between(from: 20, to: 210) }
     date { Faker::Time.forward(days: 365, period: :evening, format: :long) }
   end

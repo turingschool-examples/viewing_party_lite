@@ -1,4 +1,6 @@
-require: rubocop-rspec
+require: 
+  - rubocop-rspec
+  - rubocop-rails
 # The behavior of RuboCop can be controlled via the .rubocop.yml
 # configuration file. It makes it possible to enable/disable
 # certain cops (checks) and to alter their behavior if they accept

@@ -1,6 +1,6 @@
 class ViewingParty < ApplicationRecord
-  validates_presence_of :movie_title, :duration, :date
-  validates_numericality_of :duration, greater_than: 0
+  validates :movie_title, :movie_id, :duration, :date, presence: true
+  validates :duration, :movie_id, numericality: { greater_than: 0 }
 
   has_many :user_parties
   has_many :users, through: :user_parties
@@ -32,5 +32,9 @@ class ViewingParty < ApplicationRecord
     user_parties.select do |participant|
       return participant.user.name if participant.user_status == 'hosting'
     end
+  end
+
+  def movie_poster
+    MovieFacade.movie_by_id(movie_id).poster
   end
 end

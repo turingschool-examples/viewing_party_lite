@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/206?api_key=<movie_api_key>&language%5B%5D=en-US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 02 Dec 2022 16:49:16 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - c682dc59d8a37389400a920b285ea50c971c91d3
+      X-Memc-Age:
+      - '11712'
+      X-Memc-Expires:
+      - '4774'
+      Etag:
+      - W/"4de491606e0fd6e1d57d56386ce887b3"
+      Vary:
+      - Accept-Encoding,Accept-Encoding,Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 1c13683c7de319f25e08f83861fc6dc2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - b9O7K14uOuJIefzyO0wzH4Ke2tjonK2QEdPes056Lw-4w3rNpjUkWg==
+      Age:
+      - '147'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/nwbbZhrIXW4YHrn3YDn9pBA19eO.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"}],"homepage":"","id":206,"imdb_id":"tt0287624","original_language":"en","original_title":"Paradise
+        Found","overview":"Paradise Found is a biography about the painter Paul Gauguin.
+        Focusing on his personal conflict between citizen life and his family life
+        and the art scene in Frane. In an incredible imagery montage Gauguin manages
+        to make a successful living in the South Pacific, while being in opposition
+        to France.","popularity":3.328,"poster_path":"/i5tYnEeCAPODbEbbwYmNd8Y9seA.jpg","production_companies":[],"production_countries":[{"iso_3166_1":"AU","name":"Australia"},{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"FR","name":"France"},{"iso_3166_1":"GB","name":"United
+        Kingdom"}],"release_date":"2003-01-01","revenue":0,"runtime":89,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"","title":"Paradise
+        Found","video":false,"vote_average":6.571,"vote_count":21}'
+  recorded_at: Fri, 02 Dec 2022 16:51:43 GMT
+recorded_with: VCR 6.1.0

@@ -1,4 +1,8 @@
-<h1>Top Rated Movies</h1>
+<h1><center>Viewing Party</center></h1>
+<br>
+<hr>
+<center><%= button_to "Discover Page", discover_path(@user), method: :get %> </center>
+<h3><center>Top Rated Movies</center></h3>
 
 <ul><% @movies.each do |movie| %>
     <li><%= link_to "#{movie.movie_title}", user_movie_path(@user, movie.id), method: :get %> - Vote Average: <%= movie.rating %></li>
