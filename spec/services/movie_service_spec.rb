@@ -17,6 +17,8 @@ RSpec.describe MovieService, :vcr do
         expect(credit_data). to be_a Hash
         expect(credit_data[:cast][0][:name]).to eq("Edward Norton")
         expect(credit_data[:cast][0][:character]).to eq("The Narrator")
+        expect(credit_data[:cast][1][:name]).to eq("Brad Pitt")
+        expect(credit_data[:cast][1][:character]).to eq("Tyler Durden")
       end
     end
   end
