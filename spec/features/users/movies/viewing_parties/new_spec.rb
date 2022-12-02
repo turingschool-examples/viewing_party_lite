@@ -23,7 +23,6 @@ RSpec.describe 'new viewing party page' do
 
   it 'should display movie title' do
     expect(page).to have_content("The Shawshank Redemption")
-    # save_and_open_page
   end
   it 'should have a form with duration of party, duration must be at least equal to movie runtime' do
     expect(page).to have_field(:duration)

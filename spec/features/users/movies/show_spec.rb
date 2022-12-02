@@ -59,7 +59,6 @@ RSpec.describe 'movie details page' do
     it 'I see each reviews author and information' do
       expect(page).to have_content("Name: elshaarawy Rating: 9.0")
       expect(page).to_not have_content("Name: ashuhleyt Rating: 9.0")
-      # save_and_open_page
     end
   end
 end
