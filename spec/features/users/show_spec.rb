@@ -3,18 +3,6 @@ require 'faker'
 
 RSpec.describe 'Users' do
   before(:all) do
-    up_search_json = File.read('spec/fixtures/search_up_movies.json')
-    alien_search_json = File.read('spec/fixtures/search_alien_movies.json')
-    whiplash_search_json = File.read('spec/fixtures/search_whiplash_movies.json')
-    toy_story_search_json = File.read('spec/fixtures/search_toy_story_movies.json')
-    brave_search_json = File.read('spec/fixtures/search_brave_movies.json')
-
-    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['tmdb_api_key']}&language=en-US&page=1&include_adult=false&query=Up").to_return(status: 200, body: up_search_json)
-    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['tmdb_api_key']}&language=en-US&page=1&include_adult=false&query=Alien").to_return(status: 200, body: alien_search_json)
-    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['tmdb_api_key']}&language=en-US&page=1&include_adult=false&query=Whiplash").to_return(status: 200, body: whiplash_search_json)
-    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['tmdb_api_key']}&language=en-US&page=1&include_adult=false&query=Toy Story").to_return(status: 200, body: toy_story_search_json)
-    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['tmdb_api_key']}&language=en-US&page=1&include_adult=false&query=Brave").to_return(status: 200, body: brave_search_json)
-
     @user1 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.free_email)
     @user2 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.free_email)
     @user3 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.free_email)
@@ -41,10 +29,21 @@ RSpec.describe 'Users' do
 
     @party_user11 = PartyUser.create!(user_id: @user4.id, party_id: @party5.id, host: true)
     @party_user12 = PartyUser.create!(user_id: @user3.id, party_id: @party5.id, host: false)
+  end
+  before :each do
+    up_search_json = File.read('spec/fixtures/search_up_movies.json')
+    alien_search_json = File.read('spec/fixtures/search_alien_movies.json')
+    whiplash_search_json = File.read('spec/fixtures/search_whiplash_movies.json')
+    toy_story_search_json = File.read('spec/fixtures/search_toy_story_movies.json')
+    brave_search_json = File.read('spec/fixtures/search_brave_movies.json')
 
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['tmdb_api_key']}&language=en-US&page=1&include_adult=false&query=Up").to_return(status: 200, body: up_search_json)
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['tmdb_api_key']}&language=en-US&page=1&include_adult=false&query=Alien").to_return(status: 200, body: alien_search_json)
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['tmdb_api_key']}&language=en-US&page=1&include_adult=false&query=Whiplash").to_return(status: 200, body: whiplash_search_json)
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['tmdb_api_key']}&language=en-US&page=1&include_adult=false&query=Toy Story").to_return(status: 200, body: toy_story_search_json)
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['tmdb_api_key']}&language=en-US&page=1&include_adult=false&query=Brave").to_return(status: 200, body: brave_search_json)
     visit "/users/#{@user1.id}"
   end
-
   describe 'show' do
     it 'has user name dashboard at the top' do
       expect(page).to have_content("#{@user1.name} Dashboard")
@@ -113,6 +112,8 @@ RSpec.describe 'Users' do
         expect(page).not_to have_content('Brave')
       end
       it 'redirects to the movie show page when the movie title is clicked' do
+        up_page_json = File.read('spec/fixtures/up_page_movies.json')
+        stub_request(:get, "https://api.themoviedb.org/3/movie/?api_key=#{ENV['tmdb_api_key']}&language=en-US").to_return(status: 200, body: up_page_json)
         click_link 'Up'
         expect(page).to have_current_path("/users/#{@user1.id}/movies/14160")
       end

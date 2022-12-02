@@ -18,15 +18,32 @@
         <%party_movie = party.movie_details%>
         <%=image_tag party_movie.poster_path%>
         <%=link_to party_movie.title, user_movie_path(@user, party_movie.id)%> 
-        Event Time: <%%>
-        Host:
+        Event Start Time: <%=party.date%> at <%=party.start_time%>
+        Host: <%=party.host%>
+        Invitees: <ul><%party.invited_users.each do |name|%>
+                        <%if name == @user.name%>
+                          <b><%=name%></b>
+                        <%else%>
+                          <%=name%>
+                        <%end%>
+                      <%end%>
+        </ul>
       </div>
     <%end%>
   </div>
   <div id="hosting">
     <h4>Hosted Parties</h4>
-    <%@parties_invited_to.each do |party|%>
+    <%@parties_hosting.each do |party|%>
       <div id="party_<%=party.id%>">
+        <%party_movie = party.movie_details%>
+        <%=image_tag party_movie.poster_path%>
+        <%=link_to party_movie.title, user_movie_path(@user, party_movie.id)%> 
+        Event Start Time: <%=party.date%> at <%=party.start_time%>
+        Host: <%=party.host%>
+        Invitees: <ul><%party.invited_users.each do |name|%>
+                        <%=name%>
+                      <%end%>
+        </ul>
       </div>
     <%end%>
   </div>
