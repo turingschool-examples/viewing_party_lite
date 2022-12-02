@@ -10,7 +10,7 @@ class MovieFacade
   end
 
   def self.movie_details(movie_id)
-    Movie.new(MovieService.movie_details(movie_id), MovieFacade.first_10_cast_members(movie_id))
+    Movie.new(MovieService.movie_details(movie_id), MovieFacade.first_10_cast_members(movie_id), MovieFacade.total_reviews(movie_id))
   end
   # def self.vote_average(movie_id)
   #   MovieService.movie_details(movie_id)[:vote_average]
@@ -38,6 +38,10 @@ class MovieFacade
 
   def self.total_reviews(movie_id)
     MovieService.movie_reviews(movie_id)[:total_results]
+  end
+
+  def self.review_info(movie_id)
+    MovieService.movie_reviews(movie_id)[:results]
   end
 
 end

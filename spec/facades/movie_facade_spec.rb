@@ -14,6 +14,12 @@ RSpec.describe MovieFacade, :vcr do
       end
     end
 
+    describe '#movie_details(movie_id)' do
+      it '- creates a new movie poro' do
+
+      end
+    end
+
     # describe '#vote_average(movie_id)' do
     #   it '- returns the vote average of a given movie id' do
     #     expect(MovieFacade.vote_average(550)).to eq(8.428)
@@ -56,6 +62,25 @@ RSpec.describe MovieFacade, :vcr do
     describe '#total_reviews(movie_id)' do
       it '- returns a count of the total reviews of a given movie id' do
         expect(MovieFacade.total_reviews(550)).to eq(7)
+      end
+    end
+
+    describe '#review_info(movie_id)' do 
+      it '- returns each reviews author and information' do
+        expect(MovieFacade.review_info(550)[1]).to eq({
+          "author": "Brett Pascoe",
+          "author_details": {
+              "name": "Brett Pascoe",
+              "username": "SneekyNuts",
+              "avatar_path": "/https://www.gravatar.com/avatar/04d45e186650672a416315dac947b3d6.jpg",
+              "rating": 9.0
+          },
+          "content": "In my top 5 of all time favourite movies. Great story line and a movie you can watch over and over again.",
+          "created_at": "2018-07-05T13:22:41.754Z",
+          "id": "5b3e1ba1925141144c007f17",
+          "updated_at": "2021-06-23T15:58:10.199Z",
+          "url": "https://www.themoviedb.org/review/5b3e1ba1925141144c007f17"
+      })
       end
     end
   end
