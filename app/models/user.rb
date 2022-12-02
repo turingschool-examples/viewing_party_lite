@@ -6,4 +6,12 @@ class User < ApplicationRecord
   
   has_many :user_parties
   has_many :parties, through: :user_parties
+
+  def movie_cards_info
+    parties_info = {}
+    parties.each do |party|
+      parties_info[party.movie_id] = [MovieFacade.movie_image(party.movie_id), MovieFacade.movie_title(party.movie_id)]
+    end
+    parties_info
+  end
 end
