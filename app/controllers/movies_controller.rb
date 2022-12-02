@@ -8,7 +8,6 @@ class MoviesController < ApplicationController
 
     json = JSON.parse(response.body, symbolize_names: true)
     @movies = json[:results][0..19]
-    require 'pry'; binding.pry
     @user = User.find(params[:user_id])
   end
 
