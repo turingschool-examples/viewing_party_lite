@@ -24,6 +24,11 @@ class Movie
     @reviews = data[:results]
 
   end 
+
+  def length_to_minutes
+    binding.pry
+    @run_time
+  end
   # def genres
   #   data[]
   # end
