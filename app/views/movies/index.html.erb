@@ -1,0 +1,10 @@
+<div style="text-align:center">
+  <%= button_to 'Discover Page', user_discover_index_path(@user), method: :get %>
+</div>
+
+<ul style="list-style-type:none;">
+  <% @movies.each do |movie| %>
+  <% binding.pry %>
+    <li><%= movie[:title] %>
+  <% end %>
+</ul>
