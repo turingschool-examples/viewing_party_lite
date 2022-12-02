@@ -5,5 +5,7 @@ class MovieFacade
     end
   end
 
-  def self.movie_search(id); end
+  def self.movie_by_id(id)
+    Movie.new(MovieService.get_movie_by_id(id))
+  end
 end

@@ -25,6 +25,15 @@ RSpec.describe 'Movies Index Page' do
     expect(page).to_not have_content('Suicide Squad')
   end
 
+  it 'has links on each title to the movies show page', :vcr do
+    click_button('Find Top Rated Movies')
+
+    expect(page).to have_link('The Godfather')
+    click_link('The Godfather')
+
+    expect(current_path).to eq(user_movie_path(user1, 238))
+  end
+
   xit 'has a search bar with submit button to find movies' do
     expect(page).to have_button('Find Movies')
 
