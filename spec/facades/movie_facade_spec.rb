@@ -2,17 +2,17 @@ require 'rails_helper'
 
 RSpec.describe MovieFacade, :vcr do
   describe 'class methods' do 
-    # describe '#movie_title(movie_id)' do 
-    #   it '- returns the movie title of a given movie id' do
-    #     expect(MovieFacade.movie_title(550)).to eq("Fight Club")
-    #   end
-    # end
+    describe '#movie_title(movie_id)' do 
+      it '- returns the movie title of a given movie id' do
+        expect(MovieFacade.movie_title(550)).to eq("Fight Club")
+      end
+    end
 
-    # describe '#movie_image(movie_id)' do
-    #   it '- returns the movie image of a given movie id' do
-    #     expect(MovieFacade.movie_image(550)).to eq("/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg")
-    #   end
-    # end
+    describe '#movie_image(movie_id)' do
+      it '- returns the movie image of a given movie id' do
+        expect(MovieFacade.movie_image(550)).to eq("/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg")
+      end
+    end
 
     describe '#movie_details(movie_id)' do
       it '- creates a new movie poro' do
