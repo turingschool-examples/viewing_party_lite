@@ -16,15 +16,15 @@
     <%@parties_invited_to.each do |party|%>
       <div id="party_<%=party.id%>">
         <%party_movie = party.movie_details%>
-        <img src="https://api.themoviedb.org<%=party_movie.poster_path%>">
-        <%=link_to party_movie.title, user_movie_path(@user, party_movie.id)%> 
-        Event Start Time: <%=party.date%> at <%=party.start_time%>
-        Host: <%=party.host%>
+        <img src="https://image.tmdb.org/t/p/w500<%=party_movie.poster_path%>" height="150px"><br>
+        <%=link_to party_movie.title, user_movie_path(@user, party_movie.id)%><br>
+        Event Start Time: <%=party.date%> at <%=party.start_time%><br>
+        Host: <%=party.host%><br>
         Invitees: <ul id="invited_to_<%=party.id%>"><%party.invited_users.each do |name|%>
                         <%if name == @user.name%>
-                          <b><%=name%></b>
+                          <li><b><%=name%></b></li>
                         <%else%>
-                          <%=name%>
+                          <li><%=name%></li>
                         <%end%>
                       <%end%>
         </ul>
@@ -36,12 +36,12 @@
     <%@parties_hosting.each do |party|%>
       <div id="party_<%=party.id%>">
         <%party_movie = party.movie_details%>
-        <img src="https://api.themoviedb.org<%=party_movie.poster_path%>">
-        <%=link_to party_movie.title, user_movie_path(@user, party_movie.id)%> 
-        Event Start Time: <%=party.date%> at <%=party.start_time%>
-        Host: <%=party.host%>
+        <img src="https://image.tmdb.org/t/p/w500<%=party_movie.poster_path%>" height="150px"><br>
+        <%=link_to party_movie.title, user_movie_path(@user, party_movie.id)%><br>
+        Event Start Time: <%=party.date%> at <%=party.start_time%><br>
+        Host: <%=party.host%><br>
         Invitees: <ul id="invited_to_<%=party.id%>"><%party.invited_users.each do |name|%>
-                        <%=name%>
+                        <li><%=name%></li>
                       <%end%>
         </ul>
       </div>

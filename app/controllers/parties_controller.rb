@@ -16,8 +16,8 @@ class PartiesController < ApplicationController
       PartyUser.create(party_id: new_party.id, user_id: user.id, host: true)
       params[:users].each do |id|
         PartyUser.create(party_id: new_party.id, user_id: id.to_i, host: false)
-        p "test"
       end
+      redirect_to user_path(user)
       redirect_to user_path(user)
     else
       redirect_to new_user_movie_party_path(user, movie.id)
