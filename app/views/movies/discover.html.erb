@@ -1,6 +1,8 @@
-<h1>The Movies Discover Page</h1>
-<%= button_to "Discover The Top Rated Movies", "/users/#{@user.id}/movies", method: :get, params:{q: 'top 20rated'} %>
+<center>
+<h1>Discover Movies</h1><br><br>
+<%= button_to "Discover The Top Rated Movies", "/users/#{@user.id}/movies", method: :get, params:{q: 'top 20rated'} %><br>
 <%= form_with url: "/users/#{@user.id}/movies", method: :get, local: true do |form| %>
 <%= form.text_field :"q", placeholder: "Search Movies" %>
 <%= form.submit :'Find Movies' %>
 <% end %>
+</center>
