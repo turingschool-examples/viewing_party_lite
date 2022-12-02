@@ -43,5 +43,10 @@ RSpec.describe 'User Dashboard Page' do
       expect(page).to have_content(@viewingparty1.date)
       expect(page).to have_content(@viewingparty1.time)
     end
+
+    it 'displays host of event' do 
+      expect(page).to have_content(@user1.name)
+      expect(page).to have_content("Host: William")
+    end
   end
 end

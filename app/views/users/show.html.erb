@@ -4,10 +4,16 @@
   <h4><%= @user.name %>s Viewing Parties</h4>
   <%  @user.viewing_parties.each do |party| %>
     <% film = MovieFacade.find_movie(party[:movie_id]) %>
-      <img src=<%= "https://image.tmdb.org/t/p/original#{film.movie_poster}" %> width="300" height="300" ><br>
-      <%= link_to film.title, user_movie_path(@user, film.id) %><br>
-      <%= party.date %><br>
-      <%= party.start_time %><br>
+    <p><img src=<%= "https://image.tmdb.org/t/p/original#{film.movie_poster}" %> width="300" height="300" ></p><br>
+    <%= link_to film.title, user_movie_path(@user, film.id) %><br>
+    <%= party.date %><br>
+    <%= party.start_time %><br>
+    <% user_viewing_party = UserViewingParty.where(viewing_party_id: party.id) %>
+    <% user_viewing_party.each do |uvp| %>
+      <% if uvp.host %>
+        Host: <%= User.find(uvp.user_id).name %>
+      <% end %>
+    <% end %>
   <% end %>
   </center>
 
