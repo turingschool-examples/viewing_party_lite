@@ -6,7 +6,7 @@ class Movie
               :genres,
               :summary,
               :total_review_count,
-              :reviews
+              :reviews,
               :cast_members
 
   # :review_author,
