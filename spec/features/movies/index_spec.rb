@@ -1,18 +1,40 @@
 require 'rails_helper'
 
-RSpec.describe 'Movies Page' do
-  describe 'I can discover movies' do
-    before(:each) do
-      @user1 = User.create!(name: 'Mary', email: 'mary@gmail.com')
-      @user2 = User.create!(name: 'Larry', email: 'larry@hotmail.com')
-      @user3 = User.create!(name: 'Sherri', email: 'sherri@aol.com')
+RSpec.describe 'The Movies Index Page' do
+  describe 'As a User' do
+    describe 'When I visit the Discover Movies Index Page' do
+      describe "And click on the 'Find Top Rated Movies' button" do
+        before(:each) do
+          @user1 = User.create!(name: 'Mary', email: 'mary@gmail.com')
+          visit user_discover_index_path(@user1)
+          click_button('Find Top Rated Movies')
+        end
+        it 'redirects to the Movies Index Page' do
+          expect(current_path).to eq(user_movies_path(@user1))
+        end
 
-      movie_results = File.read('spec/fixtures/movie_results.json')
-      stub_request(:get, "https://api.themoviedb.org/3/movie/popular").
-      to_return(status: 200, body: movie_results)
+        it 'displays 20 top rated movies' do
+          expect(page).to have_content('Parasite')
+          expect(page).to have_content('Shawshank Redemption')
+          expect(page).to_not have_content('Boogie Nights')
+        end
 
-      visit "users/#{@user1.id}/movies"
+        it "has the 'Vote Average' next to each movie title" do
+          parasite_id = 496243
+
+          within "#voting_average_#{parasite_id}" do
+            expect(page).to have_content("Vote Average: 8.5")
+          end
+        end
+
+        it 'has each movie title as a link to its show page' do
+          expect(page).to have_content('Parasite')
+
+          click_link('Parasite')
+
+          expect(current_path).to eq(user_movie_path(@user1, 496243))
+        end
+      end
     end
-
   end
 end
