@@ -21,7 +21,7 @@ class Movie
     @summary_description = movie_details[:overview]
     @vote_average = movie_details[:vote_average]
     @total_reviews = movie_reviews[:total_results]
-    @reviews = get_reviews(movie_reviews)movie_reviews[:results]
+    @reviews = get_reviews(movie_reviews)
     @cast = get_cast(movie_credits)
   end
 
@@ -42,5 +42,6 @@ class Movie
     movie_reviews.each do |review|
       review_hash[review[:author]] = review[:content]
     end
+    review_hash
   end
 end
