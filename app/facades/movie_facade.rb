@@ -10,7 +10,7 @@ class MovieFacade
     response = conn.get("/3/search/movie")
 
     data = JSON.parse(response.body, symbolize_names: true)
-    # require "pry"; binding.pry
+  
     movies = data[:results][0..19]
   end
 
@@ -21,7 +21,7 @@ class MovieFacade
     response = conn.get("/3/movie/top_rated")
 
     data = JSON.parse(response.body, symbolize_names: true)
-    # require "pry"; binding.pry
+   
     movies = data[:results][0..19]
   end
 

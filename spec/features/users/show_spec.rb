@@ -18,13 +18,17 @@ RSpec.describe 'User Dashboard Page' do
     it 'I see a button to discover movies' do
       expect(page).to have_button("Discover Movies")
       click_button "Discover Movies"
-      save_and_open_page
+
       expect(current_path).to eq(user_discover_index_path(@user1.id))
     end
 
     it 'has a section that lists viewing parties' do
       expect(page).to have_content("#{@user1.name}s Viewing Parties")
+    end
 
+    it 'in viewing parties, I should see the movie image' do 
+      # expect(page).to have_content(#image)
+      save_and_open_page
     end
   end
 end

@@ -2,5 +2,9 @@
   <center><h2><%= @user.name %>s Dashboard</h2>
   <%= button_to "Discover Movies", user_discover_index_path(@user.id), method: :get %>
   <h4><%= @user.name %>s Viewing Parties</h4>
+  <%  @user.viewing_parties.each do |party| %>
+    <% film = MovieFacade.find_movie(party[:movie_id]) %>
+      <img src=<%= "https://image.tmdb.org/t/p/original#{film.movie_poster}" %> width="300" height="300" >
+  <% end %>
   </center>
 
