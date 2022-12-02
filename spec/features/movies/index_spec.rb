@@ -9,17 +9,17 @@ RSpec.describe 'The Movies Index Page' do
           visit user_discover_index_path(@user1)
           click_button('Find Top Rated Movies')
         end
-        xit 'redirects to the Movies Index Page' do
+        it 'redirects to the Movies Index Page' do
           expect(current_path).to eq(user_movies_path(@user1))
         end
 
-        xit 'displays 20 top rated movies' do
+        it 'displays 20 top rated movies' do
           expect(page).to have_content('Parasite')
           expect(page).to have_content('Shawshank Redemption')
           expect(page).to_not have_content('Boogie Nights')
         end
 
-        xit "has the 'Vote Average' next to each movie title" do
+        it "has the 'Vote Average' next to each movie title" do
           parasite_id = 496243
 
           within "#voting_average_#{parasite_id}" do
@@ -27,8 +27,8 @@ RSpec.describe 'The Movies Index Page' do
           end
         end
 
-        xit 'has each movie title as a link to its show page' do
-          expect(page).to have_content('Parasite')
+        it 'has each movie title as a link to its show page' do
+          expect(page).to have_link('Parasite')
 
           click_link('Parasite')
 
@@ -51,7 +51,15 @@ RSpec.describe 'The Movies Index Page' do
         it 'displays 20 movie search results' do
           expect(page).to have_content('Jojo Rabbit')
           expect(page).to have_content('Jojo in the Stars')
-          expect(page).to_not have_content('On Dolphin Terms: The Story of Dean & JoJo')
+          expect(page).to have_content('On Dolphin Terms: The Story of Dean & JoJo')
+        end
+
+        it 'has each movie title as a link to its show page' do
+          expect(page).to have_link('Jojo Rabbit')
+          save_and_open_page
+          click_link('Jojo Rabbit')
+
+          expect(current_path).to eq(user_movie_path(@user1, 515001))
         end
 
         it "has the 'Vote Average' next to each movie title" do
@@ -60,14 +68,6 @@ RSpec.describe 'The Movies Index Page' do
           within "#voting_average_#{jojo_id}" do
             expect(page).to have_content("Vote Average: 8.1")
           end
-        end
-
-        it 'has each movie title as a link to its show page' do
-          expect(page).to have_content('JoJo Rabbit')
-
-          click_link('JoJo Rabbit')
-
-          expect(current_path).to eq(user_movie_path(@user1, 515001))
         end
       end
     end
