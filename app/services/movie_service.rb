@@ -1,4 +1,4 @@
-class TmdbService 
+class MovieService 
   def movie_details(id)
     get_url("https://api.themoviedb.org/3/movie/#{id}?api_key=#{ENV['tmdb_key']}&language=en-US")
   end

@@ -1,6 +1,3 @@
-require './app/poros/movie'
-require './app/services/tmdb_service'
-
 class MoviesSearch
   def top_rated_movies
     service.top_rated_movies[:results].map do |data|
@@ -9,7 +6,7 @@ class MoviesSearch
   end
 
   def service
-    TmdbService.new
+    MovieService.new
   end
 
   def movies_keyword(params)
