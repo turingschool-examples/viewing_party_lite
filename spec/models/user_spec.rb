@@ -51,5 +51,10 @@ RSpec.describe User, type: :model do
         expect(@user1.parties_hosting).to eq([@party1, @party2])
       end
     end
+    describe '.other_users' do
+      it 'retrieves all users except for itself' do
+        expect(@user1.other_users).to eq([@user2, @user3, @user4])
+      end
+    end
   end
 end

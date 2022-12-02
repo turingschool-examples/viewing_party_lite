@@ -27,7 +27,7 @@ RSpec.describe 'New Viewing Party' do
         fill_in 'Start Time', with: "14:00"
         check @user2.name
         check @user3.name
-        click_button 'Register'
+        click_button 'Create'
 
         expect(page).to have_current_path(user_path(@user1))
         within '#hosting' do
@@ -42,7 +42,7 @@ RSpec.describe 'New Viewing Party' do
         fill_in 'Date', with: (Date.today + 5.days)
         fill_in 'Start Time', with: "14:00"
         check @user2.name
-        click_button 'Register'
+        click_button 'Create'
 
         visit user_path(@user2)
         within '#invited_to' do
@@ -65,7 +65,7 @@ RSpec.describe 'New Viewing Party' do
         fill_in 'Date', with: (Date.today + 5.days)
         fill_in 'Start Time', with: "14:00"
         check @user2.name
-        click_button 'Register'
+        click_button 'Create'
 
         expect(page).to have_current_path(visit new_user_movie_party_path(@user1, 862))
 

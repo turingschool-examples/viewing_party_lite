@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col d-flex justify-content-center">
+    <%= form_with url: user_movie_parties_path, method: :post do |f| %>
+      <%= f.label :name, 'Duration' %>
+      <%= f.text_field :duration %><br>
+      <%= f.label :email, 'Email' %>
+      <%= f.text_field :email %><br>
+      <%= f.submit 'Create' %>
+    <% end %>
+  </div>
+</div>
