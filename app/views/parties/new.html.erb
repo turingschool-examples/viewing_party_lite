@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col d-flex justify-content-center">
     <%= form_with url: user_movie_parties_path, method: :post do |f| %>
-      <%= f.label :duration, 'Duration' %>
+      <%= f.label :duration, 'Duration'%>
       <%= f.number_field :duration, value: @movie.runtime %><br>
       <%= f.label :date, 'Date' %>
       <%= f.date_field :date %><br>
