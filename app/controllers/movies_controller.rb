@@ -10,6 +10,7 @@ class MoviesController < ApplicationController
               else
                 MoviesSearch.new.movies_keyword(params[:q])
               end
+    @keywords = params[:q]
   end
 
   def show 
