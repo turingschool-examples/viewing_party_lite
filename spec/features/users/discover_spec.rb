@@ -22,17 +22,11 @@ RSpec.describe 'User discover page' do
 
       visit "/users/#{@jim.id}/discover"
 
-      expect(page).to have_button("Discover Top Rated Movies")
+      expect(page).to have_button("Find Top Rated Movies")
       
-      click_button "Discover Top Rated Movies"
+      click_button "Find Top Rated Movies"
       
       expect(current_path).to eq("/users/#{@jim.id}/movies")
-    end
-   
-    it 'has a button to search by movie title' do
-      visit "/users/#{@jim.id}/discover"
-
-      expect(page).to have_button("Search by Movie Title")
     end
   end
 end
