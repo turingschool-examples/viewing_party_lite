@@ -6,29 +6,35 @@ RSpec.describe 'Movie Details Page' do
     @user2 = User.create!(name: 'Jessica', email: 'jessica2@gmail.com')
     @user3 = User.create!(name: 'Fiona', email: 'Fiona3@gmail.com')
   end
-  
-  it " has a button to create a viewing party that takes the user to (/users/:user_id/movies/:movie_id/viewing-party/new)" do
+
+  it 'has a button to create a viewing party that takes the user to (/users/:user_id/movies/:movie_id/viewing-party/new)' do
     visit  user_movie_path(@user1.id, 238)
+
+    within('#create-new-viewing-party') do
+      expect(page).to have_button('Create Viewing Party for The Godfather')
+      click_button('Create Viewing Party for The Godfather')
+      expect(current_path).to eq(new_user_movie_viewing_party(@user.id, 238))
+    end
   end
 
-  it "has a button to return to the discover page" do
+  it 'has a button to return to the discover page' do
     visit  user_movie_path(@user1.id, 238)
   end
 
   it "has the following attributes of the movie: title, vote averarage, run time in hours/minutes,
     genres associated with the movie, summary description, first 10 cast members and the characters
     they play, total review count and each review's author and information" do
-      visit  user_movie_path(@user1.id, 238)
+    visit user_movie_path(@user1.id, 238)
 
-      within("#review-crastana") do
-        expect(page).to have_content("Author: crastana")
-        expect(page).to have_content("Review: The best movie ever")
-      end
+    within('#review-crastana') do
+      expect(page).to have_content('Author: crastana')
+      expect(page).to have_content('Review: The best movie ever')
+    end
 
-      within("#review-futuretv") do
-        expect(page).to have_content("Author: futuretv")
-        expect(page).to have_content("Review: The Godfather Review by Al Carlson")
-      end
+    within('#review-futuretv') do
+      expect(page).to have_content('Author: futuretv')
+      expect(page).to have_content('Review: The Godfather Review by Al Carlson')
+    end
   end
 
   it 'lists the first 10 cast members and the names of their characters' do
