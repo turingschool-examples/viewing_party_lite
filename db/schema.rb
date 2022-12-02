@@ -10,39 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_02_201842) do
-
+ActiveRecord::Schema.define(version: 20_221_202_201_842) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "parties", force: :cascade do |t|
-    t.string "movie_title"
-    t.integer "duration"
-    t.date "date"
-    t.time "time"
-    t.integer "host_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "movie_poster"
+  create_table 'parties', force: :cascade do |t|
+    t.string 'movie_title'
+    t.integer 'duration'
+    t.date 'date'
+    t.time 'time'
+    t.integer 'host_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.string 'movie_poster'
   end
 
-  create_table "user_parties", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "party_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["party_id"], name: "index_user_parties_on_party_id"
-    t.index ["user_id"], name: "index_user_parties_on_user_id"
+  create_table 'user_parties', force: :cascade do |t|
+    t.bigint 'user_id'
+    t.bigint 'party_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['party_id'], name: 'index_user_parties_on_party_id'
+    t.index ['user_id'], name: 'index_user_parties_on_user_id'
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
+  create_table 'users', force: :cascade do |t|
+    t.string 'name'
+    t.string 'email'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['email'], name: 'index_users_on_email', unique: true
   end
 
-  add_foreign_key "user_parties", "parties"
-  add_foreign_key "user_parties", "users"
+  add_foreign_key 'user_parties', 'parties'
+  add_foreign_key 'user_parties', 'users'
 end

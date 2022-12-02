@@ -3,8 +3,8 @@ require './app/services/movies_service'
 class MoviesController < ApplicationController
   def index
     @user = User.find(params[:id])
-    if params[:q] == "top_rated"
-      data = MoviesService.new.search("top_rated")
+    if params[:q] == 'top_rated'
+      data = MoviesService.new.search('top_rated')
       movies = data[:results][0..19]
       @movies = movies.pluck(:original_title, :id, :vote_average)
     else

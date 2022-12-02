@@ -6,6 +6,6 @@ class Party < ApplicationRecord
   validates_numericality_of :duration
 
   def find_host_name
-    User.find(self.host_id).name
+    User.find(host_id).name
   end
 end
