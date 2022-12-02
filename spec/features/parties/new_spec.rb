@@ -11,12 +11,13 @@ RSpec.describe 'New Viewing Party' do
   end
   describe 'new party form' do
     it 'has fields for duration, date, time, checkboxes for each existing user, and a button to create', :vcr do
+      
       expect(page).to have_field('Duration')
       expect(page).to have_field('Date')
       expect(page).to have_field('Start Time')
-      expect(page).to have_checkbox(@user2.name)
-      expect(page).to have_checkbox(@user3.name)
-      expect(page).to have_checkbox(@user4.name)
+      expect(page).to have_field("users_#{@user2.id}")
+      expect(page).to have_field("users_#{@user3.id}")
+      expect(page).to have_field("users_#{@user4.id}")
       expect(page).to have_button('Create')
     end
 
@@ -25,8 +26,8 @@ RSpec.describe 'New Viewing Party' do
         fill_in 'Duration', with: '90'
         fill_in 'Date', with: (Date.today + 5.days)
         fill_in 'Start Time', with: "14:00"
-        check @user2.name
-        check @user3.name
+        check "users_#{@user2.id}"
+        check "users_#{@user3.id}"
         click_button 'Create'
 
         expect(page).to have_current_path(user_path(@user1))
@@ -41,7 +42,7 @@ RSpec.describe 'New Viewing Party' do
         fill_in 'Duration', with: '90'
         fill_in 'Date', with: (Date.today + 5.days)
         fill_in 'Start Time', with: "14:00"
-        check @user2.name
+        check "users_#{@user2.id}"
         click_button 'Create'
 
         visit user_path(@user2)
@@ -64,7 +65,7 @@ RSpec.describe 'New Viewing Party' do
         fill_in 'Duration', with: '30'
         fill_in 'Date', with: (Date.today + 5.days)
         fill_in 'Start Time', with: "14:00"
-        check @user2.name
+        check "users_#{@user2.id}"
         click_button 'Create'
 
         expect(page).to have_current_path(visit new_user_movie_party_path(@user1, 862))
