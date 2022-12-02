@@ -56,7 +56,7 @@ RSpec.describe 'The Movies Index Page' do
 
         it 'has each movie title as a link to its show page' do
           expect(page).to have_link('Jojo Rabbit')
-          save_and_open_page
+
           click_link('Jojo Rabbit')
 
           expect(current_path).to eq(user_movie_path(@user1, 515001))
