@@ -1,6 +1,6 @@
 class ViewingParty < ApplicationRecord
-  validates_presence_of :movie_title, :movie_id, :duration, :date
-  validates_numericality_of :duration, :movie_id, greater_than: 0
+  validates :movie_title, :movie_id, :duration, :date, presence: true
+  validates :duration, :movie_id, numericality: { greater_than: 0 }
 
   has_many :user_parties
   has_many :users, through: :user_parties

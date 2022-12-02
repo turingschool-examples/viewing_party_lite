@@ -35,13 +35,13 @@ RSpec.describe 'Movies Index Page' do
       expect(current_path).to eq(user_movie_path(user1, 238))
     end
 
-    xit 'has a search bar with submit button to find movies' do
+    it 'has a search bar with submit button to find movies' do
       expect(page).to have_button('Find Movies')
 
       fill_in('search', with: 'Suicide Squad')
       click_button('Find Movies')
       expect(page).to have_content('Suicide Squad')
-      expect(page).to have_content('Vote Average: 5.91')
+      expect(page).to have_content('Vote Average: 5.9')
       expect(page).to_not have_content('Superman')
     end
   end

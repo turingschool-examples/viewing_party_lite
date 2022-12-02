@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  validates_presence_of :name, :email
-  validates_uniqueness_of :email
+  validates :name, :email, presence: true
+  validates :email, uniqueness: true
 
   has_many :user_parties
   has_many :viewing_parties, through: :user_parties
