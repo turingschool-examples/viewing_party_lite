@@ -44,7 +44,5 @@ RSpec.describe 'Discover Movies Page' do
         expect(current_path).to eq(user_movies_path(@user1.id))
       end
     end
-    # if sad path redirect back to discover with flash message
   end
 end
-
