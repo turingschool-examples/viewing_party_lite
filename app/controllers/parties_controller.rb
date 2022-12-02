@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PartiesController < ApplicationController
   def new
     @users = User.all
@@ -23,7 +25,7 @@ class PartiesController < ApplicationController
     i = 0
 
     until i == number_of_users
-      UserParty.create(party_id: party.id, user_id: params["#{i}"]) if params["#{i}"].present?
+      UserParty.create(party_id: party.id, user_id: params[i.to_s]) if params[i.to_s].present?
       i += 1
     end
 

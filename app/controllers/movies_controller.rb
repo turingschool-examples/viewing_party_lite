@@ -1,17 +1,17 @@
+# frozen_string_literal: true
+
 require './app/services/movies_service'
 
 class MoviesController < ApplicationController
   def index
     @user = User.find(params[:id])
-    if params[:q] == 'top_rated'
-      data = MoviesService.new.search('top_rated')
-      movies = data[:results][0..19]
-      @movies = movies.pluck(:original_title, :id, :vote_average)
-    else
-      data = MoviesService.new.keyword_search(params[:q])
-      movies = data[:results][0..19]
-      @movies = movies.pluck(:original_title, :id, :vote_average)
-    end
+    data = if params[:q] == 'top_rated'
+             MoviesService.new.search('top_rated')
+           else
+             MoviesService.new.keyword_search(params[:q])
+           end
+    movies = data[:results][0..19]
+    @movies = movies.pluck(:original_title, :id, :vote_average)
   end
 
   def show

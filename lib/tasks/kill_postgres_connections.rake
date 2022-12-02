@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 task kill_postgres_connections: :environment do
   db_name = "#{File.basename(Rails.root)}_#{Rails.env}"
   sh = <<~EOF
