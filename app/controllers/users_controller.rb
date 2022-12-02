@@ -9,8 +9,7 @@ class UsersController < ApplicationController
     @parties_hosting = @user.parties_hosting
   end
 
-  def new
-  end
+  def new; end
 
   def create
     @new_user = User.new(user_params)

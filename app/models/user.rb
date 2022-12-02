@@ -14,6 +14,6 @@ class User < ApplicationRecord
   end
 
   def other_users
-    User.where('id != ?', self.id)
+    User.where('id != ?', id)
   end
 end

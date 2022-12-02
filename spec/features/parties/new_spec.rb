@@ -11,7 +11,6 @@ RSpec.describe 'New Viewing Party' do
   end
   describe 'new party form' do
     it 'has fields for duration, date, time, checkboxes for each existing user, and a button to create', :vcr do
-      
       expect(page).to have_field('Duration')
       expect(page).to have_field('Date')
       expect(page).to have_field('Start Time')

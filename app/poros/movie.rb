@@ -17,7 +17,6 @@ class Movie
               :cast,
               :reviews
 
-
   def initialize(data)
     @adult = data[:adult]
     @backdrop_path = data[:backdrop_path]
