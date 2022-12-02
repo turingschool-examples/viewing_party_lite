@@ -64,7 +64,7 @@ RSpec.describe Party, type: :model do
       it 'returns a Movie object that contains the complete information of the movie being viewed', :vcr do
         expect(@party4.movie_expanded_details).to be_a(Movie)
         expect(@party4.movie_expanded_details.title).to eq("Toy Story")
-        expect(@party4.movie_details.runtime).to eq(81)
+        expect(@party4.movie_expanded_details.runtime).to eq(81)
       end
     end
   end
