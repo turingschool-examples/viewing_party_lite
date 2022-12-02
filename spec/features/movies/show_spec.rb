@@ -32,7 +32,7 @@ RSpec.describe 'movie detail page', :vcr, type: :feature do
         expect(current_path).to eq(new_viewing_party_path(@reba, @movie.id))
       end
 
-      xit '- shows a button to return to the discover page' do
+      it '- shows a button to return to the discover page' do
         expect(page).to have_button('Discover Movies')
         
         click_button 'Discover Movies'
