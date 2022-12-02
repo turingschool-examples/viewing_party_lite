@@ -14,10 +14,10 @@ RSpec.describe User, type: :model do
 
   describe 'instance methods' do
     before :each do
-      @user1 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.free_email)
-      @user2 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.free_email)
-      @user3 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.free_email)
-      @user4 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.free_email)
+      @user1 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.email)
+      @user2 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.email)
+      @user3 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.email)
+      @user4 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.email)
 
       @party1 = Party.create!(date: (Date.new + rand(90).days), start_time: "#{rand(1..24)}:00", movie_title: "Up", duration: (240 + rand(30)))
       @party2 = Party.create!(date: (Date.new + rand(90).days), start_time: "#{rand(1..24)}:00", movie_title: "Alien", duration: (240 + rand(30)))

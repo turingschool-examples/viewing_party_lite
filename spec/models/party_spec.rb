@@ -11,10 +11,10 @@ RSpec.describe Party, type: :model do
       up_search_json = File.read('spec/fixtures/search_up_movies.json')
       stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['tmdb_api_key']}&language=en-US&page=1&include_adult=false&query=Up").to_return(status: 200, body: up_search_json)
 
-      @user1 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.free_email)
-      @user2 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.free_email)
-      @user3 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.free_email)
-      @user4 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.free_email)
+      @user1 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.email)
+      @user2 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.email)
+      @user3 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.email)
+      @user4 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.email)
 
       @party1 = Party.create!(date: (Date.new + rand(90).days), start_time: "#{rand(1..24)}:00", movie_title: "Up", duration: (240 + rand(30)))
       @party2 = Party.create!(date: (Date.new + rand(90).days), start_time: "#{rand(1..24)}:00", movie_title: "Alien", duration: (240 + rand(30)))

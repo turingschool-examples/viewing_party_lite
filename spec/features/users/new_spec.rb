@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'New User Registration' do
   before(:each) do
     visit '/register'
-    @email = Faker::Internet.safe_email
+    @email = Faker::Internet.email
   end
   describe 'registration form' do
     it 'has fields for a name and email and a button to register' do
