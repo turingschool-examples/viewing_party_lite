@@ -29,6 +29,7 @@ RSpec.describe ViewParty, type: :model do
         @user_view_party = create(:user_view_party, user: @user_1, view_party: @view_party, host: true)
         @user_view_party = create(:user_view_party, user: @user_2, view_party: @view_party, host: false)
     end
+
     describe '#file_path' do
       it 'returns the poster URI for that view party', :vcr do
         expect(@view_party.file_path).to eq('/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg')
