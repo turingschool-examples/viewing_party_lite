@@ -4,6 +4,8 @@
 <h2><%= @movie_details.title %></h2>
 
 <%= button_to "Discover Movies", user_discover_index_path(@user), method: :get %>
+
+<%= button_to "Create Viewing Party for #{@movie_details.title}", "/users/#{@user.id}/movies/#{@movie_details.id}/viewing_parties/new", method: :get %>
 </center>
 
 <h3>Vote average: <%= @movie_details.vote_average %></h3>
