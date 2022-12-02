@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>ViewingPartyLite</title>
+    <style>
+    h1 {text-align: center;}
+    body {text-align: center;}
+    div {text-align: left;}
+    </style>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -9,6 +13,7 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
+    
   <body>
     <header>
       <% flash.each do |type, msg| %>
@@ -16,7 +21,8 @@
           <%= msg %>
         </div>
       <% end %>
-      <%= link_to 'Home Page', '/', method: :get%>
+      <div><%= link_to 'Home Page', '/', method: :get%></div>
+      <h1>Viewing Party </h1> 
     </header>
     <%= yield %>
   </body>

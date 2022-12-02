@@ -61,7 +61,7 @@ RSpec.describe 'Movie show page' do
 
     it 'When I visit user/:user_id/movies/:id I see the following details about the movie: title, vote average, runtime in hours and minutes, genre(s)' do
       visit "/users/#{@jim.id}/movies/680"
-
+     
       expect(page).to have_content("Pulp Fiction")
       expect(page).to have_content("Vote: 8.491")
       expect(page).to have_content("Runtime: 2 hours 34 minutes")

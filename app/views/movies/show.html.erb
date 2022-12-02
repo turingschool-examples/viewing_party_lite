@@ -1,14 +1,18 @@
 <h1> <%= @title %> </h1>
 
+<<<<<<< HEAD
 <%= button_to "Create a Viewing Party", "/users/#{@user.id}/movies/#{params[:id]}/viewing-party/new", method: :get, params: {movie_poster: @poster_path}%>
+=======
+<%= button_to "Create a Viewing Party", "/users/#{@user.id}/movies/#{params[:id]}/viewing-party/new", method: :get%><br>
+>>>>>>> d12ee7c55652cb603fe6a6ac6b9e36f8e0e8e19f
 <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get%>
 
-<h3> Vote: <%= @vote %> </h3>
-<h3> Runtime: <%= @runtime.to_i/60 %> hours <%= (@runtime.to_i % 60) %> minutes </h3>
-<h3> Genre(s): </h3>
+<h3> Vote: <%= @vote %> Runtime: <%= @runtime.to_i/60 %> hours <%= (@runtime.to_i % 60) %> minutes
+
+ Genre(s): 
 <% @genre.each do |genre| %>
-  <p> <%= genre[:name] %> </p>
-<% end %>
+  <%= genre[:name] %> 
+<% end %></h3>
 <h3> Overview: </h3>
 <%= @summary %>
 <h3> Cast: </h3>

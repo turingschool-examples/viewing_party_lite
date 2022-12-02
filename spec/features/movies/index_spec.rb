@@ -25,7 +25,7 @@ RSpec.describe 'Movie index page' do
       expect(page).to have_button("Find Top Rated Movies")
       
       click_button "Find Top Rated Movies"
- 
+
       expect(current_path).to eq("/users/#{@jim.id}/movies")
       expect(page).to have_link("20세기 소녀")
       expect(page).to have_content("Vote Average:8.7")
