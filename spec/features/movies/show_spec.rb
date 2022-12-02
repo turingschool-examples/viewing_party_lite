@@ -13,7 +13,7 @@ RSpec.describe 'Movie Details Page' do
     within('#create-new-viewing-party') do
       expect(page).to have_button('Create Viewing Party for The Godfather')
       click_button('Create Viewing Party for The Godfather')
-      expect(current_path).to eq(new_user_movie_viewing_party(@user.id, 238))
+      expect(current_path).to eq(new_user_movie_viewing_party_path(@user1.id, 238))
     end
   end
 
