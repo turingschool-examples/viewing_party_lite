@@ -9,10 +9,10 @@ class UsersController < ApplicationController
     new_user = User.new(user_params)
 
     if new_user.save
-      flash[:alert] = 'User successfully created'
+      flash[:error] = 'User successfully created'
       redirect_to user_path(new_user)
     else
-      flash[:alert] = 'Required content missing or invalid'
+      flash[:error] = 'Required content missing or invalid'
       redirect_to register_path
     end
   end

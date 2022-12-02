@@ -6,7 +6,7 @@
 <br>
 <center><%= form_with url: user_movies_path(@user), method: :get, params: {search: true}, local: true do |f| %>
           <%= f.label :search  %>
-          <%= f. text_field :search %>
+          <%= f.text_field :search %>
           <%= f.submit 'Find Movies' %>
         <% end %>
 </center>  
