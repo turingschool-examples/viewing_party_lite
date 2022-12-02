@@ -19,7 +19,6 @@ class Movie
     @runtime = movie_details[:runtime]
     @genres = get_genres(movie_details)
     @summary_description = movie_details[:overview]
-    @vote_average = movie_details[:vote_average]
     @total_reviews = movie_reviews[:total_results]
     @reviews = get_reviews(movie_reviews)
     @cast = get_cast(movie_credits)

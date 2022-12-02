@@ -14,12 +14,12 @@ RSpec.describe MovieFacade, :vcr do
       end
     end
 
-    describe '#movie_details(movie_id)' do
+    describe '#new_movie_details(movie_id)' do
       it '- creates a new movie poro' do
         movie_details = MovieService.movie_details(550)
         movie_reviews = MovieService.movie_reviews(550)
         movie_credits = MovieService.movie_credits(550) 
-        expect(MovieFacade.movie_details(550)).to be_a(Movie)
+        expect(MovieFacade.new_movie_details(550)).to be_a(Movie)
       end
     end
 

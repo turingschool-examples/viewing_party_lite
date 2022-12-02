@@ -9,7 +9,7 @@ class MovieFacade
     MovieService.movie_details(movie_id)[:poster_path]
   end
 
-  def self.movie_details(movie_id)
+  def self.new_movie_details(movie_id)
     movie_details = MovieService.movie_details(movie_id)
     movie_reviews = MovieService.movie_reviews(movie_id)
     movie_credits = MovieService.movie_credits(movie_id)
