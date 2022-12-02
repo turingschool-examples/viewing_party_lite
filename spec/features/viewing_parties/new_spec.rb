@@ -31,11 +31,7 @@ RSpec.describe "New Viewing Party Page", type: :feature do
     visit new_user_movie_viewing_party_path(@user1.id, 238)
 
     expect(page).to have_field(:duration)
-    expect(page).to have_field(:select_year)
-    expect(page).to have_field(:select_month)
-    expect(page).to have_field(:select_day)
-    expect(page).to have_field(:select_time)
-    expect(page).to have_field(:details)
+    expect(page).to have_field(:date)
     expect(page).to have_button("Create Party")
     
     expect(page).to have_content(@movie.details)

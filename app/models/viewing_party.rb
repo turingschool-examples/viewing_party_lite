@@ -2,7 +2,7 @@
 class ViewingParty < ApplicationRecord
   has_many :user_viewing_parties
   has_many :users, through: :user_viewing_parties
-
+    
   validates_presence_of :movie
   validates_presence_of :movie_title
   validates_presence_of :duration
