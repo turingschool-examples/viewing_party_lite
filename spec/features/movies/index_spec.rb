@@ -19,9 +19,17 @@ RSpec.describe 'The Movies Index Page' do
           expect(page).to_not have_content('Boogie Nights')
         end
 
+        it "has the 'Vote Average' next to each movie title" do
+          parasite_id = 496243
+
+          within "#voting_average_#{parasite_id}" do
+            expect(page).to have_content("Vote Average: 8.5")
+          end
+        end
+
         it 'has each movie title as a link to its show page' do
           expect(page).to have_content('Parasite')
-
+          save_and_open_page
           click_link('Parasite')
 
           expect(current_path).to eq(user_movie_path(@user1, 496243))
