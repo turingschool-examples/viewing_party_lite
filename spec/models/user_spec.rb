@@ -20,7 +20,7 @@ RSpec.describe User, :vcr, type: :model do
           user2 = create(:user)
           user3 = create(:user)
 
-          party1 = create(:party)
+          party1 = create(:party, movie_id: 550)
           party2 = create(:party, movie_id: 56)
           party3 = create(:party, movie_id: 56)
 
