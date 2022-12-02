@@ -37,7 +37,7 @@ class MovieFacade
   end
 
   def self.total_reviews(movie_id)
-    
+    MovieService.movie_reviews(movie_id)[:total_results]
   end
 
 end
