@@ -55,5 +55,10 @@ RSpec.describe Party, type: :model do
         expect(@party1.movie_details.id).to eq(14160)
       end
     end
+    describe '.movie_runtime' do
+      it 'returns the runtime for the movie of the party', :vcr do
+        expect(@party4.movie_runtime).to eq(81)
+      end
+    end
   end
 end

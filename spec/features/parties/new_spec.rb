@@ -10,7 +10,7 @@ RSpec.describe 'New Viewing Party' do
     visit new_user_movie_party_path(@user1, 862)
   end
   describe 'new party form' do
-    it 'has fields for duration, date, time, checkboxes for each existing user, and a button to create' do
+    it 'has fields for duration, date, time, checkboxes for each existing user, and a button to create', :vcr do
       expect(page).to have_field('Duration')
       expect(page).to have_field('Date')
       expect(page).to have_field('Start Time')
@@ -21,7 +21,7 @@ RSpec.describe 'New Viewing Party' do
     end
 
     describe 'happy path' do
-      it 'creates a new party and redirects to the user dashboard when the form is successfully submitted' do
+      it 'creates a new party and redirects to the user dashboard when the form is successfully submitted', :vcr do
         fill_in 'Duration', with: '90'
         fill_in 'Date', with: (Date.today + 5.days)
         fill_in 'Start Time', with: "14:00"
@@ -37,7 +37,7 @@ RSpec.describe 'New Viewing Party' do
           expect(page).not_to have_content(@user4.name)
         end
       end
-      it 'lists the new event in the dashboard of invited users' do
+      it 'lists the new event in the dashboard of invited users', :vcr do
         fill_in 'Duration', with: '90'
         fill_in 'Date', with: (Date.today + 5.days)
         fill_in 'Start Time', with: "14:00"
@@ -60,7 +60,7 @@ RSpec.describe 'New Viewing Party' do
     end
 
     describe 'sad paths' do
-      it 'does not create a new party if the party duration is shorter than the movie duration' do
+      it 'does not create a new party if the party duration is shorter than the movie duration', :vcr do
         fill_in 'Duration', with: '30'
         fill_in 'Date', with: (Date.today + 5.days)
         fill_in 'Start Time', with: "14:00"
