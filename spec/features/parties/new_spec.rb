@@ -68,6 +68,11 @@ RSpec.describe 'the new party form' do
   it "has a submit button" do
     visit "/users/#{@jim.id}/movies/680/viewing-party/new"
     
-    expect(page).to have_button("Submit")
+    expect(page).to have_button("Create Party")
+    expect(page).to have_button("Discover Page")
+
+    click_button "Discover Page"
+
+    expect(current_path).to eq("/users/#{@jim.id}/discover")
   end
 end
