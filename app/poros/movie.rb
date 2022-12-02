@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 class Movie
   attr_reader :id, :title, :runtime, :vote_average, :poster_path
+
   def initialize(result)
     @id = result[:id]
     @title = result[:title]

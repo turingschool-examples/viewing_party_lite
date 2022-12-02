@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 01 Dec 2022 16:25:36 GMT
+      - Fri, 02 Dec 2022 01:05:01 GMT
       Server:
       - openresty
       Cache-Control:
@@ -35,26 +35,26 @@ http_interactions:
       X-Memc-Key:
       - 7688a8b40b3d4871388fc7b0d863ea192783cd4e
       X-Memc-Age:
-      - '7915'
+      - '5072'
       X-Memc-Expires:
-      - '9649'
+      - '9535'
       Etag:
-      - W/"6340f67fb1a61685b5726d6e5e9a7405"
+      - W/"2cee8bd1642b9a372941660bdf3e3aca"
       Vary:
       - Accept-Encoding,Accept-Encoding,Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 d4fb3448d1a8d3229dcf0a89f4bbe7e8.cloudfront.net (CloudFront)
+      - 1.1 f9a5caa2a18f480171fad57618db559e.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - bT9V1gUq_JeYD19goafjlc5CFiMDgTjbmPPbE9EqHd4hxmchA3aBoQ==
+      - NLXgnk-7jJYH8rpfDDM8BZEui2U5gSuApsP9_x1lrflE9C5hs1HqGA==
       Age:
-      - '503'
+      - '4621'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/xV7Kfz4TW3hN6q4xtZgu5vduBHA.jpg","belongs_to_collection":{"id":10,"name":"Star
@@ -68,8 +68,8 @@ http_interactions:
         Ltd.","origin_country":"US"},{"id":25,"logo_path":"/qZCc1lty5FzX30aOCVRBLzaVmcp.png","name":"20th
         Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1977-05-25","revenue":775398007,"runtime":121,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"A
-        long time ago in a galaxy far, far away...","title":"Star Wars","video":false,"vote_average":8.206,"vote_count":17942}'
-  recorded_at: Thu, 01 Dec 2022 16:33:59 GMT
+        long time ago in a galaxy far, far away...","title":"Star Wars","video":false,"vote_average":8.206,"vote_count":17944}'
+  recorded_at: Fri, 02 Dec 2022 02:22:03 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/11?api_key=<movie_api_key>
@@ -95,7 +95,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 01 Dec 2022 16:25:36 GMT
+      - Fri, 02 Dec 2022 01:05:01 GMT
       Server:
       - openresty
       Cache-Control:
@@ -105,26 +105,26 @@ http_interactions:
       X-Memc-Key:
       - 7688a8b40b3d4871388fc7b0d863ea192783cd4e
       X-Memc-Age:
-      - '7915'
+      - '5072'
       X-Memc-Expires:
-      - '9649'
+      - '9535'
       Etag:
-      - W/"6340f67fb1a61685b5726d6e5e9a7405"
+      - W/"2cee8bd1642b9a372941660bdf3e3aca"
       Vary:
       - Accept-Encoding,Accept-Encoding,Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 f111faa3f37b2169cefb225b0f246234.cloudfront.net (CloudFront)
+      - 1.1 88bce767af5e31f726ade38ea5253bd4.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 6ajgsr2oOoxeicsSyzMSTY7o-TVViU2OULNEDrpqmWrHs9SVSaSZNw==
+      - Lw6EM7g35P6SEonSjB-k8H3UpZd955frUTgNifWJPjIUU3nTN1Sjsg==
       Age:
-      - '504'
+      - '4621'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/xV7Kfz4TW3hN6q4xtZgu5vduBHA.jpg","belongs_to_collection":{"id":10,"name":"Star
@@ -138,8 +138,8 @@ http_interactions:
         Ltd.","origin_country":"US"},{"id":25,"logo_path":"/qZCc1lty5FzX30aOCVRBLzaVmcp.png","name":"20th
         Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1977-05-25","revenue":775398007,"runtime":121,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"A
-        long time ago in a galaxy far, far away...","title":"Star Wars","video":false,"vote_average":8.206,"vote_count":17942}'
-  recorded_at: Thu, 01 Dec 2022 16:33:59 GMT
+        long time ago in a galaxy far, far away...","title":"Star Wars","video":false,"vote_average":8.206,"vote_count":17944}'
+  recorded_at: Fri, 02 Dec 2022 02:22:03 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/11?api_key=<movie_api_key>
@@ -165,7 +165,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 01 Dec 2022 16:25:36 GMT
+      - Fri, 02 Dec 2022 01:05:01 GMT
       Server:
       - openresty
       Cache-Control:
@@ -175,26 +175,26 @@ http_interactions:
       X-Memc-Key:
       - 7688a8b40b3d4871388fc7b0d863ea192783cd4e
       X-Memc-Age:
-      - '7915'
+      - '5072'
       X-Memc-Expires:
-      - '9649'
+      - '9535'
       Etag:
-      - W/"6340f67fb1a61685b5726d6e5e9a7405"
+      - W/"2cee8bd1642b9a372941660bdf3e3aca"
       Vary:
       - Accept-Encoding,Accept-Encoding,Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 05fe6f95b77eb54d0691950915c27264.cloudfront.net (CloudFront)
+      - 1.1 cf7db6af8b8a86ebeb9fc938221e81da.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - r8vabfj8ZKy4Xm3PN-pzvUvyxENUJP56YotcqJbA4uH398_GZ8fwJQ==
+      - 7CUBKMOJK89jHHImDcqVrIHSnzbMZB87d_N_XuIdzPswtMSvtdyCRg==
       Age:
-      - '504'
+      - '4621'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/xV7Kfz4TW3hN6q4xtZgu5vduBHA.jpg","belongs_to_collection":{"id":10,"name":"Star
@@ -208,8 +208,8 @@ http_interactions:
         Ltd.","origin_country":"US"},{"id":25,"logo_path":"/qZCc1lty5FzX30aOCVRBLzaVmcp.png","name":"20th
         Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1977-05-25","revenue":775398007,"runtime":121,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"A
-        long time ago in a galaxy far, far away...","title":"Star Wars","video":false,"vote_average":8.206,"vote_count":17942}'
-  recorded_at: Thu, 01 Dec 2022 16:33:59 GMT
+        long time ago in a galaxy far, far away...","title":"Star Wars","video":false,"vote_average":8.206,"vote_count":17944}'
+  recorded_at: Fri, 02 Dec 2022 02:22:03 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/550?api_key=<movie_api_key>
@@ -235,7 +235,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 01 Dec 2022 16:25:36 GMT
+      - Fri, 02 Dec 2022 01:09:51 GMT
       Server:
       - openresty
       Cache-Control:
@@ -245,26 +245,26 @@ http_interactions:
       X-Memc-Key:
       - 8f3dc9fbf00ec8ef64b14b7080f4013a23d639da
       X-Memc-Age:
-      - '13963'
+      - '13108'
       X-Memc-Expires:
-      - '1368'
+      - '1292'
       Etag:
-      - W/"c7b895329e707447a1de58d6e02080a1"
+      - W/"0143bbccd1ca1879b87f9cf4cf2a5e15"
       Vary:
       - Accept-Encoding,Accept-Encoding,Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 8a50fe9452625079391cf0ce7a3e0c56.cloudfront.net (CloudFront)
+      - 1.1 5257b3c7acd3727a389946b312557ff2.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 4LwCwAocg7C7ojqBsG8r3G6VO8596f4DOUxPSQhcxs7HDzpOiuQHYw==
+      - SJCnT9Y3Y58o9A8WwaHgKp6aSEmNyptggnVr7v1BzH3yU8KygZRAug==
       Age:
-      - '504'
+      - '4332'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/hZkgoQYus5vegHoetLkCJzb17zJ.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"},{"id":53,"name":"Thriller"},{"id":35,"name":"Comedy"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
@@ -279,8 +279,8 @@ http_interactions:
         Film","origin_country":"DE"},{"id":54051,"logo_path":null,"name":"Atman Entertainment","origin_country":""},{"id":54052,"logo_path":null,"name":"Knickerbocker
         Films","origin_country":"US"}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
-        Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.428,"vote_count":25242}'
-  recorded_at: Thu, 01 Dec 2022 16:34:00 GMT
+        Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.428,"vote_count":25244}'
+  recorded_at: Fri, 02 Dec 2022 02:22:03 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/550?api_key=<movie_api_key>
@@ -306,7 +306,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 01 Dec 2022 16:25:36 GMT
+      - Fri, 02 Dec 2022 01:09:51 GMT
       Server:
       - openresty
       Cache-Control:
@@ -316,26 +316,26 @@ http_interactions:
       X-Memc-Key:
       - 8f3dc9fbf00ec8ef64b14b7080f4013a23d639da
       X-Memc-Age:
-      - '13963'
+      - '13108'
       X-Memc-Expires:
-      - '1368'
+      - '1292'
       Etag:
-      - W/"c7b895329e707447a1de58d6e02080a1"
+      - W/"0143bbccd1ca1879b87f9cf4cf2a5e15"
       Vary:
       - Accept-Encoding,Accept-Encoding,Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 d4fb3448d1a8d3229dcf0a89f4bbe7e8.cloudfront.net (CloudFront)
+      - 1.1 786e78cb5cbe5eadde8b1e6951bf8a60.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 3dKNueIYyMNbKMi6dbimpbJ4K4PfqOvtfREQvR3CE9x9TTrREmCNbQ==
+      - GS3IJwWc5xAcA0KZyIHol0G6nlTG2INz3_YpMfOO2GB9t49kfaV3kw==
       Age:
-      - '504'
+      - '4332'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/hZkgoQYus5vegHoetLkCJzb17zJ.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"},{"id":53,"name":"Thriller"},{"id":35,"name":"Comedy"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
@@ -350,8 +350,8 @@ http_interactions:
         Film","origin_country":"DE"},{"id":54051,"logo_path":null,"name":"Atman Entertainment","origin_country":""},{"id":54052,"logo_path":null,"name":"Knickerbocker
         Films","origin_country":"US"}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
-        Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.428,"vote_count":25242}'
-  recorded_at: Thu, 01 Dec 2022 16:34:00 GMT
+        Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.428,"vote_count":25244}'
+  recorded_at: Fri, 02 Dec 2022 02:22:03 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/550?api_key=<movie_api_key>
@@ -377,7 +377,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 01 Dec 2022 16:25:36 GMT
+      - Fri, 02 Dec 2022 01:09:51 GMT
       Server:
       - openresty
       Cache-Control:
@@ -387,26 +387,26 @@ http_interactions:
       X-Memc-Key:
       - 8f3dc9fbf00ec8ef64b14b7080f4013a23d639da
       X-Memc-Age:
-      - '13963'
+      - '13108'
       X-Memc-Expires:
-      - '1368'
+      - '1292'
       Etag:
-      - W/"c7b895329e707447a1de58d6e02080a1"
+      - W/"0143bbccd1ca1879b87f9cf4cf2a5e15"
       Vary:
       - Accept-Encoding,Accept-Encoding,Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 5d351175d5947d478733fbecdab866f6.cloudfront.net (CloudFront)
+      - 1.1 3dc4c80cd959e984309833cac8f5a630.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - HNLan5beLqjX_j-QmVTZs_aK54FYX8xlV1r5iKNM8p-KeU2TykmkYQ==
+      - AIQ4Zwcg7ETjzcE6f3o2SiPJFB112CnVvIHGDODYXavmdsp1y_in0w==
       Age:
-      - '504'
+      - '4332'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/hZkgoQYus5vegHoetLkCJzb17zJ.jpg","belongs_to_collection":null,"budget":63000000,"genres":[{"id":18,"name":"Drama"},{"id":53,"name":"Thriller"},{"id":35,"name":"Comedy"}],"homepage":"http://www.foxmovies.com/movies/fight-club","id":550,"imdb_id":"tt0137523","original_language":"en","original_title":"Fight
@@ -421,6 +421,6 @@ http_interactions:
         Film","origin_country":"DE"},{"id":54051,"logo_path":null,"name":"Atman Entertainment","origin_country":""},{"id":54052,"logo_path":null,"name":"Knickerbocker
         Films","origin_country":"US"}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
-        Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.428,"vote_count":25242}'
-  recorded_at: Thu, 01 Dec 2022 16:34:00 GMT
+        Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.428,"vote_count":25244}'
+  recorded_at: Fri, 02 Dec 2022 02:22:03 GMT
 recorded_with: VCR 6.1.0

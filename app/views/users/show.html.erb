@@ -13,15 +13,12 @@
       <p>Date: <%= v_p.date.strftime("%m/%d/%Y") %></p>
       <p>Start Time: <%= v_p.start_time.strftime("%I:%M%p")  %></p>
       <p>Party Length: <%= "#{v_p.duration} Minutes" %></p>
-
-      <% v_p.viewing_party_users.each do |vpu| %>
-        <% if vpu.hosting? %>
-          <p><%= "Hosting" %></p>
-        <% else %>
-          <p><%= "Invited" %></p>
-        <% end %>
-       <p>____________</p>
-      <% end %>
+      <p><%= "Hosting" %>:</p>
+      <p><%=v_p.host %>
+      <hr>
+      <p><%= "Invited" %>:</p>
+      <p><%=v_p.invited %></p>
+      <hr>
     </div>
   <% end %>
 </section>

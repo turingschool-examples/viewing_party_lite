@@ -1,0 +1,23 @@
+<h1><center>Viewing Party Lite<center></h1>
+<h4><center><%= "Create a Movie Party for #{@movie[:title]}" %><center></h4>
+
+
+<section id='movie_form'>
+  <%= form_with url: "/users/#{@host.id}/movies/#{@movie[:id]}/viewing-party", method: :post, local: :true do |f| %>
+    <p><%= f.label "Day" %>
+    <%= f.date_field :date, value: f.object.try(:strftime,"%m/%d/%Y"), class: 'form-control' %></p>
+    <p><%= f.label "Start Time" %>
+    <%= f.time_field :start_time, :format=>"%H:%M" %></p>
+    <p><%= f.label "Duration of Party (Minutes)" %>
+    <%= f.number_field :duration, :value => @movie[:runtime], min: @movie[:runtime], :onkeydown => "return false" %></p>
+
+    <div id='guests'>
+      <p><%= f.collection_check_boxes :invited_to_party, @guests, :id, :name do |b| %></p>
+        <%= b.label %>
+        <%= b.check_box %>
+      <% end %>
+    </div>
+
+    <p><%= f.submit "Create Party" %></p>
+  <% end %>
+</section>

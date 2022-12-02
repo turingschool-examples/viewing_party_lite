@@ -24,7 +24,7 @@ RSpec.describe MovieService do
         expect(movie[:id]).to eq(11)
         expect(movie[:title]).to eq('Star Wars')
         expect(movie[:runtime]).to eq(121)
-        expect(movie[:vote_average]).to eq(8.2)
+        expect(movie[:vote_average].round(2)).to eq(8.21)
         expect(movie[:poster_path]).to eq('/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg')
       end
     end
@@ -50,7 +50,7 @@ RSpec.describe MovieService do
       end
     end
 
-    describe "#first_ten_cast" do
+    describe '#first_ten_cast' do
       it 'finds the first 10 cast members of a movie', :vcr do
         movie_id = 11
         movie = MovieService.movie_by_id(movie_id)
@@ -60,7 +60,7 @@ RSpec.describe MovieService do
       end
     end
 
-    describe "#movie_reviews" do
+    describe '#movie_reviews' do
       it 'finds the reviews for a movie', :vcr do
         movie_id = 11
         movie = MovieService.movie_by_id(movie_id)

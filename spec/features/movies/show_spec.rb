@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'movies show page' do
-
   before :each do
     @user1 = create(:user)
     @movie_id = 11
@@ -16,7 +17,6 @@ RSpec.describe 'movies show page' do
       expect(page).to have_link('Home')
       expect(page).to have_button("Create Viewing Party for #{@movie[:title]}")
     end
-
 
     it 'has Button to return to the Discover Page', :vcr do
       visit "/users/#{@user1.id}/movies/#{@movie[:id]}"
@@ -41,10 +41,10 @@ RSpec.describe 'movies show page' do
     it 'I see 10 cast members from the movie with the actor and character names', :vcr do
       visit "/users/#{@user1.id}/movies/#{@movie[:id]}"
 
-      within("#cast") do
-        expect(page).to have_content("Cast:")
-        expect(page).to have_content("Actor", count: 10)
-        expect(page).to have_content("Character", count: 10)
+      within('#cast') do
+        expect(page).to have_content('Cast:')
+        expect(page).to have_content('Actor', count: 10)
+        expect(page).to have_content('Character', count: 10)
       end
     end
 
@@ -52,8 +52,8 @@ RSpec.describe 'movies show page' do
       visit "/users/#{@user1.id}/movies/#{@movie[:id]}"
       # save_and_open_page
 
-      within("#reviews") do
-        expect(page).to have_content("Author:")
+      within('#reviews') do
+        expect(page).to have_content('Author:')
       end
     end
 
