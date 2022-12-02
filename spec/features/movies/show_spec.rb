@@ -28,11 +28,8 @@ RSpec.describe 'Movie Details Page' do
       expect(page).to have_content('Vote Average: 8.7')
     end
 
-    within('#description') do
-      expect(page).to have_content('Spanning the years 1945 to 1955, a chronicle of the fictional
-          Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone
-          barely survives an attempt on his life, his youngest son, Michael steps in to take care of the
-          would-be killers, launching a campaign of bloody revenge.')
+    within('#summary') do
+      expect(page).to have_content('Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family.')
     end
 
     within('#runtime') do
@@ -50,7 +47,7 @@ RSpec.describe 'Movie Details Page' do
     end
 
     within('#total-review-count') do
-      expect(page).to have_content('2')
+      expect(page).to have_content('2 Reviews')
     end
 
     within('#cast-members') do
