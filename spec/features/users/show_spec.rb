@@ -112,7 +112,7 @@ RSpec.describe 'Users' do
         expect(page).not_to have_content('Brave')
       end
       it 'redirects to the movie show page when the movie title is clicked' do
-        up_page_json = File.read('spec/fixtures/up_page_movies.json')
+        up_page_json = File.read('spec/fixtures/up_page.json')
         stub_request(:get, "https://api.themoviedb.org/3/movie/?api_key=#{ENV['tmdb_api_key']}&language=en-US").to_return(status: 200, body: up_page_json)
         click_link 'Up'
         expect(page).to have_current_path("/users/#{@user1.id}/movies/14160")
