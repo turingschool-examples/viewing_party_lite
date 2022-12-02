@@ -5,11 +5,11 @@ class MoviesController < ApplicationController
     @user = User.find(params[:id])
     if params[:q] == "top_rated"
       data = MoviesService.new.search("top_rated")
-      movies = data[:results][1..20]
+      movies = data[:results][0..19]
       @movies = movies.pluck(:original_title, :id, :vote_average)
     else
       data = MoviesService.new.keyword_search(params[:q])
-      movies = data[:results][1..20]
+      movies = data[:results][0..19]
       @movies = movies.pluck(:original_title, :id, :vote_average)
     end
   end
