@@ -1,2 +1,27 @@
+<h1> <%= @title %> </h1>
+
 <%= button_to "Create a Viewing Party", "/users/#{@user.id}/movies/#{params[:id]}/viewing-party/new", method: :get%>
 <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get%>
+
+<h3> Vote: <%= @vote %> </h3>
+<h3> Runtime: <%= @runtime.to_i/60 %> hours <%= (@runtime.to_i % 60) %> minutes </h3>
+<h3> Genre(s): </h3>
+<% @genre.each do |genre| %>
+  <p> <%= genre[:name] %> </p>
+<% end %>
+<h3> Overview: </h3>
+<%= @summary %>
+<h3> Cast: </h3>
+<% @movie_cast.each do |member|%>
+ <p> <%= member[0] %> as <%= member[1] %> </p>
+<% end %>
+<h3> Reviews: </h3>
+<h4> Count of Reviews: <%= @review_count %> </h4>
+<% @movie_reviews.each do |review|%>
+ <p> Author: <%= review[0] %> </p>
+ <p> name: <%= review[1][:name] %> </p>
+ <p> username: <%= review[1][:username] %> </p>
+ <p> rating: <%= review[1][:rating] %> </p>
+ <p> <%= image_tag("https://image.tmdb.org/t/p/original#{review[1][:avatar_path]}", height: '80', width: '80') %> </p>
+ <br>
+<% end %>
