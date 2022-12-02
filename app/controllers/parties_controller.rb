@@ -9,5 +9,8 @@ class PartiesController < ApplicationController
   end
 
   def create
+
   end
+
+
 end
