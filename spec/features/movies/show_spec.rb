@@ -1,6 +1,6 @@
 require 'rails_helper' 
 
-RSpec.describe 'movie detail page' do
+RSpec.describe 'movie detail page', type: :feature do
   describe 'as a user' do
     describe 'when I visit user_movie_path(user_id, movie_id)' do
       it '- shows a button to create a viewing party' do
@@ -40,7 +40,7 @@ RSpec.describe 'movie detail page' do
       end
 
       it '- shows each reviews author and information' do 
-        
+
       end
     end
   end
