@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe MovieCast do
-  before(:each) do
+  before do
     attrs = {
       cast: [
         {
@@ -16,11 +16,11 @@ RSpec.describe MovieCast do
         }
       ]
     }
-    @cast = MovieCast.new(attrs)
+    @cast = described_class.new(attrs)
   end
 
   it 'exists' do
-    expect(@cast).to be_a MovieCast
+    expect(@cast).to be_a described_class
     expect(@cast.cast_list[0][:name]).to eq('Edward Norton')
     expect(@cast.cast_list[0][:character]).to eq('The Narrator')
     expect(@cast.cast_list[1][:name]).to eq('Brad Pitt')

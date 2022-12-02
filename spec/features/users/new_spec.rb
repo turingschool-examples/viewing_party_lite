@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'The Register Page', type: :feature do
-  before(:each) do
+  before do
     visit register_path
   end
 
@@ -19,7 +19,7 @@ RSpec.describe 'The Register Page', type: :feature do
       end
 
       new_user = User.last
-      expect(current_path).to eq(user_path(new_user))
+      expect(page).to have_current_path(user_path(new_user), ignore_query: true)
     end
 
     it 'returns an error message if field is blank' do
@@ -30,7 +30,7 @@ RSpec.describe 'The Register Page', type: :feature do
         click_button 'Create New User'
       end
 
-      expect(current_path).to eq(register_path)
+      expect(page).to have_current_path(register_path, ignore_query: true)
       expect(page).to have_content("Name can't be blank")
     end
 
@@ -44,7 +44,7 @@ RSpec.describe 'The Register Page', type: :feature do
         click_button 'Create New User'
       end
 
-      expect(current_path).to eq(register_path)
+      expect(page).to have_current_path(register_path, ignore_query: true)
       expect(page).to have_content('Email has already been taken')
     end
   end

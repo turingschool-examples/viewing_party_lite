@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe Movie do
-  before(:each) do
+  before do
     attrs = {
       id: 550,
       title: 'Fight Club',
@@ -13,11 +13,11 @@ RSpec.describe Movie do
       genres: 'Drama, Thriller, Comedy',
       poster_path: '/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg'
     }
-    @movie = Movie.new(attrs)
+    @movie = described_class.new(attrs)
   end
 
   it 'exists' do
-    expect(@movie).to be_a Movie
+    expect(@movie).to be_a described_class
     expect(@movie.id).to eq(550)
     expect(@movie.title).to eq('Fight Club')
     expect(@movie.vote_average).to eq(8.428)

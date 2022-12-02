@@ -11,13 +11,14 @@ RSpec.describe 'New View Party Page', type: :feature do
     Movie.new(id: 550, title: 'Fight Club', vote_average: 5.3, overview: 'hahaha', runtime: 330, genres: 'romance')
   end
 
-  before(:each) do
+  before do
     VCR.insert_cassette 'view party'
     VCR.insert_cassette 'movie show'
     VCR.insert_cassette 'image url'
     visit new_user_movie_view_party_path(user_1, movie_1.id)
   end
-  after(:each) do
+
+  after do
     VCR.eject_cassette
     VCR.eject_cassette
     VCR.eject_cassette
@@ -30,7 +31,7 @@ RSpec.describe 'New View Party Page', type: :feature do
         click_button 'Discover Page'
       end
 
-      expect(current_path).to eq("/users/#{user_1.id}/discover")
+      expect(page).to have_current_path("/users/#{user_1.id}/discover", ignore_query: true)
     end
 
     it 'the form should include the following fields: name, duration, when, start time, checkboxes next to each existing user in the system, after submitting I should be taken back to my dashboard where I see the new event' do
@@ -40,7 +41,7 @@ RSpec.describe 'New View Party Page', type: :feature do
         click_button 'Create Party'
       end
 
-      expect(current_path).to eq(user_path(user_1))
+      expect(page).to have_current_path(user_path(user_1), ignore_query: true)
 
       recent_view_party = ViewParty.last
       within "##{recent_view_party.movie_id}" do
@@ -57,7 +58,7 @@ RSpec.describe 'New View Party Page', type: :feature do
         click_button 'Create Party'
       end
 
-      expect(current_path).to eq(new_user_movie_view_party_path(user_1, movie_1.id))
+      expect(page).to have_current_path(new_user_movie_view_party_path(user_1, movie_1.id), ignore_query: true)
       expect(page).to have_content('Datetime cannot be in the past')
     end
 
@@ -69,7 +70,7 @@ RSpec.describe 'New View Party Page', type: :feature do
         click_button 'Create Party'
       end
 
-      expect(current_path).to eq(new_user_movie_view_party_path(user_1, movie_1.id))
+      expect(page).to have_current_path(new_user_movie_view_party_path(user_1, movie_1.id), ignore_query: true)
       expect(page).to have_content('Party duration cannot be shorter than the movie duration')
     end
 
