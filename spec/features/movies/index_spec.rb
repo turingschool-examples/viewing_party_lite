@@ -59,16 +59,20 @@ RSpec.describe 'movies index' do
   end
 
   it 'has a link to the movies show page', :vcr do
+    VCR.insert_cassette "movie_discover"
     visit user_discover_index_path(@user_1)
 
     expect(page).to have_button("Find Top Rated Movies")
-
     click_on "Find Top Rated Movies"
 
+    VCR.insert_cassette "movie_show_page"
+    
     expect(page.status_code).to eq(200)
     expect(page).to have_link("The Godfather")
-save_and_open_page
+    
     click_on "The Godfather"
     expect(current_path).to eq(user_movie_path(@user_1, 238))
+    VCR.eject_cassette
+    VCR.eject_cassette
   end
 end
