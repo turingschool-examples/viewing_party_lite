@@ -35,6 +35,6 @@ class ViewingParty < ApplicationRecord
   end
 
   def movie_poster
-    MovieFacade.new(id)
+    MovieFacade.movie_by_id(movie_id).poster
   end
 end

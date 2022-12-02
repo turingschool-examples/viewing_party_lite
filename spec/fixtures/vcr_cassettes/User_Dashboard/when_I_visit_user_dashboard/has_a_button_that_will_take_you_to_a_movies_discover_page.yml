@@ -1,0 +1,127 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/206?api_key=<movie_api_key>&language%5B%5D=en-US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 02 Dec 2022 16:49:16 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - c682dc59d8a37389400a920b285ea50c971c91d3
+      X-Memc-Age:
+      - '11712'
+      X-Memc-Expires:
+      - '4774'
+      Etag:
+      - W/"4de491606e0fd6e1d57d56386ce887b3"
+      Vary:
+      - Accept-Encoding,Accept-Encoding,Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 786e78cb5cbe5eadde8b1e6951bf8a60.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - _qrmIQJJSJ-Wab2xF-jCz6Yqk10raHxbDIiFvnJ_bNGTYjPWmNBe1w==
+      Age:
+      - '409'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/nwbbZhrIXW4YHrn3YDn9pBA19eO.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"}],"homepage":"","id":206,"imdb_id":"tt0287624","original_language":"en","original_title":"Paradise
+        Found","overview":"Paradise Found is a biography about the painter Paul Gauguin.
+        Focusing on his personal conflict between citizen life and his family life
+        and the art scene in Frane. In an incredible imagery montage Gauguin manages
+        to make a successful living in the South Pacific, while being in opposition
+        to France.","popularity":3.328,"poster_path":"/i5tYnEeCAPODbEbbwYmNd8Y9seA.jpg","production_companies":[],"production_countries":[{"iso_3166_1":"AU","name":"Australia"},{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"FR","name":"France"},{"iso_3166_1":"GB","name":"United
+        Kingdom"}],"release_date":"2003-01-01","revenue":0,"runtime":89,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"","title":"Paradise
+        Found","video":false,"vote_average":6.571,"vote_count":21}'
+  recorded_at: Fri, 02 Dec 2022 16:56:05 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/224?api_key=<movie_api_key>&language%5B%5D=en-US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 02 Dec 2022 16:56:06 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - 81476b8f77026faa99c0bf4c40ae85e4095456b5
+      X-Memc-Age:
+      - '4397'
+      X-Memc-Expires:
+      - '10259'
+      Etag:
+      - W/"ff043deaa5b12f7644e968e330ea92a4"
+      Vary:
+      - Accept-Encoding,Accept-Encoding,Accept-Encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 f0a2a95cb4d25b2414a9c1a7a754943e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - KGvfuaQ2mEp_FSyxxAivYylzNCKngLXGF39KAYApvfGvl95gg--DaQ==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvOEJwWVBBbWJhMm96Q3huUWJKVG5ObWt3c29VLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6eyJpZCI6NDU3MzA1LCJuYW1lIjoiU29saWRhcml0eSBUcmlsb2d5IiwicG9zdGVyX3BhdGgiOm51bGwsImJhY2tkcm9wX3BhdGgiOm51bGx9LCJidWRnZXQiOjAsImdlbnJlcyI6W3siaWQiOjE4LCJuYW1lIjoiRHJhbWEifV0sImhvbWVwYWdlIjoiIiwiaWQiOjIyNCwiaW1kYl9pZCI6InR0MDA3NTkwMiIsIm9yaWdpbmFsX2xhbmd1YWdlIjoicGwiLCJvcmlnaW5hbF90aXRsZSI6IkN6xYJvd2llayB6IG1hcm11cnUiLCJvdmVydmlldyI6Ik1hbiBvZiBNYXJibGUgaXMgYSBQb2xpc2ggZmlsbSBhYm91dCBhIHN0dWRlbnQgbWFraW5nIGEgZmlsbSBhYm91dCBhIGJyaWNrbGF5ZXIgd2hvIHdhcyBvbmNlIGlkb2xpemVkLiBTaGUgaW50ZXJ2aWV3cyBwZW9wbGUgd2hvIGtuZXcgaGltIGFuZCBmaW5kcyBvbGQgZm9vdGFnZSB0aGF0IGxlYWQgdG8gYW4gdW5mb2xkaW5nIG15c3RlcnkgdGhhdCBjYXVzZXMgaGVyIHByb2R1Y2VyIHRvIGNhbmNlbCB0aGUgcHJvamVjdC4iLCJwb3B1bGFyaXR5Ijo1LjI4MSwicG9zdGVyX3BhdGgiOiIvdjBNZjdab1BpU3RESXNaenhkY25DRHVJR25mLmpwZyIsInByb2R1Y3Rpb25fY29tcGFuaWVzIjpbeyJpZCI6NTIsImxvZ29fcGF0aCI6bnVsbCwibmFtZSI6IkZpbG0gUG9sc2tpIEZpbG0gQWdlbmN5Iiwib3JpZ2luX2NvdW50cnkiOiIifSx7ImlkIjo2ODA0LCJsb2dvX3BhdGgiOm51bGwsIm5hbWUiOiJaZXNww7NsIEZpbG1vd3kgXCJYXCIiLCJvcmlnaW5fY291bnRyeSI6IiJ9XSwicHJvZHVjdGlvbl9jb3VudHJpZXMiOlt7Imlzb18zMTY2XzEiOiJQTCIsIm5hbWUiOiJQb2xhbmQifV0sInJlbGVhc2VfZGF0ZSI6IjE5NzctMDItMjUiLCJyZXZlbnVlIjowLCJydW50aW1lIjoxNjUsInNwb2tlbl9sYW5ndWFnZXMiOlt7ImVuZ2xpc2hfbmFtZSI6IlBvbGlzaCIsImlzb182MzlfMSI6InBsIiwibmFtZSI6IlBvbHNraSJ9XSwic3RhdHVzIjoiUmVsZWFzZWQiLCJ0YWdsaW5lIjoiIiwidGl0bGUiOiJNYW4gb2YgTWFyYmxlIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjcuMDI2LCJ2b3RlX2NvdW50Ijo1N30=
+  recorded_at: Fri, 02 Dec 2022 16:56:06 GMT
+recorded_with: VCR 6.1.0

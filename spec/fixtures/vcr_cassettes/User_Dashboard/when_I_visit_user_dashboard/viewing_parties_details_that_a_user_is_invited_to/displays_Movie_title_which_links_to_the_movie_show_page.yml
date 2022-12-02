@@ -1,0 +1,195 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/206?api_key=<movie_api_key>&language%5B%5D=en-US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 02 Dec 2022 16:49:16 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - c682dc59d8a37389400a920b285ea50c971c91d3
+      X-Memc-Age:
+      - '11712'
+      X-Memc-Expires:
+      - '4774'
+      Etag:
+      - W/"4de491606e0fd6e1d57d56386ce887b3"
+      Vary:
+      - Accept-Encoding,Accept-Encoding,Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 f111faa3f37b2169cefb225b0f246234.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - effrQmnw2I3uWsWKQvlniWp3wHQjG_V7gfo0qnFtjeR9_k9RWBzfFw==
+      Age:
+      - '1962'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/nwbbZhrIXW4YHrn3YDn9pBA19eO.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"}],"homepage":"","id":206,"imdb_id":"tt0287624","original_language":"en","original_title":"Paradise
+        Found","overview":"Paradise Found is a biography about the painter Paul Gauguin.
+        Focusing on his personal conflict between citizen life and his family life
+        and the art scene in Frane. In an incredible imagery montage Gauguin manages
+        to make a successful living in the South Pacific, while being in opposition
+        to France.","popularity":3.328,"poster_path":"/i5tYnEeCAPODbEbbwYmNd8Y9seA.jpg","production_companies":[],"production_countries":[{"iso_3166_1":"AU","name":"Australia"},{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"FR","name":"France"},{"iso_3166_1":"GB","name":"United
+        Kingdom"}],"release_date":"2003-01-01","revenue":0,"runtime":89,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"","title":"Paradise
+        Found","video":false,"vote_average":6.571,"vote_count":21}'
+  recorded_at: Fri, 02 Dec 2022 17:21:58 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/236?api_key=<movie_api_key>&language%5B%5D=en-US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 02 Dec 2022 17:08:32 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - b38aeecdef1bf05efabdad991e0631aae6a77bd8
+      X-Memc-Age:
+      - '8432'
+      X-Memc-Expires:
+      - '8737'
+      Etag:
+      - W/"c7856fd5539e6a7467206f05691aeaea"
+      Vary:
+      - Accept-Encoding,Accept-Encoding,Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 a7c0ba01db75946f7df3f7eaf69984b6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 4r9DwpkhBdF8lZDu1-8IaKyzr1A6tpbxyf7k66P0itngeKiPA33oUw==
+      Age:
+      - '806'
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIveDRzcW5tVjJuQUtJRzZjbXQ5V0FGOXhSQTJNLmpwZyIsImJlbG9uZ3NfdG9fY29sbGVjdGlvbiI6bnVsbCwiYnVkZ2V0IjozMDAwMDAwLCJnZW5yZXMiOlt7ImlkIjozNSwibmFtZSI6IkNvbWVkeSJ9LHsiaWQiOjE4LCJuYW1lIjoiRHJhbWEifSx7ImlkIjoxMDc0OSwibmFtZSI6IlJvbWFuY2UifV0sImhvbWVwYWdlIjoiIiwiaWQiOjIzNiwiaW1kYl9pZCI6InR0MDExMDU5OCIsIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6Ik11cmllbCdzIFdlZGRpbmciLCJvdmVydmlldyI6IkEgeW91bmcgc29jaWFsIG91dGNhc3QgaW4gQXVzdHJhbGlhIHN0ZWFscyBtb25leSBmcm9tIGhlciBwYXJlbnRzIHRvIGZpbmFuY2UgYSB2YWNhdGlvbiB3aGVyZSBzaGUgaG9wZXMgdG8gZmluZCBoYXBwaW5lc3MsIGFuZCBwZXJoYXBzIGxvdmUuIiwicG9wdWxhcml0eSI6MTMuNzE4LCJwb3N0ZXJfcGF0aCI6Ii96SnlUcjhGbzQxMmEyT0lmSkdYVFJBbTRJd1guanBnIiwicHJvZHVjdGlvbl9jb21wYW5pZXMiOlt7ImlkIjoxMDUsImxvZ29fcGF0aCI6Ii9weWlOdlBKWUd6NFcyU0ltZ1VMb0cyc240eTQucG5nIiwibmFtZSI6IkNpQnkgMjAwMCIsIm9yaWdpbl9jb3VudHJ5IjoiRlIifSx7ImlkIjoxMTg0MCwibG9nb19wYXRoIjoiLzhveUNSWWY2ZXp4QjVoOEhKSVBWRzhKanpnTC5wbmciLCJuYW1lIjoiRmlsbSBWaWN0b3JpYSIsIm9yaWdpbl9jb3VudHJ5IjoiQVUifSx7ImlkIjozOTI1MCwibG9nb19wYXRoIjpudWxsLCJuYW1lIjoiSG91c2UgJiBNb29yaG91c2UgRmlsbXMiLCJvcmlnaW5fY291bnRyeSI6IiJ9XSwicHJvZHVjdGlvbl9jb3VudHJpZXMiOlt7Imlzb18zMTY2XzEiOiJBVSIsIm5hbWUiOiJBdXN0cmFsaWEifSx7Imlzb18zMTY2XzEiOiJGUiIsIm5hbWUiOiJGcmFuY2UifV0sInJlbGVhc2VfZGF0ZSI6IjE5OTQtMDktMjkiLCJyZXZlbnVlIjoxNTExOTYzOSwicnVudGltZSI6MTA2LCJzcG9rZW5fbGFuZ3VhZ2VzIjpbeyJlbmdsaXNoX25hbWUiOiJFbmdsaXNoIiwiaXNvXzYzOV8xIjoiZW4iLCJuYW1lIjoiRW5nbGlzaCJ9LHsiZW5nbGlzaF9uYW1lIjoiSmFwYW5lc2UiLCJpc29fNjM5XzEiOiJqYSIsIm5hbWUiOiLml6XmnKzoqp4ifV0sInN0YXR1cyI6IlJlbGVhc2VkIiwidGFnbGluZSI6IlN1Y2Nlc3MgaXMgdGhlIGJlc3QgcmV2ZW5nZS4iLCJ0aXRsZSI6Ik11cmllbCdzIFdlZGRpbmciLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6Ni45MDYsInZvdGVfY291bnQiOjM1Nn0=
+  recorded_at: Fri, 02 Dec 2022 17:21:58 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/206?api_key=<movie_api_key>&language%5B%5D=en-US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 02 Dec 2022 16:49:16 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - c682dc59d8a37389400a920b285ea50c971c91d3
+      X-Memc-Age:
+      - '11712'
+      X-Memc-Expires:
+      - '4774'
+      Etag:
+      - W/"4de491606e0fd6e1d57d56386ce887b3"
+      Vary:
+      - Accept-Encoding,Accept-Encoding,Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 badefad2d1fb92bb4620df1ce11d8c92.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - iMTvKUrUAGpAjBxI67DiIHcSfaAMtIGVqaTuoi2sViE1d2mX5h3YFA==
+      Age:
+      - '1962'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/nwbbZhrIXW4YHrn3YDn9pBA19eO.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"}],"homepage":"","id":206,"imdb_id":"tt0287624","original_language":"en","original_title":"Paradise
+        Found","overview":"Paradise Found is a biography about the painter Paul Gauguin.
+        Focusing on his personal conflict between citizen life and his family life
+        and the art scene in Frane. In an incredible imagery montage Gauguin manages
+        to make a successful living in the South Pacific, while being in opposition
+        to France.","popularity":3.328,"poster_path":"/i5tYnEeCAPODbEbbwYmNd8Y9seA.jpg","production_companies":[],"production_countries":[{"iso_3166_1":"AU","name":"Australia"},{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"FR","name":"France"},{"iso_3166_1":"GB","name":"United
+        Kingdom"}],"release_date":"2003-01-01","revenue":0,"runtime":89,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"","title":"Paradise
+        Found","video":false,"vote_average":6.571,"vote_count":21}'
+  recorded_at: Fri, 02 Dec 2022 17:21:58 GMT
+recorded_with: VCR 6.1.0

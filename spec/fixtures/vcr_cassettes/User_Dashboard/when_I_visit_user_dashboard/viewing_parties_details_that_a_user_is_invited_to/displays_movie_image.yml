@@ -1,0 +1,127 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/206?api_key=<movie_api_key>&language%5B%5D=en-US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 02 Dec 2022 16:49:16 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - c682dc59d8a37389400a920b285ea50c971c91d3
+      X-Memc-Age:
+      - '11712'
+      X-Memc-Expires:
+      - '4774'
+      Etag:
+      - W/"4de491606e0fd6e1d57d56386ce887b3"
+      Vary:
+      - Accept-Encoding,Accept-Encoding,Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 d9fe97589e952f97209f7a422c89d876.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 7jH9c1t9v63diQ_BHikkVps0PgD9Bf2caq60ZqH5CgizH1OK0i78fA==
+      Age:
+      - '1961'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"adult":false,"backdrop_path":"/nwbbZhrIXW4YHrn3YDn9pBA19eO.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"}],"homepage":"","id":206,"imdb_id":"tt0287624","original_language":"en","original_title":"Paradise
+        Found","overview":"Paradise Found is a biography about the painter Paul Gauguin.
+        Focusing on his personal conflict between citizen life and his family life
+        and the art scene in Frane. In an incredible imagery montage Gauguin manages
+        to make a successful living in the South Pacific, while being in opposition
+        to France.","popularity":3.328,"poster_path":"/i5tYnEeCAPODbEbbwYmNd8Y9seA.jpg","production_companies":[],"production_countries":[{"iso_3166_1":"AU","name":"Australia"},{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"FR","name":"France"},{"iso_3166_1":"GB","name":"United
+        Kingdom"}],"release_date":"2003-01-01","revenue":0,"runtime":89,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"","title":"Paradise
+        Found","video":false,"vote_average":6.571,"vote_count":21}'
+  recorded_at: Fri, 02 Dec 2022 17:21:57 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/210?api_key=<movie_api_key>&language%5B%5D=en-US
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 02 Dec 2022 17:08:31 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - MISS
+      X-Memc-Key:
+      - ba017f07b882b79c66970607d345b65a53452fee
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '16100'
+      Vary:
+      - Accept-Encoding,Accept-Encoding,Accept-Encoding
+      - Origin
+      X-Cache:
+      - Error from cloudfront
+      Via:
+      - 1.1 3dc4c80cd959e984309833cac8f5a630.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - MWw_4QcQo9p8tbUAGth1V-fc4pY1EEX7hgKqaKk-gtWBVY6g4yho0A==
+      Age:
+      - '806'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"success":false,"status_code":34,"status_message":"The resource you
+        requested could not be found."}'
+  recorded_at: Fri, 02 Dec 2022 17:21:57 GMT
+recorded_with: VCR 6.1.0
