@@ -27,8 +27,5 @@ RSpec.describe 'TMDB Search' do
       expect(page).to have_content('Title')
       expect(page).to have_content('The Godfather')
     end
-
-
   end
-
 end

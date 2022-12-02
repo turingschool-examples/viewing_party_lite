@@ -13,9 +13,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    new_user = User.create(user_params)
-    if User.exists?(new_user.id)
-      redirect_to user_path(new_user)
+    @new_user = User.new(user_params)
+    if @new_user.save
+      redirect_to user_path(@new_user)
     else
       redirect_to '/register'
     end
