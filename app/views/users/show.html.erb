@@ -10,10 +10,41 @@
 </div>
 <hr>
 <div class="row justify-content-center" id="parties">
-  <div class="col-2 border border-1 m-3">
-    party here
+  <h3>Viewing Parties</h3>
+  <div id="invited_to">
+  <h4>Invitations</h4>
+    <%@parties_invited_to.each do |party|%>
+      <div id="party_<%=party.id%>">
+        <%party_movie = party.movie_details%>
+        <img src="https://api.themoviedb.org<%=party_movie.poster_path%>">
+        <%=link_to party_movie.title, user_movie_path(@user, party_movie.id)%> 
+        Event Start Time: <%=party.date%> at <%=party.start_time%>
+        Host: <%=party.host%>
+        Invitees: <ul id="invited_to_<%=party.id%>"><%party.invited_users.each do |name|%>
+                        <%if name == @user.name%>
+                          <b><%=name%></b>
+                        <%else%>
+                          <%=name%>
+                        <%end%>
+                      <%end%>
+        </ul>
+      </div>
+    <%end%>
   </div>
-  <div class="col-2 border border-1 m-3">
-    party here
+  <div id="hosting">
+    <h4>Hosted Parties</h4>
+    <%@parties_hosting.each do |party|%>
+      <div id="party_<%=party.id%>">
+        <%party_movie = party.movie_details%>
+        <img src="https://api.themoviedb.org<%=party_movie.poster_path%>">
+        <%=link_to party_movie.title, user_movie_path(@user, party_movie.id)%> 
+        Event Start Time: <%=party.date%> at <%=party.start_time%>
+        Host: <%=party.host%>
+        Invitees: <ul id="invited_to_<%=party.id%>"><%party.invited_users.each do |name|%>
+                        <%=name%>
+                      <%end%>
+        </ul>
+      </div>
+    <%end%>
   </div>
 </div>

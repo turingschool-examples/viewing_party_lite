@@ -3,7 +3,7 @@ require 'faker'
 
 RSpec.describe 'TMDB Search' do
   before(:each) do
-    @user = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.free_email)
+    @user = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.email)
   end
 
   describe 'happy path' do

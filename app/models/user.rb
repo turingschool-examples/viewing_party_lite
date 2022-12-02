@@ -4,4 +4,12 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
+
+  def parties_invited_to
+    parties.where('party_users.host = ?', false)
+  end
+
+  def parties_hosting
+    parties.where('party_users.host = ?', true)
+  end
 end

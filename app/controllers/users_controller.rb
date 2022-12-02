@@ -5,6 +5,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @parties_invited_to = @user.parties_invited_to
+    @parties_hosting = @user.parties_hosting
   end
 
   def new
