@@ -3,10 +3,9 @@ class Movie
               :movie_title,
               :movie_image,
               :vote_average,
-              :runtime, 
+              :runtime,
               :genres,
               :summary_description,
-              :vote_average,
               :total_reviews,
               :reviews,
               :cast
@@ -16,7 +15,7 @@ class Movie
     @movie_title = movie_details[:title]
     @movie_image = movie_details[:poster_path]
     @vote_average = movie_details[:vote_average]
-    @runtime = movie_details[:runtime]
+    @runtime = (movie_details[:runtime].to_f / 60).round(2)
     @genres = get_genres(movie_details)
     @summary_description = movie_details[:overview]
     @total_reviews = movie_reviews[:total_results]

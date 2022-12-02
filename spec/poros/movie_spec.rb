@@ -15,7 +15,7 @@ RSpec.describe Movie, :vcr do
       expect(@movie.movie_title).to eq("Fight Club")
       expect(@movie.movie_image).to eq("/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg")
       expect(@movie.vote_average).to eq(8.428)
-      expect(@movie.runtime).to eq(139)
+      expect(@movie.runtime).to eq(2.32)
       expect(@movie.genres).to eq(["Drama", "Thriller", "Comedy"])
       expect(@movie.summary_description).to eq("A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.")
       expect(@movie.cast.first).to eq(["Edward Norton", "The Narrator"])

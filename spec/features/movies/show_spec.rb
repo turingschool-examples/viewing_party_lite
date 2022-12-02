@@ -49,15 +49,16 @@ RSpec.describe 'movie detail page', :vcr, type: :feature do
       end
 
       it '- shows the runtime in hours & minutes' do
-        expect(page).to have_content("Runtime: 139 minutes")
+        expect(page).to have_content("Runtime: 2 hours 32 minutes")
       end
 
       it '- shows the genre(s) associated to the movie' do
-        expect(page).to have_content("Genres: Drama, Thriller, Comedy")
+        expect(page).to have_content("Genre(s): Drama, Thriller, Comedy")
       end
 
       it '- shows the summary description' do
-        expect(page).to have_content("Movie Summary: #{@movie.summary_description}")
+        expect(page).to have_content("Movie Summary:")
+        expect(page).to have_content("#{@movie.summary_description}")
       end
 
       it '- shows the first 10 cast members (characters & actors)' do
@@ -69,10 +70,10 @@ RSpec.describe 'movie detail page', :vcr, type: :feature do
         expect(page).to have_content("Total Reviews: 7")
       end
 
-      it '- shows each reviews author and information' do 
+      it '- shows each reviews author and information' do
         expect(page).to have_content("Movie Reviews:")
         expect(page).to have_content("Author: Goddard")
-        expect(page).to have_content("Review: Pretty awesome movie.  It shows what one crazy person can convince other crazy people to do.  Everyone needs something to believe in.  I recommend Jesus Christ, but they want Tyler Durden.")
+        expect(page).to have_content("Review: Pretty awesome movie. It shows what one crazy person can convince other crazy people to do. Everyone needs something to believe in. I recommend Jesus Christ, but they want Tyler Durden.")
       end
     end
   end

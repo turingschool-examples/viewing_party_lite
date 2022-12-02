@@ -1,0 +1,34 @@
+<h3><%= @movie.movie_title %></h3>
+
+<%= button_to "Create Viewing Party for #{@movie.movie_title}", new_viewing_party_path(@user, @movie.id), method: :get %>
+
+
+<p>
+Vote Average: <%= @movie.vote_average %><br>
+Runtime: <%= @movie.runtime.to_s[0] %> hours <%= @movie.runtime.to_s[2..3] %> minutes<br>
+Genre(s): <% @movie.genres.each do |genre| %>
+              <%= genre %>,
+          <% end %>
+</p>
+
+
+<h4>Featured Cast:</h4>
+  <p>
+  <% @movie.cast.each do |array| %> 
+    <%= array[0] %> playing <%= array[1] %><br>
+  <% end %>
+  </p>
+
+<h4>Movie Summary:</h4>
+<p><%= @movie.summary_description %></p>
+
+<h4>Total Reviews: <%= @movie.total_reviews %></h4>
+<h4>Movie Reviews:</h4> 
+<p>
+  <% @movie.reviews.each do |key, value| %></h4>
+    <p>
+    <b>Author:</b> <%= key %><br>
+    <b>Review:</b> <%= value %><br>
+    </p>
+  <% end %>
+</p>
