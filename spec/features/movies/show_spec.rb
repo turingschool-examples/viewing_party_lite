@@ -36,7 +36,7 @@ RSpec.describe 'Movie Details Page' do
       expect(page).to have_content('Runtime: 2hr 55min')
     end
 
-    within('#genres') do
+    within('#genre') do
       expect(page).to have_content('Drama')
       expect(page).to have_content('Crime')
       expect(page).to_not have_content('Comedy')
