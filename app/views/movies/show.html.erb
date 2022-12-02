@@ -1,6 +1,6 @@
 <div style="text-align:center">
-
+  <h2><%= @movie[:original_title] %></h2>
   <%= button_to 'Discover Page', user_discover_index_path(@user), method: :get %>
-  <br>
-  <%= button_to 'Create Viewing Party', new_user_movie_viewing_party_path(@user, @movie), method: :get %>
+    <br>
+  <%= button_to "Create Viewing Party for #{@movie[:original_title]}", new_user_movie_viewing_party_path(@user, @movie[:id]), method: :get %>
 </div>
