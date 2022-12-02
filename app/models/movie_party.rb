@@ -16,4 +16,12 @@ class MovieParty < ApplicationRecord
   def poster_url
     MoviesFacade.movie_poster_url(movie_id)
   end
+
+  def create_user_movie_parties(host, invitee_ids)
+    UserMovieParty.create!(user_id: host.id, movie_party_id: id, status: 0)
+
+    invitee_ids.each do |invitee_id|
+      UserMovieParty.create!(user_id: invitee_id, movie_party_id: id, status: 1)
+    end
+  end
 end

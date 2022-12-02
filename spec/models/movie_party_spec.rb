@@ -17,7 +17,11 @@ RSpec.describe MovieParty do
 
   before(:each) do
     @user = create(:user)
+    @user2 = create(:user)
+    @user3 = create(:user)
+    @user4 = create(:user)
     @party = create(:movie_party)
+    @party2 = create(:movie_party)
     @user_movie_party = UserMovieParty.create!(user_id: @user.id, movie_party_id: @party.id, status: 0)
   end
 
@@ -33,6 +37,18 @@ RSpec.describe MovieParty do
         VCR.use_cassette('godfather_movie') do
           expect(@party.poster_url).to be_a String
         end
+      end
+    end
+
+    describe '#create_user_movie_parties' do 
+      it 'creates user movie partys based on host and invites' do
+        id_array = [@user3.id, @user4.id]
+        @party2.create_user_movie_parties(@user2, id_array)
+        
+        expect(@user2.user_movie_parties).to_not match_array([])
+        expect(@user2.user_movie_parties.first.status).to eq('hosting')
+        expect(@user3.user_movie_parties).to_not match_array([])
+        expect(@user4.user_movie_parties).to_not match_array([])
       end
     end
   end
