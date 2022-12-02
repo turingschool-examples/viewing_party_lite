@@ -15,6 +15,7 @@ RSpec.describe 'user show page', :vcr, type: :feature do
 
   before(:each) do
     visit user_path(reba)
+
   end
 
   describe 'as a user' do 

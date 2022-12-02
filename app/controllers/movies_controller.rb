@@ -12,4 +12,10 @@ class MoviesController < ApplicationController
       flash[:alert] = 'Something went wrong, please try again'
     end
   end
+
+  def show
+    @user = User.find(params[:user_id])
+    @movie = MovieFacade.new_movie_details(params[:id])
+  end
+
 end
