@@ -18,6 +18,5 @@ class ViewingPartyController < ApplicationController
     end
 
     redirect_to user_path(user.id)
-    # require "pry"; binding.pxry
   end
 end

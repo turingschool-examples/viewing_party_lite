@@ -5,6 +5,10 @@ RSpec.describe 'User Dashboard Page' do
     @user1 = User.create!(name: "William", email: "William@gmail.com")
     @user2 = User.create!(name: "Ashley", email: "Ashley@gmail.com")
     @user3 = User.create!(name: "Abdul", email: "Abdul@gmail.com")
+
+    @viewingparty1 = ViewingParty.create!(movie_title: "The Shawshank Redemption", movie_id: 278, duration: 146, date: "2023/04/22", time: "05:00 PM")
+    @userviewingparty1 = UserViewingParty.create!(host: true, user_id: @user1.id, viewing_party_id: @viewingparty1.id)
+    
     visit(user_path(@user1.id))
   end
 
@@ -33,6 +37,11 @@ RSpec.describe 'User Dashboard Page' do
 
     it 'displays movie title that links to the movie show page' do 
       expect(page).to have_link("The Shawshank Redemption")
+    end
+
+    it 'displays date and time of event' do 
+      expect(page).to have_content(@viewingparty1.date)
+      expect(page).to have_content(@viewingparty1.time)
     end
   end
 end
