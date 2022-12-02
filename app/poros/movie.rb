@@ -13,10 +13,10 @@ class Movie
 
   def initialize(movie_details, movie_reviews, movie_credits)
     @id = movie_details[:id]
-    @movie_title = movie_detials[:title]
-    @movie_image = movie_detials[:poster_path]
+    @movie_title = movie_details[:title]
+    @movie_image = movie_details[:poster_path]
     @vote_average = movie_details[:vote_average]
-    @runtime = movie_detials[:runtime]
+    @runtime = movie_details[:runtime]
     @genres = get_genres(movie_details)
     @summary_description = movie_details[:overview]
     @vote_average = movie_details[:vote_average]
@@ -39,7 +39,7 @@ class Movie
 
   def get_reviews(movie_reviews)
     review_hash = {}
-    movie_reviews.each do |review|
+    movie_reviews[:results].each do |review|
       review_hash[review[:author]] = review[:content]
     end
     review_hash
