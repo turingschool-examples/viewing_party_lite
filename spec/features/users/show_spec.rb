@@ -52,7 +52,7 @@ RSpec.describe 'User Dashboard' do
       end
     end
 
-    describe 'viewing parties details that a user is invited to', :vcr do
+    describe 'viewing parties details that a user is invited to' do
       it 'displays movie image' do
         within '#viewing_parties' do
           expect(page.find("img[src='https://image.tmdb.org/t/p/w500/i5tYnEeCAPODbEbbwYmNd8Y9seA.jpg']"))
