@@ -22,6 +22,10 @@ RSpec.describe 'landing page', type: :feature do
       expect(page).to have_content('Existing Users')
       expect(page).to have_content(user1.name)
       expect(page).to have_content(user1.email)
+      expect(page).to have_link('amanda@turing.edu', href: user_path(user1))
+      expect(page).to have_link('james@turing.edu', href: user_path(user2))
+      expect(page).to have_link('pat@turing.edu', href: user_path(user3))
+      save_and_open_page
     end
 
     it 'has a link to return to the welcome page at the top of every page' do
