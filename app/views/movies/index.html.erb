@@ -1,8 +1,36 @@
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#centered {
+  text-align: center;
+}
+</style>
+
+<div id='centered'>
 <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %>
-<h1>Movie Results</h1>
-<div id='movies'>
-<% @movies.each do |movie|%>
- <%= link_to movie.title, user_movie_path(@user, movie.id), method: :get%>
- Vote Average:<%= movie.vote %><br>
+<% if @keywords == 'top 20rated' %>
+  <h2>Movie Results</h2>
+<% else %>
+  <h2>Movie Results For: <%= @keywords %></h2>
 <% end %>
+<div class='row' id='movies'>
+<% @movies.each do |movie|%>
+  <div class='column'><%= link_to movie.title, user_movie_path(@user, movie.id), method: :get%></div>
+  <div class='column'>Vote Average:<%= movie.vote %><br></div>
+<% end %>
+</div>
 </div>

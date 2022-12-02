@@ -18,5 +18,16 @@ RSpec.describe 'Discover Movies Page' do
       click_button "Find Movies"
       expect(current_path).to eq("/users/#{user1.id}/movies")
     end
+
+    it "reloads the page without returing results if the keyword search is blank and find movies is clicked" do 
+      user1 = User.create!(name: "Amanda", email: "amanda@turing.edu")
+      visit "users/#{user1.id}/discover"
+      click_button "Find Movies"
+
+      expect(current_path).to eq("/users/#{user1.id}/discover")
+      within '#flash-messages' do
+      expect(page).to have_content("Error: You must provide a query")
+    end
+    end
   end
 end

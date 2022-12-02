@@ -15,30 +15,30 @@ div.main_text {
 </style>
 
 <center>
-  <h2><%= @movie.title %></h2>
-  <%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %><br>
-  <%= button_to "Create Viewing Party For #{@movie.title}", new_user_movie_viewing_party_path(@user, @movie.id), method: :get %>
+  <h2><%= @facade.movie.title %></h2>
+  <%= button_to "Discover Page", "/users/#{@facade.user_id}/discover", method: :get %><br>
+  <%= button_to "Create Viewing Party For #{@facade.movie.title}", new_user_movie_viewing_party_path(@facade.user, @facade.id), method: :get %>
 </center>
 <br><br>
 
 <ul class="even_horizontal" id="details">
-    <li>Vote: <%= @movie.vote %></li>
-    <li>Runtime: <%= @movie.runtime_in_hours_and_min %></li>
-    <li>Genre: <%= @movie.genres.join(", ") %></li>
+    <li>Vote: <%= @facade.movie.vote %></li>
+    <li>Runtime: <%= @facade.movie.runtime_in_hours_and_min %></li>
+    <li>Genre: <%= @facade.movie.genres.join(", ") %></li>
 </ul>  
 <br>
 <hr>
 <div class="main_text">
   <h4>Summary:</h4>
   <p>
-    <%= @movie.summary %>
+    <%= @facade.movie.summary %>
   </p>
   <h4>Cast:</h4>
-  <% @cast_list.each do |actor| %>
+  <% @facade.cast_list.each do |actor| %>
     <p><%= "#{actor.character}:   #{actor.name}" %> </p>
   <% end %>
-  <h4><%= @reviews.count %> Reviews:</h4>
-  <% @reviews.each do |review| %>
+  <h4><%= @facade.reviews.count %> Reviews:</h4>
+  <% @facade.reviews.each do |review| %>
     <b><%= review.author %></b><br>
     Name: <%= review.name %><br>
     Username: <%= review.username %><br>

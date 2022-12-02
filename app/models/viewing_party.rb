@@ -22,14 +22,8 @@ class ViewingParty < ApplicationRecord
       .pluck(:name)
   end
 
-  def self.movie_runtime
-    binding.pry
-  end
-
-  def image 
+  def image(user_id)
     #this will return the url path for the movie image for that party
-    movie = MovieDetailsSearch.new.movie(movie_id)
-    config_path = ConfigSearch.new.base_path
-    "#{config_path}w200#{movie.partial_image_path}"
+    MovieDetailsFacade.new(user_id, movie_id).image_path
   end
 end
