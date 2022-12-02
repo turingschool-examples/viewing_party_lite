@@ -20,7 +20,7 @@
         <%=link_to party_movie.title, user_movie_path(@user, party_movie.id)%> 
         Event Start Time: <%=party.date%> at <%=party.start_time%>
         Host: <%=party.host%>
-        Invitees: <ul><%party.invited_users.each do |name|%>
+        Invitees: <ul id="invited_to_<%=party.id%>"><%party.invited_users.each do |name|%>
                         <%if name == @user.name%>
                           <b><%=name%></b>
                         <%else%>
@@ -40,7 +40,7 @@
         <%=link_to party_movie.title, user_movie_path(@user, party_movie.id)%> 
         Event Start Time: <%=party.date%> at <%=party.start_time%>
         Host: <%=party.host%>
-        Invitees: <ul><%party.invited_users.each do |name|%>
+        Invitees: <ul id="invited_to_<%=party.id%>"><%party.invited_users.each do |name|%>
                         <%=name%>
                       <%end%>
         </ul>

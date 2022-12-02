@@ -73,14 +73,14 @@ RSpec.describe 'Users' do
           end
         end
         it 'has a list of each user invited to the party including my user' do
-          within("#invited_to_#{@party3}") do
+          within("#invited_to_#{@party3.id}") do
             expect(page).to have_content(@user1.name)
             expect(page).to have_content(@user3.name)
             expect(page).not_to have_content(@user2.name)
           end
         end
         it 'has the name of my user in bold in the list' do
-          within("#invited_to_#{@party3}") do
+          within("#invited_to_#{@party3.id}") do
             expect(page).to have_css('b', text: @user1.name)
           end
         end
@@ -93,7 +93,7 @@ RSpec.describe 'Users' do
           end
         end
         it 'has a list of users invited to the party' do
-          within("#invited_to_#{@party1}") do
+          within("#invited_to_#{@party1.id}") do
             expect(page).not_to have_content(@user1.name)
             expect(page).to have_content(@user2.name)
             expect(page).to have_content(@user3.name)
