@@ -5,7 +5,7 @@ class Movie
               :run_time,
               :genres,
               :summary,
-              # :cast_members,
+              :cast_members,
               :total_review_count
 
   # :review_author,
@@ -18,7 +18,7 @@ class Movie
     @run_time = data[:runtime]
     @genres = data[:genres]
     @summary = data[:overview]
-    # @cast_members = data[:cast].map { |member| (member[:name] => member[:character]) } #not right
+    @cast_members = data[:cast]
     @total_review_count = data[:total_results]
     # @review_author = data[:results].map { |review| (review[:author] => member[:content]) }
   end
@@ -27,4 +27,3 @@ class Movie
   #   data[]
   # end
 end
-
