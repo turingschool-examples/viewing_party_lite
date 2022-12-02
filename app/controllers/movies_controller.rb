@@ -10,6 +10,6 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @movie = MovieSearch.new.retrieve_movie(params[:movie_id])
+    @movie = MovieSearch.new.retrieve_movie(params[:id])
   end
 end
