@@ -10,7 +10,7 @@ class User < ApplicationRecord
   def movie_cards_info
     cards = {}
     parties.each do |party|
-      cards[party.movie_id] = MovieFacade.movie_card(party.movie_id)
+      cards[party.id] = MovieFacade.movie_card(party.movie_id)
     end
     cards
   end
