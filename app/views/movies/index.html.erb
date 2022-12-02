@@ -4,7 +4,6 @@
 
 <ul style="list-style-type:none;">
   <% @movies.each do |movie| %>
-  <% binding.pry %>
-    <li><%= movie[:title] %>
+    <li><%= link_to "#{movie[:title]}", user_movie_path(@user, movie[:id]) %>
   <% end %>
 </ul>
