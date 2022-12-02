@@ -59,15 +59,15 @@ RSpec.describe ViewingParty do
       end
     end
 
-    describe "#host" do
-      it "returns the party host", :vcr do
-        expect(@viewing_party.host).to eq("Eli Fuchsman")
+    describe '#host' do
+      it 'returns the party host', :vcr do
+        expect(@viewing_party.host).to eq('Eli Fuchsman')
       end
     end
 
-    describe "#invited" do
-      it "#returns all invited users to the party", :vcr do
-        expect(@viewing_party.invited).to eq("Kristen Nestler, John John, Luke Skywalker, Michael Corleone, Tony Montana, Bruce Wayne, and Harvey Dent")
+    describe '#invited' do
+      it '#returns all invited users to the party', :vcr do
+        expect(@viewing_party.invited).to eq(["Kristen Nestler", "John John", "Luke Skywalker", "Michael Corleone", "Tony Montana", "Bruce Wayne", "Harvey Dent"])
       end
     end
   end
