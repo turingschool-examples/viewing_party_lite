@@ -8,7 +8,13 @@ class ViewingPartiesController < ApplicationController
   def create
     user = User.find(params[:user_id])
     party = Party.new(viewing_party_params)
+    
     if party.save
+      user_party = UserParty.create!(user: user, party: party, host: true)
+      attendees = User.find(params[:attendees])
+      attendees.each do |attendee|
+        UserParty.create!(user: attendee, party: party, host: false)
+      end
       redirect_to user_path(user)
     else
       flash[:alert] = party.errors.full_messages

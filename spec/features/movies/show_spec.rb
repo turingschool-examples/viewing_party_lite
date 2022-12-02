@@ -12,11 +12,12 @@ RSpec.describe 'movies show page', :vcr do
 
     expect(page).to have_button("Create Viewing Party for The Godfather")
     click_on "Create Viewing Party for The Godfather"
+    
     VCR.insert_cassette "new_party"
     expect(current_path).to eq("/users/#{@user_1.id}/movies/238/viewing_parties/new")
+    
     VCR.eject_cassette
     VCR.eject_cassette
-    # Details This viewing party button should take the user to the new viewing party page (/users/:user_id/movies/:movie_id/viewing-party/new)
   end
 
   it 'has a button to return to the discover page' do

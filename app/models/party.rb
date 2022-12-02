@@ -4,5 +4,5 @@ class Party < ApplicationRecord
 
   validates_numericality_of :duration
   validates_presence_of :movie_title, :day, :start_time
-  validates :duration, comparison: { greater_than: :start_time }
+  # validates :duration, comparison: { greater_than: runtime }
 end

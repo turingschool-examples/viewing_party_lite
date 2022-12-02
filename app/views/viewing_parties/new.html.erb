@@ -8,7 +8,7 @@
     <p><%= f.label :movie_title, "Movie Title" %>
     <%= f.text_field :movie_title, readonly: true, value: @movie.title %></p>
     <p><%= f.label :duration, "Duration of Party" %>
-    <%= f.number_field :duration, in: @movie.runtime..500 %></p>
+    <%= f.number_field :duration, min: @movie.runtime, value: @movie.runtime %></p>
     <p><%= f.label :day %>
     <%= f.date_field :day, min: Date.today %></p>
     <p><%= f.label :start_time, "Start Time" %>
@@ -16,8 +16,8 @@
     <p><%= f.label "Invite Other Users" %></p>
     <p><% @users.each do |user| %>
       <% if user != @user %>
-        <%= f.label "#{user.name}" %>
-        <%= f.check_box "#{user.name}" %>
+        <%= f.label :attendees, "#{user.name}" %>
+        <%= f.check_box :attendees, {multiple: true}, "#{user.id}", nil %>
       <% end %>
     <% end %></p>
     <p><%= f.submit "Create Party" %></p>
