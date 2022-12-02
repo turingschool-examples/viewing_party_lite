@@ -14,11 +14,19 @@ RSpec.describe MovieService, :vcr do
     context '#movie_credits(movie_id)' do
       it 'returns a movies credits' do
         credit_data = MovieService.movie_credits(550)
-        expect(credit_data). to be_a Hash
+        expect(credit_data).to be_a Hash
         expect(credit_data[:cast][0][:name]).to eq("Edward Norton")
         expect(credit_data[:cast][0][:character]).to eq("The Narrator")
         expect(credit_data[:cast][1][:name]).to eq("Brad Pitt")
         expect(credit_data[:cast][1][:character]).to eq("Tyler Durden")
+      end
+    end
+
+    context '#movie_reviews(movie_id)' do
+      it 'returns a movies reviews' do 
+        review_data = MovieService.movie_reviews(550)
+        expect(review_data).to be_a Hash
+        expect(review_data[:total_results]).to eq(7)
       end
     end
   end
