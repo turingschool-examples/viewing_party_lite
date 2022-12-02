@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.describe 'Viewing Part new page' do
@@ -18,7 +16,7 @@ RSpec.describe 'Viewing Part new page' do
   end
 
   describe 'As a User' do
-    describe 'When I visit the new viewing party page (/users/:user_id/movies/:movie_id/viewing-party/new' do
+    describe 'When I visit the new viewing party page /users/:user_id/movies/:movie_id/viewing-party/new' do
       it 'I should see the name of the movie title rendered above a form to create a new party', :vcr do
         visit "/users/#{@user2.id}/movies/#{@movie_id}/viewing-party/new"
         # save_and_open_page
@@ -54,12 +52,59 @@ RSpec.describe 'Viewing Part new page' do
           click_button('Create Party')
 
           expect(current_path).to eq("/users/#{@user2.id}")
-          save_and_open_page
+          # save_and_open_page
           expect(ViewingParty.last.viewing_party_users.count).to eq(4)
+        end
+      end
+
+      describe "Sad Path Testing" do
+        describe "When I leave the date blank" do
+          it "redirects back to /users/:user_id/movies/:movie_id/viewing-party/new and I see an error", :vcr do
+            visit "/users/#{@user2.id}/movies/#{@movie_id}/viewing-party/new"
+
+            fill_in(:start_time, with: '08:30PM')
+            fill_in(:duration, with: 150)
+            page.check(@user1.name.to_s)
+            page.check(@user3.name.to_s)
+            page.check(@user5.name.to_s)
+            click_button('Create Party')
+
+            expect(current_path).to eq("/users/#{@user2.id}/movies/#{@movie_id}/viewing-party/new")
+            expect(page).to have_content("**Date Cannot Be Blank**")
+          end
+        end
+
+        describe "When I leave the start time blank" do
+          it "redirects back to /users/:user_id/movies/:movie_id/viewing-party/new and I see an error", :vcr do
+            visit "/users/#{@user2.id}/movies/#{@movie_id}/viewing-party/new"
+
+            fill_in(:date, with: '12/08/2022')
+            fill_in(:duration, with: 150)
+            page.check(@user1.name.to_s)
+            page.check(@user3.name.to_s)
+            page.check(@user5.name.to_s)
+            click_button('Create Party')
+
+            expect(current_path).to eq("/users/#{@user2.id}/movies/#{@movie_id}/viewing-party/new")
+            expect(page).to have_content("**Start Time Cannot Be Blank**")
+          end
+        end
+
+        describe "When I leave the start time and date blank" do
+          it "redirects back to /users/:user_id/movies/:movie_id/viewing-party/new and I see an error", :vcr do
+            visit "/users/#{@user2.id}/movies/#{@movie_id}/viewing-party/new"
+
+            fill_in(:duration, with: 150)
+            page.check(@user1.name.to_s)
+            page.check(@user3.name.to_s)
+            page.check(@user5.name.to_s)
+            click_button('Create Party')
+
+            expect(current_path).to eq("/users/#{@user2.id}/movies/#{@movie_id}/viewing-party/new")
+            expect(page).to have_content("**Fields Cannot Be Blank**")
+          end
         end
       end
     end
   end
 end
-
-# Details When the party is created, the user should be redirected back to the dashboard where the new event is shown. The event should also be listed on any other user's dashbaords that were also invited to the party.

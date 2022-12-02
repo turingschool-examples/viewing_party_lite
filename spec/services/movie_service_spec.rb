@@ -24,7 +24,7 @@ RSpec.describe MovieService do
         expect(movie[:id]).to eq(11)
         expect(movie[:title]).to eq('Star Wars')
         expect(movie[:runtime]).to eq(121)
-        expect(movie[:vote_average]).to eq(8.2)
+        expect(movie[:vote_average].round(2)).to eq(8.21)
         expect(movie[:poster_path]).to eq('/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg')
       end
     end
