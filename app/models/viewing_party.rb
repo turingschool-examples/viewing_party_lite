@@ -4,6 +4,9 @@ class ViewingParty < ApplicationRecord
 
   validates_presence_of :date
   validates_presence_of :start_time
+  validates_presence_of :duration
+  validates_numericality_of :duration, only_integer: true, greater_than_or_equal_to: :run_time
+
 
   def host 
     users
@@ -17,6 +20,10 @@ class ViewingParty < ApplicationRecord
       .includes(:user_viewing_parties)
       .where("user_viewing_parties.status = 'Invited'").to_a
       .pluck(:name)
+  end
+
+  def self.movie_runtime
+    binding.pry
   end
 
   def image 
