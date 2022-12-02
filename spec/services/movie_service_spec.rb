@@ -50,7 +50,7 @@ RSpec.describe MovieService do
       end
     end
 
-    describe "#first_ten_cast" do
+    describe '#first_ten_cast' do
       it 'finds the first 10 cast members of a movie', :vcr do
         movie_id = 11
         movie = MovieService.movie_by_id(movie_id)
@@ -60,7 +60,7 @@ RSpec.describe MovieService do
       end
     end
 
-    describe "#movie_reviews" do
+    describe '#movie_reviews' do
       it 'finds the reviews for a movie', :vcr do
         movie_id = 11
         movie = MovieService.movie_by_id(movie_id)

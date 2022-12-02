@@ -22,4 +22,18 @@ class ViewingParty < ApplicationRecord
   def full_poster_path
     "https://image.tmdb.org/t/p/original#{poster_path}"
   end
+
+  def host
+    users.joins(:viewing_party_users)
+         .where('viewing_party_users.host=1')
+         .pluck(:name)
+         .to_sentence
+  end
+
+  def invited
+    users.joins(:viewing_party_users)
+         .where('viewing_party_users.host=0')
+         .pluck(:name)
+         .to_sentence
+  end
 end

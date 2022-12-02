@@ -62,14 +62,14 @@ RSpec.describe 'Movie Results Page' do
           end
         end
 
-        describe "When I click on a movie link" do
+        describe 'When I click on a movie link' do
           it "then I am take to that movie's show page", :vcr do
             user1 = create(:user)
 
             visit "/users/#{user1.id}/movies"
             # save_and_open_page
 
-            click_link("The Godfather")
+            click_link('The Godfather')
 
             expect(current_path).to eq("/users/#{user1.id}/movies/238")
           end

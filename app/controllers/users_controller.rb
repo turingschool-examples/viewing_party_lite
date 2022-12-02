@@ -36,11 +36,11 @@ class UsersController < ApplicationController
   def results
     @user = User.find(params[:user_id])
 
-    if params['Find Movies'].present?
-      @movies = MovieService.movies_by_keyword(params['Find Movies'])
-    else
-      @movies = MovieService.find_top_rated_movies
-    end
+    @movies = if params['Find Movies'].present?
+                MovieService.movies_by_keyword(params['Find Movies'])
+              else
+                MovieService.find_top_rated_movies
+              end
   end
 
   private
