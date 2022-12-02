@@ -8,7 +8,6 @@
 
 <% if @results %>
   <% @results.each do |movie| %>
-    <% binding.pry %>
       <li id="movie_<%= movie.id %>">
         <%= link_to movie.title, user_movie_path(@user.id, movie.id) %>, Vote Average: <%= movie.vote_avg %>
       </li>

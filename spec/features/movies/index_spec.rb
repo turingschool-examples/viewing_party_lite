@@ -49,7 +49,7 @@ RSpec.describe 'Movie Index Page' do
         expect(page).to have_content('Vote Average: 8.7')
         expect(page).to have_link('The Godfather')
         click_link('The Godfather')
-        expect(current_path).to eq(user_movie_path(@user1.id, @movie.id))
+        expect(current_path).to eq(user_movie_path(@user1.id, 238))
       end
     end
   end
