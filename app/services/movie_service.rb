@@ -14,6 +14,11 @@ class MovieService
     data = JSON.parse(response.body, symbolize_names: true)
   end
 
+  def self.cast(movie_id)
+    response = connection.get("/3/movie/#{movie_id}/credits")
+    data = JSON.parse(response.body, symbolize_names: true)
+  end
+
   def self.connection
     Faraday.new(url: "https://api.themoviedb.org") do |faraday|
       faraday.params["api_key"] = ENV['movies_api_key']

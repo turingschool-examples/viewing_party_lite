@@ -24,7 +24,9 @@ RSpec.describe MovieService do
         expect(movie).to have_key(:genre_ids)
         expect(movie[:genre_ids]).to be_a(Array)
       end
-
+    end 
+    
+    describe '#search_movies' do
       it 'returns movies with matching keywords' do
         search_movies = MovieService.search_movie("Nemo")
         expect(search_movies).to be_a(Hash)
@@ -45,6 +47,27 @@ RSpec.describe MovieService do
 
         expect(movie).to have_key(:genre_ids)
         expect(movie[:genre_ids]).to be_a(Array)
+      end
+    end
+
+    describe '#reviews' do
+      it 'returns reviews' do
+        reviews = MovieService.reviews(238)
+        expect(reviews).to be_a(Hash)
+        expect(reviews[:results]).to be_a(Array)
+        review = reviews[:results][0]
+
+        expect(review).to have_key(:author)
+        expect(review[:author]).to be_a(String)
+
+        expect(review).to have_key(:content)
+        expect(review[:content]).to be_a(String)
+
+        expect(reviews).to have_key(:id)
+        expect(reviews[:id]).to be_a(Integer)
+
+        expect(reviews).to have_key(:total_results)
+        expect(reviews[:total_results]).to be_a(Integer)
       end
     end
   end

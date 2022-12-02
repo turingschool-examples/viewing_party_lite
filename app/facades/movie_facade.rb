@@ -19,4 +19,11 @@ class MovieFacade
       MovieReview.new(movie_data, @id = data[:id], @number_reviews = data[:total_results])
     end
   end
+
+  def self.movie_cast(movie_id)
+    data = MovieService.cast(movie_id)
+    data[:cast].map do |cast_data|
+      MovieCast.new(cast_data)
+    end
+  end
 end

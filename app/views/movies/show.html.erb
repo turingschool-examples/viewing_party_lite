@@ -1,5 +1,11 @@
 <center><h1>Viewing Party</h1></center>
 
+<h4>Cast</h4>
+<% @cast.each do |member| %>
+  <li><strong><%= member.name %></strong></li>
+  <li>Character: <%= member.character %></li><br>
+<% end %>
+
 <h4><%= @reviews.first.number_reviews %> Reviews: </h4>
 <% @reviews.each do |review| %>
   <% if review.author != nil %>
