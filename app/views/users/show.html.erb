@@ -9,10 +9,10 @@
     <div class='party-card' id='party-<%=party.id%>'style='float: left; margin: 15px'>
       
       <div class="poster">
-        <img src="https://image.tmdb.org/t/p/original<%=@parties_info[index].img_path%>" style='width:150px'>
+        <img src="https://image.tmdb.org/t/p/original<%=@parties_info.values[index].img_path%>" style='width:150px'>
       </div>
 
-      <p class='title'> <%= @parties_info[index].title %></p>
+      <p class='title'> <%= @parties_info.values[index].title %></p>
       <p><%= party.date.strftime("%B %e, %Y") %></p>
       <p><%= party.start_time.strftime("%l:%M %P") %></p>
 
