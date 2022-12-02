@@ -36,7 +36,6 @@ RSpec.describe 'Movie show page' do
       'User-Agent'=>'Faraday v2.7.1'
         }).
       to_return(status: 200, body: json_response_3, headers: {})
-
   end
 
   describe 'As a visitor' do
