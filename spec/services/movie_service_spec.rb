@@ -29,5 +29,29 @@ RSpec.describe MovieService, :vcr do
         # expect(review_data[:total_results]).to eq(7)
       end
     end
+
+    context "#top_rated" do 
+      it 'returns a nested hash of top rated movies' do
+        VCR.use_cassette('top_rated_service') do
+          movie_data = MovieService.top_rated
+          expect(movie_data).to be_a Hash
+          expect(movie_data[:results]).to be_a Array
+          expect(movie_data[:results][0]).to be_a Hash
+          expect(movie_data[:results][0][:title]).to be_a String
+        end
+      end
+    end
+
+    context "#search(query)" do 
+      it 'returns a movies details' do
+        VCR.use_cassette('search_service') do
+          movie_data = MovieService.search('a')
+          expect(movie_data).to be_a Hash
+          expect(movie_data[:results]).to be_a Array
+          expect(movie_data[:results][0]).to be_a Hash
+          expect(movie_data[:results][0][:title]).to be_a String
+        end
+      end
+    end
   end
 end

@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @user_parties = @user.user_parties
     @parties_info = @user.movie_cards_info
   end
 

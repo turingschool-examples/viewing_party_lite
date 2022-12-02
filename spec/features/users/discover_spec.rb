@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "User Discover Dashboard" do
+RSpec.describe "User Discover Dashboard", :vcr do
   before :each do
     @test_user = create(:user)
     visit("users/#{@test_user.id}/discover")

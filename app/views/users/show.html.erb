@@ -1,20 +1,21 @@
 <%=content_for :subtitle do%>
   <h3><%= @user.name %>'s Dashboard</h3>
-  <%end%>
+<%end%>
 
 <%= render 'partials/discover_button' %>
 
-<div id='user-parties' style='width:100%; overflow-x: scroll; display: flex'>
+<div id='user-parties' >
   <% @user.parties.each_with_index do |party, index| %>
-    <div class='party-card' id='party-<%=party.id%>'style='float: left; margin: 15px'>
+    <div class='party-card' id='party-<%=@parties_info.values[index].id%>'>
       
       <div class="poster">
-        <img src="https://image.tmdb.org/t/p/original<%=@parties_info[party.movie_id][0]%>" style='width:150px'>
+        <img src="https://image.tmdb.org/t/p/original<%=@parties_info.values[index].img_path%>" style='width:150px'>
       </div>
 
-      <p class='title'> <%= @parties_info[party.movie_id][1] %></p>
+      <p class='title'> <%= @parties_info.values[index].title %></p>
       <p><%= party.date.strftime("%B %e, %Y") %></p>
       <p><%= party.start_time.strftime("%l:%M %P") %></p>
+      <p><%=@user_parties[index].user_status%></p>
 
       <!-- insert more movie info code here:
       working title and user party status -->
