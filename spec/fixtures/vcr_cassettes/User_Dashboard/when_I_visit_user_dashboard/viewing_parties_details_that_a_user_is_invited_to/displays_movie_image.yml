@@ -46,15 +46,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 d9fe97589e952f97209f7a422c89d876.cloudfront.net (CloudFront)
+      - 1.1 d09fd0ac0a8733df98f134da74eec098.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - 7jH9c1t9v63diQ_BHikkVps0PgD9Bf2caq60ZqH5CgizH1OK0i78fA==
+      - gqbbTO1EAh9DJsOb-8Bt1EbdW16VRNSfaCJz3M8w3OaZxeznQnXSFQ==
       Age:
-      - '1961'
+      - '12915'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/nwbbZhrIXW4YHrn3YDn9pBA19eO.jpg","belongs_to_collection":null,"budget":0,"genres":[{"id":18,"name":"Drama"}],"homepage":"","id":206,"imdb_id":"tt0287624","original_language":"en","original_title":"Paradise
@@ -65,10 +65,10 @@ http_interactions:
         to France.","popularity":3.328,"poster_path":"/i5tYnEeCAPODbEbbwYmNd8Y9seA.jpg","production_companies":[],"production_countries":[{"iso_3166_1":"AU","name":"Australia"},{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"FR","name":"France"},{"iso_3166_1":"GB","name":"United
         Kingdom"}],"release_date":"2003-01-01","revenue":0,"runtime":89,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"","title":"Paradise
         Found","video":false,"vote_average":6.571,"vote_count":21}'
-  recorded_at: Fri, 02 Dec 2022 17:21:57 GMT
+  recorded_at: Fri, 02 Dec 2022 20:24:31 GMT
 - request:
     method: get
-    uri: https://api.themoviedb.org/3/movie/210?api_key=<movie_api_key>&language%5B%5D=en-US
+    uri: https://api.themoviedb.org/3/movie/229?api_key=<movie_api_key>&language%5B%5D=en-US
     body:
       encoding: US-ASCII
       string: ''
@@ -81,8 +81,8 @@ http_interactions:
       - "*/*"
   response:
     status:
-      code: 404
-      message: Not Found
+      code: 200
+      message: OK
     headers:
       Content-Type:
       - application/json;charset=utf-8
@@ -91,37 +91,50 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 02 Dec 2022 17:08:31 GMT
+      - Fri, 02 Dec 2022 17:08:32 GMT
       Server:
       - openresty
       Cache-Control:
       - public, max-age=28800
       X-Memc:
-      - MISS
+      - HIT
       X-Memc-Key:
-      - ba017f07b882b79c66970607d345b65a53452fee
+      - cfb5ed9430c9f2bb0c8cfe3e13aea453e05ef3b8
       X-Memc-Age:
-      - '0'
+      - '10460'
       X-Memc-Expires:
-      - '16100'
+      - '4662'
+      Etag:
+      - W/"11f309c82ed8fc129136a203a1f04fe0"
       Vary:
       - Accept-Encoding,Accept-Encoding,Accept-Encoding
       - Origin
       X-Cache:
-      - Error from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 3dc4c80cd959e984309833cac8f5a630.cloudfront.net (CloudFront)
+      - 1.1 0ecc9d4faf14441bafb84971a4117abc.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - MWw_4QcQo9p8tbUAGth1V-fc4pY1EEX7hgKqaKk-gtWBVY6g4yho0A==
+      - c2ylTBSmww9E_F4OBxbCL-1TqB2d4QHLwR8ai11wzizv70IFJESzOw==
       Age:
-      - '806'
+      - '11760'
     body:
       encoding: ASCII-8BIT
-      string: '{"success":false,"status_code":34,"status_message":"The resource you
-        requested could not be found."}'
-  recorded_at: Fri, 02 Dec 2022 17:21:57 GMT
+      string: '{"adult":false,"backdrop_path":"/haPU3dCyYUTRN34ceyJrX4DAjZq.jpg","belongs_to_collection":{"id":218406,"name":"Frankenstein
+        (Universal) Collection","poster_path":"/nbRx9vAyYGadtbm6PCJEtJ2IMrN.jpg","backdrop_path":"/aP0pbkGzEpBhCYnZDf72LLS2sU5.jpg"},"budget":393750,"genres":[{"id":18,"name":"Drama"},{"id":27,"name":"Horror"},{"id":878,"name":"Science
+        Fiction"}],"homepage":"","id":229,"imdb_id":"tt0026138","original_language":"en","original_title":"The
+        Bride of Frankenstein","overview":"After recovering from injuries sustained
+        in the mob attack upon himself and his creation, Dr. Frankenstein falls under
+        the control of his former mentor, Dr. Pretorius, who insists the now-chastened
+        doctor resume his experiments in creating new life. Meanwhile, the Monster
+        remains on the run from those who wish to destroy him without understanding
+        that his intentions are generally good despite his lack of socialization and
+        self-control.","popularity":14.195,"poster_path":"/5241zUwe7rC17MNc2QpCBKKdp1N.jpg","production_companies":[{"id":33,"logo_path":"/8lvHyhjr8oUKOOy2dKXoALWKdp0.png","name":"Universal
+        Pictures","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
+        States of America"}],"release_date":"1935-04-20","revenue":2000000,"runtime":75,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"The
+        monster demands a mate!","title":"The Bride of Frankenstein","video":false,"vote_average":7.581,"vote_count":732}'
+  recorded_at: Fri, 02 Dec 2022 20:24:32 GMT
 recorded_with: VCR 6.1.0
