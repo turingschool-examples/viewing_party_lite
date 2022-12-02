@@ -12,4 +12,8 @@ class MovieFacade
   def self.vote_average(movie_id)
     MovieService.movie_details(movie_id)[:vote_average]
   end
+
+  def self.runtime(movie_id)
+    MovieService.movie_details(movie_id)[:runtime]
+  end
 end

@@ -22,7 +22,7 @@ RSpec.describe MovieFacade, :vcr do
 
     describe '#runtime(movie_id)' do
       it '- returns the runtime in hours & minutes of a given movie id' do
-
+        expect(MovieFacade.runtime(550)).to eq(139)
       end
     end
 
