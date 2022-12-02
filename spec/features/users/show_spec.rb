@@ -13,7 +13,7 @@ RSpec.describe 'Users' do
     @party3 = Party.create!(date: (Date.new + rand(90).days), start_time: "#{rand(1..24)}:00", movie_title: "Whiplash", duration: (240 + rand(30)))
     @party4 = Party.create!(date: (Date.new + rand(90).days), start_time: "#{rand(1..24)}:00", movie_title: "Toy Story", duration: (240 + rand(30)))
     @party5 = Party.create!(date: (Date.new + rand(90).days), start_time: "#{rand(1..24)}:00", movie_title: "Brave", duration: (240 + rand(30)))
-    
+
     @party_user1 = PartyUser.create!(user_id: @user1.id, party_id: @party1.id, host: true)
     @party_user2 = PartyUser.create!(user_id: @user1.id, party_id: @party2.id, host: true)
     @party_user3 = PartyUser.create!(user_id: @user1.id, party_id: @party3.id, host: false)
@@ -45,7 +45,6 @@ RSpec.describe 'Users' do
       click_link('Discover Movies')
       expect(current_path).to eq("/users/#{@user1.id}/discover")
     end
-
 
     it 'has section to display parties', :vcr do
       within('#parties') do

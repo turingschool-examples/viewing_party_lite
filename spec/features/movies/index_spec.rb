@@ -4,7 +4,6 @@ require 'faker'
 RSpec.describe 'Movies Index Page' do
   before(:each) do
     @user = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.free_email)
-
   end
 
   describe 'index' do
@@ -25,6 +24,5 @@ RSpec.describe 'Movies Index Page' do
       click_link 'The Godfather'
       expect(current_path).to eq(user_movie_path(@user.id, 238))
     end
-
   end
 end

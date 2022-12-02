@@ -12,7 +12,7 @@
 <div class="row justify-content-center" id="parties">
   <h3>Viewing Parties</h3>
   <div id="invited_to">
-  <h4>Invitations</h4>
+    <h4>Invitations</h4>
     <%@parties_invited_to.each do |party|%>
       <div id="party_<%=party.id%>">
         <%party_movie = party.movie_details%>
@@ -20,13 +20,14 @@
         <%=link_to party_movie.title, user_movie_path(@user, party_movie.id)%><br>
         Event Start Time: <%=party.date%> at <%=party.start_time%><br>
         Host: <%=party.host%><br>
-        Invitees: <ul id="invited_to_<%=party.id%>"><%party.invited_users.each do |name|%>
-                        <%if name == @user.name%>
-                          <li><b><%=name%></b></li>
-                        <%else%>
-                          <li><%=name%></li>
-                        <%end%>
-                      <%end%>
+        Invitees:
+        <ul id="invited_to_<%=party.id%>"><%party.invited_users.each do |name|%>
+            <%if name == @user.name%>
+              <li><b><%=name%></b></li>
+            <%else%>
+              <li><%=name%></li>
+            <%end%>
+          <%end%>
         </ul>
       </div>
     <%end%>
@@ -40,9 +41,10 @@
         <%=link_to party_movie.title, user_movie_path(@user, party_movie.id)%><br>
         Event Start Time: <%=party.date%> at <%=party.start_time%><br>
         Host: <%=party.host%><br>
-        Invitees: <ul id="invited_to_<%=party.id%>"><%party.invited_users.each do |name|%>
-                        <li><%=name%></li>
-                      <%end%>
+        Invitees:
+        <ul id="invited_to_<%=party.id%>"><%party.invited_users.each do |name|%>
+            <li><%=name%></li>
+          <%end%>
         </ul>
       </div>
     <%end%>
