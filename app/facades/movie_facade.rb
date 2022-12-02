@@ -15,5 +15,15 @@ class MovieFacade
     data = MovieService.search_by_movie_id(id)
     movie = Movie.new(data)
   end
-end
 
+  def self.movie_reviews(id)
+    data = MovieService.search_movie_reviews(id)
+    movie = Movie.new(data)
+  end
+
+  def self.movie_cast(id)
+    data = MovieService.cast(id)
+    movie = Movie.new(data)
+    movie.cast_members[0..9].map { |member| { member[:name] => member[:character] } }
+  end
+end
