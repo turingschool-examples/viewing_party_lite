@@ -1,0 +1,401 @@
+{
+  "page": 1,
+  "results": [
+      {
+          "adult": false,
+          "backdrop_path": "/3SszodoxSiJRQVoFg9IRjrMcSuJ.jpg",
+          "genre_ids": [
+              16,
+              12,
+              35,
+              10751,
+              28,
+              14
+          ],
+          "id": 62177,
+          "original_language": "en",
+          "original_title": "Brave",
+          "overview": "Brave is set in the mystical Scottish Highlands, where Mérida is the princess of a kingdom ruled by King Fergus and Queen Elinor. An unruly daughter and an accomplished archer, Mérida one day defies a sacred custom of the land and inadvertently brings turmoil to the kingdom. In an attempt to set things right, Mérida seeks out an eccentric old Wise Woman and is granted an ill-fated wish. Also figuring into Mérida’s quest — and serving as comic relief — are the kingdom’s three lords: the enormous Lord MacGuffin, the surly Lord Macintosh, and the disagreeable Lord Dingwall.",
+          "popularity": 60.113,
+          "poster_path": "/1XAuDtMWpL0sYSFK0R6EZate2Ux.jpg",
+          "release_date": "2012-06-21",
+          "title": "Brave",
+          "video": false,
+          "vote_average": 7,
+          "vote_count": 11941
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/8wI0M7HDHhDsoxMCkcAVUx7O6DX.jpg",
+          "genre_ids": [
+              18,
+              28,
+              36
+          ],
+          "id": 395991,
+          "original_language": "en",
+          "original_title": "Only the Brave",
+          "overview": "Members of the Granite Mountain Hotshots battle deadly wildfires to save an Arizona town.",
+          "popularity": 34.039,
+          "poster_path": "/lC7WdUNLOJI3sllaDGNdFy2GT8g.jpg",
+          "release_date": "2017-09-22",
+          "title": "Only the Brave",
+          "video": false,
+          "vote_average": 7.4,
+          "vote_count": 1287
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/ol1DS5opDJW6J4FLJyRAiYHdfht.jpg",
+          "genre_ids": [
+              18
+          ],
+          "id": 9956,
+          "original_language": "en",
+          "original_title": "The Brave",
+          "overview": "A down-on-his-luck American Indian recently released from jail is offered the chance to \"star\" as the victim of a snuff film, the resulting pay of which could greatly help his poverty stricken family.",
+          "popularity": 9.807,
+          "poster_path": "/Img3pLjIsZQbOzAqei0v5920Vi.jpg",
+          "release_date": "1997-07-30",
+          "title": "The Brave",
+          "video": false,
+          "vote_average": 6.1,
+          "vote_count": 165
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/42peqRwvHPIvl4gZWBa2X9xZ67T.jpg",
+          "genre_ids": [
+              80,
+              18,
+              53
+          ],
+          "id": 4413,
+          "original_language": "en",
+          "original_title": "The Brave One",
+          "overview": "A woman struggles to recover from a brutal attack by setting out on a mission for revenge.",
+          "popularity": 11.195,
+          "poster_path": "/9UZ07Rie56aJwPeYPzDDsSyqoc5.jpg",
+          "release_date": "2007-09-12",
+          "title": "The Brave One",
+          "video": false,
+          "vote_average": 6.5,
+          "vote_count": 803
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/8Wd74JCLVNSrtcwGcaUfXLPwF3s.jpg",
+          "genre_ids": [
+              14,
+              12,
+              16,
+              35,
+              10751,
+              10402
+          ],
+          "id": 19933,
+          "original_language": "en",
+          "original_title": "The Brave Little Toaster",
+          "overview": "A group of dated appliances, finding themselves stranded in a summer home that their family had just sold, decide to seek their young 8 year old \"master\".",
+          "popularity": 11.335,
+          "poster_path": "/mEZcPMNRqTcotOZSttN5MtmJbu1.jpg",
+          "release_date": "1987-07-09",
+          "title": "The Brave Little Toaster",
+          "video": false,
+          "vote_average": 6.9,
+          "vote_count": 345
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/dbqpQ7GRaJ1WcHIxLAX2yXcmvZX.jpg",
+          "genre_ids": [
+              35
+          ],
+          "id": 608398,
+          "original_language": "it",
+          "original_title": "Brave ragazze",
+          "overview": "The story of a gang of French female robbers disguised as men, who operated in the Avignon area in the mid-1980s.",
+          "popularity": 5.066,
+          "poster_path": "/8paibyFWCyxyLGQkGDmmjF9yd58.jpg",
+          "release_date": "2019-10-10",
+          "title": "Good Gals",
+          "video": false,
+          "vote_average": 6.5,
+          "vote_count": 104
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/52RD1oMub4E2lojzsuNMRNJNtco.jpg",
+          "genre_ids": [
+              18,
+              10752
+          ],
+          "id": 14171,
+          "original_language": "en",
+          "original_title": "Home of the Brave",
+          "overview": "The day after they get the word they'll go home in two weeks, a group of soldiers from Spokane are ambushed in an Iraqi city. Back stateside we follow four of them - a surgeon who saw too much, a teacher who's a single mom and who lost a hand in the ambush, an infantry man whose best friend died that day, and a soldier who keeps reliving the moment he killed a civilian woman.",
+          "popularity": 8.612,
+          "poster_path": "/eQokFEJYba9PUhJ99W0TsxzOynp.jpg",
+          "release_date": "2006-12-15",
+          "title": "Home of the Brave",
+          "video": false,
+          "vote_average": 5.4,
+          "vote_count": 137
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/jGGMxied9EJKhFJtr6XwYrLL3GM.jpg",
+          "genre_ids": [
+              18,
+              10752
+          ],
+          "id": 31101,
+          "original_language": "en",
+          "original_title": "Only The Brave",
+          "overview": "A searing portrait of war and prejudice, 'Only the Brave' takes you on a haunting journey into the hearts and minds of the forgotten heroes of WWII - the Japanese-American 100th/442nd.",
+          "popularity": 6.914,
+          "poster_path": "/76yeodG4FybwUskxhHaJM8C1ce1.jpg",
+          "release_date": "2006-10-23",
+          "title": "Only The Brave",
+          "video": false,
+          "vote_average": 5.5,
+          "vote_count": 20
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/mV9LMzZsGfbwVnU5HCEwbDdOjd0.jpg",
+          "genre_ids": [
+              28,
+              18
+          ],
+          "id": 162006,
+          "original_language": "ja",
+          "original_title": "Umizaru 4 : Brave Hearts",
+          "overview": "Mika is a flight attendant on board an airplane scheduled to land at Haneda Airport. On the way to the airport the airplane's engine starts to burn. In order to save the 346 people on board the airplane, sea marshall Daisuke Senzaki and his team are called into action ...",
+          "popularity": 4.68,
+          "poster_path": "/8p7x2F7USzNZm11fOX86WZmKJmb.jpg",
+          "release_date": "2012-07-12",
+          "title": "Brave Hearts: Umizaru",
+          "video": false,
+          "vote_average": 6.1,
+          "vote_count": 19
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/rW1HBySTmHoZCUuOiZbApUhKFjn.jpg",
+          "genre_ids": [
+              16,
+              35,
+              28,
+              10751
+          ],
+          "id": 484862,
+          "original_language": "en",
+          "original_title": "Scooby-Doo! & Batman: The Brave and the Bold",
+          "overview": "Scooby-Doo and the Mystery Inc. gang meet up with Batman and other friends to defeat evil villains and save the day.",
+          "popularity": 15.573,
+          "poster_path": "/hSPeF1zoYH8kCOhFMu7x3B55zu6.jpg",
+          "release_date": "2018-01-31",
+          "title": "Scooby-Doo! & Batman: The Brave and the Bold",
+          "video": false,
+          "vote_average": 7.4,
+          "vote_count": 184
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/inRUNgkrVdri9C12lgvqfds1qTn.jpg",
+          "genre_ids": [
+              878,
+              10770
+          ],
+          "id": 27260,
+          "original_language": "en",
+          "original_title": "Brave New World",
+          "overview": "In a futuristic totalitarian society, people have no control of their lives or their destiny.",
+          "popularity": 6.378,
+          "poster_path": "/sxgtTNhx32m94mAjp73KffmQl9H.jpg",
+          "release_date": "1998-04-19",
+          "title": "Brave New World",
+          "video": false,
+          "vote_average": 5.6,
+          "vote_count": 35
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/oSIPum1CLiWk77LUIbRTwgOs31m.jpg",
+          "genre_ids": [
+              16,
+              10751,
+              14
+          ],
+          "id": 57472,
+          "original_language": "en",
+          "original_title": "Brave Little Tailor",
+          "overview": "When a giant threatens the land, the cityfolk mistake Mickey's boast of killing seven flies with one blow to be giants. He is then forced to fight the giant for real.",
+          "popularity": 5.565,
+          "poster_path": "/8ztqNpoEGJb4dxkmgu4LbTmxVhb.jpg",
+          "release_date": "1938-09-23",
+          "title": "Brave Little Tailor",
+          "video": false,
+          "vote_average": 7,
+          "vote_count": 81
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+              18,
+              10402,
+              10751
+          ],
+          "id": 34099,
+          "original_language": "en",
+          "original_title": "Brave New Girl",
+          "overview": "Holly has everything it takes to be a star; the voice, the dream and the dedication, but she lacks the means to break away from her humble Texas upbringing. Then she gets the chance to attend an art and music school on the East coast and her future suddenly looks bright. But the road to stardom is a bumpy one.",
+          "popularity": 4.733,
+          "poster_path": "/zM2CFpnSwM8zvC22FFDWjTdJiPQ.jpg",
+          "release_date": "2004-04-25",
+          "title": "Brave New Girl",
+          "video": false,
+          "vote_average": 7.1,
+          "vote_count": 10
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/7hbpOpGDOYZ4G8ddLuzNmzxZP6.jpg",
+          "genre_ids": [
+              37
+          ],
+          "id": 43002,
+          "original_language": "en",
+          "original_title": "Lonely Are the Brave",
+          "overview": "A fiercely independent cowboy arranges to have himself locked up in jail in order to then escape with an old friend who has been sentenced to the penitentiary.",
+          "popularity": 6.993,
+          "poster_path": "/g6wKfhwGPsKgPI77ZiLhL6argMQ.jpg",
+          "release_date": "1962-05-24",
+          "title": "Lonely Are the Brave",
+          "video": false,
+          "vote_average": 7.4,
+          "vote_count": 117
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/rQ7ied56iSIdSSJ2k169A0ILvpW.jpg",
+          "genre_ids": [
+              16,
+              12,
+              10751
+          ],
+          "id": 339526,
+          "original_language": "en",
+          "original_title": "The Land Before Time XIV: Journey of the Brave",
+          "overview": "On a day known to the dinosaurs as \"Treasure Day\", Bron becomes stuck in the Mysterious Beyond. This event urges the young Longneck Littlefoot to take his friends on a quest to the Fire Mountain to save his father. Along the way, they befriend a Flyer.",
+          "popularity": 12.455,
+          "poster_path": "/eXffrLPK4dyDnc9IO8Qt9rNYz5p.jpg",
+          "release_date": "2016-02-02",
+          "title": "The Land Before Time XIV: Journey of the Brave",
+          "video": false,
+          "vote_average": 6.9,
+          "vote_count": 95
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/9r1lRWj4kt6ShKFL65dpSp3SctZ.jpg",
+          "genre_ids": [
+              99,
+              10402
+          ],
+          "id": 458166,
+          "original_language": "en",
+          "original_title": "Lindsey Stirling: Brave Enough",
+          "overview": "Beginning on the eve of her thirtieth birthday, “Brave Enough,” documents violinist Lindsey Stirling over the past year as she comes to terms with the most challenging & traumatic events of her life. Through her art, she seeks to share a message of hope and courage and yet she must ask herself the question, “Am I Brave Enough?” Capturing her personal obstacles and breakthrough moments during the “Brave Enough,” tour, the film presents an intimate look at this one-of- a-kind artist and her spectacular live performances inspired by real-life heartbreak, joy, and love.",
+          "popularity": 3.609,
+          "poster_path": "/c5MXpK7sIxzLoLAddrtHDkhLSsj.jpg",
+          "release_date": "2017-05-17",
+          "title": "Lindsey Stirling: Brave Enough",
+          "video": false,
+          "vote_average": 8,
+          "vote_count": 3
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/1ZRixRPdkVN8vdXkLKHZVpTQhdo.jpg",
+          "genre_ids": [
+              18
+          ],
+          "id": 107443,
+          "original_language": "en",
+          "original_title": "The Brave One",
+          "overview": "A young Mexican boy tirelessly tries to save his pet bull from death at the hands of a celebrated matador.",
+          "popularity": 4.189,
+          "poster_path": "/uQSzufAnEqPqpgpuxeSb0ubeIUY.jpg",
+          "release_date": "1956-10-26",
+          "title": "The Brave One",
+          "video": false,
+          "vote_average": 6.1,
+          "vote_count": 11
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+              18,
+              10402
+          ],
+          "id": 29395,
+          "original_language": "en",
+          "original_title": "Brave",
+          "overview": "Cult director Richard Stanley brings Marillion's music to the screen in the 50-minute BRAVE. A teenager believed to be suicidal is discovered wandering near the Severn Bridge. Suffering from severe memory loss, she seeks information about the mysterious events that led to her condition. This work of fiction was inspired from the true story of an amnesiac woman found at the bridge.",
+          "popularity": 1.746,
+          "poster_path": null,
+          "release_date": "1994-01-01",
+          "title": "Brave",
+          "video": false,
+          "vote_average": 6.7,
+          "vote_count": 3
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/dXn8zGN8mnt9mGihXKl6VtIEMiX.jpg",
+          "genre_ids": [
+              878,
+              18,
+              10770
+          ],
+          "id": 38699,
+          "original_language": "en",
+          "original_title": "Brave New World",
+          "overview": "An acclaimed TV miniseries based on the classic sci-fi novel.",
+          "popularity": 3.761,
+          "poster_path": "/aBxmm8PeNmhiEaQry6P17XVtlgm.jpg",
+          "release_date": "1980-03-07",
+          "title": "Brave New World",
+          "video": false,
+          "vote_average": 5.9,
+          "vote_count": 19
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/7MrQ45WA5cvu2AQMU11dan8Jdzi.jpg",
+          "genre_ids": [
+              16,
+              35,
+              10751,
+              14
+          ],
+          "id": 20378,
+          "original_language": "en",
+          "original_title": "The Brave Little Toaster to the Rescue",
+          "overview": "Those fun-loving eletrical appliances from the acclaimed animated hit 'The Brave Little Toaster' are back in an action-packed adventure with four all-new songs. This heartfelt and humorous full-length feature reunites Toaster, Blanky, Lampy, Radio and Kirby the vacuum cleaner--the beloved household gadgets of college student Rob. When Toaster and the gang spark freindships with the playful animals at the veterinary hospital, they soon discover their new pals are about to be sent to a testing laboratory. Through teamwork (and combined voltage), they embark on a hilarious rescue to save all the animals, including Sebastion, a wise monkey, and Maisie, the doting mother cat with kittens.Treat your entire family to 'The Brave Little Toaster To The Rescue', an imaginative film bursting with colorful animation, high-energy music and characters that'll warm your heart at the push of a button!",
+          "popularity": 8.129,
+          "poster_path": "/zCJEMzVnxQC6fdxY9W3eDf3EFfl.jpg",
+          "release_date": "1997-11-01",
+          "title": "The Brave Little Toaster to the Rescue",
+          "video": false,
+          "vote_average": 6.1,
+          "vote_count": 72
+      }
+  ],
+  "total_pages": 19,
+  "total_results": 377
+}

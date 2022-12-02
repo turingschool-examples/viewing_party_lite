@@ -1,0 +1,76 @@
+<div class="row">
+  <div class="col d-flex justify-content-evenly">
+    <%= link_to "Create Viewing Party for #{@movie.title}", root_path, class: 'btn btn-primary' %>
+    <%= link_to 'Discover Movies', user_discover_index_path(params[:user_id]), class: 'btn btn-primary' %>
+  </div>
+</div>
+<div class="row d-flex justify-content-center">
+  <div class="col-lg-6">
+    <table class="table table-striped m-5">
+      <tr>
+        <th>Title</th>
+        <td><%= @movie.title %></td>
+      </tr>
+      <tr>
+        <th>Vote average:</th>
+        <td><%= @movie.vote_average %></td>
+      </tr>
+      <tr>
+        <th>Runtime:</th>
+        <td><%= @movie.time_conversion %></td>
+      </tr>
+      <tr>
+        <th>Summary:</th>
+        <td><%= @movie.overview %></td>
+      </tr>
+      <tr>
+        <th>Genres:</th>
+        <td><%= @movie.genre_names %></td>
+      </tr>
+      <tr>
+        <th>cast:</th>
+        <td>
+          <table>
+            <tr>
+              <th>Actor name</th>
+              <th> </th>
+              <th>Movie character</th>
+            </tr>
+            <% @movie.cast.each do |person| %>
+              <tr class="m-3">
+                <td><%= person.name %></td>
+                <td> </td>
+                <td><%= person.character %></td>
+              </tr>
+            <% end %>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>Total Reviews:</th>
+        <td><%= @movie.reviews.count %></td>
+      </tr>
+      <tr>
+        <th>Reviews:</th>
+        <% if @movie.reviews.count != 0 %>
+          <td>
+            <table class="table">
+              <tr>
+                <th>Author</th>
+                <th>Review</th>
+              </tr>
+              <% @movie.reviews.each do |review| %>
+                <tr>
+                  <td><%= review.author %></td>
+                  <td><%= review.content %></td>
+                </tr>
+              <% end %>
+            </table>
+          </td>
+        <% else %>
+          <td>No reviews with author names</td>
+        <% end %>
+      </tr>
+    </table>
+  </div>
+</div>
