@@ -19,7 +19,7 @@ RSpec.describe 'the user show page' do
     @mostafa_party_5 = UserParty.create(user_id: @mostafa.id, party_id: @party_5.id)
   end
 
-  xit "has <user's name>'s Dahsboard at the top of the page" do
+  it "has <user's name>'s Dahsboard at the top of the page" do
     visit "/users/#{@yuji.id}"
 
     expect(page).to have_content("Yuji's Dashboard")
@@ -31,7 +31,7 @@ RSpec.describe 'the user show page' do
     expect(page).to_not have_content("Yuji's Dashboard")
   end
 
-  xit "has a button to discover movies" do
+  it "has a button to discover movies" do
     visit "/users/#{@yuji.id}"
 
     expect(page).to have_button("Discover Movies")
@@ -41,13 +41,13 @@ RSpec.describe 'the user show page' do
     expect(current_path).to eql("/users/#{@yuji.id}/discover")
   end
 
-  xit "has a section for viewing parties" do
+  it "has a section for viewing parties" do
     visit "/users/#{@yuji.id}"
 
     expect(page).to have_content("Viewing Parties")
   end
 
-  xit "has a section for the user's hosted parties with information on each party" do
+  it "has a section for the user's hosted parties with information on each party" do
     visit "/users/#{@mostafa.id}"
 
     within '#hosted_parties' do
@@ -61,7 +61,7 @@ RSpec.describe 'the user show page' do
         expect(page).to have_content("Bryan")
         expect(page).to have_content("Date: 12/01/2022")
         expect(page).to have_content("Time: 7:00 pm")
-        expect(page).to have_css("img[src*='image.tmdb.org/t/p/original]")
+        expect(page).to have_css("img[src*='image.tmdb.org/t/p/original']")
       end
       expect(page).to have_link("Young Adam")
       expect(page).to have_link("Natural Born Killers")
@@ -77,7 +77,7 @@ RSpec.describe 'the user show page' do
 
   it "has a section for the user's hosted parties with information on each party" do
     visit "/users/#{@mostafa.id}"
-    save_and_open_page
+
     within '#invited_parties' do
       expect(page).to_not have_link("The Godfather")
       expect(page).to_not have_link("Young Adam")
