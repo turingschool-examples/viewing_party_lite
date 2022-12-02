@@ -14,13 +14,4 @@ class Party < ApplicationRecord
     movie_search = MovieSearch.new
     movie_search.retrieve_movie_by_name(self.movie_title)
   end
-
-  def movie_runtime
-    movie_expanded_details.runtime
-  end
-
-  def movie_expanded_details
-    movie_search = MovieSearch.new
-    movie_search.retrieve_movie(movie_details.id)
-  end
 end

@@ -55,17 +55,5 @@ RSpec.describe Party, type: :model do
         expect(@party1.movie_details.id).to eq(14160)
       end
     end
-    describe '.movie_runtime' do
-      it 'returns the runtime for the movie of the party', :vcr do
-        expect(@party4.movie_runtime).to eq(81)
-      end
-    end
-    describe '.movie_expanded_details' do
-      it 'returns a Movie object that contains the complete information of the movie being viewed', :vcr do
-        expect(@party4.movie_expanded_details).to be_a(Movie)
-        expect(@party4.movie_expanded_details.title).to eq("Toy Story")
-        expect(@party4.movie_expanded_details.runtime).to eq(81)
-      end
-    end
   end
 end
