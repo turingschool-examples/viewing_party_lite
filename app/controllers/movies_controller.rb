@@ -16,6 +16,15 @@ class MoviesController < ApplicationController
 
   def show
     @user = User.find(params[:user_id])
-    data = MoviesService.new.search(params[:id])
+    movie_data = MoviesService.new.search(params[:id])
+    @title = movie_data[:original_title]
+    @vote = movie_data[:vote_average]
+    @runtime = movie_data[:runtime]
+    @genre = movie_data[:genres]
+    @summary = movie_data[:overview]
+    @movie_cast = MoviesService.new.cast_list(params[:id])[:cast][0..9].pluck(:name, :character)
+    movie_review_data = MoviesService.new.reviews(params[:id])
+    @review_count = movie_review_data[:total_results]
+    @movie_reviews = movie_review_data[:results].pluck(:author, :author_details)
   end
 end
