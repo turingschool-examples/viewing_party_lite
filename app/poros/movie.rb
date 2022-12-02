@@ -15,10 +15,14 @@ class Movie
     @title = data[:original_title]
     @vote_avg = data[:vote_average]
     @run_time = data[:runtime]
-    # @genres = data[:genres].map { |genre| genre[:name] }
+    @genres = data[:genres]
     @summary = data[:overview]
     # @cast_members = data[:cast].map { |member| (member[:name] => member[:character]) } #not right
     @total_review_count = data[:total_results]
     # @review_author = data[:results].map { |review| (review[:author] => member[:content]) }
   end
+
+  # def genres
+  #   data[]
+  # end
 end

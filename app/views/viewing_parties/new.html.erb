@@ -1,0 +1,19 @@
+<h1><%= @movie.title %></h1>
+
+<% form_with url: user_movie_viewing_parties(@user.id, @movie.id), method: :post, local: true do |form| %>
+  <%= form.number_field :duration, value: @movie.minute_length %>
+  <%= form.label "Duration of Party (minutes)" %>
+  <fieldset>
+    <legend>Date of Party</legend>
+    <input type="date" name="dateofparty"><br /><br />
+    <input type="submit" value="Submit">
+  </fieldset>
+
+  <%= form.collection_check_boxes : %>
+  <ul><% @users.each do |user| %>
+    <li id="users_<%user.id%>>
+      <%= user.name %> 
+  <%= form.submit "Register"%>
+<% end%>
+
+  

@@ -1,5 +1,15 @@
-<% @top_rated_movies.each do |movie| %>
-  <li id="movie_<%= movie.id %>">
-    <%= movie.title %>, Vote Average: <%= movie.vote_avg %>
-  </li>
+<% if @top_rated_movies %>
+  <% @top_rated_movies.each do |movie| %>
+      <li id="movie_<%= movie.id %>">
+        <%= movie.title %>, Vote Average: <%= movie.vote_avg %>
+      </li>
+  <% end %>
+<% end %>
+
+<% if @results %>
+  <% @results.each do |result| %>
+      <li id="movie_<%= movie.id %>">
+        <%= movie.title %>, Vote Average: <%= movie.vote_avg %>
+      </li>
+  <% end %>
 <% end %>

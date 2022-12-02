@@ -5,6 +5,7 @@ class MoviesController < ApplicationController
     if params[:top_rated].present?
       @top_rated_movies = MovieFacade.top_rated
     else params[:keyword]
+      
 
     end
   end
