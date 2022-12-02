@@ -1,5 +1,12 @@
 <center><h1>Viewing Party</h1></center>
 
+<p>Genres:</p>
+<% @movie_details.genres.each do |genre| %>
+  <li><%= genre[:name] %></li>
+<% end %>
+
+<p> Runtime: <%= @movie_details.runtime %> Minutes </p>
+
 <h3>Cast</h3>
 <% @cast.each do |member| %>
   <li><strong><%= member.name %></strong></li>

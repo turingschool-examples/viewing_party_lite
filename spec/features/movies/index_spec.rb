@@ -67,7 +67,7 @@ RSpec.describe 'movies index' do
 
     expect(page.status_code).to eq(200)
     expect(page).to have_link("The Godfather")
-
+save_and_open_page
     click_on "The Godfather"
     expect(current_path).to eq(user_movie_path(@user_1, 238))
   end

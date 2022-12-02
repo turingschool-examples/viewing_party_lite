@@ -20,6 +20,11 @@ class MovieFacade
     end
   end
 
+  def self.movie_details(movie_id)
+    data = MovieService.movie_details(movie_id)
+      MovieDetail.new(data)
+  end
+
   def self.movie_cast(movie_id)
     data = MovieService.cast(movie_id)
     data[:cast].map do |cast_data|

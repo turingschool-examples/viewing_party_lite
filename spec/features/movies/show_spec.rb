@@ -14,7 +14,7 @@ RSpec.describe 'movies show page', :vcr do
 
   end
 
-  it 'has the movie title, vote average, runtime, genres, summary, 10 cast members, count of reviews, and each reviews author and review' do
+  it 'has the movie title, vote average, runtime, genres, summary, 10 cast members, count of reviews, and each reviews author and review', :vcr do
     visit user_movie_path(@user_1, 238)
 
     expect(page).to have_content("The Godfather")
