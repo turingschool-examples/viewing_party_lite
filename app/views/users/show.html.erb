@@ -33,7 +33,7 @@
       <p> Host: <%= @user.name %> </p>
       <p> Date: <%= party.date.strftime("%m/%d/%Y") %> </p>
       <p> Time: <%= party.time.strftime("%l:%M %P") %> </p>
-      <%= image_tag("https://image.tmdb.org/t/p/original/3bhkrj58Vtu7enYsRolD1fZdja1.jpg", height: '320', width: '320') %>
+      <%= image_tag("https://image.tmdb.org/t/p/original#{party.movie_poster}", height: '320', width: '320') %>
       <h4> Users Invited: </h4>
       <% party.users.each do |user| %>
         <p> <%= user.name if user.id != @user.id %> </p>
