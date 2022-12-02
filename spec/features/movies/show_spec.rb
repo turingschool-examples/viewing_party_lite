@@ -21,6 +21,11 @@ RSpec.describe 'Movies Detail (show) page' do
       end
     end
 
+    VCR.use_cassette('search_green_mile') do
+      movie_data = MoviesService.search('The Green Mile')[:results].first
+      @another_movie = MovieLite.new(movie_data)
+    end
+
     VCR.use_cassette('movie_details') do
       VCR.use_cassette('movie_credits') do
         VCR.use_cassette('movie_reviews') do
@@ -55,7 +60,7 @@ RSpec.describe 'Movies Detail (show) page' do
     it 'I see the details related to the movie' do
       expect(page).to have_content(@godfather.movie_title)
       expect(page).to have_content(@godfather.vote_average)
-      expect(page).to have_content(@godfather.runtime)
+      expect(page).to have_content("#{@godfather.runtime / 60}h #{@godfather.runtime % 60}min")
 
       within('#genre') do
         expect(page).to have_content(@godfather.genres.first[:name])
@@ -64,18 +69,21 @@ RSpec.describe 'Movies Detail (show) page' do
 
       expect(page).to have_content(@godfather.summary)
       within('#cast') do
-        expect(page).to have_content(@godfather.first_10_cast_members.first[:name])
-        expect(page).to have_content(@godfather.first_10_cast_members.first[:character])
-        expect(page).to have_content(@godfather.first_10_cast_members[9][:name])
-        expect(page).to have_content(@godfather.first_10_cast_members[9][:character])
+        expect(page).to have_content(@godfather.first_10_cast_members.first.actor)
+        expect(page).to have_content(@godfather.first_10_cast_members.first.character)
+        expect(page).to have_content(@godfather.first_10_cast_members[9].actor)
+        expect(page).to have_content(@godfather.first_10_cast_members[9].character)
       end
       within('#reviews') do
-        expect(page).to have_content(@godfather.reviews[:results].first[:author])
-        expect(page).to have_content(@godfather.reviews[:results].first[:content].gsub(/\n/, ' '))
-        expect(page).to have_content(@godfather.reviews[:results].last[:author])
-        expect(page).to have_content(@godfather.reviews[:results].last[:content].gsub(/\n/, ' '))
-        expect(page).to have_content("Review Count: #{@godfather.reviews[:results].size}")
+        expect(page).to have_content(@godfather.reviews.first.author)
+        expect(page).to have_content(@godfather.reviews.first.content.gsub(/\n/, ' '))
+        expect(page).to have_content(@godfather.reviews.last.author)
+        expect(page).to have_content(@godfather.reviews.last.content.gsub(/\n/, ' '))
+        expect(page).to have_content("Review Count: #{@godfather.reviews.size}")
       end
+    end
+    it 'I do not see content related to other movies' do
+      expect(page).to_not have_content(@another_movie.movie_title)
     end
   end
 end

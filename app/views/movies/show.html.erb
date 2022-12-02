@@ -6,7 +6,7 @@
 
 <div>
   <p>Vote: <%= @movie.vote_average %></p>
-  <p>Runtime: <%= @movie.runtime %></p>
+  <p>Runtime: <%= "#{@movie.runtime/60}h #{@movie.runtime % 60}min" %></p>
   <div id="genre">
     <p>Genre:</p>
     <ul>
@@ -17,17 +17,19 @@
   </div>
   <p>Summary: <%= @movie.summary %></p>
   <div id="cast">
+    <h2>Cast:</h2>
     <ul>
       <% @movie.first_10_cast_members.each do |cast_member| %>
-        <li><%= "Character: #{cast_member[:character]} - #{cast_member[:name]}" %></li>
+        <li><%= "Character: #{cast_member.character} - #{cast_member.actor}" %></li>
       <% end %>
     </ul>
   </div>
   <div id="reviews">
-    <h2>Reviews</h2>
-    <% @movie.reviews[:results].each do |review| %>
-      <p><%= "#{review[:author]}: #{review[:content]}" %></p>
+    <h2>Reviews:</h2>
+    <% @movie.reviews.each do |review| %>
+      <p><strong><%= "#{review.author}:" %></strong></p>
+      <p><%= review.content %></p>
     <% end %>
-    <p>Review Count: <%= @movie.reviews[:results].size %></p>
+    <p>Review Count: <%= @movie.reviews.size %></p>
   </div>
 </div>

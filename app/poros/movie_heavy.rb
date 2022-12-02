@@ -19,7 +19,7 @@ class MovieHeavy
     @runtime = data[:runtime]
     @genres = data[:genres]
     @summary = data[:overview]
-    @first_10_cast_members = MoviesService.credits(data[:id])[:cast].first(10)
-    @reviews = MoviesService.reviews(data[:id])
+    @first_10_cast_members = CastMembersFacade.cast(data[:id])
+    @reviews = ReviewsFacade.reviews(data[:id])
   end
 end

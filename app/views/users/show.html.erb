@@ -1,5 +1,4 @@
-<center><h1><%= "#{@user.name}'s Dashboard" %></h1></center>
-<p><%= link_to 'Landing Page', '/' %></p>
+<center><h2><%= "#{@user.name}'s Dashboard" %></h2></center>
 
 <center><%= button_to 'Discover Movies', "/users/#{@user.id}/discover", method: :get %></center>
 
