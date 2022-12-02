@@ -7,8 +7,6 @@ class MovieFacade
     MinMovie.new(MovieService.movie_details(movie_id))
   end
 
-  
-
   def self.top_rated(page = 1)
     movies = []
     MovieService.top_rated(page)[:results]
