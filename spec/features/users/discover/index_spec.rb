@@ -19,7 +19,16 @@ RSpec.describe 'The Discover Movies Page' do
         expect(current_path).to eq(user_movies_path(@user1))
       end
 
+      it 'displays a search field and submit button to find movies by keyword' do
+        visit user_discover_index_path(@user1)
 
+        expect(page).to have_field('Search by Movie Title')
+
+        fill_in 'Search by Movie Title', with: 'Boogie Nights'
+        click_button('Find Movies')
+
+        expect(current_path).to eq(user_movies_path(@user1))
+      end
     end
   end
 
