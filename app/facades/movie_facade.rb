@@ -26,4 +26,11 @@ class MovieFacade
   def self.summary_description(movie_id)
     MovieService.movie_details(movie_id)[:overview]
   end
+
+  def self.first_10_cast_members(movie_id)
+    MovieService.movie_credits(movie_id)[:cast].sort_by{ |actor| actor[:order].to_i }.map do |actor|
+      [actor[:name], actor[:character]]
+    end.first(10)
+  end
+
 end

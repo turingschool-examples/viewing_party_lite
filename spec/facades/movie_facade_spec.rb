@@ -40,7 +40,16 @@ RSpec.describe MovieFacade, :vcr do
 
     describe '#first_10_cast_members(movie_id)' do
       it '- returns a list of the first 10 cast members (characters & actors)' do
-
+        expect(MovieFacade.first_10_cast_members(550)).to eq([["Edward Norton", "The Narrator"],
+                                                              ["Brad Pitt", "Tyler Durden"],
+                                                              ["Helena Bonham Carter", "Marla Singer"],
+                                                              ["Meat Loaf", "Robert \"Bob\" Paulson"],
+                                                              ["Jared Leto", "Angel Face"],
+                                                              ["Zach Grenier", "Richard Chesler"],
+                                                              ["Holt McCallany", "The Mechanic"],
+                                                              ["Eion Bailey", "Ricky"],
+                                                              ["Richmond Arquette", "Intern"],
+                                                              ["David Andrews", "Thomas"]])
       end
     end
 
