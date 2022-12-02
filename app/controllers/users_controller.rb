@@ -1,14 +1,13 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  def discover
-    @user = User.find(params[:id])
-  end
+  before_action :find_user, only: [:discover, :show]
+
+  def discover; end
 
   def new; end
 
   def show
-    @user = User.find(params[:id])
     @view_parties = @user.view_parties.order('datetime')
   end
 
@@ -24,6 +23,10 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def find_user
+    @user = User.find(params[:id])
+  end
 
   def user_params
     params.permit(:name, :email)
