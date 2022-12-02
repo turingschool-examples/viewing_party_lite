@@ -19,6 +19,13 @@ RSpec.describe 'Movie Details Page' do
 
   it 'has a button to return to the discover page' do
     visit  user_movie_path(@user1.id, 238)
+
+    within '#discover-movies' do
+      expect(page).to have_button('Discover Movies')
+      click_on 'Discover Movies'
+
+      expect(current_path).to eq("/users/#{@user1.id}/discover")
+    end
   end
 
   it "has the following attributes of the movie: title, vote averarage, run time in hours/minutes,
