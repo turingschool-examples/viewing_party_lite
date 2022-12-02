@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col d-flex justify-content-evenly">
-    <%= link_to "Create Viewing Party for #{@movie.title}", root_path, class: 'btn btn-primary' %>
+    <%= link_to "Create Viewing Party for #{@movie.title}", new_user_movie_party_path(@user, @movie.id), class: 'btn btn-primary' %>
     <%= link_to 'Discover Movies', user_discover_index_path(params[:user_id]), class: 'btn btn-primary' %>
   </div>
 </div>
