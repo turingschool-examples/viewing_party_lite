@@ -72,3 +72,5 @@ gem "webmock", "~> 3.18", :group => :test
 gem "httparty", "~> 0.20.0"
 
 gem "vcr", "~> 6.1", :group => :test
+
+gem "faraday", "~> 2.7"

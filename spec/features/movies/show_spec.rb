@@ -14,10 +14,10 @@ RSpec.describe 'Movies Show Page' do
       expect(current_path).to eq("/users/#{@user.id}/discover")
     end
 
-    xit 'has a button to Create Viewing Party', :vcr do
+    it 'has a button to Create Viewing Party', :vcr do
       expect(page).to have_link('Create Viewing Party')
       click_link 'Create Viewing Party'
-      expect(current_path).to eq("/users/#{user_id}/movies/#{movie_id}/viewing-party/new")
+      expect(current_path).to eq("/users/#{@user.id}/movies/238/viewing-party/new")
     end
 
     it 'has details for the movie on display', :vcr do

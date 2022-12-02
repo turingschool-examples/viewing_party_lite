@@ -4,6 +4,11 @@
     <%= link_to 'Discover Movies', user_discover_index_path(params[:user_id]), class: 'btn btn-primary' %>
   </div>
 </div>
+<div class="row">
+  <div class="col d-flex justify-content-center">
+    <%= image_tag "https://image.tmdb.org/t/p/w500/#{@movie.poster_path}" %>
+  </div>
+</div>
 <div class="row d-flex justify-content-center">
   <div class="col-lg-6">
     <table class="table table-striped m-5">
