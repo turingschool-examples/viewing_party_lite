@@ -4,8 +4,8 @@
 
 <div id="search-by-movie-title">
   <%= form_with url: "/users/#{@user.id}/movies", method: :get, local: true do |f| %>
-    <%= f.label :q %>
-    <%= f.text_field :q %>
+    <%= f.label :keyword %>
+    <%= f.text_field :keyword %>
     <%= f.submit "Search by Movie Title" %>
   <% end %>
 </div>
