@@ -34,7 +34,7 @@ class MovieDetailsFacade
   end
 
   def service 
-    TmdbService.new
+    MovieService.new
   end
 
   def user
