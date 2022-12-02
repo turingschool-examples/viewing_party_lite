@@ -4,18 +4,11 @@ class MoviesController < ApplicationController
   end
 
   def index
-    @user = User.find(params[:id])
-    if params[:q] != ""
-      @movies = if params[:q] == 'top 20rated'
-                  MoviesSearch.new.top_rated_movies
-                else
-                  MoviesSearch.new.movies_keyword(params[:q])
-                end
-      @keywords = params[:q]
-    else 
+    @facade = MoviesSearchFacade.new(params[:id], params[:q])
+    if @facade.query_params == ""
       flash[:alert] = "Error: You must provide a query"
-      redirect_to "/users/#{@user.id}/discover"
-    end 
+      redirect_to "/users/#{@facade.user_id}/discover"
+    end
   end
 
   def show 
