@@ -8,6 +8,7 @@ RSpec.describe 'Movies Index Page' do
         
         visit "/users/#{user1.id}/discover"
         click_button 'Discover The Top Rated Movies'
+        
         expect(current_path).to eq("/users/#{user1.id}/movies")
         expect(page).to have_content('The Godfather')
         expect(page).to have_content('Vote Average:8.7')
@@ -25,7 +26,7 @@ RSpec.describe 'Movies Index Page' do
         expect(page).to have_field("q")
         fill_in(:q, with: "Princess space")
         click_button "Find Movies"
-        save_and_open_page
+        
         expect(current_path).to eq("/users/#{user1.id}/movies")
         expect(page).to have_content('Space Princess')
         expect(page).to have_content('Vote Average:0')
@@ -35,7 +36,6 @@ RSpec.describe 'Movies Index Page' do
         expect(page).to have_content('Vote Average:0')
         expect(page).to have_content("My Brother's Wife 4 - Space Princess Choon Hyang")
         expect(page).to have_content('Vote Average:0')
-
       end
 
       it 'has links to all the movies show pages', :vcr do 
