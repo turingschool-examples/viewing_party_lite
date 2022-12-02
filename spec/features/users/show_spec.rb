@@ -6,8 +6,21 @@ RSpec.describe 'User Dashboard Page' do
     @user2 = User.create!(name: "Ashley", email: "Ashley@gmail.com")
     @user3 = User.create!(name: "Abdul", email: "Abdul@gmail.com")
 
-    @viewingparty1 = ViewingParty.create!(movie_title: "The Shawshank Redemption", movie_id: 278, duration: 146, date: "2023/04/22", time: "05:00 PM")
+    @viewingparty1 = ViewingParty.create!(movie_title: "The Shawshank Redemption", movie_id: 278, duration: 146, date: "2023/04/22", start_time: "05:00 PM")
     @userviewingparty1 = UserViewingParty.create!(host: true, user_id: @user1.id, viewing_party_id: @viewingparty1.id)
+    @userviewingparty2 = UserViewingParty.create!(host: false, user_id: @user2.id, viewing_party_id: @viewingparty1.id)
+
+    details_response = File.read('spec/fixtures/shawshank_details.json')
+    stub_request(:get, "https://api.themoviedb.org/3/movie/278?api_key=#{ENV["movie_api_key"]}").
+      to_return(status: 200, body: details_response)
+
+    credits_response = File.read('spec/fixtures/shawshank_credits.json')
+    stub_request(:get, "https://api.themoviedb.org/3/movie/278/credits?api_key=#{ENV["movie_api_key"]}").
+      to_return(status: 200, body: credits_response)
+
+    reviews_response = File.read('spec/fixtures/shawshank_reviews.json')
+    stub_request(:get, "https://api.themoviedb.org/3/movie/278/reviews?api_key=#{ENV["movie_api_key"]}").
+      to_return(status: 200, body: reviews_response)
     
     visit(user_path(@user1.id))
   end
@@ -28,7 +41,6 @@ RSpec.describe 'User Dashboard Page' do
 
     it 'has a section that lists viewing parties' do
       expect(page).to have_content("#{@user1.name}s Viewing Parties")
-      # save_and_open_page
     end
 
     it 'in viewing parties, I should see the movie image' do 
@@ -37,16 +49,23 @@ RSpec.describe 'User Dashboard Page' do
 
     it 'displays movie title that links to the movie show page' do 
       expect(page).to have_link("The Shawshank Redemption")
+      click_link("The Shawshank Redemption")
+      expect(current_path).to eq(user_movie_path( @user1.id, 278))
     end
 
     it 'displays date and time of event' do 
       expect(page).to have_content(@viewingparty1.date)
-      expect(page).to have_content(@viewingparty1.time)
+      expect(page).to have_content(@viewingparty1.start_time)
     end
 
     it 'displays host of event' do 
       expect(page).to have_content(@user1.name)
-      expect(page).to have_content("Host: William")
+      expect(page).to have_content("Congrats! You are the host of this partayyyyy!")
+    end
+
+    it 'displays attendees of event' do 
+      expect(page).to have_content("Attendee:")
+      expect(page).to have_content(@user2.name)
     end
   end
 end

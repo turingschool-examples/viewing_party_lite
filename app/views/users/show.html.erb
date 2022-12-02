@@ -8,12 +8,23 @@
     <%= link_to film.title, user_movie_path(@user, film.id) %><br>
     <%= party.date %><br>
     <%= party.start_time %><br>
-    <% user_viewing_party = UserViewingParty.where(viewing_party_id: party.id) %>
-    <% user_viewing_party.each do |uvp| %>
-      <% if uvp.host %>
-        <b>Host:</b> <p><%= User.find(uvp.user_id).name %></p><br>
+    <% user_viewing_party_host = UserViewingParty.where(viewing_party_id: party.id, user_id: @user.id) %>
+    <% if user_viewing_party_host[0].host %>
+      Congrats! You are the host of this partayyyyy!! <br>
+      <% user_viewing_party = UserViewingParty.where(viewing_party_id: party.id) %>
+      <% user_viewing_party.each do |uvp| %>
+        <% if uvp.host == false %>
+          <b>Attendee:</b> <p><%= User.find(uvp.user_id).name %></p>
+        <% end %>
+      <% end %>
+    <% else %>
+      <% user_viewing_party = UserViewingParty.where(viewing_party_id: party.id) %>
+      <% user_viewing_party.each do |uvp| %>
+        <% if uvp.host %>
+          <b>Host:</b> <p><%= User.find(uvp.user_id).name %></p><br>
         <% else %>
-        <b>Attendees:</b> <p><%= User.find(uvp.user_id).name %></p>
+          <b>Attendee:</b> <p><%= User.find(uvp.user_id).name %></p>
+        <% end %>
       <% end %>
     <% end %>
   <% end %>
