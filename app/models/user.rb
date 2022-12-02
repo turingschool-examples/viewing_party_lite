@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   has_many :user_parties
   has_many :parties, through: :user_parties
@@ -6,10 +8,10 @@ class User < ApplicationRecord
   validates_uniqueness_of :email
 
   def hosted_parties
-    parties.where(host_id: self.id)
+    parties.where(host_id: id)
   end
 
   def invited_parties
-    parties.where.not(host_id: self.id)
+    parties.where.not(host_id: id)
   end
 end

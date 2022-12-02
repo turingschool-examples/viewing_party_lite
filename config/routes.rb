@@ -1,5 +1,6 @@
-Rails.application.routes.draw do
+# frozen_string_literal: true
 
+Rails.application.routes.draw do
   get '/register', to: 'users#new'
   post '/users', to: 'users#create'
   get '/users/:id', to: 'users#show'
