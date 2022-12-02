@@ -12,3 +12,7 @@ Review: <%= review[:content] %>
       <%= cast_member.keys[0] %> as <%= cast_member.values[0] %>
   <% end %>
 </div>
+
+<div id="runtime">
+  Runtime: <%= "#{@movie.runtime/60}hr #{@movie.runtime % 60}min" %>
+</div

@@ -21,7 +21,7 @@ RSpec.describe 'Movie Details Page' do
     visit user_movie_path(@user1.id, 238)
 
     within('#runtime') do
-      expect(page).to have_content('2 hours 55 minutes')
+      expect(page).to have_content('Runtime: 2hr 55min')
     end
 
     within('#review-crastana') do
