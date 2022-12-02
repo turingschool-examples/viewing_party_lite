@@ -6,15 +6,13 @@ RSpec.describe 'user show page', :vcr, type: :feature do
     @astrid = User.create!(name: 'Astrid', email: 'astrid_mail@gmail.com')
     @reba = User.create!(name: 'Reba', email: 'reba_mail@gmail.com')
 
-    # @party_1 = Party.create!(movie_id: 550, duration: 170, date: Date.new(2022,12,20), start_time: Time.new(2022,12,20,18,30,00))
-    # @party_2 = Party.create!(movie_id: 700, duration: 160, date: Date.new(2022,12,27), start_time: Time.new(2022,12,27,20,00,00))
     @party_1 = Party.create!(movie_id: 550, duration: 170, date: Date.new(2022,12,20), start_time: DateTime.new(2022,12,20,18,30,00))
     @party_2 = Party.create!(movie_id: 700, duration: 160, date: Date.new(2022,12,27), start_time: DateTime.new(2022,12,27,20,00,00))
 
-    @kenz.parties << @party_1
-    @astrid.parties << @party_1
-    @astrid.parties << @party_2
-    @reba.parties << @party_2
+    @kenz_party_1 = UserParty.create!(user_id: @kenz.id, party_id: @party_1.id, user_status: 0)
+    @astrid_party_1 = UserParty.create!(user_id: @astrid.id, party_id: @party_1.id, user_status: 1)
+    @astrid_party_2 = UserParty.create!(user_id: @astrid.id, party_id: @party_2.id, user_status: 0)
+    @reba_party_1 = UserParty.create!(user_id: @reba.id, party_id: @party_2.id, user_status: 2)
 
     visit user_path(@reba)
   end

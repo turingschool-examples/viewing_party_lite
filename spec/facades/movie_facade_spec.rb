@@ -13,7 +13,7 @@ RSpec.describe MovieFacade, :vcr do
       end
 
       it '- returns the movie image of a given movie id' do
-
+        expect(MovieService.movie_details(550)[:poster_path]).to eq("/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg")
       end    
     end
   end
