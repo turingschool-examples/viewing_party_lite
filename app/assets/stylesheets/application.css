@@ -14,15 +14,61 @@
  *= require_self
  */
 
+html {
+  background-color: rgb(36, 35, 41);
+  color: rgb(203, 203, 203);
+  scrollbar-color: rgb(55, 54, 62);
+ }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(22, 22, 26); 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
 body {
   text-align: center;
   margin-inline: 15px;
 }
 
+a:link {
+  color: rgb(96, 98, 161);
+}
+
+a:visited {
+  color: rgb(119, 89, 141);
+}
+
+a:hover {
+  color: rgb(137, 137, 243);
+}
+
+a:active {
+  color: rgb(32, 32, 107);
+}
+
+#nav a {
+  color: rgb(218, 218, 218);
+}
+/* 
+#nav a:visited {
+  color: rgb(218, 218, 218);
+} */
+
 .error { 
   border: 2px solid red;
   padding: 3px;
-  background: rgb(255, 204, 204)
+  background: rgb(49, 34, 34)
 }
 
 .center {
@@ -35,12 +81,58 @@ body {
   margin-right: 50px;
 }
 
-
 .reviews {
   border: 2px;
   border-style: solid;
   margin-bottom: 20px;
   padding: 5px;
+}
+
+#user-parties {
+  background-image: linear-gradient(rgb(36, 35, 41), rgb(15, 15, 18));
+  width:100%; 
+  overflow-x: scroll; 
+  display: flex
+}
+
+.party-card {
+    float: left;
+    margin: 15px;
+    border: 2px solid rgb(56, 54, 62);
+    border-radius: 4px;
+    padding: 10px;
+    background: rgb(36, 35, 41);
+}
+
+input[type=text], select {
+  background-color: rgb(50, 50, 51);
+  color: rgb(203, 203, 203);
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid rgb(17, 17, 18);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  background-color: rgb(39, 51, 62);
+  color: rgb(203, 203, 203);
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: rgb(49, 69, 87);
+}
+
+#discover-form {
+  border-radius: 5px;
+  background-color: rgb(26, 26, 29);
+  padding: 20px;
 }
 
 

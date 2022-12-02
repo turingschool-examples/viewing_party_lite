@@ -4,9 +4,9 @@
 
 <%= render 'partials/discover_button' %>
 
-<div id='user-parties' style='width:100%; overflow-x: scroll; display: flex'>
+<div id='user-parties' >
   <% @user.parties.each_with_index do |party, index| %>
-    <div class='party-card' id='party-<%=@parties_info.values[index].id%>'style='float: left; margin: 15px'>
+    <div class='party-card' id='party-<%=@parties_info.values[index].id%>'>
       
       <div class="poster">
         <img src="https://image.tmdb.org/t/p/original<%=@parties_info.values[index].img_path%>" style='width:150px'>
