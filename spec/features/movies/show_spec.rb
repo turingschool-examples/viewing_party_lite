@@ -20,6 +20,21 @@ RSpec.describe 'Movie Details Page' do
     they play, total review count and each review's author and information" do
     visit user_movie_path(@user1.id, 238)
 
+    within('#title') do
+      expect(page).to have_content('The Godfather')
+    end
+
+    within('#vote-avg') do
+      expect(page).to have_content('Vote Average: 8.7')
+    end
+
+    within('#description') do
+      expect(page).to have_content('Spanning the years 1945 to 1955, a chronicle of the fictional
+          Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone
+          barely survives an attempt on his life, his youngest son, Michael steps in to take care of the
+          would-be killers, launching a campaign of bloody revenge.')
+    end
+
     within('#runtime') do
       expect(page).to have_content('Runtime: 2hr 55min')
     end
@@ -32,6 +47,10 @@ RSpec.describe 'Movie Details Page' do
     within('#review-futuretv') do
       expect(page).to have_content('Author: futuretv')
       expect(page).to have_content('Review: The Godfather Review by Al Carlson')
+    end
+
+    within('#total-review-count') do
+      expect(page).to have_content('2')
     end
 
     within('#cast-members') do
