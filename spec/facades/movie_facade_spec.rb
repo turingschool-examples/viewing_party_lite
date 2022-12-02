@@ -4,19 +4,19 @@ RSpec.describe MovieFacade, :vcr do
   describe 'class methods' do 
     describe '#movie_title(movie_id)' do 
       it '- returns the movie title of a given movie id' do
-        expect(MovieService.movie_details(550)[:title]).to eq("Fight Club")
+        expect(MovieFacade.movie_title(550)).to eq("Fight Club")
       end
     end
 
     describe '#movie_image(movie_id)' do
       it '- returns the movie image of a given movie id' do
-        expect(MovieService.movie_details(550)[:poster_path]).to eq("/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg")
+        expect(MovieFacade.movie_image(550)).to eq("/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg")
       end
     end
 
     describe '#vote_average(movie_id)' do
       it '- returns the vote average of a given movie id' do
-
+        expect(MovieFacade.vote_average(550)).to eq(8.428)
       end
     end
 
