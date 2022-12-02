@@ -26,7 +26,7 @@ RSpec.describe 'New User Registration' do
 
     describe 'sad paths' do
       it 'does not create a new user if the submitted email is identical to an existing user email' do
-        existing_user = User.create!(name: 'John Doe', email: @email)
+        User.create!(name: 'John Doe', email: @email)
         fill_in 'Name', with: 'Imposter John'
         fill_in 'Email', with: @email
         click_button 'Register'
