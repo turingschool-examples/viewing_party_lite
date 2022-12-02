@@ -2,6 +2,7 @@
 
 class MovieCast
   attr_reader :cast_list
+
   def initialize(attributes)
     @cast_list = attributes[:cast]
   end

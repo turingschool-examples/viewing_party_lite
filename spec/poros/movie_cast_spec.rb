@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe MovieCast do
@@ -5,12 +7,12 @@ RSpec.describe MovieCast do
     attrs = {
       cast: [
         {
-          "name": "Edward Norton",
-          "character": "The Narrator"
+          "name": 'Edward Norton',
+          "character": 'The Narrator'
         },
         {
-          "name": "Brad Pitt",
-          "character": "Tyler Durden"
+          "name": 'Brad Pitt',
+          "character": 'Tyler Durden'
         }
       ]
     }
@@ -27,7 +29,7 @@ RSpec.describe MovieCast do
 
   describe '#cast_format' do
     it 'returns each cast members name and character' do
-      expect(@cast.cast).to eq(["Edward Norton as The Narrator", "Brad Pitt as Tyler Durden"])
+      expect(@cast.cast).to eq(['Edward Norton as The Narrator', 'Brad Pitt as Tyler Durden'])
     end
   end
 end

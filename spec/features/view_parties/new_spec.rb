@@ -82,7 +82,7 @@ RSpec.describe 'New View Party Page', type: :feature do
       end
 
       recent_view_party = ViewParty.last
-      
+
       VCR.eject_cassette
       VCR.eject_cassette
       VCR.eject_cassette
