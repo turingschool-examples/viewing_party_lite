@@ -19,7 +19,7 @@ RSpec.describe 'the User Movie Index Page', :vcr do
         expect(page).to have_selector("#movie-table")
         within '#movie-table' do
           expect(page).to have_selector(".movie")
-          page.assert_selector(:css, ".movie", count: 40)
+          page.assert_selector(:css, ".movie", count: 20)
         end
       end
 
@@ -49,7 +49,7 @@ RSpec.describe 'the User Movie Index Page', :vcr do
   context 'term search' do
     describe 'when the search field is filled out and submitted' do
       before :each do
-        fill_in 'Movie Search', with: 'Abyss'
+        fill_in 'q', with: 'Abyss'
         click_button 'Search'
       end
       
