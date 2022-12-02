@@ -14,5 +14,4 @@ class MovieFacade
       Movie.new(movie)
     end
   end
-
 end

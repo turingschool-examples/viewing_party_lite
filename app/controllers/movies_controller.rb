@@ -5,8 +5,8 @@ class MoviesController < ApplicationController
       @movies = MovieFacade.top_rated
     elsif params[:search]
       @movies = MovieFacade.movie_search(params[:search])
-    # elsif params[:keyword]
-    #   @movies = MovieFacade.movie_search
+      # elsif params[:keyword]
+      #   @movies = MovieFacade.movie_search
     end
   end
 
