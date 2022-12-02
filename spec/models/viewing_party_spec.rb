@@ -49,7 +49,7 @@ RSpec.describe ViewingParty, type: :model do
     describe "#image" do 
       it "returns the source path for the image related to the movie party", :vcr do 
         party = ViewingParty.create!(movie_id: 278, movie_title: "Shawshank Redemption",run_time: 160, duration: 180, date: '2022-12-12', start_time: '17:00')
-        expect(party.image).to eq("http://image.tmdb.org/t/p/w200/hBcY0fE9pfXzvVaY4GKarweriG2.jpg")
+        expect(party.image(1)).to eq("http://image.tmdb.org/t/p/w200/hBcY0fE9pfXzvVaY4GKarweriG2.jpg")
       end
     end
   end

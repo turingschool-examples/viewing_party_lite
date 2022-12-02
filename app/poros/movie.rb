@@ -5,6 +5,5 @@ class Movie
     @id = data[:id]
     @title = data[:title]
     @vote = data[:vote_average]
-    
   end
 end

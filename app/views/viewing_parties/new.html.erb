@@ -9,22 +9,22 @@
 
 
 <center>
-<h2> <%= "Create Viewing Party For #{@movie.title}" %> </h2>
-<%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %><br><br>
+<h2> <%= "Create Viewing Party For #{@facade.movie.title}" %> </h2>
+<%= button_to "Discover Page", "/users/#{@facade.user_id}/discover", method: :get %><br><br>
 </center>
 <br>
 <div class='flex-container'>
-  <%= form_with url: "/users/#{@user.id}/movies/#{@movie.id}/viewing_parties", method: :post, local: true do |form| %>
+  <%= form_with url: "/users/#{@facade.user_id}/movies/#{@facade.id}/viewing_parties", method: :post, local: true do |form| %>
     <%= form.label :movie_title %>
-    <%= form.text_field :movie_title, value: @movie.title, :readonly => true %><br><br>
-    <%= form.hidden_field :run_time, value: @movie.runtime %>
+    <%= form.text_field :movie_title, value: @facade.movie.title, :readonly => true %><br><br>
+    <%= form.hidden_field :run_time, value: @facade.movie.runtime %>
     <%= form.label :duration, "Duration of Party" %>
-    <%= form.text_field :duration, value: @movie.runtime %><br><br>
+    <%= form.text_field :duration, value: @facade.movie.runtime %><br><br>
     <%= form.label :date, "Date of Party" %>
     <%= form.date_field :date, data: {provide: "datepicker"}  %><br><br>
     <%= form.label :start_time, "Start Time of Party" %>
     <%= form.time_field :start_time %><br><br>
-    <% @users.each do |user| %>
+    <% @facade.users.each do |user| %>
       <%= form.check_box :invitees, {multiple: true}, user.id, nil %>
       <%= form.label "#{user.id}", "#{user.name} (#{user.email})" %>
     <% end %><br><br>
