@@ -40,11 +40,11 @@ RSpec.describe MovieParty do
       end
     end
 
-    describe '#create_user_movie_parties' do 
+    describe '#create_user_movie_parties' do
       it 'creates user movie partys based on host and invites' do
         id_array = [@user3.id, @user4.id]
         @party2.create_user_movie_parties(@user2, id_array)
-        
+
         expect(@user2.user_movie_parties).to_not match_array([])
         expect(@user2.user_movie_parties.first.status).to eq('hosting')
         expect(@user3.user_movie_parties).to_not match_array([])

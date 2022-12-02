@@ -60,7 +60,7 @@ RSpec.describe 'Movies Detail (show) page' do
     it 'I see the details related to the movie' do
       expect(page).to have_content(@godfather.movie_title)
       expect(page).to have_content(@godfather.vote_average)
-      expect(page).to have_content("#{@godfather.runtime/60}h #{@godfather.runtime % 60}min")
+      expect(page).to have_content("#{@godfather.runtime / 60}h #{@godfather.runtime % 60}min")
 
       within('#genre') do
         expect(page).to have_content(@godfather.genres.first[:name])
@@ -81,7 +81,6 @@ RSpec.describe 'Movies Detail (show) page' do
         expect(page).to have_content(@godfather.reviews.last.content.gsub(/\n/, ' '))
         expect(page).to have_content("Review Count: #{@godfather.reviews.size}")
       end
-
     end
     it 'I do not see content related to other movies' do
       expect(page).to_not have_content(@another_movie.movie_title)

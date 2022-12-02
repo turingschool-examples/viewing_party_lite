@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CastMembersFacade
   def self.cast(movie_id)
     json = MoviesService.credits(movie_id)
