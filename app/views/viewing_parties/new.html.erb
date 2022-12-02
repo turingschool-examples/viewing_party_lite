@@ -2,7 +2,8 @@
 <h4><center><%= "Create a Movie Party for #{@movie[:title]}" %><center></h4>
 
 
-<section id='movie_form'>
+<section id='movie_form'><center>
+  <p>Movie Title: <%= @movie[:title] %></p>
   <%= form_with url: "/users/#{@host.id}/movies/#{@movie[:id]}/viewing-party", method: :post, local: :true do |f| %>
     <p><%= f.label "Day" %>
     <%= f.date_field :date, value: f.object.try(:strftime,"%m/%d/%Y"), class: 'form-control' %></p>
@@ -20,4 +21,4 @@
 
     <p><%= f.submit "Create Party" %></p>
   <% end %>
-</section>
+<center></section>

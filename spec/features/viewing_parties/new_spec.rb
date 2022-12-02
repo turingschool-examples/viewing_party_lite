@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Viewing Part new page' do
@@ -57,9 +59,9 @@ RSpec.describe 'Viewing Part new page' do
         end
       end
 
-      describe "Sad Path Testing" do
-        describe "When I leave the date blank" do
-          it "redirects back to /users/:user_id/movies/:movie_id/viewing-party/new and I see an error", :vcr do
+      describe 'Sad Path Testing' do
+        describe 'When I leave the date blank' do
+          it 'redirects back to /users/:user_id/movies/:movie_id/viewing-party/new and I see an error', :vcr do
             visit "/users/#{@user2.id}/movies/#{@movie_id}/viewing-party/new"
 
             fill_in(:start_time, with: '08:30PM')
@@ -70,12 +72,12 @@ RSpec.describe 'Viewing Part new page' do
             click_button('Create Party')
 
             expect(current_path).to eq("/users/#{@user2.id}/movies/#{@movie_id}/viewing-party/new")
-            expect(page).to have_content("**Date Cannot Be Blank**")
+            expect(page).to have_content('**Date Cannot Be Blank**')
           end
         end
 
-        describe "When I leave the start time blank" do
-          it "redirects back to /users/:user_id/movies/:movie_id/viewing-party/new and I see an error", :vcr do
+        describe 'When I leave the start time blank' do
+          it 'redirects back to /users/:user_id/movies/:movie_id/viewing-party/new and I see an error', :vcr do
             visit "/users/#{@user2.id}/movies/#{@movie_id}/viewing-party/new"
 
             fill_in(:date, with: '12/08/2022')
@@ -86,12 +88,12 @@ RSpec.describe 'Viewing Part new page' do
             click_button('Create Party')
 
             expect(current_path).to eq("/users/#{@user2.id}/movies/#{@movie_id}/viewing-party/new")
-            expect(page).to have_content("**Start Time Cannot Be Blank**")
+            expect(page).to have_content('**Start Time Cannot Be Blank**')
           end
         end
 
-        describe "When I leave the start time and date blank" do
-          it "redirects back to /users/:user_id/movies/:movie_id/viewing-party/new and I see an error", :vcr do
+        describe 'When I leave the start time and date blank' do
+          it 'redirects back to /users/:user_id/movies/:movie_id/viewing-party/new and I see an error', :vcr do
             visit "/users/#{@user2.id}/movies/#{@movie_id}/viewing-party/new"
 
             fill_in(:duration, with: 150)
@@ -101,7 +103,7 @@ RSpec.describe 'Viewing Part new page' do
             click_button('Create Party')
 
             expect(current_path).to eq("/users/#{@user2.id}/movies/#{@movie_id}/viewing-party/new")
-            expect(page).to have_content("**Fields Cannot Be Blank**")
+            expect(page).to have_content('**Fields Cannot Be Blank**')
           end
         end
       end

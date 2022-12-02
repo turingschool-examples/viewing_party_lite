@@ -27,13 +27,13 @@ class ViewingParty < ApplicationRecord
     users.joins(:viewing_party_users)
          .where('viewing_party_users.host=1')
          .pluck(:name)
-         .to_sentence
+         .first
   end
 
   def invited
     users.joins(:viewing_party_users)
          .where('viewing_party_users.host=0')
+         .distinct
          .pluck(:name)
-         .to_sentence
   end
 end
