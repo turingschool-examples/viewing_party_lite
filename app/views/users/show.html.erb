@@ -1,3 +1,9 @@
+<style>
+.cards a {
+    color: #000000;
+    text-decoration: none;
+}
+</style>
 <body>
   <div class='flex-container'>
     <div class="flex-items" id="title">
@@ -15,7 +21,7 @@
         <article class='card'>
           <img src=<%="http://image.tmdb.org/t/p/original#{party.file_path}"%>>
           <div class='text' id=<%=party.movie_id %>>
-            <h3><%= party.movie_name %></h3>
+            <h3 style="text-decoration: none;"><%= link_to party.movie_name, user_movie_path(@user, party.movie_id) %></h3>
             <p><%= party.datetime.strftime("%A, %d %B %Y") %></p>
             <p>&nbsp;<%= party.datetime.strftime("%l:%M %P") %></p>
             <p><%= if party.host?(@user) then "Hosting" else "Invited" end %></p>
