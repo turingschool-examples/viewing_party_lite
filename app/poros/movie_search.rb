@@ -27,7 +27,8 @@ class MovieSearch
     movies = search_response[:results]
     movie_hash = movies.find { |hash| hash[:title] == movie_name}
     Movie.new(movie_hash)
-    
+  end
+  
   def get_credits(movie_id)
     movie = service.get_credits(movie_id)
     cast = movie[:cast].first(10)

@@ -31,6 +31,7 @@ RSpec.describe 'Users' do
     @party_user12 = PartyUser.create!(user_id: @user3.id, party_id: @party5.id, host: false)
   end
   before :each do
+    
     up_search_json = File.read('spec/fixtures/search_up_movies.json')
     alien_search_json = File.read('spec/fixtures/search_alien_movies.json')
     whiplash_search_json = File.read('spec/fixtures/search_whiplash_movies.json')
