@@ -12,4 +12,8 @@ class User < ApplicationRecord
   def parties_hosting
     parties.where('party_users.host = ?', true)
   end
+
+  def other_users
+    User.where('id != ?', self.id)
+  end
 end
