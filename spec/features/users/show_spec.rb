@@ -29,14 +29,14 @@ RSpec.describe 'The User show page' do
         expect(page).not_to have_content("Mary's Dashboard")
       end
 
-      xit 'I should see a button to Discover Movies' do
+      it 'I should see a button to Discover Movies' do
         visit user_path(@user1)
 
         expect(page).to have_button "Discover Movies"
 
         click_button "Discover Movies"
 
-        expect(current_path).to eq(user_discover_index_path(@user1.id))
+        expect(current_path).to eq(user_discover_index_path(@user1))
       end
 
       it 'I see a section that lists all viewing parties' do

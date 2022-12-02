@@ -14,14 +14,5 @@ RSpec.describe 'Movies Page' do
       visit "users/#{@user1.id}/movies"
     end
 
-    xit 'i should be taken to the movie results page' do
-
-      expect(page).to have_content("The Godfather")
-
-    end
-
-    it 'I see the movie title as a link to the Movie Details page' do
-
-    end
   end
 end
