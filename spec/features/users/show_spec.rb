@@ -24,11 +24,15 @@ RSpec.describe 'User Dashboard Page' do
 
     it 'has a section that lists viewing parties' do
       expect(page).to have_content("#{@user1.name}s Viewing Parties")
+      # save_and_open_page
     end
 
     it 'in viewing parties, I should see the movie image' do 
       # expect(page).to have_content(#image)
-      save_and_open_page
+    end
+
+    it 'displays movie title that links to the movie show page' do 
+      expect(page).to have_link("The Shawshank Redemption")
     end
   end
 end
