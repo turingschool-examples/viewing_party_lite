@@ -32,4 +32,4 @@
 /config/application.yml
 .rubocop.yml
 
-/fixtures/vcr_cassettes/*.yml
+/spec/fixtures/vcr_cassettes/
