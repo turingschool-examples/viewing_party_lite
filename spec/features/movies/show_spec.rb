@@ -7,12 +7,25 @@ RSpec.describe 'Movie Details Page' do
     @user3 = User.create!(name: 'Fiona', email: 'Fiona3@gmail.com')
   end
 
-  it ' has a button to create a viewing party that takes the user to (/users/:user_id/movies/:movie_id/viewing-party/new)' do
+  it 'has a button to create a viewing party that takes the user to (/users/:user_id/movies/:movie_id/viewing-party/new)' do
     visit  user_movie_path(@user1.id, 238)
+
+    within('#create-new-viewing-party') do
+      expect(page).to have_button('Create Viewing Party for The Godfather')
+      click_button('Create Viewing Party for The Godfather')
+      expect(current_path).to eq(new_user_movie_viewing_party_path(@user1.id, 238))
+    end
   end
 
   it 'has a button to return to the discover page' do
     visit  user_movie_path(@user1.id, 238)
+
+    within '#discover-movies' do
+      expect(page).to have_button('Discover Movies')
+      click_on 'Discover Movies'
+
+      expect(current_path).to eq("/users/#{@user1.id}/discover")
+    end
   end
 
   it "has the following attributes of the movie: title, vote average, run time in hours/minutes,

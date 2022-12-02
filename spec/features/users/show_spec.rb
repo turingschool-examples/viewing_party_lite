@@ -27,14 +27,6 @@ RSpec.describe 'User Dashboard Page' do
     end
   end
 
-  it 'should have a section that lists viewing parties' do
-    visit user_path(@user1.id)
-
-    within '#viewing-parties' do
-      expect(page).to have_content('Viewing Parties')
-    end
-  end
-
   it 'should contain title of Viewing Party and a Home link that will redirect to the user landing page' do
     visit user_path(@user1.id)
 
@@ -44,5 +36,41 @@ RSpec.describe 'User Dashboard Page' do
       click_link('Home')
       expect(current_path).to eq(root_path)
     end
+  end
+
+  describe 'Viewing Parties' do
+    before(:each) do
+    end
+    # As a user,
+    # When I visit a user dashboard,
+    it 'should have a section that lists viewing parties' do
+      visit user_path(@user1.id)
+
+      within '#viewing-parties' do
+        expect(page).to have_content('Viewing Parties')
+      end
+    end
+    # I should see the viewing parties that the user has been invited to with the following details:
+
+    it 'should show viewing parties that the user has been invited to' do
+      visit user_path(@user1.id)
+
+      within '#viewing-parties' do
+        expect(page).to have_content('Viewing Parties')
+      end
+    end
+    # [ ] Movie Image
+    # [ ] Movie Title, which links to the movie show page
+    # [ ] Date and Time of Event
+    # [ ] Who is hosting the event
+    # [ ] List of users invited, with my name in bold
+
+    # I should also see the viewing parties that the user has created with the following details:
+
+    # [ ] Movie Image
+    # [ ] Movie Title, which links to the movie show page
+    # [ ] Date and Time of Event
+    # [ ] That I am the host of the party
+    # [ ] List of friends invited to the viewing party
   end
 end
