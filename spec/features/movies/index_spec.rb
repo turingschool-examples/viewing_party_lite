@@ -9,6 +9,17 @@ RSpec.describe 'Movies Index Page' do
   end
 
   xit 'goes to movie show page when a link is clicked' do
+    expect(page).to have_button('Find Top Rated Movies')
     click_button('Find Top Rated Movies')
+
+    expect(page).to have_button("Discover Page")
+    expect(page).to have_content("Top Rated Movies")
+
+    expect(page).to have_content("20th Century Girl")
+    expect(page).to have_link("20th Century Girl")
+    expect(page).to have_content("The Godfather")
+    expect(page).to have_link("The Godfather")
+    expect(page).to have_content("Impossible Things")
+    expect(page).to have_link("Impossible Things")
   end
 end

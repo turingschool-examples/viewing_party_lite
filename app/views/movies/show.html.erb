@@ -1,3 +1,20 @@
+<h1><center>Viewing Party</center></h1>
+<br>
+<h2><center><b><%= @movie.movie_title %></b></center></h2>
+<center><img src=<%=@movie.poster%> alt="images" width="200" height="300"></center>
+<center><%= button_to "Discover Page", discover_path(@user), method: :get %> </center>
+<center><%= button_to "Create Viewing Party for #{@movie.movie_title}", new_user_movie_viewing_party_path(@user, @movie.id), method: :get %> </center>
+<br>
+<br>
+<p>Vote: <%= @movie.rating %> -- Runtime: -- Genre: </p>
+<hr>
+<br>
+<p><b>Summary:</b></p>
 
-<%= @movie.movie_title %>
+
+<p><b>Cast:</b></p>
+
+
+<p><b>Reviews:</b></p>
+
 

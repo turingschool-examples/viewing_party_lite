@@ -10,6 +10,7 @@
             <ul> 
                 <p><b>Viewing Party</b>
                 <%# https://image.tmdb.org/t/p/original %>
+                <img src=<%=@movie.poster%> alt="images" width="200" height="300">
                 <li><%= party.start_date %></li>
                 <li><%= party.start_time %></li>
                 <li><%= party.user_hosting_status(@user) %></li>

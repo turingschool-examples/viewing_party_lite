@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   # users
   resources :users do
-    resources :movies
+    resources :movies do
+      resources :viewing_parties, only: [:new, :create]
+    end 
   end
 
   # registration page
