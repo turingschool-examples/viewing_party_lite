@@ -21,7 +21,7 @@ RSpec.describe "New Users Page", type: :feature do
 
   it "has a form to register a new user, that includes name, email (which is unique) and a 
     'Register' button" do
-      visit "/register"
+      visit new_user_path
 
       expect(page).to have_field(:name)
       expect(page).to have_field(:email)
