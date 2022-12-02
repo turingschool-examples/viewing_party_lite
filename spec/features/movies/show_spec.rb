@@ -95,7 +95,7 @@ RSpec.describe 'Movie show page' do
 
     it "When I visit user/:user_id/movies/:id I see the total number of reviews along with reviewers' information" do
       visit "/users/#{@jim.id}/movies/680"
-      save_and_open_page
+      
       expect(page).to have_content("Count of Reviews: 4")
 
       expect(page).to have_content("Author: Wuchak")
