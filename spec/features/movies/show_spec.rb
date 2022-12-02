@@ -9,12 +9,12 @@ RSpec.describe 'The Movies Show Page' do
         visit user_movie_path(@user1, 515001)
       end
 
-      xit "displays a button to 'Create a Viewing Party'" do
+      it "displays a button to 'Create a Viewing Party'" do
         expect(page).to have_button('Create Viewing Party')
 
         click_button('Create Viewing Party')
 
-        expect(current_path).to eq(new_user_movie_viewing_party(@user1, 515001))
+        expect(current_path).to eq(new_user_movie_viewing_party_path(@user1, 515001))
       end
 
       it "displays a button to return to the 'Discover Movies' page" do
