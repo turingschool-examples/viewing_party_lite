@@ -44,30 +44,14 @@ RSpec.describe 'the new party form' do
     expect(page).to have_content("Pulp Fiction")
   end
 
-  it "has a form with fields for duration of the party, date of the party, start time of the party" do
-    visit "/users/#{@jim.id}/movies/680/viewing-party/new"
-    
-    expect(page).to have_selector(:css, 'form')
-    expect(page).to have_field("duration")
-    expect(page).to have_field("[date(1i)]")
-    expect(page).to have_field("[date(2i)]")
-    expect(page).to have_field("[date(3i)]")
-    expect(page).to have_field("[time(4i)]")
-    expect(page).to have_field("[time(5i)]")
-  end
-
-  it "the form has a list of users with checkboxes next to each one" do
-    visit "/users/#{@jim.id}/movies/680/viewing-party/new"
-    
-    expect(page).to have_unchecked_field("#{@mostafa.id}")
-    expect(page).to have_unchecked_field("#{@bryan.id}")
-    expect(page).to_not have_unchecked_field("#{@jim.id}")
-    expect(page).to_not have_checked_field("#{@jim.id}")
-  end
-
   it "has a submit button" do
     visit "/users/#{@jim.id}/movies/680/viewing-party/new"
     
-    expect(page).to have_button("Submit")
+    expect(page).to have_button("Create Party")
+    expect(page).to have_button("Discover Page")
+
+    click_button "Discover Page"
+
+    expect(current_path).to eq("/users/#{@jim.id}/discover")
   end
 end
