@@ -12,7 +12,7 @@ class ViewParty < ApplicationRecord
   end
 
   def file_path
-    MovieFacade.new(self.movie_id).movie_by_id.poster_path
+    MovieFacade.new(movie_id).movie_by_id.poster_path
   end
 
   def host?(user)
@@ -20,6 +20,6 @@ class ViewParty < ApplicationRecord
   end
 
   def members
-    User.where(id: self.user_view_parties.pluck('user_id'))
+    User.where(id: user_view_parties.pluck('user_id'))
   end
 end

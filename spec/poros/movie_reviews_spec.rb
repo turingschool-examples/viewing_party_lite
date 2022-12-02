@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe MovieReviews do
@@ -5,12 +7,12 @@ RSpec.describe MovieReviews do
     attrs = {
       results: [
         {
-          "author": "Goddard",
-          "content": "Pretty awesome movie."
-        }, 
+          "author": 'Goddard',
+          "content": 'Pretty awesome movie.'
+        },
         {
-          "author": "Brett Pascoe",
-          "content": "In my top 5 of all time favourite movies."
+          "author": 'Brett Pascoe',
+          "content": 'In my top 5 of all time favourite movies.'
         }
       ]
     }
@@ -27,7 +29,8 @@ RSpec.describe MovieReviews do
 
   describe '#reviews' do
     it 'returns the author and content of each review in a specific format' do
-      expect(@movie_reviews.reviews).to eq(["Goddard: Pretty awesome movie.", "Brett Pascoe: In my top 5 of all time favourite movies."])
+      expect(@movie_reviews.reviews).to eq(['Goddard: Pretty awesome movie.',
+                                            'Brett Pascoe: In my top 5 of all time favourite movies.'])
     end
   end
 end

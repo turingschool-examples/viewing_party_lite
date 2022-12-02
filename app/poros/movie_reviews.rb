@@ -2,6 +2,7 @@
 
 class MovieReviews
   attr_reader :results
+
   def initialize(attributes)
     @results = attributes[:results]
   end

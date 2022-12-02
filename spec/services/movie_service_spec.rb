@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe MovieService do
@@ -43,10 +45,10 @@ RSpec.describe MovieService do
 
       expect(movie).to have_key :id
       expect(movie[:id]).to be_a(Integer)
-  
+
       expect(movie).to have_key :title
       expect(movie[:title]).to be_a(String)
-      
+
       expect(movie).to have_key :vote_average
       expect(movie[:vote_average]).to be_a(Float)
 
