@@ -28,6 +28,27 @@ RSpec.describe 'Movie show page' do
 
       expect(current_path).to eql("/users/#{@jim.id}/movies/680/viewing-party/new")
     end
+
+    it 'When I visit user/:user_id/movies/:id I see a button to go back to the discover page' do
+      json_response = File.read('spec/fixtures/pulp_fiction.json')
+
+      stub_request(:get, "https://api.themoviedb.org/3/movie/680?api_key=fcffd3018e92893c2d9bde84c969cedc").
+      with(
+        headers: {
+       'Accept'=>'*/*',
+       'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+       'User-Agent'=>'Faraday v2.7.1'
+        }).
+        to_return(status: 200, body: json_response, headers: {})
+
+      visit "/users/#{@jim.id}/movies/680"
+
+      expect(page).to have_button("Discover Page")
+      
+      click_button "Discover Page"
+
+      expect(current_path).to eql("/users/#{@jim.id}/discover")
+    end
   end
 end
 
