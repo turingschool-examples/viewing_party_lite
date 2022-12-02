@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     # get'/register', to: 'users#new', shallow: true
     # post '/register', to: 'users#new', shallow: true
     get '/discover', to: 'users#discover'
-    resources :movies do
+    resources :movies, only: :index do
       resources :viewing_parties
     end
   end

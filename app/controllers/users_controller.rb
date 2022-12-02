@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
   def index
-    require 'pry'
-    binding.pry
   end
 
   def show
@@ -13,7 +11,7 @@ class UsersController < ApplicationController
   end
 
   def discover
-    redirect_to user_movies_path
+    @user = User.find(params[:user_id])
   end
 
   def create
