@@ -3,5 +3,6 @@
 <%= button_to "Discover Page", user_discover_index_path(@user), method: :get %>
 
 <% @movies.each do |movie| %>
-  <p><%= movie.title %> Vote average: <%= movie.vote_average %></p>
+  <p><%= link_to movie.title, "/users/#{@user.id}/movies/#{movie.id}" %></p> 
+  <li>Vote average: <%= movie.vote_average %></li>
 <% end %>
