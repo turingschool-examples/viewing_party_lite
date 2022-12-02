@@ -14,11 +14,18 @@ RSpec.describe 'The Movies Index Page' do
         end
 
         it 'displays 20 top rated movies' do
-          expect(page).to have_content('The Godfather')
+          expect(page).to have_content('Parasite')
           expect(page).to have_content('Shawshank Redemption')
           expect(page).to_not have_content('Boogie Nights')
         end
       end
+
+        it 'has each movie title as a link to its show page' do
+          expect(page).to have_link('Parasite')
+
+          click_link('Parasite')
+
+          expect(current_path).to eq(user_movie_path(@user1, 496243))
 
     end
   end
