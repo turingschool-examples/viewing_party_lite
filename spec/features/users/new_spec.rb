@@ -22,6 +22,19 @@ RSpec.describe 'The User registration' do
         expect(page).to_not have_content("Mary")
         expect(page).to_not have_content("Sherri")
       end
+
+      it "checks for unique email address" do
+        visit root_path
+
+        click_button('Create User')
+
+        fill_in 'Name', with: "Mary"
+        fill_in 'Email', with: "Mary@gmail.com"
+        click_on 'Create Account'
+
+        expect(current_path).to eq(register_path)
+        expect(page).to have_content("Error: Email already linked with an account")
+      end
     end
   end
 end
