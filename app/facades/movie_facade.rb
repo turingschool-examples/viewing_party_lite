@@ -16,4 +16,10 @@ class MovieFacade
   def self.runtime(movie_id)
     MovieService.movie_details(movie_id)[:runtime]
   end
+
+  def self.genres(movie_id)
+    MovieService.movie_details(movie_id)[:genres].map do |key|
+      key[:name]
+    end
+  end
 end

@@ -28,7 +28,7 @@ RSpec.describe MovieFacade, :vcr do
 
     describe '#genres(movie_id)' do
       it '- returns the genres associated to a given movie id' do
-
+        expect(MovieFacade.genres(550)).to eq(["Drama", "Thriller", "Comedy"])
       end
     end
 
