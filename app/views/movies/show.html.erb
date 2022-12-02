@@ -1,0 +1,10 @@
+<center><h1>Viewing Party</h1></center>
+
+<h4><%= @reviews.first.number_reviews %> Reviews: </h4>
+<% @reviews.each do |review| %>
+  <% if review.author != nil %>
+    <p><strong><%= review.author %></strong></p>
+    <%= review.content %>
+    <br>
+  <% end %>
+<% end %>
