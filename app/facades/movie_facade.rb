@@ -35,4 +35,9 @@
         "#{author} - #{content}"
       end
     end
+
+    # def self.create_poster(id)
+    #   response = MovieService.get_poster(id)
+    #   Movie.new(response)
+    # end
 end

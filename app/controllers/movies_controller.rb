@@ -14,5 +14,6 @@ class MoviesController < ApplicationController
     @movie = MovieFacade.create_spec_movie(params[:id])
     @cast = MovieFacade.create_cast(params[:id])
     @reviews = MovieFacade.create_reviews(params[:id])
+    # @poster_path = MovieFacade.create_poster(params[:id])
   end
 end
