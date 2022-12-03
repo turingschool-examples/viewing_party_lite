@@ -5,12 +5,11 @@
   <%= form.label "Duration of Party (minutes)" %>
   <%= form.date_field :date, data: {provide: "datepicker"}  %>
   <%= form.label :date, "Date of Party" %>
-   <%= form.label :start_time, "Start Time of Party" %>
-    <%= form.time_field :start_time %>
+  <%= form.time_field :start_time %>
+  <%= form.label :start_time, "Start Time of Party" %>
   <% @users.each do |user| %>
-      <%= form.check_box :attendees, {multiple: true}, user.id, nil %>
-      <%= form.label "#{user.id}", "#{user.name} (#{user.email})" %>
-    <% end %><br><br>
+      <p><%= check_box_tag(user.id) %> <%= form.label "#{user.id}", "#{user.name} (#{user.email})" %></p>
+    <% end %><br>
   <%= form.submit "Create Party" %>
 <% end%>
 
