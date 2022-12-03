@@ -12,8 +12,6 @@ RSpec.describe "Movie Detail Page" do
     expect(page).to have_content("Romance")
     expect(page).to have_content("Runtime: 3 hours and 10 minutes")
     expect(page).to have_content("Summary: Raj is a rich, carefree, happy-go-lucky second generation NRI. Simran is the daughter of Chaudhary Baldev Singh, who in spite of being an NRI is very strict about adherence to Indian values. Simran has left for India to be married to her childhood fiancé. Raj leaves for India with a mission at his hands, to claim his lady love under the noses of her whole family. Thus begins a saga.")
-    # expect(page).to have_content("Cast: ")
-    # expect(page).to have_content("Total Reviews: ")
     end
   it 'has button to create viewing party/redirects to new form', :vcr do 
     @user1 = User.create!(name: "Micheal Jordan", email: "user1@gmail.com", password: "123test")

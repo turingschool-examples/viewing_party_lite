@@ -1,6 +1,11 @@
 <h1>Viewing Party Lite</h1>
-<%= link_to "I already have an account", "/login" %>
-<%= button_to "Create New User", "/register", method: :get %>
+<% if current_user %>
+  <%= link_to "Logout", '/logout', method: :delete %>
+<% else %>
+  <%= link_to "Register as a User", new_user_path %>
+  <%= link_to "Login", '/login', method: :get %>
+<% end %>
+
 
 <% @users.each do |user| %>
 <div id="users-<%=user.id%>">

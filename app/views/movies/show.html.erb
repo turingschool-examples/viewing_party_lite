@@ -2,21 +2,27 @@
 <h2> <%= button_to "Return To Discover Movies", "/users/#{@user.id}/discover", method: :get %> </h2>
 <h2> <%= button_to "Create Viewing Party", "/users/#{@user.id}/movies/#{@movie.id}/viewing_party/new", method: :get %> </h2>
 <h2>Title: <%= @movie.title %></h2>
+<br>
+<img src="<%= @movie.poster_path %>"
 <p><h3>Vote Average: <%= @movie.vote_average %></h3></p>
 <p>Runtime: <%= @movie.runtime / 60 %> hours and <%= @movie.runtime % 60 %> minutes</p>
 <h3>Genre: <% @movie.genres.each do |genre| %>
-  <p><%= genre[:name] %><p>
+  <h5><%= genre[:name] %></h5>
   <% end %>
-
 
 <h3>Summary: <%= @movie.overview %></h3>
 
-  Cast Members: <% @cast.each do |member|%>
+  Cast Members: <% @cast.take(10).each do |member|%>
   <%= member %>
   <% end %>
 
+<h3>Reviews: <%= @reviews.take(1).each do |review| %></h3>
+  <%= review %>
+  <% end %>
 <br>
-<h3>Total Reviews: @reviews.count</h3>
+<h4>Total Reviews: <%= @reviews.count%></h4>
 <br>
-Review Authors and Information:
+
+
+
 

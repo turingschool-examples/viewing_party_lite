@@ -10,26 +10,14 @@ class UsersController < ApplicationController
 
   def create 
     # user = User.find_by_email(params[:email])
-    new_user = User.create(user_params)
-    if new_user.save 
-      redirect_to "/users/#{new_user.id}"
-      flash[:success] = "Welcome, #{new_user.email}!"
-    else
-      redirect_to "/register"
-      flash[:error] = new_user.errors.full_messages
-    end
-  end
-
-  def login 
-    user = User.find_by(email: params[:email])
-    # if user&.authenticate(params[:password])
-    if user && user.authenticate(params[:password])
-      session[:user_id] = user.id 
+    user = User.new(user_params)
+    if user.save 
+      session[:user_id] = user.id
       redirect_to "/users/#{user.id}"
       flash[:success] = "Welcome, #{user.email}!"
     else
-      flash[:error] = "Sorry, your credentials are bad"
-      render :login_form 
+      redirect_to "/register"
+      flash[:error] = user.errors.full_messages
     end
   end
 
