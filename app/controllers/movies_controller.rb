@@ -7,9 +7,9 @@ class MoviesController < ApplicationController
     elsif params[:q].present?
       @movies = MovieFacade.search(params[:q])
       @subtitle = "Movie results for: '#{params[:q]}'"
-    else
-      redirect_to discover_path(@user)
-      flash[:alert] = 'Something went wrong, please try again'
+    # else
+    #   redirect_to discover_path(@user)
+    #   flash[:alert] = 'Something went wrong, please try again'
     end
   end
 

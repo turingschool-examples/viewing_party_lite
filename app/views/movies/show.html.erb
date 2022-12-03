@@ -2,8 +2,6 @@
   <%= @movie.movie_title %>
 <%end%>
 
-<%= render 'partials/discover_button'%>
-
 <section id= "buttons" style='margin-bottom:50px' >
   <%= render 'partials/discover_button'%>
   <br>
@@ -14,7 +12,7 @@
 
 <p>
 Vote Average: <%= @movie.vote_average %><br>
-Runtime: <%= @movie.runtime.to_s[0] %> hours <%= @movie.runtime.to_s[2..3] %> minutes<br>
+Runtime: <%= (@movie.runtime / 60).to_i %> hours <%= (@movie.runtime % 60).to_s %> minutes<br>
 Genre(s): <% @movie.genres.each do |genre| %>
               <%= genre %>,
           <% end %>

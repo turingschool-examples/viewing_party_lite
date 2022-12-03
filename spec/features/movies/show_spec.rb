@@ -49,7 +49,7 @@ RSpec.describe 'movie detail page', :vcr, type: :feature do
       end
 
       it '- shows the runtime in hours & minutes' do
-        expect(page).to have_content("Runtime: 2 hours 32 minutes")
+        expect(page).to have_content("Runtime: 2 hours 19 minutes")
       end
 
       it '- shows the genre(s) associated to the movie' do
