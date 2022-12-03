@@ -16,6 +16,7 @@ RSpec.describe 'application layout', :vcr do
              path.gsub!(':id', '550')
              path.gsub!(':movie_id', '550')
              path.gsub!(':user_id', user.id.to_s)
+             path.gsub!('/viewing_party/create', '')
            else
              path.gsub!(':id', user.id.to_s)
            end

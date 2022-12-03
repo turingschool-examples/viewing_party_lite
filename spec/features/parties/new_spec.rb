@@ -27,8 +27,7 @@
       it 'the form creates a new party' do
         VCR.use_cassette("new_party", :allow_playback_repeats => true) do
           user = create(:user, id: 50, name: "Bubbles", email: "bubbles@sunnyvale.ca")
-          visit "/users/#{user.id}/movies/550/viewing-party/new"
-      
+          visit "/users/#{user.id}/movies/550/viewing_party/new"
           fill_in "Day", with: Date.today
           fill_in "Start Time", with: Time.now
   
@@ -49,7 +48,7 @@
           guest_1 = create(:user, id: 51, name: "Julian", email: "julian@sunnyvale.ca")
           guest_2 = create(:user, id: 53, name: "Jim Lahey", email: "supervisor@sunnyvale.ca")
           guest_3 = create(:user, id: 54, name: "Ricky", email: "ricky@sunnyvale.ca")
-          visit "/users/#{host.id}/movies/550/viewing-party/new"
+          visit "/users/#{host.id}/movies/550/viewing_party/new"
           
           fill_in "Day", with: Date.today
           fill_in "Start Time", with: Time.now
@@ -75,7 +74,7 @@
           guest_1 = create(:user, id: 51, name: "Julian", email: "julian@sunnyvale.ca")
           guest_2 = create(:user, id: 53, name: "Jim Lahey", email: "supervisor@sunnyvale.ca")
           guest_3 = create(:user, id: 54, name: "Ricky", email: "ricky@sunnyvale.ca")
-          visit "/users/#{host.id}/movies/550/viewing-party/new"
+          visit "/users/#{host.id}/movies/550/viewing_party/new"
           
           fill_in "Day", with: Date.today
           fill_in "Start Time", with: Time.now
@@ -136,4 +135,3 @@
     #   end
     # end
   # end
-end
