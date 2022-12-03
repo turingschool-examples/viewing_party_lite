@@ -4,8 +4,13 @@
 
 <%= render 'partials/discover_button'%>
 
-<%= button_to "Create Viewing Party for #{@movie.movie_title}", new_viewing_party_path(@user, @movie.id), method: :get %>
-
+<section id= "buttons" style='margin-bottom:50px' >
+  <%= render 'partials/discover_button'%>
+  <br>
+  <div id= "new_party_button">
+    <%= button_to "Create Viewing Party for #{@movie.movie_title}", new_viewing_party_path(@user, @movie.id), method: :get %>
+  </div>
+</section>
 
 <p>
 Vote Average: <%= @movie.vote_average %><br>
