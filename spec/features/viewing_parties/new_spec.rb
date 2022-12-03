@@ -40,6 +40,20 @@ RSpec.describe 'New Viewing Party Page', type: :feature do
     expect(page).to have_field(:duration, with: 175)
   end
 
+  it "if a party is successfully created the user should be redirected back to their dashboard
+    where they will see a list of parties they are hosting and a list of parties they are
+    invited to " do
+      visit new_user_movie_viewing_party_path(@user1.id, 238)
+
+      fill_in :duration, with: 175
+      fill_in :date, with: '2022/12/01'
+      fill_in :start_time, with: '11:00'
+      click_button 'Create Party'
+
+      expect(current_path).to eq(user_path(@user1.id))
+      expect(page).to have_content('The Godfather')
+  end
+
   it 'should not create a viewing party if the time is not entered' do
     visit new_user_movie_viewing_party_path(@user1.id, 238)
 
@@ -64,17 +78,4 @@ RSpec.describe 'New Viewing Party Page', type: :feature do
     expect(page).to have_content("Date can't be blank")
   end
 
-  it "if a party is successfully created the user should be redirected back to their dashboard
-    where they will see a list of parties they are hosting and a list of parties they are
-    invited to " do
-      visit new_user_movie_viewing_party_path(@user1.id, 238)
-
-      fill_in :duration, with: 175
-      fill_in 'date', with: '2022/12/01'
-      fill_in 'start_time', with: '11:00'
-      click_button 'Create Party'
-
-      expect(current_path).to eq(user_path(@user1.id))
-      expect(page).to have_content('The Godfather')
-    end
 end

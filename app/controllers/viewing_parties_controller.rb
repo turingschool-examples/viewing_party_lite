@@ -12,7 +12,7 @@ class ViewingPartiesController < ApplicationController
     @party = user.viewing_parties.new(party_params)
     if @party.save
       redirect_to user_path(user.id)
-      binding.pry
+
     else
       flash[:alert] = "Error: #{error_message(@party.errors)}"
       redirect_to new_user_movie_viewing_party_path(user.id, @movie.id)
@@ -22,6 +22,6 @@ class ViewingPartiesController < ApplicationController
   private
 
   def party_params
-    params.permit(:duration, :date)
+    params.permit(:duration, :date, :start_time)
   end
 end
