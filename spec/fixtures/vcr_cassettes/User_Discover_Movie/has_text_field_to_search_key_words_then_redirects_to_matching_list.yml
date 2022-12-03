@@ -25,30 +25,24 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Wed, 07 Sep 2022 18:20:39 GMT
+      - Sat, 03 Dec 2022 01:07:09 GMT
       Server:
       - openresty
-      Access-Control-Allow-Origin:
-      - "*"
-      Access-Control-Allow-Methods:
-      - GET, HEAD, POST, PUT, DELETE, OPTIONS
-      Access-Control-Expose-Headers:
-      - ETag, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, Retry-After,
-        Content-Length, Content-Range
       Cache-Control:
       - public, max-age=600
       Vary:
-      - Accept-Encoding
+      - Accept-Encoding,Accept-Encoding
+      - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 2d8f89e435b7eede72670d12f5184086.cloudfront.net (CloudFront)
+      - 1.1 88eccec4c36b443b42b3988f57d3bebe.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - SFO5-P1
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - vk6oNeV5F7aRhmsR5FYge2Qc6DaoBgrAgdrC6dEzb1pjIN0guYU35w==
+      - Eavu5tRF0qc_PKrNnYVg2v6LxT9H3Rymv98jEWtxYO-9_yfI4w5Umg==
       Age:
       - '1'
     body:
@@ -59,10 +53,10 @@ http_interactions:
         at the Shawshank prison, where he puts his accounting skills to work for an
         amoral warden. During his long stretch in prison, Dufresne comes to be admired
         by the other inmates -- including an older prisoner named Red -- for his integrity
-        and unquenchable sense of hope.","popularity":107.139,"poster_path":"/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg","release_date":"1994-09-23","title":"The
-        Shawshank Redemption","video":false,"vote_average":8.7,"vote_count":22189},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":897459,"original_language":"en","original_title":"Hope
+        and unquenchable sense of hope.","popularity":84.681,"poster_path":"/hBcY0fE9pfXzvVaY4GKarweriG2.jpg","release_date":"1994-09-23","title":"The
+        Shawshank Redemption","video":false,"vote_average":8.7,"vote_count":22748},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":897459,"original_language":"en","original_title":"Hope
         Springs Eternal: A Look Back at The Shawshank Redemption","overview":"Documentary
-        about the movie.","popularity":1.966,"poster_path":"/vdVab7yNvgYEMd8shCfy2D6nTMu.jpg","release_date":"2004-06-25","title":"Hope
-        Springs Eternal: A Look Back at The Shawshank Redemption","video":false,"vote_average":7,"vote_count":1}],"total_pages":1,"total_results":2}'
-  recorded_at: Wed, 07 Sep 2022 18:20:40 GMT
+        about the movie.","popularity":1.4,"poster_path":"/vdVab7yNvgYEMd8shCfy2D6nTMu.jpg","release_date":"2004-06-25","title":"Hope
+        Springs Eternal: A Look Back at The Shawshank Redemption","video":false,"vote_average":6.5,"vote_count":2}],"total_pages":1,"total_results":2}'
+  recorded_at: Sat, 03 Dec 2022 01:07:10 GMT
 recorded_with: VCR 6.1.0

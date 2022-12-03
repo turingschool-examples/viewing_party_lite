@@ -1,7 +1,7 @@
 require 'rails_helper'
 #new user register
 RSpec.describe "user registration page" do 
-  xit "has a form to register" do 
+  it "has a form to register" do 
 
     visit "/users/new"
 
@@ -12,7 +12,7 @@ RSpec.describe "user registration page" do
     expect(page).to have_button("Register")
   end
 
-  xit "should take the user to their dashboard page after they register" do 
+  it "should take the user to their dashboard page after they register" do 
 
     visit "/users/new"
 
@@ -28,7 +28,7 @@ RSpec.describe "user registration page" do
   end
   
   #auth_challenge starts here:
-  xit "should require name, email, and password to register AND user email must be unique" do 
+  it "should require name, email, and password to register AND user email must be unique" do 
     visit "/users/new"
 
     fill_in :name, with: "Sam Smith"

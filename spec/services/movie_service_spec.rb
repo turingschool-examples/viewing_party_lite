@@ -22,7 +22,7 @@ RSpec.describe MovieService do
   it "gets data for cast", :vcr do 
     movie_cast = MovieService.get_cast(550)
     expect(movie_cast[:cast]).to be_a(Array)
-    expect(movie_cast[:cast].count).to eq(79)
+    expect(movie_cast[:cast].count).to eq(75)
     expect(movie_cast[:cast][0][:name]).to be_a(String)
   end
   it "gets data for reviews", :vcr do 
