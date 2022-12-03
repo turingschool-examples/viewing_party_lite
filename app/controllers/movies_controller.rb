@@ -17,24 +17,4 @@ class MoviesController < ApplicationController
     @reviews = MovieFacade.movie_reviews(id)
     @cast = MovieFacade.movie_cast(id)
   end
-
-  # def search
-  #   conn = Faraday.new(url: 'https://api.themoviedb.org/3') do |faraday|
-  #     faraday.headers['api_key'] = ENV['movies_api_key']
-  #   end
-  # end
-
-  # def top_rated
-  #   @user = User.find[:id]
-  #   conn = Faraday.new(url: 'https://api.themoviedb.org/3') do |faraday|
-  #     faraday.headers['api_key'] = ENV['movies_api_key']
-  #   end
-  #   response = conn.get('/movie/top_rated')
-
-  #   data = JSON.parse(response.body, symbolize_names: true)
-
-  #   top_rated_movies = data[:results]
-
-  #   render user_movie_path(@user.id)
-  # end
 end

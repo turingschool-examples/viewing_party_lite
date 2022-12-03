@@ -9,9 +9,6 @@ class Movie
               :reviews,
               :cast_members
 
-  # :review_author,
-  # :review_description
-
   def initialize(data)
     @id = data[:id]
     @title = data[:original_title]
@@ -23,7 +20,4 @@ class Movie
     @total_review_count = data[:total_results]
     @reviews = data[:results]
   end
-  # def genres
-  #   data[]
-  # end
 end
