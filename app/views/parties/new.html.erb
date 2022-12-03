@@ -1,0 +1,34 @@
+<h2> Create a Movie Party for <%= @movie.movie_title %> </h2>
+
+<%= render 'partials/discover_button'%>
+
+<div style='border: 2px solid; padding: 10px'>
+  <h3 style='margin:0px'>Viewing Party Details</h3>
+  <hr>
+  <br>
+  <%= form_with url: "/users/#{params[:user_id]}/movies/#{@movie.id}/viewing_party/create", method: :post, local: true, class: 'new-party' do |f| %>
+    <%= f.label :duration, "Duration of Party" %>
+    <%= f.number_field :duration, value: @movie.runtime %>
+    <br>
+    <%= f.label :date, "Day" %>
+    <%= f.date_field :date %>
+    <br>
+    <%= f.label :start_time, "Start Time" %>
+    <%= f.time_field :start_time %>
+    <br>
+    <h4 style='margin-bottom:5px'> Invite Other Users </h4>
+    <%@users.each do |user|%>
+      <span style='margin-inline: 20px'>
+        <% if user.id == params[:user_id].to_i%>
+        <%= f.check_box :added_users, {disabled: true, multiple: true, checked: true}, nil, nil %>
+        <%else%>
+        <%= f.check_box :added_users, {disabled: false, multiple: true}, user.id, nil %>
+        <%end%>
+        <%= f.label :added_users, user.email %>
+      </span>
+    <%end%>
+    <br>
+    <br>
+    <%= f.submit "Create Party" %>
+    <%end%>
+  </div>

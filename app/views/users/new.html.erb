@@ -1,0 +1,18 @@
+<%=content_for :subtitle do%>
+  <h3> New User Registration </h3>
+<%end%>
+
+<section id= "registration_form">
+
+<%= form_with url: "/users", method: :post, local: true do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label 'E-mail'%>
+  <%= f.email_field :email %>
+  <br>
+  <br>
+  <%= f.submit "Register" %>
+<% end %>
+
+</section>

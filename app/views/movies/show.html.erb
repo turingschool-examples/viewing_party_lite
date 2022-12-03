@@ -1,0 +1,41 @@
+<%= content_for :subtitle do%>
+  <%= @movie.movie_title %>
+<%end%>
+
+<section id= "buttons" style='margin-bottom:50px' >
+  <%= render 'partials/discover_button'%>
+  <br>
+  <div id= "new_party_button">
+    <%= button_to "Create Viewing Party for #{@movie.movie_title}", new_viewing_party_path(@user, @movie.id), method: :get %>
+  </div>
+</section>
+
+<p>
+Vote Average: <%= @movie.vote_average %><br>
+Runtime: <%= (@movie.runtime / 60).to_i %> hours <%= (@movie.runtime % 60).to_s %> minutes<br>
+Genre(s): <% @movie.genres.each do |genre| %>
+              <%= genre %>,
+          <% end %>
+</p>
+
+
+<h4>Featured Cast:</h4>
+  <p>
+  <% @movie.cast.each do |array| %> 
+    <%= array[0] %> playing <%= array[1] %><br>
+  <% end %>
+  </p>
+
+<h4>Movie Summary:</h4>
+<p><%= @movie.summary_description %></p>
+
+<h4>Total Reviews: <%= @movie.total_reviews %></h4>
+<h4>Movie Reviews:</h4> 
+<p>
+  <% @movie.reviews.each do |key, value| %></h4>
+    <p>
+    <b>Author:</b> <%= key %><br>
+    <b>Review:</b> <%= value %><br>
+    </p>
+  <% end %>
+</p>

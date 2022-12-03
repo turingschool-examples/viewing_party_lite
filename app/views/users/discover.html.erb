@@ -1,0 +1,19 @@
+<%=content_for :subtitle do%>
+  <h3>Discover Movies</h3>
+<%end%>
+
+<div id='discover-form'>
+  <%= button_to 'Top Rated Movies', user_movies_path(@user), method: :get, params: {q: 'top rated'}%>
+
+  OR
+
+  <section id='movie-search'>
+
+    <%= form_with url: "/users/#{@user.id}/movies", method: :get, local: true do |form| %>
+    <%= form.label "Movie search" %>
+    <%= form.text_field :q %>
+    <%= form.submit "Search" %>
+    <%end%>
+
+  </section>
+</div>
