@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/movie/19404/reviews?api_key=DONT SHOW MY API
+      KEY
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.5.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Sat, 03 Dec 2022 01:47:32 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - e85227bed124a83c221fc6586f80decf3a151d6c
+      X-Memc-Age:
+      - '9874'
+      X-Memc-Expires:
+      - '8064'
+      Etag:
+      - W/"b402850c0a55d398dfda3c415467888d"
+      Vary:
+      - Accept-Encoding,Accept-Encoding,Accept-Encoding
+      - Origin
+      X-Cache:
+      - Hit from cloudfront
+      Via:
+      - 1.1 36558cb00b679b60f8b6b32e03075a28.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - SFO5-P1
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - 5URMO9oiIe8SzQexrBMy2Jb6OoEVUFqad9N4yF3hb94eHITzfVwk-Q==
+      Age:
+      - '5326'
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":19404,"page":1,"results":[{"author":"MohamedElsharkawy","author_details":{"name":"","username":"MohamedElsharkawy","avatar_path":null,"rating":null},"content":"The
+        Dilwale Dulhania Le Jayenge is a film considered by most to be one of the
+        greatest ever made. From The American Film Institute to as voted by users
+        on the Internet Movie Database (IMDB) it is consider to be one of the best.","created_at":"2017-10-21T12:27:46.145Z","id":"59eb3d42925141565100e901","updated_at":"2021-06-23T15:58:01.939Z","url":"https://www.themoviedb.org/review/59eb3d42925141565100e901"}],"total_pages":1,"total_results":1}'
+  recorded_at: Sat, 03 Dec 2022 03:16:18 GMT
+recorded_with: VCR 6.1.0
