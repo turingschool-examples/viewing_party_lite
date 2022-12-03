@@ -8,13 +8,9 @@ Rails.application.routes.draw do
   post '/register', to: 'users#new'
 
   resources :users do
-    # shallow_path: '/register', shallow: true do
-    # get'/register', to: 'users#new', shallow: true
-    # post '/register', to: 'users#new', shallow: true
     get '/discover', to: 'users#discover'
     resources :movies, only: %i[index show] do
       resources :viewing_parties
     end
   end
-  # get '/register', to: 'users#index'
 end

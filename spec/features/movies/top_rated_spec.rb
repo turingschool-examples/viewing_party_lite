@@ -9,9 +9,6 @@ RSpec.describe 'Top Rated Movies' do
 
   describe 'happy path' do
     it 'gives the user up to 20 top rated movies' do
-      # "id": 238,
-      # "original_language": "en",
-      # "original_title": "The Godfather",
       visit user_discover_path(@user1.id)
       click_button 'Find Top Rated Movies'
 

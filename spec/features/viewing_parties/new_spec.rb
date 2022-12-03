@@ -22,7 +22,6 @@ RSpec.describe 'New Viewing Party Page', type: :feature do
     visit new_user_movie_viewing_party_path(@user1.id, 238)
 
     expect(page).to have_content('The Godfather')
-    # expect(@movie.title).to appear_before(form) #unsure if this is how this should be set up, to check if title appears before form
   end
 
   it "should have a form with the following fields: party_duration, date, start_time, check boxes
@@ -31,43 +30,53 @@ RSpec.describe 'New Viewing Party Page', type: :feature do
 
     expect(page).to have_field(:duration)
     expect(page).to have_field(:date)
+    expect(page).to have_field(:start_time)
     expect(page).to have_button('Create Party')
-
-    expect(page).to have_content(@movie.details)
-
-    # may want to look at enum for host, change value to int and boolean as part of enum
-    within("#users_#{@user1.id}") do
-      expect(page).to have_field(:collection_check_boxes)
-      expect(page).to have_content(@user1.name)
-    end
-
-    within("#users_#{@user2.id}") do
-      expect(page).to have_field(:collection_check_boxes)
-      expect(page).to have_content(@user2.name)
-    end
-
-    within("#users_#{@user3.id}") do
-      expect(page).to have_field(:collection_check_boxes)
-      expect(page).to have_content(@user3.name)
-    end
   end
 
-  xit "the party_duration field should be pre-filled out with default value of movie run time in
+  it "the party_duration field should be pre-filled out with default value of movie run time in
     minutes" do
-    visit new_user_movie_viewing_party_path(@user1.id, @movie.id)
+    visit new_user_movie_viewing_party_path(@user1.id, 238)
 
-    expect(page).to have_field(:duration, with: @movie_minutes)
+    expect(page).to have_field(:duration, with: 175)
     # will want to make a method to change hours minutes to minutes
   end
 
-  xit "should not create a viewing party if the run time is changed to a number less than the default
-    run time of the movie" do
-      visit new_user_movie_viewing_party_path(@user1.id, @movie.id)
+  it "if a party is successfully created the user should be redirected back to their dashboard
+    where they will see a list of parties they are hosting and a list of parties they are
+    invited to " do
+    visit new_user_movie_viewing_party_path(@user1.id, 238)
 
-      fill_in :party_duration,	with: 4
-      click_button 'Create Party'
+    fill_in :duration, with: 175
+    fill_in :date, with: '2022/12/01'
+    fill_in :start_time, with: '11:00'
+    click_button 'Create Party'
 
-      expect(current_path).to eq(new_user_movie_viewing_party_path(@user1.id, @movie.id))
-      expect(page).to have_content('whatever the invalid viewing party error is') # will need to update based on what the error is
-    end
+    expect(current_path).to eq(user_path(@user1.id))
+    expect(page).to have_content('The Godfather')
+  end
+
+  it 'should not create a viewing party if the time is not entered' do
+    visit new_user_movie_viewing_party_path(@user1.id, 238)
+
+    fill_in :duration, with: 175
+    fill_in 'date', with: '2022/12/01'
+    fill_in 'start_time', with: ''
+    click_button 'Create Party'
+
+    expect(current_path).to eq(new_user_movie_viewing_party_path(@user1.id, 238))
+    expect(page).to have_content("Start time can't be blank")
+  end
+
+  it 'should not create a viewing party if the dates not filled out' do
+    visit new_user_movie_viewing_party_path(@user1.id, 238)
+
+    fill_in :duration, with: 175
+    fill_in 'date', with: ''
+    fill_in 'start_time', with: '19:00'
+    click_button 'Create Party'
+
+    expect(current_path).to eq(new_user_movie_viewing_party_path(@user1.id, 238))
+    expect(page).to have_content("Date can't be blank")
+  end
 end
