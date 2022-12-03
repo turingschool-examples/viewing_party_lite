@@ -3,7 +3,7 @@
 # RSpec.describe 'Dashboard' do 
 #   it "lets a user know they must be logged in to access the dashboard page" do 
 
-#     user = !current_user 
+#     user = User.create(name: "Bob", email: "bob@bob.com", password: "test123", )
 
 #     visit "/dashboard"
 
