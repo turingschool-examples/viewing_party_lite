@@ -8,7 +8,6 @@
   <h5><%= genre[:name] %></h5>
   <% end %>
 
-
 <h3>Summary: <%= @movie.overview %></h3>
 
   Cast Members: <% @cast.take(10).each do |member|%>
@@ -16,7 +15,5 @@
   <% end %>
 
 <br>
-<h3>Total Reviews: @reviews.count</h3>
-<br>
-Review Authors and Information:
+
 

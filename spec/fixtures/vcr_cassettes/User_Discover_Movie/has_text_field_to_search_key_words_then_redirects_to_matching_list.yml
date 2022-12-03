@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Sat, 03 Dec 2022 01:07:09 GMT
+      - Sat, 03 Dec 2022 01:47:11 GMT
       Server:
       - openresty
       Cache-Control:
@@ -36,15 +36,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 88eccec4c36b443b42b3988f57d3bebe.cloudfront.net (CloudFront)
+      - 1.1 bc4ea6bb0c34991c678d2ee30fe9418e.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - SFO5-P1
+      - SFO53-C1
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - Eavu5tRF0qc_PKrNnYVg2v6LxT9H3Rymv98jEWtxYO-9_yfI4w5Umg==
+      - oPgKjmh_2tKs_5_0vBP5q0gQVxW6u2oSTvhFBBv6Saz6Wj4jT0odbw==
       Age:
-      - '1'
+      - '2'
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/kXfqcdQKsToO0OUXHcrrNCHDBzO.jpg","genre_ids":[18,80],"id":278,"original_language":"en","original_title":"The
@@ -56,7 +56,7 @@ http_interactions:
         and unquenchable sense of hope.","popularity":84.681,"poster_path":"/hBcY0fE9pfXzvVaY4GKarweriG2.jpg","release_date":"1994-09-23","title":"The
         Shawshank Redemption","video":false,"vote_average":8.7,"vote_count":22748},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":897459,"original_language":"en","original_title":"Hope
         Springs Eternal: A Look Back at The Shawshank Redemption","overview":"Documentary
-        about the movie.","popularity":1.4,"poster_path":"/vdVab7yNvgYEMd8shCfy2D6nTMu.jpg","release_date":"2004-06-25","title":"Hope
+        about the movie.","popularity":0.84,"poster_path":"/vdVab7yNvgYEMd8shCfy2D6nTMu.jpg","release_date":"2004-06-25","title":"Hope
         Springs Eternal: A Look Back at The Shawshank Redemption","video":false,"vote_average":6.5,"vote_count":2}],"total_pages":1,"total_results":2}'
-  recorded_at: Sat, 03 Dec 2022 01:07:10 GMT
+  recorded_at: Sat, 03 Dec 2022 01:47:13 GMT
 recorded_with: VCR 6.1.0

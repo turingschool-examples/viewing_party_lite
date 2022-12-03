@@ -14,4 +14,10 @@ RSpec.describe MovieFacade do
     expect(movies.count).to eq(2)
     expect(movies[1].title).to eq("Impossible Things")
   end
+
+  it "gets data for movie reviews", :vcr do 
+    reviews = MovieFacade.create_reviews("19404")
+    expect(reviews.count).to eq(1)
+    
+  end
 end

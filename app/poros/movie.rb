@@ -4,7 +4,8 @@ class Movie
               :id, 
               :genres, 
               :runtime,
-              :overview
+              :overview, 
+              :reviews
               
   def initialize(data)
     @id = data[:id]
@@ -13,5 +14,6 @@ class Movie
     @genres = data[:genres]
     @runtime = data[:runtime]
     @overview = data[:overview]
+    @reviews = data[:reviews]
   end
 end

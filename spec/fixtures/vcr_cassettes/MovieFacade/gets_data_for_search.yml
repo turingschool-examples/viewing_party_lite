@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Sat, 03 Dec 2022 01:07:08 GMT
+      - Sat, 03 Dec 2022 01:47:11 GMT
       Server:
       - openresty
       Cache-Control:
@@ -36,13 +36,13 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 81f818adbacff6b703252be1c8922598.cloudfront.net (CloudFront)
+      - 1.1 83a6f42adff040301dd9cde8ff611a9c.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - SFO5-P1
+      - SFO53-C1
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - powMIaa4cOYPxO0A_IM7LnayZUq3sHd1gjdXCasYKOmCGPFubChNcQ==
+      - Kt40eTiT2wPsek1BfCpc_veOdSOKGN1QJnazhOd203HeUGisBkknJg==
     body:
       encoding: ASCII-8BIT
       string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/zIbaXJwt13J6a3GmujN0nl6Cjcr.jpg","genre_ids":[10749,18],"id":435665,"original_language":"en","original_title":"Ava''s
@@ -52,7 +52,7 @@ http_interactions:
         Impossible Things","video":false,"vote_average":5.3,"vote_count":13},{"adult":false,"backdrop_path":"/bxSBOAD8AuMHYMdW3jso9npAkgt.jpg","genre_ids":[10751,18],"id":667257,"original_language":"es","original_title":"Cosas
         imposibles","overview":"Matilde is a woman who, after the death of her husband
         - a man who constantly abused her - finds her new best friend in Miguel, her
-        young, insecure, disoriented and even dealer neighbor","popularity":37.16,"poster_path":"/t2Ew8NZ8Ci2kqmoecZUNQUFDJnQ.jpg","release_date":"2021-06-17","title":"Impossible
+        young, insecure, disoriented and even dealer neighbor","popularity":32.859,"poster_path":"/t2Ew8NZ8Ci2kqmoecZUNQUFDJnQ.jpg","release_date":"2021-06-17","title":"Impossible
         Things","video":false,"vote_average":8.6,"vote_count":299}],"total_pages":1,"total_results":2}'
-  recorded_at: Sat, 03 Dec 2022 01:07:08 GMT
+  recorded_at: Sat, 03 Dec 2022 01:47:11 GMT
 recorded_with: VCR 6.1.0
