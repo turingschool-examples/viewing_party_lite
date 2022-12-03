@@ -7,7 +7,6 @@ RSpec.describe 'User Registration Page' do
 
   describe 'the user registration form' do
     it 'show the correct form with fields for name, email, and a submit button' do
-      # save_and_open_page
       expect(page).to have_content('New User Registration')
       expect(find('form')).to have_content('Name')
       expect(find('form')).to have_content('E-mail')
@@ -25,7 +24,6 @@ RSpec.describe 'User Registration Page' do
         user = User.last
         expect(user.name).to eq('Kenz')
         expect(user.email).to eq('kenz_mail@gmail.com')
-        # add expect for user page redirection
       end
     end
 
