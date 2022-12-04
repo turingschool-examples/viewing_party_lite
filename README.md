@@ -30,8 +30,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/AMSterling/viewing-party-lite-2">
-    <img src="images/logo.png" alt="Viewing Party Lite Logo" width="80" height="80">
+  <a href="https://github.com/AMSterling/viewing_party_lite">
   </a>
 
 <h3 align="center">Viewing Party Lite</h3>
