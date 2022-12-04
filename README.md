@@ -33,7 +33,7 @@
   <a href="https://github.com/AMSterling/viewing_party_lite">
   </a>
 
-<h3 align="center">Viewing Party Lite</h3>
+<h1 align="center">Viewing Party Lite</h1>
 
   <p align="center">
     Viewing Party Lite is an application in which users can explore movie options and create 
