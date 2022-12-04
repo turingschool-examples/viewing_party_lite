@@ -82,7 +82,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Viewing Party Lite Screen Shot][product-screenshot]](https://example.com)
+# <img src="app/assets/images/ViewingPartyHome.png"> 
 
 Example wireframes are found [here](https://backend.turing.io/module3/projects/viewing_party_lite/wireframes)
 
