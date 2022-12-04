@@ -102,7 +102,7 @@ Example wireframes are found [here](https://backend.turing.io/module3/projects/v
 * [![JavaScript][JavaScript]][JavaScript-url]
 * [![PostgreSQL][PostgreSQL]][PostgreSQL-url]
 * [![Heroku][Heroku]][Heroku-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+* [![jQuery][jQuery]][jQuery-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
