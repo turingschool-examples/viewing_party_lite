@@ -137,8 +137,9 @@ This is an example of how to list things you need to use the software and how to
 3. Install gem packages
    ```sh
    rails db:{drop,create,migrate}
-   bundle
+   bundle install
    bundle exec figaro install
+   bundle update
    ```
 4. Enter your API in `config/application.yml`
    ```js
@@ -233,7 +234,7 @@ Don't forget to give the project a star! Thanks again!
 [linkedin-url]: https://linkedin.com/in/sterling-316a6223a/
 [linkedin-shield2]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url2]: https://linkedin.com/in/blake-saylor
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: 
 
 [Atom]: https://img.shields.io/badge/Atom-66595C?style=for-the-badge&logo=Atom&logoColor=white
 [Atom-url]: https://atom.io/
