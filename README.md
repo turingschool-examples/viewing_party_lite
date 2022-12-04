@@ -247,7 +247,7 @@ Don't forget to give the project a star! Thanks again!
 [CSS]: 	https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white
 [CSS-url]: https://en.wikipedia.org/wiki/CSS
 
-[Fly]: https://custom-icon-badges.demolab.com/badge/Fly-3F51B5?style=for-the-badge&logo=fly-io&logoColor=white
+[Fly]: https://custom-icon-badges.demolab.com/badge/Fly-DCDCDC?style=for-the-badge&logo=fly-io
 [Fly-url]: https://fly.io/
 
 [GitHub Badge]: https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white
