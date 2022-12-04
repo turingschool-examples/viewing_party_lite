@@ -283,7 +283,7 @@ Don't forget to give the project a star! Thanks again!
 [RSpec]: https://custom-icon-badges.demolab.com/badge/RSpec-fffcf7?style=for-the-badge&logo=rspec
 [RSpec-url]: https://rspec.info/
 
-[RuboCop]: https://img.shields.io/badge/Rubocop-CC342D?style=for-the-badge&logo=rubocop
+[RuboCop]: https://img.shields.io/badge/RuboCop-000?logo=rubocop&logoColor=fff&style=for-the-badge
 [RuboCop-url]: https://docs.rubocop.org/rubocop-rails/index.html
 
 [Ruby]: https://img.shields.io/badge/Ruby-000000?style=for-the-badge&logo=ruby&logoColor=CC342D
