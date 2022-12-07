@@ -11,6 +11,7 @@ class ViewPartiesController < ApplicationController
 
     if @movie.minutes > params[:duration].to_i
       redirect_to new_user_movie_view_party_path(@user, @movie.id)
+      # render action - to show same page so all info persisted for user
       flash[:alert] = 'Party duration cannot be shorter than the movie duration'
     elsif new_party.save
       UserViewParty.create(user_id: @user.id, view_party_id: new_party.id, host: true)
@@ -26,7 +27,7 @@ class ViewPartiesController < ApplicationController
 
   def find_user_movie
     @user = User.find(params[:user_id])
-    @movie = MovieFacade.new(params[:movie_id]).movie_by_id
+    @movie = MovieFacade.movie_by_id(params[:movie_id])
   end
 
   def view_party_params

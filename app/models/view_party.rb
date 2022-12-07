@@ -12,7 +12,7 @@ class ViewParty < ApplicationRecord
   end
 
   def file_path
-    MovieFacade.new(movie_id).movie_by_id.poster_path
+    MovieFacade.movie_by_id(movie_id).poster_path
   end
 
   def host?(user)
