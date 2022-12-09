@@ -42,7 +42,7 @@ RSpec.describe 'The Movie Show Page', type: :feature do
     describe "I see the Movie's..." do
       it 'Title, Vote Average, Runtime, and Genres' do
         expect(page).to have_content('Fight Club')
-        expect(page).to have_content('Vote: 8.43')
+        expect(page).to have_content('Vote: 8.4')
         expect(page).to have_content('Runtime: 2hr 19min')
         expect(page).to have_content('Genre: Drama, Thriller, Comedy')
       end
