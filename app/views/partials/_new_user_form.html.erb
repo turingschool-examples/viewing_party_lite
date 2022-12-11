@@ -1,0 +1,21 @@
+<%= form_with(url: users_path, method: :post, local: true) do |f| %>
+  <table>
+    <tr>
+      <td><%= f.label :name, 'Name' %></td>
+      <td><%= f.text_field :name %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :email, 'Email' %></td>
+      <td><%= f.text_field :email %></td>
+    </tr>
+    <tr>
+      <td><%= f.label :password, 'Password' %></td>
+      <td><%= f.text_field :password %></td>
+    </tr>
+    <tr>
+      <td>
+        <%= f.submit 'Register' %>
+      </td>
+    </tr>
+  </table>
+<% end %>

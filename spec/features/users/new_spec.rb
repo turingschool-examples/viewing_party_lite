@@ -2,14 +2,25 @@ require 'rails_helper'
 
 RSpec.describe 'New User Registration' do
   before(:each) do
-    visit '/register'
     @email = Faker::Internet.email
+
+    visit '/register'
   end
+
   describe 'registration form' do
-    it 'has fields for a name and email and a button to register' do
-      expect(page).to have_field('Name')
-      expect(page).to have_field('Email')
-      expect(page).to have_button('Register')
+    it 'can register a new user' do
+      username = "Foo Person"
+      email = "foo@email.com"
+      password = "test"
+
+      fill_in "Name",	with: username
+      fill_in "email",	with: email
+      fill_in "password", with: password
+      click_on 'Register'
+      new_user = User.last
+      expect(current_path).to eq(user_path(new_user))
+
+      expect(page).to have_content("Welcome #{username}!")
     end
 
     describe 'happy path' do
