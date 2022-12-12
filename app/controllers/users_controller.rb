@@ -5,6 +5,8 @@ class UsersController < ApplicationController
 
   def discover; end
 
+  def login; end
+
   def new; end
 
   def show
