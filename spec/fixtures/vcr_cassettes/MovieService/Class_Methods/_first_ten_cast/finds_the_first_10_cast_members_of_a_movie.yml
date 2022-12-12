@@ -46,13 +46,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 88bce767af5e31f726ade38ea5253bd4.cloudfront.net (CloudFront)
+      - 1.1 ac79b9352835edad28c9b0bc7dd7f8b0.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - Kllxe9pMKRD7TFEwZ0h5dxWLiFb2RiFRb5uHHlYlrJP_o92f23I1og==
+      - lwiEjnqtWKYtICKHkD2PxVmRks0mSkjTSDC4AiMtbyT824oRWnxdfQ==
+      Age:
+      - '3262'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/yrdAamkeqXHm0UYukk8xgoCvc7G.jpg","belongs_to_collection":{"id":10,"name":"Star
@@ -67,7 +69,7 @@ http_interactions:
         Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1977-05-25","revenue":775398007,"runtime":121,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"A
         long time ago in a galaxy far, far away...","title":"Star Wars","video":false,"vote_average":8.207,"vote_count":17967}'
-  recorded_at: Mon, 12 Dec 2022 19:49:12 GMT
+  recorded_at: Mon, 12 Dec 2022 20:43:34 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/11/credits?api_key=<movie_api_key>
@@ -112,15 +114,17 @@ http_interactions:
       - Accept-Encoding,Accept-Encoding,Accept-Encoding
       - Origin
       X-Cache:
-      - Miss from cloudfront
+      - Hit from cloudfront
       Via:
-      - 1.1 77cfd797d789c3b8bc1b8f2f8a42a9c6.cloudfront.net (CloudFront)
+      - 1.1 44e92eddc431cc09e1e2c5b24edc90f8.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - F7M_HEBAAZtifsmDSz8wb_MT20_1-U6Z36ltJ2P97_cNFd2N7lBVmg==
+      - Sud6EJfrYmJVML4WKHf967tME3rZXqnU3PMxfhNDWBmHkhKY3V3M_A==
+      Age:
+      - '3261'
     body:
       encoding: ASCII-8BIT
       string: '{"id":11,"cast":[{"adult":false,"gender":2,"id":2,"known_for_department":"Acting","name":"Mark
@@ -439,5 +443,5 @@ http_interactions:
         In"},{"adult":false,"gender":0,"id":3583983,"known_for_department":"Crew","name":"Len
         Mathewman","original_name":"Len Mathewman","popularity":0.6,"profile_path":null,"credit_id":"62a423307e12f02ff658460c","department":"Crew","job":"Stand
         In"}]}'
-  recorded_at: Mon, 12 Dec 2022 19:49:13 GMT
+  recorded_at: Mon, 12 Dec 2022 20:43:34 GMT
 recorded_with: VCR 6.1.0

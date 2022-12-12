@@ -12,19 +12,19 @@ RSpec.describe 'Landing Page' do
 
   describe 'As a user' do
     describe "When I visit '/'" do
-      it 'Then I expect to see Title of Application' do
+      it 'Then I expect to see Title of Application', :vcr do
         visit '/'
 
         expect(page).to have_content('Viewing Party Lite')
       end
 
-      it 'I see a button to Create a New User' do
+      it 'I see a button to Create a New User', :vcr do
         visit '/'
 
         expect(page).to have_button('Create New User')
       end
 
-      it 'I see a List of Existing User email links' do
+      it 'I see a List of Existing User email links', :vcr do
         visit '/'
         #  save_and_open_page
 
@@ -36,7 +36,7 @@ RSpec.describe 'Landing Page' do
     end
 
     describe 'When I click an email link' do
-      it 'I am directed to that users show page' do
+      it 'I am directed to that users show page', :vcr do
         visit '/'
 
         click_link(@user1.email)
@@ -47,7 +47,7 @@ RSpec.describe 'Landing Page' do
 
     describe 'I see a home link' do
       describe 'When I click this link' do
-        it 'I am taken to the landing page' do
+        it 'I am taken to the landing page', :vcr do
           visit '/'
 
           expect(page).to have_link('Home')
@@ -55,6 +55,20 @@ RSpec.describe 'Landing Page' do
           click_link('Home')
 
           expect(current_path).to eq('/')
+        end
+      end
+    end
+
+    describe "I see a link to login" do
+      describe "When I click on the link" do
+        it "I'm taken to a Log In page ('/login') where I can input my unique email and password.", :vcr do
+          visit '/'
+
+          expect(page).to have_link("Log In")
+
+          click_link("Log In")
+
+          expect(current_path).to eq('/login')
         end
       end
     end

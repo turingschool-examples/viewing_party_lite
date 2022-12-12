@@ -46,15 +46,15 @@ http_interactions:
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 77cfd797d789c3b8bc1b8f2f8a42a9c6.cloudfront.net (CloudFront)
+      - 1.1 5257b3c7acd3727a389946b312557ff2.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - E1C9Cnga4y1VaOYolmk2sjwYaEQH_k_Ny_ctQK_cIS12w4buQJpwQw==
+      - LTOTAy099g2wAf0UaYvbhTPA72-xJKZGw87QZ3DS5jXsc0ammlJ0ZQ==
       Age:
-      - '186'
+      - '3259'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/yrdAamkeqXHm0UYukk8xgoCvc7G.jpg","belongs_to_collection":{"id":10,"name":"Star
@@ -69,7 +69,7 @@ http_interactions:
         Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1977-05-25","revenue":775398007,"runtime":121,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"A
         long time ago in a galaxy far, far away...","title":"Star Wars","video":false,"vote_average":8.207,"vote_count":17967}'
-  recorded_at: Mon, 12 Dec 2022 19:52:18 GMT
+  recorded_at: Mon, 12 Dec 2022 20:43:31 GMT
 - request:
     method: get
     uri: https://api.themoviedb.org/3/movie/11?api_key=<movie_api_key>
@@ -122,9 +122,9 @@ http_interactions:
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - hqOHr3XS4uCMKSMQ53CLxJscYFA6ExfFAOM-VM6nxDKrZB9tUZYcKQ==
+      - 3C7oRSxLt_NCVwN6S-Ah4-Pdyyt2xu7vhniHck06xoHcV7pqfbSekw==
       Age:
-      - '186'
+      - '3259'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/yrdAamkeqXHm0UYukk8xgoCvc7G.jpg","belongs_to_collection":{"id":10,"name":"Star
@@ -139,5 +139,5 @@ http_interactions:
         Century Fox","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1977-05-25","revenue":775398007,"runtime":121,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"A
         long time ago in a galaxy far, far away...","title":"Star Wars","video":false,"vote_average":8.207,"vote_count":17967}'
-  recorded_at: Mon, 12 Dec 2022 19:52:18 GMT
+  recorded_at: Mon, 12 Dec 2022 20:43:31 GMT
 recorded_with: VCR 6.1.0
