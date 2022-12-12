@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       redirect_to "/users/#{user.id}"
     else
       redirect_to '/register'
-      flash[:alert] = 'Error: This email has already been registered'
+      flash[:alert] = user.errors.full_messages.to_sentence
     end
   end
 
@@ -24,6 +24,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:name, :email)
+    params.permit(:name, :email, :password, :password_confirmation)
   end
 end
