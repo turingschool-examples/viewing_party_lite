@@ -30,6 +30,7 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       flash[:error] = 'Incorrect password'
+      # user.errors.full_messages.to_sentence
       render :login_form
     end
   end
