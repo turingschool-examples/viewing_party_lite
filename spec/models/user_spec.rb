@@ -12,5 +12,15 @@ RSpec.describe User, type: :model do
     it { is_expected.to validate_presence_of(:name) }
     it { is_expected.to validate_presence_of(:email) }
     it { is_expected.to validate_uniqueness_of(:email) }
+    it { is_expected.to validate_presence_of(:password_digest) }
+    it { is_expected.to have_secure_password }
+  end
+
+  describe 'User creation' do
+    it 'should not have an attribute of password or a value of that actual password' do
+      user = User.create(name: 'Meg', email: 'meg@test.com', password: 'password123', password_confirmation: 'password123')
+      expect(user).to_not have_attribute(:password)
+      expect(user.password_digest).to_not eq('password123')
+    end
   end
 end

@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'the Movies Index Page', type: :feature do
-  let!(:user_1) { create(:user) }
+  let!(:user_1) { create(:user, password: 'test123', password_confirmation: 'test123') }
   let!(:movie_1) do
     Movie.new(id: 238, title: 'The Godfather', vote_average: 8.7, overview: 'spanning the years of...', runtime: 175,
               genres: 'drama')

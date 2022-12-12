@@ -3,9 +3,9 @@
 require 'rails_helper'
 
 RSpec.describe 'New View Party Page', type: :feature do
-  let!(:user_1) { create(:user) }
-  let!(:user_2) { create(:user) }
-  let!(:user_3) { create(:user) }
+  let!(:user_1) { create(:user, password: 'test123', password_confirmation: 'test123') }
+  let!(:user_2) { create(:user, password: 'test456', password_confirmation: 'test456') }
+  let!(:user_3) { create(:user, password: 'test789', password_confirmation: 'test789') }
 
   let!(:movie_1) do
     Movie.new(id: 550, title: 'Fight Club', vote_average: 5.3, overview: 'hahaha', runtime: 330, genres: 'romance')

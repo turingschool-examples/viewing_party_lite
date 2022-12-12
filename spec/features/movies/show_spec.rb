@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'The Movie Show Page', type: :feature do
-  let!(:user_1) { create(:user) }
+  let!(:user_1) { create(:user, password: 'test123', password_confirmation: 'test123') }
 
   before do
     VCR.insert_cassette 'movie_show'

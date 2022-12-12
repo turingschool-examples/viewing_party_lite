@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'The User Show Page', type: :feature do
-  let!(:user_1) { create(:user) }
+  let!(:user_1) { create(:user, password: 'test123', password_confirmation: 'test123') }
   let!(:view_party_1) { create(:view_party, movie_id: 550, movie_name: 'Fight Club') }
   let!(:view_party_2) { create(:view_party, movie_id: 390, movie_name: 'Lisbon Story') }
   let!(:user_1_party_1) { create(:user_view_party, user: user_1, view_party: view_party_1) }
