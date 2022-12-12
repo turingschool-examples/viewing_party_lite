@@ -53,5 +53,19 @@ RSpec.describe 'The Register Page', type: :feature do
       expect(page).to have_current_path(register_path, ignore_query: true)
       expect(page).to have_content('Email has already been taken')
     end
+
+    it 'returns an error message if password and password confirmation do not match' do
+      within '#register-form' do
+        fill_in :name, with: 'Naomi'
+        fill_in :email, with: 'naomi@hotmail.com'
+        fill_in :password, with: 'hotsauce123'
+        fill_in :password_confirmation, with: 'coldsauce123'
+
+        click_button 'Create New User'
+      end
+
+      expect(page).to have_current_path(register_path, ignore_query: true)
+      expect(page).to have_content("Password confirmation doesn't match Password")
+    end
   end
 end
