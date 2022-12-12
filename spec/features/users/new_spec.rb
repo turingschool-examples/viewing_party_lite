@@ -8,6 +8,7 @@ RSpec.describe 'New User Registration' do
   end
 
   describe 'form' do
+    
     it 'can register a new user' do
       username = "Foo Person"
       email = "foo@email.com"
@@ -16,7 +17,8 @@ RSpec.describe 'New User Registration' do
       fill_in "Name",	with: username
       fill_in "email",	with: email
       fill_in "password", with: password
-      click_on 'Register'
+      fill_in "password confirmation", with: password
+      first(:button, 'Register').click
 
       expect(page).to have_content("Welcome #{username}!")
     end
@@ -72,7 +74,7 @@ RSpec.describe 'New User Registration' do
         end
       end
 
-      
+
     end
   end
 end
