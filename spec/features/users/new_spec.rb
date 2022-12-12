@@ -37,8 +37,8 @@ RSpec.describe 'The User registration' do
 
         fill_in 'Name', with: "Gabe"
         fill_in 'Email', with: "gabe@example.com"
-        fill_in 'Password' with: "Test123"
-        fill_in 'Password Confirmation' with: "Test123"
+        fill_in 'Password', with: "Test123"
+        fill_in 'Password Confirmation', with: "Test123"
 
         click_on 'Create Account'
 
