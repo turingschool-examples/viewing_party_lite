@@ -54,4 +54,17 @@ RSpec.describe 'Landing Page' do
     expect(current_path).to eq(root_path)
     expect(page).to have_content("Welcome, #{user.name}!")
   end
+
+  it 'cannot login with invalid credentials' do
+    user = create(:user, password: 'password123')
+
+    visit login_path
+
+    fill_in :email, with: user.email
+    fill_in :password, with: Faker::Internet.password(min_length: 10, max_length: 20)
+    click_on 'Log In'
+
+    expect(current_path).to eq(login_path)
+    expect(page).to have_content('Incorrect password')
+  end
 end
