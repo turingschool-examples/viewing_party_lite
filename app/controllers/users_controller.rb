@@ -9,14 +9,13 @@ class UsersController < ApplicationController
 
   def login_user
     user = User.find_by(email: params[:email])
-
-    if user.authenticate(params[:password])
+    if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to root_path
+      redirect_to user_path(user)
       flash[:success] = "Welcome, #{user.name}!"
     else
-      flash[:alert] = 'Sorry, your credentials do not match.'
-      render :login_form
+      redirect_to login_path
+      flash[:error] = 'Sorry, your credentials do not match.'
     end
   end
 
