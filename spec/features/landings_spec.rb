@@ -17,8 +17,8 @@ RSpec.describe 'Landing Page' do
   end
 
   it 'has a section that displays existing users emails. Each email is a link to their dashboard page' do
-    user1 = User.create!(name: 'Kevin', email: 'Kta@turing.edu')
-    user2 = User.create!(name: 'Bryan', email: 'Bkeen@turing.edu')
+    user1 = create(:user)
+    user2 = create(:user)
 
     visit root_path
 
@@ -36,5 +36,35 @@ RSpec.describe 'Landing Page' do
     click_link('Home')
 
     expect(current_path).to eq(root_path)
+  end
+
+  it 'has a link can log in with valid credentials' do
+    user = create(:user, password: 'password123')
+
+    visit root_path
+
+    click_on 'I already have an account'
+
+    expect(current_path).to eq(login_path)
+
+    fill_in :email, with: user.email
+    fill_in :password, with: user.password
+    click_on 'Log In'
+
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content("Welcome, #{user.name}!")
+  end
+
+  it 'cannot login with invalid credentials' do
+    user = create(:user, password: 'password123')
+
+    visit login_path
+
+    fill_in :email, with: user.email
+    fill_in :password, with: Faker::Internet.password(min_length: 10, max_length: 20)
+    click_on 'Log In'
+
+    expect(current_path).to eq(login_path)
+    expect(page).to have_content('Incorrect password')
   end
 end

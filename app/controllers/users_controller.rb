@@ -7,13 +7,11 @@ class UsersController < ApplicationController
 
   def create
     new_user = User.new(user_params)
-
+    new_user[:email] = new_user[:email].downcase
     if new_user.save
-      flash[:error] = 'User successfully created'
-      redirect_to user_path(new_user)
+      redirect_to user_path(new_user), success: 'User successfully created'
     else
-      flash[:error] = 'Required content missing or invalid'
-      redirect_to register_path
+      redirect_to register_path, alert: 'Required content missing or invalid'
     end
   end
 
@@ -22,9 +20,23 @@ class UsersController < ApplicationController
     @viewing_parties = @user.viewing_parties
   end
 
+  def login_form; end
+
+  def login_user
+    user = User.find_by(email: params[:email])
+    if user.authenticate(params[:password])
+      session[:user_id] = user.id
+      flash[:success] = "Welcome, #{user.name}!"
+      redirect_to root_path
+    else
+      flash[:error] = 'Incorrect password'
+      render :login_form
+    end
+  end
+
   private
 
   def user_params
-    params.permit(:name, :email)
+    params.permit(:name, :email, :password, :password_confirmation)
   end
 end

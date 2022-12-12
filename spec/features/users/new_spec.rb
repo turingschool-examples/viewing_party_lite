@@ -28,12 +28,28 @@ RSpec.describe 'new user page' do
       within '#new_user_form' do
         fill_in(:name, with: Faker::Games::Pokemon.name)
         fill_in(:email, with: Faker::Internet.email)
+        password = Faker::Internet.password(min_length: 10, max_length: 20)
+        fill_in(:password, with: password)
+        fill_in(:password_confirmation, with: password)
         click_button('Register')
       end
 
       new_user = User.last
       expect(current_path).to eq(user_path(new_user))
       expect(page).to have_content(new_user.name)
+    end
+
+    it 'will not accept passwords that do not match' do
+      within '#new_user_form' do
+        fill_in(:name, with: Faker::Games::Pokemon.name)
+        fill_in(:email, with: Faker::Internet.email)
+        fill_in(:password, with: Faker::Internet.password(min_length: 10, max_length: 20))
+        fill_in(:password_confirmation, with: Faker::Internet.password(min_length: 10, max_length: 20))
+        click_button('Register')
+      end
+
+      expect(current_path).to eq(register_path)
+      expect(page).to have_content('Required content missing or invalid')
     end
 
     it 'will redirect back to registration page if information is not entered correctly' do
