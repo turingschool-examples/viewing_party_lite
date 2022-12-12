@@ -18,7 +18,7 @@ RSpec.describe User, type: :model do
 
   describe 'User creation' do
     it 'should not have an attribute of password or a value of that actual password' do
-      user = User.create(name: 'Meg', email: 'meg@test.com', password: 'password123', password_confirmation: 'password123')
+      user = create(:user)
       expect(user).to_not have_attribute(:password)
       expect(user.password_digest).to_not eq('password123')
     end

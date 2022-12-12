@@ -17,8 +17,8 @@ RSpec.describe ViewParty, type: :model do
 
   describe 'instance methods' do
     before do
-      @user_1 = create(:user, password: 'test123', password_confirmation: 'test123')
-      @user_2 = create(:user, password: 'test123', password_confirmation: 'test123')
+      @user_1 = create(:user)
+      @user_2 = create(:user)
       @view_party = create(:view_party, movie_id: 550)
       @user_view_party = create(:user_view_party, user: @user_1, view_party: @view_party, host: true)
       @user_view_party = create(:user_view_party, user: @user_2, view_party: @view_party, host: false)

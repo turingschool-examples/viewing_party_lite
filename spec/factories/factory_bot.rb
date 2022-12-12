@@ -4,6 +4,8 @@ FactoryBot.define do
   factory :user, class: 'User' do
     name { Faker::Name.name }
     email { Faker::Internet.email }
+    password { Faker::Alphanumeric.alpha(number: 10) }
+    password_confirmation { password }
   end
 
   factory :view_party, class: 'ViewParty' do

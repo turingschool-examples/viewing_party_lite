@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'the Discover Movies Page', type: :feature do
-  let!(:user_1) { create(:user, password: 'test123', password_confirmation: 'test123') }
+  let!(:user_1) { create(:user) }
 
   before do
     visit "/users/#{user_1.id}/discover"
