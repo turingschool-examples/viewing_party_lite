@@ -4,7 +4,7 @@ RSpec.describe 'The Movies Show Page' do
   describe 'As a User' do
     describe 'When I visit the Movies Show Page' do
       before(:each) do
-        @user1 = User.create!(name: 'Mary', email: 'mary@gmail.com')
+        @user1 = User.create!(name: 'Mary', email: 'mary@gmail.com', password: 'Test123', password_confirmation: 'Test123')
         
         visit user_movie_path(@user1, 515001)
       end
