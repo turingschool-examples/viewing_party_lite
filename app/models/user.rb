@@ -10,4 +10,6 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true, on: :create
 
   has_secure_password
+
+  before_save { self.email = email.downcase if email }
 end

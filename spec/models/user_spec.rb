@@ -22,5 +22,10 @@ RSpec.describe User, type: :model do
       expect(user).to_not have_attribute(:password)
       expect(user.password_digest).to_not eq('password123')
     end
+
+    it 'downcases emails upon creation' do
+      user = create(:user, email: 'UsEr@user.COM')
+      expect(user.email).to eq('user@user.com')
+    end
   end
 end
