@@ -32,3 +32,4 @@ class MovieService
     json[:results]
   end
 end
+

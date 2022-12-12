@@ -4,14 +4,14 @@ require 'rails_helper'
 
 RSpec.describe 'Viewing Part new page' do
   before :each do
-    @user1 = User.create!(name: 'Eli Fuchsman', email: 'eli@gmail.com')
-    @user2 = User.create!(name: 'Kristen Nestler', email: 'kristen@gmail.com')
-    @user3 = User.create!(name: 'John John', email: 'John@gmail.com')
-    @user4 = User.create!(name: 'Luke Skywalker', email: 'luke@gmail.com')
-    @user5 = User.create!(name: 'Michael Corleone', email: 'mike@gmail.com')
-    @user6 = User.create!(name: 'Tony Montana', email: 'tony@gmail.com')
-    @user7 = User.create!(name: 'Bruce Wayne', email: 'bruce@gmail.com')
-    @user8 = User.create!(name: 'Harvey Dent', email: 'harvey@gmail.com')
+    @user1 = User.create!(name: 'Eli Fuchsman', email: 'eli@gmail.com', password: "test2")
+    @user2 = User.create!(name: 'Kristen Nestler', email: 'kristen@gmail.com', password: "test2")
+    @user3 = User.create!(name: 'John John', email: 'John@gmail.com', password: "test2")
+    @user4 = User.create!(name: 'Luke Skywalker', email: 'luke@gmail.com', password: "test2")
+    @user5 = User.create!(name: 'Michael Corleone', email: 'mike@gmail.com', password: "test2")
+    @user6 = User.create!(name: 'Tony Montana', email: 'tony@gmail.com', password: "test2")
+    @user7 = User.create!(name: 'Bruce Wayne', email: 'bruce@gmail.com', password: "test2")
+    @user8 = User.create!(name: 'Harvey Dent', email: 'harvey@gmail.com', password: "test2")
 
     @movie_id = 11
     @movie = MovieService.movie_by_id(@movie_id)
