@@ -3,10 +3,10 @@ require 'faker'
 
 RSpec.describe 'Users' do
   before(:each) do
-    @user_1 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.email)
-    @user_2 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.email)
-    @user_3 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.email)
-    @user_4 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.email)
+    @user_1 = create(:user)
+    @user_2 = create(:user)
+    @user_3 = create(:user)
+    @user_4 = create(:user)
   end
 
   describe 'index' do
