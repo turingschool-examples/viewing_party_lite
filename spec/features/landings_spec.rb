@@ -17,8 +17,8 @@ RSpec.describe 'Landing Page' do
   end
 
   it 'has a section that displays existing users emails. Each email is a link to their dashboard page' do
-    user1 = User.create!(name: 'Kevin', email: 'Kta@turing.edu')
-    user2 = User.create!(name: 'Bryan', email: 'Bkeen@turing.edu')
+    user1 = create(:user)
+    user2 = create(:user)
 
     visit root_path
 

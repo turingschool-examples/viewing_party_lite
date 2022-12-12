@@ -7,7 +7,6 @@ class UsersController < ApplicationController
 
   def create
     new_user = User.new(user_params)
-
     if new_user.save
       flash[:error] = 'User successfully created'
       redirect_to user_path(new_user)
@@ -25,6 +24,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:name, :email)
+    params.permit(:name, :email, :password, :password_confirmation)
   end
 end

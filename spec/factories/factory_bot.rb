@@ -4,6 +4,8 @@ FactoryBot.define do
   factory :user, class: User do
     name { Faker::Games::Pokemon.name }
     email { Faker::Internet.email }
+    password { Faker::Internet.password(min_length: 10, max_length: 20) }
+    password_confirmation { password }
   end
 
   factory :viewing_party, class: ViewingParty do

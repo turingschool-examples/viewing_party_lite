@@ -28,6 +28,9 @@ RSpec.describe 'new user page' do
       within '#new_user_form' do
         fill_in(:name, with: Faker::Games::Pokemon.name)
         fill_in(:email, with: Faker::Internet.email)
+        password = Faker::Internet.password(min_length: 10, max_length: 20)
+        fill_in(:password, with: password)
+        fill_in(:password_confirmation, with: password)
         click_button('Register')
       end
 
