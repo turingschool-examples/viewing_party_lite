@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'movie details page' do
   before :each do
-    @user1 = User.create!(name: "William", email: "William@gmail.com")
-    @user2 = User.create!(name: "Ashley", email: "Ashley@gmail.com")
-    @user3 = User.create!(name: "Abdul", email: "Abdul@gmail.com")
+    @user1 = User.create!(name: "William", email: "William@gmail.com", password: 'pw123')
+    @user2 = User.create!(name: "Ashley", email: "Ashley@gmail.com", password: 'pw123')
+    @user3 = User.create!(name: "Abdul", email: "Abdul@gmail.com", password: 'pw123')
 
     details_response = File.read('spec/fixtures/shawshank_details.json')
     stub_request(:get, "https://api.themoviedb.org/3/movie/278?api_key=#{ENV["movie_api_key"]}").
