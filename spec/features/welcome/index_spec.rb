@@ -40,15 +40,9 @@ RSpec.describe 'The Welcome Page', type: :feature do
       expect(page).to have_current_path(root_path, ignore_query: true)
     end
 
-    it 'I see a link to log in and when clicked I am taken to a Log in page where I can input email and password' do
+    it 'I see a link to log in and when clicked I am taken to a Log in page' do
       click_link 'Log In'
       expect(page).to have_current_path('/login')
-
-      user = create(:user, email: 'user@test.com', password: 'test123', password_confirmation: 'test123')
-      within '#login' do
-        fill_in :email, with: 'user@test.com'
-        fill_in :password, with: 'test123'
-      end
     end
   end
 end

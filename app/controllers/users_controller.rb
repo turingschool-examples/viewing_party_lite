@@ -5,7 +5,19 @@ class UsersController < ApplicationController
 
   def discover; end
 
-  def login; end
+  def login_form; end
+
+  def login_user
+    user = User.find_by(email: params[:email])
+
+    if user.authenticate(params[:password])
+      flash[:success] = "Welcome, #{user.email}!"
+      redirect_to user_path(user)
+    else
+      flash[:error] = 'Sorry, your credentials do not match.'
+      render :login_form
+    end
+  end
 
   def new; end
 
