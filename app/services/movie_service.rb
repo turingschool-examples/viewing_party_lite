@@ -20,7 +20,7 @@ class MovieService
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  def self.first_ten_cast(movie_id)
+  defs elf.first_ten_cast(movie_id)
     response = conn.get("movie/#{movie_id}/credits?api_key=#{ENV['movie_api_key']}")
     json = JSON.parse(response.body, symbolize_names: true)
     json[:cast][0..9]
