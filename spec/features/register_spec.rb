@@ -59,4 +59,26 @@ RSpec.describe 'register page' do
     expect(page).to have_content("Email can't be blank")
     expect(page).to have_content("Name can't be blank")
   end
+
+  it "creates new user" do
+    visit root_path
+
+    click_on "Register as a User"
+
+    expect(current_path).to eq(new_user_path)
+
+    username = "barbiedreamhouse13"
+    password = "test"
+
+    # have to change the field names when use a model form
+    fill_in :user_name, with: "Barbie"
+    fill_in :user_email, with: "barbiegal@gmail.com"
+    fill_in :user_username, with: username
+    fill_in :user_password, with: password
+    fill_in :user_password_confirmation, with: password
+
+    click_on "Create User"
+
+    expect(page).to have_content("Welcome, #{username}!")
+  end
 end

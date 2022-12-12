@@ -6,4 +6,6 @@
 <% @users.each do |u| %>
   <p><%= link_to "#{u.name}", user_path(u) %></p>
 <% end %>
+
+<%= link_to "Register as a User", new_user_path %>
 </center>

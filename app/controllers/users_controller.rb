@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def new
-
+    @user = User.new
   end
 
   def show
@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
+    if @user.save 
       redirect_to user_path(@user.id)
     else
       flash[:alert] = @user.errors.full_messages
@@ -20,6 +20,6 @@ class UsersController < ApplicationController
 private
 
   def user_params
-    params.permit(:name, :email)
+    params.require(:user).permit(:name, :email, :username, :password, :password_confirmation)
   end
 end

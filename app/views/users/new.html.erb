@@ -1,7 +1,21 @@
-<%= form_with url: register_index_path, method: :post, local: true do |f| %>
+<!-- <%= form_with url: register_index_path, method: :post, local: true do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :email %>
   <%= f.text_field :email %>
   <%= f.submit "Register" %>
+<% end %> -->
+
+<%= form_with model: @user do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <%= form.label :email %>
+  <%= form.text_field :email %>
+  <%= form.label :username, 'Username:' %>
+  <%= form.text_field :username %>
+  <%= form.label :password, 'Password:' %>
+  <%= form.password_field :password %>
+  <%= form.label :password_confirmation, 'Confirm Password' %>
+  <%= form.password_field :password_confirmation %>
+  <%= form.submit 'Create User' %>
 <% end %>
