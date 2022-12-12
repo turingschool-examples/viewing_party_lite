@@ -11,10 +11,11 @@ class UsersController < ApplicationController
     user = User.find_by(email: params[:email])
 
     if user.authenticate(params[:password])
-      flash[:success] = "Welcome, #{user.email}!"
-      redirect_to user_path(user)
+      session[:user_id] = user.id
+      redirect_to root_path
+      flash[:success] = "Welcome, #{user.name}!"
     else
-      flash[:error] = 'Sorry, your credentials do not match.'
+      flash[:alert] = 'Sorry, your credentials do not match.'
       render :login_form
     end
   end
@@ -30,6 +31,7 @@ class UsersController < ApplicationController
 
     if new_user.save
       redirect_to user_path(new_user)
+      flash[:success] = "Welcome, #{new_user.name}!"
     else
       redirect_to register_path
       flash[:alert] = new_user.errors.full_messages.to_sentence
