@@ -3,10 +3,10 @@
 require 'rails_helper'
 
 RSpec.describe MovieService do
-  describe '#top_rated_movies' do
+  describe '.top_rated_movies' do
     it 'returns the top rated movies' do
       VCR.insert_cassette 'top rated'
-      top = described_class.new.top_rated_movies
+      top = described_class.top_rated_movies
       expect(top).to be_a Hash
       expect(top[:results]).to be_an Array
       top_movies = top[:results].first
@@ -20,10 +20,10 @@ RSpec.describe MovieService do
     end
   end
 
-  describe '#search' do
+  describe '.search' do
     it 'returns the searched results' do
       VCR.insert_cassette 'searches'
-      search = described_class.new.search('princess')
+      search = described_class.search('princess')
       expect(search).to be_a Hash
       expect(search[:results]).to be_an Array
       search_movies = search[:results].first
@@ -37,10 +37,10 @@ RSpec.describe MovieService do
     end
   end
 
-  describe '#find_by_id' do
+  describe '.find_by_id' do
     it 'returns the movie found by id' do
       VCR.insert_cassette 'movie show'
-      movie = described_class.new.find_by_id(550)
+      movie = described_class.find_by_id(550)
       expect(movie).to be_a Hash
 
       expect(movie).to have_key :id
@@ -67,10 +67,10 @@ RSpec.describe MovieService do
     end
   end
 
-  describe '#find_movie_cast' do
+  describe '.find_movie_cast' do
     it 'returns the movie cast' do
       VCR.insert_cassette 'movie show'
-      cast = described_class.new.find_movie_cast(550)
+      cast = described_class.find_movie_cast(550)
       expect(cast).to be_a Hash
       expect(cast[:cast]).to be_an Array
       character = cast[:cast].first
@@ -84,10 +84,10 @@ RSpec.describe MovieService do
     end
   end
 
-  describe '#find_movie_reviews' do
+  describe '.find_movie_reviews' do
     it 'returns the movie reviews' do
       VCR.insert_cassette 'movie show'
-      reviews = described_class.new.find_movie_reviews(550)
+      reviews = described_class.find_movie_reviews(550)
       expect(reviews).to be_a Hash
       expect(reviews[:results]).to be_an Array
       review = reviews[:results].first
@@ -101,18 +101,18 @@ RSpec.describe MovieService do
     end
   end
 
-  describe '#get_url' do
+  describe '.get_url' do
     it 'parses through the response body and returns a JSON hash with keys as symbols' do
       VCR.insert_cassette 'top rated'
-      url = described_class.new.get_url('https://api.themoviedb.org/3/movie/top_rated')
+      url = described_class.get_url('https://api.themoviedb.org/3/movie/top_rated')
       expect(url).to be_a Hash
       VCR.eject_cassette
     end
   end
 
-  describe '#conn' do
+  describe '.conn' do
     it 'connects with the Movie DB API' do
-      connection = described_class.new.conn
+      connection = described_class.conn
       expect(connection.params).to be_a Hash
       expect(connection.params).to have_key :api_key
       expect(connection.params).to have_key :language

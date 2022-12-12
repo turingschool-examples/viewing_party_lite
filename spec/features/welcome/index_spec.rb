@@ -39,5 +39,10 @@ RSpec.describe 'The Welcome Page', type: :feature do
 
       expect(page).to have_current_path(root_path, ignore_query: true)
     end
+
+    it 'I see a link to log in and when clicked I am taken to a Log in page' do
+      click_link 'Log In'
+      expect(page).to have_current_path('/login')
+    end
   end
 end

@@ -25,7 +25,7 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 01 Dec 2022 22:57:03 GMT
+      - Fri, 09 Dec 2022 21:35:12 GMT
       Server:
       - openresty
       Cache-Control:
@@ -35,24 +35,24 @@ http_interactions:
       X-Memc-Key:
       - c1e15aadfb7b23652866f9b5ca742fe42bd98e85
       X-Memc-Age:
-      - '11711'
+      - '7010'
       X-Memc-Expires:
-      - '4217'
+      - '8917'
       Etag:
-      - W/"0143bbccd1ca1879b87f9cf4cf2a5e15"
+      - W/"48a0c8b05ff87ec955c00ae167a1969d"
       Vary:
       - Accept-Encoding,Accept-Encoding,Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 8774711cd9fd32ceec95cdb13439f30c.cloudfront.net (CloudFront)
+      - 1.1 9b688924e5b0f0b5e4c639d19cb145f0.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
-      - ATL58-P2
+      - DEN52-P2
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - USifcmoqsX1vZAiYMwcrllRLbn4ZxPVyBqGQrMV21aknOz60aKu4Cw==
+      - xh3Gn9rWU0XkQlQyrq-JYZEfqQxdAsk-YacQUkeHbjjqwnA7ptpwzQ==
       Age:
       - '1'
     body:
@@ -62,13 +62,13 @@ http_interactions:
         channel primal male aggression into a shocking new form of therapy. Their
         concept catches on, with underground \"fight clubs\" forming in every town,
         until an eccentric gets in the way and ignites an out-of-control spiral toward
-        oblivion.","popularity":91.06,"poster_path":"/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg","production_companies":[{"id":508,"logo_path":"/7cxRWzi4LsVm4Utfpr1hfARNurT.png","name":"Regency
+        oblivion.","popularity":87.016,"poster_path":"/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg","production_companies":[{"id":508,"logo_path":"/7cxRWzi4LsVm4Utfpr1hfARNurT.png","name":"Regency
         Enterprises","origin_country":"US"},{"id":711,"logo_path":"/tEiIH5QesdheJmDAqQwvtN60727.png","name":"Fox
         2000 Pictures","origin_country":"US"},{"id":4700,"logo_path":"/A32wmjrs9Psf4zw0uaixF0GXfxq.png","name":"The
         Linson Company","origin_country":"US"},{"id":20555,"logo_path":"/hD8yEGUBlHOcfHYbujp71vD8gZp.png","name":"Taurus
         Film","origin_country":"DE"},{"id":54051,"logo_path":null,"name":"Atman Entertainment","origin_country":""},{"id":54052,"logo_path":null,"name":"Knickerbocker
         Films","origin_country":"US"}],"production_countries":[{"iso_3166_1":"DE","name":"Germany"},{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1999-10-15","revenue":100853753,"runtime":139,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"}],"status":"Released","tagline":"Mischief.
-        Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.428,"vote_count":25244}'
-  recorded_at: Thu, 01 Dec 2022 22:57:04 GMT
+        Mayhem. Soap.","title":"Fight Club","video":false,"vote_average":8.4,"vote_count":25286}'
+  recorded_at: Fri, 09 Dec 2022 21:35:13 GMT
 recorded_with: VCR 6.1.0

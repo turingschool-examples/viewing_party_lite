@@ -8,12 +8,14 @@ RSpec.describe 'The Register Page', type: :feature do
   end
 
   describe 'When I visit the register path' do
-    it 'includes a form with name, email, and register button, once user registers they are directed to their dashboard page' do
+    it 'includes a form with name, email, password, and password confirmation and register button, once user registers they are directed to their dashboard page' do
       expect(page).to have_content('Register a New User')
 
       within '#register-form' do
         fill_in :name, with: 'Bob'
         fill_in :email, with: 'bob@gmail.com'
+        fill_in :password, with: 'test123'
+        fill_in :password_confirmation, with: 'test123'
 
         click_button 'Create New User'
       end
@@ -26,6 +28,8 @@ RSpec.describe 'The Register Page', type: :feature do
       within '#register-form' do
         fill_in :name, with: ''
         fill_in :email, with: 'bob@gmail.com'
+        fill_in :password, with: 'test123'
+        fill_in :password_confirmation, with: 'test123'
 
         click_button 'Create New User'
       end
@@ -35,17 +39,33 @@ RSpec.describe 'The Register Page', type: :feature do
     end
 
     it 'returns an error message if email already exists' do
-      existing_bob = User.create(name: 'Bob', email: 'bob@gmail.com')
+      existing_bob = User.create(name: 'Bob', email: 'bob@gmail.com', password: 'test123', password_confirmation: 'test123')
 
       within '#register-form' do
         fill_in :name, with: 'Bob'
         fill_in :email, with: 'bob@gmail.com'
+        fill_in :password, with: 'test123'
+        fill_in :password_confirmation, with: 'test123'
 
         click_button 'Create New User'
       end
 
       expect(page).to have_current_path(register_path, ignore_query: true)
       expect(page).to have_content('Email has already been taken')
+    end
+
+    it 'returns an error message if password and password confirmation do not match' do
+      within '#register-form' do
+        fill_in :name, with: 'Naomi'
+        fill_in :email, with: 'naomi@hotmail.com'
+        fill_in :password, with: 'hotsauce123'
+        fill_in :password_confirmation, with: 'coldsauce123'
+
+        click_button 'Create New User'
+      end
+
+      expect(page).to have_current_path(register_path, ignore_query: true)
+      expect(page).to have_content("Password confirmation doesn't match Password")
     end
   end
 end

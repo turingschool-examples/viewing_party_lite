@@ -1,8 +1,9 @@
 <body>
   <div class='flex-container'>
     <div class="flex-items" id="new_user_button">
+      <%= link_to 'Log In', '/login' %><br><br>
       <%= button_to 'Create a New User', register_path, method: :get, class: 'button1' %>
-    </div>
+    </div><br><br>
 
     <div class='flex-container' id="existing_users">
       <h3>Existing Users</h3>

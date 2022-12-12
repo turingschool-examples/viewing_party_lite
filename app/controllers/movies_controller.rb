@@ -5,14 +5,16 @@ class MoviesController < ApplicationController
 
   def index
     if params[:top_rated]
-      @movies = MovieFacade.new(1).top_rated
+      @movies = MovieFacade.top_rated
     elsif params[:search]
-      @movies = MovieFacade.new(params[:search]).searched_movies
+      @movies = MovieFacade.searched_movies(params[:search])
     end
   end
 
   def show
-    @movie = MovieFacade.new(params[:id])
+    @movie = MovieFacade.movie_by_id(params[:id])
+    @cast = MovieFacade.cast(params[:id])
+    @reviews = MovieFacade.reviews(params[:id])
   end
 
   private
