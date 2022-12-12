@@ -13,7 +13,7 @@ RSpec.describe "login form" do
     expect(current_path).to eq("/users/#{@user.id}")
   end
   
-    it "does not work with wrong id" do
+    it "does not work with wrong invalid credentials" do
     fill_in(:email, with: "smashley@.edu")
     click_on "Log In"
     expect(current_path).to eq("/login")
