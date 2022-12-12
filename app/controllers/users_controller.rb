@@ -7,8 +7,9 @@ class UsersController < ApplicationController
 
   def create
     new_user = User.new(user_params)
+    new_user[:email] = new_user[:email].downcase
     if new_user.save
-      redirect_to user_path(new_user), notice: 'User successfully created'
+      redirect_to user_path(new_user), success: 'User successfully created'
     else
       redirect_to register_path, alert: 'Required content missing or invalid'
     end
@@ -17,6 +18,14 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @viewing_parties = @user.viewing_parties
+  end
+
+  def login_form; end
+
+  def login
+    user = User.find_by(email: params[:email])
+    flash[:success] = "Welcome, #{user.name}!"
+    redirect_to root_path
   end
 
   private

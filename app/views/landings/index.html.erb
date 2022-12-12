@@ -3,11 +3,10 @@
 <br>
 <br>
 <br>
-<center><%= button_to "Create a New User", '/register', method: :get %></center>
-
+<center><%= button_to "Create a New User", '/register', method: :get %></center><br>
+<%= link_to "I already have an account", login_path %>
 <br>
 <br>
-
 <h3><center><strong> Existing Users </strong></h3>
 <% @users.each do |user| %>
   <p><%= link_to user.email, user_path(user) %> </p>
