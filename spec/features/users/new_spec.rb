@@ -4,10 +4,11 @@ RSpec.describe 'The User registration' do
   describe 'As a User' do
     describe 'When I visit the User Registration Page' do
       before(:each) do
-        @user1 = User.create!(name: 'Mary', email: 'mary@gmail.com', password: 'Test123')
-        @user2 = User.create!(name: 'Larry', email: 'larry@hotmail.com', password: 'Test123')
-        @user3 = User.create!(name: 'Sherri', email: 'sherri@aol.com', password: 'Test123')
+        @user1 = User.create!(name: 'Mary', email: 'mary@gmail.com', password: 'Test123', password_confirmation: 'Test123')
+        @user2 = User.create!(name: 'Larry', email: 'larry@hotmail.com', password: 'Test123', password_confirmation: 'Test123')
+        @user3 = User.create!(name: 'Sherri', email: 'sherri@aol.com', password: 'Test123', password_confirmation: 'Test123')
       end
+
       it 'I see a link to create a new user' do
         visit root_path
         click_button('Create User')
@@ -15,6 +16,8 @@ RSpec.describe 'The User registration' do
 
         fill_in 'Name', with: 'Martin'
         fill_in 'Email', with: 'martin@gmail.com'
+        fill_in 'Password', with: 'Test123'
+        fill_in 'Password Confirmation', with: 'Test123'
         click_on 'Create Account'
 
         expect(page).to have_content("Martin")
@@ -60,7 +63,47 @@ RSpec.describe 'The User registration' do
         expect(page).to have_content("Error: Email already linked with an account")
       end
 
-      it ''
+      it "I fail to fill name field and I'm taken back to the register page" do
+        visit register_path
+
+        fill_in 'Name', with: ''
+        fill_in 'Email', with: 'martin@gmail.com'
+        fill_in 'Password', with: 'Test123'
+        fill_in 'Password Confirmation', with: 'Test123'
+
+        click_on 'Create Account'
+
+        expect(current_path).to eq(register_path)
+        expect(page).to have_content("Name can't be blank")
+      end
+
+      it "I fail to fill email field and I'm taken back to the register page" do
+        visit register_path
+
+        fill_in 'Name', with: 'Martin'
+        fill_in 'Email', with: ''
+        fill_in 'Password', with: 'Test123'
+        fill_in 'Password Confirmation', with: 'Test123'
+
+        click_on 'Create Account'
+
+        expect(current_path).to eq(register_path)
+        expect(page).to have_content("Email can't be blank")
+      end
+
+      it "I fail to fill in matching passwords and I'm taken back to the register page" do
+        visit register_path
+
+        fill_in 'Name', with: 'Martin'
+        fill_in 'Email', with: 'martin@gmail.com'
+        fill_in 'Password', with: 'Test123'
+        fill_in 'Password Confirmation', with: 'Test1234'
+
+        click_on 'Create Account'
+
+        expect(current_path).to eq(register_path)
+        expect(page).to have_content("Password confirmation can't be blank")
+      end
     end
   end
 end
