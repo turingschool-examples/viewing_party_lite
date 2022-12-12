@@ -4,7 +4,7 @@ RSpec.describe 'Movies Index Page' do
   describe 'As a user when I visit users/:id/discover' do 
     describe 'and you click the find top rated movies button' do 
       it 'takes you to the top rated movies index page', :vcr do 
-        user1 = User.create!(name: 'Amanda', email: 'amanda@turing.edu')
+        user1 = User.create!(name: 'Amanda', email: 'amanda@turing.edu', password: 'amanda')
         
         visit "/users/#{user1.id}/discover"
         click_button 'Discover The Top Rated Movies'
@@ -21,7 +21,7 @@ RSpec.describe 'Movies Index Page' do
 
     describe 'and you fill in the search field and click on find movies' do 
       it 'takes you to the movie from title keywords search', :vcr do
-        user1 = User.create!(name: 'Amanda', email: 'amanda@turing.edu')
+        user1 = User.create!(name: 'Amanda', email: 'amanda@turing.edu', password: 'amanda')
         visit "/users/#{user1.id}/discover"
         expect(page).to have_field("q")
         fill_in(:q, with: "Princess space")
@@ -39,7 +39,7 @@ RSpec.describe 'Movies Index Page' do
       end
 
       it 'has links to all the movies show pages', :vcr do 
-        user1 = User.create!(name: 'Amanda', email: 'amanda@turing.edu')
+        user1 = User.create!(name: 'Amanda', email: 'amanda@turing.edu', password: 'amanda')
         visit "/users/#{user1.id}/discover"
         fill_in(:q, with: "Princess space")
         click_button "Find Movies"

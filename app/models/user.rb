@@ -6,6 +6,8 @@ class User < ApplicationRecord
   validates_presence_of :email 
   validates_uniqueness_of :email 
 
+  has_secure_password
+  
   def users_parties
     viewing_parties
       .select("viewing_parties.*, user_viewing_parties.status")

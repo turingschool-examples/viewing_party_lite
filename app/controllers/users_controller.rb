@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   def create 
     user = User.create(app_params)
     if user.valid?
+      flash[:success] = "Welcome, #{user.name}"
       redirect_to user_path(user)
     else 
       flash[:alert] = "Error: #{error_message(user.errors)}"
@@ -19,7 +20,7 @@ class UsersController < ApplicationController
 
   private
   def app_params 
-    params.permit(:name, :email)
+    params.permit(:name, :email, :password)
   end
 end
  

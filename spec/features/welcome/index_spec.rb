@@ -15,9 +15,9 @@ RSpec.describe 'landing page', type: :feature do
     end
 
     it 'has a list of existing users which links to their dashboard' do
-      user1 = User.create!(name: 'Amanda', email: 'amanda@turing.edu')
-      user2 = User.create!(name: 'James', email: 'james@turing.edu')
-      user3 = User.create!(name: 'Pat', email: 'pat@turing.edu')
+      user1 = User.create!(name: 'Amanda', email: 'amanda@turing.edu', password: 'amanda')
+      user2 = User.create!(name: 'James', email: 'james@turing.edu', password: 'james')
+      user3 = User.create!(name: 'Pat', email: 'pat@turing.edu', password: 'pat')
       visit '/'
       expect(page).to have_content('Existing Users')
       expect(page).to have_content(user1.name)
