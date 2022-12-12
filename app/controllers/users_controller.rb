@@ -17,10 +17,27 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @viewing_parties = @user.users_parties
   end
+  def login_form
+  end
+
+  def login_user
+    user = User.find_by(email: params[:email])
+    if user
+      if user.authenticate(params[:password])
+        redirect_to "/users/#{user.id}"
+      else
+        redirect_to "/login"
+        flash[:alert] = "Incorrect Password"
+      end
+    else
+      redirect_to "/login"
+      flash[:alert] = "Incorrect Email entered"
+    end
+  end
 
   private
   def app_params 
-    params.permit(:name, :email, :password)
+    params.permit(:name, :email, :password, :password_confirmation)
   end
 end
  
