@@ -23,6 +23,30 @@ RSpec.describe 'The User registration' do
         expect(page).to_not have_content("Sherri")
       end
 
+      it 'I see a form to fill in my name, email, password, and password confirmation' do
+        visit register_path
+
+        expect(page).to have_field(:name)
+        expect(page).to have_field(:email)
+        expect(page).to have_field(:password)
+        expect(page).to have_field(:password_confirmation)
+      end
+
+      it 'I fill in the form with valid information and taken to my dashboard page' do
+        visit register_path
+
+        fill_in 'Name', with: "Gabe"
+        fill_in 'Email', with: "gabe@example.com"
+        fill_in 'Password' with: "Test123"
+        fill_in 'Password Confirmation' with: "Test123"
+
+        click_on 'Create Account'
+
+        new_user = User.last
+
+        expect(current_path).to eq(user_path(new_user))
+      end
+
       it "checks for unique email address" do
         visit root_path
 
@@ -35,6 +59,8 @@ RSpec.describe 'The User registration' do
         expect(current_path).to eq(register_path)
         expect(page).to have_content("Error: Email already linked with an account")
       end
+
+      it ''
     end
   end
 end
