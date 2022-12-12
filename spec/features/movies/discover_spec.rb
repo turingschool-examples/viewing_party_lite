@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Discover Movies Page' do
   describe 'As a user when I visit users/:id/discover' do 
     it 'the discover page has a button to discover the top rated movies', :vcr do
-      user1 = User.create!(name: 'Amanda', email: 'amanda@turing.edu')
+      user1 = User.create!(name: 'Amanda', email: 'amanda@turing.edu', password: 'amanda', password_confirmation: 'amanda')
       
       visit "/users/#{user1.id}/discover"
       click_button 'Discover The Top Rated Movies'
@@ -11,7 +11,7 @@ RSpec.describe 'Discover Movies Page' do
     end
     
     it 'has a search field to enter movie title keywords', :vcr do
-      user1 = User.create!(name: 'Amanda', email: 'amanda@turing.edu')
+      user1 = User.create!(name: 'Amanda', email: 'amanda@turing.edu', password: 'amanda', password_confirmation: 'amanda')
       visit "/users/#{user1.id}/discover"
       expect(page).to have_field("q")
       fill_in(:q, with: "Shawshank")
@@ -20,7 +20,7 @@ RSpec.describe 'Discover Movies Page' do
     end
 
     it "reloads the page without returing results if the keyword search is blank and find movies is clicked" do 
-      user1 = User.create!(name: "Amanda", email: "amanda@turing.edu")
+      user1 = User.create!(name: "Amanda", email: "amanda@turing.edu", password: 'amanda', password_confirmation: 'amanda')
       visit "users/#{user1.id}/discover"
       click_button "Find Movies"
 

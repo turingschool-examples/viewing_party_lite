@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get "/users/:id/movies", to: "movies#index"
   
   get '/', to: 'welcome#index'
+  get '/login', to: 'users#login_form'
+  post '/login', to: 'users#login_user'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 end

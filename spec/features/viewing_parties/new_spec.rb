@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'New viewing party page' do
   describe 'as a user when I visit the movie show page I can click a button to create new party' do
     it 'it take me to "/users/:user_id/movies/:movie_id/viewing_parties/new"', :vcr do
-      user = User.create!(name: 'Amanda', email: 'amanda@turing.edu')
+      user = User.create!(name: 'Amanda', email: 'amanda@turing.edu', password: 'amanda', password_confirmation: 'amanda')
       
       visit user_movie_path(user, 128)
 
@@ -14,7 +14,7 @@ RSpec.describe 'New viewing party page' do
   end
 
   it 'has a button to take the user back to the discover page', :vcr do
-    user = User.create!(name: 'Amanda', email: 'amanda@turing.edu')
+    user = User.create!(name: 'Amanda', email: 'amanda@turing.edu', password: 'amanda', password_confirmation: 'amanda')
 
     visit user_movie_path(user, 128)
 
@@ -24,9 +24,9 @@ RSpec.describe 'New viewing party page' do
   end
 
   it 'has the form to create a new viewing party with details rendered', :vcr do
-    user = User.create!(name: 'Amanda', email: 'amanda@turing.edu')
-    user2 = User.create!(name: 'Annie', email: 'annie@turing.edu')
-    user3 = User.create!(name: 'James', email: 'james@turing.edu')
+    user = User.create!(name: 'Amanda', email: 'amanda@turing.edu', password: 'amanda', password_confirmation: 'amanda')
+    user2 = User.create!(name: 'Annie', email: 'annie@turing.edu', password: 'annie', password_confirmation: 'annie')
+    user3 = User.create!(name: 'James', email: 'james@turing.edu', password: 'james', password_confirmation: 'james')
 
     visit "/users/#{user.id}/movies/128/viewing_parties/new"
 
@@ -39,9 +39,9 @@ RSpec.describe 'New viewing party page' do
   end
 
   it 'returns the user back to their dashboard after create party button is clicked', :vcr do
-    user = User.create!(name: 'Amanda', email: 'amanda@turing.edu')
-    user2 = User.create!(name: 'Annie', email: 'annie@turing.edu')
-    user3 = User.create!(name: 'James', email: 'james@turing.edu')
+    user = User.create!(name: 'Amanda', email: 'amanda@turing.edu', password: 'amanda', password_confirmation: 'amanda')
+    user2 = User.create!(name: 'Annie', email: 'annie@turing.edu', password: 'annie', password_confirmation: 'annie')
+    user3 = User.create!(name: 'James', email: 'james@turing.edu', password: 'james', password_confirmation: 'james')
 
     visit "/users/#{user.id}/movies/128/viewing_parties/new"
 
@@ -68,9 +68,9 @@ RSpec.describe 'New viewing party page' do
     end
   end
   it 'reloads the page if any field left blank', :vcr do
-    user = User.create!(name: 'Amanda', email: 'amanda@turing.edu')
-    user2 = User.create!(name: 'Annie', email: 'annie@turing.edu')
-    user3 = User.create!(name: 'James', email: 'james@turing.edu')
+    user = User.create!(name: 'Amanda', email: 'amanda@turing.edu', password: 'amanda', password_confirmation: 'amanda')
+    user2 = User.create!(name: 'Annie', email: 'annie@turing.edu', password: 'annie', password_confirmation: 'annie')
+    user3 = User.create!(name: 'James', email: 'james@turing.edu', password: 'james', password_confirmation: 'james')
 
     visit "/users/#{user.id}/movies/128/viewing_parties/new"
 
@@ -87,9 +87,9 @@ RSpec.describe 'New viewing party page' do
     end
   end
   it 'reloads the page if any field left blank', :vcr do
-    user = User.create!(name: 'Amanda', email: 'amanda@turing.edu')
-    user2 = User.create!(name: 'Annie', email: 'annie@turing.edu')
-    user3 = User.create!(name: 'James', email: 'james@turing.edu')
+    user = User.create!(name: 'Amanda', email: 'amanda@turing.edu', password: 'amanda', password_confirmation: 'amanda')
+    user2 = User.create!(name: 'Annie', email: 'annie@turing.edu', password: 'annie', password_confirmation: 'annie')
+    user3 = User.create!(name: 'James', email: 'james@turing.edu', password: 'james', password_confirmation: 'james')
 
     visit "/users/#{user.id}/movies/128/viewing_parties/new"
 
@@ -101,9 +101,9 @@ RSpec.describe 'New viewing party page' do
     end
   end
   it 'reloads the page if any duration is not an integer', :vcr do
-    user = User.create!(name: 'Amanda', email: 'amanda@turing.edu')
-    user2 = User.create!(name: 'Annie', email: 'annie@turing.edu')
-    user3 = User.create!(name: 'James', email: 'james@turing.edu')
+    user = User.create!(name: 'Amanda', email: 'amanda@turing.edu', password: 'amanda', password_confirmation: 'amanda')
+    user2 = User.create!(name: 'Annie', email: 'annie@turing.edu', password: 'annie', password_confirmation: 'annie')
+    user3 = User.create!(name: 'James', email: 'james@turing.edu', password: 'james', password_confirmation: 'james')
 
     visit "/users/#{user.id}/movies/128/viewing_parties/new"
 
@@ -120,9 +120,9 @@ RSpec.describe 'New viewing party page' do
     end
   end
   it 'reloads the page if durations is less than run_time', :vcr do
-    user = User.create!(name: 'Amanda', email: 'amanda@turing.edu')
-    user2 = User.create!(name: 'Annie', email: 'annie@turing.edu')
-    user3 = User.create!(name: 'James', email: 'james@turing.edu')
+    user = User.create!(name: 'Amanda', email: 'amanda@turing.edu', password: 'amanda', password_confirmation: 'amanda')
+    user2 = User.create!(name: 'Annie', email: 'annie@turing.edu', password: 'annie', password_confirmation: 'annie')
+    user3 = User.create!(name: 'James', email: 'james@turing.edu', password: 'james', password_confirmation: 'james')
 
     visit "/users/#{user.id}/movies/128/viewing_parties/new"
 

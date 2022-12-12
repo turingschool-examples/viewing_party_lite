@@ -3,10 +3,10 @@ require 'rails_helper'
 RSpec.describe "the User Show page aka the user's dashboard" do 
   describe "when a user visits '/users/:id' where id is a valid user id" do 
     it "shows '<user name>'s Dashboard', a Discover Movies button, and a list of that user's viewing parties", :vcr do 
-      user = User.create!(name: 'Amanda', email: 'amanda@turing.edu')
-      user_2 = User.create!(name: "James", email: "james@turing.edu")
-      user_3 = User.create!(name: "Annie", email: "annie@turing.edu")
-      user_4 = User.create!(name: "Naomi", email: "naomi@turing.edu")
+      user = User.create!(name: 'Amanda', email: 'amanda@turing.edu', password: 'amanda', password_confirmation: 'amanda')
+      user_2 = User.create!(name: "James", email: "james@turing.edu", password: 'james', password_confirmation: 'james')
+      user_3 = User.create!(name: "Annie", email: "annie@turing.edu", password: 'annie', password_confirmation: 'annie')
+      user_4 = User.create!(name: "Naomi", email: "naomi@turing.edu", password: 'naomi', password_confirmation: 'naomi')
 
       party_1 = ViewingParty.create!(movie_id: 129, movie_title: "Spirited Away", duration: 180, date: '2022-12-12', start_time: '17:00', run_time: 150)
       party_2 = ViewingParty.create!(movie_id: 680, movie_title: "Pulp Fiction", duration: 200, date: '2022-12-13', start_time: '19:00', run_time: 150)
