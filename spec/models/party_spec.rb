@@ -8,19 +8,16 @@ RSpec.describe Party, type: :model do
 
   describe 'instance methods' do
     before :each do
-      # up_search_json = File.read('spec/fixtures/search_up_movies.json')
-      # stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['tmdb_api_key']}&language=en-US&page=1&include_adult=false&query=Up").to_return(status: 200, body: up_search_json)
+      @user1 = create(:user)
+      @user2 = create(:user)
+      @user3 = create(:user)
+      @user4 = create(:user)
 
-      @user1 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.email)
-      @user2 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.email)
-      @user3 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.email)
-      @user4 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.email)
-
-      @party1 = Party.create!(date: (Date.new + rand(90).days), start_time: "#{rand(1..24)}:00", movie_title: "Up", duration: (240 + rand(30)))
-      @party2 = Party.create!(date: (Date.new + rand(90).days), start_time: "#{rand(1..24)}:00", movie_title: "Alien", duration: (240 + rand(30)))
-      @party3 = Party.create!(date: (Date.new + rand(90).days), start_time: "#{rand(1..24)}:00", movie_title: "Whiplash", duration: (240 + rand(30)))
-      @party4 = Party.create!(date: (Date.new + rand(90).days), start_time: "#{rand(1..24)}:00", movie_title: "Toy Story", duration: (240 + rand(30)))
-      @party5 = Party.create!(date: (Date.new + rand(90).days), start_time: "#{rand(1..24)}:00", movie_title: "Brave", duration: (240 + rand(30)))
+      @party1 = create(:party)
+      @party2 = create(:party)
+      @party3 = create(:party)
+      @party4 = create(:party)
+      @party5 = create(:party)
 
       @party_user1 = PartyUser.create!(user_id: @user1.id, party_id: @party1.id, host: true)
       @party_user2 = PartyUser.create!(user_id: @user1.id, party_id: @party2.id, host: true)
@@ -46,13 +43,6 @@ RSpec.describe Party, type: :model do
     describe '.host' do
       it 'retrieves the name of the host', :vcr do
         expect(@party1.host).to eq(@user1.name)
-      end
-    end
-    describe '.movie_details' do
-      it 'returns a Movie object that contains the information of the movie being viewed', :vcr do
-        expect(@party1.movie_details).to be_a(Movie)
-        expect(@party1.movie_details.title).to eq("Up")
-        expect(@party1.movie_details.id).to eq(14160)
       end
     end
   end

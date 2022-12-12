@@ -13,6 +13,11 @@ Rails.application.routes.draw do
   end
 
   get '/users/:user_id', to: 'users#show'
+  get '/login', to: 'users#login_form'
+  post '/login', to: 'users#login'
 
+  # namespace :admin do
+  #   get '/dashboard', to: 'dashboard#index'
+  # end
 
 end

@@ -1,0 +1,25 @@
+<div class="row justify-content-center">
+  <div class="col-3">
+    <%= form_with(url: login_path, method: :post, local: true) do |f| %>
+      <table>
+        <tr>
+          <td><%= f.label :name, 'Name' %></td>
+          <td><%= f.text_field :name %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :email, 'Email' %></td>
+          <td><%= f.text_field :email %></td>
+        </tr>
+        <tr>
+          <td><%= f.label :password, 'Password' %></td>
+          <td><%= f.password_field :password %></td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.submit 'log in' %>
+          </td>
+        </tr>
+      </table>
+    <% end %>
+  </div>
+</div>

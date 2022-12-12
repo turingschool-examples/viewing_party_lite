@@ -12,6 +12,9 @@
   <body>
   <%= render "partials/navbar" %>
   <%= render "partials/banner" %>
+  <% flash.each do |key, value| %>
+    <%= content_tag :div, value, class: key %>
+  <% end %>
     <%= yield %>
   </body>
 </html>

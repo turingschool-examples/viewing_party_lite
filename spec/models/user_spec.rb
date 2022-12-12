@@ -7,23 +7,33 @@ RSpec.describe User, type: :model do
   end
 
   describe 'validations' do
+    it { should validate_uniqueness_of(:email) }
+    it { should validate_presence_of(:password) }
+    it { should have_secure_password }
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:email) }
-    it { should validate_uniqueness_of(:email) }
   end
+
+  it 'securly stores a password' do
+    user = create(:user, password: 'password', password_confirmation: 'password')
+
+    expect(user).to_not (have_attribute(:password))
+    expect(user.password_digest).to_not eq('test')
+  end
+
 
   describe 'instance methods' do
     before :each do
-      @user1 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.email)
-      @user2 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.email)
-      @user3 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.email)
-      @user4 = User.create!(name: Faker::Name.unique.name, email: Faker::Internet.unique.email)
+      @user1 = create(:user)
+      @user2 = create(:user)
+      @user3 = create(:user)
+      @user4 = create(:user)
 
-      @party1 = Party.create!(date: (Date.new + rand(90).days), start_time: "#{rand(1..24)}:00", movie_title: "Up", duration: (240 + rand(30)))
-      @party2 = Party.create!(date: (Date.new + rand(90).days), start_time: "#{rand(1..24)}:00", movie_title: "Alien", duration: (240 + rand(30)))
-      @party3 = Party.create!(date: (Date.new + rand(90).days), start_time: "#{rand(1..24)}:00", movie_title: "Whiplash", duration: (240 + rand(30)))
-      @party4 = Party.create!(date: (Date.new + rand(90).days), start_time: "#{rand(1..24)}:00", movie_title: "Toy Story", duration: (240 + rand(30)))
-      @party5 = Party.create!(date: (Date.new + rand(90).days), start_time: "#{rand(1..24)}:00", movie_title: "Brave", duration: (240 + rand(30)))
+      @party1 = create(:party)
+      @party2 = create(:party)
+      @party3 = create(:party)
+      @party4 = create(:party)
+      @party5 = create(:party)
 
       @party_user1 = PartyUser.create!(user_id: @user1.id, party_id: @party1.id, host: true)
       @party_user2 = PartyUser.create!(user_id: @user1.id, party_id: @party2.id, host: true)
@@ -41,6 +51,7 @@ RSpec.describe User, type: :model do
       @party_user11 = PartyUser.create!(user_id: @user4.id, party_id: @party5.id, host: true)
       @party_user12 = PartyUser.create!(user_id: @user3.id, party_id: @party5.id, host: false)
     end
+
     describe '.parties_invited_to' do
       it 'should retrieve all of the parties the user has been invited to' do
         expect(@user1.parties_invited_to).to eq([@party3, @party4])
