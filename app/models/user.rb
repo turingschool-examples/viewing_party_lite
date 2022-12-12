@@ -7,6 +7,9 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
 
+
+  enum role: %w(default manager admin)
+
   def parties_invited_to
     parties.where('party_users.host = ?', false)
   end
