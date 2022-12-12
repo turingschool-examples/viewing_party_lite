@@ -12,13 +12,17 @@ RSpec.describe User, type: :model do
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:email) }
     it { should validate_uniqueness_of(:email) }
+    it { should validate_presence_of(:password_digest)}
+    it { should validate_presence_of(:password_confirmation)}
+    it { should have_secure_password}
   end
 
   describe 'methods' do
     before :each do
-      @mostafa = User.create!(name: 'Mostafa', email: 'sasa2020@hotmail.com')
-      @yuji = User.create!(name: 'Yuji', email: 'yuyuhakusho2020@hotmail.com')
-      @bryan = User.create!(name: 'Bryan', email: 'breakingbad2020@hotmail.com')
+      @user = User.create(name: 'Meg', email: 'meg@test.com', password: 'password123', password_confirmation: 'password123')
+      @mostafa = User.create!(name: 'Mostafa', email: 'sasa2020@hotmail.com', password: 'test', password_confirmation: 'test')
+      @yuji = User.create!(name: 'Yuji', email: 'yuyuhakusho2020@hotmail.com', password: 'test1', password_confirmation: 'test1')
+      @bryan = User.create!(name: 'Bryan', email: 'breakingbad2020@hotmail.com', password: 'test2', password_confirmation: 'test2')
 
       @party_1 = @mostafa.parties.create!(movie_title: 'The Godfather', duration: 175, date: '12/1/2022',
                                           time: '19:00', host_id: @mostafa.id)
@@ -36,6 +40,13 @@ RSpec.describe User, type: :model do
       @bryan_party_1 = UserParty.create(user_id: @bryan.id, party_id: @party_1.id)
       @bryan_party_3 = UserParty.create(user_id: @bryan.id, party_id: @party_3.id)
       @mostafa_party_5 = UserParty.create(user_id: @mostafa.id, party_id: @party_5.id)
+    end
+
+    it 'can register a user' do
+
+
+      expect(@user).to_not have_attribute(:password)
+      expect(@user.password_digest).to_not eq('password123')
     end
 
     it 'has a method that finds all parties created by a user' do

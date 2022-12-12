@@ -8,7 +8,7 @@
   <%= form.hidden_field :movie_poster, value: @movie_poster %>
   <%= form.hidden_field :host_id, value: params[:user_id].to_i %>
   <%= form.label "Duration:" %>
-  <%= form.number_field :duration, value: @runtime %><br><br>
+  <%= form.number_field :duration, value: @runtime, min: @runtime %><br><br>
   <%= form.label "When:" %>
   <%= form.date_select :date, min: Date.today %><br><br>
   <%= form.label "Start Time:" %>

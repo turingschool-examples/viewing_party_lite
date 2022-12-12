@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 
 require 'pry'
 require 'faraday'
@@ -14,7 +13,7 @@ class MoviesService
 
   def keyword_search(input)
     conn = Faraday.new(url: 'https://api.themoviedb.org', params: { api_key: ENV['movie_api_key'] })
-
+require 'pry'; binding.pry
     response = conn.get('/3/search/movie', { query: input })
 
     JSON.parse(response.body, symbolize_names: true)
