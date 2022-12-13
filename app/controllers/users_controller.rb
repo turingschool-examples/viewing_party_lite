@@ -19,8 +19,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @viewing_parties = @user.viewing_parties
+    if current_user
+      @user = User.find(params[:id])
+      @viewing_parties = @user.viewing_parties
+    else
+      redirect_to root_path
+      flash[:error] = 'You must be logged in to see that page'
+    end
   end
 
   def login_form; end

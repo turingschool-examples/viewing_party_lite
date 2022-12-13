@@ -103,4 +103,13 @@ RSpec.describe 'Landing Page' do
     expect(page).to_not have_content(user1.email)
     expect(page).to_not have_content(user2.email)
   end
+
+  it 'if I try to visit my discover page while logged out, it redirects to the landing page' do
+    user = create(:user)
+
+    visit user_path(user)
+
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content('You must be logged in to see that page')
+  end
 end
