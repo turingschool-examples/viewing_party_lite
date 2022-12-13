@@ -16,12 +16,10 @@ RSpec.describe 'the new viewing parties page' do
       end
     end
 
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
-
     VCR.use_cassette('movie_details') do
       VCR.use_cassette('movie_credits') do
         VCR.use_cassette('movie_reviews') do
-          visit new_movie_viewing_party_path(@movie.id)
+          visit new_user_movie_viewing_party_path(@user1, @movie.id)
         end
       end
     end
@@ -35,7 +33,7 @@ RSpec.describe 'the new viewing parties page' do
     it 'has a button to return to discover page' do
       click_button 'Discover Page'
 
-      expect(current_path).to eq(discover_index_path)
+      expect(current_path).to eq(user_discover_index_path(@user1))
     end
   end
 
@@ -61,7 +59,7 @@ RSpec.describe 'the new viewing parties page' do
         end
       end
 
-      # expect(current_path).to eq(user_path(@user1))
+      expect(current_path).to eq(user_path(@user1))
     end
   end
 
@@ -72,7 +70,7 @@ RSpec.describe 'the new viewing parties page' do
           VCR.use_cassette('movie_reviews') do
             click_button 'Create Party'
 
-            expect(current_path).to eq(new_movie_viewing_party_path(@movie.id))
+            expect(current_path).to eq(new_user_movie_viewing_party_path(@user1, @movie.id))
             expect(page).to have_content('Error: Datetime field cannot be left blank')
           end
         end

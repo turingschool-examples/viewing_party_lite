@@ -1,18 +1,10 @@
-<div id='landing-page'>
-    <% if current_user %>
-        <%= button_to 'Logout', login_path, method: :delete %>
-    <% else %>
-        <p><%= button_to 'Create New User', '/register', method: :get %></p>
-        <p><%= button_to 'Log In', '/login', method: :get %></p>
-    <% end %>
 
-    <div id="users">
-        <% if current_user %>
-            <ul>
-                <% @users.each do |user| %>
-                    <li><%= user.email %></li>
-                <% end %>
-            </ul>
+<p><%= button_to 'Create New User', '/register', method: :get %></p>
+
+<div id="users">
+    <ul>
+        <% @users.each do |user| %>
+            <li><%= link_to user.name, user_path(user) %></li>
         <% end %>
-    </div>
+    </ul>
 </div>

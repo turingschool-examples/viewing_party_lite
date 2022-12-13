@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  before_action :check_for_user, only: :show
-
   def index
     @users = User.all
   end
@@ -12,29 +10,20 @@ class UsersController < ApplicationController
   def create
     user = User.new(user_params)
     if user.save
-      session[:user_id] = user.id
-
-      redirect_to "/dashboard"
+      redirect_to "/users/#{user.id}"
     else
       redirect_to '/register'
-      flash[:alert] = user.errors.full_messages.to_sentence
+      flash[:alert] = 'Error: This email has already been registered'
     end
   end
 
   def show
-    @user = current_user
+    @user = User.find(params[:id])
   end
 
   private
 
   def user_params
-    params.permit(:name, :email, :password, :password_confirmation)
-  end
-
-  def check_for_user
-    unless current_user
-      flash[:alert] = 'Error: You must be logged in to visit dashboard'
-      return redirect_to '/'
-    end
+    params.permit(:name, :email)
   end
 end
