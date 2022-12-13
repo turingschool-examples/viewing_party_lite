@@ -1,17 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe 'Landing Page' do
-  it 'has a landing page' do
+  before :each do
     visit root_path
+  end
+
+  it 'has a landing page' do
     expect(current_path).to eq(root_path)
   end
 
   it 'has a button to create a New User' do
-    visit root_path
+    expect(page).to have_link('Create a new user')
 
-    expect(page).to have_button('Create a New User')
-
-    click_button('Create a New User')
+    click_link('Create a new user')
 
     expect(current_path).to eq(register_path)
   end
@@ -20,7 +21,7 @@ RSpec.describe 'Landing Page' do
     user1 = create(:user)
     user2 = create(:user)
 
-    visit root_path
+    visit current_path
 
     expect(page).to have_content('Existing Users')
     expect(page).to have_content(user1.email)
@@ -30,8 +31,6 @@ RSpec.describe 'Landing Page' do
   end
 
   it 'has a home link at top of the page, that goes to landing page' do
-    visit root_path
-
     expect(page).to have_link('Home')
     click_link('Home')
 
@@ -39,16 +38,14 @@ RSpec.describe 'Landing Page' do
   end
 
   it 'has a link can log in with valid credentials' do
-    user = create(:user, password: 'password123')
-
-    visit root_path
+    user = create(:user)
 
     click_on 'I already have an account'
 
     expect(current_path).to eq(login_path)
 
-    fill_in :email, with: user.email
-    fill_in :password, with: user.password
+    fill_in(:email, with: user.email)
+    fill_in(:password, with: user.password)
     click_on 'Log In'
 
     expect(current_path).to eq(root_path)
@@ -56,15 +53,26 @@ RSpec.describe 'Landing Page' do
   end
 
   it 'cannot login with invalid credentials' do
-    user = create(:user, password: 'password123')
+    user = create(:user)
 
-    visit login_path
+    click_on 'I already have an account'
 
-    fill_in :email, with: user.email
-    fill_in :password, with: Faker::Internet.password(min_length: 10, max_length: 20)
+    fill_in(:email, with: user.email)
+    fill_in(:password, with: Faker::Internet.password(min_length: 10, max_length: 20))
     click_on 'Log In'
 
     expect(current_path).to eq(login_path)
     expect(page).to have_content('Incorrect password')
+  end
+
+  xit 'keeps a user logged in after registering' do
+    user = create(:user)
+
+    fill_in(:user_name, with: Faker::Games::Pokemon.name)
+    fill_in(:user_email, with: Faker::Internet.email)
+    password = Faker::Internet.password(min_length: 10, max_length: 20)
+    fill_in(:user_password, with: password)
+    fill_in(:user_password_confirmation, with: password)
+    click_button('Register')
   end
 end

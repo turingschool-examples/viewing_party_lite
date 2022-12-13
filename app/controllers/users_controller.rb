@@ -3,7 +3,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def new; end
+  def new
+    @user = User.new
+  end
 
   def create
     new_user = User.new(user_params)
@@ -32,7 +34,7 @@ class UsersController < ApplicationController
       elsif user.manager?
         redirect_to manager_dashboard_path
       elsif user.default?
-        redirect_to user_dashboard_path
+        redirect_to root_path
       end
       flash[:success] = "Welcome, #{user.name}!"
     else
@@ -44,6 +46,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end
