@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/dashboard', to: 'users#show'
+
   get '/', to: 'users#index'
   get '/register', to: 'users#new'
 
