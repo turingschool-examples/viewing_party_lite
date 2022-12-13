@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+
+  before_action :require_user, only: [:show]
+
   def show
-    @user = User.find(params[:id])
     @viewing_parties = @user.viewing_parties
   end
 
@@ -72,5 +74,13 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def require_user
+    @user = User.find(params[:id])
+    if @user.id != session[:user_id]
+      redirect_to root_path
+      flash[:error] = "You must be registered to access that page"
+    end
   end
 end

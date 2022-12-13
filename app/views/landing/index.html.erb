@@ -1,18 +1,20 @@
 <h1><center>Viewing Party Lite<center></h1>
 
-<% @users.each do |user| %>
 
-  <% if session[:user_id].nil? %>
-    <p><center><%= button_to "Create New User", "/register", method: :get %><center></p>
-    <p><center><%= link_to "Log In", login_path %><center></p>
-  <% else %>
-    <p><%= link_to "Log Out", '/logout', method: :delete %></p>
-  <% end %>
 
+<% if session[:user_id].nil? %>
+  <p><center><%= button_to "Create New User", "/register", method: :get %><center></p>
+  <p><center><%= link_to "Log In", login_path %><center></p>
+<% else %>
+  <p><%= link_to "Log Out", '/logout', method: :delete %></p>
 <% end %>
 
 <br>
-<h3><center>Existing Users<center></h3>
-<% @users.each do |user| %>
-  <p><center><%= link_to "#{user.email}", user_path(user) %><center></p>
+
+<% if !session[:user_id].nil? %>
+  <h3><center>Existing Users<center></h3>
+  <% @users.each do |user| %>
+  <!--<p><center><%= link_to "#{user.email}", user_path(user) %><center></p>-->
+  <p><center><%= user.email %><center></p>
+  <% end %>
 <% end %>
