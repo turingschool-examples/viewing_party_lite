@@ -1,0 +1,18 @@
+<h1>Welcome, <%= @user.username %>!</h1>
+<h1><%= @user.name %>'s Dashboard</h1>
+
+<%= button_to "Discover Movies", user_discover_index_path(@user), method: :get %>
+
+<h3>Viewing Parties</h3>
+<% @user.user_parties.each do |view_party| %>
+  <div id="party-<%= view_party.party.id %>">
+    <p><%= view_party.party.movie_title %></p>
+    <li><%= view_party.party.day %></li>
+    <li><%= view_party.party.start_time %></li>
+    <% if view_party.host %>
+      <li>Hosting</li>
+    <% else %>
+      <li>Invited</li>
+    <% end %>
+  </div>
+<% end %>
