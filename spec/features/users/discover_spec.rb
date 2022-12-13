@@ -1,12 +1,11 @@
-# frozen_string_literal: true
 
 require 'rails_helper'
 
 RSpec.describe 'User discover page' do
   before :each do
-    @mostafa = User.create!(name: 'Mostafa', email: 'sasa2020@hotmail.com')
-    @jim = User.create!(name: 'Jimothy', email: 'jimmyboy@hotmail.com')
-    @bryan = User.create!(name: 'Bryan', email: 'breakingbad2020@hotmail.com')
+    @mostafa = User.create!(name: 'Mostafa', email: 'sasa2020@hotmail.com', password: "123", password_confirmation: '123')
+    @jim = User.create!(name: 'Jimothy', email: 'jimmyboy@hotmail.com', password: "123", password_confirmation: '123')
+    @bryan = User.create!(name: 'Bryan', email: 'breakingbad2020@hotmail.com', password: "123", password_confirmation: '123')
   end
 
   describe 'As a visitor' do

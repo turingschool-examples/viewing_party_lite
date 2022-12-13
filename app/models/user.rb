@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+require 'bcrypt'
 
 class User < ApplicationRecord
   has_many :user_parties
@@ -7,6 +7,11 @@ class User < ApplicationRecord
   validates_presence_of :name, :email
   validates_uniqueness_of :email
 
+  validates :password_digest, presence: true, confirmation: true, on: :create
+  validates :password_confirmation, presence: true, on: :create
+ 
+  has_secure_password
+  
   def hosted_parties
     parties.where(host_id: id)
   end
