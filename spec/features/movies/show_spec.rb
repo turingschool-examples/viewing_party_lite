@@ -31,7 +31,7 @@ RSpec.describe 'Movies Detail (show) page' do
     VCR.use_cassette('movie_details') do
       VCR.use_cassette('movie_credits') do
         VCR.use_cassette('movie_reviews') do
-          visit "/users/#{@user.id}/movies/#{@godfather.id}"
+          visit "/movies/#{@godfather.id}"
         end
       end
     end
@@ -56,7 +56,7 @@ RSpec.describe 'Movies Detail (show) page' do
       expect(page).to have_button('Discover')
       click_button('Discover')
 
-      expect(current_path).to eq(user_discover_index_path(@user.id))
+      expect(current_path).to eq(discover_index_path)
     end
 
     it 'I see the details related to the movie' do

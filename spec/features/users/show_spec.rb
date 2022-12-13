@@ -50,7 +50,7 @@ RSpec.describe 'the user dashboard' do
     it 'has a button to discover movies' do
       expect(page).to have_button('Discover Movies')
       click_button 'Discover Movies'
-      expect(current_path).to eq("/users/#{@user.id}/discover")
+      expect(current_path).to eq("/discover")
     end
 
     it 'lists viewing parties that user is associated with' do

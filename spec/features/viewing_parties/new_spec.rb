@@ -35,7 +35,7 @@ RSpec.describe 'the new viewing parties page' do
     it 'has a button to return to discover page' do
       click_button 'Discover Page'
 
-      expect(current_path).to eq(user_discover_index_path(@user1))
+      expect(current_path).to eq(discover_index_path)
     end
   end
 
