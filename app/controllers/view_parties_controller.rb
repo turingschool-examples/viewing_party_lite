@@ -3,12 +3,7 @@
 class ViewPartiesController < ApplicationController
   before_action :find_user_movie
 
-  def new
-    if session[:user_id] == nil
-      redirect_to user_movie_path(@user, @movie.id)
-      flash[:alert] = 'You must be logged in to create a view party.'
-    end
-  end
+  def new; end
 
   def create
     invitees = User.find(params[:invite_users].reject(&:empty?))
@@ -21,7 +16,7 @@ class ViewPartiesController < ApplicationController
     elsif new_party.save
       UserViewParty.create(user_id: @user.id, view_party_id: new_party.id, host: true)
       invitees.map { |invitee| invitee.view_parties << new_party }
-      redirect_to user_path(@user)
+      redirect_to dashboard_path
     else
       redirect_to new_user_movie_view_party_path(@user, @movie.id)
       flash[:alert] = new_party.errors.full_messages.to_sentence

@@ -8,10 +8,15 @@ Rails.application.routes.draw do
 
   get '/logout', to: 'users#logout_user'
   
-  get '/users/:id/discover', to: 'users#discover'
+  get '/discover', to: 'users#discover'
 
-  resources :users, only: %i[show create] do
-    resources :movies, only: %i[index show] do
+  get '/movies', to: 'movies#index'
+  get '/movies/:id', to: 'movies#show'
+
+  get '/dashboard', to: 'users#show'
+
+  resources :users, only: %i[create] do
+    resources :movies, only: %i[show] do
       resources :view_parties, only: %i[new create]
     end
   end

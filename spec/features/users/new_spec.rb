@@ -21,7 +21,7 @@ RSpec.describe 'The Register Page', type: :feature do
       end
 
       new_user = User.last
-      expect(page).to have_current_path(user_path(new_user), ignore_query: true)
+      expect(page).to have_current_path(dashboard_path, ignore_query: true)
     end
 
     it 'returns an error message if field is blank' do

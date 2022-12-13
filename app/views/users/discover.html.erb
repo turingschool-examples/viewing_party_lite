@@ -5,11 +5,11 @@
     </div>
 
     <div class="flex-items" id='top-rated'>
-      <%= button_to 'Find Top Rated Movies', user_movies_path(@user), method: :get, params: {top_rated: true}, class: 'button2' %>
+      <%= button_to 'Find Top Rated Movies', '/movies', method: :get, params: {top_rated: true}, class: 'button2' %>
     </div>
 
     <div class="flex-items" id='find-movie'>
-      <%= form_with url: user_movies_path(@user), method: :get, local: true do |f| %>
+      <%= form_with url: '/movies', method: :get, local: true do |f| %>
         <%= f.text_field :search %>
         <%= f.submit 'Find Movies', class: 'button2' %>
       <% end %>

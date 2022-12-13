@@ -15,7 +15,7 @@ RSpec.describe 'The User Show Page', type: :feature do
     fill_in :password, with: user_1.password
     click_button 'Log In'
     VCR.insert_cassette 'image url'
-    visit user_path(user_1)
+    visit dashboard_path
   end
 
   after do
@@ -54,7 +54,7 @@ RSpec.describe 'The User Show Page', type: :feature do
       it 'I am taken to the discover page' do
         within '#discover_movies_button' do
           click_button('Discover Movies')
-          expect(page).to have_current_path("/users/#{user_1.id}/discover", ignore_query: true)
+          expect(page).to have_current_path("/discover", ignore_query: true)
         end
       end
     end

@@ -16,9 +16,11 @@
       </div>
     <% end %>
     <%= link_to 'Home', root_path %>&nbsp;&nbsp;
+    <%= link_to 'Discover', '/discover' %>&nbsp;&nbsp;
     <%= link_to 'Log In', '/login' if session[:user_id] == nil %>
     <%= link_to 'Log Out', '/logout' if session[:user_id] != nil %>
     <h1><center>Viewing Party</center></h1>
+    <center><%= link_to 'Dashboard', dashboard_path if session[:user_id] != nil %><br><br></center>
     <%= yield %>
   </body>
 </html>

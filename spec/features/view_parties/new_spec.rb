@@ -26,7 +26,7 @@ RSpec.describe 'New View Party Page', type: :feature do
         click_button 'Discover Page'
       end
 
-      expect(page).to have_current_path("/users/#{user_1.id}/discover", ignore_query: true)
+      expect(page).to have_current_path("/discover", ignore_query: true)
     end
 
     it 'the form should include the following fields: name, duration, when, start time, checkboxes next to each existing user in the system, after submitting I should be taken back to my dashboard where I see the new event' do
@@ -36,7 +36,7 @@ RSpec.describe 'New View Party Page', type: :feature do
         click_button 'Create Party'
       end
 
-      expect(page).to have_current_path(user_path(user_1), ignore_query: true)
+      expect(page).to have_current_path(dashboard_path, ignore_query: true)
 
       recent_view_party = ViewParty.last
       within "##{recent_view_party.movie_id}" do
@@ -87,12 +87,11 @@ RSpec.describe 'New View Party Page', type: :feature do
       VCR.insert_cassette 'movie show'
       VCR.insert_cassette 'image url'
 
-      visit user_path(user_2)
+      visit dashboard_path
 
       within "##{recent_view_party.movie_id}" do
         expect(page).to have_content(recent_view_party.movie_name)
         expect(page).to have_content(recent_view_party.datetime.strftime('%A, %d %B %Y'))
-        expect(page).to have_content('Invited')
       end
     end
   end

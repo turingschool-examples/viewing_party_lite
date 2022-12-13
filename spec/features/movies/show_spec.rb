@@ -21,7 +21,7 @@ RSpec.describe 'The Movie Show Page', type: :feature do
     describe 'When I click on "Discover Page' do
       it 'I am taken to the movies discover page' do
         click_button('Discover Page')
-        expect(page).to have_current_path("/users/#{user_1.id}/discover", ignore_query: true)
+        expect(page).to have_current_path("/discover", ignore_query: true)
       end
     end
 
@@ -33,15 +33,6 @@ RSpec.describe 'The Movie Show Page', type: :feature do
       it 'I am taken to new_user_movie_viewing_party' do
         click_button('Create Viewing Party for Fight Club')
         expect(page).to have_current_path(new_user_movie_view_party_path(user_1, 550), ignore_query: true)
-      end
-
-      it 'as a visitor, I am taken back and given an error message' do
-        click_link 'Log Out'
-        VCR.insert_cassette 'I_see_a_button_to_Create_Viewing_Party_for_Fight_Club_'
-        visit user_movie_path(user_1, 550)
-        click_button('Create Viewing Party for Fight Club')
-
-        expect(page).to have_content('You must be logged in to create a view party.')
       end
     end
 

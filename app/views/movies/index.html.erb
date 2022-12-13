@@ -1,7 +1,7 @@
 <body>
   <div class="flex-container">
     <div class="flex-items" id="discover_page_button">
-      <%= button_to 'Discover Page', "/users/#{@user.id}/discover", method: :get, class: 'button1' %>
+      <%= button_to 'Discover Page', "/discover", method: :get, class: 'button1' %>
     </div>
 
     <div class="flex-container" id="movie-results">
@@ -11,7 +11,7 @@
       <% else %>
         <% @movies.each do |movie| %>
           <tr class="results">
-            <td style="padding-right: 4em;"><%= link_to movie.title, user_movie_path(@user, movie.id) %></td>
+            <td style="padding-right: 4em;"><%= link_to movie.title, "/movies/#{movie.id}" %></td>
             <td style='text-align: right'><%= "Vote Average: #{movie.vote_average}" %></td>
           </tr>
         <% end %>
