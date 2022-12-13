@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'user discover movies page' do
   before :each do
-    @user_1 = User.create!(name: 'Jim', email: 'jim.halpert@gmail.com')
-    @user_2 = User.create!(name: 'Pam', email: 'pam.halpert@gmail.com')
+    @user_1 = create(:user)
+    @user_2 = create(:user)
   end
   
   it 'has a button to discover top rated movies', :vcr do
