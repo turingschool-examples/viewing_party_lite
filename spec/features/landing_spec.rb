@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'root path; application landing page' do
   before :each do
-    @user_1 = User.create!(name: 'Jim', email: 'jim.halpert@gmail.com')
-    @user_2 = User.create!(name: 'Pam', email: 'pam.halpert@gmail.com')
+    @user_1 = User.create!(name: 'Jim', email: 'jim.halpert@gmail.com', username: 'greatsalesman', password: 'pass')
+    @user_2 = User.create!(name: 'Pam', email: 'pam.halpert@gmail.com', username: 'receptionist', password: '123pass')
   end
   
   it 'has the title of the application and existing users' do
@@ -43,5 +43,14 @@ RSpec.describe 'root path; application landing page' do
     click_on "Home"
 
     expect(current_path).to eq('/')
+  end
+
+  it 'has a link to log in' do
+    visit root_path
+
+    expect(page).to have_link("Log In")
+    click_on "Log In"
+
+    expect(current_path).to eq("/login")
   end
 end
