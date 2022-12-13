@@ -12,7 +12,7 @@ RSpec.describe 'Login Page' do
     fill_in 'Password:', with: 'itsbritneybitch'
     click_button 'Log In'
 
-    expect(current_path).to eq("/users/#{user.id}")
+    expect(current_path).to eq("/dashboard")
     expect(page).to have_content("Welcome, #{user.name}! You are now logged in")
   end
 

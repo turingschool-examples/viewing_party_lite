@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
 
-      redirect_to user_path(user)
+      redirect_to '/dashboard'
       flash[:alert] = "Welcome, #{user.name}! You are now logged in"
     else
       flash[:alert] = 'Unrecognized email/password combination'

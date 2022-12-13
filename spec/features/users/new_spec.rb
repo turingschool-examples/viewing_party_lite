@@ -19,7 +19,7 @@ RSpec.describe 'New User' do
       click_button 'Register User'
 
       user = User.last
-      expect(current_path).to eq("/users/#{user.id}")
+      expect(current_path).to eq("/dashboard")
     end
 
     it 'errors if password confirmation does not match' do 
