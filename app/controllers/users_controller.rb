@@ -28,6 +28,10 @@ class UsersController < ApplicationController
   def new; end
 
   def show
+    if session[:user_id] == nil
+      redirect_to root_path
+      flash[:alert] = 'You must be logged in to access your dashboard'
+    end
     @view_parties = @user.view_parties.order('datetime')
   end
 
