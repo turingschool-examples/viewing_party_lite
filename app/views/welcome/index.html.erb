@@ -4,6 +4,7 @@
       <%= button_to 'Create a New User', register_path, method: :get, class: 'button1' %>
     </div><br><br>
 
+  <% if session[:user_id] != nil %>
     <div class='flex-container' id="existing_users">
       <h3>Existing Users</h3>
       <ul class="demo">
@@ -12,5 +13,6 @@
         <% end %>
       </ul>
     </div>
+  <% end %>
   </div>
 </body>
