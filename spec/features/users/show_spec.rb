@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'User Dashboard Page' do
   before :each do
-    @user1 = User.create!(name: "William", email: "William@gmail.com", password: 'pw123')
-    @user2 = User.create!(name: "Ashley", email: "Ashley@gmail.com", password: 'pw123')
-    @user3 = User.create!(name: "Abdul", email: "Abdul@gmail.com", password: 'pw123')
+    @user1 = User.create!(name: "William", email: "William@gmail.com", password: 'pw123', password_confirmation: 'pw123')
+    @user2 = User.create!(name: "Ashley", email: "Ashley@gmail.com", password: 'pw123', password_confirmation: 'pw123')
+    @user3 = User.create!(name: "Abdul", email: "Abdul@gmail.com", password: 'pw123', password_confirmation: 'pw123')
 
     @viewingparty1 = ViewingParty.create!(movie_title: "The Shawshank Redemption", movie_id: 278, duration: 146, date: "2023/04/22", start_time: "05:00 PM")
     @userviewingparty1 = UserViewingParty.create!(host: true, user_id: @user1.id, viewing_party_id: @viewingparty1.id)

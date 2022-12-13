@@ -27,7 +27,7 @@ class UsersController < ApplicationController
       if user && user.authenticate(params[:password])
         redirect_to "/users/#{user.id}"
       else 
-        flash[:error] = "Bad Credentials, try again."
+        flash[:error] = "Invalid login."
         redirect_to "/login" 
       end 
   end

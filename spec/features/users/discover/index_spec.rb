@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'discover movies page' do
   before :each do
-    @user1 = User.create!(name: "William", email: "William@gmail.com", password: 'pw123')
-    @user2 = User.create!(name: "Ashley", email: "Ashley@gmail.com", password: 'pw123')
-    @user3 = User.create!(name: "Abdul", email: "Abdul@gmail.com", password: 'pw123')
+    @user1 = User.create!(name: "William", email: "William@gmail.com", password: 'pw123', password_confirmation: 'pw123')
+    @user2 = User.create!(name: "Ashley", email: "Ashley@gmail.com", password: 'pw123', password_confirmation: 'pw123')
+    @user3 = User.create!(name: "Abdul", email: "Abdul@gmail.com", password: 'pw123', password_confirmation: 'pw123')
 
     visit(user_discover_index_path(@user1.id))
   end

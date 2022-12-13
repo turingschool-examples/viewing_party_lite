@@ -40,12 +40,4 @@ RSpec.describe 'welcome index page' do
     click_link "Login"
     expect(current_path).to eq(login_path)
   end
-
-  it 'when I have successful login credentials, I am taken to my user dashboard' do 
-    visit login_path
-    fill_in("Email", with: "William@gmail.com")
-    fill_in("Password", with: "pw123")
-    click_button "Log In"
-    expect(current_path).to eq(user_path(@user1.id))
-  end
 end
