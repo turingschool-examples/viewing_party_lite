@@ -12,7 +12,13 @@ class User < ApplicationRecord
   has_many :user_movie_parties
   has_many :movie_parties, through: :user_movie_parties
 
+  enum role: %w[default admin]
+
   def self.find_all_except(user)
     all.where('id != ?', user.id)
+  end
+
+  def self.default_users
+    User.where({role: 'default'})
   end
 end

@@ -1,0 +1,12 @@
+<div id='landing-page'>
+
+  <%= button_to 'Logout', login_path, method: :delete %>
+
+  <div id="users">
+    <ul>
+        <% User.default_users.each do |user| %>
+            <li><%= link_to user.email, admin_user_path(user) %></li>
+        <% end %>
+    </ul>
+  </div>
+</div>
