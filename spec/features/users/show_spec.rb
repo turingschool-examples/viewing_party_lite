@@ -10,7 +10,12 @@ RSpec.describe 'The User Show Page', type: :feature do
   let!(:user_1_party_2) { create(:user_view_party, user: user_1, view_party: view_party_2) }
 
   before do
+    visit login_path
+    fill_in :email, with: user_1.email
+    fill_in :password, with: user_1.password
+    click_button 'Log In'
     VCR.insert_cassette 'image url'
+    # allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user_1.id)
     visit user_path(user_1)
   end
 
@@ -18,7 +23,7 @@ RSpec.describe 'The User Show Page', type: :feature do
     VCR.eject_cassette
   end
 
-  describe 'When I visit the user_path' do
+  describe 'When I visit the user_path', :vcr do
     it "I see a <users name>'s Dashboard at the top" do
       within '#title' do
         expect(page).to have_content("#{user_1.name}'s Dashboard")

@@ -6,34 +6,31 @@ RSpec.describe 'The Movie Show Page', type: :feature do
   let!(:user_1) { create(:user) }
 
   before do
-    VCR.insert_cassette 'movie_show'
+    visit login_path
+    fill_in :email, with: user_1.email
+    fill_in :password, with: user_1.password
+    click_button 'Log In'
     visit user_movie_path(user_1, 550)
   end
 
-  after do
-    VCR.eject_cassette
-  end
-
-  describe 'When I visit the user movie path' do
+  describe 'When I visit the user movie path', :vcr do
     it 'I see a button to return to the "Discover Page"' do
       expect(page).to have_button('Discover Page')
     end
 
-    describe 'When I click on "Discover Page"' do
+    describe 'When I click on "Discover Page' do
       it 'I am taken to the movies discover page' do
         click_button('Discover Page')
         expect(page).to have_current_path("/users/#{user_1.id}/discover", ignore_query: true)
       end
     end
 
-    it "I see a button to 'Create Viewing Party for Fight Club'" do
+    it "I see a button to 'Create Viewing Party for Fight Club" do
       expect(page).to have_button('Create Viewing Party for Fight Club')
     end
 
-    describe 'When I click on "Create Viewing Party for Fight Club"' do
+    describe 'When I click on "Create Viewing Party for Fight Club', :vcr do
       it 'I am taken to new_user_movie_viewing_party' do
-        VCR.eject_cassette
-        VCR.insert_cassette 'view_party'
         click_button('Create Viewing Party for Fight Club')
         expect(page).to have_current_path(new_user_movie_view_party_path(user_1, 550), ignore_query: true)
       end
