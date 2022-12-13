@@ -1,0 +1,21 @@
+<h1><center>Viewing Party </center></h1>
+<h2><center><%= "#{@user.name}'s Dashboard" %> </center></h2>
+<br>
+<center><%= button_to "Discover Movies", discover_path(@user), method: :get %> </center>
+<br>
+<hr>
+<div id='viewing_parties'>
+    <h4><center>Current Viewing Parties<center></h4>
+    <% @viewing_parties.each do |party| %>
+            <ul> 
+                <p><b>Viewing Party</b><br>
+                <img src=<%=party.movie_poster%> alt="movie_poster" width="200" height="300">
+                <li><%= link_to "#{party.movie_title}", user_movie_path(@user, party.movie_id), method: :get%></li>
+                <li><%= party.start_date %></li>
+                <li><%= party.start_time %></li>
+                <li><%= party.user_hosting_status(@user) %></li>
+            </ul></p>
+            <% end %>
+</div>
+
+
