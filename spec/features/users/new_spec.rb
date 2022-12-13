@@ -5,32 +5,25 @@ RSpec.describe 'new user page' do
     visit register_path
   end
 
-  describe 'when I visit /register I see a form to create a new user' do
-    it 'takes me to the new user path' do
-      visit '/register'
-      expect(current_path).to eq(register_path)
-    end
-  end
-
   describe 'when I visit new_user_path' do
     it 'has a form to register a new user' do
       within '#new_user_form' do
         expect(page).to have_selector(:css, 'form')
         expect(page).to have_content('Name:')
-        expect(page).to have_field(:name)
+        expect(page).to have_field(:user_name)
         expect(page).to have_content('Email:')
-        expect(page).to have_field(:email)
+        expect(page).to have_field(:user_email)
         expect(page).to have_button('Register')
       end
     end
 
     it 'redirects to /users/:id when I hit register' do
       within '#new_user_form' do
-        fill_in(:name, with: Faker::Games::Pokemon.name)
-        fill_in(:email, with: Faker::Internet.email)
+        fill_in(:user_name, with: Faker::Games::Pokemon.name)
+        fill_in(:user_email, with: Faker::Internet.email)
         password = Faker::Internet.password(min_length: 10, max_length: 20)
-        fill_in(:password, with: password)
-        fill_in(:password_confirmation, with: password)
+        fill_in(:user_password, with: password)
+        fill_in(:user_password_confirmation, with: password)
         click_button('Register')
       end
 
@@ -41,10 +34,10 @@ RSpec.describe 'new user page' do
 
     it 'will not accept passwords that do not match' do
       within '#new_user_form' do
-        fill_in(:name, with: Faker::Games::Pokemon.name)
-        fill_in(:email, with: Faker::Internet.email)
-        fill_in(:password, with: Faker::Internet.password(min_length: 10, max_length: 20))
-        fill_in(:password_confirmation, with: Faker::Internet.password(min_length: 10, max_length: 20))
+        fill_in(:user_name, with: Faker::Games::Pokemon.name)
+        fill_in(:user_email, with: Faker::Internet.email)
+        fill_in(:user_password, with: Faker::Internet.password(min_length: 10, max_length: 20))
+        fill_in(:user_password_confirmation, with: Faker::Internet.password(min_length: 10, max_length: 20))
         click_button('Register')
       end
 
@@ -54,7 +47,7 @@ RSpec.describe 'new user page' do
 
     it 'will redirect back to registration page if information is not entered correctly' do
       within '#new_user_form' do
-        fill_in(:name, with: Faker::Games::Pokemon.name)
+        fill_in(:user_name, with: Faker::Games::Pokemon.name)
         click_button('Register')
       end
 
@@ -65,8 +58,8 @@ RSpec.describe 'new user page' do
       user1 = create(:user, email: 'bob@yahoo.com')
 
       within '#new_user_form' do
-        fill_in(:name, with: Faker::Games::Pokemon.name)
-        fill_in(:email, with: 'bob@yahoo.com')
+        fill_in(:user_name, with: Faker::Games::Pokemon.name)
+        fill_in(:user_email, with: 'bob@yahoo.com')
         click_button('Register')
       end
 
@@ -75,10 +68,3 @@ RSpec.describe 'new user page' do
     end
   end
 end
-
-# commented out for later
-# let!(:user1) { create(:user) }
-# let!(:user2) { create(:user) }
-# let!(:user3) { create(:user) }
-# let!(:party1) { create(:viewing_party) }
-# let!(:user_party1) { create(:user_party, user: user1, viewing_party: party1) }

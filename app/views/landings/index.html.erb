@@ -2,13 +2,17 @@
 <hr>
 <br>
 <br>
-<br>
-<center><%= button_to "Create a New User", '/register', method: :get %></center><br>
-<%= link_to "I already have an account", login_path %>
-<br>
-<br>
-<h3><center><strong> Existing Users </strong></h3>
-<% @users.each do |user| %>
-  <p><%= link_to user.email, user_path(user) %> </p>
+<% if current_user %>
+  <%= link_to 'Log out', logout_path %>
+<% else %>
+  <%= link_to 'Create a new user', register_path %><br>
+  <%= link_to 'I already have an account', login_path %>
 <% end %>
-</center>
+<br>
+<br>
+<% if current_user %>
+  <h3><strong> Existing Users </strong></h3>
+  <% @users.each do |user| %>
+    <p><%= link_to user.email, user_path(user) %> </p>
+  <% end %>
+<% end %>
