@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'Discover Movies Page' do
   before(:each) do
-    @user1 = User.create!(name: 'Chad', email: 'chad1@gmail.com')
-    @user2 = User.create!(name: 'Jessica', email: 'jessica2@gmail.com')
-    @user3 = User.create!(name: 'Fiona', email: 'Fiona3@gmail.com')
+    @user1 = User.create!(name: 'Chad', email: 'chad1@gmail.com', password: "1234test", password_confirmation: "1234test")
+    @user2 = User.create!(name: 'Jessica', email: 'jessica2@gmail.com', password: "1234test", password_confirmation: "1234test")
+    @user3 = User.create!(name: 'Fiona', email: 'Fiona3@gmail.com', password: "1234test", password_confirmation: "1234test")
   end
 
   describe 'Discover Movie Page Layout' do

@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   get '/register', to: 'users#new'
   post '/register', to: 'users#new'
 
+  get "/login", to: "users#login_form"
+  post "/login", to: "users#login_user"
+
   resources :users do
     get '/discover', to: 'users#discover'
     resources :movies, only: %i[index show] do

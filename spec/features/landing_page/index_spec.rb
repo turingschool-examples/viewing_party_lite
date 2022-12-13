@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'Landing Page' do
   before(:each) do
-    @user1 = User.create!(name: 'Chad', email: 'chad1@gmail.com')
-    @user2 = User.create!(name: 'Jessica', email: 'jessica2@gmail.com')
-    @user3 = User.create!(name: 'Fiona', email: 'Fiona3@gmail.com')
+   @user1 = User.create!(name: 'Chad', email: 'chad1@gmail.com', password: "1234test", password_confirmation: "1234test")
+    @user2 = User.create!(name: 'Jessica', email: 'jessica2@gmail.com', password: "1234test", password_confirmation: "1234test")
+    @user3 = User.create!(name: 'Fiona', email: 'Fiona3@gmail.com', password: "1234test", password_confirmation: "1234test")
   end
 
   it 'should contain title of Viewing Party' do
@@ -19,7 +19,7 @@ RSpec.describe 'Landing Page' do
     within('#new_user') do
       expect(page).to have_button('Create a New User')
       click_button('Create a New User')
-      expect(current_path).to eq('/register')
+      expect(current_path).to eq("/register")
     end
   end
 
