@@ -1,0 +1,13 @@
+<center><h1>Viewing Party</h1>
+<% if user_in_session.nil? %>
+  <p><%= link_to "Login", login_path, method: :get %></p>
+  <%= button_to "Create New User", "/register", method: :get %>
+<% else %>
+  <p><%= link_to "Log Out", '/logout' %></p>
+
+<p>Existing Users:</p>
+  <% @users.each do |user| %>
+    <li><%= user.email %></li>
+  <% end %>
+<% end %>
+</center>

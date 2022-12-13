@@ -1,0 +1,34 @@
+  <center><h2><%= @user.name %>'s Dashboard</h2>
+  <%= button_to "Discover Movies", user_discover_index_path(@user.id), method: :get %>
+  <h4><%= @user.name %>s Viewing Parties</h4>
+  <%  @user.viewing_parties.each do |party| %>
+    <% film = MovieFacade.find_movie(party[:movie_id]) %>
+    <p><img src=<%= "https://image.tmdb.org/t/p/original#{film.movie_poster}" %> width="300" height="300" ></p><br>
+    <%= link_to film.title, user_movie_path(@user, film.id) %><br>
+    <%= party.date %><br>
+    <%= party.start_time.strftime('%I:%M:%S %p') %><br>
+    <% user_viewing_party_host = UserViewingParty.where(viewing_party_id: party.id, user_id: @user.id) %>
+    <% if user_viewing_party_host[0].host %>
+      <p>Congrats! You are the host of this partayyyyy!</p>
+      <b><p>Attendees:</p></b>
+      <% user_viewing_party = UserViewingParty.where(viewing_party_id: party.id) %>
+      <% user_viewing_party.each do |uvp| %>
+        <% if uvp.host == false %>
+          <p><%= User.find(uvp.user_id).name %></p>
+        <% end %>
+      <% end %>
+    <% else %>
+      <% user_viewing_party = UserViewingParty.where(viewing_party_id: party.id) %>
+      <b>Attendees:</b>
+      <% user_viewing_party.each do |uvp| %>
+        <% if uvp.host %>
+          <p><%= User.find(uvp.user_id).name %> (host)</p>
+        <% elsif uvp.user_id == @user.id %>
+          <p><b><%= User.find(uvp.user_id).name %></b></p>
+        <% else %>
+          <p><%= User.find(uvp.user_id).name %></p>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+  </center>
