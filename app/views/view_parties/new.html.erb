@@ -7,14 +7,14 @@
 
     <div class="flex-items" id='form'>
       <h3>Viewing Party Details</h3>
-      <%= form_with url: user_movie_view_parties_path(@user, @movie.id), method: :post, local: true do |f| %>
+      <%= form_with url: movie_view_parties_path(@movie.id), method: :post, local: true do |f| %>
         <%= f.hidden_field :movie_name, value: @movie.title %>
         <%= f.label :duration %>
         <%= f.number_field :duration, value: @movie.minutes %><br><br>
         <%= f.label :datetime %>
         <%= f.datetime_local_field :datetime %><br><br>
         <%= f.label :invite_users %>
-        <%= f.collection_check_boxes :invite_users, User.order(:email).where.not(id: @user.id), :id, :email %>
+        <%= f.collection_check_boxes :invite_users, User.order(:email).where.not(id: session[:user_id]), :id, :email %>
         <%= f.submit 'Create Party', class: 'button1' %>
       <% end %>
     </div>

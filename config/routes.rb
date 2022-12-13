@@ -15,9 +15,9 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'users#show'
 
-  resources :users, only: %i[create] do
-    resources :movies, only: %i[show] do
-      resources :view_parties, only: %i[new create]
-    end
+  resources :users, only: %i[create]
+
+  resources :movies, except: %i[index create new edit show update destroy] do
+    resources :view_parties, only: %i[new create]
   end
 end

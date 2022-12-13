@@ -10,7 +10,7 @@ RSpec.describe 'The Movie Show Page', type: :feature do
     fill_in :email, with: user_1.email
     fill_in :password, with: user_1.password
     click_button 'Log In'
-    visit user_movie_path(user_1, 550)
+    visit "/movies/550"
   end
 
   describe 'When I visit the user movie path', :vcr do
@@ -32,7 +32,7 @@ RSpec.describe 'The Movie Show Page', type: :feature do
     describe 'When I click on "Create Viewing Party for Fight Club', :vcr do
       it 'I am taken to new_user_movie_viewing_party' do
         click_button('Create Viewing Party for Fight Club')
-        expect(page).to have_current_path(new_user_movie_view_party_path(user_1, 550), ignore_query: true)
+        expect(page).to have_current_path(new_movie_view_party_path(550), ignore_query: true)
       end
     end
 

@@ -16,7 +16,7 @@ RSpec.describe 'New View Party Page', type: :feature do
     fill_in :email, with: user_1.email
     fill_in :password, with: user_1.password
     click_button 'Log In'
-    visit new_user_movie_view_party_path(user_1, movie_1.id)
+    visit new_movie_view_party_path(movie_1.id)
   end
 
   describe 'When I visit the new viewing party page', :vcr do
@@ -53,7 +53,7 @@ RSpec.describe 'New View Party Page', type: :feature do
         click_button 'Create Party'
       end
 
-      expect(page).to have_current_path(new_user_movie_view_party_path(user_1, movie_1.id), ignore_query: true)
+      expect(page).to have_current_path(new_movie_view_party_path(movie_1.id), ignore_query: true)
       expect(page).to have_content('Datetime cannot be in the past')
     end
 
@@ -65,7 +65,7 @@ RSpec.describe 'New View Party Page', type: :feature do
         click_button 'Create Party'
       end
 
-      expect(page).to have_current_path(new_user_movie_view_party_path(user_1, movie_1.id), ignore_query: true)
+      expect(page).to have_current_path(new_movie_view_party_path(movie_1.id), ignore_query: true)
       expect(page).to have_content('Party duration cannot be shorter than the movie duration')
     end
 
