@@ -3,21 +3,26 @@
 require 'rails_helper'
 
 RSpec.describe 'Viewing Part new page' do
-  before :each do
-    @user1 = User.create!(name: 'Eli Fuchsman', email: 'eli@gmail.com', password: "test2")
-    @user2 = User.create!(name: 'Kristen Nestler', email: 'kristen@gmail.com', password: "test2")
-    @user3 = User.create!(name: 'John John', email: 'John@gmail.com', password: "test2")
-    @user4 = User.create!(name: 'Luke Skywalker', email: 'luke@gmail.com', password: "test2")
-    @user5 = User.create!(name: 'Michael Corleone', email: 'mike@gmail.com', password: "test2")
-    @user6 = User.create!(name: 'Tony Montana', email: 'tony@gmail.com', password: "test2")
-    @user7 = User.create!(name: 'Bruce Wayne', email: 'bruce@gmail.com', password: "test2")
-    @user8 = User.create!(name: 'Harvey Dent', email: 'harvey@gmail.com', password: "test2")
+  describe 'As a registered User' do
+    before :each do
+      @user1 = User.create!(name: 'Eli Fuchsman', email: 'eli@gmail.com', password: "test2")
+      @user2 = User.create!(name: 'Kristen Nestler', email: 'kristen@gmail.com', password: "test2")
+      @user3 = User.create!(name: 'John John', email: 'John@gmail.com', password: "test2")
+      @user4 = User.create!(name: 'Luke Skywalker', email: 'luke@gmail.com', password: "test2")
+      @user5 = User.create!(name: 'Michael Corleone', email: 'mike@gmail.com', password: "test2")
+      @user6 = User.create!(name: 'Tony Montana', email: 'tony@gmail.com', password: "test2")
+      @user7 = User.create!(name: 'Bruce Wayne', email: 'bruce@gmail.com', password: "test2")
+      @user8 = User.create!(name: 'Harvey Dent', email: 'harvey@gmail.com', password: "test2")
 
-    @movie_id = 11
-    @movie = MovieService.movie_by_id(@movie_id)
-  end
+      visit '/login'
+      fill_in :email, with: @user2.email
+      fill_in :password, with: @user2.password
 
-  describe 'As a User' do
+      click_on "Log In"
+      @movie_id = 11
+      @movie = MovieService.movie_by_id(@movie_id)
+    end
+
     describe 'When I visit the new viewing party page /users/:user_id/movies/:movie_id/viewing-party/new' do
       it 'I should see the name of the movie title rendered above a form to create a new party', :vcr do
         visit "/users/#{@user2.id}/movies/#{@movie_id}/viewing-party/new"
@@ -106,6 +111,20 @@ RSpec.describe 'Viewing Part new page' do
             expect(page).to have_content('**Fields Cannot Be Blank**')
           end
         end
+      end
+    end
+  end
+
+  describe "As a visitor" do
+    describe "when I try to visit the page to create a new viewing party" do
+      it "I remain on the landing page And I see a message telling me that I must be logged in or registered to create a movie party", :vcr do
+        user = create(:user)
+        movie_id = 11
+        movie = MovieService.movie_by_id(movie_id)
+        visit "/users/#{user.id}/movies/#{movie_id}/viewing-party/new"
+
+        expect(current_path).to eq(root_path)
+        expect(page).to have_content("You must be logged in or registered to create a movie party")
       end
     end
   end

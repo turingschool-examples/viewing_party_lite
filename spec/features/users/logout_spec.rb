@@ -1,10 +1,3 @@
-# As a logged in user
-# When I visit the landing page
-# I no longer see a link to Log In or Create an Account
-# But I see a link to Log Out.
-# When I click the link to Log Out
-# I'm taken to the landing page
-# And I can see that the Log Out link has changed back to a Log In link
 require 'rails_helper'
 
 describe "Logout User" do

@@ -1,8 +1,3 @@
-# As a visitor
-# When I visit the landing page
-# And then try to visit '/dashboard'
-# I remain on the landing page
-# And I see a message telling me that I must be logged in or registered to access my dashboard
 require 'rails_helper'
 
 RSpec.describe 'user show page' do
@@ -15,7 +10,7 @@ RSpec.describe 'user show page' do
           visit "/users/#{user.id}"
 
           expect(current_path).to eq(root_path)
-          expect(page).to have_content("You must be registered to access that page")
+          expect(page).to have_content("You must be logged in or registered to access that page")
         end
       end
     end
