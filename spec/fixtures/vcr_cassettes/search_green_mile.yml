@@ -1,0 +1,74 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?query=The%20Green%20Mile
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Authorization:
+      - Bearer movies_api_key
+      User-Agent:
+      - Faraday v2.7.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 02 Dec 2022 00:03:13 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=600
+      Vary:
+      - Accept-Encoding,Accept-Encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 df08ba5d249ec7fb2513313ea66b59f8.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - IAD50-C2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - XHLk4Ps3uM-xxY4J3y4rNOHEphe8Xmv3U8K1RgGyg5dCjamGu4R9FA==
+    body:
+      encoding: ASCII-8BIT
+      string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/l6hQWH9eDksNJNiXWYRkWqikOdu.jpg","genre_ids":[14,18,80],"id":497,"original_language":"en","original_title":"The
+        Green Mile","overview":"A supernatural tale set on death row in a Southern
+        prison, where gentle giant John Coffey possesses the mysterious power to heal
+        people''s ailments. When the cell block''s head guard, Paul Edgecomb, recognizes
+        Coffey''s miraculous gift, he tries desperately to help stave off the condemned
+        man''s execution.","popularity":57.567,"poster_path":"/velWPhVMQeQKcxggNEU8YmIo52R.jpg","release_date":"1999-12-10","title":"The
+        Green Mile","video":false,"vote_average":8.5,"vote_count":14667},{"adult":false,"backdrop_path":null,"genre_ids":[99,18],"id":456703,"original_language":"en","original_title":"Walking
+        the Mile: The Making of The Green Mile","overview":"Frank Darabont explains
+        how this new project was introduced thru a phone call from Stephen King as
+        \"another prison tale\" if he was interested to make it, the answer was not,
+        King expose his concept idea in few words, however Frank asking to Stephen
+        send the script to him firstly, when the first tale was finished and sent
+        to Darabont, after reading such odd story, asking for more, so King replied
+        \"You must wait as anybody else\", receiving later all other tales Frank wrote
+        a screenplay on 8 weeks, so come up \"the Green Mile\"","popularity":2.06,"poster_path":null,"release_date":"2000-06-13","title":"Walking
+        the Mile: The Making of The Green Mile","video":true,"vote_average":8,"vote_count":9},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":897467,"original_language":"en","original_title":"Miracles
+        and Mystery: Creating ''The Green Mile''","overview":"Behind the scenes footage
+        and interviews.","popularity":1.042,"poster_path":"/ndshdqW50oAIGhigc0HCLnnIe6u.jpg","release_date":"","title":"Miracles
+        and Mystery: Creating ''The Green Mile''","video":false,"vote_average":6,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":897465,"original_language":"en","original_title":"The
+        Making of The Green Mile","overview":"Frank Darabont explains how this new
+        project was introduced thru a phone call from Stephen King as \"another prison
+        tale\" if he was interested to make it.","popularity":0.635,"poster_path":"/6wVUbbZYeOyJwE6w8YImgpwiknL.jpg","release_date":"","title":"The
+        Making of The Green Mile","video":false,"vote_average":5,"vote_count":1}],"total_pages":1,"total_results":4}'
+  recorded_at: Fri, 02 Dec 2022 00:03:13 GMT
+recorded_with: VCR 6.1.0
