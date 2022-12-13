@@ -19,13 +19,30 @@ RSpec.describe 'the user dashboard' do
     VCR.use_cassette('godfather_movie') do
       @image_path = MoviesFacade.movie_poster_url(@party1.movie_id)
     end
+  end
 
-    VCR.use_cassette('godfather_movie') do
-      visit user_path(@user)
+  describe 'authorization' do
+    before(:each) do
+      VCR.use_cassette('godfather_movie') do
+        visit '/dashboard'
+      end
+    end
+
+    it 'redirects to landing page with error if not logged in' do 
+      expect(current_path).to eq('/')
+      expect(page).to have_content('Error: You must be logged in to visit dashboard')
     end
   end
 
   describe 'sections' do
+    before(:each) do 
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+
+      VCR.use_cassette('godfather_movie') do
+        visit '/dashboard'
+      end
+    end
+
     it 'shows "user names dashboard" at top of page' do
       expect(page).to have_content("#{@user.name}'s Dashboard")
     end
@@ -33,7 +50,7 @@ RSpec.describe 'the user dashboard' do
     it 'has a button to discover movies' do
       expect(page).to have_button('Discover Movies')
       click_button 'Discover Movies'
-      expect(current_path).to eq("/users/#{@user.id}/discover")
+      expect(current_path).to eq("/discover")
     end
 
     it 'lists viewing parties that user is associated with' do

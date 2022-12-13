@@ -12,10 +12,10 @@ class ViewingPartiesController < ApplicationController
     party = MovieParty.new(viewing_party_params)
     if party.save
       party.create_user_movie_parties(@user, params[:invitees])
-      redirect_to user_path(@user)
+      redirect_to '/dashboard'
     else
       flash[:alert] = 'Error: Datetime field cannot be left blank'
-      redirect_to new_user_movie_viewing_party_path(@user, party.movie_id)
+      redirect_to new_movie_viewing_party_path(party.movie_id)
     end
   end
 
@@ -26,6 +26,6 @@ class ViewingPartiesController < ApplicationController
   end
 
   def find_user
-    @user = User.find(params[:user_id])
+    @user = current_user
   end
 end

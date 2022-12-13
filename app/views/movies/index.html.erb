@@ -2,12 +2,12 @@
   <center><h2>Movie results for: "<%= @search %>"</h2></center>
 <% end %>
 
-<center><%= button_to 'Discover Page', user_discover_index_path(@user), method: :get %></center>
+<center><%= button_to 'Discover Page', discover_index_path, method: :get %></center>
 
 <div id="movies">
   <ol>
     <% @movies.each do |movie| %>
-      <li><%= link_to movie.movie_title, "/users/#{@user.id}/movies/#{movie.id}" %> <%= "Vote Average: #{movie.vote_average}" %></li>
+      <li><%= link_to movie.movie_title, "/movies/#{movie.id}" %> <%= "Vote Average: #{movie.vote_average}" %></li>
     <% end %>
   </ol>
 

@@ -1,11 +1,11 @@
 <center><h2>Create a Movie Party for <%= @movie.movie_title %></h2></center>
-<center><%= button_to 'Discover Page', user_discover_index_path(@user), method: :get %></center>
+<center><%= button_to 'Discover Page', discover_index_path, method: :get %></center>
 
 <hr>
 <section id="viewing_party_form">
   <center>
   <h3>Viewing Party Details</h3>
-  <%= form_with url: user_movie_viewing_parties_path(@user, @movie.id), local: true do |f| %>
+  <%= form_with url: movie_viewing_parties_path(@movie.id), local: true do |f| %>
     <p>
     <%= f.label :movie_title, 'Movie Title' %>
     <%= f.text_field :movie_title, readonly: true, value: @movie.movie_title %>

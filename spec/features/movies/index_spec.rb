@@ -8,14 +8,14 @@ RSpec.describe 'the movies result page' do
       @user1 = create(:user)
 
       VCR.use_cassette('top_rated_movies') do
-        visit "/users/#{@user1.id}/discover"
+        visit "/discover"
         click_button 'Discover Top Rated Movies'
       end
     end
 
     it 'has a button to return to the discover page' do
       click_button 'Discover Page'
-      expect(current_path).to eq(user_discover_index_path(@user1))
+      expect(current_path).to eq(discover_index_path)
     end
   end
 
@@ -30,7 +30,7 @@ RSpec.describe 'the movies result page' do
       @user1 = create(:user)
 
       VCR.use_cassette('top_rated_movies') do
-        visit "/users/#{@user1.id}/discover"
+        visit "/discover"
         click_button 'Discover Top Rated Movies'
       end
     end
@@ -57,7 +57,7 @@ RSpec.describe 'the movies result page' do
       @user1 = create(:user)
 
       VCR.use_cassette('search_godfather') do
-        visit "/users/#{@user1.id}/discover"
+        visit "/discover"
         fill_in 'Search', with: 'godfather'
         click_button 'Search by Movie Title'
       end
@@ -79,7 +79,7 @@ RSpec.describe 'the movies result page' do
 
     it 'displays no results found if search unsuccessful' do
       VCR.use_cassette('no_results_search') do
-        visit "/users/#{@user1.id}/discover"
+        visit "/discover"
         fill_in 'Search', with: '1098236'
         click_button 'Search by Movie Title'
       end

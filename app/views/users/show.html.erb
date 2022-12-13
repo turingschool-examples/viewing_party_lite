@@ -1,6 +1,6 @@
 <center><h2><%= "#{@user.name}'s Dashboard" %></h2></center>
 
-<center><%= button_to 'Discover Movies', "/users/#{@user.id}/discover", method: :get %></center>
+<center><%= button_to 'Discover Movies', "/discover", method: :get %></center>
 
 <hr>
 
@@ -8,7 +8,7 @@
   <% @user.movie_parties.each do |movie_party| %>
     <section id="party-<%= movie_party.id %>">
       <%= image_tag movie_party.poster_url, class: ".img", size: "150x225"  %>
-      <h3><%= link_to movie_party.movie_title, user_movie_path(@user, movie_party.movie_id) %></h3>
+      <h3><%= link_to movie_party.movie_title, movie_path(movie_party.movie_id) %></h3>
       <p><%= movie_party.start_time.strftime('%B %d, %Y - %I:%M %p') %></p>
       <p><%= movie_party.status(@user).capitalize %></p>
       <p>Invitees:</p>

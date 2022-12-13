@@ -14,8 +14,14 @@
       <p><%= msg %></p>
     <% end %>
 
+    <% if current_user %>
+      <%= "Logged in as #{current_user.name}" %>
+      <%= button_to 'Logout', login_path, method: :delete %>
+    <% end %>
+    <%= button_to 'Landing Page', '/', method: :get %>
+
      <center><h1>Viewing Party</h1></center>
-     <p><%= link_to 'Landing Page', '/' %></p>
+
     <%= yield %>
   </body>
 </html>

@@ -1,7 +1,7 @@
 <h3><%= @movie.movie_title %></h3>
 
-<%= button_to "Create Viewing Party for #{@movie.movie_title}", new_user_movie_viewing_party_path(@user.id, @movie.id), method: :get %>
-<%= button_to 'Discover', user_discover_index_path(@user.id), method: :get %>
+<%= button_to "Create Viewing Party for #{@movie.movie_title}", new_movie_viewing_party_path(@movie.id), method: :get %>
+<%= button_to 'Discover', discover_index_path, method: :get %>
 <hr>
 
 <div>
