@@ -34,6 +34,15 @@ RSpec.describe 'The Movie Show Page', type: :feature do
         click_button('Create Viewing Party for Fight Club')
         expect(page).to have_current_path(new_user_movie_view_party_path(user_1, 550), ignore_query: true)
       end
+
+      it 'as a visitor, I am taken back and given an error message' do
+        click_link 'Log Out'
+        VCR.insert_cassette 'I_see_a_button_to_Create_Viewing_Party_for_Fight_Club_'
+        visit user_movie_path(user_1, 550)
+        click_button('Create Viewing Party for Fight Club')
+
+        expect(page).to have_content('You must be logged in to create a view party.')
+      end
     end
 
     describe "I see the Movie's..." do
