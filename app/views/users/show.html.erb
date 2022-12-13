@@ -5,7 +5,7 @@
     </div>
 
     <div class="flex-items" id="discover_movies_button">
-      <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get, class: "button2" %>
+      <%= button_to "Discover Movies", "/discover", method: :get, class: "button2" %>
     </div>
 
     <hr class='demo'>
@@ -15,7 +15,7 @@
         <article class='card'>
           <img src=<%="http://image.tmdb.org/t/p/original#{party.file_path}"%>>
           <div class='text' id=<%=party.movie_id %>>
-            <h3 style="text-decoration: none;"><%= link_to party.movie_name, user_movie_path(@user, party.movie_id) %></h3>
+            <h3 style="text-decoration: none;"><%= link_to party.movie_name, "/movies/#{party.movie_id}" %></h3>
             <p><%= party.datetime.strftime("%A, %d %B %Y") %></p>
             <p>&nbsp;<%= party.datetime.strftime("%l:%M %P") %></p>
             <p><%= if party.host?(@user) then "Hosting" else "Invited" end %></p>

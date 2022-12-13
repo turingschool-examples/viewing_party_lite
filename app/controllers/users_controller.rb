@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  before_action :find_user, only: %i[discover show]
+  before_action :validate_user, only: %i[show]
 
   def discover; end
 
@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to user_path(user)
+      redirect_to dashboard_path
       flash[:success] = "Welcome, #{user.name}!"
     else
       flash[:error] = 'Sorry, your credentials do not match.'
@@ -28,10 +28,6 @@ class UsersController < ApplicationController
   def new; end
 
   def show
-    if session[:user_id] == nil
-      redirect_to root_path
-      flash[:alert] = 'You must be logged in to access your dashboard'
-    end
     @view_parties = @user.view_parties.order('datetime')
   end
 
@@ -39,8 +35,8 @@ class UsersController < ApplicationController
     new_user = User.new(user_params)
 
     if new_user.save
-      session[:user_id] = new_user
-      redirect_to user_path(new_user)
+      session[:user_id] = new_user.id
+      redirect_to dashboard_path
       flash[:success] = "Welcome, #{new_user.name}!"
     else
       redirect_to register_path
@@ -50,8 +46,17 @@ class UsersController < ApplicationController
 
   private
 
+  def validate_user
+    if session[:user_id] == nil
+      redirect_to root_path
+      flash[:alert] = 'You must be logged in to access your dashboard'
+    else
+      find_user
+    end
+  end
+
   def find_user
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
   end
 
   def user_params

@@ -16,7 +16,7 @@ RSpec.describe 'New View Party Page', type: :feature do
     fill_in :email, with: user_1.email
     fill_in :password, with: user_1.password
     click_button 'Log In'
-    visit new_user_movie_view_party_path(user_1, movie_1.id)
+    visit new_movie_view_party_path(movie_1.id)
   end
 
   describe 'When I visit the new viewing party page', :vcr do
@@ -26,7 +26,7 @@ RSpec.describe 'New View Party Page', type: :feature do
         click_button 'Discover Page'
       end
 
-      expect(page).to have_current_path("/users/#{user_1.id}/discover", ignore_query: true)
+      expect(page).to have_current_path("/discover", ignore_query: true)
     end
 
     it 'the form should include the following fields: name, duration, when, start time, checkboxes next to each existing user in the system, after submitting I should be taken back to my dashboard where I see the new event' do
@@ -36,7 +36,7 @@ RSpec.describe 'New View Party Page', type: :feature do
         click_button 'Create Party'
       end
 
-      expect(page).to have_current_path(user_path(user_1), ignore_query: true)
+      expect(page).to have_current_path(dashboard_path, ignore_query: true)
 
       recent_view_party = ViewParty.last
       within "##{recent_view_party.movie_id}" do
@@ -53,7 +53,7 @@ RSpec.describe 'New View Party Page', type: :feature do
         click_button 'Create Party'
       end
 
-      expect(page).to have_current_path(new_user_movie_view_party_path(user_1, movie_1.id), ignore_query: true)
+      expect(page).to have_current_path(new_movie_view_party_path(movie_1.id), ignore_query: true)
       expect(page).to have_content('Datetime cannot be in the past')
     end
 
@@ -65,7 +65,7 @@ RSpec.describe 'New View Party Page', type: :feature do
         click_button 'Create Party'
       end
 
-      expect(page).to have_current_path(new_user_movie_view_party_path(user_1, movie_1.id), ignore_query: true)
+      expect(page).to have_current_path(new_movie_view_party_path(movie_1.id), ignore_query: true)
       expect(page).to have_content('Party duration cannot be shorter than the movie duration')
     end
 
@@ -87,12 +87,11 @@ RSpec.describe 'New View Party Page', type: :feature do
       VCR.insert_cassette 'movie show'
       VCR.insert_cassette 'image url'
 
-      visit user_path(user_2)
+      visit dashboard_path
 
       within "##{recent_view_party.movie_id}" do
         expect(page).to have_content(recent_view_party.movie_name)
         expect(page).to have_content(recent_view_party.datetime.strftime('%A, %d %B %Y'))
-        expect(page).to have_content('Invited')
       end
     end
   end

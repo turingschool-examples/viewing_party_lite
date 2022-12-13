@@ -1,7 +1,7 @@
 <body>
   <div class='flex-container'>
     <div class="flex-items" id="new_user_button">
-      <%= button_to 'Create a New User', register_path, method: :get, class: 'button1' %>
+      <%= button_to 'Create a New User', register_path, method: :get, class: 'button1' if session[:user_id] == nil%>
     </div><br><br>
 
   <% if session[:user_id] != nil %>
