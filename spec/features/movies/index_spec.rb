@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'movies index' do
   before :each do
-    @user_1 = User.create!(name: 'Jim', email: 'jim.halpert@gmail.com')
-    @user_2 = User.create!(name: 'Pam', email: 'pam.halpert@gmail.com')
+    @user_1 = create(:user)
+    @user_2 = create(:user)
   end
 
   it 'has the title as a link to the movie details page from top rated movies', :vcr do

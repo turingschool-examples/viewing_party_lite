@@ -2,9 +2,12 @@ require 'rails_helper'
 
 RSpec.describe 'new viewing party page' do
   before :each do
-    @user_1 = User.create!(name: 'Jim', email: 'jim.halpert@gmail.com')
-    @user_2 = User.create!(name: 'Pam', email: 'pam.halpert@gmail.com')
-    @user_3 = User.create!(name: 'Jan', email: 'jan@gmail.com')
+    @user_1 = create(:user)
+    @user_2 = create(:user)
+    @user_3 = create(:user)
+    # @user_1 = User.create!(name: 'Jim', email: 'jim.halpert@gmail.com')
+    # @user_2 = User.create!(name: 'Pam', email: 'pam.halpert@gmail.com')
+    # @user_3 = User.create!(name: 'Jan', email: 'jan@gmail.com')
   end
 
   it 'should fields for party duration, when, start time, check boxes with existing users', :vcr do
