@@ -9,6 +9,11 @@ Rails.application.routes.draw do
     end
   end
 
+  # admin
+  namespace :admin do
+    resources :dashboard, only: [:index]
+  end
+
   # registration page
   get '/register', to: 'users#new', as: :register
   get '/login', to: 'users#login_form', as: :login
