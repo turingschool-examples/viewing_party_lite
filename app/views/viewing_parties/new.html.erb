@@ -7,8 +7,9 @@
   <%= form.label :date, "Date of Party" %>
   <%= form.time_field :start_time %>
   <%= form.label :start_time, "Start Time of Party" %>
+  <%= form.hidden_field :status, value: "hosting" %>
   <% @users.each do |user| %>
-      <p><%= check_box_tag(user.id) %> <%= form.label "#{user.id}", "#{user.name} (#{user.email})" %></p>
+      <p><%= check_box_tag(user.id, hidden_field: :status, value: "attending") %> <%= form.label "#{user.id}", "#{user.name} (#{user.email})" %></p>
     <% end %><br>
   <%= form.submit "Create Party" %>
 <% end%>

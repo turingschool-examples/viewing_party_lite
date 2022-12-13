@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_02_214005) do
+ActiveRecord::Schema.define(version: 2022_12_12_210234) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2022_12_02_214005) do
     t.bigint "viewing_party_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "status"
+    t.string "status"
     t.index ["user_id"], name: "index_user_viewing_parties_on_user_id"
     t.index ["viewing_party_id"], name: "index_user_viewing_parties_on_viewing_party_id"
   end
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 2022_12_02_214005) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
   create_table "viewing_parties", force: :cascade do |t|

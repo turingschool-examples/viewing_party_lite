@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'User Dashboard Page' do
   before(:each) do
-    @user1 = User.create!(name: 'Chad', email: 'chad1@gmail.com')
-    @user2 = User.create!(name: 'Jessica', email: 'jessica2@gmail.com')
-    @user3 = User.create!(name: 'Fiona', email: 'Fiona3@gmail.com')
+    @user1 = User.create!(name: 'Chad', email: 'chad1@gmail.com', password: "1234test", password_confirmation: "1234test")
+    @user2 = User.create!(name: 'Jessica', email: 'jessica2@gmail.com', password: "1234test", password_confirmation: "1234test")
+    @user3 = User.create!(name: 'Fiona', email: 'Fiona3@gmail.com', password: "1234test", password_confirmation: "1234test")
   end
 
   it 'should display users name at the top of the page' do
@@ -39,15 +39,11 @@ RSpec.describe 'User Dashboard Page' do
   end
 
   describe 'Viewing Parties' do
-    before(:each) do
-    end
-    # As a user,
-    # When I visit a user dashboard,
     it 'should have a section that lists viewing parties' do
       visit user_path(@user1.id)
 
-      within '#viewing-parties' do
-        expect(page).to have_content('Viewing Parties')
+      within("#viewing-parties-hosting") do
+        expect(page).to have_content('Viewing Parties - Hosting')
       end
     end
     # I should see the viewing parties that the user has been invited to with the following details:
@@ -55,8 +51,8 @@ RSpec.describe 'User Dashboard Page' do
     it 'should show viewing parties that the user has been invited to' do
       visit user_path(@user1.id)
 
-      within '#viewing-parties' do
-        expect(page).to have_content('Viewing Parties')
+      within '#viewing-parties-attending' do
+        expect(page).to have_content('Viewing Parties - Attending')
       end
     end
     # [ ] Movie Image

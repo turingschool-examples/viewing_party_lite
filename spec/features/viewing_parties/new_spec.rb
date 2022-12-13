@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'New Viewing Party Page', type: :feature do
   before(:each) do
-    @user1 = User.create!(name: 'Chad', email: 'chad1@gmail.com')
-    @user2 = User.create!(name: 'Jessica', email: 'jessica2@gmail.com')
-    @user3 = User.create!(name: 'Fiona', email: 'Fiona3@gmail.com')
+    @user1 = User.create!(name: 'Chad', email: 'chad1@gmail.com', password: "1234test", password_confirmation: "1234test")
+    @user2 = User.create!(name: 'Jessica', email: 'jessica2@gmail.com', password: "1234test", password_confirmation: "1234test")
+    @user3 = User.create!(name: 'Fiona', email: 'Fiona3@gmail.com', password: "1234test", password_confirmation: "1234test")
   end
 
   it 'should contain title of Viewing Party and a Home link that will redirect the user
@@ -53,7 +53,10 @@ RSpec.describe 'New Viewing Party Page', type: :feature do
     click_button 'Create Party'
 
     expect(current_path).to eq(user_path(@user1.id))
-    expect(page).to have_content('The Godfather')
+
+    within("#viewing-parties-hosting") do
+      expect(page).to have_content('The Godfather')
+    end 
   end
 
   it 'should not create a viewing party if the time is not entered' do
