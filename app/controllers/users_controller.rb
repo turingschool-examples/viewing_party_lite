@@ -19,6 +19,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def logout_user
+    session.destroy
+    redirect_to root_path
+    flash[:alert] = "See ya later!"
+  end
+
   def new; end
 
   def show
