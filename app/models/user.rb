@@ -8,5 +8,7 @@ class User < ApplicationRecord
   validates :name, :email, :password_digest, presence: true
   validates :email, uniqueness: true
 
+  enum role: %i[user admin]
+
   before_save { self.email = email.downcase if email }
 end
