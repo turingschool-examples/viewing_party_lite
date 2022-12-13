@@ -9,7 +9,7 @@ RSpec.describe 'user show page' do
         it 'I remain on the landing page And I see a message telling me that I must be logged in or registered to access my dashboard' do
           user = create(:user)
 
-          visit "/dashboard"
+          visit '/dashboard'
 
           expect(current_path).to eq(root_path)
           expect(page).to have_content('You must be logged in or registered to access that page')
@@ -39,7 +39,7 @@ RSpec.describe 'user show page' do
     describe ' When I visit my show page' do
       describe 'should see' do
         it 'has user information', :vcr do
-          visit "/dashboard"
+          visit '/dashboard'
           # save_and_open_page
           expect(page).to have_link('Home')
           expect(page).to have_content('Viewing Party Lite')
@@ -50,7 +50,7 @@ RSpec.describe 'user show page' do
 
       describe 'viewing party section' do
         it 'has a list of users viewing parties', :vcr do
-          visit "/dashboard"
+          visit '/dashboard'
           # save_and_open_page
 
           within("#viewing_party-#{@viewing_party1.id}") do
@@ -75,7 +75,7 @@ RSpec.describe 'user show page' do
 
       describe "When I click on 'Discover Movies' " do
         it "I am redirected to a discover page '/users/:id/discover' ", :vcr do
-          visit "/dashboard"
+          visit '/dashboard'
           # save_and_open_page
           click_button('Discover Movies')
 

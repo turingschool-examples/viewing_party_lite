@@ -13,7 +13,7 @@ RSpec.describe 'movies show page' do
     describe 'When I try to visit /users/:user_id/movies/:movie_id' do
       it 'I remain on the landing page And I see a message telling me that I must be logged in or registered to access my dashboard',
          :vcr do
-        visit "dashboard"
+        visit 'dashboard'
 
         expect(current_path).to eq(root_path)
         expect(page).to have_content('You must be logged in or registered to access that page')

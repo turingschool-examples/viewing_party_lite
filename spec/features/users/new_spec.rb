@@ -32,7 +32,7 @@ RSpec.describe 'user registration page' do
 
         click_on 'Create New User'
         # save_and_open_page
-        expect(current_path).to eq("/dashboard")
+        expect(current_path).to eq('/dashboard')
       end
     end
 

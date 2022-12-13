@@ -29,7 +29,7 @@ describe 'Login Page' do
 
           click_on 'Log In'
 
-          expect(current_path).to eq("/dashboard")
+          expect(current_path).to eq('/dashboard')
         end
       end
 

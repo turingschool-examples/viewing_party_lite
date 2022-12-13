@@ -58,7 +58,7 @@ RSpec.describe 'Viewing Part new page' do
           page.check(@user5.name.to_s)
           click_button('Create Party')
 
-          expect(current_path).to eq("/dashboard")
+          expect(current_path).to eq('/dashboard')
           # save_and_open_page
           expect(ViewingParty.last.viewing_party_users.count).to eq(4)
         end

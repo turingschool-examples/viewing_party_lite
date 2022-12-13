@@ -8,7 +8,6 @@ RSpec.describe 'Landing Page' do
     @user2 = create(:user)
     @user3 = create(:user)
     @user4 = create(:user)
-    # binding.pry
   end
 
   describe 'As a visitor' do
@@ -27,7 +26,6 @@ RSpec.describe 'Landing Page' do
 
       it 'I do not see a List of Existing User email links', :vcr do
         visit '/'
-        # save_and_open_page
 
         expect(page).to_not have_link(@user1.email)
         expect(page).to_not have_link(@user2.email)
@@ -35,30 +33,6 @@ RSpec.describe 'Landing Page' do
         expect(page).to_not have_link(@user4.email)
       end
     end
-
-    # describe 'When I click an email link' do
-    #   it 'I am directed to that users show page', :vcr do
-    #     visit '/'
-
-    #     click_link(@user1.email)
-
-    #     expect(current_path).to eq("/users/#{@user1.id}")
-    #   end
-    # end
-
-    # describe 'I see a home link' do
-    #   describe 'When I click this link' do
-    #     it 'I am taken to the landing page', :vcr do
-    #       visit '/'
-
-    #       expect(page).to have_link('Home')
-
-    #       click_link('Home')
-
-    #       expect(current_path).to eq('/')
-    #     end
-    #   end
-    # end
 
     describe 'I see a link to login' do
       describe 'When I click on the link' do
@@ -87,7 +61,7 @@ RSpec.describe 'Landing Page' do
     describe 'When I visit the landing page' do
       it 'The list of existing users is no longer a link to their show pages. But just a list of email addresses' do
         visit '/'
-        # save_and_open_page
+
         expect(page).to_not have_link(@user1.email)
         expect(page).to_not have_link(@user2.email)
         expect(page).to_not have_link(@user3.email)

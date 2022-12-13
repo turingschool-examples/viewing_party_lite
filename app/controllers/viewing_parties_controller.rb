@@ -10,27 +10,9 @@ class ViewingPartiesController < ApplicationController
 
   def create
     @guests = User.all.where.not(id: @host.id)
-    movie = MovieService.movie_by_id(params[:movie_id])
-    v_p = ViewingParty.new(viewing_party_params)
-    if v_p.save
-      ViewingPartyUser.create!(user_id: @host.id, viewing_party_id: v_p.id, host: 1)
-      invitee_ids = params[:invited_to_party].drop(1)
-      invitee_ids.each do |id|
-        id = id.to_i
-        ViewingPartyUser.create!(user_id: id, viewing_party_id: v_p.id)
-      end
-      redirect_to dashboard_path
-
-    elsif viewing_party_params[:date].blank? && viewing_party_params[:start_time].blank?
-      redirect_to "/users/#{@host.id}/movies/#{movie[:id]}/viewing-party/new"
-      flash[:alert] = '**Fields Cannot Be Blank**'
-    elsif viewing_party_params[:date].blank?
-      redirect_to "/users/#{@host.id}/movies/#{movie[:id]}/viewing-party/new"
-      flash[:alert] = '**Date Cannot Be Blank**'
-    elsif viewing_party_params[:start_time].blank?
-      redirect_to "/users/#{@host.id}/movies/#{movie[:id]}/viewing-party/new"
-      flash[:alert] = '**Start Time Cannot Be Blank**'
-    end
+    @movie = MovieService.movie_by_id(params[:movie_id])
+    @v_p = ViewingParty.new(viewing_party_params)
+    error_query_check(@v_p)
   end
 
   private
@@ -45,5 +27,27 @@ class ViewingPartiesController < ApplicationController
 
     redirect_to root_path
     flash[:error] = 'You must be logged in or registered to create a movie party'
+  end
+
+  def error_query_check(v_p)
+    if v_p.save
+      ViewingPartyUser.create!(user_id: @host.id, viewing_party_id: v_p.id, host: 1)
+      invitee_ids = params[:invited_to_party].drop(1)
+      invitee_ids.each do |id|
+        id = id.to_i
+        ViewingPartyUser.create!(user_id: id, viewing_party_id: v_p.id)
+      end
+      redirect_to dashboard_path
+
+    elsif viewing_party_params[:date].blank? && viewing_party_params[:start_time].blank?
+      redirect_to "/users/#{@host.id}/movies/#{@movie[:id]}/viewing-party/new"
+      flash[:alert] = '**Fields Cannot Be Blank**'
+    elsif viewing_party_params[:date].blank?
+      redirect_to "/users/#{@host.id}/movies/#{@movie[:id]}/viewing-party/new"
+      flash[:alert] = '**Date Cannot Be Blank**'
+    elsif viewing_party_params[:start_time].blank?
+      redirect_to "/users/#{@host.id}/movies/#{@movie[:id]}/viewing-party/new"
+      flash[:alert] = '**Start Time Cannot Be Blank**'
+    end
   end
 end
