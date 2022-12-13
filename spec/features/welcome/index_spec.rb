@@ -15,7 +15,8 @@ RSpec.describe 'landing page', type: :feature do
     end
 
     it 'has a list of existing users which links to their dashboard' do
-      user1 = User.create!(name: 'Amanda', email: 'amanda@turing.edu', password: 'amanda', password_confirmation:'amanda')
+      user1 = User.create!(name: 'Amanda', email: 'amanda@turing.edu', password: 'amanda',
+                           password_confirmation: 'amanda')
       user2 = User.create!(name: 'James', email: 'james@turing.edu', password: 'james', password_confirmation: 'james')
       user3 = User.create!(name: 'Pat', email: 'pat@turing.edu', password: 'pat', password_confirmation: 'pat')
       visit '/'
@@ -28,18 +29,18 @@ RSpec.describe 'landing page', type: :feature do
     end
 
     it 'has a link to return to the welcome page at the top of every page' do
-     visit '/'
-     expect(page).to have_link("Home")
+      visit '/'
+      expect(page).to have_link('Home')
     end
 
-    it "has a button to log in" do
+    it 'has a button to log in' do
       visit '/'
-  
-    expect(page).to have_button("Log In")
 
-    click_button "Log In"
+      expect(page).to have_button('Log In')
 
-    expect(current_path).to eq("/login")
-  end
+      click_button 'Log In'
+
+      expect(current_path).to eq('/login')
+    end
   end
 end
