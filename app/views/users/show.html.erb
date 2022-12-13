@@ -1,0 +1,15 @@
+<div id="header">
+  <h1><%= @user.name %>'s Dashboard</h1>
+</div>
+
+<div id="discover-movies">
+  <%= button_to 'Discover Movies', "/users/#{@user.id}/discover", method: :get %>
+</div>
+
+<div id="viewing-parties-hosting">
+  <h2>Viewing Parties - Hosting</h2>
+</div>
+
+<div id="viewing-parties-attending">
+  <h2>Viewing Parties - Attending</h2>
+</div>

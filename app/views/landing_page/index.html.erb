@@ -1,0 +1,12 @@
+<div id='login'>
+  <%= link_to 'Login', "/login" %>
+</div>
+
+<div id='new_user'>
+  <%= button_to 'Create a New User', "/register" %>
+</div>
+<ul id="existing_users">
+  <% @users.each do |user| %>
+  <li> <%= link_to "#{user.name}", user_path(user.id)%></li>
+  <% end %>
+</ul>
