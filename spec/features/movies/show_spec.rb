@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'movies show page' do
-  describe "As a visitor" do
+  describe 'As a visitor' do
     before :each do
       @user1 = create(:user)
       @movie_id = 11
@@ -11,17 +11,17 @@ RSpec.describe 'movies show page' do
     end
 
     describe 'When I try to visit /users/:user_id/movies/:movie_id' do
-      it "I remain on the landing page And I see a message telling me that I must be logged in or registered to access my dashboard", :vcr do
-
-        visit "/users/#{@user1.id}"
+      it 'I remain on the landing page And I see a message telling me that I must be logged in or registered to access my dashboard',
+         :vcr do
+        visit "dashboard"
 
         expect(current_path).to eq(root_path)
-        expect(page).to have_content("You must be logged in or registered to access that page")
+        expect(page).to have_content('You must be logged in or registered to access that page')
       end
     end
   end
 
-  describe "As a registered user" do
+  describe 'As a registered user' do
     before :each do
       @user1 = create(:user)
 
@@ -29,7 +29,7 @@ RSpec.describe 'movies show page' do
       fill_in :email, with: @user1.email
       fill_in :password, with: @user1.password
 
-      click_on "Log In"
+      click_on 'Log In'
 
       @movie_id = 11
       @movie = MovieService.movie_by_id(@movie_id)

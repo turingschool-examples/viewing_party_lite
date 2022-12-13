@@ -19,7 +19,7 @@ class ViewingPartiesController < ApplicationController
         id = id.to_i
         ViewingPartyUser.create!(user_id: id, viewing_party_id: v_p.id)
       end
-      redirect_to user_path(@host.id)
+      redirect_to dashboard_path
 
     elsif viewing_party_params[:date].blank? && viewing_party_params[:start_time].blank?
       redirect_to "/users/#{@host.id}/movies/#{movie[:id]}/viewing-party/new"
@@ -41,9 +41,9 @@ class ViewingPartiesController < ApplicationController
 
   def require_host
     @host = User.find(params[:user_id])
-    if @host.id != session[:user_id]
-      redirect_to root_path
-      flash[:error] = "You must be logged in or registered to create a movie party"
-    end
+    return unless @host.id != session[:user_id]
+
+    redirect_to root_path
+    flash[:error] = 'You must be logged in or registered to create a movie party'
   end
 end

@@ -60,14 +60,14 @@ RSpec.describe 'Landing Page' do
     #   end
     # end
 
-    describe "I see a link to login" do
-      describe "When I click on the link" do
+    describe 'I see a link to login' do
+      describe 'When I click on the link' do
         it "I'm taken to a Log In page ('/login') where I can input my unique email and password.", :vcr do
           visit '/'
 
-          expect(page).to have_link("Log In")
+          expect(page).to have_link('Log In')
 
-          click_link("Log In")
+          click_link('Log In')
 
           expect(current_path).to eq('/login')
         end
@@ -75,25 +75,25 @@ RSpec.describe 'Landing Page' do
     end
   end
 
-  describe "As a registered user" do
+  describe 'As a registered user' do
     before :each do
       visit '/login'
       fill_in :email, with: @user1.email
       fill_in :password, with: @user1.password
 
-      click_on "Log In"
+      click_on 'Log In'
     end
 
-    describe "When I visit the landing page" do
-      it "The list of existing users is no longer a link to their show pages. But just a list of email addresses" do
-        visit "/"
+    describe 'When I visit the landing page' do
+      it 'The list of existing users is no longer a link to their show pages. But just a list of email addresses' do
+        visit '/'
         # save_and_open_page
         expect(page).to_not have_link(@user1.email)
         expect(page).to_not have_link(@user2.email)
         expect(page).to_not have_link(@user3.email)
         expect(page).to_not have_link(@user4.email)
 
-        expect(page).to have_content("Existing Users")
+        expect(page).to have_content('Existing Users')
         expect(page).to have_content(@user1.email)
         expect(page).to have_content(@user2.email)
         expect(page).to have_content(@user3.email)
@@ -102,5 +102,3 @@ RSpec.describe 'Landing Page' do
     end
   end
 end
-
-

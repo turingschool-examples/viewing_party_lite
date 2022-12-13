@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-
   before_action :require_user, only: [:show]
 
   def show
@@ -16,7 +15,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     if user.save
       session[:user_id] = user.id
-      redirect_to user_path(user)
+      redirect_to dashboard_path
     elsif user_params[:password] != user_params[:password_confirmation]
       redirect_to '/register'
       flash[:alert] = 'ERROR: Password Confirmation does not match Password'
@@ -49,19 +48,18 @@ class UsersController < ApplicationController
               end
   end
 
-  def login_form
-  end
+  def login_form; end
 
   def login_user
     user = User.find_by(email: params[:email])
-    if user && user.authenticate(params[:password])
+    if user&.authenticate(params[:password])
       session[:user_id] = user.id
-        # binding.pry
+      # binding.pry
       flash[:success] = "Welcome, #{user.email}"
-      redirect_to "/users/#{user.id}"
+      redirect_to dashboard_path
     else
-      flash[:error] = "Bad Credentials, try again."
-      redirect_to "/login"
+      flash[:error] = 'Bad Credentials, try again.'
+      redirect_to login_path
     end
   end
 
@@ -77,10 +75,14 @@ class UsersController < ApplicationController
   end
 
   def require_user
-    @user = User.find(params[:id])
-    if @user.id != session[:user_id]
-      redirect_to root_path
-      flash[:error] = "You must be logged in or registered to access that page"
-    end
+    @user = current_user
+    return unless current_user.nil?
+
+    redirect_to root_path
+    flash[:error] = 'You must be logged in or registered to access that page'
+  end
+
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 end

@@ -13,9 +13,9 @@ class MoviesController < ApplicationController
 
   def require_user
     @user = User.find(params[:user_id])
-    if @user.id != session[:user_id]
-      redirect_to root_path
-      flash[:error] = "You must be logged in or registered to access that page"
-    end
+    return unless @user.id != session[:user_id]
+
+    redirect_to root_path
+    flash[:error] = 'You must be logged in or registered to access that page'
   end
 end
