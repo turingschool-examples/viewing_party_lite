@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   def show 
-    @user = User.find(params[:id])
+    if user_in_session
+      @user = User.find(user_in_session)
+      @users = User.all
+    else 
+      redirect_to '/', notice: 'You must be logged in to access'
+    end
   end
 
   def new 

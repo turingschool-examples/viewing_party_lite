@@ -1,4 +1,3 @@
-
 <center><h1>Viewing Party</h1>
 <% if user_in_session.nil? %>
   <p><%= link_to "Login", login_path, method: :get %></p>
@@ -8,7 +7,7 @@
 
 <p>Existing Users:</p>
   <% @users.each do |user| %>
-    <li><%= user.name %></li>
+    <li><%= user.email %></li>
   <% end %>
 <% end %>
 </center>

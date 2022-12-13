@@ -46,4 +46,11 @@ RSpec.describe 'welcome index page' do
     expect(page).to_not have_content(@user2.name)
     expect(page).to_not have_content(@user3.name)
   end 
+
+  it 'when i try to visit users dashboard as a visitor, i remain on landing page' do 
+    visit(user_path(@user1.id))
+
+    expect(current_path).to eq(root_path)
+    expect(page).to have_content('You must be logged in to access')
+  end
 end

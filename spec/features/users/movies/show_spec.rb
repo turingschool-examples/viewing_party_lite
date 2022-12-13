@@ -66,5 +66,15 @@ RSpec.describe 'movie details page' do
       click_button "Return to Discover Page"
       expect(current_path).to eq(user_discover_index_path(@user1.id))
     end
+
+    it 'as a visitor, I see a button to create a viewing party' do
+      expect(page).to have_button("Create Viewing Party")
+    end
+    
+    it 'when I click that button, I am redirected to that movies show page' do 
+      click_button "Create Viewing Party"
+      expect(current_path).to eq(user_movie_path(@user1.id, 278))
+
+    end
   end
 end
