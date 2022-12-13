@@ -8,6 +8,7 @@ RSpec.describe 'Landing Page' do
     @user2 = create(:user)
     @user3 = create(:user)
     @user4 = create(:user)
+    # binding.pry
   end
 
   describe 'As a user' do
