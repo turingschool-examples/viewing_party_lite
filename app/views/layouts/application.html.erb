@@ -11,7 +11,9 @@
 
   <body>
     <% flash.each do |type, msg| %>
-      <p><%= msg %></p>
+      <% msg.each do |message| %>
+        <p><%= message %></p>
+      <% end %>
     <% end %>
 
     <% if current_user %>
