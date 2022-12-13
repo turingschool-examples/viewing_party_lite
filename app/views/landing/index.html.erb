@@ -2,10 +2,9 @@
 <h1>Viewing Party Lite</h1>
 
 <h3>Login or Register</h3>
-<%= link_to "Register as a User", new_user_path %><br><br>
-<%= link_to "Log In", "/login" %>
-<!--<%= button_to "Create New User", new_register_path, method: 'get' %>-->
-<center>
+<%= button_to "Register as a User", new_user_path, method: :get %><br>
+<%= button_to "Log In", "/login", method: :get %>
+
 <h3>Current Users</h3>
 <div id="users">
   <% @users.each do |u| %>

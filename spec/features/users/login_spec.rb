@@ -9,7 +9,7 @@ RSpec.describe 'user login page' do
   it 'logs in a user' do
     visit root_path
 
-    expect(page).to have_link("Log In")
+    expect(page).to have_button("Log In")
     click_on "Log In"
 
     expect(current_path).to eq("/login")
@@ -24,7 +24,7 @@ RSpec.describe 'user login page' do
   it 'it shows an error message if user enters bad credentials' do
     visit root_path
 
-    expect(page).to have_link("Log In")
+    expect(page).to have_button("Log In")
     click_on "Log In"
 
     expect(current_path).to eq("/login")
