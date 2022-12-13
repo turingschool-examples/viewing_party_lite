@@ -7,15 +7,15 @@
 <% end %> -->
 
 <%= form_with model: @user do |form| %>
-  <%= form.label :name %>
-  <%= form.text_field :name %>
-  <%= form.label :email %>
-  <%= form.text_field :email %>
+  <%= form.label :name, "Name" %>
+  <%= form.text_field :name %><br><br>
+  <%= form.label :email, "Email" %>
+  <%= form.text_field :email %><br><br>
   <%= form.label :username, 'Username:' %>
-  <%= form.text_field :username %>
+  <%= form.text_field :username %><br><br>
   <%= form.label :password, 'Password:' %>
-  <%= form.password_field :password %>
-  <%= form.label :password_confirmation, 'Confirm Password' %>
-  <%= form.password_field :password_confirmation %>
+  <%= form.password_field :password %><br><br>
+  <%= form.label :password_confirmation, 'Confirm Password:' %>
+  <%= form.password_field :password_confirmation %><br><br>
   <%= form.submit 'Create User' %>
 <% end %>
