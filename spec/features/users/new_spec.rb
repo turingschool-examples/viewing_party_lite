@@ -22,8 +22,8 @@ RSpec.describe 'new user page' do
 
       fill_in("Name", with: "Naomi")
       fill_in("Email", with: "Naomi@gmail.com")
-      fill_in("Password", with: "pw123")
-      fill_in("Password", with: "pw123")
+      fill_in(:password, with: "pw123")
+     
 
       expect(page).to have_button("Register New User")
 

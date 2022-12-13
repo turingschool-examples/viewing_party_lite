@@ -8,7 +8,7 @@ RSpec.describe 'welcome index page' do
     visit login_path
   end
 
-it 'when I have successful login credentials, I am taken to my user dashboard' do 
+  it 'when I have successful login credentials, I am taken to my user dashboard' do 
     fill_in("Email", with: "William@gmail.com")
     fill_in("Password", with: "pw123")
     click_button "Log In"
@@ -22,5 +22,26 @@ it 'when I have successful login credentials, I am taken to my user dashboard' d
 
     expect(page).to have_content("Invalid login.")
     expect(current_path).to eq(login_path)
+  end
+
+  describe 'as a logged in user when I visit the landing page' do 
+    it 'i no longer see a link to log in or create an account' do 
+      visit '/'
+
+      click_link("Login")
+
+      fill_in("Email", with: "William@gmail.com")
+      fill_in("Password", with: "pw123")
+      click_button "Log In"
+
+      visit '/'
+
+      click_link("Log Out")
+
+      expect(current_path).to eq('/')
+
+      expect(page).to have_link('Login')
+      expect(page).to_not have_link('Log Out')
+    end
   end
 end 

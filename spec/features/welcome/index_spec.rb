@@ -17,12 +17,12 @@ RSpec.describe 'welcome index page' do
     expect(current_path).to eq("/register")
 
   end
-  it 'has a list of existing users' do
+  xit 'has a list of existing users' do
     expect(page).to have_content("Existing Users")
     expect(page).to have_content(@user1.name)
   end
 
-  it 'which links to the users dashboard' do
+  xit 'which links to the users dashboard' do
     expect(page).to have_link("#{@user1.name}")
   end
 
@@ -40,4 +40,10 @@ RSpec.describe 'welcome index page' do
     click_link "Login"
     expect(current_path).to eq(login_path)
   end
+
+  it 'as a visitor, does not have a list of existing users' do
+    expect(page).to_not have_content(@user1.name)
+    expect(page).to_not have_content(@user2.name)
+    expect(page).to_not have_content(@user3.name)
+  end 
 end
