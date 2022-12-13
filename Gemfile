@@ -59,6 +59,8 @@ group :test do
   gem 'simplecov'
   gem 'vcr'
   gem 'webmock'
+  gem 'faker'
+  gem 'factory_bot_rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
