@@ -14,14 +14,24 @@ class UsersController < ApplicationController
       redirect_to user_path(user)
       flash[:success] = "Welcome, #{user.name}!"
     else
-      redirect_to login_path
       flash[:error] = 'Sorry, your credentials do not match.'
+      render :login_form
     end
+  end
+
+  def logout_user
+    session.destroy
+    redirect_to root_path
+    flash[:alert] = "See ya later!"
   end
 
   def new; end
 
   def show
+    if session[:user_id] == nil
+      redirect_to root_path
+      flash[:alert] = 'You must be logged in to access your dashboard'
+    end
     @view_parties = @user.view_parties.order('datetime')
   end
 
@@ -29,6 +39,7 @@ class UsersController < ApplicationController
     new_user = User.new(user_params)
 
     if new_user.save
+      session[:user_id] = new_user
       redirect_to user_path(new_user)
       flash[:success] = "Welcome, #{new_user.name}!"
     else

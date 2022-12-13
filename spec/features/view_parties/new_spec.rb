@@ -12,19 +12,14 @@ RSpec.describe 'New View Party Page', type: :feature do
   end
 
   before do
-    VCR.insert_cassette 'view party'
-    VCR.insert_cassette 'movie show'
-    VCR.insert_cassette 'image url'
+    visit login_path
+    fill_in :email, with: user_1.email
+    fill_in :password, with: user_1.password
+    click_button 'Log In'
     visit new_user_movie_view_party_path(user_1, movie_1.id)
   end
 
-  after do
-    VCR.eject_cassette
-    VCR.eject_cassette
-    VCR.eject_cassette
-  end
-
-  describe 'When I visit the new viewing party page' do
+  describe 'When I visit the new viewing party page', :vcr do
     it 'I should see the name of the movie title rendered above a form and a button to the discover page' do
       within '#header' do
         expect(page).to have_content("Create a Movie Party for #{movie_1.title}")

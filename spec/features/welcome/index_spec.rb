@@ -22,18 +22,6 @@ RSpec.describe 'The Welcome Page', type: :feature do
       expect(page).to have_current_path(register_path, ignore_query: true)
     end
 
-    it 'I see a list of existing users which links to the users dashboard' do
-      within '#existing_users' do
-        expect(page).to have_content(user_1.email)
-        expect(page).to have_content(user_2.email)
-        expect(page).to have_content(user_3.email)
-
-        click_link user_1.email
-      end
-
-      expect(page).to have_current_path(user_path(user_1), ignore_query: true)
-    end
-
     it 'I see a link to go back to the landing page' do
       click_link 'Home'
 
@@ -43,6 +31,11 @@ RSpec.describe 'The Welcome Page', type: :feature do
     it 'I see a link to log in and when clicked I am taken to a Log in page' do
       click_link 'Log In'
       expect(page).to have_current_path('/login')
+    end
+
+    it 'directs me back to the welcome page as a visitor when trying to access a dashboard' do
+      visit user_path(user_1)
+      expect(page).to have_content('You must be logged in to access your dashboard')
     end
   end
 end

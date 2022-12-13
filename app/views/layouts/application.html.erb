@@ -15,7 +15,9 @@
         <%= msg %>
       </div>
     <% end %>
-    <%= link_to 'Home', root_path %><br><br>
+    <%= link_to 'Home', root_path %>&nbsp;&nbsp;
+    <%= link_to 'Log In', '/login' if session[:user_id] == nil %>
+    <%= link_to 'Log Out', '/logout' if session[:user_id] != nil %>
     <h1><center>Viewing Party</center></h1>
     <%= yield %>
   </body>

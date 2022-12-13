@@ -19,6 +19,18 @@ RSpec.describe 'the Login Page', type: :feature do
       expect(page).to have_content("Welcome, #{user.name}!")
     end
 
+    it 'can log me out' do
+      within '#login' do
+        fill_in :email, with: user.email
+        fill_in :password, with: user.password
+        click_button 'Log In'
+      end
+
+      click_link 'Log Out'
+
+      expect(page).to have_content('See ya later!')
+    end
+
     it 'cannot log in with bad credentials' do
       within '#login' do
         fill_in :email, with: user.email
