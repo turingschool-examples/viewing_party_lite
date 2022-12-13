@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       redirect_to "/users/#{user.id}"
     else
       redirect_to '/register'
-      flash[:alert] = user.errors.full_messages
+      flash[:alert] = user.errors.full_messages.to_sentence
     end
   end
 
