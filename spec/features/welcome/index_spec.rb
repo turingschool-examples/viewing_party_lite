@@ -32,5 +32,10 @@ RSpec.describe 'The Welcome Page', type: :feature do
       click_link 'Log In'
       expect(page).to have_current_path('/login')
     end
+
+    it 'directs me back to the welcome page as a visitor when trying to access a dashboard' do
+      visit user_path(user_1)
+      expect(page).to have_content('You must be logged in to access your dashboard')
+    end
   end
 end

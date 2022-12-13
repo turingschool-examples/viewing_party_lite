@@ -15,7 +15,6 @@ RSpec.describe 'The User Show Page', type: :feature do
     fill_in :password, with: user_1.password
     click_button 'Log In'
     VCR.insert_cassette 'image url'
-    # allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user_1.id)
     visit user_path(user_1)
   end
 
