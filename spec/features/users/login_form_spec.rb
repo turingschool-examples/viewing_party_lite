@@ -25,12 +25,12 @@ RSpec.describe 'Login form page' do
       end
 
       it 'is a sad path' do
-        @yuji = User.create!(name: 'Yuji', email: 'yuji@yuji.com', password_digest: "123", password_confirmation: '123')
+        @yuji = User.create(name: 'Yuji', email: 'yuji@yuji.com', password_digest: "123", password_confirmation: '123')
         
         visit '/login'
 
         fill_in('Email', with: 'yuji@yuji')
-        fill_in('Password', with: '123')
+        fill_in('Password', with: '12')
         click_button('Log In')
 
         expect(current_path).to eq("/login")

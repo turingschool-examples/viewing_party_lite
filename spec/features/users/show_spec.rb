@@ -4,9 +4,9 @@ require 'rails_helper'
 
 RSpec.describe 'the user show page' do
   before :each do
-    @mostafa = User.create!(name: 'Mostafa', email: 'sasa2020@hotmail.com')
-    @yuji = User.create!(name: 'Yuji', email: 'yuyuhakusho2020@hotmail.com')
-    @bryan = User.create!(name: 'Bryan', email: 'breakingbad2020@hotmail.com')
+    @mostafa = User.create!(name: 'Mostafa', email: 'sasa2020@hotmail.com', password: "123", password_confirmation: '123')
+    @yuji = User.create!(name: 'Yuji', email: 'jimmyboy@hotmail.com', password: "123", password_confirmation: '123')
+    @bryan = User.create!(name: 'Bryan', email: 'breakingbad2020@hotmail.com', password: "123", password_confirmation: '123')
 
     @party_1 = @mostafa.parties.create!(movie_title: 'The Godfather', duration: 175, date: '1/12/2022', time: '19:00',
                                         host_id: @mostafa.id, movie_poster: 'https://image.tmdb.org/t/p/original/3bhkrj58Vtu7enYsRolD1fZdja1.jpg')

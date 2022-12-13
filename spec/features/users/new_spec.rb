@@ -19,7 +19,7 @@ RSpec.describe 'Creating a new user' do
 
       click_button('Create New User')
       new_user = User.last
-      
+      # save_and_open_page
       expect(page).to have_content("Welcome, Yuji!")
       expect(current_path).to eq("/users/#{new_user.id}")
     end

@@ -10,4 +10,3 @@
 # @mostafa = User.create!(name: 'Mostafa', email: 'notsasa2020@hotmail.com')
 # @jim = User.create!(name: 'Jimothy', email: 'jimmyboy@hotmail.com')
 # @bryan = User.create!(name: 'Bryan', email: 'breakingbad2020@hotmail.com')
-@yuji = User.create!(name: 'Yuji', email: 'yuji@yuji.com', password_digest: "123", password_confirmation: "123")

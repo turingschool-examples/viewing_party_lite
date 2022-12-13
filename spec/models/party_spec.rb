@@ -19,9 +19,9 @@ RSpec.describe Party, type: :model do
 
   describe 'methods' do
     before :each do
-      @mostafa = User.create!(name: 'Mostafa', email: 'sasa2020@hotmail.com')
-      @yuji = User.create!(name: 'Yuji', email: 'yuyuhakusho2020@hotmail.com')
-      @bryan = User.create!(name: 'Bryan', email: 'breakingbad2020@hotmail.com')
+      @mostafa = User.create!(name: 'Mostafa', email: 'sasa2020@hotmail.com', password: "123", password_confirmation: '123')
+      @yuji = User.create!(name: 'Yuji', email: 'jimmyboy@hotmail.com', password: "123", password_confirmation: '123')
+      @bryan = User.create!(name: 'Bryan', email: 'breakingbad2020@hotmail.com', password: "123", password_confirmation: '123')
 
       @party_1 = @mostafa.parties.create!(movie_title: 'The Godfather', duration: 175, date: '12/1/2022',
                                           time: '19:00', host_id: @mostafa.id)

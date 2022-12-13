@@ -2,6 +2,7 @@
 Rails.application.routes.draw do
   get '/register', to: 'users#new'
   post '/users', to: 'users#create'
+  # get '/users', to: 'users#new'
   get '/users/:id', to: 'users#show'
   get '/users/:id/movies', to: 'movies#index'
   get '/', to: 'pages#home'
