@@ -14,8 +14,8 @@ class UsersController < ApplicationController
       redirect_to user_path(user)
       flash[:success] = "Welcome, #{user.name}!"
     else
-      redirect_to login_path
       flash[:error] = 'Sorry, your credentials do not match.'
+      render :login_form
     end
   end
 
