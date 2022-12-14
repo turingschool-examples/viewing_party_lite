@@ -1,0 +1,48 @@
+<style>
+ul#details li {
+  display:inline;
+}
+
+ul.even_horizontal {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+div.main_text {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+</style>
+
+<center>
+  <h2><%= @facade.movie.title %></h2>
+  <%= button_to "Discover Page", "/users/#{@facade.user_id}/discover", method: :get %><br>
+  <%= button_to "Create Viewing Party For #{@facade.movie.title}", new_user_movie_viewing_party_path(@facade.user, @facade.id), method: :get %>
+</center>
+<br><br>
+
+<ul class="even_horizontal" id="details">
+    <li>Vote: <%= @facade.movie.vote %></li>
+    <li>Runtime: <%= @facade.movie.runtime_in_hours_and_min %></li>
+    <li>Genre: <%= @facade.movie.genres.join(", ") %></li>
+</ul>  
+<br>
+<hr>
+<div class="main_text">
+  <h4>Summary:</h4>
+  <p>
+    <%= @facade.movie.summary %>
+  </p>
+  <h4>Cast:</h4>
+  <% @facade.cast_list.each do |actor| %>
+    <p><%= "#{actor.character}:   #{actor.name}" %> </p>
+  <% end %>
+  <h4><%= @facade.reviews.count %> Reviews:</h4>
+  <% @facade.reviews.each do |review| %>
+    <b><%= review.author %></b><br>
+    Name: <%= review.name %><br>
+    Username: <%= review.username %><br>
+    Avatar Path: <%= review.avatar_path %><br>
+    Rating: <%= review.rating %><br><br>
+  <% end %>
+</div>

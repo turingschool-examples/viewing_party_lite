@@ -1,0 +1,51 @@
+<style>
+div.party-card {
+    margin: 5px;
+    border: 2px solid #ccc;
+    float: left;
+    width: 180px;
+    height: 500px;
+    text-align: center;
+  }
+.movie-poster {
+  width: 100px;
+  padding: 5px;
+}
+</style>
+
+<h2 style="text-align:center;"><%= "#{@user.name}'s Dashboard" %></h2>
+<center><%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %></center>
+<hr>
+<% @viewing_parties.each do |party| %>
+  <div class="party-card" id="viewing-party-<%= party.id %>">
+    <img class="movie-poster" src=<%= party.image(@user.id) %>><br>
+    <%= link_to party.movie_title, user_movie_path(@user, party.movie_id) %>
+    <br><br>
+    <%= party.date.strftime("%B %d, %Y") %>
+    <br>
+    <%= party.start_time.strftime("%l:%M %p") %>
+    <br><br>
+    <%= party.status %><br><br>
+    <% if party.status == "Hosting" %>
+      Host: You!<br><br>
+      <div id="invitees">
+      Invitees: <br>
+                <% party.invitees.each do |name| %>
+                  <%= name %><br>
+                <% end %>
+      </div>
+    <% else %>
+      Host: <%= party.host %><br><br>
+      <div id="invitees">
+      Invitees:<br>
+      <% party.invitees.each do |name| %>
+        <% if name == @user.name %>
+          <b><%= name %></b><br>
+        <% else %>
+          <%= name %><br>
+        <% end %>
+      <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

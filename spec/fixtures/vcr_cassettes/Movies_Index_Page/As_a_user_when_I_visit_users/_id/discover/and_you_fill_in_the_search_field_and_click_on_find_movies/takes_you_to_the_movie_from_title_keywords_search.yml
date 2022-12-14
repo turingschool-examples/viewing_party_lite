@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=<tmdb_key>&include_adult=false&language=en-US&page=1&query=Princess%20space
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 02 Dec 2022 15:40:09 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=600
+      Vary:
+      - Accept-Encoding,Accept-Encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 3fddcbe99f78632bf14e5e80e6c14058.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - QYCRDAjBPhWGAEsHqjvRmkciLMhdDIUzymFoZM1IOSN_9DmyHk9RlQ==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJwYWdlIjoxLCJyZXN1bHRzIjpbeyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOm51bGwsImdlbnJlX2lkcyI6W10sImlkIjo2NTE4MTIsIm9yaWdpbmFsX2xhbmd1YWdlIjoiZW4iLCJvcmlnaW5hbF90aXRsZSI6IlNwYWNlIFByaW5jZXNzIiwib3ZlcnZpZXciOiJPbiBhIGRpc3RhbnQgcGxhbmV0ICh3aGljaCBsb29rcyBub3RoaW5nIGxpa2UgdGhlIHByb2R1Y2VyJ3MgYmFjayB5YXJkKSBhIGxvbmUgcHJpbmNlc3MgcmFjZXMgdG8gZmluZCBhIHdhcnJpb3Igd2hvIGNhbiBoZWxwIGxlYWQgaGVyIHBlb3BsZSB0byB2aWN0b3J5IGFnYWluc3QgdGhlIGV2aWwgQ2hhbmNlbGxvciBEZW5uaXMgKHllcywgRGVubmlzKS4gV2l0aCB0aGUgaGVscCBvZiB3aXphcmQgU2FjdWwsIGFuZCBzb3JjZXJlc3MgRWdyb2VnLCB0aGV5IG11c3QgcHJlcGFyZSBmb3IgYmF0dGxlIGluIHRoaXMgZmlsbSB3aGljaCBpcyBjZXJ0YWlubHkgbm90IGp1c3QgYSBjaGVhcCBjYXNoIGluIG9uIHRoZSBsYXRlc3QgZXBpc29kZSBpbiBhIHBvcHVsYXIgZnJhbmNoaXNlLiIsInBvcHVsYXJpdHkiOjAuNiwicG9zdGVyX3BhdGgiOiIvdkxQUUVXaXJsRmY4emhIdUNGOWxsQWNkNjNpLmpwZyIsInJlbGVhc2VfZGF0ZSI6IiIsInRpdGxlIjoiU3BhY2UgUHJpbmNlc3MiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6MCwidm90ZV9jb3VudCI6MH0seyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvM3VnNGxIQlU2MHF6dmhWdWxWYUZ2NklvbFhZLmpwZyIsImdlbnJlX2lkcyI6WzM1LDE2XSwiaWQiOjE2Mzc3Miwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJqYSIsIm9yaWdpbmFsX3RpdGxlIjoi44Kv44Os44Oo44Oz44GX44KT44Gh44KD44KTIOW1kOOCkuWRvOOBtiHjgqrjg6njgajlroflrpnjga7jg5fjg6rjg7PjgrvjgrkiLCJvdmVydmlldyI6IlRoZSBOb2hhcmFzIGdldCBhYmR1Y3RlZCBieSBhbGllbnMgd2hvIGNsYWltIHRoYXQgU2hpbi1jaGFuJ3MgYmFieSBzaXN0ZXIgaXMgdGhlaXIgcHJpbmNlc3MhIFdpbGwgc2hlIHN0YXkgb24gdGhpcyBwbGFuZXQgb3IgcmV0dXJuIHRvIEthc3VrYWJlPyIsInBvcHVsYXJpdHkiOjkuNzg2LCJwb3N0ZXJfcGF0aCI6Ii9nR1hyOURJNjByeW5MZTBYaVc4Z0pHZnIxVkouanBnIiwicmVsZWFzZV9kYXRlIjoiMjAxMi0wNC0xMyIsInRpdGxlIjoiQ3JheW9uIFNoaW4tY2hhbjogSW52b2tlIGEgU3Rvcm0hIE1lIGFuZCB0aGUgU3BhY2UgUHJpbmNlc3MiLCJ2aWRlbyI6ZmFsc2UsInZvdGVfYXZlcmFnZSI6Ny4xLCJ2b3RlX2NvdW50IjoyNn0seyJhZHVsdCI6ZmFsc2UsImJhY2tkcm9wX3BhdGgiOiIvNjVWSko1clU1NmFMSGx2c3lPRG9uZkhudXJ6LmpwZyIsImdlbnJlX2lkcyI6WzEwNzQ5XSwiaWQiOjcwMDk3Miwib3JpZ2luYWxfbGFuZ3VhZ2UiOiJrbyIsIm9yaWdpbmFsX3RpdGxlIjoi7ZiV64uYIOyVhOuCtDQgLSDsmrDso7zqs7Xso7wg7LaY7ZalIiwib3ZlcnZpZXciOiJQYW4tam9vbiBzcG90cyBDaG9vbi1oeWFuZyB3aG8gaXMgd2Fsa2luZyBhbG9uZSBvbiBhIGRlc2VydGVkIGNvdW50cnlzaWRlIHJvYWQgYW5kIGFwcHJvYWNoZXMgaGVyIHdpdGggbmF1Z2h0eSB0aGluZ3MgaW4gbWluZC4gSG93ZXZlciwgc2hlJ3Mgc3RyYW5nZS4gU2hlIGRvZXNuJ3QgYW5zd2VyIGhpcyBxdWVzdGlvbnMgcHJvcGVybHkuIEhvd2V2ZXIsIFBhbi1qb29uIGRvZXNuJ3QgZ2l2ZSB1cCBhbmQgYXNrcyBoZXIgdG8gZ28gd2l0aCBoaW0uIiwicG9wdWxhcml0eSI6MC42LCJwb3N0ZXJfcGF0aCI6Ii81bXBmb2RmWktTZEFmb2hUTm5VSnowYlhDVUsuanBnIiwicmVsZWFzZV9kYXRlIjoiMjAxOC0wNC0yNSIsInRpdGxlIjoiTXkgQnJvdGhlcidzIFdpZmUgNCAtIFNwYWNlIFByaW5jZXNzIENob29uLWh5YW5nIiwidmlkZW8iOmZhbHNlLCJ2b3RlX2F2ZXJhZ2UiOjAsInZvdGVfY291bnQiOjB9LHsiYWR1bHQiOmZhbHNlLCJiYWNrZHJvcF9wYXRoIjpudWxsLCJnZW5yZV9pZHMiOltdLCJpZCI6OTMwNDExLCJvcmlnaW5hbF9sYW5ndWFnZSI6ImtvIiwib3JpZ2luYWxfdGl0bGUiOiLtmJXri5gg7JWE64K0NCAtIOyasOyjvOqzteyjvCDstpjtlqUgLSIsIm92ZXJ2aWV3IjoiUGFuIEpvb24gc3BvdHMgQ2hvb24gSHlhbmcgd2hvIGlzIHdhbGtpbmcgYWxvbmUgb24gYSBkZXNlcnRlZCBjb3VudHJ5c2lkZSByb2FkIGFuZCBhcHByb2FjaGVzIGhlciB3aXRoIG5hdWdodHkgdGhpbmdzIGluIG1pbmQuIEhvd2V2ZXIsIHNoZSdzIHN0cmFuZ2UuIFNoZSBkb2Vzbid0IGFuc3dlciBoaXMgcXVlc3Rpb25zIHByb3Blcmx5LiBIb3dldmVyLCBQYW4gSm9vbiBkb2Vzbid0IGdpdmUgdXAgYW5kIGFza3MgaGVyIHRvIGdvIHdpdGggaGltLiIsInBvcHVsYXJpdHkiOjAuNiwicG9zdGVyX3BhdGgiOiIvNzFlMzZnRFgxTFl0azBMVkNOUGJBQTZsMERVLmpwZyIsInJlbGVhc2VfZGF0ZSI6IjIwMTgtMDQtMjUiLCJ0aXRsZSI6Ik15IEJyb3RoZXIncyBXaWZlIDQgLSBTcGFjZSBQcmluY2VzcyBDaG9vbiBIeWFuZyIsInZpZGVvIjpmYWxzZSwidm90ZV9hdmVyYWdlIjowLCJ2b3RlX2NvdW50IjowfV0sInRvdGFsX3BhZ2VzIjoxLCJ0b3RhbF9yZXN1bHRzIjo0fQ==
+  recorded_at: Fri, 02 Dec 2022 15:40:09 GMT
+recorded_with: VCR 6.1.0
