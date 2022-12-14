@@ -2,18 +2,16 @@
 
 Rails.application.routes.draw do
   root 'welcome#index'
+
   get '/register', to: 'users#new'
   get '/login', to: 'users#login_form'
   post '/login', to: 'users#login_user'
-
-  get '/logout', to: 'users#logout_user'
-
+  delete '/logout', to: 'users#logout_user'
   get '/discover', to: 'users#discover'
+  get '/dashboard', to: 'users#show'
 
   get '/movies', to: 'movies#index'
   get '/movies/:id', to: 'movies#show'
-
-  get '/dashboard', to: 'users#show'
 
   resources :users, only: %i[create]
 
@@ -24,6 +22,5 @@ Rails.application.routes.draw do
   namespace :admin do
     get '/dashboard', to: 'dashboard#index'
     get '/users/:id', to: 'dashboard#show'
-    # resources :dashboard, only: %i[index show]
   end
 end
