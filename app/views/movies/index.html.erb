@@ -1,0 +1,9 @@
+
+<h1> <%= "#{@user.name}'s Movies Dashboard" %> </h1>
+
+
+<%= button_to "Discover Page", "/dashboard/discover", method: :get %>
+
+<% @movies.each do |movie| %>
+<p><%= link_to "#{movie.first}",  "/dashboard/movies/#{movie[1]}", method: :get %> Vote Average:<%= movie.last %></p>
+<% end %>

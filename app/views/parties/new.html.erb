@@ -1,0 +1,25 @@
+<h1> Viewing Party</h1>
+<h3><p>Create a Viewing Party for <%= @title %></h3>
+
+<%= button_to "Discover Page", "/dashboard/discover", method: :get %><br>
+
+<%= form_with url: "/dashboard/movies/#{params[:id]}/viewing-party/new", method: :post, local: true do |form| %>
+  <%= form.hidden_field :movie_title, value: @title %>
+  <%= form.hidden_field :movie_poster, value: @movie_poster %>
+  <%= form.hidden_field :host_id, value: @user.id %>
+  <%= form.label "Duration:" %>
+  <%= form.number_field :duration, value: @runtime, min: @runtime %><br><br>
+  <%= form.label "When:" %>
+  <%= form.date_select :date, min: Date.today %><br><br>
+  <%= form.label "Start Time:" %>
+  <%= form.time_select :time, prompt: true %><br><br>
+  <p>Invite Other Users </p>
+  <% @users.each do |user|%>
+    <%if user.id != params[:user_id].to_i%>
+    <p> <%= check_box_tag(@user_count, user.id) %> <%= label_tag(user.name, "#{user.name} (#{user.email})") %> </p>
+    <% @user_count += 1%>
+    <% end %>
+  <% end %>
+  <%= form.submit "Create Party" %>
+<% end %>
+
