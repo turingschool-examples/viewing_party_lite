@@ -6,7 +6,7 @@
 
     <div id="existing-users">
       <% @users.each do |user| %>
-        <center><%= link_to user.email, admin_dashboard_path(user) %><br><center>
+        <center><%= link_to user.email, admin_path(user) %><br><center>
       <% end %>
     </div>
   </div>

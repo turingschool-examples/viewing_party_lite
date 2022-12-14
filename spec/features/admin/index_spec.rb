@@ -15,7 +15,7 @@ RSpec.describe 'Admin Dashboard', type: :feature do
 
   describe 'When I visit the admin dashboard' do
     it 'I see a list of all default users email addresses' do
-      visit admin_dashboard_index_path
+      visit admin_dashboard_path
 
       within '#existing-users' do
         expect(page).to have_content(user_3.email)
@@ -25,7 +25,7 @@ RSpec.describe 'Admin Dashboard', type: :feature do
         click_link user_3.email
       end
       
-      expect(current_path).to eq(admin_dashboard_path(user_3))
+      expect(current_path).to eq(admin_path(user_3))
     end
   end
 end

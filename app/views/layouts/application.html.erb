@@ -21,7 +21,7 @@
     <%= link_to 'Log Out', '/logout' if session[:user_id] != nil %>
     <h1><center>Viewing Party</center></h1>
     <center><%= link_to 'Dashboard', dashboard_path if session[:user_id] != nil %><br><br></center>
-    <center><%= link_to 'Admin Dashboard', admin_dashboard_index_path if session[:user_id] != nil && User.find(session[:user_id]).role == 'admin' %><br><br></center>
+    <center><%= link_to 'Admin Dashboard', admin_dashboard_path if session[:user_id] != nil && User.find(session[:user_id]).role == 'admin' %><br><br></center>
     <%= yield %>
   </body>
 </html>
