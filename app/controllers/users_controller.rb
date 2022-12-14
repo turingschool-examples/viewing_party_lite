@@ -2,7 +2,7 @@
 
 class UsersController < ApplicationController
   before_action :require_user, only: %i[show discover results]
-  helper_method :current_user
+
 
   def show
     @viewing_parties = @user.viewing_parties
@@ -62,10 +62,6 @@ class UsersController < ApplicationController
 
     redirect_to root_path
     flash[:error] = 'You must be logged in or registered to access that page'
-  end
-
-  def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
   def error_query_check(user)
