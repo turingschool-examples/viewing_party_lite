@@ -27,4 +27,14 @@ RSpec.describe User, type: :model do
       expect(user.email).to eq('user@user.com')
     end
   end
+
+  describe 'class methods' do
+    describe '.default_users' do
+      it 'returns default users only' do
+        create_list(:user, 9)
+        create_list(:user, 5, role: 1)
+        expect(User.default_users.count).to eq(9)
+      end
+    end
+  end
 end

@@ -6,7 +6,7 @@ RSpec.describe 'the Discover Movies Page', type: :feature do
   let!(:user_1) { create(:user) }
 
   before do
-    visit "/discover"
+    visit '/discover'
   end
 
   after do
@@ -16,7 +16,7 @@ RSpec.describe 'the Discover Movies Page', type: :feature do
   describe 'When I visit the user discover path' do
     it 'I see a button to Discover Top Rated Movies that takes me to the movies results page' do
       VCR.insert_cassette 'top rated'
-      visit "/discover"
+      visit '/discover'
 
       within '#top-rated' do
         click_button 'Find Top Rated Movies'
@@ -28,7 +28,7 @@ RSpec.describe 'the Discover Movies Page', type: :feature do
 
     it 'I see a text field to enter keyword(s) and a button to search by movie title that takes me to the movies results page' do
       VCR.insert_cassette 'searches'
-      visit "/discover"
+      visit '/discover'
 
       within '#find-movie' do
         fill_in :search, with: 'princess'

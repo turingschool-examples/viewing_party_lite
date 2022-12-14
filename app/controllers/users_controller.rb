@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def login_user
     user = User.find_by(email: params[:email])
-    if user && user.authenticate(params[:password])
+    if user&.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to dashboard_path
       flash[:success] = "Welcome, #{user.name}!"
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   def logout_user
     session.destroy
     redirect_to root_path
-    flash[:alert] = "See ya later!"
+    flash[:alert] = 'See ya later!'
   end
 
   def new; end
@@ -47,7 +47,7 @@ class UsersController < ApplicationController
   private
 
   def validate_user
-    if session[:user_id] == nil
+    if session[:user_id].nil?
       redirect_to root_path
       flash[:alert] = 'You must be logged in to access your dashboard'
     else

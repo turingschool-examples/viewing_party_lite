@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post '/login', to: 'users#login_user'
 
   get '/logout', to: 'users#logout_user'
-  
+
   get '/discover', to: 'users#discover'
 
   get '/movies', to: 'movies#index'
@@ -19,5 +19,11 @@ Rails.application.routes.draw do
 
   resources :movies, except: %i[index create new edit show update destroy] do
     resources :view_parties, only: %i[new create]
+  end
+
+  namespace :admin do
+    get '/dashboard', to: 'dashboard#index'
+    get '/users/:id', to: 'dashboard#show'
+    # resources :dashboard, only: %i[index show]
   end
 end
