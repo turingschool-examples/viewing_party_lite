@@ -203,22 +203,6 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
-## Heroku
-
-- heroku restart
-- heroku pg:reset DATABASE
-- heroku run rails db:migrate
-- git push heroku main
-- heroku buildpacks:set heroku/ruby
-- heroku stack:set heroku-20
-<!-- - heroku ps:scale web=1 -->
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/AMSterling/viewing_party_lite.svg?style=for-the-badge
