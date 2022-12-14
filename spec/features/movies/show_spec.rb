@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.describe 'Movie show page' do
@@ -7,7 +5,9 @@ RSpec.describe 'Movie show page' do
     @mostafa = User.create!(name: 'Mostafa', email: 'sasa2020@hotmail.com', password: "123", password_confirmation: '123')
     @jim = User.create!(name: 'Jimothy', email: 'jimmyboy@hotmail.com', password: "123", password_confirmation: '123')
     @bryan = User.create!(name: 'Bryan', email: 'breakingbad2020@hotmail.com', password: "123", password_confirmation: '123')
-
+    # user = User.create(name: 'Meg', email: "email@email.com", password: "123", password_confirmation: '123')
+    
+    #   allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     json_response = File.read('spec/fixtures/pulp_fiction.json')
     json_response_2 = File.read('spec/fixtures/pulp_fiction_credits.json')
     json_response_3 = File.read('spec/fixtures/pulp_fiction_reviews.json')
@@ -45,27 +45,34 @@ RSpec.describe 'Movie show page' do
 
   describe 'As a visitor' do
     it 'When I visit user/:user_id/movies/:id I see a button to create a viewing party' do
-      visit "/users/#{@jim.id}/movies/680"
+      user = User.create(name: 'Meg', email: "email@email.com", password: "123", password_confirmation: '123')
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+      visit "/dashboard/movies/680"
 
       expect(page).to have_button('Create a Viewing Party')
 
       click_button 'Create a Viewing Party'
 
-      expect(current_path).to eql("/users/#{@jim.id}/movies/680/viewing-party/new")
+      expect(current_path).to eql("/dashboard/movies/680/viewing-party/new")
     end
 
     it 'When I visit user/:user_id/movies/:id I see a button to go back to the discover page' do
-      visit "/users/#{@jim.id}/movies/680"
+      user = User.create(name: 'Meg', email: "email@email.com", password: "123", password_confirmation: '123')
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+      visit "/dashboard/movies/680"
 
       expect(page).to have_button('Discover Page')
 
       click_button 'Discover Page'
 
-      expect(current_path).to eql("/users/#{@jim.id}/discover")
+      expect(current_path).to eq("/dashboard/discover")
     end
 
     it 'When I visit user/:user_id/movies/:id I see the following details about the movie: title, vote average, runtime in hours and minutes, genre(s)' do
-      visit "/users/#{@jim.id}/movies/680"
+      user = User.create(name: 'Meg', email: "email@email.com", password: "123", password_confirmation: '123')
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+      
+      visit "/dashboard/movies/680"
 
       expect(page).to have_content('Pulp Fiction')
       expect(page).to have_content('Vote: 8.491')
@@ -76,13 +83,19 @@ RSpec.describe 'Movie show page' do
     end
 
     it 'When I visit user/:user_id/movies/:id I see the a summary of the movie' do
-      visit "/users/#{@jim.id}/movies/680"
+      user = User.create(name: 'Meg', email: "email@email.com", password: "123", password_confirmation: '123')
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+      
+      visit "/dashboard/movies/680"
 
       expect(page).to have_content("A burger-loving hit man, his philosophical partner, a drug-addled gangster's moll and a washed-up boxer converge in this sprawling, comedic crime caper. Their adventures unfurl in three stories that ingeniously trip back and forth in time.")
     end
 
     it 'When I visit user/:user_id/movies/:id I see the cast list (first 10) of the movie' do
-      visit "/users/#{@jim.id}/movies/680"
+      user = User.create(name: 'Meg', email: "email@email.com", password: "123", password_confirmation: '123')
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+      
+      visit "/dashboard/movies/680"
 
       expect(page).to have_content('Cast:')
       expect(page).to have_content('John Travolta as Vincent Vega')
@@ -98,7 +111,10 @@ RSpec.describe 'Movie show page' do
     end
 
     it "When I visit user/:user_id/movies/:id I see the total number of reviews along with reviewers' information" do
-      visit "/users/#{@jim.id}/movies/680"
+      user = User.create(name: 'Meg', email: "email@email.com", password: "123", password_confirmation: '123')
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+      
+      visit "/dashboard/movies/680"
 
       expect(page).to have_content('Count of Reviews: 4')
 
@@ -123,6 +139,21 @@ RSpec.describe 'Movie show page' do
       expect(page).to have_content('rating:')
 
       expect(page).to have_css("img[src*='image.tmdb.org/t/p/original']", count: 4)
+    end
+
+    it 'As a visitor
+      If I go to a movies show page 
+      And click the button to create a viewing party
+      Im redirected to the movies show page, and a message 
+      appears to let me know I must be logged in or registered to create a movie party.' do
+
+      
+      visit '/dashboard/movies/680'
+      
+      click_button("Create a Viewing Party")
+      
+      expect(page).to have_content('Must log in or register to create a viewing party')
+      expect(current_path).to eq("/dashboard/movies/680")
     end
   end
 end

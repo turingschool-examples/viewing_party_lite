@@ -6,6 +6,7 @@ RSpec.describe 'User discover page' do
     @mostafa = User.create!(name: 'Mostafa', email: 'sasa2020@hotmail.com', password: "123", password_confirmation: '123')
     @jim = User.create!(name: 'Jimothy', email: 'jimmyboy@hotmail.com', password: "123", password_confirmation: '123')
     @bryan = User.create!(name: 'Bryan', email: 'breakingbad2020@hotmail.com', password: "123", password_confirmation: '123')
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@jim)
   end
 
   describe 'As a visitor' do
@@ -22,13 +23,13 @@ RSpec.describe 'User discover page' do
         )
         .to_return(status: 200, body: json_response, headers: {})
 
-      visit "/users/#{@jim.id}/discover"
+      visit "/dashboard/discover"
 
       expect(page).to have_button('Find Top Rated Movies')
 
       click_button 'Find Top Rated Movies'
 
-      expect(current_path).to eq("/users/#{@jim.id}/movies")
+      expect(current_path).to eq("/dashboard/movies")
     end
   end
 end

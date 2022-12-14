@@ -1,7 +1,9 @@
 <h1> <%= @title %> </h1>
 
-<%= button_to "Create a Viewing Party", "/users/#{@user.id}/movies/#{params[:id]}/viewing-party/new", method: :get, params: {movie_poster: @poster_path}%>
-<%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get%>
+  <%= button_to "Create a Viewing Party", "/dashboard/movies/#{params[:id]}/viewing-party/new", method: :get, params: {movie_poster: @poster_path}%>
+
+
+  <%= button_to "Discover Page", "/dashboard/discover", method: :get%>
 
 <h3> Vote: <%= @vote %> </h3>
 <h3> Runtime: <%= @runtime.to_i/60 %> hours <%= (@runtime.to_i % 60) %> minutes </h3>

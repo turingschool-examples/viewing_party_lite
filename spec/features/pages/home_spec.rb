@@ -33,15 +33,38 @@ RSpec.describe 'the home page' do
     expect(current_path).to eql('/register')
   end
 
-  it 'has a list of existing users with each user being a link to their respective dashboard' do
+
+  it 'when a user is logged in ' do
+    
+    user = User.create(name: 'Meg', email: "email@email.com", password: "123", password_confirmation: '123')
+    
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+    
     visit '/'
 
-    expect(page).to have_link('Mostafa')
-    expect(page).to have_link('Yuji')
-    expect(page).to have_link('Bryan')
+    expect(page).to_not have_button("Log In")
+    expect(page).to_not have_button("Create New User")
 
-    click_on 'Yuji'
+    click_button "Log Out"
+    expect(current_path).to eq('/')
+  end
 
-    expect(current_path).to eql("/users/#{@yuji.id}")
+  it 'A guest(not logged in user) goes to home page' do
+    
+    visit '/'
+
+    expect(page).to have_button("Log In")
+    expect(page).to have_button("Create New User")
+  end
+
+  it 'shows a list of existing users emails' do
+    user = User.create(name: 'Meg', email: "email@email.com", password: "123", password_confirmation: '123')
+    use2 = User.create(name: 'Meg', email: "meg@meg.com", password: "123", password_confirmation: '123')
+      
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+    
+    visit '/'
+
+    expect(page).to have_content("meg@meg.com")
   end
 end
