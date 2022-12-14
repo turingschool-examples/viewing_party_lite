@@ -12,10 +12,7 @@ RSpec.describe 'New View Party Page', type: :feature do
   end
 
   before do
-    visit login_path
-    fill_in :email, with: user_1.email
-    fill_in :password, with: user_1.password
-    click_button 'Log In'
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user_1)
     visit new_movie_view_party_path(movie_1.id)
   end
 

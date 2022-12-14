@@ -9,10 +9,7 @@ RSpec.describe 'Admin Show Page', type: :feature do
 
   describe 'When I visit the admin show page' do
     it 'as a visitor, I am taken back to the landing page where I see an error' do
-      visit login_path
-      fill_in :email, with: user_2.email
-      fill_in :password, with: user_2.password
-      click_button 'Log In'
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user_2)
 
       visit admin_path(user_3)
 

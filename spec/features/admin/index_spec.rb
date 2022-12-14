@@ -10,10 +10,7 @@ RSpec.describe 'Admin Dashboard', type: :feature do
 
   describe 'When I visit the admin dashboard' do
     it 'as an admin, I see a list of all default users email addresses' do
-      visit login_path
-      fill_in :email, with: user_1.email
-      fill_in :password, with: user_1.password
-      click_button 'Log In'
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user_1)
 
       visit admin_dashboard_path
 
@@ -29,10 +26,7 @@ RSpec.describe 'Admin Dashboard', type: :feature do
     end
 
     it 'as a visitor, I am redirected to the landing page where I see an error message' do
-      visit login_path
-      fill_in :email, with: user_3.email
-      fill_in :password, with: user_3.password
-      click_button 'Log In'
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user_3)
 
       visit admin_dashboard_path
 
