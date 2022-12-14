@@ -47,7 +47,7 @@ class UsersController < ApplicationController
   private
 
   def validate_user
-    if session[:user_id].nil?
+    if current_user.nil?
       redirect_to root_path
       flash[:alert] = 'You must be logged in to access your dashboard'
     else
@@ -56,7 +56,7 @@ class UsersController < ApplicationController
   end
 
   def find_user
-    @user = User.find(session[:user_id])
+    @user = current_user
   end
 
   def user_params

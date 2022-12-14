@@ -14,7 +14,7 @@ class ViewPartiesController < ApplicationController
       # render action - to show same page so all info persisted for user
       flash[:alert] = 'Party duration cannot be shorter than the movie duration'
     elsif new_party.save
-      UserViewParty.create(user_id: session[:user_id], view_party_id: new_party.id, host: true)
+      UserViewParty.create(user_id: current_user.id, view_party_id: new_party.id, host: true)
       invitees.map { |invitee| invitee.view_parties << new_party }
       redirect_to dashboard_path
     else

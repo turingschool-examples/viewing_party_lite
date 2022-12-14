@@ -22,7 +22,7 @@ module Admin
     end
 
     def find_admin_user
-      @admin_user = User.find(session[:user_id])
+      @admin_user = current_user
       verify_admin_user
     end
   end
