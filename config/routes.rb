@@ -8,11 +8,14 @@ Rails.application.routes.draw do
   end
 
   get '/register', to: 'users#new'
+  get '/dashboard', to: 'users#show'
+
   get '/users/:id/discover', to: 'movies#discover'
   get '/users/:id/movies', to: 'movies#index'
 
   get '/', to: 'welcome#index'
   get '/login', to: 'users#login_form'
   post '/login', to: 'users#login_user'
+  get "/logout", to: "users#logout_user"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
