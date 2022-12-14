@@ -5,14 +5,13 @@
   <p><center><%= link_to "Log In", login_path %><center></p>
 <% else %>
   <p><%= link_to "Log Out", '/logout', method: :delete %></p>
-<% end %>
-
-<br>
-
-<% if current_user %>
   <h3><center>Existing Users<center></h3>
   <% @users.each do |user| %>
     <!--<p><center><%= link_to "#{user.email}", dashboard_path %><center></p>-->
     <p><center><%= user.email %><center></p>
   <% end %>
 <% end %>
+
+
+
+
