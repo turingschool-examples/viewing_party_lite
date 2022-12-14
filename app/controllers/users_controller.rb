@@ -2,6 +2,7 @@
 
 class UsersController < ApplicationController
   before_action :require_user, only: %i[show discover results]
+  helper_method :current_user
 
   def show
     @viewing_parties = @user.viewing_parties
@@ -45,7 +46,7 @@ class UsersController < ApplicationController
   end
 
   def logout_user
-    session.delete(:user_id)
+    session.destroy
     redirect_to root_path
   end
 

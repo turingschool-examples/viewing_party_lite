@@ -14,7 +14,7 @@
 <% if !session[:user_id].nil? %>
   <h3><center>Existing Users<center></h3>
   <% @users.each do |user| %>
-  <!--<p><center><%= link_to "#{user.email}", dashboard_path %><center></p>-->
-  <p><center><%= user.email %><center></p>
+    <!--<p><center><%= link_to "#{user.email}", dashboard_path %><center></p>-->
+    <p><center><%= user.email %><center></p>
   <% end %>
 <% end %>
