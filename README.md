@@ -30,11 +30,10 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/AMSterling/viewing-party-lite-2">
-    <img src="images/logo.png" alt="Viewing Party Lite Logo" width="80" height="80">
+  <a href="https://github.com/AMSterling/viewing_party_lite">
   </a>
 
-<h3 align="center">Viewing Party Lite</h3>
+<h1 align="center">Viewing Party Lite</h1>
 
   <p align="center">
     Viewing Party Lite is an application in which users can explore movie options and create 
@@ -82,7 +81,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Viewing Party Lite Screen Shot][product-screenshot]](https://example.com)
+# <img src="app/assets/images/ViewingPartyHome.png"> 
+# <img src="app/assets/images/VP-Dashboard.png"> 
 
 Example wireframes are found [here](https://backend.turing.io/module3/projects/viewing_party_lite/wireframes)
 
@@ -102,7 +102,8 @@ Example wireframes are found [here](https://backend.turing.io/module3/projects/v
 * [![JavaScript][JavaScript]][JavaScript-url]
 * [![PostgreSQL][PostgreSQL]][PostgreSQL-url]
 * [![Heroku][Heroku]][Heroku-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+* [![jQuery][jQuery]][jQuery-url]
+* [![RuboCop][RuboCop]][RuboCop-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -136,8 +137,9 @@ This is an example of how to list things you need to use the software and how to
 3. Install gem packages
    ```sh
    rails db:{drop,create,migrate}
-   bundle
+   bundle install
    bundle exec figaro install
+   bundle update
    ```
 4. Enter your API in `config/application.yml`
    ```js
@@ -232,28 +234,28 @@ Don't forget to give the project a star! Thanks again!
 [linkedin-url]: https://linkedin.com/in/sterling-316a6223a/
 [linkedin-shield2]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url2]: https://linkedin.com/in/blake-saylor
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: 
 
 [Atom]: https://img.shields.io/badge/Atom-66595C?style=for-the-badge&logo=Atom&logoColor=white
 [Atom-url]: https://atom.io/
 
-[Visual Studio Code]: https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white
-[Visual Studio Code-url]: https://code.visualstudio.com/
+[Bootstrap]: https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white
+[Bootstrap-url]: https://getbootstrap.com/
 
-[Rails]: https://img.shields.io/badge/rails-%23CC0000.svg?style=for-the-badge&logo=ruby-on-rails&logoColor=white
-[Rails-url]: https://rubyonrails.org/
-
-[Ruby]: https://img.shields.io/badge/Ruby-000000?style=for-the-badge&logo=ruby&logoColor=CC342D
-[Ruby-url]: https://www.ruby-lang.org/en/
-
-[RSpec]: https://img.shields.io/badge/RSpec-fffcf7?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij48cGF0aCBkPSJNMzIyLjM4NDE4NTgsMTQ1LjU3NTY2ODNsNjguNTQ4NjQ1LDcwLjI4NDA1NzZsLTE3LjM1NDA5NTUsMzEuNjcxMjE4OUwyNTQuMjY5MzYzNCwzOTYuNzc2MDkyNUwxMzQuOTYwMDA2NywyNTEuMDAxNzU0OGwtMTcuMzU0MDgwMi0zNS4xNDIwMjg4bDY4LjU0ODY2MDMtNzAuMjg0MDU3NkgzMjIuMzg0MTg1OHogTTMwMC4yNzUzMjk2LDM2LjAwOTgyNjdsLTI1LjY3NTQxNSwzMy45NDQ4MzE4QzM5OC4wMTA4MzM3LDgyLjAzMDUzMjgsNDcyLjA5NzI5LDIwNy45MTIxMzk5LDQzMy4wNDE5MzEyLDMxOC4zMzk0NDdsMTkuODc0ODE2OSwzOS41Mjg2ODY1bDM5LjQ5NTAyNTYtMi45ODkxNjYzQzU1Ny4zNDYxMzA0LDIwMC42MTA2NDE1LDQ1NC4zMTExNTcyLDE3LjkzMzU3NjYsMjc5LjY4MDI2NzMsMS43NTU0NzY2TDMwMC4yNzUzMjk2LDM2LjAwOTgyNjd6IE0xNy41ODYxOTg4LDM0OC42OTE4OTQ1Qy00OC41MzY1OTQ0LDE4MC4zMTU1NjcsODAuMTU4NDMyLTUuNDMyNjY5MiwyNjMuOTI0MzQ2OSwwLjc1NTQ1NDZsMjAuNjk2MDE0NCwzNC40MjIxNTczbC0yNS42MjQyMDY1LDMzLjg3NjY2MzJDMTI0LjMyMjk5OCw2Ni42NDI2OTI2LDMxLjA5Nzk1OTUsMjA1LjE3MjI3MTcsODMuMzY0Mjk2LDMyOC43OTgwMzQ3bC00Mi43NzA3NTk2LTExLjIyMTUyNzFMMTcuNTg2MTk4OCwzNDguNjkxODk0NXogTTQ4Ni4yOTQxMjg0LDM2OC4zNjY2MzgybC00MS4wNzMxNTA2LDMuMTA4NjEyMWwtMTguNjY3NTQxNS0zNy4xMjcyMjc4Yy01NC4xMDkzNDQ1LDEyNC44ODMzMDA4LTI1MC41ODg0NzA1LDE2Mi4xODEwMzAzLTMzNS45MDgyNjQyLDkuNzg3MTcwNGwtNDQuODM4ODU1Ny0xMS43NjQyMjEybC0yMi4zMDExNjA4LDMwLjE2MDAwMzdDMTI4LjAxMDc0MjIsNTc2LjQ1Mjc1ODgsNDA1LjA3OTU4OTgsNTQzLjE1MTI0NTEsNDg2LjI5NDEyODQsMzY4LjM2NjYzODJ6Ii8+PC9zdmc+
-[RSpec-url]: https://rspec.info/
-
-[PostgreSQL]: https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white
-[PostgreSQL-url]: https://www.postgresql.org/
+[CircleCI]: https://img.shields.io/badge/circle%20ci-%23161616.svg?style=for-the-badge&logo=circleci&logoColor=white
+[CircleCI-url]: https://circleci.com/developer
 
 [CSS]: 	https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white
 [CSS-url]: https://en.wikipedia.org/wiki/CSS
+
+[Fly]: https://custom-icon-badges.demolab.com/badge/Fly-DCDCDC?style=for-the-badge&logo=fly-io
+[Fly-url]: https://fly.io/
+
+[GitHub Badge]: https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white
+[GitHub-url]: https://github.com/<Username>/
+
+[Heroku]: https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white
+[Heroku-url]: https://www.heroku.com/
 
 [HTML5]: https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white
 [HTML5-url]: https://en.wikipedia.org/wiki/HTML5
@@ -261,11 +263,49 @@ Don't forget to give the project a star! Thanks again!
 [JavaScript]: https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E
 [JavaScript-url]: https://www.javascript.com/
 
-[Heroku]: https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white
-[Heroku-url]: https://www.heroku.com/
+[jQuery]: https://img.shields.io/badge/jquery-%230769AD.svg?style=for-the-badge&logo=jquery&logoColor=white
+[jQuery-url]: https://github.com/rails/jquery-rails
 
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
+[LinkedIn Badge]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
+[LinkedIn-url]: https://www.linkedin.com/in/<Username>/
 
-[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com
+[Miro]: https://img.shields.io/badge/Miro-050038?style=for-the-badge&logo=Miro&logoColor=white
+[Miro-url]: https://miro.com/
+
+[PostgreSQL]: https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white
+[PostgreSQL-url]: https://www.postgresql.org/
+
+[Postman]: https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white
+[Postman-url]: https://web.postman.co/
+
+[Rails]: https://img.shields.io/badge/rails-%23CC0000.svg?style=for-the-badge&logo=ruby-on-rails&logoColor=white
+[Rails-url]: https://rubyonrails.org/
+
+[RSpec]: https://custom-icon-badges.demolab.com/badge/RSpec-fffcf7?style=for-the-badge&logo=rspec
+[RSpec-url]: https://rspec.info/
+
+[RuboCop]: https://img.shields.io/badge/RuboCop-000?logo=rubocop&logoColor=fff&style=for-the-badge
+[RuboCop-url]: https://docs.rubocop.org/rubocop-rails/index.html
+
+[Ruby]: https://img.shields.io/badge/Ruby-000000?style=for-the-badge&logo=ruby&logoColor=CC342D
+[Ruby-url]: https://www.ruby-lang.org/en/
+
+[Visual Studio Code]: https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white
+[Visual Studio Code-url]: https://code.visualstudio.com/
+
+[bcrypt-docs]: https://github.com/bcrypt-ruby/bcrypt-ruby
+[capybara-docs]: https://github.com/teamcapybara/capybara
+[factory_bot_rails-docs]: https://github.com/thoughtbot/factory_bot_rails
+[faker-docs]: https://github.com/faker-ruby/faker
+[faraday-docs]: https://lostisland.github.io/faraday/
+[figaro-docs]: https://github.com/laserlemon/figaro
+[jsonapi-serializer-docs]: https://github.com/jsonapi-serializer/jsonapi-serializer
+[launchy-docs]: https://www.rubydoc.info/gems/launchy/2.2.0
+[omniauth-google-oauth2-docs]: https://github.com/zquestz/omniauth-google-oauth2
+[orderly-docs]: https://github.com/jmondo/orderly
+[pry-docs]: https://github.com/pry/pry
+[rspec-rails-docs]: https://github.com/rspec/rspec-rails
+[shoulda-matchers-docs]: https://github.com/thoughtbot/shoulda-matchers
+[simplecov-docs]: https://github.com/simplecov-ruby/simplecov
+[vcr-docs]: https://github.com/vcr/vcr
+[webmock-docs]: https://github.com/bblimke/webmock
