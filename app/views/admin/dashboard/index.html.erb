@@ -1,0 +1,13 @@
+<body>
+  <div class='flex-container'>
+    <div class="flex-items" id="title">
+      <h3><center><%= "#{@admin_user.name}'s Admin Dashboard" %></center></h3>
+    </div>
+
+    <div id="existing-users">
+      <% @users.each do |user| %>
+        <center><%= link_to user.email, admin_dashboard_path(user) %><br><center>
+      <% end %>
+    </div>
+  </div>
+</body>

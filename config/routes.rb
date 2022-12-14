@@ -20,4 +20,8 @@ Rails.application.routes.draw do
   resources :movies, except: %i[index create new edit show update destroy] do
     resources :view_parties, only: %i[new create]
   end
+
+  namespace :admin do
+    resources :dashboard, only: %i[index show]
+  end
 end

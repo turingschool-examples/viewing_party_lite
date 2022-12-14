@@ -1,0 +1,28 @@
+<body>
+  <div class='flex-container'>
+    <div class="flex-items" id="title">
+      <h3><%= "#{@user.name}'s Dashboard" %></h3>
+    </div>
+
+    <div class="flex-items" id="discover_movies_button">
+      <%= button_to "Discover Movies", "/discover", method: :get, class: "button2" %>
+    </div>
+
+    <hr class='demo'>
+
+    <div class='cards' id='cards'>
+      <% @user.view_parties.each do |party| %>
+        <article class='card'>
+          <img src=<%="http://image.tmdb.org/t/p/original#{party.file_path}"%>>
+          <div class='text' id=<%=party.movie_id %>>
+            <h3 style="text-decoration: none;"><%= link_to party.movie_name, "/movies/#{party.movie_id}" %></h3>
+            <p><%= party.datetime.strftime("%A, %d %B %Y") %></p>
+            <p>&nbsp;<%= party.datetime.strftime("%l:%M %P") %></p>
+            <p><%= if party.host?(@user) then "Hosting" else "Invited" end %></p>
+            <p><%= party.members.map { |member| member.name }.join(', ') %></p>
+          </div>
+        </article>
+      <% end %>
+    </div>
+  </div>
+</body>
