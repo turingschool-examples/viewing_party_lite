@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+  before_action :require_user, only: %i[show discover results]
+
   def show
-    @user = User.find(params[:id])
     @viewing_parties = @user.viewing_parties
   end
 
@@ -11,9 +12,65 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
+    @user = User.new(user_params)
+    error_query_check(@user)
+  end
+
+  def discover
+    @user = current_user
+  end
+
+  def results
+    @user = current_user
+
+    @movies = if params['Find Movies'].present?
+                MovieService.movies_by_keyword(params['Find Movies'])
+              else
+                MovieService.find_top_rated_movies
+              end
+  end
+
+  def login_form; end
+
+  def login_user
+    user = User.find_by(email: params[:email])
+    if user&.authenticate(params[:password])
+      session[:user_id] = user.id
+      flash[:success] = "Welcome, #{user.email}"
+      redirect_to dashboard_path
+    else
+      flash[:error] = 'Bad Credentials, try again.'
+      redirect_to login_path
+    end
+  end
+
+  def logout_user
+    session.delete(:user_id)
+    redirect_to root_path
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def require_user
+    @user = current_user
+    return unless current_user.nil?
+
+    redirect_to root_path
+    flash[:error] = 'You must be logged in or registered to access that page'
+  end
+
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  end
+
+  def error_query_check(user)
     if user.save
-      redirect_to user_path(user)
+      session[:user_id] = user.id
+      redirect_to dashboard_path
     elsif user_params[:password] != user_params[:password_confirmation]
       redirect_to '/register'
       flash[:alert] = 'ERROR: Password Confirmation does not match Password'
@@ -30,40 +87,5 @@ class UsersController < ApplicationController
       redirect_to '/register'
       flash[:alert] = 'ERROR: Email already in use. Please enter a different email'
     end
-  end
-
-  def discover
-    @user = User.find(params[:id])
-  end
-
-  def results
-    @user = User.find(params[:user_id])
-
-    @movies = if params['Find Movies'].present?
-                MovieService.movies_by_keyword(params['Find Movies'])
-              else
-                MovieService.find_top_rated_movies
-              end
-  end
-
-  def login_form
-  end
-
-  def login_user
-    user = User.find_by(email: params[:email])
-    if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
-      flash[:success] = "Welcome, #{user.email}"
-      redirect_to "/users/#{user.id}"
-    else
-      flash[:error] = "Bad Credentials, try again."
-      redirect_to "/login"
-    end
-  end
-
-  private
-
-  def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end

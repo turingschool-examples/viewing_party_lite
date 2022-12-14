@@ -3,17 +3,26 @@
 require 'rails_helper'
 
 RSpec.describe 'Movie Results Page' do
-  describe 'As a User' do
+  describe 'As a Registered User' do
+    before :each do
+      @user1 = create(:user)
+
+      visit '/login'
+      fill_in :email, with: @user1.email
+      fill_in :password, with: @user1.password
+
+      click_on 'Log In'
+    end
+
     describe 'when I visit the discover page' do
       describe 'I see a button for top rated movies' do
         describe 'when I click this button' do
           it 'then I am taken to a page where I see top 20 movie titles as links and their vote averages', :vcr do
-            user1 = create(:user)
-            visit "/users/#{user1.id}/discover/"
+            visit "/users/#{@user1.id}/discover/"
 
             click_button 'Find Top Rated Movies'
             #  save_and_open_page
-            expect(current_path).to eq("/users/#{user1.id}/movies")
+            expect(current_path).to eq("/users/#{@user1.id}/movies")
             expect(page).to have_link('Home')
             expect(page).to have_content('Viewing Party Lite')
             expect(page).to have_content('Top Rated Movies')
@@ -27,25 +36,23 @@ RSpec.describe 'Movie Results Page' do
 
       describe 'When I type a keyword into search and select find movies' do
         it "I am taken to '/users/user_id/movies' and I see of movies that include that keyword", :vcr do
-          user1 = create(:user)
-          visit "/users/#{user1.id}/discover/"
+          visit "/users/#{@user1.id}/discover/"
 
           fill_in('Find Movies', with: 'Spinal Tap')
           click_button('Find Movies')
           #  save_and_open_page
-          expect(current_path).to eq("/users/#{user1.id}/movies")
+          expect(current_path).to eq("/users/#{@user1.id}/movies")
           expect(page).to have_content('Movie results for: Spinal Tap')
         end
       end
 
       describe 'When I do not type anything into search and select find movies' do
         it "Then I am directed to '/users/user_id/movies' where I see top rate movies", :vcr do
-          user1 = create(:user)
-          visit "/users/#{user1.id}/discover/"
+          visit "/users/#{@user1.id}/discover/"
 
           click_button('Find Movies')
           # save_and_open_page
-          expect(current_path).to eq("/users/#{user1.id}/movies")
+          expect(current_path).to eq("/users/#{@user1.id}/movies")
           expect(page).to have_content('Top Rated Movies')
         end
       end
@@ -53,25 +60,22 @@ RSpec.describe 'Movie Results Page' do
       describe 'When on the results page' do
         describe 'When I click the button Discover Page' do
           it "Then I am redirected back to '/users/id/discover' ", :vcr do
-            user1 = create(:user)
-            visit "/users/#{user1.id}/movies"
+            visit "/users/#{@user1.id}/movies"
 
             click_button('Discover Page')
 
-            expect(current_path).to eq("/users/#{user1.id}/discover")
+            expect(current_path).to eq("/users/#{@user1.id}/discover")
           end
         end
 
         describe 'When I click on a movie link' do
           it "then I am take to that movie's show page", :vcr do
-            user1 = create(:user)
-
-            visit "/users/#{user1.id}/movies"
+            visit "/users/#{@user1.id}/movies"
             # save_and_open_page
 
             click_link('The Godfather')
 
-            expect(current_path).to eq("/users/#{user1.id}/movies/238")
+            expect(current_path).to eq("/users/#{@user1.id}/movies/238")
           end
         end
       end

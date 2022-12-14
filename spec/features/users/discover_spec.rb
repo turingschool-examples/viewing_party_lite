@@ -3,10 +3,15 @@
 require 'rails_helper'
 
 RSpec.describe 'Discover Page' do
-  describe 'As a User' do
+  describe 'As a  Registered User' do
     describe 'When I visit the discover movies page' do
       it 'I see button to for Top Movies and a button for Search with the option to input a keyword' do
         user1 = create(:user)
+        visit '/login'
+        fill_in :email, with: user1.email
+        fill_in :password, with: user1.password
+
+        click_on 'Log In'
 
         visit "/users/#{user1.id}/discover"
         # save_and_open_page
