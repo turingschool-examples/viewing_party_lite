@@ -82,7 +82,7 @@
 ## About The Project
 
 # <img src="app/assets/images/ViewingPartyHome.png"> 
-# <img src="app/assets/images/VP-Dashboard.png"> 
+# <img src="app/assets/images/VP_Dashboard.png"> 
 
 Example wireframes are found [here](https://backend.turing.io/module3/projects/viewing_party_lite/wireframes)
 
