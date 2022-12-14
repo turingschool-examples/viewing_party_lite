@@ -81,6 +81,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+App is deployed [here](https://viewing-party-22.herokuapp.com/)
+
 # <img src="app/assets/images/ViewingPartyHome.png"> 
 # <img src="app/assets/images/VP_Dashboard.png"> 
 
@@ -92,19 +94,19 @@ Example wireframes are found [here](https://backend.turing.io/module3/projects/v
 
 ### Built With
 
-* [![Rails][Rails]][Rails-url]
-* [![Ruby][Ruby]][Ruby-url]
-* [![RSpec][RSpec]][RSpec-url]
-* [![Atom][Atom]][Atom-url]
-* [![Visual Studio Code][Visual Studio Code]][Visual Studio Code-url]
-* [![CSS][CSS]][CSS-url]
-* [![HTML5][HTML5]][HTML5-url]
-* [![JavaScript][JavaScript]][JavaScript-url]
-* [![PostgreSQL][PostgreSQL]][PostgreSQL-url]
-* [![Heroku][Heroku]][Heroku-url]
-* [![jQuery][jQuery]][jQuery-url]
-* [![RuboCop][RuboCop]][RuboCop-url]
+<div align="center">
+  
+  <p>
 
+[![Rails][Rails]][Rails-url] [![Ruby][Ruby]][Ruby-url] [![RSpec][RSpec]][RSpec-url] [![Atom][Atom]][Atom-url] [![Visual Studio Code][Visual Studio    Code]][Visual Studio Code-url] [![Heroku][Heroku]][Heroku-url]
+  </p>
+  <p>
+ 
+[![CSS][CSS]][CSS-url] [![HTML5][HTML5]][HTML5-url] [![JavaScript][JavaScript]][JavaScript-url] [![PostgreSQL][PostgreSQL]][PostgreSQL-url] [![jQuery][jQuery]][jQuery-url] [![RuboCop][RuboCop]][RuboCop-url]
+
+  </p>
+</div>
+  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -198,7 +200,6 @@ Don't forget to give the project a star! Thanks again!
 
 * [AMSterling](https://github.com/AMSterling)
 * [blakesaylor](https://github.com/blakesaylor)
-* [Turing School](https://github.com/turingschool-examples/viewing_party_lite)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -234,7 +235,6 @@ Don't forget to give the project a star! Thanks again!
 [linkedin-url]: https://linkedin.com/in/sterling-316a6223a/
 [linkedin-shield2]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url2]: https://linkedin.com/in/blake-saylor
-[product-screenshot]: 
 
 [Atom]: https://img.shields.io/badge/Atom-66595C?style=for-the-badge&logo=Atom&logoColor=white
 [Atom-url]: https://atom.io/
