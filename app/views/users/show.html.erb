@@ -1,0 +1,30 @@
+<h1><center>Viewing Party Lite<center></h1>
+<p><center><%="#{@user.name}'s Dashboard"%><center></p>
+
+<p><%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %></p>
+<hr>
+<br>
+<section id= "viewing_parties">
+  <h3>Viewing Parties:</h3>
+  <% @user.viewing_parties.each do |v_p| %>
+    <div id="viewing_party-<%= v_p.id %>">
+    <h3><%= link_to "#{v_p.viewing_party_movie[:title]}", "/users/#{@user.id}/movies/#{v_p.viewing_party_movie[:id]}" %></h3>
+    <img src=<%= v_p.full_poster_path %> class='movie_poster'>
+      <p>Date: <%= v_p.date.strftime("%m/%d/%Y") %></p>
+      <p>Start Time: <%= v_p.start_time.strftime("%I:%M%p")  %></p>
+      <p>Party Length: <%= "#{v_p.duration} Minutes" %></p>
+      <p><%= "Hosting" %>:</p>
+      <p><b><%= v_p.host %></b>
+      <hr>
+      <p><%= "Invited" %>:</p>
+      <% v_p.invited.each do |invitee| %>
+        <% if invitee == @user.name %>
+          <p><b><%= invitee %></b></p>
+        <% else %>
+        <p><%= invitee %></p>
+        <% end %>
+      <% end %>
+      <hr>
+    </div>
+  <% end %>
+</section>

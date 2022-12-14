@@ -13,3 +13,34 @@
  *= require_tree .
  *= require_self
  */
+
+/* The point of this tutorial is here */
+.form {
+  display: flex;
+  flex-direction: row;
+}
+
+.search-field {
+  width: 100%;
+  padding: 10px 35px 10px 15px;
+  border: none;
+  border-radius: 100px;
+  outline: none;
+}
+
+.search-button {
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-left: -33px;
+}
+
+.search-button img {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
+
+.movie_poster {
+  height: 200px;
+}

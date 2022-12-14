@@ -1,0 +1,15 @@
+<h1><center>Viewing Party Lite<center></h1>
+<p><center>Register a New User<center> </p>
+
+
+<%= form_with model: @user, url: users_path, method: :post, local: :true do |f| %>
+  <p><%= f.label "Name:" %>
+  <%= f.text_field :name %></p>
+  <p><%= f.label "Email:" %>
+  <%= f.text_field :email %></p>
+  <p><%= f.label :password, 'Password:' %>
+  <center><%= f.password_field :password %><center></p>
+  <p><%= f.label :password_confirmation, 'Password Confirmation:' %>
+  <center><%= f.password_field :password_confirmation %><center></p>
+  <p><%= f.submit "Create New User"%></p>
+<% end %>
