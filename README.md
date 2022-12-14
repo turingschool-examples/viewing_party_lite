@@ -86,7 +86,7 @@ App is deployed [here](https://viewing-party-22.herokuapp.com/)
 # <img src="app/assets/images/ViewingPartyHome.png"> 
 # <img src="app/assets/images/VP_Dashboard.png"> 
 
-Example wireframes are found [here](https://backend.turing.io/module3/projects/viewing_party_lite/wireframes)
+Example wireframes are found [here](https://backend.turing.edu/module3/projects/viewing_party_lite/wireframes)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -157,7 +157,7 @@ This is an example of how to list things you need to use the software and how to
 
 Create Movie Viewing Parties with friends. Search movies from [The Movie Database](https://www.themoviedb.org), select a day, time, and invite other users.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+_For more examples, please refer to the [Documentation](https://backend.turing.edu/module3/projects/viewing_party_lite/)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
