@@ -6,15 +6,13 @@ RSpec.describe 'Admin Dashboard', type: :feature do
   let!(:user_3) { create(:user)}
   let!(:user_4) { create(:user)}
 
-  before do
-    visit login_path
-    fill_in :email, with: user_1.email
-    fill_in :password, with: user_1.password
-    click_button 'Log In'
-  end
-
   describe 'When I visit the admin dashboard' do
     it 'as an admin, I see a list of all default users email addresses' do
+      visit login_path
+      fill_in :email, with: user_1.email
+      fill_in :password, with: user_1.password
+      click_button 'Log In'
+
       visit admin_dashboard_path
 
       within '#existing-users' do
@@ -28,8 +26,16 @@ RSpec.describe 'Admin Dashboard', type: :feature do
       expect(current_path).to eq(admin_path(user_3))
     end
 
-    xit 'as a visitor, I am redirected to the landing page where I see an error message' do
+    it 'as a visitor, I am redirected to the landing page where I see an error message' do
+      visit login_path
+      fill_in :email, with: user_3.email
+      fill_in :password, with: user_3.password
+      click_button 'Log In'
 
+      visit admin_dashboard_path
+
+      expect(current_path).to eq(root_path)
+      expect(page).to have_content('You must be admin to access the previous page')
     end
   end
 end

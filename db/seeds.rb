@@ -9,8 +9,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 user_1 = User.create(name: 'Naomi', email: 'naomi@naomi.com', password: 'test123', password_confirmation: 'test123', role: 1)
-user_2 = User.create(name: 'Jill Doe', email: 'Jill@email.net', password: 'test123', password_confirmation: 'test123')
-user_3 = User.create(name: 'Jake Doe', email: 'Jake@email.net', password: 'test123', password_confirmation: 'test123')
+user_2 = User.create(name: 'Khaela', email: 'KHAELA@KHAELA.COM', password: 'test123', password_confirmation: 'test123')
+user_3 = User.create(name: 'Zuko', email: 'zuko@zuko.com', password: 'test123', password_confirmation: 'test123')
 party_1 = ViewParty.create(movie_id: 550, movie_name: 'Fight Club', duration: 139, datetime: DateTime.now + 1)
 party_2 = ViewParty.create(movie_id: 390, movie_name: 'Lisbon Story', duration: 139, datetime: DateTime.now + 9)
 UserViewParty.create(user_id: user_2.id, view_party_id: party_1.id, host: true)
