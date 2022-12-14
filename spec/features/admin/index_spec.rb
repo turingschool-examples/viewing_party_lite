@@ -14,7 +14,7 @@ RSpec.describe 'Admin Dashboard', type: :feature do
   end
 
   describe 'When I visit the admin dashboard' do
-    it 'I see a list of all default users email addresses' do
+    it 'as an admin, I see a list of all default users email addresses' do
       visit admin_dashboard_path
 
       within '#existing-users' do
@@ -26,6 +26,10 @@ RSpec.describe 'Admin Dashboard', type: :feature do
       end
       
       expect(current_path).to eq(admin_path(user_3))
+    end
+
+    xit 'as a visitor, I am redirected to the landing page where I see an error message' do
+
     end
   end
 end
