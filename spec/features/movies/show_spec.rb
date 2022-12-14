@@ -10,7 +10,7 @@ RSpec.describe 'The Movie Show Page', type: :feature do
     fill_in :email, with: user_1.email
     fill_in :password, with: user_1.password
     click_button 'Log In'
-    visit "/movies/550"
+    visit '/movies/550'
   end
 
   describe 'When I visit the user movie path', :vcr do
@@ -21,7 +21,7 @@ RSpec.describe 'The Movie Show Page', type: :feature do
     describe 'When I click on "Discover Page' do
       it 'I am taken to the movies discover page' do
         click_button('Discover Page')
-        expect(page).to have_current_path("/discover", ignore_query: true)
+        expect(page).to have_current_path('/discover', ignore_query: true)
       end
     end
 

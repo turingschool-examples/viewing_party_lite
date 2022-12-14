@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Admin Show Page', type: :feature do
-  let!(:user_1) { create(:user, role: 1)}
-  let!(:user_2) { create(:user)}
-  let!(:user_3) { create(:user)}
+  let!(:user_1) { create(:user, role: 1) }
+  let!(:user_2) { create(:user) }
+  let!(:user_3) { create(:user) }
 
   describe 'When I visit the admin show page' do
     it 'as a visitor, I am taken back to the landing page where I see an error' do

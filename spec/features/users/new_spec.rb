@@ -39,7 +39,8 @@ RSpec.describe 'The Register Page', type: :feature do
     end
 
     it 'returns an error message if email already exists' do
-      existing_bob = User.create(name: 'Bob', email: 'bob@gmail.com', password: 'test123', password_confirmation: 'test123')
+      existing_bob = User.create(name: 'Bob', email: 'bob@gmail.com', password: 'test123',
+                                 password_confirmation: 'test123')
 
       within '#register-form' do
         fill_in :name, with: 'Bob'

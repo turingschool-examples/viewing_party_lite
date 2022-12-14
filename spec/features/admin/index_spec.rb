@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Admin Dashboard', type: :feature do
-  let!(:user_1) { create(:user, role: 1)}
-  let!(:user_2) { create(:user, role: 1)}
-  let!(:user_3) { create(:user)}
-  let!(:user_4) { create(:user)}
+  let!(:user_1) { create(:user, role: 1) }
+  let!(:user_2) { create(:user, role: 1) }
+  let!(:user_3) { create(:user) }
+  let!(:user_4) { create(:user) }
 
   describe 'When I visit the admin dashboard' do
     it 'as an admin, I see a list of all default users email addresses' do
@@ -22,7 +24,7 @@ RSpec.describe 'Admin Dashboard', type: :feature do
 
         click_link user_3.email
       end
-      
+
       expect(current_path).to eq(admin_path(user_3))
     end
 

@@ -26,7 +26,7 @@ RSpec.describe 'New View Party Page', type: :feature do
         click_button 'Discover Page'
       end
 
-      expect(page).to have_current_path("/discover", ignore_query: true)
+      expect(page).to have_current_path('/discover', ignore_query: true)
     end
 
     it 'the form should include the following fields: name, duration, when, start time, checkboxes next to each existing user in the system, after submitting I should be taken back to my dashboard where I see the new event' do

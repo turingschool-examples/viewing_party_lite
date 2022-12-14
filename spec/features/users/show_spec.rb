@@ -54,7 +54,7 @@ RSpec.describe 'The User Show Page', type: :feature do
       it 'I am taken to the discover page' do
         within '#discover_movies_button' do
           click_button('Discover Movies')
-          expect(page).to have_current_path("/discover", ignore_query: true)
+          expect(page).to have_current_path('/discover', ignore_query: true)
         end
       end
     end

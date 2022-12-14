@@ -11,7 +11,7 @@ RSpec.describe 'the Movies Index Page', type: :feature do
 
   before do
     VCR.insert_cassette 'top rated'
-    visit "/discover"
+    visit '/discover'
     click_button 'Find Top Rated Movies'
   end
 
@@ -37,7 +37,7 @@ RSpec.describe 'the Movies Index Page', type: :feature do
     it 'I see a button that takes me back to the Discover Page' do
       click_button 'Discover Page'
 
-      expect(page).to have_current_path("/discover", ignore_query: true)
+      expect(page).to have_current_path('/discover', ignore_query: true)
     end
   end
 end

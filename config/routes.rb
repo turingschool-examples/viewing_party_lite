@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post '/login', to: 'users#login_user'
 
   get '/logout', to: 'users#logout_user'
-  
+
   get '/discover', to: 'users#discover'
 
   get '/movies', to: 'movies#index'

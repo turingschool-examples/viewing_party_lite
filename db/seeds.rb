@@ -8,7 +8,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user_1 = User.create(name: 'Naomi', email: 'naomi@naomi.com', password: 'test123', password_confirmation: 'test123', role: 1)
+user_1 = User.create(name: 'Naomi', email: 'naomi@naomi.com', password: 'test123', password_confirmation: 'test123',
+                     role: 1)
 user_2 = User.create(name: 'Khaela', email: 'KHAELA@KHAELA.COM', password: 'test123', password_confirmation: 'test123')
 user_3 = User.create(name: 'Zuko', email: 'zuko@zuko.com', password: 'test123', password_confirmation: 'test123')
 party_1 = ViewParty.create(movie_id: 550, movie_name: 'Fight Club', duration: 139, datetime: DateTime.now + 1)
