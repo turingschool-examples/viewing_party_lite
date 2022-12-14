@@ -24,38 +24,43 @@ RSpec.describe 'the user show page' do
     @bryan_party_1 = UserParty.create(user_id: @bryan.id, party_id: @party_1.id)
     @bryan_party_3 = UserParty.create(user_id: @bryan.id, party_id: @party_3.id)
     @mostafa_party_5 = UserParty.create(user_id: @mostafa.id, party_id: @party_5.id)
+    
   end
 
   it "has <user's name>'s Dahsboard at the top of the page" do
-    visit "/users/#{@yuji.id}"
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@yuji)
+    visit "/dashboard"
 
     expect(page).to have_content("Yuji's Dashboard")
     expect(page).to_not have_content("Bryan's Dashboard")
 
-    visit "/users/#{@bryan.id}"
+    # visit "/dash"
 
-    expect(page).to have_content("Bryan's Dashboard")
-    expect(page).to_not have_content("Yuji's Dashboard")
+    # expect(page).to have_content("Bryan's Dashboard")
+    # expect(page).to_not have_content("Yuji's Dashboard")
   end
 
   it 'has a button to discover movies' do
-    visit "/users/#{@yuji.id}"
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@yuji)
+    visit "/dashboard"
 
     expect(page).to have_button('Discover Movies')
 
     click_button 'Discover Movies'
 
-    expect(current_path).to eql("/users/#{@yuji.id}/discover")
+    expect(current_path).to eql("/dashboard/discover")
   end
 
   it 'has a section for viewing parties' do
-    visit "/users/#{@yuji.id}"
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@yuji)
+    visit "/dashboard"
 
     expect(page).to have_content('Viewing Parties')
   end
 
   it "has a section for the user's hosted parties with information on each party" do
-    visit "/users/#{@mostafa.id}"
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@mostafa)
+    visit "/dashboard"
 
     within '#hosted_parties' do
       within "##{@party_1.id}" do
@@ -83,7 +88,8 @@ RSpec.describe 'the user show page' do
   end
 
   it "has a section for the user's hosted parties with information on each party" do
-    visit "/users/#{@mostafa.id}"
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@mostafa)
+    visit "/dashboard"
 
     within '#invited_parties' do
       expect(page).to_not have_link('The Godfather')

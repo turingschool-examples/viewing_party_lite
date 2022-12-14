@@ -1,7 +1,5 @@
-# require 'bcrypt'
-
 class UsersController < ApplicationController
-  # include BCrypt
+
   def new
     @user = User.new()
   end
@@ -10,8 +8,10 @@ class UsersController < ApplicationController
     # user = user_params
     # user[:email] = user[:email].downcase
     # user = User.new(user)
+    # session[:user_id] = user.id
     user = User.create(user_params)
     if user.save
+      session[:user_id] = user.id
       flash[:success] = "Welcome, #{user.name}!"
       redirect_to "/users/#{user.id}"
     elsif
@@ -21,13 +21,15 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+
+    @user = current_user
+
     @hosted = @user.hosted_parties
     @invited = @user.invited_parties
   end
 
   def discover
-    @user = User.find(params[:id])
+    @user = current_user
   end
 
   def login_form
@@ -37,15 +39,21 @@ class UsersController < ApplicationController
   def login_user
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
       flash[:alert] = "Welcome, #{user.name}!"
-      redirect_to "/users/#{user.id}"
+      redirect_to dashboard_path
     else 
       flash[:error] = "Wrong Email/Password"
       redirect_to "/login" 
     end 
   end
 
-  private
+  def logout_user
+    session.destroy
+    redirect_to "/"
+  end
+
+private
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)

@@ -7,6 +7,9 @@ RSpec.describe 'Movie index page' do
     @mostafa = User.create!(name: 'Mostafa', email: 'sasa2020@hotmail.com', password: "123", password_confirmation: '123')
     @jim = User.create!(name: 'Jimothy', email: 'jimmyboy@hotmail.com', password: "123", password_confirmation: '123')
     @bryan = User.create!(name: 'Bryan', email: 'breakingbad2020@hotmail.com', password: "123", password_confirmation: '123')
+    # user = User.create(name: 'Meg', email: "email@email.com", password: "123", password_confirmation: '123')
+    
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@jim)
   end
 
   describe 'As a visitor' do
@@ -23,13 +26,13 @@ RSpec.describe 'Movie index page' do
         )
         .to_return(status: 200, body: json_response, headers: {})
 
-      visit "/users/#{@jim.id}/discover"
+      visit "/dashboard/discover"
 
       expect(page).to have_button('Find Top Rated Movies')
 
       click_button 'Find Top Rated Movies'
 
-      expect(current_path).to eq("/users/#{@jim.id}/movies")
+      expect(current_path).to eq("/dashboard/movies")
       expect(page).to have_link('20세기 소녀')
       expect(page).to have_content('Vote Average:8.7')
       expect(page).to have_link('Pulp Fiction')
@@ -48,14 +51,14 @@ RSpec.describe 'Movie index page' do
         }
       )
       .to_return(status: 200, body: json_response, headers: {})
-    visit "/users/#{@jim.id}/discover"
+    visit "/dashboard/discover"
 
     expect(page).to have_button('Submit')
 
     fill_in('q', with: 'hi')
     click_button('Submit')
 
-    expect(current_path).to eq("/users/#{@jim.id}/movies")
+    expect(current_path).to eq("/dashboard/movies")
     expect(page).to have_content('Hi Stranger')
   end
 
@@ -71,7 +74,7 @@ RSpec.describe 'Movie index page' do
         }
       )
       .to_return(status: 200, body: json_response, headers: {})
-    visit "/users/#{@jim.id}/discover"
+    visit "/dashboard/discover"
 
     expect(page).to have_button('Submit')
 
@@ -81,6 +84,6 @@ RSpec.describe 'Movie index page' do
     expect(page).to have_button('Discover Page')
 
     click_button('Discover Page')
-    expect(current_path).to eq("/users/#{@jim.id}/discover")
+    expect(current_path).to eq("/dashboard/discover")
   end
 end

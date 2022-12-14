@@ -2,8 +2,10 @@
 require './app/services/movies_service'
 
 class MoviesController < ApplicationController
+  before_action :current_user
+  
   def index
-    @user = User.find(params[:id])
+    @user = current_user
     data = if params[:q] == 'top_rated'
              MoviesService.new.search('top_rated')
            else
@@ -14,7 +16,7 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:user_id])
+    @user = current_user
     movie_data = MoviesService.new.search(params[:id])
     @title = movie_data[:original_title]
     @vote = movie_data[:vote_average]
@@ -27,4 +29,9 @@ class MoviesController < ApplicationController
     @review_count = movie_review_data[:total_results]
     @movie_reviews = movie_review_data[:results].pluck(:author, :author_details)
   end
+
+# private
+#   def require_user
+#     redirect_to '/dashboard/movies' unless current_user
+#   end
 end
