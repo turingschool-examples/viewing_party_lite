@@ -8,11 +8,15 @@ class MoviesController < ApplicationController
     if params[:search].present?
       response = conn.get("search/movie?query=#{params[:search]}")
       json = JSON.parse(response.body, symbolize_names: true)
-      @movies = json[:results][0..19]
+      @movies = json[:results][0..19].map do |movie_data|
+        Movie.new(movie_data)
+      end
     else
       response = conn.get("movie/top_rated")
       json = JSON.parse(response.body, symbolize_names: true)
-      @movies = json[:results][0..19]
+      @movies = json[:results][0..19].map do |movie_data|
+        Movie.new(movie_data)
+      end
     end
   end
 
