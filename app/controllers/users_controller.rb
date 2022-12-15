@@ -11,7 +11,8 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to user_path(@user.id)
     else
-      flash[:alert] = "Error: Email already linked with an account"
+      flash[:errors] = @user.errors.full_messages
+
       redirect_to register_path
     end
   end
@@ -19,6 +20,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:name, :email)
+    params.permit(:name, :email, :password, :password_confirmation)
   end
 end

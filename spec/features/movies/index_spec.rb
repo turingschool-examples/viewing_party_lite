@@ -5,7 +5,7 @@ RSpec.describe 'The Movies Index Page' do
     describe 'When I visit the Discover Movies Index Page' do
       describe "And click on the 'Find Top Rated Movies' button" do
         before(:each) do
-          @user1 = User.create!(name: 'Mary', email: 'mary@gmail.com')
+          @user1 = User.create!(name: 'Mary', email: 'mary@gmail.com', password: 'Test123', password_confirmation: 'Test123')
           visit user_discover_index_path(@user1)
           click_button('Find Top Rated Movies')
         end
@@ -38,7 +38,7 @@ RSpec.describe 'The Movies Index Page' do
       
       describe "And use the 'Find Movies' search function" do
         before(:each) do
-          @user1 = User.create!(name: 'Mary', email: 'mary@gmail.com')
+          @user1 = User.create!(name: 'Mary', email: 'mary@gmail.com', password: 'Test123', password_confirmation: 'Test123')
           visit user_discover_index_path(@user1)
 
           fill_in 'Search by Movie Title', with: 'jojo'
