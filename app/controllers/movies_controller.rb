@@ -5,7 +5,7 @@ class MoviesController < ApplicationController
       faraday.params["api_key"] = ENV["movie_api_key"]
     end
     
-    if params.include?(:search)
+    if params[:search].present?
       response = conn.get("search/movie?query=#{params[:search]}")
       json = JSON.parse(response.body, symbolize_names: true)
       @movies = json[:results][0..19]
