@@ -3,7 +3,7 @@
 </div>
 
   <% @movies.each do |movie| %>
-    <div id="voting_average_<%= movie[:id]%>">
-      <p><%= link_to "#{movie[:title]}", user_movie_path(@user, movie[:id]) %> - Vote Average: <%= movie[:vote_average] %></p>
+    <div id="voting_average_<%= movie.id%>">
+      <p><%= link_to "#{movie.title}", user_movie_path(@user, movie.id) %> - Vote Average: <%= movie.vote_average %></p>
     </div>
   <% end %>
