@@ -1,6 +1,7 @@
 class MoviesController < ApplicationController
+  before_action :find_user
+
   def index
-    @user = User.find(params[:user_id])
     conn = Faraday.new(url: 'https://api.themoviedb.org/3/') do |faraday|
       faraday.params["api_key"] = ENV["movie_api_key"]
     end
@@ -29,7 +30,11 @@ class MoviesController < ApplicationController
     response = conn.get("movie/#{movie_id}")
 
     @movie = JSON.parse(response.body, symbolize_names: true)
-    @user = User.find(params[:user_id])
   end
 
+  private
+
+  def find_user
+    @user = User.find(params[:user_id])
+  end
 end
