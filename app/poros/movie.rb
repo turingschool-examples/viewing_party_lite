@@ -4,14 +4,14 @@ class Movie
               :image_path,
               :vote_average,
               :duration,
-              :overview
+              :summary
 
   def initialize(attributes)
-    @id            = attributes[:id]
+    @id           = attributes[:id]
     @title        = attributes[:title]
     @image_path   = attributes[:image_path]
     @vote_average = attributes[:vote_average]
-    @duration     = attributes[:duration]
-    @overview     = attributes[:overview]
+    @duration     = attributes[:runtime]
+    @summary      = attributes[:overview]
   end
 end
