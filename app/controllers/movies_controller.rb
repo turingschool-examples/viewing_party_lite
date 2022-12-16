@@ -5,7 +5,7 @@ class MoviesController < ApplicationController
     if params[:search].present?
       @movies = MovieFacade.movie_search(params[:search])
     else
-      @movies = MovieFacade.top_rated
+      @movies = MovieFacade.top_rated_movies
     end
   end
 
