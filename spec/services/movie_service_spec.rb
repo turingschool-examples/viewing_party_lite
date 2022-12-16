@@ -33,25 +33,25 @@ describe MovieService do
     end
 
     context "#movie_by_id" do
-    it "returns the top rated movies" do
-      movie = MovieService.movie_by_id(515001)
-      expect(movie).to be_a Hash
+      it "returns the top rated movies" do
+        movie = MovieService.movie_by_id(515001)
+        expect(movie).to be_a Hash
 
-      expect(movie).to have_key :id
-      expect(movie[:id]).to be_a(Integer)
+        expect(movie).to have_key :id
+        expect(movie[:id]).to be_a(Integer)
 
-      expect(movie).to have_key :title
-      expect(movie[:title]).to be_a(String)
+        expect(movie).to have_key :title
+        expect(movie[:title]).to be_a(String)
 
-      expect(movie).to have_key :vote_average
-      expect(movie[:vote_average]).to be_a(Float)
+        expect(movie).to have_key :vote_average
+        expect(movie[:vote_average]).to be_a(Float)
 
-      expect(movie).to have_key :overview
-      expect(movie[:overview]).to be_a(String)
+        expect(movie).to have_key :overview
+        expect(movie[:overview]).to be_a(String)
 
-      expect(movie).to have_key :runtime
-      expect(movie[:runtime]).to be_a(Integer)
+        expect(movie).to have_key :runtime
+        expect(movie[:runtime]).to be_a(Integer)
+      end
     end
-  end
   end
 end
