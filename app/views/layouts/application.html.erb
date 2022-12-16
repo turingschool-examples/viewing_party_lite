@@ -8,8 +8,15 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-
+  <nav id="home_page_link">
+    <%= link_to "Home", root_path %>
+  </nav>
   <body>
+    <% flash.each do |type, msg| %>
+  <div>
+    <%= msg %>
+  </div>
+  <% end %>
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,16 @@
+<div style="text-align:center">
+  <h2><%= @movie.title %></h2>
+  <%= button_to 'Discover Page', user_discover_index_path(@user), method: :get %>
+    <br>
+  <%= button_to "Create Viewing Party for #{@movie.title}", new_user_movie_viewing_party_path(@user, @movie.id), method: :get %>
+</div>
+<br>
+<p>Vote:</p>
+<p>Runtime:</p>
+<p>Genre:</p>
+<br>
+<hr>
+<br>
+<h3>Summary</h3>
+<h3>Cast</h3>
+<h3>Reviews</h3>
