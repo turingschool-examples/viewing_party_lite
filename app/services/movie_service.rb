@@ -7,6 +7,10 @@ class MovieService
     get_url("movie/top_rated")
   end
 
+  def self.movie_by_id(id)
+    get_url("movie/#{id}")
+  end
+
   def self.get_url(url)
     JSON.parse(conn.get(url).body, symbolize_names: true)
   end

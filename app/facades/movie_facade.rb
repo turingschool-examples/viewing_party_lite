@@ -12,4 +12,9 @@ class MovieFacade
       Movie.new(movie_data)
     end
   end
+
+  def self.find_by_id(id)
+    json = MovieService.movie_by_id(id)
+    Movie.new(json)
+  end
 end
