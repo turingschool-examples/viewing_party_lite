@@ -1,0 +1,13 @@
+<h1>Create a new user</h1>
+
+<%= form_with url: "/users/new", method: :get, local: true do |f| %>
+  <%= f.label :name, "Name:" %>
+  <%= f.text_field :name %>
+  <%= f.label :email, "E-mail:" %>
+  <%= f.text_field :email %>
+  <%= f.label :password, "Password:" %>
+  <%= f.text_field :password %>
+  <%= f.label :password_confirm, "Confirm Password:" %>
+  <%= f.text_field :password_confirm %>
+  <%= f.submit "Register" %>
+<% end %>
