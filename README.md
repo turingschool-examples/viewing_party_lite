@@ -42,7 +42,7 @@ Then, run the following commands:
 ```
 cd viewing_party_lite
 bundle install
-rails db:create
+rails db:{drop,create,migrate,seed}
 rails s
 ```
 
