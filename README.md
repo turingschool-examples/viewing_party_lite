@@ -22,6 +22,7 @@ This is the base repo for the [Viewing Party Lite project](https://backend.turin
 ## Learning Goals
 - Consume JSON APIs that require authentication 
 - Test consumption of APIs (facades, services, poros)
+- Organize and refactor code to be more maintainable
 - Apply RuboCop’s style guide for code quality
 - Authentication and authorization implementation
 
