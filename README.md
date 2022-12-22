@@ -1,22 +1,52 @@
 # Viewing Party
+![GitHub Contributors](https://img.shields.io/github/contributors/naomiyocum/viewing_party_lite)
+![GitHub top language](https://img.shields.io/github/languages/top/naomiyocum/viewing_party_lite?color=yellow)
 
-This is the base repo for the [Viewing Party Lite project](https://backend.turing.edu/module3/projects/viewing_party_lite) used for Turing's Backend Module 3.
+<figure>
+<img src="https://user-images.githubusercontent.com/102825498/209204028-6b4fd8c7-0ddf-4c61-92e6-7aab85cb7125.png" alt="User Dashboard" style="width:100%">
+<figcaption align="center"><b>Example view of a user's dashboard (http://localhost:3000/dashboard)</b></figcaption>
+</figure><br><br>
 
-### About this Project
+## Table of Contents
+* [General Info](#general-info)
+* [Learning Goals](#learning-goals)
+* [Technologies](#technologies)
+* [Schema Design](#schema-design)
+* [Usage](#usage)
 
-Viewing Party Lite is an application in which users can explore movie options and create a viewing party event for themselves and other users of the application.
+## General Info
+This is the base repo for the [Viewing Party Lite project](https://backend.turing.edu/module3/projects/viewing_party_lite) used for Turing's Backend Module 3. Example wireframes to follow are found [here](https://backend.turing.edu/module3/projects/viewing_party_lite/wireframes).
 
-## Setup
+Viewing Party Lite is an application in which users can explore movie options and create a viewing party event for themselves and other users of the application. Features include browsing top rated movies, searching for movies by title, and viewing movie data such as vote average, cast, runtime, and reviews.
 
-1. Fork and Clone the repo
-2. Install gem packages: `bundle install`
-3. Setup the database: `rails db:create`
+## Learning Goals
+- Consume JSON APIs that require authentication 
+- Test consumption of APIs (facades, services, poros)
+- Apply RuboCop’s style guide for code quality
+- Authentication and authorization implementation
 
-
-## Versions
+## Technologies
 
 - Ruby 2.7.2
-
 - Rails 5.2.6
 
-Example wireframes to follow are found [here](https://backend.turing.edu/module3/projects/viewing_party_lite/wireframes)
+## Schema Design
+![Screen Shot 2022-12-22 at 11 26 27 AM](https://user-images.githubusercontent.com/102825498/209202319-17d0c8a3-b201-4173-a4c2-9e9f80a3586e.png)
+
+## Usage
+
+Clone the repo by running `git clone` with the copied URL onto your local machine
+
+Then, run the following commands:
+```
+cd viewing_party_lite
+bundle install
+rails db:create
+rails s
+```
+
+Lastly, head to your web browser and type `localhost:3000` and click enter.
+
+Now you're on the main page! Go ahead and register as a new user and search for your favorite movie to create a viewing party!
+
+
