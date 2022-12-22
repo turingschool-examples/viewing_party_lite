@@ -15,9 +15,9 @@
 * [Usage](#usage)
 
 ## General Info
-This is the base repo for the [Viewing Party Lite project](https://backend.turing.edu/module3/projects/viewing_party_lite) used for Turing's Backend Module 3. Example wireframes to follow are found [here](https://backend.turing.edu/module3/projects/viewing_party_lite/wireframes).
-
 Viewing Party Lite is an application in which users can explore movie options and create a viewing party event for themselves and other users of the application. Features include browsing top rated movies, searching for movies by title, and viewing movie data such as vote average, cast, runtime, and reviews.
+
+This is the base repo for the [Viewing Party Lite project](https://backend.turing.edu/module3/projects/viewing_party_lite) used for Turing's Backend Module 3. Example wireframes to follow are found [here](https://backend.turing.edu/module3/projects/viewing_party_lite/wireframes).
 
 ## Learning Goals
 - Consume JSON APIs that require authentication 
