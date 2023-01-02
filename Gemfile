@@ -76,3 +76,5 @@ gem "vcr", "~> 6.1", :group => :test
 gem "faraday", "~> 2.7"
 
 gem "factory_bot_rails", "~> 6.2", :groups => [:development, :test]
+
+gem "rubocop", "~> 1.40"
