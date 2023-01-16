@@ -1,4 +1,5 @@
-# Viewing Party
+<h1 align="center"> Viewing Party 🎥  </h1>
+
 ![GitHub Contributors](https://img.shields.io/github/contributors/naomiyocum/viewing_party_lite)
 ![GitHub top language](https://img.shields.io/github/languages/top/naomiyocum/viewing_party_lite?color=yellow)
 
