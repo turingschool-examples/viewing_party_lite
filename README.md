@@ -1,6 +1,6 @@
 # I am actively seeking employment!
 
-<MichaelDavidMarchand@gmail.com>
+If this repo or profile shows promise, feel free to contact me! I'd love to start a conversation! <MichaelDavidMarchand@gmail.com>
 
 |ToC|
 |---|
