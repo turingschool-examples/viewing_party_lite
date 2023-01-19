@@ -1,3 +1,7 @@
+# I am actively seeking employment!
+
+<MichaelDavidMarchand@gmail.com>
+
 # Viewing Party
 
 This is the base repo for the [Viewing Party Lite project](https://backend.turing.edu/module3/projects/viewing_party_lite) used for Turing's Backend Module 3.
