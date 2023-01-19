@@ -2,6 +2,14 @@
 
 <MichaelDavidMarchand@gmail.com>
 
+|ToC|
+|---|
+[Viewing Party](#viewing-party)
+[About this project](#about-this-project)
+[Setup](#setup)
+[Versions](#versions)
+[Wireframes](#wireframes)
+
 # Viewing Party
 
 This is the base repo for the [Viewing Party Lite project](https://backend.turing.edu/module3/projects/viewing_party_lite) used for Turing's Backend Module 3.
@@ -22,5 +30,7 @@ Viewing Party Lite is an application in which users can explore movie options an
 - Ruby 2.7.2
 
 - Rails 5.2.6
+
+## Wireframes
 
 Example wireframes to follow are found [here](https://backend.turing.edu/module3/projects/viewing_party_lite/wireframes)
