@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col d-flex justify-content-center">
+    <h4><%= "#{@user.name} Dashboard" %> </h4>
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col d-flex justify-content-center">
+    <%= link_to 'Discover Movies', user_discover_index_path(@user.id), class: 'btn btn-primary' %>
+  </div>
+</div>
+<hr>
+<div class="row justify-content-center" id="parties">
+  <h3>Viewing Parties</h3>
+  <div id="invited_to">
+    <h4>Invitations</h4>
+    <%@parties_invited_to.each do |party|%>
+      <div id="party_<%=party.id%>">
+        <%party_movie = party.movie_details%>
+        <img src="https://image.tmdb.org/t/p/w500<%=party_movie.poster_path%>" height="150px"><br>
+        <%=link_to party_movie.title, user_movie_path(@user, party_movie.id)%><br>
+        Event Start Time: <%=party.date%> at <%=party.start_time%><br>
+        Host: <%=party.host%><br>
+        Invitees:
+        <ul id="invited_to_<%=party.id%>"><%party.invited_users.each do |name|%>
+            <%if name == @user.name%>
+              <li><b><%=name%></b></li>
+            <%else%>
+              <li><%=name%></li>
+            <%end%>
+          <%end%>
+        </ul>
+      </div>
+    <%end%>
+  </div>
+  <div id="hosting">
+    <h4>Hosted Parties</h4>
+    <%@parties_hosting.each do |party|%>
+      <div id="party_<%=party.id%>">
+        <%party_movie = party.movie_details%>
+        <img src="https://image.tmdb.org/t/p/w500<%=party_movie.poster_path%>" height="150px"><br>
+        <%=link_to party_movie.title, user_movie_path(@user, party_movie.id)%><br>
+        Event Start Time: <%=party.date%> at <%=party.start_time%><br>
+        Host: <%=party.host%><br>
+        Invitees:
+        <ul id="invited_to_<%=party.id%>"><%party.invited_users.each do |name|%>
+            <li><%=name%></li>
+          <%end%>
+        </ul>
+      </div>
+    <%end%>
+  </div>
+</div>

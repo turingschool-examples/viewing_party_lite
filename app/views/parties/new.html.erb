@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col d-flex justify-content-center">
+    <%= form_with(url: user_movie_parties_path, method: :post, local: true) do |f| %>
+      <%= f.label :duration, 'Duration'%>
+      <%= f.number_field :duration, value: @movie.runtime %><br>
+      <%= f.label :date, 'Date' %>
+      <%= f.date_field :date %><br>
+      <%= f.label :start_time, 'Start Time' %>
+      <%= f.time_field :start_time, include_seconds: false %><br>
+      <% @other_users.each do |user| %>
+        <%= f.check_box :users, { multiple: true }, user.id, false %>
+        <%= f.label :users, user.name %><br>
+      <%end%>
+      <%= f.submit 'Create' %>
+    <% end %>
+  </div>
+</div>
