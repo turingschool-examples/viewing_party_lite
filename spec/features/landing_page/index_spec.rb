@@ -10,11 +10,14 @@ RSpec.describe "Landing Page" do
     end
 
     it "has a button to create a new user" do
+      visit "/"
 
+      expect(page).to have_button("New User")
+      save_and_open_page
     end
 
     it "list of existing users" do
-
+      
     end
 
     it "has a user be a link to the user's dashboard" do
