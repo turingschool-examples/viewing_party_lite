@@ -15,7 +15,9 @@ RSpec.describe 'Landing Page' do
 
   it 'has a has a create button' do
     visit root_path
-    expect(page).to have_button('Create a New User')
+    click_button('Create a New User')
+
+    expect(current_path).to eq(new_user_path)
   end
 
   it 'has navigation link' do
