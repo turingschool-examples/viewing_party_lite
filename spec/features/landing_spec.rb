@@ -24,4 +24,14 @@ RSpec.describe 'Application' do
     click_link ("#{user_1.name}")
     expect(current_path).to eq("/users/#{user_1.id}")
   end
+
+  it 'has a link back to landing page' do
+    visit root_path
+
+    expect(page).to have_link('Home')
+
+    click_link ('Home')
+    
+    expect(current_path).to eq(root_path)
+  end
 end
