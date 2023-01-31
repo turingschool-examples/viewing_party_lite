@@ -11,15 +11,20 @@ RSpec.describe "register page" do
   it 'takes user to new dashboard page where :id is id for new user created' do
     user1 = User.create!(name: "Dennis Franz", email: "dennis@aol.com")
     id = User.maximum(:id)
-    # require 'pry'; binding.pry
-    
+ 
     visit register_path
-    
+
+    fill_in "Name", with: "Ted Bundy"
+    click_button "Create New User"
+
+    expect(current_path).to eq(register_path)
+    expect(page).to have_content("Email can't be blank")
+
     fill_in "Name", with: "Ted Bundy"
     fill_in "Email", with: "ted@gmail.com"
     click_button "Create New User"
     
-    save_and_open_page
     expect(current_path).to eq(user_path((user1.id)+1))
+    expect(page).to have_content("User Created Successfully")
   end
 end
