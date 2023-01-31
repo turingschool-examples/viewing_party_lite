@@ -18,6 +18,9 @@
     <%= link_to 'Home', root_path %>
     <div class='content'>
       <h1>Viewing Party</h1>
+      <% flash.each do |type, message| %>
+      <p><%= message %></p>
+    <% end %>
       <%= yield %>
     </div>
   </body>
