@@ -28,6 +28,8 @@ RSpec.describe 'Landing page', type: :feature do
 
         visit '/'
 
+        expect(page).to have_content('Existing Users')
+
         within "#user-#{u1.id}" do
           expect(page).to have_link(u1.name, href: user_path(u1))
         end
