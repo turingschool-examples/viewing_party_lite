@@ -9,4 +9,19 @@ RSpec.describe 'Application' do
     click_on ('Create a New User') 
     expect(current_path).to eq('/register') 
   end
+
+  it 'has existing users with links to their dashboards' do
+    user_1 = create(:user)
+    user_2 = create(:user)
+   
+    visit root_path
+    within("#users") do
+      expect(page).to have_content('Existing Users')
+      expect(page).to have_link(user_1.name)
+      expect(page).to have_link(user_2.name)
+    end
+
+    click_link ("#{user_1.name}")
+    expect(current_path).to eq("/users/#{user_1.id}")
+  end
 end
