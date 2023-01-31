@@ -12,5 +12,8 @@
   <body>
     <%= yield %>
     <%= link_to "Home", welcome_index_path %>
+    <% flash.each do |type, message| %>
+      <p><%= message %></p>
+    <% end %>
   </body>
 </html>
