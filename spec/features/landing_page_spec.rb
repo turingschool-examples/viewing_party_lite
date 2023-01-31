@@ -26,7 +26,6 @@ RSpec.describe 'landing page' do
         expect(page).to have_link(nicole.email)
         expect(page).to have_link(sara.email)
       end 
-      save_and_open_page
 
       within "#user_#{charlie.id}" do 
         click_link charlie.email 
