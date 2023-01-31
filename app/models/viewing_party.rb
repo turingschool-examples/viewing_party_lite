@@ -4,5 +4,5 @@ class ViewingParty < ApplicationRecord
   has_many :users, through: :user_viewing_parties
 
   validates_numericality_of :duration, :host
-  validates_presence_of :when
+  validates_presence_of :date_time
 end

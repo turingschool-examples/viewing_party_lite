@@ -7,7 +7,7 @@
           null
         ]
       },
-      "/Users/samuelcox/turing_work/3mod/viewing_party_lite/app/models/actor_movie.rb": {
+      "/Users/samuelcox/turing_work/3mod/viewing_party_lite/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -20,48 +20,6 @@
       "/Users/samuelcox/turing_work/3mod/viewing_party_lite/app/models/application_record.rb": {
         "lines": [
           1,
-          1,
-          null
-        ]
-      },
-      "/Users/samuelcox/turing_work/3mod/viewing_party_lite/app/models/actor.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/samuelcox/turing_work/3mod/viewing_party_lite/app/models/movie.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/samuelcox/turing_work/3mod/viewing_party_lite/app/models/review.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/samuelcox/turing_work/3mod/viewing_party_lite/app/models/user.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
           1,
           null
         ]
@@ -86,6 +44,21 @@
           null
         ]
       },
+      "/Users/samuelcox/turing_work/3mod/viewing_party_lite/app/controllers/welcome_controller.rb": {
+        "lines": [
+          1,
+          1,
+          3,
+          null,
+          null
+        ]
+      },
+      "/Users/samuelcox/turing_work/3mod/viewing_party_lite/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/Users/samuelcox/turing_work/3mod/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
           0,
@@ -97,14 +70,6 @@
         }
       },
       "/Users/samuelcox/turing_work/3mod/viewing_party_lite/app/jobs/application_job.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/samuelcox/turing_work/3mod/viewing_party_lite/app/controllers/application_controller.rb": {
         "lines": [
           0,
           0
@@ -133,6 +98,6 @@
         }
       }
     },
-    "timestamp": 1675124291
+    "timestamp": 1675199473
   }
 }
