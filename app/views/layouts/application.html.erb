@@ -13,6 +13,12 @@
     <%= link_to "Landing Page", "/" %>
   </nav>
 
+  <% flash.each do |type, msg| %>
+    <div>
+      <%= msg %>
+    </div>
+  <% end %>
+
   <body>
     <%= yield %>
   </body>
