@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    require 'pry'; binding.pry
     user = User.create(user_params)
     redirect_to user_path(user)
   end
