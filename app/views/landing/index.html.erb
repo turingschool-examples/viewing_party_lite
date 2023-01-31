@@ -1,0 +1,13 @@
+<h1>Viewing Party</h1>
+<p><%= button_to "Create a New User" %></p>
+
+<div id="users">
+  <h2>Existing Users</h2>
+  <% @users.each do |user| %>
+    <div id="user_<%= user.id %>">
+      <li><%= link_to user.email, user_path(user) %></li>
+    </div>  
+  <% end %> 
+</div>
+
+<%= link_to "Home", root_path %>
