@@ -18,7 +18,7 @@ RSpec.describe 'Landing page', type: :feature do
 
         click_button 'Create a New User'
 
-        expect(current_path).to eq new_user_path
+        expect(current_path).to eq register_path
       end
 
       it 'has a list of existing users with links to their dashboards' do
