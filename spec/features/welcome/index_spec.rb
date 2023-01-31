@@ -20,4 +20,22 @@ RSpec.describe 'Landing Page' do
 
     expect(current_path).to eq('/register')
   end
+
+  it 'displays list of existing users which links to the users dashboard' do
+    user1 = create(:user)
+    user2 = create(:user)
+    user3 = create(:user)
+
+    visit root_path
+
+    within '#existing-users' do
+      expect(page).to have_link(user1.email)
+      expect(page).to have_link(user2.email)
+      expect(page).to have_link(user3.email)
+
+      click_link(user1.email)
+    end
+
+    expect(current_path).to eq("/users/#{user1.id}")
+  end
 end
