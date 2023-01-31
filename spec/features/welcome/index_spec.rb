@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'welcome index' do
   before(:each) do
+    @users = create_list(:user, 10)
     visit root_path
   end
 
@@ -20,9 +21,9 @@ RSpec.describe 'welcome index' do
       end
 
       it 'Lists Existing Users which links to the users dashboard' do
-        # expect(page).to have_link(name_users)
-        # expect(page).to have_link(name_users)
-        # expect(page).to have_link(name_users)
+        expect(page).to have_link(@users[0].name)
+        expect(page).to have_link(@users[1].name)
+        expect(page).to have_link(@users[2].name)
       end
 
       it 'Links to go back to the landing page which will be present at the top of all pages' do
