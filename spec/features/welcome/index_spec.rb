@@ -34,12 +34,3 @@ RSpec.describe 'landing page' do
     expect(page).to have_link("Home", href: welcome_index_path)
   end
 end
-
-
-
-
-# When a user visits the root path they should be on the landing page ('/') which includes:
-# Title of Application
-# Button to Create a New User
-# List of Existing Users which links to the users dashboard
-# Link to go back to the landing page (this link will be present at the top of all pages)
