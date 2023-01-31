@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'landing page' do
-  describe 'when a user visits the landing page' do
+RSpec.describe 'User index spec' do
     before(:each) do
       @user_1 = User.create!(name: 'William', email: 'william@gmail.com')
       @user_2 = User.create!(name: 'Christian', email: 'christian@gmail.com')
@@ -12,28 +11,19 @@ RSpec.describe 'landing page' do
 
       @viewing_party_user_1 = ViewingPartyUser.create!(user_id: @user_1.id, viewing_party_id: @viewing_party_1.id)
       @viewing_party_user_2 = ViewingPartyUser.create!(user_id: @user_2.id, viewing_party_id: @viewing_party_1.id)
+    end
+  describe 'User Register' do
+    it "The form should include:
+  -Name
+  -Email (must be unique)
+  -Register Button
+  Once the user registers they should be taken to a dashboard page '/users/:id', where :id is the id for the user that was just created." do
+      visit register_path
+      fill_in :name, with: "Bob"
+      fill_in :email, with: "Bob@gmail.com"
+      click_on "Submit"
+      expect(page).to have_content("Bob Show Page")
       
-      visit '/'
-    end
-
-    it 'displays title of application' do
-      expect(page).to have_content('Viewing Party')
-    end
-
-    it 'has a button to create a new user' do
-      expect(page).to have_button('New User')
-    end
-
-    it 'has a list of existing users which links to the users dashboard' do
-      expect(page).to have_content('User Dashboard')
-      expect(page).to have_content('William')
-      expect(page).to have_content('Christian')
-      expect(page).to have_content('Fake')
-    end
-
-    it 'has a Link to go back to the landing page' do
-      expect(page).to have_content('Home')
     end
   end
-  
 end

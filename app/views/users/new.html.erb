@@ -1,0 +1,9 @@
+<h5>Create a User</h5>
+
+<%= form_with url: "/users", method: :post, local: true do |f| %>
+  <%= f.label :name, "Name" %>
+  <%= f.text_field :name %>
+  <%= f.label :email, "Email" %>
+  <%= f.text_field :email %>
+  <%= f.submit "Submit" %>
+  <% end %>
