@@ -20,7 +20,9 @@ RSpec.describe "User Show Page", type: :feature do
     end
 
     it "has a section that lists viewing parties" do
+      visit user_path(@user1.id)
 
+      expect(page).to have_css("section#viewing_parties")
     end
   end
 
