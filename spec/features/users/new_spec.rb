@@ -14,7 +14,7 @@ RSpec.describe 'user registration page' do
     # When a user visits the '/register' path they should see a form to register.
     expect(page).to have_field('Name')
     expect(page).to have_field('Email')
-    expect(page).to have_link_or_button('Submit')
+    expect(page).to have_button('Submit')
   end
   
   xit 'can be filled in and submitted' do
