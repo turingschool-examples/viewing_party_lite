@@ -12,8 +12,18 @@ class UsersController < ApplicationController
   end
   
   def create
-    user = User.create!(name: params[:name], email: params[:email])
-    flash.notice = 'User has been created!'
-    redirect_to user_path(user)
+    user = User.new(name: params[:name], email: params[:email])
+    if user.save(user_params)
+      flash.notice = 'User has been created!'
+      redirect_to user_path(user)
+    else
+      flash.alert = 'Cannot use existing email'
+      redirect_to register_path
+    end
   end
+  
+  private
+    def user_params
+      params.permit(:name, :email)
+    end
 end
