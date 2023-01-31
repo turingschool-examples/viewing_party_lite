@@ -3,10 +3,18 @@ require 'rails_helper'
 RSpec.describe 'User registration page' do
   it 'creates/registers new user' do
     visit register_path
+
+    # save_and_open_page
+    expect(page).to have_field('user[name]')
+    expect(User.all).to eq([])
+    expect(User.count).to eq(0)
     
-    fill_in "Name", with: "Kaylah Rose"
-    fill_in "Email", with: "1234@valid.com"
-    click_button "Register"
+    fill_in 'user[name]', with: "Kaylah Rose"
+    fill_in 'user[email]', with: "1234@valid.com"
+    # save_and_open_page
+    click_button
+    # expect(User.all).to eq([User.last])
+    expect(User.count).to eq(1)
 
     expect(current_path).to eq(users_path(User.last))
   end
