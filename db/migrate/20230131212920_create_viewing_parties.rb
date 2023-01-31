@@ -4,7 +4,7 @@ class CreateViewingParties < ActiveRecord::Migration[5.2]
       t.references :host, foreign_key: { to_table: :users }
       t.string :movie
       t.integer :duration
-      t.datetime :when
+      t.datetime :date
 
       t.timestamps
     end

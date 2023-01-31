@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2023_01_31_212920) do
     t.bigint "host_id"
     t.string "movie"
     t.integer "duration"
-    t.datetime "when"
+    t.datetime "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["host_id"], name: "index_viewing_parties_on_host_id"
