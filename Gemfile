@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.6'
+gem 'rails', '~> 5.2.8'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
@@ -51,6 +51,12 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'simplecov'
+  gem 'rubocop'
+  gem 'faraday'
+  gem 'orderly'
+  gem 'shoulda-matchers'
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 
