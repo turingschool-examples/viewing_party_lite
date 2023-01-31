@@ -10,6 +10,9 @@
   </head>
 
   <body>
+  <% flash.each do |type, msg| %>
+      <%= msg %>
+  <% end %>
     <nav>
       <%= link_to 'Back to Home', root_path %>
     </nav>
