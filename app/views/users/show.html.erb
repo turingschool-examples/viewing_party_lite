@@ -1,0 +1,9 @@
+<h1><%= @user.name %>'s Dashboard</h1>
+
+<%= button_to 'Discover Movies', discover_user_path(@user), method: :get %>
+
+<div id='viewing-parties'>
+  <% @user.viewing_parties.each do |vp| %>
+    <p>Viewing Party #<%= vp.id %></p>
+  <% end %>
+</div>
