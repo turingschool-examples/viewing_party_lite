@@ -27,5 +27,14 @@ RSpec.describe 'The landing page index' do
         expect(page).to have_selector('section', count: 6)
       end
     end
+
+    it 'displays a home link to go back to the landing page' do 
+
+      expect(page).to have_link("Home")
+
+      click_on "Home"
+
+      expect(current_path).to eq("/")
+    end
   end
 end
