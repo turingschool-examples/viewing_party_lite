@@ -1,5 +1,9 @@
 <center><h1>Viewing Party</h1></center><br>
 <center><h3><%= "#{@user.name}'s Dashboard" %></h3></center>
 <div id="discover_link">
-<center><%= link_to "Discover Movies", "/users/#{@user.id}/discover" %></center>
+  <center><%= link_to "Discover Movies", "/users/#{@user.id}/discover" %></center>
+</div>
+
+<div id='viewing_parties'>
+  <h2>My Viewing Parties</h2>
 </div>

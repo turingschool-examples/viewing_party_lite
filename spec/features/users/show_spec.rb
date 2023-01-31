@@ -23,7 +23,11 @@ RSpec.describe "user show page" do
     end
   end
 
+  it 'has a section for viewing parties' do
+    visit user_path(@user.id)
 
-
-
+    within("#viewing_parties") do
+      expect(page).to have_content('My Viewing Parties')
+    end
+  end
 end
