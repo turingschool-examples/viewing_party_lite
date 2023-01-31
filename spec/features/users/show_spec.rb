@@ -17,9 +17,9 @@ RSpec.describe "user show page" do
     visit user_path(@user.id)
 
     within "#discover_link" do
-      expect(page).to have_link "Discover Movies", href: "/users/#{@user.id}/discover"
+      expect(page).to have_button "Discover Movies"
       expect(page).to_not have_content('My Viewing Parties')
-      click_link "Discover Movies"
+      click_button "Discover Movies"
       expect(current_path).to eq("/users/#{@user.id}/discover")
     end
   end
