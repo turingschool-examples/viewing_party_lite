@@ -40,7 +40,6 @@ RSpec.describe "Landing Page" do
       visit "/"
 
       expect(page).to have_link("Landing Page", href:"/")
-     save_and_open_page
     end
   end
 end
