@@ -8,10 +8,9 @@ class UsersController < ApplicationController
   def create
     user = User.create(user_params)
     if user.save
-
       redirect_to user_path(user)
     else
-      flash[:notice] = "Name can't be blank"
+      flash[:notice] = user.errors.full_messages.to_sentence
       redirect_to register_path
     end
   end
