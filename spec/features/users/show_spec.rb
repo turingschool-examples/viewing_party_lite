@@ -14,7 +14,9 @@ RSpec.describe "User Show Page", type: :feature do
     end
 
     it "has a button to Discover Movies" do
+      visit user_path(@user1.id)
 
+      expect(page).to have_button("Discover Movies")
     end
 
     it "has a section that lists viewing parties" do
