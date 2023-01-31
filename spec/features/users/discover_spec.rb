@@ -10,6 +10,6 @@ RSpec.describe "The Discover Movies Page" do
 
     click_button "Discover Movies"
 
-    expect(currrent_path).to eq(user_dicover_path(@user))
+    expect(current_path).to eq(user_discover_index_path(@user))
   end
 end
