@@ -1,0 +1,13 @@
+<h1>Viewing Party</h1>
+
+<%= link_to 'User Dashboard', "/users", method: :get, local: true %>
+
+<% @users.each do |user| %>
+  <ul>
+    <li><%= "Name: #{user.name}" %></li>
+  </ul>
+<% end %>
+
+<%= form_with url: "/users/new", method: :post, local: true do |f| %>
+  <%= f.submit 'New User' %>
+<% end %>
