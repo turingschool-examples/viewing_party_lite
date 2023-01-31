@@ -7,11 +7,25 @@
           null
         ]
       },
+      "/Users/janiceweaver/3Mod/projects/viewing_party_lite/app/models/user.rb": {
+        "lines": [
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/janiceweaver/3Mod/projects/viewing_party_lite/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/janiceweaver/3Mod/projects/viewing_party_lite/app/controllers/landing_page_controller.rb": {
         "lines": [
           1,
           1,
-          null,
+          3,
           null,
           null
         ]
@@ -25,15 +39,6 @@
       "/Users/janiceweaver/3Mod/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
         "lines": [
           0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/janiceweaver/3Mod/projects/viewing_party_lite/app/models/application_record.rb": {
-        "lines": [
           0,
           0,
           0
@@ -70,6 +75,6 @@
         }
       }
     },
-    "timestamp": 1675130139
+    "timestamp": 1675131427
   }
 }
