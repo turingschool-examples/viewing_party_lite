@@ -13,10 +13,12 @@
     <%= link_to "Home", root_path %>
     
     <div id='flash-message'>
-      <%= flash.each do |type, notice| %>
+      <% flash.each do |type, notice| %>
       <%= notice %>
       <% end %>
     </div>
+    
+    <h1>Viewing Party Lite</h1>
     
     <%= yield %>
   </body>
