@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Landing page', type: :feature do
@@ -14,7 +16,7 @@ RSpec.describe 'Landing page', type: :feature do
 
         expect(page).to have_button('Create a New User')
 
-        click_button 'Create a New User' 
+        click_button 'Create a New User'
 
         expect(current_path).to eq new_user_path
       end
