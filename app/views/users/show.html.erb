@@ -1,2 +1,4 @@
 <%= @user.name %>
 <%= @user.email %>
+
+<%= button_to 'Discover', user_discover_index_path(@user), method: :get %>
