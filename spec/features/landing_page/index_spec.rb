@@ -18,6 +18,14 @@ RSpec.describe "Landing Page" do
       expect(page).to have_button("New User")
     end
 
+    it "new user button is clicked an user is directed to new user form" do
+      visit "/"
+
+      click_button "New User"
+
+      expect(current_path).to eq(new_user_path)
+    end
+
     it "list of existing users" do
        visit "/"
 
