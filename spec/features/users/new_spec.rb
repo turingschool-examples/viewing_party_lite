@@ -26,7 +26,8 @@ RSpec.describe 'user new' do
       fill_in 'Name', with: 'TEST USER'
       fill_in 'Email', with: 'TESTUSER@example.com'
       click_button('Submit')
-      expect(page).to have_content('testuser@example.com')
+
+      expect(User.last.email).to eq('testuser@example.com')
     end
   end
 end
