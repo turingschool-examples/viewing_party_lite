@@ -6,7 +6,7 @@ RSpec.describe "Discover index page (/users/:id/discover)", type: :feature do
   end
 
   describe "when user visits a users's dashboard and clicks on discover movies" do
-    xit "redirects page to '/users/:id/discover' where the :id is the user id of the user who's dashboard the page redirected from" do
+    it "redirects page to '/users/:id/discover' where the :id is the user id of the user who's dashboard the page redirected from" do
       visit user_path(@user1.id)
 
       click_button "Discover Movies"

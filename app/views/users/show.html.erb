@@ -1,6 +1,8 @@
 <h1> <%= @user.name %>'s Dashboard  </h1>
 
-<%= button_to "Discover Movies", user_discovers_path(@user.id) %>
+<%= form_with url: user_discoveries_path(@user.id), method: :get, local: true do |f| %>
+  <%= f.submit "Discover Movies" %>
+<% end %>
 
 <section id="viewing_parties">
   <p hidden> test </p>
