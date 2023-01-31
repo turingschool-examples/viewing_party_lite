@@ -7,14 +7,14 @@ RSpec.describe 'User registration page' do
     expect(page).to have_field('user[name]')
     expect(User.all).to eq([])
     expect(User.count).to eq(0)
-    
-    fill_in 'user[name]', with: "Kaylah Rose"
-    fill_in 'user[email]', with: "1234@valid.com"
-    click_button "Register"
-    
-    expect(User.count).to eq(1)
 
+    fill_in 'user[name]', with: 'Kaylah Rose'
+    fill_in 'user[email]', with: '1234@valid.com'
+    click_button 'Register'
+
+    expect(User.count).to eq(1)
     expect(current_path).to eq(user_path(User.last))
+    expect(page.status_code).to eq 200
   end
 
   it 'does not create a new user with empty name field'
