@@ -28,5 +28,15 @@ RSpec.describe "User Registration", type: :feature do
 
       expect(page).to have_content("Erica Erickson")
     end
+
+    it 'flash message is displayed when any form field is left blank' do
+      visit new_user_path
+
+      fill_in :name, with: "Erica Erickson"
+      click_button "Register"
+
+      expect(current_path).to eq(new_user_path)
+      expect(page).to have_content("Field can't be blank")
+    end
   end
 end

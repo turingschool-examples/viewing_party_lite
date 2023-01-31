@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   end
 
   def create
-
     @user = User.new(user_params)
     if @user.save
       redirect_to user_path(@user.id)
@@ -13,8 +12,6 @@ class UsersController < ApplicationController
     else 
       redirect_to new_user_path, notice: "Enter valid name and email."
     end
-    
-
   end
 
   private
