@@ -4,6 +4,6 @@
 <section id="users">
 <h3> Users </h3>
 <% @users.each do |user| %>
-  <li><%= user.name %></li>
+  <li><%=link_to user.name, "/users/#{user.id}" %></li>
   <% end %>
 </section>
