@@ -4,17 +4,17 @@ RSpec.describe 'Landing page', type: :feature do
   describe 'when a user' do
     describe 'visits the root path, it' do
       it 'should display the app name' do
-        visit '/'
+        visit root_path
 
         expect(page).to have_content('Viewing Party Lite')
       end
 
       it 'has a button to create a new user' do
-        visit '/'
+        visit root_path
 
         expect(page).to have_button('Create a New User')
 
-        click_button 'Create a New User' 
+        click_button 'Create a New User'
 
         expect(current_path).to eq new_user_path
       end
@@ -26,7 +26,7 @@ RSpec.describe 'Landing page', type: :feature do
         u4 = create(:user)
         u5 = create(:user)
 
-        visit '/'
+        visit root_path
 
         expect(page).to have_content('Existing Users')
 
@@ -52,9 +52,9 @@ RSpec.describe 'Landing page', type: :feature do
       end
 
       it 'has a link to return to the landing page' do
-        visit '/'
+        visit root_path
 
-        expect(page).to have_link('Landing Page', href: '/')
+        expect(page).to have_link('Landing Page', href: root_path)
       end
     end
   end
