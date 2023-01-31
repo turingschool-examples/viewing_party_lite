@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_30_233130) do
+ActiveRecord::Schema.define(version: 2023_01_30_234851) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2023_01_30_233130) do
 
   create_table "viewing_parties", force: :cascade do |t|
     t.string "duration"
-    t.datetime "when"
+    t.datetime "party_date"
   end
 
   create_table "viewing_party_users", force: :cascade do |t|
