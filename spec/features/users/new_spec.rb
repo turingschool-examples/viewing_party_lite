@@ -32,7 +32,7 @@ RSpec.describe 'User registration page' do
       expect(User.all).to eq([])
       expect(User.count).to eq(0)
       expect(current_path).to eq(register_path)
-      expect(page).to have_content('User not registered: Required information missing.')
+      expect(page).to have_content("Name can't be blank")
       expect(page).to have_button('Register')
     end
     it 'does not create a user with empty email field'

@@ -6,9 +6,18 @@ class UsersController < ApplicationController
   end
 
   def create
-    require 'pry'; binding.pry
+    # require 'pry'
+    # binding.pry
     user = User.create(user_params)
-    redirect_to user_path(user)
+    if user.save
+
+      redirect_to user_path(user)
+    else
+      # require 'pry'
+      # binding.pry
+      flash[:notice] = "Name can't be blank"
+      redirect_to register_path
+    end
   end
 
   private
