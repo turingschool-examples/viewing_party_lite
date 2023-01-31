@@ -27,10 +27,10 @@ ActiveRecord::Schema.define(version: 2023_01_31_022216) do
     t.datetime "date"
     t.datetime "start_time"
     t.integer "movie_id"
-    t.bigint "user_id"
+    t.bigint "host_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_viewing_parties_on_user_id"
+    t.index ["host_id"], name: "index_viewing_parties_on_host_id"
   end
 
   create_table "viewing_party_users", force: :cascade do |t|
