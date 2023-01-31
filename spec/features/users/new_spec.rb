@@ -23,7 +23,7 @@ RSpec.describe "New User Page" do
     fill_in "Email", with: "bob@email.com"
     click_button "Submit"
 
-    expect(page).to have_content("Error: email already exists")
+    expect(page).to have_content("Error: All fields must be complete and email must be unique")
     expect(current_path).to eq(new_user_path)
   end
 
@@ -32,7 +32,7 @@ RSpec.describe "New User Page" do
     fill_in "Email", with: "bob@email.com"
     click_button "Submit"
 
-    expect(page).to have_content("Error: all fields must be completed")
+    expect(page).to have_content("Error: All fields must be complete and email must be unique")
     expect(current_path).to eq(new_user_path)
   end
 end
