@@ -34,6 +34,7 @@ RSpec.describe 'User registration page' do
       expect(current_path).to eq(register_path)
       expect(page).to have_content("Name can't be blank")
       expect(page).to have_button('Register')
+      expect(page.status_code).to eq 200
     end
 
     it 'does not create a user with empty email field' do
@@ -50,6 +51,7 @@ RSpec.describe 'User registration page' do
       expect(current_path).to eq(register_path)
       expect(page).to have_content("Email can't be blank")
       expect(page).to have_button('Register')
+      expect(page.status_code).to eq 200
     end
 
     it 'does not create a user with empty name and email fields' do
@@ -65,7 +67,25 @@ RSpec.describe 'User registration page' do
       expect(page).to have_content("Name can't be blank")
       expect(page).to have_content("Email can't be blank")
       expect(page).to have_button('Register')
+      expect(page.status_code).to eq 200
     end
-    it 'does not create a user with duplicate email'
+
+    it 'does not create a user with duplicate email' do
+      user1 = User.create!(name: 'dsflkj', email: '1234@valid.com')
+      visit register_path
+
+      expect(page).to have_field('user[name]')
+      expect(User.all).to eq([user1])
+      expect(User.count).to eq(1)
+
+      fill_in 'user[name]', with: 'Kaylah Rose'
+      fill_in 'user[email]', with: '1234@valid.com'
+      click_button 'Register'
+
+      expect(User.all).to eq([user1])
+      expect(User.count).to eq(1)
+      expect(page).to have_content('Email has already been taken')
+      expect(page.status_code).to eq 200
+    end
   end
 end
