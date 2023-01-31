@@ -44,7 +44,7 @@ RSpec.describe "User Register Page" do
       
       it "name cannot be blank" do
         visit register_path
-        
+
         fill_in("Name", with: "")
         fill_in("Email", with: "valid@email.com")
         
@@ -61,16 +61,31 @@ RSpec.describe "User Register Page" do
         
         fill_in("Name", with: "Test")
         fill_in("Email", with: "")
-    
+        
         click_button("Create New User")
-
+        
         expect(page).to have_field("Name", with: "Test")
         expect(page).to have_field("Email", with: "")
-
+        
         expect(page).to have_content("User creation failed")
       end
-
+      
+      it "email must be unique" do
+        user = create(:user, email: "unique@email.com")
+        
+        visit register_path
+        
+        fill_in("Name", with: "Test")
+        fill_in("Email", with: user.email)
+        
+        
+        click_button("Create New User")
+        
+        expect(page).to have_field("Name", with: "Test")
+        expect(page).to have_field("Email", with: user.email)
+        
+        expect(page).to have_content("User creation failed")
+      end
     end
-
   end
 end
