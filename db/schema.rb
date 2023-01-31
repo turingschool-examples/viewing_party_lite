@@ -10,40 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_31_010700) do
+ActiveRecord::Schema.define(version: 2023_01_31_210758) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "genres", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "genres_movies", id: false, force: :cascade do |t|
-    t.bigint "movie_id", null: false
-    t.bigint "genre_id", null: false
-  end
-
-  create_table "movies", force: :cascade do |t|
-    t.string "title"
-    t.string "summary"
-    t.string "cast"
-    t.float "vote"
-    t.integer "runtime"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "reviews", force: :cascade do |t|
-    t.string "author"
-    t.string "body"
-    t.bigint "movie_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["movie_id"], name: "index_reviews_on_movie_id"
-  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -53,27 +23,24 @@ ActiveRecord::Schema.define(version: 2023_01_31_010700) do
   end
 
   create_table "viewing_parties", force: :cascade do |t|
-    t.bigint "movie_id"
-    t.integer "party_duration"
+    t.integer "movie_id"
     t.date "date"
     t.time "start_time"
+    t.integer "party_duration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["movie_id"], name: "index_viewing_parties_on_movie_id"
   end
 
   create_table "viewing_party_users", force: :cascade do |t|
+    t.bigint "users_id"
+    t.bigint "viewing_parties_id"
     t.boolean "hosting"
-    t.bigint "user_id"
-    t.bigint "viewing_party_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_viewing_party_users_on_user_id"
-    t.index ["viewing_party_id"], name: "index_viewing_party_users_on_viewing_party_id"
+    t.index ["users_id"], name: "index_viewing_party_users_on_users_id"
+    t.index ["viewing_parties_id"], name: "index_viewing_party_users_on_viewing_parties_id"
   end
 
-  add_foreign_key "reviews", "movies"
-  add_foreign_key "viewing_parties", "movies"
-  add_foreign_key "viewing_party_users", "users"
-  add_foreign_key "viewing_party_users", "viewing_parties"
+  add_foreign_key "viewing_party_users", "users", column: "users_id"
+  add_foreign_key "viewing_party_users", "viewing_parties", column: "viewing_parties_id"
 end
