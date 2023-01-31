@@ -34,11 +34,13 @@ RSpec.describe "Landing Page" do
           expect(page).to have_link(@user1.name, href:"/users/#{@user1.id}")
           expect(page).to have_link(@user2.name, href:"/users/#{@user2.id}")
        end
-       save_and_open_page
     end
 
     it "has a link to go back to the landing page" do
+      visit "/"
 
+      expect(page).to have_link("Landing Page", href:"/")
+     save_and_open_page
     end
   end
 end
