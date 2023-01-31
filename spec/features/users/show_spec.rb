@@ -1,6 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe 'User index spec' do
+RSpec.describe 'User dashboard' do
+  describe 'when I visit a user dashboard' do
     before(:each) do
       @user_1 = User.create!(name: 'William', email: 'william@gmail.com')
       @user_2 = User.create!(name: 'Christian', email: 'christian@gmail.com')
@@ -11,19 +12,21 @@ RSpec.describe 'User index spec' do
 
       @viewing_party_user_1 = ViewingPartyUser.create!(user_id: @user_1.id, viewing_party_id: @viewing_party_1.id)
       @viewing_party_user_2 = ViewingPartyUser.create!(user_id: @user_2.id, viewing_party_id: @viewing_party_1.id)
+
+      visit user_path(@user_1)
     end
-  describe 'User Register' do
-    it "The form should include:
-  -Name
-  -Email (must be unique)
-  -Register Button
-  Once the user registers they should be taken to a dashboard page '/users/:id', where :id is the id for the user that was just created." do
-      visit register_path
-      fill_in :name, with: "Bob"
-      fill_in :email, with: "Bob@gmail.com"
-      click_on "Submit"
-      expect(page).to have_content("Bob's Dashboard")
-      
+
+    it 'displays the users name at the top of the page' do
+      expect(page).to have_content("#{@user_1.name}'s Dashboard")
+    end
+
+    it 'has a button to Discover Movies' do
+      expect(page).to have_button('Discover Movies')
+    end
+
+    it 'has a section that lists viewing parties' do
+      expect(page).to have_content(@viewing_party_1.title)
+      expect(page).to have_content(@viewing_party_2.title)
     end
   end
 end

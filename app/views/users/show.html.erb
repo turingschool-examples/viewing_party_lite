@@ -1,1 +1,11 @@
-<h5><%= @user.name %> Show Page</h5>
+<h5><%= @user.name %>'s Dashboard</h5>
+
+<%= form_with url: "/users/#{@user.id}/discover", method: :get, local: true do |f| %>
+  <%= f.submit 'Discover Movies' %>
+<% end %>
+
+<% @viewing_parties.each do |vp| %>
+  <p>Title: <%= vp.title %></p>
+  <p>Start time: <%= vp.start_time %></p>
+  <p>Duration (minutes): <%= vp.duration %></p>
+<% end %>
