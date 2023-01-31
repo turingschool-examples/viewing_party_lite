@@ -120,6 +120,19 @@
         "branches": {
         }
       },
+      "/Users/samuelcox/turing_work/3mod/viewing_party_lite/app/controllers/users/discover_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/samuelcox/turing_work/3mod/viewing_party_lite/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
@@ -141,6 +154,6 @@
         }
       }
     },
-    "timestamp": 1675202448
+    "timestamp": 1675203029
   }
 }

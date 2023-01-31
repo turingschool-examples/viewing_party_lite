@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   get '/register', to: 'users#new', as: :new_user
 
-  get '/users/:id/discover', to: 'users#discover', as: :user_discover
-
-  resources :users, only: [:show, :index, :create]
+  resources :users, only: [:show, :index, :create] do
+    scope module: 'users' do
+      resources :discover, only: :index
+    end
+  end
 end
