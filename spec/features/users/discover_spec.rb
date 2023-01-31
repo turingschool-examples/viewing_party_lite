@@ -3,10 +3,6 @@ require 'rails_helper'
 RSpec.describe "user discover page" do
   before(:all) do
     @user = create(:user)
-    top_20_response = File.read('spec/fixtures/topmovies.json')
-    stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated")
-      .with(headers: {'api_key' => 'd228687bb8c720542a46185488f1283c'})
-      .to_return(status: 200, body: top_20_response)
   end
 
   it 'displays the page title' do
@@ -22,9 +18,34 @@ RSpec.describe "user discover page" do
     within "#top_rated" do
       expect(page).to have_button("Find Top Rated Movies")
       click_button("Find Top Rated Movies")
-      expect(current_path).to eq("/users/#{@user.id}/movies?q=top%20rated")
+      
+      expect(current_path).to eq("/users/#{@user.id}/movies")
     end
   end
+
+  it 'has a search field to find movies by name when redirected to the movies results page' do
+    visit "/users/#{@user.id}/discover"
+
+    within "#search_movies" do
+      expect(page).to have_field :search
+      expect(page).to have_button("Find Movies")
+
+      click_button("Find Movies")
+      expect(current_path).to eq("/users/#{@user.id}/movies")
+    end
+  end
+
+  it 'works to find movies when a valid movie title is input in the search bar' do
+    visit "/users/#{@user.id}/discover"
+
+    within "#search_movies" do
+      fill_in :search, with: "Toy Story"
+      click_button("Find Movies")
+      expect(current_path).to eq("/users/#{@user.id}/movies")
+    end
+  end
+
+  
 
 
 
