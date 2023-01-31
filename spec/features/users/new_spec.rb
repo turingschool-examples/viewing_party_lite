@@ -19,16 +19,29 @@ RSpec.describe "User Register Page" do
         fill_in("Email", with: "valid@email.com")
 
         click_button("Create New User")
-
+        
         user = User.all.last
-
+        
         expect(current_path).to eq("/users/#{user.id}")
         expect(page).to have_content("User successfully created")
       end  
     end
     
     describe "sad path" do
-      
+      it "name nor email cannot be blank" do
+        visit register_path
+        
+        fill_in("Name", with: "")
+        fill_in("Email", with: "valid@email.com")
+    
+        click_button("Create New User")
+
+        expect(page).to have_field("Name", with: "")
+        expect(page).to have_field("Email", with: "valid@email.com")
+
+        expect(page).to have_content("User creation failed")
+
+      end
     end
 
   end
