@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def show
+    @user = User.find(params[:id])
+  end
+  
   def new
     User.new
   end
@@ -12,10 +16,6 @@ class UsersController < ApplicationController
     else 
       redirect_to new_user_path, notice: "Enter valid name and email."
     end
-  end
-
-  def show
-    @user = User.find(params[:id])
   end
 
   private

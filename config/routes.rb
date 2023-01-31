@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root 'landing_page#index'
 
-  resources :users, only:[:new, :show, :create] do
-    resources :discovers, only: [:index]
+  resources :users, only:[:show, :new, :create] do
+    resources :discoveries, only:[:index]
   end
 end
