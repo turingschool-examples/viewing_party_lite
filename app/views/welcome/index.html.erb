@@ -1,1 +1,13 @@
-<h1>Viewing Party<h1>
+<h1><center>Viewing Party</center><h1>
+<%# button_to 'Create Merchant', new_admin_merchant_path %>
+
+<body>
+  <h2>Existing Users</h2>
+  <div class="users">
+    <% @users.each do |user| %>
+    <section id="user-<%= user.id %>">
+      <%= link_to "#{user.email}", user_dashboard_index_path(user) %>
+    </section>
+    <% end %>
+  </div>  
+</body>
