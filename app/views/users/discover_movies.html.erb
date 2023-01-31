@@ -1,2 +1,11 @@
-<center><h1>Viewing Party</h1></center><br>
+<center><h1>Viewing Party</h1></center>
 <center><h3>Discover Movies</h3></center><br>
+<div id="top_rated">
+<%= button_to "Find Top Rated Movies", "/users/#{@user.id}/movies", params: {q: 'top%20rated'}, method: :get %>
+</div>
+<div id="search_movies">
+<%= form_tag("/users/#{@user.id}/movies", method: :get) do %>
+  <%= text_field_tag(:search, params[:search]) %>
+  <%= submit_tag ("Find Movies") %>
+<% end %>
+</div>
