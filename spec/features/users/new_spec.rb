@@ -15,8 +15,6 @@ RSpec.describe 'user registration page' do
     end
     
     it 'can be filled in and submitted' do
-      save_and_open_page
-      
       fill_in('Name', with: 'Jeff Goldblum')
       fill_in('Email', with: 'JurassicSnark@gmail.com')
       click_on 'Create New User'
