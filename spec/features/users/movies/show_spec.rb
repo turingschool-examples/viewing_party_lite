@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "Movie's detail page" do
   before :each do
+    User.delete_all
+    Movie.delete_all
     @user_1 = create(:user)
     @user_2 = create(:user)
 
@@ -23,4 +25,8 @@ RSpec.describe "Movie's detail page" do
     click_button('Discover Page')
     expect(current_path).to eq("/users/#{@user_1.id}/discover")
   end
+
+  # it 'should display the movie title' do
+
+  # end
 end
