@@ -12,7 +12,7 @@ RSpec.describe "Movies results page (/users/:id/movies)", type: :feature do
       click_button "Find Top Rated Movies"
       expect(current_path).to eq("/users/#{@user1.id}/movies")
 
-      within "#movies" do
+      within "#movies_top_rated" do
         expect("The Godfather").to appear_before("The Shawshank Redemption")
         expect("The Shawshank Redemption").to appear_before("The Godfather Part II")
         expect("The Godfather Part II").to appear_before("Puss in Boots: The Last Wish")
@@ -25,6 +25,22 @@ RSpec.describe "Movies results page (/users/:id/movies)", type: :feature do
         expect(find(:table, "Movies")).to have_table_row("Vote Avg" => "8.7")
         expect(find(:table, "Movies")).to have_table_row("Title" => "The Lord of the Rings: The Return of the King")
         expect(find(:table, "Movies")).to have_table_row("Vote Avg" => "8.5")
+        #this doesn't actually test that both items are on the same row, must come back and refactor
+      end
+    end
+  end
+
+  describe "visiting results page via the search by movie title feature" do
+    it "shows the top 20 results from movie search" do
+      visit user_discoveries_path(@user1.id)
+
+      fill_in :movie_search, with: "Jumanji"
+      click_button "Find Movies"
+
+      expect(current_path).to eq("/users/#{@user1.id}/movies")
+
+      within "#movies_search_results" do
+        
       end
     end
   end

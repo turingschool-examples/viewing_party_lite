@@ -11,4 +11,10 @@ class TMDBService
       TopRatedMovies.new(result)
     end
   end
+
+  def get_all_movies
+    response = conn.get("/3/movie", {"api_key" => ENV['tmdb_api_key'], "sort_by" => "release_date.asc", "include_adult" => false})
+    data = JSON.parse(response.body, symbolize_names: true)
+    results = data[:results]
+  end
 end
