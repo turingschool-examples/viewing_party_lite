@@ -30,13 +30,19 @@ module Users
 
       conn = Faraday.new(url: "https://api.themoviedb.org/3")
 
-      response = conn.get("movie/#{params[:id]}?api_key=#{ENV['movie_api_key']}&language=en-US")
+      movie_response = conn.get("movie/#{params[:id]}?api_key=#{ENV['movie_api_key']}&language=en-US")
 
-      @movie = JSON.parse(response.body, symbolize_names: true)
+      credits_response = conn.get("movie/#{params[:id]}/credits?api_key=#{ENV['movie_api_key']}&language=en-US")
+
+      @movie = JSON.parse(movie_response.body, symbolize_names: true)
+
+      credits = JSON.parse(credits_response.body, symbolize_names: true)
 
       @runtime = "#{@movie[:runtime] / 60}hr #{@movie[:runtime] % 60}min"
 
       @genres = @movie[:genres].map { |genre| genre[:name] }
+
+      @cast = credits[:cast][0..9]
     end
 
     private

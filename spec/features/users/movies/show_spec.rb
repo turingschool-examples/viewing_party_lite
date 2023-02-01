@@ -7,6 +7,10 @@ RSpec.describe 'Movies Show' do
     json_response = File.read('spec/fixtures/the_godfather.json')
     stub_request(:get, "https://api.themoviedb.org/3/movie/238?api_key=#{ENV['movie_api_key']}&language=en-US").
       to_return(status: 200, body: json_response)
+
+    json_response_2 = File.read('spec/fixtures/the_godfather_credits.json')
+    stub_request(:get, "https://api.themoviedb.org/3/movie/238/credits?api_key=#{ENV['movie_api_key']}&language=en-US").
+      to_return(status: 200, body: json_response_2)
   end
 
   it 'is linked on the results page' do
@@ -64,6 +68,14 @@ RSpec.describe 'Movies Show' do
       visit user_movie_path(user, 238)
 
       expect(page).to have_content('Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.')
+    end
+
+    it 'has a list of actors' do
+      visit user_movie_path(user, 238)
+
+      expect(page).to have_content('Don Vito Corleone: Marlon Brando')
+      expect(page).to have_content("Virgil 'The Turk' Sollozzo: Al Lettieri")
+      expect(page).to_not have_content("Salvatore 'Sal' Tessio: Abe Vigoda")
     end
   end
 end

@@ -11,3 +11,8 @@ Genre: <% @genres.each_with_index do |genre, i| %>
   <% end %>
 <% end %>
 Summary: <%= @movie[:overview] %>
+
+Cast:
+<% @cast.each do |character| %>
+  <%= character[:character] %>: <%= character[:name] %><br>
+<% end %>
