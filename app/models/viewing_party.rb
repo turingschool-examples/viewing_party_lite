@@ -4,7 +4,7 @@ class ViewingParty < ApplicationRecord
 
   validates_presence_of :movie_id, :duration, :date, :start_time
 
-  def get_movie
+  def movie_title
     movie_service = MovieService.new
     movie_service.movie(self.movie_id)[:original_title]
   end
