@@ -10,7 +10,6 @@ class TopRatedMovieService
       url: "https://api.themoviedb.org/3/movie/top_rated",
       params: {api_key: ENV['MOVIE_DB_KEY'] }
     )
-
   end
   
 end
