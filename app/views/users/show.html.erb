@@ -11,7 +11,7 @@
     <% if vp.host %>
       <br>Host: <%= @user.name %> <br/>
     <% else %>
-      <br>Host: Invited<br/>
+      <br>Host: <%= vp.host_user %> <br/>
     <% end %>
   </div>
 <% end %>
