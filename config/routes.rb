@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'landing#index'
 
   get '/users/:id/discover', to: 'users#discover_movies'
+  get '/users/:id/movies', to: 'user_movies#details'
 
   get '/register', to: 'users#new'
   post '/register', to: 'users#create'
