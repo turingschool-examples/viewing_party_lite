@@ -41,7 +41,6 @@ group :development, :test do
   gem 'faker'
   gem 'figaro'
   gem 'shoulda-matchers'
-  gem 'simplecov'
   gem 'faraday'
   gem 'orderly'
 end
