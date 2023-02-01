@@ -18,6 +18,13 @@ RSpec.describe 'Discover Index Page', type: :feature do
       expect(page).to have_button("Top Rated Movies")
 
     end
+
+    it 'brings you to the movie results page and displays the top rated movies' do
+      visit user_discover_index_path(user1)
+
+      click_button "Top Rated Movies"
+      expect(current_path).to eq(user_movies_path(user1))
+    end
   end
 
   describe 'Movie Search by Title Field and Button' do
