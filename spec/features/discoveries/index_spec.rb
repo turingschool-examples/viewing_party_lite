@@ -15,4 +15,35 @@ RSpec.describe "Discover index page (/users/:id/discover)", type: :feature do
       expect(current_path).to_not eq(user_discoveries_path(@user3.id))
     end
   end
+
+  describe "visiting /users/:id/discover" do
+    it "see a button to discover top rated movies" do
+      visit user_discoveries_path(@user1.id)
+
+      expect(page).to have_button("Find Top Rated Movies")
+    end
+
+    it 'see a text field to enter keyword(s) and an accompanying button to search by movie title' do
+      visit user_discoveries_path(@user1.id)
+
+      expect(page).to have_field(:movie_search)
+      expect(page).to have_button("Find Movies")
+    end
+
+    it 'when user clicks on the Top Rated Movies they are taken to the movies results page' do
+      visit user_discoveries_path(@user1.id)
+
+      click_button "Find Top Rated Movies"
+      expect(current_path).to eq("/users/#{@user1.id}/movies")
+    end
+
+    it 'when user clicks on the search button they are taken to the movies results page' do
+      visit user_discoveries_path(@user1.id)
+
+      fill_in :movie_search, with: "Jumanji"
+      click_button "Find Movies"
+
+      expect(current_path).to eq("/users/#{@user1.id}/movies")
+    end
+  end
 end
