@@ -6,11 +6,9 @@ Rails.application.routes.draw do
   get '/register', to: 'users#new'
 
   resources :users, except: [:new] do 
-    resources :dashboard, only: [:index, :show]
     member do
       get 'discover', to: 'users/discover#index'
     end
+    resources :movies, only: [:index, :show], controller: 'user/movies'
   end
-
-  resources :movies, only: [:show]
 end
