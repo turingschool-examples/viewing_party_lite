@@ -34,7 +34,7 @@ RSpec.describe "Movies results page (/users/:id/movies)", type: :feature do
     it "shows the top 20 results from movie search" do
       visit user_discoveries_path(@user1.id)
 
-      fill_in :search_keyword, with: "Encanto"
+      fill_in :q, with: "Encanto"
       click_button "Find Movies"
 
       expect(current_path).to eq("/users/#{@user1.id}/movies")

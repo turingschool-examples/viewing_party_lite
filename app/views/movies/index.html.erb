@@ -6,7 +6,19 @@
   <h2> Movie Search Results </h2>
 
   <section id="movie_search_results">
-
+    <table>
+      <caption hidden>Movie Results</caption>
+      <tr>
+        <th>Title</th>
+        <th>Vote Avg</th>
+      </tr>
+      <% @search_results.each do |movie| %>
+        <tr>
+          <td><%= movie.title %></td>
+          <td><%= movie.vote_avg %></td>
+        </tr>
+      <% end %>
+    </table>
   </section>
 <% else %>
   <h2> Top 20 Rated Movies </h2>

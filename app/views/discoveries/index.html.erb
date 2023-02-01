@@ -5,7 +5,7 @@
 <section id="movie_list">
 <%= form_with url: "/users/#{@user.id}/movies?q=keyword", method: :get, local: true do |f| %>
   <%= f.label "Search by Title" %>
-  <%= f.text_field :search_keyword %>
+  <%= f.text_field :q %>
   <%= f.submit "Find Movies" %>
 <% end %>
 </section>
