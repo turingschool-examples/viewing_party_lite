@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe "user discover page" do
   before(:all) do
     @user = create(:user)
+    
   end
 
   it 'displays the page title' do
@@ -34,6 +35,8 @@ RSpec.describe "user discover page" do
       expect(current_path).to eq("/users/#{@user.id}/movies")
     end
   end
+
+  
 
   it 'works to find movies when a valid movie title is input in the search bar' do
     visit "/users/#{@user.id}/discover"
