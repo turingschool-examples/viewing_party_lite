@@ -1,8 +1,2 @@
 <h1><%= @user.name %>'s Dashboard</h1>
-<%= button_to 'Discover Movies', discover_user_path(@user), method: :get %>
-<div id="hosted_parties">
-  <%= render partial: "viewing_party", collection: @user.hosted_parties, locals: {party_type: "hosted" } || "You are not hosting any viewing parties." %>
-</div>
-<div id="invited_parties">
-  <%= render partial: "viewing_party", collection: @user.invited_parties, locals: {party_type: "invited"} || "You have no upcoming viewing parties." %>
-</div>
+

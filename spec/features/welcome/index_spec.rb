@@ -18,7 +18,7 @@ RSpec.describe 'The landing page index', type: :feature do
       expect(page).to have_button("Create a New User")
     end
 
-    it 'displays existing users which link to the users dashboard' do 
+    it 'displays existing users which links to the users dashboard' do 
 
       within(".users") do
         within("section#user-#{@user1.id}") do 

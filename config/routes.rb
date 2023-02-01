@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get '/register', to: 'users#new'
 
-  resources :users do 
+  resources :users, except: [:new] do 
     resources :dashboard, only: [:index, :show]
   end
 end
