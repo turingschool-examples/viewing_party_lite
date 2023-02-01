@@ -1,0 +1,13 @@
+
+<table>
+  <tr>
+    <th>Movie Title</th>
+    <th>Average Rating</th>
+  </tr>
+  <% @movies.each do |movie| %>
+    <tr>
+      <td><%= movie[:title] %></td>
+      <td><%= movie[:vote_average] %></td>
+    </tr>
+  <% end %>
+</table>
