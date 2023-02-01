@@ -1,9 +1,8 @@
-<h1>Viewing Party</h1><br>
-<h3><%= "New User" %></h3>
-
+<center><h1>Viewing Party</h1><br></center>
+<center><h3><%= "Register a New User" %></h3></center>
 <body>
   
-    <table>
+    <center><table>
       <%= form_with url: "/register", method: :post, local: true do |f| %>
       <tr>
         <td> <%= f.label :name %> </td>
@@ -14,9 +13,9 @@
         <td> <%= f.text_field :email %> </td>
       </tr>
       <tr>
-        <td> <%= f.submit "Submit" %> </td>
+        <td> <%= f.submit "Create New User" %> </td>
       </tr>
       <% end %>
-    </table>
+    </table></center>
     
 </body>
