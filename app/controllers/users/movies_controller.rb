@@ -4,6 +4,10 @@ class Users::MoviesController < ApplicationController
     @top_movies = movie_service.get_top_movies
   end
 
+  def show
+
+  end
+
   private
 
   def movie_service

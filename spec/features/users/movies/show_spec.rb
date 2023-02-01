@@ -3,13 +3,14 @@ require 'rails_helper'
 RSpec.describe 'Movie Details', type: :feature do
   
   let!(:user) { create(:user) }
+  let!(:movie_id) { 13 }
 
   before :each do
-    url = "https://api.themoviedb.org/3/movie/13?#{ENV['api_key']}&language=en-US" 
+    url = "https://api.themoviedb.org/3/movie/#{movie_id}?#{ENV['api_key']}&language=en-US" 
     response = File.read("spec/fixtures/forrest.json")
     stub_request(:get, url).to_return(status: 200, body: response)
 
-    visit user_movie_path(user, movie)
+    visit user_movie_path(user, movie_id)
   end
 
   describe 'the movie show page' do
