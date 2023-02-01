@@ -6,7 +6,7 @@ RSpec.describe 'Movie Details', type: :feature do
 
   before :each do
     url = "https://api.themoviedb.org/3/movie/13?#{ENV['api_key']}&language=en-US" 
-    response = File.read("spec/fixtures/some_movie.json"
+    response = File.read("spec/fixtures/forrest.json")
     stub_request(:get, url).to_return(status: 200, body: response)
 
     visit user_movie_path(user, movie)
