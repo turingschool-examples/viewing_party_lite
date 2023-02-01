@@ -41,7 +41,6 @@ RSpec.describe 'The User show page', type: :feature do
               expect(page).to have_content "Start Time: #{party.start_time}"
               expect(page).to have_content "Host: #{party.host.name}"
               expect(page).to have_content "Invited: #{party.invited}"
-              expect(page).to have_content "Invited: #{party.invited}"
               page.html.should include("<b>#{user.name}</b>")
             end
           end
