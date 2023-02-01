@@ -3,6 +3,10 @@ require 'rails_helper'
 RSpec.describe 'user dashboard' do
   before(:each) do
     @user1 = User.create!(name: 'John Doe', email: 'johndoe@ymail.com')
+    @vp1 = ViewingParty.create!(movie_id: 1, date: 'Mon, 30 Jan 2023', party_duration: 118, start_time: Time.parse('19:00:00 UTC'))
+    @vp2 = ViewingParty.create!(movie_id: 2, date: 'Tue, 31 Jan 2023', party_duration: 95, start_time: Time.parse('20:00:00 UTC'))
+    @user1.viewing_party_users.create!(viewing_party_id: @vp1.id, hosting: true)
+    @user1.viewing_party_users.create!(viewing_party_id: @vp2.id, hosting: false)
   end
 
   it "shows the <user's name>'s dashboard at the top of the page" do
@@ -16,11 +20,19 @@ RSpec.describe 'user dashboard' do
 
     expect(page).to have_button("Discover Movies")
   end
+
+  it 'has a section that lists viewing parties' do
+    visit user_path(@user1)
+    save_and_open_page
+    within "#viewing_party#{@vp1.id}" do
+      expect(page).to have_content('January 30, 2023')
+      expect(page).to have_content('7:00 pm')
+      expect(page).to have_content('Hosting')
+    end
+    within "#viewing_party#{@vp2.id}" do
+      expect(page).to have_content('January 31, 2023')
+      expect(page).to have_content('8:00 pm')
+      expect(page).to have_content('Invited')
+    end
+  end
 end
-
-# When I visit '/users/:id' where :id is a valid user id,
-# I should see:
-
-# "<user's name>'s Dashboard" at the top of the page
-# A button to Discover Movies*
-# A section that lists viewing parties**
