@@ -19,9 +19,31 @@ RSpec.describe 'Movie Results Page' do
       visit discover_user_path(charlie)
 
       click_button "Top Movies"
-save_and_open_page
+
       expect(current_path).to eq "/users/#{charlie.id}/movies"
       expect(page).to have_content("The Godfather")    
+    end
+
+    it 'searches for movie by title' do 
+      stub_request(:get, "https://api.themoviedb.org/3/discover/movie?").
+      with(
+        headers: {
+        'Accept'=>'*/*',
+        'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+        'Api-Key'=>'bcd246575bc3c3494a7259d3f55f76c9',
+        'User-Agent'=>'Faraday v2.5.2'
+        }).
+      to_return(status: 200, body: File.read("./spec/fixtures/discover_movies_response.json"), headers: {})  
+
+      visit discover_user_path(charlie)
+
+      fill_in "Movie Search", with: "the"
+      click_button "Search"
+
+      expect(current_path).to eq "/users/#{charlie.id}/movies"
+      expect(page).to have_content("The Godfather")
+      expect(page).to have_content("Avatar: The Way of Water")
+      expect(page).to_not have_content("Devotion")
     end
 
     xit 'lists a maximum of 20 movie results' do
