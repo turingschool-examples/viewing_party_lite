@@ -1,5 +1,5 @@
 class Users::MoviesController < ApplicationController 
 
-  def index 
+  def index
   end
 end 
