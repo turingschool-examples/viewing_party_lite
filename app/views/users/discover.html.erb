@@ -1,1 +1,1 @@
-<%= button_to "Top Movies", user_movies_path(@user), method: :get %>
+<%= button_to "Top Movies", "/users/#{@user.id}/movies", method: :get %>
