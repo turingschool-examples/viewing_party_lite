@@ -32,7 +32,10 @@ RSpec.describe 'Movie Results Page' do
       click_button "Top Movies"
 
       expect(current_path).to eq "/users/#{charlie.id}/movies"
-      expect(page).to have_content("The Godfather")    
+      expect(page.status_code).to eq 200
+      expect(page).to have_content("The Godfather")
+      expect(page).to have_content("The Green Mile")
+      expect(page).to_not have_content("M3GAN")
     end
 
     it 'searches for movie by title' do 
@@ -42,6 +45,7 @@ RSpec.describe 'Movie Results Page' do
       click_button "Search"
 
       expect(current_path).to eq "/users/#{charlie.id}/movies"
+      expect(page.status_code).to eq 200
       expect(page).to have_content("The Enforcer")
       expect(page).to have_content("Avatar: The Way of Water")
       expect(page).to_not have_content("Devotion")
@@ -54,7 +58,21 @@ RSpec.describe 'Movie Results Page' do
       # expect(page.results).to be <= 20
     end
 
-    xit 'has a title for each movie as a link to the movie details page' do
+    it 'has a title for each movie as a link to the movie details page' do
+      visit discover_user_path(charlie)
+
+      click_button "Top Movies"
+
+      expect(current_path).to eq "/users/#{charlie.id}/movies"
+      expect(page).to have_link("The Godfather")
+
+      visit discover_user_path(charlie)
+
+      fill_in "Search Movie Title:", with: "the"
+      click_button "Search"
+
+      expect(current_path).to eq "/users/#{charlie.id}/movies"
+      expect(page).to have_link("The Enforcer")
     end
 
     xit 'displays the vote average for each movie' do
