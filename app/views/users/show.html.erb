@@ -1,5 +1,5 @@
 <h1><%= "#{@user.name}'s Dashboard" %></h1>
-
+<%= @user.email %>
 <%= button_to 'Discover', user_discover_index_path(@user), method: :get %>
 
 <h3> Viewing Parties </h3>
@@ -7,7 +7,7 @@
   <div id="party-<%= vp.viewing_party.id %>">
     <br><%= link_to vp.viewing_party.movie_title %><br/>
     <br>Date: <%= vp.viewing_party.date %><br/>
-    <br>Start time: <%= vp.viewing_party.start_time %><br/>
+    <br>Start time: <%= vp.viewing_party.start_time.strftime("%l:%M %P") %><br/>
     <% if vp.host %>
       <br>Host: <%= @user.name %> <br/>
     <% else %>

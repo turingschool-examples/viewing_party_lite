@@ -34,7 +34,7 @@ RSpec.describe 'user show page' do
       within("#party-#{@viewing_party1.id}") do
         expect(page).to have_content(@viewing_party1.movie_title)
         expect(page).to have_content(@viewing_party1.date)
-        expect(page).to have_content(@viewing_party1.start_time)
+        expect(page).to have_content(@viewing_party1.start_time.strftime("%l:%M %P"))
         expect(page).to_not have_content(@viewing_party2.movie_title)
         expect(page).to have_content("Host: #{@user1.name}")
       end
@@ -44,10 +44,9 @@ RSpec.describe 'user show page' do
       within("#party-#{@viewing_party3.id}") do
         expect(page).to have_content(@viewing_party3.movie_title)
         expect(page).to have_content(@viewing_party3.date)
-        expect(page).to have_content(@viewing_party3.start_time)
+        expect(page).to have_content(@viewing_party3.start_time.strftime("%l:%M %P"))
         expect(page).to_not have_content(@viewing_party2.movie_title)
         expect(page).to have_content("Host: Invited")
-      save_and_open_page
       end
     end
   end
