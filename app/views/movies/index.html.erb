@@ -1,6 +1,14 @@
 <h2 hidden>Movie Results Page</h2>
 
-<% if @top_rated != [] %>
+
+
+<% if @search_results != [] %>
+  <h2> Movie Search Results </h2>
+
+  <section id="movie_search_results">
+
+  </section>
+<% else %>
   <h2> Top 20 Rated Movies </h2>
 
   <section id="movies_top_rated">
@@ -18,5 +26,4 @@
       <% end %>
     </table>
   </section>
-
 <% end %>

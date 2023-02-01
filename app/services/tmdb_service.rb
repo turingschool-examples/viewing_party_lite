@@ -12,9 +12,11 @@ class TMDBService
     end
   end
 
-  def get_all_movies
-    response = conn.get("/3/movie", {"api_key" => ENV['tmdb_api_key'], "sort_by" => "release_date.asc", "include_adult" => false})
-    data = JSON.parse(response.body, symbolize_names: true)
-    results = data[:results]
+  def movie_search(keyword)
+    response = conn.get("/3/search/movie", {"api_key" => ENV['tmdb_api_key'], "include_adult" => false, "query" => keyword})
+    data = JSON.parse(response.body, symbolize_names: true)[:results]
+    data[0..19].map do |movie|
+      MovieResults.new(movie)
+    end
   end
 end
