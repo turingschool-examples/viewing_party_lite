@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       redirect_to user_path(user)
     else
       flash[:error] = user.errors.full_messages.to_sentence
-      render register_path
+      render :new
     end
   end
 
