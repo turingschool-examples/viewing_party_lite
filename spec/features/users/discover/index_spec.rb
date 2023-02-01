@@ -4,13 +4,13 @@ RSpec.describe "Discover Movies Page" do
   before :each do
     @user = create(:user)
 
-    visit user_discover_path(@user)
+    visit user_discover_index_path(@user)
   end
 
   describe "displays content" do
     it "button to discover top rated movies" do
       expect(page).to have_button("Find Top Rated Movies")
-
+      
       click_button("Find Top Rated Movies")
 
       expect(current_path).to eq("/users/#{@user.id}/movies")

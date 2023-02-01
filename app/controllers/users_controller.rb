@@ -20,19 +20,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def discover
-    @user = User.find(params[:user_id])
-  end
-
-  def movies
-
-  end
-
-  def search
-    user = User.find(params[:user_id])
-    redirect_to user_movies_path(user)
-  end
-
 private
 
   def user_params

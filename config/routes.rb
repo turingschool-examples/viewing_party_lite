@@ -4,8 +4,11 @@ Rails.application.routes.draw do
   get '/register', to: 'users#new'
 
   resources :users, only: [:show, :create] do
-    get 'discover'
-    get 'movies'
-    post 'search', to: 'users#search'
+    resources :discover, only: [:index], controller: "users/discover"
+    resources :movies, only: [:index, :show], controller: "users/movies"
+    get "/movies?q=top_rated", to: "movies#top_rated"
+    get "/movies?q=keyword", to: "movies#keyword"
   end
+  # namespace :users do
+  # end
 end
