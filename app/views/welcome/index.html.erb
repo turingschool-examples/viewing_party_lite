@@ -1,0 +1,12 @@
+<center><%= button_to "Create a New User", register_path %></center>
+
+<body>
+  <h2>Existing Users</h2>
+  <div class="users">
+    <% @users.each do |user| %>
+    <section id="user-<%= user.id %>">
+      <%= link_to "#{user.email}", user_dashboard_index_path(user) %>
+    </section>
+    <% end %>
+  </div>  
+</body>

@@ -9,7 +9,17 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
+  <nav>
+    <%= link_to "Home", '/' %>
+  </nav>
+
   <body>
-    <%= yield %>
+    <div>
+      <h1 style="text-align:center;">Viewing Party</h1>
+      <% flash.each do |type, notice| %>
+        <h3><b><%= notice %></b></h3>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>
