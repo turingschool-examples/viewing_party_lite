@@ -9,7 +9,7 @@ RSpec.describe 'Users Dashboard' do
     @viewing_party2 = ViewingParty.create!(when: "11/21/2030 10:00", duration: 120, movie_id: @movie2.id)
     Invitee.create!(user_id: @user.id, viewing_party_id: @viewing_party1.id, host: true)
     Invitee.create!(user_id: @user.id, viewing_party_id: @viewing_party2.id, host: true)
-    visit users_dashboard_path(@user)
+    visit user_dashboard_index_path(@user)
   end
 
   it 'contains a header' do

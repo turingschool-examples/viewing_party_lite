@@ -1,8 +1,4 @@
-class Users::DashboardController < ApplicationController
-  def show
-    @user = User.find(params[:id])
-  end
-  
+class UsersController < ApplicationController
   def new
   end
 
@@ -10,10 +6,10 @@ class Users::DashboardController < ApplicationController
     user = User.new(user_params)
 
     if user.save(user_params)
-      redirect_to users_dashboard_path(user)
+      redirect_to user_dashboard_index_path(user)
     else
       flash[:notice] = "Error: All fields must be complete and email must be unique"
-      redirect_to new_users_dashboard_path
+      redirect_to new_user_path
     end
   end
 

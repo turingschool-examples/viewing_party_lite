@@ -6,11 +6,11 @@ RSpec.describe "The Discover Movies Page" do
   end
 
   it 'is accessed from a button on a users show page' do
-    visit users_dashboard_path(@user)
+    visit user_dashboard_index_path(@user)
 
     click_button "Discover Movies"
 
-    expect(current_path).to eq(users_discover_index_path(@user))
+    expect(current_path).to eq(user_discover_index_path(@user))
   end
 
   it 'has a button to discover top rated movies' do
