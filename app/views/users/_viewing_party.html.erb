@@ -1,5 +1,5 @@
 <div id="#{party_type}_#{viewing_party.id}">
-<p>Movie Title: <%= link_to viewing_party.movie.title, movie_path(viewing_party.movie) %></p>
+<p>Movie Title: <%= link_to viewing_party.movie.title, user_movies_path(@user) %></p>
 <p><%= viewing_party.movie.image %></p>
 <p>Date of Event: <%= viewing_party.date %></p>
 <p>Start Time: <%= viewing_party.start_time %></p>

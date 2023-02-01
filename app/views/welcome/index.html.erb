@@ -5,8 +5,7 @@
   <div class="users">
     <% @users.each do |user| %>
     <section id="user-<%= user.id %>">
-      <%= link_to "#{user.email}", user_dashboard_index_path(user) %>
-    </section>
+      <%= link_to "#{user.email}", user_path(user) %> </section>
     <% end %>
   </div>  
 </body>
