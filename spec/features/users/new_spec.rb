@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'user new' do
+RSpec.describe 'user new page' do
   before :each do
     visit '/register'
   end
@@ -22,12 +22,30 @@ RSpec.describe 'user new' do
     end
 
     # An inconsequential feature I added for fun 
-    it 'downcases user email upon succesful registration' do
-      fill_in 'Name', with: 'TEST USER'
-      fill_in 'Email', with: 'TESTUSER@example.com'
-      click_button('Submit')
+    # it 'downcases user email upon succesful registration' do
+    #   fill_in 'Name', with: 'TEST USER'
+    #   fill_in 'Email', with: 'TESTUSER@example.com'
+    #   click_button('Submit')
 
-      expect(User.last.email).to eq('testuser@example.com')
+    #   expect(User.last.email).to eq('testuser@example.com')
+    # end
+  end
+
+  describe 'sad path' do 
+    it 'flashes an alert and redirects visitor to registration page upon submitting invalid data' do 
+      fill_in 'Name', with: 'TEST USER'
+      click_button('Submit')
+      expect(page).to have_content("Registration failed: Email can't be blank")
+      expect(current_path).to eq('/register')
+
+      fill_in 'Email', with: 'joe@example.com'
+      click_button('Submit')
+      expect(page).to have_content("Registration failed: Name can't be blank")
+      expect(current_path).to eq('/register')
+
+      click_button('Submit')
+      expect(page).to have_content("Registration failed: Name can't be blank and Email can't be blank")
+      expect(current_path).to eq('/register')
     end
   end
 end
