@@ -9,7 +9,7 @@ class MoviesController < ApplicationController
       response = conn.get('/3/discover/movie?')
 
       data = JSON.parse(response.body, symbolize_names: true)
-      
+
       results = data[:results].find_all do |movie|
         movie[:title].downcase.include?(params[:query].downcase)
       end
@@ -17,11 +17,11 @@ class MoviesController < ApplicationController
       @top_20 = results.first(20)
 
       if results.empty?
-        flash[:notice] = "No results found. Please try another title."
+        flash[:notice] = 'No results found. Please try another title.'
         redirect_to discover_user_path(@user)
       end
 
-    else 
+    else
       conn = Faraday.new(url: 'https://api.themoviedb.org') do |f|
         f.headers['api_key'] = ENV['movie_api_key']
       end
@@ -34,7 +34,7 @@ class MoviesController < ApplicationController
     end
   end
 
-  def show 
-
+  def show
+    @user = User.find(params[:id])
   end
 end
