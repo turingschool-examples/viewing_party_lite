@@ -16,6 +16,10 @@ RSpec.describe 'The landing page index', type: :feature do
     it 'displays a button to create a new user' do 
 
       expect(page).to have_button("Create a New User")
+
+      click_button "Create a New User"
+
+      expect(current_path).to eq(register_path)
     end
 
     it 'displays existing users which links to the users dashboard' do 
