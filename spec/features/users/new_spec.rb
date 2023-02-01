@@ -14,7 +14,7 @@ RSpec.describe 'user registration page' do
       expect(page).to have_button('Create New User')
     end
     
-    it 'can be filled in and submitted' do     
+    it 'can be filled in and submitted' do
       fill_in('Name', with: 'Jeff Goldblum')
       fill_in('Email', with: 'JurassicSnark@gmail.com')
       click_on 'Create New User'
