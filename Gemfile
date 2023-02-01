@@ -44,6 +44,7 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 5.0'
   gem 'faraday'
   gem 'figaro'
+  gem 'orderly'
 end
 
 group :development do
