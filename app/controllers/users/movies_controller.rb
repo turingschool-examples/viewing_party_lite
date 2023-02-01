@@ -25,6 +25,10 @@ module Users
       end
     end
 
+    def show
+      set_user
+    end
+
     private
 
     def set_user
