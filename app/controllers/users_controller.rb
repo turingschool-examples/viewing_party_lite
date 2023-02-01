@@ -6,10 +6,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.create!(user_params)
-    user[:email].downcase!
-    user.save!
-    redirect_to user_path(user.id)
+    user = User.new(user_params)
+    if user.save(user_params)
+      redirect_to user_path(user.id)
+    else 
+      redirect_to '/register', alert: "Registration failed: #{user.errors.full_messages.to_sentence}"
+    end
   end
 
   def show
