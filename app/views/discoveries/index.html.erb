@@ -1,1 +1,5 @@
 <h2>Discover Movies</h2>
+
+<%= form_with url: "/users/#{@user.id}/movies?q=top%20rated", method: :get, local: true do |f| %>
+  <%= f.submit "Find Top Rated Movies" %>
+<% end %>
