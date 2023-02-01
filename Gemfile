@@ -45,6 +45,7 @@ group :development, :test do
   gem 'faraday'
   gem 'figaro'
   gem 'orderly'
+  gem 'capybara_table'
 end
 
 group :development do
