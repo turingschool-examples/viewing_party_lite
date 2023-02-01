@@ -1,4 +1,4 @@
-<%= button_to 'Create a New User', register_path %>
+<%= button_to 'Create a New User', register_path, method: :get %>
 
 <% @users.each do |user| %>
   <p><%=link_to user.email, user_path(user) %></p>
