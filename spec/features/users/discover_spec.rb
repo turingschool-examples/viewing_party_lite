@@ -28,6 +28,9 @@ RSpec.describe "Discover Movies Page" do
         expect(current_path).to eq("/users/#{@user.id}/movies")
       end
     end
+
+    # how to test that button is giving "?q=top%20rated" on button and "?q=keyword" on search field?
+    it "passes optional parameters"
+
   end
-  
 end
