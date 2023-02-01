@@ -19,12 +19,12 @@ RSpec.describe 'user show page' do
   end
 
   describe 'When I go to a user dashbaord' do
-    it 'has a button "Discover"' do
-      expect(page).to have_button('Discover')
+    it 'has a button "Discover Movies"' do
+      expect(page).to have_button('Discover Movies')
     end
 
     it 'routes to discover page \'/users/:id/discover\' after click "Discover Movies" button' do
-      click_on('Discover')
+      click_on('Discover Movies')
 
       expect(current_path).to eq(user_discover_index_path(@user1))
     end
@@ -62,6 +62,10 @@ RSpec.describe 'user show page' do
         expect(page).to have_content("#{@user2.name}")
         expect(page).to_not have_content("#{@user3.name}")
       end
+    end
+
+    xit 'displays movie poster image' do
+      expect(page).to have_xpath('/html/body/div[1]/img')
     end
   end
 end
