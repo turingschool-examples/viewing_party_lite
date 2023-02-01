@@ -1,3 +1,9 @@
 <h3> Discover Movies </h3>
-<%= button_to 'Find Top Rated Movies', user_discover_index_path(@user), method: :get %>
+<%= link_to 'Find Top Rated Movies', "/users/#{@user.id}/movies?q=top%20rated", method: :get %>
 <hr>
+
+<%= form_with url: "/users/#{@user.id}/movies?q=#{:keyword}", method: :get, local: true do |form| %>
+  <% form.label :q %>
+  <%= form.text_field :q %>
+  <%= form.submit 'Find Movies' %>
+<% end %>

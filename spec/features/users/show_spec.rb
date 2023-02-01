@@ -20,9 +20,8 @@ RSpec.describe 'user dashboard' do
 
     expect(page).to have_button("Discover Movies")
     click_button "Discover Movies"
-    save_and_open_page
+    
     expect(current_path).to eq user_discover_index_path(@user1)
-
   end
 
   it 'has a section that lists viewing parties' do
