@@ -1,12 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'Movie Results Page' do
-  let!(:charlie) { User.create!(name: 'Charlie', email: 'charlie_boy@gmail.com') }
 
-  describe 'when the user visits the discover movies page' do
-    xit 'has a button to direct the user to the movie results page' do
-    end
-  end
+  let!(:charlie) { User.create!(name: 'Charlie', email: 'charlie_boy@gmail.com') }
 
   describe 'when the user visits the movie results page' do
     xit 'lists a maximum of 20 movie results' do
