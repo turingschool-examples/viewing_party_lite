@@ -29,5 +29,8 @@
           end
         end
       end
+
+      # Will come back to finish this user story after understanding movie API
+      it 'displays viewing party data'
     end
   end
