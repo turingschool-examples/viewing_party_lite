@@ -20,9 +20,12 @@ RSpec.describe MovieFacade do
     expect(movie_facade).to be_a(MovieFacade)
   end
 
-  it 'can return the title' do
+  it 'can return movie attributes' do
     movie = movie_facade.get_movie('238')
 
     expect(movie.title).to eq('The Godfather')
+    expect(movie.runtime).to eq(175)
+    expect(movie.vote_average).to eq(8.714)
+    expect(movie.vote_count).to eq(17392)
   end
 end
