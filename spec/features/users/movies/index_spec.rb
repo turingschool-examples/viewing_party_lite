@@ -6,6 +6,7 @@ RSpec.describe 'Movie Results Page', type: :feature do
     let!(:user) { create(:user) }
 
     before :each do
+      visit user_movie_path 
     end
 
     it 'displays only up to 20 movies' do
