@@ -13,7 +13,7 @@ RSpec.describe 'Landing Page' do
     user2 = User.create!(name: 'Jane Smith', email: 'jane@gmail.com')
     
     visit root_path
-    save_and_open_page
+
     expect(page).to have_content('Existing Users:')
     
     within '#existing_users' do
