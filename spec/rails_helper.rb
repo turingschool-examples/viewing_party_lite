@@ -70,6 +70,12 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  #before every test, webmock will stub our API call to the movie/top_rated endpoint
+  config.before do 
+    WebMock.stub_request(:any, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV["moviedb_key"]}")
+             .to_return(body: File.read('./spec/fixtures/top_movies.json'))
+  end
 end
 
 Shoulda::Matchers.configure do |config|

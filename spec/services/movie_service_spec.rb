@@ -3,8 +3,6 @@ require 'rails_helper'
 RSpec.describe MovieService do 
   describe 'get_top_movies' do 
     it 'should return the top 20 Movie objects' do
-      WebMock.stub_request(:any, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV["moviedb_key"]}")
-             .to_return(body: File.read('./spec/fixtures/top_movies.json'))
 
       service = MovieService.new
       response = service.get_top_movies 
@@ -16,6 +14,9 @@ RSpec.describe MovieService do
         expect(movie.title).to_not be(nil)
         expect(movie.vote_average).to_not be(nil)
       end
+      expect(response.first.id).to eq(238)
+      expect(response.first.title).to eq("The Godfather")
+      expect(response.first.vote_average).to eq(8.7)
     end
   end
 end
