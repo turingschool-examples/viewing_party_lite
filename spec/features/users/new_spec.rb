@@ -20,8 +20,7 @@ RSpec.describe "new page", type: :feature do
       click_button "Register"
       
       expect(page).to have_content("Tony Pepperoni's Dashboard")
-      # expect(current_path).to eq(user_path())
-      #ask about path testing at check in
+#test for registration form 
       expect(page).to_not have_content(user1.name)
     end
 
@@ -31,8 +30,6 @@ RSpec.describe "new page", type: :feature do
 
         click_button "Register"
     
-        # expect(current_path).to be(register_path)
-        # is there a way to test this path with how we set it up? is that ok?
         expect(page).to have_content("Name can't be blank and Email can't be blank")
       end
 
