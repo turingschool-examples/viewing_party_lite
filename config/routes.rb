@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :create] do
     get 'discover'
-    get 'movies'
-    post 'search', to: 'users#search'
+    resources :movies, only: [:index, :show]
+    # post 'search', to: 'users#search'
   end
+  # namespace :users do
+  # end
 end
