@@ -3,6 +3,7 @@ FactoryBot.define do
     duration { "" }
     date { "2023-01-30 19:47:54" }
     start_time { "2023-01-30 19:47:54" }
-    movie { nil }
+    movie_id { nil }
+    host { create(:user) }
   end
 end
