@@ -1,11 +1,11 @@
 require 'rails_helper'
-require './app/facades/movies/show_facade'
+require './app/facades/movies/movie_facade'
 
 RSpec.describe Movies::MovieFacade do
   let!(:movie_facade) { Movies::MovieFacade.new }
   before :each do
     json_response = File.read('spec/fixtures/movie.json')
-    stub_request(:get, "https://api.themoviedb.org/3/movie/238?api_key").
+    stub_request(:get, "https://api.themoviedb.org/3/movie/238?api_key=#{ENV['MOVIE_DB_KEY']}").
     with(
       headers: {
      'Accept'=>'*/*',
