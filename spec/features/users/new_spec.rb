@@ -22,6 +22,7 @@ RSpec.describe "new page", type: :feature do
       expect(page).to have_content("Tony Pepperoni's Dashboard")
       # expect(current_path).to eq(user_path())
       #ask about path testing at check in
+      expect(page).to_not have_content(user1.name)
     end
   end
 end
