@@ -5,10 +5,10 @@ RSpec.describe "movies results page" do
     User.delete_all
     @user = create(:user)
     top_20_response = File.read('spec/fixtures/topmovies.json')
-    stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key")
+    stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['MOVIE_DB_KEY']}")
       .to_return(status: 200, body: top_20_response)
     search_results = File.read('spec/fixtures/godfather_search.json')
-    stub_request(:get, "https://api.themoviedb.org/3/search/movie?Godfather&api_key")
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?query=Godfather&api_key=#{ENV['MOVIE_DB_KEY']}")
       .to_return(status: 200, body: search_results)
   end
 
