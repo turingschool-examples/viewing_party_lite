@@ -23,7 +23,12 @@ RSpec.describe "Discover index page (/users/:id/discover)", type: :feature do
       expect(page).to have_button("Find Top Rated Movies")
     end
 
-    it 'see a text field to enter keyword(s) to search by movie title'
+    it 'see a text field to enter keyword(s) to search by movie title' do
+      visit user_discoveries_path(@user1.id)
+
+      expect(page).to have_field(:movie_search)
+      expect(page).to have_button("Find Movies")
+    end
 
     it 'see a button to search by movie title'
 

@@ -3,3 +3,11 @@
 <%= form_with url: "/users/#{@user.id}/movies?q=top%20rated", method: :get, local: true do |f| %>
   <%= f.submit "Find Top Rated Movies" %>
 <% end %>
+
+<section id="movie_list">
+<%= form_with url: "/users/#{@user.id}/movies?q=keyword", method: :get, local: true do |f| %>
+  <%= f.label "Search" %>
+  <%= f.text_field :movie_search %>
+  <%= f.submit "Find Movies" %>
+<% end %>
+</section>
