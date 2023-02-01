@@ -16,17 +16,18 @@ RSpec.describe "The Movie Details Page" do
   end
 
   it 'contains the movie info, cast, and reviews' do
-    expect(page).to have_content("Title: Fight Club")
+    expect(page).to have_content("Fight Club")
     expect(page).to have_content("Vote Average: 8.432")
     expect(page).to have_content("Runtime: 139")
-    expect(page).to have_content("Genres: Drama, Thriller, Comedy")
+    expect(page).to have_content("Genre(s): Drama, Thriller, Comedy")
     expect(page).to have_content("Summary: A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.")
     expect(page).to have_content("Cast:")
     expect(page).to have_content("Edward Norton as The Narrator")
     expect(page).to have_content("David Andrews as Thomas")
     expect(page).to have_content("Total Reviews: 8")
-    expect(page).to have_content("Goddard's Review: Pretty awesome movie.  It shows what one crazy person can convince other crazy people to do.  Everyone needs something to believe in.  I recommend Jesus Christ, but they want Tyler Durden.")
-    expect(page).to have_content("Katch22's Review: Madness unbounded.  Don't try to make sense of insanity, just ride a wild ride.")
+    expect(page).to have_content("Goddard's Review: Pretty awesome movie. It shows what one crazy person can convince other crazy people to do. Everyone needs something to believe in. I recommend Jesus Christ, but they want Tyler Durden.")
+    expect(page).to have_content("katch22's Review: Madness unbounded. Don't try to make sense of insanity, just ride a wild ride.")
+    
   end
 
   it 'has a button to create a viewing party' do
