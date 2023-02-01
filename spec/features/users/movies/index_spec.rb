@@ -18,4 +18,16 @@ RSpec.describe 'The Movie Results Index', type: :feature do
       expect(current_path).to eq(user_discover_index_path(user1))
     end
   end
+
+  describe 'the top rated movie results' do
+    it 'will display the top 20 rated movies when button pressed' do
+      visit user_discover_index_path(user1)
+
+      click_button("Top Rated Movies")
+      save_and_open_page
+      expect(current_path).to eq(user_movies_path(user1))
+
+      # expect page to show top 20 movies from movieAPI
+    end
+  end
 end

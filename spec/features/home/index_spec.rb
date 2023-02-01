@@ -30,7 +30,7 @@ RSpec.describe "index page", type: :feature do
       expect(page).to have_button("Create New User")
     end
 
-    xit 'will load the New User Page' do
+    it 'will load the New User Page' do
       visit root_path
 
       expect(current_path).to eq(root_path)
