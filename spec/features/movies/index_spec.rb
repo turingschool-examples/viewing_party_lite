@@ -80,6 +80,24 @@ RSpec.describe 'Movie Results Page' do
     end
 
     xit 'displays the vote average for each movie' do
+      visit discover_user_path(charlie)
+
+      click_button "Top Movies"
+
+      expect(current_path).to eq "/users/#{charlie.id}/movies"
+
+    end
+
+    describe 'sad path' do 
+      it 'displays a message if search did not find a result' do 
+        visit discover_user_path(charlie)
+
+        fill_in "Search Movie Title:", with: ";osifgn"
+        click_button "Search"
+  
+        expect(current_path).to eq discover_user_path(charlie)
+        expect(page).to have_content("No results found. Please try another title.")
+      end
     end
   end
 end

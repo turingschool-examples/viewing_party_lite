@@ -16,6 +16,11 @@ class MoviesController < ApplicationController
 
       @top_20 = results.first(20)
 
+      if results.empty?
+        flash[:notice] = "No results found. Please try another title."
+        redirect_to discover_user_path(@user)
+      end
+
     else 
       conn = Faraday.new(url: 'https://api.themoviedb.org') do |f|
         f.headers['api_key'] = ENV['movie_api_key']
@@ -30,6 +35,6 @@ class MoviesController < ApplicationController
   end
 
   def show 
-    
+
   end
 end
