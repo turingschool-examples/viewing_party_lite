@@ -4,7 +4,7 @@ class UserMoviesController < ApplicationController
     if params[:q] == "top rated"
       @top_rated = TopRatedMovieService.movies["results"]
     elsif params[:search]
-      @results = 'SOMERANDOMFUCKINGSHITSERVICE'
+      @search_results = MovieSearchService.search(params[:search])["results"]
     end
   end
 end
