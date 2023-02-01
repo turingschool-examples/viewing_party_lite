@@ -64,7 +64,9 @@ RSpec.describe 'Movie Results Page' do
       click_button "Top Movies"
 
       expect(current_path).to eq "/users/#{charlie.id}/movies"
-      expect(page).to have_link("The Godfather")
+      click_link("The Godfather")
+
+      expect(current_path).to eq "/users/#{charlie.id}/movies/238"
 
       visit discover_user_path(charlie)
 
@@ -72,7 +74,9 @@ RSpec.describe 'Movie Results Page' do
       click_button "Search"
 
       expect(current_path).to eq "/users/#{charlie.id}/movies"
-      expect(page).to have_link("The Enforcer")
+      click_link("The Enforcer")
+
+      expect(current_path).to eq "/users/#{charlie.id}/movies/846433"
     end
 
     xit 'displays the vote average for each movie' do
