@@ -1,8 +1,9 @@
 require 'rails_helper'
-require './app/facades/movies/movie_facade'
+require './app/facades/movie_facade.rb'
 
-RSpec.describe Movies::MovieFacade do
-  let!(:movie_facade) { Movies::MovieFacade.new }
+RSpec.describe MovieFacade do
+  let!(:movie_facade) { MovieFacade.new }
+
   before :each do
     json_response = File.read('spec/fixtures/movie.json')
     stub_request(:get, "https://api.themoviedb.org/3/movie/238?api_key=#{ENV['MOVIE_DB_KEY']}").
@@ -16,12 +17,12 @@ RSpec.describe Movies::MovieFacade do
   end
 
   it 'exists' do
-    expect(movie_facade).to be_a(Movies::MovieFacade)
+    expect(movie_facade).to be_a(MovieFacade)
   end
 
   it 'can return the title' do
-    movie = movie_facade.get_title('238')
+    movie = movie_facade.get_movie('238')
 
-    expect(movie).to eq('The Godfather')
+    expect(movie.title).to eq('The Godfather')
   end
 end
