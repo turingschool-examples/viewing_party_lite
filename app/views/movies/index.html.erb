@@ -1,0 +1,8 @@
+<h3>Top 20 Rated Movies</h3>
+<ol>
+<% @movies.each do |movie| %>
+
+  <li><%= movie[:title] %> Vote Average: <%= movie[:vote_average] %></li>
+  
+<% end %>
+</ol>
