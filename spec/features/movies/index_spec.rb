@@ -44,4 +44,25 @@ RSpec.describe "Movies results page (/users/:id/movies)", type: :feature do
       end
     end
   end
+
+  describe "visiting either version of the results page" do
+    it "has a button to go back to the discover page and goes there when clicked" do
+      visit user_discoveries_path(@user1.id)
+
+      fill_in :q, with: "Encanto"
+      click_button "Find Movies"
+
+      expect(current_path).to eq("/users/#{@user1.id}/movies")
+
+      click_button "Return to Discover Movies"
+
+      expect(current_path.to eq(user_discoveries_path(@user1.id)))
+
+      click button "Find Top Rated Movies"
+      expect(current_path).to eq("/users/#{@user1.id}/movies")
+
+      click_button "Return to Discover Movies"
+      expect(current_path.to eq(user_discoveries_path(@user1.id)))
+    end
+  end
 end

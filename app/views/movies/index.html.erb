@@ -1,6 +1,6 @@
 <h2 hidden>Movie Results Page</h2>
 
-
+<%= button_to "Return to Discover Movies",  user_discoveries_path(@user.id), method: :get %>
 
 <% if @search_results != [] %>
   <h2> Movie Search Results </h2>
