@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     member do
       get 'discover', to: 'users/discover#index'
     end
-    resources :movies, only: [:index, :show], controller: 'user/movies'
+    resources :movies, only: [:index, :show], controller: 'users/movies'
   end
 end
