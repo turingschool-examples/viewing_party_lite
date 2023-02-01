@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_31_203719) do
+ActiveRecord::Schema.define(version: 2023_02_01_183342) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2023_01_31_203719) do
     t.string "title"
     t.integer "duration"
     t.time "start_time"
+    t.integer "host"
   end
 
   create_table "viewing_party_users", force: :cascade do |t|
