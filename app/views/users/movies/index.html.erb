@@ -1,1 +1,11 @@
 <h1>Here Are Your Results</h1>
+
+<!--
+if params[:title].present?
+ <h1>Here Are Your Results For: params_title </h1>
+end -->
+
+<div id="discover-page-button">
+  <%= button_to "Discover Page", user_discover_index_path(@user), method: :get %>
+</div>
+
