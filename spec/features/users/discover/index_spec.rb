@@ -12,7 +12,6 @@ RSpec.describe 'The User Discover Movie page', type: :feature do
     describe "Top Movies" do
       
       it 'has button Discover Top Movies' do
-        save_and_open_page
         expect(page).to have_button "Discover Top Movies"
       end
 
