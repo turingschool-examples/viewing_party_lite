@@ -10,10 +10,13 @@
   </head>
 
   <body>
-    <%= yield %>
+    <h1>Viewing Party Lite</h1>
     <%= link_to "Home", welcome_index_path %>
+
     <% flash.each do |type, message| %>
       <p><%= message %></p>
     <% end %>
+
+    <%= yield %>
   </body>
 </html>
