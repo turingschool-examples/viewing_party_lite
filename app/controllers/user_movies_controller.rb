@@ -1,5 +1,10 @@
 class UserMoviesController < ApplicationController
   def details
-binding.pry
+    @user = User.find(params[:id])
+    if params[:q] == "top rated"
+      @top_rated = TopRatedMovieService.movies["results"]
+    elsif params[:search]
+      @search_results = MovieSearchService.search(params[:search])["results"]
+    end
   end
 end
