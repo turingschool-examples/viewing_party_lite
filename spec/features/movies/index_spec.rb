@@ -22,10 +22,8 @@ RSpec.describe 'Movie results page' do
     
     fill_in('q', with: 'The Matrix')
     click_on('Find Movies')
-    save_and_open_page
     
     expect(current_path).to eq(user_movies_path(@user1))
     expect(page).to have_content('The Matrix Resurrections 6.6 The Matrix 8.2')
-    
   end
 end
