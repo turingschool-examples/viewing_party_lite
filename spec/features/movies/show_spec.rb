@@ -30,9 +30,18 @@ RSpec.describe 'Movie details page' do
   describe 'When I visit the movie details page' do
     it 'has button to create viewing party' do
       visit "/users/#{charlie.id}/movies/315162"
+      
       click_button "Create a Viewing Party"
+
+      expect(current_path).to eq "/users/#{charlie.id}/movies/315162/viewing-party/new"
     end
 
-    it 'has button to return to discover page'
+    it 'has button to return to discover page' do 
+      visit "/users/#{charlie.id}/movies/315162"
+     
+      click_button "Discover Page"
+
+      expect(current_path).to eq discover_user_path(charlie)
+    end
   end
 end
