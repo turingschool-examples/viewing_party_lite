@@ -39,6 +39,7 @@ gem 'faraday'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
+  gem 'figaro'
 end
 
 group :development do
@@ -57,6 +58,8 @@ group :test do
   gem 'shoulda-matchers', '~> 3.1'
   gem 'faker'
   gem 'database_cleaner'
+  gem 'webmock'
+  gem 'orderly'
 end
 
 

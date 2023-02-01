@@ -1,0 +1,408 @@
+{
+  "page": 1,
+  "results": [
+      {
+          "adult": false,
+          "backdrop_path": "/l6hQWH9eDksNJNiXWYRkWqikOdu.jpg",
+          "genre_ids": [
+              14,
+              18,
+              80
+          ],
+          "id": 497,
+          "original_language": "en",
+          "original_title": "The Green Mile",
+          "overview": "A supernatural tale set on death row in a Southern prison, where gentle giant John Coffey possesses the mysterious power to heal people's ailments. When the cell block's head guard, Paul Edgecomb, recognizes Coffey's miraculous gift, he tries desperately to help stave off the condemned man's execution.",
+          "popularity": 126.022,
+          "poster_path": "/velWPhVMQeQKcxggNEU8YmIo52R.jpg",
+          "release_date": "1999-12-10",
+          "title": "The Green Mile",
+          "video": false,
+          "vote_average": 8.5,
+          "vote_count": 14978
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/2Xe9lISpwXKhvKiHttbFfVRERQX.jpg",
+          "genre_ids": [
+              18,
+              35
+          ],
+          "id": 490132,
+          "original_language": "en",
+          "original_title": "Green Book",
+          "overview": "Tony Lip, a bouncer in 1962, is hired to drive pianist Don Shirley on a tour through the Deep South in the days when African Americans, forced to find alternate accommodations and services due to segregation laws below the Mason-Dixon Line, relied on a guide called The Negro Motorist Green Book.",
+          "popularity": 42.12,
+          "poster_path": "/7BsvSuDQuoqhWmU2fL7W2GOcZHU.jpg",
+          "release_date": "2018-11-16",
+          "title": "Green Book",
+          "video": false,
+          "vote_average": 8.2,
+          "vote_count": 9796
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/58r049aVTO1KjAYVuWJr0KgG5nY.jpg",
+          "genre_ids": [
+              12,
+              28,
+              53,
+              878
+          ],
+          "id": 44912,
+          "original_language": "en",
+          "original_title": "Green Lantern",
+          "overview": "For centuries, a small but powerful force of warriors called the Green Lantern Corps has sworn to keep intergalactic order. Each Green Lantern wears a ring that grants him superpowers. But when a new enemy called Parallax threatens to destroy the balance of power in the Universe, their fate and the fate of Earth lie in the hands of the first human ever recruited.",
+          "popularity": 41.274,
+          "poster_path": "/fj21HwUprqjjwTdkKC1XZurRSpV.jpg",
+          "release_date": "2011-06-16",
+          "title": "Green Lantern",
+          "video": false,
+          "vote_average": 5.2,
+          "vote_count": 6527
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/rRGl4Uqo962I2iqQSOT8nArWNWd.jpg",
+          "genre_ids": [
+              16,
+              28,
+              878
+          ],
+          "id": 887357,
+          "original_language": "en",
+          "original_title": "Green Lantern: Beware My Power",
+          "overview": "Recently discharged Marine sniper John Stewart is at a crossroads in his life, one which is only complicated by receiving an extraterrestrial ring which grants him the powers of the Green Lantern of Earth. Unfortunately, the ring doesn't come with instructions - but it does come with baggage, like a horde of interplanetary killers bent on eliminating every Green Lantern in the universe. Now, with the aid of the light-hearted Green Arrow, Adam Strange and Hawkgirl, this reluctant soldier must journey into the heart of a galactic Rann/Thanagar war and somehow succeed where all other Green Lanterns have failed.",
+          "popularity": 47.055,
+          "poster_path": "/jU8Y6JXoj163MmOCzrT9C85MRTC.jpg",
+          "release_date": "2022-05-19",
+          "title": "Green Lantern: Beware My Power",
+          "video": false,
+          "vote_average": 7.1,
+          "vote_count": 128
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/b7ATgNqE84WrGKq7Y8JtrnAuAS8.jpg",
+          "genre_ids": [
+              878,
+              53
+          ],
+          "id": 12101,
+          "original_language": "en",
+          "original_title": "Soylent Green",
+          "overview": "This is the year 2022. Overcrowding, pollution,  and resource depletion have reduced society’s leaders to finding food for the teeming masses. The answer is Soylent Green.",
+          "popularity": 15.728,
+          "poster_path": "/5nbkShkOEXUoKVhaX0XG41wyBkq.jpg",
+          "release_date": "1973-04-18",
+          "title": "Soylent Green",
+          "video": false,
+          "vote_average": 6.9,
+          "vote_count": 1041
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/3EE9h3xYxIastf5xVLbezH3eGps.jpg",
+          "genre_ids": [
+              10752,
+              28,
+              12,
+              18,
+              53
+          ],
+          "id": 22972,
+          "original_language": "en",
+          "original_title": "Green Zone",
+          "overview": "During the U.S.-led occupation of Baghdad in 2003, Chief Warrant Officer Roy Miller and his team of Army inspectors are dispatched to find weapons of mass destruction believed to be stockpiled in the Iraqi desert. Rocketing from one booby-trapped and treacherous site to the next, the men search for deadly chemical agents but stumble instead upon an elaborate cover-up that threatens to invert the purpose of their mission.",
+          "popularity": 16.674,
+          "poster_path": "/czFIaeukSxNEccysQeys1PCkuOG.jpg",
+          "release_date": "2010-03-11",
+          "title": "Green Zone",
+          "video": false,
+          "vote_average": 6.4,
+          "vote_count": 1920
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/5XQobwJuqx0UFCHVDooWUBraeID.jpg",
+          "genre_ids": [
+              28,
+              12,
+              16,
+              878,
+              18
+          ],
+          "id": 65291,
+          "original_language": "en",
+          "original_title": "Green Lantern: Emerald Knights",
+          "overview": "As the home planet of the Green Lantern Corps faces a battle with an ancient enemy, Hal Jordan prepares new recruit Arisia for the coming conflict by relating stories of the first Green Lantern and several of Hal's comrades.",
+          "popularity": 22.145,
+          "poster_path": "/weth8sLv9y8L9GsEyLRBUZewXUt.jpg",
+          "release_date": "2011-04-09",
+          "title": "Green Lantern: Emerald Knights",
+          "video": false,
+          "vote_average": 6.7,
+          "vote_count": 435
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/wjTNqt0RLe4aRMJHvjlKLtzw1vr.jpg",
+          "genre_ids": [
+              27,
+              80,
+              53
+          ],
+          "id": 313922,
+          "original_language": "en",
+          "original_title": "Green Room",
+          "overview": "A punk rock band becomes trapped in a secluded venue after finding a scene of violence. For what they saw, the band themselves become targets of violence from a gang of white power skinheads, who want to eliminate all evidence of the crime.",
+          "popularity": 11.763,
+          "poster_path": "/evZicaR7nXe4LiD9G6QYTorcJGO.jpg",
+          "release_date": "2015-09-25",
+          "title": "Green Room",
+          "video": false,
+          "vote_average": 6.7,
+          "vote_count": 2350
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/ajX3chCByhvBOXn1rbi1dMux1Zg.jpg",
+          "genre_ids": [
+              27,
+              53,
+              12
+          ],
+          "id": 171424,
+          "original_language": "en",
+          "original_title": "The Green Inferno",
+          "overview": "A group of student activists travel from New York City to the Amazon to save the rainforest.  However, once they arrive in this vast green landscape, they soon discover that they are not alone… and that no good deed goes unpunished.",
+          "popularity": 23.347,
+          "poster_path": "/dTnAYyUwp6lT0cKrt4aNujj5mdF.jpg",
+          "release_date": "2013-09-08",
+          "title": "The Green Inferno",
+          "video": false,
+          "vote_average": 5.7,
+          "vote_count": 1191
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/al0aXl47cWkf4jnKuPiEZtjWT8j.jpg",
+          "genre_ids": [
+              12,
+              18,
+              14
+          ],
+          "id": 559907,
+          "original_language": "en",
+          "original_title": "The Green Knight",
+          "overview": "An epic fantasy adventure based on the timeless Arthurian legend, The Green Knight tells the story of Sir Gawain, King Arthur's reckless and headstrong nephew, who embarks on a daring quest to confront the eponymous Green Knight, a gigantic emerald-skinned stranger and tester of men.",
+          "popularity": 16.428,
+          "poster_path": "/if4hw3Ou5Sav9Em7WWHj66mnywp.jpg",
+          "release_date": "2021-07-29",
+          "title": "The Green Knight",
+          "video": false,
+          "vote_average": 6.6,
+          "vote_count": 1410
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/vZkco9fDVHSsrZrWuI2U2WpyOEy.jpg",
+          "genre_ids": [
+              28,
+              80,
+              35
+          ],
+          "id": 40805,
+          "original_language": "en",
+          "original_title": "The Green Hornet",
+          "overview": "Britt Reid, the heir to the largest newspaper fortune in Los Angeles, is a spoiled playboy who has been, thus far, happy to lead an aimless life. After his father dies, Britt meets Kato, a resourceful company employee. Realizing that they have the talent and resources to make something of their lives, Britt and Kato join forces as costumed crime-fighters to bring down the city's most-powerful criminal, Chudnofsky.",
+          "popularity": 16.506,
+          "poster_path": "/iMq5EaAQQ3B0Ta7TtZoOiJPnnto.jpg",
+          "release_date": "2011-01-12",
+          "title": "The Green Hornet",
+          "video": false,
+          "vote_average": 5.6,
+          "vote_count": 2846
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/hgbRDIwSiQ7reWwzFtWFy0v02xo.jpg",
+          "genre_ids": [
+              18,
+              35
+          ],
+          "id": 1633,
+          "original_language": "en",
+          "original_title": "Fried Green Tomatoes",
+          "overview": "Amidst her own personality crisis, southern housewife Evelyn Couch meets Ninny, an outgoing old woman who tells her the story of Idgie Threadgoode and Ruth Jamison, two young women who experienced hardships and love in Whistle Stop, Alabama in the 1920s.",
+          "popularity": 19.519,
+          "poster_path": "/pnn2azXtMvDPqY5EZNGbndAxJmr.jpg",
+          "release_date": "1991-12-27",
+          "title": "Fried Green Tomatoes",
+          "video": false,
+          "vote_average": 7.7,
+          "vote_count": 1126
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/zYARGakIhHUvPuVJzlbqU40FrnV.jpg",
+          "genre_ids": [
+              28,
+              12,
+              16,
+              14,
+              878
+          ],
+          "id": 17445,
+          "original_language": "en",
+          "original_title": "Green Lantern: First Flight",
+          "overview": "Test pilot Hal Jordan finds himself recruited as the newest member of the intergalactic police force, The Green Lantern Corps.",
+          "popularity": 17.622,
+          "poster_path": "/zma3rOg6yJxgJ1Lo9uuw3tJOjbZ.jpg",
+          "release_date": "2009-07-28",
+          "title": "Green Lantern: First Flight",
+          "video": false,
+          "vote_average": 6.9,
+          "vote_count": 364
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/qE8b8aCKEoZxDmS6PITSc4EiQ0F.jpg",
+          "genre_ids": [
+              80,
+              18
+          ],
+          "id": 8923,
+          "original_language": "en",
+          "original_title": "Green Street Hooligans",
+          "overview": "After being wrongfully expelled from Harvard University, American Matt Buckner flees to his sister's home in England. Once there, he is befriended by her charming and dangerous brother-in-law, Pete Dunham, and introduced to the underworld of British football hooliganism. Matt learns to stand his ground through a friendship that develops against the backdrop of this secret and often violent world. 'Green Street Hooligans' is a story of loyalty, trust and the sometimes brutal consequences of living close to the edge.",
+          "popularity": 12.48,
+          "poster_path": "/tfLj69EoP1b8ZWfLyg5FGJ5LC38.jpg",
+          "release_date": "2005-09-09",
+          "title": "Green Street Hooligans",
+          "video": false,
+          "vote_average": 7.3,
+          "vote_count": 2040
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/55ZkbGyz6ls1ie217rqGpybQAOB.jpg",
+          "genre_ids": [
+              10751,
+              18
+          ],
+          "id": 17663,
+          "original_language": "en",
+          "original_title": "Anne of Green Gables",
+          "overview": "At the turn of the century on Prince Edward Island, Matthew Cuthbert and his sister Marilla decide to take on an orphan boy as help for their farm. But they get an unexpected jolt when they're mistakenly sent a girl instead: Anne Shirley.",
+          "popularity": 13.213,
+          "poster_path": "/wuF8aapqbDPFkoWbwI5LWfDXpVq.jpg",
+          "release_date": "1985-12-01",
+          "title": "Anne of Green Gables",
+          "video": false,
+          "vote_average": 8.1,
+          "vote_count": 208
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/3vCaCANCMy50p4N5YreaoSnl92S.jpg",
+          "genre_ids": [
+              35,
+              18,
+              10749
+          ],
+          "id": 12157,
+          "original_language": "en",
+          "original_title": "Green Card",
+          "overview": "Urban horticulturalist Brontë Mitchell has her eye on a gorgeous apartment, but the building's board will rent it only to a married couple. Georges Fauré, a waiter from France whose visa is expiring, needs to marry an American woman to stay in the country. Their marriage of convenience turns into a burden when they must live together to allay the suspicions of the immigration service, as the polar opposites grate on each other's nerves.",
+          "popularity": 9.237,
+          "poster_path": "/9UweLsv3pCORu25Uq72m2IBkKaK.jpg",
+          "release_date": "1990-12-23",
+          "title": "Green Card",
+          "video": false,
+          "vote_average": 6.1,
+          "vote_count": 409
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/691aKLmln9XRXHI85lMZRK4SnV9.jpg",
+          "genre_ids": [
+              10752,
+              18
+          ],
+          "id": 22377,
+          "original_language": "en",
+          "original_title": "The Green Berets",
+          "overview": "Col. Mike Kirby picks two teams of crack Green Berets for two missions in South Vietnam. The first is to strengthen a camp that is trying to be taken by the enemy. The second is to kidnap a North Vietnamese General.",
+          "popularity": 6.915,
+          "poster_path": "/c5WG23iqf3RakGOTjZnBATbYM1f.jpg",
+          "release_date": "1968-07-04",
+          "title": "The Green Berets",
+          "video": false,
+          "vote_average": 5.7,
+          "vote_count": 140
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/dEDo97Qccpm4DKHerohegv0lH3M.jpg",
+          "genre_ids": [
+              28,
+              18
+          ],
+          "id": 182873,
+          "original_language": "en",
+          "original_title": "Green Street Hooligans: Underground",
+          "overview": "An old firm leader returns to Green Street for revenge after receiving a call that his little brother was killed, but is he able to cope with a new type of hooliganism and can he find his killer?",
+          "popularity": 8.72,
+          "poster_path": "/jtlDK3r8G282Vi0cGMxLVJJkhke.jpg",
+          "release_date": "2013-10-21",
+          "title": "Green Street Hooligans: Underground",
+          "video": false,
+          "vote_average": 5.5,
+          "vote_count": 136
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/fTW6w1aJl8aiWYdAJLyfhDXmDi2.jpg",
+          "genre_ids": [
+              18,
+              10749,
+              10751
+          ],
+          "id": 40724,
+          "original_language": "en",
+          "original_title": "Anne of Green Gables: The Sequel",
+          "overview": "Anne Shirley, now a schoolteacher, has begun writing stories and collecting rejection slips. She acts as Diana's maid of honor, develops a relationship with Gilbert Blythe, and finds herself at Kingsport Ladies' College. But while Anne enjoys the battles and the friends she makes, she finds herself returning to Avonlea.",
+          "popularity": 12.739,
+          "poster_path": "/hofilKLz1UPR3nm7ooXXIdGhdTw.jpg",
+          "release_date": "1987-05-19",
+          "title": "Anne of Green Gables: The Sequel",
+          "video": false,
+          "vote_average": 8,
+          "vote_count": 103
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/bSE6JsSOvY350NhaT2nhUhl5hUE.jpg",
+          "genre_ids": [
+              28,
+              12,
+              35,
+              10751
+          ],
+          "id": 26441,
+          "original_language": "en",
+          "original_title": "The Big Green",
+          "overview": "In a depressed Texas town, British foreign exchange teacher Anna attempts to inject some life into her hopeless kids by introducing them to soccer. They're terrible at first, but Anna and her football-hero assistant whip them into shape. As they work overtime, the pair help kids build their self-esteem and also get involved in solving family squabbles.",
+          "popularity": 6.967,
+          "poster_path": "/nVHqIuBTcTLmAIrML7T704UwfNI.jpg",
+          "release_date": "1995-09-29",
+          "title": "The Big Green",
+          "video": false,
+          "vote_average": 5.5,
+          "vote_count": 160
+      }
+  ],
+  "total_pages": 61,
+  "total_results": 1213
+}
