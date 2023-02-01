@@ -1,5 +1,6 @@
 class Users::MoviesController < ApplicationController
   def index
+    @user = User.find(params[:user_id])
     conn = Faraday.new(url: 'https://api.themoviedb.org')
 
     response = conn.get(type_url[:path]) do |req|

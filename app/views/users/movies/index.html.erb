@@ -1,3 +1,5 @@
+<%= button_to 'Discover Movies', discover_user_path(@user), method: :get %>
+
 <table id='results'>
   <% @movies.each_with_index do |movie, index| %>
     <tr id="movie-<%= index %>">

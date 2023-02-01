@@ -58,7 +58,7 @@ RSpec.describe 'discover page', type: :feature do
       visit discover_user_path(u1)
 
       click_button 'Discover Top Rated Movies'
-      
+
       within '#results' do
         expect(all('tr').count).to be <= 20
         top.each_with_index do |m, index|
@@ -68,6 +68,12 @@ RSpec.describe 'discover page', type: :feature do
           end
         end
       end
+
+      expect(page).to have_button('Discover Movies')
+
+      click_button 'Discover Movies'
+
+      expect(current_path).to eq discover_user_path(u1)
     end
 
     it 'displays the results of my title search' do
@@ -91,6 +97,12 @@ RSpec.describe 'discover page', type: :feature do
           end
         end
       end
+
+      expect(page).to have_button('Discover Movies')
+
+      click_button 'Discover Movies'
+
+      expect(current_path).to eq discover_user_path(u1)
     end
   end
 end
