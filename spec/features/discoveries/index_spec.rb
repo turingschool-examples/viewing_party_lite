@@ -37,6 +37,13 @@ RSpec.describe "Discover index page (/users/:id/discover)", type: :feature do
       expect(current_path).to eq("/users/#{@user1.id}/movies")
     end
 
-    it 'when user clicks on the search button they are taken to the movies results page'
+    it 'when user clicks on the search button they are taken to the movies results page' do
+      visit user_discoveries_path(@user1.id)
+
+      fill_in :movie_search, with: "Jumanji"
+      click_button "Find Movies"
+
+      expect(current_path).to eq("/users/#{@user1.id}/movies")
+    end
   end
 end
