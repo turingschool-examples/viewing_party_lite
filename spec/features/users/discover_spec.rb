@@ -9,7 +9,7 @@ RSpec.describe 'User Discover Movies Page' do
 
     click_button "Top Movies"
 
-    expect(current_path).to eq user_movies_path(charlie)
+    expect(current_path).to eq "/users/#{charlie.id}/movies"
   end
 
   xit 'redirects to movies results page (movies index)' do 
@@ -17,6 +17,6 @@ RSpec.describe 'User Discover Movies Page' do
 
     click_button "Search"
 
-    expect(current_path).to eq user_movies_path(charlie)
+    expect(current_path).to eq "/users/#{charlie.id}/movies"
   end
 end
