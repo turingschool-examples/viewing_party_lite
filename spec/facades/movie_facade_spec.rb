@@ -21,7 +21,7 @@ RSpec.describe MovieFacade do
   end
 
   it 'can return movie attributes' do
-    movie = movie_facade.get_movie('238')
+    movie = MovieFacade.get_movie('238')
 
     expect(movie.title).to eq('The Godfather')
     expect(movie.runtime).to eq(175)
