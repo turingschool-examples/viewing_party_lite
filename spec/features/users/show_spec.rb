@@ -33,8 +33,6 @@ RSpec.describe 'User dashboard' do
       end
     end
     it 'has a section that lists viewing parties with a link to the movie show page' do
-      save_and_open_page
-
       within("##{@viewing_party_1.id}") do
         expect(page).to have_content(@viewing_party_1.title)
         expect(page).to have_link('Top Gun')
@@ -48,6 +46,7 @@ RSpec.describe 'User dashboard' do
         expect(page).to have_content(@viewing_party_2.start_time)
         expect(page).to have_content(@user_2.name)
         expect(page).to have_content("Host: #{@user_1.name}")
+        save_and_open_page
       end
     end
   end
