@@ -1,7 +1,9 @@
 class MovieService 
 
   def get_top_movies
-    service.get('/3/movie/top_rated').body["results"].map do |movie|
+    response = service.get('/3/movie/top_rated')
+    
+    JSON.parse(response.body)["results"].map do |movie|
       Movie.new(movie)
     end
   end
@@ -13,9 +15,7 @@ class MovieService
   end
 
   def service 
-    Faraday.new(service_params) do |f|
-      f.response :json
-    end
+    Faraday.new(service_params)
   end
 
   def service_params
