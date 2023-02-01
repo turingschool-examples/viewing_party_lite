@@ -11,17 +11,31 @@ class Users::MoviesController < ApplicationController
     @movies = json[:results].first(20)
   end
 
-  def show 
+  def show
     @user = User.find(params[:user_id])
     conn = Faraday.new(url: 'https://api.themoviedb.org')
     #binding.pry
     response = conn.get(type_url[:path]) do |req|
       req.params = query_params
     end
+    cast_response = conn.get("/3/movie/#{params[:id]}/credits") do |req|
+      req.params = { api_key: ENV['tmdb_api_key'],
+                     language: 'en' }
+    end
+    reviews_response = conn.get("/3/movie/#{params[:id]}/reviews") do |req|
+      req.params = { api_key: ENV['tmdb_api_key'],
+                     language: 'en' }
+    end
 
     json = JSON.parse(response.body, symbolize_names: true)
+    cast_json = JSON.parse(cast_response.body, symbolize_names: true)
+    reviews_json = JSON.parse(reviews_response.body, symbolize_names: true)
+
+    cast = cast_json[:cast].first(10)
+    reviews = reviews_json[:results]
+
     #binding.pry
-    @movie = Movie.new(json)
+    @movie = Movie.new(json, cast, reviews)
   end
 end
 
