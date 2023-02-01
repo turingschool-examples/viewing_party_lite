@@ -11,6 +11,10 @@ RSpec.describe 'Movies Show' do
     json_response_2 = File.read('spec/fixtures/the_godfather_credits.json')
     stub_request(:get, "https://api.themoviedb.org/3/movie/238/credits?api_key=#{ENV['movie_api_key']}&language=en-US").
       to_return(status: 200, body: json_response_2)
+
+    json_response_3 = File.read('spec/fixtures/the_godfather_reviews.json')
+    stub_request(:get, "https://api.themoviedb.org/3/movie/238/reviews?api_key=#{ENV['movie_api_key']}&language=en-US").
+      to_return(status: 200, body: json_response_3)
   end
 
   it 'is linked on the results page' do
@@ -76,6 +80,16 @@ RSpec.describe 'Movies Show' do
       expect(page).to have_content('Don Vito Corleone: Marlon Brando')
       expect(page).to have_content("Virgil 'The Turk' Sollozzo: Al Lettieri")
       expect(page).to_not have_content("Salvatore 'Sal' Tessio: Abe Vigoda")
+    end
+
+    it 'has a list of reviews' do
+      visit user_movie_path(user, 238)
+
+
+      expect(page).to have_content("The Godfather is a film considered by most to be one of the greatest ever made.")
+      expect(page).to have_content("futuretv")
+      expect(page).to have_content("crastana")
+      expect(page).to have_content("A masterpiece by the young and talented Francis Ford Coppola, about a Mob family and their drama, the story telling is perfect, the acting good, sometimes a little over the top in the case of Thalia Shire (the sister of the director)")
     end
   end
 end

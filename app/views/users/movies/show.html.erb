@@ -16,3 +16,9 @@ Cast:
 <% @cast.each do |character| %>
   <%= character[:character] %>: <%= character[:name] %><br>
 <% end %>
+
+Reviews:
+<% @reviews.each do |review| %>
+  Written By: <%= review[:author] %><br>
+  Review: <%= review[:content] %><br>
+<% end %>
