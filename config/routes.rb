@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :index, :create] do
     scope module: 'users' do
       resources :discover, only: :index
+      resources :movies, only: [:index, :show]
     end
   end
 end
