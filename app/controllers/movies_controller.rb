@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
   def index
+    @user = User.find(params[:user_id])
     if params[:q] == 'top rated'
       conn = Faraday.new(url: "https://api.themoviedb.org", params: {api_key: ENV['api_key']})
     

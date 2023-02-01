@@ -30,10 +30,3 @@ RSpec.describe 'discover movies page' do
     expect(current_path).to eq(user_movies_path(@user1))
   end
 end
-
-# Button to Discover Top Rated Movies
-# A text field to enter keyword(s) to search by movie title
-# A Button to Search by Movie Title
-# Details When the user clicks on the Top Rated Movies OR the search button, they should be taken to the movies results page (more details of this on the Movies Results Page issue.
-
-# The movies will be retrieved by consuming The MovieDB API

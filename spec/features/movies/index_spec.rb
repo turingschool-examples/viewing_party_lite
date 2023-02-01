@@ -32,4 +32,14 @@ RSpec.describe 'Movie results page' do
     expect(current_path).to eq(user_movies_path(@user1))
     expect(page).to have_content('The Matrix Resurrections 6.6 The Matrix 8.2')
   end
+
+  it 'has a link back to the discover page' do
+    stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=bac9a29cb5bc47e3f4c7468d07b0aafd")
+        .to_return(status: 200, body: File.read('spec/fixtures/top_rated_movies.json'))
+
+
+    visit "/users/#{@user1.id}/movies?q=top%20rated"
+
+    expect(page).to have_link('Discover Page', href: user_discover_index_path(@user1))
+  end
 end
