@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :index, :create] do
     scope module: 'users' do
       resources :discover, only: :index
-      resources :movies, only: [:index, :show]
+      resources :movies, only: [:index, :show] do
+        scope module: 'movies' do
+          resources :viewing_parties, only: [:new]
+        end
+      end
     end
   end
 end

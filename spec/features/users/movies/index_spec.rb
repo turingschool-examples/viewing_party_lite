@@ -6,7 +6,7 @@ RSpec.describe 'Movies Index' do
 
   it 'has a button to the discover page' do
     json_response = File.read('spec/fixtures/top_rated_movies.json')
-    stub_request(:get, "https://api.themoviedb.org/3/discover/movie?api_key=2f8f6c343a2a2acbd770dfbfbb00e38a&language=en-US&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&vote_count.gte=1000").
+    stub_request(:get, "https://api.themoviedb.org/3/discover/movie?api_key=#{ENV['movie_api_key']}&language=en-US&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&vote_count.gte=1000").
       to_return(status: 200, body: json_response)
 
     visit user_discover_index_path(user)
