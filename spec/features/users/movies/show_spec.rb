@@ -85,7 +85,7 @@ RSpec.describe 'Movies Show' do
     it 'has a list of reviews' do
       visit user_movie_path(user, 238)
 
-
+      expect(page).to have_content("2 Reviews:")
       expect(page).to have_content("The Godfather is a film considered by most to be one of the greatest ever made.")
       expect(page).to have_content("futuretv")
       expect(page).to have_content("crastana")

@@ -10,14 +10,14 @@ Genre: <% @genres.each_with_index do |genre, i| %>
     <%= genre %>
   <% end %>
 <% end %>
-Summary: <%= @movie[:overview] %>
+<h4>Summary: <%= @movie[:overview] %></h4>
 
-Cast:
+<h4>Cast:</h4>
 <% @cast.each do |character| %>
   <%= character[:character] %>: <%= character[:name] %><br>
 <% end %>
 
-Reviews:
+<h4><%= @reviews.count %> Reviews:</h4>
 <% @reviews.each do |review| %>
   Written By: <%= review[:author] %><br>
   Review: <%= review[:content] %><br>
