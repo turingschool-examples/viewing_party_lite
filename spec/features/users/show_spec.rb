@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe 'user show page' do
   before(:each) do
     @user1 = create(:user)
+    @user2 = create(:user)
     @viewing_party1 = create(:viewing_party, movie_id: 550)
     @viewing_party2 = create(:viewing_party, movie_id: 540)
     @viewing_party3 = create(:viewing_party, movie_id: 530)
@@ -11,6 +12,7 @@ RSpec.describe 'user show page' do
     @user_viewing_party1 = UserViewingParty.create(user: @user1, viewing_party: @viewing_party1, host: true)
     @user_viewing_party2 = UserViewingParty.create(user: @user1, viewing_party: @viewing_party2, host: true)
     @user_viewing_party3 = UserViewingParty.create(user: @user1, viewing_party: @viewing_party3, host: false)
+    @user_viewing_party3 = UserViewingParty.create(user: @user2, viewing_party: @viewing_party3, host: true)
 
     visit user_path(@user1)
   end
@@ -46,7 +48,7 @@ RSpec.describe 'user show page' do
         expect(page).to have_content(@viewing_party3.date)
         expect(page).to have_content(@viewing_party3.start_time.strftime("%l:%M %P"))
         expect(page).to_not have_content(@viewing_party2.movie_title)
-        expect(page).to have_content("Host: Invited")
+        expect(page).to have_content("Host: #{@user_viewing_party3.host_user}")
       end
     end
   end
