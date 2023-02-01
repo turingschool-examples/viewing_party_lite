@@ -1,5 +1,5 @@
 <%= button_to "Top Movies", "/users/#{@user.id}/movies", method: :get %>
-<%= form_with url: "/users/#{@user.id}/discover", method: :get do |f| %>
+<%= form_with url: "/users/#{@user.id}/movies", method: :get do |f| %>
   <%= f.label :query, "Search Movie Title:" %>
   <%= f.text_field :query %>
   <%= f.submit "Search" %>
