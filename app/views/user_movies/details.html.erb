@@ -1,0 +1,10 @@
+<center><h1>Viewing Party</h1></center><br>
+<center><%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %></center><br>
+
+<% if @top_rated %>
+  <% @top_rated.each.with_index(1) do |film, i| %>
+    <div id="top_rated-<%= i %>">
+    <%= "#{film["title"]} #{film["vote_average"]}" %>
+    </div>
+    <% end %>
+<% end %>
