@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe MovieService do
   before :each do
     json_response = File.read('spec/fixtures/movie.json')
-    stub_request(:get, "https://api.themoviedb.org/3/movie/238?api_key=3a8894c032bbd79e5f34c91f45b93378").
+    stub_request(:get, "https://api.themoviedb.org/3/movie/238?api_key").
     with(
       headers: {
      'Accept'=>'*/*',
