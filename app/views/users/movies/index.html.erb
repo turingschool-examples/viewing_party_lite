@@ -1,11 +1,11 @@
-<table>
+<table id='results'>
   <% @movies.each_with_index do |movie, index| %>
     <tr id="movie-<%= index %>">
 
       <td><%= movie[:title] %></td>
 
       <td>Vote Average: <%= movie[:vote_average] %></td>
-      
+
     </tr>
   <% end %>
 </table>
