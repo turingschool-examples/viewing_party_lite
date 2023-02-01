@@ -9,9 +9,9 @@ class ViewingParty < ApplicationRecord
     movie_service.movie(self.movie_id)[:original_title]
   end
 
-  # def movie_poster
-  #   movie_service = MovieService.new
-  #   poster_path = movie_service.movie(self.movie_id)[:poster_path]
-  #   movie_service.image(poster_path)
-  # end
+  def movie_poster
+    movie_service = MovieService.new
+    poster_path = movie_service.movie(self.movie_id)[:poster_path]
+    movie_service.image(poster_path)
+  end
 end
