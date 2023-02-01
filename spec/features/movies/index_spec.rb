@@ -51,11 +51,13 @@ RSpec.describe 'Movie Results Page' do
       expect(page).to_not have_content("Devotion")
     end
 
-    xit 'lists a maximum of 20 movie results' do
-      visit user_movies_path(charlie)
+    it 'lists a maximum of 20 movie results' do
+      visit discover_user_path(charlie)
+
+      click_button "Top Movies"
 
       expect(page.status_code).to eq 200
-      # expect(page.results).to be <= 20
+      expect(page.all("Vote Average").count).to be <= 20 
     end
 
     it 'has a title for each movie as a link to the movie details page' do
@@ -79,13 +81,13 @@ RSpec.describe 'Movie Results Page' do
       expect(current_path).to eq "/users/#{charlie.id}/movies/846433"
     end
 
-    xit 'displays the vote average for each movie' do
+    it 'displays the vote average for each movie' do
       visit discover_user_path(charlie)
 
       click_button "Top Movies"
 
       expect(current_path).to eq "/users/#{charlie.id}/movies"
-
+      expect(page).to have_content("Vote Average: 8.7")
     end
 
     describe 'sad path' do 

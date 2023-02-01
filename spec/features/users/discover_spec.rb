@@ -37,10 +37,9 @@ RSpec.describe 'User Discover Movies Page' do
   it 'has a text field to enter keyword(s) to search by movie title' do 
     visit discover_user_path(charlie) 
 
-    fill_in "Search Movie Title:", with: "Finding Nemo"
+    fill_in "Search Movie Title:", with: "boots"
     click_button "Search"
 
     expect(current_path).to eq "/users/#{charlie.id}/movies"
   end
-
 end
