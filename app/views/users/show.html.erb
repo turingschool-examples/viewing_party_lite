@@ -1,7 +1,17 @@
-<%= "#{@user.name}'s Dashboard" %>
-<%= @user.email %>
-<% @user.viewing_parties.each do |vp| %>
-  <%= vp.get_movie %>
-<% end %>
+<h1><%= "#{@user.name}'s Dashboard" %></h1>
 
 <%= button_to 'Discover', user_discover_index_path(@user), method: :get %>
+
+<h3> Viewing Parties </h3>
+<% @user.user_viewing_parties.each do |vp| %>
+  <div id="party-<%= vp.viewing_party.id %>">
+    <br><%= link_to vp.viewing_party.movie_title %><br/>
+    <br>Date: <%= vp.viewing_party.date %><br/>
+    <br>Start time: <%= vp.viewing_party.start_time %><br/>
+    <% if vp.host %>
+      <br>Host: <%= @user.name %> <br/>
+    <% else %>
+      <br>Host: Invited<br/>
+    <% end %>
+  </div>
+<% end %>
