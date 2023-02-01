@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'The landing page index' do 
+RSpec.describe 'The landing page index', type: :feature do 
   describe 'landing page index' do 
     before :each do 
       @user1 = create(:user)
