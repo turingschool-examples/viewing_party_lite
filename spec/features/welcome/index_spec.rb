@@ -12,7 +12,7 @@ RSpec.describe 'landing page' do
   it 'has a button to create a new user' do
     click_button("Create User")
 
-    expect(current_path).to eq(new_users_dashboard_path)
+    expect(current_path).to eq(new_user_path)
   end
 
   it 'list of Existing Users which links to the users dashboard' do
@@ -22,11 +22,11 @@ RSpec.describe 'landing page' do
     visit welcome_index_path
 
     within "div#user_#{user1.id}" do
-      expect(page).to have_link(user1.name, href: users_dashboard_path(user1))
+      expect(page).to have_link(user1.name, href: user_dashboard_index_path(user1))
     end
 
     within "div#user_#{user2.id}" do
-      expect(page).to have_link(user2.name, href: users_dashboard_path(user2))
+      expect(page).to have_link(user2.name, href: user_dashboard_index_path(user2))
     end
   end
 
