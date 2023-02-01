@@ -42,4 +42,15 @@ RSpec.describe 'Movie results page' do
 
     expect(page).to have_link('Discover Page', href: user_discover_index_path(@user1))
   end
+
+  it 'links each movie to that leads to the movie details page' do
+        stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=bac9a29cb5bc47e3f4c7468d07b0aafd")
+        .to_return(status: 200, body: File.read('spec/fixtures/top_rated_movies.json'))
+
+
+    visit "/users/#{@user1.id}/movies?q=top%20rated"
+
+    expect(page).to have_link('The Godfather', href: user_movie_path(@user1, 238))
+    expect(page).to have_link('The Shawshank Redemption', href: user_movie_path(@user1, 278))
+  end
 end

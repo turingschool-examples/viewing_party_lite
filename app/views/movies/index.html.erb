@@ -7,7 +7,7 @@
   </tr>
   <% @movies.each do |movie| %>
     <tr>
-      <td><%= movie[:title] %></td>
+      <td><%= link_to movie[:title], user_movie_path(@user, movie[:id]) %></td>
       <td><%= movie[:vote_average] %></td>
     </tr>
   <% end %>
