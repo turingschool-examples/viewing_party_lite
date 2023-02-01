@@ -1,3 +1,14 @@
 <h3><%= @user.name %>'s Dashboard</h3>
 
 <%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %>
+
+<div id='viewing-parties'>
+  <div id='invited'>
+    <h5>Invited</h5>
+  </div>
+
+  <div id='hosting'>
+    <h5>Hosting</h5>
+  </div>
+</div>
+
