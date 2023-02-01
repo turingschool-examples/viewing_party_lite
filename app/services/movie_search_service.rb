@@ -9,11 +9,8 @@ class MovieSearchService
 
   def self.conn(query)
     Faraday.new(
-      url: "https://api.themoviedb.org/3/search/movie?#{query}",
+      url: "https://api.themoviedb.org/3/search/movie?query=#{query}",
       params: {api_key: ENV['MOVIE_DB_KEY'] }
     )
-
   end
-
-
 end

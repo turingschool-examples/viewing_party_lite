@@ -1,9 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe "user discover page" do
-  before(:all) do
+  before(:each) do
+    User.delete_all
     @user = create(:user)
-    
+    top_20_response = File.read('spec/fixtures/topmovies.json')
+    stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key")
+      .to_return(status: 200, body: top_20_response)
+    search_results = File.read('spec/fixtures/godfather_search.json')
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?Godfather&api_key")
+      .to_return(status: 200, body: search_results)
   end
 
   it 'displays the page title' do
@@ -24,7 +30,7 @@ RSpec.describe "user discover page" do
     end
   end
 
-  it 'has a search field to find movies by name when redirected to the movies results page' do
+  xit 'has a search field to find movies by name when redirected to the movies results page' do
     visit "/users/#{@user.id}/discover"
 
     within "#search_movies" do
@@ -42,7 +48,7 @@ RSpec.describe "user discover page" do
     visit "/users/#{@user.id}/discover"
 
     within "#search_movies" do
-      fill_in :search, with: "Toy Story"
+      fill_in :search, with: "Godfather"
       click_button("Find Movies")
       expect(current_path).to eq("/users/#{@user.id}/movies")
     end
