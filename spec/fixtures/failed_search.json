@@ -1,0 +1,6 @@
+{
+  "errors": [
+      "query must be provided"
+  ],
+  "success": false
+}

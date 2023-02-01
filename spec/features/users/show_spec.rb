@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Users New' do
+RSpec.describe 'Users Show' do
   let!(:user) { create(:user) }
   it 'Shows the user name' do
     visit user_path(user)
