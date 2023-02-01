@@ -17,5 +17,17 @@
 
         expect(current_path).to eq("/users/#{@user.id}/discover")
       end
+
+      it 'has section for viewing parties' do
+        within '#viewing-parties' do
+          within '#invited' do
+            expect(page).to have_content("Invited")
+          end
+
+          within '#hosting' do
+            expect(page).to have_content("Hosting")
+          end
+        end
+      end
     end
   end
