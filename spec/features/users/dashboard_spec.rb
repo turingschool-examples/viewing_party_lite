@@ -17,6 +17,10 @@ RSpec.describe 'User Dashboard' do
       visit user_path(@user_1)
 
       expect(page).to have_button('Discover Movies')
+      
+      click_button 'Discover Movies'
+      
+      expect(current_path).to eq(user_discover_index_path(@user_1))
     end
 
     it 'Has a section for viewing parties' do

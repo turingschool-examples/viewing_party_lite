@@ -1,5 +1,5 @@
-<h3><%= @user.name %>'s Dashboard'</h3>
+<h3><%= @user.name %>'s Dashboard</h3>
 <br>
-<%= button_to 'Discover Movies' %>
+<%= button_to 'Discover Movies', user_discover_index_path(@user), method: :get %>
 <br>
 <h3>Viewing Parties</h3>
