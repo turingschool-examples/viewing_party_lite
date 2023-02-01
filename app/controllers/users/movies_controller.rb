@@ -5,7 +5,7 @@ module Users
 
       conn = Faraday.new(url: "https://api.themoviedb.org/3")
 
-      if params[:q] == 'top 20rated'
+      if params[:q] == 'top rated'
 
         response = conn.get("discover/movie?api_key=2f8f6c343a2a2acbd770dfbfbb00e38a&language=en-US&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&vote_count.gte=1000")
 

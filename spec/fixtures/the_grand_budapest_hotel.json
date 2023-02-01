@@ -1,0 +1,44 @@
+{
+  "page": 1,
+  "results": [
+      {
+          "adult": false,
+          "backdrop_path": "/xHDynIimfsgj0ZOs0j5ma8v1vmM.jpg",
+          "genre_ids": [
+              35,
+              18
+          ],
+          "id": 120467,
+          "original_language": "en",
+          "original_title": "The Grand Budapest Hotel",
+          "overview": "The Grand Budapest Hotel tells of a legendary concierge at a famous European hotel between the wars and his friendship with a young employee who becomes his trusted protégé. The story involves the theft and recovery of a priceless Renaissance painting, the battle for an enormous family fortune and the slow and then sudden upheavals that transformed Europe during the first half of the 20th century.",
+          "popularity": 28.028,
+          "poster_path": "/eWdyYQreja6JGCzqHWXpWHDrrPo.jpg",
+          "release_date": "2014-02-26",
+          "title": "The Grand Budapest Hotel",
+          "video": false,
+          "vote_average": 8.1,
+          "vote_count": 13047
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+              99
+          ],
+          "id": 665027,
+          "original_language": "en",
+          "original_title": "The Wes Anderson Collection: The Grand Budapest Hotel",
+          "overview": "Visual essay on Wes Anderson's 2014 film THE GRAND BUDAPEST HOTEL",
+          "popularity": 0.635,
+          "poster_path": "/gvC7lhYVzCPrsWLU1WmAfLtfmkE.jpg",
+          "release_date": "2015-02-16",
+          "title": "The Wes Anderson Collection: The Grand Budapest Hotel",
+          "video": false,
+          "vote_average": 7,
+          "vote_count": 1
+      }
+  ],
+  "total_pages": 1,
+  "total_results": 2
+}

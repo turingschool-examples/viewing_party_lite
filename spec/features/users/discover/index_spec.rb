@@ -28,4 +28,17 @@ RSpec.describe 'Discover Index' do
 
     expect(current_path).to eq(user_movies_path(user))
   end
+
+  it 'accepts multiple words in search field' do
+    json_response = File.read('spec/fixtures/movies_with_spider_man.json')
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=2f8f6c343a2a2acbd770dfbfbb00e38a&language=en-US&query=Spider%20Man&page=1&include_adult=false").
+      to_return(status: 200, body: json_response)
+
+    visit user_discover_index_path(user)
+
+    fill_in(:title, with: 'Spider Man')
+    click_button('Find Movies')
+
+    expect(current_path).to eq(user_movies_path(user))
+  end
 end
