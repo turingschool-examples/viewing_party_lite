@@ -31,3 +31,5 @@
 
 # Mac OS System Files
 .DS_Store
+# Ignore application configuration
+/config/application.yml
