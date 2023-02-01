@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/register', to: 'users#new'
 
   resources :users, only: %i[create show] do
+    resources :movies, only: %i[index], controller: 'users/movies'
     member do
       get 'discover', to: 'users/discover#index'
     end
