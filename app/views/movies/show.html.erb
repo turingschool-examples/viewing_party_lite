@@ -1,6 +1,16 @@
 <center><h1>Viewing Party</h1></center>
 <center><h3><%= @movie.title %></h3></center>
-<%binding.pry%>
 
 <center><p><%= button_to 'Discover Page', "/users/#{@user.id}/discover", method: :get %></p></center>
 <center><p><%= button_to "Create a Viewing Party for the #{@movie.title}", "/users/#{@user.id}/movies/#{@movie.id}/viewing_parties/new", method: :get %></p></center>
+
+<p>Vote: <%= @movie.vote_average %></p>
+<p>Runtime: <%= @movie.runtime %>minutes</p>
+<p>Genre: <% @movie.genres.each do |genre| %>
+  <%= genre[:name] %>
+<% end %></p>
+
+<p>Summary</p>
+<%= @movie.summary %>
+
+

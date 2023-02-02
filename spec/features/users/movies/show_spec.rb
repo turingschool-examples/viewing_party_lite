@@ -21,6 +21,7 @@ RSpec.describe "Movie's detail page" do
         to_return(status: 200, body: json_response, headers: {})
 
         @movie_detail = MovieDetail.new(JSON.parse(json_response, symbolize_names: true))
+        # require 'pry'; binding.pry
 
     visit "/users/#{@user_1.id}/movies/#{@movie_detail.id}"
   end
@@ -39,7 +40,23 @@ RSpec.describe "Movie's detail page" do
     expect(current_path).to eq("/users/#{@user_1.id}/discover")
   end
 
-  it 'should display the movie title' do
+  it 'displays the movie title' do
     expect(page).to have_content("#{@movie_detail.title}")
+  end
+
+  it 'displays the movie vote average' do
+    expect(page).to have_content("#{@movie_detail.vote_average}")
+  end
+  
+  it 'displays the movie runtime' do
+    expect(page).to have_content("#{@movie_detail.runtime}")
+  end
+  
+  it 'displays the movie runtime' do
+    expect(page).to have_content("Drama Crime")
+  end
+
+  it 'displays the movie runtime' do
+    expect(page).to have_content("#{@movie_detail.summary}")
   end
 end
