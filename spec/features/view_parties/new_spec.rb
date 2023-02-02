@@ -5,6 +5,9 @@ RSpec.describe 'new view party page' do
     User.delete_all
 
     @user = create(:user)
+    @user2 = create(:user)
+    @user3 = create(:user)
+    @user4 = create(:user)
 
     json_response = File.read('spec/fixtures/movie.json')
     stub_request(:get, "https://api.themoviedb.org/3/movie/238?api_key=#{ENV['MOVIE_DB_KEY']}")
@@ -26,5 +29,22 @@ RSpec.describe 'new view party page' do
     expect(current_path).to eq("/users/#{@user.id}/discover")
   end
 
+  it 'has a form to create a viewing party with the movie info already filled in' do
+    within "#party_form" do
+      expect(page).to have_content("Viewing Party Details")
+      expect(page).to have_content("Movie Title: #{@movie_detail.title}")
+      expect(page).to have_content("Duration of Party")
+      expect(page).to have_field :duration, with: @movie_detail.duration
+      expect(page).to have_field :party_date
+      expect(page).to have_field :start_time
+      expect(page).to have_content("Invite Other Users")
+      expect(page).to have_unchecked_field("#{@user2.name} (#{@user2.email}")
+      expect(page).to have_unchecked_field("#{@user3.name} (#{@user3.email}")
+      expect(page).to have_unchecked_field("#{@user4.name} (#{@user4.email}")
+      expect(page).to have_button("Create Party")
+    end
+
+
+  end
 
 end
