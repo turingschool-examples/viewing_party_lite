@@ -40,16 +40,22 @@ class MoviesController < ApplicationController
     conn = Faraday.new(url: 'https://api.themoviedb.org') do |f|
       f.params['api_key'] = ENV['movie_api_key']
     end
-    response = conn.get('/3/movie/id?')
+    response = conn.get("/3/movie/#{params[:movie_id]}?")
 
     @movie = JSON.parse(response.body, symbolize_names: true)
-
+    # require 'pry'; binding.pry
     conn = Faraday.new(url: 'https://api.themoviedb.org') do |f|
       f.params['api_key'] = ENV['movie_api_key']
     end
     response = conn.get("/3/movie/#{@movie[:id]}/credits?") 
-
+    
     @credits = JSON.parse(response.body, symbolize_names: true)
+    # require 'pry'; binding.pry
+    conn = Faraday.new(url: 'https://api.themoviedb.org') do |f|
+      f.params['api_key'] = ENV['movie_api_key']
+    end
+    response = conn.get("/3/movie/#{@movie[:id]}/credits?") 
+    # @details = 
     # TODO: movie hash keep_if to remove extra data
   end
 end
