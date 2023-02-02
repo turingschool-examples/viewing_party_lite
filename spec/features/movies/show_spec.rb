@@ -5,8 +5,8 @@ RSpec.describe 'Movie details page' do
     stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['MOVIE_DB_KEY']}")
       .to_return(status: 200, body: File.read('./spec/fixtures/top_rated_movies_response.json'), headers: {})
 
-    stub_request(:get, "https://api.themoviedb.org/3/discover/movie?api_key=#{ENV['MOVIE_DB_KEY']}")
-      .to_return(status: 200, body: File.read('./spec/fixtures/discover_movies_response.json'), headers: {})
+    stub_request(:get, "https://api.themoviedb.org/3/movie/id?api_key=#{ENV['MOVIE_DB_KEY']}")
+      .to_return(status: 200, body: File.read('./spec/fixtures/green_mile/details_response.json'), headers: {})
 
     stub_request(:get, "https://api.themoviedb.org/3/movie/497/credits?api_key=#{ENV['MOVIE_DB_KEY']}")
       .to_return(status: 200, body: File.read('./spec/fixtures/green_mile/credits_response.json'), headers: {})
@@ -38,7 +38,7 @@ RSpec.describe 'Movie details page' do
     end
 
     it 'displays movie info' do
-      visit "/users/#{charlie.id}/movies/155"
+      visit "/users/#{charlie.id}/movies/497"
 
       expect(page).to have_content('The Green Mile')
       expect(page).to have_content('Vote: 8.5')
