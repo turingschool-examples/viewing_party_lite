@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     end
     resources :discover, only: [:index], controller: "users/discover"
     resources :movies, only: [:index, :show], controller: "users/movies" do
-  end
+    end
   end
 end
