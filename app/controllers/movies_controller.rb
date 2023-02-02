@@ -10,10 +10,4 @@ class MoviesController < ApplicationController
     @actors = MovieFacade.actors(params[:id])
     @reviews = MovieFacade.review_details(params[:id])
   end
-
-  private
-
-  # def movie_params
-  #   params
-  # end
 end
