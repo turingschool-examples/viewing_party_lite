@@ -28,7 +28,7 @@ RSpec.describe 'The User Discover Movie page', type: :feature do
       end
 
       it 'routes to the movie results page' do
-        fill_in "Title Search", with: "Test"
+        fill_in "Title Search", with: "river"
 
         click_button "Search"
 

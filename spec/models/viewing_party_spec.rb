@@ -10,7 +10,7 @@ RSpec.describe ViewingParty, type: :model do
   describe '#movie' do
     it 'returns a movie object' do
       vp = create(:viewing_party)
-      expect(vp.movie).to be_a NullMovie
+      expect(vp.movie).to be_a Movie
     end
   end
 end
