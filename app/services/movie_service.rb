@@ -17,7 +17,7 @@ class MovieService
     MovieService.parse(response)
   end
 
-def self.reviews(id)
+  def self.reviews(id)
     response = MovieService.conn.get("/3/movie/#{id}/reviews?api_key=#{ENV['movie_api_key']}")
     MovieService.parse(response)
   end
