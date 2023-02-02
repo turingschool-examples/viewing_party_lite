@@ -4,7 +4,8 @@ class Movie
               :vote_average,
               :runtime,
               :overview,
-              :cast
+              :cast,
+              :reviews
 
   def initialize(movie_params)
     @id = movie_params[:id]
@@ -13,14 +14,21 @@ class Movie
     @runtime = movie_params[:runtime]
     @genres = movie_params[:genres]
     @overview = movie_params[:overview]
-    @cast = movie_params[:cast]
+    @cast = movie_params[:cast].try(:first, 10)
+    @reviews = movie_params[:results]
   end
 
-  #TODO: This isn't the place for this parsing?
+  #TODO: Consider Cast and Review poros 
+
+  #TODO: This isn't the place for this data parsing?
   def genres 
     @genres.map do |genre|
       genre[:name]
     end.join(', ')
+  end
+
+  def review_total
+    @reviews.length
   end
 
   #TODO: placeholder method
