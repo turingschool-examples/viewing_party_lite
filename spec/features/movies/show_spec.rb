@@ -27,5 +27,31 @@ RSpec.describe 'Movie details page' do
 
       expect(current_path).to eq discover_user_path(charlie)
     end
+
+    it 'displays movie info' do
+      visit "/users/#{charlie.id}/movies/155"
+
+      expect(page).to have_content('The Green Mile')
+      expect(page).to have_content('Vote: 8.5')
+      expect(page).to have_content('Runtime: 3hr 9min')
+      expect(page).to have_content('Genre: Fantasy, Drama, Crime')
+      within('#summary') do
+        expect(page).to have_content('Summary')
+        expect(page).to have_content('A supernatural tale set on death row')
+      end
+
+      within('#cast') do
+        expect(page).to have_content('Cast')
+        expect(page).to have_content('Tom Hanks as Paul Edgecomb')
+        # TODO: only show first 10 cast members
+      end
+
+      within('#reviews') do
+        expect(page).to have_content('0 Reviews')
+      end
+
+      # TODO: Each review's author and information
+      # TODO: visit movie page with reviews
+    end
   end
 end
