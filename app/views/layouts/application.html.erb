@@ -5,6 +5,19 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+  <style>
+  .column {
+    float: left;
+    width: 33.33%;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  </style>
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>

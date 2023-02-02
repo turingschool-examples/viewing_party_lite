@@ -4,12 +4,15 @@
 <center><p><%= button_to 'Discover Page', "/users/#{@user.id}/discover", method: :get %></p></center>
 <center><p><%= button_to "Create a Viewing Party for the #{@movie.title}", "/users/#{@user.id}/movies/#{@movie.id}/viewing_parties/new", method: :get %></p></center>
 
-<p>Vote: <%= @movie.vote_average %></p>
-<p>Runtime: <%= @movie.runtime %>minutes</p>
-<p>Genre: <% @movie.genres.each do |genre| %>
-  <%= genre[:name] %>
-<% end %></p>
+<div class ="row">
+  <div class="column">Vote: <%= @movie.vote_average %></div>
+  <div class="column">Runtime: <%= @movie.runtime %>minutes</div>
+  <div class="column">Genre: <% @movie.genres.each do |genre| %>
+    <li><%= genre[:name] %></li>
+  <% end %></div>
+<div>
 
+<br><br><br>
 <p>Summary</p>
 <%= @movie.summary %>
 
