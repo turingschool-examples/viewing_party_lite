@@ -5,7 +5,7 @@
 <br><br>
 Vote: <%= @movie.vote_avg %>  Runtime: <%= (@movie.runtime / 60) %>hr <%= (@movie.runtime % 60) %>min  
 Genre(s):  
-<%= @movie.genres.map { |genre| genre[:name] }.to_sentence %>
+<%= @movie.genres.to_sentence %>
 <hr>
 <h4>Summary:</h4>
 <%= @movie.summary %>
