@@ -1,7 +1,7 @@
 class MovieService 
 
-  def initialize(url = '')
-    @url = url
+  def initialize(movie_id = '')
+    @movie_id = movie_id
   end
 
   def get_top_movies
@@ -19,9 +19,9 @@ class MovieService
   end
 
   def movie
-   movie_params = JSON.parse(service.get("/3/movie/#{@url}").body, symbolize_names: true)
-   movie_params = movie_params.merge(JSON.parse(service.get("/3/movie/#{@url}/credits").body, symbolize_names: true))
-   movie_params = movie_params.merge(JSON.parse(service.get("/3/movie/#{@url}/reviews").body, symbolize_names: true))
+   movie_params = JSON.parse(service.get("/3/movie/#{@movie_id}").body, symbolize_names: true)
+   movie_params = movie_params.merge(JSON.parse(service.get("/3/movie/#{@movie_id}/credits").body, symbolize_names: true))
+   movie_params = movie_params.merge(JSON.parse(service.get("/3/movie/#{@movie_id}/reviews").body, symbolize_names: true))
   end
 
   private
