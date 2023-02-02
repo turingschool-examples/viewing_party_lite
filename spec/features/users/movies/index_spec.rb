@@ -36,3 +36,18 @@ RSpec.describe 'Movies Results Page' do
 
     expect(page).to have_content("Vote Average:", count: 20)
   end
+
+  it 'each movie title link leads to movie details page' do
+    visit "/users/#{@user.id}/movies?q=top_rated"
+    
+    click_link 'The Godfather'
+    expect(current_path).to eq "/users/#{@user.id}/movies/238"
+  end
+
+  it 'has a button to return to Discover Page' do
+    visit "/users/#{@user.id}/movies?q=top_rated"
+    
+    click_button("Discover Page")
+
+    expect(current_path).to eq user_discover_index_path(@user)
+  end
