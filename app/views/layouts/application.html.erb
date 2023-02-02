@@ -16,6 +16,18 @@
     display: table;
     clear: both;
   }
+
+  .column-2 {
+    float: left;
+    width: 50%;
+  }
+
+  /* Clear floats after the columns */
+  .row-2:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
   </style>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
