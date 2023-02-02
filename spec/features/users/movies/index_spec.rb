@@ -66,4 +66,14 @@ RSpec.describe 'Movies Results Page' do
       expect(page).to have_content('Vote Average: 6.5') 
     end
   end
+
+  it 'shows error message if search is blank' do
+    visit user_discover_index_path(@user)
+
+    click_button('Find Movies')
+
+    expect(current_path).to eq(user_discover_index_path(@user))
+
+    expect(page).to have_content("Error: Search must be specified")
+  end
 end
