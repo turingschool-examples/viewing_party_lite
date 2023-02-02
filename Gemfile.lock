@@ -269,7 +269,7 @@ GEM
       nokogiri (~> 1.8)
 
 PLATFORMS
-  x86_64-darwin-21
+  ruby
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
@@ -302,4 +302,4 @@ RUBY VERSION
    ruby 2.7.4p191
 
 BUNDLED WITH
-   2.4.5
+   2.1.4

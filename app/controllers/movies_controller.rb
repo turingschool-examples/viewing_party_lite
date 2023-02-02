@@ -1,40 +1,13 @@
 class MoviesController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    conn = Faraday.new(url: "https://api.themoviedb.org", params: {api_key: ENV['api_key']})
-    if params[:q] == 'top rated'
-      response = conn.get("/3/movie/top_rated")
-    else
-      response = conn.get("/3/search/movie", { query: params[:q], include_adult: false } )
-    end
-    data = JSON.parse(response.body, symbolize_names: true)
-    @movies = data[:results].map do |movie_data|
-      Movie.new(movie_data)
-    end
+    @movies =MovieFacade.discover_movie(params[:q])
   end
 
   def show
     @user = User.find(params[:user_id])
-    conn = Faraday.new(url: "https://api.themoviedb.org", params: {api_key: ENV['api_key']})
-    mov_response = conn.get("/3/movie/#{params[:id]}")
-    @movie = Movie.new(JSON.parse(mov_response.body, symbolize_names: true))
- 
-    credits_response = conn.get("/3/movie/#{params[:id]}/credits")
-    credits_data = JSON.parse(credits_response.body, symbolize_names: true)
-    @actors = credits_data[:cast].map do |actor_data|
-      Actor.new(actor_data)
-    end
-
-    rev_response = conn.get("/3/movie/#{params[:id]}/reviews")
-    rev_data = JSON.parse(rev_response.body, symbolize_names: true)
-    @reviews = rev_data[:results].map do |review_data|
-      Review.new(review_data)
-    end
+    @movie = MovieFacade.movie_details(params[:id])
+    @actors = MovieFacade.actors(params[:id])
+    @reviews = MovieFacade.review_details(params[:id])
   end
-
-  private
-
-  # def movie_params
-  #   params
-  # end
 end
