@@ -17,4 +17,5 @@ class Movie
   def genres
     @genre_data.map { |genre| genre[:name] }
   end
+  # Runtime method? To stick with MVC (see calculations in view/movies/show)
 end
