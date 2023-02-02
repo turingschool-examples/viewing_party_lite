@@ -23,4 +23,11 @@ class MovieFacade
       MovieDetail.new(movie)
     end
   end
+  
+  def self.reviews(id)
+    revs = ReviewService.get_reviews(id)
+    revs.map do |data|
+      Review.new(data)
+    end
+  end
 end
