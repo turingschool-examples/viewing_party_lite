@@ -24,4 +24,13 @@ RSpec.describe MovieService do
     expect(response[:genres][0][:name]).to be_a(String)
     expect(response[:runtime]).to be_a(Integer)
   end
+
+  it 'can return a movie cast' do
+    response = MovieService.actors(238)
+    actor = response[:cast][0] 
+    # require 'pry'; binding.pry
+    expect(response[:cast]).to be_a(Array)
+    expect(actor[:name]).to be_a(String)
+    expect(actor[:character]).to be_a(String)
+  end
 end
