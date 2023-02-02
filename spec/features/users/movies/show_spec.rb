@@ -38,7 +38,7 @@ RSpec.describe "Movie Detail (Show) page" do
         expect(page).to have_content("Genre: Drama, Crime")
         expect(page).to have_content("Summary: Spanning the years 1945 to 1955," + 
           "a chronicle of the fictional Italian-American Corleone crime family.")
-        expect(page).to have_content("Cast: Marlon Brando, Al Pachino")
+        expect(page).to have_content("Cast: Marlon Brando as Don Vito Corleone, Al Pachino")
         expect(page).to have_content("2 Reviews: ")
         expect(page).to have_content("The Godfather Review by Al Carlson")
         expect(page).to have_content("futuretv")
