@@ -7,4 +7,10 @@
 <div id="movie-information">
   <p>Vote Average: <%= @show_movie.vote_average %></p>
   <p>Runtime: <%= @show_movie.runtime %></p>
+  <p>Genres:<br>
+    <% @show_movie.genres.each do |genre| %>
+      - <%= genre %><br>
+    <% end %>
+  </p>
+  <p>Summary: <%= @show_movie.overview %></p>
 </div>

@@ -27,7 +27,7 @@ RSpec.describe 'The Movie Details (Show) Page', type: :feature do
   end
 
   describe 'The Movie Information' do
-    it 'will list all the movies information' do
+    it 'will list the movie title, vote-average, and run-time information' do
       stub_request(:get, "https://api.themoviedb.org/3/movie/51888?api_key").
       to_return(status: 200, body: File.read("spec/fixtures/robot_chicken_response.json"), headers: {})
 
@@ -35,7 +35,12 @@ RSpec.describe 'The Movie Details (Show) Page', type: :feature do
 
       expect(page).to have_content("Robot Chicken: Star Wars Episode III")
       expect(page).to have_content(7.4)
-      expect(page).to have_content("0:45")
+      expect(page).to have_content("0 hour(s) 45 min")
+      expect(page).to have_content("Genres: - Comedy - Science Fiction - Animation - TV Movie")
+      expect(page).to have_content("Summary: Robot Chicken: Star Wars Episode III, directed by Chris McKay, combines the satirical sensibilities of Green and Matthew Senreich's Robot Chicken with characters of the Star Wars universe.")
+    end
+
+    xit 'will list things' do
     end
   end
 end
