@@ -14,6 +14,10 @@ class MovieService
   def self.search(query)
     JSON.parse(conn.get("search/movie?query=#{query}").body, symbolize_names: true)
   end
+
+  def self.image(id)
+    JSON.parse(conn.get("movie/2/#{id}/images?").body, symbolize_names: true)
+  end
   
   private
   

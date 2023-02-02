@@ -9,6 +9,11 @@ RSpec.describe MovieService do
     json_response2 = File.read('spec/fixtures/cast.json')
     stub_request(:get, "https://api.themoviedb.org/3/movie/238/credits?api_key=#{ENV['MOVIE_DB_KEY']}")
     .to_return(status: 200, body: json_response2, headers: {})
+    
+    
+    json_response3 = File.read('spec/fixtures/image.json')
+    stub_request(:get, "https://api.themoviedb.org/3/movie/238/images?api_key=#{ENV['MOVIE_DB_KEY']}")
+    .to_return(status: 200, body: json_response3, headers: {})
   end
 
   it 'returns a movie' do
@@ -26,5 +31,13 @@ RSpec.describe MovieService do
     
     expect(cast).to be_an(Array)
     expect(cast.count).to eq(10)
+  end
+
+  xit "can return a movies' image" do
+    id = 238
+    image = MovieService.image[:backdrops][0]
+
+    expect(image)
+    
   end
 end
