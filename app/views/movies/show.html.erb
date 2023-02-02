@@ -1,0 +1,23 @@
+<h3><%= @movie[:title] %></h3>
+<%= link_to 'Discover Page', user_discover_index_path(@user) %>
+<br>
+<%= link_to "Create Viewing Party for #{@movie[:title]}", new_user_movie_viewing_party_path(@user, @movie[:id]) %>
+<br><br>
+Vote: <%= @movie[:vote_average] %>  Runtime: <%= (@movie[:runtime]/60) %>hr <%= (@movie[:runtime]%60) %>min  
+Genre(s):  
+<%= @movie[:genres].map { |genre| genre[:name] }.to_sentence %>
+<hr>
+<h4>Summary:</h4>
+<%= @movie[:overview] %>
+<br>
+<h4>Cast: </h4>
+<%= @cast.first(10).map { |actor| "#{actor[:name]} as #{actor[:character]}" }.to_sentence %>
+<br>
+<h4><%= @reviews.count %> Reviews:</h4>
+<% @reviews.each do |review| %>
+  Review by: <%= review[:author] %> 
+  Rating: <%= review[:author_details][:rating] %>/10.0
+  <br>
+  <%= review[:content] %>
+  <br><br>
+<% end %>
