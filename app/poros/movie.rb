@@ -3,7 +3,6 @@ class Movie
               :title,
               :vote_average,
               :runtime,
-              :genres,
               :overview,
               :cast
 
@@ -12,13 +11,13 @@ class Movie
     @title = movie_params[:original_title]
     @vote_average = movie_params[:vote_average]
     @runtime = movie_params[:runtime]
-    @genres = genre_parse(movie_params[:genres])
+    @genres = movie_params[:genres]
     @overview = movie_params[:overview]
     @cast = movie_params[:cast]
   end
 
-  def genre_parse(data) 
-    data.map do |genre|
+  def genres 
+    @genres.map do |genre|
       genre[:name]
     end.join(', ')
   end
