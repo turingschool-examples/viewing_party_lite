@@ -1,13 +1,15 @@
 class MovieFacade
   def self.top_rated_movies
     json = MovieService.top_rated_movies[:results]
-    json.map do |data|
-      Movie.new(data)
-    end
+    movies_array(json)
   end
 
   def self.keyword_search(keyword)
     json = MovieService.keyword_search(keyword)[:results]
+    movies_array(json)
+  end
+
+  def self.movies_array(json)
     json.map do |data|
       Movie.new(data)
     end
