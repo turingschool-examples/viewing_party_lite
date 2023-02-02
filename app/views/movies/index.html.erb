@@ -2,6 +2,6 @@
 
 <% @top_20.each do |movie| %>
   <br>
-  <p><%= link_to movie[:title], "/users/#{@user.id}/movies/#{movie[:id]}" %>
-  Vote Average: <%= movie[:vote_average] %></p>
+  <p><%= link_to movie.title, "/users/#{@user.id}/movies/#{movie.id}" %>
+  Vote Average: <%= movie.vote_average %></p>
 <% end %>

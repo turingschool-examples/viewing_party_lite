@@ -11,7 +11,8 @@ class MoviesController < ApplicationController
         redirect_to discover_user_path(@user)
       end
     else
-      @top_20 = MoviesFacade.top_movies
+      results = MoviesFacade.top_movies
+      @top_20 = results.first(20)
     end
   end
 
