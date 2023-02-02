@@ -1,7 +1,10 @@
-<%= button_to "Create User", new_user_path, method: :get %>
+<h1 style="text-align: center;"><%= button_to "Create User", new_user_path, method: :get %></h1>
 
-<% @users.each do |user| %>
-  <div id="user_<%= user.id %>">
-    <%= link_to user.name, user_dashboard_index_path(user) %>
-  </div>
-<% end %>
+<div style="margin: auto; width: 30%;">
+  <h1 style="font-size: 40px;">Existing Users</h1>
+  <% @users.each do |user| %>
+    <div id="user_<%= user.id %>">
+      <p style="text-align: left; font-size: 20px;"><%= link_to user.email, user_dashboard_index_path(user) %>
+    </div>
+  <% end %>
+</div>
