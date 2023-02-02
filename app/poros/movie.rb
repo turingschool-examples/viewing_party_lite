@@ -1,28 +1,29 @@
 class Movie
-
-  include ActiveModel::Model
-
-  attr_reader :movie_id,
+  attr_reader :id,
               :title,
               :vote_average,
               :runtime,
               :genres,
-              :summary
+              :hours_mins,
+              :success,
+              :overview
 
   def initialize(data)
-    @movie_id     = data[:id]
+    @id           = data[:id]
     @title        = data[:title]
     @vote_average = data[:vote_average]
-    @runtime      = convert_runtime(data[:runtime])
-    @genres       = data[:genres]
-    @summary      = data[:overview]
+    @runtime      = data[:runtime]
+    @overview     = data[:overview]
+    @hours_mins   = convert_runtime(data[:runtime]) if data[:runtime]
+    @genres       = convert_genres(data[:genres]) if data[:genres]
+    @success      = data[:success]
   end
 
   def convert_runtime(runtime)
     "#{runtime / 60}hr #{runtime % 60}min"
   end
 
-  def persisted?
-    false
+  def convert_genres(genres)
+    genres.map { |genre| genre[:name] }
   end
 end

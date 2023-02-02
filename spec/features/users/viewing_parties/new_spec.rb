@@ -16,8 +16,8 @@ RSpec.describe 'Viewing Party New' do
     fill_in('viewing_party[date]', with: Date.today)
     fill_in('viewing_party[start_time]', with: start_time)
 
-    page.check("viewing_party[user_#{users.second.id}]")
-    page.check("viewing_party[user_#{users.fourth.id}]")
+    page.check("viewing_party[#{users.second.id}]")
+    page.check("viewing_party[#{users.fourth.id}]")
 
     click_button('Create Viewing Party')
 
@@ -25,7 +25,7 @@ RSpec.describe 'Viewing Party New' do
     viewing_party = ViewingParty.first
 
     expect(viewing_party.date).to eq(Date.today)
-    expect(viewing_party.time).to eq(start_time)
+    expect(viewing_party.start_time.strftime('%H:%M')).to eq(start_time.utc.strftime('%H:%M'))
     expect(viewing_party.users).to eq([users.first, users.second, users.fourth])
     user_viewing_party_1 = UserViewingParty.find_by(user_id: user.id)
     user_viewing_party_2 = UserViewingParty.find_by(user_id: users.second.id)
