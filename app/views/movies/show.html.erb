@@ -1,25 +1,28 @@
-<center><h1>Viewing Party</h1></center>
-<center><h3><%= @movie.title %></h3></center>
+<div class="sub-header">
+  <%= @movie.title %>
+</div>
 
 <center><p><%= button_to 'Discover Page', "/users/#{@user.id}/discover", method: :get %></p></center>
 <center><p><%= button_to "Create a Viewing Party for the #{@movie.title}", "/users/#{@user.id}/movies/#{@movie.id}/viewing_parties/new", method: :get %></p></center>
 
-<div class ="row">
-  <div class="column">Vote: <%= @movie.vote_average %></div>
-  <div class="column">Runtime: <%= @movie.runtime %>minutes</div>
-  <div class="column">Genre: <% @movie.genres.each do |genre| %>
-    <li><%= genre[:name] %></li>
-  <% end %></div>
-<div>
+<div class="content">
+  <div class="row">
+    <div class="column">Vote: <%= @movie.vote_average %></div>
+    <div class="column">Runtime: <%= @movie.runtime %>minutes</div>
+    <div class="column">Genre: <% @movie.genres.each do |genre| %>
+      <li><%= genre[:name] %></li>
+    <% end %></div>
+  <div>
 
-<br><br><br>
-<h4>Summary</h4>
-<%= @movie.summary %>
+  <hr>
 
-<br>
-<h4>Cast</h4>
-<% @cast.each do |actor| %>
-  <div id="actor-<%=actor.id%>">
-    <p><%= actor.name %> as <%= actor.character %></p>
-  </div>
-<% end %>
+  <b><p>Summary</p></b>
+    <font size="+1"><%= @movie.summary %></font>
+
+  <h4>Cast</h4>
+  <% @cast.each do |actor| %>
+    <div id="actor-<%=actor.id%>">
+      <p><%= actor.name %> <i>as</i> <%= actor.character %></p>
+    </div>
+  <% end %>
+</div>
