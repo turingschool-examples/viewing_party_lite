@@ -15,5 +15,11 @@ RSpec.describe MovieFacade do
         expect(MovieFacade.keyword_search("Lego").length).to eq(20)
       end
     end
+
+    describe '.movie_details' do
+      it 'returns a detailed Movie poros' do
+        expect(MovieFacade.movie_details("238")).to be_a(Movie)
+      end
+    end
   end
 end
