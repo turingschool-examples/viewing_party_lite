@@ -29,7 +29,7 @@ RSpec.describe 'User Dashboard' do
       UserViewingParty.create!(user_id: nicole.id, viewing_party_id: party3.id)
 
       visit user_path(charlie)
-      save_and_open_page
+      
       within "#viewing_parties" do 
         expect(page).to have_content(party1.event_date.strftime("%B %-d, %Y"))
         expect(page).to have_content(party1.start_time.strftime("%I:%M %P"))
