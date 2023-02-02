@@ -14,4 +14,9 @@ class Movie
     @genre = movie_params[:genre]
     @summary = movie_params[:summary]
   end
+
+  #placeholder method
+  def image
+    'image'
+  end
 end

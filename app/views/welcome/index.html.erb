@@ -1,11 +1,13 @@
-<center><%= button_to "Create a New User", register_path, method: :get %></center>
+<center>
+  <%= button_to "Create a New User", register_path, method: :get %>
+</center>
 
 <body>
   <h2>Existing Users</h2>
   <div class="users">
     <% @users.each do |user| %>
     <section id="user-<%= user.id %>">
-      <%= link_to "#{user.email}", user_path(user) %> </section>
+      <%= link_to user.email, user_path(user) %> </section>
     <% end %>
   </div>  
 </body>

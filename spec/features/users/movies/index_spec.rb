@@ -1,34 +1,48 @@
-require 'rails_helper'
+require 'rails_helper' 
 
-RSpec.describe 'Movie Results Page', type: :feature do
-  describe 'movie results ' do
+RSpec.describe 'User Movies Index Page' do 
+  before :each do 
+    @user1 = create(:user)
+  end
 
-    let!(:user) { create(:user) }
-
-    before :each do
-      visit user_movie_path 
-    end
-
-    it 'displays only up to 20 movies' do
-      expect(movies.length).to be <= 20
-    end
-
-    it 'has a button to return to the discover page' do
-      expect(page).to have_button "Discover Page"
+  describe 'navigation' do 
+    it 'should have a discover page button' do 
+      visit user_movies_path(@user1)
 
       click_button "Discover Page"
 
-      expect(current_path).to eq discover_user_path
+      expect(current_path).to eq(discover_user_path(@user1))
     end
+  end
 
-    describe 'it can display movies from a top movies request' do
-      it 'displays each movies title and vote avg' do
-        movies.each do |movie|
-          within "#movie_#{movie_id}" do
-            expect(page).to have_content(movie.title)
-            expect(page).to have_content(movie.vote_average) 
-          end
+  describe 'top movies' do 
+    it 'should display the top 20 rated movies' do 
+      visit user_movies_path(@user1)
+
+      within(".movies") do
+        within("section#movie-238") do 
+          expect(page).to have_link("The Godfather", href: "/users/#{@user1.id}/movies/238")
+          expect(page).to have_content("Vote Average: 8.7")
         end
+        
+        expect(page).to have_selector('section', count: 20)
+      end
+    end
+  end
+
+  describe 'search movies' do 
+    it 'should display the top 20 movies matching users search criteria' do 
+      visit user_movies_path(user_id: @user1.id, title_search: "river")
+
+      expect(page).to have_content("Movie results for: river")
+
+      within(".movies") do
+        within("section#movie-395834") do 
+          expect(page).to have_link("Wind River", href: "/users/#{@user1.id}/movies/395834")
+          expect(page).to have_content("Vote Average: 7.4")
+        end
+
+        expect(page).to have_selector('section', count: 20)
       end
     end
   end

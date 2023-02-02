@@ -12,6 +12,7 @@ require File.expand_path('../config/environment', __dir__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
+WebMock.disable_net_connect!(allow_localhost: true)
 
 Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each {|f| require f}
 
@@ -69,6 +70,15 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  #before every test, webmock will stub our API call to the movie/top_rated endpoint
+  config.before do 
+    WebMock.stub_request(:any, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV["moviedb_key"]}")
+           .to_return(body: File.read('./spec/fixtures/top_movies.json'))
+
+    WebMock.stub_request(:any, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV["moviedb_key"]}&query=river")
+           .to_return(body: File.read('./spec/fixtures/search_river_movies.json'))
+  end
 end
 
 Shoulda::Matchers.configure do |config|

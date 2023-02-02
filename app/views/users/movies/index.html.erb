@@ -1,0 +1,22 @@
+<% if @search_term %>
+  <div style="text-align:center; margin-bottom:20px;">
+    <strong>Movie results for: <%= @search_term %></strong>
+  </div>
+<% end %>
+
+<center>
+  <%= button_to "Discover Page", discover_user_path(@user), method: :get %>
+</center>
+
+<div style="margin:auto;width:40%;" class="movies">
+    <% @movies.each do |movie| %>
+     <section id="movie-<%= movie.id %>">
+       <div style="text-align:left;">
+        <%= link_to movie.title, user_movie_path(@user, movie.id) %> 
+       </div>
+       <div style="text-align:right;">
+        Vote Average: <%= movie.vote_average %>
+       </div>
+     </section>
+    <% end %>
+</div>

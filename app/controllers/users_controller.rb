@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def create
    user = User.new(permitted_params)
-
+   
     if user.save 
       redirect_to user_path(user)
     else

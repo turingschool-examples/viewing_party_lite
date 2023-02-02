@@ -6,9 +6,17 @@ class MovieService
   end
 
   def get_top_movies
-    service.get('/3/movie/top_rated').body["results"].map do |movie|
-      Movie.new(movie)
+    response = service.get('/3/movie/top_rated')
+    
+    build_movie_objects(response)
+  end
+
+  def search_movies(search_query)
+    response = service.get('/3/search/movie') do |request|
+      request.params["query"] = search_query
     end
+
+    build_movie_objects(response)
   end
 
   def movie
@@ -22,9 +30,7 @@ class MovieService
   end
 
   def service 
-    Faraday.new(service_params) do |f|
-      f.response :json
-    end
+    Faraday.new(service_params)
   end
 
   def service_params
@@ -33,5 +39,11 @@ class MovieService
       params: {api_key: ENV["moviedb_key"],
       language: "en-US"}
     }
+  end
+
+  def build_movie_objects(response)
+    JSON.parse(response.body)["results"].map do |movie|
+      Movie.new(movie)
+    end
   end
 end
