@@ -1,0 +1,12 @@
+<div id='movie-results'>
+  <table style="width:50%;">
+    <tbody>
+      <% @movies.each_with_index do |movie, i| %>
+        <tr id="movie-<%= i+1 %>">
+          <td style="text-align:left"><%= link_to movie.title, user_movie_path(@user, movie.id) %></td>
+          <td style="text-align:left">Vote Average: <%= movie.vote_average %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
