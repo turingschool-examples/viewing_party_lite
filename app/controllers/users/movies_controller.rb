@@ -14,8 +14,8 @@ class Users::MoviesController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     conn = Faraday.new(url: 'https://api.themoviedb.org')
-    #binding.pry
-    response = conn.get(type_url[:path]) do |req|
+    # binding.pry
+    response = conn.get("/3/movie/#{params[:id]}") do |req|
       req.params = query_params
     end
     cast_response = conn.get("/3/movie/#{params[:id]}/credits") do |req|
