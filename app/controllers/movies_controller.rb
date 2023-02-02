@@ -12,6 +12,7 @@ class MoviesController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:user_id])
     movie_id = params[:id]
     @movie = TMDBService.get_movie_by_id(movie_id)
   end
