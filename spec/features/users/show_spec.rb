@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-RSpec.describe 'The User show page', type: :feature do
+RSpec.describe 'The User Dashboard page', type: :feature do
   describe 'the user show page' do
 
     let!(:user) { create(:user) }
-    let!(:invited_party1) { create(:viewing_party) }
-    let!(:invited_party2) { create(:viewing_party) }
-    let!(:hosted_party1) { create(:viewing_party, host: user) }
-    let!(:hosted_party2) { create(:viewing_party, host: user) }
+    let!(:invited_party1) { create(:viewing_party, movie_id: 13)}
+    let!(:invited_party2) { create(:viewing_party, movie_id: 14)}
+    let!(:hosted_party1) { create(:viewing_party, host: user, movie_id: 15)}
+    let!(:hosted_party2) { create(:viewing_party, host: user, movie_id: 17)}
     let!(:vpu1){ create(:viewing_party_user, user: user, viewing_party: invited_party1) }
     let!(:vpu2){ create(:viewing_party_user, user: user, viewing_party: invited_party2) }
 
@@ -28,12 +28,11 @@ RSpec.describe 'The User show page', type: :feature do
     end
 
     describe 'viewing parties' do
-      xit 'lists all viewing parties the user has been invited to with their data' do
+      it 'lists all viewing parties the user has been invited to with their data' do
         invited_parties = user.invited_parties
-        #TODO: Some tests will fail until API decisions are made
         within "#invited_parties" do
           invited_parties.each do |party|
-            within "invited_#{party.id}" do
+            within "#invited_#{party.id}" do
               expect(page).to have_content "Movie Title: #{party.movie.title}"
               expect(page).to have_link "#{party.movie.title}"
               expect(page.find('#movie-image')['src']).to have_content 'Movie_Image.' 
@@ -47,12 +46,11 @@ RSpec.describe 'The User show page', type: :feature do
         end
       end
 
-      xit 'lists all viewing parties the user has hosted' do
+      it 'lists all viewing parties the user has hosted' do
         hosted_parties = user.hosted_parties
-        #TODO: Some tests will fail until API decisions are made
-        within "hosted_parties" do
+        within "#hosted_parties" do
           hosted_parties.each do |party|
-            within "hosted_#{party.id}" do
+            within "#hosted_#{party.id}" do
               expect(page).to have_content "You are the host of this viewing party."
               expect(page).to have_content "Movie Title: #{party.movie.title}"
               expect(page).to have_link "#{party.movie.title}"
