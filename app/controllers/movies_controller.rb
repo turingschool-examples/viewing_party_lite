@@ -40,12 +40,12 @@ class MoviesController < ApplicationController
     conn = Faraday.new(url: 'https://api.themoviedb.org') do |f|
       f.params['api_key'] = ENV['movie_api_key']
     end
-    response = conn.get('/3/discover/movie?')
+    response = conn.get('/3/movie/id?')
 
-    data = JSON.parse(response.body, symbolize_names: true)
+    @movie = JSON.parse(response.body, symbolize_names: true)
+    # @movie = data[:results].find do |movie|
+    #   movie[:id] == params[:movie_id]
+    # end
 
-    @movie = data[:results].find do |movie|
-      movie[:id] == params[:movie_id]
-    end
   end
 end
