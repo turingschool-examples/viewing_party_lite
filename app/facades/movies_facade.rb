@@ -16,4 +16,8 @@ class MoviesFacade
       MovieResult.new(movie_result_data)
     end
   end
+
+  def self.movie_details(movie) 
+    MoviesService.find_movie_details(movie)
+  end
 end

@@ -18,25 +18,18 @@ class MoviesController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    movie = params[:movie_id]
 
-    conn = Faraday.new(url: 'https://api.themoviedb.org') do |f|
-      f.params['api_key'] = ENV['movie_api_key']
-    end
-    response = conn.get("/3/movie/#{params[:movie_id]}?")
+    @movie = MoviesFacade.movie_details(movie) 
 
-    @movie = JSON.parse(response.body, symbolize_names: true)
-    # require 'pry'; binding.pry
     conn = Faraday.new(url: 'https://api.themoviedb.org') do |f|
       f.params['api_key'] = ENV['movie_api_key']
     end
     response = conn.get("/3/movie/#{@movie[:id]}/credits?") 
     
     @credits = JSON.parse(response.body, symbolize_names: true)
-    # require 'pry'; binding.pry
-    conn = Faraday.new(url: 'https://api.themoviedb.org') do |f|
-      f.params['api_key'] = ENV['movie_api_key']
-    end
-    response = conn.get("/3/movie/#{@movie[:id]}/credits?") 
+
+    
     # @details = 
     # TODO: movie hash keep_if to remove extra data
   end
