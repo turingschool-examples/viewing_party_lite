@@ -3,9 +3,15 @@ class MovieService
   def get_top_movies
     response = service.get('/3/movie/top_rated')
     
-    JSON.parse(response.body)["results"].map do |movie|
-      Movie.new(movie)
+    build_movie_objects(response)
+  end
+
+  def search_movies(search_query)
+    response = service.get('/3/search/movie') do |request|
+      request.params["query"] = search_query
     end
+
+    build_movie_objects(response)
   end
 
   private
@@ -23,5 +29,11 @@ class MovieService
       url: base_uri,
       params: {api_key: ENV["moviedb_key"]}
     }
+  end
+
+  def build_movie_objects(response)
+    JSON.parse(response.body)["results"].map do |movie|
+      Movie.new(movie)
+    end
   end
 end

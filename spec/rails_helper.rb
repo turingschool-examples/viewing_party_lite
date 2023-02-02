@@ -74,7 +74,10 @@ RSpec.configure do |config|
   #before every test, webmock will stub our API call to the movie/top_rated endpoint
   config.before do 
     WebMock.stub_request(:any, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV["moviedb_key"]}")
-             .to_return(body: File.read('./spec/fixtures/top_movies.json'))
+           .to_return(body: File.read('./spec/fixtures/top_movies.json'))
+
+    WebMock.stub_request(:any, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV["moviedb_key"]}&query=river")
+           .to_return(body: File.read('./spec/fixtures/search_river_movies.json'))
   end
 end
 
