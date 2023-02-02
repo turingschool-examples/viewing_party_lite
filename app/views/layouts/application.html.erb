@@ -6,6 +6,11 @@
     <%= csp_meta_tag %>
 
   <style>
+
+  .nav {
+    font-family: fantasy;
+  }
+
   .column {
     float: left;
     width: 33.33%;
@@ -22,19 +27,42 @@
     width: 50%;
   }
 
-  /* Clear floats after the columns */
   .row-2:after {
     content: "";
     display: table;
     clear: both;
   }
-  </style>
+
+  .content {
+    font-family: system-ui;
+  }
+
+  .sub-header {
+    font-family: fantasy;
+    text-align: center;
+    font-size: xx-large;
+  }
+
+  hr {
+    width: 100%;
+    height:1px;
+    background-color:black;
+  }
+
+</style>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
+    <section>
+      <div class="nav"><p><%= link_to 'Home', root_path %></p></div>
+    </section>
+
+    <div class="top-container">
+      <h1 style="text-align:center; font-family: fantasy; font-size: xxx-large;">Viewing Party</h1>
+    </div>
     
     <% flash.each do |type, msg| %>
       <div>
@@ -42,9 +70,6 @@
       </div>
     <% end %>
     
-    <section>
-      <p><%= link_to 'Home', root_path %></p>
-    </section>
     <%= yield %>
   </body>
 </html>
