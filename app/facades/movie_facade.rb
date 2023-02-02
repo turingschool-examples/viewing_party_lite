@@ -13,4 +13,9 @@ class MovieFacade
       Actor.new(actor_data)
     end
   end
+
+  def self.movie_details(movie_id)
+    Movie.new(MovieService.movie_details(movie_id))
+    # movie = movie_data
+  end
 end

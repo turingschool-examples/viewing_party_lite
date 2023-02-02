@@ -1,5 +1,4 @@
 class MovieService
-
   def self.conn
     Faraday.new(url: "https://api.themoviedb.org", params: {api_key: ENV['api_key']})
   end
@@ -21,7 +20,7 @@ class MovieService
 
   def self.movie_details(movie_id)
     response = conn.get("/3/movie/#{movie_id}")
-    Movie.new(parse_json(response))
+    (parse_json(response))
  
   end
   
