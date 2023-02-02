@@ -17,7 +17,6 @@ RSpec.describe 'Users discover index' do
 
   it 'has a button to discover top rated movies' do
     expect(page).to have_button('Discover Top Rated Movies')
-    save_and_open_page
   end
 
   it 'has a text field to enter keyword(s) to search by movie title' do
@@ -37,7 +36,7 @@ RSpec.describe 'Users discover index' do
 
   describe 'when user clicks on search button' do
     it 'redirects to the movies results page' do
-      fill_in 'Search', with: 'Top Gun'
+      fill_in :search, with: 'Top Gun'
       click_button('Search by Movie Title')
       expect(current_path).to eq(movies_path)
       expect(page).to have_content('Top Gun')

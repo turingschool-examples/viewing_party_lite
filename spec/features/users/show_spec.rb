@@ -46,7 +46,6 @@ RSpec.describe 'User dashboard' do
         expect(page).to have_content(@viewing_party_2.start_time)
         expect(page).to have_content(@user_2.name)
         expect(page).to have_content("Host: #{@user_1.name}")
-        save_and_open_page
       end
     end
   end
