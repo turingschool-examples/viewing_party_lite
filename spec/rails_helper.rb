@@ -95,6 +95,10 @@ RSpec.configure do |config|
       url = "https://api.themoviedb.org/3/movie/#{movie_id}/reviews?api_key=#{ENV['moviedb_key']}" 
       response = File.read("spec/fixtures/reviews.json")
       WebMock.stub_request(:get, url).to_return(status: 200, body: response)
+
+      url = "https://api.themoviedb.org/3/movie/#{movie_id}/images?api_key=#{ENV['moviedb_key']}"
+      response = File.read("spec/fixtures/images/movie_#{movie_id}.json")
+      WebMock.stub_request(:get, url).to_return(status: 200, body: response)
     end
   end
 end
