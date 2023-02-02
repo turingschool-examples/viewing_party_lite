@@ -2,7 +2,6 @@ class TMDBService
   def self.conn
     Faraday.new(url: "https://api.themoviedb.org")
   end
-
 #could add something like
 # def get_call(URI)
 #   response = conn.get(URI, {"api_key" => ENV['tmdb_api_key']})

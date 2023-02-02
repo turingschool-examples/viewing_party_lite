@@ -3,7 +3,8 @@ class MoviesController < ApplicationController
     @user = User.find(params[:user_id])
 
     if params[:q] != "top%20rated"
-      @search_results = MovieSearchFacade.movie_search(params[:q])
+      keyword = params[:q]
+      @search_results = MovieSearchFacade.movie_search(keyword)
     else
       @search_results = []
       @top_rated = TopRatedMoviesFacade.top_20_rated_movies
