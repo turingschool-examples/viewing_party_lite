@@ -5,9 +5,9 @@
 </div>
 
 <div id="display-movies">
-  <% @movies[:results].each do |movie| %>
-    <b><%= link_to movie[:title], user_movie_path(@user, movie[:id]) %></b><br>
-    Vote Avg: <%= movie[:vote_average] %><br>
+  <% @movies.each do |movie| %>
+    <b><%= link_to movie.title, user_movie_path(@user, movie.movie_id) %></b><br>
+    Vote Avg: <%= movie.vote_average %><br>
     <p></p>
   <% end %>
 </div>
