@@ -32,6 +32,6 @@ class Movie
   end
 
   def image
-    @image_path ||= MovieFacade.new(movie_id).movie_image
+
   end
 end
