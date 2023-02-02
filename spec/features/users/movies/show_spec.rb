@@ -3,23 +3,24 @@ require 'rails_helper'
 RSpec.describe 'Movie Details', type: :feature do
   
   let!(:user) { create(:user) }
-  let!(:movie) { FactoryBot.build(:movie)}
 
   before :each do
     #TODO: Can I remove the api interpolation?
-    url = "https://api.themoviedb.org/3/movie/#{movie.id}?api_key=#{ENV['moviedb_key']}&language=en-US" 
+    movie_id = 13
+    url = "https://api.themoviedb.org/3/movie/#{movie_id}?api_key=#{ENV['moviedb_key']}&language=en-US" 
     response = File.read("spec/fixtures/forrest.json")
     stub_request(:get, url).to_return(status: 200, body: response)
 
-    visit user_movie_path(user, movie.id)
+    @movie = MovieFacade.new(url: 13).movie
+    visit user_movie_path(user, movie_id)
   end
 
   describe 'the movie show page' do
     describe 'navigation' do
       it 'has a button to create a viewing party' do
-        click_button "Create Viewing Party for #{movie.title}" 
+        click_button "Create Viewing Party for #{@movie.title}" 
 
-        expect(current_path).to eq new_user_movie_viewing_party_path(user, movie)
+        expect(current_path).to eq new_user_movie_viewing_party_path(user, @movie)
       end
 
       it 'has a button to return to the Discover Page' do
@@ -34,17 +35,17 @@ RSpec.describe 'Movie Details', type: :feature do
         #TODO: this test is getting bloated, break up.
 
         within "#movie" do
-          expect(page).to have_content "Movie Title: #{movie.title}"
-          expect(page).to have_content "Runtime: #{movie.runtime}"
-          expect(page).to have_content "Genre: #{movie.genre}"
-          expect(page).to have_content "Summary: #{movie.summary}"
+          expect(page).to have_content "Movie Title: #{@movie.title}"
+          expect(page).to have_content "Runtime: #{@movie.runtime}"
+          expect(page).to have_content "Genre: #{@movie.genre}"
+          expect(page).to have_content "Summary: #{@movie.overview}"
 
-          movie.cast.each do |cast_member|
+          @movie.cast.each do |cast_member|
             expect(page).to have_content cast_member
           end
 
-          expect(page).to have_content "Total Reviews: #{movie.review_total}"
-          movie.reviewers.each do |reviewer|
+          expect(page).to have_content "Total Reviews: #{@movie.review_total}"
+          @movie.reviewers.each do |reviewer|
             expect(page).to have_content "Review Author: #{reviewer.author}"
             expect(page).to have_content "Author Information: #{reviewer.information}"
           end
