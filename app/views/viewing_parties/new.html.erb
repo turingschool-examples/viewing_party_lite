@@ -1,3 +1,4 @@
 <div class="sub-header">
-  Create a Movie Party for <%= @movie.title %>
+  Create a Movie Party for <%= "'#{@movie.title}'" %>
 </div>
+<center><p><%= button_to 'Discover Page', "/users/#{@user.id}/discover", method: :get %></p></center>
