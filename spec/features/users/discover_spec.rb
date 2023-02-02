@@ -7,6 +7,9 @@ RSpec.describe 'Discover Movies Page' do
     end
 
     it 'has a link to discover top rated movies' do
+      stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=d15da2c6fe48d15a51f43f47b05c0ed1&language=en-US&page=1").
+        to_return(status: 200, body: File.read('spec/fixtures/top_movies_response.json'), headers: {})
+
       visit user_discover_index_path(@user)
 
       expect(page).to have_button 'Find Top Rated Movies'
@@ -14,6 +17,7 @@ RSpec.describe 'Discover Movies Page' do
 
       expect(page).to have_current_path "/users/#{@user.id}/movies?q=top+rated"
     end
+    
     it 'Has a search field for movie names' do
       visit user_discover_index_path(@user)
 
