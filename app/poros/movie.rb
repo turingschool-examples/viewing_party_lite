@@ -31,8 +31,7 @@ class Movie
     @reviews.length
   end
 
-  #TODO: placeholder method
   def image
-    'image'
+    @image_path ||= MovieFacade.new(movie_id).movie_image
   end
 end
