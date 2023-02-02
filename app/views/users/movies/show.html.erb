@@ -1,0 +1,10 @@
+<h1><%= @movie.title %></h1>
+
+<div id="discover-page-button">
+  <%= button_to "Discover Page", user_discover_index_path(@user), method: :get %>
+</div>
+
+<div id="movie-information">
+  <p>Vote Average: <%= @movie.vote_average %></p>
+  <p>Runtime: <%= @movie.runtime %></p>
+</div>
