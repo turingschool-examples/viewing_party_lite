@@ -12,6 +12,16 @@ class MovieService
     MovieService.parse(response)
   end
 
+  def self.cast(id)
+    response = MovieService.conn.get("/3/movie/#{id}/credits?api_key=#{ENV['movie_api_key']}")
+    MovieService.parse(response)
+  end
+
+  def self.reviews(id)
+    response = MovieService.conn.get("/3/movie/#{id}/reviews?api_key=#{ENV['movie_api_key']}")
+    MovieService.parse(response)
+  end
+
   def self.top_rated
     response = MovieService.conn.get("/3/movie/top_rated?api_key=#{ENV['movie_api_key']}")
     MovieService.parse(response)
