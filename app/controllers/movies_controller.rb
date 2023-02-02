@@ -6,7 +6,7 @@ class MoviesController < ApplicationController
     load_movies = TMDBService.new
 
     if params[:q] != "top%20rated"
-      @search_results = load_movies.movie_search(params[:q])
+      @search_results = TMDBService.movie_search_query(params[:q])
     else
       @search_results = []
       @top_rated = TMDBService.top_rated_movies
