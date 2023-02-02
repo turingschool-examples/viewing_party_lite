@@ -1,10 +1,18 @@
 class MoviesController < ApplicationController
   def index
-    binding.pry
-    load_movies = TMDBService.new
-    @top_rated = load_movies.get_top_rated_movies
-    binding.pry
-   
+    @user = User.find(params[:user_id])
+
+    if params[:q] != "top%20rated"
+      keyword = params[:q]
+      @search_results = MovieSearchFacade.movie_search(keyword)
+    else
+      @search_results = []
+      @top_rated = TopRatedMoviesFacade.top_20_rated_movies
     end
+  end
+
+  def show
+    movie_id = params[:id]
+    @movie = TMDBService.get_movie_by_id(movie_id)
   end
 end
