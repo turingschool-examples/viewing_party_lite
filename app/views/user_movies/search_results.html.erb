@@ -4,7 +4,7 @@
 <% if @top_rated %>
   <% @top_rated.each.with_index(1) do |film, i| %>
     <div id="top_rated-<%= i %>">
-      <%= link_to "#{film.title}", user_movie_path(@user.id, film.id) %> <%= "#{film.vote_average}" %>
+      <%= link_to "#{film["title"]}", "/users/#{@user.id}/movies/#{film["id"]}" %><%= "#{film["vote_average"]}" %>
     </div>
   <% end %>
 <% end %>
@@ -12,7 +12,7 @@
 <% if @search_results %>
   <% @search_results.each.with_index(1) do |film, i| %>
     <div id="search_results-<%= i %>">
-      <%= link_to "#{film.title}", user_movie_path(@user.id, film.id), params: {movie: film} %> <%= "#{film.vote_average}" %>
+      <%= link_to "#{film["title"]}", "/users/#{@user.id}/movies/#{film["id"]}" %><%= "#{film["vote_average"]}" %>
     </div>
   <% end %>
 <% end %>

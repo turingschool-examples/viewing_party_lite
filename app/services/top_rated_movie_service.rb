@@ -1,6 +1,6 @@
 class TopRatedMovieService
   def self.movies
-    JSON.parse(conn.get.body)
+    JSON.parse(conn.get.body, symbolize_names: true)
   end
 
   private
