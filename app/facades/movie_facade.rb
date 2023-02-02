@@ -32,4 +32,11 @@ class MovieFacade
       actor.popularity
     end.reverse[0..9]
   end
+
+  def self.find_reviews(movie_id)
+    data = MovieService.find_reviews_response(movie_id)
+    data[:results].map do |review_information|
+      MovieReview.new(review_information)
+    end
+  end
 end

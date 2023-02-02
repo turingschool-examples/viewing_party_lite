@@ -22,7 +22,10 @@ RSpec.describe 'The Movie Details (Show) Page', type: :feature do
       expect(page).to have_content("#{user1.name}'s Discover Movies Page")
     end
 
-    xit 'has a button to create a viewing party' do
+    it 'has a button to create a viewing party' do
+      visit user_movie_path(user1, movie1)
+
+      expect(page).to have_button("Create Viewing Party", new_user_movie_party_path(user1, movie1))
     end
   end
 
@@ -41,9 +44,15 @@ RSpec.describe 'The Movie Details (Show) Page', type: :feature do
     end
 
     it 'lists the thespians for a given movie' do
+      stub_request(:get, "https://api.themoviedb.org/3/movie/51888?api_key").
+      to_return(status: 200, body: File.read("spec/fixtures/robot_chicken_response.json"), headers: {})
+
       visit user_movie_path(user1, movie1)
 
-      expect(page).to have_content("Cast:")
+      within("#cast-information") do
+        expect(page).to have_content("Cast Information")
+        # needs more testing here
+      end
     end
   end
 end

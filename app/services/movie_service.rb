@@ -25,6 +25,11 @@ class MovieService
     parse(response)
   end
 
+  def self.find_reviews_response(movie_id)
+    response = api_call.get("3/movie/#{movie_id}/reviews")
+    parse(response)
+  end
+
   def self.parse(response)
     JSON.parse(response.body, symbolize_names: true)
   end

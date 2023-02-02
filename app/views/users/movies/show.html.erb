@@ -1,27 +1,43 @@
-<h1><%= @show_movie.title %></h1>
+<h1><%= @movie.title %></h1>
 
 <div id="discover-page-button">
   <%= button_to "Discover Page", user_discover_index_path(@user), method: :get %>
 </div>
 
+<div id="create-party-button">
+  <%= button_to "Create Viewing Party", new_user_movie_party_path(@user, @movie.id), method: :get %>
+</div>
+
 <div id="movie-information">
   <h3>Movie Information</h3>
-  <p>Vote Average: <%= @show_movie.vote_average %></p>
-  <p>Runtime: <%= @show_movie.runtime %></p>
-  <p>Genres:<br>
-    <% @show_movie.genres.each do |genre| %>
+  Vote Average: <%= @movie.vote_average %><br>
+  Runtime: <%= @movie.runtime %><br>
+  Genres:<br>
+    <% @movie.genres.each do |genre| %>
       - <%= genre %><br>
     <% end %>
   </p>
-  <p>Summary: <%= @show_movie.overview %></p>
+  <p>Summary: <%= @movie.overview %></p>
 </div>
 
 <div id="cast-information">
   <h3>Cast Information</h3>
   <% @actors.each do |actor|  %>
     <p>
-    <%= actor.name %><br>
+    <%= actor.name %>, as <%= actor.character %><br>
     Popularity Rating: <%= actor.popularity.round(1) %><br>
+    </p>
+  <% end %>
+</div>
+
+<div id="review-information">
+  <h3>Reviews</h3>
+  Total Review Count: <%= @reviews.count %><br>
+  <% @reviews.each do |review|  %>
+    <p>
+    Author: <%= review.author %><br>
+    Rating: <%= review.rating %><br>
+    Content: <%= review.content %><br>
     </p>
   <% end %>
 </div>
