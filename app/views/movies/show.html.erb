@@ -13,7 +13,13 @@
 <div>
 
 <br><br><br>
-<p>Summary</p>
+<h4>Summary</h4>
 <%= @movie.summary %>
 
-
+<br>
+<h4>Cast</h4>
+<% @cast.each do |actor| %>
+  <div id="actor-<%=actor.id%>">
+    <p><%= actor.name %> as <%= actor.character %></p>
+  </div>
+<% end %>
