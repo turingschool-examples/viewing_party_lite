@@ -1,8 +1,12 @@
+<%= render partial: './shared/header' %>
+
 <h2><%= "#{@user.name}'s Dashboard" %></h2>
 <p><%= button_to "Discover Movies", discover_user_path(@user), method: :get %></p>
 <section id="viewing_parties">
   <% @user.viewing_parties.each do |party| %>
-    <li><%= party.event_date.strftime("%B %-d, %Y") %>
-        <%= party.start_time.strftime("%I:%M %P") %></li>
+    <p style="border-style:solid; border-width:2px; text-align:center">
+    <%= party.event_date.strftime("%B %-d, %Y") %>
+    <br>
+    <%= party.start_time.strftime("%I:%M %P") %></p>
   <% end %>
 </section>

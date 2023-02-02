@@ -1,13 +1,12 @@
-<h1>Viewing Party</h1>
-<p><%= button_to "Create a New User", register_path, method: :get %></p>
+<%= render partial: './shared/header' %>
+
+<h2><%= button_to "Create a New User", register_path, method: :get %></h2>
 
 <div id="users">
-  <h2>Existing Users</h2>
+  <h3>Existing Users</h3>
   <% @users.each do |user| %>
     <div id="user_<%= user.id %>">
       <li><%= link_to user.email, user_path(user) %></li>
     </div>  
   <% end %> 
 </div>
-
-<%= link_to "Home", root_path %>
