@@ -6,7 +6,8 @@ RSpec.describe 'Movie Details', type: :feature do
   let!(:movie_id) { 13 }
 
   before :each do
-    url = "https://api.themoviedb.org/3/movie/#{movie_id}?#{ENV['api_key']}&language=en-US" 
+    #TODO: Can I remove the api interpolation?
+    url = "https://api.themoviedb.org/3/movie/#{movie_id}?api_key=#{ENV['moviedb_key']}&language=en-US" 
     response = File.read("spec/fixtures/forrest.json")
     stub_request(:get, url).to_return(status: 200, body: response)
 
