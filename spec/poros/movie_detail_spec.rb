@@ -14,13 +14,17 @@ RSpec.describe MovieDetail do
         }).
         to_return(status: 200, body: json_response, headers: {})
 
-        # require 'pry'; binding.pry
-        @movie_detail = MovieDetail.new(JSON.parse(json_response))
+        @movie_detail = MovieDetail.new(JSON.parse(json_response, symbolize_names: true))
       end
 
   it 'exists and has attributes' do
     expect(@movie_detail).to be_a(MovieDetail)
-    # require 'pry'; binding.pry
-    # expect(@movie_detail.title).to eq('The Godfather')
+    expect(@movie_detail.title).to eq('The Godfather')
+    expect(@movie_detail.id).to eq(238)
+    expect(@movie_detail.summary).to be_a(String)
+    expect(@movie_detail.genres).to be_a(Array)
+    expect(@movie_detail.runtime).to eq(175)
+    expect(@movie_detail.vote_average).to eq(8.714)
+    expect(@movie_detail.vote_count).to eq(17392)
   end
 end

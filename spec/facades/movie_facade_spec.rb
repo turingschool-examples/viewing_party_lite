@@ -20,10 +20,13 @@ RSpec.describe MovieFacade do
     expect(movie_facade).to be_a(MovieFacade)
   end
 
-  it 'can return the title' do
+  it 'can return movie attributes' do
     movie = MovieFacade.get_movie('238')
 
     expect(movie.title).to eq('The Godfather')
+    expect(movie.runtime).to eq(175)
+    expect(movie.vote_average).to eq(8.714)
+    expect(movie.vote_count).to eq(17392)
   end
   
   it 'can return the first ten cast members' do
@@ -38,8 +41,6 @@ RSpec.describe MovieFacade do
     to_return(status: 200, body: json_response, headers: {})
     cast = MovieFacade.top_cast('238')
     
-    
     expect(cast.first.name).to eq("Marlon Brando")
-    
   end
 end

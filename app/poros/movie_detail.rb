@@ -8,7 +8,6 @@ class MovieDetail
               :genres
 
   def initialize(response)
-    # require 'pry'; binding.pry
     @title = response[:title]
     @id = response[:id]
     @summary = response[:overview]
