@@ -1,17 +1,11 @@
-module Users
-  module Movies
-    class ViewingPartyController < ApplicationController
-      def new
+class ViewingPartyController < ApplicationController
+  def new
+    @movie = MovieFacade.movie_details(params[:movie_id])
+    @user = User.find(params[:user_id])
+    @viewing_party = ViewingParty.new
+  end
 
-      end
+  def create
 
-      def create
-
-      end
-
-      def show
-
-      end
-    end
   end
 end
