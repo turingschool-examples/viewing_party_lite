@@ -1,8 +1,12 @@
 <h1> Discover </h1>
 
-<%= button_to "Top Rated Movies", user_movies_path(@user), method: :get %>
 <%= form_with url: user_movies_path(@user), method: :get, local: true do |f| %>
-  <%= f.label 'Search' %>
-  <%= f.text_field 'Search' %>
+  <%= f.hidden_field :top_rated %>
+  <%= f.submit 'Top Rated Movies' %>
+<% end %>
+
+<%= form_with url: user_movies_path(@user), method: :get, local: true do |f| %>
+  <%= f.label :search %>
+  <%= f.text_field :search %>
   <%= f.submit 'Search' %>
 <% end %>

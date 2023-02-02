@@ -6,7 +6,6 @@ class User < ApplicationRecord
   validates_uniqueness_of :email 
 
   def movie_search(partial)
-    movie_service = MovieService.new
-    movie_service.search(partial)
+    MovieService.search(partial)
   end
 end

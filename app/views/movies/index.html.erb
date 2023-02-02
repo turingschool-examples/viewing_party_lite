@@ -1,1 +1,12 @@
 <h1>Movies</h1>
+<% if @movies %>
+  <% @movies.each do |movie| %>
+    <ul>
+      <li>
+        <%= link_to movie.original_title, user_movies_path(@user, movie) %>
+        vote average: <%= movie.vote_average %>
+      </li>
+    </ul>
+  <% end %>
+<% end %>
+<%= button_to 'Discover Page', user_discover_index_path(@user), method: :get %>
