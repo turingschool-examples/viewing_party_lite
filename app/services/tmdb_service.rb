@@ -12,15 +12,11 @@ class TMDBService
   def self.top_rated_movies
     response = conn.get("/3/movie/top_rated", {"api_key" => ENV['tmdb_api_key']})
     data = json_parse(response)
-    
-    TopRatedMoviesFacade.top_20_rated_movies(data)
   end
 
   def self.movie_search_query(keyword)
     response = conn.get("/3/search/movie", {"api_key" => ENV['tmdb_api_key'], "include_adult" => false, "query" => keyword})
     data = json_parse(response)
-    
-    MovieSearchFacade.movie_search(data)
   end
 
   def movie_by_id(id)

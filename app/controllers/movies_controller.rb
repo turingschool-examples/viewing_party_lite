@@ -2,14 +2,12 @@ class MoviesController < ApplicationController
   def index
     @user = User.find(params[:user_id])
 
-    #move this to facade
-    load_movies = TMDBService.new
 
     if params[:q] != "top%20rated"
-      @search_results = TMDBService.movie_search_query(params[:q])
+      @search_results = MovieSearchFacade.movie_search(params[:q])
     else
       @search_results = []
-      @top_rated = TMDBService.top_rated_movies
+      @top_rated = TopRatedMoviesFacade.top_20_rated_movies
     end
   end
 
