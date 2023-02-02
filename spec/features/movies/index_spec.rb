@@ -7,6 +7,9 @@ RSpec.describe 'Movie Results Page' do
 
     stub_request(:get, "https://api.themoviedb.org/3/discover/movie?api_key=#{ENV['MOVIE_DB_KEY']}")
       .to_return(status: 200, body: File.read('./spec/fixtures/discover_movies_response.json'), headers: {})
+
+    stub_request(:get, "https://api.themoviedb.org/3/movie/id?api_key=#{ENV['MOVIE_DB_KEY']}")
+      .to_return(status: 200, body: File.read('./spec/fixtures/discover_movies_response.json'), headers: {})
   end
 
   let!(:charlie) { User.create!(name: 'Charlie', email: 'charlie_boy@gmail.com') }

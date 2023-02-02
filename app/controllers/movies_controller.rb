@@ -43,9 +43,13 @@ class MoviesController < ApplicationController
     response = conn.get('/3/movie/id?')
 
     @movie = JSON.parse(response.body, symbolize_names: true)
-    # @movie = data[:results].find do |movie|
-    #   movie[:id] == params[:movie_id]
-    # end
 
+    conn = Faraday.new(url: 'https://api.themoviedb.org') do |f|
+      f.params['api_key'] = ENV['movie_api_key']
+    end
+    response = conn.get("/3/movie/#{@movie[:id]}/credits?") 
+
+    @credits = JSON.parse(response.body, symbolize_names: true)
+    # TODO: movie hash keep_if to remove extra data
   end
 end

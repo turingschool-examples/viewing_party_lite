@@ -41,7 +41,7 @@ RSpec.describe 'Movie details page' do
       visit "/users/#{charlie.id}/movies/497"
 
       expect(page).to have_content('The Green Mile')
-      expect(page).to have_content('Vote: 8.5')
+      expect(page).to have_content('Vote Average: 8.5')
       expect(page).to have_content('Runtime: 3hr 9min')
       expect(page).to have_content('Genre: Fantasy, Drama, Crime')
       within('#summary') do
