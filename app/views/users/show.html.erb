@@ -8,7 +8,7 @@
   <div id=<%= vp.id %>>
   
   
-  <%= image_tag "https://image.tmdb.org/t/p/w500#{User.poster(vp.title)}", size: "200x300" %>
+  <%= image_tag "https://image.tmdb.org/t/p/w500#{MoviesFascade.poster(vp.title)}", size: "200x300" %>
   <br>
   <%= link_to "#{vp.title}", "/viewing_parties/#{vp.id}", method: :get, local: true %>
   <p>Start time: <%= vp.start_time %></p>

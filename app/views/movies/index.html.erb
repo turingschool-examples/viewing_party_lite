@@ -1,0 +1,6 @@
+<h1> <%= @title %> </h1>
+<% @movies.each do |movie| %>
+  <p>Title: <%= movie.title %></p>
+  <p>Rating: <%= movie.vote_average %></p>
+  <br>
+<% end %>
