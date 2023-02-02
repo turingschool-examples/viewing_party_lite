@@ -30,11 +30,5 @@ class TMDBService
   def self.get_movie_cast(movie_id)
     response = conn.get("/3/movie/#{movie_id}/credits", {"api_key" => ENV['tmdb_api_key']})
     data = json_parse(response)
-    cast = data[:cast]
-
-    cast.map do |actor|
-      MovieCast.new(actor)
-    end
-
   end
 end
