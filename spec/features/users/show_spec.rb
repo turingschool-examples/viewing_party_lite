@@ -18,15 +18,15 @@ RSpec.describe 'user dashboard' do
   it 'has a button to discover movies and when I click that button I am redirected to user discover page' do
     visit user_path(@user1)
 
-    expect(page).to have_button("Discover Movies")
-    click_button "Discover Movies"
-    
+    expect(page).to have_button('Discover Movies')
+    click_button 'Discover Movies'
+
     expect(current_path).to eq user_discover_index_path(@user1)
   end
 
   it 'has a section that lists viewing parties' do
     visit user_path(@user1)
-   
+
     within "#viewing_party#{@vp1.id}" do
       expect(page).to have_content('January 30, 2023')
       expect(page).to have_content('7:00 pm')
@@ -36,7 +36,6 @@ RSpec.describe 'user dashboard' do
       expect(page).to have_content('January 31, 2023')
       expect(page).to have_content('8:00 pm')
       expect(page).to have_content('Invited')
-
     end
   end
 end

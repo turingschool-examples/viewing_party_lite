@@ -10,6 +10,4 @@ Rails.application.routes.draw do
   end
 
   get '/register', to: 'users#new'
-
-
 end

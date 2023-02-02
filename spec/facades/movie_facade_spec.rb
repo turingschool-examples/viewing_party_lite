@@ -52,4 +52,3 @@ RSpec.describe MovieFacade do
     end
   end
 end
-  
