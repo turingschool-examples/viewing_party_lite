@@ -65,4 +65,18 @@ RSpec.describe "Movies results page (/users/:id/movies)", type: :feature do
       expect(current_path).to eq(user_discoveries_path(@user1.id))
     end
   end
+
+  describe "when visiting a movies results page, each movie title is a link to a movie details page" do
+    it 'clicking a moving takes user to the movies details page' do
+      visit user_discoveries_path(@user1.id)
+
+      click_button "Find Top Rated Movies"
+
+      expect(page).to have_link("The Godfather")
+
+      click_link "The Godfather"
+
+      expect(page).to have_content("The Godfather")
+    end
+  end
 end

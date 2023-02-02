@@ -14,7 +14,7 @@
       </tr>
       <% @search_results.each do |movie| %>
         <tr>
-          <td><%= movie.title %></td>
+          <td><%= link_to movie.title, user_movie_path(@user.id, movie.id) %></td>
           <td><%= movie.vote_avg %></td>
         </tr>
       <% end %>
@@ -32,7 +32,7 @@
       </tr>
       <% @top_rated.each do |movie| %>
         <tr>
-          <td><%= movie.title %></td>
+          <td><%= link_to movie.title, user_movie_path(@user.id, movie.id) %></td>
           <td><%= movie.vote_avg %></td>
         </tr>
       <% end %>

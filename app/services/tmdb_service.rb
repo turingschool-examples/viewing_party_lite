@@ -19,4 +19,10 @@ class TMDBService
       MovieResults.new(movie)
     end
   end
+
+  def movie_by_id(id)
+    response = conn.get("/3/movie/#{id}", {"api_key" => ENV['tmdb_api_key']})
+    movie = JSON.parse(response.body, symbolize_names: true)
+    MovieResults.new(movie)
+  end
 end
