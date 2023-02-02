@@ -7,3 +7,9 @@
 <p>Runtime: <%= @movie.time_conversion %></p>
 <p>Genre: <%= @movie.all_genres %></p>
 <p>Summary: <%= @movie.summary %></p>
+<section id="cast">
+<ul>Cast: <% @cast.each do |actor| %>
+  <li>Actor: <%= actor.name %>, Character: <%= actor.character %></li>
+<% end %>
+</ul>
+</section>

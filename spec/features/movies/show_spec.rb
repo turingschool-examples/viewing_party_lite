@@ -29,7 +29,14 @@ RSpec.describe "Movies details page (/users/:id/movies/:id)", type: :feature do
       expect(page).to have_content("Summary: Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.")
     end
 
-    it "displays the first ten cast members (characters and actors)"
+    it "displays the first ten cast members (characters and actors)" do
+      within"#cast" do
+        expect("Marlon Brando").to appear_before("Al Pacino")
+        expect("Al Pacino").to appear_before("Richard S. Castellano")
+        expect("Richard S. Castellano").to appear_before("Diane Keaton")
+        expect("Diane Keaton").to appear_before("Sterling Hayden")
+      end
+    end
 
     it "count of total reviews, shows author of review and information"
   end
