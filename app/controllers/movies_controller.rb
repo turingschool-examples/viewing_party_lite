@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
 
     if params[:top_rated]
       conn = Faraday.new(url: 'https://api.themoviedb.org') do |f|
-        f.headers['api_key'] = ENV['movie_api_key']
+        f.params['api_key'] = ENV['movie_api_key']
       end
       response = conn.get('/3/discover/movie?')
 
@@ -23,7 +23,7 @@ class MoviesController < ApplicationController
 
     else
       conn = Faraday.new(url: 'https://api.themoviedb.org') do |f|
-        f.headers['api_key'] = ENV['movie_api_key']
+        f.params['api_key'] = ENV['movie_api_key']
       end
 
       response = conn.get('/3/movie/top_rated?')
