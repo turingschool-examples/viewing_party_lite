@@ -17,9 +17,13 @@ RSpec.describe 'new view party page' do
 
   it 'displays the site title and page title at the top' do
     expect(page).to have_content("Viewing Party")
-    expect(page).to have_content("Create a Movie Party for #{@movie_detail.title}")
+    expect(page).to have_content("Create a Movie Party for '#{@movie_detail.title}'")
+  end
 
-
+  it 'has a link to return to the discover page' do
+    expect(page).to have_button("Discover Page")
+    click_button("Discover Page")
+    expect(current_path).to eq("/users/#{@user.id}/discover")
   end
 
 
