@@ -51,3 +51,11 @@ RSpec.describe 'Movies Results Page' do
 
     expect(current_path).to eq user_discover_index_path(@user)
   end
+
+  it 'shows 20 movies from a keyword search' do
+    visit user_discover_index_path(@user)
+
+    fill_in('keyword', with: 'Lego')
+    click_button('Find Movies')
+  end
+end

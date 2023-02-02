@@ -1,3 +1,6 @@
+<% if params[:q] == "keyword" %>
+  <h3>Movie results for: <%= params[:q] %></h3>
+<% end %>
 
 <button id='return-to-discover-button'>
   <%= button_to 'Discover Page', user_discover_index_path(@user), method: :get %>
