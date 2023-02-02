@@ -30,7 +30,18 @@ RSpec.describe "Discover Movies Page" do
     end
 
     # how to test that button is giving "?q=top%20rated" on button and "?q=keyword" on search field?
-    it "passes optional parameters"
+    it "passes optional parameters" do
+      click_button("Find Top Rated Movies")
 
+      expect(current_url).to include("/users/#{@user.id}/movies?q=top_rated")
+
+      # visit user_discover_index_path(@user)
+
+      # fill_in(:q, with: "Test")
+
+      # click_button("Find Movies")
+      # # require 'pry'; binding.pry
+      # expect(current_url).to include("/users/#{@user.id}/movies?q=Test")
+    end
   end
 end
