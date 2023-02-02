@@ -3,14 +3,12 @@ require 'rails_helper'
 RSpec.describe MovieService do
   before :each do
     json_response = File.read('spec/fixtures/movie.json')
-    stub_request(:get, "https://api.themoviedb.org/3/movie/238?api_key=#{ENV['MOVIE_DB_KEY']}").
-    with(
-      headers: {
-     'Accept'=>'*/*',
-     'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-     'User-Agent'=>'Faraday v2.7.4'
-      }).
-    to_return(status: 200, body: json_response, headers: {})
+    stub_request(:get, "https://api.themoviedb.org/3/movie/238?api_key=#{ENV['MOVIE_DB_KEY']}")
+    .to_return(status: 200, body: json_response, headers: {})
+  
+    json_response2 = File.read('spec/fixtures/cast.json')
+    stub_request(:get, "https://api.themoviedb.org/3/movie/238/credits?api_key=#{ENV['MOVIE_DB_KEY']}")
+    .to_return(status: 200, body: json_response2, headers: {})
   end
 
   it 'returns a movie' do
@@ -20,5 +18,13 @@ RSpec.describe MovieService do
     expect(movie).to be_a(Hash)
     expect(movie[:original_title]).to eq('The Godfather')
     expect(movie).to have_key(:id)
+  end
+
+  it 'can return the first ten actors in a movie' do
+    id = 238
+    cast = MovieFacade.top_cast(id)
+    
+    expect(cast).to be_an(Array)
+    expect(cast.count).to eq(10)
   end
 end
