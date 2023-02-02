@@ -4,7 +4,7 @@ class Movie
               :vote_average,
               :runtime,
               :genre,
-              :summary
+              :overview
 
   def initialize(movie_params)
     @id = movie_params[:id]
@@ -12,7 +12,7 @@ class Movie
     @vote_average = movie_params[:vote_average]
     @runtime = movie_params[:runtime]
     @genre = movie_params[:genre]
-    @summary = movie_params[:summary]
+    @overview = movie_params[:overview]
   end
 
   #placeholder method
