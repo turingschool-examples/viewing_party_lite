@@ -6,12 +6,9 @@ RSpec.describe 'Movie Details', type: :feature do
 
   before :each do
     #TODO: Can I remove the api interpolation?
-    movie_id = 13
-    url = "https://api.themoviedb.org/3/movie/#{movie_id}?api_key=#{ENV['moviedb_key']}&language=en-US" 
-    response = File.read("spec/fixtures/forrest.json")
-    stub_request(:get, url).to_return(status: 200, body: response)
+    movie_id = 14
 
-    @movie = MovieFacade.new(url: 13).movie
+    @movie = MovieFacade.new(movie_id).movie
     visit user_movie_path(user, movie_id)
   end
 
