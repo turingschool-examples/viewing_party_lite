@@ -15,4 +15,10 @@ class MovieResults
     @summary = movie[:overview]
     @review_count = movie[:vote_count]
   end
+
+  # def time_conversion(minutes)
+  #   hours = minutes / 60
+  #   rest = minutes % 60
+  #   "#{hours}:#{rest}" 
+  # end
 end
