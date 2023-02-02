@@ -19,7 +19,6 @@ RSpec.describe Actor do
     cast = MovieFacade.top_cast(id)
     actor = cast.first
     
-    # binding.pry
     expect(actor).to be_an(Actor)
     expect(actor.name).to eq('Marlon Brando')
     expect(actor.character).to eq('Don Vito Corleone')

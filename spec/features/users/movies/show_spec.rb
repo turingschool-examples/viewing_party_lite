@@ -22,6 +22,10 @@ RSpec.describe "Movie's detail page" do
 
         @movie_detail = MovieDetail.new(JSON.parse(json_response, symbolize_names: true))
         # require 'pry'; binding.pry
+    
+    json_response_cast = File.read('spec/fixtures/cast.json')
+    stub_request(:get, "https://api.themoviedb.org/3/movie/238/credits?api_key=#{ENV['MOVIE_DB_KEY']}")
+      .to_return(status: 200, body: json_response_cast, headers: {})
 
     visit "/users/#{@user_1.id}/movies/#{@movie_detail.id}"
   end
@@ -58,5 +62,15 @@ RSpec.describe "Movie's detail page" do
 
   it 'displays the movie runtime' do
     expect(page).to have_content("#{@movie_detail.summary}")
+  end
+  
+  it 'displays the first ten cast members' do 
+    within "#actor-3084" do #first cast member
+      expect(page).to have_content("Marlon Brando as Don Vito Corleone")
+    end
+    
+    within "#actor-3091" do #tenth cast member
+      expect(page).to have_content("Al Lettieri as Virgil 'The Turk' Sollozzo")
+    end
   end
 end
