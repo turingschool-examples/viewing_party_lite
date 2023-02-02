@@ -16,4 +16,9 @@ class MovieService
   def image(poster_path)
     "https://image.tmdb.org/t/p/h100#{poster_path}"
   end
+
+  def search(string)
+    response = @conn.get("/3/search/movie?query=#{string}&api_key=#{ENV['movie_api_key']}")
+    JSON.parse(response.body, symbolize_names: true)
+  end
 end
