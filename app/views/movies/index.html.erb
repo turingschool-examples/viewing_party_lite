@@ -1,8 +1,9 @@
 <h3>Top 20 Rated Movies</h3>
+<%= button_to 'Discover Page', user_discover_index_path(@user), method: :get %>
 <ol>
 <% @movies.each do |movie| %>
 
-  <li><%= movie[:title] %> Vote Average: <%= movie[:vote_average] %></li>
+  <li><%= link_to movie[:title], user_movie_path(@user, movie[:id]) %> | Vote Average: <%= movie[:vote_average] %></li>
   
 <% end %>
 </ol>
