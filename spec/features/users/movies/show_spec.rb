@@ -40,7 +40,10 @@ RSpec.describe 'The Movie Details (Show) Page', type: :feature do
       expect(page).to have_content("Summary: Robot Chicken: Star Wars Episode III, directed by Chris McKay, combines the satirical sensibilities of Green and Matthew Senreich's Robot Chicken with characters of the Star Wars universe.")
     end
 
-    xit 'will list things' do
+    it 'lists the thespians for a given movie' do
+      visit user_movie_path(user1, movie1)
+
+      expect(page).to have_content("Cast:")
     end
   end
 end

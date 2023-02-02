@@ -5,6 +5,7 @@
 </div>
 
 <div id="movie-information">
+  <h3>Movie Information</h3>
   <p>Vote Average: <%= @show_movie.vote_average %></p>
   <p>Runtime: <%= @show_movie.runtime %></p>
   <p>Genres:<br>
@@ -13,4 +14,14 @@
     <% end %>
   </p>
   <p>Summary: <%= @show_movie.overview %></p>
+</div>
+
+<div id="cast-information">
+  <h3>Cast Information</h3>
+  <% @actors.each do |actor|  %>
+    <p>
+    <%= actor.name %><br>
+    Popularity Rating: <%= actor.popularity.round(1) %><br>
+    </p>
+  <% end %>
 </div>
