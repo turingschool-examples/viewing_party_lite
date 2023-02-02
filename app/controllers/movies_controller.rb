@@ -3,7 +3,7 @@ class MoviesController < ApplicationController
     @user = User.find(params[:id])
 
     if params[:top_rated]
-      results = MoviesFacade.top_20(params[:query])
+      results = MoviesFacade.search_results(params[:query])
       @top_20 = results.first(20)
 
       if results.empty?
