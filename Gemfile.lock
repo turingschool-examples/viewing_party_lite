@@ -74,6 +74,10 @@ GEM
     date (3.3.3)
     diff-lcs (1.5.0)
     docile (1.4.0)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     erubi (1.12.0)
     execjs (2.8.1)
     faraday (2.5.2)
@@ -263,6 +267,7 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   capybara
   coffee-rails (~> 4.2)
+  dotenv-rails
   faraday
   figaro
   jbuilder (~> 2.5)
