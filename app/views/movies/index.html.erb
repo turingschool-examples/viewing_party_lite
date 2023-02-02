@@ -1,7 +1,7 @@
 <% @results.each do |movie| %>
-  <div id="movie_<%= movie[:id] %>">
-    <p>Title: <%= link_to movie[:title], user_movie_path(@user, movie[:id]) %> </p>
-    <p>Vote Average: <%= movie[:vote_average] %> </p>
+  <div id="movie_<%= movie.id %>">
+    <p>Title: <%= link_to movie.title, user_movie_path(@user, movie.id) %> </p>
+    <p>Vote Average: <%= movie.vote_average %> </p>
     <br>
   </div>
 <% end %>
