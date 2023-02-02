@@ -18,6 +18,7 @@ class MoviesFacade
   end
 
   def self.movie_details(movie) 
-    MoviesService.find_movie_details(movie)
+    found_movie = MoviesService.find_movie_details(movie)
+    MovieDetail.new(found_movie)
   end
 end

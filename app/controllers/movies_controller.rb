@@ -18,14 +18,14 @@ class MoviesController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    movie = params[:movie_id]
+    @movie_id = params[:movie_id]
 
-    @movie = MoviesFacade.movie_details(movie) 
+    @movie = MoviesFacade.movie_details(@movie_id) 
 
     conn = Faraday.new(url: 'https://api.themoviedb.org') do |f|
       f.params['api_key'] = ENV['movie_api_key']
     end
-    response = conn.get("/3/movie/#{@movie[:id]}/credits?") 
+    response = conn.get("/3/movie/#{@movie_id}/credits?") 
     
     @credits = JSON.parse(response.body, symbolize_names: true)
 
