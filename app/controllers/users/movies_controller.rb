@@ -4,21 +4,16 @@ class Users::MoviesController < ApplicationController
     @search_term = params[:title_search]
 
     if @search_term
-      @movies = movie_service.search_movies(@search_term)
+      @movies = MovieFacade.new.search_movies(@search_term)
     else
-      @movies = movie_service.get_top_movies
+      @movies = MovieFacade.new.get_top_movies
     end
     @user = User.find(params[:user_id])
   end
 
   def show
-    @movie = MovieFacade.new(url: params[:id]).movie
+    @movie = MovieFacade.new(params[:id]).movie
     @user = User.find(params[:user_id])
   end
-
-  private
-
-  def movie_service
-    MovieService.new
-  end
 end
+
