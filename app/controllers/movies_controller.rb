@@ -3,12 +3,8 @@ class MoviesController < ApplicationController
     @user = User.find(params[:id])
 
     if params[:top_rated]
-      data = MoviesService.movie_search 
 
-      results = data[:results].find_all do |movie|
-        movie[:title].downcase.include?(params[:query].downcase)
-      end
-
+      results = MoviesFacade.top_20(params[:query])
       @top_20 = results.first(20)
 
       if results.empty?
