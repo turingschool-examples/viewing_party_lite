@@ -27,7 +27,8 @@ RSpec.describe 'discover index page' do
     end
 
     it 'search field submit button routes to results page /users/:user_id/movies' do
-      click_button('Search')
+      fill_in 'Search', with: 'Air'
+      click_button 'Search'
 
       expect(current_path).to eq(user_movies_path(@user1))
     end
