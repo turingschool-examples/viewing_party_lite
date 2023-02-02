@@ -3,12 +3,7 @@ class MoviesController < ApplicationController
     @user = User.find(params[:id])
 
     if params[:top_rated]
-      conn = Faraday.new(url: 'https://api.themoviedb.org') do |f|
-        f.params['api_key'] = ENV['movie_api_key']
-      end
-      response = conn.get('/3/discover/movie?')
-
-      data = JSON.parse(response.body, symbolize_names: true)
+      data = MoviesService.movie_search 
 
       results = data[:results].find_all do |movie|
         movie[:title].downcase.include?(params[:query].downcase)
