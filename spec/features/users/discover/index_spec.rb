@@ -18,10 +18,10 @@ RSpec.describe "Discover Movies Page" do
     
     it "search by movie title text field and button" do
       within "#keyword-search" do
-        expect(page).to have_field(:keyword)
+        expect(page).to have_field(:q)
         expect(page).to have_button("Find Movies")
         
-        fill_in(:keyword, with: "Test")
+        fill_in(:q, with: "Test")
 
         click_button("Find Movies")
         
