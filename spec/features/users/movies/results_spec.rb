@@ -51,16 +51,19 @@ RSpec.describe "movies results page" do
     within "#search_results-1" do
       expect(page).to have_content("The Godfather")
       expect(page).to have_content("8.7")
+      expect(page).to have_link("The Godfather")
     end
 
     within "#search_results-7" do
       expect(page).to have_content("Megalodon!: Great White Godfather")
       expect(page).to have_content("0")
+      expect(page).to have_link("Megalodon!: Great White Godfather")
     end
 
     within "#search_results-19" do
       expect(page).to have_content("Francis and The Godfather")
       expect(page).to have_content("0")
+      expect(page).to have_link("Francis and The Godfather")
     end
 
   end
