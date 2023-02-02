@@ -5,7 +5,6 @@ RSpec.describe 'Movie Details', type: :feature do
   let!(:user) { create(:user) }
 
   before :each do
-    #TODO: Can I remove the api interpolation?
     movie_id = 14
 
     @movie = MovieFacade.new(movie_id).movie
@@ -22,8 +21,9 @@ RSpec.describe 'Movie Details', type: :feature do
 
       it 'has a button to return to the Discover Page' do
         expect(page).to have_button "Discover"
+        click_button "Discover"
 
-        expect(current_path).to eq discover_user_path
+        expect(current_path).to eq discover_user_path(user)
       end
     end
 
@@ -37,9 +37,9 @@ RSpec.describe 'Movie Details', type: :feature do
           expect(page).to have_content "Genre: #{@movie.genres}"
           expect(page).to have_content "Summary: #{@movie.overview}"
 
-          #@movie.cast.each do |cast_member|
-          #  expect(page).to have_content cast_member
-          #end
+          @movie.cast.each do |cast_member|
+            expect(page).to have_content cast_member
+          end
 
           #expect(page).to have_content "Total Reviews: #{@movie.review_total}"
           #@movie.reviewers.each do |reviewer|
