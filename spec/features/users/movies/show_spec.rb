@@ -26,6 +26,10 @@ RSpec.describe "Movie's detail page" do
     json_response_cast = File.read('spec/fixtures/cast.json')
     stub_request(:get, "https://api.themoviedb.org/3/movie/238/credits?api_key=#{ENV['MOVIE_DB_KEY']}")
       .to_return(status: 200, body: json_response_cast, headers: {})
+      
+    json_response_reviews = File.read('spec/fixtures/reviews.json')
+    stub_request(:get, "https://api.themoviedb.org/3/movie/238/reviews?api_key=#{ENV['MOVIE_DB_KEY']}")
+      .to_return(status: 200, body: json_response_reviews, headers: {})
 
     visit "/users/#{@user_1.id}/movies/#{@movie_detail.id}"
   end

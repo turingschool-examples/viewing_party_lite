@@ -25,9 +25,12 @@ class MovieFacade
   end
   
   def self.reviews(id)
-    revs = ReviewService.get_reviews(id)
-    revs.map do |data|
-      Review.new(data)
+    hash = MovieService.get_reviews(id)
+    revs = hash[:results]
+    # binding.pry
+    revs.map do |response|
+      Review.new(response)
+      binding.pry
     end
   end
 end
