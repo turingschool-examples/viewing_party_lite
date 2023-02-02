@@ -8,4 +8,9 @@ class Movie
     @title = movie_params["title"]
     @vote_average = movie_params["vote_average"]
   end
+
+  #placeholder method
+  def image
+    'image'
+  end
 end
