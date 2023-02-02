@@ -4,7 +4,6 @@ class MovieSearchService
     JSON.parse(conn(query).get.body, symbolize_names: true)
   end
 
-
   private
 
   def self.conn(query)

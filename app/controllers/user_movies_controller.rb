@@ -1,5 +1,3 @@
-# require './app/facades/movie_facade'
-
 class UserMoviesController < ApplicationController
   def details
     @user = User.find(params[:id])
