@@ -9,4 +9,9 @@ end -->
   <%= button_to "Discover Page", user_discover_index_path(@user), method: :get %>
 </div>
 
-<%= @top_rated_movies %>
+<% @top_rated_movies[:results].each do |movie| %>
+  <b><%= link_to movie[:title] %></b><br>
+  Vote Avg: <%= movie[:vote_average] %><br>
+  <p></p>
+<% end %>
+
