@@ -15,6 +15,6 @@ class MovieFacade
 
   def self.get_details(movie_id)
     data = MovieService.new.movie_details(movie_id)
-    Details.new(data)
+    Detail.new(data)
   end
 end
