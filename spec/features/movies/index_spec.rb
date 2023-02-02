@@ -6,7 +6,7 @@ RSpec.describe 'Movie results page' do
   end
 
   it 'lists top 20 rated movies when user clicks find top rated movies from dash' do
-    stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=bac9a29cb5bc47e3f4c7468d07b0aafd")
+    stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['api_key']}")
         .to_return(status: 200, body: File.read('spec/fixtures/top_rated_movies.json'))
 
     visit user_discover_index_path(@user1)
@@ -21,7 +21,7 @@ RSpec.describe 'Movie results page' do
   end
   
   it 'populates relevant results given a keyword search from dashboard' do
-    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=bac9a29cb5bc47e3f4c7468d07b0aafd&include_adult=false&query=The%20Matrix")
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['api_key']}&include_adult=false&query=The%20Matrix")
         .to_return(status: 200, body: File.read('spec/fixtures/search_for_the_matrix.json'))
 
     visit user_discover_index_path(@user1)
@@ -34,7 +34,7 @@ RSpec.describe 'Movie results page' do
   end
 
   it 'has a link back to the discover page' do
-    stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=bac9a29cb5bc47e3f4c7468d07b0aafd")
+    stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['api_key']}")
         .to_return(status: 200, body: File.read('spec/fixtures/top_rated_movies.json'))
 
 
@@ -44,7 +44,7 @@ RSpec.describe 'Movie results page' do
   end
 
   it 'links each movie to that leads to the movie details page' do
-        stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=bac9a29cb5bc47e3f4c7468d07b0aafd")
+        stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['api_key']}")
         .to_return(status: 200, body: File.read('spec/fixtures/top_rated_movies.json'))
 
 

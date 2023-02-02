@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe 'movie details page' do
   before(:each) do
     @user1 = User.create!(name: 'John Doe', email: 'johndoe@ymail.com')
-    stub_request(:get, "https://api.themoviedb.org/3/movie/238?api_key=bac9a29cb5bc47e3f4c7468d07b0aafd")
+    stub_request(:get, "https://api.themoviedb.org/3/movie/238?api_key=#{ENV['api_key']}")
       .to_return(status: 200, body: File.read('spec/fixtures/movie_details_godfather238.json'), headers: {})
-    stub_request(:get, "https://api.themoviedb.org/3/movie/238/credits?api_key=bac9a29cb5bc47e3f4c7468d07b0aafd")
+    stub_request(:get, "https://api.themoviedb.org/3/movie/238/credits?api_key=#{ENV['api_key']}")
       .to_return(status: 200, body: File.read('spec/fixtures/cast_details.json'))
-    stub_request(:get, "https://api.themoviedb.org/3/movie/238/reviews?api_key=bac9a29cb5bc47e3f4c7468d07b0aafd")
+    stub_request(:get, "https://api.themoviedb.org/3/movie/238/reviews?api_key=#{ENV['api_key']}")
       .to_return(status: 200, body: File.read('spec/fixtures/reviews.json'))
   end
 
