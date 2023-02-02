@@ -10,17 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_02_190750) do
+ActiveRecord::Schema.define(version: 2023_02_02_233451) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "movies", force: :cascade do |t|
-    t.string "title"
-    t.integer "runtime"
-    t.string "genre"
-    t.text "summary"
-  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -30,9 +23,9 @@ ActiveRecord::Schema.define(version: 2023_02_02_190750) do
 
   create_table "viewing_parties", force: :cascade do |t|
     t.string "duration"
-    t.datetime "party_date"
-    t.bigint "movie_id"
-    t.index ["movie_id"], name: "index_viewing_parties_on_movie_id"
+    t.integer "host_id"
+    t.date "party_date"
+    t.time "party_time"
   end
 
   create_table "viewing_party_users", force: :cascade do |t|
@@ -42,7 +35,6 @@ ActiveRecord::Schema.define(version: 2023_02_02_190750) do
     t.index ["viewing_party_id"], name: "index_viewing_party_users_on_viewing_party_id"
   end
 
-  add_foreign_key "viewing_parties", "movies"
   add_foreign_key "viewing_party_users", "users"
   add_foreign_key "viewing_party_users", "viewing_parties"
 end
