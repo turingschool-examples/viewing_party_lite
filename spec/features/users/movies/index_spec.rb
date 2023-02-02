@@ -104,5 +104,20 @@ RSpec.describe 'discover page', type: :feature do
 
       expect(current_path).to eq discover_user_path(u1)
     end
+
+    it "has a link to each movie's show page" do
+      stub_request(:get, 'https://api.themoviedb.org/3/movie/top_rated?api_key=c4d6d86f378d33bacc04481f7e6380b2&language=en')
+        .to_return(status: 200,
+                    body: File.read('spec/fixtures/tmdb_top_response.json'),
+                    headers: {})
+
+      visit discover_user_path(u1)
+
+      click_button 'Discover Top Rated Movies'
+
+      within '#results' do
+        expect(page).to have_link(top.keys[0], href: user_movie_path(u1, 238, type: 'show'))
+      end
+    end
   end
 end
