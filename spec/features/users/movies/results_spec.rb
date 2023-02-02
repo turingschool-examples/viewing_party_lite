@@ -64,6 +64,8 @@ RSpec.describe "movies results page" do
       expect(page).to have_content("Francis and The Godfather")
       expect(page).to have_content("0")
       expect(page).to have_link("Francis and The Godfather")
+      click_link("Francis and The Godfather")
+      save_and_open_page
     end
 
   end
