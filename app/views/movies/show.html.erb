@@ -20,4 +20,10 @@
     <font size="+1"><%= @movie.summary %></font>
 </div>
 
-
+<br>
+<h4>Cast</h4>
+<% @cast.each do |actor| %>
+  <div id="actor-<%=actor.id%>">
+    <p><%= actor.name %> as <%= actor.character %></p>
+  </div>
+<% end %>
