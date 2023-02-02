@@ -16,6 +16,12 @@ class MovieFacade
 
   def self.movie_details(movie_id)
     Movie.new(MovieService.movie_details(movie_id))
-    # movie = movie_data
+  end
+
+  def self.review_details(movie_id)
+    review_data = MovieService.review_details(movie_id)
+    review = review_data[:results].map do |review_data|
+      Review.new(review_data)
+    end
   end
 end

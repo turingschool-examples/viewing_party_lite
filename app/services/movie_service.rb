@@ -21,7 +21,6 @@ class MovieService
   def self.movie_details(movie_id)
     response = conn.get("/3/movie/#{movie_id}")
     (parse_json(response))
- 
   end
   
   def self.actors(movie_id)
@@ -31,8 +30,6 @@ class MovieService
 
   def self.review_details(movie_id)
     response = conn.get("/3/movie/#{movie_id}/reviews")
-    parse_json(response)[:results].map do |review_data|
-      Review.new(review_data)
-    end
+    parse_json(response)
   end
 end
