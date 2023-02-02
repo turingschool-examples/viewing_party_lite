@@ -20,7 +20,7 @@ class MovieService
   end
 
   def movie
-    Movie.new(JSON.parse(service.get("/3/movie/#{@url}").body, symbolize_names: true))
+    service.get("/3/movie/#{@url}").body
   end
 
   private
