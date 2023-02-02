@@ -1,4 +1,4 @@
-<% if params[:q] == "keyword" %>
+<% unless params[:q] == "top_rated" %>
   <h3>Movie results for: <%= params[:q] %></h3>
 <% end %>
 
