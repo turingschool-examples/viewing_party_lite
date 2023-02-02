@@ -12,7 +12,7 @@
 <% if @search_results %>
   <% @search_results.each.with_index(1) do |film, i| %>
     <div id="search_results-<%= i %>">
-      <%= "#{film["title"]} #{film["vote_average"]}" %>
+      <%= link_to "#{film["title"]} #{film["vote_average"]}", user_movie_path(@user.id, film["id"]) %>
     </div>
   <% end %>
 <% end %>
