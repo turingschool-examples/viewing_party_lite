@@ -5,4 +5,9 @@ class MoviesFacade
       movie[:title].downcase.include?(query.downcase)
     end
   end
+
+  def self.top_movies 
+    data = MoviesService.top_rated
+    data[:results].first(20)
+  end
 end

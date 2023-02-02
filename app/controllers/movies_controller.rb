@@ -3,7 +3,6 @@ class MoviesController < ApplicationController
     @user = User.find(params[:id])
 
     if params[:top_rated]
-
       results = MoviesFacade.top_20(params[:query])
       @top_20 = results.first(20)
 
@@ -11,17 +10,8 @@ class MoviesController < ApplicationController
         flash[:notice] = 'No results found. Please try another title.'
         redirect_to discover_user_path(@user)
       end
-
     else
-      conn = Faraday.new(url: 'https://api.themoviedb.org') do |f|
-        f.params['api_key'] = ENV['movie_api_key']
-      end
-
-      response = conn.get('/3/movie/top_rated?')
-
-      data = JSON.parse(response.body, symbolize_names: true)
-
-      @top_20 = data[:results].first(20)
+      @top_20 = MoviesFacade.top_movies
     end
   end
 
