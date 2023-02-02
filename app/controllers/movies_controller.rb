@@ -36,5 +36,16 @@ class MoviesController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+
+    conn = Faraday.new(url: 'https://api.themoviedb.org') do |f|
+      f.params['api_key'] = ENV['movie_api_key']
+    end
+    response = conn.get('/3/discover/movie?')
+
+    data = JSON.parse(response.body, symbolize_names: true)
+
+    @movie = data[:results].find do |movie|
+      movie[:id] == params[:movie_id]
+    end
   end
 end
