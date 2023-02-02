@@ -1,0 +1,32 @@
+require 'rails_helper'
+
+RSpec.describe 'The new viewing party page' do
+  it 'lists the movie title above the form' do
+    visit "/users/#{charlie.id}/movies/497/viewing-party/new"
+
+    expect(page).to have_content('The Green Mile')
+  end
+
+  describe 'happy path' do
+    it 'creates a new viewing party with default time and no other users' do
+      visit "/users/#{charlie.id}/movies/497/viewing-party/new"
+
+      within('#form') do
+        expect(page).to have_content('189')
+        fill_in 'day', with: Date.now
+        fill_in 'start_time', with: '7:00'
+        click_button 'Create Party'
+      end
+      expect(current_path).to eq("/users/#{charlie.id}")
+    end
+    
+    it 'creates viewing party with custom duration and no other users'
+    # fill_in 'party_duration', with: '200'
+    it 'creates viewing party with default duration and other users'
+    it 'shows up on other users dashboards (show pages)'
+  end
+
+  describe 'sad path' do
+    it 'does not create viewing party with duration less than movie runtime'
+  end
+end
