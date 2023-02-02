@@ -4,9 +4,9 @@ RSpec.describe "Movies Index" do
   before :each do
     @user = User.create!(name: "John", email: "john@example.com")
   end
-
+  # d15da2c6fe48d15a51f43f47b05c0ed1
   it 'has a link to return to discover page' do
-    stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=d15da2c6fe48d15a51f43f47b05c0ed1&language=en-US&page=1").
+    stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['api_key']}&language=en-US&page=1").
       to_return(status: 200, body: File.read('spec/fixtures/top_movies_response.json'), headers: {})
     visit user_movies_path(@user)
 
@@ -18,7 +18,7 @@ RSpec.describe "Movies Index" do
   end
 
   it 'Returns the top 20 movies' do
-    stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=d15da2c6fe48d15a51f43f47b05c0ed1&language=en-US&page=1").
+    stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['api_key']}&language=en-US&page=1").
       to_return(status: 200, body: File.read('spec/fixtures/top_movies_response.json'), headers: {})
     visit user_discover_index_path(@user)
     click_on "Find Top Rated Movies"

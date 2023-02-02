@@ -1,12 +1,17 @@
 class MoviesController < ApplicationController
   def index
+    WebMock.disable!
     @user = User.find(params[:user_id])
+
     if(params[:keyword])
-      conn = Faraday.get("https://api.themoviedb.org/3/search/movie?api_key=#{ENV['api_key']}&language=en-US&query=#{params[:keyword]}&page=1&include_adult=false")
+      @search_movies = MovieFacade.search_results(params[:keyword])
     else
-      conn = Faraday.get("https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['api_key']}&language=en-US&page=1")
+      @top_movies = MovieFacade.top_rated_results
     end
-    data = JSON.parse(conn.body, symbolize_names: true)
-    @movies = data[:results]
+    
+  end
+
+  def show
+    @movie = MovieFacade.all_movie_info(params[:id])
   end
 end
