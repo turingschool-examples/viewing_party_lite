@@ -1,6 +1,6 @@
 class MovieSearchFacade
   def self.movie_search(keyword)
-    data = TMDBService.movie_search_query(keyword)
+    data = TMDBService.get_movie_search_query(keyword)
     results = data[:results]
     results[0..19].map do |movie|
       MovieResults.new(movie)

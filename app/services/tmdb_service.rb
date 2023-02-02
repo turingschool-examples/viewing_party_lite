@@ -8,18 +8,17 @@ class TMDBService
 #   response = conn.get(URI, {"api_key" => ENV['tmdb_api_key']})
 # end
 
-
-  def self.top_rated_movies
+  def self.get_top_rated_movies
     response = conn.get("/3/movie/top_rated", {"api_key" => ENV['tmdb_api_key']})
     data = json_parse(response)
   end
 
-  def self.movie_search_query(keyword)
+  def self.get_movie_search_query(keyword)
     response = conn.get("/3/search/movie", {"api_key" => ENV['tmdb_api_key'], "include_adult" => false, "query" => keyword})
     data = json_parse(response)
   end
 
-  def movie_by_id(id)
+  def self.get_movie_by_id(id)
     response = conn.get("/3/movie/#{id}", {"api_key" => ENV['tmdb_api_key']})
     movie = json_parse(response)
     MovieResults.new(movie)
