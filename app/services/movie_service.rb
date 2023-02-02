@@ -13,9 +13,7 @@ class MovieService
     else
       response = conn.get("/3/search/movie", { query: movie_query, include_adult: false } )
     end
-    parse_json(response)[:results].map do |movie_data|
-      Movie.new(movie_data)
-    end
+    parse_json(response)
   end
 
   def self.movie_details(movie_id)

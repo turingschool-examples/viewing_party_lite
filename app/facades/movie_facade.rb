@@ -24,4 +24,11 @@ class MovieFacade
       Review.new(review_data)
     end
   end
+
+  def self.discover_movie(movie_query)
+    movies_data = MovieService.discover_movie(movie_query)
+    movies = movies_data[:results].map do |movie_data|
+      Movie.new(movie_data)
+    end
+  end
 end
