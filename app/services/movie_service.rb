@@ -1,6 +1,5 @@
 class MovieService 
 
-  #TODO: Inject default?
   def initialize(url = '')
     @url = url
   end
@@ -20,7 +19,9 @@ class MovieService
   end
 
   def movie
-    service.get("/3/movie/#{@url}").body
+   movie_params = JSON.parse(service.get("/3/movie/#{@url}").body, symbolize_names: true)
+   movie_params = movie_params.merge(JSON.parse(service.get("/3/movie/#{@url}/credits").body, symbolize_names: true))
+   movie_params = movie_params.merge(JSON.parse(service.get("/3/movie/#{@url}/reviews").body, symbolize_names: true))
   end
 
   private
@@ -36,13 +37,12 @@ class MovieService
   def service_params
     {
       url: base_uri,
-      params: {api_key: ENV["moviedb_key"],
-      language: "en-US"}
+      params: { api_key: ENV["moviedb_key"] }
     }
   end
 
   def build_movie_objects(response)
-    JSON.parse(response.body)["results"].map do |movie|
+    JSON.parse(response.body, symbolize_names: true)[:results].map do |movie|
       Movie.new(movie)
     end
   end
