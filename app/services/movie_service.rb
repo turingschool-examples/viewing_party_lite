@@ -4,6 +4,11 @@ class MovieService
     parse_body(response)
   end
 
+  def self.keyword_search(keyword)
+    response = conn.get("search/movie?query=#{keyword}")
+    parse_body(response)
+  end
+
   def self.conn
     Faraday.new(
       url: 'https://api.themoviedb.org/3',
