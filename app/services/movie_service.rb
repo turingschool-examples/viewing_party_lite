@@ -1,7 +1,7 @@
 class MovieService 
 
   #TODO: Inject default?
-  def initialize(url)
+  def initialize(url = '')
     @url = url
   end
 
@@ -12,7 +12,7 @@ class MovieService
   end
 
   def movie
-    Movie.new(service.get("/3/movie/#{@url}").body)
+    Movie.new(JSON.parse(service.get("/3/movie/#{@url}").body, symbolize_names: true))
   end
 
   private
