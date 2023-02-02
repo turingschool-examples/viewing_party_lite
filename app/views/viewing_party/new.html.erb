@@ -2,7 +2,7 @@
 <%= link_to 'Discover Page', user_discover_index_path(@user) %>
 <div id='party-details'>
     <%= form_with model: @viewing_party, url: user_movie_viewing_party_index_path(@user, @movie.id), local: true do |f| %>
-      <center><p style="border: solid; padding: 20px; width: 400px; height: 300px; ">
+      <center><p style="border: solid; padding: 20px; width: 50%; height: 300px; ">
         Viewing Party Details
         <br><br>
         Movie Title
@@ -16,6 +16,11 @@
         <br><br>
         <%= f.label :start_time, 'Start Time' %>
         <%= f.time_field :start_time %>
+        <br><br>
+        <% @users.each do |user|  %>
+          <%= f.check_box :invitee %>
+          <%= f.label :invitee, "#{user.name} (#{user.email})" %>
+        <% end %>
         <br><br>
         <%= f.submit "Create Party"%>
       </p></center>
