@@ -4,6 +4,12 @@ class Users::MoviesController < ApplicationController
     @movies = parse(display_results)
   end
 
+  def show
+    @user = User.find(params[:user_id])
+    @movie = parse(find_movie(params[:id])) 
+    @runtime = time_conversion(@movie[:runtime])
+  end
+
   private
   def api_call
     Faraday.new(url: "https://api.themoviedb.org") do |faraday|
@@ -25,6 +31,16 @@ class Users::MoviesController < ApplicationController
 
   def top_rated_movies
     api_call.get("3/movie/top_rated?language=en-US&limit=20")
+  end
+
+  def find_movie(movie_id)
+    api_call.get("3/movie/#{movie_id}")
+  end
+
+  def time_conversion(minutes)
+    hours = minutes / 60
+    rest = minutes % 60
+    return "#{hours}:#{rest}" 
   end
 
   def parse(response)
