@@ -23,5 +23,6 @@ RSpec.describe Actor do
     expect(actor).to be_an(Actor)
     expect(actor.name).to eq('Marlon Brando')
     expect(actor.character).to eq('Don Vito Corleone')
+    expect(actor.id).to eq(3084)
   end
 end
