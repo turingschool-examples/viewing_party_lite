@@ -1,9 +1,13 @@
-<center><h3><%= "#{@user.name}'s Dashboard" %></h3></center>
+<div class="sub-header">
+  <%= "#{@user.name}'s Dashboard" %></h3></center>
+</div>
+
 <div id="discover_link">
   <center><%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %></center>
 </div>
 
+
 <div id='viewing_parties'>
-  <h2>My Viewing Parties</h2>
+  <h3> My Viewing Parties</h3>
   <%# this is where our Dashboard:Viewing Parties user story info will go%>
 </div>

@@ -1,8 +1,10 @@
 <h3><%= button_to 'Create a New User', register_path, method: :get %></h3>
 
 <div id='users'>
-  <h4>Existing Users</h4>
-  <% @users.each do |user| %>
-    <p><%= link_to "#{user.name}", user_path(user) %><p>
-  <% end %>
+  <div class="sub-header">
+    <h4>Existing Users</h4>
+  </div>
+    <% @users.each do |user| %>
+      <center><p><%= link_to "#{user.name}", user_path(user) %><p></center>
+    <% end %>
 </div>

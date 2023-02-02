@@ -1,4 +1,7 @@
-<center><h3>Discover Movies</h3></center><br>
+<div class="sub-header">
+  Discover Movies
+</div>
+  
 <div id="top_rated">
   <%= button_to "Find Top Rated Movies", "/users/#{@user.id}/movies", params: {q: 'top rated'}, method: :get %>
 </div>
