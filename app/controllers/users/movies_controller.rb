@@ -7,6 +7,7 @@ class Users::MoviesController < ApplicationController
   def show
     #TODO: Add user?
     @movie = MovieFacade.new(url: params[:id]).movie
+    @user = User.find(params[:user_id])
   end
 
   private
