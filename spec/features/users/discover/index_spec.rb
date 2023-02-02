@@ -20,6 +20,9 @@ RSpec.describe 'Discover Index Page', type: :feature do
     end
 
     it 'brings you to the movie results page and displays the top rated movies' do
+      stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key&language=en-US&limit=20").
+      to_return(status: 200, body: File.read('spec/fixtures/top_rated_movies_response.json'), headers: {})
+
       visit user_discover_index_path(user1)
 
       click_button "Top Rated Movies"
@@ -36,6 +39,9 @@ RSpec.describe 'Discover Index Page', type: :feature do
     end
 
     it 'will take me to the movies results page (index) when I fill in the field and click submit' do
+      stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key&language=en-US&limit=20").
+      to_return(status: 200, body: File.read('spec/fixtures/top_rated_movies_response.json'), headers: {})
+      
       visit user_discover_index_path(user1)
 
       fill_in(:title, with: "Fight Club")

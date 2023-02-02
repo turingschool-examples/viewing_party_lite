@@ -7,6 +7,9 @@ RSpec.describe 'The Movie Results Index', type: :feature do
   
   describe 'the discover page button' do
     it 'takes a user back to their discover page' do
+      stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key&language=en-US&limit=20").
+      to_return(status: 200, body: File.read('spec/fixtures/top_rated_movies_response.json'), headers: {})
+
       visit user_movies_path(user1)
       
       expect(page).to have_button("Discover Page")
@@ -21,10 +24,13 @@ RSpec.describe 'The Movie Results Index', type: :feature do
 
   describe 'the top rated movie results' do
     it 'will display the top 20 rated movies when button pressed' do
+      stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key&language=en-US&limit=20").
+      to_return(status: 200, body: File.read('spec/fixtures/top_rated_movies_response.json'), headers: {})
+
       visit user_discover_index_path(user1)
 
       click_button("Top Rated Movies")
-      save_and_open_page
+
       expect(current_path).to eq(user_movies_path(user1))
 
       # expect page to show top 20 movies from movieAPI
