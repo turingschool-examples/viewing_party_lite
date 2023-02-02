@@ -1,18 +1,23 @@
-<center><h3><%= @movie.title %></h3></center>
+<div class="sub-header">
+  <%= @movie.title %>
+</div>
 
 <center><p><%= button_to 'Discover Page', "/users/#{@user.id}/discover", method: :get %></p></center>
 <center><p><%= button_to "Create a Viewing Party for the #{@movie.title}", "/users/#{@user.id}/movies/#{@movie.id}/viewing_parties/new", method: :get %></p></center>
 
-<div class ="row">
-  <div class="column">Vote: <%= @movie.vote_average %></div>
-  <div class="column">Runtime: <%= @movie.runtime %>minutes</div>
-  <div class="column">Genre: <% @movie.genres.each do |genre| %>
-    <li><%= genre[:name] %></li>
-  <% end %></div>
-<div>
+<div class="content">
+  <div class="row">
+    <div class="column">Vote: <%= @movie.vote_average %></div>
+    <div class="column">Runtime: <%= @movie.runtime %>minutes</div>
+    <div class="column">Genre: <% @movie.genres.each do |genre| %>
+      <li><%= genre[:name] %></li>
+    <% end %></div>
+  <div>
 
-<br><br><br>
-<p>Summary</p>
-<%= @movie.summary %>
+  <hr>
+
+  <b><p>Summary</p></b>
+    <font size="+1"><%= @movie.summary %></font>
+</div>
 
 
