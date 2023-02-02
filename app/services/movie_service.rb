@@ -1,14 +1,41 @@
 class MovieService
+
+  def self.conn
+    Faraday.new(url: "https://api.themoviedb.org", params: {api_key: ENV['api_key']})
+  end
+
+  def self.parse_json(response)
+    JSON.parse(response.body, symbolize_names: true)
+  end
+
   def self.discover_movie(movie_query)
-    conn = Faraday.new(url: "https://api.themoviedb.org", params: {api_key: ENV['api_key']})
     if movie_query == 'top rated'
       response = conn.get("/3/movie/top_rated")
     else
       response = conn.get("/3/search/movie", { query: movie_query, include_adult: false } )
     end
-    data = JSON.parse(response.body, symbolize_names: true)
-    @movies = data[:results].map do |movie_data|
+    parse_json(response)[:results].map do |movie_data|
       Movie.new(movie_data)
+    end
+  end
+
+  def self.movie_details(movie_id)
+    response = conn.get("/3/movie/#{movie_id}")
+    Movie.new(parse_json(response))
+ 
+  end
+  
+  def self.actors(movie_id)
+    response = conn.get("/3/movie/#{movie_id}/credits")
+    parse_json(response)[:cast].map do |actor_data|
+      Actor.new(actor_data)
+    end
+  end
+
+  def self.review_details(movie_id)
+    response = conn.get("/3/movie/#{movie_id}/reviews")
+    parse_json(response)[:results].map do |review_data|
+      Review.new(review_data)
     end
   end
 end
