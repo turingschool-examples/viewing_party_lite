@@ -22,7 +22,7 @@ RSpec.describe 'The Movie Results Index', type: :feature do
     end
   end
 
-  describe 'the top rated movie results' do
+  describe 'the display movie results area' do
     it 'will display the top 20 rated movies when button pressed' do
       stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key&language=en-US&limit=20").
       to_return(status: 200, body: File.read('spec/fixtures/top_rated_movies_response.json'), headers: {})
@@ -33,7 +33,24 @@ RSpec.describe 'The Movie Results Index', type: :feature do
 
       expect(current_path).to eq(user_movies_path(user1))
 
-      # expect page to show top 20 movies from movieAPI
+    end
+
+    it 'will display the search results after a search has occurred' do
+      stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key&query=star%20wars").
+      to_return(status: 200, body: File.read('spec/fixtures/search_for_starwars.json'), headers: {})
+
+      visit user_discover_index_path(user1)
+
+      fill_in :query, with: "star wars"
+      click_button("Search")
+
+      expect(current_path).to eq(user_movies_path(user1))
+
+      within("#display-movies") do
+        expect(page).to have_content("Star Wars: The Rise of Skywalker")
+        expect(page).to have_content("Star Wars: The Last Jedi")
+        expect(page).to have_content("Star Wars: The Force Awakens")
+      end
     end
   end
 end

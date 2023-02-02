@@ -6,8 +6,8 @@
 
 <div id="movie-search">
   <%= form_with url: user_movies_path(@user), method: :get do |f| %>
-    <%= f.label :title, "Movie Title" %>
-    <%= f.text_field :title %>
+    <%= f.label :query, "Movie Title" %>
+    <%= f.text_field :query %>
     <%= f.submit "Search" %>
   <% end %>
 </div>
