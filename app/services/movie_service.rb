@@ -27,9 +27,7 @@ class MovieService
   
   def self.actors(movie_id)
     response = conn.get("/3/movie/#{movie_id}/credits")
-    parse_json(response)[:cast].map do |actor_data|
-      Actor.new(actor_data)
-    end
+    parse_json(response)
   end
 
   def self.review_details(movie_id)
