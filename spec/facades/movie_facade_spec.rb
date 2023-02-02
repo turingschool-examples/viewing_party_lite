@@ -8,5 +8,12 @@ RSpec.describe MovieFacade do
         expect(MovieFacade.top_rated_movies.length).to eq(20)
       end
     end
+
+    describe '.keyword_search' do
+      it 'returns an array of 20 Movie objects based on a keyword search' do
+        expect(MovieFacade.keyword_search("Lego")).to all be_a(Movie)
+        expect(MovieFacade.keyword_search("Lego").length).to eq(20)
+      end
+    end
   end
 end

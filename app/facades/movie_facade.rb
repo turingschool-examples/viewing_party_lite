@@ -5,4 +5,11 @@ class MovieFacade
       Movie.new(data)
     end
   end
+
+  def self.keyword_search(keyword)
+    json = MovieService.keyword_search(keyword)[:results]
+    json.map do |data|
+      Movie.new(data)
+    end
+  end
 end
