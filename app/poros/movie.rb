@@ -16,13 +16,14 @@ class Movie
     @cast = movie_params[:cast]
   end
 
+  #TODO: This isn't the place for this parsing?
   def genres 
     @genres.map do |genre|
       genre[:name]
     end.join(', ')
   end
 
-  #placeholder method
+  #TODO: placeholder method
   def image
     'image'
   end
