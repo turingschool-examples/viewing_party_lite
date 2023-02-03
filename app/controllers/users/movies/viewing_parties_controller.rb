@@ -7,6 +7,19 @@ class Users::Movies::ViewingPartiesController < ApplicationController
   end
 
   def create
-    
+    viewing_party = ViewingParty.new(viewing_party_params)
+
+    if viewing_party.save
+      redirect_to user_path(params[:user_id])
+    else
+      flash[:alert] = "Error"
+      render :new
+    end
   end
+
+private
+  def viewing_party_params
+    params.permit(:duration, :user_id, :movie_id, :start_time, :day)
+  end
+  
 end

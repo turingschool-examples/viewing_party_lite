@@ -33,7 +33,28 @@ RSpec.describe 'New Viewing Party Page' do
         expect(page).to have_field('Duration of Party', with: @movie.runtime)
         expect(page).to have_field("Day", with: Date.today)
         expect(page).to have_field("Start Time", with: Time.now)
+        expect(page).to have_button("Create Party")
       end
+    end
+
+    it 'accepts field input to make viewing party' do
+      fill_in('Duration of Party', with: (@movie.runtime + 5))
+      fill_in('Day', with: Date.tomorrow)
+      fill_in('Start Time', with: Time.now)
+
+      click_button("Create Party")
+
+      expect(current_path).to eq(user_path(@user))
+    end
+    
+    it 'sad path' do
+      fill_in('Duration of Party', with: (@movie.runtime - 5))
+      fill_in('Day', with: Date.yesterday)
+      fill_in('Start Time', with: Time.now)
+  
+      click_button("Create Party")
+  
+      expect(page).to have_button("Create Party")
     end
   end
 end
