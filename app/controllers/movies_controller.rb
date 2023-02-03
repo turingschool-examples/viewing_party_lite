@@ -21,15 +21,8 @@ class MoviesController < ApplicationController
     @movie_id = params[:movie_id]
 
     @movie = MoviesFacade.movie_details(@movie_id) 
-
-    conn = Faraday.new(url: 'https://api.themoviedb.org') do |f|
-      f.params['api_key'] = ENV['movie_api_key']
-    end
-    response = conn.get("/3/movie/#{@movie_id}/credits?") 
     
-    @credits = JSON.parse(response.body, symbolize_names: true)
-
-    
+    @credits = MoviesFacade.movie_credits(@movie_id)
     # @details = 
     # TODO: movie hash keep_if to remove extra data
   end

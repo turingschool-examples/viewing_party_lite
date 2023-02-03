@@ -21,4 +21,9 @@ class MoviesFacade
     found_movie = MoviesService.find_movie_details(movie)
     MovieDetail.new(found_movie)
   end
+
+  def self.movie_credits(movie)
+    found_movie = MoviesService.find_movie_credits(movie)
+    MovieCredit.new(found_movie)
+  end
 end

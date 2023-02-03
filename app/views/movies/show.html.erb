@@ -14,7 +14,5 @@
 
 <div id="cast">
   <h3>Cast</h3>
-  <p><%= @credits[:cast].map do |actor| %>
-    <% "#{actor[:name]} as #{actor[:character]}" %>
-  <% end.join(', ') %>
+  <p><%= @credits.find_actor_name_and_character %>
 </div>

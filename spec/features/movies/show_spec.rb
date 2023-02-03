@@ -52,7 +52,16 @@ RSpec.describe 'Movie details page' do
       within('#cast') do
         expect(page).to have_content('Cast')
         expect(page).to have_content('Tom Hanks as Paul Edgecomb')
-        # TODO: only show first 10 cast members
+        expect(page).to have_content('David Morse as Brutus "Brutal" Howell')
+        expect(page).to have_content('Bonnie Hunt as Jan Edgecomb')
+        expect(page).to have_content('Michael Clarke Duncan as John Coffey')
+        expect(page).to have_content('James Cromwell as Warden Hal Moores')
+        expect(page).to have_content('Michael Jeter as Eduard Delacroix')
+        expect(page).to have_content('Graham Greene as Arlen Bitterbuck')
+        expect(page).to have_content('Doug Hutchison as Percy Wetmore')
+        expect(page).to have_content("Sam Rockwell as 'Wild Bill' Wharton")
+        expect(page).to have_content('Barry Pepper as Dean Stanton')
+        expect(page.all('as').count).to be <= 10
       end
 
       # within('#reviews') do

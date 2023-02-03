@@ -11,6 +11,10 @@ class MoviesService
     parse_data(conn.get("/3/movie/#{movie}?"))
   end
 
+  def self.find_movie_credits(movie) 
+    parse_data(conn.get("/3/movie/#{movie}/credits?"))
+  end
+
   def self.parse_data(response)
     JSON.parse(response.body, symbolize_names: true)
   end
