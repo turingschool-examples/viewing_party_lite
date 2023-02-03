@@ -1,5 +1,6 @@
 class Detail
   attr_reader :id,
+              :image,
               :title,
               :vote_average, 
               :runtime, 
