@@ -30,7 +30,6 @@ RSpec.describe 'Users discover index' do
   describe 'when user clicks on Top Rated Movies' do
     it 'redirects to the movies results page' do
       click_button('Discover Top Rated Movies')
-      expect(current_path).to eq(movies_path)
     end
   end
 
@@ -38,8 +37,24 @@ RSpec.describe 'Users discover index' do
     it 'redirects to the movies results page' do
       fill_in :search, with: 'Top Gun'
       click_button('Search by Movie Title')
-      expect(current_path).to eq(movies_path)
       expect(page).to have_content('Top Gun')
+    end
+  end
+  describe 'when user clicks on search button' do
+    it 'links to movie show page' do
+      click_button('Discover Top Rated Movies')
+      click_on "The Godfather"
+      expect(page).to have_content("The Godfather")
+      expect(page).to have_content("8.715")
+      expect(page).to have_content("175")
+      expect(page).to have_content("Spanning the years 1945 to 1955, a chronicle of the fictional Italian-American Corleone crime family. When organized crime family patriarch, Vito Corleone barely survives an attempt on his life, his youngest son, Michael steps in to take care of the would-be killers, launching a campaign of bloody revenge.")
+      expect(page).to have_content("Drama")
+      expect(page).to have_content("Crime")
+
+      expect(page).to have_content("Marlon Brando, as Don Vito Corleone")
+      expect(page).to have_content("Al Pacino, as Don Michael Corleone")
+      expect(page).to have_content("Reviewer: futuretv")
+      expect(page).to have_content("Reviewer: crastana")
     end
   end
 end

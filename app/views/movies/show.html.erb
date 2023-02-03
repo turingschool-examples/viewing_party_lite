@@ -1,0 +1,18 @@
+<h1><%= @movie.title %></h1>
+<p>Average: <%= @movie.vote_average %></p>
+<p>Runtime(Minutes): <%= @movie.runtime %></p>
+<p>Summary: <%= @movie.overview %></p>
+<h5>Genres: </h5>
+<% @movie.genres.each do |genre| %>
+    <p><%= genre[:name] %></p>
+<% end %>
+<br>
+<h5>Cast: </h5>
+<% MoviesFascade.cast(@movie.movie_id).each do |castmember| %>
+    <p><%= "#{castmember[:name]}, as #{castmember[:character]}" %></p>
+<% end %>
+<h5>Total Reviews: <%= MoviesFascade.reviews(@movie.movie_id).length %></h5>
+<% MoviesFascade.reviews(@movie.movie_id).each do |review| %>
+    <p>Reviewer: <%= review[:author_details][:username] %></p>
+    <p>Review: <%= review[:content] %></p>
+<% end %>

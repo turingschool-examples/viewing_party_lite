@@ -1,6 +1,7 @@
 <h1> <%= @title %> </h1>
 <% @movies.each do |movie| %>
-  <p>Title: <%= movie.title %></p>
+
+  <%= link_to "#{movie.title}", "/users/#{@user}/movies/#{movie.movie_id}", method: :get, local: true %>
   <p>Rating: <%= movie.vote_average %></p>
   <br>
 <% end %>

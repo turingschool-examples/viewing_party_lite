@@ -18,4 +18,16 @@ class MoviesService
     response = conn.get("/3/movie/top_rated")
     parse_json(response)
   end
+  def self.find(id)
+    response = conn.get("/3/movie/#{id}")
+    parse_json(response)
+  end
+  def self.cast(id)
+    response = conn.get("/3/movie/#{id}/credits")
+    parse_json(response)
+  end
+  def self.reviews(id)
+    response = conn.get("/3/movie/#{id}/reviews")
+    parse_json(response)
+  end
 end
