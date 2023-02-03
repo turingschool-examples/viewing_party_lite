@@ -10,7 +10,9 @@ class MovieFacade
     data = MovieService.search_results_response(search_params)
     data[:results].map do |movie_information|
       IndexMovie.new(movie_information)
-    end
+    end.sort_by do |movie|
+      movie.vote_average
+    end.reverse
   end
 
   def self.find_movie(movie_id)

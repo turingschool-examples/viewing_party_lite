@@ -1,17 +1,37 @@
-<h1>New Viewing Party</h1>
+<h3>Create A Movie Party For <%= @movie.title %></h3>
 
-<%= @movie.title %>
-
-<%= form_with url: user_movie_parties_path(@user, @movie.id), method: :post, local: true do |f| %>
-  <%= f.label :duration, "Duration" %>
-  <%= f.number_field :duration, value: @movie.runtime, min: @movie.runtime %>
-  <%= f.label :date, "Date" %>
-  <%= f.date_field :date %>
-  <%= f.label :start_time, "Start Time" %>
-  <%= f.time_field :start_time %>
-  <% @potential_guests.each do |guest| %>
-    <%= f.check_box :"#{guest.id}" %>
-    <%= f.label :"#{guest.id}", "#{guest.name} (#{guest.email})" %>
+<div id="viewing-party-details">
+  <h4>Viewing Party Details</h4>
+  <table>
+  <tr>
+    <td>Movie Title</td>
+    <td><%= @movie.title %></td>
+  </tr>
+  <%= form_with url: user_movie_parties_path(@user, @movie.id), method: :post, local: true do |f| %>
+  <tr>
+    <td><%= f.label :duration, "Duration" %></td>
+    <td><%= f.number_field :duration, value: @movie.runtime, min: @movie.runtime %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :date, "Date" %> </td>
+    <td><%= f.date_field :date %></td>
+  </tr>
+  <tr>
+    <td><%= f.label :start_time, "Start Time" %></td>
+    <td><%= f.time_field :start_time %></td>
+  </tr>
+   <tr><td><h4>Invite Other Users</h4></td></tr>
+    <div id="user-list">
+      <tr><td><% @potential_guests.each do |guest| %>
+        <div id="user">
+          <%= f.check_box :"#{guest.id}" %>
+          <%= f.label :"#{guest.id}", "#{guest.name} (#{guest.email})" %><br>
+        </div>
+      <% end %></td></tr>
+    </div>
+    <tr>
+      <td><%= f.submit "Create Party" %></td>
+    </tr>
   <% end %>
-  <%= f.submit "Create Party" %>
-<% end %>
+  </table>
+</div>

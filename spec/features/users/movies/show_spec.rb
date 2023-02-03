@@ -47,8 +47,8 @@ RSpec.describe 'The Movie Details (Show) Page', type: :feature do
       expect(page).to have_content("Robot Chicken: Star Wars Episode III")
       expect(page).to have_content(7.4)
       expect(page).to have_content("0 hour(s) 45 min")
-      expect(page).to have_content("Genres: - Comedy - Science Fiction - Animation - TV Movie")
-      expect(page).to have_content("Summary: Robot Chicken: Star Wars Episode III, directed by Chris McKay, combines the satirical sensibilities of Green and Matthew Senreich's Robot Chicken with characters of the Star Wars universe.")
+      expect(page).to have_content("Genres: Comedy Science Fiction Animation TV Movie")
+      expect(page).to have_content("Robot Chicken: Star Wars Episode III, directed by Chris McKay, combines the satirical sensibilities of Green and Matthew Senreich's Robot Chicken with characters of the Star Wars universe.")
     end
 
     it 'lists the thespians for a given movie' do

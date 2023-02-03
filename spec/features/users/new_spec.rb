@@ -20,7 +20,6 @@ RSpec.describe "new page", type: :feature do
       click_button "Register"
       
       expect(page).to have_content("Tony Pepperoni's Dashboard")
-#test for registration form 
       expect(page).to_not have_content(user1.name)
     end
 

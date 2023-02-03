@@ -45,12 +45,12 @@ RSpec.describe "index page", type: :feature do
     it 'has a list of existing users names' do
       visit root_path
 
-      within("#user-list") do
-        expect(page).to have_content(user1.name)
-        expect(page).to have_content(user2.name)
-        expect(page).to have_content(user3.name)
-        expect(page).to have_content(user4.name)
-        expect(page).to have_content(user5.name)
+      within("#user-list-home") do
+        expect(page).to have_content(user1.email)
+        expect(page).to have_content(user2.email)
+        expect(page).to have_content(user3.email)
+        expect(page).to have_content(user4.email)
+        expect(page).to have_content(user5.email)
       end
     end
 
@@ -58,15 +58,15 @@ RSpec.describe "index page", type: :feature do
       visit root_path
       
       within("#user-#{user1.id}") do
-        expect(page).to have_link("#{user1.name}", href: user_path(user1))
+        expect(page).to have_link("#{user1.email}", href: user_path(user1))
       end
 
       within("#user-#{user2.id}") do
-        expect(page).to have_link("#{user2.name}", href: user_path(user2))
+        expect(page).to have_link("#{user2.email}", href: user_path(user2))
       end
 
       within("#user-#{user3.id}") do
-        expect(page).to have_link("#{user3.name}", href: user_path(user3))
+        expect(page).to have_link("#{user3.email}", href: user_path(user3))
       end
     end
   end
