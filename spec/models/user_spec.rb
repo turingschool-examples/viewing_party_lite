@@ -24,5 +24,17 @@ RSpec.describe User, type: :model do
         expect(user.name_and_email).to eq("Bob (email@email.com)")
       end
     end
+
+    describe 'invited or hosting' do
+      before :each do
+        @user1,@user2 = create_list(:user, 2)
+        @viewing_party1 = ViewingParty.create(user_id: @user1.id, movie_id: 1, runtime: 1, duration: 2, 
+          start_time: Time.now, day: Date.tomorrow, title: "Movie Title", poster_path: "asdf")
+        @viewing_party_user1 = ViewingPartyUser.create(user_id: @user2.id, viewing_party_id: @viewing_party1.id)
+      end
+      it 'returns viewing parties the user is invited to' do
+        expect(@user2.invited).to eq([@viewing_party1])
+      end
+    end
   end
 end

@@ -17,7 +17,5 @@ RSpec.describe ViewingParty, type: :model do
     it { should validate_presence_of :start_time }
     it { should validate_presence_of :duration }
     it { should validate_numericality_of :duration }
-
-    # how to ensure duration is > movie.runtime
   end
 end

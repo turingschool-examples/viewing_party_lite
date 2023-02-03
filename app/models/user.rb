@@ -9,4 +9,9 @@ class User < ApplicationRecord
   def name_and_email
     "#{name} (#{email})"
   end
+
+  def invited
+    require 'pry'; binding.pry
+  end
+  
 end
