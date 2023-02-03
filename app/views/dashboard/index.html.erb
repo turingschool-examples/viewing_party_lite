@@ -4,7 +4,7 @@
 <%= button_to "Discover Movies", user_discover_index_path(@user), method: :get %>
 </div>
 
-<div style="float: left;">
+<div style="float: left; padding-left: 60px;">
 <h4>Viewing Party Invites</h4>
 <% @user.not_hosting_viewing_parties.each do |vp| %>
   <div id="viewing_party_<%= vp.id %>">
@@ -28,8 +28,8 @@
 <% end %>
 </div>
 
-<div style="float: right;">
-<h4>My Viewing Parties</h4>
+<div style="float: right; padding-right: 60px;">
+<h4>Viewing Parties I'm Hosting</h4>
 <% @user.hosting_viewing_parties.each do |vp| %>
   <div id="viewing_party_<%= vp.id %>">
     <p>Viewing Party <%= vp.id %></p>

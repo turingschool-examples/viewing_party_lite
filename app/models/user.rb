@@ -27,8 +27,4 @@ class User < ApplicationRecord
     end
     vps
   end
-
-  def invited
-    
-  end
 end

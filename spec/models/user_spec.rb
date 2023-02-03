@@ -13,7 +13,7 @@ RSpec.describe User do
   end
 
   describe '#host?' do
-    it 'does' do
+    it 'returns true if user is host of given vp, false otherwise' do
       user = User.create!(name: "John Cena", email: "John@email.com")
       viewing_party1 = ViewingParty.create!(when: "11/21/2030 7:00", duration: 90, start_time: "7:00", movie_id: 550)
       Invitee.create!(user_id: user.id, viewing_party_id: viewing_party1.id, host: true)
@@ -22,6 +22,30 @@ RSpec.describe User do
 
       expect(user.host?(viewing_party1.id)).to eq(true)
       expect(user.host?(viewing_party2.id)).to eq(false)
+    end
+  end
+
+  describe '#hosting_viewing_parties' do
+    it 'returns an array of all vps that the user is hosting' do
+      user = User.create!(name: "John Cena", email: "John@email.com")
+      viewing_party1 = ViewingParty.create!(when: "11/21/2030 7:00", duration: 90, start_time: "7:00", movie_id: 550)
+      Invitee.create!(user_id: user.id, viewing_party_id: viewing_party1.id, host: true)
+      viewing_party2 = ViewingParty.create!(when: "11/21/2030 7:00", duration: 90, start_time: "7:00", movie_id: 550)
+      Invitee.create!(user_id: user.id, viewing_party_id: viewing_party2.id, host: false)
+
+      expect(user.hosting_viewing_parties).to eq([viewing_party1])
+    end
+  end
+
+  describe '#not_hosting_viewing_parties' do
+    it 'returns an array of all vps that the user is not hosting' do
+      user = User.create!(name: "John Cena", email: "John@email.com")
+      viewing_party1 = ViewingParty.create!(when: "11/21/2030 7:00", duration: 90, start_time: "7:00", movie_id: 550)
+      Invitee.create!(user_id: user.id, viewing_party_id: viewing_party1.id, host: true)
+      viewing_party2 = ViewingParty.create!(when: "11/21/2030 7:00", duration: 90, start_time: "7:00", movie_id: 550)
+      Invitee.create!(user_id: user.id, viewing_party_id: viewing_party2.id, host: false)
+
+      expect(user.not_hosting_viewing_parties).to eq([viewing_party2])
     end
   end
 end

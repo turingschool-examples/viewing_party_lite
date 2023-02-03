@@ -7,6 +7,7 @@ RSpec.describe Detail do
         [{name: "John", character: "Smitty"},{name: "Brad", character: "Junie"}], {total_results: 1, results: [{author: "J", content: "review"}]}])
 
       expect(detail).to be_a(Detail)
+      expect(detail.image).to eq("https://image.tmdb.org/t/p/original/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg")
       expect(detail.title).to eq("Fight")
       expect(detail.vote_average).to eq(1.23)
       expect(detail.runtime).to eq(60)

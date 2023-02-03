@@ -11,7 +11,7 @@ class Detail
               :reviews
 
   def initialize(data)
-    @image = "https://image.tmdb.org/t/p/original/#{data[0][:poster_path]}"
+    @image = "https://image.tmdb.org/t/p/original#{data[0][:poster_path]}"
     @id = data[0][:id]
     @title = data[0][:title]
     @vote_average = data[0][:vote_average]
