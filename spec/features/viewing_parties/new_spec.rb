@@ -21,12 +21,12 @@ RSpec.describe 'The new viewing party page' do
       visit "/users/#{charlie.id}/movies/497/viewing-party/new"
       expect(ViewingParty.all).to eq([])
       within('#form') do
-      fill_in 'day', with: Date.tomorrow
-      fill_in 'time', with: Time.now
-      click_button 'Create Party'
-    end
-    expect(ViewingParty.all.count).to eq(1)
-    expect(ViewingParty.all[0].host_id).to eq(charlie.id)
+        fill_in 'day', with: Date.tomorrow
+        fill_in 'time', with: Time.now
+        click_button 'Create Party'
+      end
+      expect(ViewingParty.all.count).to eq(1)
+      expect(ViewingParty.all[0].host_id).to eq(charlie.id)
       expect(current_path).to eq("/users/#{charlie.id}")
     end
 
@@ -53,7 +53,7 @@ RSpec.describe 'The new viewing party page' do
       expect(cindy.user_viewing_parties.count).to eq(1)
       expect(UserViewingParty.all.count).to eq 2
     end
-    
+
     it 'shows up on other users dashboards (show pages)' do
       visit "/users/#{charlie.id}/movies/497/viewing-party/new"
       within('#form') do
@@ -63,7 +63,9 @@ RSpec.describe 'The new viewing party page' do
         click_button 'Create Party'
       end
       visit "/users/#{cindy.id}"
-      # expect(page).to have_content()
+      within '#viewing_parties' do
+        expect(page).to have_content(cindy.viewing_parties[0].event_date.strftime('%B %-d, %Y'))
+      end
     end
   end
 
