@@ -7,6 +7,8 @@ RSpec.describe 'user registration page' do
   
   describe 'initial tests' do
     it 'has a form to create a new user' do
+      ViewingPartyUser.delete_all
+      ViewingParty.delete_all
       User.delete_all
       
       expect(page).to have_field('Name')

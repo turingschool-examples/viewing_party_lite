@@ -38,18 +38,9 @@ RSpec.describe MovieFacade do
     expect(cast.first.name).to eq("Marlon Brando")
   end
 
-  # it 'returns image url' do
-  #   json_response = File.read('spec/fixtures/image.json')
+  it 'returns image url' do
+    image_url = MovieFacade.get_dashboard_image('238')
 
-  #   stub_request(:get, "https://api.themoviedb.org/3/movie/238/images?api_key=3a8894c032bbd79e5f34c91f45b93378").
-  #        with(
-  #          headers: {
-  #         'Accept'=>'*/*',
-  #         'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-  #         'User-Agent'=>'Faraday v2.7.4'
-  #          }).
-  #        to_return(status: 200, body: json_response, headers: {})
-
-  #   image_url = MovieService.image('238')
-  # end
+    expect(image_url).to eq("/tmU7GeKVybMWFButWEGl2M4GeiP.jpg")
+  end
 end

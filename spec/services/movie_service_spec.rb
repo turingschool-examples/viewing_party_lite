@@ -32,12 +32,4 @@ RSpec.describe MovieService do
     expect(cast).to be_an(Array)
     expect(cast.count).to eq(10)
   end
-
-  xit "can return a movies' image" do
-    id = 238
-    image = MovieService.image[:backdrops][0]
-
-    expect(image)
-    
-  end
 end

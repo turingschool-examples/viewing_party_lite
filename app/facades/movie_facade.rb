@@ -23,4 +23,8 @@ class MovieFacade
       MovieDetail.new(movie)
     end
   end
+
+  def self.get_dashboard_image(id)
+    MovieService.get_movie(id)[:backdrop_path]
+  end
 end

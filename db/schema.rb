@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_02_233451) do
+ActiveRecord::Schema.define(version: 2023_02_03_014055) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2023_02_02_233451) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
-    t.boolean "hosting", default: false
   end
 
   create_table "viewing_parties", force: :cascade do |t|
@@ -26,6 +25,7 @@ ActiveRecord::Schema.define(version: 2023_02_02_233451) do
     t.integer "host_id"
     t.date "party_date"
     t.time "party_time"
+    t.integer "movie_id"
   end
 
   create_table "viewing_party_users", force: :cascade do |t|

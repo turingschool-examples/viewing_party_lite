@@ -11,5 +11,19 @@
   <h3> My Viewing Parties</h3>
 
   
+  <%# <% @parties_info.each do |party_info| %>
+    <%# <p><%= party_info.image %></p> %>
+    <%# <p><%= link_to "#{party_info.name}", "/users/#{@user.id}/movies/#{@movie.id}"  %></p> %>
+    <%# <p><%= party_info.date %></p> %>
+    <%# <p><%= party_info.time %></p> %>
+    <%# <p><%= party_info.host %></p> %>
+  <%# <% end %> %> %>
+  <%# <img src=<%= "/tmU7GeKVybMWFButWEGl2M4GeiP.jpg" %> %>
+  
   <%# this is where our Dashboard:Viewing Parties user story info will go%>
+
+  <% @viewing_parties.each do |vp| %>
+    <%# <%= MovieFacade.get_movie(vp.movie_id) %> %>
+    <%# <% binding.pry %> %>
+  <% end %>
 </div>
