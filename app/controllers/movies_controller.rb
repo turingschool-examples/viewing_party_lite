@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
-  def index
+  def index 
+    @user = params[:user_id]
     if params[:commit] == 'Search by Movie Title'
       @movies = MoviesFascade.movie_data(params[:search])
       @title = params[:commit]
@@ -9,5 +10,9 @@ class MoviesController < ApplicationController
       @movies = MoviesFascade.top_rated
       @title = params[:commit]
     end
+  end
+  def show 
+    @movie = MoviesFascade.find(params[:id])
+    
   end
 end
