@@ -16,9 +16,11 @@ RSpec.describe MovieReview do
   end
 
   describe 'review_with_author' do 
-    xit 'returns the author and the review' do 
+    it 'returns the author and the review' do 
       movie = MovieReview.new(@data)
 
+      expect(movie.review_with_author).to include('Author: futuretv')
+      expect(movie.review_with_author).to include('Content: The Godfather Review by Al Carlson')
     end
   end
 end 

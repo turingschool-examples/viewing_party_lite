@@ -80,8 +80,8 @@ RSpec.describe 'Movie details page' do
         expect(page).to have_content('2 Reviews')
         expect(page).to have_content('Author: futuretv')
         expect(page).to have_content('Author: crastana')
-        expect(page).to have_text('Content: The Godfather Review by Al Carlson')
-        expect(page).to have_text('Content: The best movie ever...')
+        expect(page).to have_content('Content: The Godfather Review by Al Carlson')
+        expect(page).to have_content('Content: The best movie ever...')
       end
     end
   end
