@@ -5,17 +5,23 @@ RSpec.describe 'Movie details page' do
     stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['MOVIE_DB_KEY']}")
       .to_return(status: 200, body: File.read('./spec/fixtures/top_rated_movies_response.json'), headers: {})
 
-    # stub_request(:get, "https://api.themoviedb.org/3/movie/id?api_key=#{ENV['MOVIE_DB_KEY']}")
-      # .to_return(status: 200, body: File.read('./spec/fixtures/green_mile/details_response.json'), headers: {})
-
     stub_request(:get, "https://api.themoviedb.org/3/movie/497/credits?api_key=#{ENV['MOVIE_DB_KEY']}")
       .to_return(status: 200, body: File.read('./spec/fixtures/green_mile/credits_response.json'), headers: {})
 
     stub_request(:get, "https://api.themoviedb.org/3/movie/497?api_key=#{ENV['MOVIE_DB_KEY']}")
       .to_return(status: 200, body: File.read('./spec/fixtures/green_mile/details_response.json'), headers: {})
 
-    # stub_request(:get, "https://api.themoviedb.org/3/movie/497?api_key=#{ENV['MOVIE_DB_KEY']}")
-      # .to_return(status: 200, body: File.read('./spec/fixtures/green_mile/reviews_response.json'), headers: {})
+    stub_request(:get, "https://api.themoviedb.org/3/movie/497/reviews?api_key=#{ENV['MOVIE_DB_KEY']}")
+      .to_return(status: 200, body: File.read('./spec/fixtures/green_mile/reviews_response.json'), headers: {})
+
+    stub_request(:get, "https://api.themoviedb.org/3/movie/238/reviews?api_key=#{ENV['MOVIE_DB_KEY']}")
+      .to_return(status: 200, body: File.read('./spec/fixtures/godfather/reviews_response.json'), headers: {})
+
+    stub_request(:get, "https://api.themoviedb.org/3/movie/238/credits?api_key=#{ENV['MOVIE_DB_KEY']}")
+      .to_return(status: 200, body: File.read('./spec/fixtures/godfather/credits_response.json'), headers: {})
+
+    stub_request(:get, "https://api.themoviedb.org/3/movie/238?api_key=#{ENV['MOVIE_DB_KEY']}")
+      .to_return(status: 200, body: File.read('./spec/fixtures/godfather/details_response.json'), headers: {})
   end 
 
   let!(:charlie) { User.create!(name: 'Charlie', email: 'charlie_boy@gmail.com') }
@@ -52,15 +58,31 @@ RSpec.describe 'Movie details page' do
       within('#cast') do
         expect(page).to have_content('Cast')
         expect(page).to have_content('Tom Hanks as Paul Edgecomb')
-        # TODO: only show first 10 cast members
+        expect(page).to have_content('David Morse as Brutus "Brutal" Howell')
+        expect(page).to have_content('Bonnie Hunt as Jan Edgecomb')
+        expect(page).to have_content('Michael Clarke Duncan as John Coffey')
+        expect(page).to have_content('James Cromwell as Warden Hal Moores')
+        expect(page).to have_content('Michael Jeter as Eduard Delacroix')
+        expect(page).to have_content('Graham Greene as Arlen Bitterbuck')
+        expect(page).to have_content('Doug Hutchison as Percy Wetmore')
+        expect(page).to have_content("Sam Rockwell as 'Wild Bill' Wharton")
+        expect(page).to have_content('Barry Pepper as Dean Stanton')
+        expect(page.all('as').count).to be <= 10
       end
 
-      # within('#reviews') do
-      #   expect(page).to have_content('0 Reviews')
-      # end
+      within('#reviews') do
+        expect(page).to have_content('0 Reviews')
+      end
 
-      # TODO: Each review's author and information
-      # TODO: visit movie page with reviews
+      visit "/users/#{charlie.id}/movies/238"
+
+      within('#reviews') do
+        expect(page).to have_content('2 Reviews')
+        expect(page).to have_content('Author: futuretv')
+        expect(page).to have_content('Author: crastana')
+        expect(page).to have_content('Content: The Godfather Review by Al Carlson')
+        expect(page).to have_content('Content: The best movie ever...')
+      end
     end
   end
 end

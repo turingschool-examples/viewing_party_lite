@@ -22,6 +22,12 @@ RSpec.describe 'Movie Results Page' do
 
     stub_request(:get, "https://api.themoviedb.org/3/movie/497/credits?api_key=#{ENV['MOVIE_DB_KEY']}")
       .to_return(status: 200, body: File.read('./spec/fixtures/green_mile/credits_response.json'), headers: {})
+
+    stub_request(:get, "https://api.themoviedb.org/3/movie/846433/reviews?api_key=#{ENV['MOVIE_DB_KEY']}")
+      .to_return(status: 200, body: File.read('./spec/fixtures/green_mile/reviews_response.json'), headers: {})
+  
+    stub_request(:get, "https://api.themoviedb.org/3/movie/497/reviews?api_key=#{ENV['MOVIE_DB_KEY']}")
+      .to_return(status: 200, body: File.read('./spec/fixtures/green_mile/reviews_response.json'), headers: {})
   end
 
   let!(:charlie) { User.create!(name: 'Charlie', email: 'charlie_boy@gmail.com') }
@@ -67,7 +73,6 @@ RSpec.describe 'Movie Results Page' do
       click_button 'Top Movies'
 
       expect(current_path).to eq "/users/#{charlie.id}/movies"
-      # click_link('The Godfather')
       click_link('The Green Mile')
 
       expect(current_path).to eq "/users/#{charlie.id}/movies/497"
