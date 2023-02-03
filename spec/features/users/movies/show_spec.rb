@@ -21,7 +21,7 @@ RSpec.describe "Movie Detail (Show) page" do
       
       click_button("Create Viewing Party for The Godfather")
 
-      expect(current_path).to eq("users/@user.id/movies/238/viewing_party/new")
+      expect(current_path).to eq("/users/#{@user.id}/movies/238/viewing_parties/new")
       # expect(current_path).to eq(new_user_movie_viewing_party_path)
     end
   end
@@ -31,7 +31,7 @@ RSpec.describe "Movie Detail (Show) page" do
       within "#movie-title" do
         expect(page).to have_content("The Godfather")
       end
-      
+
       within "#movie-details" do
         expect(page).to have_content("Vote: 8.7")
         expect(page).to have_content("Runtime: 2hr 55min")
