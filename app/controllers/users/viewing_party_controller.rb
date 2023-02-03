@@ -27,7 +27,7 @@ class Users::ViewingPartyController < ApplicationController
 
   def create_viewing_party_users(viewing_party)
     params[:invitees].each do |i|
-      ViewingPartyUser.create(viewing_party_id: viewing_party.id, user_id: i[0]) if i[1] == 1
+      ViewingPartyUser.create(viewing_party_id: viewing_party.id, user_id: i[0]) if i[1] == '1'
     end
   end
 
