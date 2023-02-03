@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Movie do
@@ -48,8 +50,8 @@ RSpec.describe Movie do
         genres: [{ "id": 18, "name": 'Drama' }, { "id": 10, "name": 'Rom-Com' }],
         overview: 'classic rom com with classic rom com actors'
       }
-      movie = Movie.new(movie_data) 
-      
+      movie = Movie.new(movie_data)
+
       expect(movie.runtime_calc).to eq('1hr 55min')
     end
   end

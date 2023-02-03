@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @movies = @user.viewing_parties.map do |vp|
-      MovieFacade.movie_details(vp.movie_id) 
+      MovieFacade.movie_details(vp.movie_id)
     end
   end
 

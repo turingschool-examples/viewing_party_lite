@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ViewingPartyController < ApplicationController
   def new
     @movie = MovieFacade.movie_details(params[:movie_id])

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Actor
   attr_reader :name,
               :character

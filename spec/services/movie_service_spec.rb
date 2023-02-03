@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe MovieService do
@@ -48,7 +50,7 @@ RSpec.describe MovieService do
     response = MovieService.discover_movie('top rated')
     top_movie = response[:results][0]
 
-    expect(response[:results].count).to eq (20)
+    expect(response[:results].count).to eq(20)
     expect(top_movie[:title]).to be_a(String)
     expect(top_movie[:vote_average]).to be_a(Float)
   end
