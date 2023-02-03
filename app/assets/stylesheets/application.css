@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+.movie_columns {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 1em;
+}
