@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe MovieFacade do
@@ -21,7 +23,7 @@ RSpec.describe MovieFacade do
 
       sample_movie = movies.first
       expect(sample_movie.id).to eq(238)
-      expect(sample_movie.title).to eq("The Godfather")
+      expect(sample_movie.title).to eq('The Godfather')
       expect(sample_movie.vote_average).to eq(8.7)
     end
   end
@@ -29,17 +31,16 @@ RSpec.describe MovieFacade do
   describe '#seach_movies()' do
     it 'returns an array of movie objects based on a search' do
       movie_facade = MovieFacade.new
-      movies = movie_facade.search_movies("river")
+      movies = movie_facade.search_movies('river')
       expect(movies).to be_a Array
       movies.each do |movie|
         expect(movie).to be_a Movie
       end
 
       sample_movie = movies.first
-      expect(sample_movie.id).to eq(395834)
-      expect(sample_movie.title).to eq("Wind River")
+      expect(sample_movie.id).to eq(395_834)
+      expect(sample_movie.title).to eq('Wind River')
       expect(sample_movie.vote_average).to eq(7.4)
     end
   end
 end
-

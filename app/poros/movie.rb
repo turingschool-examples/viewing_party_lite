@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Movie
   attr_reader :id,
               :title,
@@ -17,7 +19,6 @@ class Movie
     @reviews = movie_params[:results]
     @image_path = base_image_uri + movie_params[:poster_path]
   end
-
 
   def genres
     @genres.map do |genre|
@@ -47,9 +48,9 @@ class Movie
     end
   end
 
-  private 
+  private
 
   def base_image_uri
-    "https://image.tmdb.org/t/p/w500/"
+    'https://image.tmdb.org/t/p/w500/'
   end
 end

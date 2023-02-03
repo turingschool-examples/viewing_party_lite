@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
@@ -9,8 +11,8 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(permitted_params)
-   
-    if user.save 
+
+    if user.save
       redirect_to user_path(user)
     else
       redirect_to '/register'
@@ -18,7 +20,7 @@ class UsersController < ApplicationController
     end
   end
 
-  private 
+  private
 
   def permitted_params
     params.require(:user).permit(:name, :email)

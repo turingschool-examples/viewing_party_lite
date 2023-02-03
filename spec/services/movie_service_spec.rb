@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe MovieService do 
-  describe 'get_top_movies' do 
+RSpec.describe MovieService do
+  describe 'get_top_movies' do
     it 'should return a response with 20 top movies' do
       service = MovieService.new
-      response = service.get_top_movies 
+      response = service.get_top_movies
 
       expect(response).to have_key(:results)
       expect(response[:results]).to be_a Array
@@ -23,7 +25,7 @@ RSpec.describe MovieService do
   describe '#search_movies' do
     it 'returns a response with movie data based on a search' do
       service = MovieService.new
-      response = service.search_movies('river') 
+      response = service.search_movies('river')
 
       expect(response).to have_key(:results)
       expect(response[:results]).to be_a Array
@@ -60,5 +62,3 @@ RSpec.describe MovieService do
     end
   end
 end
-
-
