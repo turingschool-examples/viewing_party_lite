@@ -5,3 +5,27 @@ def load_test_data
   @user4 = User.create!({name: "Dylan Dillerson", email: "DD@gmail.com"})
  
 end
+
+def top_rated_movies_stub
+   stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated").
+         with(
+           headers: {
+       	  'Accept'=>'*/*',
+       	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+       	  'User-Agent'=>'Faraday v2.7.4'
+           }, query: {"api_key"  => ENV['tmdb_api_key']}).
+         to_return(status: 200, body: File.read('spec/fixtures/top_rated_movies.json'), headers: {})
+end
+
+def movie_search_stub(keyword)
+  stub_request(:get, "https://api.themoviedb.org/3/search/movie")
+      .with(
+        headers: {
+        'Accept'=>'*/*',
+        'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+        'User-Agent'=>'Faraday v2.7.4'
+        }, query: {"api_key"  => ENV['tmdb_api_key'],
+          "query" => keyword, 
+          "include_adult" => false})
+      .to_return(status: 200, body: File.read('spec/fixtures/movie_search.json'), headers: {})
+end
