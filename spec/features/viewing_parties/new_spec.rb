@@ -70,6 +70,18 @@ RSpec.describe 'The new viewing party page' do
   end
 
   describe 'sad path' do
-    it 'does not create viewing party with duration less than movie runtime'
+    it 'does not create viewing party with duration less than movie runtime' do
+      visit "/users/#{charlie.id}/movies/497/viewing-party/new"
+      expect(ViewingParty.all).to eq([])
+      within('#form') do
+        fill_in 'duration', with: 0
+        fill_in 'day', with: Date.tomorrow
+        fill_in 'time', with: Time.now
+        click_button 'Create Party'
+      end
+      expect(current_path).to eq("/users/#{charlie.id}/movies/497/viewing-party/new")
+      expect(page).to have_content('Party time must be longer than the movie runtime.')
+      expect(ViewingParty.all).to eq([])
+    end
   end
 end

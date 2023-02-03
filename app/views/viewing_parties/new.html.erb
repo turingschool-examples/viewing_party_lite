@@ -6,6 +6,7 @@
   <p>Movie Title : <%=@movie[:title]%></p>
 
   <%= form_with url: "/users/#{@user.id}/movies/#{@movie[:id]}/viewing-party", method: :post, local: true do |f| %>
+    <%= f.hidden_field :movie_runtime, value: @movie[:runtime] %>
     <%= f.label :duration, "Duration of Party" %>
     <%= f.number_field :duration, value: @movie[:runtime]%>
     <%= f.label :day %>
