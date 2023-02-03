@@ -1,12 +1,14 @@
-<h1> Discover </h1>
+<center>
+  <h1> Discover </h1>
 
-<%= form_with url: user_movies_path(@user), method: :get, local: true do |f| %>
-  <%= f.hidden_field :top_rated %>
-  <%= f.submit 'Top Rated Movies' %>
-<% end %>
+  <%= form_with url: user_movies_path(@user), method: :get, local: true do |f| %>
+    <%= f.hidden_field :top_rated %>
+    <%= f.submit 'Top Rated Movies' %>
+  <% end %><br>
 
-<%= form_with url: user_movies_path(@user), method: :get, local: true do |f| %>
-  <%= f.label :search %>
-  <%= f.text_field :search %>
-  <%= f.submit 'Search' %>
-<% end %>
+  <%= form_with url: user_movies_path(@user), method: :get, local: true do |f| %>
+    <%= f.label :search %>
+    <%= f.text_field :search %>
+    <%= f.submit 'Search' %>
+  <% end %>
+</center>

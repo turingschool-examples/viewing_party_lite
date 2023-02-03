@@ -1,28 +1,22 @@
-<h1><%= @movie.original_title %></h1>
+<center>
+  <h1><%= @movie.original_title %></h1>
 
-vote average: <%= @movie.vote_average %><br>
-runtime: <%= @movie.runtime %><br>
-genres:
-<% @movie.genres.each do |genre| %>
-  <%= genre[:name] %><br>
-<% end %>
-summary: <%= @movie.summary %><br>
+  <pre>vote average: <%= @movie.vote_average %> runtime: <%= @movie.runtime %> genres: <% @movie.genres.each do |genre| %><%= genre[:name] %> <% end %></pre>
+________________________________________________________<br><br>
+</center>
+summary: <br><%= @movie.summary %><br><br>
 cast:
-    <% @cast.each do |member| %>
-      <ul>
-        <li>
-          Name: <%= member.name %>
-          Character: <%= member.character %>
-        <li>
-      </ul>
-    <% end %>
-<%= "Number of Reviews: #{@reviews.length}" %><br>
+  <br><% @cast.each do |member| %>
+    Name: <%= member.name %>
+    Character: <%= member.character %>
+  <% end %><br><br>
+<%= "Number of Reviews: #{@reviews.length}" %><br><br>
 <div id="reviews">
   <% @reviews.each do |review| %>
     Author: <%= review.author %><br>
-    Review: <%= review.content %>
+    Review: <br><%= review.content %>
   <% end %>
-</div>
+</div><br>
 
-<%= button_to "Create Viewing Party", new_user_movie_viewing_party_path(@user, @movie), method: :get %>
+<%= button_to "Create Viewing Party", new_user_movie_viewing_party_path(@user, @movie.id), method: :get %>
 <%= button_to "Discover Page Details", user_discover_index_path(@user), method: :get %>

@@ -15,10 +15,10 @@ RSpec.describe 'movies show page' do
       expect(page).to have_button('Create Viewing Party')
     end
 
-    xit 'the viewing party button should take the user to the new viewing party page (/users/:user_id/movies/:movie_id/viewing-party/new)' do
+    it 'the viewing party button should take the user to the new viewing party page (/users/:user_id/movies/:movie_id/viewing-party/new)' do
       click_on('Create Viewing Party')
 
-      expect(page).to eq("New Viewing Party")
+      expect(page).to have_content("Create Viewing Party")
     end
 
     it 'should display a button to return to the Discover Page Details' do
