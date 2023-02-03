@@ -8,9 +8,7 @@ Rails.application.routes.draw do
     scope module: 'users' do
       resources :discover, only: :index
       resources :movies, only: [:index, :show] do
-        scope module: 'movies' do
-          resources :viewing_parties, only: [:new]
-        end
+        resources :viewing_parties, only: [:new, :create]
       end
     end
   end

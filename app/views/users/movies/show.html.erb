@@ -1,24 +1,24 @@
-<h3><%= @movie[:title] %></h3>
+<h3><%= @movie.title %></h3>
 <%= button_to 'Discover Page', user_discover_index_path(@user), method: :get %>
-<%= button_to "Create Viewing Party for #{@movie[:title]}", new_user_movie_viewing_party_path(@user, @movie[:id]), method: :get %>
-Vote Average: <%= @movie[:vote_average] %>
-Runtime: <%= @runtime %>
-Genre: <% @genres.each_with_index do |genre, i| %>
-  <% unless @genres[i+1] == nil %>
+<%= button_to "Create Viewing Party for #{@movie.title}", new_user_movie_viewing_party_path(@user, @movie.id), method: :get %>
+Vote Average: <%= @movie.vote_average %>
+Runtime: <%= @movie.hours_mins %>
+Genre: <% @movie.genres.each_with_index do |genre, i| %>
+  <% unless @movie.genres[i+1] == nil %>
     <%= genre %>,
   <% else %>
     <%= genre %>
   <% end %>
 <% end %>
-<h4>Summary: <%= @movie[:overview] %></h4>
+<h4>Summary: <%= @movie.overview %></h4>
 
 <h4>Cast:</h4>
 <% @cast.each do |character| %>
-  <%= character[:character] %>: <%= character[:name] %><br>
+  <%= character.character %>: <%= character.actor %><br>
 <% end %>
 
 <h4><%= @reviews.count %> Reviews:</h4>
 <% @reviews.each do |review| %>
-  Written By: <%= review[:author] %><br>
-  Review: <%= review[:content] %><br>
+  Written By: <%= review.author %><br>
+  Review: <%= review.content %><br>
 <% end %>

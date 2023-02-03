@@ -7,6 +7,10 @@ class User < ApplicationRecord
 
   before_validation :downcase_email
 
+  def find_user_viewing_party(viewing_party)
+    self.user_viewing_parties.find_by(viewing_party_id: viewing_party.id)
+  end
+
   private
 
   def downcase_email
