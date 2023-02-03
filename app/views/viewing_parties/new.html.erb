@@ -4,7 +4,7 @@
 <center><p><%= button_to 'Discover Page', "/users/#{@user.id}/discover", method: :get %></p></center>
 <div id="party_form">
   <center><table>
-    <%= form_with url: user_movie_viewing_parties_path, method: :post, local: true do |f| %>
+    <%= form_with url: user_movie_viewing_parties_path(@user.id, @movie.id), method: :post, local: true do |f| %>
     <tr>
       <center><td> <%= f.label :header, "Viewing Party Details" %></td></center>
     </tr>
@@ -24,14 +24,18 @@
       <td> <%= f.time_field :party_time %></td>
     </tr>
     <tr>
-    <h2> Invite Other Users </h2>
+   
     </tr>
     <tr>
-      <td><% @users.each do |user| %>
-        <%= check_box_tag(:user_info) %>
-        <%= label_tag(:user_info, "#{user.name} (#{user.email})") %>
-      <% end %></td>
+    <h2> Invite Other Users </h2>
+      <td><%= f.collection_check_boxes(:user_ids, @users, :id, :name_with_email) %>
+       
+     
+          
+       
+     </td>
     <tr>
+    <%= f.hidden_field :host_id, value: @user.id %>
       <td><%= f.submit "Create Party" %></td>
     <% end %>
   </table></center>

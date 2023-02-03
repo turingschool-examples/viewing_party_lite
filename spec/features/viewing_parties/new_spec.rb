@@ -38,9 +38,9 @@ RSpec.describe 'new view party page' do
       expect(page).to have_field :party_date
       expect(page).to have_field :party_time
       expect(page).to have_content("Invite Other Users")
-      expect(page).to have_unchecked_field("#{@user2.name} (#{@user2.email}")
-      expect(page).to have_unchecked_field("#{@user3.name} (#{@user3.email}")
-      expect(page).to have_unchecked_field("#{@user4.name} (#{@user4.email}")
+      expect(page).to have_unchecked_field("#{@user2.name}")
+      expect(page).to have_unchecked_field("#{@user3.name}")
+      expect(page).to have_unchecked_field("#{@user4.name}")
       expect(page).to have_button("Create Party")
     end
   end
@@ -50,12 +50,14 @@ RSpec.describe 'new view party page' do
       fill_in :duration, with: 190
       fill_in :party_date, with: Date.today + 2.days
       fill_in :party_time, with: Time.now + 1.hours
-      within "#user_id-#{@user3.id}" do
-        check(:user_info)
-      end
+   
+      check("#{@user3.name}")
+      check("#{@user2.name}")
+    
       click_button("Create Party")
     end
     expect(current_path).to eq("/users/#{@user.id}")
+    expect(page).to have_content(@movie_detail.title)
   end
 
 end
