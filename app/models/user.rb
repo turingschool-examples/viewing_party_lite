@@ -4,6 +4,7 @@ class User < ApplicationRecord
 
   validates_presence_of :name, :email
   validates :email, uniqueness: { case_sensitive: false, message: 'User already exists with given email' }
+  validates :email, email: true
 
   before_validation :downcase_email
 

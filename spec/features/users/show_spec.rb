@@ -39,6 +39,7 @@ RSpec.describe 'Users Show' do
           if user_party.hosting
             within "#viewing_party_#{party.id}" do
               expect(page).to have_content(party.movie.title)
+              expect(page).to have_css("img[src*=https://image.tmdb.org/t/p/w500/#{party.movie.image}']")
               expect(page).to have_content(party.date)
               expect(page).to have_content(party.start_time.strftime('%l:%M %p'))
               expect(page).to have_content('You are the Host')

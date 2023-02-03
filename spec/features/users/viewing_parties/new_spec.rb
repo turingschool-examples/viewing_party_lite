@@ -36,6 +36,31 @@ RSpec.describe 'Viewing Party New' do
     expect(user_viewing_party_2.hosting).to eq(false)
   end
 
+  it 'displays the information on the users page' do
+    visit new_user_movie_viewing_party_path(user, 238)
+    start_time = Time.now
+
+    fill_in('viewing_party[date]', with: Date.today)
+    fill_in('viewing_party[start_time]', with: start_time)
+
+    page.check("viewing_party[#{users.second.id}]")
+    page.check("viewing_party[#{users.fourth.id}]")
+
+    click_button('Create Viewing Party')
+
+    viewing_party = ViewingParty.first
+
+    within '#hosted_parties' do
+      expect(page).to have_link("The Godfather")
+      expect(page.find('img')[:src]).to eq("https://image.tmdb.org/t/p/w500/#{viewing_party.movie.image}")
+      expect(page).to have_content(viewing_party.date)
+      expect(page).to have_content(viewing_party.start_time.utc.strftime('%l:%M %p'))
+      expect(page).to have_content("You are the Host")
+      expect(page).to have_content(viewing_party.users[1].name)
+      expect(page).to have_content(viewing_party.users[2].name)
+    end
+  end
+
   it 'will not create if runtime is longer than duration' do
     visit new_user_movie_viewing_party_path(user, 238)
     start_time = Time.now
@@ -51,5 +76,41 @@ RSpec.describe 'Viewing Party New' do
 
     expect(current_path).to eq(new_user_movie_viewing_party_path(user, 238))
     expect(page).to have_content('Duration must be greater than or equal to movie runtime')
+  end
+
+  describe 'sad paths' do
+    it 'wont go to the next page if no fields are filled in' do
+      visit new_user_movie_viewing_party_path(user, 238)
+      start_time = Time.now
+
+
+      click_button('Create Viewing Party')
+      expect(page).to have_content("Date can't be blank")
+      expect(page).to have_content("Start time can't be blank")
+    end
+
+    it 'wont go to the next page if no date is selected' do 
+      visit new_user_movie_viewing_party_path(user, 238)
+      start_time = Time.now
+      
+      fill_in('viewing_party[start_time]', with: start_time)
+      
+      click_button('Create Viewing Party')
+      
+      expect(page).to have_content("Date can't be blank")
+      expect(page).to_not have_content("Start time can't be blank")
+    end
+
+    it 'wont go to the next page if no start time is selected' do
+      visit new_user_movie_viewing_party_path(user, 238)
+      start_time = Time.now
+
+      fill_in('viewing_party[date]', with: Date.today)
+      
+      click_button('Create Viewing Party')
+      
+      expect(page).to_not have_content("Date can't be blank")
+      expect(page).to have_content("Start time can't be blank")
+    end
   end
 end

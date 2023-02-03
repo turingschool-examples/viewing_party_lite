@@ -25,4 +25,35 @@ RSpec.describe 'Users New' do
 
     expect(page).to have_content('User already exists with given email')
   end
+
+  it 'will not create a user if the name is not filled out' do
+    visit new_user_path
+
+    fill_in('user[name]', with: user.name)
+    
+    click_button('Register')
+    
+    expect(page).to have_content("Email can't be blank")
+  end
+  it 'will not create a user if the email is not filled out' do
+    visit new_user_path
+    
+    fill_in('user[email]', with: user.email)
+    
+    click_button('Register')
+    
+    expect(page).to have_content("Name can't be blank")
+    
+  end
+  
+  it 'makes sure that the email field is filled in with a real email' do
+    visit new_user_path
+    
+    fill_in('user[name]', with: user.name)
+    fill_in('user[email]', with: 'kyle.email.com')
+  
+    click_button('Register')
+  
+    expect(page).to have_content("Email is invalid")
+  end
 end
