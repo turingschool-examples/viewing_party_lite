@@ -55,8 +55,6 @@ RSpec.describe 'user show page', type: :feature do
         expect(page).to have_content("#{vp2.movie_details(vp1.movie_api_id).title}", count: 1)
         expect(page).to have_content("#{vp3.movie_details(vp1.movie_api_id).title}", count: 1)
       end
-
-      save_and_open_page
     end
   end
 end

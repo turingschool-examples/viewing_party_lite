@@ -6,7 +6,8 @@ class Movie
               :summary,
               :id,
               :cast,
-              :reviews
+              :reviews,
+              :poster_path
 
   def initialize(data, cast_data = nil, review_data = nil)
     @title = data[:title]
@@ -17,5 +18,6 @@ class Movie
     @id = data[:id]
     @cast = cast_data
     @reviews = review_data
+    @poster_path = data[:poster_path]
   end
 end

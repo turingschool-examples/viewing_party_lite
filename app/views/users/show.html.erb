@@ -8,6 +8,7 @@
 
 <div id='viewing-parties'>
   <% @hosting.each do |vp| %>
+    <img src="https://image.tmdb.org/t/p/original<%= vp.movie_details(vp.movie_api_id).poster_path %>">
     <%= vp.movie_details(vp.movie_api_id).title %>
     <%= vp.date.strftime('%B %d, %Y') %>
     <%= vp.start_time.strftime('%I:%M %p') %>
