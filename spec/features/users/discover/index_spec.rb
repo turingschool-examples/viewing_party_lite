@@ -41,4 +41,18 @@ RSpec.describe 'Discover Index' do
 
     expect(current_path).to eq(user_movies_path(user))
   end
+
+  it 'tells user to add a query if they dont fill out the field' do
+    json_response = File.read('spec/fixtures/failed_search.json')
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['movie_api_key']}&include_adult=false&language=en-US&page=1&query=").
+    to_return(status: 200, body: json_response)
+  
+    visit user_discover_index_path(user)
+  
+    fill_in(:title, with: '')
+    click_button('Find Movies')
+  
+    expect(current_path).to eq(user_discover_index_path(user))
+    expect(page).to have_content('query must be provided')
+  end
 end

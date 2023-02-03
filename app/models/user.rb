@@ -4,12 +4,14 @@ class User < ApplicationRecord
 
   validates_presence_of :name, :email
   validates :email, uniqueness: { case_sensitive: false, message: 'User already exists with given email' }
+  validates :email, email: true
 
   before_validation :downcase_email
 
   def find_user_viewing_party(viewing_party)
     self.user_viewing_parties.find_by(viewing_party_id: viewing_party.id)
   end
+
 
   private
 

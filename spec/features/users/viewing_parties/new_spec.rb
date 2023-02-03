@@ -85,11 +85,10 @@ RSpec.describe 'Viewing Party New' do
 
 
       click_button('Create Viewing Party')
-      save_and_open_page
       expect(page).to have_content("Date can't be blank")
       expect(page).to have_content("Start time can't be blank")
     end
-    
+
     it 'wont go to the next page if no date is selected' do 
       visit new_user_movie_viewing_party_path(user, 238)
       start_time = Time.now
