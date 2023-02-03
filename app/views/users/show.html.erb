@@ -10,6 +10,14 @@
     <% @movies.each do |movie| %>
       <section id="id_<%= movie.id %>">
         <p><%= movie.title %></p>
+        <section id="<%= movie.id %>_party_guests">
+          <p>Guests:</p>
+          <ul>
+            <% @party_guests.each do |guest| %>
+              <li><%= guest %></li>
+            <% end %>
+          </ul>
+        </section>
       </section>
     <% end %>
   <% end %>
