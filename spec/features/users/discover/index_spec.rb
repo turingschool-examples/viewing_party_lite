@@ -29,20 +29,34 @@ RSpec.describe 'Users discover index' do
 
   describe 'when user clicks on Top Rated Movies' do
     it 'redirects to the movies results page' do
+      # stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=17774d224d9d374cf775b5850c113b88").
+      # to_return(status: 200, body: File.read('spec/fixtures/top_rated_response.json'), headers: {})
+
       click_button('Discover Top Rated Movies')
     end
   end
 
   describe 'when user clicks on search button' do
     it 'redirects to the movies results page' do
+      # stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=17774d224d9d374cf775b5850c113b88&query=Top%20Gun").
+      # to_return(status: 200, body: File.read('spec/fixtures/top_gun_response.json'), headers: {})
+
       fill_in :search, with: 'Top Gun'
       click_button('Search by Movie Title')
       expect(page).to have_content('Top Gun')
     end
   end
+
   describe 'when user clicks on search button' do
     it 'links to movie show page' do
+      # stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=17774d224d9d374cf775b5850c113b88").
+      #   to_return(status: 200, body: File.read('spec/fixtures/top_rated_godfather.json'), headers: {})
+
       click_button('Discover Top Rated Movies')
+
+      # stub_request(:get, "https://api.themoviedb.org/3/movie/238/credits?api_key=17774d224d9d374cf775b5850c113b88").
+      #    to_return(status: 200, body: File.read('spec/fixtures/godfather_response.json'), headers: {})
+
       click_on 'The Godfather'
       expect(page).to have_content('The Godfather')
       expect(page).to have_content('8.715')
