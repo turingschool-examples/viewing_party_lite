@@ -28,7 +28,7 @@ RSpec.describe 'new viewing party page' do
   it 'has a form to enter details for user party and duration defaults to movies runtime' do
     visit new_user_movie_viewing_party_path(@user1, @movie.id)
     users = [@user2, @user3, @user4, @user5]
-    
+
     within '#party-details' do
       expect(page).to have_content("The Godfather")
       expect(page).to have_field('Duration of Party', with: @movie.runtime)
@@ -43,4 +43,32 @@ RSpec.describe 'new viewing party page' do
     end
   end
 
+  it 'creates a new viewing party and viewing party users when you complete form with valid data' do
+    visit new_user_movie_viewing_party_path(@user1, @movie.id)
+    
+    fill_in 'Duration of Party', with: '200'
+    fill_in 'Day', with: '%03.%02.%2023'
+    fill_in 'Start Time', with: '08:00 PM'
+    
+    check("#{@user2.name}")
+    check("#{@user3.name}")
+    click_button 'Create Party'
+
+    expect(current_path).to eq(user_path(@user1))
+    within "#viewing_party#{ViewingParty.maximum(:id)}" do
+      expect(page).to have_content('February 03, 2023')
+      expect(page).to have_content('Hosting')
+      expect(page).to have_content('8:00 pm')
+      # expect(page).to have_content(@movie.title)
+    end
+
+    visit user_path(@user2)
+
+    within "#viewing_party#{ViewingParty.maximum(:id)}" do
+      expect(page).to have_content('February 03, 2023')
+      expect(page).to have_content('Invited')
+      expect(page).to have_content('8:00 pm')
+      # expect(page).to have_content(@movie.title)
+    end
+  end
 end
