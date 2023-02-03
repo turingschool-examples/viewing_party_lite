@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     
     @viewing_party_details = @user.viewing_parties.map do |party|
-      movie = MoviesFacade.movie_details(party.movie_id).title
+      movie = MoviesFacade.movie_details(party.movie_id)
     end
   end
 
