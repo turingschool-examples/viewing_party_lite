@@ -6,6 +6,7 @@ class UserMoviesController < ApplicationController
     elsif params[:search] && params[:search] != (nil || "")
       @search_results = MovieFacade.movie_search(params[:search])
     else
+      redirect_to "/users/#{@user.id}/discover"
       flash.alert = "No Results Found"
     end
   end
