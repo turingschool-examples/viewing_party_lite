@@ -19,7 +19,7 @@
       <%= "Hosting" %>
       <br>
         <% vp.users.each do |user| %>
-        <% next if user = @user %>
+          <% next if user == @user %>
           <%= user.name%>
           <br> 
         <% end %>
@@ -27,7 +27,7 @@
       <%= "Invited" %>
       <br>
         <% vp.users.each do |user| %>
-        <% if user = @user %>
+        <% if user == @user %>
             <b><%= user.name %></b>
           <% else %>
             <%= user.name%>
