@@ -13,3 +13,11 @@
 <% end %>
 </ul>
 </section>
+
+<section id="reviews">
+<h3><%=@reviews.count%> Reviews</h3>
+  <% @reviews.each do |review| %>
+    <p>Author: <%= review.author %></p>
+    <p>Author's Review: <%= review.content %>/<p>
+  <% end %>
+</section>

@@ -38,6 +38,12 @@ RSpec.describe "Movies details page (/users/:id/movies/:id)", type: :feature do
       end
     end
 
-    it "count of total reviews, shows author of review and information"
+    it "count of total reviews, shows author of review and information" do
+      within"#reviews" do
+      expect(page).to have_content("Author: futuretv")
+      expect(page).to have_content("The Sollozzo’s, a family of drug dealers, confront Don and request protection in exchange for profits from the Sollozzo’s drug sales.")
+      expect(page).to have_content("2 Reviews")
+    end
+    end
   end
 end
