@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def create
-   user = User.new(permitted_params)
+    user = User.new(permitted_params)
    
     if user.save 
       redirect_to user_path(user)

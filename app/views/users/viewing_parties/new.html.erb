@@ -7,7 +7,11 @@
 
 <center>
   <section class="new_viewing_party_form">
-    <%= form_with model: @viewing_party, url: user_movie_viewing_parties_path(@host.id, @movie.id), method: :post do |f| %>
+    <%= form_with url: user_movie_viewing_parties_path(@host.id, @movie.id), method: :post, local: true do |f| %>
+      <%= f.hidden_field :host_id, value: @host.id %>
+      <%= f.label :movie, "Movie Title" %>
+      <%= f.text_field :movie, value: @movie.title, disabled: true %>
+      <br>
       <%= f.label :duration, "Duration of Party" %>
       <%= f.text_field :duration %>
       <br>
