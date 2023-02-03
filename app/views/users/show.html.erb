@@ -3,8 +3,28 @@
 <%= button_to "Discover Movies", user_discover_index_path(@user), method: :get %>
 
 <div id="viewing-parties">
-  <h3>Viewing Parties</h3>
-  <% @user.parties.each do |party| %>
+  <h3>Viewing Parties I'm Hosting</h3>
+  <% @user.hosted_parties.each do |party| %>
+      Host:<br>
+      <!-- return host of this party's name -->
+
+      Attendees:<br>
+      <% party.users.each do |user| %>
+        <% if user == @user %>
+          - <b><%= user.name  %></b><br>
+        <% else %>
+          - <%= user.name  %><br>
+        <% end %>
+      <% end %>
+      <p>
+      Movie ID: <%= party.movie_id %><br>
+      Start Time: <%= party.start_time %><br>
+      Party Duration: <%= party.duration %> minutes<br>
+    </div>
+  <% end %>
+
+  <h3>Viewing Parties I'm Invited To</h3>
+  <% @user.invited_parties.each do |party| %>
       Attendees:<br>
       <% party.users.each do |user| %>
         <% if user == @user %>
