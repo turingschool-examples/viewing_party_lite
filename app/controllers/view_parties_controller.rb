@@ -10,17 +10,13 @@ class ViewPartiesController < ApplicationController
   def create
     user = User.find(params[:user_id])
     movie_id = params[:movie_id]
-    # binding.pry
     view_party = user.view_parties.new(new_view_party_params)
-    # binding.pry
+
     if view_party.save
-      # binding.pry
-      guests = params[:guest]
-      guests.reject! {|guest| guest.empty?}
+      guests = params[:guest].reject! {|guest| guest.empty?}
       guests.map do |guest|
         view_party.party_guests.create(guest_id: guest.to_i)
       end
-      binding.pry
       redirect_to user_path(user.id)
     else
       redirect_to new_user_movie_view_party_path(user.id, movie_id), notice: "Invalid input"
