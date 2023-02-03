@@ -4,10 +4,41 @@
 <br>
 <div id="invited_parties">
   <h3>Viewing Parties I'm Invited to:</h3>
-
+  <% @user.invited_to.each do |party| %>
+    <%= link_to party.movie_info[:title], user_movie_path(@user, party.movie_id) %>
+    <br>
+    <%= image_tag "https://image.tmdb.org/t/p/original#{party.movie_info[:poster]}", height: '20%', width: '20%' %>
+    <br>
+    <%= party.start_day.strftime("%A, %B %-d, %Y") %>
+    <br>
+    <%= party.start_time.strftime('%l:%M %p') %>
+    <br>
+    <h4>Host: <%= party.host.name %></h4>
+    <h4>Invitees</h4>
+    <% party.invitees.each do |invitee| %>
+      <% if invitee.name == @user.name %>
+        <p><b><%= invitee.name %></b></p>
+      <% else %>
+        <p><%= invitee.name %></p>
+      <% end %>
+    <% end %>
+  <% end %>
 </div>
 
 <div id="hosted_parties">
   <h3>Viewing Parties I'm Hosting:</h3>
-
+  <% @user.hosting.each do |party| %>
+    <%= link_to party.movie_info[:title], user_movie_path(@user, party.movie_id) %>
+    <br>
+    <%= image_tag "https://image.tmdb.org/t/p/original#{party.movie_info[:poster]}", height: '20%', width: '20%' %>
+    <br>
+    <%= party.start_day.strftime("%A, %B %-d, %Y") %>
+    <br>
+    <%= party.start_time.strftime('%l:%M %p') %>
+    <br>
+    <h5>Invitees</h5>
+    <% party.invitees.each do |invitee| %>
+      <p><%= invitee.name %></p>
+    <% end %>
+  <% end %>
 </div>

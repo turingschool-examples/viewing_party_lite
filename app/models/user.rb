@@ -4,5 +4,11 @@ class User < ApplicationRecord
 
   validates_uniqueness_of :email
 
-  
+  def hosting
+    viewing_parties.where("user_viewing_parties.status = 'Hosting'")
+  end
+
+  def invited_to
+    viewing_parties.where("user_viewing_parties.status = 'Invited'")
+  end
 end

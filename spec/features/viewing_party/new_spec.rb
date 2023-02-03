@@ -15,9 +15,7 @@ RSpec.describe 'new viewing party page' do
     @movie = Movie.new(id: 550,
                        title: "Fight Club",
                        runtime: 139)
-    visit new_user_movie_viewing_party_path(@user_1, @movie.id)
 
-    save_and_open_page
-    
+    visit new_user_movie_viewing_party_path(@user_1, @movie.id)
   end
 end
