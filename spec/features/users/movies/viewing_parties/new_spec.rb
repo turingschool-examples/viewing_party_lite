@@ -26,8 +26,6 @@ RSpec.describe 'New Viewing Party Page' do
   
   describe 'new viewing party form' do
     it 'has fields' do
-      save_and_open_page
-      # require 'pry'; binding.pry
       within "#new-party-form" do
         expect(page).to have_content("Movie Title\n#{@movie.title}")
         expect(page).to have_field('Duration of Party', with: @movie.runtime)
@@ -41,9 +39,9 @@ RSpec.describe 'New Viewing Party Page' do
       fill_in('Duration of Party', with: (@movie.runtime + 5))
       fill_in('Day', with: Date.tomorrow)
       fill_in('Start Time', with: Time.now)
-
+      
       click_button("Create Party")
-
+      
       expect(current_path).to eq(user_path(@user))
     end
     
@@ -51,10 +49,27 @@ RSpec.describe 'New Viewing Party Page' do
       fill_in('Duration of Party', with: (@movie.runtime - 5))
       fill_in('Day', with: Date.yesterday)
       fill_in('Start Time', with: Time.now)
-  
+      
       VCR.use_cassette("movie_details") do
         click_button("Create Party")
         expect(page).to have_button("Create Party")
+      end
+    end
+    
+    it 'creates viewing party users when user boxes selected' do
+      fill_in('Duration of Party', with: (@movie.runtime + 5))
+      fill_in('Day', with: Date.tomorrow)
+      fill_in('Start Time', with: (Time.now + 20))
+      
+      within '#invite' do
+        expect(page).to have_field(@guest1.name_and_email)
+        check(@guest1.name_and_email)
+      end
+      
+      VCR.use_cassette("movie_details") do
+        click_button("Create Party")
+        
+        expect(current_path).to eq(user_path(@user))
       end
     end
   end

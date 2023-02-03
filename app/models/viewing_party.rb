@@ -8,7 +8,7 @@ class ViewingParty < ApplicationRecord
   validates :runtime, presence: true, numericality: true 
   validates :day, presence: true, on: :minimum_date
   validates :start_time, presence: true
-  validates :duration, presence: true, numericality: true, length: { minimum: :runtime }
+  validates :duration, presence: true, numericality: { greater_than_or_equal_to: :runtime }
 
   def minimum_date
     unless day >= Date.today
