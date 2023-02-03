@@ -13,7 +13,7 @@ RSpec.describe 'User Dashboard' do
   let!(:nicole) { User.create!(name: 'Nicole', email: 'nicoley_oley@yahoo.com') }
 
   let!(:party1) do
-    charlie.viewing_parties.create!(duration: 189, event_date: Date.new(2023, 4, 12), start_time: Time.now - 4.hours,
+    ViewingParty.create!(duration: 189, event_date: Date.new(2023, 4, 12), start_time: Time.now - 4.hours,
                                     host_id: charlie.id, movie_id: 497)
   end
   let!(:party2) do
@@ -59,18 +59,24 @@ RSpec.describe 'User Dashboard' do
       expect(current_path).to eq(discover_user_path(charlie))
     end
 
-    it 'displays the viewing parties a user has been invited to' do
+    it 'displays the viewing parties for a user' do
       UserViewingParty.create!(user_id: charlie.id, viewing_party_id: party1.id)
       UserViewingParty.create!(user_id: charlie.id, viewing_party_id: party2.id)
       UserViewingParty.create!(user_id: nicole.id, viewing_party_id: party3.id)
-      
+
       visit user_path(charlie)
-      save_and_open_page
-      within("#party-#{party2.id}") do
+      within("#party-#{party1.id}") do
         expect(page).to have_content('The Green Mile')
+        expect(page).to have_content(party1.event_date.strftime('%B %-d, %Y'))
+        expect(page).to have_content(party1.start_time.strftime('%I:%M %P'))
+        expect(page).to have_content('Hosting')
+      end
+
+      within("#party-#{party2.id}") do
+        expect(page).to have_content('The Godfather')
         expect(page).to have_content(party2.event_date.strftime('%B %-d, %Y'))
         expect(page).to have_content(party2.start_time.strftime('%I:%M %P'))
-        expect(page).to have_content("Invited")
+        expect(page).to have_content('Invited')
       end
     end
 
@@ -80,7 +86,7 @@ RSpec.describe 'User Dashboard' do
       expect(page).to have_content('The Godfather')
       expect(page).to have_content(party1.event_date.strftime('%B %-d, %Y'))
       expect(page).to have_content(party1.start_time.strftime('%I:%M %P'))
-      expect(page).to have_content("Hosting")
+      expect(page).to have_content('Hosting')
     end
   end
 end
