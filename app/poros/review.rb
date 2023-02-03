@@ -1,16 +1,15 @@
 class Review
-  attr_reader :id,
+  attr_reader :review_id,
               :author,
-              :content
+              :content,
+              :rating
   def initialize(response)
-    # binding.pry
-    @id = response[:id] #in base hash
-    # binding.pry
-    @author = response[:author_details][:username] #in a hash in an array in base hash
+    @review_id = response[:id] #in base hash
+    @author = response[:author] #in a hash in an array in base hash
     @content = response[:content] #in a hash in an array 
+    # binding.pry
+    author_details = response[:author_details]
+    @rating = author_details[:rating]
+    # binding.pry
   end
-  
-  # def author_name
-  # 
-  # end
 end

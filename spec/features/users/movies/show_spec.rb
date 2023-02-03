@@ -67,4 +67,19 @@ RSpec.describe "Movie's detail page" do
       expect(page).to have_content("Al Lettieri as Virgil 'The Turk' Sollozzo")
     end
   end
+  
+  describe 'review API consumption' do
+    before(:each) do
+      json_response = File.read('spec/fixtures/reviews.json')
+      stub_request(:get, "https://api.themoviedb.org/3/movie/238/reviews?api_key=#{ENV['MOVIE_DB_KEY']}")
+        .to_return(status: 200, body: json_response, headers: {})
+        
+      @review = MovieFacade.reviews('238').first
+    end
+    
+    it 'displays reviews' do
+      expect(page).to have_content("futuretv")
+      expect(@review.content).to be_a(String)
+    end
+  end
 end

@@ -49,24 +49,39 @@ RSpec.describe MovieFacade do
       stub_request(:get, "https://api.themoviedb.org/3/movie/238/reviews?api_key=#{ENV['MOVIE_DB_KEY']}")
         .to_return(status: 200, body: json_response_reviews, headers: {})
         # binding.pry
-      @revs = MovieFacade.reviews('238')
+      # @revs = MovieFacade.all_reviews('238')
+      @all = MovieFacade.all_reviews('238')
+      @review1 = MovieFacade.reviews('238').first
+      @review2 = MovieFacade.reviews('238').last
+      # binding.pry
     end
     
     it 'exists and has attributes' do
-      expect(@revs).to be_a(Array)
+      expect(@all).to be_a(Array)
     end
     
     it 'can return a count of reviews' do
-      expect(@revs.count).to eq(2)
+      expect(@all.count).to eq(2)
     end
     
     it 'can return the names of reviewers' do
-      expect(@revs.first.author).to eq("futuretv")
-      expect(@revs.last.author).to eq("crastana")
+      expect(@review1.author).to eq("futuretv")
+      expect(@review2.author).to eq("crastana")
+    end
+    
+    it 'can return the comment id' do
+      expect(@review1.review_id).to eq("5346fa840e0a265ffa001e20")
+      expect(@review2.review_id).to eq("62d5ea2fe93e95095cbddefe")
+    end
+    
+    it 'can return review rating' do
+      expect(@review1.rating).to eq(10.0)
+      expect(@review2.rating).to eq(10.0)
     end
     
     it 'can return review information' do
-      expect(@revs.first.content).to be_a(String)
+      expect(@review1.content).to be_a(String)
+      expect(@review2.content).to be_a(String)
     end
   end
 end
