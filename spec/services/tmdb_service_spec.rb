@@ -46,4 +46,30 @@ RSpec.describe TMDBService do
       expect(response[:results][0]).to have_key(:id)
     end
   end
+
+  describe "get_movie_by_id" do
+    it 'can return movies from movie id' do
+      id = 238
+
+      stub_request(:get, "https://api.themoviedb.org/3/movie/#{id}").
+      with(
+        headers: {
+        'Accept'=>'*/*',
+        'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+        'User-Agent'=>'Faraday v2.7.4'
+        }, query: {"api_key"  => ENV['tmdb_api_key']
+          }).
+
+      to_return(status: 200, body: File.read('spec/fixtures/movie_by_id.json'), headers: {})
+
+
+      response = TMDBService.get_movie_by_id(id)
+
+      expect(response).to be_instance_of(MovieResults)
+      expect(response.id).to eq(238)
+      expect(response.runtime).to eq(175)
+      expect(response.title).to eq("The Godfather")
+      expect(response.vote_avg).to eq(8.715)
+    end
+  end
 end
