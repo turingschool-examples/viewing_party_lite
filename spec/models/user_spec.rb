@@ -24,4 +24,14 @@ RSpec.describe User do
       expect(@user1.find_viewing_party_user(@vp2)).to eq(@vpu2)
     end
   end
+
+  describe '#name_and_email' do
+    it 'returns a string of users name and email' do
+      @user1 = User.create!(name: 'John Doe', email: 'johndoe@ymail.com')
+      @user2 = User.create!(name: 'Scott Smith', email: 'test@email.com')
+
+      expect(@user1.name_and_email).to eq('John Doe (johndoe@ymail.com)')
+      expect(@user2.name_and_email).to eq('Scott Smith (test@email.com)')
+    end
+  end
 end
