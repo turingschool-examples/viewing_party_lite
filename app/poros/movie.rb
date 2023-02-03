@@ -4,8 +4,6 @@ class Movie
               :vote_average,
               :runtime,
               :overview,
-              :cast,
-              :reviews,
               :image_path
 
   def initialize(movie_params)
@@ -20,7 +18,6 @@ class Movie
     @image_path = base_image_uri + movie_params[:poster_path]
   end
 
-  # TODO: Consider Cast and Review poros
 
   def genres
     @genres.map do |genre|
@@ -30,6 +27,24 @@ class Movie
 
   def review_total
     @reviews.length
+  end
+
+  def cast
+    @cast.map do |cast_member|
+      actor = OpenStruct.new
+      actor.name = cast_member[:name]
+      actor.character = cast_member[:character]
+      actor
+    end
+  end
+
+  def reviews
+    @reviews.map do |review|
+      critic = OpenStruct.new
+      critic.author = review[:author]
+      critic.content = review[:content]
+      critic
+    end
   end
 
   private 
