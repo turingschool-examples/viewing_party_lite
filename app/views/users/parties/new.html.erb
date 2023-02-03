@@ -1,1 +1,17 @@
 <h1>New Viewing Party</h1>
+
+<%= @movie.title %>
+
+<%= form_with url: user_movie_parties_path(@user, @movie.id), method: :post, local: true do |f| %>
+  <%= f.label :duration, "Duration" %>
+  <%= f.number_field :duration, value: @movie.runtime, min: @movie.runtime %>
+  <%= f.label :when, "When" %>
+  <%= f.date_field :when %>
+  <%= f.label :start_time, "Start Time" %>
+  <%= f.time_field :when %>
+  <% @potential_guests.each do |guest| %>
+    <%= f.check_box :"#{guest.id}" %>
+    <%= f.label :"#{guest.id}", "#{guest.name} (#{guest.email})" %>
+  <% end %>
+  <%= f.submit "Create Party" %>
+<% end %>

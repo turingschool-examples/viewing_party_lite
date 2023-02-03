@@ -2,6 +2,7 @@ class ShowMovie
   attr_reader :id,
               :title,
               :vote_average,
+              :parsed_runtime,
               :runtime,
               :genres,
               :overview
@@ -10,7 +11,8 @@ class ShowMovie
     @id = movie_information[:id]
     @title = movie_information[:title]
     @vote_average = movie_information[:vote_average]
-    @runtime = time_conversion(movie_information[:runtime])
+    @parsed_runtime = time_conversion(movie_information[:runtime])
+    @runtime = movie_information[:runtime]
     @genres = list_genres(movie_information[:genres])
     @overview = movie_information[:overview]
   end
