@@ -38,7 +38,6 @@ RSpec.describe 'The User Dashboard page', type: :feature do
         invited_parties = user.invited_parties
         within "#invited_parties" do
           invited_parties.each do |party|
-#            src = party.movie.image_path
             within "#invited_#{party.id}" do
               expect(page).to have_content "Movie Title: #{party.movie.title}"
               expect(page).to have_link "#{party.movie.title}"
@@ -57,7 +56,6 @@ RSpec.describe 'The User Dashboard page', type: :feature do
 
       it 'lists all viewing parties the user has hosted' do
         hosted_parties = user.hosted_parties
-        save_and_open_page
         within "#hosted_parties" do
           hosted_parties.each do |party|
             within "#hosted_#{party.id}" do
@@ -73,6 +71,13 @@ RSpec.describe 'The User Dashboard page', type: :feature do
             end
           end
         end
+      end
+
+      it 'the movies links go to the movie details page' do
+        sample_party = user.invited_parties.first
+        click_link "#{sample_party.movie.title}"
+
+        expect(current_path).to eq user_movie_path(user, sample_party.movie.id)
       end
     end
   end
