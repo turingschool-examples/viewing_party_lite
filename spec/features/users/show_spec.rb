@@ -63,15 +63,15 @@ RSpec.describe 'User Dashboard' do
       UserViewingParty.create!(user_id: charlie.id, viewing_party_id: party1.id)
       UserViewingParty.create!(user_id: charlie.id, viewing_party_id: party2.id)
       UserViewingParty.create!(user_id: nicole.id, viewing_party_id: party3.id)
-
+      
       visit user_path(charlie)
+      save_and_open_page
       within("#party-#{party2.id}") do
         expect(page).to have_content('The Green Mile')
         expect(page).to have_content(party2.event_date.strftime('%B %-d, %Y'))
         expect(page).to have_content(party2.start_time.strftime('%I:%M %P'))
         expect(page).to have_content("Invited")
       end
-      save_and_open_page
     end
 
     xit 'displays the viewing parties a user has created' do
