@@ -8,10 +8,8 @@ class ViewingParty < ApplicationRecord
                        :start_time,
                        :movie_id
 
-  #placeholder movie method
   def movie
     movie ||= MovieFacade.new(movie_id).movie
   end
-
 end
 
