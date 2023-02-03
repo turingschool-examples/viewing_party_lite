@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'register page' do
@@ -10,7 +12,6 @@ RSpec.describe 'register page' do
 
   it 'takes user to new dashboard page where :id is id for new user created' do
     user1 = User.create!(name: 'Dennis Franz', email: 'dennis@aol.com')
-    id = User.maximum(:id)
 
     visit register_path
 
@@ -24,7 +25,7 @@ RSpec.describe 'register page' do
     fill_in 'Email', with: 'ted@gmail.com'
     click_button 'Create New User'
 
-    expect(current_path).to eq(user_path((user1.id)+1))
+    expect(current_path).to eq(user_path(user1.id + 1))
     expect(page).to have_content('User Created Successfully')
   end
 end

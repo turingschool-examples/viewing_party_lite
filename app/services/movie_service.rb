@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MovieService
   def self.conn
     Faraday.new(url: 'https://api.themoviedb.org', params: { api_key: ENV['api_key'] })
@@ -8,17 +10,17 @@ class MovieService
   end
 
   def self.discover_movie(movie_query)
-    if movie_query == 'top rated'
-      response = conn.get('/3/movie/top_rated')
-    else
-      response = conn.get('/3/search/movie', { query: movie_query, include_adult: false } )
-    end
+    response = if movie_query == 'top rated'
+                 conn.get('/3/movie/top_rated')
+               else
+                 conn.get('/3/search/movie', { query: movie_query, include_adult: false })
+               end
     parse_json(response)
   end
 
   def self.movie_details(movie_id)
     response = conn.get("/3/movie/#{movie_id}")
-    (parse_json(response))
+    parse_json(response)
   end
 
   def self.actors(movie_id)

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Movie
   attr_reader :id,
               :title,
@@ -22,6 +24,6 @@ class Movie
 
   def runtime_calc
     movie_runtime = @runtime.to_i
-    (movie_runtime / 60).to_s + "hr " + (movie_runtime % 60).to_s + "min"
+    "#{movie_runtime / 60}hr #{movie_runtime % 60}min"
   end
 end

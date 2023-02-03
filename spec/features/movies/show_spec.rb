@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'movie details page' do
@@ -20,12 +22,13 @@ RSpec.describe 'movie details page' do
   it 'has a button to create a viewing party' do
     visit user_movie_path(@user1, 238)
 
-    expect(page).to have_link('Create Viewing Party for The Godfather', href: new_user_movie_viewing_party_path(@user1, 238))
+    expect(page).to have_link('Create Viewing Party for The Godfather',
+                              href: new_user_movie_viewing_party_path(@user1, 238))
   end
 
   it 'has the average vote, runtime and genres' do
     visit user_movie_path(@user1, 238)
-    
+
     expect(page).to have_content('Vote: 8.715 Runtime: 2hr 55min Genre(s): Drama and Crime')
   end
 
