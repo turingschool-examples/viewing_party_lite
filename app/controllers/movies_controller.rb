@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   def index
-    WebMock.disable!
+    
     @user = User.find(params[:user_id])
 
     if(params[:keyword])
@@ -13,5 +13,6 @@ class MoviesController < ApplicationController
 
   def show
     @movie = MovieFacade.all_movie_info(params[:id])
+    # require 'pry'; binding.pry
   end
 end

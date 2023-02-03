@@ -19,27 +19,26 @@ class MovieFacade
                   vote_average: details[:vote_average],
                   runtime: details[:runtime],
                   genres: details[:genres],
-                  summary: details[:overview],
+                  overview: details[:overview],
                   cast: cast_results(movie_id),
                   reviews: reviews_results(movie_id)
                  }
-                 require 'pry', binding.pry
+                
     Movie.new(movie_data)
   end
 
   def self.cast_results(movie_id)
-    # require 'pry', binding.pry
     MovieService.get_cast(movie_id)[:cast][0..9].map do |actor_data|
       { name: actor_data[:name], character: actor_data[:character] }
     end
   end
 
-  def self.details_results(movie_id) # runtime, genre, summary
+  def self.details_results(movie_id)
     MovieService.get_details(movie_id)
   end
 
   def self.reviews_results(movie_id)
-    MovieService.get_reviews(movie_id)
+    MovieService.get_reviews(movie_id)[:results]
   end
 
 
