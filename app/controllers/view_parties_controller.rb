@@ -10,7 +10,7 @@ class ViewPartiesController < ApplicationController
   def create
     user = User.find(params[:user_id])
     movie_id = params[:movie_id]
-    binding.pry
+    # binding.pry
     view_party = user.view_parties.new(new_view_party_params)
     # binding.pry
     if view_party.save

@@ -27,13 +27,12 @@ RSpec.describe "Movies details page (/users/:id/movies/:id)", type: :feature do
     it "has field to select a start time" do
       expect(page).to have_select(:_time_4i)
       expect(page).to have_select(:_time_5i)
-      save_and_open_page
     end
     it "has users listed as checkboxes" do
       expect(page).to have_unchecked_field(@user2.name)
       expect(page).to have_unchecked_field(@user3.name)
       check @user4.name
-      expect(page).to have_checked_Field(@user4.name)
+      expect(page).to have_checked_field(@user4.name)
     end
 
     it "dashboard with the new event now displayed" do
