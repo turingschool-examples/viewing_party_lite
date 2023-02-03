@@ -9,6 +9,11 @@ class MovieService
     parse_body(response)
   end
 
+  def self.detail_search(movie_id)
+    response = conn.get("movie/#{movie_id}?append_to_response=credits,reviews")
+    parse_body(response)
+  end
+
   def self.conn
     Faraday.new(
       url: 'https://api.themoviedb.org/3',
