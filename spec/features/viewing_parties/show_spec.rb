@@ -17,11 +17,9 @@ RSpec.describe 'New and show viewing party page' do
 
     @movie = MoviesFascade.find(238)
 
-
     # visit new_user_movie_viewing_party_path(@user_1)
     visit "/users/#{@user_1.id}/movies/#{@movie.movie_id}/viewing_parties/new"
     # /users/:user_id/movies/:movie_id/viewing_parties/new(.:format)
-  
   end
 
   it 'displays name of movie title rendered above a form' do

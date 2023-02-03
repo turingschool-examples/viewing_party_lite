@@ -1,6 +1,6 @@
 class MoviesService
   def self.conn
-    conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
+    conn = Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
       faraday.params['api_key'] = ENV['tmdb_api']
     end
   end
@@ -15,17 +15,20 @@ class MoviesService
   end
 
   def self.top_rated
-    response = conn.get("/3/movie/top_rated")
+    response = conn.get('/3/movie/top_rated')
     parse_json(response)
   end
+
   def self.find(id)
     response = conn.get("/3/movie/#{id}")
     parse_json(response)
   end
+
   def self.cast(id)
     response = conn.get("/3/movie/#{id}/credits")
     parse_json(response)
   end
+
   def self.reviews(id)
     response = conn.get("/3/movie/#{id}/reviews")
     parse_json(response)
