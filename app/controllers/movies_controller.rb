@@ -1,6 +1,5 @@
 class MoviesController < ApplicationController
   def index
-    
     @user = User.find(params[:user_id])
 
     if(params[:keyword])
@@ -12,7 +11,7 @@ class MoviesController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:user_id])
     @movie = MovieFacade.all_movie_info(params[:id])
-    # require 'pry'; binding.pry
   end
 end
