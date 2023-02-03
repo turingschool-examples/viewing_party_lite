@@ -3,4 +3,6 @@ class User < ApplicationRecord
   has_many :viewing_parties, through: :user_viewing_parties
 
   validates_uniqueness_of :email
+
+  
 end
