@@ -10,7 +10,9 @@ class Users::MoviesController < ApplicationController
       @movies = MovieFacade.keyword_search(params[:q])
     end
   end
-
+  
   def show
+    @user = User.find(params[:user_id])
+    @movie = MovieFacade.movie_details(params[:id])
   end
 end

@@ -3,35 +3,39 @@ class Movie
               :title,
               :vote_average,
               :runtime,
-              :overview
+              :overview,
+              :genres,
+              :cast,
+              :reviews
 
   def initialize(data)
     @id = data[:id]
     @title = data[:title]
     @vote_average = data[:vote_average]
     @runtime = data[:runtime]
-    @genres = data[:genres]
-    @credits = data[:credits]
+    @genres = sanitize_genres(data[:genres])
+    @cast = sanitize_cast(data[:credits])
     @overview = data[:overview]
-    @reviews = data[:reviews]
+    @reviews = sanitize_reviews(data[:reviews])
   end
 
-  def genres
-    @genres.map do |genre|
+  def sanitize_genres(data)
+    return if data.nil?
+    data.map do |genre|
       genre[:name]
     end
   end
 
-  def cast
-    return unless @credits
-      @credits[:cast][0..9].map do |cast|
+  def sanitize_cast(data)
+    return if data.nil?
+      data[:cast][0..9].map do |cast|
         { name: cast[:name], character: cast[:character] }
       end
   end
 
-  def reviews
-    return unless @reviews
-      @reviews[:results].map do |review|
+  def sanitize_reviews(data)
+    return if data.nil?
+      data[:results].map do |review|
         { author: review[:author], content: review[:content] }
       end
   end
