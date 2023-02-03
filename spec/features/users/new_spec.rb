@@ -46,6 +46,14 @@ RSpec.describe 'user new page' do
       click_button('Submit')
       expect(page).to have_content("Registration failed: Name can't be blank and Email can't be blank")
       expect(current_path).to eq('/register')
+
+      create(:user, name: 'Alex', email: 'pitzelalex@gmail.com')
+
+      fill_in 'Name', with: 'Alex'
+      fill_in 'Email', with: 'pitzelalex@gmail.com'
+
+      click_button('Submit')
+      expect(page).to have_content('Email has already been taken')
     end
   end
 end
