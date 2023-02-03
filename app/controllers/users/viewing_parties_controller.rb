@@ -3,6 +3,11 @@ class Users::ViewingPartiesController < ApplicationController
     @host = User.find(params[:user_id])
     @movie = MovieFacade.new(params[:movie_id]).movie
     @viewing_party = ViewingParty.new
+    @all_users = User.where.not(id: @host)
+  end
+
+  def create 
+    require 'pry'; binding.pry
   end
 
   private
