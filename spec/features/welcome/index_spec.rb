@@ -13,7 +13,7 @@ RSpec.describe 'welcome index' do
 
     describe 'Title of Application' do
       it 'Title of Application' do
-        expect(page).to have_content('Viewing Party Lite')
+        expect(page).to have_content('Viewing Party')
       end
 
       it 'Button to Create a New User' do
