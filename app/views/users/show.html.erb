@@ -5,15 +5,39 @@
 <div id='viewing-parties'>
   <div id='invited'>
     <h5>Invited</h5>
-    - VP Date
-    - VP Time
-    - VP Duration
-    - VP Movie Name
-    - VP Movie Poster
+    <% @user.invited.each do |viewing_party| %>
+      <div id="viewing_party-#{viewing_party.id}">
+      <%= image_tag "https://image.tmdb.org/t/p/w200#{viewing_party.poster_path}"%>
+      <%= link_to viewing_party.title, user_movie_path(@user, viewing_party.movie_id) %>
+      Date: <%= viewing_party.day.strftime("%B %-d, %Y") %>
+      Start time: <%= viewing_party.start_time.strftime("%-I:%M %p") %>
+      Hosted by: <%= viewing_party.user.name %>
+      Invited:
+      <% viewing_party.users.each do |user| %>
+        <% if user.name == @user.name %>
+          <b><%= user.name %></b>
+        <% else %>
+          <%= user.name %>
+        <% end %>
+      <% end %>
+      </div>
+    <% end %>
   </div>
 
   <div id='hosting'>
     <h5>Hosting</h5>
+    <% @user.hosting.each do |viewing_party| %>
+      <div id="viewing_party-#{viewing_party.id}">
+      <%= image_tag "https://image.tmdb.org/t/p/w200#{viewing_party.poster_path}"%>
+      <%= link_to "#{viewing_party.title}", user_movie_path(@user, viewing_party.movie_id) %>
+      Date: <%= viewing_party.day.strftime("%B %-d, %Y") %>
+      Start time: <%= viewing_party.start_time.strftime("%-I:%M %p") %>
+      Users invited: 
+      <% viewing_party.users.each do |user| %>
+       <%= user.name %>
+      <% end %>
+      </div>
+    <% end %>
   </div>
 </div>
 

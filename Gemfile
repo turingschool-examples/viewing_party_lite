@@ -37,8 +37,10 @@ gem 'faraday'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'pry'
+  gem 'factory_bot_rails'
+  gem 'faker'
   gem 'figaro'
+  gem 'pry'
   gem 'vcr'
 end
 
@@ -54,8 +56,6 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'simplecov'
-  gem 'factory_bot_rails'
-  gem 'faker'
   gem 'shoulda-matchers'
   gem 'hirb'
   gem 'table_print'

@@ -24,5 +24,4 @@ class User < ApplicationRecord
   def hosting
     self.viewing_parties
   end
-  
 end

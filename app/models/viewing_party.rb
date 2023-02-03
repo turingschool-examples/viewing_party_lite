@@ -15,5 +15,4 @@ class ViewingParty < ApplicationRecord
       errors.add(:day, "Invalid Date")
     end
   end
-  
 end
