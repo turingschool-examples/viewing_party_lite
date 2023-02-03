@@ -17,8 +17,23 @@
     <br>
     <% if @user.find_viewing_party_user(vp).hosting %>
       <%= "Hosting" %>
+      <br>
+        <% vp.users.each do |user| %>
+        <% next if user = @user %>
+          <%= user.name%>
+          <br> 
+        <% end %>
     <% else %>
       <%= "Invited" %>
+      <br>
+        <% vp.users.each do |user| %>
+        <% if user = @user %>
+            <b><%= user.name %></b>
+          <% else %>
+            <%= user.name%>
+          <% end %>
+          <br> 
+        <% end %>
     <% end %>
     </p>
   </div>
