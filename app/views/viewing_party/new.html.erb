@@ -21,8 +21,10 @@
         Invite Other Users
         <br>
       
-          <%= f.collection_check_boxes(:user_ids, @users, :id, :name_and_email) %>
-
+          <%= f.collection_check_boxes(:user_ids, @users, :id, :name_and_email) do |box| %>
+            <%= box.check_box %>
+            <%= box.label %><br>
+            <% end %>
         <br><br>
         <%= f.submit "Create Party"%>
       </p></center>
