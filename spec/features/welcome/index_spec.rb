@@ -12,7 +12,7 @@ RSpec.describe 'landing page' do
 
       @viewing_party_user_1 = ViewingPartyUser.create!(user_id: @user_1.id, viewing_party_id: @viewing_party_1.id)
       @viewing_party_user_2 = ViewingPartyUser.create!(user_id: @user_2.id, viewing_party_id: @viewing_party_1.id)
-      
+
       visit '/'
     end
 
@@ -35,5 +35,4 @@ RSpec.describe 'landing page' do
       expect(page).to have_content('Home')
     end
   end
-  
 end
