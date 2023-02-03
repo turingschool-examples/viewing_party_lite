@@ -1,13 +1,16 @@
-<h1>Here Are Your Results</h1>
+<h2>Here Are Your Results</h2>
 
 <div id="discover-page-button">
   <%= button_to "Discover Page", user_discover_index_path(@user), method: :get %>
 </div>
-
+<p></p>
 <div id="display-movies">
+  <table>
   <% @movies.each do |movie| %>
-    <b><%= link_to movie.title, user_movie_path(@user, movie.movie_id) %></b><br>
-    Vote Avg: <%= movie.vote_average %><br>
-    <p></p>
+    <tr>
+      <td><b><%= link_to movie.title, user_movie_path(@user, movie.movie_id) %></b></td>
+      <td>Vote Avg: <%= movie.vote_average %><br></td>
+    </tr>
   <% end %>
+  </table>
 </div>

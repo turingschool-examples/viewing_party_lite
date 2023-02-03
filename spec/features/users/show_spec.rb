@@ -11,6 +11,7 @@ RSpec.describe 'The User Dashboard (Show Page)', type: :feature do
     stub_request(:get, "https://api.themoviedb.org/3/movie/1/reviews?api_key").
     to_return(status: 200, body: File.read("spec/fixtures/citizen_kane_reviews_response.json"), headers: {})
   end
+
   let!(:user1) { User.create!(name: "Anthony", email: "anthony@gmail.com") }
   let!(:user2) { User.create!(name: "Thomas", email: "thomas@gmail.com") }
   let!(:user3) { User.create!(name: "Jessica", email: "jessica@gmail.com") }

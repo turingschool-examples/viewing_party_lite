@@ -1,51 +1,15 @@
-<h1><%= "#{@user.name}" %>'s Dashboard</h1>
+<h2><%= "#{@user.name}" %>'s Dashboard</h2>
 
 <%= button_to "Discover Movies", user_discover_index_path(@user), method: :get %>
 
 <div id="viewing-parties">
   <h2>Viewing Parties I'm Invited To</h2>
-  <% @user.invited_parties.each do |party| %>
-      <h3><%= party.movie.title %> Party</h3>
-      Host:<br>
-      <%= party.host_of(party) %><br>
-      <p></p>
-      Attendees:<br>
-      <% party.users.each do |user| %>
-        <% if user == @user %>
-          - <b><%= user.name  %></b><br>
-        <% else %>
-          - <%= user.name  %><br>
-        <% end %>
-      <% end %>
-      <p>
-      <%= link_to party.movie.title, user_movie_path(@user, party.movie_id) %><br>
-      <img src="https://image.tmdb.org/t/p/w500<%= party.movie.poster %>" style="width:200px;height:300px;"><br>
-      Start Date: <%= party.start_time.strftime("%A, %B %d, %Y")%><br>
-      Start Time: <%= party.start_time.strftime('%I:%M %P') %><br>
-      Party Duration: <%= party.duration %> minutes<br>
-    </div>
-  <% end %>
+  <div id="invited-parties">
+    <%= render partial: 'parties', :locals => { party_list: @user.invited_parties } %>
+  </div>
 
   <h2>Viewing Parties I'm Hosting</h2>
-  <% @user.hosted_parties.each do |party| %>
-      <h3><%= party.movie.title %> Party</h3>
-      Host:<br>
-      <%= party.host_of(party) %><br>
-      <p></p>
-      Attendees:<br>
-      <% party.users.each do |user| %>
-        <% if user == @user %>
-          - <b><%= user.name  %></b><br>
-        <% else %>
-          - <%= user.name  %><br>
-        <% end %>
-      <% end %>
-      <p>
-      <%= link_to party.movie.title, user_movie_path(@user, party.movie_id) %><br>
-      <img src="https://image.tmdb.org/t/p/w500<%= party.movie.poster %>" style="width:200px;height:300px;"><br>
-      Start Date: <%= party.start_time.strftime("%A, %B %d, %Y")%><br>
-      Start Time: <%= party.start_time.strftime('%I:%M %P') %><br>
-      Party Duration: <%= party.duration %> minutes<br>
-    </div>
-  <% end %>
+  <div id="hosted-parties">
+    <%= render partial: 'parties', :locals => { party_list: @user.hosted_parties } %>
+  </div>
 </div>
