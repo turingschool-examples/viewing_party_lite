@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -10,9 +12,9 @@ Rails.application.routes.draw do
   post '/register', to: 'users#create'
   # get '/users/:user_id/movies/:movie_id/viewing-party/new', to: 'viewing_parties#new'
 
-  resources :users, only: [:create, :show] do
+  resources :users, only: %i[create show] do
     resources :movies, only: [:show] do
-      resources :viewing_parties, only: [:new, :create]
+      resources :viewing_parties, only: %i[new create]
     end
   end
 end
