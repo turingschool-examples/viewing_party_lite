@@ -15,9 +15,9 @@ class MovieService
     JSON.parse(conn.get("search/movie?query=#{query}").body, symbolize_names: true)
   end
 
-  def self.image(id)
-    JSON.parse(conn.get("movie/2/#{id}/images?").body, symbolize_names: true)
-  end
+  # def self.image(id)
+  #   JSON.parse(conn.get("movie/#{id}/images").body, symbolize_names: true)[:backdrops].first[:file_path]
+  # end
   
   private
   

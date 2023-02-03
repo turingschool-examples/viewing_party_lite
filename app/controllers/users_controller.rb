@@ -1,9 +1,8 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    require 'pry'; binding.pry
-    
-    # @image = post :bookmark, params: { bulkfile: image_json}
+    # require 'pry'; binding.pry
+
   end
   
   def discover_movies
