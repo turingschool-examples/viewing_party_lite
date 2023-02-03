@@ -5,7 +5,8 @@ class Movie
               :runtime,
               :overview,
               :cast,
-              :reviews
+              :reviews,
+              :image_path
 
   def initialize(movie_params)
     @id = movie_params[:id]
@@ -16,12 +17,13 @@ class Movie
     @overview = movie_params[:overview]
     @cast = movie_params[:cast].try(:first, 10)
     @reviews = movie_params[:results]
+    @image_path = base_image_uri + movie_params[:poster_path]
   end
 
-  #TODO: Consider Cast and Review poros 
+  # TODO: Consider Cast and Review poros
 
-  #TODO: This isn't the place for this data parsing?
-  def genres 
+  # TODO: This isn't the place for this data parsing?
+  def genres
     @genres.map do |genre|
       genre[:name]
     end.join(', ')
@@ -31,7 +33,7 @@ class Movie
     @reviews.length
   end
 
-  def image
-
+  def base_image_uri
+    "https://image.tmdb.org/t/p/w500/"
   end
 end

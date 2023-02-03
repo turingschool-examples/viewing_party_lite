@@ -7,3 +7,4 @@ class ViewingParty < ApplicationRecord
     movie ||= MovieFacade.new(movie_id).movie
   end
 end
+
