@@ -10,17 +10,17 @@ class ViewingPartyController < ApplicationController
     # require 'pry', binding.pry
     viewing_party = ViewingParty.new(viewing_party_params)
     if viewing_party.save
-      # UserViewingParty.create!(user_id: params[:user_id],
-      #                          viewing_party_id: viewing_party.id,
-      #                          status: "Hosting")
-      # User.all.each do |user|
-      #   if params[user.id.to_s]
-      #     UserViewingParty.create!(user_id: user.id,
-      #                             viewing_party_id: viewing_party.id,
-      #                             status: "Invited")
-      #   end
-      # end
-      redirect_to user_path(params[:id])
+      UserViewingParty.create!(user_id: params[:user_id],
+                               viewing_party_id: viewing_party.id,
+                               status: "Hosting")
+      User.all.each do |user|
+        if params[user.id.to_s]
+          UserViewingParty.create!(user_id: user.id,
+                                  viewing_party_id: viewing_party.id,
+                                  status: "Invited")
+        end
+      end
+      redirect_to user_path(params[:user_id])
     end
   end
 
