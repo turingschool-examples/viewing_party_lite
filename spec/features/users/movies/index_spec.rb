@@ -6,8 +6,8 @@ RSpec.describe 'Movies Index' do
 
   it 'has a button to the discover page' do
     json_response = File.read('spec/fixtures/top_rated_movies.json')
-    stub_request(:get, "https://api.themoviedb.org/3/discover/movie?api_key=#{ENV['movie_api_key']}&language=en-US&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&vote_count.gte=1000").
-      to_return(status: 200, body: json_response)
+    stub_request(:get, "https://api.themoviedb.org/3/discover/movie?api_key=#{ENV['movie_api_key']}&language=en-US&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&vote_count.gte=1000")
+      .to_return(status: 200, body: json_response)
 
     visit user_discover_index_path(user)
     click_button 'Find Top Rated Movies'
@@ -18,8 +18,8 @@ RSpec.describe 'Movies Index' do
 
   it 'shows the top rated movies' do
     json_response = File.read('spec/fixtures/top_rated_movies.json')
-    stub_request(:get, "https://api.themoviedb.org/3/discover/movie?api_key=#{ENV['movie_api_key']}&language=en-US&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&vote_count.gte=1000").
-      to_return(status: 200, body: json_response)
+    stub_request(:get, "https://api.themoviedb.org/3/discover/movie?api_key=#{ENV['movie_api_key']}&language=en-US&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&vote_count.gte=1000")
+      .to_return(status: 200, body: json_response)
 
     visit user_discover_index_path(user)
     click_button 'Find Top Rated Movies'
@@ -41,8 +41,8 @@ RSpec.describe 'Movies Index' do
 
   it 'shows movies filtered by title' do
     json_response = File.read('spec/fixtures/movies_with_green.json')
-    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['movie_api_key']}&language=en-US&query=Green&page=1&include_adult=false").
-      to_return(status: 200, body: json_response)
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['movie_api_key']}&language=en-US&query=Green&page=1&include_adult=false")
+      .to_return(status: 200, body: json_response)
 
     visit user_discover_index_path(user)
     fill_in(:title, with: 'Green')
@@ -53,8 +53,8 @@ RSpec.describe 'Movies Index' do
 
   it 'accepts multiple words in search field' do
     json_response = File.read('spec/fixtures/movies_with_spider_man.json')
-    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['movie_api_key']}&language=en-US&query=Spider%20Man&page=1&include_adult=false").
-      to_return(status: 200, body: json_response)
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['movie_api_key']}&language=en-US&query=Spider%20Man&page=1&include_adult=false")
+      .to_return(status: 200, body: json_response)
 
     visit user_discover_index_path(user)
 
@@ -66,8 +66,8 @@ RSpec.describe 'Movies Index' do
 
   it 'only returns movies that meet the criteria, and responses are case insensitive' do
     json_response = File.read('spec/fixtures/the_grand_budapest_hotel.json')
-    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['movie_api_key']}&language=en-US&query=the%20grand%20budapest%20hotel&page=1&include_adult=false").
-      to_return(status: 200, body: json_response)
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['movie_api_key']}&language=en-US&query=the%20grand%20budapest%20hotel&page=1&include_adult=false")
+      .to_return(status: 200, body: json_response)
 
     visit user_discover_index_path(user)
 
@@ -79,8 +79,8 @@ RSpec.describe 'Movies Index' do
 
   it 'returns an error if nothing is inputted' do
     json_response = File.read('spec/fixtures/failed_search.json')
-    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['movie_api_key']}&language=en-US&query=&page=1&include_adult=false").
-      to_return(status: 200, body: json_response)
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['movie_api_key']}&language=en-US&query=&page=1&include_adult=false")
+      .to_return(status: 200, body: json_response)
 
     visit user_discover_index_path(user)
 

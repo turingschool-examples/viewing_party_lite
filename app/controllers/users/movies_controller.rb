@@ -13,11 +13,9 @@ module Users
 
       end
 
-      if @movies.is_a?(Hash)
-        if @movies[:success] == false
-          flash[:error] = @movies[:errors]
-          redirect_to user_discover_index_path(@user)
-        end
+      if @movies.is_a?(Hash) && (@movies[:success] == false)
+        flash[:error] = @movies[:errors]
+        redirect_to user_discover_index_path(@user)
       end
     end
 

@@ -5,22 +5,22 @@ RSpec.describe 'Movies Show' do
   let(:user) { users.first }
   before :each do
     json_response = File.read('spec/fixtures/the_godfather.json')
-    stub_request(:get, "https://api.themoviedb.org/3/movie/238?api_key=#{ENV['movie_api_key']}&language=en-US").
-      to_return(status: 200, body: json_response)
+    stub_request(:get, "https://api.themoviedb.org/3/movie/238?api_key=#{ENV['movie_api_key']}&language=en-US")
+      .to_return(status: 200, body: json_response)
 
     json_response_2 = File.read('spec/fixtures/the_godfather_credits.json')
-    stub_request(:get, "https://api.themoviedb.org/3/movie/238/credits?api_key=#{ENV['movie_api_key']}&language=en-US").
-      to_return(status: 200, body: json_response_2)
+    stub_request(:get, "https://api.themoviedb.org/3/movie/238/credits?api_key=#{ENV['movie_api_key']}&language=en-US")
+      .to_return(status: 200, body: json_response_2)
 
     json_response_3 = File.read('spec/fixtures/the_godfather_reviews.json')
-    stub_request(:get, "https://api.themoviedb.org/3/movie/238/reviews?api_key=#{ENV['movie_api_key']}&language=en-US").
-      to_return(status: 200, body: json_response_3)
+    stub_request(:get, "https://api.themoviedb.org/3/movie/238/reviews?api_key=#{ENV['movie_api_key']}&language=en-US")
+      .to_return(status: 200, body: json_response_3)
   end
 
   it 'is linked on the results page' do
     json_response_1 = File.read('spec/fixtures/top_rated_movies.json')
-    stub_request(:get, "https://api.themoviedb.org/3/discover/movie?api_key=#{ENV['movie_api_key']}&language=en-US&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&vote_count.gte=1000").
-      to_return(status: 200, body: json_response_1)
+    stub_request(:get, "https://api.themoviedb.org/3/discover/movie?api_key=#{ENV['movie_api_key']}&language=en-US&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&vote_count.gte=1000")
+      .to_return(status: 200, body: json_response_1)
 
     visit user_discover_index_path(user)
     click_button 'Find Top Rated Movies'
@@ -85,11 +85,11 @@ RSpec.describe 'Movies Show' do
     it 'has a list of reviews' do
       visit user_movie_path(user, 238)
 
-      expect(page).to have_content("2 Reviews:")
-      expect(page).to have_content("The Godfather is a film considered by most to be one of the greatest ever made.")
-      expect(page).to have_content("futuretv")
-      expect(page).to have_content("crastana")
-      expect(page).to have_content("A masterpiece by the young and talented Francis Ford Coppola, about a Mob family and their drama, the story telling is perfect, the acting good, sometimes a little over the top in the case of Thalia Shire (the sister of the director)")
+      expect(page).to have_content('2 Reviews:')
+      expect(page).to have_content('The Godfather is a film considered by most to be one of the greatest ever made.')
+      expect(page).to have_content('futuretv')
+      expect(page).to have_content('crastana')
+      expect(page).to have_content('A masterpiece by the young and talented Francis Ford Coppola, about a Mob family and their drama, the story telling is perfect, the acting good, sometimes a little over the top in the case of Thalia Shire (the sister of the director)')
     end
   end
 end

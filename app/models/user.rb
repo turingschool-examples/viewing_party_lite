@@ -7,10 +7,10 @@ class User < ApplicationRecord
   validates :email, email: true
 
   def find_user_viewing_party(viewing_party)
-    self.user_viewing_parties.find_by(viewing_party_id: viewing_party.id)
+    user_viewing_parties.find_by(viewing_party_id: viewing_party.id)
   end
 
   def all_but_self
-    User.where.not(id: self.id)
+    User.where.not(id: id)
   end
 end
