@@ -10,14 +10,25 @@ RSpec.describe MovieFacade do
   end
 
   describe '#get_top_movies' do
-    xit 'returns an array of the top 20 movie objects' do
-
+    it 'returns an array of the top 20 movie objects' do
+      movie_facade = MovieFacade.new
+      movies = movie_facade.get_top_movies
+      expect(movies.length).to eq 20
+      expect(movies).to be_a Array
+      movies.each do |movie|
+        expect(movie).to be_a Movie
+      end
     end
   end
 
   describe '#seach_movies()' do
-    xit 'returns an array of movie objects based on a search' do
-
+    it 'returns an array of movie objects based on a search' do
+      movie_facade = MovieFacade.new
+      movies = movie_facade.search_movies("river")
+      expect(movies).to be_a Array
+      movies.each do |movie|
+        expect(movie).to be_a Movie
+      end
     end
   end
 end
