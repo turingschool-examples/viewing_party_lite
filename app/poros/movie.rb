@@ -22,7 +22,6 @@ class Movie
 
   # TODO: Consider Cast and Review poros
 
-  # TODO: This isn't the place for this data parsing?
   def genres
     @genres.map do |genre|
       genre[:name]
