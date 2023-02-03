@@ -48,32 +48,36 @@ RSpec.describe 'Movies Results Page' do
   end
 
   it 'has a button to return to Discover Page' do
-    visit "/users/#{@user.id}/movies?q=top_rated"
-    
-    click_button("Discover Page")
+    VCR.use_cassette "top_rated" do
+      visit "/users/#{@user.id}/movies?q=top_rated"
+      
+      click_button("Discover Page")
 
-    expect(current_path).to eq user_discover_index_path(@user)    
+      expect(current_path).to eq user_discover_index_path(@user)    
+    end
   end
 
   it 'shows 20 movies from a keyword search' do
-    visit user_discover_index_path(@user)
+    VCR.use_cassette "keyword_search_lego" do
+      visit user_discover_index_path(@user)
 
-    fill_in(:q, with: 'Lego')
-    click_button('Find Movies')
+      fill_in(:q, with: 'Lego')
+      click_button('Find Movies')
 
-    expect(page).to have_content("Vote Average:", count: 20)
+      expect(page).to have_content("Vote Average:", count: 20)
 
-    within '#movie-1' do
-      expect(page).to have_link('The Lego Movie')
-      expect(page).to have_content('Vote Average: 7.4') 
-    end
-    within '#movie-2' do
-      expect(page).to have_link('The Lego Batman Movie')
-      expect(page).to have_content('Vote Average: 7.2') 
-    end
-    within '#movie-3' do
-      expect(page).to have_link('The Lego Ninjago Movie')
-      expect(page).to have_content('Vote Average: 6.5') 
+      within '#movie-1' do
+        expect(page).to have_link('The Lego Movie')
+        expect(page).to have_content('Vote Average: 7.4') 
+      end
+      within '#movie-2' do
+        expect(page).to have_link('The Lego Batman Movie')
+        expect(page).to have_content('Vote Average: 7.2') 
+      end
+      within '#movie-3' do
+        expect(page).to have_link('The Lego Ninjago Movie')
+        expect(page).to have_content('Vote Average: 6.5') 
+      end
     end
   end
 
