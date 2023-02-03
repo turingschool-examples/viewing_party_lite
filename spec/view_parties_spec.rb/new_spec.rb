@@ -19,12 +19,17 @@ RSpec.describe "Movies details page (/users/:id/movies/:id)", type: :feature do
     end
 
     it "has field for selecting a date" do
-      
+      expect(page).to have_select(:_day_1i)
+      expect(page).to have_select(:_day_2i)
+      expect(page).to have_select(:_day_3i)
     end
 
-    it "has field to select a start time"
-
-    it "has users listed as checkboxes"
+    it "has field to select a start time" do
+      expect(page).to have_field(:time)
+    end
+    it "has users listed as checkboxes" do
+      expect(page).to have
+    end
 
     it "user fills out form and when create a party button is clicked they are redirected to the users's dashboard with the new event now displayed"
   end
