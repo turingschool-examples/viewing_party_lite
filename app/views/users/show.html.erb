@@ -18,9 +18,11 @@
         <p>Duration: <%= party_info[:duration] %>mins</p>
         <p>Host: </p>
           <b> &emsp; <%= party_info[:host] %></b>
-        <p>Attendees: <% party_info[:attendees].each do |attendee| %></p>
-          <p> &emsp; <%= attendee.name %></p>
-        <% end %> 
+          <div id="attendees-<%= party_info[:movie_id] %>">
+            <p>Attendees: <% party_info[:attendees].each do |attendee| %></p>
+            <p> &emsp; <%= attendee.name %></p>
+          <% end %> 
+        </div>
       </div>
     <% end %>
   </div>
