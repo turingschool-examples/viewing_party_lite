@@ -48,12 +48,9 @@ RSpec.describe MovieFacade do
       json_response_reviews = File.read('spec/fixtures/reviews.json')
       stub_request(:get, "https://api.themoviedb.org/3/movie/238/reviews?api_key=#{ENV['MOVIE_DB_KEY']}")
         .to_return(status: 200, body: json_response_reviews, headers: {})
-        # binding.pry
-      # @revs = MovieFacade.all_reviews('238')
       @all = MovieFacade.all_reviews('238')
       @review1 = MovieFacade.reviews('238').first
       @review2 = MovieFacade.reviews('238').last
-      # binding.pry
     end
     
     it 'exists and has attributes' do
