@@ -1,5 +1,6 @@
 class Detail
-  attr_reader :title,
+  attr_reader :id,
+              :title,
               :vote_average, 
               :runtime, 
               :genres, 
@@ -9,6 +10,7 @@ class Detail
               :reviews
 
   def initialize(data)
+    @id = data[0][:id]
     @title = data[0][:title]
     @vote_average = data[0][:vote_average]
     @runtime = data[0][:runtime]
