@@ -6,9 +6,33 @@
   <center><table>
     <%= form_with url: user_movie_viewing_parties_path, method: :post, local: true do |f| %>
     <tr>
-      <td> <%= f.label :header, value: "Viewing Party Details" %>
-
-
+      <center><td> <%= f.label :header, "Viewing Party Details" %></td></center>
+    </tr>
+    <tr>
+      <td> <%= f.label :movie_title, "Movie Title: #{@movie.title}" %></td>
+    </tr>
+    <tr>
+      <td> <%= f.label :duration, "Duration of Party" %></td>
+      <td> <%= f.number_field :duration, value: @movie.runtime %></td>
+    </tr>
+    <tr>
+      <td> <%= f.label :date, "Day" %></td>
+      <td> <%= f.date_field :party_date, min: Date.today %></td>
+    </tr>
+    <tr>
+      <td> <%= f.label :time, "Start Time" %></td>
+      <td> <%= f.time_field :party_time %></td>
+    </tr>
+    <tr>
+    <h2> Invite Other Users </h2>
+    </tr>
+    <tr>
+      <td><% @users.each do |user| %>
+        <%= check_box_tag(:user_info) %>
+        <%= label_tag(:user_info, "#{user.name} (#{user.email})") %>
+      <% end %></td>
+    <tr>
+      <td><%= f.submit "Create Party" %></td>
     <% end %>
   </table></center>
 </div>
