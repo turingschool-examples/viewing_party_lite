@@ -12,6 +12,8 @@ RSpec.describe "movies results page" do
     search_results = File.read('spec/fixtures/godfather_search.json')
     stub_request(:get, "https://api.themoviedb.org/3/search/movie?query=Godfather&api_key=#{ENV['MOVIE_DB_KEY']}")
       .to_return(status: 200, body: search_results)
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['MOVIE_DB_KEY']}&query=")
+      .to_return(status: 200, body: "")
   end
 
   it 'has the site title at the top of the page' do
