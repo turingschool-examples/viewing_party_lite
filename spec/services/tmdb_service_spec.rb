@@ -72,4 +72,26 @@ RSpec.describe TMDBService do
       expect(response.vote_avg).to eq(8.715)
     end
   end
+
+  describe "get_movie_cast" do
+    it 'returns cast from movie' do
+      movie_id = 238
+
+      stub_request(:get, "https://api.themoviedb.org/3/movie/#{movie_id}/credits").
+         with(
+           headers: {
+       	  'Accept'=>'*/*',
+       	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+       	  'User-Agent'=>'Faraday v2.7.4'
+           }, query: {"api_key"  => ENV['tmdb_api_key']})
+           .to_return(status: 200, body: File.read('spec/fixtures/movie_credits.json'), headers: {})
+
+      response = TMDBService.get_movie_cast(movie_id)
+
+      expect(response).to have_key(:cast)
+      expect(response[:cast]).to be_a(Array)
+      expect(response[:cast][0]).to have_key(:name)
+      expect(response[:cast][0]).to have_key(:character)
+    end
+  end
 end
