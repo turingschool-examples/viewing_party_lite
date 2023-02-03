@@ -73,6 +73,30 @@ RSpec.describe 'The User Dashboard page', type: :feature do
         end
       end
 
+      it 'can display a new viewing party' do
+        visit user_path(user2)
+        within "#hosted_parties" do
+          expect(page).to_not have_content "Movie Title: American Beauty"
+        end
+
+        visit new_user_movie_viewing_party_path(user2, 14) 
+
+        fill_in("Duration of Party", with: 300)
+        select("2025", from: "[date(1i)]")
+        select("March", from: "[date(2i)]")
+        select("5", from: "[date(3i)]")
+        select("20", from: "[start_time(4i)]")
+        select("00", from: "[start_time(5i)]")
+        page.check(user.display_name)
+        page.check(user3.display_name)
+        click_button "Create Party"
+
+        visit user_path(user2)
+        within '#hosted_parties' do
+          expect(page).to have_content "Movie Title: American Beauty"
+        end
+      end
+
       it 'the movies links go to the movie details page' do
         sample_party = user.invited_parties.first
         click_link "#{sample_party.movie.title}"

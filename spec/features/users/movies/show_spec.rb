@@ -38,8 +38,8 @@ RSpec.describe 'Movie Details', type: :feature do
         end
 
         within "#movie" do
-          expect(page).to have_content "#{@movie.title}"
-          expect(page).to have_content "Summary: #{@movie.overview}"
+          expect(page).to have_content @movie.title
+          expect(page).to have_content @movie.overview
 
           @movie.cast.each do |cast_member|
             within "#cast" do
