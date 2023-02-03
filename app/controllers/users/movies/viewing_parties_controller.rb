@@ -7,6 +7,6 @@ class Users::Movies::ViewingPartiesController < ApplicationController
   end
 
   def create
-    # require 'pry'; binding.pry
+    
   end
 end

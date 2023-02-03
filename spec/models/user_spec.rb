@@ -16,4 +16,13 @@ RSpec.describe User, type: :model do
       end
     end
   end
+
+  describe 'instance methods' do
+    describe '.name_and_email' do
+      it 'returns string of user name_and_email' do
+        user = create(:user, name: "Bob", email: "email@email.com")
+        expect(user.name_and_email).to eq("Bob (email@email.com)")
+      end
+    end
+  end
 end
