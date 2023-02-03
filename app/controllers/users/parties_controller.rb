@@ -25,10 +25,10 @@ class Users::PartiesController < ApplicationController
       end
       redirect_to user_path(params[:user_id])
     else
+      redirect_to new_user_movie_party_path(params[:user_id], params[:movie_id])
       flash[:error] = "Please fill in all fields accurately"
     end
   end
-
 
   def party_params
     params.permit(:duration, :start_time, :movie_id)   
