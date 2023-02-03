@@ -3,8 +3,9 @@
 <%= button_to "Discover Movies", user_discover_index_path(@user), method: :get %>
 
 <div id="viewing-parties">
-  <h3>Viewing Parties I'm Hosting</h3>
-  <% @user.hosted_parties.each do |party| %>
+  <h2>Viewing Parties I'm Invited To</h2>
+  <% @user.invited_parties.each do |party| %>
+      <h3><%= party.movie.title %> Party</h3>
       Host:<br>
       <%= party.host_of(party) %><br>
       <p></p>
@@ -17,14 +18,17 @@
         <% end %>
       <% end %>
       <p>
-      Movie ID: <%= party.movie_id %><br>
-      Start Time: <%= party.start_time %><br>
+      <%= link_to party.movie.title, user_movie_path(@user, party.movie_id) %><br>
+      <img src="https://image.tmdb.org/t/p/w500<%= party.movie.poster %>" style="width:200px;height:300px;"><br>
+      Start Date: <%= party.start_time.strftime("%A, %B %d, %Y")%><br>
+      Start Time: <%= party.start_time.strftime('%I:%M %P') %><br>
       Party Duration: <%= party.duration %> minutes<br>
     </div>
   <% end %>
 
-  <h3>Viewing Parties I'm Invited To</h3>
-  <% @user.invited_parties.each do |party| %>
+  <h2>Viewing Parties I'm Hosting</h2>
+  <% @user.hosted_parties.each do |party| %>
+      <h3><%= party.movie.title %> Party</h3>
       Host:<br>
       <%= party.host_of(party) %><br>
       <p></p>
@@ -37,8 +41,10 @@
         <% end %>
       <% end %>
       <p>
-      Movie ID: <%= party.movie_id %><br>
-      Start Time: <%= party.start_time %><br>
+      <%= link_to party.movie.title, user_movie_path(@user, party.movie_id) %><br>
+      <img src="https://image.tmdb.org/t/p/w500<%= party.movie.poster %>" style="width:200px;height:300px;"><br>
+      Start Date: <%= party.start_time.strftime("%A, %B %d, %Y")%><br>
+      Start Time: <%= party.start_time.strftime('%I:%M %P') %><br>
       Party Duration: <%= party.duration %> minutes<br>
     </div>
   <% end %>

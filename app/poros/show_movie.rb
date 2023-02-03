@@ -1,6 +1,7 @@
 class ShowMovie
   attr_reader :id,
               :title,
+              :poster,
               :vote_average,
               :parsed_runtime,
               :runtime,
@@ -9,6 +10,7 @@ class ShowMovie
 
   def initialize(movie_information)
     @id = movie_information[:id]
+    @poster = movie_information[:poster_path]
     @title = movie_information[:title]
     @vote_average = movie_information[:vote_average]
     @parsed_runtime = time_conversion(movie_information[:runtime])
