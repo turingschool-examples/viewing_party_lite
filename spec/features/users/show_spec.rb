@@ -45,6 +45,7 @@ RSpec.describe "User Show Page", type: :feature do
       select 12, from: :_time_4i
       select 24, from: :_time_5i
       check @user2.name
+      check @user3.name
       click_button "Create Party"
     end
 
@@ -66,8 +67,10 @@ RSpec.describe "User Show Page", type: :feature do
       expect(page).to have_content(175)
     end
 
-    it "shows the user is the host for the party" do
-      expect(page).to have_content(@user1.name)
+    it "shows list of friends invited to viewing party" do
+      within"#238_party_guests" do
+        expect(page).to have_content(@user2.name)
+      end
     end
 
     xit "shows list of friends invited to viewing party" do
