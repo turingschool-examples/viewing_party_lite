@@ -7,6 +7,8 @@ RSpec.describe 'The new viewing party page' do
   end
 
   let!(:charlie) { User.create!(name: 'Charlie', email: 'charlie_boy@gmail.com') }
+  let!(:cindy) { User.create!(name: 'Cindy', email: 'user@gmail.com') }
+  let!(:louis) { User.create!(name: 'Louis', email: 'email_me@gmail.com') }
 
   it 'lists the movie title above the form' do
     visit "/users/#{charlie.id}/movies/497/viewing-party/new"
@@ -20,6 +22,7 @@ RSpec.describe 'The new viewing party page' do
       within('#form') do
         # fill_in 'day', with: Date.now
         # fill_in 'start_time', with: '7:00'
+        
         click_button 'Create Party'
       end
       expect(current_path).to eq("/users/#{charlie.id}")

@@ -12,6 +12,10 @@ class ViewingPartiesController < ApplicationController
   end
 
   def create
-    
+    # require 'pry'; binding.pry
+    user = User.find(params[:id])
+    viewing_party = user.viewing_parties.create(duration: params[:duration].to_i, event_date: Time.now, start_time: Time.now)
+    # viewing_party.user_viewing_parties.create(guests)
+    redirect_to user_path(user)
   end
 end
