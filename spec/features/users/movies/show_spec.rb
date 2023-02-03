@@ -81,6 +81,7 @@ RSpec.describe "Movie's detail page" do
     
     it 'displays reviews' do
       expect(page).to have_content("futuretv")
+      expect(page).to have_content("2 Reviews")
       expect(@review.content).to be_a(String)
     end
   end

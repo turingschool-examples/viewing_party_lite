@@ -27,6 +27,7 @@
   <% end %>
   
   <b><p>Reviews</p></b>
+  <p><%= @reviews.count %> Reviews</p>
     <font size="+1"><% @reviews.each do |review| %></font>
     <div class="review">
       <p>Author: <%= review.author %></p>
