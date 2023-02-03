@@ -1,5 +1,5 @@
 <% @users.each do |user| %>
   <ul>
-    <li><%= "Name: #{user.name}" %></li>
+    <li><%= link_to "Name: #{user.name}", "/users/#{user.id}", method: :get, local: true %></li>
   </ul>
 <% end %>

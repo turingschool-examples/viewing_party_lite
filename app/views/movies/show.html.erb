@@ -6,6 +6,7 @@
 <% @movie.genres.each do |genre| %>
     <p><%= genre[:name] %></p>
 <% end %>
+<%= link_to "Create a Viewing Party for this movie", "/users/#{@user.to_i}/movies/#{@movie.movie_id}/viewing_parties/new", method: :get, local: true %>
 <br>
 <h5>Cast: </h5>
 <% MoviesFascade.cast(@movie.movie_id).each do |castmember| %>
