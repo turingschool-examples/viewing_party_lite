@@ -39,6 +39,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
   gem 'figaro'
+  gem 'vcr'
 end
 
 group :development do
@@ -58,6 +59,7 @@ group :test do
   gem 'shoulda-matchers'
   gem 'hirb'
   gem 'table_print'
+  gem 'webmock'
 end
 
 
