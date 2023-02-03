@@ -25,4 +25,13 @@
       <p><%= actor.name %> <i>as</i> <%= actor.character %></p>
     </div>
   <% end %>
+  
+  <b><p>Reviews</p></b>
+    <font size="+1"><% @reviews.each do |review| %></font>
+    <div class="review">
+      <p>Author: <%= review.author %></p>
+      <p>Rating: <%= review.rating %></p>
+      <p>Review: <%= review.content %></p>
+    <% end %>
+    </div>
 </div>
