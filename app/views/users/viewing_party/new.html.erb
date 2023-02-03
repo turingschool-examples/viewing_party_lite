@@ -3,8 +3,16 @@
   <%= f.label :duration, 'Duration:' %>
   <%= f.number_field :duration, value: @movie.runtime, min: @movie.runtime %>
 
-  <%= f.hidden_field :type, value: 'search' %>
-  <%= f.hidden_field :path, value: '/3/search/movie' %>
+  <%= f.label :date, 'Day:' %>
+  <%= f.date_field :date %>
 
-  <%= f.submit 'Search By Movie Title' %>
+  <%= f.label :start_time, 'Start Time:' %>
+  <%= f.time_field :start_time %>
+
+  <% @users.each do |user| %>
+    <%= f.check_box :"#{user.id}" %>
+    <%= f.label :"#{user.id}", "#{user.name} (#{user.email})" %>
+  <% end %>
+  
+  <%= f.submit value: 'Create Viewing Party' %>
 <% end %>
