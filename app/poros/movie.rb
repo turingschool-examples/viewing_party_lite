@@ -33,6 +33,8 @@ class Movie
     @reviews.length
   end
 
+  private 
+
   def base_image_uri
     "https://image.tmdb.org/t/p/w500/"
   end
