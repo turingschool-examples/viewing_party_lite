@@ -11,5 +11,11 @@ RSpec.describe User do
     it { should validate_presence_of :email }
     it { should validate_uniqueness_of :email }
   end
+
+  it 'can get the user name with email' do
+    user = create(:user)
+
+    expect(user.name_with_email).to eq("#{user.name} #{user.email}")
+  end
   
 end
