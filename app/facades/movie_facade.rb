@@ -26,6 +26,7 @@ class MovieFacade
 
   def self.get_dashboard_image(id)
     MovieService.get_movie(id)[:backdrop_path]
+  end
 
   def self.all_reviews(id)
     hash = MovieService.get_reviews(id)
