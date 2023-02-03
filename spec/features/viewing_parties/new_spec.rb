@@ -27,7 +27,16 @@ RSpec.describe 'The new viewing party page' do
       expect(current_path).to eq("/users/#{charlie.id}")
     end
     
-    it 'creates viewing party with custom duration and no other users'
+    it 'creates viewing party with custom duration and no other users' do
+      visit "/users/#{charlie.id}/movies/497/viewing-party/new"
+      within('#form') do
+        fill_in 'duration', with: "200"
+        fill_in 'day', with: Date.tomorrow
+        fill_in 'time', with: Time.now
+        click_button 'Create Party'
+      end
+      expect(current_path).to eq("/users/#{charlie.id}")
+    end
     it 'creates viewing party with default duration and other users'
     it 'shows up on other users dashboards (show pages)'
   end
