@@ -29,6 +29,6 @@ class MoviesFacade
 
   def self.movie_reviews(movie)
     found_reviews = MoviesService.find_movie_reviews(movie)
-    # MovieReview.new(found_reviews)
+    MovieReview.new(found_reviews)
   end
 end

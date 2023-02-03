@@ -80,8 +80,9 @@ RSpec.describe 'Movie details page' do
         expect(page).to have_content('2 Reviews')
         expect(page).to have_content('Author: futuretv')
         expect(page).to have_content('Author: crastana')
+        expect(page).to have_content('Content: The Godfather Review by Al Carlson The Godfather is a film considered')
+        expect(page).to have_content('Content: The best movie ever... A masterpiece')
       end
-      # TODO: Each review's author and information
     end
   end
 end
