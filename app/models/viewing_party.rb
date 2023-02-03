@@ -5,13 +5,11 @@ class ViewingParty < ApplicationRecord
   validates_presence_of :movie_id, :duration, :date, :start_time
 
   def movie_title
-    movie_service = MovieService.new
-    movie_service.movie(self.movie_id)[:original_title]
+    MovieService.movie(self.movie_id)[:original_title]
   end
 
   def movie_poster
-    movie_service = MovieService.new
-    poster_path = movie_service.movie(self.movie_id)[:poster_path]
-    movie_service.image(poster_path)
+    poster_path = MovieService.movie(self.movie_id)[:poster_path]
+    MovieService.image(poster_path)
   end
 end
