@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "user show page" do 
-  before(:all) do
+  before(:each) do
     ViewingPartyUser.delete_all
     ViewingParty.delete_all
     User.delete_all
@@ -22,7 +22,6 @@ RSpec.describe "user show page" do
     @viewing_party_2 = ViewingParty.create!(duration: '200', host_id: @user_2.id, movie_id: @movie_detail_2.id, party_date: Date.today-1, party_time: Time.now)
     @viewing_party_user_1 = ViewingPartyUser.create!(user_id: @user_1.id, viewing_party_id: @viewing_party_1.id)
     @viewing_party_user_2 = ViewingPartyUser.create!(user_id: @user_1.id, viewing_party_id: @viewing_party_2.id)
-
   end
   
   it 'displays the site and page title' do
@@ -72,12 +71,13 @@ RSpec.describe "user show page" do
     end
   end
   
-  xit 'displays the viewing party information' do
-    visit user_path(@user.id)
+  it 'displays the viewing party information' do
+    visit user_path(@user_1.id)
 
     within("#viewing_parties") do
-      expect(page).to have_content(@viewing_party_1.title)
-      require 'pry'; binding.pry
+      expect(page).to have_content(@viewing_party_1.duration)
+      # expect(page).to have_content(@viewing_party_1.party_time)
+      expect(page).to have_content(@viewing_party_1.party_date)
     end
   end
 end

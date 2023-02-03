@@ -1,7 +1,17 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @viewing_parties = @user.viewing_parties
+    @viewing_party_1 = @user.viewing_parties[0]
+  # require 'pry'; binding.pry 
+  if @viewing_party_1
+    # require 'pry'; binding.pry
+    @movie_1 = MovieFacade.get_movie(@viewing_party_1.movie_id)
+  end
+  @viewing_party_2 = @user.viewing_parties[1]
+  if @viewing_party_2
+    @movie_2 = MovieFacade.get_movie(@viewing_party_2.movie_id)
+  end
+  
     # @movie = MovieFacade.get_movie()
 
     # # require 'pry'; binding.pry
