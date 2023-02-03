@@ -11,6 +11,7 @@ class ViewingPartiesController < ApplicationController
     @viewing_party.save
     @invitees = User.where(id: params[:user_ids].reject { |u| u.empty? })
     @viewing_party.users = @invitees
+    ViewingPartyUser.create!(user_id: @user.id, viewing_party_id: @viewing_party.id)
     
     redirect_to "/users/#{@user.id}"
   end
