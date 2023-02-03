@@ -4,6 +4,7 @@ class ViewingPartiesController < ApplicationController
     @user = User.find(params[:user_id])
     @movie = params[:movie_id]
     @runtime = params[:runtime]
+    Movie.create!(api_id: params[:movie_id], image_url: params[:image_url], title: params[:title])
   end
 
   def create
@@ -34,6 +35,6 @@ class ViewingPartiesController < ApplicationController
 
   private
   def viewing_party_params
-    params.permit(:duration, :when, :start_time)
+    params.permit(:duration, :when, :start_time, :movie_id)
   end
 end

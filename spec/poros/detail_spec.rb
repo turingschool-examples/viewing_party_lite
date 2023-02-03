@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe SearchResult do
+RSpec.describe Detail do
   describe '#initialize' do
     it 'correctly instantiates' do
-      detail = Detail.new([{title: "Fight", vote_average: 1.23, runtime: 60, genres: [{name: "Thriller"},{name: "Action"}], overview: "overview"},
+      detail = Detail.new([{id: 550, poster_path: "/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg", title: "Fight", vote_average: 1.23, runtime: 60, genres: [{name: "Thriller"},{name: "Action"}], overview: "overview"},
         [{name: "John", character: "Smitty"},{name: "Brad", character: "Junie"}], {total_results: 1, results: [{author: "J", content: "review"}]}])
 
       expect(detail).to be_a(Detail)
