@@ -1,10 +1,11 @@
-class MovieFacade
+# frozen_string_literal: true
 
+class MovieFacade
   def self.get_movie(id)
-    movie_info = MovieService.get_movie(id)  
+    movie_info = MovieService.get_movie(id)
     movie_detail = MovieDetail.new(movie_info)
   end
-  
+
   def self.top_cast(id)
     cast = MovieService.get_cast(id)[:cast][0..9]
     cast.map do |data|
@@ -30,10 +31,9 @@ class MovieFacade
 
   def self.all_reviews(id)
     hash = MovieService.get_reviews(id)
-    revs = hash[:results]
-    revs
+    hash[:results]
   end
-  
+
   def self.reviews(id)
     all = all_reviews(id)
     all.map do |review|

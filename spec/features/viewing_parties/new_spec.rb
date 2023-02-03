@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'new view party page' do
@@ -21,45 +23,44 @@ RSpec.describe 'new view party page' do
   end
 
   it 'displays the site title and page title at the top' do
-    expect(page).to have_content("Viewing Party")
+    expect(page).to have_content('Viewing Party')
     expect(page).to have_content("Create a Movie Party for '#{@movie_detail.title}'")
   end
 
   it 'has a link to return to the discover page' do
-    expect(page).to have_button("Discover Page")
-    click_button("Discover Page")
+    expect(page).to have_button('Discover Page')
+    click_button('Discover Page')
     expect(current_path).to eq("/users/#{@user.id}/discover")
   end
 
   it 'has a form to create a viewing party with the movie info already filled in' do
-    within "#party_form" do
-      expect(page).to have_content("Viewing Party Details")
+    within '#party_form' do
+      expect(page).to have_content('Viewing Party Details')
       expect(page).to have_content("Movie Title: #{@movie_detail.title}")
-      expect(page).to have_content("Duration of Party")
+      expect(page).to have_content('Duration of Party')
       expect(page).to have_field :duration, with: @movie_detail.runtime
       expect(page).to have_field :party_date
       expect(page).to have_field :party_time
-      expect(page).to have_content("Invite Other Users")
-      expect(page).to have_unchecked_field("#{@user2.name}")
-      expect(page).to have_unchecked_field("#{@user3.name}")
-      expect(page).to have_unchecked_field("#{@user4.name}")
-      expect(page).to have_button("Create Party")
+      expect(page).to have_content('Invite Other Users')
+      expect(page).to have_unchecked_field(@user2.name.to_s)
+      expect(page).to have_unchecked_field(@user3.name.to_s)
+      expect(page).to have_unchecked_field(@user4.name.to_s)
+      expect(page).to have_button('Create Party')
     end
   end
 
   it 'creates a new viewing party when the form is filled out' do
-    within "#party_form" do
+    within '#party_form' do
       fill_in :duration, with: 190
       fill_in :party_date, with: Date.today + 2.days
       fill_in :party_time, with: Time.now + 1.hours
-   
-      check("#{@user3.name}")
-      check("#{@user2.name}")
-    
-      click_button("Create Party")
+
+      check(@user3.name.to_s)
+      check(@user2.name.to_s)
+
+      click_button('Create Party')
     end
     expect(current_path).to eq("/users/#{@user.id}")
     expect(page).to have_content(@movie_detail.title)
   end
-
 end
