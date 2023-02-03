@@ -13,14 +13,18 @@ RSpec.describe MovieFacade do
 
     describe '.keyword_search' do
       it 'returns an array of 20 Movie objects based on a keyword search' do
-        expect(MovieFacade.keyword_search("Lego")).to all be_a(Movie)
-        expect(MovieFacade.keyword_search("Lego").length).to eq(20)
+        VCR.use_cassette "keyword_search_lego" do
+          expect(MovieFacade.keyword_search("Lego")).to all be_a(Movie)
+          expect(MovieFacade.keyword_search("Lego").length).to eq(20)
+        end
       end
     end
 
     describe '.movie_details' do
       it 'returns a detailed Movie poros' do
-        expect(MovieFacade.movie_details("238")).to be_a(Movie)
+        VCR.use_cassette "movie_details" do
+          expect(MovieFacade.movie_details("238")).to be_a(Movie)
+        end
       end
     end
   end
