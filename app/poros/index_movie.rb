@@ -7,8 +7,3 @@ class IndexMovie
     @movie_id = data[:id]
   end
 end
-#     # binding.pry
-#     @title = data[:results][:title]
-#     @vote_average = data[:results][:vote_average]
-#   end
-# end

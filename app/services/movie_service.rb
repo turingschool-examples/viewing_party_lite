@@ -1,5 +1,4 @@
 class MovieService
-
   def self.api_call
     Faraday.new(url: "https://api.themoviedb.org") do |faraday|
       faraday.params["api_key"] = ENV["movie_api_key"]
@@ -18,6 +17,16 @@ class MovieService
 
   def self.find_movie_response(movie_id)
     response = api_call.get("3/movie/#{movie_id}")
+    parse(response)
+  end
+
+  def self.find_cast_response(movie_id)
+    response = api_call.get("3/movie/#{movie_id}/credits")    
+    parse(response)
+  end
+
+  def self.find_reviews_response(movie_id)
+    response = api_call.get("3/movie/#{movie_id}/reviews")
     parse(response)
   end
 
