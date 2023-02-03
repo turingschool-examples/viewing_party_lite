@@ -19,8 +19,8 @@ RSpec.describe 'Discover Movies Page' do
     end
     
     it 'Has a search field for movie names' do
-      stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=d15da2c6fe48d15a51f43f47b05c0ed1&language=en-US&page=1").
-        to_return(status: 200, body: File.read('spec/fixtures/top_movies_response.json'), headers: {})
+      stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=d15da2c6fe48d15a51f43f47b05c0ed1&include_adult=false&language=en-US&page=1&query=Fast").
+        to_return(status: 200, body: File.read('spec/fixtures/search_response.json'), headers: {})
       visit user_discover_index_path(@user)
 
       expect(page).to have_field :keyword

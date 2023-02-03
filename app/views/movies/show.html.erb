@@ -1,1 +1,22 @@
-<%= @movie.title %>
+<h1><%= @movie.title %></h1>
+
+<h3>Vote Average: <%= @movie.vote_average.round(1) %></h3>
+
+<h3>Genres: <% @movie.genres.each do |genre| %></h3>
+  <%= genre[:name] %>
+<% end %>
+<h3>Runtime: <%= @movie.runtime_to_hours %></h3>
+
+<h3>Summary: <%= @movie.overview %></h3>
+
+
+<ul>
+  <h3>Cast: <% @movie.top_cast_members.each do |actor| %></h3>
+    <li><%= actor[:name] %> as <%= actor[:character] %></li>
+  <% end %>
+<ul>
+
+<h3><%= @movie.reviews.count %> Reviews: <% @movie.reviews.each do |review| %></h3>
+  <h5><%= review[:author] %></h5>
+  <h5><%= review[:content] %></h5>
+<% end %>
