@@ -18,8 +18,8 @@ RSpec.describe "user show page" do
     @user_2 = create(:user)
     @movie_detail = MovieDetail.new(JSON.parse(json_response, symbolize_names: true))
     @movie_detail_2 = MovieDetail.new(JSON.parse(json_response_2, symbolize_names: true))
-    @viewing_party_1 = ViewingParty.create!(duration: '180', host_id: @user_1.id, movie_id: @movie_detail.id, party_date: Date.today, party_time: Time.now)
-    @viewing_party_2 = ViewingParty.create!(duration: '200', host_id: @user_2.id, movie_id: @movie_detail_2.id, party_date: Date.today-1, party_time: Time.now)
+    @viewing_party_1 = ViewingParty.create!(duration: '180', host_id: @user_1.id, movie_id: @movie_detail.id, party_date: Date.today, party_time: "17:00")
+    @viewing_party_2 = ViewingParty.create!(duration: '200', host_id: @user_2.id, movie_id: @movie_detail_2.id, party_date: Date.today-1, party_time: "18:00")
     @viewing_party_user_1 = ViewingPartyUser.create!(user_id: @user_1.id, viewing_party_id: @viewing_party_1.id)
     @viewing_party_user_2 = ViewingPartyUser.create!(user_id: @user_1.id, viewing_party_id: @viewing_party_2.id)
   end
@@ -51,33 +51,21 @@ RSpec.describe "user show page" do
     end
   end
   
-  xit 'displays the movie image in the viewing parties section' do
+  it 'displays the movie image and title(as a link) in the viewing parties section' do
     visit user_path(@user_1.id)
 
     within("#viewing_parties") do
-      expect(page).to find("/tmU7GeKVybMWFButWEGl2M4GeiP.jpg")
-      save_and_open_page
-    end
-  end
-  
-  xit 'displays the movie title as a link' do
-    visit user_path(@user_1.id)
-    movie = @movie_detail.id
-    require 'pry'; binding.pry
-    
-    within("#viewing_parties") do
+      # expect(page).to have_xpath("https://image.tmdb.org/t/p/w500/#{@movie_detail.image_url}")
       expect(page).to have_link("#{@movie_detail.title}") 
-      require 'pry'; binding.pry
     end
   end
   
   it 'displays the viewing party information' do
     visit user_path(@user_1.id)
-
     within("#viewing_parties") do
       expect(page).to have_content(@viewing_party_1.duration)
-      # expect(page).to have_content(@viewing_party_1.party_time)
-      expect(page).to have_content(@viewing_party_1.party_date)
+      expect(page).to have_content(@viewing_party_1.party_time.strftime("%I:%M%p"))
+      expect(page).to have_content(@viewing_party_1.party_date.strftime("%B %d, %Y"))
     end
   end
 end

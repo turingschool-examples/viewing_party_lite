@@ -9,32 +9,16 @@
 
 <div id='viewing_parties'>
   <h3> My Viewing Parties</h3>
-
-  
-  <%# <% @parties_info.each do |party_info| %>
-    <%# <p><%= party_info.image %></p>
-    <%# <p><%= link_to "#{party_info.name}", "/users/#{@user.id}/movies/#{@movie.id}"  %></p>
-    <%# <p><%= party_info.date %></p>
-    <%# <p><%= party_info.time %></p>
-    <%# <p><%= party_info.host %></p>
-  <%# <% end %> 
-  <%# <img src=<%= "/tmU7GeKVybMWFButWEGl2M4GeiP.jpg" %>
-  
-  <%# this is where our Dashboard:Viewing Parties user story info will go%>
-
-<% if @viewing_party_1 %>
- <p><%= "#{@movie_1.title}" %></p>
- <p><img src=<%=@movie_1.image_url%>></p>
- <p><%= @viewing_party_1.duration %>min</p>
- <p><%= @viewing_party_1.party_date %></p>
- <p><%= @viewing_party_1.party_time %></p>
-<% end %>
-<% if @viewing_party_2 %>
- <p><%= "#{@movie_2.title}" %></p>
- <p><img src=<%=@movie_2.image_url%>></p>
- <p><%= @viewing_party_2.duration %>min</p>
- <p><%= @viewing_party_2.party_date %></p>
- <p><%= @viewing_party_2.party_time %></p>
-<% end %>
-
+  <div class="row-1">
+    <div class="column-2">
+      <% @parties_info.each do |party_info| %>
+        <p><img src=<%= "#{party_info[:image]}"%>></p>
+        <p><%= link_to "#{party_info[:title]}", "/users/#{@user.id}/movies/#{party_info[:id]}" %></p>
+        <p>Date: <%= party_info[:date].strftime("%B %d, %Y") %></p>
+        <p>Time: <%= party_info[:time].strftime("%I:%M%p") %></p>
+        <p>Duration: <%= party_info[:duration] %>mins</p>
+        <p>Host: <b><%= party_info[:host] %></b></p>
+      </div>
+    <% end %>
+  </div>
 </div>

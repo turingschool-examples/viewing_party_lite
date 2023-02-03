@@ -1,35 +1,22 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @viewing_party_1 = @user.viewing_parties[0]
-  # require 'pry'; binding.pry 
-  if @viewing_party_1
-    # require 'pry'; binding.pry
-    @movie_1 = MovieFacade.get_movie(@viewing_party_1.movie_id)
-  end
-  @viewing_party_2 = @user.viewing_parties[1]
-  if @viewing_party_2
-    @movie_2 = MovieFacade.get_movie(@viewing_party_2.movie_id)
-  end
-  
-    # @movie = MovieFacade.get_movie()
-
-    # # require 'pry'; binding.pry
-    # @parties_info = []
-    # @viewing_parties.each do |party|
-    #   require 'pry'; binding.pry
-    #   # @movie = MovieFacade.get_movie(party.movie_id)
-    #   host = User.find(party.host_id)
-    #   party_info = {
-    #     # image: @movie.image_url,
-    #     # title: @movie.title,
-    #     date: party.party_date,
-    #     time: party.party_time,
-    #     host: host
-    #   }
-    #   @parties_info << party_info
-    # end
-
+    @viewing_parties = @user.viewing_parties
+    @parties_info = []
+    @viewing_parties.each do |party|
+      movie = MovieFacade.get_movie(party.movie_id)
+      host = User.find(party.host_id)
+      party_info = {
+        movie_id: movie.id,
+        image: "https://image.tmdb.org/t/p/w500/#{movie.image_url}",
+        title: movie.title,
+        duration: party.duration,
+        date: party.party_date,
+        time: party.party_time,
+        host: host.name
+      }
+      @parties_info << party_info
+    end
   end
   
   def discover_movies
