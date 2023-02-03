@@ -21,8 +21,14 @@ RSpec.describe "Parties New Page", type: :feature do
     it 'can create viewing parties' do
       visit new_user_movie_party_path(user1, movie1)
 
+      fill_in "Duration", with: 120
+      fill_in "Date", with: "2024-01-01"
+      fill_in "Start Time", with: "12:00"
+      check user2.id 
+
       click_button "Create Party"
 
+      expect(current_path).to eq(user_path(user1))
     end
   end
 end
