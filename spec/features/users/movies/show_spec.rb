@@ -4,7 +4,9 @@ RSpec.describe "Movie Detail (Show) page" do
   before :each do
     @user = create(:user)
 
-    visit user_movie_path(@user, id: '238')
+    VCR.use_cassette "movie_details" do
+      visit user_movie_path(@user, id: '238')
+    end
   end
 
   describe "buttons to other pages" do
