@@ -77,7 +77,7 @@ RSpec.describe 'User Dashboard' do
         expect(page).to have_content(party1.event_date.strftime('%B %-d, %Y'))
         expect(page).to have_content(party1.start_time.strftime('%I:%M %P'))
         expect(page).to have_content('Hosting: Charlie')
-        expect(page).to have_content("Attendees: Charlie, Nicole")
+        expect(page).to have_content("Attendees: Charlie Nicole")
       end
 
       within("#party-#{party2.id}") do

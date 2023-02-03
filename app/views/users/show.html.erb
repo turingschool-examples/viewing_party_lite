@@ -12,6 +12,17 @@
         <%= party[:event_date].strftime("%B %-d, %Y") %>
         <br>
         <%= party[:start_time].strftime("%I:%M %P") %>
+        <p>Hosting: <%= party[:host].name%></p>
+        <p>Attendees: <% party[:attendees].each do |user|%>
+            <% if user == @user %>
+              <b><%= user.name %></b>
+              <% else %>
+              <%= user.name %>
+            <% end %>
+        <% end %>
+        </p>
+
+        
       <% if party[:host_id] == @user.id %>
         <p><%="Hosting"%></p>
       <% else %>

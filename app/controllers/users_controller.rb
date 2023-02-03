@@ -9,8 +9,9 @@ class UsersController < ApplicationController
         movie_id: party.movie_id,
         event_date: party.event_date,
         start_time: party.start_time,
-        host_id: party.host_id,
-        title: movie.title
+        host: User.find(party.host_id),
+        title: movie.title,
+        attendees: ViewingParty.find(party.id).users
       }
     end
   end
