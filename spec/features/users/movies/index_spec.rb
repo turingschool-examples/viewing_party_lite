@@ -69,9 +69,9 @@ RSpec.describe 'discover page', type: :feature do
         end
       end
 
-      expect(page).to have_button('Discover Movies')
+      expect(page).to have_button('Discover Page')
 
-      click_button 'Discover Movies'
+      click_button 'Discover Page'
 
       expect(current_path).to eq discover_user_path(u1)
     end
@@ -98,9 +98,9 @@ RSpec.describe 'discover page', type: :feature do
         end
       end
 
-      expect(page).to have_button('Discover Movies')
+      expect(page).to have_button('Discover Page')
 
-      click_button 'Discover Movies'
+      click_button 'Discover Page'
 
       expect(current_path).to eq discover_user_path(u1)
     end
