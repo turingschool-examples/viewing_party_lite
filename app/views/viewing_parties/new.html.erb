@@ -1,3 +1,14 @@
 <div class="sub-header">
-  Create a Movie Party for _____
+  Create a Movie Party for <%= "'#{@movie.title}'" %>
+</div>
+<center><p><%= button_to 'Discover Page', "/users/#{@user.id}/discover", method: :get %></p></center>
+<div id="party_form">
+  <center><table>
+    <%= form_with url: user_movie_viewing_parties_path, method: :post, local: true do |f| %>
+    <tr>
+      <td> <%= f.label :header, value: "Viewing Party Details" %>
+
+
+    <% end %>
+  </table></center>
 </div>
