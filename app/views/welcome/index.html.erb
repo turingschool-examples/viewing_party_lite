@@ -1,8 +1,24 @@
-<%= button_to 'Create a New User', new_user_path, method: :get %>
-
-<h3>Existing Users</h3>
-<ul>
-  <% @users.each do |user| %>
-    <li><%= link_to user.email, user_path(user) %><li>
-  <% end %>
-<ul>
+<div class='container'>
+  <div class='text-center'>
+    <div class='page-header'>
+      <%= button_to 'Create a New User', new_user_path, method: :get, class: 'btn-default' %>
+    </div>
+    <h3>Existing Users</h3>
+  </div>
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= link_to user.email, user_path(user) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
