@@ -13,10 +13,12 @@ class UsersController < ApplicationController
         duration: party.duration,
         date: party.party_date,
         time: party.party_time,
-        host: host.name
+        host: host.name,
+        attendees: party.users
       }
       @parties_info << party_info
     end
+    
   end
   
   def discover_movies

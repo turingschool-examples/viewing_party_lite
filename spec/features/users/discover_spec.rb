@@ -12,6 +12,8 @@ RSpec.describe "user discover page" do
     search_results = File.read('spec/fixtures/godfather_search.json')
     stub_request(:get, "https://api.themoviedb.org/3/search/movie?query=Godfather&api_key=#{ENV['MOVIE_DB_KEY']}")
       .to_return(status: 200, body: search_results)
+    stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['MOVIE_DB_KEY']}&query=")
+      .to_return(status: 200, body: "")
   end
 
   it 'displays the page title' do
@@ -32,7 +34,7 @@ RSpec.describe "user discover page" do
     end
   end
 
-  xit 'has a search field to find movies by name when redirected to the movies results page' do
+  it 'has a search field that redirects back to itself if no results are found with a message' do
     visit "/users/#{@user.id}/discover"
 
     within "#search_movies" do
@@ -40,8 +42,9 @@ RSpec.describe "user discover page" do
       expect(page).to have_button("Find Movies")
 
       click_button("Find Movies")
-      expect(current_path).to eq("/users/#{@user.id}/movies")
+      expect(current_path).to eq("/users/#{@user.id}/discover")
     end
+    expect(page).to have_content("No Results Found")
   end
 
   
