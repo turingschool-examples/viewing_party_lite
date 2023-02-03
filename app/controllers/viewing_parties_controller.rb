@@ -12,7 +12,6 @@ class ViewingPartiesController < ApplicationController
     @users = User.where('id != ?', params[:user_id])
     @user = User.find(params[:user_id])
     @movie = params[:movie_id]
-    
 
     if viewing_party.duration && viewing_party.duration < params[:runtime].to_i
       flash[:notice] = "Error: Duration must be equal to or greater than the movie runtime"
