@@ -1,6 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe 'The User Dashboard (Show Page)', type: :feature do
+  before :each do
+    stub_request(:get, "https://api.themoviedb.org/3/movie/1/credits?api_key").
+    to_return(status: 200, body: File.read("spec/fixtures/robot_chicken_credits_response.json"), headers: {})
+
+    stub_request(:get, "https://api.themoviedb.org/3/movie/1?api_key").
+    to_return(status: 200, body: File.read("spec/fixtures/robot_chicken_response.json"), headers: {})
+ 
+    stub_request(:get, "https://api.themoviedb.org/3/movie/1/reviews?api_key").
+    to_return(status: 200, body: File.read("spec/fixtures/citizen_kane_reviews_response.json"), headers: {})
+  end
   let!(:user1) { User.create!(name: "Anthony", email: "anthony@gmail.com") }
   let!(:user2) { User.create!(name: "Thomas", email: "thomas@gmail.com") }
   let!(:user3) { User.create!(name: "Jessica", email: "jessica@gmail.com") }
@@ -38,7 +48,8 @@ RSpec.describe 'The User Dashboard (Show Page)', type: :feature do
       visit user_path(user1)
 
       within "#viewing-parties" do
-        expect(page).to have_content(party1.start_time)
+        expect(page).to have_content(party1.start_time.strftime("%A, %B %d, %Y"))
+        expect(page).to have_content(party1.start_time.strftime('%I:%M %P'))
         expect(page).to have_content(party1.duration)
         expect(page).to have_content(user1.name)
         expect(page).to have_content(user2.name)
