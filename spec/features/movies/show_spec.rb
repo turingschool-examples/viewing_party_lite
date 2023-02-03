@@ -22,7 +22,7 @@ RSpec.describe 'movie details page' do
 
     expect(page).to have_link('Create Viewing Party for The Godfather', href: new_user_movie_viewing_party_path(@user1, 238))
   end
-  
+
   it 'has the average vote, runtime and genres' do
     visit user_movie_path(@user1, 238)
 
@@ -39,7 +39,7 @@ RSpec.describe 'movie details page' do
     visit user_movie_path(@user1, 238)
 
     expect(page).to have_content("Marlon Brando as Don Vito Corleone, Al Pacino as Don Michael Corleone, James Caan as Santino 'Sonny' Corleone, Robert Duvall as Tom Hagen, Richard S. Castellano as Pete Clemenza, Diane Keaton as Kay Adams, Talia Shire as Constanzia 'Connie' Corleone-Rizzi, Gianni Russo as Carlo Rizzi, Sterling Hayden as Capt. Mark McCluskey, and Al Lettieri as Virgil 'The Turk' Sollozzo")
-    expect(page).to_not have_content("Abe Vigoda")
+    expect(page).to_not have_content('Abe Vigoda')
   end
 
   it 'lists count of reviews and all reviews with an author' do

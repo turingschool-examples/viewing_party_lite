@@ -11,14 +11,14 @@ RSpec.describe 'Landing Page' do
   it 'lists existing users with links to user dashboard' do
     user1 = User.create!(name: 'John Doe', email: 'john@doe.com')
     user2 = User.create!(name: 'Jane Smith', email: 'jane@gmail.com')
-    
+
     visit root_path
 
     expect(page).to have_content('Existing Users:')
-    
+
     within '#existing_users' do
-      expect(page).to have_link('john@doe.com', href: user_path(user1))      
-      expect(page).to have_link('jane@gmail.com', href: user_path(user2))      
+      expect(page).to have_link('john@doe.com', href: user_path(user1))
+      expect(page).to have_link('jane@gmail.com', href: user_path(user2))
     end
   end
 
