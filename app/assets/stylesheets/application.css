@@ -34,3 +34,34 @@ margin: auto;
   width: 50%;
   padding: 10px;
 }
+
+.centered_block {
+margin: auto;
+  width: 80%;
+  padding: 10px;
+}
+
+.centered_table {
+margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+table {
+  table-layout: fixed;
+  width: 80%;
+}
+
+.vote_col {
+  text-align: right;
+  width: 30%;
+}
+
+.title_col {
+  text-align: left;
+}
+
+#topBlackBar {
+  border-top: 5px solid #000;
+  margin: 0;
+}

@@ -1,10 +1,14 @@
-<h2><%= @movie.title %></h2>
+<div class='centered_text'>
+  <h2><%= @movie.title %></h2>
 
-<%= button_to 'Discover Movies', discover_user_path(@user), method: :get %>
+  <%= button_to 'Discover Movies', discover_user_path(@user), method: :get %>
 
-<%= button_to "Create Viewing Party For #{@movie.title}", discover_user_path(@user), method: :get %>
+  <br>
 
-<table id='specs'>
+  <%= button_to "Create Viewing Party For #{@movie.title}", discover_user_path(@user), method: :get %>
+</div>
+
+<table id='specs' class='centered_table'>
   <tr>
     <td>Vote: <%= @movie.vote_average %></td>
     <td>Runtime: <%= @movie.runtime/60 %>hr <%= @movie.runtime % 60 %>min</td>
@@ -12,12 +16,14 @@
   </tr>
 </table>
 
-<section id='summary'>
+<div id="topBlackBar"/>
+
+<section id='summary' class='centered_block'>
   <h3>Summary</h3><br>
   <%= @movie.summary %>
 </section>
 
-<section id='cast'>
+<section id='cast' class='centered_block'>
   <h3>Cast</h3>
   <table>
     <% @movie.cast.each do |cast| %>
@@ -28,7 +34,7 @@
   </table>
 </section>
 
-<section id='reviews'>
+<section id='reviews' class='centered_block'>
   <h3><%= @movie.reviews.count %> Reviews</h3>
   <% @movie.reviews.each do |review| %>
     <p>Author: <%= review.author %></p>
