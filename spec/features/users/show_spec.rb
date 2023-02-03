@@ -78,6 +78,8 @@ RSpec.describe 'User Dashboard' do
         expect(page).to have_content(party2.start_time.strftime('%I:%M %P'))
         expect(page).to have_content('Invited')
       end
+      click_link "The Green Mile"
+      expect(current_path).to eq("/users/#{charlie.id}/movies/497")
     end
   end
 end
