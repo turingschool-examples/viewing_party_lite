@@ -3,7 +3,6 @@
 <%= form_with url: "/users/#{@user.id}/discover", method: :get, local: true do |f| %>
   <%= f.submit 'Discover Movies' %>
 <% end %>
-
 <% @user.viewing_parties.each do |vp| %>
   <div id=<%= vp.id %>>
   

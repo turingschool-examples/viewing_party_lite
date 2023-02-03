@@ -13,6 +13,8 @@ class MoviesController < ApplicationController
   end
 
   def show
+    @user = params[:user_id]
+
     @movie = MoviesFascade.find(params[:id])
   end
 end
