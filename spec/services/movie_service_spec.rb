@@ -19,4 +19,11 @@ RSpec.describe MovieService do
       expect(response.first.vote_average).to eq(8.7)
     end
   end
+
+  describe '#search_movies' do
+    
+  end
+
+  describe '#movie' do
+  end
 end

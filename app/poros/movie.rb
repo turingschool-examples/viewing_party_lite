@@ -22,7 +22,6 @@ class Movie
 
   # TODO: Consider Cast and Review poros
 
-  # TODO: This isn't the place for this data parsing?
   def genres
     @genres.map do |genre|
       genre[:name]
@@ -32,6 +31,8 @@ class Movie
   def review_total
     @reviews.length
   end
+
+  private 
 
   def base_image_uri
     "https://image.tmdb.org/t/p/w500/"

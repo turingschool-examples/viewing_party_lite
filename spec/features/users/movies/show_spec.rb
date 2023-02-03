@@ -31,10 +31,14 @@ RSpec.describe 'Movie Details', type: :feature do
       it 'displays the movies title, vote_avg, runtime, genre, summary, cast, and review info' do
         #TODO: this test is getting bloated, break up.
 
-        within "#movie" do
-          expect(page).to have_content "Movie Title: #{@movie.title}"
+        within ".movie_data" do
+          expect(page).to have_content "Vote: #{@movie.vote_average}"
           expect(page).to have_content "Runtime: #{@movie.runtime}"
           expect(page).to have_content "Genre: #{@movie.genres}"
+        end
+
+        within "#movie" do
+          expect(page).to have_content "#{@movie.title}"
           expect(page).to have_content "Summary: #{@movie.overview}"
 
           @movie.cast.each do |cast_member|
