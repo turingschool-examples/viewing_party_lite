@@ -14,7 +14,7 @@
     <%= f.time_field :time %>
     <p>Invite Other Users</p>
     <% @users.each do |user| %>
-      <%= f.check_box :user%>
+      <%= f.check_box user.name%>
       <%= f.label :user, user.name.to_s + " (#{user.email})"%>
     <% end %>
     <%= f.submit "Create Party"%>

@@ -47,6 +47,9 @@ RSpec.describe 'The new viewing party page' do
         click_button 'Create Party'
       end
       expect(current_path).to eq("/users/#{charlie.id}")
+      expect(cindy.user_viewing_parties.count).to eq(1)
+      expect(UserViewingParty.all.count).to eq 2
+      # require 'pry'; binding.pry
     end
     it 'shows up on other users dashboards (show pages)'
   end
