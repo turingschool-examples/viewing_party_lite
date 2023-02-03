@@ -61,7 +61,6 @@ RSpec.describe 'user show page' do
     visit user_path(@user_1.id)
 
     within('#viewing_parties') do
-      # expect(page).to have_xpath("https://image.tmdb.org/t/p/w500/#{@movie_detail.image_url}")
       expect(page).to have_link(@movie_detail.title.to_s)
     end
   end
