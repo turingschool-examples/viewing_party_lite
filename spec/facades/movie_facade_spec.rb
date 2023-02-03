@@ -18,6 +18,11 @@ RSpec.describe MovieFacade do
       movies.each do |movie|
         expect(movie).to be_a Movie
       end
+
+      sample_movie = movies.first
+      expect(sample_movie.id).to eq(238)
+      expect(sample_movie.title).to eq("The Godfather")
+      expect(sample_movie.vote_average).to eq(8.7)
     end
   end
 
@@ -29,6 +34,11 @@ RSpec.describe MovieFacade do
       movies.each do |movie|
         expect(movie).to be_a Movie
       end
+
+      sample_movie = movies.first
+      expect(sample_movie.id).to eq(395834)
+      expect(sample_movie.title).to eq("Wind River")
+      expect(sample_movie.vote_average).to eq(7.4)
     end
   end
 end
