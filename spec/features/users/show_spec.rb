@@ -57,7 +57,6 @@ RSpec.describe 'The User Dashboard page', type: :feature do
 
       it 'lists all viewing parties the user has hosted' do
         hosted_parties = user.hosted_parties
-        save_and_open_page
         within "#hosted_parties" do
           hosted_parties.each do |party|
             within "#hosted_#{party.id}" do
