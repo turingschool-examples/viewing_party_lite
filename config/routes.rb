@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get '/users/:id/movies/:movie_id/viewing-party/new', to: 'viewing_parties#new'
   get '/users/:id/movies', to: 'movies#index'
 
+  post '/users/:id/movies/:movie_id/viewing-party', to: 'viewing_parties#create'
+
   resources :users, only: %i[show new create] do
     get 'discover', on: :member
   end

@@ -10,4 +10,8 @@ class ViewingPartiesController < ApplicationController
     @movie = JSON.parse(response.body, symbolize_names: true)
     @users = User.all
   end
+
+  def create
+    
+  end
 end

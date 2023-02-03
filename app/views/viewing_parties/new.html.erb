@@ -5,7 +5,7 @@
   <h4>Viewing Party Details</h4>
   <p>Movie Title : <%=@movie[:title]%></p>
 
-  <%= form_with url: user_path(@user), method: :post, local: true do |f| %>
+  <%= form_with url: "/users/#{@user.id}/movies/#{@movie[:id]}/viewing-party", method: :post, local: true do |f| %>
     <%= f.label :duration, "Duration of Party" %>
     <%= f.number_field :duration, value: @movie[:runtime]%>
     <%= f.label :day %>
