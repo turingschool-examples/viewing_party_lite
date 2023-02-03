@@ -4,7 +4,7 @@ class MovieResults
               :id,
               :runtime,
               :genres,
-              :overview,
+              :summary,
               :vote_count
   def initialize(movie)
     @title = movie[:title]
@@ -16,9 +16,16 @@ class MovieResults
     @review_count = movie[:vote_count]
   end
 
-  # def time_conversion(minutes)
-  #   hours = minutes / 60
-  #   rest = minutes % 60
-  #   "#{hours}:#{rest}" 
-  # end
+  def time_conversion
+    hours = runtime / 60
+    rest = runtime % 60
+    "#{hours}hr #{rest}min" 
+  end
+
+  def all_genres
+    list = @genres.map do |genre|
+      genre[:name]
+    end
+    list.join(", ") 
+  end
 end

@@ -26,4 +26,14 @@ class TMDBService
   def self.json_parse(response)
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  def self.get_movie_cast(movie_id)
+    response = conn.get("/3/movie/#{movie_id}/credits", {"api_key" => ENV['tmdb_api_key']})
+    data = json_parse(response)
+  end
+
+  def self.get_movie_reviews(movie_id)
+    response = conn.get("/3/movie/#{movie_id}/reviews", {"api_key" => ENV['tmdb_api_key']})
+    data = json_parse(response)
+  end
 end
