@@ -39,4 +39,8 @@ class Movie
         { author: review[:author], content: review[:content] }
       end
   end
+
+  def review_count
+    @reviews.count
+  end
 end
