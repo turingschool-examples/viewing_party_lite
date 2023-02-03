@@ -16,3 +16,4 @@ class MovieFacade
     @movie ||= Movie.new(@movie_service.movie)
   end
 end
+

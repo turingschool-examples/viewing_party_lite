@@ -1,15 +1,21 @@
 require 'rails_helper'
 
-RSpec.describe 'The User show page', type: :feature do
+RSpec.describe 'The User Dashboard page', type: :feature do
   describe 'the user show page' do
 
     let!(:user) { create(:user) }
-    let!(:invited_party1) { create(:viewing_party) }
-    let!(:invited_party2) { create(:viewing_party) }
-    let!(:hosted_party1) { create(:viewing_party, host: user) }
-    let!(:hosted_party2) { create(:viewing_party, host: user) }
+    let!(:user2) { create(:user) }
+    let!(:user3) { create(:user) }
+    let!(:invited_party1) { create(:viewing_party, movie_id: 13)}
+    let!(:invited_party2) { create(:viewing_party, movie_id: 14)}
+    let!(:hosted_party1) { create(:viewing_party, host: user, movie_id: 15)}
+    let!(:hosted_party2) { create(:viewing_party, host: user, movie_id: 17)}
     let!(:vpu1){ create(:viewing_party_user, user: user, viewing_party: invited_party1) }
     let!(:vpu2){ create(:viewing_party_user, user: user, viewing_party: invited_party2) }
+    let!(:vpu3){ create(:viewing_party_user, user: user2, viewing_party: invited_party2) }
+    let!(:vpu4){ create(:viewing_party_user, user: user3, viewing_party: invited_party2) }
+    let!(:vpu5){ create(:viewing_party_user, user: user2, viewing_party: hosted_party1) }
+    let!(:vpu6){ create(:viewing_party_user, user: user3, viewing_party: hosted_party2) }
 
     before :each do
       visit user_path(user)
@@ -28,38 +34,42 @@ RSpec.describe 'The User show page', type: :feature do
     end
 
     describe 'viewing parties' do
-      xit 'lists all viewing parties the user has been invited to with their data' do
+      it 'lists all viewing parties the user has been invited to with their data' do
         invited_parties = user.invited_parties
-        #TODO: Some tests will fail until API decisions are made
         within "#invited_parties" do
           invited_parties.each do |party|
-            within "invited_#{party.id}" do
+#            src = party.movie.image_path
+            within "#invited_#{party.id}" do
               expect(page).to have_content "Movie Title: #{party.movie.title}"
               expect(page).to have_link "#{party.movie.title}"
-              expect(page.find('#movie-image')['src']).to have_content 'Movie_Image.' 
+              expect(page.find('img')[:src]).to eq party.movie.image_path 
               expect(page).to have_content "Date of Event: #{party.date}"
               expect(page).to have_content "Start Time: #{party.start_time}"
               expect(page).to have_content "Host: #{party.host.name}"
-              expect(page).to have_content "Invited: #{party.invited}"
+              party.users.each do |invitee|
+                expect(page).to have_content invitee.name
+              end
               page.html.should include("<b>#{user.name}</b>")
             end
           end
         end
       end
 
-      xit 'lists all viewing parties the user has hosted' do
+      it 'lists all viewing parties the user has hosted' do
         hosted_parties = user.hosted_parties
-        #TODO: Some tests will fail until API decisions are made
-        within "hosted_parties" do
+        save_and_open_page
+        within "#hosted_parties" do
           hosted_parties.each do |party|
-            within "hosted_#{party.id}" do
+            within "#hosted_#{party.id}" do
               expect(page).to have_content "You are the host of this viewing party."
               expect(page).to have_content "Movie Title: #{party.movie.title}"
               expect(page).to have_link "#{party.movie.title}"
-              expect(page.find('#movie-image')['src']).to have_content 'Movie_Image.' 
+              expect(page.find('img')[:src]).to eq party.movie.image_path 
               expect(page).to have_content "Date of Event: #{party.date}"
               expect(page).to have_content "Start Time: #{party.start_time}"
-              expect(page).to have_content "Invited: #{party.invited}"
+              party.users.each do |invitee|
+                expect(page).to have_content invitee.name
+              end
             end
           end
         end

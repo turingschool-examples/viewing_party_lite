@@ -81,18 +81,21 @@ RSpec.configure do |config|
     WebMock.stub_request(:any, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV["moviedb_key"]}&query=river")
            .to_return(body: File.read('./spec/fixtures/search_river_movies.json'))
 
-    movie_id = 14
-    url = "https://api.themoviedb.org/3/movie/#{movie_id}?api_key=#{ENV['moviedb_key']}" 
-    response = File.read("spec/fixtures/american_b.json")
-    WebMock.stub_request(:get, url).to_return(status: 200, body: response)
+    movie_ids = [13, 14, 15, 17] 
+    movie_ids.each do |movie_id|
 
-    url = "https://api.themoviedb.org/3/movie/#{movie_id}/credits?api_key=#{ENV['moviedb_key']}" 
-    response = File.read("spec/fixtures/credits.json")
-    WebMock.stub_request(:get, url).to_return(status: 200, body: response)
+      url = "https://api.themoviedb.org/3/movie/#{movie_id}?api_key=#{ENV['moviedb_key']}" 
+      response = File.read("spec/fixtures/movie_#{movie_id}.json")
+      WebMock.stub_request(:get, url).to_return(status: 200, body: response)
 
-    url = "https://api.themoviedb.org/3/movie/#{movie_id}/reviews?api_key=#{ENV['moviedb_key']}" 
-    response = File.read("spec/fixtures/reviews.json")
-    WebMock.stub_request(:get, url).to_return(status: 200, body: response)
+      url = "https://api.themoviedb.org/3/movie/#{movie_id}/credits?api_key=#{ENV['moviedb_key']}" 
+      response = File.read("spec/fixtures/credits.json")
+      WebMock.stub_request(:get, url).to_return(status: 200, body: response)
+
+      url = "https://api.themoviedb.org/3/movie/#{movie_id}/reviews?api_key=#{ENV['moviedb_key']}" 
+      response = File.read("spec/fixtures/reviews.json")
+      WebMock.stub_request(:get, url).to_return(status: 200, body: response)
+    end
   end
 end
 
