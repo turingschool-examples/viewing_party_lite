@@ -35,6 +35,10 @@ RSpec.describe User, type: :model do
       it 'returns viewing parties the user is invited to' do
         expect(@user2.invited).to eq([@viewing_party1])
       end
+
+      it 'returns viewing parties that the user is hosting' do
+        expect(@user1.hosting).to eq([@viewing_party1])
+      end
     end
   end
 end
