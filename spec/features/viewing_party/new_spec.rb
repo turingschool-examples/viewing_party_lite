@@ -72,4 +72,17 @@ RSpec.describe 'new viewing party page' do
       expect(page).to have_content('John Doe John Smith John Williams')
     end
   end
+
+  it 'does not create a viewing party if you enter invalid data' do
+    visit new_user_movie_viewing_party_path(@user2, @movie.id)
+
+    fill_in 'Duration of Party', with: '200'
+    fill_in 'Day', with: '%03.%02.%2023'
+    check("#{@user1.name}")
+    check("#{@user3.name}")
+    click_button 'Create Party'
+
+    expect(current_path).to eq(new_user_movie_viewing_party_path(@user2, @movie.id))
+    expect(page).to have_content("Start time can't be blank")
+  end
 end

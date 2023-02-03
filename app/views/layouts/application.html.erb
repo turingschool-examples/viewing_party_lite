@@ -5,6 +5,15 @@
       .content{
         text-align: center;
       }
+      .banner{
+        text-decoration: none;
+        font-family: 'Helvetica', 'Arial', sans-serif;
+      }
+      .error{
+        align: center;
+        color: red;
+        outline-style: double;
+      }
     </style>
     <title>ViewingPartyLite</title>
     <%= csrf_meta_tags %>
@@ -15,11 +24,11 @@
   </head>
 
   <body>
-    <%= link_to 'Home', root_path %>
+    <p><span  class='banner'><%= image_tag 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Home-icon.svg/16px-Home-icon.svg.png' %> <%= link_to 'Home', root_path %></span>
     <div class='content'>
-      <h1>Viewing Party</h1>
+      <h1 class='banner'>Viewing Party</h1>
       <% flash.each do |type, message| %>
-      <p><%= message %></p>
+      <p class='error'><%= message %></p>
     <% end %>
       <%= yield %>
     </div>
