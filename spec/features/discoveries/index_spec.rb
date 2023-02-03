@@ -31,6 +31,7 @@ RSpec.describe "Discover index page (/users/:id/discover)", type: :feature do
     end
 
     it 'when user clicks on the Top Rated Movies they are taken to the movies results page' do
+      stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated").to_return(status: 200, body: "")
       visit user_discoveries_path(@user1.id)
 
       click_button "Find Top Rated Movies"

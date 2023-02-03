@@ -8,7 +8,10 @@ class TMDBService
 # end
 
   def self.get_top_rated_movies
-    response = conn.get("/3/movie/top_rated", {"api_key" => ENV['tmdb_api_key']})
+    conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
+      faraday.headers["api_key"] = ENV['govt_api_key']
+    end
+    response = conn.get("/3/movie/top_rated")
     data = json_parse(response)
   end
 
