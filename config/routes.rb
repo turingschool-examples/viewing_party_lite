@@ -4,11 +4,11 @@ Rails.application.routes.draw do
 
   get '/register', to: 'users#new', as: :new_user
 
-  resources :users, only: [:show, :index, :create] do
+  resources :users, only: %i[show index create] do
     scope module: 'users' do
       resources :discover, only: :index
-      resources :movies, only: [:index, :show] do
-        resources :viewing_parties, only: [:new, :create]
+      resources :movies, only: %i[index show] do
+        resources :viewing_parties, only: %i[new create]
       end
     end
   end

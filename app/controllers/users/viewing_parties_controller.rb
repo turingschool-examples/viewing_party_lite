@@ -24,10 +24,10 @@ module Users
     private
 
     def create_user_viewing_parties
-      UserViewingParty.create({user_id: @user.id, viewing_party_id: @viewing_party.id, hosting: true})
+      UserViewingParty.create({ user_id: @user.id, viewing_party_id: @viewing_party.id, hosting: true })
       params[:viewing_party].each do |key, value|
         if value == '1' && key != :movie_id
-          UserViewingParty.create({user_id: key, viewing_party_id: @viewing_party.id})
+          UserViewingParty.create({ user_id: key, viewing_party_id: @viewing_party.id })
         end
       end
     end

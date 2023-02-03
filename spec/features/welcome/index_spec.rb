@@ -6,7 +6,7 @@ RSpec.describe 'Landing Page' do
   it 'Has all relevant content' do
     visit root_path
 
-    random_user = users.shuffle.shuffle.last
+    random_user = users.shuffle.sample
     expect(page).to have_content('Viewing Party')
     expect(page).to have_link(users.first.email, href: user_path(users.first))
     expect(page).to have_link(users.last.email, href: user_path(users.last))

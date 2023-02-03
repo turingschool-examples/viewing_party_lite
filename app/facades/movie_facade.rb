@@ -25,8 +25,6 @@ class MovieFacade
     end
   end
 
-  private
-
   def self.filter_movies(uri)
     MovieService.parse_response(uri)
   end

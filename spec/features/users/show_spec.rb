@@ -2,15 +2,15 @@ require 'rails_helper'
 
 RSpec.describe 'Users Show' do
   before :each do
-    json_response_1= File.read('spec/fixtures/the_godfather.json')
-    stub_request(:get, "https://api.themoviedb.org/3/movie/238?api_key=#{ENV['movie_api_key']}&language=en-US").
-      to_return(status: 200, body: json_response_1)
+    json_response_1 = File.read('spec/fixtures/the_godfather.json')
+    stub_request(:get, "https://api.themoviedb.org/3/movie/238?api_key=#{ENV['movie_api_key']}&language=en-US")
+      .to_return(status: 200, body: json_response_1)
     json_response_2 = File.read('spec/fixtures/shawshank_redemption.json')
-    stub_request(:get, "https://api.themoviedb.org/3/movie/278?api_key=#{ENV['movie_api_key']}&language=en-US").
-      to_return(status: 200, body: json_response_2)
+    stub_request(:get, "https://api.themoviedb.org/3/movie/278?api_key=#{ENV['movie_api_key']}&language=en-US")
+      .to_return(status: 200, body: json_response_2)
     json_response_3 = File.read('spec/fixtures/puss_in_boots.json')
-    stub_request(:get, "https://api.themoviedb.org/3/movie/315162?api_key=#{ENV['movie_api_key']}&language=en-US").
-      to_return(status: 200, body: json_response_3)
+    stub_request(:get, "https://api.themoviedb.org/3/movie/315162?api_key=#{ENV['movie_api_key']}&language=en-US")
+      .to_return(status: 200, body: json_response_3)
   end
   describe 'Features' do
     let!(:users) { create_list(:user, 10) }
@@ -61,7 +61,9 @@ RSpec.describe 'Users Show' do
       within '#invited_parties' do
         user.viewing_parties.each do |party|
           user_party = user.user_viewing_parties.find_by(viewing_party_id: party.id)
-          unless user_party.hosting
+          if user_party.hosting
+            expect(page).to_not have_css("#viewing_party_#{party.id}")
+          else
             within "#viewing_party_#{party.id}" do
               expect(page).to have_content(party.movie.title)
               expect(page).to have_content(party.date.strftime('%-m/%-d/%Y'))
@@ -71,8 +73,6 @@ RSpec.describe 'Users Show' do
                 expect(page).to have_content("Host:\n#{invitee.user.name}") if invitee.hosting
               end
             end
-          else
-            expect(page).to_not have_css("#viewing_party_#{party.id}")
           end
         end
       end
