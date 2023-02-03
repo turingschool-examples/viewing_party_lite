@@ -19,9 +19,9 @@ RSpec.describe "Movies details page (/users/:id/movies/:id)", type: :feature do
     end
 
     it "has field for selecting a date" do
-      expect(page).to have_select(:_day_1i)
-      expect(page).to have_select(:_day_2i)
-      expect(page).to have_select(:_day_3i)
+      expect(page).to have_select(:_date_1i)
+      expect(page).to have_select(:_date_2i)
+      expect(page).to have_select(:_date_3i)
     end
 
     it "has field to select a start time" do
@@ -34,9 +34,9 @@ RSpec.describe "Movies details page (/users/:id/movies/:id)", type: :feature do
     it "user fills out form and when create a party button is clicked they are redirected to the users's 
     dashboard with the new event now displayed" do
       fill_in :duration, with: 186
-      select 2023, from: :_day_1i
-      select "March", from: :_day_2i
-      select "20", from: :_day_3i
+      select 2023, from: :_date_1i
+      select "March", from: :_date_2i
+      select "20", from: :_date_3i
       fill_in :time, with: "9:00"
       click_button "Create Party"
 
