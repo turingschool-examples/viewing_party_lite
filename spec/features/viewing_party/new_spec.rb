@@ -17,5 +17,16 @@ RSpec.describe 'new viewing party page' do
                        runtime: 139)
 
     visit new_user_movie_viewing_party_path(@user_1, @movie.id)
+    
+    fill_in :duration, with: 139
+    fill_in :start_day, with: '12/01/2022'
+    fill_in :start_time, with: '11:00 PM'
+    check @user_2.id.to_s
+    click_button 'Create Party'
+    
+    within "div#hosted_parties" do
+      expect(page).to have_content(@movie.title)
+      expect(page).to have_content(@user_2.name)
+    end
   end
 end
