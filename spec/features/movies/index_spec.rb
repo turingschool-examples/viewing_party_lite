@@ -7,6 +7,7 @@ RSpec.describe "Movies results page (/users/:id/movies)", type: :feature do
 
   describe "visiting results page from via the 'Find Top Rated Movies' button on discoveries page" do
     it "shows the top rated 20 movies" do
+      top_rated_movies_stub
       visit user_discoveries_path(@user1.id)
 
       click_button "Find Top Rated Movies"
@@ -32,9 +33,11 @@ RSpec.describe "Movies results page (/users/:id/movies)", type: :feature do
 
   describe "visiting results page via the search by movie title feature" do
     it "shows the top 20 results from movie search" do
+      keyword = "Encanto"
+      movie_search_stub(keyword)
       visit user_discoveries_path(@user1.id)
 
-      fill_in :q, with: "Encanto"
+      fill_in :q, with: keyword
       click_button "Find Movies"
 
       expect(current_path).to eq("/users/#{@user1.id}/movies")
@@ -47,9 +50,13 @@ RSpec.describe "Movies results page (/users/:id/movies)", type: :feature do
 
   describe "visiting either version of the results page" do
     it "has a button to go back to the discover page and goes there when clicked" do
+      keyword = "Encanto"
+      movie_search_stub(keyword)
+      top_rated_movies_stub
+
       visit user_discoveries_path(@user1.id)
 
-      fill_in :q, with: "Encanto"
+      fill_in :q, with: keyword
       click_button "Find Movies"
 
       expect(current_path).to eq("/users/#{@user1.id}/movies")
@@ -68,6 +75,12 @@ RSpec.describe "Movies results page (/users/:id/movies)", type: :feature do
 
   describe "when visiting a movies results page, each movie title is a link to a movie details page" do
     it 'clicking a moving takes user to the movies details page' do
+      movie_id = 238
+      top_rated_movies_stub
+      movie_by_id_stub(movie_id)
+      movie_cast_stub(movie_id)
+      movie_reviews_stub(movie_id)
+
       visit user_discoveries_path(@user1.id)
 
       click_button "Find Top Rated Movies"

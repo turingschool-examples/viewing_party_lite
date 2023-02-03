@@ -29,3 +29,38 @@ def movie_search_stub(keyword)
           "include_adult" => false})
       .to_return(status: 200, body: File.read('spec/fixtures/movie_search.json'), headers: {})
 end
+
+def movie_by_id_stub(movie_id)
+  stub_request(:get, "https://api.themoviedb.org/3/movie/#{movie_id}").
+      with(
+        headers: {
+        'Accept'=>'*/*',
+        'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+        'User-Agent'=>'Faraday v2.7.4'
+        }, query: {"api_key"  => ENV['tmdb_api_key']
+          }).
+
+      to_return(status: 200, body: File.read('spec/fixtures/movie_by_id.json'), headers: {})
+end
+
+def movie_cast_stub(movie_id)
+  stub_request(:get, "https://api.themoviedb.org/3/movie/#{movie_id}/credits").
+         with(
+           headers: {
+       	  'Accept'=>'*/*',
+       	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+       	  'User-Agent'=>'Faraday v2.7.4'
+           }, query: {"api_key"  => ENV['tmdb_api_key']})
+           .to_return(status: 200, body: File.read('spec/fixtures/movie_credits.json'), headers: {})
+end
+
+def movie_reviews_stub(movie_id)
+  stub_request(:get, "https://api.themoviedb.org/3/movie/#{movie_id}/reviews").
+         with(
+           headers: {
+       	  'Accept'=>'*/*',
+       	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+       	  'User-Agent'=>'Faraday v2.7.4'
+           }, query: {"api_key"  => ENV['tmdb_api_key']})
+           .to_return(status: 200, body: File.read('spec/fixtures/movie_reviews.json'), headers: {})
+end
