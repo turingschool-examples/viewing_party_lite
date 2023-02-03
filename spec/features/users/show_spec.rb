@@ -16,12 +16,14 @@ RSpec.describe "user show page" do
     
     @user_1 = create(:user)
     @user_2 = create(:user)
+    @user_3 = create(:user)
     @movie_detail = MovieDetail.new(JSON.parse(json_response, symbolize_names: true))
     @movie_detail_2 = MovieDetail.new(JSON.parse(json_response_2, symbolize_names: true))
     @viewing_party_1 = ViewingParty.create!(duration: '180', host_id: @user_1.id, movie_id: @movie_detail.id, party_date: Date.today, party_time: "17:00")
     @viewing_party_2 = ViewingParty.create!(duration: '200', host_id: @user_2.id, movie_id: @movie_detail_2.id, party_date: Date.today-1, party_time: "18:00")
     @viewing_party_user_1 = ViewingPartyUser.create!(user_id: @user_1.id, viewing_party_id: @viewing_party_1.id)
     @viewing_party_user_2 = ViewingPartyUser.create!(user_id: @user_1.id, viewing_party_id: @viewing_party_2.id)
+    @viewing_party_user_3 = ViewingPartyUser.create!(user_id: @user_2.id, viewing_party_id: @viewing_party_1.id)
   end
   
   it 'displays the site and page title' do
@@ -66,6 +68,15 @@ RSpec.describe "user show page" do
       expect(page).to have_content(@viewing_party_1.duration)
       expect(page).to have_content(@viewing_party_1.party_time.strftime("%I:%M%p"))
       expect(page).to have_content(@viewing_party_1.party_date.strftime("%B %d, %Y"))
+    end
+  end
+
+  it 'displays the attendees' do
+    visit user_path(@user_1.id)
+    within("#attendees-#{@viewing_party_1.movie_id}") do
+      expect(page).to have_content("#{@user_2.name}")
+      expect(page).to have_content("#{@user_1.name}")
+      expect(page).to_not have_content("#{@user_3.name}")
     end
   end
 end
