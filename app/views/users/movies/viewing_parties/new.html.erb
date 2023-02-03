@@ -16,6 +16,9 @@
           <td><%= f.label :duration, "Duration of Party" %></td>
           <td><%= f.number_field :duration, value: @movie.runtime, min: @movie.runtime, required: true, style: 'text-align:center;' %></td>
           <%= f.hidden_field :runtime, value: @movie.runtime %>
+          <%= f.hidden_field :title, value: @movie.title %>
+          <%= f.hidden_field :poster_path, value: @movie.poster_path %>
+
         </tr>
 
         <tr>
