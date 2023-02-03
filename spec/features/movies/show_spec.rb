@@ -3,6 +3,11 @@ require 'rails_helper'
 RSpec.describe "Movies details page (/users/:id/movies/:id)", type: :feature do
   before :each do
     load_test_data
+    movie_id = 238
+    top_rated_movies_stub
+    movie_by_id_stub(movie_id)
+    movie_cast_stub(movie_id)
+    movie_reviews_stub(movie_id)
     visit user_discoveries_path(@user1.id)
     click_button "Find Top Rated Movies"
     click_link "The Godfather"

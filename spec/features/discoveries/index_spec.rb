@@ -31,6 +31,7 @@ RSpec.describe "Discover index page (/users/:id/discover)", type: :feature do
     end
 
     it 'when user clicks on the Top Rated Movies they are taken to the movies results page' do
+      top_rated_movies_stub
       visit user_discoveries_path(@user1.id)
 
       click_button "Find Top Rated Movies"
@@ -38,9 +39,11 @@ RSpec.describe "Discover index page (/users/:id/discover)", type: :feature do
     end
 
     it 'when user clicks on the search button they are taken to the movies results page' do
+      keyword = "Jumanji"
+      movie_search_stub(keyword)
       visit user_discoveries_path(@user1.id)
 
-      fill_in :q, with: "Jumanji"
+      fill_in :q, with: keyword
       click_button "Find Movies"
 
       expect(current_path).to eq("/users/#{@user1.id}/movies")

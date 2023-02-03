@@ -1,0 +1,372 @@
+{
+  "page": 1,
+  "results": [
+      {
+          "adult": false,
+          "backdrop_path": "/3G1Q5xF40HkUBJXxt2DQgQzKTp5.jpg",
+          "genre_ids": [
+              16,
+              35,
+              10751,
+              14
+          ],
+          "id": 568124,
+          "original_language": "en",
+          "original_title": "Encanto",
+          "overview": "The tale of an extraordinary family, the Madrigals, who live hidden in the mountains of Colombia, in a magical house, in a vibrant town, in a wondrous, charmed place called an Encanto. The magic of the Encanto has blessed every child in the family—every child except one, Mirabel. But when she discovers that the magic surrounding the Encanto is in danger, Mirabel decides that she, the only ordinary Madrigal, might just be her exceptional family's last hope.",
+          "popularity": 272.04,
+          "poster_path": "/4j0PNHkMr5ax3IA8tjtxcmPU3QT.jpg",
+          "release_date": "2021-10-13",
+          "title": "Encanto",
+          "video": false,
+          "vote_average": 7.7,
+          "vote_count": 7895
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/tsjXBo4LmzV0Bb9hdrz25tzX5GD.jpg",
+          "genre_ids": [
+              10402
+          ],
+          "id": 1041513,
+          "original_language": "en",
+          "original_title": "Encanto at the Hollywood Bowl",
+          "overview": "A taped performance of the Encanto Live-to-Film Concert Experience at the Hollywood Bowl. The original cast puts on a miracle of a concert as they sing the favorite songs, accompanied by a full orchestra and 50 person ensemble, and the Hollywood Bowl transforms into Casita!",
+          "popularity": 858.726,
+          "poster_path": "/sa3Ku5yNVjp8NloWxJoI9dQjvOi.jpg",
+          "release_date": "2022-12-28",
+          "title": "Encanto at the Hollywood Bowl",
+          "video": false,
+          "vote_average": 7.6,
+          "vote_count": 71
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+              18
+          ],
+          "id": 703155,
+          "original_language": "es",
+          "original_title": "El encanto",
+          "overview": "Bruno is thirty years old and has a girlfriend, Juliana, with whom he is about to celebrate a decade of love.He loves her, but feels that she no longer captivates him. She wants to be a mother. He doesn't know if he wants to take that step. He fears it could be a mistake, perhaps Juliana is not the woman of his life or perhaps it is too soon. To make matters worse, he is attracted to Lara, his new sexy and young employee. Further confused, Bruno only finds comfort in the company of his father and his old bass. This confusion pushes Bruno to reunite with an old love: music.",
+          "popularity": 2.575,
+          "poster_path": "/pZMFUQ3iw9ST9e1v0F8qxLwWg0D.jpg",
+          "release_date": "2020-07-30",
+          "title": "El encanto",
+          "video": false,
+          "vote_average": 6.4,
+          "vote_count": 53
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+              99
+          ],
+          "id": 535413,
+          "original_language": "pt",
+          "original_title": "Rua do Encanto 22",
+          "overview": "Rua do Encanto 22, brings a small part of the history of a great Brazilian.",
+          "popularity": 0.6,
+          "poster_path": "/agLt9g1d2WpV4RfOAQGoJ5hj7GT.jpg",
+          "release_date": "2014-07-01",
+          "title": "Rua do Encanto 22",
+          "video": false,
+          "vote_average": 10,
+          "vote_count": 1
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [],
+          "id": 718602,
+          "original_language": "pt",
+          "original_title": "Por Encanto: Notas de Outono",
+          "overview": "",
+          "popularity": 0.6,
+          "poster_path": null,
+          "release_date": "2002-03-05",
+          "title": "Por Encanto: Notas de Outono",
+          "video": false,
+          "vote_average": 0,
+          "vote_count": 0
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/5ntvyCHRtWd3m7CHYH2SyFD0K4R.jpg",
+          "genre_ids": [
+              99,
+              10402
+          ],
+          "id": 496018,
+          "original_language": "es",
+          "original_title": "Nuestra Isla Nuestro Encanto",
+          "overview": "A tour through some of the main festivities, carnivals, sports and casual events that we celebrate in Puerto Rico.  The 2017 edition of the yearly musical show produced by Banco Popular.",
+          "popularity": 0.6,
+          "poster_path": "/mTHKyXEhlwriE0kWGFg1DdRuyql.jpg",
+          "release_date": "2017-12-01",
+          "title": "Our Island, Our Enchantment",
+          "video": false,
+          "vote_average": 0,
+          "vote_count": 0
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+              99,
+              10402
+          ],
+          "id": 685429,
+          "original_language": "pt",
+          "original_title": "Maria Rita – Canto Encanto Tanto",
+          "overview": "In the documentary, the singer Maria Rita talks about her professional career, music, and life.",
+          "popularity": 0.6,
+          "poster_path": "/kwwWXHtOWPmtmGxG6wISINW9VZk.jpg",
+          "release_date": "2013-07-08",
+          "title": "Maria Rita – Canto Encanto Tanto",
+          "video": false,
+          "vote_average": 0,
+          "vote_count": 0
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [],
+          "id": 188647,
+          "original_language": "es",
+          "original_title": "Cantajuego: Una granja con encanto",
+          "overview": "",
+          "popularity": 0.6,
+          "poster_path": null,
+          "release_date": "2011-03-28",
+          "title": "Cantajuego: Una granja con encanto",
+          "video": false,
+          "vote_average": 0,
+          "vote_count": 0
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+              99
+          ],
+          "id": 959736,
+          "original_language": "es",
+          "original_title": "El encanto de la mosca",
+          "overview": "",
+          "popularity": 0.6,
+          "poster_path": "/qHxT9KSkEeKgdIkUZ4GKZZHm2VT.jpg",
+          "release_date": "2022-04-07",
+          "title": "El encanto de la mosca",
+          "video": false,
+          "vote_average": 0,
+          "vote_count": 0
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [],
+          "id": 674090,
+          "original_language": "en",
+          "original_title": "El Encanto de la Oscuridad: Parte 1",
+          "overview": "After a terrible incident, Annie Collingwood will lose her boyfriend and to get it back she will have to deliver 3 objects of great value to a strange entity called the illusionist.",
+          "popularity": 0.6,
+          "poster_path": "/cCKIbmSSPPI0xIPxLMxb5hMmavF.jpg",
+          "release_date": "2016-01-01",
+          "title": "El Encanto de la Oscuridad: Parte 1",
+          "video": false,
+          "vote_average": 5.3,
+          "vote_count": 3
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [],
+          "id": 675133,
+          "original_language": "en",
+          "original_title": "El Encanto de la Oscuridad: Parte 2",
+          "overview": "Mexican feature film",
+          "popularity": 0.6,
+          "poster_path": "/3mlH3DDRlPyQNTCIBb5YFX6liPd.jpg",
+          "release_date": "2018-01-01",
+          "title": "El Encanto de la Oscuridad: Parte 2",
+          "video": false,
+          "vote_average": 4.5,
+          "vote_count": 4
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/AdA7u6ImHvjYW9r0nahjOThHV0C.jpg",
+          "genre_ids": [
+              99,
+              10402
+          ],
+          "id": 742548,
+          "original_language": "pt",
+          "original_title": "Encantadeiras - O Canto e o Encanto das Quebradeiras de Coco Babaçu",
+          "overview": "The Encantadeiras is a group formed by a group of babassu coconut breakers from Maranhão. The film accompanies the 7 women on a tour and unveils the story of each one. Babaçu, feminism, land reform and music. A lot of music.",
+          "popularity": 0.6,
+          "poster_path": "/nT11dwnimTe9xE2nW5c1we2IEYt.jpg",
+          "release_date": "2020-09-10",
+          "title": "Encantadeiras - O Canto e o Encanto das Quebradeiras de Coco Babaçu",
+          "video": false,
+          "vote_average": 0,
+          "vote_count": 0
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/uw4v9I6uug15VE9n8DMN9QsslC.jpg",
+          "genre_ids": [
+              18,
+              10749
+          ],
+          "id": 42297,
+          "original_language": "en",
+          "original_title": "Burlesque",
+          "overview": "Ali, a small-town gal with a great voice, leaves a troubled life behind and follows her dreams to Los Angeles. She lands a job as a cocktail waitress at the Burlesque Lounge, a once-majestic theater that houses an inspired musical revue led by Tess, the proprietor. Ali vows to perform there and, with the help of a savvy stage manager and a gender-bending host, she makes the leap from bar to stage, helping restore the club's former glory.",
+          "popularity": 14.858,
+          "poster_path": "/3U9zBIibERQZqYKM3N1a4MYgBsN.jpg",
+          "release_date": "2010-11-23",
+          "title": "Burlesque",
+          "video": false,
+          "vote_average": 7.2,
+          "vote_count": 2032
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/I5yAaGUORfH1xkUgL7HPFmrF5x.jpg",
+          "genre_ids": [
+              10749,
+              18,
+              14,
+              10770
+          ],
+          "id": 487045,
+          "original_language": "en",
+          "original_title": "Snowmance",
+          "overview": "No man is perfect enough for Sarah Groves, except perhaps the impressive snowmen she sculpts annually with her childhood pal, Nick. In mid-December, her snowman disappears, and in his place, materializes Cole, who seems too perfect for Sarah to be true.",
+          "popularity": 4.832,
+          "poster_path": "/sXPTx7lelMZMdvRy7EbjaPq9BXX.jpg",
+          "release_date": "2017-11-20",
+          "title": "Snowmance",
+          "video": false,
+          "vote_average": 5.9,
+          "vote_count": 42
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/6rvuqxrg3mC2YaKSkhgbk5BY4uR.jpg",
+          "genre_ids": [
+              10749,
+              18
+          ],
+          "id": 11801,
+          "original_language": "en",
+          "original_title": "Angel",
+          "overview": "Edwardian England. A precocious girl from a poor background with aspirations to being a novelist finds herself swept to fame and fortune when her tasteless romances hit the best seller lists. Her life changes in unexpected ways when she encounters an aristocratic brother and sister, both of whom have cultural ambitions, and both of whom fall in love with her.",
+          "popularity": 7.154,
+          "poster_path": "/tyL663WNFNq4BuKUeACWfP7zPnN.jpg",
+          "release_date": "2007-02-17",
+          "title": "Angel",
+          "video": false,
+          "vote_average": 5.6,
+          "vote_count": 119
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+              35,
+              10749
+          ],
+          "id": 20438,
+          "original_language": "en",
+          "original_title": "The Tao of Steve",
+          "overview": "Underachieving, overweight kindergarten teacher Dex finds a woman who forces him to reexamine his Zen-like system of seduction.",
+          "popularity": 3.979,
+          "poster_path": "/4Or87o2LAvgsTlDCrvw9lqECL3D.jpg",
+          "release_date": "2000-08-04",
+          "title": "The Tao of Steve",
+          "video": false,
+          "vote_average": 6,
+          "vote_count": 62
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/iqjRg8U00S0mSHAeojzeeYry8Ao.jpg",
+          "genre_ids": [
+              18
+          ],
+          "id": 167710,
+          "original_language": "tl",
+          "original_title": "Kagadanan sa Banwaan Ning mga Engkanto",
+          "overview": "A Filipino poet returns home after the typhoon.",
+          "popularity": 0.731,
+          "poster_path": "/iNAjcvAHKyv0MGO5ABl5pvQL6FA.jpg",
+          "release_date": "2007-04-26",
+          "title": "Death in the Land of Encantos",
+          "video": false,
+          "vote_average": 7.7,
+          "vote_count": 12
+      },
+      {
+          "adult": false,
+          "backdrop_path": "/sv6iFKSjff8UrIPISjYsKl37AT.jpg",
+          "genre_ids": [
+              53,
+              80
+          ],
+          "id": 182497,
+          "original_language": "en",
+          "original_title": "Fatal Charm",
+          "overview": "Valerie's (Amanda Peterson) prosecutor mom is trying to put away Adam (Christopher Atkins), an alleged serial killer on trial for murdering six women. But he's so charming that the teenage Valerie just can't believe he really did it, and soon they begin sending each other letters. Adam is caught up in a jailbreak and ends up on the run.",
+          "popularity": 2.322,
+          "poster_path": "/m4L6nkMdlbiGfJ5vfL5tl3XFrU5.jpg",
+          "release_date": "1990-09-19",
+          "title": "Fatal Charm",
+          "video": false,
+          "vote_average": 5.8,
+          "vote_count": 8
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+              99
+          ],
+          "id": 933186,
+          "original_language": "en",
+          "original_title": "Los encantos de Jazmín",
+          "overview": "",
+          "popularity": 0.6,
+          "poster_path": null,
+          "release_date": "1998-01-01",
+          "title": "Los encantos de Jazmín",
+          "video": false,
+          "vote_average": 0,
+          "vote_count": 0
+      },
+      {
+          "adult": false,
+          "backdrop_path": null,
+          "genre_ids": [
+              18
+          ],
+          "id": 881570,
+          "original_language": "es",
+          "original_title": "Des goûts et des couleurs",
+          "overview": "The owner of a luxurious yacht seduces attractive women to deliver them to a black crew member.",
+          "popularity": 0.6,
+          "poster_path": "/uzu8G849ZsdR4mQT7F8TcXvehH8.jpg",
+          "release_date": "1974-07-18",
+          "title": "Des goûts et des couleurs",
+          "video": false,
+          "vote_average": 0,
+          "vote_count": 0
+      }
+  ],
+  "total_pages": 2,
+  "total_results": 36
+}
