@@ -3,7 +3,7 @@ class ViewingPartyController < ApplicationController
     @movie = MovieFacade.movie_details(params[:movie_id])
     @user = User.find(params[:user_id])
     @viewing_party = ViewingParty.new
-    @users = User.where.not(id: params[:user_id]) #maybe move to a model method
+    @users = @user.all_other_users
   end
 
   def create

@@ -12,4 +12,8 @@ class User < ApplicationRecord
   def name_and_email
     self.name + ' (' + self.email + ')'
   end
+
+  def all_other_users
+    User.where.not(id: self.id)
+  end
 end

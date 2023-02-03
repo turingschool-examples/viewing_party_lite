@@ -42,6 +42,5 @@ RSpec.describe 'user dashboard' do
       expect(page).to have_content('8:00 pm')
       expect(page).to have_content('Invited')
     end
-    save_and_open_page
   end
 end
