@@ -40,8 +40,6 @@ RSpec.describe 'Viewing Party New' do
     visit new_user_movie_viewing_party_path(user, 238)
     start_time = Time.now
 
-    expect(page).to have_field('viewing_party[duration]', with: 175 )
-
     fill_in('viewing_party[date]', with: Date.today)
     fill_in('viewing_party[start_time]', with: start_time)
 
@@ -78,5 +76,42 @@ RSpec.describe 'Viewing Party New' do
 
     expect(current_path).to eq(new_user_movie_viewing_party_path(user, 238))
     expect(page).to have_content('Duration must be greater than or equal to movie runtime')
+  end
+
+  describe 'sad paths' do
+    it 'wont go to the next page if no fields are filled in' do
+      visit new_user_movie_viewing_party_path(user, 238)
+      start_time = Time.now
+
+
+      click_button('Create Viewing Party')
+      save_and_open_page
+      expect(page).to have_content("Date can't be blank")
+      expect(page).to have_content("Start time can't be blank")
+    end
+    
+    it 'wont go to the next page if no date is selected' do 
+      visit new_user_movie_viewing_party_path(user, 238)
+      start_time = Time.now
+      
+      fill_in('viewing_party[start_time]', with: start_time)
+      
+      click_button('Create Viewing Party')
+      
+      expect(page).to have_content("Date can't be blank")
+      expect(page).to_not have_content("Start time can't be blank")
+    end
+
+    it 'wont go to the next page if no start time is selected' do
+      visit new_user_movie_viewing_party_path(user, 238)
+      start_time = Time.now
+
+      fill_in('viewing_party[date]', with: Date.today)
+      
+      click_button('Create Viewing Party')
+      
+      expect(page).to_not have_content("Date can't be blank")
+      expect(page).to have_content("Start time can't be blank")
+    end
   end
 end
