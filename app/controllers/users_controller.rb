@@ -1,7 +1,14 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    # require 'pry'; binding.pry
+   
+    view_parties = @user.view_parties
+    movie_ids = view_parties.map do |party|
+      party[:movie_id]
+    end
+    @movies = movie_ids.map do |movie_id|
+      TMDBService.get_movie_by_id(movie_id)
+    end
   end
   
   def new

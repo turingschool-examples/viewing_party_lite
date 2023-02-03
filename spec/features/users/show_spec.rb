@@ -3,6 +3,11 @@ require 'rails_helper'
 RSpec.describe "User Show Page", type: :feature do
   before :each do
     load_test_data
+    movie_id = 238
+    top_rated_movies_stub
+    movie_by_id_stub(movie_id)
+    movie_cast_stub(movie_id)
+    movie_reviews_stub(movie_id)
   end
 
   describe "when I visit a users show page" do
@@ -50,7 +55,7 @@ RSpec.describe "User Show Page", type: :feature do
     end
 
     it "should show movie title which links to the movie show page" do
-      within"#The Godfather" do
+      within"#id_238" do
         expect(page).to have_content("The Godfather")
       end
     end
