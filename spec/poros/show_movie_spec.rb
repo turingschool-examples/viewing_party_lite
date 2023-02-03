@@ -98,10 +98,41 @@ RSpec.describe ShowMovie do
 
   it 'exists and has attributes' do
     expect(@movie.id).to eq(51888)
+    expect(@movie.poster).to eq("/mi2lVho2zpfwcxI6yC1QYJi435D.jpg")
     expect(@movie.title).to eq("Robot Chicken: Star Wars Episode III")
     expect(@movie.vote_average).to eq(7.4)
+    expect(@movie.parsed_runtime).to eq("0 hour(s) 45 min")
     expect(@movie.runtime).to eq(45)
     expect(@movie.genres).to eq(["Comedy", "Science Fiction", "Animation", "TV Movie"])
     expect(@movie.overview).to eq("Robot Chicken: Star Wars Episode III, directed by Chris McKay, combines the satirical sensibilities of Green and Matthew Senreich's Robot Chicken with characters of the Star Wars universe.")
   end
+
+  describe 'ShowMovie methods' do
+    it 'can convert time to be normal via #time_conversion' do
+      expect(@movie.time_conversion(90)).to eq("1 hour(s) 30 min")
+    end
+
+    it 'can list all genres in an array' do
+      genres = [
+                    {
+                        "id": 35,
+                        "name": "Very Scary"
+                    },
+                    {
+                        "id": 878,
+                        "name": "Science Fiction"
+                    },
+                    {
+                        "id": 16,
+                        "name": "blubby flubby"
+                    },
+                    {
+                        "id": 10770,
+                        "name": "Snack Time Movie"
+                    }
+                ]
+      expect(@movie.list_genres(genres)).to eq(["Very Scary", "Science Fiction", "blubby flubby", "Snack Time Movie"])
+    end
+  end
+
 end
