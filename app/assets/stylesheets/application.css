@@ -20,3 +20,12 @@
   grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 1em;
 }
+
+.movie_data {
+  column-count: 3;
+}
+
+hr {
+  height: 3px;
+  background-color: black;
+}
