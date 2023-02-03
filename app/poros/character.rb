@@ -1,5 +1,4 @@
 class Character
-
   attr_reader :actor, :character
 
   def initialize(data)

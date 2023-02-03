@@ -1,16 +1,16 @@
 class MovieFacade
-  def self.find_movie(uri)
-    @movie = Movie.new(filter_movies(uri))
+  def self.find_movie(movie_id)
+    @movie = Movie.new(filter_movies("movie/#{movie_id}?api_key=#{ENV['movie_api_key']}&language=en-US"))
   end
 
-  def self.find_cast(uri)
-    @cast = filter_credits(uri).map do |character|
+  def self.find_cast(movie_id)
+    @cast = filter_credits("movie/#{movie_id}/credits?api_key=#{ENV['movie_api_key']}&language=en-US").map do |character|
       Character.new(character)
     end
   end
 
-  def self.find_reviews(uri)
-    @reviews = filter_response(uri).map do |review|
+  def self.find_reviews(movie_id)
+    @reviews = filter_response("movie/#{movie_id}/reviews?api_key=#{ENV['movie_api_key']}&language=en-US").map do |review|
       Review.new(review)
     end
   end

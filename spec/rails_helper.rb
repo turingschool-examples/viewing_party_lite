@@ -50,6 +50,37 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
 
   config.before(:suite) do
+    # json_response_1 = File.read('spec/fixtures/the_godfather.json')
+    # stub_request(:get, "https://api.themoviedb.org/3/movie/238?api_key=#{ENV['movie_api_key']}&language=en-US").
+    #   to_return(status: 200, body: json_response_1)
+    # json_response_2 = File.read('spec/fixtures/shawshank_redemption.json')
+    # stub_request(:get, "https://api.themoviedb.org/3/movie/278?api_key=#{ENV['movie_api_key']}&language=en-US").
+    #   to_return(status: 200, body: json_response_2)
+    # json_response_3 = File.read('spec/fixtures/puss_in_boots.json')
+    # stub_request(:get, "https://api.themoviedb.org/3/movie/315162?api_key=#{ENV['movie_api_key']}&language=en-US").
+    # to_return(status: 200, body: json_response_3)
+    # json_response_4 = File.read('spec/fixtures/the_godfather_credits.json')
+    # stub_request(:get, "https://api.themoviedb.org/3/movie/238/credits?api_key=#{ENV['movie_api_key']}&language=en-US").
+    #   to_return(status: 200, body: json_response_4)
+    # json_response_5 = File.read('spec/fixtures/the_godfather_reviews.json')
+    # stub_request(:get, "https://api.themoviedb.org/3/movie/238/reviews?api_key=#{ENV['movie_api_key']}&language=en-US").
+    #   to_return(status: 200, body: json_response_5)
+    # json_response_6 = File.read('spec/fixtures/top_rated_movies.json')
+    # stub_request(:get, "https://api.themoviedb.org/3/discover/movie?api_key=#{ENV['movie_api_key']}&language=en-US&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&vote_count.gte=1000").
+    #   to_return(status: 200, body: json_response_6)
+    # json_response_7 = File.read('spec/fixtures/movies_with_green.json')
+    # stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['movie_api_key']}&language=en-US&query=Green&page=1&include_adult=false").
+    #   to_return(status: 200, body: json_response_7)
+    # json_response_8 = File.read('spec/fixtures/the_grand_budapest_hotel.json')
+    # stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['movie_api_key']}&language=en-US&query=the%20grand%20budapest%20hotel&page=1&include_adult=false").
+    #   to_return(status: 200, body: json_response_8)
+    # json_response_9 = File.read('spec/fixtures/movies_with_spider_man.json')
+    # stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['movie_api_key']}&language=en-US&query=Spider%20Man&page=1&include_adult=false")
+    #   to_return(status: 200, body: json_response_9)
+    # json_response_10 = File.read('spec/fixtures/failed_search.json')
+    # stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['movie_api_key']}&language=en-US&query=&page=1&include_adult=false").
+    #   to_return(status: 200, body: json_response_10)
+
     DatabaseCleaner.clean_with(:truncation)
     DatabaseCleaner.strategy = :transaction
   end

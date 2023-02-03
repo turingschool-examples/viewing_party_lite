@@ -24,11 +24,11 @@ module Users
     def show
       set_user
 
-      @movie = MovieFacade.find_movie("movie/#{params[:id]}?api_key=#{ENV['movie_api_key']}&language=en-US")
+      @movie = MovieFacade.find_movie(params[:id])
 
-      @cast = MovieFacade.find_cast("movie/#{params[:id]}/credits?api_key=#{ENV['movie_api_key']}&language=en-US")
+      @cast = MovieFacade.find_cast(params[:id])
 
-      @reviews = MovieFacade.find_reviews("movie/#{params[:id]}/reviews?api_key=#{ENV['movie_api_key']}&language=en-US")
+      @reviews = MovieFacade.find_reviews(params[:id])
     end
 
     private

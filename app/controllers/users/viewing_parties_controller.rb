@@ -3,7 +3,7 @@ module Users
     def new
       @viewing_party = ViewingParty.new
       set_user
-      @movie = MovieFacade.find_movie("movie/#{params[:movie_id]}?api_key=#{ENV['movie_api_key']}&language=en-US")
+      @movie = MovieFacade.find_movie(params[:movie_id])
     end
 
     def create

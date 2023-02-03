@@ -3,24 +3,8 @@ require 'rails_helper'
 RSpec.describe 'Movies Show' do
   let!(:users) { create_list(:user, 10) }
   let(:user) { users.first }
-  before :each do
-    json_response = File.read('spec/fixtures/the_godfather.json')
-    stub_request(:get, "https://api.themoviedb.org/3/movie/238?api_key=#{ENV['movie_api_key']}&language=en-US").
-      to_return(status: 200, body: json_response)
-
-    json_response_2 = File.read('spec/fixtures/the_godfather_credits.json')
-    stub_request(:get, "https://api.themoviedb.org/3/movie/238/credits?api_key=#{ENV['movie_api_key']}&language=en-US").
-      to_return(status: 200, body: json_response_2)
-
-    json_response_3 = File.read('spec/fixtures/the_godfather_reviews.json')
-    stub_request(:get, "https://api.themoviedb.org/3/movie/238/reviews?api_key=#{ENV['movie_api_key']}&language=en-US").
-      to_return(status: 200, body: json_response_3)
-  end
 
   it 'is linked on the results page' do
-    json_response_1 = File.read('spec/fixtures/top_rated_movies.json')
-    stub_request(:get, "https://api.themoviedb.org/3/discover/movie?api_key=#{ENV['movie_api_key']}&language=en-US&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&vote_count.gte=1000").
-      to_return(status: 200, body: json_response_1)
 
     visit user_discover_index_path(user)
     click_button 'Find Top Rated Movies'

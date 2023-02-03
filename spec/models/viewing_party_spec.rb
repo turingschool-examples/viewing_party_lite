@@ -12,4 +12,17 @@ RSpec.describe ViewingParty, type: :model do
     it { should validate_presence_of(:start_time) }
     it { should validate_presence_of(:date) }
   end
+
+  describe 'Instance Methods' do
+    it 'returns the movie for a given viewing party' do
+      json_response = File.read('spec/fixtures/the_godfather.json')
+      stub_request(:get, "https://api.themoviedb.org/3/movie/238?api_key=#{ENV['movie_api_key']}&language=en-US").
+        to_return(status: 200, body: json_response)
+
+      viewing_party = ViewingParty.new({duration: 175, movie_id: 238, start_time: Time.now, date: Date.today})
+
+      expect(viewing_party.movie).to be_a(Movie)
+      expect(viewing_party.movie.title).to eq('The Godfather')
+    end
+  end
 end

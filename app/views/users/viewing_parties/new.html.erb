@@ -6,7 +6,7 @@
 Movie Title: <%= @movie.title %>
 <%= form_with model: [@user, :movie, @viewing_party], local: true do |form| %>
   <%= form.label :duration, 'Duration of Party:' %>
-  <%= form.number_field :duration, value: @movie.runtime %>
+  <%= form.number_field :duration, value: @movie.runtime, min: @movie.runtime %>
   <%= form.label :date, 'Day:' %>
   <%= form.date_field :date %>
   <%= form.label :start_time, 'Start Time:' %>
