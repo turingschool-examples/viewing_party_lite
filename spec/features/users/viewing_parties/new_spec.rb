@@ -14,6 +14,7 @@ RSpec.describe 'viewing party new page' do
   before :each do
     @user1 = User.create!(name: "john", email: "john@email.com")
     @user2 = User.create!(name: "brad", email: "brad@email.com")
+    @user3 = User.create!(name: "Max", email: "max@email.com")
 
     json_response1 = File.read('spec/fixtures/fight_club_details.json')
     stub_request(:get, "https://api.themoviedb.org/3/movie/550?api_key=5b03ee47af6e087159e9baca0f110161").to_return(status: 200, body: json_response1, headers: {})
@@ -24,8 +25,11 @@ RSpec.describe 'viewing party new page' do
     json_response3 = File.read('spec/fixtures/fight_club_reviews.json')
     stub_request(:get, "https://api.themoviedb.org/3/movie/550/reviews?api_key=5b03ee47af6e087159e9baca0f110161&language=en-US&page=1").to_return(status: 200, body: json_response3, headers: {})
 
-    visit new_user_movie_viewing_party_path(@user1, 550)
+    visit user_movie_path(@user1, 550)
+
+    click_button "Create Viewing Party"
   end
+  
   it 'creates a new viewing party if all fields are valid' do
     fill_in :duration, with: 140
     fill_in :when, with: "02/02/2023"

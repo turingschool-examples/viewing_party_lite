@@ -1,0 +1,14 @@
+  <%= form_with url: user_movie_viewing_parties_path(@user, @movie), method: :post, local: true do |f| %>
+    <%= f.label :duration %>
+    <%= f.number_field :duration %>
+    <%= f.label :when %>
+    <%= f.text_field :when %>
+    <%= f.label :start_time %>
+    <%= f.text_field :start_time %>
+    <% @users.each do |user| %>
+      <%= f.label user.email %>
+      <%= f.check_box user.email %>
+    <% end %>
+    <%= f.number_field :runtime, :value => @runtime, readonly: true %>
+    <%= f.submit "Create Party" %>
+    <% end %>

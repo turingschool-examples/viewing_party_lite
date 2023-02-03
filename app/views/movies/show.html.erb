@@ -16,5 +16,5 @@
   <p><%= author %>'s Review: <%= review %></p>
 <% end %>
 
-<%= button_to "Create Viewing Party" %>
+<%= button_to "Create Viewing Party", "/users/#{@user.id}/movies/#{@movie.id}/viewing_parties/new", method: :get, params: { runtime: @movie.runtime } %>
 <%= link_to "Return to Discover Page", user_discover_index_path(@user) %>

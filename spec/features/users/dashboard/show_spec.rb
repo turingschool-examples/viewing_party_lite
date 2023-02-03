@@ -3,10 +3,8 @@ require 'rails_helper'
 RSpec.describe 'Users Dashboard' do
   before :each do
     @user = User.create!(name: "John Cena", email: "John@email.com")
-    @movie1 = Movie.create!(title: "Suicide Squad", runtime: 90, genre: "Action", summary: "Stuff happens bro")
-    @movie2 = Movie.create!(title: "The Independent", runtime: 120, genre: "Action", summary: "Stuff happens bro")
-    @viewing_party1 = ViewingParty.create!(when: "11/21/2030 7:00", duration: 90, movie_id: @movie1.id)
-    @viewing_party2 = ViewingParty.create!(when: "11/21/2030 10:00", duration: 120, movie_id: @movie2.id)
+    @viewing_party1 = ViewingParty.create!(when: "11/21/2030 7:00", duration: 90, start_time: "7:00")
+    @viewing_party2 = ViewingParty.create!(when: "11/21/2030 10:00", duration: 120, start_time: "7:00")
     Invitee.create!(user_id: @user.id, viewing_party_id: @viewing_party1.id, host: true)
     Invitee.create!(user_id: @user.id, viewing_party_id: @viewing_party2.id, host: true)
     visit user_dashboard_index_path(@user)
