@@ -2,7 +2,7 @@
 
 <%= button_to 'Discover Movies', discover_user_path(@user), method: :get %>
 
-<%= button_to "Create Viewing Party For #{@movie.title}", discover_user_path(@user), method: :get %>
+<%= button_to "Create Viewing Party For #{@movie.title}", "/users/#{@user.id}/movies/#{@movie.id}/viewing_party/new", params: {type: :search} method: :get %>
 
 <table id='specs'>
   <tr>
