@@ -18,16 +18,16 @@
   <h4>Cast</h4>
   <div id="cast">
     <% @movie.cast.each do |cast_member| %>
-      <%= "Actor: #{cast_member[:name]}, " %>
-      <%= "Character: #{cast_member[:character]}" %>
+      <%= "Actor: #{cast_member.name}, " %>
+      <%= "Character: #{cast_member.character}" %>
       <br>
     <% end %>
   </div>
   <div id="reviews">
     <h4><%= @movie.review_total %> Reviews</h4>
     <% @movie.reviews.each do |review| %>
-      <p><%= "Review Author: #{review[:author]}"%></p>
-      <p><%= "Review: #{review[:content]}" %></p>
+      <p><%= "Review Author: #{review.author}"%></p>
+      <p><%= "Review: #{review.content}" %></p>
     <% end %>
   </div>
 </div>

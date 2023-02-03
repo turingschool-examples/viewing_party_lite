@@ -14,8 +14,6 @@ RSpec.describe Movie do
       expect(movie.runtime).to eq 120
       expect(movie.genres).to eq "Drama, Action" 
       expect(movie.overview).to eq "a film depicting a story"
-      #expect(movie.cast).to be_a  
-      #expect(movie.reviews).to eq [{ author: 'reviewer', review: 'good' }, { author: 'other reviewer', review: 'not the best' }]
       expect(movie.image_path).to eq "https://image.tmdb.org/t/p/w500/imagelocation"
     end
   end
@@ -30,6 +28,26 @@ RSpec.describe Movie do
   describe '#review_total' do
     it 'returns the total number of reviews a movie has' do
       expect(movie.review_total).to eq 2
+    end
+  end
+
+  describe '#cast' do
+    it 'creates an Array of Structs containt cast data' do
+      expect(movie.cast).to be_a Array
+      movie.cast.each do |cast_member|
+        expect(cast_member).to be_a OpenStruct
+      end
+      expect(movie.cast.first.name).to eq 'actor'
+    end
+  end
+
+  describe '#review' do
+    it 'creates an Array of Structs containing review data' do
+      expect(movie.reviews).to be_a Array
+      movie.reviews.each do |review|
+        expect(review).to be_a OpenStruct
+      end
+      expect(movie.reviews.first.author).to eq 'reviewer'
     end
   end
 end
