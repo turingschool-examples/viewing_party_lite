@@ -2,10 +2,14 @@
 <%= button_to 'Discover Movies', user_discover_index_path(@user), method: :get %>
 <hr>
 
-<% @user.viewing_parties.each do |vp| %>
+<% @user.viewing_parties.each_with_index do |vp, index| %>
 
   <div id="viewing_party<%= vp.id %>">
-    <p style="border: solid; padding: 20px; width: 150px; height: 300px; float: left; margin: 20px;">
+    <p style="border: solid; padding: 20px; width: 300px; float: left; margin: 20px;">
+    <%= image_tag"https://image.tmdb.org/t/p/w200#{@movies[index].poster_path}" %>
+    <br>
+    <%= link_to "#{@movies[index].title}", user_movie_path(@user, @movies[index].id)%>
+    <br><br>
     <%= vp.date.strftime('%B %d, %Y') %>
     <br>
     <%= vp.start_time.strftime("%I:%M %P") %>
