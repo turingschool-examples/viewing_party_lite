@@ -81,4 +81,10 @@ RSpec.describe MovieFacade do
       expect(@review2.content).to be_a(String)
     end
   end
+
+  it 'returns image url' do
+    image_url = MovieFacade.get_dashboard_image('238')
+
+    expect(image_url).to eq("/tmU7GeKVybMWFButWEGl2M4GeiP.jpg")
+  end
 end

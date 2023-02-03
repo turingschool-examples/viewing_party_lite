@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe "user discover page" do
   before(:each) do
+    ViewingPartyUser.delete_all
+    ViewingParty.delete_all
     User.delete_all
     @user = create(:user)
     top_20_response = File.read('spec/fixtures/topmovies.json')

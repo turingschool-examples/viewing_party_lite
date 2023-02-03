@@ -1,22 +1,23 @@
 <center><%= button_to "Discover Page", "/users/#{@user.id}/discover", method: :get %></center><br>
 
-<div class="row-2">
-  <% if @top_rated %>
-    <% @top_rated.each.with_index(1) do |film, i| %>
-      <div id="top_rated-<%= i %>">
-        <div class="column-2"><%= link_to "#{film.title}", user_movie_path(@user.id, film.id) %></div> 
-        <div class="column-2"><%= "#{film.vote_average}" %></div>
-      </div>
+<div class="content">
+  <div class="row-2">
+    <% if @top_rated %>
+      <% @top_rated.each.with_index(1) do |film, i| %>
+        <div id="top_rated-<%= i %>">
+          <div class="column-2"><%= link_to "#{film.title}", user_movie_path(@user.id, film.id) %></div> 
+          <div class="column-2"><%= "#{film.vote_average}" %></div>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
 
-
-  <% if @search_results %>
-    <% @search_results.each.with_index(1) do |film, i| %>
-      <div id="search_results-<%= i %>">
-        <div class="column-2"><%= link_to "#{film.title}", user_movie_path(@user.id, film.id), params: {movie: film} %></div> 
-        <div class="column-2"><%= "#{film.vote_average}" %></div>
-      </div>
+    <% if @search_results %>
+      <% @search_results.each.with_index(1) do |film, i| %>
+        <div id="search_results-<%= i %>">
+          <div class="column-2"><%= link_to "#{film.title}", user_movie_path(@user.id, film.id), params: {movie: film} %></div> 
+          <div class="column-2"><%= "#{film.vote_average}" %></div>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>

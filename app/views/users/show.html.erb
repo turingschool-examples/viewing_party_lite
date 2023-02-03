@@ -6,8 +6,18 @@
   <center><%= button_to "Discover Movies", "/users/#{@user.id}/discover", method: :get %></center>
 </div>
 
-
 <div id='viewing_parties'>
   <h3> My Viewing Parties</h3>
-  <%# this is where our Dashboard:Viewing Parties user story info will go%>
+  <div class="row-1">
+    <div class="column-2">
+      <% @parties_info.each do |party_info| %>
+        <p><img src=<%= "#{party_info[:image]}"%>></p>
+        <p><%= link_to "#{party_info[:title]}", "/users/#{@user.id}/movies/#{party_info[:movie_id]}" %></p>
+        <p>Date: <%= party_info[:date].strftime("%B %d, %Y") %></p>
+        <p>Time: <%= party_info[:time].strftime("%I:%M%p") %></p>
+        <p>Duration: <%= party_info[:duration] %>mins</p>
+        <p>Host: <b><%= party_info[:host] %></b></p>
+      </div>
+    <% end %>
+  </div>
 </div>

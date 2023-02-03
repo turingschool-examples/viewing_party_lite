@@ -1,6 +1,22 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
+    @viewing_parties = @user.viewing_parties
+    @parties_info = []
+    @viewing_parties.each do |party|
+      movie = MovieFacade.get_movie(party.movie_id)
+      host = User.find(party.host_id)
+      party_info = {
+        movie_id: movie.id,
+        image: "https://image.tmdb.org/t/p/w500/#{movie.image_url}",
+        title: movie.title,
+        duration: party.duration,
+        date: party.party_date,
+        time: party.party_time,
+        host: host.name
+      }
+      @parties_info << party_info
+    end
   end
   
   def discover_movies

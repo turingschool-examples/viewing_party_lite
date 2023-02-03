@@ -26,5 +26,6 @@ RSpec.describe MovieDetail do
     expect(@movie_detail.runtime).to eq(175)
     expect(@movie_detail.vote_average).to eq(8.714)
     expect(@movie_detail.vote_count).to eq(17392)
+    expect(@movie_detail.image_url).to eq("/tmU7GeKVybMWFButWEGl2M4GeiP.jpg")
   end
 end
