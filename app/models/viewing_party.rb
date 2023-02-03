@@ -5,7 +5,15 @@ class ViewingParty < ApplicationRecord
 
   validates_presence_of :user_id
   validates :movie_id, presence: true, numericality: true 
-  validates_presence_of :day 
-  validates_presence_of :start_time 
-  validates :duration, presence: true, numericality: true
+  validates :runtime, presence: true, numericality: true 
+  validates :day, presence: true, on: :minimum_date
+  validates :start_time, presence: true
+  validates :duration, presence: true, numericality: true, length: { minimum: :runtime }
+
+  def minimum_date
+    unless day >= Date.today
+      errors.add(:day, "Invalid Date")
+    end
+  end
+  
 end

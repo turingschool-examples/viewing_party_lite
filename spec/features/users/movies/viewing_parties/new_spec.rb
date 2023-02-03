@@ -52,9 +52,10 @@ RSpec.describe 'New Viewing Party Page' do
       fill_in('Day', with: Date.yesterday)
       fill_in('Start Time', with: Time.now)
   
-      click_button("Create Party")
-  
-      expect(page).to have_button("Create Party")
+      VCR.use_cassette("movie_details") do
+        click_button("Create Party")
+        expect(page).to have_button("Create Party")
+      end
     end
   end
 end
