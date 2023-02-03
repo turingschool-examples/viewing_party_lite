@@ -22,8 +22,6 @@ class Movie
 
   def runtime_calc
     movie_runtime = @runtime.to_i
-    mins = (movie_runtime % 60).to_s
-    hrs = ((movie_runtime - (movie_runtime % 60)) / 60).to_s
-    hrs + "hr " + mins + "min"
+    (movie_runtime / 60).to_s + "hr " + (movie_runtime % 60).to_s + "min"
   end
 end
