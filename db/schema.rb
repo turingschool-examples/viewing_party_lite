@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_03_023357) do
+ActiveRecord::Schema.define(version: 2023_02_03_183852) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "party_guests", force: :cascade do |t|
+    t.integer "guest_id"
+    t.bigint "view_party_id"
+    t.index ["view_party_id"], name: "index_party_guests_on_view_party_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -33,5 +39,6 @@ ActiveRecord::Schema.define(version: 2023_02_03_023357) do
     t.index ["user_id"], name: "index_view_parties_on_user_id"
   end
 
+  add_foreign_key "party_guests", "view_parties"
   add_foreign_key "view_parties", "users"
 end

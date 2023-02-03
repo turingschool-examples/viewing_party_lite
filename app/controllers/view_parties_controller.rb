@@ -14,7 +14,7 @@ class ViewPartiesController < ApplicationController
     view_party = user.view_parties.new(new_view_party_params)
     # binding.pry
     if view_party.save
-      # binding.pry
+      binding.pry
       # params_checkboxes.map do |details|
       #   view_party.guest_parties.new(details)
       # end
