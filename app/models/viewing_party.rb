@@ -15,6 +15,6 @@ class ViewingParty < ApplicationRecord
   end
 
   def invitees
-    self.user_viewing_parties.map { |uvp| uvp.user.name unless uvp.hosting }
+    self.user_viewing_parties.filter_map { |uvp| uvp.user.name unless uvp.hosting }
   end
 end

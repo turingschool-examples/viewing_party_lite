@@ -49,7 +49,6 @@ RSpec.describe 'Discover Index' do
   
     visit user_discover_index_path(user)
   
-    fill_in(:title, with: '')
     click_button('Find Movies')
   
     expect(current_path).to eq(user_discover_index_path(user))

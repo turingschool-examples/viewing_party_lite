@@ -52,9 +52,9 @@ RSpec.describe 'Viewing Party New' do
 
     within '#hosted_parties' do
       expect(page).to have_link("The Godfather")
-      expect(page.find('img')[:src]).to eq("https://image.tmdb.org/t/p/w500/#{viewing_party.movie.image}")
-      expect(page).to have_content(viewing_party.date)
-      expect(page).to have_content(viewing_party.start_time.utc.strftime('%l:%M %p'))
+      expect(page.find('img')[:src]).to eq("https://image.tmdb.org/t/p/w200/#{viewing_party.movie.image}")
+      expect(page).to have_content(viewing_party.date.strftime('%-m/%-d/%Y'))
+      expect(page).to have_content(viewing_party.start_time.utc.strftime('%-l:%M %p'))
       expect(page).to have_content("You are the Host")
       expect(page).to have_content(viewing_party.users[1].name)
       expect(page).to have_content(viewing_party.users[2].name)

@@ -39,9 +39,9 @@ RSpec.describe 'Users Show' do
           if user_party.hosting
             within "#viewing_party_#{party.id}" do
               expect(page).to have_content(party.movie.title)
-              expect(page).to have_css("img[src*=https://image.tmdb.org/t/p/w500/#{party.movie.image}']")
-              expect(page).to have_content(party.date)
-              expect(page).to have_content(party.start_time.strftime('%l:%M %p'))
+              expect(page.find('img')[:src]).to eq("https://image.tmdb.org/t/p/w200/#{party.movie.image}")
+              expect(page).to have_content(party.date.strftime('%-m/%-d/%Y'))
+              expect(page).to have_content(party.start_time.strftime('%-l:%M %p'))
               expect(page).to have_content('You are the Host')
               party.users.each do |invitee|
                 expect(page).to have_content(invitee.name) unless invitee == user
@@ -64,11 +64,11 @@ RSpec.describe 'Users Show' do
           unless user_party.hosting
             within "#viewing_party_#{party.id}" do
               expect(page).to have_content(party.movie.title)
-              expect(page).to have_content(party.date)
-              expect(page).to have_content(party.start_time.strftime('%l:%M %p'))
+              expect(page).to have_content(party.date.strftime('%-m/%-d/%Y'))
+              expect(page).to have_content(party.start_time.strftime('%-l:%M %p'))
               party.user_viewing_parties.each do |invitee|
                 expect(page).to have_content(invitee.user.name)
-                expect(page).to have_content("Host: #{invitee.user.name}") if invitee.hosting
+                expect(page).to have_content("Host:\n#{invitee.user.name}") if invitee.hosting
               end
             end
           else
