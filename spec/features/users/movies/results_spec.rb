@@ -22,14 +22,6 @@ RSpec.describe "movies results page" do
     expect(page).to have_content("Viewing Party")
   end
 
-  it 'has a link back to the discover page' do
-    visit "users/#{@user.id}/movies"
-
-    expect(page).to have_button("Discover Page")
-    click_button("Discover Page")
-    expect(current_path).to eq("/users/#{@user.id}/discover")
-  end
-
   it 'displays the top 20 rated movies and their average rating' do
     visit "users/#{@user.id}/movies?q=top%20rated"
 

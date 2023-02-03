@@ -34,7 +34,7 @@ RSpec.describe "user discover page" do
     end
   end
 
-  it 'has a search field to find movies by name when redirected to the movies results page' do
+  it 'has a search field that redirects back to itself if no results are found with a message' do
     visit "/users/#{@user.id}/discover"
 
     within "#search_movies" do
@@ -42,9 +42,9 @@ RSpec.describe "user discover page" do
       expect(page).to have_button("Find Movies")
 
       click_button("Find Movies")
-      expect(current_path).to eq("/users/#{@user.id}/movies")
-     
+      expect(current_path).to eq("/users/#{@user.id}/discover")
     end
+    expect(page).to have_content("No Results Found")
   end
 
   
