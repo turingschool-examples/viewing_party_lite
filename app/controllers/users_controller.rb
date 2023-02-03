@@ -6,6 +6,7 @@ class UsersController < ApplicationController
       movie = MoviesFacade.movie_details(party.movie_id)
       {
         party_id: party.id,
+        movie_id: party.movie_id,
         event_date: party.event_date,
         start_time: party.start_time,
         host_id: party.host_id,

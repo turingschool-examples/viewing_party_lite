@@ -7,6 +7,12 @@ RSpec.describe 'User Dashboard' do
 
     stub_request(:get, "https://api.themoviedb.org/3/movie/238?api_key=#{ENV['MOVIE_DB_KEY']}")
       .to_return(status: 200, body: File.read('./spec/fixtures/godfather/details_response.json'), headers: {})
+
+    stub_request(:get, "https://api.themoviedb.org/3/movie/497/credits?api_key=#{ENV['MOVIE_DB_KEY']}")
+      .to_return(status: 200, body: File.read('./spec/fixtures/green_mile/credits_response.json'), headers: {})
+
+    stub_request(:get, "https://api.themoviedb.org/3/movie/497/reviews?api_key=#{ENV['MOVIE_DB_KEY']}")
+      .to_return(status: 200, body: File.read('./spec/fixtures/green_mile/reviews_response.json'), headers: {})
   end
 
   let!(:charlie) { User.create!(name: 'Charlie', email: 'charlie_boy@gmail.com') }
@@ -14,7 +20,7 @@ RSpec.describe 'User Dashboard' do
 
   let!(:party1) do
     ViewingParty.create!(duration: 189, event_date: Date.new(2023, 4, 12), start_time: Time.now - 4.hours,
-                                    host_id: charlie.id, movie_id: 497)
+                         host_id: charlie.id, movie_id: 497)
   end
   let!(:party2) do
     ViewingParty.create!(duration: 104, event_date: Date.new(2023, 3, 21), start_time: Time.now + 4.hours,
@@ -78,7 +84,7 @@ RSpec.describe 'User Dashboard' do
         expect(page).to have_content(party2.start_time.strftime('%I:%M %P'))
         expect(page).to have_content('Invited')
       end
-      click_link "The Green Mile"
+      click_link 'The Green Mile'
       expect(current_path).to eq("/users/#{charlie.id}/movies/497")
     end
   end

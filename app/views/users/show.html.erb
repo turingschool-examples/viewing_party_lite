@@ -7,7 +7,7 @@
       <section id="party-<%=party[:party_id]%>">
     
         <p style="border-style:solid; border-width:2px; text-align:center">
-        <%= party[:title] %>
+        <%= link_to party[:title], "/users/#{@user.id}/movies/#{party[:movie_id]}" %>
         <br>
         <%= party[:event_date].strftime("%B %-d, %Y") %>
         <br>
