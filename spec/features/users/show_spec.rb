@@ -4,12 +4,18 @@ RSpec.describe 'The User Dashboard page', type: :feature do
   describe 'the user show page' do
 
     let!(:user) { create(:user) }
+    let!(:user2) { create(:user) }
+    let!(:user3) { create(:user) }
     let!(:invited_party1) { create(:viewing_party, movie_id: 13)}
     let!(:invited_party2) { create(:viewing_party, movie_id: 14)}
     let!(:hosted_party1) { create(:viewing_party, host: user, movie_id: 15)}
     let!(:hosted_party2) { create(:viewing_party, host: user, movie_id: 17)}
     let!(:vpu1){ create(:viewing_party_user, user: user, viewing_party: invited_party1) }
     let!(:vpu2){ create(:viewing_party_user, user: user, viewing_party: invited_party2) }
+    let!(:vpu3){ create(:viewing_party_user, user: user2, viewing_party: invited_party2) }
+    let!(:vpu4){ create(:viewing_party_user, user: user3, viewing_party: invited_party2) }
+    let!(:vpu5){ create(:viewing_party_user, user: user2, viewing_party: hosted_party1) }
+    let!(:vpu6){ create(:viewing_party_user, user: user3, viewing_party: hosted_party2) }
 
     before :each do
       visit user_path(user)
@@ -51,6 +57,7 @@ RSpec.describe 'The User Dashboard page', type: :feature do
 
       it 'lists all viewing parties the user has hosted' do
         hosted_parties = user.hosted_parties
+        save_and_open_page
         within "#hosted_parties" do
           hosted_parties.each do |party|
             within "#hosted_#{party.id}" do
