@@ -18,7 +18,9 @@ RSpec.describe "Movies details page (/users/:id/movies/:id)", type: :feature do
       expect(page).to have_field(:duration, with: 175)
     end
 
-    it "has field for selecting a date"
+    it "has field for selecting a date" do
+      
+    end
 
     it "has field to select a start time"
 
