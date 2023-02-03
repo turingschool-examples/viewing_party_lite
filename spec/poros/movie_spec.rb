@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Movie do
   let!(:movie_data) do
-    { id: 1, original_title: 'Test Title', vote_average: 5.5, runtime: 120, genres: [{name: "Drama"}, {name: "Action"}],
+    { id: 1, original_title: 'Test Title', vote_average: 5.5, runtime: 120, genres: [{ name: 'Drama' }, { name: 'Action' }],
       overview: 'a film depicting a story', cast: [{ name: 'actor', character: 'role' }, { name: 'second actor', character: 'supporting role' }], results: [{ author: 'reviewer', review: 'good' }, { author: 'other reviewer', review: 'not the best' }], poster_path: 'imagelocation' }
   end
   let!(:movie) { Movie.new(movie_data) }
@@ -12,16 +14,16 @@ RSpec.describe Movie do
       expect(movie.title).to eq 'Test Title'
       expect(movie.vote_average).to eq 5.5
       expect(movie.runtime).to eq 120
-      expect(movie.genres).to eq "Drama, Action" 
-      expect(movie.overview).to eq "a film depicting a story"
-      expect(movie.image_path).to eq "https://image.tmdb.org/t/p/w500/imagelocation"
+      expect(movie.genres).to eq 'Drama, Action'
+      expect(movie.overview).to eq 'a film depicting a story'
+      expect(movie.image_path).to eq 'https://image.tmdb.org/t/p/w500/imagelocation'
     end
   end
 
   describe '#genres' do
     it 'returns a list of comma separated genres' do
       expect(movie.genres).to be_a String
-      expect(movie.genres).to eq "Drama, Action"
+      expect(movie.genres).to eq 'Drama, Action'
     end
   end
 

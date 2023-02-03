@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe ViewingParty, type: :model do
@@ -7,7 +9,7 @@ RSpec.describe ViewingParty, type: :model do
     it { should have_many(:users).through(:viewing_party_users) }
   end
 
-  describe 'validations' do 
+  describe 'validations' do
     it { should validate_presence_of :duration }
     it { should validate_presence_of :date }
     it { should validate_presence_of :start_time }

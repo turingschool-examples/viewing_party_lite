@@ -1,13 +1,14 @@
-require 'rails_helper' 
+# frozen_string_literal: true
 
-RSpec.describe 'User Registration Page', type: :feature do 
-  before :each do 
+require 'rails_helper'
+
+RSpec.describe 'User Registration Page', type: :feature do
+  before :each do
     visit '/register'
   end
 
-  describe 'user registration form - happy path' do 
-    it 'displays a form to fill in users name and unique email. Once created user is taken to their dashdoard page' do 
-
+  describe 'user registration form - happy path' do
+    it 'displays a form to fill in users name and unique email. Once created user is taken to their dashdoard page' do
       fill_in('Name', with: 'River')
       fill_in('Email', with: 'river@gmail.com')
 
@@ -20,10 +21,9 @@ RSpec.describe 'User Registration Page', type: :feature do
   end
 
   describe 'user registration form - sad path' do
-    it 'can only create a user if all form fields are filled out' do 
-
-      fill_in('Name', with: "")
-      fill_in('Email', with: "")
+    it 'can only create a user if all form fields are filled out' do
+      fill_in('Name', with: '')
+      fill_in('Email', with: '')
 
       click_button 'Create New User'
 
@@ -32,11 +32,11 @@ RSpec.describe 'User Registration Page', type: :feature do
       expect(User.count).to eq(0)
     end
 
-    it 'can only create a new user when the email is unique' do 
-      create(:user, name: "River", email: "river@gmail.com")
+    it 'can only create a new user when the email is unique' do
+      create(:user, name: 'River', email: 'river@gmail.com')
 
-      fill_in('Name', with: "Moose")
-      fill_in('Email', with: "river@gmail.com")
+      fill_in('Name', with: 'Moose')
+      fill_in('Email', with: 'river@gmail.com')
       click_button 'Create New User'
 
       expect(current_path).to eq('/register')

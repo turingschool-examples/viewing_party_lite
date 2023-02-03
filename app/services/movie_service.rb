@@ -1,17 +1,18 @@
-class MovieService 
+# frozen_string_literal: true
 
+class MovieService
   def initialize(movie_id = '')
     @movie_id = movie_id
   end
 
   def get_top_movies
     response = service.get('/3/movie/top_rated')
-    parse(response)    
+    parse(response)
   end
 
   def search_movies(search_query)
     response = service.get('/3/search/movie') do |request|
-      request.params["query"] = search_query
+      request.params['query'] = search_query
     end
     parse(response)
   end
@@ -23,17 +24,17 @@ class MovieService
   private
 
   def base_uri
-    "https://api.themoviedb.org"
+    'https://api.themoviedb.org'
   end
 
-  def service 
+  def service
     Faraday.new(service_params)
   end
 
   def service_params
     {
       url: base_uri,
-      params: { api_key: ENV["moviedb_key"] }
+      params: { api_key: ENV['moviedb_key'] }
     }
   end
 
