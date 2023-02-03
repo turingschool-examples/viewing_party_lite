@@ -25,7 +25,7 @@ RSpec.describe 'movie details page' do
 
   it 'has the average vote, runtime and genres' do
     visit user_movie_path(@user1, 238)
-
+    
     expect(page).to have_content('Vote: 8.715 Runtime: 2hr 55min Genre(s): Drama and Crime')
   end
 

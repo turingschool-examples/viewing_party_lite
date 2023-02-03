@@ -19,5 +19,9 @@ class Movie
   def genres
     @genre_data.map { |genre| genre[:name] }
   end
-  # Runtime method? To stick with MVC (see calculations in view/movies/show)
+
+  def runtime_calc
+    movie_runtime = @runtime.to_i
+    (movie_runtime / 60).to_s + "hr " + (movie_runtime % 60).to_s + "min"
+  end
 end
