@@ -3,11 +3,13 @@ require 'rails_helper'
 RSpec.describe 'New Viewing Party Page' do
   before :each do
     @user = create(:user)
+    @guest1,@guest2,@guest3 = create_list(:user, 3)
     string = File.read('./spec/fixtures/godfather_details.json')
     data = JSON.parse(string, symbolize_names: true)
     @movie = Movie.new(data)
-
-    visit new_user_movie_viewing_party_path(@user, @movie.id)
+    VCR.use_cassette("movie_details") do
+      visit new_user_movie_viewing_party_path(@user, @movie.id)
+    end
   end
 
   it 'displays the name of the movie title' do
@@ -24,11 +26,13 @@ RSpec.describe 'New Viewing Party Page' do
   
   describe 'new viewing party form' do
     it 'has fields' do
+      save_and_open_page
+      # require 'pry'; binding.pry
       within "#new-party-form" do
-        expect(page).to have_content("Movie Title #{@movie.title}")
+        expect(page).to have_content("Movie Title\n#{@movie.title}")
         expect(page).to have_field('Duration of Party', with: @movie.runtime)
         expect(page).to have_field("Day", with: Date.today)
-        expect(page).to have_field("Start Time")
+        expect(page).to have_field("Start Time", with: Time.now)
       end
     end
   end
