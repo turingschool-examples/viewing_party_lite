@@ -103,9 +103,11 @@ RSpec.describe MovieDetail do
     expect(movie.overview).to eq("A supernatural tale set on death row in a Southern prison, where gentle giant John Coffey possesses the mysterious power to heal people's ailments. When the cell block's head guard, Paul Edgecomb, recognizes Coffey's miraculous gift, he tries desperately to help stave off the condemned man's execution.")
   end
 
-  it 'can list out the name of each genre for the movie' do 
-    movie = MovieDetail.new(@data)
+  describe 'list_genres' do 
+    it 'can list out the name of each genre for the movie' do 
+        movie = MovieDetail.new(@data)
 
-    expect(movie.list_genres).to eq("Fantasy, Drama, Crime")
+        expect(movie.list_genres).to eq("Fantasy, Drama, Crime")
+    end 
   end
 end
