@@ -69,20 +69,22 @@ RSpec.describe 'User Dashboard' do
       UserViewingParty.create!(user_id: charlie.id, viewing_party_id: party1.id)
       UserViewingParty.create!(user_id: charlie.id, viewing_party_id: party2.id)
       UserViewingParty.create!(user_id: nicole.id, viewing_party_id: party3.id)
+      UserViewingParty.create!(user_id: nicole.id, viewing_party_id: party1.id)
 
       visit user_path(charlie)
       within("#party-#{party1.id}") do
         expect(page).to have_content('The Green Mile')
         expect(page).to have_content(party1.event_date.strftime('%B %-d, %Y'))
         expect(page).to have_content(party1.start_time.strftime('%I:%M %P'))
-        expect(page).to have_content('Hosting')
+        expect(page).to have_content('Hosting: Charlie')
+        expect(page).to have_content("Attendees: Charlie, Nicole")
       end
 
       within("#party-#{party2.id}") do
         expect(page).to have_content('The Godfather')
         expect(page).to have_content(party2.event_date.strftime('%B %-d, %Y'))
         expect(page).to have_content(party2.start_time.strftime('%I:%M %P'))
-        expect(page).to have_content('Invited')
+        expect(page).to have_content('Hosting: ')
       end
       click_link 'The Green Mile'
       expect(current_path).to eq("/users/#{charlie.id}/movies/497")
