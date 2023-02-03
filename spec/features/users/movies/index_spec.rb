@@ -50,7 +50,7 @@ RSpec.describe 'discover page', type: :feature do
 
   describe "when I visit '/users/:id/discover', it" do
     it 'displays the results of my discover top rated button' do
-      stub_request(:get, 'https://api.themoviedb.org/3/movie/top_rated?api_key=c4d6d86f378d33bacc04481f7e6380b2&language=en')
+      stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['tmdb_api_key']}&language=en")
         .to_return(status: 200,
                    body: File.read('spec/fixtures/tmdb_top_response.json'),
                    headers: {})
@@ -77,7 +77,7 @@ RSpec.describe 'discover page', type: :feature do
     end
 
     it 'displays the results of my title search' do
-      stub_request(:get, 'https://api.themoviedb.org/3/search/movie?api_key=c4d6d86f378d33bacc04481f7e6380b2&language=en&query=Alien')
+      stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['tmdb_api_key']}&language=en&query=Alien")
         .to_return(status: 200,
                    body: File.read('spec/fixtures/tmdb_search_title_response.json'),
                    headers: {})
@@ -106,7 +106,7 @@ RSpec.describe 'discover page', type: :feature do
     end
 
     it "has a link to each movie's show page" do
-      stub_request(:get, 'https://api.themoviedb.org/3/movie/top_rated?api_key=c4d6d86f378d33bacc04481f7e6380b2&language=en')
+      stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['tmdb_api_key']}&language=en")
         .to_return(status: 200,
                     body: File.read('spec/fixtures/tmdb_top_response.json'),
                     headers: {})

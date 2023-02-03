@@ -16,4 +16,11 @@ class MovieFacade
 
     Movie.new(movie_data, cast, reviews)
   end
+
+  def self.light_details(path)
+    params = { api_key: ENV['tmdb_api_key'],
+               language: 'en' }
+    movie_data = MovieService.ping(path, params)
+    Movie.new(movie_data)
+  end
 end

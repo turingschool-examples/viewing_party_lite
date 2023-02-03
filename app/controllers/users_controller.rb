@@ -16,6 +16,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @hosting = @user.viewing_parties
+    @invited = @user.viewing_party_users
   end
 
   private

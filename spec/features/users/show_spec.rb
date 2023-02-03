@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Landing page', type: :feature do
+RSpec.describe 'user show page', type: :feature do
   let!(:u1) { create(:user) }
   let!(:u2) { create(:user) }
 
@@ -26,16 +26,34 @@ RSpec.describe 'Landing page', type: :feature do
     end
 
     it 'displays a section that lists viewing parties' do
+      WebMock.allow_net_connect!
+      users = create_list(:user, 10)
+
       vp1 = create(:viewing_party, host: u1)
       vp2 = create(:viewing_party, host: u1)
       vp3 = create(:viewing_party, host: u1)
+      vp4 = create(:viewing_party, host: users[0])
+
+      create(:viewing_party_user, viewing_party: vp1, user: users[0])
+      create(:viewing_party_user, viewing_party: vp1, user: users[1])
+      create(:viewing_party_user, viewing_party: vp1, user: users[2])
+      create(:viewing_party_user, viewing_party: vp1, user: users[3])
+      create(:viewing_party_user, viewing_party: vp2, user: users[3])
+      create(:viewing_party_user, viewing_party: vp2, user: users[4])
+      create(:viewing_party_user, viewing_party: vp2, user: users[5])
+      create(:viewing_party_user, viewing_party: vp2, user: users[6])
+      create(:viewing_party_user, viewing_party: vp2, user: users[7])
+      create(:viewing_party_user, viewing_party: vp3, user: users[7])
+      create(:viewing_party_user, viewing_party: vp3, user: users[8])
+      create(:viewing_party_user, viewing_party: vp3, user: users[9])
+      create(:viewing_party_user, viewing_party: vp4, user: u1)
 
       visit user_path(u1)
 
       within '#viewing-parties' do
-        expect(page).to have_content("Viewing Party ##{vp1.id}", count: 1)
-        expect(page).to have_content("Viewing Party ##{vp2.id}", count: 1)
-        expect(page).to have_content("Viewing Party ##{vp3.id}", count: 1)
+        expect(page).to have_content("#{vp1.movie_details(vp1.movie_api_id).title}", count: 1)
+        expect(page).to have_content("#{vp2.movie_details(vp1.movie_api_id).title}", count: 1)
+        expect(page).to have_content("#{vp3.movie_details(vp1.movie_api_id).title}", count: 1)
       end
     end
   end

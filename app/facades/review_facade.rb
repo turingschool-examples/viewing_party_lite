@@ -4,7 +4,6 @@ class ReviewFacade
     data = SubService.ping(id, path)
 
     reviews = data[:results]
-
     reviews.map do |review_data|
       Review.new(review_data)
     end

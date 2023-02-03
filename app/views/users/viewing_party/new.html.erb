@@ -1,0 +1,20 @@
+<%= @movie.title %>
+<%= form_with url: user_movie_viewing_parties_path(@user, @movie.id), method: :post, local: true do |f| %>
+  <%= f.label :duration, 'Duration:' %>
+  <%= f.number_field :duration, value: @movie.runtime, min: @movie.runtime %>
+
+  <%= f.label :date, 'Day:' %>
+  <%= f.date_field :date %>
+
+  <%= f.label :start_time, 'Start Time:' %>
+  <%= f.time_field :start_time %>
+  
+  <%= f.fields_for :invitees do |i| %>
+    <% @users.each do |user| %>
+      <%= i.check_box :"#{user.id}" %>
+      <%= i.label :"#{user.id}", "#{user.name} (#{user.email})" %>
+    <% end %>
+  <% end %>
+  
+  <%= f.submit value: 'Create Viewing Party' %>
+<% end %>

@@ -3,7 +3,7 @@
 
   <%= button_to 'Discover Movies', discover_user_path(@user), method: :get %>
 
-  <br>
+<%= button_to "Create Viewing Party For #{@movie.title}", new_user_movie_viewing_party_path(@user, params[:id]), method: :get %><br>
 
   <%= button_to "Create Viewing Party For #{@movie.title}", discover_user_path(@user), method: :get %>
 </div>
