@@ -41,4 +41,5 @@ RSpec.describe ViewingParty do
                                                              time: Time.parse('2000-01-01 17:00:00.000000000 +0000'),
                                                              title: 'The Godfather' })
   end
+
 end

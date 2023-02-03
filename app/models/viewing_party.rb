@@ -23,4 +23,5 @@ class ViewingParty < ApplicationRecord
       attendees: users
     }
   end
+
 end
