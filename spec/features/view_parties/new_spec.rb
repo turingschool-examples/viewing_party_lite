@@ -31,7 +31,7 @@ RSpec.describe 'new view party page' do
 
   it 'has a form to create a viewing party with the movie info already filled in' do
     within "#party_form" do
-      save_and_open_page
+      # save_and_open_page
       expect(page).to have_content("Viewing Party Details")
       expect(page).to have_content("Movie Title: #{@movie_detail.title}")
       expect(page).to have_content("Duration of Party")

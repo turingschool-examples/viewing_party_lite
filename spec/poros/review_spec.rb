@@ -15,7 +15,8 @@ RSpec.describe Review do
     expect(@review).to be_a(Review)
     expect(@review.id).to eq(238)
     # binding.pry
-    # expect(@review[:results].author).to eq(1)
-    expect(@review.author_name).to eq("futuretv")
+    expect(@review.id).to eq("5346fa840e0a265ffa001e20")
+    expect(@review.author).to eq("futuretv")
+    expect(@review.content).to be_a(String)
   end
 end
