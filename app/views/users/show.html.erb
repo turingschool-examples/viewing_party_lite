@@ -16,7 +16,11 @@
         <p>Date: <%= party_info[:date].strftime("%B %d, %Y") %></p>
         <p>Time: <%= party_info[:time].strftime("%I:%M%p") %></p>
         <p>Duration: <%= party_info[:duration] %>mins</p>
-        <p>Host: <b><%= party_info[:host] %></b></p>
+        <p>Host: </p>
+          <b> &emsp; <%= party_info[:host] %></b>
+        <p>Attendees: <% party_info[:attendees].each do |attendee| %></p>
+          <p> &emsp; <%= attendee.name %></p>
+        <% end %> 
       </div>
     <% end %>
   </div>
