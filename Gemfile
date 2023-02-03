@@ -47,6 +47,7 @@ group :development, :test do
   gem 'orderly'
   gem 'capybara_table'
   gem 'hirb'
+  gem 'webmock'
 end
 
 group :development do
