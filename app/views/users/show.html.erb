@@ -7,7 +7,7 @@
     <% unless @user.find_user_viewing_party(party).hosting %>
       <div id="viewing_party_<%= party.id %>">
         <% movie = party.movie %>
-        <%= image_tag "https://image.tmdb.org/t/p/original/#{movie.image}" %>
+        <%= image_tag "https://image.tmdb.org/t/p/w500/#{movie.image}" %>
         <%= link_to movie.title, user_movie_path(@user, movie.id) %>
         Date: <%= party.date %>
         Start Time: <%= party.start_time.strftime('%l:%M %p') %>
@@ -26,7 +26,7 @@
     <% if @user.find_user_viewing_party(party).hosting %>
       <div id="viewing_party_<%= party.id %>">
         <% movie = party.movie %>
-        <%= image_tag "https://image.tmdb.org/t/p/original/#{movie.image}" %>
+        <%= image_tag "https://image.tmdb.org/t/p/w500/#{movie.image}" %>
         <%= link_to movie.title, user_movie_path(@user, movie.id) %>
         Date: <%= party.date %>
         Start Time: <%= party.start_time.strftime('%l:%M %p') %>
