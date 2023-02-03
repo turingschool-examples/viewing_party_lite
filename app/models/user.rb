@@ -12,5 +12,4 @@ class User < ApplicationRecord
   def invited_parties
     parties.where(user_parties: {is_host: false})
   end
-
 end

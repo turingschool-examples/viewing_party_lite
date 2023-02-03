@@ -6,8 +6,8 @@
   <h3>Viewing Parties I'm Hosting</h3>
   <% @user.hosted_parties.each do |party| %>
       Host:<br>
-      <!-- return host of this party's name -->
-
+      <%= party.host_of(party) %><br>
+      <p></p>
       Attendees:<br>
       <% party.users.each do |user| %>
         <% if user == @user %>
@@ -25,6 +25,9 @@
 
   <h3>Viewing Parties I'm Invited To</h3>
   <% @user.invited_parties.each do |party| %>
+      Host:<br>
+      <%= party.host_of(party) %><br>
+      <p></p>
       Attendees:<br>
       <% party.users.each do |user| %>
         <% if user == @user %>

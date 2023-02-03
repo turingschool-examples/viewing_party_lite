@@ -8,7 +8,8 @@ class Party < ApplicationRecord
     MovieFacade.find_movie(self.movie_id)
   end
 
-  def host(party)
-    # user_parties.where(party_id: party.id).is_host
+  def host_of(party)
+    userparty = UserParty.where(party_id: party.id, is_host: true).first
+    User.where(id: userparty.user_id)[0].name
   end
 end
