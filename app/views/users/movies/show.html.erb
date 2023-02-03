@@ -1,24 +1,60 @@
-<h3><%= @movie.title %></h3>
-<%= button_to 'Discover Page', user_discover_index_path(@user), method: :get %>
-<%= button_to "Create Viewing Party for #{@movie.title}", new_user_movie_viewing_party_path(@user, @movie.id), method: :get %>
-Vote Average: <%= @movie.vote_average %>
-Runtime: <%= @movie.hours_mins %>
-Genre: <% @movie.genres.each_with_index do |genre, i| %>
-  <% unless @movie.genres[i+1] == nil %>
-    <%= genre %>,
-  <% else %>
-    <%= genre %>
+<div class='container'>
+  <div class='page-header'>
+    <div class='text-center'>
+      <h3><%= @movie.title %></h3>
+      <%= button_to 'Discover Page', user_discover_index_path(@user), method: :get, class: 'btn-default' %>
+      <%= button_to "Create Viewing Party for #{@movie.title}", new_user_movie_viewing_party_path(@user, @movie.id), method: :get, class: 'btn-default' %>
+    </div>
+
+    <div class='row'>
+      <div class='text-center'>
+        <div class='lead'>
+          <div class='col-sm-4'>
+            Vote Average: <%= @movie.vote_average %>
+          </div>
+          <div class='col-sm-4'>
+            Runtime: <%= @movie.hours_mins %>
+          </div>
+          <div class='col-sm-4'>
+            Genre: <% @movie.genres.each_with_index do |genre, i| %>
+              <% unless @movie.genres[i+1] == nil %>
+                <%= genre %>,
+              <% else %>
+                <%= genre %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class='container'>
+  <h4>Summary:</h4>
+  <p><%= @movie.overview %></p>
+
+  <h4>Cast:</h4>
+  <table class='table table-striped'>
+    <thead>
+      <tr>
+        <th>Character Name</th>
+        <th>Actor Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cast.each do |character| %>
+        <tr>
+          <td><%= character.character %></td>
+          <td><%= character.actor %></td>
+        </tr>
+      <% end %>
+    <tbody>
+  </table>
+
+  <h4><%= @reviews.count %> Reviews:</h4>
+  <% @reviews.each do |review| %>
+    <h5>Written By: <%= review.author %></h5>
+    <h5>Review:</h5>
+    <p><%= review.content %></p>
   <% end %>
-<% end %>
-<h4>Summary: <%= @movie.overview %></h4>
-
-<h4>Cast:</h4>
-<% @cast.each do |character| %>
-  <%= character.character %>: <%= character.actor %><br>
-<% end %>
-
-<h4><%= @reviews.count %> Reviews:</h4>
-<% @reviews.each do |review| %>
-  Written By: <%= review.author %><br>
-  Review: <%= review.content %><br>
-<% end %>
+</div>

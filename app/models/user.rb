@@ -12,6 +12,9 @@ class User < ApplicationRecord
     self.user_viewing_parties.find_by(viewing_party_id: viewing_party.id)
   end
 
+  def all_but_self
+    User.where.not(id: self.id)
+  end
 
   private
 

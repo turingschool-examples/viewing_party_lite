@@ -3,6 +3,7 @@ module Users
     def new
       @viewing_party = ViewingParty.new
       set_user
+      @users = @user.all_but_self
       @movie = MovieFacade.find_movie(params[:movie_id])
     end
 
@@ -33,7 +34,6 @@ module Users
 
     def set_user
       @user = User.find(params[:user_id])
-      @users = User.all
     end
 
     def viewing_party_params
