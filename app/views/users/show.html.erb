@@ -1,40 +1,58 @@
-<h3><%= @user.name %>'s Dashboard</h3>
-<%= button_to 'Discover Movies', user_discover_index_path(@user), method: :get %>
-
-<div id='invited_parties'>
-  <h4>Invited Parties</h4>
-  <% @user.viewing_parties.each do |party| %>
-    <% unless @user.find_user_viewing_party(party).hosting %>
-      <div id="viewing_party_<%= party.id %>">
-        <% movie = party.movie %>
-        <%= image_tag "https://image.tmdb.org/t/p/original/#{movie.image}" %>
-        <%= link_to movie.title, user_movie_path(@user, movie.id) %>
-        Date: <%= party.date %>
-        Start Time: <%= party.start_time.strftime('%l:%M %p') %>
-        Host: <%= party.host %>
-        Invitees: <% party.invitees.each do |invitee| %>
-          <%= invitee %><br>
-        <% end %>
-      </div>
-    <% end %>
-  <% end %>
+<div class='container'>
+  <div class='text-center'>
+    <div class='page-header'>
+      <h3><%= @user.name %>'s Dashboard</h3>
+      <%= button_to 'Discover Movies', user_discover_index_path(@user), method: :get, class: 'btn-default' %>
+    </div>
+  </div>
 </div>
 
-<div id='hosted_parties'>
-  <h4>Hosted Parties</h4>
-  <% @user.viewing_parties.each do |party| %>
-    <% if @user.find_user_viewing_party(party).hosting %>
-      <div id="viewing_party_<%= party.id %>">
-        <% movie = party.movie %>
-        <%= image_tag "https://image.tmdb.org/t/p/original/#{movie.image}" %>
-        <%= link_to movie.title, user_movie_path(@user, movie.id) %>
-        Date: <%= party.date %>
-        Start Time: <%= party.start_time.strftime('%l:%M %p') %>
-        You are the Host
-        Invitees: <% party.invitees.each do |invitee| %>
-          <%= invitee %><br>
+<div class='container'>
+  <div class='col-sm-6'>
+    <div class='text-center'>
+      <div id='invited_parties'>
+        <h4>Invited Parties</h4>
+        <% @user.viewing_parties.each do |party| %>
+          <% unless @user.find_user_viewing_party(party).hosting %>
+            <div id="viewing_party_<%= party.id %>">
+              <% movie = party.movie %>
+              <%= image_tag "https://image.tmdb.org/t/p/w200/#{movie.image}" %><br>
+              <h4><%= link_to movie.title, user_movie_path(@user, movie.id) %></h4>
+              <h5>Date:</h5> <%= party.date.strftime('%-m/%-d/%Y') %><br>
+              <h5>Start Time:</h5> <%= party.start_time.strftime('%l:%M %p') %><br>
+              <h5>Host:</h5> <%= party.host %>
+              <h5>Invitees:</h5>
+              <% party.invitees.each do |invitee| %>
+                <%= invitee %><br>
+              <% end %>
+            </div>
+          <% end %>
         <% end %>
       </div>
-    <% end %>
-  <% end %>
+    </div>
+  </div>
+
+  <div class='col-sm-6'>
+    <div class='text-center'>
+      <div id='hosted_parties'>
+        <h4>Hosted Parties</h4>
+        <% @user.viewing_parties.each do |party| %>
+          <% if @user.find_user_viewing_party(party).hosting %>
+            <div id="viewing_party_<%= party.id %>">
+              <% movie = party.movie %>
+              <%= image_tag "https://image.tmdb.org/t/p/w200/#{movie.image}" %><br>
+              <h4><%= link_to movie.title, user_movie_path(@user, movie.id) %></h4>
+              <h5>Date:</h5> <%= party.date.strftime('%-m/%-d/%Y') %><br>
+              <h5>Start Time:</h5> <%= party.start_time.strftime('%l:%M %p') %><br>
+              <h5>You are the Host</h5>
+              <h5>Invitees:</h5>
+              <% party.invitees.each do |invitee| %>
+                <%= invitee %><br>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

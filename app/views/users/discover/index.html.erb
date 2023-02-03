@@ -1,8 +1,13 @@
-<h3>Discover Movies</h3>
+<div class='container'>
+  <div class='text-center'>
+    <div class='page-header'>
+      <h3>Discover Movies</h3>
 
-<%= button_to 'Find Top Rated Movies', user_movies_path(@user), params: { q: 'top rated' }, method: :get %>
-
-<%= form_with url: user_movies_path(@user), method: :get, local: true do |form| %>
-  <%= form.text_field :title %>
-  <%= form.submit "Find Movies" %>
-<% end %>
+      <%= button_to 'Find Top Rated Movies', user_movies_path(@user), params: { q: 'top rated' }, method: :get, class: 'btn-default' %>
+    </div>
+    <%= form_with url: user_movies_path(@user), method: :get, local: true do |form| %>
+      <%= form.text_field :title %>
+      <%= form.submit "Find Movies" %>
+    <% end %>
+  </div>
+</div>
