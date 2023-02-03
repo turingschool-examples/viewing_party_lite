@@ -13,12 +13,12 @@ class ViewingPartiesController < ApplicationController
 
   def create
     host = User.find(params[:id])
-    viewing_party = host.viewing_parties.create(duration: params[:duration].to_i, event_date: params[:day], start_time: params[:time])
+    viewing_party = host.viewing_parties.create(duration: params[:duration].to_i, event_date: params[:day],
+                                                start_time: params[:time])
     User.all.each do |user|
       next if user == host
-      if params[user.name] == "1"
-        UserViewingParty.create(user_id: user.id, viewing_party_id: viewing_party.id)
-      end
+
+      UserViewingParty.create(user_id: user.id, viewing_party_id: viewing_party.id) if params[user.name] == '1'
     end
     redirect_to user_path(host)
   end
