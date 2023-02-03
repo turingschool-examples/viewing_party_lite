@@ -13,7 +13,7 @@ class MovieFacade
     movie_data = MovieService.ping(path, params)
     cast = CastFacade.get(params[:movie_id])
     reviews = ReviewFacade.get(params[:movie_id])
-
+    # require 'pry'; binding.pry
     Movie.new(movie_data, cast, reviews)
   end
 end
