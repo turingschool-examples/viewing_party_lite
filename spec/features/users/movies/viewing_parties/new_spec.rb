@@ -21,3 +21,15 @@ RSpec.describe 'New Viewing Party Page' do
 
     expect(current_path).to eq(user_discover_index_path(@user))
   end
+  
+  describe 'new viewing party form' do
+    it 'has fields' do
+      within "#new-party-form" do
+        expect(page).to have_content("Movie Title #{@movie.title}")
+        expect(page).to have_field('Duration of Party', with: @movie.runtime)
+        expect(page).to have_field("Day", with: Date.today)
+        expect(page).to have_field("Start Time")
+      end
+    end
+  end
+end
