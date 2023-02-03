@@ -22,4 +22,12 @@
     <% end %>
   <% end %>
 </section>
+<% @user.view_parties.each do |party| %><br>
+<img crossorigin="anonymous" scr= "http://image.tmdb.org/t/p/9Baumh5J9N1nJUYzNkm0xsgjpwY.jpg" width="300" height="300" >
+  <a href="http://image.tmdb.org/t/p/w500/9Baumh5J9N1nJUYzNkm0xsgjpwY.jpg">...</a>
+  <p>Party's Date: <%= party.date %></p>
+  <p>Start Time: <%= party.time %></p>
+  <p>Party's Length(in mins): <%= party.duration %></p> 
+  <p>Party's Host: <%= @user.name %></p>
+<% end %> 
 

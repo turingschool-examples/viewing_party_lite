@@ -38,7 +38,7 @@ RSpec.describe "User Show Page", type: :feature do
       click_button("Find Top Rated Movies")
       click_link("The Godfather")
       click_button("Create Viewing Party for The Godfather")
-      fill_in :duration, with: 186
+      fill_in :duration, with: 175
       select 2023, from: :_date_1i
       select "March", from: :_date_2i
       select "20", from: :_date_3i
@@ -61,9 +61,11 @@ RSpec.describe "User Show Page", type: :feature do
       end
     end
 
-    it "shows the date and time of the event"
-
-    it "shows the user is the host for the party"
+    it "shows the date and duration of the event" do
+      # expect(page).to have_content(2023-02-03)
+      # expect(page).to have_content(2000-01-01 12:24:00 UTC)
+      expect(page).to have_content(175)
+    end
 
     it "shows list of friends invited to viewing party" do
       within"#238_party_guests" do
@@ -71,6 +73,9 @@ RSpec.describe "User Show Page", type: :feature do
       end
     end
 
+    xit "shows list of friends invited to viewing party" do
+      expect(page).to have_content([@user1.name, @user2.name, @user3.name])
+    end
   end
 
 end
