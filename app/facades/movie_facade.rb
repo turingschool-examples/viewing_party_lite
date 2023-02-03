@@ -8,6 +8,7 @@ class MovieFacade
 
   def self.movie_details(movie_id)
     Movie.new(MovieService.movie_details(movie_id))
+    
   end
 
   def self.review_details(movie_id)

@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    # require 'pry'; binding.pry
+    @movies = @user.viewing_parties.map do |vp|
+      MovieFacade.movie_details(vp.movie_id)
+      
+    end
   end
 
   def new

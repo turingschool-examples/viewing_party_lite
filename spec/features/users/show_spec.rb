@@ -2,9 +2,14 @@ require 'rails_helper'
 
 RSpec.describe 'user dashboard' do
   before(:each) do
+    stub_request(:get, "https://api.themoviedb.org/3/movie/238?api_key=#{ENV['api_key']}")
+    .to_return(status: 200, body: File.read('spec/fixtures/movie_details_godfather238.json'), headers: {})
+    stub_request(:get, "https://api.themoviedb.org/3/movie/603?api_key=#{ENV['api_key']}")
+    .to_return(status: 200, body: File.read('spec/fixtures/movie_details_matrix603.json'), headers: {})
+  
     @user1 = User.create!(name: 'John Doe', email: 'johndoe@ymail.com')
-    @vp1 = ViewingParty.create!(movie_id: 1, date: 'Mon, 30 Jan 2023', party_duration: 118, start_time: Time.parse('19:00:00 UTC'))
-    @vp2 = ViewingParty.create!(movie_id: 2, date: 'Tue, 31 Jan 2023', party_duration: 95, start_time: Time.parse('20:00:00 UTC'))
+    @vp1 = ViewingParty.create!(movie_id: 238, date: 'Mon, 30 Jan 2023', party_duration: 118, start_time: Time.parse('19:00:00 UTC'))
+    @vp2 = ViewingParty.create!(movie_id: 603, date: 'Tue, 31 Jan 2023', party_duration: 95, start_time: Time.parse('20:00:00 UTC'))
     @user1.viewing_party_users.create!(viewing_party_id: @vp1.id, hosting: true)
     @user1.viewing_party_users.create!(viewing_party_id: @vp2.id, hosting: false)
   end
@@ -37,5 +42,6 @@ RSpec.describe 'user dashboard' do
       expect(page).to have_content('8:00 pm')
       expect(page).to have_content('Invited')
     end
+    save_and_open_page
   end
 end
