@@ -11,7 +11,7 @@
 <div id="movie-information">
   <h3>Movie Information</h3>
   Vote Average: <%= @movie.vote_average %><br>
-  Runtime: <%= @movie.runtime %><br>
+  Runtime: <%= @movie.parsed_runtime %><br>
   Genres:<br>
     <% @movie.genres.each do |genre| %>
       - <%= genre %><br>

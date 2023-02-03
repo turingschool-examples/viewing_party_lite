@@ -100,7 +100,7 @@ RSpec.describe ShowMovie do
     expect(@movie.id).to eq(51888)
     expect(@movie.title).to eq("Robot Chicken: Star Wars Episode III")
     expect(@movie.vote_average).to eq(7.4)
-    expect(@movie.runtime).to eq("0 hour(s) 45 min")
+    expect(@movie.runtime).to eq(45)
     expect(@movie.genres).to eq(["Comedy", "Science Fiction", "Animation", "TV Movie"])
     expect(@movie.overview).to eq("Robot Chicken: Star Wars Episode III, directed by Chris McKay, combines the satirical sensibilities of Green and Matthew Senreich's Robot Chicken with characters of the Star Wars universe.")
   end
