@@ -15,7 +15,7 @@ RSpec.describe 'Users Show' do
   describe 'Features' do
     let!(:users) { create_list(:user, 10) }
     let!(:viewing_parties) { create_list(:viewing_party, 3) }
-    let!(:user_viewing_parties) { create_list(:user_viewing_party, 5) }
+    let!(:user_viewing_parties) { create_list(:user_viewing_party, 20) }
     let(:user) { users.first }
 
     it 'Shows the user name' do
@@ -30,11 +30,50 @@ RSpec.describe 'Users Show' do
       expect(page).to have_button('Discover Movies')
     end
 
-    it 'has a list of viewing parties' do
+    it 'has a list of hosted parties' do
       visit user_path(user)
 
-      within '#viewing_parties' do
-        expect
+      within '#hosted_parties' do
+        user.viewing_parties.each do |party|
+          user_party = user.user_viewing_parties.find_by(viewing_party_id: party.id)
+          if user_party.hosting
+            within "#viewing_party_#{party.id}" do
+              expect(page).to have_content(party.movie.title)
+              expect(page).to have_content(party.date)
+              expect(page).to have_content(party.start_time.strftime('%l:%M %p'))
+              expect(page).to have_content('You are the Host')
+              party.users.each do |invitee|
+                expect(page).to have_content(invitee.name) unless invitee == user
+              end
+            end
+          else
+            expect(page).to_not have_css("#viewing_party_#{party.id}")
+          end
+        end
+      end
+    end
+
+    it 'has a list of invited parties' do
+      user = users.second
+      visit user_path(user)
+
+      within '#invited_parties' do
+        user.viewing_parties.each do |party|
+          user_party = user.user_viewing_parties.find_by(viewing_party_id: party.id)
+          unless user_party.hosting
+            within "#viewing_party_#{party.id}" do
+              expect(page).to have_content(party.movie.title)
+              expect(page).to have_content(party.date)
+              expect(page).to have_content(party.start_time.strftime('%l:%M %p'))
+              party.user_viewing_parties.each do |invitee|
+                expect(page).to have_content(invitee.user.name)
+                expect(page).to have_content("Host: #{invitee.user.name}") if invitee.hosting
+              end
+            end
+          else
+            expect(page).to_not have_css("#viewing_party_#{party.id}")
+          end
+        end
       end
     end
   end

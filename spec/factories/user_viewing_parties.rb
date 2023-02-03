@@ -9,6 +9,6 @@ FactoryBot.define do
         (User.all - [user]).shuffle.shuffle.first.id
       end
     }
-    hosting { user_id == User.first.id }
+    hosting { !UserViewingParty.exists?(viewing_party_id: viewing_party_id) }
   end
 end

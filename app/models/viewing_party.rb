@@ -9,4 +9,12 @@ class ViewingParty < ApplicationRecord
   def movie
     MovieFacade.find_movie(self.movie_id) if self.movie_id
   end
+
+  def host
+    self.user_viewing_parties.find_by(hosting: true).user.name
+  end
+
+  def invitees
+    self.user_viewing_parties.map { |uvp| uvp.user.name unless uvp.hosting }
+  end
 end

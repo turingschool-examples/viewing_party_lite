@@ -5,7 +5,7 @@ class Movie
               :runtime,
               :genres,
               :hours_mins,
-              :success,
+              :image,
               :overview
 
   def initialize(data)
@@ -16,7 +16,7 @@ class Movie
     @overview     = data[:overview]
     @hours_mins   = convert_runtime(data[:runtime]) if data[:runtime]
     @genres       = convert_genres(data[:genres]) if data[:genres]
-    @success      = data[:success]
+    @image        = data[:poster_path]
   end
 
   def convert_runtime(runtime)

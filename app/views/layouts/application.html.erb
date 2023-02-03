@@ -10,8 +10,10 @@
   </head>
 
   <body>
-  <% flash.each do |type, msg| %>
-      <%= msg %>
+  <% flash.each do |type, msgs| %>
+      <% msgs.each do |msg| %>
+        <%= msg %>
+      <% end %>
   <% end %>
     <nav>
       <%= link_to 'Back to Home', root_path %>

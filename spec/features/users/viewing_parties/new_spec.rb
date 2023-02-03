@@ -4,6 +4,12 @@ RSpec.describe 'Viewing Party New' do
   let!(:users) { create_list(:user, 10) }
   let(:user) { users.first }
 
+  before :each do
+    json_response = File.read('spec/fixtures/the_godfather.json')
+    stub_request(:get, "https://api.themoviedb.org/3/movie/238?api_key=#{ENV['movie_api_key']}&language=en-US").
+      to_return(status: 200, body: json_response)
+  end
+
   it 'can create a new viewing party' do
     visit new_user_movie_viewing_party_path(user, 238)
     start_time = Time.now
@@ -30,7 +36,7 @@ RSpec.describe 'Viewing Party New' do
     expect(user_viewing_party_2.hosting).to eq(false)
   end
 
-  xit 'will not create if runtime is longer than duration' do
+  it 'will not create if runtime is longer than duration' do
     visit new_user_movie_viewing_party_path(user, 238)
     start_time = Time.now
 
@@ -44,5 +50,6 @@ RSpec.describe 'Viewing Party New' do
     click_button('Create Viewing Party')
 
     expect(current_path).to eq(new_user_movie_viewing_party_path(user, 238))
+    expect(page).to have_content('Duration must be greater than or equal to movie runtime')
   end
 end
