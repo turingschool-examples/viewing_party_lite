@@ -10,16 +10,17 @@
   </head>
 
   <body>
-   <div id="navigation">
-    <%= link_to "Home", root_path %> 
-   </div>
-
-   <div id="error-messages">
-    <% flash.each do |_type, message| %>
-      <%= message %><br>
-    <% end %>
-
-   </div>
-    <%= yield %>
+    <div id="navigation">
+      <%= link_to "Home", root_path %> 
+    </div>
+    <center>
+    <h1>Viewing Party</h1>
+      <div id="error-messages">
+        <% flash.each do |_type, message| %>
+          <%= message %><br>
+        <% end %>
+      </div>
+      <%= yield %>
+      </center>
   </body>
 </html>

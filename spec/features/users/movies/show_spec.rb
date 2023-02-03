@@ -77,7 +77,7 @@ RSpec.describe 'The Movie Details (Show) Page', type: :feature do
         expect(page).to have_content("Total Review Count: 7")
         expect(page).to have_content("Author: Gurre")
         expect(page).to have_content("9.0")
-        expect(page).to have_content("Content: ") #come back to this
+        expect(page).to have_content("Content: I fondly recollect, growing up in Canada in the 70's and 80's, my mom taking my older sister and I to the cinema (my dad was more interested in watching bowling, hockey, or either crime shows, British sitcoms or hockey on TV). Despite all of his TV appearances over the years, and films he acted in to fund his own productions, the first time I was aware of Orson Welles was one of those startling and bizarrely professional yet unmistakably charismatic 'Paul Masson' wine commercials that they tend to make fun of on The Simpsons in these decades gone by.")
       end
     end
   end
