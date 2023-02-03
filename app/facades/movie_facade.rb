@@ -26,5 +26,18 @@ class MovieFacade
 
   def self.get_dashboard_image(id)
     MovieService.get_movie(id)[:backdrop_path]
+
+  def self.all_reviews(id)
+    hash = MovieService.get_reviews(id)
+    revs = hash[:results]
+    revs
+  end
+  
+  def self.reviews(id)
+    all = all_reviews(id)
+    all.map do |review|
+      @rev = Review.new(review)
+      @rev
+    end
   end
 end

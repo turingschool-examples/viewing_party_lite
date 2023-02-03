@@ -18,6 +18,10 @@ RSpec.describe "Movie's detail page" do
     json_response_cast = File.read('spec/fixtures/cast.json')
     stub_request(:get, "https://api.themoviedb.org/3/movie/238/credits?api_key=#{ENV['MOVIE_DB_KEY']}")
       .to_return(status: 200, body: json_response_cast, headers: {})
+      
+    json_response_reviews = File.read('spec/fixtures/reviews.json')
+    stub_request(:get, "https://api.themoviedb.org/3/movie/238/reviews?api_key=#{ENV['MOVIE_DB_KEY']}")
+      .to_return(status: 200, body: json_response_reviews, headers: {})
 
     visit "/users/#{@user_1.id}/movies/#{@movie_detail.id}"
   end
@@ -63,6 +67,21 @@ RSpec.describe "Movie's detail page" do
     
     within "#actor-3091" do #tenth cast member
       expect(page).to have_content("Al Lettieri as Virgil 'The Turk' Sollozzo")
+    end
+  end
+  
+  describe 'review API consumption' do
+    before(:each) do
+      json_response = File.read('spec/fixtures/reviews.json')
+      stub_request(:get, "https://api.themoviedb.org/3/movie/238/reviews?api_key=#{ENV['MOVIE_DB_KEY']}")
+        .to_return(status: 200, body: json_response, headers: {})
+        
+      @review = MovieFacade.reviews('238').first
+    end
+    
+    it 'displays reviews' do
+      expect(page).to have_content("futuretv")
+      expect(@review.content).to be_a(String)
     end
   end
 end
