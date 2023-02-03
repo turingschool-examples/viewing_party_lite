@@ -9,9 +9,9 @@
     <%= f.label :duration, "Duration of Party" %>
     <%= f.number_field :duration, value: @movie[:runtime]%>
     <%= f.label :day %>
-    <%= f.date_select :day %>
+    <%= f.date_field :day %>
     <%= f.label :time %>
-    <%= f.time_select :time %>
+    <%= f.time_field :time %>
     <p>Invite Other Users</p>
     <% @users.each do |user| %>
       <%= f.check_box :user%>

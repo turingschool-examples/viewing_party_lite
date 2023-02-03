@@ -17,12 +17,11 @@ RSpec.describe 'The new viewing party page' do
   end
 
   describe 'happy path' do
-    it 'creates a new viewing party with default time and no other users' do
+    it 'creates a new viewing party with default duration and no other users' do
       visit "/users/#{charlie.id}/movies/497/viewing-party/new"
       within('#form') do
-        # fill_in 'day', with: Date.now
-        # fill_in 'start_time', with: '7:00'
-        
+        fill_in 'day', with: Date.tomorrow
+        fill_in 'time', with: Time.now
         click_button 'Create Party'
       end
       expect(current_path).to eq("/users/#{charlie.id}")
