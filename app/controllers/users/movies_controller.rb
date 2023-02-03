@@ -15,7 +15,7 @@ module Users
 
       if @movies.is_a?(Hash)
         if @movies[:success] == false
-          flash[:errors] = @movies[:errors]
+          flash[:error] = @movies[:errors]
           redirect_to user_discover_index_path(@user)
         end
       end

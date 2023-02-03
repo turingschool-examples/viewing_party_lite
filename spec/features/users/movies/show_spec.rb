@@ -77,9 +77,9 @@ RSpec.describe 'Movies Show' do
     it 'has a list of actors' do
       visit user_movie_path(user, 238)
 
-      expect(page).to have_content('Don Vito Corleone: Marlon Brando')
-      expect(page).to have_content("Virgil 'The Turk' Sollozzo: Al Lettieri")
-      expect(page).to_not have_content("Salvatore 'Sal' Tessio: Abe Vigoda")
+      expect(page).to have_content('Don Vito Corleone Marlon Brando')
+      expect(page).to have_content("Virgil 'The Turk' Sollozzo Al Lettieri")
+      expect(page).to_not have_content("Salvatore 'Sal' Tessio Abe Vigoda")
     end
 
     it 'has a list of reviews' do
