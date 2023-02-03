@@ -33,7 +33,6 @@ RSpec.describe "Discover Movies Page" do
       end
     end
 
-    # how to test that button is giving "?q=top%20rated" on button and "?q=keyword" on search field?
     it "passes optional parameters" do
       VCR.use_cassette "top_rated" do
         click_button("Find Top Rated Movies")

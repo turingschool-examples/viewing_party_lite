@@ -20,8 +20,9 @@ RSpec.describe "Movie Detail (Show) page" do
 
     it "button to create a viewing party" do
       expect(page).to have_button("Create Viewing Party for The Godfather")
-      
-      click_button("Create Viewing Party for The Godfather")
+      VCR.use_cassette "movie_details" do
+        click_button("Create Viewing Party for The Godfather")
+      end
 
       expect(current_path).to eq("/users/#{@user.id}/movies/238/viewing_parties/new")
       # expect(current_path).to eq(new_user_movie_viewing_party_path)

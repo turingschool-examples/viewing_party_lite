@@ -6,7 +6,8 @@ class Movie
               :overview,
               :genres,
               :cast,
-              :reviews
+              :reviews,
+              :poster_path
 
   def initialize(data)
     @id = data[:id]
@@ -17,6 +18,7 @@ class Movie
     @cast = sanitize_cast(data[:credits])
     @overview = data[:overview]
     @reviews = sanitize_reviews(data[:reviews])
+    @poster_path = data[:poster_path]
   end
 
   def sanitize_genres(data)
