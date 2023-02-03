@@ -13,12 +13,6 @@ RSpec.describe 'User Dashboard' do
 
     stub_request(:get, "https://api.themoviedb.org/3/movie/497/reviews?api_key=#{ENV['MOVIE_DB_KEY']}")
       .to_return(status: 200, body: File.read('./spec/fixtures/green_mile/reviews_response.json'), headers: {})
-
-    stub_request(:get, "https://api.themoviedb.org/3/movie/497/images?api_key=#{ENV['MOVIE_DB_KEY']}")
-      .to_return(status: 200, body: File.read('./spec/fixtures/green_mile/images_response.json'), headers: {})
-    
-    stub_request(:get, "https://api.themoviedb.org/3/movie/238/images?api_key=#{ENV['MOVIE_DB_KEY']}")
-      .to_return(status: 200, body: File.read('./spec/fixtures/godfather/images_response.json'), headers: {})  
   end
 
   let!(:charlie) { User.create!(name: 'Charlie', email: 'charlie_boy@gmail.com') }

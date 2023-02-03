@@ -3,7 +3,8 @@ class MovieDetail
               :vote_average,
               :runtime,
               :genres,
-              :overview
+              :overview,
+              :backdrop_path
 
   def initialize(movie_detail_data)
     @title = movie_detail_data[:title]
@@ -11,6 +12,7 @@ class MovieDetail
     @runtime = movie_detail_data[:runtime]
     @genres = movie_detail_data[:genres]
     @overview = movie_detail_data[:overview]
+    @backdrop_path = movie_detail_data[:backdrop_path]
   end
 
   def list_genres

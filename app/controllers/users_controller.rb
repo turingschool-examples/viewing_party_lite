@@ -11,6 +11,7 @@ class UsersController < ApplicationController
         start_time: party.start_time,
         host: User.find(party.host_id),
         title: movie.title,
+        image: "https://image.tmdb.org/t/p/w500/#{movie.backdrop_path}",
         attendees: ViewingParty.find(party.id).users
       }
     end
