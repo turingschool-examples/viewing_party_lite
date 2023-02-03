@@ -94,4 +94,26 @@ RSpec.describe TMDBService do
       expect(response[:cast][0]).to have_key(:character)
     end
   end
+
+  describe "get_movie_reviews" do
+    it 'returns reviews from movie' do
+      movie_id = 238
+
+      stub_request(:get, "https://api.themoviedb.org/3/movie/#{movie_id}/reviews").
+         with(
+           headers: {
+       	  'Accept'=>'*/*',
+       	  'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+       	  'User-Agent'=>'Faraday v2.7.4'
+           }, query: {"api_key"  => ENV['tmdb_api_key']})
+           .to_return(status: 200, body: File.read('spec/fixtures/movie_reviews.json'), headers: {})
+
+      response = TMDBService.get_movie_reviews(movie_id)
+
+      expect(response).to have_key(:results)
+      expect(response[:results]).to be_a(Array)
+      expect(response[:results][0]).to have_key(:author)
+      expect(response[:results][0]).to have_key(:content)
+    end
+  end
 end
