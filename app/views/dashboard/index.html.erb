@@ -4,8 +4,47 @@
 <%= button_to "Discover Movies", user_discover_index_path(@user), method: :get %>
 </div>
 
-<% @user.viewing_parties.each do |vp| %>
+<div style="float: left; padding-left: 60px;">
+<h4>Viewing Party Invites</h4>
+<% @user.not_hosting_viewing_parties.each do |vp| %>
   <div id="viewing_party_<%= vp.id %>">
     <p>Viewing Party <%= vp.id %></p>
+    <p>Movie: <%= vp.get_movie.title %></p>
+    <img src=<%= vp.get_movie.image_url %> style="width:250px;height:300px;">
+    <p>Date: <%= vp.when %></p>
+    <p>Time: <%= vp.start_time %></p>
+    <p>Host: <%= vp.get_host.email %></p>
+    <p>Users in Viewing Party: </p>
+    <% vp.users.each do |user| %>
+      <%if (user.id == @user.id)%>
+        <b> <%= user.email %> </b> <br>
+      <%elsif user.id == vp.get_host.id%>
+      <% else %>
+        <p> <%= user.email %> </p>
+      <%end%>
+    <% end %>
+    <br>
   </div>
 <% end %>
+</div>
+
+<div style="float: right; padding-right: 60px;">
+<h4>Viewing Parties I'm Hosting</h4>
+<% @user.hosting_viewing_parties.each do |vp| %>
+  <div id="viewing_party_<%= vp.id %>">
+    <p>Viewing Party <%= vp.id %></p>
+    <p>Movie: <%= vp.get_movie.title %></p>
+    <img src=<%= vp.get_movie.image_url %> style="width:250px;height:300px;">
+    <p>Date: <%= vp.when %></p>
+    <p>Time: <%= vp.start_time %></p>
+    <p>Users I Invited: </p>
+    <% vp.users.each do |user| %>
+      <% if user.id != @user.id%>
+        <p> <%= user.email %> </p>
+      <% end %>
+    <% end %>
+    <br>
+  </div>
+<% end %>
+</div>
+

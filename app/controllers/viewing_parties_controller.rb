@@ -4,6 +4,7 @@ class ViewingPartiesController < ApplicationController
     @user = User.find(params[:user_id])
     @movie = params[:movie_id]
     @runtime = params[:runtime]
+    Movie.create!(api_id: params[:movie_id], image_url: params[:image_url], title: params[:title])
   end
 
   def create
@@ -11,7 +12,6 @@ class ViewingPartiesController < ApplicationController
     @users = User.where('id != ?', params[:user_id])
     @user = User.find(params[:user_id])
     @movie = params[:movie_id]
-    
 
     if viewing_party.duration && viewing_party.duration < params[:runtime].to_i
       flash[:notice] = "Error: Duration must be equal to or greater than the movie runtime"
@@ -34,6 +34,6 @@ class ViewingPartiesController < ApplicationController
 
   private
   def viewing_party_params
-    params.permit(:duration, :when, :start_time)
+    params.permit(:duration, :when, :start_time, :movie_id)
   end
 end

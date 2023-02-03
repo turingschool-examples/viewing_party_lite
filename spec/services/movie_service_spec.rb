@@ -50,20 +50,3 @@ RSpec.describe MovieService do
     end
   end
 end
-
-
-# it 'can return one senate member object' do 
-#     response = CongressService.senate_members
-
-#     expect(response).to have_key(:results)
-#     expect(response[:results]).to be_a(Array)
-#     expect(response[:results][0]).to have_key(:members)
-#     expect(response[:results][0][:members]).to be_a(Array)
-#     expect(response[:results][0][:members].first).to have_key(:first_name)
-#     expect(response[:results][0][:members].first[:first_name]).to be_a(String)
-#     expect(response[:results][0][:members].first).to have_key(:last_name)
-#     expect(response[:results][0][:members].first[:last_name]).to be_a(String)
-#     expect(response[:results][0][:members].first).to have_key(:twitter_account)
-#     expect(response[:results][0][:members].first[:twitter_account]).to be_a(String)
-
-#   end 
