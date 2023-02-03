@@ -22,7 +22,7 @@
   <table>
     <% @movie.cast.each do |cast| %>
       <tr>
-        <td><%= cast[:name] %> as <%= cast[:character] %></td>
+        <td><%= cast.name %> as <%= cast.character %></td>
       </tr>
     <% end %>
   </table>
@@ -31,7 +31,7 @@
 <section id='reviews'>
   <h3><%= @movie.reviews.count %> Reviews</h3>
   <% @movie.reviews.each do |review| %>
-    <p>Author: <%= review[:author] %></p>
-    <p><%= review[:content] %></p>
+    <p>Author: <%= review.author %></p>
+    <p><%= review.content %></p>
   <% end %>
 </section>

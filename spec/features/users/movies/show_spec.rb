@@ -8,6 +8,7 @@ RSpec.describe 'user movie show spec', type: :feature do
   describe 'as a user, when I visit a movies detail page, it' do
     before :each do
       WebMock.allow_net_connect!
+      # todo
       visit user_movie_path(u1, 348, type: 'show', path: '/3/movie/348')
     end
 

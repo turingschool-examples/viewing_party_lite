@@ -3,10 +3,9 @@
 <table id='results'>
   <% @movies.each_with_index do |movie, index| %>
     <tr id="movie-<%= index %>">
-      <td><%= link_to movie[:title], user_movie_path(@user, movie[:id], type: 'show') %></td>
+      <td><%= link_to movie.title, user_movie_path(@user, movie.id, type: 'show') %></td>
 
-      <td>Vote Average: <%= movie[:vote_average] %></td>
-
+      <td>Vote Average: <%= movie.vote_average %></td>
     </tr>
   <% end %>
 </table>
