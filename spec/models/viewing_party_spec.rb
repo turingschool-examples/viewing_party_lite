@@ -9,6 +9,7 @@ RSpec.describe ViewingParty do
   describe 'validations' do
     it { should validate_presence_of :duration }
     it { should validate_presence_of :party_date }
+    it { should validate_presence_of :party_time }
     it { should validate_presence_of :host_id }
   end
   
