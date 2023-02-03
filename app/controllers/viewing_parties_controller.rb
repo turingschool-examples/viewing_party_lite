@@ -13,8 +13,9 @@ class ViewingPartiesController < ApplicationController
 
   def create
     host = User.find(params[:id])
+    
     viewing_party = host.viewing_parties.create(duration: params[:duration].to_i, event_date: params[:day],
-                                                start_time: params[:time])
+                                                start_time: params[:time], host_id: host.id, movie_id: params[:movie_id])
     User.all.each do |user|
       next if user == host
 
