@@ -1,3 +1,4 @@
+gem 'dotenv-rails', groups: [:development, :test]
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -33,10 +34,13 @@ gem 'jbuilder', '~> 2.5'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'faraday'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
+  gem 'shoulda-matchers'
+  gem 'figaro'
 end
 
 group :development do
@@ -51,6 +55,7 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'simplecov'
+  gem 'webmock'
 end
 
 

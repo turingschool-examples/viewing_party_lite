@@ -1,0 +1,9 @@
+<%= render partial: './shared/header' %>
+
+<%= button_to "Top Movies", "/users/#{@user.id}/movies", method: :get %>
+<%= form_with url: "/users/#{@user.id}/movies", method: :get, local: true do |f| %>
+  <%= f.hidden_field :top_rated, value: false %>
+  <%= f.label :query, "Search Movie Title:" %>
+  <%= f.text_field :query %>
+  <%= f.submit "Search" %>
+<% end %>
