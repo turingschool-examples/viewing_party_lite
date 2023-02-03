@@ -23,7 +23,7 @@ class MoviesController < ApplicationController
     @movie = MoviesFacade.movie_details(@movie_id) 
     
     @credits = MoviesFacade.movie_credits(@movie_id)
-    # @details = 
-    # TODO: movie hash keep_if to remove extra data
+
+    @reviews = MoviesFacade.movie_reviews(@movie_id)
   end
 end
