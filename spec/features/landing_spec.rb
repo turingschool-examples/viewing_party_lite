@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'Application' do
@@ -5,23 +7,23 @@ RSpec.describe 'Application' do
     visit root_path
     expect(page).to have_content('Viewing Party')
     expect(page).to have_button('Create a New User')
-    
-    click_on ('Create a New User') 
-    expect(current_path).to eq('/register') 
+
+    click_on('Create a New User')
+    expect(current_path).to eq('/register')
   end
 
   it 'has existing users with links to their dashboards' do
     user_1 = create(:user)
     user_2 = create(:user)
-   
+
     visit root_path
-    within("#users") do
+    within('#users') do
       expect(page).to have_content('Existing Users')
       expect(page).to have_link(user_1.name)
       expect(page).to have_link(user_2.name)
     end
 
-    click_link ("#{user_1.name}")
+    click_link(user_1.name.to_s)
     expect(current_path).to eq("/users/#{user_1.id}")
   end
 
@@ -30,8 +32,8 @@ RSpec.describe 'Application' do
 
     expect(page).to have_link('Home')
 
-    click_link ('Home')
-    
+    click_link('Home')
+
     expect(current_path).to eq(root_path)
   end
 end
