@@ -4,6 +4,7 @@ class ViewingParty < ApplicationRecord
   has_many :users, through: :viewing_party_users
 
   validates_presence_of :user_id
+  validates_presence_of :title
   validates :movie_id, presence: true, numericality: true 
   validates :runtime, presence: true, numericality: true 
   validates :day, presence: true, on: :minimum_date

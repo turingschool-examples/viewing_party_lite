@@ -33,18 +33,17 @@
       it 'has section for viewing parties' do
         within '#viewing-parties' do
           within '#invited' do
-            save_and_open_page
             expect(page).to have_content("Invited")
-            expect(page).to have_content(@viewing_party2.day)
+            expect(page).to have_content(@viewing_party2.day.strftime("%B %-d, %Y"))
             expect(page).to have_content(@viewing_party2.title)
-            expect(page).to have_content(@viewing_party2.duration)
+            expect(page).to have_content(@viewing_party2.start_time.strftime("%-I:%M %p"))
           end
           
           within '#hosting' do
             expect(page).to have_content("Hosting")
-            expect(page).to have_content(@viewing_party1.day)
+            expect(page).to have_content(@viewing_party1.day.strftime("%B %-d, %Y"))
             expect(page).to have_content(@viewing_party1.title)
-            expect(page).to have_content(@viewing_party1.duration)
+            expect(page).to have_content(@viewing_party1.start_time.strftime("%-I:%M %p"))
           end
         end
       end
