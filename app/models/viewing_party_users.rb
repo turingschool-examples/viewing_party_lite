@@ -1,3 +1,0 @@
-class ViewingPartyUsers < ApplicationRecord
-
-end

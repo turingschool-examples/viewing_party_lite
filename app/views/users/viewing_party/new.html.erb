@@ -8,10 +8,12 @@
 
   <%= f.label :start_time, 'Start Time:' %>
   <%= f.time_field :start_time %>
-
-  <% @users.each do |user| %>
-    <%= f.check_box :"#{user.id}" %>
-    <%= f.label :"#{user.id}", "#{user.name} (#{user.email})" %>
+  
+  <%= f.fields_for :invitees do |i| %>
+    <% @users.each do |user| %>
+      <%= i.check_box :"#{user.id}" %>
+      <%= i.label :"#{user.id}", "#{user.name} (#{user.email})" %>
+    <% end %>
   <% end %>
   
   <%= f.submit value: 'Create Viewing Party' %>
