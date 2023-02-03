@@ -1,1 +1,10 @@
 <%= @movie.title %>
+<%= form_with url: user_movie_viewing_parties_path(@user, @movie.id), method: :post, local: true do |f| %>
+  <%= f.label :duration, 'Duration:' %>
+  <%= f.number_field :duration, value: @movie.runtime, min: @movie.runtime %>
+
+  <%= f.hidden_field :type, value: 'search' %>
+  <%= f.hidden_field :path, value: '/3/search/movie' %>
+
+  <%= f.submit 'Search By Movie Title' %>
+<% end %>
