@@ -64,7 +64,7 @@ RSpec.describe 'user show page' do
       end
     end
 
-    xit 'displays movie poster image' do
+    it 'displays movie poster image' do
       expect(page).to have_xpath('/html/body/div[1]/img')
     end
   end

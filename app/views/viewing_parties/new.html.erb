@@ -1,19 +1,20 @@
-<h1><%= @movie.original_title %> Viewing Party</h1>
-<%= form_with url: user_movie_viewing_parties_path(@user, @movie.id), method: :post, local: true do |f| %>
-  <%= f.label :duration, 'Duration' %>
-  <%= f.text_field :duration, value: @movie.runtime %><br>
-  <%= f.label :date, 'Date' %>
-  <%= f.text_field :date %><br>
-  <%= f.label :start_time, 'Start time' %>
-  <%= f.text_field :start_time %><br>
-  <%= f.label "Invite Other Users" %>
-  <% @users.each do |user| %>
-    <% if user != @users %>
-      <%= f.label :attendees, "#{user.name}" %>
-      <%= check_box "attendees", user.id %>
+<center>
+  <h1><%= @movie.original_title %> Create Viewing Party</h1>
+  <%= form_with url: user_movie_viewing_parties_path(@user, @movie.id), method: :post, local: true do |f| %>
+    <%= f.label :duration, 'Duration' %>
+    <%= f.text_field :duration, value: @movie.runtime %><br>
+    <%= f.label :date, 'Date' %>
+    <%= f.date_select :date %><br>
+    <%= f.label :start_time, 'Start time' %>
+    <%= f.time_select :start_time %><br>
+    <%= f.label "Invite Other Users" %><br>
+    <% @users.each do |user| %>
+      <% if user != @users %>
+        <%= f.label :attendees, "#{user.name}" %>
+        <%= check_box "attendees", user.id %>
+      <% end %>
     <% end %>
-  <% end %>
-  <%= f.hidden_field(:movie_id, value: @movie.id)%><br>
-  <%= f.submit 'Create' %>
-<% end%>
-
+    <%= f.hidden_field(:movie_id, value: @movie.id)%><br>
+    <%= f.submit 'Create' %>
+  <% end%>
+</center>

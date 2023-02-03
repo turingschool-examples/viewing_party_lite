@@ -21,9 +21,9 @@ RSpec.describe 'welcome index' do
       end
 
       it 'Lists Existing Users which links to the users dashboard' do
-        expect(page).to have_link(@users[0].name)
-        expect(page).to have_link(@users[1].name)
-        expect(page).to have_link(@users[2].name)
+        expect(page).to have_link(@users[0].email)
+        expect(page).to have_link(@users[1].email)
+        expect(page).to have_link(@users[2].email)
       end
 
       it 'Links to go back to the landing page which will be present at the top of all pages' do

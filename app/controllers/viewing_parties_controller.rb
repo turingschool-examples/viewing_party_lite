@@ -9,11 +9,10 @@ class ViewingPartiesController < ApplicationController
     @user = User.find(params[:user_id])
     @vp = ViewingParty.new(viewing_party_params)
     @users = User.all
-    # binding.pry
     @movie = MovieFacade.details(params[:movie_id])
 
     if @vp.save
-      uvp = UserViewingParty.create!(user_id: @user.id, viewing_party_id: @vp.id, host: true)
+      UserViewingParty.create!(user_id: @user.id, viewing_party_id: @vp.id, host: true)
       attendees = User.where(id: params[:attendees].keys)
       
       attendees.each do |user|
@@ -22,7 +21,6 @@ class ViewingPartiesController < ApplicationController
       redirect_to user_path(@user)
     else
       flash[:alert] = 'Please fill in all details'
-      # binding.pry
       redirect_to new_user_movie_viewing_party_path(@user, @movie.id)
     end
   end
