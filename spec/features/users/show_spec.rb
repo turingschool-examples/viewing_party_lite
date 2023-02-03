@@ -79,14 +79,5 @@ RSpec.describe 'User Dashboard' do
         expect(page).to have_content('Invited')
       end
     end
-
-    xit 'displays the viewing parties a user has created' do
-      visit user_path(charlie)
-
-      expect(page).to have_content('The Godfather')
-      expect(page).to have_content(party1.event_date.strftime('%B %-d, %Y'))
-      expect(page).to have_content(party1.start_time.strftime('%I:%M %P'))
-      expect(page).to have_content('Hosting')
-    end
   end
 end
