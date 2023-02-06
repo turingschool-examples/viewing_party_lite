@@ -33,7 +33,7 @@ RSpec.describe ViewingParty do
 
   it 'has a method to find all the display data for the dashboard' do
     expect(@viewing_party_1.collect_display_data).to match({ attendees: [@user_1],
-                                                             date: Date.parse('Fri, 03 Feb 2023'),
+                                                             date: Date.today,
                                                              duration: '180',
                                                              host: @user_1.name.to_s,
                                                              image: 'https://image.tmdb.org/t/p/w500//tmU7GeKVybMWFButWEGl2M4GeiP.jpg',

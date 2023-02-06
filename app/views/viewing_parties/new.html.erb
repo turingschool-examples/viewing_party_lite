@@ -27,7 +27,7 @@
       <tr>
       </tr>
       <tr>
-      <td><%= f.label "Invite Other Users" %></td>
+      <td><%= f.label :check_boxes, "Invite Other Users" %></td><br>
         <td><%= f.collection_check_boxes(:user_ids, @users, :id, :name_with_email) %></td>
       <tr>
       <%= f.hidden_field :host_id, value: @user.id %>
