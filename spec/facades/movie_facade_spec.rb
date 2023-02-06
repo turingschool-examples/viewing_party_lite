@@ -9,13 +9,6 @@ RSpec.describe MovieFacade do
   before :each do
     json_response = File.read('spec/fixtures/movie.json')
     stub_request(:get, "https://api.themoviedb.org/3/movie/238?api_key=#{ENV['MOVIE_DB_KEY']}")
-      .with(
-        headers: {
-          'Accept' => '*/*',
-          'Accept-Encoding' => 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-          'User-Agent' => 'Faraday v2.7.4'
-        }
-      )
       .to_return(status: 200, body: json_response, headers: {})
   end
 
@@ -51,7 +44,7 @@ RSpec.describe MovieFacade do
       json_response_reviews = File.read('spec/fixtures/reviews.json')
       stub_request(:get, "https://api.themoviedb.org/3/movie/238/reviews?api_key=#{ENV['MOVIE_DB_KEY']}")
         .to_return(status: 200, body: json_response_reviews, headers: {})
-      @all = MovieFacade.all_reviews('238')
+      @all = MovieFacade.reviews('238')
       @review1 = MovieFacade.reviews('238').first
       @review2 = MovieFacade.reviews('238').last
     end
