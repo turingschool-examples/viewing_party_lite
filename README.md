@@ -73,7 +73,7 @@ _Home/Create Account/Login/User Index_
 _User Dashboard_
 # <img src="app/assets/images/VP_Dashboard.png">
 
-Example wireframes are found [here](https://backend.turing.edu/module3/projects/viewing_party_lite/wireframes)
+_Example wireframes are found [here](https://backend.turing.edu/module3/projects/viewing_party_lite/wireframes)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
