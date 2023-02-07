@@ -109,11 +109,20 @@ Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* ruby
+This is an example of how to list things you need to use the software and how to install them. <a href="https://developer.apple.com/xcode/" target="_blank" rel="noopener noreferrer">Xcode</a> and <a href="https://docs.brew.sh/Installation" target="_blank" rel="noopener noreferrer">Homebrew</a> is recommended for Mac.
+
+Ruby:
   ```sh
   rbenv install 2.7.4
+  ```
+Rails:
+  ```sh
   gem install rails --version 5.2.8
+  ```
+PostgreSQL@14<a href="https://www.postgresql.org/download/" target="_blank" rel="noopener noreferrer">(Windows)</a> or if using Homebrew:
+  ```sh
+  brew install postgresql
+  brew services start postgresql
   ```
 
 ### Installation
