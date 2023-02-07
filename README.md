@@ -79,7 +79,7 @@ _Example wireframes are found [here](https://backend.turing.edu/module3/projects
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
+<!-- BUILT WITH -->
 ### Built With
 
 <div align="center">
@@ -110,7 +110,10 @@ Follow installation instructions below. Push to your preferred production server
 Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+
+<!-- PREREQUISITES -->
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them. <a href="https://developer.apple.com/xcode/" target="_blank" rel="noopener noreferrer">Xcode</a> and <a href="https://docs.brew.sh/Installation" target="_blank" rel="noopener noreferrer">Homebrew</a> is recommended for Mac.
@@ -131,6 +134,8 @@ PostgreSQL@14<a href="https://www.postgresql.org/download/" target="_blank" rel=
 ---
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+
+<!-- INSTALLATION -->
 ### Installation
 
 1. Get a free API Key at [https://www.themoviedb.org/settings/api](https://www.themoviedb.org/settings/api)
@@ -155,7 +160,6 @@ _A full list of gems that will be installed can be found in the [gemfile][gemfil
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
 <!-- USAGE EXAMPLES -->
 ## Usage
 
@@ -165,7 +169,6 @@ _For more examples, please refer to the [Documentation](https://backend.turing.e
 
 ---
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- ROADMAP -->
@@ -180,7 +183,6 @@ See the [open issues](https://github.com/AMSterling/viewing_party_lite/issues) f
 
 ---
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- CONTRIBUTING -->
