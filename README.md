@@ -75,6 +75,7 @@ _User Dashboard_
 
 _Example wireframes are found [here](https://backend.turing.edu/module3/projects/viewing_party_lite/wireframes)_
 
+---
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -94,6 +95,7 @@ _Example wireframes are found [here](https://backend.turing.edu/module3/projects
   </p>
 </div>
 
+---
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -106,6 +108,8 @@ Follow installation instructions below. Push to your preferred production server
   rails server
   ```
 Then open [http://localhost:3000](http://localhost:3000) in your browser.
+
+---
 
 ### Prerequisites
 
@@ -124,6 +128,8 @@ PostgreSQL@14<a href="https://www.postgresql.org/download/" target="_blank" rel=
   brew install postgresql
   brew services start postgresql
   ```
+---
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Installation
 
@@ -141,9 +147,11 @@ PostgreSQL@14<a href="https://www.postgresql.org/download/" target="_blank" rel=
    ```
 4. Enter your API in `config/application.yml`
    ```js
-   movie_api_key: 'ENTER YOUR API';
+   movie_api_key: 'ENTER YOUR API'
    ```
+_A full list of gems that will be installed can be found in the [gemfile][gemfile-url]._
 
+---
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -155,6 +163,7 @@ Create Movie Viewing Parties with friends. Search movies from [The Movie Databas
 
 _For more examples, please refer to the [Documentation](https://backend.turing.edu/module3/projects/viewing_party_lite/)_
 
+---
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -169,6 +178,7 @@ _For more examples, please refer to the [Documentation](https://backend.turing.e
 
 See the [open issues](https://github.com/AMSterling/viewing_party_lite/issues) for a full list of proposed features (and known issues).
 
+---
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -187,6 +197,7 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+---
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -197,6 +208,7 @@ Don't forget to give the project a star! Thanks again!
 * [AMSterling](https://github.com/AMSterling)
 * [blakesaylor](https://github.com/blakesaylor)
 
+---
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
