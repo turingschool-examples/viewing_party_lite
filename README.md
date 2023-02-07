@@ -66,11 +66,12 @@
 
 App is deployed [here](https://viewing-party-22.herokuapp.com/)
 
-# <img src="app/assets/images/ViewingPartyHome.png">
 _Home/Create Account/Login/User Index_
+# <img src="app/assets/images/ViewingPartyHome.png">
 
-# <img src="app/assets/images/VP_Dashboard.png">
+
 _User Dashboard_
+# <img src="app/assets/images/VP_Dashboard.png">
 
 Example wireframes are found [here](https://backend.turing.edu/module3/projects/viewing_party_lite/wireframes)
 
