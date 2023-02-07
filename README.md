@@ -1,23 +1,6 @@
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
 
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -36,7 +19,7 @@
 <h1 align="center">Viewing Party Lite</h1>
 
   <p align="center">
-    Viewing Party Lite is an application in which users can explore movie options and create 
+    Viewing Party Lite is an application in which users can explore movie options and create
     a viewing party event for themselves and other users of the application.
     <br />
     <a href="https://github.com/AMSterling/viewing_party_lite"><strong>Explore the docs »</strong></a>
@@ -83,8 +66,8 @@
 
 App is deployed [here](https://viewing-party-22.herokuapp.com/)
 
-# <img src="app/assets/images/ViewingPartyHome.png"> 
-# <img src="app/assets/images/VP_Dashboard.png"> 
+# <img src="app/assets/images/ViewingPartyHome.png">
+# <img src="app/assets/images/VP_Dashboard.png">
 
 Example wireframes are found [here](https://backend.turing.io/module3/projects/viewing_party_lite/wireframes)
 
@@ -95,18 +78,18 @@ Example wireframes are found [here](https://backend.turing.io/module3/projects/v
 ### Built With
 
 <div align="center">
-  
+
   <p>
 
 [![Rails][Rails]][Rails-url] [![Ruby][Ruby]][Ruby-url] [![RSpec][RSpec]][RSpec-url] [![Atom][Atom]][Atom-url] [![Visual Studio Code][Visual Studio    Code]][Visual Studio Code-url] [![Heroku][Heroku]][Heroku-url]
   </p>
   <p>
- 
+
 [![CSS][CSS]][CSS-url] [![HTML5][HTML5]][HTML5-url] [![JavaScript][JavaScript]][JavaScript-url] [![PostgreSQL][PostgreSQL]][PostgreSQL-url] [![jQuery][jQuery]][jQuery-url] [![RuboCop][RuboCop]][RuboCop-url]
 
   </p>
 </div>
-  
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -114,10 +97,10 @@ Example wireframes are found [here](https://backend.turing.io/module3/projects/v
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Follow installation instructions below. Push to your preferred production server or in your terminal run 
-  ```sh 
+Follow installation instructions below. Push to your preferred production server or in your terminal run
+  ```sh
   rails server
-  ``` 
+  ```
 Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ### Prerequisites
@@ -225,6 +208,7 @@ Don't forget to give the project a star! Thanks again!
 [contributors-url]: https://github.com/AMSterling/viewing_party_lite/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/AMSterling/viewing_party_lite.svg?style=for-the-badge
 [forks-url]: https://github.com/AMSterling/viewing_party_lite/network/members
+[gemfile-url]: https://github.com/AMSterling/viewing_party_lite/blob/main/Gemfile
 [stars-shield]: https://img.shields.io/github/stars/AMSterling/viewing_party_lite.svg?style=for-the-badge
 [stars-url]: https://github.com/AMSterling/viewing_party_lite/stargazers
 [issues-shield]: https://img.shields.io/github/issues/AMSterling/viewing_party_lite.svg?style=for-the-badge
@@ -237,25 +221,40 @@ Don't forget to give the project a star! Thanks again!
 [linkedin-url2]: https://linkedin.com/in/blake-saylor
 
 [Atom]: https://img.shields.io/badge/Atom-66595C?style=for-the-badge&logo=Atom&logoColor=white
-[Atom-url]: https://atom.io/
+[Atom-url]: https://github.com/atom/atom/releases/tag/v1.60.0
 
 [Bootstrap]: https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com/
 
+[Capybara]: https://custom-icon-badges.demolab.com/badge/Capybara-F7F4EF?style=for-the-badge&logo=capybara
+[Capybara-url]: https://www.patreon.com/capybara
+
 [CircleCI]: https://img.shields.io/badge/circle%20ci-%23161616.svg?style=for-the-badge&logo=circleci&logoColor=white
 [CircleCI-url]: https://circleci.com/developer
 
-[CSS]: 	https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white
+[CSS]: https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white
 [CSS-url]: https://en.wikipedia.org/wiki/CSS
 
 [Fly]: https://custom-icon-badges.demolab.com/badge/Fly-DCDCDC?style=for-the-badge&logo=fly-io
 [Fly-url]: https://fly.io/
 
+[Git Badge]: https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white
+[Git-url]: https://git-scm.com/
+
 [GitHub Badge]: https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white
 [GitHub-url]: https://github.com/<Username>/
 
+[GitHub Actions]: https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white
+[GitHub Actions-url]: https://github.com/features/actions
+
+[GraphQL]: https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white
+[GraphQL-url]: https://graphql.org/
+
 [Heroku]: https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white
 [Heroku-url]: https://www.heroku.com/
+
+[Homebrew]: https://custom-icon-badges.demolab.com/badge/Homebrew-2e2a24?style=for-the-badge&logo=homebrew_logo
+[Homebrew-url]: https://brew.sh/
 
 [HTML5]: https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white
 [HTML5-url]: https://en.wikipedia.org/wiki/HTML5
@@ -269,8 +268,14 @@ Don't forget to give the project a star! Thanks again!
 [LinkedIn Badge]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
 [LinkedIn-url]: https://www.linkedin.com/in/<Username>/
 
+[MacOS]: https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=macos&logoColor=F0F0F0
+[MacOS-url]: https://www.apple.com/macos
+
 [Miro]: https://img.shields.io/badge/Miro-050038?style=for-the-badge&logo=Miro&logoColor=white
 [Miro-url]: https://miro.com/
+
+[Postgres]: https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white
+[Postgres-url]: https://www.postgresql.org/
 
 [PostgreSQL]: https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white
 [PostgreSQL-url]: https://www.postgresql.org/
@@ -281,6 +286,12 @@ Don't forget to give the project a star! Thanks again!
 [Rails]: https://img.shields.io/badge/rails-%23CC0000.svg?style=for-the-badge&logo=ruby-on-rails&logoColor=white
 [Rails-url]: https://rubyonrails.org/
 
+[Redis]: https://img.shields.io/badge/redis-%23DD0031.svg?&style=for-the-badge&logo=redis&logoColor=white
+[Redis-url]: https://redis.io/
+
+[Replit]: https://img.shields.io/badge/replit-667881?style=for-the-badge&logo=replit&logoColor=white
+[Replit-url]: https://replit.com/
+
 [RSpec]: https://custom-icon-badges.demolab.com/badge/RSpec-fffcf7?style=for-the-badge&logo=rspec
 [RSpec-url]: https://rspec.info/
 
@@ -290,8 +301,20 @@ Don't forget to give the project a star! Thanks again!
 [Ruby]: https://img.shields.io/badge/Ruby-000000?style=for-the-badge&logo=ruby&logoColor=CC342D
 [Ruby-url]: https://www.ruby-lang.org/en/
 
+[Slack]: https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white
+[Slack-url]: https://slack.com/trials?remote_promo=f4d95f0b&utm_medium=ppc&utm_source=google&utm_campaign=ppc_google_amer_en_brand_selfserve_discount&utm_term=Slack_Exact_._slack_._e_._c&utm_content=611662283461&gclid=Cj0KCQiA54KfBhCKARIsAJzSrdptOf7OUrgfeH0CWCC7LaOjR8arXoBnBMZjUSTJqmzTKvH6Jh-YXzAaAjfWEALw_wcB&gclsrc=aw.ds
+
+[Tailwind]: https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white
+[Tailwind-url]: https://tailwindcss.com/
+
 [Visual Studio Code]: https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white
 [Visual Studio Code-url]: https://code.visualstudio.com/
+
+[XCode]: https://img.shields.io/badge/Xcode-007ACC?style=for-the-badge&logo=Xcode&logoColor=white
+[XCode-url]: https://developer.apple.com/xcode/
+
+[Zoom]: https://img.shields.io/badge/Zoom-2D8CFF?style=for-the-badge&logo=zoom&logoColor=white
+[Zoom-url]: https://zoom.us/
 
 [bcrypt-docs]: https://github.com/bcrypt-ruby/bcrypt-ruby
 [capybara-docs]: https://github.com/teamcapybara/capybara
