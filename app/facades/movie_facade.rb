@@ -15,8 +15,8 @@ class MovieFacade
     end.reverse
   end
 
-  def self.find_movie(movie_id)
-    data = MovieService.find_movie_response(movie_id)
+  def self.find_movie(id)
+    data = MovieService.find_movie_response(id)
     ShowMovie.new(data)
   end
 

@@ -28,6 +28,6 @@ RSpec.describe Movie do
   it 'exists and has attributes' do
     expect(@movie.title).to eq("The Godfather")
     expect(@movie.vote_average).to eq(8.7)
-    expect(@movie.movie_id).to eq(238)
+    expect(@movie.id).to eq(238)
   end
 end
