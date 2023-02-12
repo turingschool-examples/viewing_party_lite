@@ -25,7 +25,7 @@ RSpec.describe MovieFacade do
       expect(top_rated_movies).to be_a(Array)
       
       top_rated_movies.each do |movie|
-        expect(movie).to be_a(IndexMovie)
+        expect(movie).to be_a(Movie)
       end
     end
 
@@ -35,7 +35,7 @@ RSpec.describe MovieFacade do
       expect(searched_movies).to be_a(Array)
 
       searched_movies.each do |movie|
-        expect(movie).to be_a(IndexMovie)
+        expect(movie).to be_a(Movie)
       end
     end
 

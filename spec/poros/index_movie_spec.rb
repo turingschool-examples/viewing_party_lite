@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe IndexMovie do
+RSpec.describe Movie do
   before :each do
    data = {
               "adult": false,
@@ -22,7 +22,7 @@ RSpec.describe IndexMovie do
               "vote_count": 17394
           }
         
-  @movie = IndexMovie.new(data)
+  @movie = Movie.new(data)
   end
 
   it 'exists and has attributes' do

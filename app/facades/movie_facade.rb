@@ -2,14 +2,14 @@ class MovieFacade
   def self.top_rated_movies
     data = MovieService.top_rated_movies_response
     data[:results].map do |movie_information|
-      IndexMovie.new(movie_information)
+      Movie.new(movie_information)
     end
   end
 
   def self.search_results(search_params)
     data = MovieService.search_results_response(search_params)
     data[:results].map do |movie_information|
-      IndexMovie.new(movie_information)
+      Movie.new(movie_information)
     end.sort_by do |movie|
       movie.vote_average
     end.reverse
