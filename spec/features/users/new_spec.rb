@@ -34,15 +34,21 @@ RSpec.describe 'user registration page' do
     it 'returns an error if the email has an existing user' do
       fill_in('Name', with: 'Jeff Goldblum')
       fill_in('Email', with: 'JurassicSnark@gmail.com')
+      fill_in('Password', with: 'password567')
+      fill_in('Password confirmation', with: 'password567')
       click_on 'Register new user'
       visit register_path
 
       fill_in('Name', with: 'John Doe')
       fill_in('Email', with: 'JurassicSnark@gmail.com')
+      fill_in('Password', with: 'password567')
+      fill_in('Password confirmation', with: 'password567')
       click_on 'Register new user'
 
       expect(current_path).to eq(register_path)
-      expect(page).to have_content('Cannot use existing email')
+      save_and_open_page
+
+      expect(page).to have_content("Email has already been taken")
     end
   end
 end
