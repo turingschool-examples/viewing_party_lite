@@ -54,7 +54,7 @@ RSpec.describe 'new page', type: :feature do
 
         fill_in(:name, with: 'Tony')
         fill_in(:email, with: 'anth@test.com')
-        fill_in(:password, with: 'passrd123')
+        fill_in(:password, with: 'passwot rd123')
         fill_in(:password_confirmation, with: 'passwo')
 
         click_button 'Register'

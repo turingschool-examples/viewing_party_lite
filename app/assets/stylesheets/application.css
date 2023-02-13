@@ -63,6 +63,14 @@ td {
   width: 40%;
 }
 
+#new-user-button {
+  flex: 1;
+}
+
+#login-button {
+  flex: 1;
+}
+
 #movie-search {
   padding-top: 1rem;
 }
