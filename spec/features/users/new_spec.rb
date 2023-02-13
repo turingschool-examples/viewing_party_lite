@@ -10,6 +10,8 @@ RSpec.describe 'User Registration Page', type: :feature do
 
       fill_in('Name', with: 'River')
       fill_in('Email', with: 'river@gmail.com')
+      fill_in('Password', with: 'password123')
+      fill_in('Password Confirmation', with: 'password123')
 
       click_button 'Create New User'
 
@@ -24,19 +26,64 @@ RSpec.describe 'User Registration Page', type: :feature do
 
       fill_in('Name', with: "")
       fill_in('Email', with: "")
+      
+      click_button 'Create New User'
+
+      expect(current_path).to eq('/register')
+      expect(page).to have_content("Name can't be blank, Password can't be blank, and Email can't be blank")
+      expect(User.count).to eq(0)
+    end
+
+    it 'can only create a user if all form fields are filled out - password' do 
+
+      fill_in('Name', with: "River")
+      fill_in('Email', with: "River@gmail.com")
+      fill_in('Password', with: '')
+      fill_in('Password Confirmation', with: '')
 
       click_button 'Create New User'
 
       expect(current_path).to eq('/register')
-      expect(page).to have_content('User was not created')
+      expect(page).to have_content("Password can't be blank")
+      expect(User.count).to eq(0)
+    end
+
+    it 'can only create a user if all form fields are filled out - password confirmation' do 
+
+      fill_in('Name', with: "River")
+      fill_in('Email', with: "River@gmail.com")
+      fill_in('Password', with: 'test123')
+      fill_in('Password Confirmation', with: '')
+
+      click_button 'Create New User'
+
+      expect(current_path).to eq('/register')
+      expect(page).to have_content("Password confirmation doesn't match Password")
+      expect(User.count).to eq(0)
+    end
+
+    it 'can only create a user if password and password confirmation match' do 
+
+      fill_in('Name', with: "River")
+      fill_in('Email', with: "River@gmail.com")
+      fill_in('Password', with: 'test123')
+      fill_in('Password Confirmation', with: 'test1')
+
+      click_button 'Create New User'
+
+      expect(current_path).to eq('/register')
+      expect(page).to have_content("Password confirmation doesn't match Password")
       expect(User.count).to eq(0)
     end
 
     it 'can only create a new user when the email is unique' do 
-      create(:user, name: "River", email: "river@gmail.com")
+      create(:user, name: "River", email: "river@gmail.com", password: 'test123', password_confirmation: 'test123')
 
       fill_in('Name', with: "Moose")
       fill_in('Email', with: "river@gmail.com")
+      fill_in('Password', with: 'password123')
+      fill_in('Password Confirmation', with: 'password123')
+
       click_button 'Create New User'
 
       expect(current_path).to eq('/register')
