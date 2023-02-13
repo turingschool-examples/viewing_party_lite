@@ -10,36 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_230_202_214_654) do
+ActiveRecord::Schema.define(version: 2023_02_13_175425) do
+
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'user_viewing_parties', force: :cascade do |t|
-    t.bigint 'viewing_party_id'
-    t.bigint 'user_id'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.boolean 'hosting', default: false
-    t.index ['user_id'], name: 'index_user_viewing_parties_on_user_id'
-    t.index ['viewing_party_id'], name: 'index_user_viewing_parties_on_viewing_party_id'
+  create_table "user_viewing_parties", force: :cascade do |t|
+    t.bigint "viewing_party_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "hosting", default: false
+    t.index ["user_id"], name: "index_user_viewing_parties_on_user_id"
+    t.index ["viewing_party_id"], name: "index_user_viewing_parties_on_viewing_party_id"
   end
 
-  create_table 'users', force: :cascade do |t|
-    t.string 'name'
-    t.string 'email'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
-  create_table 'viewing_parties', force: :cascade do |t|
-    t.date 'date'
-    t.integer 'duration'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.integer 'movie_id'
-    t.time 'start_time'
+  create_table "viewing_parties", force: :cascade do |t|
+    t.date "date"
+    t.integer "duration"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "movie_id"
+    t.time "start_time"
   end
 
-  add_foreign_key 'user_viewing_parties', 'users'
-  add_foreign_key 'user_viewing_parties', 'viewing_parties'
+  add_foreign_key "user_viewing_parties", "users"
+  add_foreign_key "user_viewing_parties", "viewing_parties"
 end
