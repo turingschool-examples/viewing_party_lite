@@ -87,7 +87,7 @@ RSpec.describe 'User Registration Page', type: :feature do
       click_button 'Create New User'
 
       expect(current_path).to eq('/register')
-      expect(page).to have_content('User was not created')
+      expect(page).to have_content('Email has already been taken')
       expect(User.count).to eq(1)
     end
   end
