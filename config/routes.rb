@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   get '/register', to: 'users#new', as: :new_user
 
+  get '/login', to: 'users#login_form', as: :users_login
+
+  post '/login', to: 'users#login_user'
+
   resources :users, only: %i[show index create] do
     scope module: 'users' do
       resources :discover, only: :index

@@ -23,5 +23,6 @@ RSpec.describe 'Landing Page' do
   it 'has navigation link' do
     visit root_path
     expect(page).to have_link('Back to Home', href: root_path)
+    expect(page).to have_link('Log In', href: users_login_path)
   end
 end

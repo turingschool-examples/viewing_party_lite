@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       redirect_to user_path(user)
     else
       flash[:error] = user.errors.full_messages
-      redirect_to new_user_path
+      render :new
     end
   end
 
@@ -18,10 +18,28 @@ class UsersController < ApplicationController
     set_user
   end
 
+  def login_form
+  end
+
+  def login_user
+    if User.exists?(email: params[:email])
+      user = User.find_by(email: params[:email])
+      if user.authenticate(params[:password])
+        redirect_to user_path(user)
+      else
+        flash[:error] = ['Password is incorrect']
+        render :login_form
+      end
+    else
+      flash[:error] = ['Email does not match any in system']
+      render :login_form
+    end
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:name, :email)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 
   def set_user
