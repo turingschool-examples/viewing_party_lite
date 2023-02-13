@@ -1,15 +1,15 @@
 class MovieFacade
   def self.top_rated_movies
     data = MovieService.top_rated_movies_response
-    data[:results].map do |movie_information|
-      Movie.new(movie_information)
+    data[:results].map do |movie_info|
+      Movie.new(movie_info)
     end
   end
 
   def self.search_results(search_params)
     data = MovieService.search_results_response(search_params)
-    data[:results].map do |movie_information|
-      Movie.new(movie_information)
+    data[:results].map do |movie_info|
+      Movie.new(movie_info)
     end.sort_by(&:vote_average).reverse
   end
 
@@ -20,8 +20,8 @@ class MovieFacade
 
   def self.find_cast(movie_id)
     data = MovieService.find_cast_response(movie_id)
-    data[:cast].map do |actor_information|
-      MovieActor.new(actor_information) if actor_information[:known_for_department] == 'Acting'
+    data[:cast].map do |actor_info|
+      MovieActor.new(actor_info) if actor_info[:known_for_department] == 'Acting'
     end.compact
   end
 
@@ -31,8 +31,8 @@ class MovieFacade
 
   def self.find_reviews(movie_id)
     data = MovieService.find_reviews_response(movie_id)
-    data[:results].map do |review_information|
-      MovieReview.new(review_information)
+    data[:results].map do |review_info|
+      MovieReview.new(review_info)
     end
   end
 end
