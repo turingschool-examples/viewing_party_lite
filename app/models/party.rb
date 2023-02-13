@@ -15,7 +15,6 @@ class Party < ApplicationRecord
 
   def create_user_parties(params)
     potential_guests = User.where.not(id: params[:user_id])
-
     UserParty.create!(user_id: params[:user_id], party_id: id, is_host: true)
 
     potential_guests.each do |guest|

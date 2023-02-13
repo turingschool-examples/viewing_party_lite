@@ -8,7 +8,7 @@ class Users::PartiesController < ApplicationController
   def create
     party = Party.new(party_params)
     if party.save
-      party.create_user_parties(user_party_params)
+      party.create_user_parties(params)
       redirect_to user_path(params[:user_id])
     else
       redirect_to new_user_movie_party_path(params[:user_id], params[:movie_id])
@@ -20,9 +20,5 @@ class Users::PartiesController < ApplicationController
 
   def party_params
     params.permit(:duration, :start_time, :movie_id)
-  end
-
-  def user_party_params
-    params.permit(:user_id, :party_id, :is_host)
   end
 end
