@@ -1,5 +1,11 @@
-<%= button_to "Create New User", register_path, method: :get %>
-<%= button_to "Login", login_path, method: :get %>
+<div id="buttons-row">
+  <div id="new-user-button">
+    <%= button_to "Create New User", register_path, method: :get %>
+  </div> 
+  <div id="login-button">
+    <%= button_to "Login", login_path, method: :get %>
+  </div> 
+</div> 
 <p>
 <div id="user-list-home">
   <h3>Current Users</h3>
