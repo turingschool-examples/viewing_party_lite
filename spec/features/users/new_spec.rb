@@ -48,6 +48,19 @@ RSpec.describe 'new page', type: :feature do
 
         expect(page).to have_content('Email has already been taken')
       end
+
+      it 'will not allow registration with unmatching passwords' do
+        visit register_path
+
+        fill_in(:name, with: 'Tony')
+        fill_in(:email, with: 'anth@test.com')
+        fill_in(:password, with: 'passrd123')
+        fill_in(:password_confirmation, with: 'passwo')
+
+        click_button 'Register'
+
+        expect(page).to have_content("Password confirmation doesn't match Password")
+      end
     end
   end
 end
