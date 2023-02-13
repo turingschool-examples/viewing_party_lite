@@ -23,16 +23,12 @@ class MovieFacade
   def self.find_cast(movie_id)
     data = MovieService.find_cast_response(movie_id)
     data[:cast].map do |actor_information|
-      if actor_information[:known_for_department] == "Acting"
-        MovieActor.new(actor_information)
-      end
+      MovieActor.new(actor_information) if actor_information[:known_for_department] == 'Acting'
     end.compact
   end
 
   def self.cast_by_popularity(movie_id)
-    find_cast(movie_id).sort_by do |actor|
-      actor.popularity
-    end.reverse[0..9]
+    find_cast(movie_id).sort_by(&:popularity).reverse[0..9]
   end
 
   def self.find_reviews(movie_id)

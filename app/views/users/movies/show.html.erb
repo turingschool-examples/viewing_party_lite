@@ -10,6 +10,7 @@
 </div>
 
 <h3>Movie Information</h3>
+<hr>  
 <div id="movie-information">
   <div id="movie-info-piece">
     Vote Average: <%= @movie.vote_average %><br>
@@ -28,8 +29,8 @@
 <hr>  
 
 <div id="summary">
-<h3>Summary</h3>
-<%= @movie.overview %>
+  <h3>Summary</h3>
+  <%= @movie.overview %>
 </div>
 
 <div id="cast-information">
@@ -49,9 +50,9 @@
   Total Review Count: <%= @reviews.count %><br>
   <% @reviews.each do |review|  %>
     <p>
-    Author: <%= review.author %><br>
-    Rating: <%= review.rating %><br>
-    Content: <%= review.content %><br>
+    <b>Author</b>: <%= review.author %><br>
+    <b>Rating</b>: <%= review.rating %><br>
+    <b>Content</b>: <%= review.content %><br>
     </p>
   <% end %>
 </div>
