@@ -46,7 +46,6 @@ RSpec.describe 'user registration page' do
       click_on 'Register new user'
 
       expect(current_path).to eq(register_path)
-      save_and_open_page
 
       expect(page).to have_content("Email has already been taken")
     end
