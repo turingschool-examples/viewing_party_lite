@@ -1,9 +1,37 @@
 class Movie
-  attr_reader :title, :vote_average, :id
+  attr_reader :id,
+              :title,
+              :poster,
+              :vote_average,
+              :parsed_runtime,
+              :runtime,
+              :genres,
+              :overview
 
-  def initialize(data)
-    @id = data[:id]
-    @title = data[:title]
-    @vote_average = data[:vote_average]
+  def initialize(movie_information)
+    @id = movie_information[:id]
+    @poster = movie_information[:poster_path]
+    @title = movie_information[:title]
+    @vote_average = movie_information[:vote_average]
+    @parsed_runtime = time_conversion(movie_information[:runtime])
+    @runtime = movie_information[:runtime]
+    @genres = list_genres(movie_information[:genres])
+    @overview = movie_information[:overview]
+  end
+
+  def time_conversion(minutes)
+    return '0 hour(s) 0 min' if minutes.nil?
+
+    hours = minutes / 60
+    rest = minutes % 60
+    "#{hours} hour(s) #{rest} min"
+  end
+
+  def list_genres(genres)
+    return [] if genres.nil?
+
+    genres.map do |genre|
+      genre[:name]
+    end
   end
 end

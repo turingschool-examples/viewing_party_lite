@@ -17,7 +17,7 @@ class MovieFacade
 
   def self.find_movie(id)
     data = MovieService.find_movie_response(id)
-    ShowMovie.new(data)
+    Movie.new(data)
   end
 
   def self.find_cast(movie_id)
