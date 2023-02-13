@@ -1,4 +1,4 @@
-class ShowMovie
+class Movie
   attr_reader :id,
               :title,
               :poster,
@@ -20,12 +20,16 @@ class ShowMovie
   end
 
   def time_conversion(minutes)
+    return '0 hour(s) 0 min' if minutes.nil?
+
     hours = minutes / 60
     rest = minutes % 60
-    "#{hours} hour(s) #{rest} min" 
+    "#{hours} hour(s) #{rest} min"
   end
 
   def list_genres(genres)
+    return [] if genres.nil?
+
     genres.map do |genre|
       genre[:name]
     end

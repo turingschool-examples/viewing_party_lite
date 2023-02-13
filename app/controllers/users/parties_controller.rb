@@ -6,31 +6,23 @@ class Users::PartiesController < ApplicationController
   end
 
   def create
-    potential_guests = User.where.not(id: params[:user_id])
     party = Party.new(party_params)
-
-    create_user_parties(party, potential_guests)
+    if party.save
+      party.create_user_parties(user_party_params)
+      redirect_to user_path(params[:user_id])
+    else
+      redirect_to new_user_movie_party_path(params[:user_id], params[:movie_id])
+      flash[:error] = 'Please fill in all fields accurately'
+    end
   end
 
   private
 
-  def create_user_parties(party, potential_guests)
-    if party.save
-      UserParty.create!(user_id: params[:user_id], party_id: party.id, is_host: true)
-
-      potential_guests.each do |guest|
-        if params["#{guest.id}".to_sym] == "1"
-          UserParty.create!(user_id: guest.id, party_id: party.id, is_host: false)
-        end
-      end
-      redirect_to user_path(params[:user_id])
-    else
-      redirect_to new_user_movie_party_path(params[:user_id], params[:movie_id])
-      flash[:error] = "Please fill in all fields accurately"
-    end
+  def party_params
+    params.permit(:duration, :start_time, :movie_id)
   end
 
-  def party_params
-    params.permit(:duration, :start_time, :movie_id)   
+  def user_party_params
+    params.permit(:user_id, :party_id, :is_host)
   end
 end

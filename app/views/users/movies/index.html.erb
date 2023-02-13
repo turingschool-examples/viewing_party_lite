@@ -8,7 +8,7 @@
   <table>
   <% @movies.each do |movie| %>
     <tr>
-      <td><b><%= link_to movie.title, user_movie_path(@user, movie.movie_id) %></b></td>
+      <td><b><%= link_to movie.title, user_movie_path(@user, movie.id) %></b></td>
       <td>Vote Avg: <%= movie.vote_average %><br></td>
     </tr>
   <% end %>

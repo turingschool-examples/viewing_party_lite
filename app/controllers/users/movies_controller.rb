@@ -1,11 +1,9 @@
 class Users::MoviesController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    if params[:query]
-      @movies = MovieFacade.search_results(params[:query])
-    else
-      @movies = MovieFacade.top_rated_movies
-    end
+    return @movies = MovieFacade.search_results(params[:query]) if params[:query]
+
+    @movies = MovieFacade.top_rated_movies
   end
 
   def show

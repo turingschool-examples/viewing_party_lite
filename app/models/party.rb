@@ -5,11 +5,21 @@ class Party < ApplicationRecord
   validates_presence_of :duration, :start_time
 
   def movie
-    MovieFacade.find_movie(self.movie_id)
+    MovieFacade.find_movie(movie_id)
   end
 
-  def host_of(party)
-    userparty = UserParty.where(party_id: party.id, is_host: true).first
+  def host
+    userparty = UserParty.where(party_id: id, is_host: true).first
     User.where(id: userparty.user_id)[0].name
+  end
+
+  def create_user_parties(params)
+    potential_guests = User.where.not(id: params[:user_id])
+
+    UserParty.create!(user_id: params[:user_id], party_id: id, is_host: true)
+
+    potential_guests.each do |guest|
+      UserParty.create!(user_id: guest.id, party_id: id, is_host: false) if params[guest.id.to_s.to_sym] == '1'
+    end
   end
 end
