@@ -14,6 +14,24 @@
  *= require_self
  */
 
+#buttons-row {
+  display: flex;
+  flex-wrap: wrap;
+  width: 40%;
+}
+
+#movie-search {
+  padding-top: 1rem;
+}
+
+#discover-page-button {
+  flex: 1;
+}
+
+#create-party-button {
+  flex: 1;
+}
+
 #movie-information {
   display: flex;
 }
@@ -26,7 +44,7 @@
   display: flex;
 }
 
-#user {
+#user { 
   flex: 1;
 }
 
@@ -42,6 +60,29 @@
   flex: 1;
 }
 
+table {
+  width: 60%;
+}
+
+td {
+  padding: .5rem;
+}
+
+#summary {
+  display: block;
+  text-align: left;
+}
+
+#review-information {
+  display: block;
+  text-align: left;
+}
+
+#cast-information {
+  display: block;
+  text-align: left;
+}
+
 #viewing-party-details {
   padding: 1rem;
   display: block;
@@ -53,11 +94,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
 html {
   background-color: #f0f0f0;
   color: #364047;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
+  margin: 10%;
 }
 
 img {

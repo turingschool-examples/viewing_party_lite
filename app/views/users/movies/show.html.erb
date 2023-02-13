@@ -1,11 +1,12 @@
 <h2><%= @movie.title %></h2>
 
-<div id="discover-page-button">
-  <%= button_to "Discover Page", user_discover_index_path(@user), method: :get %>
-</div>
-<p></p>
-<div id="create-party-button">
-  <%= button_to "Create Viewing Party", new_user_movie_party_path(@user, @movie.id), method: :get %>
+<div id="buttons-row">
+  <div id="discover-page-button">
+    <%= button_to "Discover Page", user_discover_index_path(@user), method: :get %>
+  </div>
+  <div id="create-party-button">
+    <%= button_to "Create Viewing Party", new_user_movie_party_path(@user, @movie.id), method: :get %>
+  </div>
 </div>
 
 <h3>Movie Information</h3>
@@ -17,27 +18,30 @@
     Runtime: <%= @movie.parsed_runtime %><br>
   </div>
   <div id="movie-info-piece">
-  Genres: 
+    Genres: 
     <% @movie.genres.each do |genre| %>
       <%= genre %> 
     <% end %>
   </div>
 </div>
+
 <hr>  
-  <h3>Summary</h3>
-  <%= @movie.overview %>
+
+<div id="summary">
+<h3>Summary</h3>
+<%= @movie.overview %>
+</div>
 
 <div id="cast-information">
   <h3>Cast Information</h3>
   <table> 
-    
     <% @actors.each do |actor|  %>
       <tr>
         <td><b><%= actor.name %></b>, as <%= actor.character %></td>
         <td>Popularity Rating: <%= actor.popularity.round(1) %></td>
       </tr>
     <% end %>
-</table>
+  </table>
 </div>
 
 <div id="review-information">

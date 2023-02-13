@@ -12,4 +12,6 @@ class Party < ApplicationRecord
     userparty = UserParty.where(party_id: party.id, is_host: true).first
     User.where(id: userparty.user_id)[0].name
   end
+
+  
 end
