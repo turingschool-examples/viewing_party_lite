@@ -11,7 +11,7 @@ RSpec.describe 'The landing page index', type: :feature do
       visit root_path
     end
     it 'displays the application title' do 
-      save_and_open_page
+
       expect(page).to have_content("Viewing Party")
     end
 
