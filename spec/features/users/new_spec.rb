@@ -15,7 +15,7 @@ RSpec.describe 'user registration page' do
 
       expect(page).to have_field('Name')
       expect(page).to have_field('Email')
-      expect(page).to have_button('Create New User')
+      expect(page).to have_button('Register new user')
     end
 
     it 'can be filled in and submitted' do
@@ -24,7 +24,7 @@ RSpec.describe 'user registration page' do
       fill_in('Password', with: 'password123')
       fill_in('Password confirmation', with: 'password123')
     
-      click_on 'Create New User'
+      click_on 'Register new user'
 
       expect(current_path).to eq(user_path(User.last.id))
       expect(page).to have_content('Jeff Goldblum')
@@ -34,12 +34,12 @@ RSpec.describe 'user registration page' do
     it 'returns an error if the email has an existing user' do
       fill_in('Name', with: 'Jeff Goldblum')
       fill_in('Email', with: 'JurassicSnark@gmail.com')
-      click_on 'Create New User'
+      click_on 'Register new user'
       visit register_path
 
       fill_in('Name', with: 'John Doe')
       fill_in('Email', with: 'JurassicSnark@gmail.com')
-      click_on 'Create New User'
+      click_on 'Register new user'
 
       expect(current_path).to eq(register_path)
       expect(page).to have_content('Cannot use existing email')
