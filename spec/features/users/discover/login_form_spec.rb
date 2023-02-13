@@ -30,6 +30,17 @@ RSpec.describe 'login page', type: :feature do
 
         expect(page).to have_content('Invalid email or password')
       end
+
+      it 'errors if wrong password' do
+        visit login_path
+
+        fill_in(:email, with: 'anth@test.com')
+        fill_in(:password, with: 'wrongpassword123')
+
+        click_button 'Login'
+
+        expect(page).to have_content('Invalid email or password')
+      end
     end
   end
 end
