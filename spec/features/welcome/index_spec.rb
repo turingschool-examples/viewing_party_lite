@@ -10,8 +10,9 @@ RSpec.describe 'The landing page index', type: :feature do
 
       visit root_path
     end
-    it 'displays the application title' do
-      expect(page).to have_content('Viewing Party')
+    it 'displays the application title' do 
+
+      expect(page).to have_content("Viewing Party")
     end
 
     it 'displays a button to create a new user' do
@@ -37,6 +38,32 @@ RSpec.describe 'The landing page index', type: :feature do
       click_on 'Home'
 
       expect(current_path).to eq('/')
+    end
+
+    it "can log in with valid credentials" do
+      click_on "Log In"
+
+      expect(current_path).to eq(login_path)
+
+      fill_in :email, with: @user1.email
+      fill_in :password, with: @user1.password
+
+      click_on "Log In"
+
+      expect(current_path).to eq(user_path(@user1))
+      expect(page).to have_content("Welcome, #{@user1.name}!")
+    end
+
+    it "cannot log in with bad credentials" do
+      visit login_path
+
+      fill_in :email, with: @user1.email
+      fill_in :password, with: "bad password"
+
+      click_on "Log In"
+
+      expect(current_path).to eq(login_path)
+      expect(page).to have_content("Sorry, your credentials are bad")
     end
   end
 end
