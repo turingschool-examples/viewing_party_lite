@@ -5,9 +5,13 @@ RSpec.describe 'Parties New Page', type: :feature do
     stub_request(:get, 'https://api.themoviedb.org/3/movie/51888?api_key')
       .to_return(status: 200, body: File.read('spec/fixtures/robot_chicken_response.json'), headers: {})
   end
-  let!(:user1) { User.create!(name: 'Anthony', email: 'anthony@gmail.com') }
-  let!(:user2) { User.create!(name: 'Thomas', email: 'thomas@gmail.com') }
-  let!(:user3) { User.create!(name: 'Jessica', email: 'jessica@gmail.com') }
+  
+  let!(:user1) { User.create!(name: 'Brian', email: 'brian@test.com', password: 'password123', password_confirmation: 'password123') }
+  let!(:user2) { User.create!(name: 'Peter', email: 'peter@test.com', password: 'password123', password_confirmation: 'password123') }
+  let!(:user3) { User.create!(name: 'Chris', email: 'chris@test.com', password: 'password123', password_confirmation: 'password123') }
+  let!(:user4) { User.create!(name: 'Meg', email: 'meg@test.com', password: 'password123', password_confirmation: 'password123') }
+  let!(:user5) { User.create!(name: 'Anth', email: 'anth@test.com', password: 'password123', password_confirmation: 'password123') }
+  let!(:user6) { User.create!(name: 'Thomas', email: 'thomas@test.com', password: 'password123', password_confirmation: 'password123') }
   let!(:movie1) { 51_888 }
   describe 'The basics of the page' do
     it 'has a title' do
