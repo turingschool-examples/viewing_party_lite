@@ -1,12 +1,12 @@
 class MovieService
   def self.conn
-    Faraday.new(url: "https://api.themoviedb.org") do |faraday|
-      faraday.params["api_key"] = ENV["movie_api_key"]
+    Faraday.new(url: 'https://api.themoviedb.org') do |faraday|
+      faraday.params['api_key'] = ENV['movie_api_key']
     end
   end
 
   def self.top_rated_movies_response
-    response = conn.get("3/movie/top_rated?language=en-US&limit=20")
+    response = conn.get('3/movie/top_rated?language=en-US&limit=20')
     parse(response)
   end
 
@@ -21,7 +21,7 @@ class MovieService
   end
 
   def self.find_cast_response(movie_id)
-    response = conn.get("3/movie/#{movie_id}/credits")    
+    response = conn.get("3/movie/#{movie_id}/credits")
     parse(response)
   end
 
@@ -33,4 +33,6 @@ class MovieService
   def self.parse(response)
     JSON.parse(response.body, symbolize_names: true)
   end
+
+  private_class_method :conn, :parse
 end

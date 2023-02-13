@@ -6,21 +6,9 @@ class Users::PartiesController < ApplicationController
   end
 
   def create
-    potential_guests = User.where.not(id: params[:user_id])
     party = Party.new(party_params)
-
-    create_user_parties(party, potential_guests)
-  end
-
-  private
-
-  def create_user_parties(party, potential_guests)
     if party.save
-      UserParty.create!(user_id: params[:user_id], party_id: party.id, is_host: true)
-
-      potential_guests.each do |guest|
-        UserParty.create!(user_id: guest.id, party_id: party.id, is_host: false) if params[guest.id.to_s.to_sym] == '1'
-      end
+      party.create_user_parties(user_party_params)
       redirect_to user_path(params[:user_id])
     else
       redirect_to new_user_movie_party_path(params[:user_id], params[:movie_id])
@@ -28,7 +16,13 @@ class Users::PartiesController < ApplicationController
     end
   end
 
+  private
+
   def party_params
     params.permit(:duration, :start_time, :movie_id)
+  end
+
+  def user_party_params
+    params.permit(:user_id, :party_id, :is_host)
   end
 end

@@ -29,7 +29,7 @@ RSpec.describe Party, type: :model do
     end
 
     it '#movie finds the movie of the party' do
-      expect(party1.host_of(party1)).to eq('Anthony')
+      expect(party1.host).to eq('Anthony')
     end
   end
 end

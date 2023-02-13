@@ -1,7 +1,7 @@
   <% party_list.each do |party| %>
     <div id="a-party">
       <h3><%= party.movie.title %> Party</h3>
-      Host: <%= party.host_of(party) %><br>
+      Host: <%= party.host %><br>
       <p></p>
       Attendees: 
       <% party.users.each do |user| %>
