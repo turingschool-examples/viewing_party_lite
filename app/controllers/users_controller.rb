@@ -19,13 +19,28 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
+   user = User.new(user_params)
     if user.save(user_params)
       flash.notice = 'User has been created!'
       redirect_to user_path(user)
     else
-      flash.alert = 'Cannot use existing email'
+      flash[:error] = user.errors.full_messages.to_sentence
       redirect_to register_path
+    end
+  end
+
+  def login_form
+    render :login_form 
+  end
+
+  def login
+    user = User.find_by(email: params[:email])
+    if user.authenticate(params[:password])
+      flash[:notice] = "Welcome, #{user.email}!"
+      redirect_to user_path(user)
+    else
+      flash[:notice] = "Sorry, your credientials are bad."
+      render :login_form
     end
   end
 
