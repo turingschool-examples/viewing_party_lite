@@ -12,7 +12,7 @@ RSpec.describe "index page", type: :feature do
     it 'The title of the application' do
       visit root_path
 
-      expect(page).to have_content("Viewing Party")
+      expect(page).to have_content('Viewing Party')
     end
 
     it 'has a link to landing page' do
