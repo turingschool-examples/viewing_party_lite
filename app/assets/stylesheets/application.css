@@ -58,6 +58,16 @@ a {
   font-weight: 400;
 }
 
+a.navigation {
+  margin: 0 1rem;
+  color: #364047;
+  box-shadow: 0 -0.2em 0 #2e75b390 inset;
+  text-decoration: none;
+  text-transform: lowercase;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
 a:hover {
   text-decoration: none;
   transition: 1s;
