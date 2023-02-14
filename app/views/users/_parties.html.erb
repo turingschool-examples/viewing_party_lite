@@ -14,7 +14,7 @@
       <p>
       <%= link_to party.movie.title, user_movie_path(@user, party.movie_id) %><br>
       <p>
-      <img src="https://image.tmdb.org/t/p/w500<%= party.movie.poster %>" ><br>
+      <img src="https://image.tmdb.org/t/p/w500<%= party.movie.poster %>" class="poster"><br>
       <p></p>
       Start Date: <%= party.start_time.strftime("%A, %B %d, %Y")%><br>
       Start Time: <%= party.start_time.strftime('%I:%M %P') %><br>

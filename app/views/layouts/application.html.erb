@@ -14,7 +14,9 @@
       <b><%= link_to "Home", root_path %></b>
     </div>
     <center>
-    <h1>Viewing Party</h1>
+    <% unless current_page?(root_path) %>
+      <h1>Viewing Party</h1>
+    <% end %>
       <div id="error-messages">
         <% flash.each do |_type, message| %>
           <%= message %><br>
