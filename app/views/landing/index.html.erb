@@ -1,12 +1,18 @@
-<h3><%= button_to 'Create a New User', register_path, method: :get %></h3>
-<p><%= link_to "I already have an account", login_path %><p>
+<% if session[:user_id] %>
+  <%= link_to "Log Out", logout_path %>
+
   <div id='users'>
     <div class="sub-header">
       <h4>Existing Users</h4>
     </div>
-  <div class="content">
+    <div class="content">
       <% @users.each do |user| %>
         <center><p><%= link_to "#{user.name}", user_path(user) %><p></center>
       <% end %>
+    </div>
   </div>
-</div>
+
+<% else %>
+  <h3><%= button_to 'Create a New User', register_path, method: :get %></h3>
+  <p><%= link_to "I already have an account", login_path %></p>
+<% end %>  

@@ -2,11 +2,16 @@
 
 class UsersController < ApplicationController
   def show
-    @user = User.find(params[:id])
-    @viewing_parties = @user.viewing_parties
-    @parties_info = []
-    @viewing_parties.each do |party|
-      @parties_info << party.collect_display_data
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+      @viewing_parties = @user.viewing_parties
+      @parties_info = []
+      @viewing_parties.each do |party|
+        @parties_info << party.collect_display_data
+      end
+    else
+      flash[:alert] = "You must be logged in or registered to access dashboard"
+      redirect_to '/'
     end
   end
 
@@ -21,6 +26,7 @@ class UsersController < ApplicationController
   def create
    user = User.new(user_params)
     if user.save(user_params)
+      session[:user_id] = user.id
       flash.notice = 'User has been created!'
       redirect_to user_path(user)
     else
@@ -35,13 +41,19 @@ class UsersController < ApplicationController
 
   def login
     user = User.find_by(email: params[:email])
-    if user.authenticate(params[:password])
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
       flash[:notice] = "Welcome, #{user.email}!"
       redirect_to user_path(user)
     else
       flash[:notice] = "Sorry, your credientials are bad."
       render :login_form
     end
+  end
+
+  def logout
+    session.delete(:user_id)
+    redirect_to root_path
   end
 
   private
