@@ -5,13 +5,14 @@ RSpec.describe 'Viewing Party New' do
   let(:user) { users.first }
 
   before :each do
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     json_response = File.read('spec/fixtures/the_godfather.json')
     stub_request(:get, "https://api.themoviedb.org/3/movie/238?api_key=#{ENV['movie_api_key']}&language=en-US")
       .to_return(status: 200, body: json_response)
   end
 
   it 'can create a new viewing party' do
-    visit new_user_movie_viewing_party_path(user, 238)
+    visit new_movie_viewing_party_path(238)
     start_time = Time.now
 
     expect(page).to have_field('viewing_party[duration]', with: 175)
@@ -24,7 +25,7 @@ RSpec.describe 'Viewing Party New' do
 
     click_button('Create Viewing Party')
 
-    expect(current_path).to eq(user_path(user))
+    expect(current_path).to eq(user_path)
     viewing_party = ViewingParty.first
 
     expect(viewing_party.date).to eq(Date.today)
@@ -37,7 +38,7 @@ RSpec.describe 'Viewing Party New' do
   end
 
   it 'displays the information on the users page' do
-    visit new_user_movie_viewing_party_path(user, 238)
+    visit new_movie_viewing_party_path(238)
     start_time = Time.now
 
     fill_in('viewing_party[date]', with: Date.today)
@@ -62,7 +63,7 @@ RSpec.describe 'Viewing Party New' do
   end
 
   it 'will not create if runtime is longer than duration' do
-    visit new_user_movie_viewing_party_path(user, 238)
+    visit new_movie_viewing_party_path(238)
     start_time = Time.now
 
     fill_in('viewing_party[duration]', with: 100)
@@ -74,13 +75,14 @@ RSpec.describe 'Viewing Party New' do
 
     click_button('Create Viewing Party')
 
-    expect(current_path).to eq(new_user_movie_viewing_party_path(user, 238))
+    expect(current_path).to eq(new_movie_viewing_party_path(238))
     expect(page).to have_content('Duration must be greater than or equal to movie runtime')
   end
 
   describe 'sad paths' do
     it 'wont go to the next page if no fields are filled in' do
-      visit new_user_movie_viewing_party_path(user, 238)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+      visit new_movie_viewing_party_path(238)
       start_time = Time.now
 
       click_button('Create Viewing Party')
@@ -89,7 +91,8 @@ RSpec.describe 'Viewing Party New' do
     end
 
     it 'wont go to the next page if no date is selected' do
-      visit new_user_movie_viewing_party_path(user, 238)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+      visit new_movie_viewing_party_path(238)
       start_time = Time.now
 
       fill_in('viewing_party[start_time]', with: start_time)
@@ -101,7 +104,8 @@ RSpec.describe 'Viewing Party New' do
     end
 
     it 'wont go to the next page if no start time is selected' do
-      visit new_user_movie_viewing_party_path(user, 238)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+      visit new_movie_viewing_party_path(238)
       start_time = Time.now
 
       fill_in('viewing_party[date]', with: Date.today)

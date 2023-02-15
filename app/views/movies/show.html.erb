@@ -2,8 +2,8 @@
   <div class='page-header'>
     <div class='text-center'>
       <h3><%= @movie.title %></h3>
-      <%= button_to 'Discover Page', user_discover_index_path(@user), method: :get, class: 'btn-default' %>
-      <%= button_to "Create Viewing Party for #{@movie.title}", new_user_movie_viewing_party_path(@user, @movie.id), method: :get, class: 'btn-default' %>
+      <%= button_to 'Discover Page', discover_index_path, method: :get, class: 'btn-default' %>
+      <%= button_to "Create Viewing Party for #{@movie.title}", new_movie_viewing_party_path(@movie.id), method: :get, class: 'btn-default' %>
     </div>
 
     <div class='row'>

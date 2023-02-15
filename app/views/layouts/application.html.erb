@@ -20,8 +20,12 @@
     <% end %>
     <div class="jumbotron">
       <nav>
-        <%= link_to 'Back to Home', root_path %>
-        <%= link_to 'Log In', users_login_path %>
+        <%= link_to 'Back to Home', root_path %> |
+        <% unless current_user %>
+          <%= link_to 'Log In', users_login_path %>
+        <% else %>
+          <%= link_to 'Log Out', logout_path, method: :delete %>
+        <% end %>
       </nav>
       <h1 class='text-center'>Viewing Party</h1>
     </div>

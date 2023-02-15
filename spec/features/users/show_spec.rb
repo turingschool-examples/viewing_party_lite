@@ -16,21 +16,24 @@ RSpec.describe 'Users Show' do
     let!(:users) { create_list(:user, 10) }
     let!(:viewing_parties) { create_list(:viewing_party, 3) }
     let!(:user_viewing_parties) { create_list(:user_viewing_party, 20) }
-    let(:user) { users.first }
+    let!(:user) { create(:user, password: 'testpass123', password_confirmation: 'testpass123') }
 
     it 'Shows the user name' do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
       visit user_path(user)
 
       expect(page).to have_content(user.name)
     end
 
     it 'it has a button to discover movies' do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
       visit user_path(user)
 
       expect(page).to have_button('Discover Movies')
     end
 
     it 'has a list of hosted parties' do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
       visit user_path(user)
 
       within '#hosted_parties' do
@@ -55,7 +58,7 @@ RSpec.describe 'Users Show' do
     end
 
     it 'has a list of invited parties' do
-      user = users.second
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
       visit user_path(user)
 
       within '#invited_parties' do
@@ -76,6 +79,12 @@ RSpec.describe 'Users Show' do
           end
         end
       end
+    end
+
+    it 'will not visit the page if user is not logged in' do
+      visit user_path(user)
+
+      expect(page).to have_content('User must be logged in')
     end
   end
 end

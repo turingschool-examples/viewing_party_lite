@@ -3,9 +3,9 @@
     <div class='page-header'>
       <h3>Discover Movies</h3>
 
-      <%= button_to 'Find Top Rated Movies', user_movies_path(@user), params: { q: 'top rated' }, method: :get, class: 'btn-default' %>
+      <%= button_to 'Find Top Rated Movies', movies_path, params: { q: 'top rated' }, method: :get, class: 'btn-default' %>
     </div>
-    <%= form_with url: user_movies_path(@user), method: :get, local: true do |form| %>
+    <%= form_with url: movies_path, method: :get, local: true do |form| %>
       <%= form.text_field :title %>
       <%= form.submit "Find Movies" %>
     <% end %>
