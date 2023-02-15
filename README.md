@@ -1,6 +1,6 @@
 # Viewing Party
 
-This is the base repo for the [Viewing Party Lite project](https://backend.turing.edu/module3/projects/viewing_party_lite) used for Turing's Backend Module 3.
+![](app/assets/images/hero.jpg)
 
 ### About this Project
 
@@ -11,12 +11,10 @@ Viewing Party Lite is an application in which users can explore movie options an
 1. Fork and Clone the repo
 2. Install gem packages: `bundle install`
 3. Setup the database: `rails db:create`
-
+4. Run `figaro install`
+5. Add [moviedb api auth key](https://developers.themoviedb.org/)
 
 ## Versions
+- Ruby 2.7.4
+- Rails 5.2.8
 
-- Ruby 2.7.2
-
-- Rails 5.2.6
-
-Example wireframes to follow are found [here](https://backend.turing.edu/module3/projects/viewing_party_lite/wireframes)
