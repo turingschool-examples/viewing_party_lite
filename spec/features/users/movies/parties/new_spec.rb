@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Parties New Page', type: :feature do
+RSpec.describe 'Create A Viewing Party', type: :feature do
   before :each do
     stub_request(:get, 'https://api.themoviedb.org/3/movie/51888?api_key')
       .to_return(status: 200, body: File.read('spec/fixtures/robot_chicken_response.json'), headers: {})
@@ -13,9 +13,11 @@ RSpec.describe 'Parties New Page', type: :feature do
   let!(:user5) { User.create!(name: 'Anth', email: 'anth@test.com', password: 'password123', password_confirmation: 'password123') }
   let!(:user6) { User.create!(name: 'Thomas', email: 'thomas@test.com', password: 'password123', password_confirmation: 'password123') }
   let!(:movie1) { 51_888 }
-  describe 'The basics of the page' do
+
+  describe 'The Party New Page' do
     it 'has a title' do
-      visit new_user_movie_party_path(user1, movie1)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
+      visit new_movie_party_path(movie1)
 
       expect(page).to have_content('Robot Chicken: Star Wars Episode III')
     end
@@ -23,7 +25,8 @@ RSpec.describe 'Parties New Page', type: :feature do
 
   describe 'create viewing party form' do
     it 'can create viewing parties' do
-      visit new_user_movie_party_path(user1, movie1)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
+      visit new_movie_party_path(movie1)
 
       expect(page).to have_field(:duration)
       expect(page).to have_field(:date)
@@ -43,7 +46,8 @@ RSpec.describe 'Parties New Page', type: :feature do
 
   describe 'sad path create viewing party form' do
     it 'can create viewing parties' do
-      visit new_user_movie_party_path(user1, movie1)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
+      visit new_movie_party_path(movie1)
 
       click_button 'Create Party'
 

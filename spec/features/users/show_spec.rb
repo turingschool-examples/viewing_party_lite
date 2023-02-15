@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'The User Dashboard (Show Page)', type: :feature do
+RSpec.describe 'The User Dashboard', type: :feature do
   before :each do
     stub_request(:get, "https://api.themoviedb.org/3/movie/1/credits?api_key").
     to_return(status: 200, body: File.read("spec/fixtures/robot_chicken_credits_response.json"), headers: {})
@@ -23,8 +23,9 @@ RSpec.describe 'The User Dashboard (Show Page)', type: :feature do
   let!(:user_party1) { UserParty.create!(user: user1, party: party1, is_host: true) } 
   let!(:user_party2) { UserParty.create!(user: user2, party: party1, is_host: false) } 
 
-  describe 'the basics' do
+  describe 'show page' do
     it 'has the users name in the title' do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
       visit user_path(user1)
 
       expect(page).to have_content("#{user1.name}'s Dashboard")      
@@ -32,17 +33,19 @@ RSpec.describe 'The User Dashboard (Show Page)', type: :feature do
     end
     
     it 'has a button to discover movies' do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
       visit user_path(user1)
 
       expect(page).to have_button("Discover Movies")
     end
     
     it 'will take you to discover movies page on button click' do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
       visit user_path(user1)
 
       click_button("Discover Movies")
 
-      expect(current_path).to eq(user_discover_index_path(user1))
+      expect(current_path).to eq(discover_index_path)
 
       expect(page).to have_content("#{user1.name}'s Discover Movies Page")
     end
@@ -50,6 +53,8 @@ RSpec.describe 'The User Dashboard (Show Page)', type: :feature do
 
   describe 'the viewing parties section' do
     it 'lists the parties the user is invited to' do
+
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
       visit user_path(user1)
 
       within "#viewing-parties" do

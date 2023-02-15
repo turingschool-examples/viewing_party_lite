@@ -11,10 +11,11 @@
 
   <body>
     <div id="navigation">
-      <b><%= link_to "Home", root_path %></b>
+      <%= link_to "Home", root_path, class: "navigation" %>
+      <%= link_to "Dashboard", dashboard_path, class: "navigation" %>
     </div>
     <center>
-    <h1>Viewing Party</h1>
+      <h1>Viewing Party</h1>
       <div id="error-messages">
         <% flash.each do |_type, message| %>
           <%= message %><br>

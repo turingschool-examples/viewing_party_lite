@@ -7,12 +7,13 @@ RSpec.describe "index page", type: :feature do
   let!(:user4) { User.create!(name: 'Meg', email: 'meg@test.com', password: 'password123', password_confirmation: 'password123') }
   let!(:user5) { User.create!(name: 'Anth', email: 'anth@test.com', password: 'password123', password_confirmation: 'password123') }
   let!(:user6) { User.create!(name: 'Thomas', email: 'thomas@test.com', password: 'password123', password_confirmation: 'password123') }
-
+  
   describe 'Page Defaults' do
     it 'The title of the application' do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
       visit root_path
 
-      expect(page).to have_content("Viewing Party")
+      expect(page).to have_content('Viewing Party')
     end
 
     it 'has a link to landing page' do
@@ -42,8 +43,9 @@ RSpec.describe "index page", type: :feature do
     end
   end
 
-  describe 'the existing users area' do
+  describe 'as a logged-in user the existing users area' do
     it 'has a list of existing users names' do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
       visit root_path
 
       within("#user-list-home") do
@@ -52,22 +54,6 @@ RSpec.describe "index page", type: :feature do
         expect(page).to have_content(user3.email)
         expect(page).to have_content(user4.email)
         expect(page).to have_content(user5.email)
-      end
-    end
-
-    it 'has a link to each users show page' do
-      visit root_path
-      
-      within("#user-#{user1.id}") do
-        expect(page).to have_link("#{user1.email}", href: user_path(user1))
-      end
-
-      within("#user-#{user2.id}") do
-        expect(page).to have_link("#{user2.email}", href: user_path(user2))
-      end
-
-      within("#user-#{user3.id}") do
-        expect(page).to have_link("#{user3.email}", href: user_path(user3))
       end
     end
   end

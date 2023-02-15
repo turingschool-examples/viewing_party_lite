@@ -13,7 +13,8 @@ RSpec.describe 'The Movie Results Index', type: :feature do
       stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key&language=en-US&limit=20").
       to_return(status: 200, body: File.read('spec/fixtures/top_rated_movies_response.json'), headers: {})
 
-      visit user_movies_path(user1)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
+      visit movies_path
       
       expect(page).to have_button("Discover Page")
 
@@ -21,7 +22,7 @@ RSpec.describe 'The Movie Results Index', type: :feature do
         click_button("Discover Page")
       end
 
-      expect(current_path).to eq(user_discover_index_path(user1))
+      expect(current_path).to eq(discover_index_path)
     end
   end
 
@@ -30,11 +31,12 @@ RSpec.describe 'The Movie Results Index', type: :feature do
       stub_request(:get, "https://api.themoviedb.org/3/movie/top_rated?api_key&language=en-US&limit=20").
       to_return(status: 200, body: File.read('spec/fixtures/top_rated_movies_response.json'), headers: {})
 
-      visit user_discover_index_path(user1)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
+      visit discover_index_path
 
       click_button("Top Rated Movies")
 
-      expect(current_path).to eq(user_movies_path(user1))
+      expect(current_path).to eq(movies_path)
 
     end
 
@@ -42,12 +44,13 @@ RSpec.describe 'The Movie Results Index', type: :feature do
       stub_request(:get, "https://api.themoviedb.org/3/search/movie?api_key&query=star%20wars").
       to_return(status: 200, body: File.read('spec/fixtures/search_for_starwars.json'), headers: {})
 
-      visit user_discover_index_path(user1)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
+      visit discover_index_path
 
       fill_in :query, with: "star wars"
       click_button("Search")
 
-      expect(current_path).to eq(user_movies_path(user1))
+      expect(current_path).to eq(movies_path)
 
       within("#display-movies") do
         expect(page).to have_content("Star Wars: The Rise of Skywalker")

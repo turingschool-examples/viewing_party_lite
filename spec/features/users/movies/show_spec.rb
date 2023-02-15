@@ -22,30 +22,33 @@ RSpec.describe 'The Movie Details (Show) Page', type: :feature do
 
   describe 'the page basics' do
     it 'has a button to return to Discover Page' do
-      visit user_movie_path(user1, movie1)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
+      visit movie_path(movie1)
 
       expect(page).to have_button("Discover Page")
 
       click_button("Discover Page")
 
-      expect(current_path).to eq(user_discover_index_path(user1))
+      expect(current_path).to eq(discover_index_path)
 
       expect(page).to have_content("#{user1.name}'s Discover Movies Page")
     end
 
     it 'has a button to create a viewing party' do
-      visit user_movie_path(user1, movie1)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
+      visit movie_path(movie1)
 
       expect(page).to have_button("Create Viewing Party")
       click_button "Create Viewing Party"
 
-      expect(current_path).to eq(new_user_movie_party_path(user1, movie1))
+      expect(current_path).to eq(new_movie_party_path(movie1))
     end
   end
 
   describe 'The Movie Information' do
     it 'will list the movie title, vote-average, and run-time information' do
-      visit user_movie_path(user1, movie1)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
+      visit movie_path(movie1)
 
       expect(page).to have_content("Robot Chicken: Star Wars Episode III")
       expect(page).to have_content(7.4)
@@ -55,7 +58,8 @@ RSpec.describe 'The Movie Details (Show) Page', type: :feature do
     end
 
     it 'lists the thespians for a given movie' do
-      visit user_movie_path(user1, movie1)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
+      visit movie_path(movie1)
 
       within("#cast-information") do
         expect(page).to have_content("Cast Information")
@@ -73,7 +77,8 @@ RSpec.describe 'The Movie Details (Show) Page', type: :feature do
     end
 
     it "lists the review information for the movie" do
-      visit user_movie_path(user1, movie1)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
+      visit movie_path(movie1)
 
       within("#review-information") do
         expect(page).to have_content("Reviews")
