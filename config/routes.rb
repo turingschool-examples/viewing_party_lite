@@ -4,16 +4,18 @@ Rails.application.routes.draw do
 
   get '/register', to: 'users#new', as: :new_user
 
-  get '/login', to: 'users#login_form', as: :users_login
+  get '/dashboard', to: 'users#show', as: :user
 
-  post '/login', to: 'users#login_user'
+  get '/login', to: 'sessions#new', as: :users_login
 
-  resources :users, only: %i[show index create] do
-    scope module: 'users' do
-      resources :discover, only: :index
-      resources :movies, only: %i[index show] do
-        resources :viewing_parties, only: %i[new create]
-      end
-    end
+  delete '/logout', to: 'sessions#delete', as: :logout
+
+  post '/login', to: 'sessions#create'
+
+  resources :users, only: [:index, :create]
+
+  resources :discover, only: :index
+  resources :movies, only: %i[index show] do
+    resources :viewing_parties, only: %i[new create]
   end
 end

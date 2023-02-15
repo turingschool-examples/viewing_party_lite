@@ -5,7 +5,6 @@ class User < ApplicationRecord
   validates_presence_of :name, :email, :password
   validates :email, uniqueness: { case_sensitive: false, message: 'User already exists with given email' }
   validates :email, email: true
-  validates_confirmation_of :password
 
   has_secure_password
 

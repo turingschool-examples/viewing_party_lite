@@ -3,13 +3,13 @@
     <div class='text-center'>
       <h3>Create a Movie Party for <%= @movie.title %></h3>
 
-      <%= button_to 'Discover Page', user_discover_index_path(@user), method: :get, class: 'btn-default' %>
+      <%= button_to 'Discover Page', discover_index_path, method: :get, class: 'btn-default' %>
 
       <h3>Viewing Party Details</h3>
     </div>
   </div>
   Movie Title: <%= @movie.title %>
-  <%= form_with model: [@user, :movie, @viewing_party], local: true do |form| %>
+  <%= form_with model: [:movie, @viewing_party], local: true do |form| %>
     <div class='form-group'>
       <%= form.label :duration, 'Duration of Party:' %>
       <%= form.number_field :duration, value: @movie.runtime, min: @movie.runtime, class: 'form-control' %>

@@ -1,11 +1,11 @@
 <div class='container'>
   <div class='text-center'>
     <div class='page-header'>
-      <%= button_to 'Discover Page', user_discover_index_path(@user), method: :get, class: 'btn-default' %>
+      <%= button_to 'Discover Page', discover_index_path, method: :get, class: 'btn-default' %>
     </div>
     <% @movies.each do |movie| %>
       <div id="movie_<%= movie.id %>">
-        <%= link_to "#{movie.title}", user_movie_path(@user.id, movie.id), class: 'col-sm-6' %>
+        <%= link_to "#{movie.title}", movie_path(movie.id), class: 'col-sm-6' %>
         <div class='col-sm-6'>Vote Average: <%= movie.vote_average %></div>
       </div>
     <% end %>
