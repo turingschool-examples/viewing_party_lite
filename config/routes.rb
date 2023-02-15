@@ -9,10 +9,9 @@ Rails.application.routes.draw do
   get "/logout", to: "users#logout_user"
   get "/dashboard", to: "users#show"
 
-  resources :users, only: [:show, :create] do
-    resources :discover, only: [:index], controller: "users/discover"
-    resources :movies, only: [:index, :show], controller: "users/movies" do
-      resources :parties, only: [:new, :create], controller: "users/parties"
-    end
+  resources :discover, only: [:index], controller: "users/discover"
+  resources :movies, only: [:index, :show], controller: "users/movies" do
+    resources :parties, only: [:new, :create], controller: "users/parties"
   end
+  resources :users, only: [:show, :create]
 end

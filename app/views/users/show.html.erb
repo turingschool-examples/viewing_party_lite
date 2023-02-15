@@ -1,18 +1,18 @@
-<h2><%= "#{@user.name}" %>'s Dashboard</h2>
+<h2><%= "#{current_user.name}" %>'s Dashboard</h2>
 
-<%= button_to "Discover Movies", user_discover_index_path(@user), method: :get %>
+<%= button_to "Discover Movies", discover_index_path, method: :get %>
 
 <div id="viewing-parties">
-  <% if @user.invited_parties.any? %>
+  <% if current_user.invited_parties.any? %>
     <h2>Viewing Parties I'm Invited To</h2>
     <div id="invited-parties">
-      <%= render partial: 'parties', :locals => { party_list: @user.invited_parties } %>
+      <%= render partial: 'parties', :locals => { party_list: current_user.invited_parties } %>
     </div>
   <% end %>
-  <% if @user.hosted_parties.any? %>
+  <% if current_user.hosted_parties.any? %>
     <h2>Viewing Parties I'm Hosting</h2>
     <div id="hosted-parties">
-      <%= render partial: 'parties', :locals => { party_list: @user.hosted_parties } %>
+      <%= render partial: 'parties', :locals => { party_list: current_user.hosted_parties } %>
     </div>
   <% end %>
 </div>

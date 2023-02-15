@@ -7,7 +7,7 @@
     <td>Movie Title</td>
     <td><%= @movie.title %></td>
   </tr>
-  <%= form_with url: user_movie_parties_path(@user, @movie.id), method: :post, local: true do |f| %>
+  <%= form_with url: movie_parties_path(@movie.id), method: :post, local: true do |f| %>
   <tr>
     <td><%= f.label :duration, "Duration" %></td>
     <td><%= f.number_field :duration, value: @movie.runtime, min: @movie.runtime %></td>

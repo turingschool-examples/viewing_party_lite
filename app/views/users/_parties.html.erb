@@ -5,14 +5,14 @@
       <p></p>
       Attendees: 
       <% party.users.each do |user| %>
-        <% if user == @user %> 
+        <% if user == current_user %> 
           <b><%= user.name  %></b>
         <% else %>
           <%= user.name  %>  
         <% end %>
       <% end %>
       <p>
-      <%= link_to party.movie.title, user_movie_path(@user, party.movie_id) %><br>
+      <%= link_to party.movie.title, movie_path(party.movie_id) %><br>
       <p>
       <img src="https://image.tmdb.org/t/p/w500<%= party.movie.poster %>" class="poster"><br>
       <p></p>

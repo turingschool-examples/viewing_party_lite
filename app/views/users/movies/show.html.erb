@@ -2,10 +2,10 @@
 
 <div id="buttons-row">
   <div id="discover-page-button">
-    <%= button_to "Discover Page", user_discover_index_path(@user), method: :get %>
+    <%= button_to "Discover Page", discover_index_path, method: :get %>
   </div>
   <div id="create-party-button">
-    <%= button_to "Create Viewing Party", new_user_movie_party_path(@user, @movie.id), method: :get %>
+    <%= button_to "Create Viewing Party", new_movie_party_path(@movie.id), method: :get %>
   </div>
 </div>
 
