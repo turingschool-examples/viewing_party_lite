@@ -1,0 +1,363 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=<API Key>&page=1&query=Wayne
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 17 Feb 2023 01:07:56 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - HIT
+      X-Memc-Key:
+      - d14916524d4ed2cf74734edade1c04c2c15c00b0
+      X-Memc-Age:
+      - '21185'
+      X-Memc-Expires:
+      - '415'
+      Etag:
+      - W/"1150f09fab452a343255372b1991d66e"
+      Vary:
+      - Accept-Encoding,Accept-Encoding,Accept-Encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 16d72e0791ff01fc4470d27fc024527a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - _2b9NApdGYZrG5UACHPuRnz0sIVT6jNX3h2ypYtapLZJ_n17_K1KAg==
+    body:
+      encoding: UTF-8
+      string: '{"page":1,"results":[{"adult":false,"backdrop_path":"/aNv2y7O9CiVysW2fVAFANuchYsg.jpg","genre_ids":[99],"id":535222,"original_language":"en","original_title":"Wayne","overview":"Wayne
+        tells the exhilarating story of 1987 World Motorcycle Grand Prix Champion
+        Wayne Gardner''s triumphant, improbable journey from a 5-dollar dirt bike
+        to the international summit of his sport.","popularity":1.841,"poster_path":"/asq5fP7bKhfuTynhsmUdgs0PvJy.jpg","release_date":"2018-09-06","title":"Wayne","video":false,"vote_average":6.0,"vote_count":4},{"adult":false,"backdrop_path":null,"genre_ids":[80],"id":392468,"original_language":"en","original_title":"Wayne","overview":"Shadowed
+        by a lifetime of brutal mistreatment, Wayne has a tendency to violently lash
+        out when provoked. Recently released from prison, he has taken up residence
+        in the bowels of a dilapidated theatre where he works the night shift as a
+        janitor. With the help of his do-gooder social worker, Wayne is committed
+        to controlling his temper, but when a gang of criminals push him too far,
+        he chooses instead to utilize it.","popularity":0.875,"poster_path":null,"release_date":"2009-06-03","title":"Wayne","video":false,"vote_average":7.0,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":649175,"original_language":"en","original_title":"Wayne","overview":"After
+        50 years of marriage, Wayne, an octogenarian with Alzheimer''s, seeks a forbidden
+        love from his youth.","popularity":0.632,"poster_path":"/zX3blURaIze8gtAkp3Uvgr9xwry.jpg","release_date":"2015-06-21","title":"Wayne","video":false,"vote_average":0.0,"vote_count":0},{"adult":false,"backdrop_path":"/1P0vQoZYoMG1LvtHKgLl6pV2XQL.jpg","genre_ids":[99],"id":653831,"original_language":"fr","original_title":"John
+        Wayne - L''Amérique à tout prix","overview":"This is the story of a man who
+        climbed the Hollywood ladder, one rung at a time, until he reached the top
+        and became the most popular American actor of his era.","popularity":1.613,"poster_path":"/oTwOCKk8sXaJQDNy0uqS1klkBfT.jpg","release_date":"2019-12-08","title":"John
+        Wayne - America at All Costs","video":false,"vote_average":7.0,"vote_count":5},{"adult":false,"backdrop_path":"/9ZDwUvhY5gTRc1xDw0RxGdi3zbQ.jpg","genre_ids":[35,10402],"id":8873,"original_language":"en","original_title":"Wayne''s
+        World 2","overview":"A message from Jim Morrison in a dream prompts cable
+        access TV stars Wayne and Garth to put on a rock concert, \"Waynestock,\"
+        with Aerosmith as headliners. But amid the preparations, Wayne frets that
+        a record producer is putting the moves on his girlfriend, Cassandra, while
+        Garth handles the advances of mega-babe Honey Hornee.","popularity":11.035,"poster_path":"/xRzMaHvSJEBdqEVrscOnfyyCj2Y.jpg","release_date":"1993-12-10","title":"Wayne''s
+        World 2","video":false,"vote_average":6.099,"vote_count":867},{"adult":false,"backdrop_path":"/lAvf5zzyOgTZmpRBRJFa7IVVqCK.jpg","genre_ids":[35,10402],"id":8872,"original_language":"en","original_title":"Wayne''s
+        World","overview":"The adventures of two amiably aimless metal-head friends,
+        Wayne and Garth. From Wayne''s basement, the pair broadcast a talk-show called
+        \"Wayne''s World\" on local public access television. The show comes to the
+        attention of a sleazy network executive who wants to produce a big-budget
+        version of \"Wayne''s World\"—and he also wants Wayne''s girlfriend, a rock
+        singer named Cassandra. Wayne and Garth have to battle the executive not only
+        to save their show, but also Cassandra.","popularity":14.104,"poster_path":"/nhQtlLVl2z5ywu2uDnXjVqi08On.jpg","release_date":"1992-02-14","title":"Wayne''s
+        World","video":false,"vote_average":6.697,"vote_count":1903},{"adult":false,"backdrop_path":"/675fD1LUZ9fVLBzZBwKeLhwagxG.jpg","genre_ids":[53],"id":813910,"original_language":"en","original_title":"O
+        Espelho","overview":"Fascinated by pop culture male figures, a man loses his
+        identity in the search to replicate them","popularity":0.6,"poster_path":"/5jo38ykqeeHFH8hZuTxKLfB63l.jpg","release_date":"2021-04-26","title":"I,
+        John Wayne","video":false,"vote_average":5.0,"vote_count":2},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":616174,"original_language":"en","original_title":"John
+        Wayne Gacy: Defending a Monster","overview":"\"Sam, could you do me a favor?\"  A
+        seemingly simple request sparks the story that has now become part of America’s
+        true crime hall of fame - the journey of a young lawyer, fresh from the Public
+        Defender’s Office, whose first client in private practice turns out to be
+        the most evil serial killer in our nation''s history.","popularity":2.73,"poster_path":"/zti56ETt1Jy8YccD2KbVq86XiCe.jpg","release_date":"2019-07-25","title":"John
+        Wayne Gacy: Defending a Monster","video":false,"vote_average":7.0,"vote_count":2},{"adult":false,"backdrop_path":"/idbjrl5yNwGqXfbFkerT4brnwZQ.jpg","genre_ids":[10402],"id":241428,"original_language":"en","original_title":"Jeff
+        Wayne''s Musical Version of the War of the Worlds - The New Generation: Alive
+        on Stage!","overview":"In 1978 Jeff Wayne composed and produced one of the
+        most ground-breaking and bestselling musical works of all time. In 2006 Jeff
+        Wayne''s Musical Version of The War of The Worlds took to the stage with audiences
+        and critics hailing it as one of the most innovative combinations of music,
+        technology and live performance.  Now in 2013 The New Generation production
+        is launched . With an all-star cast including Liam Neeson, Marti Pellow, Jason
+        Donovan, Kaiser Chiefs'' Ricky Wilson, Jetblack''s Will Stapleton and Wicked''s
+        Kerry Ellis, plus stunning new 3D holography and a 3-ton 35ft Martian Fighting
+        Machine, it''s truly a musical multi-media extravaganza. Filmed Live at London''s
+        O2 Arena, Jeff Wayne''s Musical Version of The War of The Worlds is a show
+        not to be missed!","popularity":2.082,"poster_path":"/epj1q8EWrJYUOpKHaLFA32sZ02T.jpg","release_date":"2013-11-28","title":"Jeff
+        Wayne''s Musical Version of the War of the Worlds - The New Generation: Alive
+        on Stage!","video":true,"vote_average":6.9,"vote_count":9},{"adult":false,"backdrop_path":"/ft6okqNxWd4M7gB2VRpLpylhqtA.jpg","genre_ids":[10402],"id":16377,"original_language":"en","original_title":"Jeff
+        Wayne''s Musical Version of The War of the Worlds: Live on Stage!","overview":"The
+        live version of Jeff Wayne''s 1978 bestselling album was brought to the stage
+        in 2006 as part of a sell-out tour of the UK. Filmed at London''s Wembley
+        Arena, and using a blend of theatre, music and visual imagery, the production
+        incorporates performers from the original recording, including Justin Hayward,
+        Chris Thompson and Wayne himself. There''s also audio and visual elements
+        featuring Richard Burton, as well as the ten-piece Black Smoke Band and the
+        48-piece Ulladubulla Strings.","popularity":1.549,"poster_path":"/5z19r3tfjNPZ3UhW3lfYwKd3khn.jpg","release_date":"2006-11-06","title":"Jeff
+        Wayne''s Musical Version of The War of the Worlds: Live on Stage!","video":true,"vote_average":6.5,"vote_count":14},{"adult":false,"backdrop_path":null,"genre_ids":[99,27],"id":780766,"original_language":"en","original_title":"The
+        John Wayne Gacy Murders: life and death in Chicago","overview":"Summaries  \"The
+        John Wayne Gacy Murders: Life and Death in Chicago\", Focuses on serial killer
+        John Wayne Gacy''s time in Chicago and includes information about Gacy''s
+        childhood, his career of crime in Waterloo, Iowa, and Gacy''s becoming a celebrity
+        in prison. Containing interviews with Chicago attorneys, news reporters, law
+        enforcement officers, and history experts, the film illustrates what the atmosphere
+        was like in Chicago when Gacy was murdering and ultimately apprehended. Gacy''s
+        time in prison as a celebrity serial killer is also explored in this groundbreaking
+        film by Chicago native filmmaker John Borowski.  —John Borowski","popularity":1.563,"poster_path":"/9Ph0W8fEb3ZGO9F8MgCVM6czTtj.jpg","release_date":"2020-08-01","title":"The
+        John Wayne Gacy Murders: life and death in Chicago","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":"/1WCCbeiPEgzT6c04GrbPPLtOMk5.jpg","genre_ids":[28,18,10770],"id":142912,"original_language":"en","original_title":"Assault
+        on the Wayne","overview":"The U.S. submarine Anthony Wayne is underway for
+        a top-secret mission. Onboard is a highly classified device that will give
+        the Americans a decided nuclear advantage. The entire mission and the secret
+        technology are threatened when the sub commander discovers his crew has been
+        infiltrated by enemy agents. The commander is charged with trying to protect
+        the device while ferreting out the enemy agents. Compounding matters is the
+        state of the commander''s physical and mental condition, which is being questioned
+        by his crew.","popularity":1.632,"poster_path":"/spaH90zWiGPA4eVfLo1Z3HZXYmY.jpg","release_date":"1971-01-12","title":"Assault
+        on the Wayne","video":false,"vote_average":3.0,"vote_count":2},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":324160,"original_language":"en","original_title":"John
+        Wayne Parr: Blessed With Venom","overview":"Chronicling the life and career
+        of Australian Muay Thai superstar and 7 times World Champion, John Wayne Parr.","popularity":1.153,"poster_path":"/gjyESrvUXh8G6t0CU9ZtLjJsVom.jpg","release_date":"2011-10-26","title":"John
+        Wayne Parr: Blessed With Venom","video":false,"vote_average":8.0,"vote_count":2},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":281891,"original_language":"en","original_title":"Unlicensed
+        Cemetery: The John Wayne Gacy Murders","overview":"John Wayne Gacy was accused
+        and convicted of the brutal homosexual torture slayings of 33 young men and
+        boys...but many believe his total could be much higher. This video will explore
+        the many sides of John Wayne Gacy with case facts, profile interviews and
+        re-enactments that aren''t available anywhere.","popularity":1.491,"poster_path":"/mIOAf9dkbh1vZwTM6E35QtcPZLJ.jpg","release_date":"2002-01-01","title":"Unlicensed
+        Cemetery: The John Wayne Gacy Murders","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":1056834,"original_language":"en","original_title":"Kenny
+        Wayne Shepherd Band Trouble Is 25","overview":"The five-time-Grammy-nominated
+        guitarist Kenny Wayne Shepherd announces Trouble Is 25, a top-to-bottom reinterpretation
+        of his seminal album Trouble Is, which struck the match that reignited modern
+        blues upon its release 25 years ago.","popularity":1.396,"poster_path":"/5D6LWABFtg5T61628o5sgSZzQps.jpg","release_date":"2022-11-20","title":"Kenny
+        Wayne Shepherd Band Trouble Is 25","video":false,"vote_average":0.0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[10402],"id":201071,"original_language":"en","original_title":"Fountains
+        of Wayne: No Better Place - Live in Chicago","overview":"Fountains Of Wayne
+        breeze into the Windy City with their warm, feel-good vibe, unleashing the
+        hooks and humor that have made them champions of power pop. For the band''s
+        first-ever live DVD, fans are treated to a career-defining set with punchy
+        performances of their hits including \"Stacy''s Mom,\" \"Sink To The Bottom\"
+        and \"Radiation Vibe.\"  Having perfected the sounds of summer buzz with tight
+        rhythms, carefree melodies and humor-laced lyrics, the indie pop quartet takes
+        the stage in prime form, knocking out favorite after favorite. This concert
+        was shot in a widescreen format and recorded in 5.1 Surround to provide an
+        electrifying home viewing experience. Next to actually attending a Fountains
+        show, as any fan will tell you, there''s No Better Place to see them. Bonus
+        features: all-new, never-before-seen acoustic performances of songs from their
+        2007 album, Traffic and Weather, and more.","popularity":1.999,"poster_path":null,"release_date":"2009-03-02","title":"Fountains
+        of Wayne: No Better Place - Live in Chicago","video":false,"vote_average":0.0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":607067,"original_language":"en","original_title":"Bruce
+        and Pepper Wayne Gacy''s Home Movies","overview":"Experimental short film
+        depicting the home movies of Bruce Wayne Gacy and Pepper Wayne Gacy, the children
+        of the notorious serial killer John Wayne Gacy.","popularity":0.6,"poster_path":"/97YTZngmY9VPn5JeX3K83kEM5Vp.jpg","release_date":"1988-01-01","title":"Bruce
+        and Pepper Wayne Gacy''s Home Movies","video":false,"vote_average":0.0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":327017,"original_language":"en","original_title":"John
+        Wayne and Chisum","overview":"Documentary included in the DVD version of \"Chisum\"","popularity":0.6,"poster_path":null,"release_date":"1970-01-01","title":"John
+        Wayne and Chisum","video":false,"vote_average":6.5,"vote_count":2},{"adult":false,"backdrop_path":null,"genre_ids":[35],"id":49301,"original_language":"fr","original_title":"Je
+        T''Aime John Wayne","overview":"Belmonde lives in 1990s London as an iconic
+        , cool Frenchman modelled on the new wave cinema of the 1960s. Really he is
+        English and middle class – a fact that his family won''t let him forget!","popularity":1.185,"poster_path":"/t1pTaZ0PIYg0UUu3nAbeY5fs870.jpg","release_date":"2000-01-01","title":"Je
+        T''Aime John Wayne","video":false,"vote_average":5.8,"vote_count":18},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":586432,"original_language":"en","original_title":"Jeff
+        \"Big Daddy\" Wayne: Big Daddy Kicks It","overview":"Comedian Jeff Wayne was
+        dubbed “Big Daddy” by Billy Crystal and Robin Williams on an HBO Comic Relief
+        show. The moniker has stuck to a guy who’s been part of the stand-up comedy
+        scene for a long time. He’s toured all over the world, several times in Europe.
+        The Norwegian Newspaper “Sondags B.A.”, described him as having “amazing audience
+        communication, and ferociously funny!”\r ​","popularity":0.6,"poster_path":null,"release_date":"","title":"Jeff
+        \"Big Daddy\" Wayne: Big Daddy Kicks It","video":false,"vote_average":0.0,"vote_count":0}],"total_pages":5,"total_results":95}'
+  recorded_at: Fri, 17 Feb 2023 01:07:56 GMT
+- request:
+    method: get
+    uri: https://api.themoviedb.org/3/search/movie?api_key=<API Key>&page=2&query=Wayne
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v2.7.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 17 Feb 2023 01:07:57 GMT
+      Server:
+      - openresty
+      Cache-Control:
+      - public, max-age=28800
+      X-Memc:
+      - MISS, STORE
+      X-Memc-Key:
+      - 6d579747aca9a3015246619b219af547e4166556
+      X-Memc-Age:
+      - '0'
+      X-Memc-Expires:
+      - '21600'
+      Etag:
+      - W/"afc4fdbd76f7c58e8165e11186ea5701"
+      Vary:
+      - Accept-Encoding,Accept-Encoding,Accept-Encoding
+      - Origin
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 d9fe97589e952f97209f7a422c89d876.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN52-P2
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      X-Amz-Cf-Id:
+      - HqXkAAWVoKPZjYK_QQ8pgrbNprd2v1_S1jllriB6LEg62tiiGJjbfw==
+    body:
+      encoding: UTF-8
+      string: '{"page":2,"results":[{"adult":false,"backdrop_path":null,"genre_ids":[],"id":835839,"original_language":"en","original_title":"Ash:
+        The Art of Wayne Gilbert","overview":"An in-depth look at the art of Texas
+        painter Wayne Gilbert whose controversial artwork is created with cremated
+        human remains.","popularity":0.6,"poster_path":null,"release_date":"","title":"Ash:
+        The Art of Wayne Gilbert","video":false,"vote_average":0.0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":838908,"original_language":"de","original_title":"The
+        Importance of Being Extraordinary: Eckhart Tolle and Wayne W. Dyer","overview":"","popularity":0.6,"poster_path":"/6Ex0MXOQt0cmTJESIucIDB8shXv.jpg","release_date":"","title":"The
+        Importance of Being Extraordinary: Eckhart Tolle and Wayne W. Dyer","video":false,"vote_average":0.0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":832702,"original_language":"en","original_title":"Kenny
+        Wayne Shepherd Band - Straight To You: Live","overview":"You get to watch
+        the band in its full glory as well as listen. In the last 10 years the multi-platinum
+        selling Shepherd has gone from strength to strength, winning countless awards,
+        releasing four studio albums and touring the world over several times - from
+        Brazil to Europe, India to Canada and US to Australia and beyond.","popularity":0.6,"poster_path":"/7svILCv0ttb23CI927GxjDatdfw.jpg","release_date":"2020-11-24","title":"Kenny
+        Wayne Shepherd Band - Straight To You: Live","video":false,"vote_average":0.0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":872864,"original_language":"en","original_title":"A
+        Turning of the Earth: John Ford, John Wayne and ''The Searchers''","overview":"Documentary
+        on the making of \"The Searchers\" (1956), starring John Wayne and directed
+        by John Ford, with outtakes, behind-the-scenes footage and interviews with
+        many of the surviving cast and crew.","popularity":0.6,"poster_path":"/atkZ8IrLjCMYSqbqz87YZrqHrr5.jpg","release_date":"1998-01-01","title":"A
+        Turning of the Earth: John Ford, John Wayne and ''The Searchers''","video":false,"vote_average":0.0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":360382,"original_language":"en","original_title":"John
+        Ford/John Wayne: The Filmmaker and the Legend","overview":"John Ford and John
+        Wayne — a friendship and professional collaboration that spanned 50 years,
+        changed each others’ lives, changed the movies, and in the process, changed
+        the way America saw itself. It was a relationship that reflected all the elements
+        and all the paradoxes of 20th century America — generosity of spirit, abuse
+        of power, a sense of loyalty, and a restless nationalism that didn’t quite
+        know what to do with itself.","popularity":0.6,"poster_path":null,"release_date":"2006-05-10","title":"John
+        Ford/John Wayne: The Filmmaker and the Legend","video":false,"vote_average":0.0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":358845,"original_language":"en","original_title":"Wayne''s
+        Deer","overview":"Respected documentarian Kent Martin returns to the Festival
+        with Wayne’s Deer, a portrait of Wayne Bruhm, amateur naturalist and hunter.
+        Wayne’s ancestors first settled along the LaHave River, Nova Scotia in 1723,
+        and he has spent hours quietly hidden in these woods watching deer movements
+        for decades. Beforehand he takes such precautions as using his own time tested
+        formula made from boiled hakmatack needles and other substances to mask his
+        scent. Indeed Wayne probably knows more about deer than most biologists with
+        PhD’s. And every Fall he shoots one deer for meat. Wayne’s Deer was patiently
+        shot over four seasons and tells a refreshingly honest story of living with
+        nature.","popularity":0.6,"poster_path":null,"release_date":"2015-09-20","title":"Wayne''s
+        Deer","video":false,"vote_average":0.0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":21899,"original_language":"en","original_title":"SportsCentury
+        Greatest Athletes: Wayne Gretzky","overview":"","popularity":0.6,"poster_path":"/82iOHtxU1mZMQYaTR6hg74zNNfH.jpg","release_date":"2000-11-10","title":"SportsCentury
+        Greatest Athletes: Wayne Gretzky","video":false,"vote_average":0.0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":393052,"original_language":"en","original_title":"Wayne
+        Dyer: The Power of Intention","overview":"In Dr. Wayne Dyer''s public television
+        special, taped live in front of a thousand fans in Boston''s historic theater
+        district, he transforms conventional thinking about making things happen in
+        our lives into a profound understanding of how each person possesses the infinite
+        potential and power to co-create the life he or she desires. To accomplish
+        this, Dr. Dyer takes the audience through a journey into the seven faces of
+        intention - 1: creativity, 2: kindness; 3: love, 4: beauty, 5: expansiveness,
+        6: abundance, and 7: receptivity. Throughout the program, Dr. Dyer illustrates
+        his points with signature stories that move the audience to tears--as well
+        as abundant laughter.","popularity":0.6,"poster_path":null,"release_date":"2003-05-14","title":"Wayne
+        Dyer: The Power of Intention","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":393056,"original_language":"en","original_title":"Wayne
+        Dyer: Excuses Begone!","overview":"People are forever using excuses and defending
+        those excuses as if they were actually true. Such statements as ''It would
+        be very difficult for me to change'', or ''I''m too old/young to change''
+        are all excuses used regularly without challenging the truth of these thinking
+        habits. When you eliminate excuses that explain your shortcomings or failures,
+        you''ll awaken to your infinite possibilities.","popularity":0.6,"poster_path":null,"release_date":"2009-06-01","title":"Wayne
+        Dyer: Excuses Begone!","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[],"id":57888,"original_language":"en","original_title":"Wayne
+        Brady Live - Making Shit Up","overview":"Emmy award winning Wayne bardy is
+        one of the most versatile performers in show business today. He has been entertaining
+        audiences with his acting, inprov, singing and dancing on television, film
+        and stage. In television, Brady recently provided a voice for the upcoming
+        animated feature, Food Fight! For Lions Gate. He starred in the screen Gem
+        feature, Crossover, and the independant feature The List, a romantic comedy
+        with Sydney Tamia Poiter and Illeana Douglas.","popularity":0.626,"poster_path":null,"release_date":"2010-03-11","title":"Wayne
+        Brady Live - Making Shit Up","video":false,"vote_average":8.0,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[10402],"id":397945,"original_language":"en","original_title":"Wayne
+        Shorter: Live at Montreux 1996","overview":"Wayne Shorter is one of the most
+        significant jazz performers of modern times. He performed as part of Art Blakey''s
+        Jazz Messengers and then Miles Davis'' band in the sixties before co-founding
+        Weather Report with Joe Zawinul in the early seventies. This Montreux concert
+        from 1996 features the Wayne Shorter Quintet and followed on from the release
+        of his Grammy Award winning album \"High Life\".","popularity":1.486,"poster_path":"/akvfJpbAgCZmKaXp645G7sce6Hh.jpg","release_date":"1996-07-08","title":"Wayne
+        Shorter: Live at Montreux 1996","video":false,"vote_average":10.0,"vote_count":1},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":898826,"original_language":"en","original_title":"Wayne
+        Train","overview":"A short documentary on the making of THE TRAIN ROBBERS","popularity":0.84,"poster_path":null,"release_date":"1973-02-07","title":"Wayne
+        Train","video":false,"vote_average":0.0,"vote_count":0},{"adult":false,"backdrop_path":"/xYKCIErL7csu7GgEjmBLDYQNPAV.jpg","genre_ids":[99,10402],"id":651314,"original_language":"en","original_title":"Lil
+        Wayne: Rap Sheet","overview":"American rapper, songwriter Dwayne Michael Carter
+        Jr., also known as Lil Wayne began his music career at the tender age of nine.
+        He joined Cash Money Records as the youngest member of the label. In 1997
+        he joined the group Hot Boys and got his first taste of success and fame after
+        the release of the groups major selling album Guerrilla Warfare. In 1999 Lil
+        Wayne released his debut album The Block is Hot, which hit the top of the
+        Hip Hop charts, selling over one million copies in the U.S and went on to
+        become double platinum. The sale of his next two albums sold modestly, however
+        the release of the Carter series helped cement the rappers reputation as one
+        of the leading hip-hop performers. Lil Wayne’s sixth studio album, The Carter
+        III, was released in June 2008 and featured appearances by T-Pain, Jay-Z and
+        Busta Rhymes.","popularity":1.4,"poster_path":"/qINEvLrIRLiQhogg5Qtv8MlJ1Jf.jpg","release_date":"2013-12-03","title":"Lil
+        Wayne: Rap Sheet","video":true,"vote_average":0.0,"vote_count":0},{"adult":false,"backdrop_path":"/bkSNHGsDFZzY9omru8lScjfMpyF.jpg","genre_ids":[],"id":652862,"original_language":"en","original_title":"Fivestar
+        Training with Wayne Rooney","overview":"Train with Wayne Rooney and improve
+        your soccer skills by completing workouts designed by the most accomplished
+        soccer trainers in the world. Watch as Wayne and his team go through drills
+        from shooting to dribbling, ball control, passing and more.","popularity":0.6,"poster_path":"/ustw9jVz8U23gU7Pr1iRfgM2D1a.jpg","release_date":"2014-05-27","title":"Fivestar
+        Training with Wayne Rooney","video":true,"vote_average":0.0,"vote_count":0},{"adult":false,"backdrop_path":"/gd8dLyWu9MF86uZZKTBZZusf8Ff.jpg","genre_ids":[],"id":652865,"original_language":"en","original_title":"Fivestar
+        Training with Wayne Rooney: Ball Control","overview":"Train with Wayne Rooney
+        and improve your soccer skills by completing workouts designed by the most
+        accomplished soccer trainers in the world. Watch as Wayne and his team go
+        through drills from shooting to dribbling, ball control, passing and more.","popularity":0.6,"poster_path":"/orMfuKGKP0rGUkUVsJetB1T7BJp.jpg","release_date":"2014-05-27","title":"Fivestar
+        Training with Wayne Rooney: Ball Control","video":true,"vote_average":0.0,"vote_count":0},{"adult":false,"backdrop_path":"/gd8dLyWu9MF86uZZKTBZZusf8Ff.jpg","genre_ids":[],"id":652866,"original_language":"en","original_title":"Fivestar
+        Training with Wayne Rooney: Dribbling","overview":"Train with Wayne Rooney
+        and improve your soccer skills by completing workouts designed by the most
+        accomplished soccer trainers in the world. Watch as Wayne and his team go
+        through drills from shooting to dribbling, ball control, passing and more.","popularity":0.6,"poster_path":"/9IZpOOhblCUYVZLz0QEjDWLVEYh.jpg","release_date":"2014-05-27","title":"Fivestar
+        Training with Wayne Rooney: Dribbling","video":true,"vote_average":0.0,"vote_count":0},{"adult":false,"backdrop_path":"/gd8dLyWu9MF86uZZKTBZZusf8Ff.jpg","genre_ids":[],"id":652867,"original_language":"en","original_title":"Fivestar
+        Training with Wayne Rooney: Finishing","overview":"Train with Wayne Rooney
+        and improve your soccer skills by completing workouts designed by the most
+        accomplished soccer trainers in the world. Watch as Wayne and his team go
+        through drills from shooting to dribbling, ball control, passing and more.","popularity":0.6,"poster_path":"/2IWYP0V42vwUDNJ1VESKMsGfmgp.jpg","release_date":"2014-05-27","title":"Fivestar
+        Training with Wayne Rooney: Finishing","video":true,"vote_average":0.0,"vote_count":0},{"adult":false,"backdrop_path":"/gd8dLyWu9MF86uZZKTBZZusf8Ff.jpg","genre_ids":[],"id":652868,"original_language":"en","original_title":"Fivestar
+        Training with Wayne Rooney: Passing","overview":"Train with Wayne Rooney and
+        improve your soccer skills by completing workouts designed by the most accomplished
+        soccer trainers in the world. Watch as Wayne and his team go through drills
+        from shooting to dribbling, ball control, passing and more","popularity":0.6,"poster_path":"/pcqpCJS0ORVGFv6fCvaNUQH6hC4.jpg","release_date":"2014-05-27","title":"Fivestar
+        Training with Wayne Rooney: Passing","video":true,"vote_average":0.0,"vote_count":0},{"adult":false,"backdrop_path":"/gd8dLyWu9MF86uZZKTBZZusf8Ff.jpg","genre_ids":[],"id":652869,"original_language":"en","original_title":"Fivestar
+        Training with Wayne Rooney: Shooting","overview":"Train with Wayne Rooney
+        and improve your soccer skills by completing workouts designed by the most
+        accomplished soccer trainers in the world. Watch as Wayne and his team go
+        through drills from shooting to dribbling, ball control, passing and more.","popularity":0.6,"poster_path":"/eO9tsfDm4TNUfzuKj8PHyQwe28q.jpg","release_date":"2014-05-27","title":"Fivestar
+        Training with Wayne Rooney: Shooting","video":true,"vote_average":0.0,"vote_count":0},{"adult":false,"backdrop_path":null,"genre_ids":[99],"id":90959,"original_language":"en","original_title":"John
+        Wayne Standing Tall","overview":"Profile of one of the world''s most popular
+        motion picture stars, told through interviews with some of the artists who
+        worked with him, family, friends, and excerpts from many of his films and
+        television appearances.","popularity":0.879,"poster_path":null,"release_date":"1989-03-01","title":"John
+        Wayne Standing Tall","video":false,"vote_average":6.0,"vote_count":1}],"total_pages":5,"total_results":95}'
+  recorded_at: Fri, 17 Feb 2023 01:07:57 GMT
+recorded_with: VCR 6.1.0
