@@ -14,7 +14,7 @@ class ViewingPartiesController < ApplicationController
       host_id: params[:host_id].to_i,
       duration: params[:duration].to_i,
       eventdate: Date.parse(params[:eventdate]),
-      starttime: Time.parse(params[:starttime])
+      starttime: Time.zone.parse(params[:starttime])
     )
 
     UserViewingParty.create!( user_id: current_user.id, viewing_party_id: viewing_party.id )

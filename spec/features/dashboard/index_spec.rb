@@ -5,6 +5,22 @@ RSpec.describe 'the User Dashboard' do
   let!(:user1) { users.first }
   let!(:user2) { users.second }
   let!(:user3) { users.third }
+  # let!(:party1) { ViewingParty.create!(
+  #                 poster_path: '/4RnCeRzvI1xk5tuNWjpDKzSnJDk.jpg',
+  #                 movie_name: 'Happy Gilmore',
+  #                 movie_id: 9614,
+  #                 host_id: user1.id,
+  #                 duration: 96,
+  #                 eventdate: Date.yesterday,
+  #                 starttime: Time.now) }
+  #
+  # let!(:up1) { UserViewingParty.create!(
+  #              user_id: user2.id,
+  #              viewing_party_id: party1.id) }
+  #
+  # let!(:up2) { UserViewingParty.create!(
+  #              user_id: user3.id,
+  #              viewing_party_id: party1.id) }
 
   it 'shows the users name at the top of the page' do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
@@ -32,7 +48,7 @@ RSpec.describe 'the User Dashboard' do
 
     fill_in 'Duration of Party:', with: 180
     fill_in 'Date', with: Date.tomorrow
-    fill_in 'Start Time', with: Time.now + 600
+    fill_in 'Start Time', with: Time.current + 600
 
     check("attendees_#{user2.id}")
 
@@ -40,7 +56,7 @@ RSpec.describe 'the User Dashboard' do
 
     within "#vparty-0" do
       expect(page).to have_link('The Shawshank Redemption')
-      expect(page).to have_content(Date.tomorrow.strftime('%B%e, %Y'))
+      expect(page).to have_content(Date.tomorrow.strftime('%B %e, %Y'))
       # expect(page).to have_content(Time.strftime('%I:%M %p'))
       expect(page).to have_content("Hosted by: #{user1.name}")
       expect(page).to have_content("Attendees: #{user2.name}")
@@ -55,7 +71,7 @@ RSpec.describe 'the User Dashboard' do
 
     fill_in 'Duration of Party:', with: 180
     fill_in 'Date', with: Date.tomorrow
-    fill_in 'Start Time', with: Time.now + 600
+    fill_in 'Start Time', with: Time.current + 600
 
     check("attendees_#{user1.id}")
 
@@ -66,7 +82,7 @@ RSpec.describe 'the User Dashboard' do
 
     within "#vparty-0" do
       expect(page).to have_link('The Godfather')
-      expect(page).to have_content(Date.tomorrow.strftime('%B%e, %Y'))
+      expect(page).to have_content(Date.tomorrow.strftime('%B %e, %Y'))
       expect(page).to have_content("Hosted by: #{user2.name}")
       expect(page).to have_content("Attendees: #{user1.name}")
       expect(page).to have_content('Invited')

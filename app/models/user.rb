@@ -10,11 +10,11 @@ class User < ApplicationRecord
   before_save :downcase_email
 
   def hosted_parties
-    viewing_parties.where(host_id: id)
+    viewing_parties.upcoming.where(host_id: id)
   end
 
   def invited_parties
-    viewing_parties.where.not(host_id: id)
+    viewing_parties.upcoming.where.not(host_id: id)
   end
 
   def name_and_email

@@ -38,12 +38,12 @@ RSpec.describe User, type: :model do
 
     @party1 = ViewingParty.create!(
       poster_path: 'test path',
-      movie_name: 'The Shawshank Redemption',
+      movie_name: 'The First Movie',
       movie_id: 123,
       host_id: @user1.id,
       duration: 456,
       eventdate: Date.today,
-      starttime: Time.now
+      starttime: Time.current
     )
 
     @party2 = ViewingParty.create!(
@@ -53,7 +53,7 @@ RSpec.describe User, type: :model do
       host_id: @user1.id,
       duration: 405,
       eventdate: Date.today,
-      starttime: Time.now
+      starttime: Time.current
     )
 
     @party3 = ViewingParty.create!(
@@ -63,7 +63,7 @@ RSpec.describe User, type: :model do
       host_id: @user2.id,
       duration: 720,
       eventdate: Date.today,
-      starttime: Time.now
+      starttime: Time.current
     )
 
     @user_party_1 = UserViewingParty.create!(
@@ -106,16 +106,33 @@ RSpec.describe User, type: :model do
   end
 
   describe 'instance methods' do
+    let!(:party4) { ViewingParty.create!(
+                    poster_path: '/wAD7nnWh4e6wweffwmkLbf35uf0.jpg',
+                    movie_name: 'Beverly Hills Ninja',
+                    movie_id: 9622,
+                    host_id: @user3.id,
+                    duration: 96,
+                    eventdate: Date.yesterday,
+                    starttime: Time.now) }
+    let!(:up5) { UserViewingParty.create!(
+                 user_id: @user1.id,
+                 viewing_party_id: party4.id) }
+
+    let!(:up6) { UserViewingParty.create!(
+                 user_id: @user2.id,
+                 viewing_party_id: party4.id) }
+
     it 'can return all hosted parties for a User' do
 
       expect(@user1.hosted_parties.count).to eq 2
-      expect(@user1.hosted_parties).to eq [@party1, @party2]
+      expect(@user1.hosted_parties).to eq([@party1, @party2])
     end
 
     it 'can return all parties a user is invited to' do
 
       expect(@user1.invited_parties.count).to eq 1
-      expect(@user1.invited_parties).to eq [@party3]
+      expect(@user1.invited_parties).to eq([@party3])
+      expect(@user1.invited_parties).to_not include([party4])
     end
 
     it 'can downcase an email when input' do

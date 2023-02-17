@@ -7,6 +7,8 @@ class ViewingParty < ApplicationRecord
   has_many :user_viewing_parties
   has_many :users, through: :user_viewing_parties
 
+  scope :upcoming, -> { where('eventdate >= ?', Date.current) }
+
   def attendees
     self.users.select(:name).where.not(id: host.id).pluck(:name).to_sentence
   end
