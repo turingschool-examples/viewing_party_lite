@@ -26,7 +26,7 @@ RSpec.describe 'the landing page' do
 
     fill_in :email, with: "#{user1.email}"
     fill_in :password, with: "#{user1.password}"
-    click_on '🎟'
+    click_on 'Login 🎟'
     click_link 'Home'
 
     within "#user-#{user1.id}" do
@@ -63,6 +63,6 @@ RSpec.describe 'the landing page' do
 
     expect(page).to have_field(:email)
     expect(page).to have_field(:password)
-    expect(page).to have_button('🎟')
+    expect(page).to have_button('Login 🎟')
   end
 end

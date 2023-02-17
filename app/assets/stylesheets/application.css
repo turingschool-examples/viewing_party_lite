@@ -70,8 +70,16 @@ th {
   text-align: right;
   font-weight: bold;
   font-size: 20px;
-  width: 98%
+  width: auto
 }
+
+/* #login a {
+  font-family: 'Merriweather', sans-serif;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  width: auto
+} */
 
 #login-form {
   margin: auto;

@@ -31,7 +31,7 @@ RSpec.describe 'New Viewing Party' do
     expect(page).to have_button('Create Party')
 
     fill_in 'Date', with: Date.tomorrow
-    fill_in 'Start Time', with: Time.now + 600
+    fill_in 'Start Time', with: Time.current + 600
 
     check("attendees_#{user2.id}")
     check("attendees_#{user3.id}")

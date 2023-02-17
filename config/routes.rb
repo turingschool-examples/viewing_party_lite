@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get '/register', to: 'users#new'
   post '/register', to: 'users#create'
   get '/login', to: 'sessions#new'
-  post  '/login', to: 'sessions#create'
+  post '/login', to: 'sessions#create'
 
   namespace :admin do
     get '/dashboard', to: 'dashboard#index'
