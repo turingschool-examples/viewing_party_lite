@@ -122,13 +122,13 @@ RSpec.describe User, type: :model do
                  user_id: @user2.id,
                  viewing_party_id: party4.id) }
 
-    it 'can return all hosted parties for a User' do
+    it 'can return all upcoming hosted parties for a User' do
 
       expect(@user1.hosted_parties.count).to eq 2
       expect(@user1.hosted_parties).to eq([@party1, @party2])
     end
 
-    it 'can return all parties a user is invited to' do
+    it 'can return all upcoming parties a user is invited to' do
 
       expect(@user1.invited_parties.count).to eq 1
       expect(@user1.invited_parties).to eq([@party3])
