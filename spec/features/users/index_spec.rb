@@ -28,6 +28,8 @@ RSpec.describe 'the landing page' do
     fill_in :password, with: "#{user1.password}"
     click_on 'Login 🎟'
     click_link 'Home'
+    
+    expect(page).to_not have_link('Admin Dashboard')
 
     within "#user-#{user1.id}" do
       expect(page).to have_link("#{user1.email}'s Dashboard", href: dashboard_path)

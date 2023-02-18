@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
 
   namespace :admin do
-    get '/dashboard', to: 'dashboard#index'
+    # get '/dashboard', to: 'dashboard#index'
+    # namespace :users do
+    #   get '/dashboard', to: 'dashboard#show'
+    # end
+    resources :dashboard, only: %i[index show]
   end
 
   get '/dashboard', to: 'dashboard#index'

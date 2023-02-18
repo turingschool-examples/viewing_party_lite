@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2022_10_25_192354) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "admin", default: false
+    t.integer "role", default: 0
   end
 
   create_table "viewing_parties", force: :cascade do |t|

@@ -3,7 +3,7 @@
   <div id='user-info'>
     <% @users.each do |user| %>
       <div id="user-<%= user.id %>">
-        <p><%= user.name %>: <%= link_to "#{user.email}'s Dashboard", dashboard_path(user) %></p>
+        <p><%= user.name %>: <%= link_to "#{user.email}'s Dashboard", admin_dashboard_path(user) %></p>
       </div>
     <% end %>
   </div>

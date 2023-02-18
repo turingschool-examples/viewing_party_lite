@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Limelight&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Varela&display=swap" rel="stylesheet">
   </head>
-  
+
   <body>
 
     <%= stylesheet_link_tag "navbar" %>
@@ -21,6 +21,11 @@
         <li style='float:left'>
           <% unless current_page?(root_path) %>
             <%= link_to 'Home', root_path %>
+          <% end %>
+          <% if current_admin? %>
+            <% unless current_page?(admin_dashboard_index_path) %>
+              <%= link_to 'Admin Dashboard', admin_dashboard_index_path %>
+            <% end %>
           <% end %>
         </li>
         <li style='float:right'>

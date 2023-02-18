@@ -5,22 +5,6 @@ RSpec.describe 'the User Dashboard' do
   let!(:user1) { users.first }
   let!(:user2) { users.second }
   let!(:user3) { users.third }
-  # let!(:party1) { ViewingParty.create!(
-  #                 poster_path: '/4RnCeRzvI1xk5tuNWjpDKzSnJDk.jpg',
-  #                 movie_name: 'Happy Gilmore',
-  #                 movie_id: 9614,
-  #                 host_id: user1.id,
-  #                 duration: 96,
-  #                 eventdate: Date.yesterday,
-  #                 starttime: Time.now) }
-  #
-  # let!(:up1) { UserViewingParty.create!(
-  #              user_id: user2.id,
-  #              viewing_party_id: party1.id) }
-  #
-  # let!(:up2) { UserViewingParty.create!(
-  #              user_id: user3.id,
-  #              viewing_party_id: party1.id) }
 
   it 'shows the users name at the top of the page' do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
@@ -28,6 +12,7 @@ RSpec.describe 'the User Dashboard' do
     visit dashboard_path
 
     expect(page).to have_content("#{user1.name}'s Dashboard")
+    expect(page).to_not have_link('Admin Dashboard')
   end
 
   it 'should have a button to discover movies' do

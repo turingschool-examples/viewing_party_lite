@@ -28,6 +28,8 @@ gem 'figaro' # bundle exec figaro install
 gem 'jquery-rails'
 
 group :development, :test do
+  gem 'factory_bot_rails'
+  gem 'faker'
   gem 'pry'
 end
 
@@ -39,8 +41,6 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'factory_bot_rails'
-  gem 'faker'
   gem 'launchy' # save_and_open_page
   gem 'orderly'
   gem 'rspec-rails'
