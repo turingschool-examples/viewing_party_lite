@@ -30,8 +30,7 @@ RSpec.describe 'Application' do
       expect(page).to have_content(user_2.email)
     end
 
-    # click_link(user_1.name.to_s)
-    # expect(current_path).to eq("/users/#{user_1.id}")
+    expect(page).to_not have_button('Create a New User')
   end
 
   it 'has a link back to landing page' do
