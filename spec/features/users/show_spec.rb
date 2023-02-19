@@ -28,6 +28,11 @@ RSpec.describe 'user show page' do
     @viewing_party_user_1 = ViewingPartyUser.create!(user_id: @user_1.id, viewing_party_id: @viewing_party_1.id)
     @viewing_party_user_2 = ViewingPartyUser.create!(user_id: @user_1.id, viewing_party_id: @viewing_party_2.id)
     @viewing_party_user_3 = ViewingPartyUser.create!(user_id: @user_2.id, viewing_party_id: @viewing_party_1.id)
+
+    visit login_path
+    fill_in :email, with: @user_1.email
+    fill_in :password, with: @user_1.password
+    click_button("Log In")
   end
 
   it 'displays the site and page title' do

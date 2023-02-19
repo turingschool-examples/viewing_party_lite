@@ -25,11 +25,15 @@ RSpec.describe "Movie's detail page" do
     stub_request(:get, "https://api.themoviedb.org/3/movie/238/reviews?api_key=#{ENV['MOVIE_DB_KEY']}")
       .to_return(status: 200, body: json_response_reviews, headers: {})
 
+    visit login_path
+    fill_in :email, with: @user_1.email
+    fill_in :password, with: @user_1.password
+    click_button("Log In")
+
     visit "/users/#{@user_1.id}/movies/#{@movie_detail.id}"
   end
 
   it 'has a button to create a viewing page' do
-    
     expect(page).to have_button("Create a Viewing Party for #{@movie_detail.title}")
 
     click_button("Create a Viewing Party for #{@movie_detail.title}")

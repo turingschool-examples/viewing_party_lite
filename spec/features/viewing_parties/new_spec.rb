@@ -17,6 +17,11 @@ RSpec.describe 'new view party page' do
 
     @movie_detail = MovieDetail.new(JSON.parse(json_response, symbolize_names: true))
 
+    visit login_path
+    fill_in :email, with: @user.email
+    fill_in :password, with: @user.password
+    click_button("Log In")
+
     visit new_user_movie_viewing_party_path(@user.id, @movie_detail.id)
   end
 
