@@ -1,14 +1,16 @@
 <% if session[:user_id] %>
   <%= link_to "Log Out", logout_path %>
 
-  <div id='users'>
+  <div id="users">
     <div class="sub-header">
       <h4>Existing Users</h4>
     </div>
     <div class="content">
-      <% @users.each do |user| %>
-        <center><p><%= link_to "#{user.name}", user_path(user) %><p></center>
-      <% end %>
+      <ul>
+        <% @users.each do |user| %>
+          <center><li><%= "#{user.email}" %></li></center>
+        <% end %>
+      <ul>
     </div>
   </div>
 

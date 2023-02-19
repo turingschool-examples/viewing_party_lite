@@ -12,19 +12,26 @@ RSpec.describe 'Application' do
     expect(current_path).to eq('/register')
   end
 
-  it 'has existing users with links to their dashboards' do
-    user_1 = create(:user)
+  it 'has existing users with emails listed' do
+    user_1 = create(:user, email: "user_1@gmail.com", password: "password123", password_confirmation: "password123")
     user_2 = create(:user)
 
+    visit '/login'
+
+    fill_in(:email, with: 'user_1@gmail.com')
+    fill_in(:password, with: 'password123')
+    click_button("Log In")
+    
     visit root_path
-    within('#users') do
+    
+    within("#users") do
       expect(page).to have_content('Existing Users')
-      expect(page).to have_link(user_1.name)
-      expect(page).to have_link(user_2.name)
+      expect(page).to have_content(user_1.email)
+      expect(page).to have_content(user_2.email)
     end
 
-    click_link(user_1.name.to_s)
-    expect(current_path).to eq("/users/#{user_1.id}")
+    # click_link(user_1.name.to_s)
+    # expect(current_path).to eq("/users/#{user_1.id}")
   end
 
   it 'has a link back to landing page' do
