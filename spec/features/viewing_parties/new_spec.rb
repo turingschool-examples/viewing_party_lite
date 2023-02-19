@@ -22,7 +22,7 @@ RSpec.describe 'new view party page' do
     fill_in :password, with: @user.password
     click_button("Log In")
 
-    visit new_user_movie_viewing_party_path(@user.id, @movie_detail.id)
+    visit new_movie_viewing_party_path(@movie_detail.id)
   end
 
   it 'displays the site title and page title at the top' do
@@ -33,7 +33,7 @@ RSpec.describe 'new view party page' do
   it 'has a link to return to the discover page' do
     expect(page).to have_button('Discover Page')
     click_button('Discover Page')
-    expect(current_path).to eq("/users/#{@user.id}/discover")
+    expect(current_path).to eq("/discover")
   end
 
   it 'has a form to create a viewing party with the movie info already filled in' do
@@ -64,7 +64,7 @@ RSpec.describe 'new view party page' do
 
       click_button('Create Party')
     end
-    expect(current_path).to eq("/users/#{@user.id}")
+    expect(current_path).to eq("/dashboard")
     expect(page).to have_content(@movie_detail.title)
   end
 end

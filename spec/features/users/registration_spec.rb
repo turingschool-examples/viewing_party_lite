@@ -13,7 +13,7 @@ RSpec.describe 'Register page' do
       click_on "Register new user"
       new_user = User.last.id
 
-      expect(current_path).to eq(user_path(new_user))
+      expect(current_path).to eq('/dashboard')
     end
   end
   
