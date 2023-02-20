@@ -2,8 +2,8 @@
   <%= @movie.title %>
 </div>
 
-<center><p><%= button_to 'Discover Page', "/users/#{@user.id}/discover", method: :get %></p></center>
-<center><p><%= button_to "Create a Viewing Party for #{@movie.title}", "/users/#{@user.id}/movies/#{@movie.id}/viewing_parties/new", method: :get %></p></center>
+<center><p><%= button_to 'Discover Page', "/discover", method: :get %></p></center>
+<center><p><%= button_to "Create a Viewing Party for #{@movie.title}", "/movies/#{@movie.id}/viewing_parties/new", method: :get %></p></center>
 
 <div class="content">
   <div class="row">

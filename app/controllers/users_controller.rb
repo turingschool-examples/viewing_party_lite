@@ -16,7 +16,6 @@ class UsersController < ApplicationController
   end
 
   def discover_movies
-    @user = User.find(params[:id])
   end
 
   def new
@@ -28,7 +27,7 @@ class UsersController < ApplicationController
     if user.save(user_params)
       session[:user_id] = user.id
       flash.notice = 'User has been created!'
-      redirect_to user_path(user)
+      redirect_to dashboard_path
     else
       flash[:error] = user.errors.full_messages.to_sentence
       redirect_to register_path
@@ -43,8 +42,13 @@ class UsersController < ApplicationController
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      flash[:notice] = "Welcome, #{user.email}!"
-      redirect_to user_path(user)
+      if user.admin?
+        flash[:notice] = "Welcome to your Admin Dashboard, #{user.name}!"
+        redirect_to admin_dashboard_path
+      else
+        flash[:notice] = "Welcome, #{user.email}!"
+        redirect_to dashboard_path
+      end
     else
       flash[:notice] = "Sorry, your credientials are bad."
       render :login_form

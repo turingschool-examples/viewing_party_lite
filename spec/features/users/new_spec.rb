@@ -26,7 +26,8 @@ RSpec.describe 'user registration page' do
     
       click_on 'Register new user'
 
-      expect(current_path).to eq(user_path(User.last.id))
+      expect(current_path).to eq("/dashboard")
+
       expect(page).to have_content('Jeff Goldblum')
       expect(page).to have_content('User has been created!')
     end

@@ -36,25 +36,25 @@ RSpec.describe 'user show page' do
   end
 
   it 'displays the site and page title' do
-    visit user_path(@user_1.id)
+    visit "/dashboard"
 
     expect(page).to have_content('Viewing Party')
     expect(page).to have_content("#{@user_1.name}'s Dashboard")
   end
 
   it 'has a button to link to the discover movies page' do
-    visit user_path(@user_1.id)
+    visit "/dashboard"
 
     within '#discover_link' do
       expect(page).to have_button 'Discover Movies'
       expect(page).to_not have_content('My Viewing Parties')
       click_button 'Discover Movies'
-      expect(current_path).to eq("/users/#{@user_1.id}/discover")
     end
+    expect(current_path).to eq("/discover")
   end
 
   it 'has a section for viewing parties' do
-    visit user_path(@user_1.id)
+    visit "/dashboard"
 
     within('#viewing_parties') do
       expect(page).to have_content('My Viewing Parties')
@@ -63,7 +63,7 @@ RSpec.describe 'user show page' do
   end
 
   it 'displays the movie image and title(as a link) in the viewing parties section' do
-    visit user_path(@user_1.id)
+    visit "/dashboard"
 
     within('#viewing_parties') do
       expect(page).to have_link(@movie_detail.title.to_s)
@@ -71,7 +71,7 @@ RSpec.describe 'user show page' do
   end
 
   it 'displays the viewing party information' do
-    visit user_path(@user_1.id)
+    visit "/dashboard"
     within('#viewing_parties') do
       expect(page).to have_content(@viewing_party_1.duration)
       expect(page).to have_content(@viewing_party_1.party_time.strftime('%I:%M%p'))
@@ -80,7 +80,7 @@ RSpec.describe 'user show page' do
   end
 
   it 'displays the attendees' do
-    visit user_path(@user_1.id)
+    visit "/dashboard"
     within("#attendees-#{@viewing_party_1.movie_id}") do
       expect(page).to have_content("#{@user_2.name}")
       expect(page).to have_content("#{@user_1.name}")
