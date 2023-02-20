@@ -1,0 +1,7 @@
+<div class="sub-header">
+  <h4> Welcome to your Admin Dashboard, <%= @admin.name %>! </h4>
+</div>
+
+<% @users.each do |user| %>
+  <p><%= link_to "#{user.name}", dashboard_path %></p>
+<% end %>

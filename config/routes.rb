@@ -24,4 +24,8 @@ Rails.application.routes.draw do
   get '/register', to: 'users#new'
   post '/register', to: 'users#create'
 
+  namespace :admin do
+    get '/dashboard', to: 'dashboard#index'
+    get '/users/:id', to: 'dashboard#show'
+  end
 end

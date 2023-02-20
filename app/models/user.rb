@@ -10,6 +10,8 @@ class User < ApplicationRecord
 
   has_secure_password 
 
+  enum role: %w(default admin)
+
   def name_with_email
     "#{name} #{email}"
   end
