@@ -70,6 +70,10 @@ _Home/Create Account/Login/User Index_
 # <img src="app/assets/images/ViewingPartyHome.png">
 
 
+_Create Viewing Party_
+# <img src="app/assets/images/CreateViewingParty.png">
+
+
 _User Dashboard_
 # <img src="app/assets/images/VP_Dashboard.png">
 
