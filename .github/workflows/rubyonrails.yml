@@ -25,6 +25,7 @@ jobs:
     env:
       RAILS_ENV: test
       DATABASE_URL: "postgres://rails:password@localhost:5432/rails_test"
+      movie_api_key: ${{ secrets.MOVIE_API_KEY }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -39,7 +40,7 @@ jobs:
       # Add or replace test runners here
       - name: Run tests
         run: bin/rake
-        
+
       # However you run your tests to generate code coverage
       - name: Run my tests
         run: |
@@ -49,7 +50,7 @@ jobs:
       - uses: joshmfrankel/simplecov-check-action@main
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          
+
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -66,7 +67,7 @@ jobs:
       uses: joshmfrankel/simplecov-check-action@1.0.0
       with:
         # Github token for create checks
-        github_token: 
+        github_token:
         # The name of the check's job
         check_job_name: # optional, default is SimpleCov
         # Minimum test suite coverage percentage

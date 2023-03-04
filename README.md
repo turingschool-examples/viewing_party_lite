@@ -2,8 +2,9 @@
 
 <div align="right">
 
+[![Test Coverage](https://api.codeclimate.com/v1/badges/40181d7fadd0ea241abf/test_coverage)](https://codeclimate.com/github/AMSterling/viewing_party_lite/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/40181d7fadd0ea241abf/maintainability)](https://codeclimate.com/github/AMSterling/viewing_party_lite/maintainability)
-            
+
 </div>
 
 [![Contributors][contributors-shield]][contributors-url]
