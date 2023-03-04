@@ -1,5 +1,5 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
+
 <div align="right">
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/40181d7fadd0ea241abf/maintainability)](https://codeclimate.com/github/AMSterling/viewing_party_lite/maintainability)
