@@ -1,0 +1,81 @@
+# This workflow uses actions that are not certified by GitHub.  They are
+# provided by a third-party and are governed by separate terms of service,
+# privacy policy, and support documentation.
+#
+# This workflow will install a prebuilt Ruby version, install dependencies, and
+# run tests and linters.
+name: "Ruby on Rails CI"
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:11-alpine
+        ports:
+          - "5432:5432"
+        env:
+          POSTGRES_DB: rails_test
+          POSTGRES_USER: rails
+          POSTGRES_PASSWORD: password
+    env:
+      RAILS_ENV: test
+      DATABASE_URL: "postgres://rails:password@localhost:5432/rails_test"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      # Add or replace dependency steps here
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@ee2113536afb7f793eed4ce60e8d3b26db912da4 # v1.127.0
+        with:
+          bundler-cache: true
+      # Add or replace database setup steps here
+      - name: Set up database schema
+        run: bin/rails db:schema:load
+      # Add or replace test runners here
+      - name: Run tests
+        run: bin/rake
+        
+      # However you run your tests to generate code coverage
+      - name: Run my tests
+        run: |
+          bundle exec rspec
+
+      # Minimum configuration
+      - uses: joshmfrankel/simplecov-check-action@main
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@ee2113536afb7f793eed4ce60e8d3b26db912da4 # v1.127.0
+        with:
+          bundler-cache: true
+      # Add or replace any other lints here
+      - name: SimpleCov+ Action
+      # You may pin to the exact commit or the version.
+      # uses: joshmfrankel/simplecov-check-action@80bff9575301ca82742eac01efb49afbddaee626
+      uses: joshmfrankel/simplecov-check-action@1.0.0
+      with:
+        # Github token for create checks
+        github_token: 
+        # The name of the check's job
+        check_job_name: # optional, default is SimpleCov
+        # Minimum test suite coverage percentage
+        minimum_suite_coverage: # optional, default is 90
+        # Minimum coverage percent for every file (requres simplecov-json)
+        minimum_file_coverage: # optional, default is 0
+        # File path to coverage results
+        coverage_path: # optional, default is coverage/.last_run.json
+        # File path to simplecov-json coverage results (only when using simplecov-json)
+        coverage_json_path: # optional, default is coverage/coverage.json
+        # Display logs for debugging
+        debug_mode: # optional
