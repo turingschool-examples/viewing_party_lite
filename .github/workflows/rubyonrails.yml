@@ -61,22 +61,22 @@ jobs:
         with:
           bundler-cache: true
       # Add or replace any other lints here
-      - name: SimpleCov+ Action
-      # You may pin to the exact commit or the version.
-      # uses: joshmfrankel/simplecov-check-action@80bff9575301ca82742eac01efb49afbddaee626
-      uses: joshmfrankel/simplecov-check-action@1.0.0
-      with:
-        # Github token for create checks
-        github_token:
-        # The name of the check's job
-        check_job_name: # optional, default is SimpleCov
-        # Minimum test suite coverage percentage
-        minimum_suite_coverage: # optional, default is 90
-        # Minimum coverage percent for every file (requres simplecov-json)
-        minimum_file_coverage: # optional, default is 0
-        # File path to coverage results
-        coverage_path: # optional, default is coverage/.last_run.json
-        # File path to simplecov-json coverage results (only when using simplecov-json)
-        coverage_json_path: # optional, default is coverage/coverage.json
-        # Display logs for debugging
-        debug_mode: # optional
+      # - name: SimpleCov+ Action
+      #   # You may pin to the exact commit or the version.
+      #   # uses: joshmfrankel/simplecov-check-action@80bff9575301ca82742eac01efb49afbddaee626
+      #   uses: joshmfrankel/simplecov-check-action@1.0.0
+      #   with:
+      #     # Github token for create checks
+      #     github_token:
+      #     # The name of the check's job
+      #     check_job_name: # optional, default is SimpleCov
+      #     # Minimum test suite coverage percentage
+      #     minimum_suite_coverage: # optional, default is 90
+      #     # Minimum coverage percent for every file (requres simplecov-json)
+      #     minimum_file_coverage: # optional, default is 0
+      #     # File path to coverage results
+      #     coverage_path: # optional, default is coverage/.last_run.json
+      #     # File path to simplecov-json coverage results (only when using simplecov-json)
+      #     coverage_json_path: # optional, default is coverage/coverage.json
+      #     # Display logs for debugging
+      #     debug_mode: # optional
