@@ -254,6 +254,9 @@ Don't forget to give the project a star! Thanks again!
 [CircleCI]: https://img.shields.io/badge/circle%20ci-%23161616.svg?style=for-the-badge&logo=circleci&logoColor=white
 [CircleCI-url]: https://circleci.com/developer
 
+[CodeClimate]: https://a11ybadges.com/badge?style=for-the-badge&logo=codeclimate
+[CodeClimate-url]: https://codeclimate.com
+
 [CSS]: https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white
 [CSS-url]: https://en.wikipedia.org/wiki/CSS
 
