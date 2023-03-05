@@ -4,6 +4,7 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/40181d7fadd0ea241abf/test_coverage)](https://codeclimate.com/github/AMSterling/viewing_party_lite/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/40181d7fadd0ea241abf/maintainability)](https://codeclimate.com/github/AMSterling/viewing_party_lite/maintainability)
+[![Ruby on Rails CI](https://github.com/AMSterling/viewing_party_lite/actions/workflows/rubyonrails.yml/badge.svg)](https://github.com/AMSterling/viewing_party_lite/actions/workflows/rubyonrails.yml)
 
 </div>
 
@@ -96,7 +97,7 @@ _Example wireframes are found [here](https://backend.turing.edu/module3/projects
 
   <p>
 
-[![Rails][Rails]][Rails-url] [![Ruby][Ruby]][Ruby-url] [![RSpec][RSpec]][RSpec-url] [![Atom][Atom]][Atom-url] [![Visual Studio Code][Visual Studio Code]][Visual Studio Code-url] [![Heroku][Heroku]][Heroku-url]
+[![Rails][Rails]][Rails-url] [![Ruby][Ruby]][Ruby-url] [![RSpec][RSpec]][RSpec-url] [![Atom][Atom]][Atom-url] [![Visual Studio Code][Visual Studio Code]][Visual Studio Code-url] [![Heroku][Heroku]][Heroku-url] [![GitHub Actions][GitHub Actions]][GitHub Actions-url]
   </p>
   <p>
 
