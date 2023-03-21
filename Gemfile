@@ -49,7 +49,7 @@ group :development do
   gem 'orderly'
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', '~> 4.0'
   gem 'web-console', '>= 3.3.0'
 end
 
