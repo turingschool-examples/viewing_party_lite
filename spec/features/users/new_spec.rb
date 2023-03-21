@@ -15,7 +15,7 @@ RSpec.describe "'/register'", type: :feature do
       fill_in :email, with: "David@example.com"
       click_button("Create New User")
 
-      expect(current_path).to eq('/users/:id')
+      expect(current_path).to eq("/users/#{User.last.id}")
       expect(page).to have_content("David's Dashboard")
     end
   end
