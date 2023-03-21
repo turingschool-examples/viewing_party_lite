@@ -1,7 +1,27 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/davidmarino/Desktop/3_mod/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
+      "/Users/BrianHayes/3mod/projects/viewing_party_lite/app/helpers/application_helper.rb": {
+        "lines": [
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/BrianHayes/3mod/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/BrianHayes/3mod/projects/viewing_party_lite/app/models/viewing_party_user.rb": {
         "lines": [
           0,
           0,
@@ -11,16 +31,7 @@
         "branches": {
         }
       },
-      "/Users/davidmarino/Desktop/3_mod/projects/viewing_party_lite/app/models/application_record.rb": {
-        "lines": [
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/davidmarino/Desktop/3_mod/projects/viewing_party_lite/app/jobs/application_job.rb": {
+      "/Users/BrianHayes/3mod/projects/viewing_party_lite/app/models/viewing_party.rb": {
         "lines": [
           0,
           0
@@ -28,25 +39,10 @@
         "branches": {
         }
       },
-      "/Users/davidmarino/Desktop/3_mod/projects/viewing_party_lite/app/controllers/application_controller.rb": {
+      "/Users/BrianHayes/3mod/projects/viewing_party_lite/app/models/application_record.rb": {
         "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/davidmarino/Desktop/3_mod/projects/viewing_party_lite/app/helpers/application_helper.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/davidmarino/Desktop/3_mod/projects/viewing_party_lite/app/channels/application_cable/connection.rb": {
-        "lines": [
-          0,
+          null,
+          null,
           0,
           0,
           0
@@ -54,8 +50,50 @@
         "branches": {
         }
       },
-      "/Users/davidmarino/Desktop/3_mod/projects/viewing_party_lite/app/channels/application_cable/channel.rb": {
+      "/Users/BrianHayes/3mod/projects/viewing_party_lite/app/models/user.rb": {
         "lines": [
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/BrianHayes/3mod/projects/viewing_party_lite/app/jobs/application_job.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/BrianHayes/3mod/projects/viewing_party_lite/app/controllers/application_controller.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/BrianHayes/3mod/projects/viewing_party_lite/app/channels/application_cable/connection.rb": {
+        "lines": [
+          null,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/Users/BrianHayes/3mod/projects/viewing_party_lite/app/channels/application_cable/channel.rb": {
+        "lines": [
+          null,
+          null,
           0,
           0,
           0,
@@ -65,6 +103,6 @@
         }
       }
     },
-    "timestamp": 1679348000
+    "timestamp": 1679431403
   }
 }
