@@ -1,0 +1,7 @@
+<h1>Welcome to Viewing Party!</h1>
+<p><%= button_to "Register New User", "/register" %></p>
+<% @users.each do |user| %>
+  <div id="user_names<%= user.id%>">
+    <p><%= link_to user.name, "/users/#{user.id}" %></p>
+  </div>
+<% end %>
