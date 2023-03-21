@@ -9,8 +9,9 @@
           null
         ]
       },
-      "/Users/davidmarino/Desktop/3_mod/projects/viewing_party_lite/app/models/user_party.rb": {
+      "/Users/davidmarino/Desktop/3_mod/projects/viewing_party_lite/app/models/user.rb": {
         "lines": [
+          1,
           1,
           1,
           null,
@@ -28,7 +29,7 @@
           null
         ]
       },
-      "/Users/davidmarino/Desktop/3_mod/projects/viewing_party_lite/app/models/user.rb": {
+      "/Users/davidmarino/Desktop/3_mod/projects/viewing_party_lite/app/models/viewing_party.rb": {
         "lines": [
           1,
           1,
@@ -38,12 +39,30 @@
           null
         ]
       },
-      "/Users/davidmarino/Desktop/3_mod/projects/viewing_party_lite/app/models/viewing_party.rb": {
+      "/Users/davidmarino/Desktop/3_mod/projects/viewing_party_lite/app/models/user_party.rb": {
         "lines": [
           1,
           1,
           null,
           1,
+          1,
+          null
+        ]
+      },
+      "/Users/davidmarino/Desktop/3_mod/projects/viewing_party_lite/app/controllers/landing_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          3,
+          null,
+          null
+        ]
+      },
+      "/Users/davidmarino/Desktop/3_mod/projects/viewing_party_lite/app/controllers/application_controller.rb": {
+        "lines": [
+          null,
+          null,
           1,
           null
         ]
@@ -61,16 +80,6 @@
         }
       },
       "/Users/davidmarino/Desktop/3_mod/projects/viewing_party_lite/app/jobs/application_job.rb": {
-        "lines": [
-          null,
-          null,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/davidmarino/Desktop/3_mod/projects/viewing_party_lite/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -105,6 +114,6 @@
         }
       }
     },
-    "timestamp": 1679429038
+    "timestamp": 1679431690
   }
 }
