@@ -1,0 +1,15 @@
+<h1 style="text-align:center;"><%= @user.name %>'s Dashboard</h1>
+<center>
+  <%= button_to 'Discover Movies', discover_user_path(@user), method: :get %>
+</center>
+<center>
+  <div id="hosted_parties" class="movie_columns">
+    <%= render partial: "viewing_party", collection: @user.hosted_parties, locals: {party_type: "hosted" } || "You are not hosting any viewing parties." %>
+  </div>
+</center>
+<center>
+<div id="invited_parties" class="movie_columns">
+  <%= render partial: "viewing_party", collection: @user.invited_parties, locals: {party_type: "invited"} || "You have no upcoming viewing parties." %>
+</div>
+</center>
+

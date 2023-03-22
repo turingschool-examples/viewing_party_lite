@@ -1,0 +1,21 @@
+<h3><center>Register a New User</center><h3>
+
+<center>
+  <section>
+    <%= form_with model: @user, url: "/users", method: :post, local: true do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <br>
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+      <br>
+      <%= f.label :password, 'Password' %>
+      <%= f.password_field :password %>
+      <br>
+      <%= f.label :password_confirmation, 'Password Confirmation' %>
+      <%= f.password_field :password_confirmation %>
+      <br>
+      <%= f.submit 'Create New User' %>
+    <% end %>
+  </section>
+</center>

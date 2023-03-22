@@ -1,0 +1,21 @@
+<div id=<%= "#{party_type}_#{viewing_party.id}"%>> 
+  <p>Movie Title: <%= link_to viewing_party.movie.title, user_movie_path(@user, viewing_party.movie.id) %></p>
+  <div id="movie-poster">
+    <p><%= image_tag viewing_party.movie.image_path %></p>
+  </div>
+  <p>Date of Event: <%= viewing_party.date %></p>
+  <p>Start Time: <%= viewing_party.start_time %></p>
+  <% if @user != viewing_party.host %>
+    <p>Host: <%= viewing_party.host.name %></p>
+  <% else %>
+    <p>You are the host of this viewing party.</p>
+  <% end %>
+  <p>Invited: </p>
+  <% viewing_party.users.each do |user| %>
+    <% if @user.name == user.name  %>
+      <b><%= user.name %></b>
+    <% else %>
+      <%= user.name %>
+    <% end %>
+  <% end %>
+</div>

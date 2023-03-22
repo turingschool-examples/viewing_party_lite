@@ -1,11 +1,25 @@
+# frozen_string_literal: true
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
+require 'simplecov'
+SimpleCov.start do
+  add_filter 'spec'
+  add_filter 'channels'
+  add_filter 'jobs'
+  add_filter 'mailers'
+end
+
 require 'spec_helper'
+
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
-abort("The Rails environment is running in production mode!") if Rails.env.production?
+abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
+WebMock.disable_net_connect!(allow_localhost: true)
+
+Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -61,6 +75,30 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+
+  # before every test, webmock will stub our API call to the movie/top_rated endpoint
+  config.before do
+    WebMock.stub_request(:any, "https://api.themoviedb.org/3/movie/top_rated?api_key=#{ENV['moviedb_key']}")
+           .to_return(body: File.read('./spec/fixtures/top_movies.json'))
+
+    WebMock.stub_request(:any, "https://api.themoviedb.org/3/search/movie?api_key=#{ENV['moviedb_key']}&query=river")
+           .to_return(body: File.read('./spec/fixtures/search_river_movies.json'))
+
+    movie_ids = [13, 14, 15, 17]
+    movie_ids.each do |movie_id|
+      url = "https://api.themoviedb.org/3/movie/#{movie_id}?api_key=#{ENV['moviedb_key']}"
+      response = File.read("spec/fixtures/movie_#{movie_id}.json")
+      WebMock.stub_request(:get, url).to_return(status: 200, body: response)
+
+      url = "https://api.themoviedb.org/3/movie/#{movie_id}/credits?api_key=#{ENV['moviedb_key']}"
+      response = File.read('spec/fixtures/credits.json')
+      WebMock.stub_request(:get, url).to_return(status: 200, body: response)
+
+      url = "https://api.themoviedb.org/3/movie/#{movie_id}/reviews?api_key=#{ENV['moviedb_key']}"
+      response = File.read('spec/fixtures/reviews.json')
+      WebMock.stub_request(:get, url).to_return(status: 200, body: response)
+    end
+  end
 end
 
 Shoulda::Matchers.configure do |config|
