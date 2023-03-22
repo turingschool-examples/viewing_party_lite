@@ -39,15 +39,16 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'shoulda-matchers', '~> 4.0'
+  gem 'orderly'
   gem 'net-http'
 end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'factory_bot_rails'
-  gem 'faker'
   gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'orderly'
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
   gem 'web-console', '>= 3.3.0'

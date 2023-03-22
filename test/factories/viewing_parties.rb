@@ -1,9 +1,8 @@
 FactoryBot.define do
   factory :viewing_party do
-    duration { "MyString" }
-    host_id { 1 }
-    party_date { "2023-03-20" }
-    party_time { "2023-03-20 19:26:16" }
+    duration { "2:00:00" }
+    party_date {Time.now }
+    party_time {Time.now.strftime("%I:%M:%S")}
     movie_id { 1 }
   end
 end
