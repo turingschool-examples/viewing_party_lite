@@ -4,7 +4,7 @@ RSpec.describe "'/register'", type: :feature do
   describe "When I visit the register page" do
     it "Should have a form to register a new user" do
       visit "/register"
-
+      save_and_open_page
       expect(page).to have_content("Viewing Party")
       expect(page).to have_content("Register a New User")
       expect(page).to have_field(:name)
