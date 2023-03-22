@@ -43,6 +43,7 @@ group :development, :test do
   gem 'faker'
   gem 'shoulda-matchers', '~> 4.0'
   gem 'orderly'
+  gem 'net-http'
 end
 
 group :development do
@@ -51,6 +52,7 @@ group :development do
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
   gem 'web-console', '>= 3.3.0'
+  gem 'shoulda-matchers', '~> 4.0'
 end
 
 group :test do
