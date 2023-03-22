@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/davidmarino/Desktop/3_mod/projects/viewing_party_lite/app/helpers/application_helper.rb": {
+      "/Users/BrianHayes/3mod/projects/viewing_party_lite/app/helpers/application_helper.rb": {
         "lines": [
           null,
           null,
@@ -9,9 +9,8 @@
           null
         ]
       },
-      "/Users/davidmarino/Desktop/3_mod/projects/viewing_party_lite/app/models/user_party.rb": {
+      "/Users/BrianHayes/3mod/projects/viewing_party_lite/app/models/user_party.rb": {
         "lines": [
-          1,
           1,
           null,
           1,
@@ -19,7 +18,7 @@
           null
         ]
       },
-      "/Users/davidmarino/Desktop/3_mod/projects/viewing_party_lite/app/models/application_record.rb": {
+      "/Users/BrianHayes/3mod/projects/viewing_party_lite/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -28,17 +27,7 @@
           null
         ]
       },
-      "/Users/davidmarino/Desktop/3_mod/projects/viewing_party_lite/app/models/user.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/davidmarino/Desktop/3_mod/projects/viewing_party_lite/app/models/viewing_party.rb": {
+      "/Users/BrianHayes/3mod/projects/viewing_party_lite/app/models/user.rb": {
         "lines": [
           1,
           1,
@@ -48,7 +37,7 @@
           null
         ]
       },
-      "/Users/davidmarino/Desktop/3_mod/projects/viewing_party_lite/app/mailers/application_mailer.rb": {
+      "/Users/BrianHayes/3mod/projects/viewing_party_lite/app/models/viewing_party.rb": {
         "lines": [
           1,
           1,
@@ -63,7 +52,8 @@
           1,
           null,
           1,
-          1,
+          2,
+          2,
           null,
           null
         ]
@@ -123,6 +113,6 @@
         }
       }
     },
-    "timestamp": 1679433904
+    "timestamp": 1679443458
   }
 }
