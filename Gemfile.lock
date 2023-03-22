@@ -74,6 +74,13 @@ GEM
     docile (1.4.0)
     erubi (1.12.0)
     execjs (2.8.1)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
+    faker (3.1.1)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     globalid (1.1.0)
       activesupport (>= 5.0)
@@ -104,6 +111,8 @@ GEM
     mini_portile2 (2.8.1)
     minitest (5.17.0)
     msgpack (1.6.0)
+    net-http (0.3.2)
+      uri
     net-imap (0.3.4)
       date
       net-protocol
@@ -117,6 +126,9 @@ GEM
     nokogiri (1.14.1)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
+    orderly (0.1.1)
+      capybara (>= 1.1)
+      rspec (>= 2.14)
     parallel (1.22.1)
     parser (3.2.0.0)
       ast (~> 2.4.1)
@@ -161,6 +173,10 @@ GEM
       ffi (~> 1.0)
     regexp_parser (2.6.2)
     rexml (3.2.5)
+    rspec (3.12.0)
+      rspec-core (~> 3.12.0)
+      rspec-expectations (~> 3.12.0)
+      rspec-mocks (~> 3.12.0)
     rspec-core (3.12.0)
       rspec-support (~> 3.12.0)
     rspec-expectations (3.12.2)
@@ -190,10 +206,15 @@ GEM
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.24.1)
       parser (>= 3.1.1.0)
+    rubocop-capybara (2.17.1)
+      rubocop (~> 1.41)
     rubocop-rails (2.17.4)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.33.0, < 2.0)
+    rubocop-rspec (2.19.0)
+      rubocop (~> 1.33)
+      rubocop-capybara (~> 2.17)
     ruby-progressbar (1.11.0)
     ruby_dep (1.5.0)
     sass (3.7.4)
@@ -207,6 +228,8 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    shoulda-matchers (4.5.1)
+      activesupport (>= 4.2.0)
     simplecov (0.22.0)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -229,6 +252,7 @@ GEM
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (2.4.2)
+    uri (0.12.0)
     web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -247,16 +271,22 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   capybara
   coffee-rails (~> 4.2)
+  factory_bot_rails
+  faker
   jbuilder (~> 2.5)
   launchy
   listen (>= 3.0.5, < 3.2)
+  net-http
+  orderly
   pg (>= 0.18, < 2.0)
   pry
   puma (~> 3.11)
   rails (~> 5.2.8)
   rspec-rails
   rubocop-rails
+  rubocop-rspec
   sass-rails (~> 5.0)
+  shoulda-matchers (~> 4.0)
   simplecov
   tzinfo-data
   uglifier (>= 1.3.0)

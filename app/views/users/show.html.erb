@@ -1,0 +1,18 @@
+<h1><%= @user.name%>'s Dashboard</h1>
+<br>
+<br>
+<%= button_to "Discover Movies", "/users/:id/discover" %>
+<% @viewing_parties.each do |party| %> 
+  <div id="party<%= party.id%>">
+  <%= party.movie_id %><br>
+  <%= party.party_date %><br>
+  <%= party.party_time.strftime("%I:%M:%S") %><br>
+  <% party.user_parties.each do |user_party| %>
+    <% if user_party.host == true %>
+      <%= "Hosting" %>
+    <% else %>
+      <%= "Invited" %>
+    <% end %>
+  <% end %><br><br>
+  </div>
+<% end %>
