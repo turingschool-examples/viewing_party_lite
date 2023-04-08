@@ -4,13 +4,14 @@
 
 Viewing Party Lite is an application in which users can explore movie options and create a viewing party event for themselves and other users of the application.
 
-## Setup
+## :heavy_check_mark:Setup
 
-- :heavy_check_mark: Fork and Clone the repo
-- :heavy_check_mark: Install gem packages: `bundle install`
-- :heavy_check_mark: Setup the database: `rails db:create`
+- Fork and Clone the repo
+- Install gem packages: `bundle install`
+- Setup the database: `rails db:{drop,create,migrate}`
+- Visit the app on `localhost:3000`
 
-## Versions
+## :computer:Versions
 
 - Ruby 2.7.2
 
