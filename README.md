@@ -3,7 +3,7 @@
 <div align="right">
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/40181d7fadd0ea241abf/test_coverage)](https://codeclimate.com/github/AMSterling/viewing_party_lite/test_coverage)
-[![Maintainability](https://api.codeclimate.com/v1/badges/40181d7fadd0ea241abf/maintainability)](https://codeclimate.com/github/AMSterling/viewing_party_lite/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/266fb64b3c18fb7aefd0/maintainability)](https://codeclimate.com/github/AMSterling/viewing_party_lite/maintainability)
 [![Ruby on Rails CI](https://github.com/AMSterling/viewing_party_lite/actions/workflows/rubyonrails.yml/badge.svg)](https://github.com/AMSterling/viewing_party_lite/actions/workflows/rubyonrails.yml)
 
 </div>
