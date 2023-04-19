@@ -41,7 +41,7 @@ RSpec.describe 'the User Dashboard' do
 
     within "#vparty-0" do
       expect(page).to have_link('The Shawshank Redemption')
-      expect(page).to have_content(Date.tomorrow.strftime('%B%e, %Y'))
+      expect(page).to have_content(Date.tomorrow.strftime('%B %e, %Y'))
       # expect(page).to have_content(Time.strftime('%I:%M %p'))
       expect(page).to have_content("Hosted by: #{user1.name}")
       expect(page).to have_content("Attendees: #{user2.name}")
@@ -67,7 +67,7 @@ RSpec.describe 'the User Dashboard' do
 
     within "#vparty-0" do
       expect(page).to have_link('The Godfather')
-      expect(page).to have_content(Date.tomorrow.strftime('%B%e, %Y'))
+      expect(page).to have_content(Date.tomorrow.strftime('%B %e, %Y'))
       expect(page).to have_content("Hosted by: #{user2.name}")
       expect(page).to have_content("Attendees: #{user1.name}")
       expect(page).to have_content('Invited')

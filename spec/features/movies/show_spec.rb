@@ -42,7 +42,7 @@ RSpec.describe 'Movies Show Page' do
     end
 
     within '#reviews-section' do
-      expect(page).to have_content('8 Review(s)')
+      expect(page).to have_content('9 Review(s)')
       expect(page).to have_content('Author: elshaarawy')
       expect(page).to have_content('very good movie 9.5/10')
     end
