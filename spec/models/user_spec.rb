@@ -18,85 +18,80 @@ RSpec.describe User, type: :model do
                  name: 'Saylor',
                  email: 'SAyLoR@webmail.COM',
                  password: 'password',
-                 password_confirmation: 'password') }
-   let!(:user2) { User.create!(
-                  name: 'Sterling',
-                  email: 'sterling@webmail.com',
-                  password: 'password',
-                  password_confirmation: 'password') }
-   let!(:user3) { User.create!(
-                  name: 'Coleman',
-                  email: 'dani@webmail.com',
-                  password: 'password',
-                  password_confirmation: 'password'
-                  ) }
-   let!(:party1) { ViewingParty.create!(
-                   poster_path: 'test path',
-                   movie_name: 'The First Movie',
-                   movie_id: 123,
-                   host_id: user1.id,
-                   duration: 456,
-                   eventdate: Date.today,
-                   starttime: Time.current
-                 ) }
-   let!(:party2) { ViewingParty.create!(
-                   poster_path: 'test path number two',
-                   movie_name: 'A Second Movie',
-                   movie_id: 303,
-                   host_id: user1.id,
-                   duration: 405,
-                   eventdate: Date.today,
-                   starttime: Time.current
-                 ) }
-   let!(:party3) { ViewingParty.create!(
-                   poster_path: 'testing 123',
-                   movie_name: 'A Third Movie!',
-                   movie_id: 918,
-                   host_id: user2.id,
-                   duration: 720,
-                   eventdate: Date.today,
-                   starttime: Time.current
-                 ) }
-   let!(:party4) { ViewingParty.create!(
-                   poster_path: '/wAD7nnWh4e6wweffwmkLbf35uf0.jpg',
-                   movie_name: 'Beverly Hills Ninja',
-                   movie_id: 9622,
-                   host_id: user3.id,
-                   duration: 96,
-                   eventdate: Date.yesterday,
-                   starttime: Time.now
-                 ) }
-   let!(:user_party_1) { UserViewingParty.create!(
-                         user_id: user1.id,
-                         viewing_party_id: party1.id
-                       ) }
-   let!(:user_party_2) { UserViewingParty.create!(
-                         user_id: user2.id,
-                         viewing_party_id: party1.id
-                       ) }
-   let!(:user_party_3) { UserViewingParty.create!(
-                         user_id: user1.id,
-                         viewing_party_id: party2.id
-                       ) }
-   let!(:user_party_4) { UserViewingParty.create!(
-                         user_id: user2.id,
-                         viewing_party_id: party2.id
-                       ) }
-   let!(:user_party_5) { UserViewingParty.create!(
-                         user_id: user1.id,
-                         viewing_party_id: party3.id
-                       ) }
-   let!(:user_party_6) { UserViewingParty.create!(
-                         user_id: user2.id,
-                         viewing_party_id: party3.id
-                       ) }
-   let!(:user_party_7) { UserViewingParty.create!(
-                user_id: user1.id,
-                viewing_party_id: party4.id) }
+                 password_confirmation: 'password'
+                ) }
+  let!(:users) { create_list(:user, 2) }
+  let!(:user2) { users.first }
+  let!(:user3) { users.second }
 
-   let!(:user_party_8) { UserViewingParty.create!(
+  let!(:party1) { ViewingParty.create!(
+                  poster_path: 'test path',
+                  movie_name: 'The First Movie',
+                  movie_id: 123,
+                  host_id: user1.id,
+                  duration: 456,
+                  eventdate: Date.today,
+                  starttime: Time.current
+                ) }
+  let!(:party2) { ViewingParty.create!(
+                  poster_path: 'test path number two',
+                  movie_name: 'A Second Movie',
+                  movie_id: 303,
+                  host_id: user1.id,
+                  duration: 405,
+                  eventdate: Date.today,
+                  starttime: Time.current
+                ) }
+  let!(:party3) { ViewingParty.create!(
+                  poster_path: 'testing 123',
+                  movie_name: 'A Third Movie!',
+                  movie_id: 918,
+                  host_id: user2.id,
+                  duration: 720,
+                  eventdate: Date.today,
+                  starttime: Time.current
+                ) }
+  let!(:party4) { ViewingParty.create!(
+                  poster_path: '/wAD7nnWh4e6wweffwmkLbf35uf0.jpg',
+                  movie_name: 'Beverly Hills Ninja',
+                  movie_id: 9622,
+                  host_id: user3.id,
+                  duration: 96,
+                  eventdate: Date.yesterday,
+                  starttime: Time.now
+                ) }
+  let!(:uvp1) { UserViewingParty.create!(
+                user_id: user1.id,
+                viewing_party_id: party1.id
+               ) }
+  let!(:uvp2) { UserViewingParty.create!(
                 user_id: user2.id,
-                viewing_party_id: party4.id) }
+                viewing_party_id: party1.id
+               ) }
+  let!(:uvp3) { UserViewingParty.create!(
+                user_id: user1.id,
+                viewing_party_id: party2.id
+               ) }
+  let!(:uvp4) { UserViewingParty.create!(
+                user_id: user2.id,
+                viewing_party_id: party2.id
+               ) }
+  let!(:uvp5) { UserViewingParty.create!(
+                user_id: user1.id,
+                viewing_party_id: party3.id
+               ) }
+  let!(:uvp6) { UserViewingParty.create!(
+                user_id: user2.id,
+                viewing_party_id: party3.id
+               ) }
+  let!(:uvp7) { UserViewingParty.create!(
+                user_id: user1.id,
+                viewing_party_id: party4.id
+               ) }
+  let!(:uvp8) { UserViewingParty.create!(
+                user_id: user2.id,
+                viewing_party_id: party4.id
+               ) }
 
   describe 'User attributes' do
     it 'ensures encryption of passwords' do
