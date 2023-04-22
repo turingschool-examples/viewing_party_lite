@@ -15,7 +15,7 @@ RSpec.describe ViewingParty, type: :model do
     it { should have_many(:users).through(:user_viewing_parties) }
   end
 
-  context 'model methods', :vcr do
+  describe 'model methods', :vcr do
     let!(:users) { create_list(:user, 4) }
     let!(:user1) { users.first }
     let!(:user2) { users.second }

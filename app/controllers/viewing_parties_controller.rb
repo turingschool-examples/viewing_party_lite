@@ -24,7 +24,7 @@ class ViewingPartiesController < ApplicationController
         UserViewingParty.create!( user_id: attendee.to_i, viewing_party_id: viewing_party.id )
       end
     end
-
+    
     redirect_to dashboard_path
   end
 end

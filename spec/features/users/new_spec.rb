@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'creating a new user' do
+RSpec.describe 'Create User' do
   let!(:users) { create_list(:user, 3) }
   let!(:user1) { users.first }
   let!(:user2) { users.second }
@@ -45,7 +45,7 @@ RSpec.describe 'creating a new user' do
     expect(page).to have_link("jerry@trashtv.com's Dashboard")
   end
 
-  it 'should check for uniqueness of email address and be case insensitive' do
+  it 'checks for uniqueness of email address case insensitive' do
     User.create!(name: 'Geraldo', email: 'geraldo@trashtv.com', password: 'password', password_confirmation: 'password')
 
     click_link('Create a New User')
@@ -64,7 +64,7 @@ RSpec.describe 'creating a new user' do
     expect(page).to have_content('Email has already been taken')
   end
 
-  it 'should check that password and confirmation match' do
+  it 'checks that password and confirmation match' do
 
     click_link('Create a New User')
     expect(current_path).to eq(register_path)
@@ -81,7 +81,7 @@ RSpec.describe 'creating a new user' do
     expect(page).to have_content("Password confirmation doesn't match Password")
   end
 
-  it 'should not create user if name is not filled in' do
+  it 'does not create user if name field is empty' do
 
     click_link('Create a New User')
     expect(current_path).to eq(register_path)

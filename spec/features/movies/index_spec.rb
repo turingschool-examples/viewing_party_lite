@@ -6,7 +6,7 @@ RSpec.describe 'Movies Index Page' do
   let!(:user2) { users.second }
   let!(:user3) { users.third }
 
-  it 'can show the top 40 movies from the API', :vcr do
+  it 'shows the top 40 movies from the API', :vcr do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
     visit discover_path
@@ -18,7 +18,7 @@ RSpec.describe 'Movies Index Page' do
     expect(page).to have_content('Shawshank Redemption')
   end
 
-  it 'can show the top 40 movies from the API based on a search string', :vcr do
+  it 'shows the top 40 movies from the API based on a search string', :vcr do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
     visit discover_path

@@ -11,7 +11,7 @@ RSpec.describe 'User Sessions' do
     visit root_path
   end
 
-  context 'User' do
+  feature 'User log in' do
     it 'can log in and log out' do
 
       fill_in :email, with: "#{user1.email}"
@@ -77,7 +77,7 @@ RSpec.describe 'User Sessions' do
     end
   end
 
-  context 'Admin' do
+  feature 'Admin log in' do
     it 'can log in as an admin and get to admin dashboard' do
 
       fill_in :email, with: admin.email

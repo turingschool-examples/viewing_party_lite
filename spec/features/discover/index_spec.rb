@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'discover page' do
+RSpec.describe 'Discover Page' do
   let!(:users) { create_list(:user, 3) }
   let!(:user1) { users.first }
   let!(:user2) { users.second }

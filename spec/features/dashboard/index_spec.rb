@@ -15,7 +15,7 @@ RSpec.describe 'the User Dashboard' do
     expect(page).to_not have_link('Admin Dashboard')
   end
 
-  it 'should have a button to discover movies' do
+  it 'has a button to discover movies' do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user1)
 
     visit dashboard_path
