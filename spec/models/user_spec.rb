@@ -30,7 +30,7 @@ RSpec.describe User, type: :model do
                   movie_id: 123,
                   host_id: user1.id,
                   duration: 456,
-                  eventdate: Date.today,
+                  eventdate: Date.tomorrow,
                   starttime: Time.current
                 ) }
   let!(:party2) { ViewingParty.create!(
@@ -39,7 +39,7 @@ RSpec.describe User, type: :model do
                   movie_id: 303,
                   host_id: user1.id,
                   duration: 405,
-                  eventdate: Date.today,
+                  eventdate: Date.tomorrow,
                   starttime: Time.current
                 ) }
   let!(:party3) { ViewingParty.create!(
@@ -48,7 +48,7 @@ RSpec.describe User, type: :model do
                   movie_id: 918,
                   host_id: user2.id,
                   duration: 720,
-                  eventdate: Date.today,
+                  eventdate: Date.tomorrow,
                   starttime: Time.current
                 ) }
   let!(:party4) { ViewingParty.create!(
