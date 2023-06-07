@@ -135,7 +135,7 @@ Rails:
   ```sh
   7.0.4
   ```
-Database
+Database:
   ```sh
   postgresql@14
   ```
