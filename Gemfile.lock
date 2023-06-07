@@ -317,7 +317,7 @@ DEPENDENCIES
   launchy
   listen
   orderly
-  pg
+  pg (>= 0.18, < 2.0)
   pry
   puma (~> 3.12.6)
   rails (~> 7.0.4)
