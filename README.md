@@ -127,21 +127,17 @@ Then open [http://localhost:3000](http://localhost:3000) in your browser.
 <!-- PREREQUISITES -->
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them. <a href="https://developer.apple.com/xcode/" target="_blank" rel="noopener noreferrer">Xcode</a> and <a href="https://docs.brew.sh/Installation" target="_blank" rel="noopener noreferrer">Homebrew</a> is recommended for Mac.
-Ruby version manager <a href="https://github.com/rbenv/rbenv" target="_blank" rel="noopener noreferrer">rbenv</a>
-
 Ruby:
   ```sh
-  rbenv install 3.1.1
+  3.1.1
   ```
 Rails:
   ```sh
-  gem install rails --version 7.0.4
+  7.0.4
   ```
-PostgreSQL@14<a href="https://www.postgresql.org/download/" target="_blank" rel="noopener noreferrer">(Windows)</a> or if using Homebrew:
+Database
   ```sh
-  brew install postgresql@14
-  brew services start postgresql@14
+  postgresql@14
   ```
 ---
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
