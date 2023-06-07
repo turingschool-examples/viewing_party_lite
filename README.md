@@ -139,8 +139,8 @@ Rails:
   ```
 PostgreSQL@14<a href="https://www.postgresql.org/download/" target="_blank" rel="noopener noreferrer">(Windows)</a> or if using Homebrew:
   ```sh
-  brew install postgresql
-  brew services start postgresql
+  brew install postgresql@14
+  brew services start postgresql@14
   ```
 ---
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
