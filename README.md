@@ -101,7 +101,7 @@ _Example wireframes are found [here](https://backend.turing.edu/module3/projects
   </p>
   <p>
 
-[![CSS][CSS]][CSS-url] [![HTML5][HTML5]][HTML5-url] [![JavaScript][JavaScript]][JavaScript-url] [![PostgreSQL][PostgreSQL]][PostgreSQL-url] [![jQuery][jQuery]][jQuery-url] [![RuboCop][RuboCop]][RuboCop-url] [![Turing][Turing]][Turing-url]
+[![Capybara][Capybara]][Capybara-url] [![CSS][CSS]][CSS-url] [![HTML5][HTML5]][HTML5-url] [![JavaScript][JavaScript]][JavaScript-url] [![PostgreSQL][PostgreSQL]][PostgreSQL-url] [![jQuery][jQuery]][jQuery-url] [![RuboCop][RuboCop]][RuboCop-url] [![Turing][Turing]][Turing-url]
 
   </p>
 </div>
