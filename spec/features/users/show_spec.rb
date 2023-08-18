@@ -73,9 +73,9 @@ RSpec.describe "User Show Page", type: :feature do
       end
     end
 
-    xit "shows list of friends invited to viewing party" do
-      expect(page).to have_content([@user1.name, @user2.name, @user3.name])
-    end
+    # xit "shows list of friends invited to viewing party" do
+    #   expect(page).to have_content([@user1.name, @user2.name, @user3.name])
+    # end
   end
 
 end
