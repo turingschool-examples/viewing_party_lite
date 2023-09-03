@@ -30,6 +30,9 @@ Team communication <br>
 Prioritizing goals/user stories <br>
 Time management <br>
 
+Additional learning goals can be found [here](https://backend.turing.edu/module3/misc/learning_goals).
+
+
 ## Tech Stack
 ![ruby](https://img.shields.io/badge/Ruby-100000?style=for-the-badge&logo=Ruby&logoColor=B30000&labelColor=black&color=black)
 <br>
